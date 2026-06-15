@@ -54,6 +54,10 @@ namespace Amazon.WAFV2
         /// Constant EXCLUDED_AS_COUNT for ActionValue
         /// </summary>
         public static readonly ActionValue EXCLUDED_AS_COUNT = new ActionValue("EXCLUDED_AS_COUNT");
+        /// <summary>
+        /// Constant MONETIZE for ActionValue
+        /// </summary>
+        public static readonly ActionValue MONETIZE = new ActionValue("MONETIZE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -146,6 +150,64 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociatedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BlockchainChain.
+    /// </summary>
+    public class BlockchainChain : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASE for BlockchainChain
+        /// </summary>
+        public static readonly BlockchainChain BASE = new BlockchainChain("BASE");
+        /// <summary>
+        /// Constant BASE_SEPOLIA for BlockchainChain
+        /// </summary>
+        public static readonly BlockchainChain BASE_SEPOLIA = new BlockchainChain("BASE_SEPOLIA");
+        /// <summary>
+        /// Constant SOLANA for BlockchainChain
+        /// </summary>
+        public static readonly BlockchainChain SOLANA = new BlockchainChain("SOLANA");
+        /// <summary>
+        /// Constant SOLANA_DEVNET for BlockchainChain
+        /// </summary>
+        public static readonly BlockchainChain SOLANA_DEVNET = new BlockchainChain("SOLANA_DEVNET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockchainChain(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockchainChain FindValue(string value)
+        {
+            return FindValue<BlockchainChain>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockchainChain(string value)
         {
             return FindValue(value);
         }
@@ -1315,6 +1377,148 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type CryptoCurrency.
+    /// </summary>
+    public class CryptoCurrency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USDC for CryptoCurrency
+        /// </summary>
+        public static readonly CryptoCurrency USDC = new CryptoCurrency("USDC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CryptoCurrency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CryptoCurrency FindValue(string value)
+        {
+            return FindValue<CryptoCurrency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CryptoCurrency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Currency.
+    /// </summary>
+    public class Currency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USDC for Currency
+        /// </summary>
+        public static readonly Currency USDC = new Currency("USDC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Currency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Currency FindValue(string value)
+        {
+            return FindValue<Currency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Currency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CurrencyMode.
+    /// </summary>
+    public class CurrencyMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REAL for CurrencyMode
+        /// </summary>
+        public static readonly CurrencyMode REAL = new CurrencyMode("REAL");
+        /// <summary>
+        /// Constant TEST for CurrencyMode
+        /// </summary>
+        public static readonly CurrencyMode TEST = new CurrencyMode("TEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CurrencyMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CurrencyMode FindValue(string value)
+        {
+            return FindValue<CurrencyMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CurrencyMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataProtectionAction.
     /// </summary>
     public class DataProtectionAction : ConstantClass
@@ -1689,6 +1893,68 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type GroupByType.
+    /// </summary>
+    public class GroupByType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CATEGORY for GroupByType
+        /// </summary>
+        public static readonly GroupByType CATEGORY = new GroupByType("CATEGORY");
+        /// <summary>
+        /// Constant INTENT for GroupByType
+        /// </summary>
+        public static readonly GroupByType INTENT = new GroupByType("INTENT");
+        /// <summary>
+        /// Constant NAME for GroupByType
+        /// </summary>
+        public static readonly GroupByType NAME = new GroupByType("NAME");
+        /// <summary>
+        /// Constant ORGANIZATION for GroupByType
+        /// </summary>
+        public static readonly GroupByType ORGANIZATION = new GroupByType("ORGANIZATION");
+        /// <summary>
+        /// Constant WEBACL for GroupByType
+        /// </summary>
+        public static readonly GroupByType WEBACL = new GroupByType("WEBACL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupByType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupByType FindValue(string value)
+        {
+            return FindValue<GroupByType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupByType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InspectionLevel.
     /// </summary>
     public class InspectionLevel : ConstantClass
@@ -1732,6 +1998,64 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InspectionLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntervalType.
+    /// </summary>
+    public class IntervalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAILY for IntervalType
+        /// </summary>
+        public static readonly IntervalType DAILY = new IntervalType("DAILY");
+        /// <summary>
+        /// Constant FIVE_MINUTELY for IntervalType
+        /// </summary>
+        public static readonly IntervalType FIVE_MINUTELY = new IntervalType("FIVE_MINUTELY");
+        /// <summary>
+        /// Constant HOURLY for IntervalType
+        /// </summary>
+        public static readonly IntervalType HOURLY = new IntervalType("HOURLY");
+        /// <summary>
+        /// Constant MINUTELY for IntervalType
+        /// </summary>
+        public static readonly IntervalType MINUTELY = new IntervalType("MINUTELY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntervalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntervalType FindValue(string value)
+        {
+            return FindValue<IntervalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntervalType(string value)
         {
             return FindValue(value);
         }
@@ -2329,6 +2653,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField METRIC_NAME = new ParameterExceptionField("METRIC_NAME");
         /// <summary>
+        /// Constant MONETIZATION_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField MONETIZATION_CONFIG = new ParameterExceptionField("MONETIZATION_CONFIG");
+        /// <summary>
         /// Constant NOT_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField NOT_STATEMENT = new ParameterExceptionField("NOT_STATEMENT");
@@ -2349,9 +2677,17 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField PAYLOAD_TYPE = new ParameterExceptionField("PAYLOAD_TYPE");
         /// <summary>
+        /// Constant PAYMENT_NETWORK for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField PAYMENT_NETWORK = new ParameterExceptionField("PAYMENT_NETWORK");
+        /// <summary>
         /// Constant POSITION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField POSITION = new ParameterExceptionField("POSITION");
+        /// <summary>
+        /// Constant PRICE_AMOUNT for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField PRICE_AMOUNT = new ParameterExceptionField("PRICE_AMOUNT");
         /// <summary>
         /// Constant RATE_BASED_STATEMENT for ParameterExceptionField
         /// </summary>
@@ -2436,6 +2772,10 @@ namespace Amazon.WAFV2
         /// Constant TOKEN_DOMAIN for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField TOKEN_DOMAIN = new ParameterExceptionField("TOKEN_DOMAIN");
+        /// <summary>
+        /// Constant WALLET_ADDRESS for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField WALLET_ADDRESS = new ParameterExceptionField("WALLET_ADDRESS");
         /// <summary>
         /// Constant WEB_ACL for ParameterExceptionField
         /// </summary>
@@ -2636,6 +2976,110 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PositionalConstraint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RankingSortBy.
+    /// </summary>
+    public class RankingSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAME for RankingSortBy
+        /// </summary>
+        public static readonly RankingSortBy NAME = new RankingSortBy("NAME");
+        /// <summary>
+        /// Constant PERCENTAGE for RankingSortBy
+        /// </summary>
+        public static readonly RankingSortBy PERCENTAGE = new RankingSortBy("PERCENTAGE");
+        /// <summary>
+        /// Constant REVENUE for RankingSortBy
+        /// </summary>
+        public static readonly RankingSortBy REVENUE = new RankingSortBy("REVENUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RankingSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RankingSortBy FindValue(string value)
+        {
+            return FindValue<RankingSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RankingSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RankingStatisticType.
+    /// </summary>
+    public class RankingStatisticType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TOP_PATHS_BY_REVENUE for RankingStatisticType
+        /// </summary>
+        public static readonly RankingStatisticType TOP_PATHS_BY_REVENUE = new RankingStatisticType("TOP_PATHS_BY_REVENUE");
+        /// <summary>
+        /// Constant TOP_SOURCES_BY_REVENUE for RankingStatisticType
+        /// </summary>
+        public static readonly RankingStatisticType TOP_SOURCES_BY_REVENUE = new RankingStatisticType("TOP_SOURCES_BY_REVENUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RankingStatisticType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RankingStatisticType FindValue(string value)
+        {
+            return FindValue<RankingStatisticType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RankingStatisticType(string value)
         {
             return FindValue(value);
         }
@@ -2979,6 +3423,130 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type SettlementSortBy.
+    /// </summary>
+    public class SettlementSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMOUNT for SettlementSortBy
+        /// </summary>
+        public static readonly SettlementSortBy AMOUNT = new SettlementSortBy("AMOUNT");
+        /// <summary>
+        /// Constant NAME for SettlementSortBy
+        /// </summary>
+        public static readonly SettlementSortBy NAME = new SettlementSortBy("NAME");
+        /// <summary>
+        /// Constant STATUS for SettlementSortBy
+        /// </summary>
+        public static readonly SettlementSortBy STATUS = new SettlementSortBy("STATUS");
+        /// <summary>
+        /// Constant TIMESTAMP for SettlementSortBy
+        /// </summary>
+        public static readonly SettlementSortBy TIMESTAMP = new SettlementSortBy("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SettlementSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SettlementSortBy FindValue(string value)
+        {
+            return FindValue<SettlementSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SettlementSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SettlementStatus.
+    /// </summary>
+    public class SettlementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE for SettlementStatus
+        /// </summary>
+        public static readonly SettlementStatus DUPLICATE = new SettlementStatus("DUPLICATE");
+        /// <summary>
+        /// Constant FAILED for SettlementStatus
+        /// </summary>
+        public static readonly SettlementStatus FAILED = new SettlementStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for SettlementStatus
+        /// </summary>
+        public static readonly SettlementStatus PENDING = new SettlementStatus("PENDING");
+        /// <summary>
+        /// Constant SERVICE_ERROR for SettlementStatus
+        /// </summary>
+        public static readonly SettlementStatus SERVICE_ERROR = new SettlementStatus("SERVICE_ERROR");
+        /// <summary>
+        /// Constant SETTLED for SettlementStatus
+        /// </summary>
+        public static readonly SettlementStatus SETTLED = new SettlementStatus("SETTLED");
+        /// <summary>
+        /// Constant SKIPPED_ORIGIN_ERROR for SettlementStatus
+        /// </summary>
+        public static readonly SettlementStatus SKIPPED_ORIGIN_ERROR = new SettlementStatus("SKIPPED_ORIGIN_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SettlementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SettlementStatus FindValue(string value)
+        {
+            return FindValue<SettlementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SettlementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SizeInspectionLimit.
     /// </summary>
     public class SizeInspectionLimit : ConstantClass
@@ -3030,6 +3598,56 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SizeInspectionLimit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASC = new SortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESC = new SortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }
@@ -3156,6 +3774,56 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TextTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeSeriesStatisticType.
+    /// </summary>
+    public class TimeSeriesStatisticType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATE_HISTOGRAM for TimeSeriesStatisticType
+        /// </summary>
+        public static readonly TimeSeriesStatisticType DATE_HISTOGRAM = new TimeSeriesStatisticType("DATE_HISTOGRAM");
+        /// <summary>
+        /// Constant PAYMENT_TRAFFIC for TimeSeriesStatisticType
+        /// </summary>
+        public static readonly TimeSeriesStatisticType PAYMENT_TRAFFIC = new TimeSeriesStatisticType("PAYMENT_TRAFFIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeSeriesStatisticType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeSeriesStatisticType FindValue(string value)
+        {
+            return FindValue<TimeSeriesStatisticType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeSeriesStatisticType(string value)
         {
             return FindValue(value);
         }

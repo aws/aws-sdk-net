@@ -134,6 +134,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ManagedByFirewallManager = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MonetizationConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = MonetizationConfigUnmarshaller.Instance;
+                    unmarshalledObject.MonetizationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
