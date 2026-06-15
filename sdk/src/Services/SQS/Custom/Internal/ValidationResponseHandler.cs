@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,6 +10,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.SQS.Model;
 using Amazon.Runtime.Internal;
+using Amazon.Util;
 
 namespace Amazon.SQS.Internal
 {
@@ -103,14 +105,16 @@ namespace Amazon.SQS.Internal
                 if (ms == null) throw new ArgumentNullException("ms");
 
                 Write((int)ms.Length);
-                var bytes = ms.ToArray();
-                Write(bytes);
+                if (ms.TryGetBuffer(out var buffer))
+                    Write(buffer.Array, buffer.Offset, buffer.Count);
+                else
+                    Write(ms.ToArray());
             }
             public void Write(int value)
             {
                 var bytes = BitConverter.GetBytes(value);
                 if (shouldReverseInts)
-                    bytes = bytes.Reverse().ToArray();
+                    Array.Reverse(bytes);
                 Write(bytes);
             }
             public void Write(byte value)
@@ -121,14 +125,14 @@ namespace Amazon.SQS.Internal
             {
                 writer.Write(bytes);
             }
+            public void Write(byte[] bytes, int offset, int count)
+            {
+                writer.Write(bytes, offset, count);
+            }
 
             public void Dispose()
             {
-#if NETSTANDARD
                 writer.Dispose();
-#else
-                writer.Close();
-#endif
             }
         }
 
@@ -139,7 +143,7 @@ namespace Amazon.SQS.Internal
         /// <returns></returns>
         public static string CalculateMD5(Dictionary<string, MessageAttributeValue> attributes)
         {
-            List<KeyValuePair<string, MessageAttributeValue>> orderedAttributes = new List<KeyValuePair<string, MessageAttributeValue>>();
+            var orderedAttributes = new List<KeyValuePair<string, MessageAttributeValue>>(attributes.Count);
             foreach (var kvp in attributes)
             {
                 orderedAttributes.Add(kvp);
@@ -185,10 +189,9 @@ namespace Amazon.SQS.Internal
                         }
                     }
                 }
-            }
 
-            var bytes = ms.ToArray();
-            return CalculateMD5(bytes);
+                return CalculateMD5(ms.GetBuffer(), 0, (int)ms.Length);
+            }
         }
 
         /// <summary>
@@ -198,8 +201,19 @@ namespace Amazon.SQS.Internal
         /// <returns></returns>
         public static string CalculateMD5(string message)
         {
-            var messageBytes = System.Text.Encoding.UTF8.GetBytes(message);
-            return CalculateMD5(messageBytes);
+            if (message == null) throw new ArgumentNullException(nameof(message));
+            var maxByteCount = Encoding.UTF8.GetMaxByteCount(message.Length);
+            var rentedBytes = ArrayPool<byte>.Shared.Rent(maxByteCount);
+            try
+            {
+                var written = Encoding.UTF8.GetBytes(message, 0, message.Length, rentedBytes, 0);
+                var md5Hash = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(rentedBytes, 0, written);
+                return AWSSDKUtils.ToHex(md5Hash, true);
+            }
+            finally
+            {
+                ArrayPool<byte>.Shared.Return(rentedBytes);
+            }
         }
 
         /// <summary>
@@ -209,9 +223,21 @@ namespace Amazon.SQS.Internal
         /// <returns></returns>
         public static string CalculateMD5(byte[] bytes)
         {
-            var md5Hash = Amazon.Util.CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(bytes);
-            var calculatedMd5 = BitConverter.ToString(md5Hash).Replace("-", string.Empty).ToLowerInvariant();
-            return calculatedMd5;
+            var md5Hash = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(bytes);
+            return AWSSDKUtils.ToHex(md5Hash, true);
+        }
+
+        /// <summary>
+        /// Calculate the MD5
+        /// </summary>
+        /// <param name="bytes">bytes to compute the hash code for</param>
+        /// <param name="offset">Offset into the byte array from which to begin using data</param>
+        /// <param name="count">Number of bytes in the array to use as data</param>
+        /// <returns></returns>
+        public static string CalculateMD5(byte[] bytes, int offset, int count)
+        {
+            var md5Hash = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(bytes, offset, count);
+            return AWSSDKUtils.ToHex(md5Hash, true);
         }
 
         /// <summary>
