@@ -656,14 +656,6 @@
       <Project>{B657BE29-914F-4778-941B-92B4657F1C56}</Project>
       <Name>AWSSDK.IoTDeviceAdvisor.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/IoTEvents/AWSSDK.IoTEvents.CodeAnalysis.csproj">
-      <Project>{3980C0CC-5E69-4E87-80BA-F9CAEBD4DB81}</Project>
-      <Name>AWSSDK.IoTEvents.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/IoTEventsData/AWSSDK.IoTEventsData.CodeAnalysis.csproj">
-      <Project>{D014FBA6-A964-4D00-A248-5F518D0B8CC1}</Project>
-      <Name>AWSSDK.IoTEventsData.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTFleetWise/AWSSDK.IoTFleetWise.CodeAnalysis.csproj">
       <Project>{8A2B2868-F9D0-4762-8782-04E1259038E9}</Project>
       <Name>AWSSDK.IoTFleetWise.CodeAnalysis</Name>
@@ -960,10 +952,6 @@
       <Project>{1F501A21-5AB1-453C-BC7D-67B56F5EB3F1}</Project>
       <Name>AWSSDK.Outposts.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/Panorama/AWSSDK.Panorama.CodeAnalysis.csproj">
-      <Project>{0D5E637F-5FB5-45BC-B838-1AC29CC66C60}</Project>
-      <Name>AWSSDK.Panorama.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/PaymentCryptography/AWSSDK.PaymentCryptography.CodeAnalysis.csproj">
       <Project>{532AAC0C-6EAD-4529-A072-A13E8162EED7}</Project>
       <Name>AWSSDK.PaymentCryptography.CodeAnalysis</Name>
@@ -1211,10 +1199,6 @@
     <ProjectReference Include="../ServiceAnalysis/SimpleWorkflow/AWSSDK.SimpleWorkflow.CodeAnalysis.csproj">
       <Project>{A4E059F3-7571-4CF5-9724-89DD23D7FA5A}</Project>
       <Name>AWSSDK.SimpleWorkflow.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/SimSpaceWeaver/AWSSDK.SimSpaceWeaver.CodeAnalysis.csproj">
-      <Project>{9E3DB7A3-DB0A-4293-8723-8D86B0D2E1C3}</Project>
-      <Name>AWSSDK.SimSpaceWeaver.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Snowball/AWSSDK.Snowball.CodeAnalysis.csproj">
       <Project>{54A63ED2-11F0-4F76-8F5B-B7016E94AF86}</Project>

@@ -1025,11 +1025,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_OUTPOSTS"
   },
   {
-    "service_id": "Panorama",
-    "services_section_name": "panorama",
-    "service_envvar_name": "AWS_ENDPOINT_URL_PANORAMA"
-  },
-  {
     "service_id": "Personalize",
     "services_section_name": "personalize",
     "service_envvar_name": "AWS_ENDPOINT_URL_PERSONALIZE"
