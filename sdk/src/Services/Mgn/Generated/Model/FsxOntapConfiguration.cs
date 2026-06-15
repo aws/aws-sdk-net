@@ -30,39 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Source Server connector action.
+    /// FSx for ONTAP storage configuration.
     /// </summary>
-    public partial class SourceServerConnectorAction
+    public partial class FsxOntapConfiguration
     {
-        private string _connectorArn;
         private string _credentialsSecretArn;
-
-        /// <summary>
-        /// Gets and sets the property ConnectorArn. 
-        /// <para>
-        /// Source Server connector action connector arn.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=27, Max=100)]
-        public string ConnectorArn
-        {
-            get { return this._connectorArn; }
-            set { this._connectorArn = value; }
-        }
-
-        // Check to see if ConnectorArn property is set
-        internal bool IsSetConnectorArn()
-        {
-            return this._connectorArn != null;
-        }
+        private string _storageVirtualMachineId;
 
         /// <summary>
         /// Gets and sets the property CredentialsSecretArn. 
         /// <para>
-        /// Source Server connector action credentials secret arn.
+        /// FSx ONTAP configuration credentials secret ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=256)]
+        [AWSProperty(Required=true, Min=20, Max=256)]
         public string CredentialsSecretArn
         {
             get { return this._credentialsSecretArn; }
@@ -73,6 +54,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetCredentialsSecretArn()
         {
             return this._credentialsSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageVirtualMachineId. 
+        /// <para>
+        /// FSx ONTAP configuration storage virtual machine ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=21, Max=21)]
+        public string StorageVirtualMachineId
+        {
+            get { return this._storageVirtualMachineId; }
+            set { this._storageVirtualMachineId = value; }
+        }
+
+        // Check to see if StorageVirtualMachineId property is set
+        internal bool IsSetStorageVirtualMachineId()
+        {
+            return this._storageVirtualMachineId != null;
         }
 
     }

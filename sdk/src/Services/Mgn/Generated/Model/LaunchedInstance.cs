@@ -37,6 +37,8 @@ namespace Amazon.Mgn.Model
         private string _ec2InstanceID;
         private FirstBoot _firstBoot;
         private string _jobid;
+        private List<LastKnownCheck> _lastKnownChecks = AWSConfigs.InitializeCollections ? new List<LastKnownCheck>() : null;
+        private LastKnownCheckStatus _lastKnownFsxChecksStatus;
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceID. 
@@ -92,6 +94,48 @@ namespace Amazon.Mgn.Model
         internal bool IsSetJobID()
         {
             return this._jobid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastKnownChecks. 
+        /// <para>
+        /// Launched instance last known checks.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<LastKnownCheck> LastKnownChecks
+        {
+            get { return this._lastKnownChecks; }
+            set { this._lastKnownChecks = value; }
+        }
+
+        // Check to see if LastKnownChecks property is set
+        internal bool IsSetLastKnownChecks()
+        {
+            return this._lastKnownChecks != null && (this._lastKnownChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastKnownFsxChecksStatus. 
+        /// <para>
+        /// Launched instance last known FSx checks status.
+        /// </para>
+        /// </summary>
+        public LastKnownCheckStatus LastKnownFsxChecksStatus
+        {
+            get { return this._lastKnownFsxChecksStatus; }
+            set { this._lastKnownFsxChecksStatus = value; }
+        }
+
+        // Check to see if LastKnownFsxChecksStatus property is set
+        internal bool IsSetLastKnownFsxChecksStatus()
+        {
+            return this._lastKnownFsxChecksStatus != null;
         }
 
     }

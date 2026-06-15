@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchedInstance Object
+    /// Response Unmarshaller for StorageConfiguration Object
     /// </summary>  
-    public class LaunchedInstanceUnmarshaller : IJsonUnmarshaller<LaunchedInstance, JsonUnmarshallerContext>
+    public class StorageConfigurationUnmarshaller : IJsonUnmarshaller<StorageConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LaunchedInstance Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StorageConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LaunchedInstance unmarshalledObject = new LaunchedInstance();
+            StorageConfiguration unmarshalledObject = new StorageConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ec2InstanceID", targetDepth, ref reader))
+                if (context.TestExpression("fsxOntapConfiguration", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ec2InstanceID = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = FsxOntapConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FsxOntapConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstBoot", targetDepth, ref reader))
+                if (context.TestExpression("storageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirstBoot = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("jobID", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobID = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastKnownChecks", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LastKnownCheck, LastKnownCheckUnmarshaller>(LastKnownCheckUnmarshaller.Instance);
-                    unmarshalledObject.LastKnownChecks = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastKnownFsxChecksStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastKnownFsxChecksStatus = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         }
 
 
-        private static LaunchedInstanceUnmarshaller _instance = new LaunchedInstanceUnmarshaller();        
+        private static StorageConfigurationUnmarshaller _instance = new StorageConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchedInstanceUnmarshaller Instance
+        public static StorageConfigurationUnmarshaller Instance
         {
             get
             {

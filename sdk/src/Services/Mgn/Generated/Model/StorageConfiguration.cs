@@ -30,49 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Source Server connector action.
+    /// Storage configuration for replication.
     /// </summary>
-    public partial class SourceServerConnectorAction
+    public partial class StorageConfiguration
     {
-        private string _connectorArn;
-        private string _credentialsSecretArn;
+        private FsxOntapConfiguration _fsxOntapConfiguration;
+        private StorageType _storageType;
 
         /// <summary>
-        /// Gets and sets the property ConnectorArn. 
+        /// Gets and sets the property FsxOntapConfiguration. 
         /// <para>
-        /// Source Server connector action connector arn.
+        /// Storage configuration FSx ONTAP configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=27, Max=100)]
-        public string ConnectorArn
+        public FsxOntapConfiguration FsxOntapConfiguration
         {
-            get { return this._connectorArn; }
-            set { this._connectorArn = value; }
+            get { return this._fsxOntapConfiguration; }
+            set { this._fsxOntapConfiguration = value; }
         }
 
-        // Check to see if ConnectorArn property is set
-        internal bool IsSetConnectorArn()
+        // Check to see if FsxOntapConfiguration property is set
+        internal bool IsSetFsxOntapConfiguration()
         {
-            return this._connectorArn != null;
+            return this._fsxOntapConfiguration != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CredentialsSecretArn. 
+        /// Gets and sets the property StorageType. 
         /// <para>
-        /// Source Server connector action credentials secret arn.
+        /// Storage configuration storage type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=256)]
-        public string CredentialsSecretArn
+        [AWSProperty(Required=true)]
+        public StorageType StorageType
         {
-            get { return this._credentialsSecretArn; }
-            set { this._credentialsSecretArn = value; }
+            get { return this._storageType; }
+            set { this._storageType = value; }
         }
 
-        // Check to see if CredentialsSecretArn property is set
-        internal bool IsSetCredentialsSecretArn()
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
         {
-            return this._credentialsSecretArn != null;
+            return this._storageType != null;
         }
 
     }

@@ -37,7 +37,10 @@ namespace Amazon.Mgn.Model
     {
         private string _accountid;
         private SourceServerConnectorAction _connectorAction;
+        private string _fqdnForActionFramework;
+        private string _platform;
         private string _sourceServerID;
+        private string _userProvidedID;
 
         /// <summary>
         /// Gets and sets the property AccountID. 
@@ -77,6 +80,43 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FqdnForActionFramework. 
+        /// <para>
+        /// Update Source Server request FQDN for action framework.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string FqdnForActionFramework
+        {
+            get { return this._fqdnForActionFramework; }
+            set { this._fqdnForActionFramework = value; }
+        }
+
+        // Check to see if FqdnForActionFramework property is set
+        internal bool IsSetFqdnForActionFramework()
+        {
+            return this._fqdnForActionFramework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// Update Source Server request platform operating system.
+        /// </para>
+        /// </summary>
+        public string Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceServerID. 
         /// <para>
         /// Update Source Server request source server ID.
@@ -93,6 +133,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetSourceServerID()
         {
             return this._sourceServerID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserProvidedID. 
+        /// <para>
+        /// Update Source Server request user provided ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string UserProvidedID
+        {
+            get { return this._userProvidedID; }
+            set { this._userProvidedID = value; }
+        }
+
+        // Check to see if UserProvidedID property is set
+        internal bool IsSetUserProvidedID()
+        {
+            return this._userProvidedID != null;
         }
 
     }

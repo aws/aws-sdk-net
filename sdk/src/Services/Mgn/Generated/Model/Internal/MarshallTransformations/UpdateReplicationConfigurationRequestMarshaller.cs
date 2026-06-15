@@ -192,6 +192,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("storageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StorageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetStoreSnapshotOnLocalZone())
             {
                 context.Writer.WritePropertyName("storeSnapshotOnLocalZone");

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchedInstance Object
+    /// Response Unmarshaller for LastKnownCheck Object
     /// </summary>  
-    public class LaunchedInstanceUnmarshaller : IJsonUnmarshaller<LaunchedInstance, JsonUnmarshallerContext>
+    public class LastKnownCheckUnmarshaller : IJsonUnmarshaller<LastKnownCheck, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LaunchedInstance Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LastKnownCheck Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LaunchedInstance unmarshalledObject = new LaunchedInstance();
+            LastKnownCheck unmarshalledObject = new LastKnownCheck();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,34 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ec2InstanceID", targetDepth, ref reader))
+                if (context.TestExpression("checkedAt", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ec2InstanceID = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CheckedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstBoot", targetDepth, ref reader))
+                if (context.TestExpression("error", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirstBoot = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobID", targetDepth, ref reader))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobID = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastKnownChecks", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LastKnownCheck, LastKnownCheckUnmarshaller>(LastKnownCheckUnmarshaller.Instance);
-                    unmarshalledObject.LastKnownChecks = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastKnownFsxChecksStatus", targetDepth, ref reader))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastKnownFsxChecksStatus = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +91,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         }
 
 
-        private static LaunchedInstanceUnmarshaller _instance = new LaunchedInstanceUnmarshaller();        
+        private static LastKnownCheckUnmarshaller _instance = new LastKnownCheckUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchedInstanceUnmarshaller Instance
+        public static LastKnownCheckUnmarshaller Instance
         {
             get
             {
