@@ -509,6 +509,342 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailChecksContentFilterCategory.
+    /// </summary>
+    public class GuardrailChecksContentFilterCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HATE for GuardrailChecksContentFilterCategory
+        /// </summary>
+        public static readonly GuardrailChecksContentFilterCategory HATE = new GuardrailChecksContentFilterCategory("HATE");
+        /// <summary>
+        /// Constant INSULTS for GuardrailChecksContentFilterCategory
+        /// </summary>
+        public static readonly GuardrailChecksContentFilterCategory INSULTS = new GuardrailChecksContentFilterCategory("INSULTS");
+        /// <summary>
+        /// Constant MISCONDUCT for GuardrailChecksContentFilterCategory
+        /// </summary>
+        public static readonly GuardrailChecksContentFilterCategory MISCONDUCT = new GuardrailChecksContentFilterCategory("MISCONDUCT");
+        /// <summary>
+        /// Constant SEXUAL for GuardrailChecksContentFilterCategory
+        /// </summary>
+        public static readonly GuardrailChecksContentFilterCategory SEXUAL = new GuardrailChecksContentFilterCategory("SEXUAL");
+        /// <summary>
+        /// Constant VIOLENCE for GuardrailChecksContentFilterCategory
+        /// </summary>
+        public static readonly GuardrailChecksContentFilterCategory VIOLENCE = new GuardrailChecksContentFilterCategory("VIOLENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailChecksContentFilterCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailChecksContentFilterCategory FindValue(string value)
+        {
+            return FindValue<GuardrailChecksContentFilterCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailChecksContentFilterCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailChecksPromptAttackCategory.
+    /// </summary>
+    public class GuardrailChecksPromptAttackCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JAILBREAK for GuardrailChecksPromptAttackCategory
+        /// </summary>
+        public static readonly GuardrailChecksPromptAttackCategory JAILBREAK = new GuardrailChecksPromptAttackCategory("JAILBREAK");
+        /// <summary>
+        /// Constant PROMPT_INJECTION for GuardrailChecksPromptAttackCategory
+        /// </summary>
+        public static readonly GuardrailChecksPromptAttackCategory PROMPT_INJECTION = new GuardrailChecksPromptAttackCategory("PROMPT_INJECTION");
+        /// <summary>
+        /// Constant PROMPT_LEAKAGE for GuardrailChecksPromptAttackCategory
+        /// </summary>
+        public static readonly GuardrailChecksPromptAttackCategory PROMPT_LEAKAGE = new GuardrailChecksPromptAttackCategory("PROMPT_LEAKAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailChecksPromptAttackCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailChecksPromptAttackCategory FindValue(string value)
+        {
+            return FindValue<GuardrailChecksPromptAttackCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailChecksPromptAttackCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailChecksRole.
+    /// </summary>
+    public class GuardrailChecksRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Assistant for GuardrailChecksRole
+        /// </summary>
+        public static readonly GuardrailChecksRole Assistant = new GuardrailChecksRole("assistant");
+        /// <summary>
+        /// Constant System for GuardrailChecksRole
+        /// </summary>
+        public static readonly GuardrailChecksRole System = new GuardrailChecksRole("system");
+        /// <summary>
+        /// Constant User for GuardrailChecksRole
+        /// </summary>
+        public static readonly GuardrailChecksRole User = new GuardrailChecksRole("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailChecksRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailChecksRole FindValue(string value)
+        {
+            return FindValue<GuardrailChecksRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailChecksRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailChecksSensitiveInformationEntityType.
+    /// </summary>
+    public class GuardrailChecksSensitiveInformationEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType ADDRESS = new GuardrailChecksSensitiveInformationEntityType("ADDRESS");
+        /// <summary>
+        /// Constant AGE for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType AGE = new GuardrailChecksSensitiveInformationEntityType("AGE");
+        /// <summary>
+        /// Constant AWS_ACCESS_KEY for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType AWS_ACCESS_KEY = new GuardrailChecksSensitiveInformationEntityType("AWS_ACCESS_KEY");
+        /// <summary>
+        /// Constant AWS_SECRET_KEY for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType AWS_SECRET_KEY = new GuardrailChecksSensitiveInformationEntityType("AWS_SECRET_KEY");
+        /// <summary>
+        /// Constant CA_HEALTH_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType CA_HEALTH_NUMBER = new GuardrailChecksSensitiveInformationEntityType("CA_HEALTH_NUMBER");
+        /// <summary>
+        /// Constant CA_SOCIAL_INSURANCE_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType CA_SOCIAL_INSURANCE_NUMBER = new GuardrailChecksSensitiveInformationEntityType("CA_SOCIAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_CVV for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType CREDIT_DEBIT_CARD_CVV = new GuardrailChecksSensitiveInformationEntityType("CREDIT_DEBIT_CARD_CVV");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_EXPIRY for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType CREDIT_DEBIT_CARD_EXPIRY = new GuardrailChecksSensitiveInformationEntityType("CREDIT_DEBIT_CARD_EXPIRY");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType CREDIT_DEBIT_CARD_NUMBER = new GuardrailChecksSensitiveInformationEntityType("CREDIT_DEBIT_CARD_NUMBER");
+        /// <summary>
+        /// Constant DRIVER_ID for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType DRIVER_ID = new GuardrailChecksSensitiveInformationEntityType("DRIVER_ID");
+        /// <summary>
+        /// Constant EMAIL for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType EMAIL = new GuardrailChecksSensitiveInformationEntityType("EMAIL");
+        /// <summary>
+        /// Constant INTERNATIONAL_BANK_ACCOUNT_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType INTERNATIONAL_BANK_ACCOUNT_NUMBER = new GuardrailChecksSensitiveInformationEntityType("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant IP_ADDRESS for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType IP_ADDRESS = new GuardrailChecksSensitiveInformationEntityType("IP_ADDRESS");
+        /// <summary>
+        /// Constant LICENSE_PLATE for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType LICENSE_PLATE = new GuardrailChecksSensitiveInformationEntityType("LICENSE_PLATE");
+        /// <summary>
+        /// Constant MAC_ADDRESS for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType MAC_ADDRESS = new GuardrailChecksSensitiveInformationEntityType("MAC_ADDRESS");
+        /// <summary>
+        /// Constant NAME for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType NAME = new GuardrailChecksSensitiveInformationEntityType("NAME");
+        /// <summary>
+        /// Constant PASSWORD for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType PASSWORD = new GuardrailChecksSensitiveInformationEntityType("PASSWORD");
+        /// <summary>
+        /// Constant PHONE for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType PHONE = new GuardrailChecksSensitiveInformationEntityType("PHONE");
+        /// <summary>
+        /// Constant PIN for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType PIN = new GuardrailChecksSensitiveInformationEntityType("PIN");
+        /// <summary>
+        /// Constant SWIFT_CODE for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType SWIFT_CODE = new GuardrailChecksSensitiveInformationEntityType("SWIFT_CODE");
+        /// <summary>
+        /// Constant UK_NATIONAL_HEALTH_SERVICE_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType UK_NATIONAL_HEALTH_SERVICE_NUMBER = new GuardrailChecksSensitiveInformationEntityType("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
+        /// <summary>
+        /// Constant UK_NATIONAL_INSURANCE_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType UK_NATIONAL_INSURANCE_NUMBER = new GuardrailChecksSensitiveInformationEntityType("UK_NATIONAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = new GuardrailChecksSensitiveInformationEntityType("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
+        /// <summary>
+        /// Constant URL for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType URL = new GuardrailChecksSensitiveInformationEntityType("URL");
+        /// <summary>
+        /// Constant US_BANK_ACCOUNT_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType US_BANK_ACCOUNT_NUMBER = new GuardrailChecksSensitiveInformationEntityType("US_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant US_BANK_ROUTING_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType US_BANK_ROUTING_NUMBER = new GuardrailChecksSensitiveInformationEntityType("US_BANK_ROUTING_NUMBER");
+        /// <summary>
+        /// Constant US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = new GuardrailChecksSensitiveInformationEntityType("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        /// <summary>
+        /// Constant US_PASSPORT_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType US_PASSPORT_NUMBER = new GuardrailChecksSensitiveInformationEntityType("US_PASSPORT_NUMBER");
+        /// <summary>
+        /// Constant US_SOCIAL_SECURITY_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType US_SOCIAL_SECURITY_NUMBER = new GuardrailChecksSensitiveInformationEntityType("US_SOCIAL_SECURITY_NUMBER");
+        /// <summary>
+        /// Constant USERNAME for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType USERNAME = new GuardrailChecksSensitiveInformationEntityType("USERNAME");
+        /// <summary>
+        /// Constant VEHICLE_IDENTIFICATION_NUMBER for GuardrailChecksSensitiveInformationEntityType
+        /// </summary>
+        public static readonly GuardrailChecksSensitiveInformationEntityType VEHICLE_IDENTIFICATION_NUMBER = new GuardrailChecksSensitiveInformationEntityType("VEHICLE_IDENTIFICATION_NUMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailChecksSensitiveInformationEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailChecksSensitiveInformationEntityType FindValue(string value)
+        {
+            return FindValue<GuardrailChecksSensitiveInformationEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailChecksSensitiveInformationEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterConfidence.
     /// </summary>
     public class GuardrailContentFilterConfidence : ConstantClass

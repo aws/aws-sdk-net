@@ -318,6 +318,41 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksContentBlock.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksContentFilterResultEntry.SeverityScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksPromptAttackResultEntry.SeverityScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.BeginOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.ConfidenceScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.ContentIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.EndOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.MessageIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailConfiguration.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
