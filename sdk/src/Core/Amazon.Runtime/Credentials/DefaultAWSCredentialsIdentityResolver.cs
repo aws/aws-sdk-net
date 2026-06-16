@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Credentials
 {
@@ -55,7 +56,6 @@ namespace Amazon.Runtime.Credentials
         private long _lastSeenCredentialsFileToken;
         private long _lastSeenConfigFileToken;
         private long _lastSeenNetSdkFileToken;
-        private volatile bool _cachedCredentialsAreFileBacked;
 
         public DefaultAWSCredentialsIdentityResolver()
         {
@@ -160,19 +160,19 @@ namespace Amazon.Runtime.Credentials
         }
 
         /// <summary>
-        /// Returns true if the cached credentials were resolved from a file (a static
-        /// BasicAWSCredentials / SessionAWSCredentials profile) and any of the backing files have
+        /// Returns true if any of the credentials/config files backing the cached credentials have
         /// changed since they were resolved. Purely an in-memory change-token comparison, no I/O on
         /// this path, so it is safe to call on every credential resolution.
         /// <para />
-        /// Returns false for credential types that refresh themselves (SSO, assume-role, web identity,
-        /// container, instance profile), so a file touch never forces a needless re-resolution of those.
+        /// Invalidation is intentionally not gated on the resolved credential type. Profile edits can
+        /// switch a profile between credential types (e.g., from static keys to <c>source_profile</c>/
+        /// assume-role, or repoint <c>source_profile</c> at a different role) — changes that a
+        /// self-refreshing credential object cannot detect on its own because it keeps using the
+        /// role/values it was constructed with. Re-resolving on any file change is cheap and rare and
+        /// avoids serving credentials from a stale profile definition.
         /// </summary>
         private bool HasCredentialsFileChanged()
         {
-            if (!_cachedCredentialsAreFileBacked)
-                return false;
-
             if (_credentialsFileWatcher != null && _credentialsFileWatcher.ChangeToken != _lastSeenCredentialsFileToken)
                 return true;
 
@@ -186,27 +186,18 @@ namespace Amazon.Runtime.Credentials
         }
 
         /// <summary>
-        /// After the credential chain resolves, set up (or tear down) file-change tracking for the
-        /// newly cached credentials. Tracking is only enabled for static, file-backed credential types
-        /// (<see cref="BasicAWSCredentials"/> / <see cref="SessionAWSCredentials"/>) — the only types
-        /// that read their values from the credentials/config file once and never refresh. Every other
-        /// type manages its own refresh, so file-change invalidation is intentionally skipped for them.
+        /// After the credential chain resolves, capture the current change tokens of the
+        /// credentials/config files so a later <see cref="HasCredentialsFileChanged"/> check can detect
+        /// edits made after this point. Tracking is set up regardless of the resolved credential type:
+        /// a file edit can switch a profile between credential types, which a self-refreshing credential
+        /// object cannot detect on its own, so any file change must invalidate the cache.
         /// <para />
         /// Must only be called while holding <see cref="_credentialResolutionLock"/>, before
         /// <see cref="_cachedCredentials"/> is published, so that a concurrent lock-free reader that
         /// observes the new credentials also observes the tracking state captured here.
         /// </summary>
-        private void UpdateFileChangeTracking(AWSCredentials resolvedCredentials)
+        private void UpdateFileChangeTracking()
         {
-            var type = resolvedCredentials.GetType();
-            var isFileBacked = type == typeof(BasicAWSCredentials) || type == typeof(SessionAWSCredentials);
-
-            if (!isFileBacked)
-            {
-                _cachedCredentialsAreFileBacked = false;
-                return;
-            }
-
             // The default chain resolves the profile with no explicit location override
             // (see _credentialProfileChain), so resolve file paths the same way.
             var credentialsFilePath = CachedProfileCredentialResolver.GetEffectiveCredentialsFilePath(null);
@@ -220,8 +211,6 @@ namespace Amazon.Runtime.Credentials
             _lastSeenCredentialsFileToken = _credentialsFileWatcher?.ChangeToken ?? 0;
             _lastSeenConfigFileToken = _configFileWatcher?.ChangeToken ?? 0;
             _lastSeenNetSdkFileToken = _netSdkCredentialsFileWatcher?.ChangeToken ?? 0;
-
-            _cachedCredentialsAreFileBacked = true;
         }
 
         /// <summary>
@@ -298,7 +287,7 @@ namespace Amazon.Runtime.Credentials
                 // snapshot is being updated.
                 _cachedCredentials = null;
                 _lastKnownEnvironmentState.UpdateEnvironment();
-                UpdateFileChangeTracking(resolvedCredentials);
+                UpdateFileChangeTracking();
                 _cachedCredentials = resolvedCredentials;
                 return resolvedCredentials;
             }
