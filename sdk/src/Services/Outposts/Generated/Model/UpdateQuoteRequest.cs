@@ -106,7 +106,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property QuoteIdentifier. 
         /// <para>
-        /// The ID or ARN of the quote.
+        /// The ID of the quote.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
