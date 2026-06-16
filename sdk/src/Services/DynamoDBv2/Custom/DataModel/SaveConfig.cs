@@ -35,12 +35,21 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public bool? IgnoreNullValues { get; set; }
 
+        /// <summary>
+        /// Represents a filter expression that can be used to filter results in DynamoDB operations.
+        /// </summary>
+        /// <remarks>
+        /// Note: Conditions must be against non-key properties.
+        /// </remarks>
+        public ContextExpression filterExpression { get; set; }
+
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
         {
             var config = base.ToDynamoDBOperationConfig();
             config.SkipVersionCheck = SkipVersionCheck;
             config.IgnoreNullValues = IgnoreNullValues;
+            config.Expression = filterExpression;
 
             return config;
         }

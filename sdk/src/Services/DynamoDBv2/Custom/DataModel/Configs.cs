@@ -464,6 +464,9 @@ namespace Amazon.DynamoDBv2.DataModel
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
+
+            ContextExpression filterExpression = operationConfig.Expression ?? new ContextExpression();
+
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
             string derivedTypeAttributeName =
                 //!string.IsNullOrEmpty(operationConfig.DerivedTypeAttributeName) ? operationConfig.DerivedTypeAttributeName :
@@ -478,6 +481,7 @@ namespace Amazon.DynamoDBv2.DataModel
             BackwardQuery = backwardQuery;
             IndexName = indexName;
             QueryFilter = queryFilter;
+            FilterExpression = filterExpression;
             ConditionalOperator = conditionalOperator;
             ContextConversion = conversion;
             OperationConversion = operationConfig.Conversion;
@@ -567,6 +571,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Note: Conditions must be against non-key properties.
         /// </summary>
         public List<ScanCondition> QueryFilter { get; set; }
+
+        /// <summary>
+        /// Represents a filter expression that can be used to filter results in DynamoDB operations.
+        /// </summary>
+        /// <remarks>
+        /// Note: Conditions must be against non-key properties.
+        /// </remarks>
+        public ContextExpression FilterExpression { get; set; }
 
         /// <summary>
         /// Specifies the conversion behavior for .NET objects (entities) mapped to DynamoDB items.

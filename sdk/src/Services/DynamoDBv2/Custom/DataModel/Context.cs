@@ -412,12 +412,27 @@ namespace Amazon.DynamoDBv2.DataModel
             ApplyPostUpdate(storage, value, flatConfig, updateDocument, updateConfig);
         }
 
+        private Expression ComposeConditionalExpression(Expression inputConditionalExpression, Expression versionExpression)
+        {
+            Expression conditionalExpression = new Expression();
+
+            if (versionExpression.IsSet && !inputConditionalExpression.IsSet)
+                return versionExpression;
+            if(inputConditionalExpression.IsSet && !versionExpression.IsSet)
+                return inputConditionalExpression;
+
+
+
+            return conditionalExpression;
+        }
+
         private (UpdateItemOperationConfig opConfig, Expression versionExpression, UpdateExpression counterUpdateExpression, 
             HashSet<string> updateIfNotExistsAttributeNames, bool updateIfNotExists) PrepareUpdateOperation(ItemStorage storage, DynamoDBFlatConfig flatConfig, Table table)
         {
             var counterUpdateExpression = BuildCounterUpdateExpression(storage);
 
             Expression versionExpression = null;
+            Expression conditionalExpression = null;
 
             // get the list of attributes with UpdateIfNotExists attribute
             var updateIfNotExistsAttributeNames = GetUpdateIfNotExistsAttributeNames(storage);
@@ -434,14 +449,24 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 ReturnValues = returnValues
             };
+            
+            if (flatConfig.FilterExpression is not { Filter: null })
+            {
+                if (flatConfig.QueryFilter != null && flatConfig.QueryFilter.Count != 0)
+                {
+                    throw new InvalidOperationException("QueryFilter is not supported with filter expression. Use either QueryFilter or filter expression, but not both.");
+                }
+                conditionalExpression = ComposeExpression(flatConfig.FilterExpression.Filter, storage.Config, flatConfig);
+            }
 
             if (!(flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) && storage.Config.HasVersion)
             {
                 var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
                 versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
-                updateItemOperationConfig.ConditionalExpression = versionExpression;
             }
+            var expression = ComposeConditionalExpression(conditionalExpression, versionExpression);
+            updateItemOperationConfig.ConditionalExpression = expression;
 
             return (updateItemOperationConfig,
                 versionExpression,
