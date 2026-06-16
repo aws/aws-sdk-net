@@ -2734,6 +2734,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant Lead for EngagementContextType
         /// </summary>
         public static readonly EngagementContextType Lead = new EngagementContextType("Lead");
+        /// <summary>
+        /// Constant ProspectingResult for EngagementContextType
+        /// </summary>
+        public static readonly EngagementContextType ProspectingResult = new EngagementContextType("ProspectingResult");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3824,6 +3828,118 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrimaryNeedFromAws(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProspectingFromEngagementTaskSortName.
+    /// </summary>
+    public class ProspectingFromEngagementTaskSortName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FailedEngagementCount for ProspectingFromEngagementTaskSortName
+        /// </summary>
+        public static readonly ProspectingFromEngagementTaskSortName FailedEngagementCount = new ProspectingFromEngagementTaskSortName("FailedEngagementCount");
+        /// <summary>
+        /// Constant StartTime for ProspectingFromEngagementTaskSortName
+        /// </summary>
+        public static readonly ProspectingFromEngagementTaskSortName StartTime = new ProspectingFromEngagementTaskSortName("StartTime");
+        /// <summary>
+        /// Constant TaskName for ProspectingFromEngagementTaskSortName
+        /// </summary>
+        public static readonly ProspectingFromEngagementTaskSortName TaskName = new ProspectingFromEngagementTaskSortName("TaskName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProspectingFromEngagementTaskSortName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProspectingFromEngagementTaskSortName FindValue(string value)
+        {
+            return FindValue<ProspectingFromEngagementTaskSortName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProspectingFromEngagementTaskSortName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProspectingTaskStatus.
+    /// </summary>
+    public class ProspectingTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ProspectingTaskStatus
+        /// </summary>
+        public static readonly ProspectingTaskStatus COMPLETED = new ProspectingTaskStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ProspectingTaskStatus
+        /// </summary>
+        public static readonly ProspectingTaskStatus FAILED = new ProspectingTaskStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ProspectingTaskStatus
+        /// </summary>
+        public static readonly ProspectingTaskStatus IN_PROGRESS = new ProspectingTaskStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for ProspectingTaskStatus
+        /// </summary>
+        public static readonly ProspectingTaskStatus PENDING = new ProspectingTaskStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProspectingTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProspectingTaskStatus FindValue(string value)
+        {
+            return FindValue<ProspectingTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProspectingTaskStatus(string value)
         {
             return FindValue(value);
         }

@@ -101,6 +101,14 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Paginator for ListProspectingFromEngagementTasks operation
+        ///</summary>
+        public IListProspectingFromEngagementTasksPaginator ListProspectingFromEngagementTasks(ListProspectingFromEngagementTasksRequest request) 
+        {
+            return new ListProspectingFromEngagementTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResourceSnapshotJobs operation
         ///</summary>
         public IListResourceSnapshotJobsPaginator ListResourceSnapshotJobs(ListResourceSnapshotJobsRequest request) 

@@ -68,6 +68,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetProspectingResult())
+            {
+                context.Writer.WritePropertyName("ProspectingResult");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProspectingResultMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProspectingResult, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

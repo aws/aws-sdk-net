@@ -68,6 +68,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lead = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ProspectingResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProspectingResultUnmarshaller.Instance;
+                    unmarshalledObject.ProspectingResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

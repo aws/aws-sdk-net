@@ -38,6 +38,8 @@ namespace Amazon.PartnerCentralSelling.Model
         private AwsProductsSpendInsightsBySource _awsProductsSpendInsightsBySource;
         private EngagementScore _engagementScore;
         private string _nextBestActions;
+        private OpportunityQuality _opportunityQuality;
+        private List<Recommendation> _recommendations = AWSConfigs.InitializeCollections ? new List<Recommendation>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsProductsSpendInsightsBySource. 
@@ -94,6 +96,47 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetNextBestActions()
         {
             return this._nextBestActions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpportunityQuality. 
+        /// <para>
+        /// Opportunity quality assessment. Null if not yet scored.
+        /// </para>
+        /// </summary>
+        public OpportunityQuality OpportunityQuality
+        {
+            get { return this._opportunityQuality; }
+            set { this._opportunityQuality = value; }
+        }
+
+        // Check to see if OpportunityQuality property is set
+        internal bool IsSetOpportunityQuality()
+        {
+            return this._opportunityQuality != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recommendations. 
+        /// <para>
+        /// List of recommendations from various agent-driven sources.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Recommendation> Recommendations
+        {
+            get { return this._recommendations; }
+            set { this._recommendations = value; }
+        }
+
+        // Check to see if Recommendations property is set
+        internal bool IsSetRecommendations()
+        {
+            return this._recommendations != null && (this._recommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

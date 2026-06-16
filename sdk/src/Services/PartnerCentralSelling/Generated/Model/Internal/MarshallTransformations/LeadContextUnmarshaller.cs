@@ -62,6 +62,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.Customer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Insights", targetDepth, ref reader))
+                {
+                    var unmarshaller = LeadInsightsUnmarshaller.Instance;
+                    unmarshalledObject.Insights = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Interactions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LeadInteraction, LeadInteractionUnmarshaller>(LeadInteractionUnmarshaller.Instance);
