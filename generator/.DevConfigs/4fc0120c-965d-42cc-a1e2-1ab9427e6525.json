@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Invalidate the DefaultAWSCredentialsIdentityResolver default-chain credential cache when the shared credentials file is modified, so static credentials (BasicAWSCredentials/SessionAWSCredentials) rotated by an external tool are picked up mid-process without requiring a restart. "
+      "Invalidate the DefaultAWSCredentialsIdentityResolver default-chain credential cache when the shared credentials file is modified, so credentials rotated by an external tool are picked up mid-process without requiring a restart."
     ]
   }
 }

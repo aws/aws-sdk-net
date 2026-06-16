@@ -349,15 +349,21 @@ namespace AWSSDK.UnitTests
         // where credentials are resolved via the generator chain and cached in _cachedCredentials. 
 
         /// <summary>
-        /// Clears the environment variables that the default credential chain inspects before it
-        /// reaches the profile generator, so these tests deterministically resolve from the file.
+        /// Clears every environment variable the default credential chain inspects before it reaches
+        /// the profile generator, so these tests deterministically resolve from the file.
         /// </summary>
         private void ClearChainEnvironmentVariables()
         {
             Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, null);
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, null);
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY, null);
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, null);
+
+            // Web-identity credentials are resolved by the chain ahead of the profile generator.
+            Environment.SetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, null);
+            Environment.SetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, null);
+            Environment.SetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, null);
         }
 
         /// <summary>

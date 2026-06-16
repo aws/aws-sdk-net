@@ -17,7 +17,7 @@ using System;
 using System.IO;
 using System.Threading;
 
-namespace Amazon.Runtime.Credentials
+namespace Amazon.Util.Internal
 {
     /// <summary>
     /// A shared file system watcher for a single file path. Multiple consumers may depend on the
@@ -29,9 +29,9 @@ namespace Amazon.Runtime.Credentials
     /// stored token to the current token rather than resetting shared state. This avoids cross-entry
     /// interference when multiple consumers depend on the same file.
     /// <para />
-    /// This is used both by <see cref="CachedProfileCredentialResolver"/> (for credentials resolved
-    /// from a profile set on the client config) and by <see cref="DefaultAWSCredentialsIdentityResolver"/>
-    /// (for static credentials resolved from a file via the default credential chain).
+    /// This is used both by <c>CachedProfileCredentialResolver</c> (for credentials resolved
+    /// from a profile set on the client config) and by <c>DefaultAWSCredentialsIdentityResolver</c>
+    /// (for credentials resolved from a file via the default credential chain).
     /// </summary>
     internal sealed class SharedFileWatcher : IDisposable
     {
@@ -51,14 +51,17 @@ namespace Amazon.Runtime.Credentials
 
         private FileSystemWatcher TryCreateWatcher(string filePath)
         {
-            var directory = Path.GetDirectoryName(filePath);
-            var fileName = Path.GetFileName(filePath);
-
-            if (string.IsNullOrEmpty(directory) || !Directory.Exists(directory))
-                return null;
-
             try
             {
+                // Path parsing is inside the try so that a bad path (e.g., invalid characters from an
+                // environment override) results in the same fail-safe "return null" as any other
+                // failure, rather than escaping and breaking credential resolution/cache invalidation.
+                var directory = Path.GetDirectoryName(filePath);
+                var fileName = Path.GetFileName(filePath);
+
+                if (string.IsNullOrEmpty(directory) || !Directory.Exists(directory))
+                    return null;
+
                 var watcher = new FileSystemWatcher(directory, fileName)
                 {
                     NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.FileName,

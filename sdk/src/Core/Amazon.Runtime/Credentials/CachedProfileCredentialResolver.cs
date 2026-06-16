@@ -20,6 +20,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Credentials
 {
