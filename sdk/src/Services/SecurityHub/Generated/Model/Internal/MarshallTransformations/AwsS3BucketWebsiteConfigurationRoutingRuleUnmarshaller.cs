@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Condition", targetDepth))
+                if (context.TestExpression("Condition", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketWebsiteConfigurationRoutingRuleConditionUnmarshaller.Instance;
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Redirect", targetDepth))
+                if (context.TestExpression("Redirect", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketWebsiteConfigurationRoutingRuleRedirectUnmarshaller.Instance;
                     unmarshalledObject.Redirect = unmarshaller.Unmarshall(context, ref reader);

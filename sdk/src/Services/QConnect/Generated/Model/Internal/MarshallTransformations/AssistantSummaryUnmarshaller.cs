@@ -56,73 +56,73 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aiAgentConfiguration", targetDepth))
+                if (context.TestExpression("aiAgentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AIAgentConfigurationData, StringUnmarshaller, AIAgentConfigurationDataUnmarshaller>(StringUnmarshaller.Instance, AIAgentConfigurationDataUnmarshaller.Instance);
                     unmarshalledObject.AiAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assistantArn", targetDepth))
+                if (context.TestExpression("assistantArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssistantArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assistantId", targetDepth))
+                if (context.TestExpression("assistantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssistantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("capabilityConfiguration", targetDepth))
+                if (context.TestExpression("capabilityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AssistantCapabilityConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CapabilityConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integrationConfiguration", targetDepth))
+                if (context.TestExpression("integrationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AssistantIntegrationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IntegrationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orchestratorConfigurationList", targetDepth))
+                if (context.TestExpression("orchestratorConfigurationList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OrchestratorConfigurationEntry, OrchestratorConfigurationEntryUnmarshaller>(OrchestratorConfigurationEntryUnmarshaller.Instance);
                     unmarshalledObject.OrchestratorConfigurationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serverSideEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("serverSideEncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerSideEncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ServerSideEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnabledByDefault", targetDepth))
+                if (context.TestExpression("EnabledByDefault", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnabledByDefault = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsArn", targetDepth))
+                if (context.TestExpression("StandardsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StandardsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsManagedBy", targetDepth))
+                if (context.TestExpression("StandardsManagedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StandardsManagedByUnmarshaller.Instance;
                     unmarshalledObject.StandardsManagedBy = unmarshaller.Unmarshall(context, ref reader);

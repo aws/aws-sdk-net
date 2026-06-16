@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CachediSCSIVolumes", targetDepth))
+                if (context.TestExpression("CachediSCSIVolumes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CachediSCSIVolume, CachediSCSIVolumeUnmarshaller>(CachediSCSIVolumeUnmarshaller.Instance);
                     response.CachediSCSIVolumes = unmarshaller.Unmarshall(context, ref reader);

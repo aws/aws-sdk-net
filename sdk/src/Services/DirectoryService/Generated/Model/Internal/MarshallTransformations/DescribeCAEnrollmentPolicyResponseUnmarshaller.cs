@@ -52,31 +52,31 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CaEnrollmentPolicyStatus", targetDepth))
+                if (context.TestExpression("CaEnrollmentPolicyStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CaEnrollmentPolicyStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CaEnrollmentPolicyStatusReason", targetDepth))
+                if (context.TestExpression("CaEnrollmentPolicyStatusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CaEnrollmentPolicyStatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DirectoryId", targetDepth))
+                if (context.TestExpression("DirectoryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DirectoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedDateTime", targetDepth))
+                if (context.TestExpression("LastUpdatedDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PcaConnectorArn", targetDepth))
+                if (context.TestExpression("PcaConnectorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PcaConnectorArn = unmarshaller.Unmarshall(context, ref reader);

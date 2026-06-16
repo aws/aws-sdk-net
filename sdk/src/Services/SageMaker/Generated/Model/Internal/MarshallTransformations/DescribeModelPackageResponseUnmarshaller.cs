@@ -52,187 +52,193 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalInferenceSpecifications", targetDepth))
+                if (context.TestExpression("AdditionalInferenceSpecifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdditionalInferenceSpecificationDefinition, AdditionalInferenceSpecificationDefinitionUnmarshaller>(AdditionalInferenceSpecificationDefinitionUnmarshaller.Instance);
                     response.AdditionalInferenceSpecifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApprovalDescription", targetDepth))
+                if (context.TestExpression("ApprovalDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApprovalDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CertifyForMarketplace", targetDepth))
+                if (context.TestExpression("CertifyForMarketplace", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CertifyForMarketplace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedBy", targetDepth))
+                if (context.TestExpression("CreatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = UserContextUnmarshaller.Instance;
                     response.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerMetadataProperties", targetDepth))
+                if (context.TestExpression("CustomerMetadataProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.CustomerMetadataProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DriftCheckBaselines", targetDepth))
+                if (context.TestExpression("DriftCheckBaselines", targetDepth, ref reader))
                 {
                     var unmarshaller = DriftCheckBaselinesUnmarshaller.Instance;
                     response.DriftCheckBaselines = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceSpecification", targetDepth))
+                if (context.TestExpression("InferenceSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceSpecificationUnmarshaller.Instance;
                     response.InferenceSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedBy", targetDepth))
+                if (context.TestExpression("LastModifiedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = UserContextUnmarshaller.Instance;
                     response.LastModifiedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataProperties", targetDepth))
+                if (context.TestExpression("ManagedStorageType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ManagedStorageType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MetadataProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = MetadataPropertiesUnmarshaller.Instance;
                     response.MetadataProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelApprovalStatus", targetDepth))
+                if (context.TestExpression("ModelApprovalStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelApprovalStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelCard", targetDepth))
+                if (context.TestExpression("ModelCard", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelPackageModelCardUnmarshaller.Instance;
                     response.ModelCard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelLifeCycle", targetDepth))
+                if (context.TestExpression("ModelLifeCycle", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelLifeCycleUnmarshaller.Instance;
                     response.ModelLifeCycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelMetrics", targetDepth))
+                if (context.TestExpression("ModelMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelMetricsUnmarshaller.Instance;
                     response.ModelMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageArn", targetDepth))
+                if (context.TestExpression("ModelPackageArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelPackageArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageDescription", targetDepth))
+                if (context.TestExpression("ModelPackageDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelPackageDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageGroupName", targetDepth))
+                if (context.TestExpression("ModelPackageGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelPackageGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageName", targetDepth))
+                if (context.TestExpression("ModelPackageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelPackageName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageRegistrationType", targetDepth))
+                if (context.TestExpression("ModelPackageRegistrationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelPackageRegistrationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageStatus", targetDepth))
+                if (context.TestExpression("ModelPackageStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelPackageStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageStatusDetails", targetDepth))
+                if (context.TestExpression("ModelPackageStatusDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelPackageStatusDetailsUnmarshaller.Instance;
                     response.ModelPackageStatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageVersion", targetDepth))
+                if (context.TestExpression("ModelPackageVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ModelPackageVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SamplePayloadUrl", targetDepth))
+                if (context.TestExpression("SamplePayloadUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SamplePayloadUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityConfig", targetDepth))
+                if (context.TestExpression("SecurityConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelPackageSecurityConfigUnmarshaller.Instance;
                     response.SecurityConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SkipModelValidation", targetDepth))
+                if (context.TestExpression("SkipModelValidation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SkipModelValidation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceAlgorithmSpecification", targetDepth))
+                if (context.TestExpression("SourceAlgorithmSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceAlgorithmSpecificationUnmarshaller.Instance;
                     response.SourceAlgorithmSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceUri", targetDepth))
+                if (context.TestExpression("SourceUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Task", targetDepth))
+                if (context.TestExpression("Task", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Task = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationSpecification", targetDepth))
+                if (context.TestExpression("ValidationSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelPackageValidationSpecificationUnmarshaller.Instance;
                     response.ValidationSpecification = unmarshaller.Unmarshall(context, ref reader);

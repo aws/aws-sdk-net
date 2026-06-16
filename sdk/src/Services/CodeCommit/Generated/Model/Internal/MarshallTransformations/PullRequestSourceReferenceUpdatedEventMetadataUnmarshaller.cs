@@ -56,25 +56,25 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("afterCommitId", targetDepth))
+                if (context.TestExpression("afterCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AfterCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("beforeCommitId", targetDepth))
+                if (context.TestExpression("beforeCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BeforeCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mergeBase", targetDepth))
+                if (context.TestExpression("mergeBase", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MergeBase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryName", targetDepth))
+                if (context.TestExpression("repositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);

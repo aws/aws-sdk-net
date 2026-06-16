@@ -56,13 +56,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyId", targetDepth))
+                if (context.TestExpression("KeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyType", targetDepth))
+                if (context.TestExpression("KeyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyType = unmarshaller.Unmarshall(context, ref reader);

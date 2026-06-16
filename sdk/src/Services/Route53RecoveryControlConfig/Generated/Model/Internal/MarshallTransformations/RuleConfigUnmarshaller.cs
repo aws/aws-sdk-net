@@ -56,19 +56,19 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Inverted", targetDepth))
+                if (context.TestExpression("Inverted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inverted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Threshold", targetDepth))
+                if (context.TestExpression("Threshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

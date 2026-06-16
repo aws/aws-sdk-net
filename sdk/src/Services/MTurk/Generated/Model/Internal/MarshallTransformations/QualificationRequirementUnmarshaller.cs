@@ -56,37 +56,37 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionsGuarded", targetDepth))
+                if (context.TestExpression("ActionsGuarded", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionsGuarded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Comparator", targetDepth))
+                if (context.TestExpression("Comparator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Comparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntegerValues", targetDepth))
+                if (context.TestExpression("IntegerValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.IntegerValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocaleValues", targetDepth))
+                if (context.TestExpression("LocaleValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Locale, LocaleUnmarshaller>(LocaleUnmarshaller.Instance);
                     unmarshalledObject.LocaleValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QualificationTypeId", targetDepth))
+                if (context.TestExpression("QualificationTypeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QualificationTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequiredToPreview", targetDepth))
+                if (context.TestExpression("RequiredToPreview", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequiredToPreview = unmarshaller.Unmarshall(context, ref reader);

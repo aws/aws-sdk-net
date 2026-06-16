@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Collections", targetDepth))
+                if (context.TestExpression("Collections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataV2, MetricDataV2Unmarshaller>(MetricDataV2Unmarshaller.Instance);
                     unmarshalledObject.Collections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Dimensions", targetDepth))
+                if (context.TestExpression("Dimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricInterval", targetDepth))
+                if (context.TestExpression("MetricInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricIntervalUnmarshaller.Instance;
                     unmarshalledObject.MetricInterval = unmarshaller.Unmarshall(context, ref reader);

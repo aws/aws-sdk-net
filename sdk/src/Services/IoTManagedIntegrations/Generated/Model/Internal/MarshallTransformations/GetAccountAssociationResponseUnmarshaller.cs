@@ -52,61 +52,61 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountAssociationId", targetDepth))
+                if (context.TestExpression("AccountAssociationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountAssociationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssociationState", targetDepth))
+                if (context.TestExpression("AssociationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssociationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectorDestinationId", targetDepth))
+                if (context.TestExpression("ConnectorDestinationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorDestinationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorMessage", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeneralAuthorization", targetDepth))
+                if (context.TestExpression("GeneralAuthorization", targetDepth, ref reader))
                 {
                     var unmarshaller = GeneralAuthorizationNameUnmarshaller.Instance;
                     response.GeneralAuthorization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OAuthAuthorizationUrl", targetDepth))
+                if (context.TestExpression("OAuthAuthorizationUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OAuthAuthorizationUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

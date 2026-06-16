@@ -52,13 +52,13 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assets", targetDepth))
+                if (context.TestExpression("assets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetShallow, AssetShallowUnmarshaller>(AssetShallowUnmarshaller.Instance);
                     response.Assets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessPolicyDetail", targetDepth))
+                if (context.TestExpression("accessPolicyDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessPolicyDetailUnmarshaller.Instance;
                     response.AccessPolicyDetail = unmarshaller.Unmarshall(context, ref reader);

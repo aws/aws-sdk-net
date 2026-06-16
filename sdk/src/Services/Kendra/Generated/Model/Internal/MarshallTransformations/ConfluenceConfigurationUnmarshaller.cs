@@ -56,73 +56,73 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachmentConfiguration", targetDepth))
+                if (context.TestExpression("AttachmentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfluenceAttachmentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AttachmentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BlogConfiguration", targetDepth))
+                if (context.TestExpression("BlogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfluenceBlogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BlogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExclusionPatterns", targetDepth))
+                if (context.TestExpression("ExclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InclusionPatterns", targetDepth))
+                if (context.TestExpression("InclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PageConfiguration", targetDepth))
+                if (context.TestExpression("PageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfluencePageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProxyConfiguration", targetDepth))
+                if (context.TestExpression("ProxyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerUrl", targetDepth))
+                if (context.TestExpression("ServerUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpaceConfiguration", targetDepth))
+                if (context.TestExpression("SpaceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfluenceSpaceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SpaceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Version", targetDepth))
+                if (context.TestExpression("Version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfiguration", targetDepth))
+                if (context.TestExpression("VpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceVpcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

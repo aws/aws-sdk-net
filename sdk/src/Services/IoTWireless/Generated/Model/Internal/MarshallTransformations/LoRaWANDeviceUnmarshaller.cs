@@ -56,49 +56,49 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AbpV1_0_x", targetDepth))
+                if (context.TestExpression("AbpV1_0_x", targetDepth, ref reader))
                 {
                     var unmarshaller = AbpV1_0_xUnmarshaller.Instance;
                     unmarshalledObject.AbpV1_0_x = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AbpV1_1", targetDepth))
+                if (context.TestExpression("AbpV1_1", targetDepth, ref reader))
                 {
                     var unmarshaller = AbpV1_1Unmarshaller.Instance;
                     unmarshalledObject.AbpV1_1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DevEui", targetDepth))
+                if (context.TestExpression("DevEui", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DevEui = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceProfileId", targetDepth))
+                if (context.TestExpression("DeviceProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FPorts", targetDepth))
+                if (context.TestExpression("FPorts", targetDepth, ref reader))
                 {
                     var unmarshaller = FPortsUnmarshaller.Instance;
                     unmarshalledObject.FPorts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OtaaV1_0_x", targetDepth))
+                if (context.TestExpression("OtaaV1_0_x", targetDepth, ref reader))
                 {
                     var unmarshaller = OtaaV1_0_xUnmarshaller.Instance;
                     unmarshalledObject.OtaaV1_0_x = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OtaaV1_1", targetDepth))
+                if (context.TestExpression("OtaaV1_1", targetDepth, ref reader))
                 {
                     var unmarshaller = OtaaV1_1Unmarshaller.Instance;
                     unmarshalledObject.OtaaV1_1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceProfileId", targetDepth))
+                if (context.TestExpression("ServiceProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceProfileId = unmarshaller.Unmarshall(context, ref reader);

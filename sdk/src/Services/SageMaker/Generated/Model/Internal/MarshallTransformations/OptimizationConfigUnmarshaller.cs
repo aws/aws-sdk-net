@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ModelCompilationConfig", targetDepth))
+                if (context.TestExpression("ModelCompilationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelCompilationConfigUnmarshaller.Instance;
                     unmarshalledObject.ModelCompilationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelQuantizationConfig", targetDepth))
+                if (context.TestExpression("ModelQuantizationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelQuantizationConfigUnmarshaller.Instance;
                     unmarshalledObject.ModelQuantizationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelShardingConfig", targetDepth))
+                if (context.TestExpression("ModelShardingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelShardingConfigUnmarshaller.Instance;
                     unmarshalledObject.ModelShardingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelSpeculativeDecodingConfig", targetDepth))
+                if (context.TestExpression("ModelSpeculativeDecodingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelSpeculativeDecodingConfigUnmarshaller.Instance;
                     unmarshalledObject.ModelSpeculativeDecodingConfig = unmarshaller.Unmarshall(context, ref reader);

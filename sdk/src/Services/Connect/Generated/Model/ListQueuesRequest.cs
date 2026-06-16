@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListQueues operation.
-    /// Provides information about the queues for the specified Amazon Connect instance.
+    /// Provides information about the queues for the specified Connect Customer instance.
     /// 
     ///  
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-    /// Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Standard and Agent</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListQueuesRequest : AmazonConnectRequest
@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

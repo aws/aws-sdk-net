@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3OutputUrl", targetDepth))
+                if (context.TestExpression("S3OutputUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = S3OutputUrlUnmarshaller.Instance;
                     unmarshalledObject.S3OutputUrl = unmarshaller.Unmarshall(context, ref reader);

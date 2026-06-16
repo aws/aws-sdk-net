@@ -56,49 +56,49 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteOnTermination", targetDepth))
+                if (context.TestExpression("DeleteOnTermination", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Encrypted", targetDepth))
+                if (context.TestExpression("Encrypted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Iops", targetDepth))
+                if (context.TestExpression("Iops", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyId", targetDepth))
+                if (context.TestExpression("KmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotId", targetDepth))
+                if (context.TestExpression("SnapshotId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Throughput", targetDepth))
+                if (context.TestExpression("Throughput", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeSize", targetDepth))
+                if (context.TestExpression("VolumeSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeType", targetDepth))
+                if (context.TestExpression("VolumeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context, ref reader);

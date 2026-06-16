@@ -56,103 +56,103 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EditorId", targetDepth))
+                if (context.TestExpression("EditorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EditorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnvironmentVariables", targetDepth))
+                if (context.TestExpression("EnvironmentVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionEngine", targetDepth))
+                if (context.TestExpression("ExecutionEngine", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionEngineConfigUnmarshaller.Instance;
                     unmarshalledObject.ExecutionEngine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastStateChangeReason", targetDepth))
+                if (context.TestExpression("LastStateChangeReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastStateChangeReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookExecutionId", targetDepth))
+                if (context.TestExpression("NotebookExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotebookExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookExecutionName", targetDepth))
+                if (context.TestExpression("NotebookExecutionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotebookExecutionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookInstanceSecurityGroupId", targetDepth))
+                if (context.TestExpression("NotebookInstanceSecurityGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotebookInstanceSecurityGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookParams", targetDepth))
+                if (context.TestExpression("NotebookParams", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotebookParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookS3Location", targetDepth))
+                if (context.TestExpression("NotebookS3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = NotebookS3LocationForOutputUnmarshaller.Instance;
                     unmarshalledObject.NotebookS3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputNotebookFormat", targetDepth))
+                if (context.TestExpression("OutputNotebookFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputNotebookFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputNotebookS3Location", targetDepth))
+                if (context.TestExpression("OutputNotebookS3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputNotebookS3LocationForOutputUnmarshaller.Instance;
                     unmarshalledObject.OutputNotebookS3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputNotebookURI", targetDepth))
+                if (context.TestExpression("OutputNotebookURI", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputNotebookURI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

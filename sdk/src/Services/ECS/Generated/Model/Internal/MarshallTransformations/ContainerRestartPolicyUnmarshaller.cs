@@ -56,19 +56,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ignoredExitCodes", targetDepth))
+                if (context.TestExpression("ignoredExitCodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.IgnoredExitCodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("restartAttemptPeriod", targetDepth))
+                if (context.TestExpression("restartAttemptPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RestartAttemptPeriod = unmarshaller.Unmarshall(context, ref reader);

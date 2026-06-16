@@ -2103,6 +2103,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly ProvisionedControlPlaneTier Tier4xl = new ProvisionedControlPlaneTier("tier-4xl");
         /// <summary>
+        /// Constant Tier8xl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Tier8xl = new ProvisionedControlPlaneTier("tier-8xl");
+        /// <summary>
         /// Constant TierXl for ProvisionedControlPlaneTier
         /// </summary>
         public static readonly ProvisionedControlPlaneTier TierXl = new ProvisionedControlPlaneTier("tier-xl");
@@ -2244,6 +2248,56 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResolveConflicts(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpreadLevel.
+    /// </summary>
+    public class SpreadLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Host for SpreadLevel
+        /// </summary>
+        public static readonly SpreadLevel Host = new SpreadLevel("host");
+        /// <summary>
+        /// Constant Rack for SpreadLevel
+        /// </summary>
+        public static readonly SpreadLevel Rack = new SpreadLevel("rack");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpreadLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpreadLevel FindValue(string value)
+        {
+            return FindValue<SpreadLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpreadLevel(string value)
         {
             return FindValue(value);
         }
@@ -2491,6 +2545,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");
         /// <summary>
+        /// Constant NetworkAccess for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType NetworkAccess = new UpdateParamType("NetworkAccess");
+        /// <summary>
         /// Constant NodeRepairConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType NodeRepairConfig = new UpdateParamType("NodeRepairConfig");
@@ -2526,6 +2584,18 @@ namespace Amazon.EKS
         /// Constant ResolveConflicts for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ResolveConflicts = new UpdateParamType("ResolveConflicts");
+        /// <summary>
+        /// Constant RoleArn for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleArn = new UpdateParamType("RoleArn");
+        /// <summary>
+        /// Constant RoleMappingsToAddOrUpdate for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleMappingsToAddOrUpdate = new UpdateParamType("RoleMappingsToAddOrUpdate");
+        /// <summary>
+        /// Constant RoleMappingsToRemove for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleMappingsToRemove = new UpdateParamType("RoleMappingsToRemove");
         /// <summary>
         /// Constant SecurityGroups for UpdateParamType
         /// </summary>
@@ -2563,9 +2633,33 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType UpgradePolicy = new UpdateParamType("UpgradePolicy");
         /// <summary>
+        /// Constant VendedLogs for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType VendedLogs = new UpdateParamType("VendedLogs");
+        /// <summary>
         /// Constant Version for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType Version = new UpdateParamType("Version");
+        /// <summary>
+        /// Constant WarmPoolEnabled for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolEnabled = new UpdateParamType("WarmPoolEnabled");
+        /// <summary>
+        /// Constant WarmPoolMaxGroupPreparedCapacity for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolMaxGroupPreparedCapacity = new UpdateParamType("WarmPoolMaxGroupPreparedCapacity");
+        /// <summary>
+        /// Constant WarmPoolMinSize for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolMinSize = new UpdateParamType("WarmPoolMinSize");
+        /// <summary>
+        /// Constant WarmPoolReuseOnScaleIn for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolReuseOnScaleIn = new UpdateParamType("WarmPoolReuseOnScaleIn");
+        /// <summary>
+        /// Constant WarmPoolState for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolState = new UpdateParamType("WarmPoolState");
         /// <summary>
         /// Constant ZonalShiftConfig for UpdateParamType
         /// </summary>
@@ -2690,6 +2784,10 @@ namespace Amazon.EKS
         /// Constant AutoModeUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType AutoModeUpdate = new UpdateType("AutoModeUpdate");
+        /// <summary>
+        /// Constant CapabilityUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType CapabilityUpdate = new UpdateType("CapabilityUpdate");
         /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>
@@ -2822,6 +2920,60 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarmPoolState.
+    /// </summary>
+    public class WarmPoolState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIBERNATED for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState HIBERNATED = new WarmPoolState("HIBERNATED");
+        /// <summary>
+        /// Constant RUNNING for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState RUNNING = new WarmPoolState("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState STOPPED = new WarmPoolState("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarmPoolState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarmPoolState FindValue(string value)
+        {
+            return FindValue<WarmPoolState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarmPoolState(string value)
         {
             return FindValue(value);
         }

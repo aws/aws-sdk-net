@@ -56,91 +56,91 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlockType", targetDepth))
+                if (context.TestExpression("BlockType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BlockType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnIndex", targetDepth))
+                if (context.TestExpression("ColumnIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ColumnIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnSpan", targetDepth))
+                if (context.TestExpression("ColumnSpan", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ColumnSpan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityTypes", targetDepth))
+                if (context.TestExpression("EntityTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Geometry", targetDepth))
+                if (context.TestExpression("Geometry", targetDepth, ref reader))
                 {
                     var unmarshaller = GeometryUnmarshaller.Instance;
                     unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Page", targetDepth))
+                if (context.TestExpression("Page", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Page = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Query", targetDepth))
+                if (context.TestExpression("Query", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryUnmarshaller.Instance;
                     unmarshalledObject.Query = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Relationships", targetDepth))
+                if (context.TestExpression("Relationships", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Relationship, RelationshipUnmarshaller>(RelationshipUnmarshaller.Instance);
                     unmarshalledObject.Relationships = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowIndex", targetDepth))
+                if (context.TestExpression("RowIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RowIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowSpan", targetDepth))
+                if (context.TestExpression("RowSpan", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RowSpan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectionStatus", targetDepth))
+                if (context.TestExpression("SelectionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Text", targetDepth))
+                if (context.TestExpression("Text", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextType", targetDepth))
+                if (context.TestExpression("TextType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TextType = unmarshaller.Unmarshall(context, ref reader);

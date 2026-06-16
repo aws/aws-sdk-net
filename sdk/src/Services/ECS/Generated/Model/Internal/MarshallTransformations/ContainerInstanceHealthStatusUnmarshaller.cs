@@ -56,13 +56,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("details", targetDepth))
+                if (context.TestExpression("details", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceHealthCheckResult, InstanceHealthCheckResultUnmarshaller>(InstanceHealthCheckResultUnmarshaller.Instance);
                     unmarshalledObject.Details = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overallStatus", targetDepth))
+                if (context.TestExpression("overallStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverallStatus = unmarshaller.Unmarshall(context, ref reader);

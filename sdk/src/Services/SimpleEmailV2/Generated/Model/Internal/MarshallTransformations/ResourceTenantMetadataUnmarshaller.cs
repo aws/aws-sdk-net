@@ -56,25 +56,25 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssociatedTimestamp", targetDepth))
+                if (context.TestExpression("AssociatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AssociatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TenantId", targetDepth))
+                if (context.TestExpression("TenantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TenantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TenantName", targetDepth))
+                if (context.TestExpression("TenantName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TenantName = unmarshaller.Unmarshall(context, ref reader);

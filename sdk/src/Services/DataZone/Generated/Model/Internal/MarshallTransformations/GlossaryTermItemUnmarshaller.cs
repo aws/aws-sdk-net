@@ -56,85 +56,85 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalAttributes", targetDepth))
+                if (context.TestExpression("additionalAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = GlossaryTermItemAdditionalAttributesUnmarshaller.Instance;
                     unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdBy", targetDepth))
+                if (context.TestExpression("createdBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainId", targetDepth))
+                if (context.TestExpression("domainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("glossaryId", targetDepth))
+                if (context.TestExpression("glossaryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GlossaryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("longDescription", targetDepth))
+                if (context.TestExpression("longDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LongDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shortDescription", targetDepth))
+                if (context.TestExpression("shortDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShortDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("termRelations", targetDepth))
+                if (context.TestExpression("termRelations", targetDepth, ref reader))
                 {
                     var unmarshaller = TermRelationsUnmarshaller.Instance;
                     unmarshalledObject.TermRelations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedBy", targetDepth))
+                if (context.TestExpression("updatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpdatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageRestrictions", targetDepth))
+                if (context.TestExpression("usageRestrictions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UsageRestrictions = unmarshaller.Unmarshall(context, ref reader);

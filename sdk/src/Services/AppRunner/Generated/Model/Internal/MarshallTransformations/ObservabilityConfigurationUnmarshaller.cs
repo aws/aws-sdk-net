@@ -56,49 +56,49 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeletedAt", targetDepth))
+                if (context.TestExpression("DeletedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeletedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Latest", targetDepth))
+                if (context.TestExpression("Latest", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Latest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObservabilityConfigurationArn", targetDepth))
+                if (context.TestExpression("ObservabilityConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObservabilityConfigurationName", targetDepth))
+                if (context.TestExpression("ObservabilityConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityConfigurationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObservabilityConfigurationRevision", targetDepth))
+                if (context.TestExpression("ObservabilityConfigurationRevision", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityConfigurationRevision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TraceConfiguration", targetDepth))
+                if (context.TestExpression("TraceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TraceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TraceConfiguration = unmarshaller.Unmarshall(context, ref reader);

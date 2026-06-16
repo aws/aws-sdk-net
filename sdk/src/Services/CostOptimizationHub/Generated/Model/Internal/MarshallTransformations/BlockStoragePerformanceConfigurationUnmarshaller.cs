@@ -56,13 +56,13 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("iops", targetDepth))
+                if (context.TestExpression("iops", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("throughput", targetDepth))
+                if (context.TestExpression("throughput", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context, ref reader);

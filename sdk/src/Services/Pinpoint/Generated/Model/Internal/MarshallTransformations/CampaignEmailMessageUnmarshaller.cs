@@ -56,31 +56,31 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Body", targetDepth))
+                if (context.TestExpression("Body", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Body = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FromAddress", targetDepth))
+                if (context.TestExpression("FromAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FromAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Headers", targetDepth))
+                if (context.TestExpression("Headers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MessageHeader, MessageHeaderUnmarshaller>(MessageHeaderUnmarshaller.Instance);
                     unmarshalledObject.Headers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HtmlBody", targetDepth))
+                if (context.TestExpression("HtmlBody", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HtmlBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);

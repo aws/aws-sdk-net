@@ -52,13 +52,13 @@ namespace Amazon.MWAAServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkflowVersions", targetDepth))
+                if (context.TestExpression("WorkflowVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkflowVersionSummary, WorkflowVersionSummaryUnmarshaller>(WorkflowVersionSummaryUnmarshaller.Instance);
                     response.WorkflowVersions = unmarshaller.Unmarshall(context, ref reader);

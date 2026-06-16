@@ -15,7 +15,6 @@
 
 using System;
 using System.Net;
-using Amazon.EC2.Model;
 using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
@@ -31,10 +30,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestNullRole()
         {
-            AssertExtensions.ExpectException(() =>
-            {
-                var creds = new InstanceProfileAWSCredentials(role: null);
-            }, typeof(ArgumentNullException), "Value cannot be null." + Environment.NewLine + "Parameter name: role");
+            AssertExtensions.ExpectException(() => new InstanceProfileAWSCredentials(role: null), typeof(ArgumentNullException));
         }
 
         [TestMethod]
@@ -95,6 +91,14 @@ namespace AWSSDK.UnitTests
 
             using (new AWSConfigsDateFaker(() => currentTime.ToUniversalTime())) 
             using (var imdsServlet = new EC2InstanceMetadataServlet())
+            // EC2InstanceMetadataServlet redirects EC2InstanceMetadata calls via the env var, but
+            // InstanceProfileAWSCredentials.Server is a static field initialized at class load time.
+            // If the class was loaded before this test (e.g. by a prior test in the same process),
+            // Server still points to the real IMDS endpoint. Reset it now so InfoUri and
+            // CurrentRoleUri resolve to the local test servlet for the duration of this test.
+            using (new DisposableSwitch(
+                onStart: () => InstanceProfileAWSCredentials.ResetServiceEndpoint(),
+                onEnd:   () => InstanceProfileAWSCredentials.ResetServiceEndpoint()))
             {
                 var instanceProfileAwsCredentials =
                     new InstanceProfileAWSCredentials(

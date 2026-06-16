@@ -52,19 +52,19 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Simulation", targetDepth))
+                if (context.TestExpression("Simulation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Simulation = unmarshaller.Unmarshall(context, ref reader);

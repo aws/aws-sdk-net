@@ -56,19 +56,19 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DesiredState", targetDepth))
+                if (context.TestExpression("DesiredState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DesiredState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaintenanceSchedules", targetDepth))
+                if (context.TestExpression("MaintenanceSchedules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutoTuneMaintenanceSchedule, AutoTuneMaintenanceScheduleUnmarshaller>(AutoTuneMaintenanceScheduleUnmarshaller.Instance);
                     unmarshalledObject.MaintenanceSchedules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RollbackOnDisable", targetDepth))
+                if (context.TestExpression("RollbackOnDisable", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RollbackOnDisable = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blocklist", targetDepth))
+                if (context.TestExpression("blocklist", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BlockedGuestUser, BlockedGuestUserUnmarshaller>(BlockedGuestUserUnmarshaller.Instance);
                     response.Blocklist = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authority", targetDepth))
+                if (context.TestExpression("authority", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorityUnmarshaller.Instance;
                     unmarshalledObject.Authority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("effectiveDate", targetDepth))
+                if (context.TestExpression("effectiveDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EffectiveDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("expirationDate", targetDepth))
+                if (context.TestExpression("expirationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemEffectiveDate", targetDepth))
+                if (context.TestExpression("systemEffectiveDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SystemEffectiveDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taxExemptionType", targetDepth))
+                if (context.TestExpression("taxExemptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = TaxExemptionTypeUnmarshaller.Instance;
                     unmarshalledObject.TaxExemptionType = unmarshaller.Unmarshall(context, ref reader);

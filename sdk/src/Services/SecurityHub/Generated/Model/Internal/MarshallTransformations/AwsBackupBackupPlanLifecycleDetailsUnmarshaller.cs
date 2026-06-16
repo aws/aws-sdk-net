@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteAfterDays", targetDepth))
+                if (context.TestExpression("DeleteAfterDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DeleteAfterDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MoveToColdStorageAfterDays", targetDepth))
+                if (context.TestExpression("MoveToColdStorageAfterDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MoveToColdStorageAfterDays = unmarshaller.Unmarshall(context, ref reader);

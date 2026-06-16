@@ -56,31 +56,31 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DkimPercentage", targetDepth))
+                if (context.TestExpression("DkimPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DkimPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InboxPercentage", targetDepth))
+                if (context.TestExpression("InboxPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.InboxPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MissingPercentage", targetDepth))
+                if (context.TestExpression("MissingPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MissingPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpamPercentage", targetDepth))
+                if (context.TestExpression("SpamPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SpamPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpfPercentage", targetDepth))
+                if (context.TestExpression("SpfPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SpfPercentage = unmarshaller.Unmarshall(context, ref reader);

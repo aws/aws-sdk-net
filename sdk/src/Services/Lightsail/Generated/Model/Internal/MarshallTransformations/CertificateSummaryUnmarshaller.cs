@@ -56,31 +56,31 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificateArn", targetDepth))
+                if (context.TestExpression("certificateArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("certificateDetail", targetDepth))
+                if (context.TestExpression("certificateDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = CertificateUnmarshaller.Instance;
                     unmarshalledObject.CertificateDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("certificateName", targetDepth))
+                if (context.TestExpression("certificateName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CertificateName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("domainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

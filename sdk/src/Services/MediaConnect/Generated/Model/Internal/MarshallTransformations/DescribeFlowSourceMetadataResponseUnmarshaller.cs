@@ -52,31 +52,31 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("flowArn", targetDepth))
+                if (context.TestExpression("flowArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FlowArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messages", targetDepth))
+                if (context.TestExpression("messages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MessageDetail, MessageDetailUnmarshaller>(MessageDetailUnmarshaller.Instance);
                     response.Messages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ndiInfo", targetDepth))
+                if (context.TestExpression("ndiInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = NdiSourceMetadataInfoUnmarshaller.Instance;
                     response.NdiInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestamp", targetDepth))
+                if (context.TestExpression("timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transportMediaInfo", targetDepth))
+                if (context.TestExpression("transportMediaInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = TransportMediaInfoUnmarshaller.Instance;
                     response.TransportMediaInfo = unmarshaller.Unmarshall(context, ref reader);

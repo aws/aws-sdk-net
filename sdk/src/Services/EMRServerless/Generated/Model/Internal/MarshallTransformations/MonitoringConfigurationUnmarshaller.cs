@@ -56,25 +56,25 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLoggingConfiguration", targetDepth))
+                if (context.TestExpression("cloudWatchLoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedPersistenceMonitoringConfiguration", targetDepth))
+                if (context.TestExpression("managedPersistenceMonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedPersistenceMonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedPersistenceMonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("prometheusMonitoringConfiguration", targetDepth))
+                if (context.TestExpression("prometheusMonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PrometheusMonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PrometheusMonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
+                if (context.TestExpression("s3MonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);

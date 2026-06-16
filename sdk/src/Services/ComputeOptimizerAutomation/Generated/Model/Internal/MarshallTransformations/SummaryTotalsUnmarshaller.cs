@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SummaryTotals Object
     /// </summary>  
-    public class SummaryTotalsUnmarshaller : IJsonUnmarshaller<SummaryTotals, JsonUnmarshallerContext>
+    public class SummaryTotalsUnmarshaller : ICborUnmarshaller<SummaryTotals, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SummaryTotals Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SummaryTotals Unmarshall(CborUnmarshallerContext context)
         {
             SummaryTotals unmarshalledObject = new SummaryTotals();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("automationEventCount", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AutomationEventCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("estimatedMonthlySavings", targetDepth))
-                {
-                    var unmarshaller = EstimatedMonthlySavingsUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "automationEventCount":
+                        {
+                            context.AddPathSegment("AutomationEventCount");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.AutomationEventCount = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "estimatedMonthlySavings":
+                        {
+                            context.AddPathSegment("EstimatedMonthlySavings");
+                            var unmarshaller = EstimatedMonthlySavingsUnmarshaller.Instance;
+                            unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

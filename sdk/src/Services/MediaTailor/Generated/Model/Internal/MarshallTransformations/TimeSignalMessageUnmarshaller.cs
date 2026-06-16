@@ -56,7 +56,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SegmentationDescriptors", targetDepth))
+                if (context.TestExpression("SegmentationDescriptors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SegmentationDescriptor, SegmentationDescriptorUnmarshaller>(SegmentationDescriptorUnmarshaller.Instance);
                     unmarshalledObject.SegmentationDescriptors = unmarshaller.Unmarshall(context, ref reader);

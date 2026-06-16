@@ -52,49 +52,49 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DedicatedIpAutoWarmupEnabled", targetDepth))
+                if (context.TestExpression("DedicatedIpAutoWarmupEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DedicatedIpAutoWarmupEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Details", targetDepth))
+                if (context.TestExpression("Details", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountDetailsUnmarshaller.Instance;
                     response.Details = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnforcementStatus", targetDepth))
+                if (context.TestExpression("EnforcementStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EnforcementStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductionAccessEnabled", targetDepth))
+                if (context.TestExpression("ProductionAccessEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ProductionAccessEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SendingEnabled", targetDepth))
+                if (context.TestExpression("SendingEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.SendingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SendQuota", targetDepth))
+                if (context.TestExpression("SendQuota", targetDepth, ref reader))
                 {
                     var unmarshaller = SendQuotaUnmarshaller.Instance;
                     response.SendQuota = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuppressionAttributes", targetDepth))
+                if (context.TestExpression("SuppressionAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = SuppressionAttributesUnmarshaller.Instance;
                     response.SuppressionAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VdmAttributes", targetDepth))
+                if (context.TestExpression("VdmAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = VdmAttributesUnmarshaller.Instance;
                     response.VdmAttributes = unmarshaller.Unmarshall(context, ref reader);

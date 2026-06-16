@@ -56,19 +56,19 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Peering", targetDepth))
+                if (context.TestExpression("Peering", targetDepth, ref reader))
                 {
                     var unmarshaller = PeeringUnmarshaller.Instance;
                     unmarshalledObject.Peering = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransitGatewayArn", targetDepth))
+                if (context.TestExpression("TransitGatewayArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransitGatewayArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransitGatewayPeeringAttachmentId", targetDepth))
+                if (context.TestExpression("TransitGatewayPeeringAttachmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransitGatewayPeeringAttachmentId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnonymousUsers", targetDepth))
+                if (context.TestExpression("AnonymousUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnonymousUserSnapshotJobResult, AnonymousUserSnapshotJobResultUnmarshaller>(AnonymousUserSnapshotJobResultUnmarshaller.Instance);
                     unmarshalledObject.AnonymousUsers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegisteredUsers", targetDepth))
+                if (context.TestExpression("RegisteredUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegisteredUserSnapshotJobResult, RegisteredUserSnapshotJobResultUnmarshaller>(RegisteredUserSnapshotJobResultUnmarshaller.Instance);
                     unmarshalledObject.RegisteredUsers = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AbortConfigCriteriaList", targetDepth))
+                if (context.TestExpression("AbortConfigCriteriaList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AbortConfigCriteria, AbortConfigCriteriaUnmarshaller>(AbortConfigCriteriaUnmarshaller.Instance);
                     unmarshalledObject.AbortConfigCriteriaList = unmarshaller.Unmarshall(context, ref reader);

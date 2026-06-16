@@ -56,13 +56,13 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lastDelivery", targetDepth))
+                if (context.TestExpression("lastDelivery", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastDelivery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastStatus", targetDepth))
+                if (context.TestExpression("lastStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastStatus = unmarshaller.Unmarshall(context, ref reader);

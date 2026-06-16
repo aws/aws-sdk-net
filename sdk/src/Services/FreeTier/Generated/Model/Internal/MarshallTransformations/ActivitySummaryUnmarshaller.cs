@@ -56,25 +56,25 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activityId", targetDepth))
+                if (context.TestExpression("activityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActivityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reward", targetDepth))
+                if (context.TestExpression("reward", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityRewardUnmarshaller.Instance;
                     unmarshalledObject.Reward = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("title", targetDepth))
+                if (context.TestExpression("title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);

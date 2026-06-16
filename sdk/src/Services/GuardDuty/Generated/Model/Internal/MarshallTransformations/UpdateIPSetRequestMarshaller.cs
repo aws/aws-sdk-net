@@ -65,14 +65,14 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetDetectorId())
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
-            request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
+            request.AddPathResource("{DetectorId}", StringUtils.FromString(publicRequest.DetectorId));
             if (!publicRequest.IsSetIpSetId())
                 throw new AmazonGuardDutyException("Request object does not have required field IpSetId set");
-            request.AddPathResource("{ipSetId}", StringUtils.FromString(publicRequest.IpSetId));
-            request.ResourcePath = "/detector/{detectorId}/ipset/{ipSetId}";
+            request.AddPathResource("{IpSetId}", StringUtils.FromString(publicRequest.IpSetId));
+            request.ResourcePath = "/detector/{DetectorId}/ipset/{IpSetId}";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -105,10 +105,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

@@ -52,13 +52,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessKey", targetDepth))
+                if (context.TestExpression("accessKey", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessKeyUnmarshaller.Instance;
                     response.AccessKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operations", targetDepth))
+                if (context.TestExpression("operations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Operation, OperationUnmarshaller>(OperationUnmarshaller.Instance);
                     response.Operations = unmarshaller.Unmarshall(context, ref reader);

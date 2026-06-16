@@ -56,55 +56,55 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("anchor", targetDepth))
+                if (context.TestExpression("anchor", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Anchor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fields", targetDepth))
+                if (context.TestExpression("fields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ComponentProperty, StringUnmarshaller, ComponentPropertyUnmarshaller>(StringUnmarshaller.Instance, ComponentPropertyUnmarshaller.Instance);
                     unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("global", targetDepth))
+                if (context.TestExpression("global", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Global = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("model", targetDepth))
+                if (context.TestExpression("model", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = MutationActionSetStateParameterUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("target", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("url", targetDepth))
+                if (context.TestExpression("url", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);

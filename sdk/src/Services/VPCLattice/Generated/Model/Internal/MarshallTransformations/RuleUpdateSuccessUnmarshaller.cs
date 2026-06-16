@@ -56,43 +56,43 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleActionUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isDefault", targetDepth))
+                if (context.TestExpression("isDefault", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("match", targetDepth))
+                if (context.TestExpression("match", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleMatchUnmarshaller.Instance;
                     unmarshalledObject.Match = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("priority", targetDepth))
+                if (context.TestExpression("priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);

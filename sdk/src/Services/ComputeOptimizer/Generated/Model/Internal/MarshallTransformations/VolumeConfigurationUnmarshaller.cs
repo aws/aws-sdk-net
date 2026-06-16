@@ -29,76 +29,101 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VolumeConfiguration Object
     /// </summary>  
-    public class VolumeConfigurationUnmarshaller : IJsonUnmarshaller<VolumeConfiguration, JsonUnmarshallerContext>
+    public class VolumeConfigurationUnmarshaller : ICborUnmarshaller<VolumeConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VolumeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VolumeConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             VolumeConfiguration unmarshalledObject = new VolumeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("rootVolume", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RootVolume = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("volumeBaselineIOPS", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeBaselineIOPS = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("volumeBaselineThroughput", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeBaselineThroughput = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("volumeBurstIOPS", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeBurstIOPS = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("volumeBurstThroughput", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeBurstThroughput = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("volumeSize", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("volumeType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "rootVolume":
+                        {
+                            context.AddPathSegment("RootVolume");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.RootVolume = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "volumeBaselineIOPS":
+                        {
+                            context.AddPathSegment("VolumeBaselineIOPS");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.VolumeBaselineIOPS = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "volumeBaselineThroughput":
+                        {
+                            context.AddPathSegment("VolumeBaselineThroughput");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.VolumeBaselineThroughput = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "volumeBurstIOPS":
+                        {
+                            context.AddPathSegment("VolumeBurstIOPS");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.VolumeBurstIOPS = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "volumeBurstThroughput":
+                        {
+                            context.AddPathSegment("VolumeBurstThroughput");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.VolumeBurstThroughput = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "volumeSize":
+                        {
+                            context.AddPathSegment("VolumeSize");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "volumeType":
+                        {
+                            context.AddPathSegment("VolumeType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

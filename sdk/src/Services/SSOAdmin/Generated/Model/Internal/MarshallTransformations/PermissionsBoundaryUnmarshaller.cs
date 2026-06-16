@@ -56,13 +56,13 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomerManagedPolicyReference", targetDepth))
+                if (context.TestExpression("CustomerManagedPolicyReference", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerManagedPolicyReferenceUnmarshaller.Instance;
                     unmarshalledObject.CustomerManagedPolicyReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedPolicyArn", targetDepth))
+                if (context.TestExpression("ManagedPolicyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManagedPolicyArn = unmarshaller.Unmarshall(context, ref reader);

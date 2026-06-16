@@ -52,79 +52,79 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssetId", targetDepth))
+                if (context.TestExpression("AssetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityTaskId", targetDepth))
+                if (context.TestExpression("CapacityTaskId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CapacityTaskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityTaskStatus", targetDepth))
+                if (context.TestExpression("CapacityTaskStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CapacityTaskStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompletionDate", targetDepth))
+                if (context.TestExpression("CompletionDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CompletionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationDate", targetDepth))
+                if (context.TestExpression("CreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DryRun", targetDepth))
+                if (context.TestExpression("DryRun", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DryRun = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Failed", targetDepth))
+                if (context.TestExpression("Failed", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityTaskFailureUnmarshaller.Instance;
                     response.Failed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesToExclude", targetDepth))
+                if (context.TestExpression("InstancesToExclude", targetDepth, ref reader))
                 {
                     var unmarshaller = InstancesToExcludeUnmarshaller.Instance;
                     response.InstancesToExclude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedDate", targetDepth))
+                if (context.TestExpression("LastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrderId", targetDepth))
+                if (context.TestExpression("OrderId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrderId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutpostId", targetDepth))
+                if (context.TestExpression("OutpostId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OutpostId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestedInstancePools", targetDepth))
+                if (context.TestExpression("RequestedInstancePools", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceTypeCapacity, InstanceTypeCapacityUnmarshaller>(InstanceTypeCapacityUnmarshaller.Instance);
                     response.RequestedInstancePools = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskActionOnBlockingInstances", targetDepth))
+                if (context.TestExpression("TaskActionOnBlockingInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskActionOnBlockingInstances = unmarshaller.Unmarshall(context, ref reader);

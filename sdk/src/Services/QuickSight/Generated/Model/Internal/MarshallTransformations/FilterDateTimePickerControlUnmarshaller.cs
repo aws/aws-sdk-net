@@ -56,37 +56,43 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommitMode", targetDepth))
+                if (context.TestExpression("CommitMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CommitMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisplayOptions", targetDepth))
+                if (context.TestExpression("ControlTitleFormatText", targetDepth, ref reader))
+                {
+                    var unmarshaller = ControlTitleFormatTextUnmarshaller.Instance;
+                    unmarshalledObject.ControlTitleFormatText = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("DisplayOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimePickerControlDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.DisplayOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterControlId", targetDepth))
+                if (context.TestExpression("FilterControlId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterControlId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceFilterId", targetDepth))
+                if (context.TestExpression("SourceFilterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceFilterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

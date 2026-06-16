@@ -52,13 +52,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityConfigSummaries", targetDepth))
+                if (context.TestExpression("securityConfigSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecurityConfigSummary, SecurityConfigSummaryUnmarshaller>(SecurityConfigSummaryUnmarshaller.Instance);
                     response.SecurityConfigSummaries = unmarshaller.Unmarshall(context, ref reader);

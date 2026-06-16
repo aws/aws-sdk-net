@@ -56,13 +56,13 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("canProcessManually", targetDepth))
+                if (context.TestExpression("canProcessManually", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CanProcessManually = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intensity", targetDepth))
+                if (context.TestExpression("intensity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Intensity = unmarshaller.Unmarshall(context, ref reader);

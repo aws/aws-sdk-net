@@ -52,25 +52,25 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("catalogArn", targetDepth))
+                if (context.TestExpression("catalogArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CatalogArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lakehouseIdcApplicationArn", targetDepth))
+                if (context.TestExpression("lakehouseIdcApplicationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LakehouseIdcApplicationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lakehouseRegistrationStatus", targetDepth))
+                if (context.TestExpression("lakehouseRegistrationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LakehouseRegistrationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("namespaceName", targetDepth))
+                if (context.TestExpression("namespaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NamespaceName = unmarshaller.Unmarshall(context, ref reader);

@@ -52,31 +52,31 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachmentStatus", targetDepth))
+                if (context.TestExpression("AttachmentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AttachmentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
+                if (context.TestExpression("CreatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationAttachmentArn", targetDepth))
+                if (context.TestExpression("RegistrationAttachmentArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistrationAttachmentArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationAttachmentId", targetDepth))
+                if (context.TestExpression("RegistrationAttachmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistrationAttachmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

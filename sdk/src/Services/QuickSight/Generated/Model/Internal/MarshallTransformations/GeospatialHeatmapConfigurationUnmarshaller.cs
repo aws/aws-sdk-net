@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HeatmapColor", targetDepth))
+                if (context.TestExpression("HeatmapColor", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialHeatmapColorScaleUnmarshaller.Instance;
                     unmarshalledObject.HeatmapColor = unmarshaller.Unmarshall(context, ref reader);

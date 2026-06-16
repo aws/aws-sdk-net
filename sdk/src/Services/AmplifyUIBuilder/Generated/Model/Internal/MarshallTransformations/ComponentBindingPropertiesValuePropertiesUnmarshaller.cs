@@ -56,49 +56,49 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bucket", targetDepth))
+                if (context.TestExpression("bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultValue", targetDepth))
+                if (context.TestExpression("defaultValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("field", targetDepth))
+                if (context.TestExpression("field", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Field = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("key", targetDepth))
+                if (context.TestExpression("key", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Key = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("model", targetDepth))
+                if (context.TestExpression("model", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("predicates", targetDepth))
+                if (context.TestExpression("predicates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Predicate, PredicateUnmarshaller>(PredicateUnmarshaller.Instance);
                     unmarshalledObject.Predicates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotName", targetDepth))
+                if (context.TestExpression("slotName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SlotName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userAttribute", targetDepth))
+                if (context.TestExpression("userAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserAttribute = unmarshaller.Unmarshall(context, ref reader);

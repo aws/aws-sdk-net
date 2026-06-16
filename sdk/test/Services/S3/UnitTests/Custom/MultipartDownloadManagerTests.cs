@@ -17,6 +17,24 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class MultipartDownloadManagerTests
     {
+        private MultipartDownloadManager CreateCoordinatorForParseTests()
+        {
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            return new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
+        }
+
+        private MultipartDownloadManager CreateCoordinatorForRangeValidationTests()
+        {
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: 8 * 1024 * 1024,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            return new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
+        }
+
         private Mock<IPartDataHandler> CreateMockDataHandler()
         {
             var mockHandler = new Mock<IPartDataHandler>();
@@ -132,38 +150,31 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(coordinator);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, false, false, false, DisplayName = "Null S3Client")]
         [DataRow(false, true, false, false, DisplayName = "Null Request")]
         [DataRow(false, false, true, false, DisplayName = "Null Config")]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullParameter_ThrowsArgumentNullException(
             bool nullClient, bool nullRequest, bool nullConfig, bool nullHandler)
         {
-            // Arrange
             var client = nullClient ? null : MultipartDownloadTestHelpers.CreateMockS3Client().Object;
             var request = nullRequest ? null : MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = nullConfig ? null : MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = nullHandler ? null : CreateMockDataHandler().Object;
-
-            // Act
-            var coordinator = new MultipartDownloadManager(client, request, config, handler);
+            Assert.ThrowsExactly<ArgumentNullException>(() =>
+                new MultipartDownloadManager(client, request, config, handler));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
         public void Constructor_WithEncryptionClient_ThrowsNotSupportedException()
         {
-            // Arrange
             var mockEncryptionClient = new Mock<IAmazonS3>();
             mockEncryptionClient.As<Amazon.S3.Internal.IAmazonS3Encryption>();
-            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockDataHandler = CreateMockDataHandler();
-
-            // Act
-            var coordinator = new MultipartDownloadManager(mockEncryptionClient.Object, request, config, mockDataHandler.Object);
+            Assert.ThrowsExactly<NotSupportedException>(() =>
+                new MultipartDownloadManager(mockEncryptionClient.Object, request, config, mockDataHandler.Object));
         }
 
         [TestMethod]
@@ -375,26 +386,21 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task DiscoverUsingPartStrategy_WithInvalidContentRange_ThrowsException()
         {
-            // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
                 contentLength: 8 * 1024 * 1024,
                 partsCount: 5,
                 contentRange: "invalid-format",
                 eTag: "test-etag");
-            
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
                 (req, ct) => Task.FromResult(mockResponse));
-            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            await coordinator.StartDownloadAsync(null, CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await coordinator.StartDownloadAsync(null, CancellationToken.None));
         }
 
         #endregion
@@ -496,31 +502,25 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task DiscoverUsingRangeStrategy_Multipart_ValidatesContentLength()
         {
-            // Arrange
             var totalObjectSize = 50 * 1024 * 1024;
             var partSize = 8 * 1024 * 1024;
-            var wrongPartSize = 5 * 1024 * 1024; // ContentLength doesn't match requested part size
-            
+            var wrongPartSize = 5 * 1024 * 1024;
             var mockResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
                 contentLength: wrongPartSize,
                 partsCount: null,
                 contentRange: $"bytes 0-{wrongPartSize - 1}/{totalObjectSize}",
                 eTag: "range-etag");
-            
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
                 (req, ct) => Task.FromResult(mockResponse));
-            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            await coordinator.StartDownloadAsync(null, CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await coordinator.StartDownloadAsync(null, CancellationToken.None));
         }
 
         [TestMethod]
@@ -618,24 +618,22 @@ namespace AWSSDK.UnitTests
 
         #region Validation Tests
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(MultipartDownloadTestHelpers.ValidationFailureType.MissingContentRange, DisplayName = "Missing ContentRange")]
         [DataRow(MultipartDownloadTestHelpers.ValidationFailureType.InvalidContentRangeFormat, DisplayName = "Invalid ContentRange Format")]
         [DataRow(MultipartDownloadTestHelpers.ValidationFailureType.UnparseableRange, DisplayName = "Unparseable Range")]
         [DataRow(MultipartDownloadTestHelpers.ValidationFailureType.RangeMismatch, DisplayName = "Range Mismatch")]
         [DataRow(MultipartDownloadTestHelpers.ValidationFailureType.ETagMismatch, DisplayName = "ETag Mismatch")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task Validation_Failures_ThrowInvalidOperationException(
             MultipartDownloadTestHelpers.ValidationFailureType failureType)
         {
-            // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockClientWithValidationFailure(failureType);
             var coordinator = MultipartDownloadTestHelpers.CreateCoordinatorForValidationTest(mockClient.Object, failureType);
-            
-
-            // Act & Assert (exception expected via attribute)
-            await coordinator.StartDownloadAsync(null, CancellationToken.None);
-            await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+            {
+                await coordinator.StartDownloadAsync(null, CancellationToken.None);
+                await coordinator.DownloadCompletionTask;
+            });
         }
 
         [TestMethod]
@@ -1340,18 +1338,15 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public async Task Operations_AfterDispose_ThrowObjectDisposedException()
         {
-            // Arrange
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
             coordinator.Dispose();
-            await coordinator.StartDownloadAsync(null, CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<ObjectDisposedException>(async () =>
+                await coordinator.StartDownloadAsync(null, CancellationToken.None));
         }
 
         #endregion
@@ -1359,42 +1354,34 @@ namespace AWSSDK.UnitTests
         #region Cancellation Token Tests
 
         [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
         public async Task DiscoverDownloadStrategyAsync_WhenCancelled_ThrowsOperationCanceledException()
         {
-            // Arrange
             var mockClient = new Mock<IAmazonS3>();
             mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
                 .ThrowsAsync(new OperationCanceledException());
-            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
             var cts = new CancellationTokenSource();
             cts.Cancel();
-
-            // Act
-            await coordinator.StartDownloadAsync(null, cts.Token);
+            await Assert.ThrowsExactlyAsync<OperationCanceledException>(async () =>
+                await coordinator.StartDownloadAsync(null, cts.Token));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
         public async Task StartDownloadAsync_SinglePart_WithPreCancelledToken_ThrowsOperationCanceledException()
         {
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
                 (req, ct) => Task.FromResult(mockResponse));
-            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(
                 mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
             var cts = new CancellationTokenSource();
             cts.Cancel();
-
-            await coordinator.StartDownloadAsync(null, cts.Token);
+            await Assert.ThrowsExactlyAsync<OperationCanceledException>(async () =>
+                await coordinator.StartDownloadAsync(null, cts.Token));
         }
 
 
@@ -1423,30 +1410,24 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
         public async Task StartDownloadsAsync_WhenCancelledBeforeStart_ThrowsOperationCanceledException()
         {
-            // Arrange
             var totalParts = 3;
             var partSize = 8 * 1024 * 1024;
             var totalObjectSize = totalParts * partSize;
-            
             var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
                 totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
-            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 downloadType: MultipartDownloadType.PART);
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
-            
-            
             var cts = new CancellationTokenSource();
             cts.Cancel();
-
-            // Act
-            await coordinator.StartDownloadAsync(null, cts.Token);
-            await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
+            await Assert.ThrowsExactlyAsync<OperationCanceledException>(async () =>
+            {
+                await coordinator.StartDownloadAsync(null, cts.Token);
+                await coordinator.DownloadCompletionTask;
+            });
         }
 
         [TestMethod]
@@ -1664,13 +1645,10 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
         public async Task StartDownloadsAsync_RangeStrategy_CancellationDuringDownloads()
         {
-            // Arrange - RANGE strategy cancellation
             var totalObjectSize = 20 * 1024 * 1024;
             var partSize = 8 * 1024 * 1024;
-            
             var callCount = 0;
             var mockClient = new Mock<IAmazonS3>();
             mockClient.Setup(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
@@ -1678,26 +1656,20 @@ namespace AWSSDK.UnitTests
                 {
                     callCount++;
                     if (callCount == 1)
-                    {
-                        // Discovery succeeds
                         return Task.FromResult(MultipartDownloadTestHelpers.CreateRangeResponse(
                             0, partSize - 1, totalObjectSize, "test-etag"));
-                    }
-                    // Part 2 download throws cancellation
                     throw new OperationCanceledException();
                 });
-            
             var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
                 partSize: partSize,
                 downloadType: MultipartDownloadType.RANGE);
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 1);
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
-            
-
-            // Act
-            await coordinator.StartDownloadAsync(null, CancellationToken.None);
-            await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
+            await Assert.ThrowsExactlyAsync<OperationCanceledException>(async () =>
+            {
+                await coordinator.StartDownloadAsync(null, CancellationToken.None);
+                await coordinator.DownloadCompletionTask;
+            });
         }
 
         #endregion
@@ -2686,111 +2658,54 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ParseContentRange_NullContentRange_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            coordinator.ParseContentRange(null);
+            var coordinator = CreateCoordinatorForParseTests();
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ParseContentRange(null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ParseContentRange_EmptyContentRange_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            coordinator.ParseContentRange(string.Empty);
+            var coordinator = CreateCoordinatorForParseTests();
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ParseContentRange(string.Empty));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ParseContentRange_InvalidFormat_NoSlash_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            coordinator.ParseContentRange("bytes 0-1000");
+            var coordinator = CreateCoordinatorForParseTests();
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ParseContentRange("bytes 0-1000"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ParseContentRange_InvalidFormat_NoDash_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            coordinator.ParseContentRange("bytes 01000/5000");
+            var coordinator = CreateCoordinatorForParseTests();
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ParseContentRange("bytes 01000/5000"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ParseContentRange_InvalidFormat_NonNumericRange_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            coordinator.ParseContentRange("bytes abc-def/5000");
+            var coordinator = CreateCoordinatorForParseTests();
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ParseContentRange("bytes abc-def/5000"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ParseContentRange_WildcardTotalSize_ThrowsInvalidOperationExceptionWithMessage()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act & Assert
-            try
-            {
-                coordinator.ParseContentRange("bytes 0-1000/*");
-                Assert.Fail("Expected InvalidOperationException was not thrown");
-            }
-            catch (InvalidOperationException ex)
-            {
-                Assert.IsTrue(ex.Message.Contains("Unexpected wildcard"));
-                Assert.IsTrue(ex.Message.Contains("S3 always returns exact object sizes"));
-                throw;
-            }
+            var coordinator = CreateCoordinatorForParseTests();
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ParseContentRange("bytes 0-1000/*"));
+            Assert.IsTrue(ex.Message.Contains("Unexpected wildcard"));
+            Assert.IsTrue(ex.Message.Contains("S3 always returns exact object sizes"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ParseContentRange_NonNumericTotalSize_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            coordinator.ParseContentRange("bytes 0-1000/abc");
+            var coordinator = CreateCoordinatorForParseTests();
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ParseContentRange("bytes 0-1000/abc"));
         }
 
         [TestMethod]
@@ -2828,17 +2743,10 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ExtractTotalSizeFromContentRange_InvalidFormat_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-
-            // Act
-            coordinator.ExtractTotalSizeFromContentRange("invalid-format");
+            var coordinator = CreateCoordinatorForParseTests();
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ExtractTotalSizeFromContentRange("invalid-format"));
         }
 
         [TestMethod]
@@ -2994,93 +2902,35 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateContentRange_RangeStrategy_MissingContentRange_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
-                partSize: 8 * 1024 * 1024,
-                downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
-            var response = new GetObjectResponse
-            {
-                ContentRange = null
-            };
-            var objectSize = 52428800L;
-
-            // Act
-            coordinator.ValidateContentRange(response, 1, objectSize);
+            var coordinator = CreateCoordinatorForRangeValidationTests();
+            var response = new GetObjectResponse { ContentRange = null };
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ValidateContentRange(response, 1, 52428800L));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateContentRange_RangeStrategy_EmptyContentRange_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
-                partSize: 8 * 1024 * 1024,
-                downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
-            var response = new GetObjectResponse
-            {
-                ContentRange = string.Empty
-            };
-            var objectSize = 52428800L;
-
-            // Act
-            coordinator.ValidateContentRange(response, 1, objectSize);
+            var coordinator = CreateCoordinatorForRangeValidationTests();
+            var response = new GetObjectResponse { ContentRange = string.Empty };
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ValidateContentRange(response, 1, 52428800L));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateContentRange_RangeStrategy_WrongStartByte_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
-                partSize: 8 * 1024 * 1024,
-                downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
-            // Expected: bytes 0-8388607, Actual: bytes 100-8388607 (wrong start)
-            var response = new GetObjectResponse
-            {
-                ContentRange = "bytes 100-8388607/52428800"
-            };
-            var objectSize = 52428800L;
-
-            // Act
-            coordinator.ValidateContentRange(response, 1, objectSize);
+            var coordinator = CreateCoordinatorForRangeValidationTests();
+            var response = new GetObjectResponse { ContentRange = "bytes 100-8388607/52428800" };
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ValidateContentRange(response, 1, 52428800L));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateContentRange_RangeStrategy_WrongEndByte_ThrowsInvalidOperationException()
         {
-            // Arrange
-            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
-            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
-                partSize: 8 * 1024 * 1024,
-                downloadType: MultipartDownloadType.RANGE);
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
-            
-            // Expected: bytes 0-8388607, Actual: bytes 0-8388600 (wrong end)
-            var response = new GetObjectResponse
-            {
-                ContentRange = "bytes 0-8388600/52428800"
-            };
-            var objectSize = 52428800L;
-
-            // Act
-            coordinator.ValidateContentRange(response, 1, objectSize);
+            var coordinator = CreateCoordinatorForRangeValidationTests();
+            var response = new GetObjectResponse { ContentRange = "bytes 0-8388600/52428800" };
+            Assert.ThrowsExactly<InvalidOperationException>(() => coordinator.ValidateContentRange(response, 1, 52428800L));
         }
 
         [TestMethod]

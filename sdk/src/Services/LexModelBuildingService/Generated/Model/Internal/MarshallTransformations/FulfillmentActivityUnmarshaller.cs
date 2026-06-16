@@ -56,13 +56,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("codeHook", targetDepth))
+                if (context.TestExpression("codeHook", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeHookUnmarshaller.Instance;
                     unmarshalledObject.CodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

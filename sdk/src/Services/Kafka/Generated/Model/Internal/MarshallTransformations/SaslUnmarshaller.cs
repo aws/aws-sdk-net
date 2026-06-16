@@ -56,13 +56,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("iam", targetDepth))
+                if (context.TestExpression("iam", targetDepth, ref reader))
                 {
                     var unmarshaller = IamUnmarshaller.Instance;
                     unmarshalledObject.Iam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scram", targetDepth))
+                if (context.TestExpression("scram", targetDepth, ref reader))
                 {
                     var unmarshaller = ScramUnmarshaller.Instance;
                     unmarshalledObject.Scram = unmarshaller.Unmarshall(context, ref reader);

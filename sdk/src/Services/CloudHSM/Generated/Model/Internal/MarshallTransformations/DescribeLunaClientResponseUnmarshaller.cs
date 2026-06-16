@@ -52,31 +52,31 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Certificate", targetDepth))
+                if (context.TestExpression("Certificate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Certificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CertificateFingerprint", targetDepth))
+                if (context.TestExpression("CertificateFingerprint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CertificateFingerprint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientArn", targetDepth))
+                if (context.TestExpression("ClientArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClientArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Label", targetDepth))
+                if (context.TestExpression("Label", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTimestamp", targetDepth))
+                if (context.TestExpression("LastModifiedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context, ref reader);

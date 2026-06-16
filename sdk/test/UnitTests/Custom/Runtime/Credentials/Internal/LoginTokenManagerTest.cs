@@ -49,7 +49,7 @@ namespace AWSSDK.UnitTests
             _mockFileCache.Setup(x => x.TryGetLoginTokenAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()))
                          .ReturnsAsync(new TryResponse<LoginToken> { Success = false });
 
-            await Assert.ThrowsExceptionAsync<AmazonClientException>(() => _tokenManager.GetTokenAsync(options));
+            await Assert.ThrowsExactlyAsync<AmazonClientException>(() => _tokenManager.GetTokenAsync(options));
         }
 
         [TestMethod]

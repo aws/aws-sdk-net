@@ -56,25 +56,25 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CountryCode", targetDepth))
+                if (context.TestExpression("CountryCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CountryCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JurisdictionOfIncorporation", targetDepth))
+                if (context.TestExpression("JurisdictionOfIncorporation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JurisdictionOfIncorporation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LegalName", targetDepth))
+                if (context.TestExpression("LegalName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LegalName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationId", targetDepth))
+                if (context.TestExpression("RegistrationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistrationId = unmarshaller.Unmarshall(context, ref reader);

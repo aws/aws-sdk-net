@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// An access token generated for a federated user to access Amazon Connect.
+        /// An access token generated for a federated user to access Connect Customer.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -61,8 +61,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AccessTokenExpiration. 
         /// <para>
-        /// A token generated with an expiration time for the session a user is logged in to Amazon
-        /// Connect.
+        /// A token generated with an expiration time for the session a user is logged in to Connect
+        /// Customer.
         /// </para>
         /// </summary>
         public DateTime? AccessTokenExpiration
@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RefreshToken. 
         /// <para>
-        /// Renews a token generated for a user to access the Amazon Connect instance.
+        /// Renews a token generated for a user to access the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

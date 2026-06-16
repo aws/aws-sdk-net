@@ -52,13 +52,13 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Keys", targetDepth))
+                if (context.TestExpression("Keys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Keys = unmarshaller.Unmarshall(context, ref reader);

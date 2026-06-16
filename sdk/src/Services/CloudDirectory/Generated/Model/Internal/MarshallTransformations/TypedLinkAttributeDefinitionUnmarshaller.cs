@@ -56,37 +56,37 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultValue", targetDepth))
+                if (context.TestExpression("DefaultValue", targetDepth, ref reader))
                 {
                     var unmarshaller = TypedAttributeValueUnmarshaller.Instance;
                     unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsImmutable", targetDepth))
+                if (context.TestExpression("IsImmutable", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsImmutable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequiredBehavior", targetDepth))
+                if (context.TestExpression("RequiredBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RequiredBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rules", targetDepth))
+                if (context.TestExpression("Rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Rule, StringUnmarshaller, RuleUnmarshaller>(StringUnmarshaller.Instance, RuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

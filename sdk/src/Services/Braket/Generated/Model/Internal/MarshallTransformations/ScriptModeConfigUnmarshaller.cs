@@ -56,19 +56,19 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compressionType", targetDepth))
+                if (context.TestExpression("compressionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entryPoint", targetDepth))
+                if (context.TestExpression("entryPoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Uri", targetDepth))
+                if (context.TestExpression("s3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);

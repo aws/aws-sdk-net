@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conversationId", targetDepth))
+                if (context.TestExpression("conversationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConversationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordNumber", targetDepth))
+                if (context.TestExpression("recordNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("turnNumber", targetDepth))
+                if (context.TestExpression("turnNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TurnNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("turnSpecification", targetDepth))
+                if (context.TestExpression("turnSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = TurnSpecificationUnmarshaller.Instance;
                     unmarshalledObject.TurnSpecification = unmarshaller.Unmarshall(context, ref reader);

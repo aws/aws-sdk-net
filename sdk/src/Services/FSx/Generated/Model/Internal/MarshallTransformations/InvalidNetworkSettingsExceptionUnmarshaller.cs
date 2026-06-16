@@ -72,19 +72,19 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("InvalidRouteTableId", targetDepth))
+                    if (context.TestExpression("InvalidRouteTableId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InvalidRouteTableId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("InvalidSecurityGroupId", targetDepth))
+                    if (context.TestExpression("InvalidSecurityGroupId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InvalidSecurityGroupId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("InvalidSubnetId", targetDepth))
+                    if (context.TestExpression("InvalidSubnetId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InvalidSubnetId = unmarshaller.Unmarshall(context, ref reader);

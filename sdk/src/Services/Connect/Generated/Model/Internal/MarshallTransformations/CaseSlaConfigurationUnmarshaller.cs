@@ -56,31 +56,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldId", targetDepth))
+                if (context.TestExpression("FieldId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetFieldValues", targetDepth))
+                if (context.TestExpression("TargetFieldValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldValueUnion, FieldValueUnionUnmarshaller>(FieldValueUnionUnmarshaller.Instance);
                     unmarshalledObject.TargetFieldValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetSlaMinutes", targetDepth))
+                if (context.TestExpression("TargetSlaMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TargetSlaMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

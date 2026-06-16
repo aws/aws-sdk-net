@@ -56,37 +56,43 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lastModified", targetDepth))
+                if (context.TestExpression("lastModified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logGroupNames", targetDepth))
+                if (context.TestExpression("logGroupNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LogGroupNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryDefinitionId", targetDepth))
+                if (context.TestExpression("parameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<QueryParameter, QueryParameterUnmarshaller>(QueryParameterUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("queryDefinitionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryDefinitionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryLanguage", targetDepth))
+                if (context.TestExpression("queryLanguage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryString", targetDepth))
+                if (context.TestExpression("queryString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryString = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionContextUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineArn", targetDepth))
+                if (context.TestExpression("pipelineArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineExecutionId", targetDepth))
+                if (context.TestExpression("pipelineExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineName", targetDepth))
+                if (context.TestExpression("pipelineName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stage", targetDepth))
+                if (context.TestExpression("stage", targetDepth, ref reader))
                 {
                     var unmarshaller = StageContextUnmarshaller.Instance;
                     unmarshalledObject.Stage = unmarshaller.Unmarshall(context, ref reader);

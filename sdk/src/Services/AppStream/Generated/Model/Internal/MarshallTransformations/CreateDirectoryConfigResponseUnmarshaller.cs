@@ -52,7 +52,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DirectoryConfig", targetDepth))
+                if (context.TestExpression("DirectoryConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DirectoryConfigUnmarshaller.Instance;
                     response.DirectoryConfig = unmarshaller.Unmarshall(context, ref reader);

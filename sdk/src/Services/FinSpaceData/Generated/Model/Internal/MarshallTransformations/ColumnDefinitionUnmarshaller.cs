@@ -56,19 +56,19 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("columnDescription", targetDepth))
+                if (context.TestExpression("columnDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("columnName", targetDepth))
+                if (context.TestExpression("columnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataType", targetDepth))
+                if (context.TestExpression("dataType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataType = unmarshaller.Unmarshall(context, ref reader);

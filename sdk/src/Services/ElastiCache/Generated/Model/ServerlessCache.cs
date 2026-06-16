@@ -44,11 +44,13 @@ namespace Amazon.ElastiCache.Model
         private string _fullEngineVersion;
         private string _kmsKeyId;
         private string _majorEngineVersion;
+        private NetworkType _networkType;
         private Endpoint _readerEndpoint;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serverlessCacheName;
         private int? _snapshotRetentionLimit;
         private string _status;
+        private StorageEncryptionType _storageEncryptionType;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userGroupId;
 
@@ -233,6 +235,27 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The type of IP address protocol used by the serverless cache. Must be either <c>ipv4</c>
+        /// | <c>ipv6</c> | <c>dual_stack</c>. <c>ipv6</c> is only supported with IPv6-only subnets.
+        /// If not specified, defaults to <c>ipv4</c>, unless all provided subnets are IPv6-only,
+        /// in which case it defaults to <c>ipv6</c>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReaderEndpoint.
         /// </summary>
         public Endpoint ReaderEndpoint
@@ -291,8 +314,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// The current setting for the number of serverless cache snapshots the system will retain.
-        /// Available for Valkey, Redis OSS and Serverless Memcached only.
+        /// The number of days for which ElastiCache retains automatic snapshots before deleting
+        /// them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value
+        /// allowed is 35 days.
         /// </para>
         /// </summary>
         public int? SnapshotRetentionLimit
@@ -324,6 +348,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// Indicates the type of encryption for data stored at rest in the serverless cache.
+        /// Serverless caches are always encrypted at rest. The value is <c>sse-elasticache</c>
+        /// if an ElastiCache service-managed key is used, or <c>sse-kms</c> if a customer-managed
+        /// KMS key is used.
+        /// </para>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
         }
 
         /// <summary>

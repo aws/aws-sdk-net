@@ -56,25 +56,25 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReferenceId", targetDepth))
+                if (context.TestExpression("ReferenceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferenceSchema", targetDepth))
+                if (context.TestExpression("ReferenceSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceSchemaUnmarshaller.Instance;
                     unmarshalledObject.ReferenceSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3ReferenceDataSourceDescription", targetDepth))
+                if (context.TestExpression("S3ReferenceDataSourceDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ReferenceDataSourceDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3ReferenceDataSourceDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);

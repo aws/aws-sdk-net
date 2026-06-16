@@ -56,73 +56,73 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataAccessRoleArn", targetDepth))
+                if (context.TestExpression("DataAccessRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainId", targetDepth))
+                if (context.TestExpression("DomainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndedAt", targetDepth))
+                if (context.TestExpression("EndedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnrollmentConfig", targetDepth))
+                if (context.TestExpression("EnrollmentConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EnrollmentConfigUnmarshaller.Instance;
                     unmarshalledObject.EnrollmentConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureDetails", targetDepth))
+                if (context.TestExpression("FailureDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = FailureDetailsUnmarshaller.Instance;
                     unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputDataConfig", targetDepth))
+                if (context.TestExpression("InputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InputDataConfigUnmarshaller.Instance;
                     unmarshalledObject.InputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("JobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobName", targetDepth))
+                if (context.TestExpression("JobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobProgress", targetDepth))
+                if (context.TestExpression("JobProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = JobProgressUnmarshaller.Instance;
                     unmarshalledObject.JobProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("JobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputDataConfig", targetDepth))
+                if (context.TestExpression("OutputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputDataConfigUnmarshaller.Instance;
                     unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);

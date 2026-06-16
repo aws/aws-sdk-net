@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Predicate", targetDepth))
+                if (context.TestExpression("Predicate", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsUnmarshaller.Instance;
                     unmarshalledObject.Predicate = unmarshaller.Unmarshall(context, ref reader);

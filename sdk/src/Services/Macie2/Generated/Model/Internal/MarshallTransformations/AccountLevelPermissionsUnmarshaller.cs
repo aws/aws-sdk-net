@@ -56,7 +56,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blockPublicAccess", targetDepth))
+                if (context.TestExpression("blockPublicAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockPublicAccessUnmarshaller.Instance;
                     unmarshalledObject.BlockPublicAccess = unmarshaller.Unmarshall(context, ref reader);

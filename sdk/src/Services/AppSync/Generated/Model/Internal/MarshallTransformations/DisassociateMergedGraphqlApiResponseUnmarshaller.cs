@@ -52,7 +52,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceApiAssociationStatus", targetDepth))
+                if (context.TestExpression("sourceApiAssociationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceApiAssociationStatus = unmarshaller.Unmarshall(context, ref reader);

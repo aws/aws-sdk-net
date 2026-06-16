@@ -56,37 +56,37 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fileSystemLocationName", targetDepth))
+                if (context.TestExpression("fileSystemLocationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemLocationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputManifestHash", targetDepth))
+                if (context.TestExpression("inputManifestHash", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputManifestHash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputManifestPath", targetDepth))
+                if (context.TestExpression("inputManifestPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputManifestPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputRelativeDirectories", targetDepth))
+                if (context.TestExpression("outputRelativeDirectories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OutputRelativeDirectories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rootPath", targetDepth))
+                if (context.TestExpression("rootPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RootPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rootPathFormat", targetDepth))
+                if (context.TestExpression("rootPathFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RootPathFormat = unmarshaller.Unmarshall(context, ref reader);

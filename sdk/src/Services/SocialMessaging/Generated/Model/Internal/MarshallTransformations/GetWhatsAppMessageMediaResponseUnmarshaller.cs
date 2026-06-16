@@ -52,13 +52,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fileSize", targetDepth))
+                if (context.TestExpression("fileSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FileSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mimeType", targetDepth))
+                if (context.TestExpression("mimeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MimeType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountName", targetDepth))
+                if (context.TestExpression("AccountName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultNamespace", targetDepth))
+                if (context.TestExpression("DefaultNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Edition", targetDepth))
+                if (context.TestExpression("Edition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Edition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationEmail", targetDepth))
+                if (context.TestExpression("NotificationEmail", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotificationEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicSharingEnabled", targetDepth))
+                if (context.TestExpression("PublicSharingEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PublicSharingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TerminationProtectionEnabled", targetDepth))
+                if (context.TestExpression("TerminationProtectionEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TerminationProtectionEnabled = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Statistics", targetDepth))
+                if (context.TestExpression("Statistics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Statistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetBands", targetDepth))
+                if (context.TestExpression("TargetBands", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TargetBands = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ZoneS3Path", targetDepth))
+                if (context.TestExpression("ZoneS3Path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ZoneS3Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ZoneS3PathKmsKeyId", targetDepth))
+                if (context.TestExpression("ZoneS3PathKmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ZoneS3PathKmsKeyId = unmarshaller.Unmarshall(context, ref reader);

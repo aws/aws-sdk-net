@@ -52,85 +52,85 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataEndTime", targetDepth))
+                if (context.TestExpression("DataEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DataEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataQualitySummary", targetDepth))
+                if (context.TestExpression("DataQualitySummary", targetDepth, ref reader))
                 {
                     var unmarshaller = DataQualitySummaryUnmarshaller.Instance;
                     response.DataQualitySummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetArn", targetDepth))
+                if (context.TestExpression("DatasetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetName", targetDepth))
+                if (context.TestExpression("DatasetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataStartTime", targetDepth))
+                if (context.TestExpression("DataStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DataStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngestedFilesSummary", targetDepth))
+                if (context.TestExpression("IngestedFilesSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = IngestedFilesSummaryUnmarshaller.Instance;
                     response.IngestedFilesSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngestionInputConfiguration", targetDepth))
+                if (context.TestExpression("IngestionInputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IngestionInputConfigurationUnmarshaller.Instance;
                     response.IngestionInputConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedAt", targetDepth))
+                if (context.TestExpression("LastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schema", targetDepth))
+                if (context.TestExpression("Schema", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Schema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerSideKmsKeyId", targetDepth))
+                if (context.TestExpression("ServerSideKmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServerSideKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDatasetArn", targetDepth))
+                if (context.TestExpression("SourceDatasetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceDatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

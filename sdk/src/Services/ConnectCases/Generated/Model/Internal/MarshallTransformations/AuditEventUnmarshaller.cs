@@ -56,37 +56,37 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eventId", targetDepth))
+                if (context.TestExpression("eventId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fields", targetDepth))
+                if (context.TestExpression("fields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuditEventField, AuditEventFieldUnmarshaller>(AuditEventFieldUnmarshaller.Instance);
                     unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("performedBy", targetDepth))
+                if (context.TestExpression("performedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = AuditEventPerformedByUnmarshaller.Instance;
                     unmarshalledObject.PerformedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("performedTime", targetDepth))
+                if (context.TestExpression("performedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PerformedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relatedItemType", targetDepth))
+                if (context.TestExpression("relatedItemType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RelatedItemType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

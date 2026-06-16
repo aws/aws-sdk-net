@@ -56,43 +56,43 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentitySourceArn", targetDepth))
+                if (context.TestExpression("IdentitySourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentitySourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentitySourceParameters", targetDepth))
+                if (context.TestExpression("IdentitySourceParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentitySourceParametersForListUnmarshaller.Instance;
                     unmarshalledObject.IdentitySourceParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentitySourceType", targetDepth))
+                if (context.TestExpression("IdentitySourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentitySourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusCode", targetDepth))
+                if (context.TestExpression("StatusCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);

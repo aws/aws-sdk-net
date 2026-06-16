@@ -56,31 +56,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeLineCount", targetDepth))
+                if (context.TestExpression("CodeLineCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CodeLineCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeSize", targetDepth))
+                if (context.TestExpression("CodeSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CodeSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfObjects", targetDepth))
+                if (context.TestExpression("NumberOfObjects", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfObjects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObjectType", targetDepth))
+                if (context.TestExpression("ObjectType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ObjectType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaId", targetDepth))
+                if (context.TestExpression("SchemaId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaId = unmarshaller.Unmarshall(context, ref reader);

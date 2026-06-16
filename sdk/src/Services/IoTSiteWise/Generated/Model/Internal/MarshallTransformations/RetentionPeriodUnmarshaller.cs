@@ -56,13 +56,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("numberOfDays", targetDepth))
+                if (context.TestExpression("numberOfDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unlimited", targetDepth))
+                if (context.TestExpression("unlimited", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Unlimited = unmarshaller.Unmarshall(context, ref reader);

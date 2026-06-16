@@ -56,31 +56,31 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyCheckValue", targetDepth))
+                if (context.TestExpression("KeyCheckValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyCheckValueAlgorithm", targetDepth))
+                if (context.TestExpression("KeyCheckValueAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyCheckValueAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyMaterial", targetDepth))
+                if (context.TestExpression("KeyMaterial", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyMaterial = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WrappedKeyMaterialFormat", targetDepth))
+                if (context.TestExpression("WrappedKeyMaterialFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WrappedKeyMaterialFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WrappingKeyArn", targetDepth))
+                if (context.TestExpression("WrappingKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WrappingKeyArn = unmarshaller.Unmarshall(context, ref reader);

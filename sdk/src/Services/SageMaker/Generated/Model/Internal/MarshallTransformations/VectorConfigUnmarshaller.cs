@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Dimension", targetDepth))
+                if (context.TestExpression("Dimension", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Dimension = unmarshaller.Unmarshall(context, ref reader);

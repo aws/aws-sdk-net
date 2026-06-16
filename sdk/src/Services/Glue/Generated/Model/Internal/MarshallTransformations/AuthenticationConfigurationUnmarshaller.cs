@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyArn", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OAuth2Properties", targetDepth))
+                if (context.TestExpression("OAuth2Properties", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuth2PropertiesUnmarshaller.Instance;
                     unmarshalledObject.OAuth2Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);

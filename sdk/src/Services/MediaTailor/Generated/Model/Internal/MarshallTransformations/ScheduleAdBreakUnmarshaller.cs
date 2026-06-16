@@ -56,25 +56,25 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApproximateDurationSeconds", targetDepth))
+                if (context.TestExpression("ApproximateDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApproximateDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApproximateStartTime", targetDepth))
+                if (context.TestExpression("ApproximateStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApproximateStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceLocationName", targetDepth))
+                if (context.TestExpression("SourceLocationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceLocationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VodSourceName", targetDepth))
+                if (context.TestExpression("VodSourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VodSourceName = unmarshaller.Unmarshall(context, ref reader);

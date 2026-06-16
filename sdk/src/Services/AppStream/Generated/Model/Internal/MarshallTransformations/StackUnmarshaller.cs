@@ -56,85 +56,97 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessEndpoints", targetDepth))
+                if (context.TestExpression("AccessEndpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccessEndpoint, AccessEndpointUnmarshaller>(AccessEndpointUnmarshaller.Instance);
                     unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationSettings", targetDepth))
+                if (context.TestExpression("AgentAccessConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = AgentAccessConfigUnmarshaller.Instance;
+                    unmarshalledObject.AgentAccessConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ApplicationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationSettingsResponseUnmarshaller.Instance;
                     unmarshalledObject.ApplicationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("ContentRedirection", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContentRedirectionUnmarshaller.Instance;
+                    unmarshalledObject.ContentRedirection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisplayName", targetDepth))
+                if (context.TestExpression("DisplayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmbedHostDomains", targetDepth))
+                if (context.TestExpression("EmbedHostDomains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EmbedHostDomains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeedbackURL", targetDepth))
+                if (context.TestExpression("FeedbackURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FeedbackURL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedirectURL", targetDepth))
+                if (context.TestExpression("RedirectURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RedirectURL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackErrors", targetDepth))
+                if (context.TestExpression("StackErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StackError, StackErrorUnmarshaller>(StackErrorUnmarshaller.Instance);
                     unmarshalledObject.StackErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageConnectors", targetDepth))
+                if (context.TestExpression("StorageConnectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
                     unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamingExperienceSettings", targetDepth))
+                if (context.TestExpression("StreamingExperienceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamingExperienceSettingsUnmarshaller.Instance;
                     unmarshalledObject.StreamingExperienceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserSettings", targetDepth))
+                if (context.TestExpression("UserSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
                     unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context, ref reader);

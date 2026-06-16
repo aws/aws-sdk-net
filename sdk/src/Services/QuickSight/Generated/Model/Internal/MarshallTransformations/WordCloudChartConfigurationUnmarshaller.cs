@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryLabelOptions", targetDepth))
+                if (context.TestExpression("CategoryLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.CategoryLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("FieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = WordCloudFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Interactions", targetDepth))
+                if (context.TestExpression("Interactions", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
                     unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SortConfiguration", targetDepth))
+                if (context.TestExpression("SortConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WordCloudSortConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WordCloudOptions", targetDepth))
+                if (context.TestExpression("WordCloudOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = WordCloudOptionsUnmarshaller.Instance;
                     unmarshalledObject.WordCloudOptions = unmarshaller.Unmarshall(context, ref reader);

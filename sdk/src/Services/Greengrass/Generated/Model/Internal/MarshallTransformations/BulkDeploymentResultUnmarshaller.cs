@@ -56,49 +56,49 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentArn", targetDepth))
+                if (context.TestExpression("DeploymentArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentId", targetDepth))
+                if (context.TestExpression("DeploymentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentStatus", targetDepth))
+                if (context.TestExpression("DeploymentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentType", targetDepth))
+                if (context.TestExpression("DeploymentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorDetails", targetDepth))
+                if (context.TestExpression("ErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
                     unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorMessage", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupArn", targetDepth))
+                if (context.TestExpression("GroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupArn = unmarshaller.Unmarshall(context, ref reader);

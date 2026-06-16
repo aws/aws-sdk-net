@@ -56,7 +56,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3InputConfiguration", targetDepth))
+                if (context.TestExpression("S3InputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IngestionS3InputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3InputConfiguration = unmarshaller.Unmarshall(context, ref reader);

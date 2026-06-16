@@ -56,109 +56,109 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlgorithmSpecification", targetDepth))
+                if (context.TestExpression("AlgorithmSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterAlgorithmSpecificationUnmarshaller.Instance;
                     unmarshalledObject.AlgorithmSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CheckpointConfig", targetDepth))
+                if (context.TestExpression("CheckpointConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CheckpointConfigUnmarshaller.Instance;
                     unmarshalledObject.CheckpointConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefinitionName", targetDepth))
+                if (context.TestExpression("DefinitionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefinitionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
+                if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableManagedSpotTraining", targetDepth))
+                if (context.TestExpression("EnableManagedSpotTraining", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableManagedSpotTraining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableNetworkIsolation", targetDepth))
+                if (context.TestExpression("EnableNetworkIsolation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableNetworkIsolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HyperParameterRanges", targetDepth))
+                if (context.TestExpression("HyperParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterRangesUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HyperParameterTuningResourceConfig", targetDepth))
+                if (context.TestExpression("HyperParameterTuningResourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningResourceConfigUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterTuningResourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputDataConfig", targetDepth))
+                if (context.TestExpression("InputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Channel, ChannelUnmarshaller>(ChannelUnmarshaller.Instance);
                     unmarshalledObject.InputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputDataConfig", targetDepth))
+                if (context.TestExpression("OutputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputDataConfigUnmarshaller.Instance;
                     unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceConfig", targetDepth))
+                if (context.TestExpression("ResourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceConfigUnmarshaller.Instance;
                     unmarshalledObject.ResourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetryStrategy", targetDepth))
+                if (context.TestExpression("RetryStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryStrategyUnmarshaller.Instance;
                     unmarshalledObject.RetryStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StaticHyperParameters", targetDepth))
+                if (context.TestExpression("StaticHyperParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.StaticHyperParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StoppingCondition", targetDepth))
+                if (context.TestExpression("StoppingCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = StoppingConditionUnmarshaller.Instance;
                     unmarshalledObject.StoppingCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TuningObjective", targetDepth))
+                if (context.TestExpression("TuningObjective", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobObjectiveUnmarshaller.Instance;
                     unmarshalledObject.TuningObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigUnmarshaller.Instance;
                     unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

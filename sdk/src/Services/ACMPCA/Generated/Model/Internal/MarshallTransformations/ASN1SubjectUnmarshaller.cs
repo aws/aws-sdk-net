@@ -56,91 +56,91 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommonName", targetDepth))
+                if (context.TestExpression("CommonName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CommonName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Country", targetDepth))
+                if (context.TestExpression("Country", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomAttributes", targetDepth))
+                if (context.TestExpression("CustomAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomAttribute, CustomAttributeUnmarshaller>(CustomAttributeUnmarshaller.Instance);
                     unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DistinguishedNameQualifier", targetDepth))
+                if (context.TestExpression("DistinguishedNameQualifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DistinguishedNameQualifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GenerationQualifier", targetDepth))
+                if (context.TestExpression("GenerationQualifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GenerationQualifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GivenName", targetDepth))
+                if (context.TestExpression("GivenName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GivenName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Initials", targetDepth))
+                if (context.TestExpression("Initials", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Initials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Locality", targetDepth))
+                if (context.TestExpression("Locality", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Locality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Organization", targetDepth))
+                if (context.TestExpression("Organization", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Organization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationalUnit", targetDepth))
+                if (context.TestExpression("OrganizationalUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationalUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Pseudonym", targetDepth))
+                if (context.TestExpression("Pseudonym", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Pseudonym = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SerialNumber", targetDepth))
+                if (context.TestExpression("SerialNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SerialNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Surname", targetDepth))
+                if (context.TestExpression("Surname", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Surname = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);

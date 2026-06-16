@@ -56,25 +56,25 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientIds", targetDepth))
+                if (context.TestExpression("clientIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ClientIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("discoveryUrl", targetDepth))
+                if (context.TestExpression("discoveryUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiscoveryUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openIdIssuer", targetDepth))
+                if (context.TestExpression("openIdIssuer", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OpenIdIssuer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userPoolArn", targetDepth))
+                if (context.TestExpression("userPoolArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserPoolArn = unmarshaller.Unmarshall(context, ref reader);

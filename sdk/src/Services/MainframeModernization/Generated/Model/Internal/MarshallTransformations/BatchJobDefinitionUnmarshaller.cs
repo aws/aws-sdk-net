@@ -56,13 +56,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fileBatchJobDefinition", targetDepth))
+                if (context.TestExpression("fileBatchJobDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = FileBatchJobDefinitionUnmarshaller.Instance;
                     unmarshalledObject.FileBatchJobDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scriptBatchJobDefinition", targetDepth))
+                if (context.TestExpression("scriptBatchJobDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = ScriptBatchJobDefinitionUnmarshaller.Instance;
                     unmarshalledObject.ScriptBatchJobDefinition = unmarshaller.Unmarshall(context, ref reader);

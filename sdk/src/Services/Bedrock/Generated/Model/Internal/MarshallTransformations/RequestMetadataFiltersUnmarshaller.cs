@@ -56,25 +56,25 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("andAll", targetDepth))
+                if (context.TestExpression("andAll", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RequestMetadataBaseFilters, RequestMetadataBaseFiltersUnmarshaller>(RequestMetadataBaseFiltersUnmarshaller.Instance);
                     unmarshalledObject.AndAll = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("equals", targetDepth))
+                if (context.TestExpression("equals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Equals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notEquals", targetDepth))
+                if (context.TestExpression("notEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.NotEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orAll", targetDepth))
+                if (context.TestExpression("orAll", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RequestMetadataBaseFilters, RequestMetadataBaseFiltersUnmarshaller>(RequestMetadataBaseFiltersUnmarshaller.Instance);
                     unmarshalledObject.OrAll = unmarshaller.Unmarshall(context, ref reader);

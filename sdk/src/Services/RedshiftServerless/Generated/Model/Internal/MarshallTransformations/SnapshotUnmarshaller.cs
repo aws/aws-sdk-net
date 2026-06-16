@@ -56,133 +56,133 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountsWithProvisionedRestoreAccess", targetDepth))
+                if (context.TestExpression("accountsWithProvisionedRestoreAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AccountsWithProvisionedRestoreAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("accountsWithRestoreAccess", targetDepth))
+                if (context.TestExpression("accountsWithRestoreAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AccountsWithRestoreAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("actualIncrementalBackupSizeInMegaBytes", targetDepth))
+                if (context.TestExpression("actualIncrementalBackupSizeInMegaBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ActualIncrementalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("adminPasswordSecretArn", targetDepth))
+                if (context.TestExpression("adminPasswordSecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdminPasswordSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("adminPasswordSecretKmsKeyId", targetDepth))
+                if (context.TestExpression("adminPasswordSecretKmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdminPasswordSecretKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("adminUsername", targetDepth))
+                if (context.TestExpression("adminUsername", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdminUsername = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("backupProgressInMegaBytes", targetDepth))
+                if (context.TestExpression("backupProgressInMegaBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BackupProgressInMegaBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("currentBackupRateInMegaBytesPerSecond", targetDepth))
+                if (context.TestExpression("currentBackupRateInMegaBytesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.CurrentBackupRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elapsedTimeInSeconds", targetDepth))
+                if (context.TestExpression("elapsedTimeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedSecondsToCompletion", targetDepth))
+                if (context.TestExpression("estimatedSecondsToCompletion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EstimatedSecondsToCompletion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsKeyId", targetDepth))
+                if (context.TestExpression("kmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("namespaceArn", targetDepth))
+                if (context.TestExpression("namespaceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NamespaceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("namespaceName", targetDepth))
+                if (context.TestExpression("namespaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ownerAccount", targetDepth))
+                if (context.TestExpression("ownerAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotArn", targetDepth))
+                if (context.TestExpression("snapshotArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotCreateTime", targetDepth))
+                if (context.TestExpression("snapshotCreateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotName", targetDepth))
+                if (context.TestExpression("snapshotName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotRemainingDays", targetDepth))
+                if (context.TestExpression("snapshotRemainingDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SnapshotRemainingDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotRetentionPeriod", targetDepth))
+                if (context.TestExpression("snapshotRetentionPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SnapshotRetentionPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotRetentionStartTime", targetDepth))
+                if (context.TestExpression("snapshotRetentionStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SnapshotRetentionStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalBackupSizeInMegaBytes", targetDepth))
+                if (context.TestExpression("totalBackupSizeInMegaBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context, ref reader);

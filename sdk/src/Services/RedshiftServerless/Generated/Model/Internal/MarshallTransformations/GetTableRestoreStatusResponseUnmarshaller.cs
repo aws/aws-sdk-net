@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tableRestoreStatus", targetDepth))
+                if (context.TestExpression("tableRestoreStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = TableRestoreStatusUnmarshaller.Instance;
                     response.TableRestoreStatus = unmarshaller.Unmarshall(context, ref reader);

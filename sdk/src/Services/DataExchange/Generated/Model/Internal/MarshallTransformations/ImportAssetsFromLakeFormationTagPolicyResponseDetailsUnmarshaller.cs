@@ -56,37 +56,37 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CatalogId", targetDepth))
+                if (context.TestExpression("CatalogId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Database", targetDepth))
+                if (context.TestExpression("Database", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseLFTagPolicyAndPermissionsUnmarshaller.Instance;
                     unmarshalledObject.Database = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSetId", targetDepth))
+                if (context.TestExpression("DataSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RevisionId", targetDepth))
+                if (context.TestExpression("RevisionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Table", targetDepth))
+                if (context.TestExpression("Table", targetDepth, ref reader))
                 {
                     var unmarshaller = TableLFTagPolicyAndPermissionsUnmarshaller.Instance;
                     unmarshalledObject.Table = unmarshaller.Unmarshall(context, ref reader);

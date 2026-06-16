@@ -56,25 +56,25 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("base", targetDepth))
+                if (context.TestExpression("base", targetDepth, ref reader))
                 {
                     var unmarshaller = MergeHunkDetailUnmarshaller.Instance;
                     unmarshalledObject.Base = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = MergeHunkDetailUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isConflict", targetDepth))
+                if (context.TestExpression("isConflict", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsConflict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("source", targetDepth))
+                if (context.TestExpression("source", targetDepth, ref reader))
                 {
                     var unmarshaller = MergeHunkDetailUnmarshaller.Instance;
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);

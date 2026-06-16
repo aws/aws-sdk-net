@@ -56,91 +56,91 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Capabilities", targetDepth))
+                if (context.TestExpression("Capabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisableRollback", targetDepth))
+                if (context.TestExpression("DisableRollback", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableRollback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DriftInformation", targetDepth))
+                if (context.TestExpression("DriftInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFormationStackDriftInformationDetailsUnmarshaller.Instance;
                     unmarshalledObject.DriftInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableTerminationProtection", targetDepth))
+                if (context.TestExpression("EnableTerminationProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableTerminationProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationArns", targetDepth))
+                if (context.TestExpression("NotificationArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NotificationArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Outputs", targetDepth))
+                if (context.TestExpression("Outputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsCloudFormationStackOutputsDetails, AwsCloudFormationStackOutputsDetailsUnmarshaller>(AwsCloudFormationStackOutputsDetailsUnmarshaller.Instance);
                     unmarshalledObject.Outputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackId", targetDepth))
+                if (context.TestExpression("StackId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StackId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackName", targetDepth))
+                if (context.TestExpression("StackName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackStatus", targetDepth))
+                if (context.TestExpression("StackStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StackStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackStatusReason", targetDepth))
+                if (context.TestExpression("StackStatusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StackStatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeoutInMinutes", targetDepth))
+                if (context.TestExpression("TimeoutInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);

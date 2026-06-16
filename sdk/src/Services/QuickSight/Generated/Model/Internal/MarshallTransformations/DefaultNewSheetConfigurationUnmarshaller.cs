@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InteractiveLayoutConfiguration", targetDepth))
+                if (context.TestExpression("InteractiveLayoutConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultInteractiveLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InteractiveLayoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaginatedLayoutConfiguration", targetDepth))
+                if (context.TestExpression("PaginatedLayoutConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultPaginatedLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PaginatedLayoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SheetContentType", targetDepth))
+                if (context.TestExpression("SheetContentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SheetContentType = unmarshaller.Unmarshall(context, ref reader);

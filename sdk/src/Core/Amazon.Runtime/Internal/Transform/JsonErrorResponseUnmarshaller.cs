@@ -170,17 +170,26 @@ namespace Amazon.Runtime.Internal.Transform
                     continue;
                 }
 
-                if (context.TestExpression("__type"))
+                // Match the error-shape keys directly against the reader, restricted to property-name
+                // tokens so a string value equal to one of the keys is never mistaken for the key itself.
+                // Keys are matched against the casings services actually emit: "__type" is always
+                // lowercase, while the message and code fields may be either lower- or PascalCase.
+                if (context.CurrentTokenType != JsonTokenType.PropertyName)
+                {
+                    continue;
+                }
+
+                if (reader.ValueTextEquals("__type"))
                 {
                     type = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("message"))
+                if (reader.ValueTextEquals("message") || reader.ValueTextEquals("Message"))
                 {
                     message = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("code"))
+                if (reader.ValueTextEquals("code") || reader.ValueTextEquals("Code"))
                 {
                     code = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;

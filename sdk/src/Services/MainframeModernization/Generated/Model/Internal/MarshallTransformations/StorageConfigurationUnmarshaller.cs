@@ -56,13 +56,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("efs", targetDepth))
+                if (context.TestExpression("efs", targetDepth, ref reader))
                 {
                     var unmarshaller = EfsStorageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Efs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fsx", targetDepth))
+                if (context.TestExpression("fsx", targetDepth, ref reader))
                 {
                     var unmarshaller = FsxStorageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Fsx = unmarshaller.Unmarshall(context, ref reader);

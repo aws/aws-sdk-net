@@ -52,43 +52,43 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Destinations", targetDepth))
+                if (context.TestExpression("Destinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Destination, DestinationUnmarshaller>(DestinationUnmarshaller.Instance);
                     response.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginalSourceFileSystemArn", targetDepth))
+                if (context.TestExpression("OriginalSourceFileSystemArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OriginalSourceFileSystemArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceFileSystemArn", targetDepth))
+                if (context.TestExpression("SourceFileSystemArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceFileSystemArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceFileSystemId", targetDepth))
+                if (context.TestExpression("SourceFileSystemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceFileSystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceFileSystemOwnerId", targetDepth))
+                if (context.TestExpression("SourceFileSystemOwnerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceFileSystemOwnerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceFileSystemRegion", targetDepth))
+                if (context.TestExpression("SourceFileSystemRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceFileSystemRegion = unmarshaller.Unmarshall(context, ref reader);

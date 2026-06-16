@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("payloadDeliveryBucketName", targetDepth))
+                if (context.TestExpression("payloadDeliveryBucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PayloadDeliveryBucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicArn", targetDepth))
+                if (context.TestExpression("topicArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicArn = unmarshaller.Unmarshall(context, ref reader);

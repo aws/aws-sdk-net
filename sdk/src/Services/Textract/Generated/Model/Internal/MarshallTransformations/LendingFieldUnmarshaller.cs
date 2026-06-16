@@ -56,19 +56,19 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyDetection", targetDepth))
+                if (context.TestExpression("KeyDetection", targetDepth, ref reader))
                 {
                     var unmarshaller = LendingDetectionUnmarshaller.Instance;
                     unmarshalledObject.KeyDetection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueDetections", targetDepth))
+                if (context.TestExpression("ValueDetections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LendingDetection, LendingDetectionUnmarshaller>(LendingDetectionUnmarshaller.Instance);
                     unmarshalledObject.ValueDetections = unmarshaller.Unmarshall(context, ref reader);

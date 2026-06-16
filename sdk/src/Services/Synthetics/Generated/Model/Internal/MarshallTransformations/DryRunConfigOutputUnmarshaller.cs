@@ -56,13 +56,13 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DryRunId", targetDepth))
+                if (context.TestExpression("DryRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DryRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastDryRunExecutionStatus", targetDepth))
+                if (context.TestExpression("LastDryRunExecutionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastDryRunExecutionStatus = unmarshaller.Unmarshall(context, ref reader);

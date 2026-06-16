@@ -56,13 +56,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RecurringChargeAmount", targetDepth))
+                if (context.TestExpression("RecurringChargeAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RecurringChargeAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurringChargeFrequency", targetDepth))
+                if (context.TestExpression("RecurringChargeFrequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecurringChargeFrequency = unmarshaller.Unmarshall(context, ref reader);

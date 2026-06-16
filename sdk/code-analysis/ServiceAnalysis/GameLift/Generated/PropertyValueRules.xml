@@ -345,7 +345,7 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateScriptRequest.NodeJsVersion</property>
     <max>16</max>
-    <pattern>^\d+\.[x0-9]+$</pattern>
+    <pattern>^[0-9]+\.(?:x|[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateScriptRequest.Version</property>
@@ -557,6 +557,55 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeContainerGroupDefinitionRequest.VersionNumber</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsRequest.ComputeName</property>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9\-]+(\/[a-zA-Z0-9\-]+)?$|^arn:.*:compute\/[a-zA-Z0-9\-]+(\/[a-zA-Z0-9\-]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsRequest.ContainerName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsRequest.FleetId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[a-z]*fleet-[a-zA-Z0-9\-]+$|^arn:.*:[a-z]*fleet\/[a-z]*fleet-[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsRequest.InstanceId</property>
+    <pattern>[a-zA-Z0-9\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsResponse.ComputeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-]+(\/[a-zA-Z0-9\-]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsResponse.ContainerGroupDefinitionArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:.*:containergroupdefinition\/[a-zA-Z0-9\-]+(:[0-9]+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsResponse.FleetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-z]*fleet-[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsResponse.InstanceId</property>
+    <pattern>[a-zA-Z0-9\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsResponse.Location</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeEC2InstanceLimitsRequest.Location</property>
@@ -2174,6 +2223,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.ContainerGroupPortMapping.ContainerName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ContainerGroupPortMapping.ContainerRuntimeId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.ContainerHealthCheck.Interval</property>
     <min>60</min>
     <max>300</max>
@@ -2214,6 +2273,16 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^\/[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ContainerPortMapping.ConnectionPort</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ContainerPortMapping.ContainerPort</property>
+    <min>1</min>
+    <max>60000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ContainerPortRange.FromPort</property>
@@ -2613,6 +2682,12 @@
     <min>19</min>
     <max>19</max>
     <pattern>^i-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.ComputeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-]+(\/[a-zA-Z0-9\-]+)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.CreatorId</property>
@@ -3187,7 +3262,7 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.NodeJsVersion</property>
     <max>16</max>
-    <pattern>^\d+\.[x0-9]+$</pattern>
+    <pattern>^[0-9]+\.(?:x|[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.ScriptArn</property>

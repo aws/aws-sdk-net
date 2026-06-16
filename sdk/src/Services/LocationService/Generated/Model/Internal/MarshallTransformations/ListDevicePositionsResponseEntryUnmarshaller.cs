@@ -56,31 +56,31 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Accuracy", targetDepth))
+                if (context.TestExpression("Accuracy", targetDepth, ref reader))
                 {
                     var unmarshaller = PositionalAccuracyUnmarshaller.Instance;
                     unmarshalledObject.Accuracy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceId", targetDepth))
+                if (context.TestExpression("DeviceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Position", targetDepth))
+                if (context.TestExpression("Position", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PositionProperties", targetDepth))
+                if (context.TestExpression("PositionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.PositionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SampleTime", targetDepth))
+                if (context.TestExpression("SampleTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SampleTime = unmarshaller.Unmarshall(context, ref reader);

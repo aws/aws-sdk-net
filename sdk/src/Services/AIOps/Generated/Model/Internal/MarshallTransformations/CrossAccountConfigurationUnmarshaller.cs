@@ -56,7 +56,7 @@ namespace Amazon.AIOps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceRoleArn", targetDepth))
+                if (context.TestExpression("sourceRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceRoleArn = unmarshaller.Unmarshall(context, ref reader);

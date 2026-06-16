@@ -56,13 +56,13 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Address", targetDepth))
+                if (context.TestExpression("Address", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CachePeriodInMinutes", targetDepth))
+                if (context.TestExpression("CachePeriodInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CachePeriodInMinutes = unmarshaller.Unmarshall(context, ref reader);

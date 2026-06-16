@@ -56,7 +56,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KmsEncryptionConfig", targetDepth))
+                if (context.TestExpression("KmsEncryptionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KmsEncryptionConfigUnmarshaller.Instance;
                     unmarshalledObject.KmsEncryptionConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("securityProfileIdentifier", targetDepth))
+                if (context.TestExpression("securityProfileIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityProfileIdentifierUnmarshaller.Instance;
                     unmarshalledObject.SecurityProfileIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("target", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityProfileTargetUnmarshaller.Instance;
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);

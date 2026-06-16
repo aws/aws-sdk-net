@@ -56,31 +56,31 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fields", targetDepth))
+                if (context.TestExpression("fields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSourceIntrospectionModelField, DataSourceIntrospectionModelFieldUnmarshaller>(DataSourceIntrospectionModelFieldUnmarshaller.Instance);
                     unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("indexes", targetDepth))
+                if (context.TestExpression("indexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSourceIntrospectionModelIndex, DataSourceIntrospectionModelIndexUnmarshaller>(DataSourceIntrospectionModelIndexUnmarshaller.Instance);
                     unmarshalledObject.Indexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primaryKey", targetDepth))
+                if (context.TestExpression("primaryKey", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceIntrospectionModelIndexUnmarshaller.Instance;
                     unmarshalledObject.PrimaryKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sdl", targetDepth))
+                if (context.TestExpression("sdl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Sdl = unmarshaller.Unmarshall(context, ref reader);

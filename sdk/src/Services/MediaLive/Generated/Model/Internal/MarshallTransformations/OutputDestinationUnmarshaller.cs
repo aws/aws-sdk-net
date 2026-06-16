@@ -56,37 +56,43 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logicalInterfaceNames", targetDepth))
+                if (context.TestExpression("logicalInterfaceNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LogicalInterfaceNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaPackageSettings", targetDepth))
+                if (context.TestExpression("mediaConnectRouterSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MediaConnectRouterOutputDestinationSettings, MediaConnectRouterOutputDestinationSettingsUnmarshaller>(MediaConnectRouterOutputDestinationSettingsUnmarshaller.Instance);
+                    unmarshalledObject.MediaConnectRouterSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("mediaPackageSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MediaPackageOutputDestinationSettings, MediaPackageOutputDestinationSettingsUnmarshaller>(MediaPackageOutputDestinationSettingsUnmarshaller.Instance);
                     unmarshalledObject.MediaPackageSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiplexSettings", targetDepth))
+                if (context.TestExpression("multiplexSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexProgramChannelDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.MultiplexSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("settings", targetDepth))
+                if (context.TestExpression("settings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputDestinationSettings, OutputDestinationSettingsUnmarshaller>(OutputDestinationSettingsUnmarshaller.Instance);
                     unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("srtSettings", targetDepth))
+                if (context.TestExpression("srtSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SrtOutputDestinationSettings, SrtOutputDestinationSettingsUnmarshaller>(SrtOutputDestinationSettingsUnmarshaller.Instance);
                     unmarshalledObject.SrtSettings = unmarshaller.Unmarshall(context, ref reader);

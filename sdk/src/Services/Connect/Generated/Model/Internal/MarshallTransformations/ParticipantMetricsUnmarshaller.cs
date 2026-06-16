@@ -56,55 +56,55 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConversationAbandon", targetDepth))
+                if (context.TestExpression("ConversationAbandon", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConversationAbandon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastMessageTimestamp", targetDepth))
+                if (context.TestExpression("LastMessageTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastMessageTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxResponseTimeInMillis", targetDepth))
+                if (context.TestExpression("MaxResponseTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxResponseTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessageLengthInChars", targetDepth))
+                if (context.TestExpression("MessageLengthInChars", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessageLengthInChars = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessagesSent", targetDepth))
+                if (context.TestExpression("MessagesSent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessagesSent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumResponses", targetDepth))
+                if (context.TestExpression("NumResponses", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumResponses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParticipantId", targetDepth))
+                if (context.TestExpression("ParticipantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParticipantType", targetDepth))
+                if (context.TestExpression("ParticipantType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParticipantType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalResponseTimeInMillis", targetDepth))
+                if (context.TestExpression("TotalResponseTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalResponseTimeInMillis = unmarshaller.Unmarshall(context, ref reader);

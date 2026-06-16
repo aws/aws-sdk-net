@@ -52,7 +52,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("task", targetDepth))
+                if (context.TestExpression("task", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchDeleteConfigurationTaskUnmarshaller.Instance;
                     response.Task = unmarshaller.Unmarshall(context, ref reader);

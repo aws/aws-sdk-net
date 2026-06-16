@@ -52,25 +52,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailabilityZoneChangeProtection", targetDepth))
+                if (context.TestExpression("AvailabilityZoneChangeProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AvailabilityZoneChangeProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallArn", targetDepth))
+                if (context.TestExpression("FirewallArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FirewallArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallName", targetDepth))
+                if (context.TestExpression("FirewallName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FirewallName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateToken", targetDepth))
+                if (context.TestExpression("UpdateToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UpdateToken = unmarshaller.Unmarshall(context, ref reader);

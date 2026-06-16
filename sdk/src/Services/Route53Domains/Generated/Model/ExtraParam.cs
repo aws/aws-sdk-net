@@ -44,7 +44,11 @@ namespace Amazon.Route53Domains.Model
         /// the top-level domains that require additional parameters and the names of the parameters
         /// that they require:
         /// </para>
-        ///  <dl> <dt>.com.au and .net.au</dt> <dd> <ul> <li> 
+        ///  <dl> <dt>.au, .com.au, and .net.au</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <c>AU_REGISTRANT_NAME</c> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>AU_ID_NUMBER</c> 
         /// </para>
@@ -67,6 +71,202 @@ namespace Amazon.Route53Domains.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>TM</c> (Trademark number)
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>AU_ELIGIBILITY_TYPE</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CHARITABLE_TRUST (Charitable trust)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CHARITY (Charity)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CHILD_CARE_CENTRE (Child care centre)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLUB (Club)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COMMERCIAL_STATUTORY_BODY (Commercial statutory body)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COMMONWEALTH_ENTITY (Commonwealth entity)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COMPANY (Company)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COMPANY_LIMITED_BY_GUARANTEE (Company limited by guarantee)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EDUCATIONAL_INSTITUTION (Educational institution)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GOVERNMENT_SCHOOL (Government school)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HIGHER_EDUCATION_INSTITUTION (Higher education institution)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INCORPORATED_ASSOCIATION (Incorporated association)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INDIGENOUS_CORPORATION (Indigenous corporation)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INDUSTRY_BODY (Industry body)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INDUSTRY_ORGANISATION (Industry association)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NATIONAL_BODY (National body)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DISTRIBUTING_COOPERATIVE (Non-distributing cooperative)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_GOVERNMENT_SCHOOL (Non-government school)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_PROFIT_ORGANISATION (Non-profit organisation)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_TRADING_COOPERATIVE (Non-trading cooperative)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NOT_FOR_PROFIT_COMMUNITY_GROUP (Not-for-profit community group)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PARTNERSHIP (Partnership)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PEAK_STATE_TERRITORY_BODY (Peak state/territory body)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PENDING_TM_OWNER (Pending TM owner)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLITICAL_PARTY (Political party)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PRESCHOOL (Pre-school)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PUBLIC_PRIVATE_ANCILLARY_FUND (Public/private ancillary fund)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGISTERED_BUSINESS (Registered business)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGISTERED_ORGANISATION (Registered organisation)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGISTRABLE_BODY (Registrable body)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RESEARCH_ORGANISATION (Research organisation)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// STATUTORY_BODY (Statutory body)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TRADE_UNION (Trade union)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TRADEMARK_OWNER (Trademark owner)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TRADING_COOPERATIVE (Trading cooperative)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TRAINING_ORGANISATION (Training organisation)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TRUST (Trust)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNINCORPORATED_ASSOCIATION (Unincorporated association)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EDUCATION_AND_CARE_SERVICES_CHILDCARE (Education and care services (child care))
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GOVERNMENT_BODY (Government body)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PROVIDER_OF_NON_ACCREDITED_TRAINING (Provider of non-accredited training)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RELIGIOUS_CHURCH_GROUP (Religious/church group)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SOLE_TRADER (Sole trader)
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>AU_POLICY_REASON</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>POLICY_REASON_1</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>POLICY_REASON_2</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>.ca</dt> <dd> <ul> <li> 
         /// <para>

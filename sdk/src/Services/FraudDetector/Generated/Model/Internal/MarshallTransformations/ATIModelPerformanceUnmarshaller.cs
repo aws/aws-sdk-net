@@ -56,7 +56,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("asi", targetDepth))
+                if (context.TestExpression("asi", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Asi = unmarshaller.Unmarshall(context, ref reader);

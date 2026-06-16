@@ -56,49 +56,49 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportingLocation", targetDepth))
+                if (context.TestExpression("ExportingLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportingLocationUnmarshaller.Instance;
                     unmarshalledObject.ExportingLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobEndTime", targetDepth))
+                if (context.TestExpression("JobEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.JobEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("JobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStartTime", targetDepth))
+                if (context.TestExpression("JobStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.JobStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStats", targetDepth))
+                if (context.TestExpression("JobStats", targetDepth, ref reader))
                 {
                     var unmarshaller = JobStatsUnmarshaller.Instance;
                     unmarshalledObject.JobStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Message", targetDepth))
+                if (context.TestExpression("Message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

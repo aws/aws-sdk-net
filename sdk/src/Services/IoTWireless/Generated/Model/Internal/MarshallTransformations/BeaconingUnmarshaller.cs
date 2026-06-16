@@ -56,13 +56,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataRate", targetDepth))
+                if (context.TestExpression("DataRate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Frequencies", targetDepth))
+                if (context.TestExpression("Frequencies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.Frequencies = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("endpoints", targetDepth))
+                if (context.TestExpression("endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Endpoint, EndpointUnmarshaller>(EndpointUnmarshaller.Instance);
                     response.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeID", targetDepth))
+                if (context.TestExpression("nodeID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NodeID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sharedSecret", targetDepth))
+                if (context.TestExpression("sharedSecret", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SharedSecret = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrencyDisplayFormatConfiguration", targetDepth))
+                if (context.TestExpression("CurrencyDisplayFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CurrencyDisplayFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CurrencyDisplayFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberDisplayFormatConfiguration", targetDepth))
+                if (context.TestExpression("NumberDisplayFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NumberDisplayFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NumberDisplayFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PercentageDisplayFormatConfiguration", targetDepth))
+                if (context.TestExpression("PercentageDisplayFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PercentageDisplayFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PercentageDisplayFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);

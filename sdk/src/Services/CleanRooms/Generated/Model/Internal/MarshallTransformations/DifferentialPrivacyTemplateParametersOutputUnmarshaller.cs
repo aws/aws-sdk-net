@@ -56,13 +56,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("epsilon", targetDepth))
+                if (context.TestExpression("epsilon", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Epsilon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usersNoisePerQuery", targetDepth))
+                if (context.TestExpression("usersNoisePerQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UsersNoisePerQuery = unmarshaller.Unmarshall(context, ref reader);

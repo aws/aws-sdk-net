@@ -52,7 +52,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImportJobProperties", targetDepth))
+                if (context.TestExpression("ImportJobProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportJobPropertiesUnmarshaller.Instance;
                     response.ImportJobProperties = unmarshaller.Unmarshall(context, ref reader);

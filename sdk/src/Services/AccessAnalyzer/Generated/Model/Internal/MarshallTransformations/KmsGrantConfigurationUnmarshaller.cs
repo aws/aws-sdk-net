@@ -56,31 +56,31 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("constraints", targetDepth))
+                if (context.TestExpression("constraints", targetDepth, ref reader))
                 {
                     var unmarshaller = KmsGrantConstraintsUnmarshaller.Instance;
                     unmarshalledObject.Constraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("granteePrincipal", targetDepth))
+                if (context.TestExpression("granteePrincipal", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GranteePrincipal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("issuingAccount", targetDepth))
+                if (context.TestExpression("issuingAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IssuingAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operations", targetDepth))
+                if (context.TestExpression("operations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Operations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retiringPrincipal", targetDepth))
+                if (context.TestExpression("retiringPrincipal", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RetiringPrincipal = unmarshaller.Unmarshall(context, ref reader);

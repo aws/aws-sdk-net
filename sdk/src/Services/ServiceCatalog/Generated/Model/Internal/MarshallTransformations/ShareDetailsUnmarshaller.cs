@@ -56,13 +56,13 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ShareErrors", targetDepth))
+                if (context.TestExpression("ShareErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ShareError, ShareErrorUnmarshaller>(ShareErrorUnmarshaller.Instance);
                     unmarshalledObject.ShareErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessfulShares", targetDepth))
+                if (context.TestExpression("SuccessfulShares", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SuccessfulShares = unmarshaller.Unmarshall(context, ref reader);

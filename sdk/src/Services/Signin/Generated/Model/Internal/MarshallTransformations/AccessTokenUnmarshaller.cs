@@ -56,19 +56,19 @@ namespace Amazon.Signin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessKeyId", targetDepth))
+                if (context.TestExpression("accessKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secretAccessKey", targetDepth))
+                if (context.TestExpression("secretAccessKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretAccessKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionToken", targetDepth))
+                if (context.TestExpression("sessionToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SessionToken = unmarshaller.Unmarshall(context, ref reader);

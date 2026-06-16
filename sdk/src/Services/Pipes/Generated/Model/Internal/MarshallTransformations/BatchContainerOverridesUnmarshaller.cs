@@ -56,25 +56,25 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Command", targetDepth))
+                if (context.TestExpression("Command", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchEnvironmentVariable, BatchEnvironmentVariableUnmarshaller>(BatchEnvironmentVariableUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceRequirements", targetDepth))
+                if (context.TestExpression("ResourceRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchResourceRequirement, BatchResourceRequirementUnmarshaller>(BatchResourceRequirementUnmarshaller.Instance);
                     unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context, ref reader);

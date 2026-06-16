@@ -56,13 +56,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authParameters", targetDepth))
+                if (context.TestExpression("authParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuthParameter, AuthParameterUnmarshaller>(AuthParameterUnmarshaller.Instance);
                     unmarshalledObject.AuthParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customAuthenticationType", targetDepth))
+                if (context.TestExpression("customAuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomAuthenticationType = unmarshaller.Unmarshall(context, ref reader);

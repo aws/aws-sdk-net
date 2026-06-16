@@ -56,31 +56,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioDescriptionAudioChannel", targetDepth))
+                if (context.TestExpression("audioDescriptionAudioChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AudioDescriptionAudioChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audioDescriptionDataChannel", targetDepth))
+                if (context.TestExpression("audioDescriptionDataChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AudioDescriptionDataChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelMapping", targetDepth))
+                if (context.TestExpression("channelMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelMappingUnmarshaller.Instance;
                     unmarshalledObject.ChannelMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelsIn", targetDepth))
+                if (context.TestExpression("channelsIn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ChannelsIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelsOut", targetDepth))
+                if (context.TestExpression("channelsOut", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ChannelsOut = unmarshaller.Unmarshall(context, ref reader);

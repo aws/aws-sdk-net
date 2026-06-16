@@ -52,13 +52,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaselineId", targetDepth))
+                if (context.TestExpression("BaselineId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BaselineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperatingSystem", targetDepth))
+                if (context.TestExpression("OperatingSystem", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OperatingSystem = unmarshaller.Unmarshall(context, ref reader);

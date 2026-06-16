@@ -56,172 +56,184 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationId", targetDepth))
+                if (context.TestExpression("applicationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("attempt", targetDepth))
+                if (context.TestExpression("attempt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Attempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("attemptCreatedAt", targetDepth))
+                if (context.TestExpression("attemptCreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AttemptCreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("attemptUpdatedAt", targetDepth))
+                if (context.TestExpression("attemptUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AttemptUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("billedResourceUtilization", targetDepth))
+                if (context.TestExpression("billedResourceUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceUtilizationUnmarshaller.Instance;
                     unmarshalledObject.BilledResourceUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configurationOverrides", targetDepth))
+                if (context.TestExpression("configurationOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurationOverridesUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdBy", targetDepth))
+                if (context.TestExpression("createdBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endedAt", targetDepth))
+                if (context.TestExpression("endedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionIamPolicy", targetDepth))
+                if (context.TestExpression("executionIamPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = JobRunExecutionIamPolicyUnmarshaller.Instance;
                     unmarshalledObject.ExecutionIamPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionRole", targetDepth))
+                if (context.TestExpression("executionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionTimeoutMinutes", targetDepth))
+                if (context.TestExpression("executionTimeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobDriver", targetDepth))
+                if (context.TestExpression("imageConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ImageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ImageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("jobDriver", targetDepth, ref reader))
                 {
                     var unmarshaller = JobDriverUnmarshaller.Instance;
                     unmarshalledObject.JobDriver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobRunId", targetDepth))
+                if (context.TestExpression("jobRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mode", targetDepth))
+                if (context.TestExpression("mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkConfiguration", targetDepth))
+                if (context.TestExpression("networkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queuedDurationMilliseconds", targetDepth))
+                if (context.TestExpression("queuedDurationMilliseconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueuedDurationMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("releaseLabel", targetDepth))
+                if (context.TestExpression("releaseLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retryPolicy", targetDepth))
+                if (context.TestExpression("retryPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryPolicyUnmarshaller.Instance;
                     unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedAt", targetDepth))
+                if (context.TestExpression("startedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateDetails", targetDepth))
+                if (context.TestExpression("stateDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StateDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalExecutionDurationSeconds", targetDepth))
+                if (context.TestExpression("totalExecutionDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalExecutionDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalResourceUtilization", targetDepth))
+                if (context.TestExpression("totalResourceUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = TotalResourceUtilizationUnmarshaller.Instance;
                     unmarshalledObject.TotalResourceUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("workerTypeSpecifications", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, WorkerTypeSpecification, StringUnmarshaller, WorkerTypeSpecificationUnmarshaller>(StringUnmarshaller.Instance, WorkerTypeSpecificationUnmarshaller.Instance);
+                    unmarshalledObject.WorkerTypeSpecifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

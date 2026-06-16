@@ -56,13 +56,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mtu", targetDepth))
+                if (context.TestExpression("mtu", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Mtu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("socketAddress", targetDepth))
+                if (context.TestExpression("socketAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = RangedSocketAddressUnmarshaller.Instance;
                     unmarshalledObject.SocketAddress = unmarshaller.Unmarshall(context, ref reader);

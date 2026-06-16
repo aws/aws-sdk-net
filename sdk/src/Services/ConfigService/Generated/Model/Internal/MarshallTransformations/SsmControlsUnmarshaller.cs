@@ -56,13 +56,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConcurrentExecutionRatePercentage", targetDepth))
+                if (context.TestExpression("ConcurrentExecutionRatePercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConcurrentExecutionRatePercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorPercentage", targetDepth))
+                if (context.TestExpression("ErrorPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorPercentage = unmarshaller.Unmarshall(context, ref reader);

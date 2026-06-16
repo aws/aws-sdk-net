@@ -52,7 +52,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identityProvider", targetDepth))
+                if (context.TestExpression("identityProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityProviderUnmarshaller.Instance;
                     response.IdentityProvider = unmarshaller.Unmarshall(context, ref reader);

@@ -105,7 +105,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// A name for the snapshot being created.
+        /// A name for the snapshot being created. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

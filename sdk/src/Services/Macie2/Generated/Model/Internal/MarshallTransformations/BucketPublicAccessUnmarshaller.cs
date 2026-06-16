@@ -56,13 +56,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("effectivePermission", targetDepth))
+                if (context.TestExpression("effectivePermission", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EffectivePermission = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permissionConfiguration", targetDepth))
+                if (context.TestExpression("permissionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BucketPermissionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PermissionConfiguration = unmarshaller.Unmarshall(context, ref reader);

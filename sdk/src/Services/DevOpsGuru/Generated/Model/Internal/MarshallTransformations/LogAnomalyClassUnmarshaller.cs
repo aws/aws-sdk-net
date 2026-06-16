@@ -56,43 +56,43 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Explanation", targetDepth))
+                if (context.TestExpression("Explanation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Explanation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogAnomalyToken", targetDepth))
+                if (context.TestExpression("LogAnomalyToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogAnomalyToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogAnomalyType", targetDepth))
+                if (context.TestExpression("LogAnomalyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogAnomalyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogEventId", targetDepth))
+                if (context.TestExpression("LogEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogEventTimestamp", targetDepth))
+                if (context.TestExpression("LogEventTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LogEventTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogStreamName", targetDepth))
+                if (context.TestExpression("LogStreamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfLogLinesOccurrences", targetDepth))
+                if (context.TestExpression("NumberOfLogLinesOccurrences", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfLogLinesOccurrences = unmarshaller.Unmarshall(context, ref reader);

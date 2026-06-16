@@ -56,19 +56,19 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MultiRegionKeyType", targetDepth))
+                if (context.TestExpression("MultiRegionKeyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MultiRegionKeyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryKey", targetDepth))
+                if (context.TestExpression("PrimaryKey", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiRegionKeyUnmarshaller.Instance;
                     unmarshalledObject.PrimaryKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaKeys", targetDepth))
+                if (context.TestExpression("ReplicaKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiRegionKey, MultiRegionKeyUnmarshaller>(MultiRegionKeyUnmarshaller.Instance);
                     unmarshalledObject.ReplicaKeys = unmarshaller.Unmarshall(context, ref reader);

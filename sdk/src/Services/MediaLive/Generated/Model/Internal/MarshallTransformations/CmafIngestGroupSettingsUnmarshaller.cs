@@ -56,103 +56,103 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalDestinations", targetDepth))
+                if (context.TestExpression("additionalDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdditionalDestinations, AdditionalDestinationsUnmarshaller>(AdditionalDestinationsUnmarshaller.Instance);
                     unmarshalledObject.AdditionalDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captionLanguageMappings", targetDepth))
+                if (context.TestExpression("captionLanguageMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CmafIngestCaptionLanguageMapping, CmafIngestCaptionLanguageMappingUnmarshaller>(CmafIngestCaptionLanguageMappingUnmarshaller.Instance);
                     unmarshalledObject.CaptionLanguageMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id3Behavior", targetDepth))
+                if (context.TestExpression("id3Behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id3Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id3NameModifier", targetDepth))
+                if (context.TestExpression("id3NameModifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id3NameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("klvBehavior", targetDepth))
+                if (context.TestExpression("klvBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KlvBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("klvNameModifier", targetDepth))
+                if (context.TestExpression("klvNameModifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KlvNameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenId3Behavior", targetDepth))
+                if (context.TestExpression("nielsenId3Behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NielsenId3Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenId3NameModifier", targetDepth))
+                if (context.TestExpression("nielsenId3NameModifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NielsenId3NameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte35NameModifier", targetDepth))
+                if (context.TestExpression("scte35NameModifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Scte35NameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte35Type", targetDepth))
+                if (context.TestExpression("scte35Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Scte35Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentLength", targetDepth))
+                if (context.TestExpression("segmentLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentLengthUnits", targetDepth))
+                if (context.TestExpression("segmentLengthUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentLengthUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sendDelayMs", targetDepth))
+                if (context.TestExpression("sendDelayMs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SendDelayMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timedMetadataId3Frame", targetDepth))
+                if (context.TestExpression("timedMetadataId3Frame", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadataId3Frame = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timedMetadataId3Period", targetDepth))
+                if (context.TestExpression("timedMetadataId3Period", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadataId3Period = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timedMetadataPassthrough", targetDepth))
+                if (context.TestExpression("timedMetadataPassthrough", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadataPassthrough = unmarshaller.Unmarshall(context, ref reader);

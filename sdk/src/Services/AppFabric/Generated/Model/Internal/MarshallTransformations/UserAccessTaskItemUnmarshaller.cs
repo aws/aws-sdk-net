@@ -56,25 +56,25 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("app", targetDepth))
+                if (context.TestExpression("app", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.App = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("error", targetDepth))
+                if (context.TestExpression("error", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskErrorUnmarshaller.Instance;
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskId", targetDepth))
+                if (context.TestExpression("taskId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tenantId", targetDepth))
+                if (context.TestExpression("tenantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TenantId = unmarshaller.Unmarshall(context, ref reader);

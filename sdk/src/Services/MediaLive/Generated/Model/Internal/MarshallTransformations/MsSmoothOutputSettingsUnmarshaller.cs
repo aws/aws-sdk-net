@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("h265PackagingType", targetDepth))
+                if (context.TestExpression("h265PackagingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.H265PackagingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nameModifier", targetDepth))
+                if (context.TestExpression("nameModifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NameModifier = unmarshaller.Unmarshall(context, ref reader);

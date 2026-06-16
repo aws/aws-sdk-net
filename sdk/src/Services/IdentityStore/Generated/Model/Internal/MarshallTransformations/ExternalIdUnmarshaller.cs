@@ -56,13 +56,13 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Issuer", targetDepth))
+                if (context.TestExpression("Issuer", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Issuer = unmarshaller.Unmarshall(context, ref reader);

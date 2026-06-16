@@ -56,79 +56,79 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointId", targetDepth))
+                if (context.TestExpression("EndpointId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointUrl", targetDepth))
+                if (context.TestExpression("EndpointUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventBuses", targetDepth))
+                if (context.TestExpression("EventBuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EndpointEventBus, EndpointEventBusUnmarshaller>(EndpointEventBusUnmarshaller.Instance);
                     unmarshalledObject.EventBuses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationConfig", targetDepth))
+                if (context.TestExpression("ReplicationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationConfigUnmarshaller.Instance;
                     unmarshalledObject.ReplicationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingConfig", targetDepth))
+                if (context.TestExpression("RoutingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingConfigUnmarshaller.Instance;
                     unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StateReason", targetDepth))
+                if (context.TestExpression("StateReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StateReason = unmarshaller.Unmarshall(context, ref reader);

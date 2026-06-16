@@ -56,61 +56,61 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteProtection", targetDepth))
+                if (context.TestExpression("DeleteProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallArn", targetDepth))
+                if (context.TestExpression("FirewallArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirewallArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallId", targetDepth))
+                if (context.TestExpression("FirewallId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirewallId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallName", targetDepth))
+                if (context.TestExpression("FirewallName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirewallName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallPolicyArn", targetDepth))
+                if (context.TestExpression("FirewallPolicyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirewallPolicyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallPolicyChangeProtection", targetDepth))
+                if (context.TestExpression("FirewallPolicyChangeProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FirewallPolicyChangeProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetChangeProtection", targetDepth))
+                if (context.TestExpression("SubnetChangeProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SubnetChangeProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetMappings", targetDepth))
+                if (context.TestExpression("SubnetMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsNetworkFirewallFirewallSubnetMappingsDetails, AwsNetworkFirewallFirewallSubnetMappingsDetailsUnmarshaller>(AwsNetworkFirewallFirewallSubnetMappingsDetailsUnmarshaller.Instance);
                     unmarshalledObject.SubnetMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcId", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);

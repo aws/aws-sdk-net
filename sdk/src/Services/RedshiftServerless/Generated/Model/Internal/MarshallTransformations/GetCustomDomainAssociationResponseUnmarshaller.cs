@@ -52,25 +52,25 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customDomainCertificateArn", targetDepth))
+                if (context.TestExpression("customDomainCertificateArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomDomainCertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customDomainCertificateExpiryTime", targetDepth))
+                if (context.TestExpression("customDomainCertificateExpiryTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CustomDomainCertificateExpiryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customDomainName", targetDepth))
+                if (context.TestExpression("customDomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomDomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workgroupName", targetDepth))
+                if (context.TestExpression("workgroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkgroupName = unmarshaller.Unmarshall(context, ref reader);

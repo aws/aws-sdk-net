@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private EndpointConfigStepMetadata _endpointConfig;
         private FailStepMetadata _fail;
         private InferenceComponentMetadata _inferenceComponent;
+        private JobStepMetadata _job;
         private LambdaStepMetadata _lambda;
         private LineageMetadata _lineage;
         private ModelStepMetadata _model;
@@ -328,6 +329,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInferenceComponent()
         {
             return this._inferenceComponent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Job. 
+        /// <para>
+        /// The metadata for a SageMaker job used in a pipeline execution step.
+        /// </para>
+        /// </summary>
+        public JobStepMetadata Job
+        {
+            get { return this._job; }
+            set { this._job = value; }
+        }
+
+        // Check to see if Job property is set
+        internal bool IsSetJob()
+        {
+            return this._job != null;
         }
 
         /// <summary>

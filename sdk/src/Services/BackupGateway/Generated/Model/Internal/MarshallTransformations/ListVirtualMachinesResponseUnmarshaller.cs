@@ -52,13 +52,13 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VirtualMachines", targetDepth))
+                if (context.TestExpression("VirtualMachines", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VirtualMachine, VirtualMachineUnmarshaller>(VirtualMachineUnmarshaller.Instance);
                     response.VirtualMachines = unmarshaller.Unmarshall(context, ref reader);

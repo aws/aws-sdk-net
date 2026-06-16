@@ -56,43 +56,43 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("device", targetDepth))
+                if (context.TestExpression("device", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceUnmarshaller.Instance;
                     unmarshalledObject.Device = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("job", targetDepth))
+                if (context.TestExpression("job", targetDepth, ref reader))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
                     unmarshalledObject.Job = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("message", targetDepth))
+                if (context.TestExpression("message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("result", targetDepth))
+                if (context.TestExpression("result", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Result = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("run", targetDepth))
+                if (context.TestExpression("run", targetDepth, ref reader))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
                     unmarshalledObject.Run = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suite", targetDepth))
+                if (context.TestExpression("suite", targetDepth, ref reader))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
                     unmarshalledObject.Suite = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("test", targetDepth))
+                if (context.TestExpression("test", targetDepth, ref reader))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
                     unmarshalledObject.Test = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FilterConfiguration", targetDepth))
+                if (context.TestExpression("FilterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestLayout", targetDepth))
+                if (context.TestExpression("ManifestLayout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestName", targetDepth))
+                if (context.TestExpression("ManifestName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestWindowSeconds", targetDepth))
+                if (context.TestExpression("ManifestWindowSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Url", targetDepth))
+                if (context.TestExpression("Url", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);

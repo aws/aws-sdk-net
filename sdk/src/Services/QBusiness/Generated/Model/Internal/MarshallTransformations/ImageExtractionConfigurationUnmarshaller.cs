@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageExtractionStatus", targetDepth))
+                if (context.TestExpression("imageExtractionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageExtractionStatus = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deploymentPatternVersions", targetDepth))
+                if (context.TestExpression("deploymentPatternVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeploymentPatternVersionDataSummary, DeploymentPatternVersionDataSummaryUnmarshaller>(DeploymentPatternVersionDataSummaryUnmarshaller.Instance);
                     response.DeploymentPatternVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,103 +56,103 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amiId", targetDepth))
+                if (context.TestExpression("amiId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmiId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterId", targetDepth))
+                if (context.TestExpression("clusterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customLaunchTemplate", targetDepth))
+                if (context.TestExpression("customLaunchTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomLaunchTemplateUnmarshaller.Instance;
                     unmarshalledObject.CustomLaunchTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorInfo", targetDepth))
+                if (context.TestExpression("errorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ErrorInfo, ErrorInfoUnmarshaller>(ErrorInfoUnmarshaller.Instance);
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamInstanceProfileArn", targetDepth))
+                if (context.TestExpression("iamInstanceProfileArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IamInstanceProfileArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceConfigs", targetDepth))
+                if (context.TestExpression("instanceConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceConfig, InstanceConfigUnmarshaller>(InstanceConfigUnmarshaller.Instance);
                     unmarshalledObject.InstanceConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modifiedAt", targetDepth))
+                if (context.TestExpression("modifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("purchaseOption", targetDepth))
+                if (context.TestExpression("purchaseOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PurchaseOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalingConfiguration", targetDepth))
+                if (context.TestExpression("scalingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ScalingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slurmConfiguration", targetDepth))
+                if (context.TestExpression("slurmConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeNodeGroupSlurmConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SlurmConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spotOptions", targetDepth))
+                if (context.TestExpression("spotOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SpotOptionsUnmarshaller.Instance;
                     unmarshalledObject.SpotOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subnetIds", targetDepth))
+                if (context.TestExpression("subnetIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context, ref reader);

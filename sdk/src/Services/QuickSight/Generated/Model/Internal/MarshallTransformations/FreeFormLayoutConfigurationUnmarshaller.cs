@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CanvasSizeOptions", targetDepth))
+                if (context.TestExpression("CanvasSizeOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = FreeFormLayoutCanvasSizeOptionsUnmarshaller.Instance;
                     unmarshalledObject.CanvasSizeOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Elements", targetDepth))
+                if (context.TestExpression("Elements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FreeFormLayoutElement, FreeFormLayoutElementUnmarshaller>(FreeFormLayoutElementUnmarshaller.Instance);
                     unmarshalledObject.Elements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Groups", targetDepth))
+                if (context.TestExpression("Groups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SheetLayoutGroup, SheetLayoutGroupUnmarshaller>(SheetLayoutGroupUnmarshaller.Instance);
                     unmarshalledObject.Groups = unmarshaller.Unmarshall(context, ref reader);

@@ -52,79 +52,79 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetArn", targetDepth))
+                if (context.TestExpression("assetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetCompositeModels", targetDepth))
+                if (context.TestExpression("assetCompositeModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetCompositeModel, AssetCompositeModelUnmarshaller>(AssetCompositeModelUnmarshaller.Instance);
                     response.AssetCompositeModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetCompositeModelSummaries", targetDepth))
+                if (context.TestExpression("assetCompositeModelSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetCompositeModelSummary, AssetCompositeModelSummaryUnmarshaller>(AssetCompositeModelSummaryUnmarshaller.Instance);
                     response.AssetCompositeModelSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetCreationDate", targetDepth))
+                if (context.TestExpression("assetCreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AssetCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetDescription", targetDepth))
+                if (context.TestExpression("assetDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetExternalId", targetDepth))
+                if (context.TestExpression("assetExternalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetHierarchies", targetDepth))
+                if (context.TestExpression("assetHierarchies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetHierarchy, AssetHierarchyUnmarshaller>(AssetHierarchyUnmarshaller.Instance);
                     response.AssetHierarchies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetId", targetDepth))
+                if (context.TestExpression("assetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetLastUpdateDate", targetDepth))
+                if (context.TestExpression("assetLastUpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AssetLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelId", targetDepth))
+                if (context.TestExpression("assetModelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetName", targetDepth))
+                if (context.TestExpression("assetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetProperties", targetDepth))
+                if (context.TestExpression("assetProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetProperty, AssetPropertyUnmarshaller>(AssetPropertyUnmarshaller.Instance);
                     response.AssetProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetStatus", targetDepth))
+                if (context.TestExpression("assetStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetStatusUnmarshaller.Instance;
                     response.AssetStatus = unmarshaller.Unmarshall(context, ref reader);

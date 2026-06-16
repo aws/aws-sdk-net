@@ -56,61 +56,61 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionStates", targetDepth))
+                if (context.TestExpression("actionStates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActionState, ActionStateUnmarshaller>(ActionStateUnmarshaller.Instance);
                     unmarshalledObject.ActionStates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("beforeEntryConditionState", targetDepth))
+                if (context.TestExpression("beforeEntryConditionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StageConditionStateUnmarshaller.Instance;
                     unmarshalledObject.BeforeEntryConditionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inboundExecution", targetDepth))
+                if (context.TestExpression("inboundExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = StageExecutionUnmarshaller.Instance;
                     unmarshalledObject.InboundExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inboundExecutions", targetDepth))
+                if (context.TestExpression("inboundExecutions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StageExecution, StageExecutionUnmarshaller>(StageExecutionUnmarshaller.Instance);
                     unmarshalledObject.InboundExecutions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inboundTransitionState", targetDepth))
+                if (context.TestExpression("inboundTransitionState", targetDepth, ref reader))
                 {
                     var unmarshaller = TransitionStateUnmarshaller.Instance;
                     unmarshalledObject.InboundTransitionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestExecution", targetDepth))
+                if (context.TestExpression("latestExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = StageExecutionUnmarshaller.Instance;
                     unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onFailureConditionState", targetDepth))
+                if (context.TestExpression("onFailureConditionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StageConditionStateUnmarshaller.Instance;
                     unmarshalledObject.OnFailureConditionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onSuccessConditionState", targetDepth))
+                if (context.TestExpression("onSuccessConditionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StageConditionStateUnmarshaller.Instance;
                     unmarshalledObject.OnSuccessConditionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retryStageMetadata", targetDepth))
+                if (context.TestExpression("retryStageMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryStageMetadataUnmarshaller.Instance;
                     unmarshalledObject.RetryStageMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stageName", targetDepth))
+                if (context.TestExpression("stageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StageName = unmarshaller.Unmarshall(context, ref reader);

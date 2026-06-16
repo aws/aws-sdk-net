@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Automation", targetDepth))
+                if (context.TestExpression("Automation", targetDepth, ref reader))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
                     unmarshalledObject.Automation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Connection", targetDepth))
+                if (context.TestExpression("Connection", targetDepth, ref reader))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
                     unmarshalledObject.Connection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Insight", targetDepth))
+                if (context.TestExpression("Insight", targetDepth, ref reader))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
                     unmarshalledObject.Insight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visualization", targetDepth))
+                if (context.TestExpression("Visualization", targetDepth, ref reader))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
                     unmarshalledObject.Visualization = unmarshaller.Unmarshall(context, ref reader);

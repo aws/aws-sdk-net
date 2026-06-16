@@ -56,37 +56,37 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth))
+                if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DaysOfWeek", targetDepth))
+                if (context.TestExpression("DaysOfWeek", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.DaysOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndHourOfDay", targetDepth))
+                if (context.TestExpression("EndHourOfDay", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndHourOfDay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndMinuteOfHour", targetDepth))
+                if (context.TestExpression("EndMinuteOfHour", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndMinuteOfHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartHourOfDay", targetDepth))
+                if (context.TestExpression("StartHourOfDay", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartHourOfDay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartMinuteOfHour", targetDepth))
+                if (context.TestExpression("StartMinuteOfHour", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartMinuteOfHour = unmarshaller.Unmarshall(context, ref reader);

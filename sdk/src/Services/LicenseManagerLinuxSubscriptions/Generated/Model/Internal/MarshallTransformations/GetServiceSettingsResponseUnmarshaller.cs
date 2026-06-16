@@ -52,31 +52,31 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HomeRegions", targetDepth))
+                if (context.TestExpression("HomeRegions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.HomeRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LinuxSubscriptionsDiscovery", targetDepth))
+                if (context.TestExpression("LinuxSubscriptionsDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LinuxSubscriptionsDiscovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LinuxSubscriptionsDiscoverySettings", targetDepth))
+                if (context.TestExpression("LinuxSubscriptionsDiscoverySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = LinuxSubscriptionsDiscoverySettingsUnmarshaller.Instance;
                     response.LinuxSubscriptionsDiscoverySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);

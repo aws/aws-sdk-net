@@ -29,7 +29,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ConflictException"},
         {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+        {"shape":"InternalServerException"},
+        {"shape":"ServiceQuotaExceededException"}
       ]
     },
     "AssociateAwsTrainingCertificationEmailDomain":{
@@ -115,7 +116,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ConflictException"},
         {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+        {"shape":"InternalServerException"},
+        {"shape":"ServiceQuotaExceededException"}
       ]
     },
     "CreatePartner":{
@@ -381,7 +383,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+        {"shape":"InternalServerException"},
+        {"shape":"ServiceQuotaExceededException"}
       ]
     },
     "RejectConnectionInvitation":{
@@ -431,7 +434,8 @@
         {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+        {"shape":"InternalServerException"},
+        {"shape":"ServiceQuotaExceededException"}
       ],
       "idempotent":true
     },
@@ -616,7 +620,8 @@
         "INCOMPATIBLE_IDENTITY_VERIFICATION_STATUS",
         "INVALID_ACCOUNT_LINKING_STATUS",
         "INVALID_ACCOUNT_STATE",
-        "INCOMPATIBLE_DOMAIN"
+        "INCOMPATIBLE_DOMAIN",
+        "INELIGIBLE_ACCOUNT_TIER"
       ]
     },
     "BusinessValidationError":{
@@ -648,7 +653,9 @@
       "type":"structure",
       "required":["BusinessVerificationDetails"],
       "members":{
-        "BusinessVerificationDetails":{"shape":"BusinessVerificationDetails"}
+        "BusinessVerificationDetails":{"shape":"BusinessVerificationDetails"},
+        "CompletionUrl":{"shape":"CompletionUrl"},
+        "CompletionUrlExpiresAt":{"shape":"DateTime"}
       }
     },
     "CancelConnectionInvitationRequest":{
@@ -704,7 +711,7 @@
       "type":"string",
       "max":256,
       "min":1,
-      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD]+"
+      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD\\n]+"
     },
     "CancelConnectionRequest":{
       "type":"structure",
@@ -1025,7 +1032,7 @@
       "type":"string",
       "max":256,
       "min":1,
-      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD]+"
+      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD\\n]+"
     },
     "CreateConnectionInvitationResponse":{
       "type":"structure",
@@ -1064,7 +1071,7 @@
       "type":"string",
       "max":256,
       "min":1,
-      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD]+"
+      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD\\n]+"
     },
     "CreatePartnerRequest":{
       "type":"structure",
@@ -1272,7 +1279,7 @@
       "type":"string",
       "max":256,
       "min":1,
-      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD]+"
+      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD\\n]+"
     },
     "GetConnectionPreferencesRequest":{
       "type":"structure",
@@ -1535,10 +1542,16 @@
         "NextToken":{"shape":"NextToken"},
         "ConnectionType":{"shape":"ConnectionType"},
         "MaxResults":{"shape":"MaxResults"},
-        "OtherParticipantIdentifiers":{"shape":"ParticipantIdentifierList"},
+        "OtherParticipantIdentifiers":{"shape":"ListConnectionInvitationsRequestOtherParticipantIdentifiersList"},
         "ParticipantType":{"shape":"ParticipantType"},
         "Status":{"shape":"InvitationStatus"}
       }
+    },
+    "ListConnectionInvitationsRequestOtherParticipantIdentifiersList":{
+      "type":"list",
+      "member":{"shape":"ParticipantIdentifier"},
+      "max":100,
+      "min":0
     },
     "ListConnectionInvitationsResponse":{
       "type":"structure",
@@ -1556,8 +1569,14 @@
         "NextToken":{"shape":"NextToken"},
         "ConnectionType":{"shape":"ConnectionTypeFilter"},
         "MaxResults":{"shape":"MaxResults"},
-        "OtherParticipantIdentifiers":{"shape":"ParticipantIdentifierList"}
+        "OtherParticipantIdentifiers":{"shape":"ListConnectionsRequestOtherParticipantIdentifiersList"}
       }
+    },
+    "ListConnectionsRequestOtherParticipantIdentifiersList":{
+      "type":"list",
+      "member":{"shape":"ParticipantIdentifier"},
+      "max":100,
+      "min":0
     },
     "ListConnectionsResponse":{
       "type":"structure",
@@ -1958,7 +1977,7 @@
       "type":"string",
       "max":256,
       "min":1,
-      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD]+"
+      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD\\n]+"
     },
     "ResourceNotFoundException":{
       "type":"structure",
@@ -2045,7 +2064,12 @@
       "type":"string",
       "enum":[
         "LIMIT_EXCEEDED_NUMBER_OF_EMAIL",
-        "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN"
+        "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN",
+        "LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY",
+        "LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION",
+        "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION",
+        "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY",
+        "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY"
       ]
     },
     "StartProfileUpdateTaskRequest":{

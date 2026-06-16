@@ -61,6 +61,7 @@ namespace Amazon.CloudWatch.Model
     {
         private string _dashboardBody;
         private string _dashboardName;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DashboardBody. 
@@ -107,6 +108,43 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDashboardName()
         {
             return this._dashboardName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of key-value pairs to associate with the dashboard. You can associate as many
+        /// as 50 tags with a dashboard.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags can help you organize and categorize your dashboards. You can also use them to
+        /// scope user permissions by granting a user permission to access or change only dashboards
+        /// with certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this parameter only when creating a new dashboard. If you specify <c>Tags</c>
+        /// when updating an existing dashboard, the tag updates are ignored. To add or update
+        /// tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.
+        /// To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

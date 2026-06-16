@@ -56,25 +56,25 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authResources", targetDepth))
+                if (context.TestExpression("authResources", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identityPoolConfigs", targetDepth))
+                if (context.TestExpression("identityPoolConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateBackendAuthIdentityPoolConfigUnmarshaller.Instance;
                     unmarshalledObject.IdentityPoolConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("service", targetDepth))
+                if (context.TestExpression("service", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userPoolConfigs", targetDepth))
+                if (context.TestExpression("userPoolConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateBackendAuthUserPoolConfigUnmarshaller.Instance;
                     unmarshalledObject.UserPoolConfigs = unmarshaller.Unmarshall(context, ref reader);

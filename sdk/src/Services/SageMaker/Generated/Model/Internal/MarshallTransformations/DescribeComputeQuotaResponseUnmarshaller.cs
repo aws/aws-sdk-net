@@ -52,91 +52,91 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActivationState", targetDepth))
+                if (context.TestExpression("ActivationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ActivationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterArn", targetDepth))
+                if (context.TestExpression("ClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeQuotaArn", targetDepth))
+                if (context.TestExpression("ComputeQuotaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComputeQuotaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeQuotaConfig", targetDepth))
+                if (context.TestExpression("ComputeQuotaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeQuotaConfigUnmarshaller.Instance;
                     response.ComputeQuotaConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeQuotaId", targetDepth))
+                if (context.TestExpression("ComputeQuotaId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComputeQuotaId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeQuotaTarget", targetDepth))
+                if (context.TestExpression("ComputeQuotaTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeQuotaTargetUnmarshaller.Instance;
                     response.ComputeQuotaTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeQuotaVersion", targetDepth))
+                if (context.TestExpression("ComputeQuotaVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ComputeQuotaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedBy", targetDepth))
+                if (context.TestExpression("CreatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = UserContextUnmarshaller.Instance;
                     response.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedBy", targetDepth))
+                if (context.TestExpression("LastModifiedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = UserContextUnmarshaller.Instance;
                     response.LastModifiedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

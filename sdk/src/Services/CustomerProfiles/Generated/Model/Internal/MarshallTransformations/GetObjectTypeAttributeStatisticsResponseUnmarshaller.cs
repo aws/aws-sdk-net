@@ -52,13 +52,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CalculatedAt", targetDepth))
+                if (context.TestExpression("CalculatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CalculatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Statistics", targetDepth))
+                if (context.TestExpression("Statistics", targetDepth, ref reader))
                 {
                     var unmarshaller = GetObjectTypeAttributeStatisticsStatsUnmarshaller.Instance;
                     response.Statistics = unmarshaller.Unmarshall(context, ref reader);

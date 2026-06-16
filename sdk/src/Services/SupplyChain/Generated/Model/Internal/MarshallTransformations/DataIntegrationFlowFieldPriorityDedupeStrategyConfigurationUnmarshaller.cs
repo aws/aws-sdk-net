@@ -56,7 +56,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fields", targetDepth))
+                if (context.TestExpression("fields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataIntegrationFlowFieldPriorityDedupeField, DataIntegrationFlowFieldPriorityDedupeFieldUnmarshaller>(DataIntegrationFlowFieldPriorityDedupeFieldUnmarshaller.Instance);
                     unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);

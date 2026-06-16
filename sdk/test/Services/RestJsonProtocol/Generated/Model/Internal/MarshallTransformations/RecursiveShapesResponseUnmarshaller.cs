@@ -52,7 +52,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nested", targetDepth))
+                if (context.TestExpression("nested", targetDepth, ref reader))
                 {
                     var unmarshaller = RecursiveShapesInputOutputNested1Unmarshaller.Instance;
                     response.Nested = unmarshaller.Unmarshall(context, ref reader);

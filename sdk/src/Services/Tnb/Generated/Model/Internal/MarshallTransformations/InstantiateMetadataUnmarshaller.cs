@@ -56,13 +56,13 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalParamsForNs", targetDepth))
+                if (context.TestExpression("additionalParamsForNs", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.AdditionalParamsForNs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nsdInfoId", targetDepth))
+                if (context.TestExpression("nsdInfoId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NsdInfoId = unmarshaller.Unmarshall(context, ref reader);

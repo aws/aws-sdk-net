@@ -56,127 +56,127 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContributionAnalysisDefaults", targetDepth))
+                if (context.TestExpression("ContributionAnalysisDefaults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContributionAnalysisDefault, ContributionAnalysisDefaultUnmarshaller>(ContributionAnalysisDefaultUnmarshaller.Instance);
                     unmarshalledObject.ContributionAnalysisDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLabels", targetDepth))
+                if (context.TestExpression("DataLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.DataLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultSeriesSettings", targetDepth))
+                if (context.TestExpression("DefaultSeriesSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartDefaultSeriesSettingsUnmarshaller.Instance;
                     unmarshalledObject.DefaultSeriesSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("FieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastConfigurations", targetDepth))
+                if (context.TestExpression("ForecastConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ForecastConfiguration, ForecastConfigurationUnmarshaller>(ForecastConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ForecastConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Interactions", targetDepth))
+                if (context.TestExpression("Interactions", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
                     unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Legend", targetDepth))
+                if (context.TestExpression("Legend", targetDepth, ref reader))
                 {
                     var unmarshaller = LegendOptionsUnmarshaller.Instance;
                     unmarshalledObject.Legend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryYAxisDisplayOptions", targetDepth))
+                if (context.TestExpression("PrimaryYAxisDisplayOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = LineSeriesAxisDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.PrimaryYAxisDisplayOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryYAxisLabelOptions", targetDepth))
+                if (context.TestExpression("PrimaryYAxisLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.PrimaryYAxisLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferenceLines", targetDepth))
+                if (context.TestExpression("ReferenceLines", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReferenceLine, ReferenceLineUnmarshaller>(ReferenceLineUnmarshaller.Instance);
                     unmarshalledObject.ReferenceLines = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryYAxisDisplayOptions", targetDepth))
+                if (context.TestExpression("SecondaryYAxisDisplayOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = LineSeriesAxisDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.SecondaryYAxisDisplayOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryYAxisLabelOptions", targetDepth))
+                if (context.TestExpression("SecondaryYAxisLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.SecondaryYAxisLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Series", targetDepth))
+                if (context.TestExpression("Series", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SeriesItem, SeriesItemUnmarshaller>(SeriesItemUnmarshaller.Instance);
                     unmarshalledObject.Series = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SingleAxisOptions", targetDepth))
+                if (context.TestExpression("SingleAxisOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SingleAxisOptionsUnmarshaller.Instance;
                     unmarshalledObject.SingleAxisOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SmallMultiplesOptions", targetDepth))
+                if (context.TestExpression("SmallMultiplesOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SmallMultiplesOptionsUnmarshaller.Instance;
                     unmarshalledObject.SmallMultiplesOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SortConfiguration", targetDepth))
+                if (context.TestExpression("SortConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartSortConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tooltip", targetDepth))
+                if (context.TestExpression("Tooltip", targetDepth, ref reader))
                 {
                     var unmarshaller = TooltipOptionsUnmarshaller.Instance;
                     unmarshalledObject.Tooltip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualPalette", targetDepth))
+                if (context.TestExpression("VisualPalette", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualPaletteUnmarshaller.Instance;
                     unmarshalledObject.VisualPalette = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XAxisDisplayOptions", targetDepth))
+                if (context.TestExpression("XAxisDisplayOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.XAxisDisplayOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XAxisLabelOptions", targetDepth))
+                if (context.TestExpression("XAxisLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.XAxisLabelOptions = unmarshaller.Unmarshall(context, ref reader);

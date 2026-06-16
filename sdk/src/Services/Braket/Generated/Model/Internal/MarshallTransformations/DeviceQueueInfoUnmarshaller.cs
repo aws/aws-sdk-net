@@ -56,19 +56,19 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("queue", targetDepth))
+                if (context.TestExpression("queue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Queue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queuePriority", targetDepth))
+                if (context.TestExpression("queuePriority", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueuePriority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queueSize", targetDepth))
+                if (context.TestExpression("queueSize", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueueSize = unmarshaller.Unmarshall(context, ref reader);

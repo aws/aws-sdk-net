@@ -72,7 +72,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ResourceTypeNotFound", targetDepth))
+                    if (context.TestExpression("ResourceTypeNotFound", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceTypeNotFound = unmarshaller.Unmarshall(context, ref reader);

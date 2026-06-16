@@ -56,19 +56,19 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cpuCount", targetDepth))
+                if (context.TestExpression("cpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("disks", targetDepth))
+                if (context.TestExpression("disks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Disk, DiskUnmarshaller>(DiskUnmarshaller.Instance);
                     unmarshalledObject.Disks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ramSizeInGb", targetDepth))
+                if (context.TestExpression("ramSizeInGb", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context, ref reader);

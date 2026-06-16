@@ -56,13 +56,13 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Interval", targetDepth))
+                if (context.TestExpression("Interval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Interval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntervalUnit", targetDepth))
+                if (context.TestExpression("IntervalUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntervalUnit = unmarshaller.Unmarshall(context, ref reader);

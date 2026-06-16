@@ -56,19 +56,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NumberOfMatchesFound", targetDepth))
+                if (context.TestExpression("NumberOfMatchesFound", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfMatchesFound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfMergesDone", targetDepth))
+                if (context.TestExpression("NumberOfMergesDone", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfMergesDone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfProfilesReviewed", targetDepth))
+                if (context.TestExpression("NumberOfProfilesReviewed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfProfilesReviewed = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ephemerisData", targetDepth))
+                if (context.TestExpression("ephemerisData", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EphemerisData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceS3Object", targetDepth))
+                if (context.TestExpression("sourceS3Object", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
                     unmarshalledObject.SourceS3Object = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("metrics", targetDepth))
+                if (context.TestExpression("metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = ConverseStreamMetricsUnmarshaller.Instance;
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("performanceConfig", targetDepth))
+                if (context.TestExpression("performanceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PerformanceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceTier", targetDepth))
+                if (context.TestExpression("serviceTier", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceTierUnmarshaller.Instance;
                     unmarshalledObject.ServiceTier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trace", targetDepth))
+                if (context.TestExpression("trace", targetDepth, ref reader))
                 {
                     var unmarshaller = ConverseStreamTraceUnmarshaller.Instance;
                     unmarshalledObject.Trace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usage", targetDepth))
+                if (context.TestExpression("usage", targetDepth, ref reader))
                 {
                     var unmarshaller = TokenUsageUnmarshaller.Instance;
                     unmarshalledObject.Usage = unmarshaller.Unmarshall(context, ref reader);

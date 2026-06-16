@@ -56,37 +56,37 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Duration", targetDepth))
+                if (context.TestExpression("Duration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FixedPrice", targetDepth))
+                if (context.TestExpression("FixedPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeType", targetDepth))
+                if (context.TestExpression("NodeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OfferingType", targetDepth))
+                if (context.TestExpression("OfferingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OfferingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurringCharges", targetDepth))
+                if (context.TestExpression("RecurringCharges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecurringCharge, RecurringChargeUnmarshaller>(RecurringChargeUnmarshaller.Instance);
                     unmarshalledObject.RecurringCharges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservedNodesOfferingId", targetDepth))
+                if (context.TestExpression("ReservedNodesOfferingId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReservedNodesOfferingId = unmarshaller.Unmarshall(context, ref reader);

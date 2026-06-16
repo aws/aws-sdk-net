@@ -56,25 +56,25 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizationStrategy", targetDepth))
+                if (context.TestExpression("AuthorizationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FineGrainedAuthorizationEnabled", targetDepth))
+                if (context.TestExpression("FineGrainedAuthorizationEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FineGrainedAuthorizationEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdpLambdaArn", targetDepth))
+                if (context.TestExpression("IdpLambdaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdpLambdaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metadata", targetDepth))
+                if (context.TestExpression("Metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);

@@ -56,73 +56,73 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryFilter", targetDepth))
+                if (context.TestExpression("CategoryFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicCategoryFilterUnmarshaller.Instance;
                     unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateRangeFilter", targetDepth))
+                if (context.TestExpression("DateRangeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicDateRangeFilterUnmarshaller.Instance;
                     unmarshalledObject.DateRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterClass", targetDepth))
+                if (context.TestExpression("FilterClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterDescription", targetDepth))
+                if (context.TestExpression("FilterDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterName", targetDepth))
+                if (context.TestExpression("FilterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterSynonyms", targetDepth))
+                if (context.TestExpression("FilterSynonyms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.FilterSynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterType", targetDepth))
+                if (context.TestExpression("FilterType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NullFilter", targetDepth))
+                if (context.TestExpression("NullFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicNullFilterUnmarshaller.Instance;
                     unmarshalledObject.NullFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericEqualityFilter", targetDepth))
+                if (context.TestExpression("NumericEqualityFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicNumericEqualityFilterUnmarshaller.Instance;
                     unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericRangeFilter", targetDepth))
+                if (context.TestExpression("NumericRangeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicNumericRangeFilterUnmarshaller.Instance;
                     unmarshalledObject.NumericRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperandFieldName", targetDepth))
+                if (context.TestExpression("OperandFieldName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperandFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelativeDateFilter", targetDepth))
+                if (context.TestExpression("RelativeDateFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicRelativeDateFilterUnmarshaller.Instance;
                     unmarshalledObject.RelativeDateFilter = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("caseId", targetDepth))
+                if (context.TestExpression("caseId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CaseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("templateId", targetDepth))
+                if (context.TestExpression("templateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TemplateId = unmarshaller.Unmarshall(context, ref reader);

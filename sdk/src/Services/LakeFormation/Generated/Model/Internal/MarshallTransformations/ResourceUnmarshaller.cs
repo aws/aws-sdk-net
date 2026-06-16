@@ -56,55 +56,55 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Catalog", targetDepth))
+                if (context.TestExpression("Catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = CatalogResourceUnmarshaller.Instance;
                     unmarshalledObject.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Database", targetDepth))
+                if (context.TestExpression("Database", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseResourceUnmarshaller.Instance;
                     unmarshalledObject.Database = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataCellsFilter", targetDepth))
+                if (context.TestExpression("DataCellsFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = DataCellsFilterResourceUnmarshaller.Instance;
                     unmarshalledObject.DataCellsFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLocation", targetDepth))
+                if (context.TestExpression("DataLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLocationResourceUnmarshaller.Instance;
                     unmarshalledObject.DataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LFTag", targetDepth))
+                if (context.TestExpression("LFTag", targetDepth, ref reader))
                 {
                     var unmarshaller = LFTagKeyResourceUnmarshaller.Instance;
                     unmarshalledObject.LFTag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LFTagExpression", targetDepth))
+                if (context.TestExpression("LFTagExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = LFTagExpressionResourceUnmarshaller.Instance;
                     unmarshalledObject.LFTagExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LFTagPolicy", targetDepth))
+                if (context.TestExpression("LFTagPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = LFTagPolicyResourceUnmarshaller.Instance;
                     unmarshalledObject.LFTagPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Table", targetDepth))
+                if (context.TestExpression("Table", targetDepth, ref reader))
                 {
                     var unmarshaller = TableResourceUnmarshaller.Instance;
                     unmarshalledObject.Table = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableWithColumns", targetDepth))
+                if (context.TestExpression("TableWithColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = TableWithColumnsResourceUnmarshaller.Instance;
                     unmarshalledObject.TableWithColumns = unmarshaller.Unmarshall(context, ref reader);

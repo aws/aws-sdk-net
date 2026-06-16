@@ -52,13 +52,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("testResults", targetDepth))
+                if (context.TestExpression("testResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyTestResult, AutomatedReasoningPolicyTestResultUnmarshaller>(AutomatedReasoningPolicyTestResultUnmarshaller.Instance);
                     response.TestResults = unmarshaller.Unmarshall(context, ref reader);

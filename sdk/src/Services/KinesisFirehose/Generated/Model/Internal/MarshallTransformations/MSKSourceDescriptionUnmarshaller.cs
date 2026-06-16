@@ -56,31 +56,31 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
+                if (context.TestExpression("AuthenticationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryStartTimestamp", targetDepth))
+                if (context.TestExpression("DeliveryStartTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeliveryStartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MSKClusterARN", targetDepth))
+                if (context.TestExpression("MSKClusterARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MSKClusterARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReadFromTimestamp", targetDepth))
+                if (context.TestExpression("ReadFromTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReadFromTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicName", targetDepth))
+                if (context.TestExpression("TopicName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicName = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestRevision", targetDepth))
+                if (context.TestExpression("latestRevision", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkerConfigurationRevisionSummaryUnmarshaller.Instance;
                     unmarshalledObject.LatestRevision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workerConfigurationArn", targetDepth))
+                if (context.TestExpression("workerConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkerConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workerConfigurationState", targetDepth))
+                if (context.TestExpression("workerConfigurationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkerConfigurationState = unmarshaller.Unmarshall(context, ref reader);

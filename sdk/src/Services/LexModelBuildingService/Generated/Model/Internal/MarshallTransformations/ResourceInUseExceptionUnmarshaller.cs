@@ -72,13 +72,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("exampleReference", targetDepth))
+                    if (context.TestExpression("exampleReference", targetDepth, ref reader))
                     {
                         var unmarshaller = ResourceReferenceUnmarshaller.Instance;
                         unmarshalledObject.ExampleReference = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("referenceType", targetDepth))
+                    if (context.TestExpression("referenceType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ReferenceType = unmarshaller.Unmarshall(context, ref reader);

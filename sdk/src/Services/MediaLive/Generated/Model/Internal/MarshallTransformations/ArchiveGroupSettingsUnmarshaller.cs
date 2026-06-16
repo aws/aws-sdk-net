@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("archiveCdnSettings", targetDepth))
+                if (context.TestExpression("archiveCdnSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveCdnSettingsUnmarshaller.Instance;
                     unmarshalledObject.ArchiveCdnSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rolloverInterval", targetDepth))
+                if (context.TestExpression("rolloverInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RolloverInterval = unmarshaller.Unmarshall(context, ref reader);

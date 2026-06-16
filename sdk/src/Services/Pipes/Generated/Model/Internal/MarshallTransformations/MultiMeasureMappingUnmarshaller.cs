@@ -56,13 +56,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MultiMeasureAttributeMappings", targetDepth))
+                if (context.TestExpression("MultiMeasureAttributeMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiMeasureAttributeMapping, MultiMeasureAttributeMappingUnmarshaller>(MultiMeasureAttributeMappingUnmarshaller.Instance);
                     unmarshalledObject.MultiMeasureAttributeMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultiMeasureName", targetDepth))
+                if (context.TestExpression("MultiMeasureName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MultiMeasureName = unmarshaller.Unmarshall(context, ref reader);

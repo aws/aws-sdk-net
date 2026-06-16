@@ -56,55 +56,55 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bucketCriteria", targetDepth))
+                if (context.TestExpression("bucketCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BucketCriteriaForJobUnmarshaller.Instance;
                     unmarshalledObject.BucketCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketDefinitions", targetDepth))
+                if (context.TestExpression("bucketDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3BucketDefinitionForJob, S3BucketDefinitionForJobUnmarshaller>(S3BucketDefinitionForJobUnmarshaller.Instance);
                     unmarshalledObject.BucketDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobId", targetDepth))
+                if (context.TestExpression("jobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobStatus", targetDepth))
+                if (context.TestExpression("jobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobType", targetDepth))
+                if (context.TestExpression("jobType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastRunErrorStatus", targetDepth))
+                if (context.TestExpression("lastRunErrorStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = LastRunErrorStatusUnmarshaller.Instance;
                     unmarshalledObject.LastRunErrorStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userPausedDetails", targetDepth))
+                if (context.TestExpression("userPausedDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = UserPausedDetailsUnmarshaller.Instance;
                     unmarshalledObject.UserPausedDetails = unmarshaller.Unmarshall(context, ref reader);

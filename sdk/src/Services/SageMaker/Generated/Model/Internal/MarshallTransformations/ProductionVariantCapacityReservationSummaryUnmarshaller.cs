@@ -56,37 +56,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailableInstanceCount", targetDepth))
+                if (context.TestExpression("AvailableInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AvailableInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityReservationPreference", targetDepth))
+                if (context.TestExpression("CapacityReservationPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservationPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ec2CapacityReservations", targetDepth))
+                if (context.TestExpression("Ec2CapacityReservations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Ec2CapacityReservation, Ec2CapacityReservationUnmarshaller>(Ec2CapacityReservationUnmarshaller.Instance);
                     unmarshalledObject.Ec2CapacityReservations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MlReservationArn", targetDepth))
+                if (context.TestExpression("MlReservationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MlReservationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalInstanceCount", targetDepth))
+                if (context.TestExpression("TotalInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsedByCurrentEndpoint", targetDepth))
+                if (context.TestExpression("UsedByCurrentEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UsedByCurrentEndpoint = unmarshaller.Unmarshall(context, ref reader);

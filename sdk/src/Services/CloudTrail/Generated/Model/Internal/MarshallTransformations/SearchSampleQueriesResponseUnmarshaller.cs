@@ -52,13 +52,13 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchResults", targetDepth))
+                if (context.TestExpression("SearchResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SearchSampleQueriesSearchResult, SearchSampleQueriesSearchResultUnmarshaller>(SearchSampleQueriesSearchResultUnmarshaller.Instance);
                     response.SearchResults = unmarshaller.Unmarshall(context, ref reader);

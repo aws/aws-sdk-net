@@ -56,37 +56,37 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("auth", targetDepth))
+                if (context.TestExpression("auth", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpAuthorizationUnmarshaller.Instance;
                     unmarshalledObject.Auth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("batchConfig", targetDepth))
+                if (context.TestExpression("batchConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchConfigUnmarshaller.Instance;
                     unmarshalledObject.BatchConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("confirmationUrl", targetDepth))
+                if (context.TestExpression("confirmationUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfirmationUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableBatching", targetDepth))
+                if (context.TestExpression("enableBatching", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableBatching = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("headers", targetDepth))
+                if (context.TestExpression("headers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HttpActionHeader, HttpActionHeaderUnmarshaller>(HttpActionHeaderUnmarshaller.Instance);
                     unmarshalledObject.Headers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("url", targetDepth))
+                if (context.TestExpression("url", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);

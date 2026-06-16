@@ -94,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetIncludeManagedResources())
+                {
+                    request.Parameters.Add("IncludeManagedResources", StringUtils.FromBool(publicRequest.IncludeManagedResources));
+                }
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));

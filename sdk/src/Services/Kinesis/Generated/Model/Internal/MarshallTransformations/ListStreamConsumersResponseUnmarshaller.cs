@@ -52,13 +52,13 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Consumers", targetDepth))
+                if (context.TestExpression("Consumers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Consumer, ConsumerUnmarshaller>(ConsumerUnmarshaller.Instance);
                     response.Consumers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

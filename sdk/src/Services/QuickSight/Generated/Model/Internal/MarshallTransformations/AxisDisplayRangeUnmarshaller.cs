@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataDriven", targetDepth))
+                if (context.TestExpression("DataDriven", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisDisplayDataDrivenRangeUnmarshaller.Instance;
                     unmarshalledObject.DataDriven = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinMax", targetDepth))
+                if (context.TestExpression("MinMax", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisDisplayMinMaxRangeUnmarshaller.Instance;
                     unmarshalledObject.MinMax = unmarshaller.Unmarshall(context, ref reader);

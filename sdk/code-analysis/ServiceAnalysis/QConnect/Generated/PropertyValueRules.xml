@@ -976,6 +976,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.ListModelsRequest.AssistantId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ListModelsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ListModelsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ListModelsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.ListQuickResponsesRequest.KnowledgeBaseId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}</pattern>
   </property-value-rule>
@@ -1200,6 +1219,11 @@
     <property>Amazon.QConnect.Model.SendMessageRequest.OrchestratorUseCase</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.SendMessageRequest.OriginRequestId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.SendMessageRequest.SessionId</property>
@@ -2489,6 +2513,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.GuardrailPolicyResult.Details</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.GuardrailRegexConfig.Description</property>
     <min>1</min>
     <max>1000</max>
@@ -2853,6 +2882,16 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.MessageTemplateVersionSummary.VersionNumber</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ModelSummary.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.ModelSummary.ModelId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.NotesChunkDataDetails.Completion</property>
@@ -3306,6 +3345,11 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.Span.OriginRequestId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.Span.ParentSpanId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
@@ -3326,6 +3370,11 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9\s_.,-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.Span.StatusDescription</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.SpanAttributes.AgentId</property>
@@ -3436,8 +3485,23 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.SpanGuardrailAssessment.GuardrailId</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.SpanGuardrailAssessment.GuardrailName</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.SpanMessage.MessageId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.SpanReasoningValue.Value</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.SpanTextValue.Value</property>

@@ -52,13 +52,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaExtensionsInfo", targetDepth))
+                if (context.TestExpression("SchemaExtensionsInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SchemaExtensionInfo, SchemaExtensionInfoUnmarshaller>(SchemaExtensionInfoUnmarshaller.Instance);
                     response.SchemaExtensionsInfo = unmarshaller.Unmarshall(context, ref reader);

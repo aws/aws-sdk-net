@@ -52,37 +52,37 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrentActiveVersion", targetDepth))
+                if (context.TestExpression("CurrentActiveVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.CurrentActiveVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentActiveVersionArn", targetDepth))
+                if (context.TestExpression("CurrentActiveVersionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CurrentActiveVersionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelArn", targetDepth))
+                if (context.TestExpression("ModelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelName", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreviousActiveVersion", targetDepth))
+                if (context.TestExpression("PreviousActiveVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.PreviousActiveVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreviousActiveVersionArn", targetDepth))
+                if (context.TestExpression("PreviousActiveVersionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PreviousActiveVersionArn = unmarshaller.Unmarshall(context, ref reader);

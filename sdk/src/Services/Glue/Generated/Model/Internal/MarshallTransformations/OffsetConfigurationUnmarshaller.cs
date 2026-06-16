@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LimitParameter", targetDepth))
+                if (context.TestExpression("LimitParameter", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtractedParameterUnmarshaller.Instance;
                     unmarshalledObject.LimitParameter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OffsetParameter", targetDepth))
+                if (context.TestExpression("OffsetParameter", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtractedParameterUnmarshaller.Instance;
                     unmarshalledObject.OffsetParameter = unmarshaller.Unmarshall(context, ref reader);

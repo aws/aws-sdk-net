@@ -56,25 +56,25 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bucketPrefix", targetDepth))
+                if (context.TestExpression("bucketPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorHandlingConfig", targetDepth))
+                if (context.TestExpression("errorHandlingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorHandlingConfigUnmarshaller.Instance;
                     unmarshalledObject.ErrorHandlingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intermediateBucketName", targetDepth))
+                if (context.TestExpression("intermediateBucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntermediateBucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("object", targetDepth))
+                if (context.TestExpression("object", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Object = unmarshaller.Unmarshall(context, ref reader);

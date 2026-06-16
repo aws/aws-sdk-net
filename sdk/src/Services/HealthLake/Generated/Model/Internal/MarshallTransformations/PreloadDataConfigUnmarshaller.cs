@@ -56,7 +56,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PreloadDataType", targetDepth))
+                if (context.TestExpression("PreloadDataType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreloadDataType = unmarshaller.Unmarshall(context, ref reader);

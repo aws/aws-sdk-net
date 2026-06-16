@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Media", targetDepth))
+                if (context.TestExpression("Media", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MediaItem, MediaItemUnmarshaller>(MediaItemUnmarshaller.Instance);
                     response.Media = unmarshaller.Unmarshall(context, ref reader);

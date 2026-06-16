@@ -56,31 +56,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageGroupArn", targetDepth))
+                if (context.TestExpression("ManagedConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ManagedConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ModelPackageGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelPackageGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageGroupDescription", targetDepth))
+                if (context.TestExpression("ModelPackageGroupDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelPackageGroupDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageGroupName", targetDepth))
+                if (context.TestExpression("ModelPackageGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelPackageGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageGroupStatus", targetDepth))
+                if (context.TestExpression("ModelPackageGroupStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelPackageGroupStatus = unmarshaller.Unmarshall(context, ref reader);

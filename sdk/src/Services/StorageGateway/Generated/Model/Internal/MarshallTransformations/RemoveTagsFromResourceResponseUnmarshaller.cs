@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceARN", targetDepth))
+                if (context.TestExpression("ResourceARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceARN = unmarshaller.Unmarshall(context, ref reader);

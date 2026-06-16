@@ -56,73 +56,73 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Audiences", targetDepth))
+                if (context.TestExpression("Audiences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Audiences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelName", targetDepth))
+                if (context.TestExpression("ChannelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelState", targetDepth))
+                if (context.TestExpression("ChannelState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FillerSlate", targetDepth))
+                if (context.TestExpression("FillerSlate", targetDepth, ref reader))
                 {
                     var unmarshaller = SlateSourceUnmarshaller.Instance;
                     unmarshalledObject.FillerSlate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogConfiguration", targetDepth))
+                if (context.TestExpression("LogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationForChannelUnmarshaller.Instance;
                     unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Outputs", targetDepth))
+                if (context.TestExpression("Outputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResponseOutputItem, ResponseOutputItemUnmarshaller>(ResponseOutputItemUnmarshaller.Instance);
                     unmarshalledObject.Outputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlaybackMode", targetDepth))
+                if (context.TestExpression("PlaybackMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlaybackMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tier", targetDepth))
+                if (context.TestExpression("Tier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Tier = unmarshaller.Unmarshall(context, ref reader);

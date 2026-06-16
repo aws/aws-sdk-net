@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("endTimeoutMinutes", targetDepth))
+                if (context.TestExpression("endTimeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTimeoutMinutes", targetDepth))
+                if (context.TestExpression("startTimeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldGroup", targetDepth))
+                if (context.TestExpression("fieldGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldGroupUnmarshaller.Instance;
                     unmarshalledObject.FieldGroup = unmarshaller.Unmarshall(context, ref reader);

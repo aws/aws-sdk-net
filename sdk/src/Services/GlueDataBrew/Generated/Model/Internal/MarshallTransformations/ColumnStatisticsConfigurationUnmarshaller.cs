@@ -56,13 +56,13 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Selectors", targetDepth))
+                if (context.TestExpression("Selectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnSelector, ColumnSelectorUnmarshaller>(ColumnSelectorUnmarshaller.Instance);
                     unmarshalledObject.Selectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Statistics", targetDepth))
+                if (context.TestExpression("Statistics", targetDepth, ref reader))
                 {
                     var unmarshaller = StatisticsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Statistics = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailableBalance", targetDepth))
+                if (context.TestExpression("AvailableBalance", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AvailableBalance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnHoldBalance", targetDepth))
+                if (context.TestExpression("OnHoldBalance", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OnHoldBalance = unmarshaller.Unmarshall(context, ref reader);

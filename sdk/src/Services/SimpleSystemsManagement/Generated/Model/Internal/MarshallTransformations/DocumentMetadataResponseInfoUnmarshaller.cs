@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReviewerResponse", targetDepth))
+                if (context.TestExpression("ReviewerResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentReviewerResponseSource, DocumentReviewerResponseSourceUnmarshaller>(DocumentReviewerResponseSourceUnmarshaller.Instance);
                     unmarshalledObject.ReviewerResponse = unmarshaller.Unmarshall(context, ref reader);

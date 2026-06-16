@@ -123,8 +123,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionArn. 
         /// <para>
-        /// A unique identifier for the game session. Use the game session ID. When using FlexMatch
-        /// as a standalone matchmaking solution, this parameter is not needed. 
+        /// An identifier for the game session that is unique across all regions. The value is
+        /// always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>. When using FlexMatch as a standalone matchmaking solution,
+        /// this parameter is not needed. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

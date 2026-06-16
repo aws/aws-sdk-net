@@ -52,37 +52,37 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArrivalTime", targetDepth))
+                if (context.TestExpression("ArrivalTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ArrivalTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DepartureTime", targetDepth))
+                if (context.TestExpression("DepartureTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DepartureTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsolineGeometryFormat", targetDepth))
+                if (context.TestExpression("IsolineGeometryFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IsolineGeometryFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Isolines", targetDepth))
+                if (context.TestExpression("Isolines", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Isoline, IsolineUnmarshaller>(IsolineUnmarshaller.Instance);
                     response.Isolines = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnappedDestination", targetDepth))
+                if (context.TestExpression("SnappedDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     response.SnappedDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnappedOrigin", targetDepth))
+                if (context.TestExpression("SnappedOrigin", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     response.SnappedOrigin = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customDNSServerIP", targetDepth))
+                if (context.TestExpression("customDNSServerIP", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomDNSServerIP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customDNSServerName", targetDepth))
+                if (context.TestExpression("customDNSServerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomDNSServerName = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CanarySize", targetDepth))
+                if (context.TestExpression("CanarySize", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacitySizeUnmarshaller.Instance;
                     unmarshalledObject.CanarySize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LinearStepSize", targetDepth))
+                if (context.TestExpression("LinearStepSize", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacitySizeUnmarshaller.Instance;
                     unmarshalledObject.LinearStepSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WaitIntervalInSeconds", targetDepth))
+                if (context.TestExpression("WaitIntervalInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WaitIntervalInSeconds = unmarshaller.Unmarshall(context, ref reader);

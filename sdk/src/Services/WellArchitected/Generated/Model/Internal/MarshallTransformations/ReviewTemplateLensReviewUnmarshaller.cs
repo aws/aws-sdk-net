@@ -56,61 +56,61 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LensAlias", targetDepth))
+                if (context.TestExpression("LensAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LensAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LensArn", targetDepth))
+                if (context.TestExpression("LensArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LensArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LensName", targetDepth))
+                if (context.TestExpression("LensName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LensName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LensStatus", targetDepth))
+                if (context.TestExpression("LensStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LensStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LensVersion", targetDepth))
+                if (context.TestExpression("LensVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LensVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Notes", targetDepth))
+                if (context.TestExpression("Notes", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Notes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PillarReviewSummaries", targetDepth))
+                if (context.TestExpression("PillarReviewSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReviewTemplatePillarReviewSummary, ReviewTemplatePillarReviewSummaryUnmarshaller>(ReviewTemplatePillarReviewSummaryUnmarshaller.Instance);
                     unmarshalledObject.PillarReviewSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuestionCounts", targetDepth))
+                if (context.TestExpression("QuestionCounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.QuestionCounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdatedAt", targetDepth))
+                if (context.TestExpression("UpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

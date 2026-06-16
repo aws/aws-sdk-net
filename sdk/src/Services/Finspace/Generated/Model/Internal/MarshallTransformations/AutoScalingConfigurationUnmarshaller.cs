@@ -56,37 +56,37 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingMetric", targetDepth))
+                if (context.TestExpression("autoScalingMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxNodeCount", targetDepth))
+                if (context.TestExpression("maxNodeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricTarget", targetDepth))
+                if (context.TestExpression("metricTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minNodeCount", targetDepth))
+                if (context.TestExpression("minNodeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scaleInCooldownSeconds", targetDepth))
+                if (context.TestExpression("scaleInCooldownSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ScaleInCooldownSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scaleOutCooldownSeconds", targetDepth))
+                if (context.TestExpression("scaleOutCooldownSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ScaleOutCooldownSeconds = unmarshaller.Unmarshall(context, ref reader);

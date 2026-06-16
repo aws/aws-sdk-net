@@ -56,73 +56,73 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Columns", targetDepth))
+                if (context.TestExpression("Columns", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseColumnListUnmarshaller.Instance;
                     unmarshalledObject.Columns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Databases", targetDepth))
+                if (context.TestExpression("Databases", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseListUnmarshaller.Instance;
                     unmarshalledObject.Databases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseSourceAuthenticationConfiguration", targetDepth))
+                if (context.TestExpression("DatabaseSourceAuthenticationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseSourceAuthenticationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DatabaseSourceAuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseSourceVPCConfiguration", targetDepth))
+                if (context.TestExpression("DatabaseSourceVPCConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseSourceVPCConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DatabaseSourceVPCConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Endpoint", targetDepth))
+                if (context.TestExpression("Endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Port", targetDepth))
+                if (context.TestExpression("Port", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotInfo", targetDepth))
+                if (context.TestExpression("SnapshotInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DatabaseSnapshotInfo, DatabaseSnapshotInfoUnmarshaller>(DatabaseSnapshotInfoUnmarshaller.Instance);
                     unmarshalledObject.SnapshotInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotWatermarkTable", targetDepth))
+                if (context.TestExpression("SnapshotWatermarkTable", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotWatermarkTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SSLMode", targetDepth))
+                if (context.TestExpression("SSLMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SSLMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SurrogateKeys", targetDepth))
+                if (context.TestExpression("SurrogateKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SurrogateKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tables", targetDepth))
+                if (context.TestExpression("Tables", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseTableListUnmarshaller.Instance;
                     unmarshalledObject.Tables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -25,6 +25,76 @@ namespace Amazon.Bedrock
 {
 
     /// <summary>
+    /// Constants used for properties of type AdvancedPromptOptimizationJobStatus.
+    /// </summary>
+    public class AdvancedPromptOptimizationJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for AdvancedPromptOptimizationJobStatus
+        /// </summary>
+        public static readonly AdvancedPromptOptimizationJobStatus Completed = new AdvancedPromptOptimizationJobStatus("Completed");
+        /// <summary>
+        /// Constant Deleting for AdvancedPromptOptimizationJobStatus
+        /// </summary>
+        public static readonly AdvancedPromptOptimizationJobStatus Deleting = new AdvancedPromptOptimizationJobStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for AdvancedPromptOptimizationJobStatus
+        /// </summary>
+        public static readonly AdvancedPromptOptimizationJobStatus Failed = new AdvancedPromptOptimizationJobStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for AdvancedPromptOptimizationJobStatus
+        /// </summary>
+        public static readonly AdvancedPromptOptimizationJobStatus InProgress = new AdvancedPromptOptimizationJobStatus("InProgress");
+        /// <summary>
+        /// Constant PartiallyCompleted for AdvancedPromptOptimizationJobStatus
+        /// </summary>
+        public static readonly AdvancedPromptOptimizationJobStatus PartiallyCompleted = new AdvancedPromptOptimizationJobStatus("PartiallyCompleted");
+        /// <summary>
+        /// Constant Stopped for AdvancedPromptOptimizationJobStatus
+        /// </summary>
+        public static readonly AdvancedPromptOptimizationJobStatus Stopped = new AdvancedPromptOptimizationJobStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for AdvancedPromptOptimizationJobStatus
+        /// </summary>
+        public static readonly AdvancedPromptOptimizationJobStatus Stopping = new AdvancedPromptOptimizationJobStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdvancedPromptOptimizationJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdvancedPromptOptimizationJobStatus FindValue(string value)
+        {
+            return FindValue<AdvancedPromptOptimizationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdvancedPromptOptimizationJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgreementStatus.
     /// </summary>
     public class AgreementStatus : ConstantClass
@@ -673,6 +743,10 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType GENERATE_FIDELITY_REPORT = new AutomatedReasoningPolicyBuildWorkflowType("GENERATE_FIDELITY_REPORT");
         /// <summary>
+        /// Constant GENERATE_POLICY_SCENARIOS for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType GENERATE_POLICY_SCENARIOS = new AutomatedReasoningPolicyBuildWorkflowType("GENERATE_POLICY_SCENARIOS");
+        /// <summary>
         /// Constant IMPORT_POLICY for AutomatedReasoningPolicyBuildWorkflowType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType IMPORT_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("IMPORT_POLICY");
@@ -681,9 +755,17 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType INGEST_CONTENT = new AutomatedReasoningPolicyBuildWorkflowType("INGEST_CONTENT");
         /// <summary>
+        /// Constant ITERATIVELY_REFINE_POLICY for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType ITERATIVELY_REFINE_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("ITERATIVELY_REFINE_POLICY");
+        /// <summary>
         /// Constant REFINE_POLICY for AutomatedReasoningPolicyBuildWorkflowType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType REFINE_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("REFINE_POLICY");
+        /// <summary>
+        /// Constant RESOLVE_POLICY_AMBIGUITIES for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType RESOLVE_POLICY_AMBIGUITIES = new AutomatedReasoningPolicyBuildWorkflowType("RESOLVE_POLICY_AMBIGUITIES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1092,6 +1174,64 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomModelDeploymentUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataRetentionMode.
+    /// </summary>
+    public class DataRetentionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode Default = new DataRetentionMode("default");
+        /// <summary>
+        /// Constant Inherit for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode Inherit = new DataRetentionMode("inherit");
+        /// <summary>
+        /// Constant None for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode None = new DataRetentionMode("none");
+        /// <summary>
+        /// Constant Provider_data_share for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode Provider_data_share = new DataRetentionMode("provider_data_share");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataRetentionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRetentionMode FindValue(string value)
+        {
+            return FindValue<DataRetentionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRetentionMode(string value)
         {
             return FindValue(value);
         }
@@ -3710,6 +3850,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SearchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SelectiveGuardingMode.
+    /// </summary>
+    public class SelectiveGuardingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPREHENSIVE for SelectiveGuardingMode
+        /// </summary>
+        public static readonly SelectiveGuardingMode COMPREHENSIVE = new SelectiveGuardingMode("COMPREHENSIVE");
+        /// <summary>
+        /// Constant SELECTIVE for SelectiveGuardingMode
+        /// </summary>
+        public static readonly SelectiveGuardingMode SELECTIVE = new SelectiveGuardingMode("SELECTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelectiveGuardingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelectiveGuardingMode FindValue(string value)
+        {
+            return FindValue<SelectiveGuardingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelectiveGuardingMode(string value)
         {
             return FindValue(value);
         }

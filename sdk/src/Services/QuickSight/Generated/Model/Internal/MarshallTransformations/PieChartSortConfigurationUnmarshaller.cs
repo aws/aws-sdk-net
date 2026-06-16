@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryItemsLimit", targetDepth))
+                if (context.TestExpression("CategoryItemsLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CategoryItemsLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CategorySort", targetDepth))
+                if (context.TestExpression("CategorySort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.CategorySort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SmallMultiplesLimitConfiguration", targetDepth))
+                if (context.TestExpression("SmallMultiplesLimitConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SmallMultiplesLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SmallMultiplesSort", targetDepth))
+                if (context.TestExpression("SmallMultiplesSort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.SmallMultiplesSort = unmarshaller.Unmarshall(context, ref reader);

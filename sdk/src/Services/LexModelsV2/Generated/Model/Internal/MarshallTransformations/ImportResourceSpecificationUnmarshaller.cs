@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botImportSpecification", targetDepth))
+                if (context.TestExpression("botImportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = BotImportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.BotImportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botLocaleImportSpecification", targetDepth))
+                if (context.TestExpression("botLocaleImportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = BotLocaleImportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.BotLocaleImportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customVocabularyImportSpecification", targetDepth))
+                if (context.TestExpression("customVocabularyImportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomVocabularyImportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CustomVocabularyImportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("testSetImportResourceSpecification", targetDepth))
+                if (context.TestExpression("testSetImportResourceSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = TestSetImportResourceSpecificationUnmarshaller.Instance;
                     unmarshalledObject.TestSetImportResourceSpecification = unmarshaller.Unmarshall(context, ref reader);

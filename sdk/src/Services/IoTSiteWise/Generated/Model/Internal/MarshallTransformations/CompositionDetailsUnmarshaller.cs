@@ -56,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compositionRelationship", targetDepth))
+                if (context.TestExpression("compositionRelationship", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompositionRelationshipItem, CompositionRelationshipItemUnmarshaller>(CompositionRelationshipItemUnmarshaller.Instance);
                     unmarshalledObject.CompositionRelationship = unmarshaller.Unmarshall(context, ref reader);

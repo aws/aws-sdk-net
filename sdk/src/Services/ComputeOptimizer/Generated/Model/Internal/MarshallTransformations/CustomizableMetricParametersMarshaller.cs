@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomizableMetricParameters Marshaller
     /// </summary>
-    public class CustomizableMetricParametersMarshaller : IRequestMarshaller<CustomizableMetricParameters, JsonMarshallerContext> 
+    public class CustomizableMetricParametersMarshaller : IRequestMarshaller<CustomizableMetricParameters, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomizableMetricParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomizableMetricParameters requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetHeadroom())
-            {
-                context.Writer.WritePropertyName("headroom");
-                context.Writer.WriteStringValue(requestObject.Headroom);
-            }
 
-            if(requestObject.IsSetThreshold())
+            if (requestObject.IsSetHeadroom())
             {
-                context.Writer.WritePropertyName("threshold");
-                context.Writer.WriteStringValue(requestObject.Threshold);
+                context.Writer.WriteTextString("headroom");
+                context.Writer.WriteTextString(requestObject.Headroom);
             }
-
+            if (requestObject.IsSetThreshold())
+            {
+                context.Writer.WriteTextString("threshold");
+                context.Writer.WriteTextString(requestObject.Threshold);
+            }
         }
 
         /// <summary>

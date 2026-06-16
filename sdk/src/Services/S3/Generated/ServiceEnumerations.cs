@@ -235,6 +235,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly BucketLocationConstraint ApEast1 = new BucketLocationConstraint("ap-east-1");
         /// <summary>
+        /// Constant ApEast2 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApEast2 = new BucketLocationConstraint("ap-east-2");
+        /// <summary>
         /// Constant ApNortheast1 for BucketLocationConstraint
         /// </summary>
         public static readonly BucketLocationConstraint ApNortheast1 = new BucketLocationConstraint("ap-northeast-1");
@@ -274,6 +278,14 @@ namespace Amazon.S3
         /// Constant ApSoutheast5 for BucketLocationConstraint
         /// </summary>
         public static readonly BucketLocationConstraint ApSoutheast5 = new BucketLocationConstraint("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast6 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApSoutheast6 = new BucketLocationConstraint("ap-southeast-6");
+        /// <summary>
+        /// Constant ApSoutheast7 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApSoutheast7 = new BucketLocationConstraint("ap-southeast-7");
         /// <summary>
         /// Constant CaCentral1 for BucketLocationConstraint
         /// </summary>
@@ -339,6 +351,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly BucketLocationConstraint MeSouth1 = new BucketLocationConstraint("me-south-1");
         /// <summary>
+        /// Constant MxCentral1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint MxCentral1 = new BucketLocationConstraint("mx-central-1");
+        /// <summary>
         /// Constant SaEast1 for BucketLocationConstraint
         /// </summary>
         public static readonly BucketLocationConstraint SaEast1 = new BucketLocationConstraint("sa-east-1");
@@ -392,6 +408,56 @@ namespace Amazon.S3
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BucketLocationConstraint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BucketNamespace.
+    /// </summary>
+    public partial class BucketNamespace : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountRegional for BucketNamespace
+        /// </summary>
+        public static readonly BucketNamespace AccountRegional = new BucketNamespace("account-regional");
+        /// <summary>
+        /// Constant Global for BucketNamespace
+        /// </summary>
+        public static readonly BucketNamespace Global = new BucketNamespace("global");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BucketNamespace(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketNamespace FindValue(string value)
+        {
+            return FindValue<BucketNamespace>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketNamespace(string value)
         {
             return FindValue(value);
         }
@@ -463,6 +529,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ChecksumAlgorithm CRC64NVME = new ChecksumAlgorithm("CRC64NVME");
         /// <summary>
+        /// Constant MD5 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm MD5 = new ChecksumAlgorithm("MD5");
+        /// <summary>
         /// Constant SHA1 for ChecksumAlgorithm
         /// </summary>
         public static readonly ChecksumAlgorithm SHA1 = new ChecksumAlgorithm("SHA1");
@@ -470,6 +540,22 @@ namespace Amazon.S3
         /// Constant SHA256 for ChecksumAlgorithm
         /// </summary>
         public static readonly ChecksumAlgorithm SHA256 = new ChecksumAlgorithm("SHA256");
+        /// <summary>
+        /// Constant SHA512 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm SHA512 = new ChecksumAlgorithm("SHA512");
+        /// <summary>
+        /// Constant XXHASH128 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm XXHASH128 = new ChecksumAlgorithm("XXHASH128");
+        /// <summary>
+        /// Constant XXHASH3 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm XXHASH3 = new ChecksumAlgorithm("XXHASH3");
+        /// <summary>
+        /// Constant XXHASH64 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm XXHASH64 = new ChecksumAlgorithm("XXHASH64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

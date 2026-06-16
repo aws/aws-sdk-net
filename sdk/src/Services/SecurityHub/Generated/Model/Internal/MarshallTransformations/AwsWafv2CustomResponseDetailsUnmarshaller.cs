@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomResponseBodyKey", targetDepth))
+                if (context.TestExpression("CustomResponseBodyKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomResponseBodyKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseCode", targetDepth))
+                if (context.TestExpression("ResponseCode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseHeaders", targetDepth))
+                if (context.TestExpression("ResponseHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsWafv2CustomHttpHeader, AwsWafv2CustomHttpHeaderUnmarshaller>(AwsWafv2CustomHttpHeaderUnmarshaller.Instance);
                     unmarshalledObject.ResponseHeaders = unmarshaller.Unmarshall(context, ref reader);

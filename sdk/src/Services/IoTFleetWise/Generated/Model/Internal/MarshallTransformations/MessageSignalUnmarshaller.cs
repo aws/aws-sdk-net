@@ -56,13 +56,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("structuredMessage", targetDepth))
+                if (context.TestExpression("structuredMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StructuredMessageUnmarshaller.Instance;
                     unmarshalledObject.StructuredMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicName", targetDepth))
+                if (context.TestExpression("topicName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicName = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("coverageStatus", targetDepth))
+                if (context.TestExpression("coverageStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CoverageStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("detectorId", targetDepth))
+                if (context.TestExpression("detectorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("issue", targetDepth))
+                if (context.TestExpression("issue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Issue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceDetails", targetDepth))
+                if (context.TestExpression("resourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageResourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.ResourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("resourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

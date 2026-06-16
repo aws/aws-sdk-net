@@ -193,7 +193,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DocumentBatchGet docBatch = new DocumentBatchGet(table)
             {
-                AttributesToGet = _itemStorageConfig.AttributesToGet,
+                ProjectionExpression = _itemStorageConfig.ProjectionExpression,
                 ConsistentRead = ConsistentRead
             };
             docBatch.Keys.AddRange(_keys);
@@ -205,6 +205,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             UntypedResults.Clear();
             Results.Clear();
+
             foreach (var doc in items)
             {
                 var item = _context.FromDocumentHelper<T>(doc, _config);

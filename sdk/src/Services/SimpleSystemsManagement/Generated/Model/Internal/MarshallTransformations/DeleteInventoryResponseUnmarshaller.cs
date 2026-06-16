@@ -52,19 +52,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeletionId", targetDepth))
+                if (context.TestExpression("DeletionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeletionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeletionSummary", targetDepth))
+                if (context.TestExpression("DeletionSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = InventoryDeletionSummaryUnmarshaller.Instance;
                     response.DeletionSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TypeName", targetDepth))
+                if (context.TestExpression("TypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TypeName = unmarshaller.Unmarshall(context, ref reader);

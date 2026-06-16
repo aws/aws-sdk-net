@@ -56,13 +56,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("file-system-id", targetDepth))
+                if (context.TestExpression("file-system-id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mount-point", targetDepth))
+                if (context.TestExpression("mount-point", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MountPoint = unmarshaller.Unmarshall(context, ref reader);

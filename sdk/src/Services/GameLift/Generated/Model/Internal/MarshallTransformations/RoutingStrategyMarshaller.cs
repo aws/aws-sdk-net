@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RoutingStrategy Marshaller
     /// </summary>
-    public class RoutingStrategyMarshaller : IRequestMarshaller<RoutingStrategy, JsonMarshallerContext> 
+    public class RoutingStrategyMarshaller : IRequestMarshaller<RoutingStrategy, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RoutingStrategy requestObject, JsonMarshallerContext context)
+        public void Marshall(RoutingStrategy requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFleetId())
-            {
-                context.Writer.WritePropertyName("FleetId");
-                context.Writer.WriteStringValue(requestObject.FleetId);
-            }
 
-            if(requestObject.IsSetMessage())
+            if (requestObject.IsSetFleetId())
             {
-                context.Writer.WritePropertyName("Message");
-                context.Writer.WriteStringValue(requestObject.Message);
+                context.Writer.WriteTextString("FleetId");
+                context.Writer.WriteTextString(requestObject.FleetId);
             }
-
-            if(requestObject.IsSetType())
+            if (requestObject.IsSetMessage())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Message");
+                context.Writer.WriteTextString(requestObject.Message);
             }
-
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
+            }
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Filters", targetDepth))
+                if (context.TestExpression("Filters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Filter, FilterUnmarshaller>(FilterUnmarshaller.Instance);
                     unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);

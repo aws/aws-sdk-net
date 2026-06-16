@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaintenanceId", targetDepth))
+                if (context.TestExpression("MaintenanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MaintenanceId = unmarshaller.Unmarshall(context, ref reader);

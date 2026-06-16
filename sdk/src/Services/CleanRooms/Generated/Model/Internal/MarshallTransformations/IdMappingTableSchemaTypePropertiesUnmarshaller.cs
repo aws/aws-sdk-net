@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idMappingTableInputSource", targetDepth))
+                if (context.TestExpression("idMappingTableInputSource", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdMappingTableInputSource, IdMappingTableInputSourceUnmarshaller>(IdMappingTableInputSourceUnmarshaller.Instance);
                     unmarshalledObject.IdMappingTableInputSource = unmarshaller.Unmarshall(context, ref reader);

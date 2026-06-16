@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StreamingConfiguration", targetDepth))
+                if (context.TestExpression("StreamingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamingConfigurationUnmarshaller.Instance;
                     response.StreamingConfiguration = unmarshaller.Unmarshall(context, ref reader);

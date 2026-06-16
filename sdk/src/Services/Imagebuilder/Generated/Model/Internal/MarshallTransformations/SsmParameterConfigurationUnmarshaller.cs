@@ -56,19 +56,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amiAccountId", targetDepth))
+                if (context.TestExpression("amiAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmiAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataType", targetDepth))
+                if (context.TestExpression("dataType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parameterName", targetDepth))
+                if (context.TestExpression("parameterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context, ref reader);

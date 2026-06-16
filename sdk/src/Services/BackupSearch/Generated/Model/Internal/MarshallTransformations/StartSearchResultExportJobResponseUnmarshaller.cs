@@ -52,13 +52,13 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExportJobArn", targetDepth))
+                if (context.TestExpression("ExportJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExportJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportJobIdentifier", targetDepth))
+                if (context.TestExpression("ExportJobIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExportJobIdentifier = unmarshaller.Unmarshall(context, ref reader);

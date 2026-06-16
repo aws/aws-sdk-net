@@ -56,31 +56,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxAbrBitrate", targetDepth))
+                if (context.TestExpression("maxAbrBitrate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAbrBitrate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxQualityLevel", targetDepth))
+                if (context.TestExpression("maxQualityLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxQualityLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxRenditions", targetDepth))
+                if (context.TestExpression("maxRenditions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRenditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minAbrBitrate", targetDepth))
+                if (context.TestExpression("minAbrBitrate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinAbrBitrate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rules", targetDepth))
+                if (context.TestExpression("rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedAbrRule, AutomatedAbrRuleUnmarshaller>(AutomatedAbrRuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);

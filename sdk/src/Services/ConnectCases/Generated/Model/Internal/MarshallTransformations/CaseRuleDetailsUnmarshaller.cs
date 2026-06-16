@@ -56,19 +56,19 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldOptions", targetDepth))
+                if (context.TestExpression("fieldOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldOptionsCaseRuleUnmarshaller.Instance;
                     unmarshalledObject.FieldOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hidden", targetDepth))
+                if (context.TestExpression("hidden", targetDepth, ref reader))
                 {
                     var unmarshaller = HiddenCaseRuleUnmarshaller.Instance;
                     unmarshalledObject.Hidden = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("required", targetDepth))
+                if (context.TestExpression("required", targetDepth, ref reader))
                 {
                     var unmarshaller = RequiredCaseRuleUnmarshaller.Instance;
                     unmarshalledObject.Required = unmarshaller.Unmarshall(context, ref reader);

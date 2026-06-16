@@ -52,7 +52,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SchemaExtensionId", targetDepth))
+                if (context.TestExpression("SchemaExtensionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SchemaExtensionId = unmarshaller.Unmarshall(context, ref reader);

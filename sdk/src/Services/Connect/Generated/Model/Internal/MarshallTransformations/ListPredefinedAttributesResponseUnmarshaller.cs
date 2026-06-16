@@ -52,13 +52,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredefinedAttributeSummaryList", targetDepth))
+                if (context.TestExpression("PredefinedAttributeSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PredefinedAttributeSummary, PredefinedAttributeSummaryUnmarshaller>(PredefinedAttributeSummaryUnmarshaller.Instance);
                     response.PredefinedAttributeSummaryList = unmarshaller.Unmarshall(context, ref reader);

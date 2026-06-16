@@ -56,13 +56,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("day", targetDepth))
+                if (context.TestExpression("day", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Day = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
+                if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);

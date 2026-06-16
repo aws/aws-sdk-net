@@ -52,19 +52,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CelebrityFaces", targetDepth))
+                if (context.TestExpression("CelebrityFaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Celebrity, CelebrityUnmarshaller>(CelebrityUnmarshaller.Instance);
                     response.CelebrityFaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrientationCorrection", targetDepth))
+                if (context.TestExpression("OrientationCorrection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrientationCorrection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnrecognizedFaces", targetDepth))
+                if (context.TestExpression("UnrecognizedFaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComparedFace, ComparedFaceUnmarshaller>(ComparedFaceUnmarshaller.Instance);
                     response.UnrecognizedFaces = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryErrors", targetDepth))
+                if (context.TestExpression("QueryErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueryError, QueryErrorUnmarshaller>(QueryErrorUnmarshaller.Instance);
                     response.QueryErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceIdentifiers", targetDepth))
+                if (context.TestExpression("ResourceIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceIdentifier, ResourceIdentifierUnmarshaller>(ResourceIdentifierUnmarshaller.Instance);
                     response.ResourceIdentifiers = unmarshaller.Unmarshall(context, ref reader);

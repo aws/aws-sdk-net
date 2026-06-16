@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the GetFarm operation.
+    /// Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins
+    /// (flows into Get, Summary, and BatchGet) and Create outputs.
     /// </summary>
     public partial class GetFarmResponse : AmazonWebServiceResponse
     {
@@ -47,7 +48,9 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property CostScaleFactor. 
         /// <para>
-        /// The cost scale factor applied on the farm.
+        /// A multiplier applied to the farm's calculated costs for usage data and budget tracking.
+        /// A value less than 1 represents a discount, a value greater than 1 represents a premium,
+        /// and a value of 1 represents no adjustment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

@@ -52,6 +52,7 @@ namespace Amazon.Glue.Model
         private double? _progress;
         private string _role;
         private string _securityConfiguration;
+        private SessionType _sessionType;
         private SessionStatus _status;
         private WorkerType _workerType;
 
@@ -393,6 +394,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetSecurityConfiguration()
         {
             return this._securityConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionType. 
+        /// <para>
+        /// The type of the session.
+        /// </para>
+        /// </summary>
+        public SessionType SessionType
+        {
+            get { return this._sessionType; }
+            set { this._sessionType = value; }
+        }
+
+        // Check to see if SessionType property is set
+        internal bool IsSetSessionType()
+        {
+            return this._sessionType != null;
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("supportType", targetDepth))
+                if (context.TestExpression("supportType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SupportType = unmarshaller.Unmarshall(context, ref reader);

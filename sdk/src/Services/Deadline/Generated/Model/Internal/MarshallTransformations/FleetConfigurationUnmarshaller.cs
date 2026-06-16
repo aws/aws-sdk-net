@@ -56,13 +56,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customerManaged", targetDepth))
+                if (context.TestExpression("customerManaged", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerManagedFleetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomerManaged = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceManagedEc2", targetDepth))
+                if (context.TestExpression("serviceManagedEc2", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceManagedEc2FleetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ServiceManagedEc2 = unmarshaller.Unmarshall(context, ref reader);

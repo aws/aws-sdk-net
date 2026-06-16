@@ -56,49 +56,61 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CompositeSliConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = CompositeSliConfigUnmarshaller.Instance;
+                    unmarshalledObject.CompositeSliConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DependencyConfig", targetDepth))
+                if (context.TestExpression("DependencyConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DependencyConfigUnmarshaller.Instance;
                     unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationType", targetDepth))
+                if (context.TestExpression("EvaluationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyAttributes", targetDepth))
+                if (context.TestExpression("KeyAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricSourceType", targetDepth))
+                if (context.TestExpression("MetricSource", targetDepth, ref reader))
+                {
+                    var unmarshaller = MetricSourceUnmarshaller.Instance;
+                    unmarshalledObject.MetricSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MetricSourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricSourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperationName", targetDepth))
+                if (context.TestExpression("OperationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationName = unmarshaller.Unmarshall(context, ref reader);

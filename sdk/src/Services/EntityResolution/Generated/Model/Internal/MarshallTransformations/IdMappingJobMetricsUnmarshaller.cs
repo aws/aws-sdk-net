@@ -56,91 +56,91 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deleteRecordsProcessed", targetDepth))
+                if (context.TestExpression("deleteRecordsProcessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DeleteRecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputRecords", targetDepth))
+                if (context.TestExpression("inputRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InputRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mappedRecordsRemoved", targetDepth))
+                if (context.TestExpression("mappedRecordsRemoved", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MappedRecordsRemoved = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mappedSourceRecordsRemoved", targetDepth))
+                if (context.TestExpression("mappedSourceRecordsRemoved", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MappedSourceRecordsRemoved = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mappedTargetRecordsRemoved", targetDepth))
+                if (context.TestExpression("mappedTargetRecordsRemoved", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MappedTargetRecordsRemoved = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newMappedRecords", targetDepth))
+                if (context.TestExpression("newMappedRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NewMappedRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newMappedSourceRecords", targetDepth))
+                if (context.TestExpression("newMappedSourceRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NewMappedSourceRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newMappedTargetRecords", targetDepth))
+                if (context.TestExpression("newMappedTargetRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NewMappedTargetRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newUniqueRecordsLoaded", targetDepth))
+                if (context.TestExpression("newUniqueRecordsLoaded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NewUniqueRecordsLoaded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordsNotProcessed", targetDepth))
+                if (context.TestExpression("recordsNotProcessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalMappedRecords", targetDepth))
+                if (context.TestExpression("totalMappedRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalMappedRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalMappedSourceRecords", targetDepth))
+                if (context.TestExpression("totalMappedSourceRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalMappedSourceRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalMappedTargetRecords", targetDepth))
+                if (context.TestExpression("totalMappedTargetRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalMappedTargetRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalRecordsProcessed", targetDepth))
+                if (context.TestExpression("totalRecordsProcessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalRecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uniqueRecordsLoaded", targetDepth))
+                if (context.TestExpression("uniqueRecordsLoaded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UniqueRecordsLoaded = unmarshaller.Unmarshall(context, ref reader);

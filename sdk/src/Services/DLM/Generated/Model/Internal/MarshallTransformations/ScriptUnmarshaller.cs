@@ -56,37 +56,37 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecuteOperationOnScriptFailure", targetDepth))
+                if (context.TestExpression("ExecuteOperationOnScriptFailure", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExecuteOperationOnScriptFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionHandler", targetDepth))
+                if (context.TestExpression("ExecutionHandler", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionHandler = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionHandlerService", targetDepth))
+                if (context.TestExpression("ExecutionHandlerService", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionHandlerService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionTimeout", targetDepth))
+                if (context.TestExpression("ExecutionTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumRetryCount", targetDepth))
+                if (context.TestExpression("MaximumRetryCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumRetryCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Stages", targetDepth))
+                if (context.TestExpression("Stages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Stages = unmarshaller.Unmarshall(context, ref reader);

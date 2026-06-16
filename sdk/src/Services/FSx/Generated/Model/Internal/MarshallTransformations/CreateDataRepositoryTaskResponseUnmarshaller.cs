@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataRepositoryTask", targetDepth))
+                if (context.TestExpression("DataRepositoryTask", targetDepth, ref reader))
                 {
                     var unmarshaller = DataRepositoryTaskUnmarshaller.Instance;
                     response.DataRepositoryTask = unmarshaller.Unmarshall(context, ref reader);

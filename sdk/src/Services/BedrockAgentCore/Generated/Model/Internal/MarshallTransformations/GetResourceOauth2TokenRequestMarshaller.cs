@@ -65,14 +65,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/identities/oauth2/token";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAudiences())
+            {
+                context.Writer.WritePropertyName("audiences");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAudiencesListValue in publicRequest.Audiences)
+                {
+                        context.Writer.WriteStringValue(publicRequestAudiencesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetCustomParameters())
             {
                 context.Writer.WritePropertyName("customParameters");
@@ -117,6 +128,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ResourceOauth2ReturnUrl);
             }
 
+            if(publicRequest.IsSetResources())
+            {
+                context.Writer.WritePropertyName("resources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetScopes())
             {
                 context.Writer.WritePropertyName("scopes");
@@ -142,10 +164,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

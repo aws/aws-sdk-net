@@ -56,25 +56,25 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("controlSets", targetDepth))
+                if (context.TestExpression("controlSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssessmentControlSet, AssessmentControlSetUnmarshaller>(AssessmentControlSetUnmarshaller.Instance);
                     unmarshalledObject.ControlSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameworkMetadataUnmarshaller.Instance;
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);

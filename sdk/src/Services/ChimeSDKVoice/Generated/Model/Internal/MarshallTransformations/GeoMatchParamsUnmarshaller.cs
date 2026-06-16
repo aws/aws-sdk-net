@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AreaCode", targetDepth))
+                if (context.TestExpression("AreaCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AreaCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Country", targetDepth))
+                if (context.TestExpression("Country", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);

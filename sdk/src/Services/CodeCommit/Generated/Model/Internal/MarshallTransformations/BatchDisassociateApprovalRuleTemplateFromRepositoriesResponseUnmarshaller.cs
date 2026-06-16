@@ -52,13 +52,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("disassociatedRepositoryNames", targetDepth))
+                if (context.TestExpression("disassociatedRepositoryNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.DisassociatedRepositoryNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchDisassociateApprovalRuleTemplateFromRepositoriesError, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorUnmarshaller>(BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);

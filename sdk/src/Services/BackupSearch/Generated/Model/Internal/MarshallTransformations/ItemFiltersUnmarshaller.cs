@@ -56,13 +56,13 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EBSItemFilters", targetDepth))
+                if (context.TestExpression("EBSItemFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EBSItemFilter, EBSItemFilterUnmarshaller>(EBSItemFilterUnmarshaller.Instance);
                     unmarshalledObject.EBSItemFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3ItemFilters", targetDepth))
+                if (context.TestExpression("S3ItemFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3ItemFilter, S3ItemFilterUnmarshaller>(S3ItemFilterUnmarshaller.Instance);
                     unmarshalledObject.S3ItemFilters = unmarshaller.Unmarshall(context, ref reader);

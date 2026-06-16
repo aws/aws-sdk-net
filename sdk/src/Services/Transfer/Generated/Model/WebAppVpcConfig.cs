@@ -35,9 +35,29 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class WebAppVpcConfig
     {
+        private WebAppVpcEndpointIpAddressType _ipAddressType;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the web app's VPC endpoint. This determines whether the endpoint
+        /// is accessible over IPv4 only, or over both IPv4 and IPv6.
+        /// </para>
+        /// </summary>
+        public WebAppVpcEndpointIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

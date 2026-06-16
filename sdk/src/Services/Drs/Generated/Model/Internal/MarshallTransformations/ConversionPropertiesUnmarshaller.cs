@@ -56,37 +56,37 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataTimestamp", targetDepth))
+                if (context.TestExpression("dataTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forceUefi", targetDepth))
+                if (context.TestExpression("forceUefi", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceUefi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rootVolumeName", targetDepth))
+                if (context.TestExpression("rootVolumeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RootVolumeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("volumeToConversionMap", targetDepth))
+                if (context.TestExpression("volumeToConversionMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                     unmarshalledObject.VolumeToConversionMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("volumeToProductCodes", targetDepth))
+                if (context.TestExpression("volumeToProductCodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<ProductCode>, StringUnmarshaller, JsonListUnmarshaller<ProductCode,ProductCodeUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<ProductCode, ProductCodeUnmarshaller>(ProductCodeUnmarshaller.Instance));
                     unmarshalledObject.VolumeToProductCodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("volumeToVolumeSize", targetDepth))
+                if (context.TestExpression("volumeToVolumeSize", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
                     unmarshalledObject.VolumeToVolumeSize = unmarshaller.Unmarshall(context, ref reader);

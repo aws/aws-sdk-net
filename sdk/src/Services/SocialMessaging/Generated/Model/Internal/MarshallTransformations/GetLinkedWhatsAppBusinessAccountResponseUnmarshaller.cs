@@ -52,7 +52,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("account", targetDepth))
+                if (context.TestExpression("account", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkedWhatsAppBusinessAccountUnmarshaller.Instance;
                     response.Account = unmarshaller.Unmarshall(context, ref reader);

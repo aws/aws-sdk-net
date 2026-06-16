@@ -56,67 +56,67 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnsReferenced", targetDepth))
+                if (context.TestExpression("ColumnsReferenced", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ColumnsReferenced = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DoubleValue", targetDepth))
+                if (context.TestExpression("DoubleValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationLevel", targetDepth))
+                if (context.TestExpression("EvaluationLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EvaluationLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InclusionAnnotation", targetDepth))
+                if (context.TestExpression("InclusionAnnotation", targetDepth, ref reader))
                 {
                     var unmarshaller = TimestampedInclusionAnnotationUnmarshaller.Instance;
                     unmarshalledObject.InclusionAnnotation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProfileId", targetDepth))
+                if (context.TestExpression("ProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecordedOn", targetDepth))
+                if (context.TestExpression("RecordedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RecordedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferencedDatasets", targetDepth))
+                if (context.TestExpression("ReferencedDatasets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ReferencedDatasets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunIdentifier", targetDepth))
+                if (context.TestExpression("RunIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = RunIdentifierUnmarshaller.Instance;
                     unmarshalledObject.RunIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatisticId", targetDepth))
+                if (context.TestExpression("StatisticId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatisticId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatisticName", targetDepth))
+                if (context.TestExpression("StatisticName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatisticName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatisticProperties", targetDepth))
+                if (context.TestExpression("StatisticProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.StatisticProperties = unmarshaller.Unmarshall(context, ref reader);

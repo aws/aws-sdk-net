@@ -56,13 +56,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogConfigurations", targetDepth))
+                if (context.TestExpression("LogConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LogConfigurationType, LogConfigurationTypeUnmarshaller>(LogConfigurationTypeUnmarshaller.Instance);
                     unmarshalledObject.LogConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserPoolId", targetDepth))
+                if (context.TestExpression("UserPoolId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserPoolId = unmarshaller.Unmarshall(context, ref reader);

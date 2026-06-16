@@ -52,7 +52,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authentication", targetDepth))
+                if (context.TestExpression("authentication", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthenticationDescriptionUnmarshaller.Instance;
                     response.Authentication = unmarshaller.Unmarshall(context, ref reader);

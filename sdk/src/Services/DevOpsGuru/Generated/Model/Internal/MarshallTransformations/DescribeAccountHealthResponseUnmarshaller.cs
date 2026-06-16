@@ -52,31 +52,31 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalyzedResourceCount", targetDepth))
+                if (context.TestExpression("AnalyzedResourceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AnalyzedResourceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricsAnalyzed", targetDepth))
+                if (context.TestExpression("MetricsAnalyzed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MetricsAnalyzed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenProactiveInsights", targetDepth))
+                if (context.TestExpression("OpenProactiveInsights", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.OpenProactiveInsights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenReactiveInsights", targetDepth))
+                if (context.TestExpression("OpenReactiveInsights", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.OpenReactiveInsights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceHours", targetDepth))
+                if (context.TestExpression("ResourceHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ResourceHours = unmarshaller.Unmarshall(context, ref reader);

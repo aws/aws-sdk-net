@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+#if NETFRAMEWORK
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -70,7 +71,7 @@ namespace AWSSDK.UnitTests
             };
 
         
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(Testcases))]
         [TestCategory("S3")]
         public void AddressingTests(string bucketName, RegionEndpoint regionEndpoint, bool? usePathStyle,
@@ -83,7 +84,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void TestPathStyleAddressingWithAccelerateEnabled()
         {
-            var exception = Assert.ThrowsException<AmazonClientException>(() => TestAddressingForConfig("bucket-name", RegionEndpoint.USEast1, true, true, false, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3-accelerate.amazonaws.com"));
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => TestAddressingForConfig("bucket-name", RegionEndpoint.USEast1, true, true, false, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3-accelerate.amazonaws.com"));
             Assert.AreEqual("S3 accelerate is not compatible with Path style requests. Disable Path style requests using AmazonS3Config.ForcePathStyle property to use S3 accelerate.", exception.Message);
         }
 
@@ -92,7 +93,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void TestPathStyleAddressingWithAccelerateAndDualstackEnabled()
         {
-            var exception = Assert.ThrowsException<AmazonClientException>(() => TestAddressingForConfig("bucket-name", RegionEndpoint.USEast1, true, true, true, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3-accelerate.dualstack.amazonaws.com"));
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => TestAddressingForConfig("bucket-name", RegionEndpoint.USEast1, true, true, true, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3-accelerate.dualstack.amazonaws.com"));
             Assert.AreEqual("S3 accelerate is not compatible with Path style requests. Disable Path style requests using AmazonS3Config.ForcePathStyle property to use S3 accelerate.", exception.Message);
         }
 
@@ -151,3 +152,4 @@ namespace AWSSDK.UnitTests
         }
     }
 }
+#endif

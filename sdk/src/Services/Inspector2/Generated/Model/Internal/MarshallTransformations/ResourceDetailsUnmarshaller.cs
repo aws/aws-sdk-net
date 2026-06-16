@@ -56,25 +56,25 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsEc2Instance", targetDepth))
+                if (context.TestExpression("awsEc2Instance", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEc2Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsEcrContainerImage", targetDepth))
+                if (context.TestExpression("awsEcrContainerImage", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcrContainerImageDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEcrContainerImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsLambdaFunction", targetDepth))
+                if (context.TestExpression("awsLambdaFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsLambdaFunctionDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsLambdaFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeRepository", targetDepth))
+                if (context.TestExpression("codeRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeRepositoryDetailsUnmarshaller.Instance;
                     unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context, ref reader);

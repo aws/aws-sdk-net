@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("loadBalancer", targetDepth))
+                if (context.TestExpression("loadBalancer", targetDepth, ref reader))
                 {
                     var unmarshaller = LoadBalancerUnmarshaller.Instance;
                     response.LoadBalancer = unmarshaller.Unmarshall(context, ref reader);

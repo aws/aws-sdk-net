@@ -52,73 +52,73 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acquiredLimits", targetDepth))
+                if (context.TestExpression("acquiredLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AcquiredLimit, AcquiredLimitUnmarshaller>(AcquiredLimitUnmarshaller.Instance);
                     response.AcquiredLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("definition", targetDepth))
+                if (context.TestExpression("definition", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionActionDefinitionUnmarshaller.Instance;
                     response.Definition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endedAt", targetDepth))
+                if (context.TestExpression("endedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manifests", targetDepth))
+                if (context.TestExpression("manifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TaskRunManifestPropertiesResponse, TaskRunManifestPropertiesResponseUnmarshaller>(TaskRunManifestPropertiesResponseUnmarshaller.Instance);
                     response.Manifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("processExitCode", targetDepth))
+                if (context.TestExpression("processExitCode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ProcessExitCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("progressMessage", targetDepth))
+                if (context.TestExpression("progressMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProgressMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("progressPercent", targetDepth))
+                if (context.TestExpression("progressPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.ProgressPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionActionId", targetDepth))
+                if (context.TestExpression("sessionActionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionActionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedAt", targetDepth))
+                if (context.TestExpression("startedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workerUpdatedAt", targetDepth))
+                if (context.TestExpression("workerUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.WorkerUpdatedAt = unmarshaller.Unmarshall(context, ref reader);

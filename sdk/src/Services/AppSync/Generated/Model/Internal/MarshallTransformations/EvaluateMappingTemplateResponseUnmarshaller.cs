@@ -52,31 +52,31 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("error", targetDepth))
+                if (context.TestExpression("error", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorDetailUnmarshaller.Instance;
                     response.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluationResult", targetDepth))
+                if (context.TestExpression("evaluationResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EvaluationResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logs", targetDepth))
+                if (context.TestExpression("logs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Logs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outErrors", targetDepth))
+                if (context.TestExpression("outErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OutErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stash", targetDepth))
+                if (context.TestExpression("stash", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Stash = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateTimeParameters", targetDepth))
+                if (context.TestExpression("DateTimeParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateTimeParameter, DateTimeParameterUnmarshaller>(DateTimeParameterUnmarshaller.Instance);
                     unmarshalledObject.DateTimeParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DecimalParameters", targetDepth))
+                if (context.TestExpression("DecimalParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DecimalParameter, DecimalParameterUnmarshaller>(DecimalParameterUnmarshaller.Instance);
                     unmarshalledObject.DecimalParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntegerParameters", targetDepth))
+                if (context.TestExpression("IntegerParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntegerParameter, IntegerParameterUnmarshaller>(IntegerParameterUnmarshaller.Instance);
                     unmarshalledObject.IntegerParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringParameters", targetDepth))
+                if (context.TestExpression("StringParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringParameter, StringParameterUnmarshaller>(StringParameterUnmarshaller.Instance);
                     unmarshalledObject.StringParameters = unmarshaller.Unmarshall(context, ref reader);

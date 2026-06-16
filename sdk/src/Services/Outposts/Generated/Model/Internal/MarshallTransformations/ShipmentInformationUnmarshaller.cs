@@ -56,13 +56,13 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ShipmentCarrier", targetDepth))
+                if (context.TestExpression("ShipmentCarrier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShipmentCarrier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShipmentTrackingNumber", targetDepth))
+                if (context.TestExpression("ShipmentTrackingNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShipmentTrackingNumber = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataDeletionJob", targetDepth))
+                if (context.TestExpression("dataDeletionJob", targetDepth, ref reader))
                 {
                     var unmarshaller = DataDeletionJobUnmarshaller.Instance;
                     response.DataDeletionJob = unmarshaller.Unmarshall(context, ref reader);

@@ -56,61 +56,61 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Column", targetDepth))
+                if (context.TestExpression("Column", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultFilterControlConfiguration", targetDepth))
+                if (context.TestExpression("DefaultFilterControlConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultFilterControlConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DefaultFilterControlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludePeriodConfiguration", targetDepth))
+                if (context.TestExpression("ExcludePeriodConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExcludePeriodConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExcludePeriodConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterId", targetDepth))
+                if (context.TestExpression("FilterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeMaximum", targetDepth))
+                if (context.TestExpression("IncludeMaximum", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeMaximum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeMinimum", targetDepth))
+                if (context.TestExpression("IncludeMinimum", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeMinimum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NullOption", targetDepth))
+                if (context.TestExpression("NullOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NullOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RangeMaximumValue", targetDepth))
+                if (context.TestExpression("RangeMaximumValue", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeRangeFilterValueUnmarshaller.Instance;
                     unmarshalledObject.RangeMaximumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RangeMinimumValue", targetDepth))
+                if (context.TestExpression("RangeMinimumValue", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeRangeFilterValueUnmarshaller.Instance;
                     unmarshalledObject.RangeMinimumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeGranularity", targetDepth))
+                if (context.TestExpression("TimeGranularity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisabledSecurityControlIdentifiers", targetDepth))
+                if (context.TestExpression("DisabledSecurityControlIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DisabledSecurityControlIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnabledSecurityControlIdentifiers", targetDepth))
+                if (context.TestExpression("EnabledSecurityControlIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EnabledSecurityControlIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityControlCustomParameters", targetDepth))
+                if (context.TestExpression("SecurityControlCustomParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecurityControlCustomParameter, SecurityControlCustomParameterUnmarshaller>(SecurityControlCustomParameterUnmarshaller.Instance);
                     unmarshalledObject.SecurityControlCustomParameters = unmarshaller.Unmarshall(context, ref reader);

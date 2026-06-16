@@ -52,13 +52,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FaceDetails", targetDepth))
+                if (context.TestExpression("FaceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FaceDetail, FaceDetailUnmarshaller>(FaceDetailUnmarshaller.Instance);
                     response.FaceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrientationCorrection", targetDepth))
+                if (context.TestExpression("OrientationCorrection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrientationCorrection = unmarshaller.Unmarshall(context, ref reader);

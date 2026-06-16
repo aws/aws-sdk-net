@@ -52,7 +52,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Blueprints", targetDepth))
+                if (context.TestExpression("Blueprints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PipelineBlueprintSummary, PipelineBlueprintSummaryUnmarshaller>(PipelineBlueprintSummaryUnmarshaller.Instance);
                     response.Blueprints = unmarshaller.Unmarshall(context, ref reader);

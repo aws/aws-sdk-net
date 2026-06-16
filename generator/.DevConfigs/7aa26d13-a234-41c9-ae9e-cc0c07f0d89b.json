@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Apply PooledContentStream optimization to S3 custom XML marshallers."
+      ]
+    }
+  ]
+}

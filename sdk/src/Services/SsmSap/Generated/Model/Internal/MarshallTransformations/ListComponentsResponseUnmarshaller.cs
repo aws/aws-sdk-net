@@ -52,13 +52,13 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Components", targetDepth))
+                if (context.TestExpression("Components", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComponentSummary, ComponentSummaryUnmarshaller>(ComponentSummaryUnmarshaller.Instance);
                     response.Components = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

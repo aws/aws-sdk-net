@@ -56,25 +56,25 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Reason", targetDepth))
+                if (context.TestExpression("Reason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurrenceRule", targetDepth))
+                if (context.TestExpression("RecurrenceRule", targetDepth, ref reader))
                 {
                     var unmarshaller = RecurrenceRuleUnmarshaller.Instance;
                     unmarshalledObject.RecurrenceRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Window", targetDepth))
+                if (context.TestExpression("Window", targetDepth, ref reader))
                 {
                     var unmarshaller = WindowUnmarshaller.Instance;
                     unmarshalledObject.Window = unmarshaller.Unmarshall(context, ref reader);

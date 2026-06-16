@@ -56,13 +56,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fargateEphemeralStorageKmsKeyId", targetDepth))
+                if (context.TestExpression("fargateEphemeralStorageKmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FargateEphemeralStorageKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsKeyId", targetDepth))
+                if (context.TestExpression("kmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);

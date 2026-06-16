@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessPolicy", targetDepth))
+                if (context.TestExpression("AccessPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackupVaultArn", targetDepth))
+                if (context.TestExpression("BackupVaultArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupVaultArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackupVaultName", targetDepth))
+                if (context.TestExpression("BackupVaultName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionKeyArn", targetDepth))
+                if (context.TestExpression("EncryptionKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Notifications", targetDepth))
+                if (context.TestExpression("Notifications", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsBackupBackupVaultNotificationsDetailsUnmarshaller.Instance;
                     unmarshalledObject.Notifications = unmarshaller.Unmarshall(context, ref reader);

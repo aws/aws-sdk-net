@@ -56,13 +56,13 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldLevelMessages", targetDepth))
+                if (context.TestExpression("fieldLevelMessages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldValidationMessage, FieldValidationMessageUnmarshaller>(FieldValidationMessageUnmarshaller.Instance);
                     unmarshalledObject.FieldLevelMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileLevelMessages", targetDepth))
+                if (context.TestExpression("fileLevelMessages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FileValidationMessage, FileValidationMessageUnmarshaller>(FileValidationMessageUnmarshaller.Instance);
                     unmarshalledObject.FileLevelMessages = unmarshaller.Unmarshall(context, ref reader);

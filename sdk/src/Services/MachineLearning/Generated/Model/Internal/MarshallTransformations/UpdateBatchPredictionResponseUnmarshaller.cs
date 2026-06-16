@@ -52,7 +52,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BatchPredictionId", targetDepth))
+                if (context.TestExpression("BatchPredictionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BatchPredictionId = unmarshaller.Unmarshall(context, ref reader);

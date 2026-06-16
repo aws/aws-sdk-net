@@ -52,19 +52,19 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("knownDependencyCount", targetDepth))
+                if (context.TestExpression("knownDependencyCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.KnownDependencyCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("neighbors", targetDepth))
+                if (context.TestExpression("neighbors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NeighborConnectionDetail, NeighborConnectionDetailUnmarshaller>(NeighborConnectionDetailUnmarshaller.Instance);
                     response.Neighbors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

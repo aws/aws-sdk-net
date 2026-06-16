@@ -36,8 +36,8 @@ namespace Amazon.Bedrock.Model
     {
         private string _guardrailIdentifier;
         private string _guardrailVersion;
-        private InputTags _inputTags;
         private ModelEnforcement _modelEnforcement;
+        private SelectiveContentGuarding _selectiveContentGuarding;
 
         /// <summary>
         /// Gets and sets the property GuardrailIdentifier. 
@@ -78,25 +78,6 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputTags. 
-        /// <para>
-        /// Whether to honor or ignore input tags at runtime.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public InputTags InputTags
-        {
-            get { return this._inputTags; }
-            set { this._inputTags = value; }
-        }
-
-        // Check to see if InputTags property is set
-        internal bool IsSetInputTags()
-        {
-            return this._inputTags != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ModelEnforcement. 
         /// <para>
         /// Model-specific information for the enforced guardrail configuration. If not present,
@@ -113,6 +94,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModelEnforcement()
         {
             return this._modelEnforcement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectiveContentGuarding. 
+        /// <para>
+        /// Selective content guarding controls for enforced guardrails.
+        /// </para>
+        /// </summary>
+        public SelectiveContentGuarding SelectiveContentGuarding
+        {
+            get { return this._selectiveContentGuarding; }
+            set { this._selectiveContentGuarding = value; }
+        }
+
+        // Check to see if SelectiveContentGuarding property is set
+        internal bool IsSetSelectiveContentGuarding()
+        {
+            return this._selectiveContentGuarding != null;
         }
 
     }

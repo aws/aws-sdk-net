@@ -56,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("iotCoreThingName", targetDepth))
+                if (context.TestExpression("iotCoreThingName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IotCoreThingName = unmarshaller.Unmarshall(context, ref reader);

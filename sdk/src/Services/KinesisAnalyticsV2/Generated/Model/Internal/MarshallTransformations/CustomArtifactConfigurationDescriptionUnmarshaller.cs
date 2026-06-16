@@ -56,19 +56,19 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArtifactType", targetDepth))
+                if (context.TestExpression("ArtifactType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ArtifactType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MavenReferenceDescription", targetDepth))
+                if (context.TestExpression("MavenReferenceDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = MavenReferenceUnmarshaller.Instance;
                     unmarshalledObject.MavenReferenceDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3ContentLocationDescription", targetDepth))
+                if (context.TestExpression("S3ContentLocationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ContentLocationUnmarshaller.Instance;
                     unmarshalledObject.S3ContentLocationDescription = unmarshaller.Unmarshall(context, ref reader);

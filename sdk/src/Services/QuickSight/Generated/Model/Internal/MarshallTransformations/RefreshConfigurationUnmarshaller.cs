@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IncrementalRefresh", targetDepth))
+                if (context.TestExpression("IncrementalRefresh", targetDepth, ref reader))
                 {
                     var unmarshaller = IncrementalRefreshUnmarshaller.Instance;
                     unmarshalledObject.IncrementalRefresh = unmarshaller.Unmarshall(context, ref reader);

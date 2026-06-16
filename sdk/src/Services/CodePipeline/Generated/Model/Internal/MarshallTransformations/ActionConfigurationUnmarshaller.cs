@@ -56,7 +56,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);

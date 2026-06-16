@@ -56,43 +56,43 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsLogsConfiguration", targetDepth))
+                if (context.TestExpression("awsLogsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpressGatewayServiceAwsLogsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AwsLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("command", targetDepth))
+                if (context.TestExpression("command", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerPort", targetDepth))
+                if (context.TestExpression("containerPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environment", targetDepth))
+                if (context.TestExpression("environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryCredentials", targetDepth))
+                if (context.TestExpression("repositoryCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpressGatewayRepositoryCredentialsUnmarshaller.Instance;
                     unmarshalledObject.RepositoryCredentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secrets", targetDepth))
+                if (context.TestExpression("secrets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);
                     unmarshalledObject.Secrets = unmarshaller.Unmarshall(context, ref reader);

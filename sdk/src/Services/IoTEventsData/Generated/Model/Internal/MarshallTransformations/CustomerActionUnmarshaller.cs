@@ -56,37 +56,37 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acknowledgeActionConfiguration", targetDepth))
+                if (context.TestExpression("acknowledgeActionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AcknowledgeActionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AcknowledgeActionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("actionName", targetDepth))
+                if (context.TestExpression("actionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("disableActionConfiguration", targetDepth))
+                if (context.TestExpression("disableActionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DisableActionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DisableActionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableActionConfiguration", targetDepth))
+                if (context.TestExpression("enableActionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EnableActionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EnableActionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resetActionConfiguration", targetDepth))
+                if (context.TestExpression("resetActionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ResetActionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ResetActionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snoozeActionConfiguration", targetDepth))
+                if (context.TestExpression("snoozeActionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SnoozeActionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SnoozeActionConfiguration = unmarshaller.Unmarshall(context, ref reader);

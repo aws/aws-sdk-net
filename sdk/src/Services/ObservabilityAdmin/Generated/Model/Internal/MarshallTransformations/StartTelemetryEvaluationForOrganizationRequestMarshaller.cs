@@ -59,10 +59,44 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartTelemetryEvaluationForOrganizationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ObservabilityAdmin");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/StartTelemetryEvaluationForOrganization";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllRegions())
+            {
+                context.Writer.WritePropertyName("AllRegions");
+                context.Writer.WriteBooleanValue(publicRequest.AllRegions.Value);
+            }
+
+            if(publicRequest.IsSetRegions())
+            {
+                context.Writer.WritePropertyName("Regions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                {
+                        context.Writer.WriteStringValue(publicRequestRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+            
+
 
             return request;
         }

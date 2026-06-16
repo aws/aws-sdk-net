@@ -56,31 +56,31 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApproveAfterDays", targetDepth))
+                if (context.TestExpression("ApproveAfterDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ApproveAfterDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApproveUntilDate", targetDepth))
+                if (context.TestExpression("ApproveUntilDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApproveUntilDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComplianceLevel", targetDepth))
+                if (context.TestExpression("ComplianceLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComplianceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableNonSecurity", targetDepth))
+                if (context.TestExpression("EnableNonSecurity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableNonSecurity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PatchFilterGroup", targetDepth))
+                if (context.TestExpression("PatchFilterGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = PatchFilterGroupUnmarshaller.Instance;
                     unmarshalledObject.PatchFilterGroup = unmarshaller.Unmarshall(context, ref reader);

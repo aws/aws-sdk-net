@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultAction", targetDepth))
+                if (context.TestExpression("DefaultAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricName", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RulesList", targetDepth))
+                if (context.TestExpression("RulesList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsWafRegionalWebAclRulesListDetails, AwsWafRegionalWebAclRulesListDetailsUnmarshaller>(AwsWafRegionalWebAclRulesListDetailsUnmarshaller.Instance);
                     unmarshalledObject.RulesList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebAclId", targetDepth))
+                if (context.TestExpression("WebAclId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebAclId = unmarshaller.Unmarshall(context, ref reader);

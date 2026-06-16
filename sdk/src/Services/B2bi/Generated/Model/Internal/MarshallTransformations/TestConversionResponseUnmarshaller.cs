@@ -52,13 +52,13 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("convertedFileContent", targetDepth))
+                if (context.TestExpression("convertedFileContent", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConvertedFileContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationMessages", targetDepth))
+                if (context.TestExpression("validationMessages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ValidationMessages = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compressionFactor", targetDepth))
+                if (context.TestExpression("compressionFactor", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.CompressionFactor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encoderProfile", targetDepth))
+                if (context.TestExpression("encoderProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncoderProfile = unmarshaller.Unmarshall(context, ref reader);

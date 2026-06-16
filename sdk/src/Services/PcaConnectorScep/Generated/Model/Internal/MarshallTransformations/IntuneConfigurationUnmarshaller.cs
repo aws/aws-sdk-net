@@ -56,13 +56,13 @@ namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AzureApplicationId", targetDepth))
+                if (context.TestExpression("AzureApplicationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AzureApplicationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);

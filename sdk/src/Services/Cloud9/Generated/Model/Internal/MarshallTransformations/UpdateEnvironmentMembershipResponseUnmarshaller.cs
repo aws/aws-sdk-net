@@ -52,7 +52,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("membership", targetDepth))
+                if (context.TestExpression("membership", targetDepth, ref reader))
                 {
                     var unmarshaller = EnvironmentMemberUnmarshaller.Instance;
                     response.Membership = unmarshaller.Unmarshall(context, ref reader);

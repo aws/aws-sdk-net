@@ -52,19 +52,19 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxQueryTCU", targetDepth))
+                if (context.TestExpression("MaxQueryTCU", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxQueryTCU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryCompute", targetDepth))
+                if (context.TestExpression("QueryCompute", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryComputeResponseUnmarshaller.Instance;
                     response.QueryCompute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryPricingModel", targetDepth))
+                if (context.TestExpression("QueryPricingModel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueryPricingModel = unmarshaller.Unmarshall(context, ref reader);

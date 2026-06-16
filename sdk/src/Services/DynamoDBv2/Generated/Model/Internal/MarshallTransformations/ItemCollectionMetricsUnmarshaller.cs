@@ -56,13 +56,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ItemCollectionKey", targetDepth))
+                if (context.TestExpression("ItemCollectionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
                     unmarshalledObject.ItemCollectionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SizeEstimateRangeGB", targetDepth))
+                if (context.TestExpression("SizeEstimateRangeGB", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     unmarshalledObject.SizeEstimateRangeGB = unmarshaller.Unmarshall(context, ref reader);

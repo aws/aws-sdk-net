@@ -52,19 +52,19 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComponentConfiguration", targetDepth))
+                if (context.TestExpression("ComponentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComponentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Monitor", targetDepth))
+                if (context.TestExpression("Monitor", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Monitor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tier", targetDepth))
+                if (context.TestExpression("Tier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Tier = unmarshaller.Unmarshall(context, ref reader);

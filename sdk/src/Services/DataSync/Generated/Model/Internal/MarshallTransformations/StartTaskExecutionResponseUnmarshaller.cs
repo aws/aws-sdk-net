@@ -52,7 +52,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TaskExecutionArn", targetDepth))
+                if (context.TestExpression("TaskExecutionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskExecutionArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conflictMetadata", targetDepth))
+                if (context.TestExpression("conflictMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ConflictMetadataUnmarshaller.Instance;
                     unmarshalledObject.ConflictMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mergeHunks", targetDepth))
+                if (context.TestExpression("mergeHunks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MergeHunk, MergeHunkUnmarshaller>(MergeHunkUnmarshaller.Instance);
                     unmarshalledObject.MergeHunks = unmarshaller.Unmarshall(context, ref reader);

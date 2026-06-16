@@ -56,19 +56,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeviceCreationFileList", targetDepth))
+                if (context.TestExpression("DeviceCreationFileList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DeviceCreationFileList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Positioning", targetDepth))
+                if (context.TestExpression("Positioning", targetDepth, ref reader))
                 {
                     var unmarshaller = SidewalkPositioningUnmarshaller.Instance;
                     unmarshalledObject.Positioning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Role", targetDepth))
+                if (context.TestExpression("Role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);

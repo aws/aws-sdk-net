@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentConnectionDetails", targetDepth))
+                if (context.TestExpression("agentConnectionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DownlinkConnectionDetailsUnmarshaller.Instance;
                     unmarshalledObject.AgentConnectionDetails = unmarshaller.Unmarshall(context, ref reader);

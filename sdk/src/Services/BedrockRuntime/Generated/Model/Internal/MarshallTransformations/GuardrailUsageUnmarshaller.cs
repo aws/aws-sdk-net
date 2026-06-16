@@ -56,55 +56,55 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("automatedReasoningPolicies", targetDepth))
+                if (context.TestExpression("automatedReasoningPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutomatedReasoningPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("automatedReasoningPolicyUnits", targetDepth))
+                if (context.TestExpression("automatedReasoningPolicyUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutomatedReasoningPolicyUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentPolicyImageUnits", targetDepth))
+                if (context.TestExpression("contentPolicyImageUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContentPolicyImageUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentPolicyUnits", targetDepth))
+                if (context.TestExpression("contentPolicyUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContentPolicyUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contextualGroundingPolicyUnits", targetDepth))
+                if (context.TestExpression("contextualGroundingPolicyUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContextualGroundingPolicyUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitiveInformationPolicyFreeUnits", targetDepth))
+                if (context.TestExpression("sensitiveInformationPolicyFreeUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SensitiveInformationPolicyFreeUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitiveInformationPolicyUnits", targetDepth))
+                if (context.TestExpression("sensitiveInformationPolicyUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SensitiveInformationPolicyUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicPolicyUnits", targetDepth))
+                if (context.TestExpression("topicPolicyUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TopicPolicyUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wordPolicyUnits", targetDepth))
+                if (context.TestExpression("wordPolicyUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WordPolicyUnits = unmarshaller.Unmarshall(context, ref reader);

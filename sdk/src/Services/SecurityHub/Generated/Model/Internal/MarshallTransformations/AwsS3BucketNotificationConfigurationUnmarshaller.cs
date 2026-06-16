@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Configurations", targetDepth))
+                if (context.TestExpression("Configurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsS3BucketNotificationConfigurationDetail, AwsS3BucketNotificationConfigurationDetailUnmarshaller>(AwsS3BucketNotificationConfigurationDetailUnmarshaller.Instance);
                     unmarshalledObject.Configurations = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actors", targetDepth))
+                if (context.TestExpression("actors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Actor, ActorUnmarshaller>(ActorUnmarshaller.Instance);
                     unmarshalledObject.Actors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("additionalSequenceTypes", targetDepth))
+                if (context.TestExpression("additionalSequenceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalSequenceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpoints", targetDepth))
+                if (context.TestExpression("endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkEndpoint, NetworkEndpointUnmarshaller>(NetworkEndpointUnmarshaller.Instance);
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resources", targetDepth))
+                if (context.TestExpression("resources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceV2, ResourceV2Unmarshaller>(ResourceV2Unmarshaller.Instance);
                     unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sequenceIndicators", targetDepth))
+                if (context.TestExpression("sequenceIndicators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Indicator, IndicatorUnmarshaller>(IndicatorUnmarshaller.Instance);
                     unmarshalledObject.SequenceIndicators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signals", targetDepth))
+                if (context.TestExpression("signals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Signal, SignalUnmarshaller>(SignalUnmarshaller.Instance);
                     unmarshalledObject.Signals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uid", targetDepth))
+                if (context.TestExpression("uid", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Uid = unmarshaller.Unmarshall(context, ref reader);

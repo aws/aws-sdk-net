@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class AudioPidSelection
     {
         private int? _pid;
+        private List<AudioPid> _pids = AWSConfigs.InitializeCollections ? new List<AudioPid>() : null;
 
         /// <summary>
         /// Gets and sets the property Pid. Selects a specific PID from within a source.
@@ -50,6 +51,27 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetPid()
         {
             return this._pid.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pids. Selects one or more unique PIDs from within a source.When
+        /// using 'pids', you can specify per-PID audio pre-mixer settings.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AudioPid> Pids
+        {
+            get { return this._pids; }
+            set { this._pids = value; }
+        }
+
+        // Check to see if Pids property is set
+        internal bool IsSetPids()
+        {
+            return this._pids != null && (this._pids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

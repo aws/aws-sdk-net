@@ -56,25 +56,25 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("steps", targetDepth))
+                if (context.TestExpression("steps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Step, StepUnmarshaller>(StepUnmarshaller.Instance);
                     unmarshalledObject.Steps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowDescription", targetDepth))
+                if (context.TestExpression("workflowDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkflowDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowTargetAction", targetDepth))
+                if (context.TestExpression("workflowTargetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkflowTargetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowTargetRegion", targetDepth))
+                if (context.TestExpression("workflowTargetRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkflowTargetRegion = unmarshaller.Unmarshall(context, ref reader);

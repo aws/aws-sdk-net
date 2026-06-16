@@ -63,6 +63,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetMediaConnectRouterSettings())
+            {
+                context.Writer.WritePropertyName("mediaConnectRouterSettings");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMediaConnectRouterSettingsListValue in requestObject.MediaConnectRouterSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MediaConnectRouterOutputDestinationSettingsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMediaConnectRouterSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetMediaPackageSettings())
             {
                 context.Writer.WritePropertyName("mediaPackageSettings");

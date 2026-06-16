@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceTags", targetDepth))
+                if (context.TestExpression("ResourceTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);
                     response.ResourceTags = unmarshaller.Unmarshall(context, ref reader);

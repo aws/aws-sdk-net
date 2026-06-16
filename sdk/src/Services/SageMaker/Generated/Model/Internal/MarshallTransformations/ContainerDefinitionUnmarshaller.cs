@@ -56,67 +56,67 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalModelDataSources", targetDepth))
+                if (context.TestExpression("AdditionalModelDataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdditionalModelDataSource, AdditionalModelDataSourceUnmarshaller>(AdditionalModelDataSourceUnmarshaller.Instance);
                     unmarshalledObject.AdditionalModelDataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerHostname", targetDepth))
+                if (context.TestExpression("ContainerHostname", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerHostname = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Image", targetDepth))
+                if (context.TestExpression("Image", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageConfig", targetDepth))
+                if (context.TestExpression("ImageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageConfigUnmarshaller.Instance;
                     unmarshalledObject.ImageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceSpecificationName", targetDepth))
+                if (context.TestExpression("InferenceSpecificationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InferenceSpecificationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mode", targetDepth))
+                if (context.TestExpression("Mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataSource", targetDepth))
+                if (context.TestExpression("ModelDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelDataSourceUnmarshaller.Instance;
                     unmarshalledObject.ModelDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataUrl", targetDepth))
+                if (context.TestExpression("ModelDataUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelDataUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageName", targetDepth))
+                if (context.TestExpression("ModelPackageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelPackageName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultiModelConfig", targetDepth))
+                if (context.TestExpression("MultiModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiModelConfigUnmarshaller.Instance;
                     unmarshalledObject.MultiModelConfig = unmarshaller.Unmarshall(context, ref reader);

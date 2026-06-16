@@ -56,13 +56,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyToMatch", targetDepth))
+                if (context.TestExpression("KeyToMatch", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyToMatch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Script", targetDepth))
+                if (context.TestExpression("Script", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Script = unmarshaller.Unmarshall(context, ref reader);

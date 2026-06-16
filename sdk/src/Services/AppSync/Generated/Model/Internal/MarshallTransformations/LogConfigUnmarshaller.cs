@@ -56,19 +56,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLogsRoleArn", targetDepth))
+                if (context.TestExpression("cloudWatchLogsRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("excludeVerboseContent", targetDepth))
+                if (context.TestExpression("excludeVerboseContent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeVerboseContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fieldLogLevel", targetDepth))
+                if (context.TestExpression("fieldLogLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldLogLevel = unmarshaller.Unmarshall(context, ref reader);

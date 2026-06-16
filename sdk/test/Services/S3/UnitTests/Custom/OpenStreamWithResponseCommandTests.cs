@@ -443,7 +443,7 @@ namespace AWSSDK.UnitTests
             response.ResponseStream.Dispose();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(1, DisplayName = "Minimum (1 part)")]
         [DataRow(128, DisplayName = "Small (128 parts)")]
         [DataRow(1024, DisplayName = "Default (1024 parts)")]
@@ -581,7 +581,7 @@ namespace AWSSDK.UnitTests
             response.ResponseStream.Dispose();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(16 * 1024, DisplayName = "Small (16KB)")]
         [DataRow(64 * 1024, DisplayName = "Medium (64KB)")]
         [DataRow(128 * 1024, DisplayName = "Large (128KB)")]

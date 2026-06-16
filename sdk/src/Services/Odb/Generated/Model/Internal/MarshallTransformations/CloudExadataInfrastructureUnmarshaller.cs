@@ -56,229 +56,229 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activatedStorageCount", targetDepth))
+                if (context.TestExpression("activatedStorageCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActivatedStorageCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("additionalStorageCount", targetDepth))
+                if (context.TestExpression("additionalStorageCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AdditionalStorageCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availabilityZone", targetDepth))
+                if (context.TestExpression("availabilityZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availabilityZoneId", targetDepth))
+                if (context.TestExpression("availabilityZoneId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availableStorageSizeInGBs", targetDepth))
+                if (context.TestExpression("availableStorageSizeInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AvailableStorageSizeInGBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudExadataInfrastructureArn", targetDepth))
+                if (context.TestExpression("cloudExadataInfrastructureArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudExadataInfrastructureArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudExadataInfrastructureId", targetDepth))
+                if (context.TestExpression("cloudExadataInfrastructureId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudExadataInfrastructureId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computeCount", targetDepth))
+                if (context.TestExpression("computeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ComputeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computeModel", targetDepth))
+                if (context.TestExpression("computeModel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputeModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cpuCount", targetDepth))
+                if (context.TestExpression("cpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customerContactsToSendToOCI", targetDepth))
+                if (context.TestExpression("customerContactsToSendToOCI", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomerContact, CustomerContactUnmarshaller>(CustomerContactUnmarshaller.Instance);
                     unmarshalledObject.CustomerContactsToSendToOCI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("databaseServerType", targetDepth))
+                if (context.TestExpression("databaseServerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseServerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataStorageSizeInTBs", targetDepth))
+                if (context.TestExpression("dataStorageSizeInTBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DataStorageSizeInTBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dbNodeStorageSizeInGBs", targetDepth))
+                if (context.TestExpression("dbNodeStorageSizeInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DbNodeStorageSizeInGBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dbServerVersion", targetDepth))
+                if (context.TestExpression("dbServerVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DbServerVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("displayName", targetDepth))
+                if (context.TestExpression("displayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastMaintenanceRunId", targetDepth))
+                if (context.TestExpression("lastMaintenanceRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastMaintenanceRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maintenanceWindow", targetDepth))
+                if (context.TestExpression("maintenanceWindow", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceWindowUnmarshaller.Instance;
                     unmarshalledObject.MaintenanceWindow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxCpuCount", targetDepth))
+                if (context.TestExpression("maxCpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxDataStorageInTBs", targetDepth))
+                if (context.TestExpression("maxDataStorageInTBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxDataStorageInTBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxDbNodeStorageSizeInGBs", targetDepth))
+                if (context.TestExpression("maxDbNodeStorageSizeInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxDbNodeStorageSizeInGBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxMemoryInGBs", targetDepth))
+                if (context.TestExpression("maxMemoryInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxMemoryInGBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memorySizeInGBs", targetDepth))
+                if (context.TestExpression("memorySizeInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemorySizeInGBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthlyDbServerVersion", targetDepth))
+                if (context.TestExpression("monthlyDbServerVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonthlyDbServerVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthlyStorageServerVersion", targetDepth))
+                if (context.TestExpression("monthlyStorageServerVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonthlyStorageServerVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextMaintenanceRunId", targetDepth))
+                if (context.TestExpression("nextMaintenanceRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextMaintenanceRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ocid", targetDepth))
+                if (context.TestExpression("ocid", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ocid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociResourceAnchorName", targetDepth))
+                if (context.TestExpression("ociResourceAnchorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciResourceAnchorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociUrl", targetDepth))
+                if (context.TestExpression("ociUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("percentProgress", targetDepth))
+                if (context.TestExpression("percentProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.PercentProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shape", targetDepth))
+                if (context.TestExpression("shape", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Shape = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageCount", targetDepth))
+                if (context.TestExpression("storageCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageServerType", targetDepth))
+                if (context.TestExpression("storageServerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageServerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageServerVersion", targetDepth))
+                if (context.TestExpression("storageServerVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageServerVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalStorageSizeInGBs", targetDepth))
+                if (context.TestExpression("totalStorageSizeInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalStorageSizeInGBs = unmarshaller.Unmarshall(context, ref reader);

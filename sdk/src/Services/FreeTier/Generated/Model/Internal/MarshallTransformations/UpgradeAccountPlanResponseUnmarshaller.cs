@@ -52,19 +52,19 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("accountPlanStatus", targetDepth))
+                if (context.TestExpression("accountPlanStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountPlanStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("accountPlanType", targetDepth))
+                if (context.TestExpression("accountPlanType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountPlanType = unmarshaller.Unmarshall(context, ref reader);

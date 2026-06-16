@@ -56,13 +56,13 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3Reports", targetDepth))
+                if (context.TestExpression("s3Reports", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExperimentReportS3Report, ExperimentReportS3ReportUnmarshaller>(ExperimentReportS3ReportUnmarshaller.Instance);
                     unmarshalledObject.S3Reports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = ExperimentReportStateUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);

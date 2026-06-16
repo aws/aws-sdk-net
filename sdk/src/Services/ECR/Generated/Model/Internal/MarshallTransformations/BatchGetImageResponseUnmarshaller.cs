@@ -52,13 +52,13 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failures", targetDepth))
+                if (context.TestExpression("failures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImageFailure, ImageFailureUnmarshaller>(ImageFailureUnmarshaller.Instance);
                     response.Failures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("images", targetDepth))
+                if (context.TestExpression("images", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Image, ImageUnmarshaller>(ImageUnmarshaller.Instance);
                     response.Images = unmarshaller.Unmarshall(context, ref reader);

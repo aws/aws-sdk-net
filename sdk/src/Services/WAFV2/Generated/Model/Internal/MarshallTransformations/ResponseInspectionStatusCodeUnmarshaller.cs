@@ -56,13 +56,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailureCodes", targetDepth))
+                if (context.TestExpression("FailureCodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.FailureCodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessCodes", targetDepth))
+                if (context.TestExpression("SuccessCodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.SuccessCodes = unmarshaller.Unmarshall(context, ref reader);

@@ -244,7 +244,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot,
         /// therefore this name must be unique within its context - ElastiCache or an Amazon S3
-        /// bucket if exporting.
+        /// bucket if exporting. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

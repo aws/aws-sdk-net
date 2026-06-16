@@ -56,37 +56,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalEnis", targetDepth))
+                if (context.TestExpression("AdditionalEnis", targetDepth, ref reader))
                 {
                     var unmarshaller = AdditionalEnisUnmarshaller.Instance;
                     unmarshalledObject.AdditionalEnis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityReservation", targetDepth))
+                if (context.TestExpression("CapacityReservation", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityReservationUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerEni", targetDepth))
+                if (context.TestExpression("CustomerEni", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerEni = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureMessage", targetDepth))
+                if (context.TestExpression("FailureMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LcsExecutionState", targetDepth))
+                if (context.TestExpression("InstanceRequirementsEniConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InstanceRequirementsEniConfiguration, InstanceRequirementsEniConfigurationUnmarshaller>(InstanceRequirementsEniConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.InstanceRequirementsEniConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("LcsExecutionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LcsExecutionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeLogicalId", targetDepth))
+                if (context.TestExpression("NodeLogicalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeLogicalId = unmarshaller.Unmarshall(context, ref reader);

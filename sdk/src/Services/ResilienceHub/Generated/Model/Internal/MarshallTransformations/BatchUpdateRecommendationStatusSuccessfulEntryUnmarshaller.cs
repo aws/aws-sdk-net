@@ -56,37 +56,37 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appComponentId", targetDepth))
+                if (context.TestExpression("appComponentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppComponentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entryId", targetDepth))
+                if (context.TestExpression("entryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("excluded", targetDepth))
+                if (context.TestExpression("excluded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Excluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("excludeReason", targetDepth))
+                if (context.TestExpression("excludeReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExcludeReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("item", targetDepth))
+                if (context.TestExpression("item", targetDepth, ref reader))
                 {
                     var unmarshaller = UpdateRecommendationStatusItemUnmarshaller.Instance;
                     unmarshalledObject.Item = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("referenceId", targetDepth))
+                if (context.TestExpression("referenceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,79 +56,79 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CallAnalyticsStreamCategories", targetDepth))
+                if (context.TestExpression("CallAnalyticsStreamCategories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.CallAnalyticsStreamCategories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContentIdentificationType", targetDepth))
+                if (context.TestExpression("ContentIdentificationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentIdentificationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContentRedactionType", targetDepth))
+                if (context.TestExpression("ContentRedactionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentRedactionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnablePartialResultsStabilization", targetDepth))
+                if (context.TestExpression("EnablePartialResultsStabilization", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnablePartialResultsStabilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterPartialResults", targetDepth))
+                if (context.TestExpression("FilterPartialResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FilterPartialResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageCode", targetDepth))
+                if (context.TestExpression("LanguageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageModelName", targetDepth))
+                if (context.TestExpression("LanguageModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartialResultsStability", targetDepth))
+                if (context.TestExpression("PartialResultsStability", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PartialResultsStability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PiiEntityTypes", targetDepth))
+                if (context.TestExpression("PiiEntityTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PiiEntityTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostCallAnalyticsSettings", targetDepth))
+                if (context.TestExpression("PostCallAnalyticsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = PostCallAnalyticsSettingsUnmarshaller.Instance;
                     unmarshalledObject.PostCallAnalyticsSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VocabularyFilterMethod", targetDepth))
+                if (context.TestExpression("VocabularyFilterMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VocabularyFilterName", targetDepth))
+                if (context.TestExpression("VocabularyFilterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VocabularyName", targetDepth))
+                if (context.TestExpression("VocabularyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context, ref reader);

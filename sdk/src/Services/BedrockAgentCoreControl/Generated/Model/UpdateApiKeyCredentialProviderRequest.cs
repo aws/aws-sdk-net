@@ -36,6 +36,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class UpdateApiKeyCredentialProviderRequest : AmazonBedrockAgentCoreControlRequest
     {
         private string _apiKey;
+        private SecretReference _apiKeySecretConfig;
+        private SecretSourceType _apiKeySecretSource;
         private string _name;
 
         /// <summary>
@@ -45,7 +47,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// and is encrypted and stored securely.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=0, Max=65536)]
         public string ApiKey
         {
             get { return this._apiKey; }
@@ -56,6 +58,46 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetApiKey()
         {
             return this._apiKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiKeySecretConfig. 
+        /// <para>
+        /// A reference to the AWS Secrets Manager secret that stores the API key. This includes
+        /// the secret ID and the JSON key used to extract the API key value from the secret.
+        /// Required when <c>apiKeySecretSource</c> is set to <c>EXTERNAL</c>.
+        /// </para>
+        /// </summary>
+        public SecretReference ApiKeySecretConfig
+        {
+            get { return this._apiKeySecretConfig; }
+            set { this._apiKeySecretConfig = value; }
+        }
+
+        // Check to see if ApiKeySecretConfig property is set
+        internal bool IsSetApiKeySecretConfig()
+        {
+            return this._apiKeySecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiKeySecretSource. 
+        /// <para>
+        /// The source type of the API key secret. Use <c>MANAGED</c> if the secret is managed
+        /// by the service, or <c>EXTERNAL</c> if you manage the secret yourself in AWS Secrets
+        /// Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType ApiKeySecretSource
+        {
+            get { return this._apiKeySecretSource; }
+            set { this._apiKeySecretSource = value; }
+        }
+
+        // Check to see if ApiKeySecretSource property is set
+        internal bool IsSetApiKeySecretSource()
+        {
+            return this._apiKeySecretSource != null;
         }
 
         /// <summary>

@@ -72,7 +72,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ErrorDetails", targetDepth))
+                    if (context.TestExpression("ErrorDetails", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
                         unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);

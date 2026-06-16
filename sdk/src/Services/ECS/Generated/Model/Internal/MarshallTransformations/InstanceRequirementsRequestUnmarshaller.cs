@@ -56,145 +56,145 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acceleratorCount", targetDepth))
+                if (context.TestExpression("acceleratorCount", targetDepth, ref reader))
                 {
                     var unmarshaller = AcceleratorCountRequestUnmarshaller.Instance;
                     unmarshalledObject.AcceleratorCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("acceleratorManufacturers", targetDepth))
+                if (context.TestExpression("acceleratorManufacturers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AcceleratorManufacturers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("acceleratorNames", targetDepth))
+                if (context.TestExpression("acceleratorNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AcceleratorNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("acceleratorTotalMemoryMiB", targetDepth))
+                if (context.TestExpression("acceleratorTotalMemoryMiB", targetDepth, ref reader))
                 {
                     var unmarshaller = AcceleratorTotalMemoryMiBRequestUnmarshaller.Instance;
                     unmarshalledObject.AcceleratorTotalMemoryMiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("acceleratorTypes", targetDepth))
+                if (context.TestExpression("acceleratorTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AcceleratorTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowedInstanceTypes", targetDepth))
+                if (context.TestExpression("allowedInstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bareMetal", targetDepth))
+                if (context.TestExpression("bareMetal", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BareMetal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("baselineEbsBandwidthMbps", targetDepth))
+                if (context.TestExpression("baselineEbsBandwidthMbps", targetDepth, ref reader))
                 {
                     var unmarshaller = BaselineEbsBandwidthMbpsRequestUnmarshaller.Instance;
                     unmarshalledObject.BaselineEbsBandwidthMbps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("burstablePerformance", targetDepth))
+                if (context.TestExpression("burstablePerformance", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BurstablePerformance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cpuManufacturers", targetDepth))
+                if (context.TestExpression("cpuManufacturers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.CpuManufacturers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("excludedInstanceTypes", targetDepth))
+                if (context.TestExpression("excludedInstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludedInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceGenerations", targetDepth))
+                if (context.TestExpression("instanceGenerations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InstanceGenerations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localStorage", targetDepth))
+                if (context.TestExpression("localStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocalStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localStorageTypes", targetDepth))
+                if (context.TestExpression("localStorageTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LocalStorageTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxSpotPriceAsPercentageOfOptimalOnDemandPrice", targetDepth))
+                if (context.TestExpression("maxSpotPriceAsPercentageOfOptimalOnDemandPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryGiBPerVCpu", targetDepth))
+                if (context.TestExpression("memoryGiBPerVCpu", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryGiBPerVCpuRequestUnmarshaller.Instance;
                     unmarshalledObject.MemoryGiBPerVCpu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryMiB", targetDepth))
+                if (context.TestExpression("memoryMiB", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryMiBRequestUnmarshaller.Instance;
                     unmarshalledObject.MemoryMiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkBandwidthGbps", targetDepth))
+                if (context.TestExpression("networkBandwidthGbps", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkBandwidthGbpsRequestUnmarshaller.Instance;
                     unmarshalledObject.NetworkBandwidthGbps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkInterfaceCount", targetDepth))
+                if (context.TestExpression("networkInterfaceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkInterfaceCountRequestUnmarshaller.Instance;
                     unmarshalledObject.NetworkInterfaceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onDemandMaxPricePercentageOverLowestPrice", targetDepth))
+                if (context.TestExpression("onDemandMaxPricePercentageOverLowestPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OnDemandMaxPricePercentageOverLowestPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requireHibernateSupport", targetDepth))
+                if (context.TestExpression("requireHibernateSupport", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireHibernateSupport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spotMaxPricePercentageOverLowestPrice", targetDepth))
+                if (context.TestExpression("spotMaxPricePercentageOverLowestPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SpotMaxPricePercentageOverLowestPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalLocalStorageGB", targetDepth))
+                if (context.TestExpression("totalLocalStorageGB", targetDepth, ref reader))
                 {
                     var unmarshaller = TotalLocalStorageGBRequestUnmarshaller.Instance;
                     unmarshalledObject.TotalLocalStorageGB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vCpuCount", targetDepth))
+                if (context.TestExpression("vCpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = VCpuCountRangeRequestUnmarshaller.Instance;
                     unmarshalledObject.VCpuCount = unmarshaller.Unmarshall(context, ref reader);

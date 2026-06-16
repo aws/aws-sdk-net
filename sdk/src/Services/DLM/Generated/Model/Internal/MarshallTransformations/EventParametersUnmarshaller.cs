@@ -56,19 +56,19 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DescriptionRegex", targetDepth))
+                if (context.TestExpression("DescriptionRegex", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DescriptionRegex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventType", targetDepth))
+                if (context.TestExpression("EventType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotOwner", targetDepth))
+                if (context.TestExpression("SnapshotOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SnapshotOwner = unmarshaller.Unmarshall(context, ref reader);

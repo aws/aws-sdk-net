@@ -56,43 +56,43 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DynamodbExport", targetDepth))
+                if (context.TestExpression("DynamodbExport", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamodbExport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamodbS3Bucket", targetDepth))
+                if (context.TestExpression("DynamodbS3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamodbS3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamodbS3BucketOwner", targetDepth))
+                if (context.TestExpression("DynamodbS3BucketOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamodbS3BucketOwner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamodbS3Prefix", targetDepth))
+                if (context.TestExpression("DynamodbS3Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamodbS3Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamodbStsRoleArn", targetDepth))
+                if (context.TestExpression("DynamodbStsRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamodbStsRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamodbTableArn", targetDepth))
+                if (context.TestExpression("DynamodbTableArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DynamodbTableArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamodbUnnestDDBJson", targetDepth))
+                if (context.TestExpression("DynamodbUnnestDDBJson", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DynamodbUnnestDDBJson = unmarshaller.Unmarshall(context, ref reader);

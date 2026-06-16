@@ -52,7 +52,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Policies", targetDepth))
+                if (context.TestExpression("Policies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LifecyclePolicySummary, LifecyclePolicySummaryUnmarshaller>(LifecyclePolicySummaryUnmarshaller.Instance);
                     response.Policies = unmarshaller.Unmarshall(context, ref reader);

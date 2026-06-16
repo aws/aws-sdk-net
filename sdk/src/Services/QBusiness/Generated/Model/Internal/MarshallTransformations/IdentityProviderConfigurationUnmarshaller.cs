@@ -56,13 +56,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("openIDConnectConfiguration", targetDepth))
+                if (context.TestExpression("openIDConnectConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenIDConnectProviderConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OpenIDConnectConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("samlConfiguration", targetDepth))
+                if (context.TestExpression("samlConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SamlProviderConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SamlConfiguration = unmarshaller.Unmarshall(context, ref reader);

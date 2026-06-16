@@ -56,13 +56,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("comparisonOperator", targetDepth))
+                if (context.TestExpression("comparisonOperator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operand", targetDepth))
+                if (context.TestExpression("operand", targetDepth, ref reader))
                 {
                     var unmarshaller = CommandParameterValueComparisonOperandUnmarshaller.Instance;
                     unmarshalledObject.Operand = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("missionProfileId", targetDepth))
+                if (context.TestExpression("missionProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MissionProfileId = unmarshaller.Unmarshall(context, ref reader);

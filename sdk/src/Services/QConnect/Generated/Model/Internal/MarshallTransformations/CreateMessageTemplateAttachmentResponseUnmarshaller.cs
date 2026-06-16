@@ -52,7 +52,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attachment", targetDepth))
+                if (context.TestExpression("attachment", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageTemplateAttachmentUnmarshaller.Instance;
                     response.Attachment = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3OutputDataConfig", targetDepth))
+                if (context.TestExpression("s3OutputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AsyncInvokeS3OutputDataConfigUnmarshaller.Instance;
                     unmarshalledObject.S3OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);

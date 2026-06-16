@@ -56,157 +56,157 @@ namespace Amazon.KeyspacesStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("asciiT", targetDepth))
+                if (context.TestExpression("asciiT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AsciiT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bigintT", targetDepth))
+                if (context.TestExpression("bigintT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BigintT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blobT", targetDepth))
+                if (context.TestExpression("blobT", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.BlobT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("boolT", targetDepth))
+                if (context.TestExpression("boolT", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BoolT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("counterT", targetDepth))
+                if (context.TestExpression("counterT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CounterT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dateT", targetDepth))
+                if (context.TestExpression("dateT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DateT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("decimalT", targetDepth))
+                if (context.TestExpression("decimalT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DecimalT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("doubleT", targetDepth))
+                if (context.TestExpression("doubleT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DoubleT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("durationT", targetDepth))
+                if (context.TestExpression("durationT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DurationT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("floatT", targetDepth))
+                if (context.TestExpression("floatT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FloatT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inetT", targetDepth))
+                if (context.TestExpression("inetT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InetT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intT", targetDepth))
+                if (context.TestExpression("intT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listT", targetDepth))
+                if (context.TestExpression("listT", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyspacesCell, KeyspacesCellUnmarshaller>(KeyspacesCellUnmarshaller.Instance);
                     unmarshalledObject.ListT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapT", targetDepth))
+                if (context.TestExpression("mapT", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyspacesCellMapDefinition, KeyspacesCellMapDefinitionUnmarshaller>(KeyspacesCellMapDefinitionUnmarshaller.Instance);
                     unmarshalledObject.MapT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("setT", targetDepth))
+                if (context.TestExpression("setT", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyspacesCell, KeyspacesCellUnmarshaller>(KeyspacesCellUnmarshaller.Instance);
                     unmarshalledObject.SetT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("smallintT", targetDepth))
+                if (context.TestExpression("smallintT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SmallintT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textT", targetDepth))
+                if (context.TestExpression("textT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TextT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestampT", targetDepth))
+                if (context.TestExpression("timestampT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimestampT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeT", targetDepth))
+                if (context.TestExpression("timeT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeuuidT", targetDepth))
+                if (context.TestExpression("timeuuidT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeuuidT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tinyintT", targetDepth))
+                if (context.TestExpression("tinyintT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TinyintT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tupleT", targetDepth))
+                if (context.TestExpression("tupleT", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyspacesCell, KeyspacesCellUnmarshaller>(KeyspacesCellUnmarshaller.Instance);
                     unmarshalledObject.TupleT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("udtT", targetDepth))
+                if (context.TestExpression("udtT", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, KeyspacesCell, StringUnmarshaller, KeyspacesCellUnmarshaller>(StringUnmarshaller.Instance, KeyspacesCellUnmarshaller.Instance);
                     unmarshalledObject.UdtT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uuidT", targetDepth))
+                if (context.TestExpression("uuidT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UuidT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("varcharT", targetDepth))
+                if (context.TestExpression("varcharT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VarcharT = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("varintT", targetDepth))
+                if (context.TestExpression("varintT", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VarintT = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppLifecycleManagement", targetDepth))
+                if (context.TestExpression("AppLifecycleManagement", targetDepth, ref reader))
                 {
                     var unmarshaller = AppLifecycleManagementUnmarshaller.Instance;
                     unmarshalledObject.AppLifecycleManagement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BuiltInLifecycleConfigArn", targetDepth))
+                if (context.TestExpression("BuiltInLifecycleConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuiltInLifecycleConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeRepositories", targetDepth))
+                if (context.TestExpression("CodeRepositories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CodeRepository, CodeRepositoryUnmarshaller>(CodeRepositoryUnmarshaller.Instance);
                     unmarshalledObject.CodeRepositories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomImages", targetDepth))
+                if (context.TestExpression("CustomImages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomImage, CustomImageUnmarshaller>(CustomImageUnmarshaller.Instance);
                     unmarshalledObject.CustomImages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultResourceSpec", targetDepth))
+                if (context.TestExpression("DefaultResourceSpec", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSpecUnmarshaller.Instance;
                     unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmrSettings", targetDepth))
+                if (context.TestExpression("EmrSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmrSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmrSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LifecycleConfigArns", targetDepth))
+                if (context.TestExpression("LifecycleConfigArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LifecycleConfigArns = unmarshaller.Unmarshall(context, ref reader);

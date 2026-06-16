@@ -56,19 +56,19 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BehaviorOnMxFailure", targetDepth))
+                if (context.TestExpression("BehaviorOnMxFailure", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BehaviorOnMxFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MailFromDomain", targetDepth))
+                if (context.TestExpression("MailFromDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MailFromDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MailFromDomainStatus", targetDepth))
+                if (context.TestExpression("MailFromDomainStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MailFromDomainStatus = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Operands", targetDepth))
+                if (context.TestExpression("Operands", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails, AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsUnmarshaller>(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsUnmarshaller.Instance);
                     unmarshalledObject.Operands = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prefix", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tag", targetDepth))
+                if (context.TestExpression("Tag", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetailsUnmarshaller.Instance;
                     unmarshalledObject.Tag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoAdjustType", targetDepth))
+                if (context.TestExpression("AutoAdjustType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoAdjustType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HistoricalOptions", targetDepth))
+                if (context.TestExpression("HistoricalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = HistoricalOptionsUnmarshaller.Instance;
                     unmarshalledObject.HistoricalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastAutoAdjustTime", targetDepth))
+                if (context.TestExpression("LastAutoAdjustTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAutoAdjustTime = unmarshaller.Unmarshall(context, ref reader);

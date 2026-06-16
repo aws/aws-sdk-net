@@ -56,25 +56,25 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VolumeARN", targetDepth))
+                if (context.TestExpression("VolumeARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeRecoveryPointTime", targetDepth))
+                if (context.TestExpression("VolumeRecoveryPointTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeRecoveryPointTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeSizeInBytes", targetDepth))
+                if (context.TestExpression("VolumeSizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeUsageInBytes", targetDepth))
+                if (context.TestExpression("VolumeUsageInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context, ref reader);

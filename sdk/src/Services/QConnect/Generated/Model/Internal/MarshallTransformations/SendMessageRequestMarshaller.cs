@@ -71,8 +71,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/assistants/{assistantId}/sessions/{sessionId}/message";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -149,6 +149,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.OrchestratorUseCase);
             }
 
+            if(publicRequest.IsSetOriginRequestId())
+            {
+                context.Writer.WritePropertyName("originRequestId");
+                context.Writer.WriteStringValue(publicRequest.OriginRequestId);
+            }
+
             if(publicRequest.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
@@ -157,10 +163,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

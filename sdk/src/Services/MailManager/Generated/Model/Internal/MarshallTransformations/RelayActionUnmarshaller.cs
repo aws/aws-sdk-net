@@ -56,19 +56,19 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionFailurePolicy", targetDepth))
+                if (context.TestExpression("ActionFailurePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionFailurePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MailFrom", targetDepth))
+                if (context.TestExpression("MailFrom", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MailFrom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Relay", targetDepth))
+                if (context.TestExpression("Relay", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Relay = unmarshaller.Unmarshall(context, ref reader);

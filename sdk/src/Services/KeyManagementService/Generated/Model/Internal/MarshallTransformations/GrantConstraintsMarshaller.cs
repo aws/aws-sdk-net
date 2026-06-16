@@ -74,6 +74,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSourceArn())
+            {
+                context.Writer.WritePropertyName("SourceArn");
+                context.Writer.WriteStringValue(requestObject.SourceArn);
+            }
+
         }
 
         /// <summary>

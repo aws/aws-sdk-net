@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("countsByGroup", targetDepth))
+                if (context.TestExpression("countsByGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupCount, GroupCountUnmarshaller>(GroupCountUnmarshaller.Instance);
                     response.CountsByGroup = unmarshaller.Unmarshall(context, ref reader);

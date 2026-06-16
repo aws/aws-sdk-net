@@ -56,49 +56,49 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastScannedAt", targetDepth))
+                if (context.TestExpression("lastScannedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastScannedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("resourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceMetadata", targetDepth))
+                if (context.TestExpression("resourceMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceScanMetadataUnmarshaller.Instance;
                     unmarshalledObject.ResourceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanMode", targetDepth))
+                if (context.TestExpression("scanMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScanMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanStatus", targetDepth))
+                if (context.TestExpression("scanStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ScanStatusUnmarshaller.Instance;
                     unmarshalledObject.ScanStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanType", targetDepth))
+                if (context.TestExpression("scanType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScanType = unmarshaller.Unmarshall(context, ref reader);

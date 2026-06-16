@@ -56,25 +56,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PrivateLinkEndpoint", targetDepth))
+                if (context.TestExpression("PrivateLinkEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrivateLinkEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupArns", targetDepth))
+                if (context.TestExpression("SecurityGroupArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroupArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetArns", targetDepth))
+                if (context.TestExpression("SubnetArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubnetArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcEndpointId", targetDepth))
+                if (context.TestExpression("VpcEndpointId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context, ref reader);

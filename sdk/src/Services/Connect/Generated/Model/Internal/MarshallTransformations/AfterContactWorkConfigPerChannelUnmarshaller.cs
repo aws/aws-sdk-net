@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AfterContactWorkConfig", targetDepth))
+                if (context.TestExpression("AfterContactWorkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AfterContactWorkConfigUnmarshaller.Instance;
                     unmarshalledObject.AfterContactWorkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AgentFirstCallbackAfterContactWorkConfig", targetDepth))
+                if (context.TestExpression("AgentFirstCallbackAfterContactWorkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AfterContactWorkConfigUnmarshaller.Instance;
                     unmarshalledObject.AgentFirstCallbackAfterContactWorkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("Channel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reservedInstancesId", targetDepth))
+                if (context.TestExpression("reservedInstancesId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReservedInstancesId = unmarshaller.Unmarshall(context, ref reader);

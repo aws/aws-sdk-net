@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// The avoidance geometry, to be included while calculating an isoline.
+    /// Defines an area to avoid during calculations using one of several supported geometry
+    /// types. The service will prefer routes that avoid these areas when possible.
     /// </summary>
     public partial class IsolineAvoidanceAreaGeometry
     {
@@ -43,10 +44,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property BoundingBox. 
         /// <para>
-        /// Geometry defined as a bounding box. The first pair represents the X and Y coordinates
-        /// (longitude and latitude,) of the southwest corner of the bounding box; the second
-        /// pair represents the X and Y coordinates (longitude and latitude) of the northeast
-        /// corner.
+        /// A rectangular area defined by its southwest and northeast corners: <c>[min longitude,
+        /// min latitude, max longitude, max latitude]</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -70,8 +69,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Corridor. 
         /// <para>
-        /// Geometry defined as a corridor - a LineString with a radius that defines the width
-        /// of the corridor.
+        /// A buffer zone around a line, defined by a series of coordinates and a radius in meters.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -90,8 +88,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Polygon. 
         /// <para>
-        /// A list of Polygon will be excluded for calculating isolines, the list can only contain
-        /// 1 polygon.
+        /// A polygon defined by a list of coordinate rings. The first ring defines the outer
+        /// boundary; subsequent rings will be ignored.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -115,8 +113,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property PolylineCorridor. 
         /// <para>
-        /// Geometry defined as an encoded corridor – a polyline with a radius that defines the
-        /// width of the corridor. For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.
+        /// A buffer zone around a compressed polyline, defined by an encoded polyline string
+        /// and a radius in meters. For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -135,9 +133,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property PolylinePolygon. 
         /// <para>
-        /// A list of PolylinePolygon's that are excluded for calculating isolines, the list can
-        /// only contain 1 polygon. For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.
-        /// 
+        /// A polygon defined by encoded polyline strings. The first string defines the outer
+        /// boundary; subsequent strings will be ignored. For more information on polyline encoding,
+        /// see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -56,25 +56,25 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attemptId", targetDepth))
+                if (context.TestExpression("attemptId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttemptId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("objects", targetDepth))
+                if (context.TestExpression("objects", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, PipelineObject, StringUnmarshaller, PipelineObjectUnmarshaller>(StringUnmarshaller.Instance, PipelineObjectUnmarshaller.Instance);
                     unmarshalledObject.Objects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineId", targetDepth))
+                if (context.TestExpression("pipelineId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskId", targetDepth))
+                if (context.TestExpression("taskId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskId = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("composition", targetDepth))
+                if (context.TestExpression("composition", targetDepth, ref reader))
                 {
                     var unmarshaller = CompositionUnmarshaller.Instance;
                     response.Composition = unmarshaller.Unmarshall(context, ref reader);

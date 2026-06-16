@@ -56,7 +56,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("csv", targetDepth))
+                if (context.TestExpression("csv", targetDepth, ref reader))
                 {
                     var unmarshaller = CSVOutputUnmarshaller.Instance;
                     unmarshalledObject.Csv = unmarshaller.Unmarshall(context, ref reader);

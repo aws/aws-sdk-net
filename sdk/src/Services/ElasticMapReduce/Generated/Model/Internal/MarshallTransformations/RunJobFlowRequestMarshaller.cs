@@ -67,8 +67,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -318,10 +318,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ServiceRole);
             }
 
+            if(publicRequest.IsSetSessionEnabled())
+            {
+                context.Writer.WritePropertyName("SessionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SessionEnabled.Value);
+            }
+
             if(publicRequest.IsSetStepConcurrencyLevel())
             {
                 context.Writer.WritePropertyName("StepConcurrencyLevel");
                 context.Writer.WriteNumberValue(publicRequest.StepConcurrencyLevel.Value);
+            }
+
+            if(publicRequest.IsSetStepExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("StepExecutionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.StepExecutionRoleArn);
             }
 
             if(publicRequest.IsSetSteps())
@@ -375,10 +387,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

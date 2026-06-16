@@ -52,7 +52,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OrganizationId", targetDepth))
+                if (context.TestExpression("OrganizationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrganizationId = unmarshaller.Unmarshall(context, ref reader);

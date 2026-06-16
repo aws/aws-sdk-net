@@ -56,13 +56,13 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("manifestName", targetDepth))
+                if (context.TestExpression("manifestName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamSelection", targetDepth))
+                if (context.TestExpression("streamSelection", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamSelectionUnmarshaller.Instance;
                     unmarshalledObject.StreamSelection = unmarshaller.Unmarshall(context, ref reader);

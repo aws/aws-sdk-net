@@ -52,19 +52,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associatedAccessPolicy", targetDepth))
+                if (context.TestExpression("associatedAccessPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AssociatedAccessPolicyUnmarshaller.Instance;
                     response.AssociatedAccessPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterName", targetDepth))
+                if (context.TestExpression("clusterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("principalArn", targetDepth))
+                if (context.TestExpression("principalArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PrincipalArn = unmarshaller.Unmarshall(context, ref reader);

@@ -65,12 +65,37 @@ namespace Amazon.BedrockAgentCore.Model
     /// </summary>
     public partial class StartCodeInterpreterSessionRequest : AmazonBedrockAgentCoreRequest
     {
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
         private string _clientToken;
         private string _codeInterpreterIdentifier;
         private string _name;
         private int? _sessionTimeoutSeconds;
         private string _traceId;
         private string _traceParent;
+
+        /// <summary>
+        /// Gets and sets the property Certificates. 
+        /// <para>
+        /// A list of certificates to install in the code interpreter session.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Certificate> Certificates
+        {
+            get { return this._certificates; }
+            set { this._certificates = value; }
+        }
+
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
+        {
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -137,9 +162,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property SessionTimeoutSeconds. 
         /// <para>
-        /// The time in seconds after which the session automatically terminates if there is no
-        /// activity. The default value is 900 seconds (15 minutes). The minimum allowed value
-        /// is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).
+        /// The duration in seconds (time-to-live) after which the session automatically terminates,
+        /// regardless of ongoing activity. Defaults to 900 seconds (15 minutes). Recommended
+        /// minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=28800)]

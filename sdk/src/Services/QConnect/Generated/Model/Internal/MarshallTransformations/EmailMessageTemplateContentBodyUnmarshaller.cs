@@ -56,13 +56,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("html", targetDepth))
+                if (context.TestExpression("html", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageTemplateBodyContentProviderUnmarshaller.Instance;
                     unmarshalledObject.Html = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("plainText", targetDepth))
+                if (context.TestExpression("plainText", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageTemplateBodyContentProviderUnmarshaller.Instance;
                     unmarshalledObject.PlainText = unmarshaller.Unmarshall(context, ref reader);

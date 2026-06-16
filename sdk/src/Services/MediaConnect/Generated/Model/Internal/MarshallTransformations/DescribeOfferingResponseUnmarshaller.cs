@@ -52,7 +52,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("offering", targetDepth))
+                if (context.TestExpression("offering", targetDepth, ref reader))
                 {
                     var unmarshaller = OfferingUnmarshaller.Instance;
                     response.Offering = unmarshaller.Unmarshall(context, ref reader);

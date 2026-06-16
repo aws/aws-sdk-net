@@ -296,11 +296,17 @@ namespace Amazon.MedicalImaging
         /// <exception cref="Amazon.MedicalImaging.Model.AccessDeniedException">
         /// The user does not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MedicalImaging.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.InternalServerException">
         /// An unexpected error occurred during processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MedicalImaging.Model.NotAcceptableException">
+        /// The request content type or accept header is not supported.
         /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
@@ -578,9 +584,10 @@ namespace Amazon.MedicalImaging
 
         /// <summary>
         /// Start importing bulk data into an <c>ACTIVE</c> data store. The import job imports
-        /// DICOM P10 files found in the S3 prefix specified by the <c>inputS3Uri</c> parameter.
-        /// The import job stores processing results in the file specified by the <c>outputS3Uri</c>
-        /// parameter.
+        /// DICOM P10 files or enhances existing DICOM files with JSON metadata. The <c>importConfiguration</c>
+        /// parameter specifies the import type. The data is found in the S3 prefix specified
+        /// by the <c>inputS3Uri</c> parameter. The import job stores processing results in the
+        /// file specified by the <c>outputS3Uri</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDICOMImportJob service method.</param>
         /// <param name="cancellationToken">

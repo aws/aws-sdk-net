@@ -56,19 +56,19 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EncryptionConflictResolutionStrategy", targetDepth))
+                if (context.TestExpression("EncryptionConflictResolutionStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConflictResolutionStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionStrategy", targetDepth))
+                if (context.TestExpression("EncryptionStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyArn", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);

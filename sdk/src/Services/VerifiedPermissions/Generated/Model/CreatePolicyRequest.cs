@@ -63,6 +63,7 @@ namespace Amazon.VerifiedPermissions.Model
     {
         private string _clientToken;
         private PolicyDefinition _definition;
+        private string _name;
         private string _policyStoreId;
 
         /// <summary>
@@ -127,10 +128,53 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies a name for the policy that is unique among all policies within the policy
+        /// store. You can use the name in place of the policy ID in API operations that reference
+        /// the policy. The name must be prefixed with <c>name/</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a name that is already associated with another policy in the policy
+        /// store, you receive a <c>ConflictException</c> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=150)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyStoreId. 
         /// <para>
         /// Specifies the <c>PolicyStoreId</c> of the policy store you want to store the policy
         /// in.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a policy store, use its ID or alias name. When using an alias name, prefix
+        /// it with <c>policy-store-alias/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PSEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <c>policy-store-alias/example-policy-store</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -56,25 +56,25 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attributes", targetDepth))
+                if (context.TestExpression("attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomLogSourceAttributesUnmarshaller.Instance;
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provider", targetDepth))
+                if (context.TestExpression("provider", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomLogSourceProviderUnmarshaller.Instance;
                     unmarshalledObject.Provider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceName", targetDepth))
+                if (context.TestExpression("sourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceVersion", targetDepth))
+                if (context.TestExpression("sourceVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceVersion = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocumentMetadata", targetDepth))
+                if (context.TestExpression("DocumentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.DocumentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpenseDocuments", targetDepth))
+                if (context.TestExpression("ExpenseDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpenseDocument, ExpenseDocumentUnmarshaller>(ExpenseDocumentUnmarshaller.Instance);
                     response.ExpenseDocuments = unmarshaller.Unmarshall(context, ref reader);

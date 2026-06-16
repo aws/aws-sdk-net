@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionArns", targetDepth))
+                if (context.TestExpression("ActionArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ActionArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ArtifactArns", targetDepth))
+                if (context.TestExpression("ArtifactArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ArtifactArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Associations", targetDepth))
+                if (context.TestExpression("Associations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociationInfo, AssociationInfoUnmarshaller>(AssociationInfoUnmarshaller.Instance);
                     unmarshalledObject.Associations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContextArns", targetDepth))
+                if (context.TestExpression("ContextArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ContextArns = unmarshaller.Unmarshall(context, ref reader);

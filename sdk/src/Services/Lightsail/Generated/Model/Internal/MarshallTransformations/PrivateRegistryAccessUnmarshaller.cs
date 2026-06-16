@@ -56,7 +56,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ecrImagePullerRole", targetDepth))
+                if (context.TestExpression("ecrImagePullerRole", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerServiceECRImagePullerRoleUnmarshaller.Instance;
                     unmarshalledObject.EcrImagePullerRole = unmarshaller.Unmarshall(context, ref reader);

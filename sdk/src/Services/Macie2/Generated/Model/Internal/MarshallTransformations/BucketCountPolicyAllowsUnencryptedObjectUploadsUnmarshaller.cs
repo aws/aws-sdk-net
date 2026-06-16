@@ -56,19 +56,19 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowsUnencryptedObjectUploads", targetDepth))
+                if (context.TestExpression("allowsUnencryptedObjectUploads", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AllowsUnencryptedObjectUploads = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deniesUnencryptedObjectUploads", targetDepth))
+                if (context.TestExpression("deniesUnencryptedObjectUploads", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DeniesUnencryptedObjectUploads = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unknown", targetDepth))
+                if (context.TestExpression("unknown", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Unknown = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("readCapacityAutoScaling", targetDepth))
+                if (context.TestExpression("readCapacityAutoScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsUnmarshaller.Instance;
                     unmarshalledObject.ReadCapacityAutoScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("writeCapacityAutoScaling", targetDepth))
+                if (context.TestExpression("writeCapacityAutoScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsUnmarshaller.Instance;
                     unmarshalledObject.WriteCapacityAutoScaling = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("groups", targetDepth))
+                if (context.TestExpression("groups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Groups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("impersonatedUser", targetDepth))
+                if (context.TestExpression("impersonatedUser", targetDepth, ref reader))
                 {
                     var unmarshaller = ImpersonatedUserUnmarshaller.Instance;
                     unmarshalledObject.ImpersonatedUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionName", targetDepth))
+                if (context.TestExpression("sessionName", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SessionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uid", targetDepth))
+                if (context.TestExpression("uid", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Uid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("username", targetDepth))
+                if (context.TestExpression("username", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Username = unmarshaller.Unmarshall(context, ref reader);

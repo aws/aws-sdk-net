@@ -4023,6 +4023,346 @@ namespace Amazon.WAFV2
 
         #endregion
         
+        #region  GetRevenueStatistics
+
+
+        /// <summary>
+        /// Retrieves ranked monetization statistics. Use the <c>StatisticType</c> parameter to
+        /// specify the ranking: <c>TOP_SOURCES_BY_REVENUE</c> for top sources by revenue, or
+        /// <c>TOP_PATHS_BY_REVENUE</c> for top content paths by revenue. This operation is only
+        /// available for <c>CLOUDFRONT</c> scope. The maximum supported time window is 90 days.
+        /// When no <c>CurrencyMode</c> filter is provided, results default to <c>REAL</c>. To
+        /// retrieve test data, include a <c>CurrencyMode</c> filter with the value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevenueStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetRevenueStatistics service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatistics">REST API Reference for GetRevenueStatistics Operation</seealso>
+        GetRevenueStatisticsResponse GetRevenueStatistics(GetRevenueStatisticsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves ranked monetization statistics. Use the <c>StatisticType</c> parameter to
+        /// specify the ranking: <c>TOP_SOURCES_BY_REVENUE</c> for top sources by revenue, or
+        /// <c>TOP_PATHS_BY_REVENUE</c> for top content paths by revenue. This operation is only
+        /// available for <c>CLOUDFRONT</c> scope. The maximum supported time window is 90 days.
+        /// When no <c>CurrencyMode</c> filter is provided, results default to <c>REAL</c>. To
+        /// retrieve test data, include a <c>CurrencyMode</c> filter with the value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevenueStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRevenueStatistics service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatistics">REST API Reference for GetRevenueStatistics Operation</seealso>
+        Task<GetRevenueStatisticsResponse> GetRevenueStatisticsAsync(GetRevenueStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRevenueStatisticsSummary
+
+
+        /// <summary>
+        /// Retrieves a summary of monetization revenue for the specified time window. Returns
+        /// total revenue, revenue by verification tier, total settlements, and total HTTP 402
+        /// responses served. This operation is only available for <c>CLOUDFRONT</c> scope. The
+        /// maximum supported time window is 90 days. When no <c>CurrencyMode</c> filter is provided,
+        /// results default to <c>REAL</c>. To retrieve test data, include a <c>CurrencyMode</c>
+        /// filter with the value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevenueStatisticsSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetRevenueStatisticsSummary service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatisticsSummary">REST API Reference for GetRevenueStatisticsSummary Operation</seealso>
+        GetRevenueStatisticsSummaryResponse GetRevenueStatisticsSummary(GetRevenueStatisticsSummaryRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a summary of monetization revenue for the specified time window. Returns
+        /// total revenue, revenue by verification tier, total settlements, and total HTTP 402
+        /// responses served. This operation is only available for <c>CLOUDFRONT</c> scope. The
+        /// maximum supported time window is 90 days. When no <c>CurrencyMode</c> filter is provided,
+        /// results default to <c>REAL</c>. To retrieve test data, include a <c>CurrencyMode</c>
+        /// filter with the value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevenueStatisticsSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRevenueStatisticsSummary service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatisticsSummary">REST API Reference for GetRevenueStatisticsSummary Operation</seealso>
+        Task<GetRevenueStatisticsSummaryResponse> GetRevenueStatisticsSummaryAsync(GetRevenueStatisticsSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRevenueStatisticsTimeSeries
+
+
+        /// <summary>
+        /// Retrieves time series data for monetization revenue. Returns data points aggregated
+        /// at the specified interval for the given time window. This operation is only available
+        /// for <c>CLOUDFRONT</c> scope. The maximum supported time window is 90 days. When no
+        /// <c>CurrencyMode</c> filter is provided, results default to <c>REAL</c>. To retrieve
+        /// test data, include a <c>CurrencyMode</c> filter with the value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevenueStatisticsTimeSeries service method.</param>
+        /// 
+        /// <returns>The response from the GetRevenueStatisticsTimeSeries service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatisticsTimeSeries">REST API Reference for GetRevenueStatisticsTimeSeries Operation</seealso>
+        GetRevenueStatisticsTimeSeriesResponse GetRevenueStatisticsTimeSeries(GetRevenueStatisticsTimeSeriesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves time series data for monetization revenue. Returns data points aggregated
+        /// at the specified interval for the given time window. This operation is only available
+        /// for <c>CLOUDFRONT</c> scope. The maximum supported time window is 90 days. When no
+        /// <c>CurrencyMode</c> filter is provided, results default to <c>REAL</c>. To retrieve
+        /// test data, include a <c>CurrencyMode</c> filter with the value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevenueStatisticsTimeSeries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRevenueStatisticsTimeSeries service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRevenueStatisticsTimeSeries">REST API Reference for GetRevenueStatisticsTimeSeries Operation</seealso>
+        Task<GetRevenueStatisticsTimeSeriesResponse> GetRevenueStatisticsTimeSeriesAsync(GetRevenueStatisticsTimeSeriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRuleGroup
 
 
@@ -5696,6 +6036,120 @@ namespace Amazon.WAFV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         Task<ListRuleGroupsResponse> ListRuleGroupsAsync(ListRuleGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSettlementRecords
+
+
+        /// <summary>
+        /// Retrieves individual settlement transaction records for monetization. Each record
+        /// represents a single payment transaction between a client and your protected resource.
+        /// This operation is only available for <c>CLOUDFRONT</c> scope. The maximum supported
+        /// time window is 90 days. When no <c>CurrencyMode</c> filter is provided, results default
+        /// to <c>REAL</c>. To retrieve test data, include a <c>CurrencyMode</c> filter with the
+        /// value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSettlementRecords service method.</param>
+        /// 
+        /// <returns>The response from the ListSettlementRecords service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListSettlementRecords">REST API Reference for ListSettlementRecords Operation</seealso>
+        ListSettlementRecordsResponse ListSettlementRecords(ListSettlementRecordsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves individual settlement transaction records for monetization. Each record
+        /// represents a single payment transaction between a client and your protected resource.
+        /// This operation is only available for <c>CLOUDFRONT</c> scope. The maximum supported
+        /// time window is 90 days. When no <c>CurrencyMode</c> filter is provided, results default
+        /// to <c>REAL</c>. To retrieve test data, include a <c>CurrencyMode</c> filter with the
+        /// value <c>TEST</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSettlementRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSettlementRecords service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListSettlementRecords">REST API Reference for ListSettlementRecords Operation</seealso>
+        Task<ListSettlementRecordsResponse> ListSettlementRecordsAsync(ListSettlementRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

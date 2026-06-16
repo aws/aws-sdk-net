@@ -56,31 +56,31 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("documentChar", targetDepth))
+                if (context.TestExpression("documentChar", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentCharLocationUnmarshaller.Instance;
                     unmarshalledObject.DocumentChar = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentChunk", targetDepth))
+                if (context.TestExpression("documentChunk", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentChunkLocationUnmarshaller.Instance;
                     unmarshalledObject.DocumentChunk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentPage", targetDepth))
+                if (context.TestExpression("documentPage", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentPageLocationUnmarshaller.Instance;
                     unmarshalledObject.DocumentPage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("searchResultLocation", targetDepth))
+                if (context.TestExpression("searchResultLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = SearchResultLocationUnmarshaller.Instance;
                     unmarshalledObject.SearchResultLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("web", targetDepth))
+                if (context.TestExpression("web", targetDepth, ref reader))
                 {
                     var unmarshaller = WebLocationUnmarshaller.Instance;
                     unmarshalledObject.Web = unmarshaller.Unmarshall(context, ref reader);

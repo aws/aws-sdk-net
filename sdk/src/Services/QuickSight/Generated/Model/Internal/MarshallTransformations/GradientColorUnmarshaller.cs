@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Stops", targetDepth))
+                if (context.TestExpression("Stops", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GradientStop, GradientStopUnmarshaller>(GradientStopUnmarshaller.Instance);
                     unmarshalledObject.Stops = unmarshaller.Unmarshall(context, ref reader);

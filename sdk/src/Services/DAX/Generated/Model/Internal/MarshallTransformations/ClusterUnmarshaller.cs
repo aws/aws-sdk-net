@@ -56,115 +56,115 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveNodes", targetDepth))
+                if (context.TestExpression("ActiveNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterArn", targetDepth))
+                if (context.TestExpression("ClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterDiscoveryEndpoint", targetDepth))
+                if (context.TestExpression("ClusterDiscoveryEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = EndpointUnmarshaller.Instance;
                     unmarshalledObject.ClusterDiscoveryEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterEndpointEncryptionType", targetDepth))
+                if (context.TestExpression("ClusterEndpointEncryptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterEndpointEncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterName", targetDepth))
+                if (context.TestExpression("ClusterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IamRoleArn", targetDepth))
+                if (context.TestExpression("IamRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkType", targetDepth))
+                if (context.TestExpression("NetworkType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeIdsToRemove", targetDepth))
+                if (context.TestExpression("NodeIdsToRemove", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NodeIdsToRemove = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Nodes", targetDepth))
+                if (context.TestExpression("Nodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Node, NodeUnmarshaller>(NodeUnmarshaller.Instance);
                     unmarshalledObject.Nodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeType", targetDepth))
+                if (context.TestExpression("NodeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationConfiguration", targetDepth))
+                if (context.TestExpression("NotificationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NotificationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NotificationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterGroup", targetDepth))
+                if (context.TestExpression("ParameterGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterGroupStatusUnmarshaller.Instance;
                     unmarshalledObject.ParameterGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
+                if (context.TestExpression("PreferredMaintenanceWindow", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroups", targetDepth))
+                if (context.TestExpression("SecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecurityGroupMembership, SecurityGroupMembershipUnmarshaller>(SecurityGroupMembershipUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SSEDescription", targetDepth))
+                if (context.TestExpression("SSEDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = SSEDescriptionUnmarshaller.Instance;
                     unmarshalledObject.SSEDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetGroup", targetDepth))
+                if (context.TestExpression("SubnetGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubnetGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNodes", targetDepth))
+                if (context.TestExpression("TotalNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNodes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clusterArn", targetDepth))
+                if (context.TestExpression("clusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterDetails", targetDepth))
+                if (context.TestExpression("clusterDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterDetails, ClusterDetailsUnmarshaller>(ClusterDetailsUnmarshaller.Instance);
                     unmarshalledObject.ClusterDetails = unmarshaller.Unmarshall(context, ref reader);

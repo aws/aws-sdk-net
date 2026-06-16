@@ -56,97 +56,97 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Actions", targetDepth))
+                if (context.TestExpression("Actions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Action, ActionUnmarshaller>(ActionUnmarshaller.Instance);
                     unmarshalledObject.Actions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CopyTags", targetDepth))
+                if (context.TestExpression("CopyTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateInterval", targetDepth))
+                if (context.TestExpression("CreateInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CreateInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossRegionCopyTargets", targetDepth))
+                if (context.TestExpression("CrossRegionCopyTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CrossRegionCopyTarget, CrossRegionCopyTargetUnmarshaller>(CrossRegionCopyTargetUnmarshaller.Instance);
                     unmarshalledObject.CrossRegionCopyTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventSource", targetDepth))
+                if (context.TestExpression("EventSource", targetDepth, ref reader))
                 {
                     var unmarshaller = EventSourceUnmarshaller.Instance;
                     unmarshalledObject.EventSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Exclusions", targetDepth))
+                if (context.TestExpression("Exclusions", targetDepth, ref reader))
                 {
                     var unmarshaller = ExclusionsUnmarshaller.Instance;
                     unmarshalledObject.Exclusions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExtendDeletion", targetDepth))
+                if (context.TestExpression("ExtendDeletion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExtendDeletion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Parameters", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ParametersUnmarshaller.Instance;
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyLanguage", targetDepth))
+                if (context.TestExpression("PolicyLanguage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyType", targetDepth))
+                if (context.TestExpression("PolicyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceLocations", targetDepth))
+                if (context.TestExpression("ResourceLocations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ResourceLocations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceType", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceTypes", targetDepth))
+                if (context.TestExpression("ResourceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ResourceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetainInterval", targetDepth))
+                if (context.TestExpression("RetainInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetainInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schedules", targetDepth))
+                if (context.TestExpression("Schedules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Schedule, ScheduleUnmarshaller>(ScheduleUnmarshaller.Instance);
                     unmarshalledObject.Schedules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetTags", targetDepth))
+                if (context.TestExpression("TargetTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.TargetTags = unmarshaller.Unmarshall(context, ref reader);

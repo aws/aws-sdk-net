@@ -52,7 +52,7 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagEntry, TagEntryUnmarshaller>(TagEntryUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

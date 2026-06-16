@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogs", targetDepth))
+                if (context.TestExpression("CloudWatchLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Logs", targetDepth))
+                if (context.TestExpression("S3Logs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCodeBuildProjectLogsConfigS3LogsDetailsUnmarshaller.Instance;
                     unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);

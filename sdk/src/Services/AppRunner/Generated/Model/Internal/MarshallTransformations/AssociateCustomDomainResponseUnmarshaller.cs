@@ -52,25 +52,25 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomDomain", targetDepth))
+                if (context.TestExpression("CustomDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomDomainUnmarshaller.Instance;
                     response.CustomDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DNSTarget", targetDepth))
+                if (context.TestExpression("DNSTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DNSTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceArn", targetDepth))
+                if (context.TestExpression("ServiceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcDNSTargets", targetDepth))
+                if (context.TestExpression("VpcDNSTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcDNSTarget, VpcDNSTargetUnmarshaller>(VpcDNSTargetUnmarshaller.Instance);
                     response.VpcDNSTargets = unmarshaller.Unmarshall(context, ref reader);

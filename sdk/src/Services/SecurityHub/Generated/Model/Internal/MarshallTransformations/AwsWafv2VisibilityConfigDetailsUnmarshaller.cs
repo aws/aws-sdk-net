@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchMetricsEnabled", targetDepth))
+                if (context.TestExpression("CloudWatchMetricsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchMetricsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricName", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SampledRequestsEnabled", targetDepth))
+                if (context.TestExpression("SampledRequestsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SampledRequestsEnabled = unmarshaller.Unmarshall(context, ref reader);

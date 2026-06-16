@@ -52,7 +52,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateSigningRequest", targetDepth))
+                if (context.TestExpression("CertificateSigningRequest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CertificateSigningRequest = unmarshaller.Unmarshall(context, ref reader);

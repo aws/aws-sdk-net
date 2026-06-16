@@ -56,43 +56,43 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssessmentResults", targetDepth))
+                if (context.TestExpression("AssessmentResults", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssessmentResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssessmentResultsFile", targetDepth))
+                if (context.TestExpression("AssessmentResultsFile", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssessmentResultsFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssessmentStatus", targetDepth))
+                if (context.TestExpression("AssessmentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssessmentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationTaskArn", targetDepth))
+                if (context.TestExpression("ReplicationTaskArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicationTaskArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationTaskIdentifier", targetDepth))
+                if (context.TestExpression("ReplicationTaskIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicationTaskIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationTaskLastAssessmentDate", targetDepth))
+                if (context.TestExpression("ReplicationTaskLastAssessmentDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReplicationTaskLastAssessmentDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3ObjectUrl", targetDepth))
+                if (context.TestExpression("S3ObjectUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3ObjectUrl = unmarshaller.Unmarshall(context, ref reader);

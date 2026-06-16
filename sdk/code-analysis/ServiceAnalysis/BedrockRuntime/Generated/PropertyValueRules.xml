@@ -79,6 +79,11 @@
     <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:imported-model/[a-z0-9]{12})|([0-9]{12}:provisioned-model/[a-z0-9]{12})|([0-9]{12}:custom-model-deployment/[a-z0-9]{12})|([0-9]{12}:(inference-profile|application-inference-profile)/[a-zA-Z0-9-:.]+)))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)|([a-zA-Z0-9-:.]+)$|(^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:prompt/[0-9a-zA-Z]{10}(?::[0-9]{1,5})?))$|(^arn:aws:sagemaker:[a-z0-9-]+:[0-9]{12}:endpoint/[a-zA-Z0-9-]+$)|(^arn:aws(-[^:]+)?:bedrock:([0-9a-z-]{1,20}):([0-9]{12}):(default-)?prompt-router/[a-zA-Z0-9-:.]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.InvokeModelRequest.RequestMetadata</property>
+    <min>0</min>
+    <max>8500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.InvokeModelResponse.Body</property>
     <min>0</min>
     <max>25000000</max>
@@ -109,6 +114,11 @@
     <min>1</min>
     <max>2048</max>
     <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:imported-model/[a-z0-9]{12})|([0-9]{12}:provisioned-model/[a-z0-9]{12})|([0-9]{12}:custom-model-deployment/[a-z0-9]{12})|([0-9]{12}:(inference-profile|application-inference-profile)/[a-zA-Z0-9-:.]+)))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)|([a-zA-Z0-9-:.]+)$|(^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:prompt/[0-9a-zA-Z]{10}(?::[0-9]{1,5})?))$|(^arn:aws:sagemaker:[a-z0-9-]+:[0-9]{12}:endpoint/[a-zA-Z0-9-]+$)|(^arn:aws(-[^:]+)?:bedrock:([0-9a-z-]{1,20}):([0-9]{12}):(default-)?prompt-router/[a-zA-Z0-9-:.]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.InvokeModelWithResponseStreamRequest.RequestMetadata</property>
+    <min>0</min>
+    <max>8500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ListAsyncInvokesRequest.MaxResults</property>
@@ -308,6 +318,41 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksContentBlock.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksContentFilterResultEntry.SeverityScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksPromptAttackResultEntry.SeverityScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.BeginOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.ConfidenceScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.ContentIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.EndOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailChecksSensitiveInformationResultEntry.MessageIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailConfiguration.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
@@ -469,13 +514,13 @@
     <property>Amazon.BedrockRuntime.Model.ToolResultBlock.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>[a-zA-Z0-9_.:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ToolResultBlockStart.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>[a-zA-Z0-9_.:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ToolSpecification.Description</property>
@@ -497,7 +542,7 @@
     <property>Amazon.BedrockRuntime.Model.ToolUseBlock.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>[a-zA-Z0-9_.:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ToolUseBlockStart.Name</property>
@@ -509,7 +554,7 @@
     <property>Amazon.BedrockRuntime.Model.ToolUseBlockStart.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>[a-zA-Z0-9_.:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.VideoSource.Bytes</property>

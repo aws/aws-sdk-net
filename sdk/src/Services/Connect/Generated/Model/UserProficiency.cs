@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AttributeName. 
         /// <para>
         /// The name of user's proficiency. You must use name of predefined attribute present
-        /// in the Amazon Connect instance.
+        /// in the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AttributeValue. 
         /// <para>
         /// The value of user's proficiency. You must use value of predefined attribute present
-        /// in the Amazon Connect instance.
+        /// in the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

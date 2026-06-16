@@ -56,13 +56,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceValue", targetDepth))
+                if (context.TestExpression("ResourceValue", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceValueUnmarshaller.Instance;
                     unmarshalledObject.ResourceValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StaticValue", targetDepth))
+                if (context.TestExpression("StaticValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticValueUnmarshaller.Instance;
                     unmarshalledObject.StaticValue = unmarshaller.Unmarshall(context, ref reader);

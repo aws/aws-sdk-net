@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inputChannelLevels", targetDepth))
+                if (context.TestExpression("inputChannelLevels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputChannelLevel, InputChannelLevelUnmarshaller>(InputChannelLevelUnmarshaller.Instance);
                     unmarshalledObject.InputChannelLevels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputChannel", targetDepth))
+                if (context.TestExpression("outputChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OutputChannel = unmarshaller.Unmarshall(context, ref reader);

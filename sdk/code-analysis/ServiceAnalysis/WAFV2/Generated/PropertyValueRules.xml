@@ -349,6 +349,40 @@
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetRevenueStatisticsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetRevenueStatisticsRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetRevenueStatisticsResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetRevenueStatisticsTimeSeriesRequest.Limit</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetRevenueStatisticsTimeSeriesRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetRevenueStatisticsTimeSeriesResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.GetRuleGroupRequest.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -648,6 +682,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ListRuleGroupsResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListSettlementRecordsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListSettlementRecordsRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListSettlementRecordsResponse.NextMarker</property>
     <min>1</min>
     <max>256</max>
     <pattern>.*\S.*</pattern>
@@ -979,6 +1030,32 @@
     <min>1</min>
     <max>10240</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DataPointEntry.Category</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DataPointEntry.GroupByValue</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DataPointEntry.Intent</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DataPointEntry.MonetizeServedCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DataPointEntry.SettledCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.DisallowedFeature.Feature</property>
@@ -1320,6 +1397,17 @@
     <pattern>^[\w#:\.\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.MonetizationFilter.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.MonetizeAction.PriceMultiplier</property>
+    <min>1</min>
+    <max>3</max>
+    <pattern>^([1-9][0-9]?|100)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.PasswordField.Identifier</property>
     <min>1</min>
     <max>512</max>
@@ -1340,10 +1428,22 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.PaymentNetwork.WalletAddress</property>
+    <min>26</min>
+    <max>44</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.PhoneNumberField.Identifier</property>
     <min>1</min>
     <max>512</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.Price.Amount</property>
+    <min>1</min>
+    <max>13</max>
+    <pattern>^([1-9][0-9]*(\.[0-9]{1,3})?|0\.([1-9][0-9]{0,2}|0[1-9][0-9]?|00[1-9]))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.RateBasedStatement.Limit</property>
@@ -1465,6 +1565,28 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.RevenueBreakdown.TotalMonetizeServed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RevenueBreakdown.TotalSettled</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RevenuePathStatistics.Path</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RevenuePathStatistics.Percentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RevenuePathStatistics.RequestCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.Rule.Name</property>
     <min>1</min>
     <max>128</max>
@@ -1572,6 +1694,71 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.ContentPath</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.Intent</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.Network</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9:._\-=+/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.Organization</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.PayerAddress</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9:._\-=+/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9:._\-=+/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.SourceCategory</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.SourceName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.TransactionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.WalletAddress</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9:._\-=+/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SettlementRecord.WebAclArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.SingleHeader.Name</property>
     <min>1</min>
     <max>64</max>
@@ -1587,6 +1774,45 @@
     <property>Amazon.WAFV2.Model.SizeConstraintStatement.Size</property>
     <min>0</min>
     <max>21474836480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SourceStatistics.GroupByValue</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SourceStatistics.Intent</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SourceStatistics.Organization</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SourceStatistics.Percentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SourceStatistics.RequestCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SourceStatistics.SourceCategory</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.SourceStatistics.SourceName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.Tag.Key</property>

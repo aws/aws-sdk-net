@@ -52,13 +52,13 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionList", targetDepth))
+                if (context.TestExpression("actionList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PredictedAction, PredictedActionUnmarshaller>(PredictedActionUnmarshaller.Instance);
                     response.ActionList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendationId", targetDepth))
+                if (context.TestExpression("recommendationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecommendationId = unmarshaller.Unmarshall(context, ref reader);

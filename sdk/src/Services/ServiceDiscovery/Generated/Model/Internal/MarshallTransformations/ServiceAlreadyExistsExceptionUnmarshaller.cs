@@ -72,19 +72,19 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("CreatorRequestId", targetDepth))
+                    if (context.TestExpression("CreatorRequestId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ServiceArn", targetDepth))
+                    if (context.TestExpression("ServiceArn", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServiceArn = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ServiceId", targetDepth))
+                    if (context.TestExpression("ServiceId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServiceId = unmarshaller.Unmarshall(context, ref reader);

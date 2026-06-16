@@ -52,13 +52,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationToken", targetDepth))
+                if (context.TestExpression("authorizationToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizationToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("expiration", targetDepth))
+                if (context.TestExpression("expiration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Expiration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EntityTypes", targetDepth))
+                if (context.TestExpression("EntityTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntityRecognizerMetadataEntityTypesListItem, EntityRecognizerMetadataEntityTypesListItemUnmarshaller>(EntityRecognizerMetadataEntityTypesListItemUnmarshaller.Instance);
                     unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationMetrics", targetDepth))
+                if (context.TestExpression("EvaluationMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityRecognizerEvaluationMetricsUnmarshaller.Instance;
                     unmarshalledObject.EvaluationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfTestDocuments", targetDepth))
+                if (context.TestExpression("NumberOfTestDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfTestDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfTrainedDocuments", targetDepth))
+                if (context.TestExpression("NumberOfTrainedDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfTrainedDocuments = unmarshaller.Unmarshall(context, ref reader);

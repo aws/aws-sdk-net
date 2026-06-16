@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acknowledgment", targetDepth))
+                if (context.TestExpression("acknowledgment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Acknowledgment = unmarshaller.Unmarshall(context, ref reader);
@@ -90,6 +90,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClientException"))
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFoundException"))
+                {
+                    return ClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {

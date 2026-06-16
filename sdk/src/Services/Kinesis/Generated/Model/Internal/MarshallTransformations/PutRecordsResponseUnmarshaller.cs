@@ -52,19 +52,19 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EncryptionType", targetDepth))
+                if (context.TestExpression("EncryptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailedRecordCount", targetDepth))
+                if (context.TestExpression("FailedRecordCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.FailedRecordCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Records", targetDepth))
+                if (context.TestExpression("Records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PutRecordsResultEntry, PutRecordsResultEntryUnmarshaller>(PutRecordsResultEntryUnmarshaller.Instance);
                     response.Records = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttackId", targetDepth))
+                if (context.TestExpression("AttackId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttackId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttackVectors", targetDepth))
+                if (context.TestExpression("AttackVectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttackVectorDescription, AttackVectorDescriptionUnmarshaller>(AttackVectorDescriptionUnmarshaller.Instance);
                     unmarshalledObject.AttackVectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditLogs", targetDepth))
+                if (context.TestExpression("AuditLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainLogPublishingOptionsLogConfigUnmarshaller.Instance;
                     unmarshalledObject.AuditLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexSlowLogs", targetDepth))
+                if (context.TestExpression("IndexSlowLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainLogPublishingOptionsLogConfigUnmarshaller.Instance;
                     unmarshalledObject.IndexSlowLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchSlowLogs", targetDepth))
+                if (context.TestExpression("SearchSlowLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainLogPublishingOptionsLogConfigUnmarshaller.Instance;
                     unmarshalledObject.SearchSlowLogs = unmarshaller.Unmarshall(context, ref reader);

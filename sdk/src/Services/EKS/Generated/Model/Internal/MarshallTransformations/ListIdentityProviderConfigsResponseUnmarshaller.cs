@@ -52,13 +52,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identityProviderConfigs", targetDepth))
+                if (context.TestExpression("identityProviderConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdentityProviderConfig, IdentityProviderConfigUnmarshaller>(IdentityProviderConfigUnmarshaller.Instance);
                     response.IdentityProviderConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

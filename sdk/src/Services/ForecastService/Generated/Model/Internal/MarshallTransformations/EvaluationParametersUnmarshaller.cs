@@ -56,13 +56,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackTestWindowOffset", targetDepth))
+                if (context.TestExpression("BackTestWindowOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BackTestWindowOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfBacktestWindows", targetDepth))
+                if (context.TestExpression("NumberOfBacktestWindows", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfBacktestWindows = unmarshaller.Unmarshall(context, ref reader);

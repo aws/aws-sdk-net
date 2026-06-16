@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PropertyName", targetDepth))
+                if (context.TestExpression("PropertyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PropertyName = unmarshaller.Unmarshall(context, ref reader);

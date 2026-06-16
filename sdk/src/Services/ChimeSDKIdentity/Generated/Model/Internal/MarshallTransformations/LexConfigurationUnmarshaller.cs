@@ -56,31 +56,31 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InvokedBy", targetDepth))
+                if (context.TestExpression("InvokedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = InvokedByUnmarshaller.Instance;
                     unmarshalledObject.InvokedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LexBotAliasArn", targetDepth))
+                if (context.TestExpression("LexBotAliasArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LexBotAliasArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocaleId", targetDepth))
+                if (context.TestExpression("LocaleId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocaleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RespondsTo", targetDepth))
+                if (context.TestExpression("RespondsTo", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RespondsTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WelcomeIntent", targetDepth))
+                if (context.TestExpression("WelcomeIntent", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WelcomeIntent = unmarshaller.Unmarshall(context, ref reader);

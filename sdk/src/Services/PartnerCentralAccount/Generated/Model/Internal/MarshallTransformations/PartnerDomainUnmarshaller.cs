@@ -56,13 +56,13 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegisteredAt", targetDepth))
+                if (context.TestExpression("RegisteredAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RegisteredAt = unmarshaller.Unmarshall(context, ref reader);

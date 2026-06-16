@@ -52,13 +52,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lifecyclePolicySummaryList", targetDepth))
+                if (context.TestExpression("lifecyclePolicySummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LifecyclePolicySummary, LifecyclePolicySummaryUnmarshaller>(LifecyclePolicySummaryUnmarshaller.Instance);
                     response.LifecyclePolicySummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

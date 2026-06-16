@@ -56,25 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("colorSpacePassthroughSettings", targetDepth))
+                if (context.TestExpression("colorSpacePassthroughSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ColorSpacePassthroughSettingsUnmarshaller.Instance;
                     unmarshalledObject.ColorSpacePassthroughSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hdr10Settings", targetDepth))
+                if (context.TestExpression("hdr10Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Hdr10SettingsUnmarshaller.Instance;
                     unmarshalledObject.Hdr10Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rec601Settings", targetDepth))
+                if (context.TestExpression("hlg2020Settings", targetDepth, ref reader))
+                {
+                    var unmarshaller = Hlg2020SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Hlg2020Settings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("rec601Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Rec601SettingsUnmarshaller.Instance;
                     unmarshalledObject.Rec601Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rec709Settings", targetDepth))
+                if (context.TestExpression("rec709Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Rec709SettingsUnmarshaller.Instance;
                     unmarshalledObject.Rec709Settings = unmarshaller.Unmarshall(context, ref reader);

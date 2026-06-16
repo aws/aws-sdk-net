@@ -39,11 +39,13 @@ namespace Amazon.DataZone.Model
         private GluePropertiesInput _glueProperties;
         private HyperPodPropertiesInput _hyperPodProperties;
         private IamPropertiesInput _iamProperties;
+        private LakehousePropertiesInput _lakehouseProperties;
         private MlflowPropertiesInput _mlflowProperties;
         private RedshiftPropertiesInput _redshiftProperties;
         private S3PropertiesInput _s3Properties;
         private SparkEmrPropertiesInput _sparkEmrProperties;
         private SparkGluePropertiesInput _sparkGlueProperties;
+        private VpcPropertiesInput _vpcProperties;
         private WorkflowsMwaaPropertiesInput _workflowsMwaaProperties;
         private WorkflowsServerlessPropertiesInput _workflowsServerlessProperties;
 
@@ -138,6 +140,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LakehouseProperties. 
+        /// <para>
+        /// The lakehouse properties of a connection.
+        /// </para>
+        /// </summary>
+        public LakehousePropertiesInput LakehouseProperties
+        {
+            get { return this._lakehouseProperties; }
+            set { this._lakehouseProperties = value; }
+        }
+
+        // Check to see if LakehouseProperties property is set
+        internal bool IsSetLakehouseProperties()
+        {
+            return this._lakehouseProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MlflowProperties. 
         /// <para>
         /// The MLflow properties of a connection.
@@ -225,6 +245,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetSparkGlueProperties()
         {
             return this._sparkGlueProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcProperties. 
+        /// <para>
+        /// The VPC properties of a connection.
+        /// </para>
+        /// </summary>
+        public VpcPropertiesInput VpcProperties
+        {
+            get { return this._vpcProperties; }
+            set { this._vpcProperties = value; }
+        }
+
+        // Check to see if VpcProperties property is set
+        internal bool IsSetVpcProperties()
+        {
+            return this._vpcProperties != null;
         }
 
         /// <summary>

@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("isPeered", targetDepth))
+                if (context.TestExpression("isPeered", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsPeered = unmarshaller.Unmarshall(context, ref reader);

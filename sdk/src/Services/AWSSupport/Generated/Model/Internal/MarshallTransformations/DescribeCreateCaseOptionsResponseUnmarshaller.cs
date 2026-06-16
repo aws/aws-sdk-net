@@ -52,13 +52,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("communicationTypes", targetDepth))
+                if (context.TestExpression("communicationTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CommunicationTypeOptions, CommunicationTypeOptionsUnmarshaller>(CommunicationTypeOptionsUnmarshaller.Instance);
                     response.CommunicationTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("languageAvailability", targetDepth))
+                if (context.TestExpression("languageAvailability", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LanguageAvailability = unmarshaller.Unmarshall(context, ref reader);

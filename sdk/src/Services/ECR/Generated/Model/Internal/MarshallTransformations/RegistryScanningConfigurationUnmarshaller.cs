@@ -56,13 +56,13 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rules", targetDepth))
+                if (context.TestExpression("rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegistryScanningRule, RegistryScanningRuleUnmarshaller>(RegistryScanningRuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanType", targetDepth))
+                if (context.TestExpression("scanType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScanType = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("brokerArn", targetDepth))
+                if (context.TestExpression("brokerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BrokerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("brokerId", targetDepth))
+                if (context.TestExpression("brokerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BrokerId = unmarshaller.Unmarshall(context, ref reader);

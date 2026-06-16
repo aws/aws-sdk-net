@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authenticationUrl", targetDepth))
+                if (context.TestExpression("authenticationUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationUrl = unmarshaller.Unmarshall(context, ref reader);

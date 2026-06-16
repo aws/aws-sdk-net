@@ -26,6 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.KinesisFirehose.Model;
 using Amazon.KinesisFirehose;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
@@ -47,3 +48,4 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         }
     }
 }
+#endif

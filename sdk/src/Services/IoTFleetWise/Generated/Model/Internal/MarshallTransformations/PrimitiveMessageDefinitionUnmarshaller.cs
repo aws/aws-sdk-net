@@ -56,7 +56,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ros2PrimitiveMessageDefinition", targetDepth))
+                if (context.TestExpression("ros2PrimitiveMessageDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = ROS2PrimitiveMessageDefinitionUnmarshaller.Instance;
                     unmarshalledObject.Ros2PrimitiveMessageDefinition = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("settings", targetDepth))
+                if (context.TestExpression("settings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Setting, SettingUnmarshaller>(SettingUnmarshaller.Instance);
                     response.Settings = unmarshaller.Unmarshall(context, ref reader);

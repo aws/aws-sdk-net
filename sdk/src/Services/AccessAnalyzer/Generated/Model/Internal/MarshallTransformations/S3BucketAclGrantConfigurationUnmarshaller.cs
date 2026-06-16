@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("grantee", targetDepth))
+                if (context.TestExpression("grantee", targetDepth, ref reader))
                 {
                     var unmarshaller = AclGranteeUnmarshaller.Instance;
                     unmarshalledObject.Grantee = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permission", targetDepth))
+                if (context.TestExpression("permission", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Permission = unmarshaller.Unmarshall(context, ref reader);

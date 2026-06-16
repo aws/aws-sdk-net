@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableExplanations", targetDepth))
+                if (context.TestExpression("EnableExplanations", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnableExplanations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceConfig", targetDepth))
+                if (context.TestExpression("InferenceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClarifyInferenceConfigUnmarshaller.Instance;
                     unmarshalledObject.InferenceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShapConfig", targetDepth))
+                if (context.TestExpression("ShapConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClarifyShapConfigUnmarshaller.Instance;
                     unmarshalledObject.ShapConfig = unmarshaller.Unmarshall(context, ref reader);

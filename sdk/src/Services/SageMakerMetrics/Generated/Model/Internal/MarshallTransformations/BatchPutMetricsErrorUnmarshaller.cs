@@ -56,13 +56,13 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Code", targetDepth))
+                if (context.TestExpression("Code", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricIndex", targetDepth))
+                if (context.TestExpression("MetricIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MetricIndex = unmarshaller.Unmarshall(context, ref reader);

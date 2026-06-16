@@ -56,13 +56,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogStreamName", targetDepth))
+                if (context.TestExpression("LogStreamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Disabled", targetDepth))
+                if (context.TestExpression("Disabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Disabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rules", targetDepth))
+                if (context.TestExpression("Rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RealTimeAlertRule, RealTimeAlertRuleUnmarshaller>(RealTimeAlertRuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);

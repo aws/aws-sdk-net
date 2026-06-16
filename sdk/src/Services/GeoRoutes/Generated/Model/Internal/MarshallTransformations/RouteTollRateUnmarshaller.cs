@@ -56,49 +56,49 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicableTimes", targetDepth))
+                if (context.TestExpression("ApplicableTimes", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicableTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConvertedPrice", targetDepth))
+                if (context.TestExpression("ConvertedPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTollPriceUnmarshaller.Instance;
                     unmarshalledObject.ConvertedPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalPrice", targetDepth))
+                if (context.TestExpression("LocalPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTollPriceUnmarshaller.Instance;
                     unmarshalledObject.LocalPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Pass", targetDepth))
+                if (context.TestExpression("Pass", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTollPassUnmarshaller.Instance;
                     unmarshalledObject.Pass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaymentMethods", targetDepth))
+                if (context.TestExpression("PaymentMethods", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PaymentMethods = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transponders", targetDepth))
+                if (context.TestExpression("Transponders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteTransponder, RouteTransponderUnmarshaller>(RouteTransponderUnmarshaller.Instance);
                     unmarshalledObject.Transponders = unmarshaller.Unmarshall(context, ref reader);

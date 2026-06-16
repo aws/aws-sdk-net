@@ -56,127 +56,133 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("availabilityZone", targetDepth))
+                if (context.TestExpression("availabilityZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availabilityZoneId", targetDepth))
+                if (context.TestExpression("availabilityZoneId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("backupSubnetCidr", targetDepth))
+                if (context.TestExpression("backupSubnetCidr", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupSubnetCidr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clientSubnetCidr", targetDepth))
+                if (context.TestExpression("clientSubnetCidr", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientSubnetCidr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customDomainName", targetDepth))
+                if (context.TestExpression("customDomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomDomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultDnsPrefix", targetDepth))
+                if (context.TestExpression("defaultDnsPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultDnsPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("displayName", targetDepth))
+                if (context.TestExpression("displayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedServices", targetDepth))
+                if (context.TestExpression("ec2PlacementGroupIds", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Ec2PlacementGroupIds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("managedServices", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedServicesUnmarshaller.Instance;
                     unmarshalledObject.ManagedServices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociDnsForwardingConfigs", targetDepth))
+                if (context.TestExpression("ociDnsForwardingConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OciDnsForwardingConfig, OciDnsForwardingConfigUnmarshaller>(OciDnsForwardingConfigUnmarshaller.Instance);
                     unmarshalledObject.OciDnsForwardingConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociNetworkAnchorId", targetDepth))
+                if (context.TestExpression("ociNetworkAnchorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciNetworkAnchorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociNetworkAnchorUrl", targetDepth))
+                if (context.TestExpression("ociNetworkAnchorUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciNetworkAnchorUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociResourceAnchorName", targetDepth))
+                if (context.TestExpression("ociResourceAnchorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciResourceAnchorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociVcnId", targetDepth))
+                if (context.TestExpression("ociVcnId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciVcnId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociVcnUrl", targetDepth))
+                if (context.TestExpression("ociVcnUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OciVcnUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("odbNetworkArn", targetDepth))
+                if (context.TestExpression("odbNetworkArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OdbNetworkArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("odbNetworkId", targetDepth))
+                if (context.TestExpression("odbNetworkId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OdbNetworkId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("peeredCidrs", targetDepth))
+                if (context.TestExpression("peeredCidrs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PeeredCidrs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("percentProgress", targetDepth))
+                if (context.TestExpression("percentProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.PercentProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);

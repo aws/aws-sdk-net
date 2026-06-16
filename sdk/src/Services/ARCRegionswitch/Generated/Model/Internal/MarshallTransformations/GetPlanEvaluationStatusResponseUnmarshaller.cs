@@ -52,43 +52,43 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("evaluationState", targetDepth))
+                if (context.TestExpression("evaluationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EvaluationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastEvaluatedVersion", targetDepth))
+                if (context.TestExpression("lastEvaluatedVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastEvaluatedVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastEvaluationTime", targetDepth))
+                if (context.TestExpression("lastEvaluationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastEvaluationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("planArn", targetDepth))
+                if (context.TestExpression("planArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PlanArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("warnings", targetDepth))
+                if (context.TestExpression("warnings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceWarning, ResourceWarningUnmarshaller>(ResourceWarningUnmarshaller.Instance);
                     response.Warnings = unmarshaller.Unmarshall(context, ref reader);

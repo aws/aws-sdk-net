@@ -52,25 +52,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attachments", targetDepth))
+                if (context.TestExpression("attachments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MessageTemplateAttachment, MessageTemplateAttachmentUnmarshaller>(MessageTemplateAttachmentUnmarshaller.Instance);
                     response.Attachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("attributesNotInterpolated", targetDepth))
+                if (context.TestExpression("attributesNotInterpolated", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.AttributesNotInterpolated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("content", targetDepth))
+                if (context.TestExpression("content", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageTemplateContentProviderUnmarshaller.Instance;
                     response.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceConfigurationSummary", targetDepth))
+                if (context.TestExpression("sourceConfigurationSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageTemplateSourceConfigurationSummaryUnmarshaller.Instance;
                     response.SourceConfigurationSummary = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WirelessDeviceEventTopic", targetDepth))
+                if (context.TestExpression("WirelessDeviceEventTopic", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WirelessDeviceEventTopic = unmarshaller.Unmarshall(context, ref reader);

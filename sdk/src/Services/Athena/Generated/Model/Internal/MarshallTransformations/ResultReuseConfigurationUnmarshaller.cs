@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResultReuseByAgeConfiguration", targetDepth))
+                if (context.TestExpression("ResultReuseByAgeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ResultReuseByAgeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ResultReuseByAgeConfiguration = unmarshaller.Unmarshall(context, ref reader);

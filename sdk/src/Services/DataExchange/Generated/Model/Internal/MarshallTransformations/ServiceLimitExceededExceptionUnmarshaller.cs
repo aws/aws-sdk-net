@@ -72,13 +72,13 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("LimitName", targetDepth))
+                    if (context.TestExpression("LimitName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LimitName = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("LimitValue", targetDepth))
+                    if (context.TestExpression("LimitValue", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.LimitValue = unmarshaller.Unmarshall(context, ref reader);

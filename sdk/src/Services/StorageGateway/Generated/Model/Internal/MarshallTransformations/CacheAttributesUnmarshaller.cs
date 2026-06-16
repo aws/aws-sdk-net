@@ -56,7 +56,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CacheStaleTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("CacheStaleTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CacheStaleTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);

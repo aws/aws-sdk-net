@@ -52,19 +52,19 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("caseId", targetDepth))
+                if (context.TestExpression("caseId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CaseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("caseStatus", targetDepth))
+                if (context.TestExpression("caseStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CaseStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolverType", targetDepth))
+                if (context.TestExpression("resolverType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResolverType = unmarshaller.Unmarshall(context, ref reader);

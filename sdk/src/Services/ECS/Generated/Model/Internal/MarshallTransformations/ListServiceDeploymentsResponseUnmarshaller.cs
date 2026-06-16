@@ -52,13 +52,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceDeployments", targetDepth))
+                if (context.TestExpression("serviceDeployments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceDeploymentBrief, ServiceDeploymentBriefUnmarshaller>(ServiceDeploymentBriefUnmarshaller.Instance);
                     response.ServiceDeployments = unmarshaller.Unmarshall(context, ref reader);
@@ -96,6 +96,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClientException"))
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFoundException"))
+                {
+                    return ClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {

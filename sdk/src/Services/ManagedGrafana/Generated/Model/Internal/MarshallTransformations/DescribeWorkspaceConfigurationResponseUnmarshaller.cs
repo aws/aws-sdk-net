@@ -52,13 +52,13 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("grafanaVersion", targetDepth))
+                if (context.TestExpression("grafanaVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GrafanaVersion = unmarshaller.Unmarshall(context, ref reader);

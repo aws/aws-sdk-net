@@ -56,13 +56,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("remoteNodeNetworks", targetDepth))
+                if (context.TestExpression("remoteNodeNetworks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RemoteNodeNetwork, RemoteNodeNetworkUnmarshaller>(RemoteNodeNetworkUnmarshaller.Instance);
                     unmarshalledObject.RemoteNodeNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remotePodNetworks", targetDepth))
+                if (context.TestExpression("remotePodNetworks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RemotePodNetwork, RemotePodNetworkUnmarshaller>(RemotePodNetworkUnmarshaller.Instance);
                     unmarshalledObject.RemotePodNetworks = unmarshaller.Unmarshall(context, ref reader);

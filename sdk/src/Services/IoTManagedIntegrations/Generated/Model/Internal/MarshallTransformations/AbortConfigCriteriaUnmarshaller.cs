@@ -56,25 +56,25 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureType", targetDepth))
+                if (context.TestExpression("FailureType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinNumberOfExecutedThings", targetDepth))
+                if (context.TestExpression("MinNumberOfExecutedThings", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinNumberOfExecutedThings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThresholdPercentage", targetDepth))
+                if (context.TestExpression("ThresholdPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThresholdPercentage = unmarshaller.Unmarshall(context, ref reader);

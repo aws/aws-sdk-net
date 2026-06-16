@@ -52,67 +52,67 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionDefinitions", targetDepth))
+                if (context.TestExpression("actionDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActionDefinition, ActionDefinitionUnmarshaller>(ActionDefinitionUnmarshaller.Instance);
                     response.ActionDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelArn", targetDepth))
+                if (context.TestExpression("computationModelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComputationModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelConfiguration", targetDepth))
+                if (context.TestExpression("computationModelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputationModelConfigurationUnmarshaller.Instance;
                     response.ComputationModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelCreationDate", targetDepth))
+                if (context.TestExpression("computationModelCreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ComputationModelCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelDataBinding", targetDepth))
+                if (context.TestExpression("computationModelDataBinding", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ComputationModelDataBindingValue, StringUnmarshaller, ComputationModelDataBindingValueUnmarshaller>(StringUnmarshaller.Instance, ComputationModelDataBindingValueUnmarshaller.Instance);
                     response.ComputationModelDataBinding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelDescription", targetDepth))
+                if (context.TestExpression("computationModelDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComputationModelDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelId", targetDepth))
+                if (context.TestExpression("computationModelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComputationModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelLastUpdateDate", targetDepth))
+                if (context.TestExpression("computationModelLastUpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ComputationModelLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelName", targetDepth))
+                if (context.TestExpression("computationModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComputationModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelStatus", targetDepth))
+                if (context.TestExpression("computationModelStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputationModelStatusUnmarshaller.Instance;
                     response.ComputationModelStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computationModelVersion", targetDepth))
+                if (context.TestExpression("computationModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ComputationModelVersion = unmarshaller.Unmarshall(context, ref reader);

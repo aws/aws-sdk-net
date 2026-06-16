@@ -56,13 +56,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bindingProperties", targetDepth))
+                if (context.TestExpression("bindingProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = FormInputBindingPropertiesValuePropertiesUnmarshaller.Instance;
                     unmarshalledObject.BindingProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

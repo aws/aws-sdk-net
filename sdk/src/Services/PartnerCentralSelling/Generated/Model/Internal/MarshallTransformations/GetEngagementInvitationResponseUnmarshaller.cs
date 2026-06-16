@@ -52,103 +52,103 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Catalog", targetDepth))
+                if (context.TestExpression("Catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngagementDescription", targetDepth))
+                if (context.TestExpression("EngagementDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EngagementDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngagementId", targetDepth))
+                if (context.TestExpression("EngagementId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EngagementId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngagementTitle", targetDepth))
+                if (context.TestExpression("EngagementTitle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EngagementTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExistingMembers", targetDepth))
+                if (context.TestExpression("ExistingMembers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EngagementMemberSummary, EngagementMemberSummaryUnmarshaller>(EngagementMemberSummaryUnmarshaller.Instance);
                     response.ExistingMembers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpirationDate", targetDepth))
+                if (context.TestExpression("ExpirationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpirationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvitationDate", targetDepth))
+                if (context.TestExpression("InvitationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.InvitationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvitationMessage", targetDepth))
+                if (context.TestExpression("InvitationMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InvitationMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Payload", targetDepth))
+                if (context.TestExpression("Payload", targetDepth, ref reader))
                 {
                     var unmarshaller = PayloadUnmarshaller.Instance;
                     response.Payload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PayloadType", targetDepth))
+                if (context.TestExpression("PayloadType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PayloadType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Receiver", targetDepth))
+                if (context.TestExpression("Receiver", targetDepth, ref reader))
                 {
                     var unmarshaller = ReceiverUnmarshaller.Instance;
                     response.Receiver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RejectionReason", targetDepth))
+                if (context.TestExpression("RejectionReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RejectionReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SenderAwsAccountId", targetDepth))
+                if (context.TestExpression("SenderAwsAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SenderAwsAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SenderCompanyName", targetDepth))
+                if (context.TestExpression("SenderCompanyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SenderCompanyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

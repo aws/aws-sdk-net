@@ -52,37 +52,37 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedBy", targetDepth))
+                if (context.TestExpression("CreatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = CreatedByInfoUnmarshaller.Instance;
                     response.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileArn", targetDepth))
+                if (context.TestExpression("FileArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FileArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileId", targetDepth))
+                if (context.TestExpression("FileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileStatus", targetDepth))
+                if (context.TestExpression("FileStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FileStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploadUrlMetadata", targetDepth))
+                if (context.TestExpression("UploadUrlMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = UploadUrlMetadataUnmarshaller.Instance;
                     response.UploadUrlMetadata = unmarshaller.Unmarshall(context, ref reader);

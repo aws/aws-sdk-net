@@ -52,37 +52,37 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Classes", targetDepth))
+                if (context.TestExpression("Classes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentClass, DocumentClassUnmarshaller>(DocumentClassUnmarshaller.Instance);
                     response.Classes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentMetadata", targetDepth))
+                if (context.TestExpression("DocumentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.DocumentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentType", targetDepth))
+                if (context.TestExpression("DocumentType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentTypeListItem, DocumentTypeListItemUnmarshaller>(DocumentTypeListItemUnmarshaller.Instance);
                     response.DocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ErrorsListItem, ErrorsListItemUnmarshaller>(ErrorsListItemUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Labels", targetDepth))
+                if (context.TestExpression("Labels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentLabel, DocumentLabelUnmarshaller>(DocumentLabelUnmarshaller.Instance);
                     response.Labels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Warnings", targetDepth))
+                if (context.TestExpression("Warnings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WarningsListItem, WarningsListItemUnmarshaller>(WarningsListItemUnmarshaller.Instance);
                     response.Warnings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creatorModeControl", targetDepth))
+                if (context.TestExpression("creatorModeControl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatorModeControl = unmarshaller.Unmarshall(context, ref reader);

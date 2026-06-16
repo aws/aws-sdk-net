@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MonitoringJobDefinition", targetDepth))
+                if (context.TestExpression("MonitoringJobDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringJobDefinitionUnmarshaller.Instance;
                     unmarshalledObject.MonitoringJobDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringJobDefinitionName", targetDepth))
+                if (context.TestExpression("MonitoringJobDefinitionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonitoringJobDefinitionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringType", targetDepth))
+                if (context.TestExpression("MonitoringType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonitoringType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduleConfig", targetDepth))
+                if (context.TestExpression("ScheduleConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduleConfigUnmarshaller.Instance;
                     unmarshalledObject.ScheduleConfig = unmarshaller.Unmarshall(context, ref reader);

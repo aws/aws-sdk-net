@@ -56,13 +56,13 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("active", targetDepth))
+                if (context.TestExpression("active", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statisticsId", targetDepth))
+                if (context.TestExpression("statisticsId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatisticsId = unmarshaller.Unmarshall(context, ref reader);

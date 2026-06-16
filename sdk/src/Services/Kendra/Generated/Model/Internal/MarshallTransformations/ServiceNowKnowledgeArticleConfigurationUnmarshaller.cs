@@ -56,43 +56,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrawlAttachments", targetDepth))
+                if (context.TestExpression("CrawlAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlAttachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentDataFieldName", targetDepth))
+                if (context.TestExpression("DocumentDataFieldName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentDataFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentTitleFieldName", targetDepth))
+                if (context.TestExpression("DocumentTitleFieldName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentTitleFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludeAttachmentFilePatterns", targetDepth))
+                if (context.TestExpression("ExcludeAttachmentFilePatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludeAttachmentFilePatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldMappings", targetDepth))
+                if (context.TestExpression("FieldMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSourceToIndexFieldMapping, DataSourceToIndexFieldMappingUnmarshaller>(DataSourceToIndexFieldMappingUnmarshaller.Instance);
                     unmarshalledObject.FieldMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterQuery", targetDepth))
+                if (context.TestExpression("FilterQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeAttachmentFilePatterns", targetDepth))
+                if (context.TestExpression("IncludeAttachmentFilePatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludeAttachmentFilePatterns = unmarshaller.Unmarshall(context, ref reader);

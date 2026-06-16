@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContributionAnalysis", targetDepth))
+                if (context.TestExpression("ContributionAnalysis", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicIRContributionAnalysisUnmarshaller.Instance;
                     unmarshalledObject.ContributionAnalysis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Filters", targetDepth))
+                if (context.TestExpression("Filters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<TopicIRFilterOption>, JsonListUnmarshaller<TopicIRFilterOption,TopicIRFilterOptionUnmarshaller>>(new JsonListUnmarshaller<TopicIRFilterOption, TopicIRFilterOptionUnmarshaller>(TopicIRFilterOptionUnmarshaller.Instance));
                     unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupByList", targetDepth))
+                if (context.TestExpression("GroupByList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicIRGroupBy, TopicIRGroupByUnmarshaller>(TopicIRGroupByUnmarshaller.Instance);
                     unmarshalledObject.GroupByList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metrics", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicIRMetric, TopicIRMetricUnmarshaller>(TopicIRMetricUnmarshaller.Instance);
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sort", targetDepth))
+                if (context.TestExpression("Sort", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicSortClauseUnmarshaller.Instance;
                     unmarshalledObject.Sort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visual", targetDepth))
+                if (context.TestExpression("Visual", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualOptionsUnmarshaller.Instance;
                     unmarshalledObject.Visual = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("andAll", targetDepth))
+                if (context.TestExpression("andAll", targetDepth, ref reader))
                 {
                     var unmarshaller = CompoundConditionUnmarshaller.Instance;
                     unmarshalledObject.AndAll = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("equalTo", targetDepth))
+                if (context.TestExpression("equalTo", targetDepth, ref reader))
                 {
                     var unmarshaller = BooleanOperandsUnmarshaller.Instance;
                     unmarshalledObject.EqualTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notEqualTo", targetDepth))
+                if (context.TestExpression("notEqualTo", targetDepth, ref reader))
                 {
                     var unmarshaller = BooleanOperandsUnmarshaller.Instance;
                     unmarshalledObject.NotEqualTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orAll", targetDepth))
+                if (context.TestExpression("orAll", targetDepth, ref reader))
                 {
                     var unmarshaller = CompoundConditionUnmarshaller.Instance;
                     unmarshalledObject.OrAll = unmarshaller.Unmarshall(context, ref reader);

@@ -85,10 +85,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("InstanceType");
+                context.Writer.WriteStringValue(requestObject.InstanceType);
+            }
+
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");
                 context.Writer.WriteStringValue(requestObject.ModelName);
+            }
+
+            if(requestObject.IsSetSchedulingConfig())
+            {
+                context.Writer.WritePropertyName("SchedulingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceComponentSchedulingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.SchedulingConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartupParameters())

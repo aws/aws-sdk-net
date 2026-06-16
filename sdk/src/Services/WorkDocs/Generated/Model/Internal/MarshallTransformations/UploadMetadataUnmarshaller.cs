@@ -56,13 +56,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SignedHeaders", targetDepth))
+                if (context.TestExpression("SignedHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.SignedHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploadUrl", targetDepth))
+                if (context.TestExpression("UploadUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UploadUrl = unmarshaller.Unmarshall(context, ref reader);

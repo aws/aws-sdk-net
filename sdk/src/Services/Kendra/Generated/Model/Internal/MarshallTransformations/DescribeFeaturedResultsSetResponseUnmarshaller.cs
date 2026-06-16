@@ -52,55 +52,55 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTimestamp", targetDepth))
+                if (context.TestExpression("CreationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.CreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeaturedDocumentsMissing", targetDepth))
+                if (context.TestExpression("FeaturedDocumentsMissing", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FeaturedDocumentMissing, FeaturedDocumentMissingUnmarshaller>(FeaturedDocumentMissingUnmarshaller.Instance);
                     response.FeaturedDocumentsMissing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeaturedDocumentsWithMetadata", targetDepth))
+                if (context.TestExpression("FeaturedDocumentsWithMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FeaturedDocumentWithMetadata, FeaturedDocumentWithMetadataUnmarshaller>(FeaturedDocumentWithMetadataUnmarshaller.Instance);
                     response.FeaturedDocumentsWithMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeaturedResultsSetId", targetDepth))
+                if (context.TestExpression("FeaturedResultsSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FeaturedResultsSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeaturedResultsSetName", targetDepth))
+                if (context.TestExpression("FeaturedResultsSetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FeaturedResultsSetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
+                if (context.TestExpression("LastUpdatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LastUpdatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryTexts", targetDepth))
+                if (context.TestExpression("QueryTexts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.QueryTexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

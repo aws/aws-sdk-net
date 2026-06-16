@@ -56,19 +56,19 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Accounts", targetDepth))
+                if (context.TestExpression("Accounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Accounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllAccountsEnabled", targetDepth))
+                if (context.TestExpression("AllAccountsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllAccountsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludeSpecifiedAccounts", targetDepth))
+                if (context.TestExpression("ExcludeSpecifiedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeSpecifiedAccounts = unmarshaller.Unmarshall(context, ref reader);

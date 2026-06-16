@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizationConfig", targetDepth))
+                if (context.TestExpression("AuthorizationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesystemId", targetDepth))
+                if (context.TestExpression("FilesystemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilesystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RootDirectory", targetDepth))
+                if (context.TestExpression("RootDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransitEncryption", targetDepth))
+                if (context.TestExpression("TransitEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransitEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransitEncryptionPort", targetDepth))
+                if (context.TestExpression("TransitEncryptionPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransitEncryptionPort = unmarshaller.Unmarshall(context, ref reader);

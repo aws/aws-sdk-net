@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TreeMapGroupItemsLimitConfiguration", targetDepth))
+                if (context.TestExpression("TreeMapGroupItemsLimitConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TreeMapGroupItemsLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TreeMapSort", targetDepth))
+                if (context.TestExpression("TreeMapSort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.TreeMapSort = unmarshaller.Unmarshall(context, ref reader);

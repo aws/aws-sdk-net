@@ -56,67 +56,67 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorInfo", targetDepth))
+                if (context.TestExpression("ErrorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorInfoUnmarshaller.Instance;
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngestionId", targetDepth))
+                if (context.TestExpression("IngestionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IngestionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngestionSizeInBytes", targetDepth))
+                if (context.TestExpression("IngestionSizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IngestionSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngestionStatus", targetDepth))
+                if (context.TestExpression("IngestionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IngestionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngestionTimeInSeconds", targetDepth))
+                if (context.TestExpression("IngestionTimeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IngestionTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueueInfo", targetDepth))
+                if (context.TestExpression("QueueInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = QueueInfoUnmarshaller.Instance;
                     unmarshalledObject.QueueInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestSource", targetDepth))
+                if (context.TestExpression("RequestSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RequestSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestType", targetDepth))
+                if (context.TestExpression("RequestType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RequestType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowInfo", targetDepth))
+                if (context.TestExpression("RowInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = RowInfoUnmarshaller.Instance;
                     unmarshalledObject.RowInfo = unmarshaller.Unmarshall(context, ref reader);

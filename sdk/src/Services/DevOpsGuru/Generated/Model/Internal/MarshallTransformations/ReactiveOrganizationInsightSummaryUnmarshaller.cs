@@ -56,55 +56,55 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsightTimeRange", targetDepth))
+                if (context.TestExpression("InsightTimeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = InsightTimeRangeUnmarshaller.Instance;
                     unmarshalledObject.InsightTimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationalUnitId", targetDepth))
+                if (context.TestExpression("OrganizationalUnitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationalUnitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceCollection", targetDepth))
+                if (context.TestExpression("ResourceCollection", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceCollectionUnmarshaller.Instance;
                     unmarshalledObject.ResourceCollection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceCollection", targetDepth))
+                if (context.TestExpression("ServiceCollection", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceCollectionUnmarshaller.Instance;
                     unmarshalledObject.ServiceCollection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Severity", targetDepth))
+                if (context.TestExpression("Severity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Severity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

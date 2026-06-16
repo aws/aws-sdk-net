@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sampled", targetDepth))
+                if (context.TestExpression("sampled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Sampled = unmarshaller.Unmarshall(context, ref reader);

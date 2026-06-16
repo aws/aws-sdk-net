@@ -56,31 +56,31 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableKeyReuseOnNtTokenKeysetStorageFull", targetDepth))
+                if (context.TestExpression("EnableKeyReuseOnNtTokenKeysetStorageFull", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableKeyReuseOnNtTokenKeysetStorageFull = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeSymmetricAlgorithms", targetDepth))
+                if (context.TestExpression("IncludeSymmetricAlgorithms", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeSymmetricAlgorithms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NoSecurityExtension", targetDepth))
+                if (context.TestExpression("NoSecurityExtension", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoSecurityExtension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoveInvalidCertificateFromPersonalStore", targetDepth))
+                if (context.TestExpression("RemoveInvalidCertificateFromPersonalStore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RemoveInvalidCertificateFromPersonalStore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserInteractionRequired", targetDepth))
+                if (context.TestExpression("UserInteractionRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UserInteractionRequired = unmarshaller.Unmarshall(context, ref reader);

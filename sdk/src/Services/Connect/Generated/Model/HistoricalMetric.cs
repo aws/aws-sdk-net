@@ -43,8 +43,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the metric. Following is a list of each supported metric mapped to the
-        /// UI name, linked to a detailed description in the <i>Amazon Connect Administrator Guide</i>.
-        /// 
+        /// UI name, linked to a detailed description in the <i>Connect Customer Administrator
+        /// Guide</i>. 
         /// </para>
         ///  <dl> <dt>ABANDON_TIME</dt> <dd> 
         /// <para>

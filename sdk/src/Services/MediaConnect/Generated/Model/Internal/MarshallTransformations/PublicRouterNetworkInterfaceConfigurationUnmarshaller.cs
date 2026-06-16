@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowRules", targetDepth))
+                if (context.TestExpression("allowRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PublicRouterNetworkInterfaceRule, PublicRouterNetworkInterfaceRuleUnmarshaller>(PublicRouterNetworkInterfaceRuleUnmarshaller.Instance);
                     unmarshalledObject.AllowRules = unmarshaller.Unmarshall(context, ref reader);

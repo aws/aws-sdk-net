@@ -56,13 +56,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IpAddress", targetDepth))
+                if (context.TestExpression("IpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Port", targetDepth))
+                if (context.TestExpression("Port", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);

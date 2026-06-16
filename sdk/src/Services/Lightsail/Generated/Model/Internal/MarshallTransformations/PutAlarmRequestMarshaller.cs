@@ -67,8 +67,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -139,6 +139,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");
@@ -160,10 +176,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

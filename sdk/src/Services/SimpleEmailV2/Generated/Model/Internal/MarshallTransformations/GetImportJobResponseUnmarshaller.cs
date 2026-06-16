@@ -52,55 +52,55 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompletedTimestamp", targetDepth))
+                if (context.TestExpression("CompletedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CompletedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
+                if (context.TestExpression("CreatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailedRecordsCount", targetDepth))
+                if (context.TestExpression("FailedRecordsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.FailedRecordsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureInfo", targetDepth))
+                if (context.TestExpression("FailureInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = FailureInfoUnmarshaller.Instance;
                     response.FailureInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportDataSource", targetDepth))
+                if (context.TestExpression("ImportDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportDataSourceUnmarshaller.Instance;
                     response.ImportDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportDestination", targetDepth))
+                if (context.TestExpression("ImportDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportDestinationUnmarshaller.Instance;
                     response.ImportDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("JobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("JobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcessedRecordsCount", targetDepth))
+                if (context.TestExpression("ProcessedRecordsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ProcessedRecordsCount = unmarshaller.Unmarshall(context, ref reader);

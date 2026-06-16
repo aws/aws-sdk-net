@@ -56,43 +56,43 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botName", targetDepth))
+                if (context.TestExpression("botName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BotName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botTags", targetDepth))
+                if (context.TestExpression("botTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.BotTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataPrivacy", targetDepth))
+                if (context.TestExpression("dataPrivacy", targetDepth, ref reader))
                 {
                     var unmarshaller = DataPrivacyUnmarshaller.Instance;
                     unmarshalledObject.DataPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorLogSettings", targetDepth))
+                if (context.TestExpression("errorLogSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorLogSettingsUnmarshaller.Instance;
                     unmarshalledObject.ErrorLogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))
+                if (context.TestExpression("idleSessionTTLInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleSessionTTLInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("testBotAliasTags", targetDepth))
+                if (context.TestExpression("testBotAliasTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.TestBotAliasTags = unmarshaller.Unmarshall(context, ref reader);

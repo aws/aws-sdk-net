@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class GetEvaluatorRequest : AmazonBedrockAgentCoreControlRequest
     {
         private string _evaluatorId;
+        private IncludedData _includedData;
 
         /// <summary>
         /// Gets and sets the property EvaluatorId. 
@@ -56,6 +57,28 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEvaluatorId()
         {
             return this._evaluatorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludedData. 
+        /// <para>
+        ///  Controls which data is returned in the response. <c>ALL_DATA</c> (default) returns
+        /// the full evaluator including decrypted instructions and rating scale. For evaluators
+        /// encrypted with a customer managed KMS key, this requires <c>kms:Decrypt</c> permission
+        /// on the key. <c>METADATA_ONLY</c> returns evaluator metadata and model configuration
+        /// without instructions or rating scale, and does not require any KMS permissions. 
+        /// </para>
+        /// </summary>
+        public IncludedData IncludedData
+        {
+            get { return this._includedData; }
+            set { this._includedData = value; }
+        }
+
+        // Check to see if IncludedData property is set
+        internal bool IsSetIncludedData()
+        {
+            return this._includedData != null;
         }
 
     }

@@ -52,19 +52,19 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("exclusionPreviews", targetDepth))
+                if (context.TestExpression("exclusionPreviews", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExclusionPreview, ExclusionPreviewUnmarshaller>(ExclusionPreviewUnmarshaller.Instance);
                     response.ExclusionPreviews = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("previewStatus", targetDepth))
+                if (context.TestExpression("previewStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PreviewStatus = unmarshaller.Unmarshall(context, ref reader);

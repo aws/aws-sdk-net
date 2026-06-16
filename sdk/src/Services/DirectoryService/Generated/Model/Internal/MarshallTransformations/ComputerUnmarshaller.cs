@@ -56,19 +56,19 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComputerAttributes", targetDepth))
+                if (context.TestExpression("ComputerAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Attribute, AttributeUnmarshaller>(AttributeUnmarshaller.Instance);
                     unmarshalledObject.ComputerAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputerId", targetDepth))
+                if (context.TestExpression("ComputerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputerName", targetDepth))
+                if (context.TestExpression("ComputerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputerName = unmarshaller.Unmarshall(context, ref reader);

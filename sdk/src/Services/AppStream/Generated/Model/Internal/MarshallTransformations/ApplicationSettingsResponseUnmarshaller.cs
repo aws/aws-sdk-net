@@ -56,19 +56,19 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BucketName", targetDepth))
+                if (context.TestExpression("S3BucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SettingsGroup", targetDepth))
+                if (context.TestExpression("SettingsGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SettingsGroup = unmarshaller.Unmarshall(context, ref reader);

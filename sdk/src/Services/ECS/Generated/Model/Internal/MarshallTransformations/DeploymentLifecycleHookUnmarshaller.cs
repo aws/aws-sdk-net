@@ -56,28 +56,40 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hookDetails", targetDepth))
+                if (context.TestExpression("hookDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.HookDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hookTargetArn", targetDepth))
+                if (context.TestExpression("hookTargetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HookTargetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleStages", targetDepth))
+                if (context.TestExpression("lifecycleStages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LifecycleStages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("targetType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("timeoutConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeploymentLifecycleHookTimeoutConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

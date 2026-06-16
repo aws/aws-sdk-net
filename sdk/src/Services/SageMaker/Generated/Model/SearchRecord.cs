@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private FeatureGroup _featureGroup;
         private FeatureMetadata _featureMetadata;
         private HyperParameterTuningJobSearchEntity _hyperParameterTuningJob;
+        private Job _job;
         private ModelDashboardModel _model;
         private ModelCard _modelCard;
         private ModelPackage _modelPackage;
@@ -134,6 +135,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHyperParameterTuningJob()
         {
             return this._hyperParameterTuningJob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Job.
+        /// </summary>
+        public Job Job
+        {
+            get { return this._job; }
+            set { this._job = value; }
+        }
+
+        // Check to see if Job property is set
+        internal bool IsSetJob()
+        {
+            return this._job != null;
         }
 
         /// <summary>

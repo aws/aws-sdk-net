@@ -32,8 +32,8 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the ImportPhoneNumber operation.
     /// Imports a claimed phone number from an external service, such as Amazon Web Services
-    /// End User Messaging, into an Amazon Connect instance. You can call this API only in
-    /// the same Amazon Web Services Region where the Amazon Connect instance was created.
+    /// End User Messaging, into an Connect Customer instance. You can call this API only
+    /// in the same Amazon Web Services Region where the Connect Customer instance was created.
     /// 
     ///  <important> 
     /// <para>
@@ -97,7 +97,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

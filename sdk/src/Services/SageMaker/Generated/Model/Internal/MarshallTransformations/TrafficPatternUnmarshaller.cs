@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Phases", targetDepth))
+                if (context.TestExpression("Phases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Phase, PhaseUnmarshaller>(PhaseUnmarshaller.Instance);
                     unmarshalledObject.Phases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Stairs", targetDepth))
+                if (context.TestExpression("Stairs", targetDepth, ref reader))
                 {
                     var unmarshaller = StairsUnmarshaller.Instance;
                     unmarshalledObject.Stairs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrafficType", targetDepth))
+                if (context.TestExpression("TrafficType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrafficType = unmarshaller.Unmarshall(context, ref reader);

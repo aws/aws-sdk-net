@@ -56,19 +56,19 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("keyspaceStatus", targetDepth))
+                if (context.TestExpression("keyspaceStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyspaceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tablesReplicationProgress", targetDepth))
+                if (context.TestExpression("tablesReplicationProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TablesReplicationProgress = unmarshaller.Unmarshall(context, ref reader);

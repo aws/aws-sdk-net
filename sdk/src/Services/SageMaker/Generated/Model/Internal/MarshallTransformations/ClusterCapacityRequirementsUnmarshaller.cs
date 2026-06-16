@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OnDemand", targetDepth))
+                if (context.TestExpression("OnDemand", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterOnDemandOptionsUnmarshaller.Instance;
                     unmarshalledObject.OnDemand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Spot", targetDepth))
+                if (context.TestExpression("Spot", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterSpotOptionsUnmarshaller.Instance;
                     unmarshalledObject.Spot = unmarshaller.Unmarshall(context, ref reader);

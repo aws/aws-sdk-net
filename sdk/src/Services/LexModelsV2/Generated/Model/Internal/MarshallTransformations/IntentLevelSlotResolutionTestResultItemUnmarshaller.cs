@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("intentName", targetDepth))
+                if (context.TestExpression("intentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiTurnConversation", targetDepth))
+                if (context.TestExpression("multiTurnConversation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MultiTurnConversation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotResolutionResults", targetDepth))
+                if (context.TestExpression("slotResolutionResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SlotResolutionTestResultItem, SlotResolutionTestResultItemUnmarshaller>(SlotResolutionTestResultItemUnmarshaller.Instance);
                     unmarshalledObject.SlotResolutionResults = unmarshaller.Unmarshall(context, ref reader);

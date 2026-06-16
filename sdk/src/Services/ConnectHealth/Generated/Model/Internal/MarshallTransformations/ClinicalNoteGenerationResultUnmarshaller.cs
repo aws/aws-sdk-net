@@ -56,19 +56,19 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("afterVisitSummaryResult", targetDepth))
+                if (context.TestExpression("afterVisitSummaryResult", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactDetailsUnmarshaller.Instance;
                     unmarshalledObject.AfterVisitSummaryResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noteResult", targetDepth))
+                if (context.TestExpression("noteResult", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactDetailsUnmarshaller.Instance;
                     unmarshalledObject.NoteResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transcriptResult", targetDepth))
+                if (context.TestExpression("transcriptResult", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactDetailsUnmarshaller.Instance;
                     unmarshalledObject.TranscriptResult = unmarshaller.Unmarshall(context, ref reader);

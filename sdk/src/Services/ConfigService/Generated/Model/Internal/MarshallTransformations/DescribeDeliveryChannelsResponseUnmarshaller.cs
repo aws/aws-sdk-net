@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeliveryChannels", targetDepth))
+                if (context.TestExpression("DeliveryChannels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeliveryChannel, DeliveryChannelUnmarshaller>(DeliveryChannelUnmarshaller.Instance);
                     response.DeliveryChannels = unmarshaller.Unmarshall(context, ref reader);

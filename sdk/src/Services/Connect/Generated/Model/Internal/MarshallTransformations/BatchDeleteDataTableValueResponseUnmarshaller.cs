@@ -52,13 +52,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Failed", targetDepth))
+                if (context.TestExpression("Failed", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchDeleteDataTableValueFailureResult, BatchDeleteDataTableValueFailureResultUnmarshaller>(BatchDeleteDataTableValueFailureResultUnmarshaller.Instance);
                     response.Failed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Successful", targetDepth))
+                if (context.TestExpression("Successful", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchDeleteDataTableValueSuccessResult, BatchDeleteDataTableValueSuccessResultUnmarshaller>(BatchDeleteDataTableValueSuccessResultUnmarshaller.Instance);
                     response.Successful = unmarshaller.Unmarshall(context, ref reader);

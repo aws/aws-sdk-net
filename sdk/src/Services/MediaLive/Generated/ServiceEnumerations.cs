@@ -1148,6 +1148,14 @@ namespace Amazon.MediaLive
         /// Constant ITU_1770_2 for AudioNormalizationAlgorithm
         /// </summary>
         public static readonly AudioNormalizationAlgorithm ITU_1770_2 = new AudioNormalizationAlgorithm("ITU_1770_2");
+        /// <summary>
+        /// Constant ITU_1770_3 for AudioNormalizationAlgorithm
+        /// </summary>
+        public static readonly AudioNormalizationAlgorithm ITU_1770_3 = new AudioNormalizationAlgorithm("ITU_1770_3");
+        /// <summary>
+        /// Constant ITU_1770_4 for AudioNormalizationAlgorithm
+        /// </summary>
+        public static readonly AudioNormalizationAlgorithm ITU_1770_4 = new AudioNormalizationAlgorithm("ITU_1770_4");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1224,6 +1232,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AudioNormalizationAlgorithmControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AudioNormalizationPeakCalculation.
+    /// </summary>
+    public class AudioNormalizationPeakCalculation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for AudioNormalizationPeakCalculation
+        /// </summary>
+        public static readonly AudioNormalizationPeakCalculation NONE = new AudioNormalizationPeakCalculation("NONE");
+        /// <summary>
+        /// Constant TRUE_PEAK for AudioNormalizationPeakCalculation
+        /// </summary>
+        public static readonly AudioNormalizationPeakCalculation TRUE_PEAK = new AudioNormalizationPeakCalculation("TRUE_PEAK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioNormalizationPeakCalculation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioNormalizationPeakCalculation FindValue(string value)
+        {
+            return FindValue<AudioNormalizationPeakCalculation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioNormalizationPeakCalculation(string value)
         {
             return FindValue(value);
         }
@@ -2614,6 +2672,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BurnInTeletextGridControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CaptionSynchronizationMode.
+    /// </summary>
+    public class CaptionSynchronizationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_VIDEO_DELAY for CaptionSynchronizationMode
+        /// </summary>
+        public static readonly CaptionSynchronizationMode NO_VIDEO_DELAY = new CaptionSynchronizationMode("NO_VIDEO_DELAY");
+        /// <summary>
+        /// Constant VIDEO_ALIGNED_CAPTIONS for CaptionSynchronizationMode
+        /// </summary>
+        public static readonly CaptionSynchronizationMode VIDEO_ALIGNED_CAPTIONS = new CaptionSynchronizationMode("VIDEO_ALIGNED_CAPTIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CaptionSynchronizationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CaptionSynchronizationMode FindValue(string value)
+        {
+            return FindValue<CaptionSynchronizationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CaptionSynchronizationMode(string value)
         {
             return FindValue(value);
         }
@@ -13792,6 +13900,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MaintenanceDay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaConnectRouterOutputEncryptionType.
+    /// </summary>
+    public class MediaConnectRouterOutputEncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for MediaConnectRouterOutputEncryptionType
+        /// </summary>
+        public static readonly MediaConnectRouterOutputEncryptionType AUTOMATIC = new MediaConnectRouterOutputEncryptionType("AUTOMATIC");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for MediaConnectRouterOutputEncryptionType
+        /// </summary>
+        public static readonly MediaConnectRouterOutputEncryptionType SECRETS_MANAGER = new MediaConnectRouterOutputEncryptionType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaConnectRouterOutputEncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaConnectRouterOutputEncryptionType FindValue(string value)
+        {
+            return FindValue<MediaConnectRouterOutputEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaConnectRouterOutputEncryptionType(string value)
         {
             return FindValue(value);
         }

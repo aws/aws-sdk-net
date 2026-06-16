@@ -56,19 +56,19 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("BoundingBox", targetDepth, ref reader))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;
                     unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Polygon", targetDepth))
+                if (context.TestExpression("Polygon", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Point, PointUnmarshaller>(PointUnmarshaller.Instance);
                     unmarshalledObject.Polygon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RotationAngle", targetDepth))
+                if (context.TestExpression("RotationAngle", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RotationAngle = unmarshaller.Unmarshall(context, ref reader);

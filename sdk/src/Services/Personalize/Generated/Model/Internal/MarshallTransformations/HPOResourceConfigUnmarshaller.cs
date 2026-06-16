@@ -56,13 +56,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxNumberOfTrainingJobs", targetDepth))
+                if (context.TestExpression("maxNumberOfTrainingJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaxNumberOfTrainingJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxParallelTrainingJobs", targetDepth))
+                if (context.TestExpression("maxParallelTrainingJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaxParallelTrainingJobs = unmarshaller.Unmarshall(context, ref reader);

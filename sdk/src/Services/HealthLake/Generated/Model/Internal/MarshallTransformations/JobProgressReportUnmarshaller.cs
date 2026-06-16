@@ -56,49 +56,49 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Throughput", targetDepth))
+                if (context.TestExpression("Throughput", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfFilesReadWithCustomerError", targetDepth))
+                if (context.TestExpression("TotalNumberOfFilesReadWithCustomerError", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfFilesReadWithCustomerError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfImportedFiles", targetDepth))
+                if (context.TestExpression("TotalNumberOfImportedFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfImportedFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfResourcesImported", targetDepth))
+                if (context.TestExpression("TotalNumberOfResourcesImported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfResourcesImported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfResourcesScanned", targetDepth))
+                if (context.TestExpression("TotalNumberOfResourcesScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfResourcesScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfResourcesWithCustomerError", targetDepth))
+                if (context.TestExpression("TotalNumberOfResourcesWithCustomerError", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfResourcesWithCustomerError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfScannedFiles", targetDepth))
+                if (context.TestExpression("TotalNumberOfScannedFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfScannedFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalSizeOfScannedFilesInMB", targetDepth))
+                if (context.TestExpression("TotalSizeOfScannedFilesInMB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalSizeOfScannedFilesInMB = unmarshaller.Unmarshall(context, ref reader);

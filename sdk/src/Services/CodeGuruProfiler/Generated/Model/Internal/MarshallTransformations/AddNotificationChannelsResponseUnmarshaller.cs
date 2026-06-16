@@ -52,7 +52,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("notificationConfiguration", targetDepth))
+                if (context.TestExpression("notificationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NotificationConfigurationUnmarshaller.Instance;
                     response.NotificationConfiguration = unmarshaller.Unmarshall(context, ref reader);

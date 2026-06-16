@@ -52,7 +52,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("item", targetDepth))
+                if (context.TestExpression("item", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Stage, StageUnmarshaller>(StageUnmarshaller.Instance);
                     response.Item = unmarshaller.Unmarshall(context, ref reader);

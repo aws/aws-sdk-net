@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("systemMessageOverride", targetDepth))
+                if (context.TestExpression("systemMessageOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SystemMessageOverride = unmarshaller.Unmarshall(context, ref reader);

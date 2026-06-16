@@ -28,6 +28,16 @@ namespace Amazon.BedrockAgentCore.Model
     {
 
         /// <summary>
+        /// Paginator for ListABTests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListABTestsPaginator ListABTests(ListABTestsRequest request);
+
+        /// <summary>
         /// Paginator for ListActors operation
         ///</summary>
         [AWSPaginator(
@@ -36,6 +46,16 @@ namespace Amazon.BedrockAgentCore.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListActorsPaginator ListActors(ListActorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBatchEvaluations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBatchEvaluationsPaginator ListBatchEvaluations(ListBatchEvaluationsRequest request);
 
         /// <summary>
         /// Paginator for ListEvents operation
@@ -66,6 +86,36 @@ namespace Amazon.BedrockAgentCore.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListMemoryRecordsPaginator ListMemoryRecords(ListMemoryRecordsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPaymentInstruments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentInstrumentsPaginator ListPaymentInstruments(ListPaymentInstrumentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPaymentSessions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentSessionsPaginator ListPaymentSessions(ListPaymentSessionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecommendations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
 
         /// <summary>
         /// Paginator for ListSessions operation

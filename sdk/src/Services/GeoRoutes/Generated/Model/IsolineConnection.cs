@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Isolines may contain multiple components, if these components are connected by ferry
-    /// links. These components are returned as separate polygons while the ferry links are
-    /// returned as connections.
+    /// Represents a segment of the transportation network that connects separate parts of
+    /// a reachable area. These connections show how discontinuous areas are linked, such
+    /// as by ferry routes or bridges crossing unroutable terrain.
     /// </summary>
     public partial class IsolineConnection
     {
@@ -43,8 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property FromPolygonIndex. 
         /// <para>
-        /// Index of the polygon corresponding to the "from" component of the connection. The
-        /// polygon is available from <c>Isoline[].Geometries</c>.
+        /// The index of the starting polygon in the isoline's <c>Geometries</c> list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -63,7 +62,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// The isoline geometry.
+        /// The shape of the connection, representing the actual path through the transportation
+        /// network that links the polygons.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,8 +82,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property ToPolygonIndex. 
         /// <para>
-        /// Index of the polygon corresponding to the "to" component of the connection. The polygon
-        /// is available from <c>Isoline[].Geometries</c>.
+        /// The index of the ending polygon in the isoline's <c>Geometries</c> list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

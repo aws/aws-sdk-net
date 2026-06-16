@@ -56,49 +56,49 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("architecture", targetDepth))
+                if (context.TestExpression("architecture", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.Architecture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("epoch", targetDepth))
+                if (context.TestExpression("epoch", targetDepth, ref reader))
                 {
                     var unmarshaller = NumberFilterUnmarshaller.Instance;
                     unmarshalledObject.Epoch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filePath", targetDepth))
+                if (context.TestExpression("filePath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.FilePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("release", targetDepth))
+                if (context.TestExpression("release", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.Release = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceLambdaLayerArn", targetDepth))
+                if (context.TestExpression("sourceLambdaLayerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.SourceLambdaLayerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceLayerHash", targetDepth))
+                if (context.TestExpression("sourceLayerHash", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.SourceLayerHash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);

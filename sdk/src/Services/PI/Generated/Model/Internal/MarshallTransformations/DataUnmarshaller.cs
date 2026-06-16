@@ -56,7 +56,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PerformanceInsightsMetric", targetDepth))
+                if (context.TestExpression("PerformanceInsightsMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceInsightsMetricUnmarshaller.Instance;
                     unmarshalledObject.PerformanceInsightsMetric = unmarshaller.Unmarshall(context, ref reader);

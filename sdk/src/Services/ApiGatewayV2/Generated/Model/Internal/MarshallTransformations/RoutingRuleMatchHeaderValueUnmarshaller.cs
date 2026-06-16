@@ -56,13 +56,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("header", targetDepth))
+                if (context.TestExpression("header", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Header = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("valueGlob", targetDepth))
+                if (context.TestExpression("valueGlob", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValueGlob = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WindowStartTime", targetDepth))
+                if (context.TestExpression("WindowStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = WindowStartTimeUnmarshaller.Instance;
                     unmarshalledObject.WindowStartTime = unmarshaller.Unmarshall(context, ref reader);

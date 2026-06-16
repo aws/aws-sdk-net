@@ -56,7 +56,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReportS3Configuration", targetDepth))
+                if (context.TestExpression("ReportS3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportS3ConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ReportS3Configuration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("decisionNumber", targetDepth))
+                if (context.TestExpression("decisionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DecisionNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ppnExceptionDesignationCode", targetDepth))
+                if (context.TestExpression("ppnExceptionDesignationCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PpnExceptionDesignationCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taxRegistrationNumberType", targetDepth))
+                if (context.TestExpression("taxRegistrationNumberType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaxRegistrationNumberType = unmarshaller.Unmarshall(context, ref reader);

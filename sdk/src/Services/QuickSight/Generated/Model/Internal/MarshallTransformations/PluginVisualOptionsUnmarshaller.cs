@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VisualProperties", targetDepth))
+                if (context.TestExpression("VisualProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PluginVisualProperty, PluginVisualPropertyUnmarshaller>(PluginVisualPropertyUnmarshaller.Instance);
                     unmarshalledObject.VisualProperties = unmarshaller.Unmarshall(context, ref reader);

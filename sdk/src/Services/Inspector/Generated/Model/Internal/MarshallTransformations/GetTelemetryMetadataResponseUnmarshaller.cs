@@ -52,7 +52,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("telemetryMetadata", targetDepth))
+                if (context.TestExpression("telemetryMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TelemetryMetadata, TelemetryMetadataUnmarshaller>(TelemetryMetadataUnmarshaller.Instance);
                     response.TelemetryMetadata = unmarshaller.Unmarshall(context, ref reader);

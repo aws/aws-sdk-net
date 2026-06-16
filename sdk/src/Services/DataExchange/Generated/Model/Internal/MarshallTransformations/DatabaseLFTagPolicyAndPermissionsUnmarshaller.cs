@@ -56,13 +56,13 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Expression", targetDepth))
+                if (context.TestExpression("Expression", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LFTag, LFTagUnmarshaller>(LFTagUnmarshaller.Instance);
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Permissions", targetDepth))
+                if (context.TestExpression("Permissions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Permissions = unmarshaller.Unmarshall(context, ref reader);

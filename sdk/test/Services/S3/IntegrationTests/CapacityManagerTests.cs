@@ -1,39 +1,39 @@
-/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
 using Amazon.S3;
 using AWSSDK_DotNet.CommonTest.Utils;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Xml;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
+#if NETFRAMEWORK
+    [Trait("Category", "S3")]
     public class CapacityManagerTests
     {
         public static int requestCount;
+
+        private const string ListObjectsResponseXml =
+            @"<?xml version=""1.0"" encoding=""UTF-8""?>
+<ListBucketResult xmlns=""http://s3.amazonaws.com/doc/2006-03-01/"">
+    <Name>bucket</Name>
+    <Prefix/>
+    <Marker/>
+    <MaxKeys>1000</MaxKeys>
+    <IsTruncated>false</IsTruncated>
+    <Contents>
+        <Key>my-image.jpg</Key>
+        <LastModified>2009-10-12T17:50:30.000Z</LastModified>
+        <ETag>&quot;fba9dede5f27731c9771645a39863328&quot;</ETag>
+        <Size>434234</Size>
+        <StorageClass>STANDARD</StorageClass>
+    </Contents>
+</ListBucketResult>";
 
         /// <summary>
         /// Background Info:- Each retry request requires 5 capacity. On successful retry response 5 would be put back into the
         /// capacity. On a successful response which is not a retry request 1 is added to the capacity. The capacity has a max cap 
         /// that is not exceeded.
-        /// Dependency:- This test depends on the file ListObjectsResponse.xml which contains a sample success ListObject response.
+        /// Dependency: This test uses the ListObjectsResponseXml constant which contains a sample success ListObject response.
         /// This Integration test works in three phases.
         /// Phase 1. Keeping in mind that we can make a 100 requests with the current set configurations, 500 requests are made
         /// to a mock servlet which returns back a 500 error which leads to 500 retry requests. As the capacity can only handle 
@@ -42,8 +42,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// response. This puts back enough capacity to make a 100 retry requests.
         /// Phase 3. Phase 1 is repeated again with an assert to prove that Phase 2 added the said capacity.
         /// </summary>
-        [TestMethod]
-        public async Task S3CapacityManagerIntegrationTest()
+        [Fact]
+        public void S3CapacityManagerIntegrationTest()
         {
             int TotalRequests = 500;
             int RetryRequests = 100;
@@ -67,14 +67,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                     else
                     {
-                        var xmlDoc = UtilityMethods.GetResourceText("ListObjectsResponse.xml");
-                        XmlDocument myxml = new XmlDocument();
-                        myxml.LoadXml(xmlDoc);
-                        string contents = myxml.InnerXml;
-                        
                         return new MultipleResponseServlet.Response
                         {
-                            Contents = contents,
+                            Contents = ListObjectsResponseXml,
                             Headers = new Dictionary<string, string>(),
                             StatusCode = 200
                         };
@@ -93,7 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     requestCount = 0;
                     for (int i = 0; i < TotalRequests; i++)
                     {
-                        var response = await client.ListObjectsAsync("CapacityManagerTests");
+                        var response = client.ListObjects("CapacityManagerTests");
                     }
                     retryFlag = true;
                     requestCount = 0;
@@ -114,11 +109,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     if (i == totalRequests - 1)
                     {
-                        Assert.AreEqual(retryRequests * 2, requestCount - extraRequests);
+                        Assert.Equal(retryRequests * 2, requestCount - extraRequests);
                     }
                     continue;
                 }
             }
         }
     }
+#endif
 }

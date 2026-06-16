@@ -56,25 +56,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CollectorStatus", targetDepth))
+                if (context.TestExpression("CollectorStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CollectorStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalCollectorS3Access", targetDepth))
+                if (context.TestExpression("LocalCollectorS3Access", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LocalCollectorS3Access = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebCollectorGrantedRoleBasedAccess", targetDepth))
+                if (context.TestExpression("WebCollectorGrantedRoleBasedAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WebCollectorGrantedRoleBasedAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebCollectorS3Access", targetDepth))
+                if (context.TestExpression("WebCollectorS3Access", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WebCollectorS3Access = unmarshaller.Unmarshall(context, ref reader);

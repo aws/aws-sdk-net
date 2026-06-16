@@ -70,7 +70,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The content of the static policy written in the Cedar policy language.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Statement
         {
             get { return this._statement; }

@@ -56,25 +56,25 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InlineConfigurations", targetDepth))
+                if (context.TestExpression("InlineConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InlineCustomDocumentEnrichmentConfiguration, InlineCustomDocumentEnrichmentConfigurationUnmarshaller>(InlineCustomDocumentEnrichmentConfigurationUnmarshaller.Instance);
                     unmarshalledObject.InlineConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostExtractionHookConfiguration", targetDepth))
+                if (context.TestExpression("PostExtractionHookConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HookConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PostExtractionHookConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreExtractionHookConfiguration", targetDepth))
+                if (context.TestExpression("PreExtractionHookConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HookConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PreExtractionHookConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);

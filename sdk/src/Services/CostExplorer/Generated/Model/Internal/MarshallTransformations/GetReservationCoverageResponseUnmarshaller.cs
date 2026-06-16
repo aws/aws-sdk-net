@@ -52,19 +52,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CoveragesByTime", targetDepth))
+                if (context.TestExpression("CoveragesByTime", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CoverageByTime, CoverageByTimeUnmarshaller>(CoverageByTimeUnmarshaller.Instance);
                     response.CoveragesByTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Total", targetDepth))
+                if (context.TestExpression("Total", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageUnmarshaller.Instance;
                     response.Total = unmarshaller.Unmarshall(context, ref reader);

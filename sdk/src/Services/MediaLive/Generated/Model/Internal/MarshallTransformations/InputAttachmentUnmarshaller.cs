@@ -56,31 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("automaticInputFailoverSettings", targetDepth))
+                if (context.TestExpression("automaticInputFailoverSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomaticInputFailoverSettingsUnmarshaller.Instance;
                     unmarshalledObject.AutomaticInputFailoverSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputAttachmentName", targetDepth))
+                if (context.TestExpression("inputAttachmentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputAttachmentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputId", targetDepth))
+                if (context.TestExpression("inputId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputSettings", targetDepth))
+                if (context.TestExpression("inputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = InputSettingsUnmarshaller.Instance;
                     unmarshalledObject.InputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logicalInterfaceNames", targetDepth))
+                if (context.TestExpression("logicalInterfaceNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LogicalInterfaceNames = unmarshaller.Unmarshall(context, ref reader);

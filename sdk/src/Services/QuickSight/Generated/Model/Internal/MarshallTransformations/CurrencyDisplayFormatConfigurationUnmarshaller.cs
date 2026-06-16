@@ -56,49 +56,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DecimalPlacesConfiguration", targetDepth))
+                if (context.TestExpression("DecimalPlacesConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DecimalPlacesConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DecimalPlacesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NegativeValueConfiguration", targetDepth))
+                if (context.TestExpression("NegativeValueConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NegativeValueConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NegativeValueConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NullValueFormatConfiguration", targetDepth))
+                if (context.TestExpression("NullValueFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullValueFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NullValueFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberScale", targetDepth))
+                if (context.TestExpression("NumberScale", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NumberScale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prefix", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SeparatorConfiguration", targetDepth))
+                if (context.TestExpression("SeparatorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericSeparatorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SeparatorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Suffix", targetDepth))
+                if (context.TestExpression("Suffix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Suffix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Symbol", targetDepth))
+                if (context.TestExpression("Symbol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Symbol = unmarshaller.Unmarshall(context, ref reader);

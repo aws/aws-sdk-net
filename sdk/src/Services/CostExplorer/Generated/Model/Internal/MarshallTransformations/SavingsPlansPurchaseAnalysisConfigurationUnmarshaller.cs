@@ -56,37 +56,43 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AccountScope", targetDepth))
+                if (context.TestExpression("AccountScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnalysisType", targetDepth))
+                if (context.TestExpression("AnalysisType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AnalysisType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LookBackTimePeriod", targetDepth))
+                if (context.TestExpression("LookBackTimePeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = DateIntervalUnmarshaller.Instance;
                     unmarshalledObject.LookBackTimePeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansToAdd", targetDepth))
+                if (context.TestExpression("SavingsPlansTargetCoverage", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.SavingsPlansTargetCoverage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SavingsPlansToAdd", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SavingsPlans, SavingsPlansUnmarshaller>(SavingsPlansUnmarshaller.Instance);
                     unmarshalledObject.SavingsPlansToAdd = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansToExclude", targetDepth))
+                if (context.TestExpression("SavingsPlansToExclude", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SavingsPlansToExclude = unmarshaller.Unmarshall(context, ref reader);

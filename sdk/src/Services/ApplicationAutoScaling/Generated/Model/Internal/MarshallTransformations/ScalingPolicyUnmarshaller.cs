@@ -56,67 +56,67 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Alarms", targetDepth))
+                if (context.TestExpression("Alarms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Alarm, AlarmUnmarshaller>(AlarmUnmarshaller.Instance);
                     unmarshalledObject.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyARN", targetDepth))
+                if (context.TestExpression("PolicyARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyName", targetDepth))
+                if (context.TestExpression("PolicyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyType", targetDepth))
+                if (context.TestExpression("PolicyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredictiveScalingPolicyConfiguration", targetDepth))
+                if (context.TestExpression("PredictiveScalingPolicyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingPolicyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PredictiveScalingPolicyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceId", targetDepth))
+                if (context.TestExpression("ResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalableDimension", targetDepth))
+                if (context.TestExpression("ScalableDimension", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalableDimension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceNamespace", targetDepth))
+                if (context.TestExpression("ServiceNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepScalingPolicyConfiguration", targetDepth))
+                if (context.TestExpression("StepScalingPolicyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StepScalingPolicyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StepScalingPolicyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetTrackingScalingPolicyConfiguration", targetDepth))
+                if (context.TestExpression("TargetTrackingScalingPolicyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetTrackingScalingPolicyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TargetTrackingScalingPolicyConfiguration = unmarshaller.Unmarshall(context, ref reader);

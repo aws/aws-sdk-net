@@ -56,13 +56,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnnotationValue", targetDepth))
+                if (context.TestExpression("AnnotationValue", targetDepth, ref reader))
                 {
                     var unmarshaller = AnnotationValueUnmarshaller.Instance;
                     unmarshalledObject.AnnotationValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceIds", targetDepth))
+                if (context.TestExpression("ServiceIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceId, ServiceIdUnmarshaller>(ServiceIdUnmarshaller.Instance);
                     unmarshalledObject.ServiceIds = unmarshaller.Unmarshall(context, ref reader);

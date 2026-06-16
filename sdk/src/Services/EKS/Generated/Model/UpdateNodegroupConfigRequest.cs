@@ -47,6 +47,7 @@ namespace Amazon.EKS.Model
         private NodegroupScalingConfig _scalingConfig;
         private UpdateTaintsPayload _taints;
         private NodegroupUpdateConfig _updateConfig;
+        private WarmPoolConfig _warmPoolConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -195,6 +196,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetUpdateConfig()
         {
             return this._updateConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmPoolConfig. 
+        /// <para>
+        /// The warm pool configuration to apply to the node group. You can use this to add a
+        /// warm pool to an existing node group or modify the settings of an existing warm pool.
+        /// </para>
+        /// </summary>
+        public WarmPoolConfig WarmPoolConfig
+        {
+            get { return this._warmPoolConfig; }
+            set { this._warmPoolConfig = value; }
+        }
+
+        // Check to see if WarmPoolConfig property is set
+        internal bool IsSetWarmPoolConfig()
+        {
+            return this._warmPoolConfig != null;
         }
 
     }

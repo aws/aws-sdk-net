@@ -56,55 +56,55 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveSlotsByChannel", targetDepth))
+                if (context.TestExpression("ActiveSlotsByChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.ActiveSlotsByChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailableSlotsByChannel", targetDepth))
+                if (context.TestExpression("AvailableSlotsByChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.AvailableSlotsByChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Contacts", targetDepth))
+                if (context.TestExpression("Contacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AgentContactReference, AgentContactReferenceUnmarshaller>(AgentContactReferenceUnmarshaller.Instance);
                     unmarshalledObject.Contacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HierarchyPath", targetDepth))
+                if (context.TestExpression("HierarchyPath", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyPathReferenceUnmarshaller.Instance;
                     unmarshalledObject.HierarchyPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxSlotsByChannel", targetDepth))
+                if (context.TestExpression("MaxSlotsByChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.MaxSlotsByChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextStatus", targetDepth))
+                if (context.TestExpression("NextStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingProfile", targetDepth))
+                if (context.TestExpression("RoutingProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;
                     unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentStatusReferenceUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("User", targetDepth))
+                if (context.TestExpression("User", targetDepth, ref reader))
                 {
                     var unmarshaller = UserReferenceUnmarshaller.Instance;
                     unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);

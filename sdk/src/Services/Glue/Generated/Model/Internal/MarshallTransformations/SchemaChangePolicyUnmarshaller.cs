@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteBehavior", targetDepth))
+                if (context.TestExpression("DeleteBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeleteBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateBehavior", targetDepth))
+                if (context.TestExpression("UpdateBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpdateBehavior = unmarshaller.Unmarshall(context, ref reader);

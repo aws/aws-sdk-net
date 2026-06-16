@@ -56,43 +56,43 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeAgents", targetDepth))
+                if (context.TestExpression("activeAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blackListedAgents", targetDepth))
+                if (context.TestExpression("blackListedAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlackListedAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthyAgents", targetDepth))
+                if (context.TestExpression("healthyAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthyAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shutdownAgents", targetDepth))
+                if (context.TestExpression("shutdownAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShutdownAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalAgents", targetDepth))
+                if (context.TestExpression("totalAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unhealthyAgents", targetDepth))
+                if (context.TestExpression("unhealthyAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnhealthyAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unknownAgents", targetDepth))
+                if (context.TestExpression("unknownAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnknownAgents = unmarshaller.Unmarshall(context, ref reader);

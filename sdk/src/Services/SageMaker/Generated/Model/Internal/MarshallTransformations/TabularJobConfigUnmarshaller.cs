@@ -56,49 +56,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CandidateGenerationConfig", targetDepth))
+                if (context.TestExpression("CandidateGenerationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CandidateGenerationConfigUnmarshaller.Instance;
                     unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompletionCriteria", targetDepth))
+                if (context.TestExpression("CompletionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
                     unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth))
+                if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FeatureSpecificationS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GenerateCandidateDefinitionsOnly", targetDepth))
+                if (context.TestExpression("GenerateCandidateDefinitionsOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GenerateCandidateDefinitionsOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mode", targetDepth))
+                if (context.TestExpression("Mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProblemType", targetDepth))
+                if (context.TestExpression("ProblemType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProblemType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SampleWeightAttributeName", targetDepth))
+                if (context.TestExpression("SampleWeightAttributeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SampleWeightAttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetAttributeName", targetDepth))
+                if (context.TestExpression("TargetAttributeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetAttributeName = unmarshaller.Unmarshall(context, ref reader);

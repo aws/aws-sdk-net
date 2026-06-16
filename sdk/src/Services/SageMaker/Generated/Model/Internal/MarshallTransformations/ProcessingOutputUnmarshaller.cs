@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppManaged", targetDepth))
+                if (context.TestExpression("AppManaged", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AppManaged = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureStoreOutput", targetDepth))
+                if (context.TestExpression("FeatureStoreOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = ProcessingFeatureStoreOutputUnmarshaller.Instance;
                     unmarshalledObject.FeatureStoreOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputName", targetDepth))
+                if (context.TestExpression("OutputName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Output", targetDepth))
+                if (context.TestExpression("S3Output", targetDepth, ref reader))
                 {
                     var unmarshaller = ProcessingS3OutputUnmarshaller.Instance;
                     unmarshalledObject.S3Output = unmarshaller.Unmarshall(context, ref reader);

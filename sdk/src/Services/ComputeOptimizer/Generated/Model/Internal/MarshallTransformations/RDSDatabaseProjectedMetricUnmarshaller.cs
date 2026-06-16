@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RDSDatabaseProjectedMetric Object
     /// </summary>  
-    public class RDSDatabaseProjectedMetricUnmarshaller : IJsonUnmarshaller<RDSDatabaseProjectedMetric, JsonUnmarshallerContext>
+    public class RDSDatabaseProjectedMetricUnmarshaller : ICborUnmarshaller<RDSDatabaseProjectedMetric, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RDSDatabaseProjectedMetric Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RDSDatabaseProjectedMetric Unmarshall(CborUnmarshallerContext context)
         {
             RDSDatabaseProjectedMetric unmarshalledObject = new RDSDatabaseProjectedMetric();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("name", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("timestamps", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);
-                    unmarshalledObject.Timestamps = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("values", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Values = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "name":
+                        {
+                            context.AddPathSegment("Name");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "timestamps":
+                        {
+                            context.AddPathSegment("Timestamps");
+                            var unmarshaller = new CborListUnmarshaller<DateTime, CborDateTimeUnmarshaller>(CborDateTimeUnmarshaller.Instance);
+                            unmarshalledObject.Timestamps = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "values":
+                        {
+                            context.AddPathSegment("Values");
+                            var unmarshaller = new CborListUnmarshaller<double, CborDoubleUnmarshaller>(CborDoubleUnmarshaller.Instance);
+                            unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

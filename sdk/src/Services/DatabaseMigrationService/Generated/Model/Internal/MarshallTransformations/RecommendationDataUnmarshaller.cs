@@ -56,7 +56,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RdsEngine", targetDepth))
+                if (context.TestExpression("RdsEngine", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsRecommendationUnmarshaller.Instance;
                     unmarshalledObject.RdsEngine = unmarshaller.Unmarshall(context, ref reader);

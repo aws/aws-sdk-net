@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AddressDefinition", targetDepth))
+                if (context.TestExpression("AddressDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddressDefinition = unmarshaller.Unmarshall(context, ref reader);

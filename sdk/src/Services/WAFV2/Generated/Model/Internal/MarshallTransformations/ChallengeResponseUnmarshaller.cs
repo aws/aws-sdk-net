@@ -56,19 +56,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseCode", targetDepth))
+                if (context.TestExpression("ResponseCode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SolveTimestamp", targetDepth))
+                if (context.TestExpression("SolveTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SolveTimestamp = unmarshaller.Unmarshall(context, ref reader);

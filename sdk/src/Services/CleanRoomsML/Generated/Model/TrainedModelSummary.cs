@@ -40,6 +40,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _description;
         private List<IncrementalTrainingDataChannelOutput> _incrementalTrainingDataChannels = AWSConfigs.InitializeCollections ? new List<IncrementalTrainingDataChannelOutput>() : null;
         private string _membershipIdentifier;
+        private string _mlModelTrainingPayerAccountId;
         private string _name;
         private TrainedModelStatus _status;
         private string _trainedModelArn;
@@ -165,6 +166,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetMembershipIdentifier()
         {
             return this._membershipIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlModelTrainingPayerAccountId. 
+        /// <para>
+        /// The account ID of the member that is responsible for paying for model training costs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string MlModelTrainingPayerAccountId
+        {
+            get { return this._mlModelTrainingPayerAccountId; }
+            set { this._mlModelTrainingPayerAccountId = value; }
+        }
+
+        // Check to see if MlModelTrainingPayerAccountId property is set
+        internal bool IsSetMlModelTrainingPayerAccountId()
+        {
+            return this._mlModelTrainingPayerAccountId != null;
         }
 
         /// <summary>

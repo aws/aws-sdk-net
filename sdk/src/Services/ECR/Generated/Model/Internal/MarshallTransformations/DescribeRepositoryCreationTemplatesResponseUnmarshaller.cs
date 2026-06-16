@@ -52,19 +52,19 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registryId", targetDepth))
+                if (context.TestExpression("registryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryCreationTemplates", targetDepth))
+                if (context.TestExpression("repositoryCreationTemplates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RepositoryCreationTemplate, RepositoryCreationTemplateUnmarshaller>(RepositoryCreationTemplateUnmarshaller.Instance);
                     response.RepositoryCreationTemplates = unmarshaller.Unmarshall(context, ref reader);

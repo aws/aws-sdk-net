@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContentModeration", targetDepth))
+                if (context.TestExpression("ContentModeration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomizationFeatureContentModerationConfigUnmarshaller.Instance;
                     unmarshalledObject.ContentModeration = unmarshaller.Unmarshall(context, ref reader);

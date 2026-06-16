@@ -56,127 +56,151 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("brazilAdditionalInfo", targetDepth))
+                if (context.TestExpression("belgiumAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = BelgiumAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.BelgiumAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("brazilAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = BrazilAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.BrazilAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("canadaAdditionalInfo", targetDepth))
+                if (context.TestExpression("canadaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = CanadaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.CanadaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("egyptAdditionalInfo", targetDepth))
+                if (context.TestExpression("chileAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = ChileAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.ChileAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("egyptAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = EgyptAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.EgyptAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estoniaAdditionalInfo", targetDepth))
+                if (context.TestExpression("estoniaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = EstoniaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.EstoniaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("georgiaAdditionalInfo", targetDepth))
+                if (context.TestExpression("franceAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = FranceAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.FranceAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("georgiaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = GeorgiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.GeorgiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("greeceAdditionalInfo", targetDepth))
+                if (context.TestExpression("greeceAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = GreeceAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.GreeceAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("indiaAdditionalInfo", targetDepth))
+                if (context.TestExpression("indiaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = IndiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.IndiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("indonesiaAdditionalInfo", targetDepth))
+                if (context.TestExpression("indonesiaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = IndonesiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.IndonesiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("israelAdditionalInfo", targetDepth))
+                if (context.TestExpression("israelAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = IsraelAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.IsraelAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("italyAdditionalInfo", targetDepth))
+                if (context.TestExpression("italyAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ItalyAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.ItalyAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kenyaAdditionalInfo", targetDepth))
+                if (context.TestExpression("kenyaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = KenyaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.KenyaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("malaysiaAdditionalInfo", targetDepth))
+                if (context.TestExpression("malaysiaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = MalaysiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.MalaysiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("polandAdditionalInfo", targetDepth))
+                if (context.TestExpression("philippinesAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = PhilippinesAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.PhilippinesAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("polandAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = PolandAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.PolandAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("romaniaAdditionalInfo", targetDepth))
+                if (context.TestExpression("romaniaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = RomaniaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.RomaniaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("saudiArabiaAdditionalInfo", targetDepth))
+                if (context.TestExpression("saudiArabiaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = SaudiArabiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.SaudiArabiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("southKoreaAdditionalInfo", targetDepth))
+                if (context.TestExpression("southKoreaAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = SouthKoreaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.SouthKoreaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spainAdditionalInfo", targetDepth))
+                if (context.TestExpression("spainAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = SpainAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.SpainAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("turkeyAdditionalInfo", targetDepth))
+                if (context.TestExpression("turkeyAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = TurkeyAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.TurkeyAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ukraineAdditionalInfo", targetDepth))
+                if (context.TestExpression("ukraineAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = UkraineAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.UkraineAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uzbekistanAdditionalInfo", targetDepth))
+                if (context.TestExpression("uzbekistanAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = UzbekistanAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.UzbekistanAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vietnamAdditionalInfo", targetDepth))
+                if (context.TestExpression("vietnamAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = VietnamAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.VietnamAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);

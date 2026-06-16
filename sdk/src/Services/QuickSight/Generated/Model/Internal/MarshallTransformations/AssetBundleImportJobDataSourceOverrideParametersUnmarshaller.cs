@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Credentials", targetDepth))
+                if (context.TestExpression("Credentials", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleImportJobDataSourceCredentialsUnmarshaller.Instance;
                     unmarshalledObject.Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSourceId", targetDepth))
+                if (context.TestExpression("DataSourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSourceParameters", targetDepth))
+                if (context.TestExpression("DataSourceParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceParametersUnmarshaller.Instance;
                     unmarshalledObject.DataSourceParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SslProperties", targetDepth))
+                if (context.TestExpression("SslProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SslPropertiesUnmarshaller.Instance;
                     unmarshalledObject.SslProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConnectionProperties", targetDepth))
+                if (context.TestExpression("VpcConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConnectionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.VpcConnectionProperties = unmarshaller.Unmarshall(context, ref reader);

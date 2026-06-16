@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class Capabilities
     {
+        private CapabilityState _accessAppsNativeDataStore;
         private CapabilityState _action;
         private CapabilityState _addOrRunAnomalyDetectionForAnalyses;
         private CapabilityState _amazonBedrockARSAction;
@@ -42,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _amazonSThreeAction;
         private CapabilityState _analysis;
         private CapabilityState _approveFlowShareRequests;
+        private CapabilityState _apps;
         private CapabilityState _asanaAction;
         private CapabilityState _automate;
         private CapabilityState _bambooHRAction;
@@ -56,6 +58,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateAmazonBedrockFSAction;
         private CapabilityState _createAndUpdateAmazonBedrockKRSAction;
         private CapabilityState _createAndUpdateAmazonSThreeAction;
+        private CapabilityState _createAndUpdateApps;
         private CapabilityState _createAndUpdateAsanaAction;
         private CapabilityState _createAndUpdateBambooHRAction;
         private CapabilityState _createAndUpdateBoxAgentAction;
@@ -103,6 +106,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createChatAgents;
         private CapabilityState _createDashboardExecutiveSummaryWithQ;
         private CapabilityState _createSharedFolders;
+        private CapabilityState _createSpaces;
         private CapabilityState _createSPICEDataset;
         private CapabilityState _dashboard;
         private CapabilityState _editVisualWithQ;
@@ -115,6 +119,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _extension;
         private CapabilityState _factSetAction;
         private CapabilityState _flow;
+        private CapabilityState _generateAnalyses;
         private CapabilityState _genericHTTPAction;
         private CapabilityState _githubAction;
         private CapabilityState _googleCalendarAction;
@@ -122,9 +127,11 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _huggingFaceAction;
         private CapabilityState _includeContentInScheduledReportsEmail;
         private CapabilityState _intercomAction;
+        private CapabilityState _invokeAppsAIInference;
         private CapabilityState _jiraAction;
         private CapabilityState _knowledgeBase;
         private CapabilityState _linearAction;
+        private CapabilityState _manageSharedFolders;
         private CapabilityState _mcpAction;
         private CapabilityState _mondayAction;
         private CapabilityState _msExchangeAction;
@@ -147,6 +154,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _sapMaterialStockAction;
         private CapabilityState _sapPhysicalInventoryAction;
         private CapabilityState _sapProductMasterDataAction;
+        private CapabilityState _scenario;
         private CapabilityState _selfUpgradeUserRole;
         private CapabilityState _serviceNowAction;
         private CapabilityState _shareAmazonBedrockARSAction;
@@ -154,10 +162,12 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareAmazonBedrockKRSAction;
         private CapabilityState _shareAmazonSThreeAction;
         private CapabilityState _shareAnalyses;
+        private CapabilityState _shareApps;
         private CapabilityState _shareAsanaAction;
         private CapabilityState _shareBambooHRAction;
         private CapabilityState _shareBoxAgentAction;
         private CapabilityState _shareCanvaAgentAction;
+        private CapabilityState _shareChatAgents;
         private CapabilityState _shareComprehendAction;
         private CapabilityState _shareComprehendMedicalAction;
         private CapabilityState _shareConfluenceAction;
@@ -195,11 +205,13 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareSharePointAction;
         private CapabilityState _shareSlackAction;
         private CapabilityState _shareSmartsheetAction;
+        private CapabilityState _shareSpaces;
         private CapabilityState _shareTextractAction;
         private CapabilityState _shareZendeskAction;
         private CapabilityState _slackAction;
         private CapabilityState _smartsheetAction;
         private CapabilityState _space;
+        private CapabilityState _story;
         private CapabilityState _subscribeDashboardEmailReports;
         private CapabilityState _textractAction;
         private CapabilityState _topic;
@@ -250,6 +262,24 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useZendeskAction;
         private CapabilityState _viewAccountSPICECapacity;
         private CapabilityState _zendeskAction;
+
+        /// <summary>
+        /// Gets and sets the property AccessAppsNativeDataStore. 
+        /// <para>
+        /// The ability to access the native data store for new and existing apps.
+        /// </para>
+        /// </summary>
+        public CapabilityState AccessAppsNativeDataStore
+        {
+            get { return this._accessAppsNativeDataStore; }
+            set { this._accessAppsNativeDataStore = value; }
+        }
+
+        // Check to see if AccessAppsNativeDataStore property is set
+        internal bool IsSetAccessAppsNativeDataStore()
+        {
+            return this._accessAppsNativeDataStore != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -394,6 +424,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetApproveFlowShareRequests()
         {
             return this._approveFlowShareRequests != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Apps. 
+        /// <para>
+        /// The ability to perform apps-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Apps
+        {
+            get { return this._apps; }
+            set { this._apps = value; }
+        }
+
+        // Check to see if Apps property is set
+        internal bool IsSetApps()
+        {
+            return this._apps != null;
         }
 
         /// <summary>
@@ -646,6 +694,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateAmazonSThreeAction()
         {
             return this._createAndUpdateAmazonSThreeAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateApps. 
+        /// <para>
+        /// The ability to create or update apps.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateApps
+        {
+            get { return this._createAndUpdateApps; }
+            set { this._createAndUpdateApps = value; }
+        }
+
+        // Check to see if CreateAndUpdateApps property is set
+        internal bool IsSetCreateAndUpdateApps()
+        {
+            return this._createAndUpdateApps != null;
         }
 
         /// <summary>
@@ -1495,6 +1561,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateSpaces. 
+        /// <para>
+        /// The ability to create spaces.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSpaces
+        {
+            get { return this._createSpaces; }
+            set { this._createSpaces = value; }
+        }
+
+        // Check to see if CreateSpaces property is set
+        internal bool IsSetCreateSpaces()
+        {
+            return this._createSpaces != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateSPICEDataset. 
         /// <para>
         /// The ability to create a SPICE dataset.
@@ -1711,6 +1795,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GenerateAnalyses. 
+        /// <para>
+        /// The ability to generate analysis using AI
+        /// </para>
+        /// </summary>
+        public CapabilityState GenerateAnalyses
+        {
+            get { return this._generateAnalyses; }
+            set { this._generateAnalyses = value; }
+        }
+
+        // Check to see if GenerateAnalyses property is set
+        internal bool IsSetGenerateAnalyses()
+        {
+            return this._generateAnalyses != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GenericHTTPAction. 
         /// <para>
         /// The ability to perform actions using REST API connection connectors.
@@ -1837,6 +1939,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InvokeAppsAIInference. 
+        /// <para>
+        /// The ability to add and invoke AI inference in new and existing apps.
+        /// </para>
+        /// </summary>
+        public CapabilityState InvokeAppsAIInference
+        {
+            get { return this._invokeAppsAIInference; }
+            set { this._invokeAppsAIInference = value; }
+        }
+
+        // Check to see if InvokeAppsAIInference property is set
+        internal bool IsSetInvokeAppsAIInference()
+        {
+            return this._invokeAppsAIInference != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JiraAction. 
         /// <para>
         /// The ability to perform actions using Jira connectors.
@@ -1888,6 +2008,31 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetLinearAction()
         {
             return this._linearAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManageSharedFolders. 
+        /// <para>
+        /// The ability to create, update, delete and view shared folders (both restricted and
+        /// unrestricted), ability to add any asset to shared folders, and ability to share the
+        /// folders.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This does <i>not</i> prevent inheriting access to assets that others
+        /// share with them through folder membership.
+        /// </para>
+        /// </summary>
+        public CapabilityState ManageSharedFolders
+        {
+            get { return this._manageSharedFolders; }
+            set { this._manageSharedFolders = value; }
+        }
+
+        // Check to see if ManageSharedFolders property is set
+        internal bool IsSetManageSharedFolders()
+        {
+            return this._manageSharedFolders != null;
         }
 
         /// <summary>
@@ -2287,6 +2432,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Scenario. 
+        /// <para>
+        /// The ability to perform Scenario-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Scenario
+        {
+            get { return this._scenario; }
+            set { this._scenario = value; }
+        }
+
+        // Check to see if Scenario property is set
+        internal bool IsSetScenario()
+        {
+            return this._scenario != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SelfUpgradeUserRole. 
         /// <para>
         /// The ability to enable users to upgrade their user role.
@@ -2413,6 +2576,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareApps. 
+        /// <para>
+        /// The ability to share apps with other users.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareApps
+        {
+            get { return this._shareApps; }
+            set { this._shareApps = value; }
+        }
+
+        // Check to see if ShareApps property is set
+        internal bool IsSetShareApps()
+        {
+            return this._shareApps != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareAsanaAction. 
         /// <para>
         /// The ability to share Asana actions.
@@ -2482,6 +2663,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareCanvaAgentAction()
         {
             return this._shareCanvaAgentAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareChatAgents. 
+        /// <para>
+        /// The ability to share chat agents with other users and groups.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareChatAgents
+        {
+            get { return this._shareChatAgents; }
+            set { this._shareChatAgents = value; }
+        }
+
+        // Check to see if ShareChatAgents property is set
+        internal bool IsSetShareChatAgents()
+        {
+            return this._shareChatAgents != null;
         }
 
         /// <summary>
@@ -3151,6 +3350,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareSpaces. 
+        /// <para>
+        /// The ability to share spaces with other users and groups.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSpaces
+        {
+            get { return this._shareSpaces; }
+            set { this._shareSpaces = value; }
+        }
+
+        // Check to see if ShareSpaces property is set
+        internal bool IsSetShareSpaces()
+        {
+            return this._shareSpaces != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareTextractAction. 
         /// <para>
         /// The ability to share Textract actions.
@@ -3238,6 +3455,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSpace()
         {
             return this._space != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Story. 
+        /// <para>
+        /// The ability to perform Story-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Story
+        {
+            get { return this._story; }
+            set { this._story = value; }
+        }
+
+        // Check to see if Story property is set
+        internal bool IsSetStory()
+        {
+            return this._story != null;
         }
 
         /// <summary>

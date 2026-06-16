@@ -16,7 +16,9 @@ using Amazon.Runtime.Internal;
 using Amazon.S3;
 using Amazon;
 using Amazon.Runtime.Internal.Transform;
+#if NETFRAMEWORK
 using static AWSSDK.UnitTests.UnmarshallerTests;
+#endif
 using Amazon.Util;
 using AWSSDK_DotNet.CommonTest.Utils;
 using Amazon.Runtime.Internal.Auth;
@@ -300,6 +302,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) == TimeSpan.FromMinutes(0));
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -342,7 +345,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
 
             exception = Utils.AssertExceptionExpected<AmazonS3Exception>(()=>{
-                var copyObjectResponse = s3Client.CopyObject("source", "key", 
+                var copyObjectResponse = s3Client.CopyObject("source", "key",
                     "destination", "key");
             });
             Assert.AreEqual("InternalError", exception.ErrorCode);
@@ -389,8 +392,8 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("zKxM2OZ8xQLqXp6UUteraUD5L8V-zNeiRAM9x7GsjPDHwXn7YJv8Jw==", exception.AmazonCloudFrontId);
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
         }
+#endif
 
-#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\AsyncNetFramework")]
@@ -473,7 +476,6 @@ namespace AWSSDK.UnitTests
             typeof(AmazonServiceException));
             Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
         }
-#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]

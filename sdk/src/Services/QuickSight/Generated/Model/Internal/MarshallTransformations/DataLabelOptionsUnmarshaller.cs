@@ -56,61 +56,61 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryLabelVisibility", targetDepth))
+                if (context.TestExpression("CategoryLabelVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CategoryLabelVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLabelTypes", targetDepth))
+                if (context.TestExpression("DataLabelTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLabelType, DataLabelTypeUnmarshaller>(DataLabelTypeUnmarshaller.Instance);
                     unmarshalledObject.DataLabelTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelColor", targetDepth))
+                if (context.TestExpression("LabelColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelContent", targetDepth))
+                if (context.TestExpression("LabelContent", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelFontConfiguration", targetDepth))
+                if (context.TestExpression("LabelFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LabelFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeasureLabelVisibility", targetDepth))
+                if (context.TestExpression("MeasureLabelVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeasureLabelVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Overlap", targetDepth))
+                if (context.TestExpression("Overlap", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Overlap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Position", targetDepth))
+                if (context.TestExpression("Position", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalsVisibility", targetDepth))
+                if (context.TestExpression("TotalsVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visibility", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Visibility = unmarshaller.Unmarshall(context, ref reader);

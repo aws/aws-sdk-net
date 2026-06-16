@@ -40,6 +40,7 @@ namespace Amazon.WAFV2.Model
         private CaptchaAction _captcha;
         private ChallengeAction _challenge;
         private CountAction _count;
+        private MonetizeAction _monetize;
 
         /// <summary>
         /// Gets and sets the property Allow. 
@@ -130,6 +131,28 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCount()
         {
             return this._count != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Monetize. 
+        /// <para>
+        /// Instructs WAF to return an HTTP 402 Payment Required response with a price manifest.
+        /// The requesting client can complete payment and resubmit the request to gain access.
+        /// This is a terminating action-requests that do not complete payment are blocked. This
+        /// action is available only for web ACLs associated with Amazon CloudFront distributions
+        /// and requires a <c>MonetizationConfig</c> on the web ACL.
+        /// </para>
+        /// </summary>
+        public MonetizeAction Monetize
+        {
+            get { return this._monetize; }
+            set { this._monetize = value; }
+        }
+
+        // Check to see if Monetize property is set
+        internal bool IsSetMonetize()
+        {
+            return this._monetize != null;
         }
 
     }

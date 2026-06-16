@@ -80,8 +80,8 @@ namespace Amazon.BCMDashboards
         /// problem persists, contact Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.BCMDashboards.Model.ServiceQuotaExceededException">
-        /// The request would exceed service quotas. For example, attempting to create more than
-        /// 20 widgets in a dashboard or exceeding the maximum number of dashboards per account.
+        /// The request would exceed a service quota. Review the service quotas for Amazon Web
+        /// Services Billing and Cost Management Dashboards and retry your request.
         /// </exception>
         /// <exception cref="Amazon.BCMDashboards.Model.ThrottlingException">
         /// The request was denied due to request throttling. Reduce the frequency of requests
@@ -93,6 +93,51 @@ namespace Amazon.BCMDashboards
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         Task<CreateDashboardResponse> CreateDashboardAsync(CreateDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateScheduledReport
+
+
+
+        /// <summary>
+        /// Creates a new scheduled report for a dashboard. A scheduled report automatically generates
+        /// and delivers dashboard snapshots on a recurring schedule. Reports are delivered within
+        /// 15 minutes of the scheduled delivery time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateScheduledReport service method, as returned by BCMDashboards.</returns>
+        /// <exception cref="Amazon.BCMDashboards.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Verify your IAM permissions
+        /// and any resource policies.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. For example, attempting to create a resource that already exists or is being
+        /// created.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.InternalServerException">
+        /// An internal error occurred while processing the request. Retry your request. If the
+        /// problem persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota. Review the service quotas for Amazon Web
+        /// Services Billing and Cost Management Dashboards and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and use exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ValidationException">
+        /// The input parameters do not satisfy the requirements. Check the error message for
+        /// specific validation details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/CreateScheduledReport">REST API Reference for CreateScheduledReport Operation</seealso>
+        Task<CreateScheduledReportResponse> CreateScheduledReportAsync(CreateScheduledReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -127,6 +172,96 @@ namespace Amazon.BCMDashboards
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         Task<DeleteDashboardResponse> DeleteDashboardAsync(DeleteDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteScheduledReport
+
+
+
+        /// <summary>
+        /// Deletes a specified scheduled report. This is an irreversible operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScheduledReport service method, as returned by BCMDashboards.</returns>
+        /// <exception cref="Amazon.BCMDashboards.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Verify your IAM permissions
+        /// and any resource policies.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.InternalServerException">
+        /// An internal error occurred while processing the request. Retry your request. If the
+        /// problem persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ResourceNotFoundException">
+        /// The specified resource (dashboard, policy, or widget) was not found. Verify the ARN
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and use exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ValidationException">
+        /// The input parameters do not satisfy the requirements. Check the error message for
+        /// specific validation details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/DeleteScheduledReport">REST API Reference for DeleteScheduledReport Operation</seealso>
+        Task<DeleteScheduledReportResponse> DeleteScheduledReportAsync(DeleteScheduledReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ExecuteScheduledReport
+
+
+
+        /// <summary>
+        /// Triggers an immediate execution of a scheduled report, outside of its regular schedule.
+        /// The scheduled report must be in <c>ENABLED</c> state. Calling this operation on a
+        /// <c>DISABLED</c> scheduled report returns a <c>ValidationException</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If a <c>clientToken</c> is provided, the service uses it for idempotency. Requests
+        /// with the same client token will not trigger a new execution within the same minute.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteScheduledReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteScheduledReport service method, as returned by BCMDashboards.</returns>
+        /// <exception cref="Amazon.BCMDashboards.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Verify your IAM permissions
+        /// and any resource policies.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. For example, attempting to create a resource that already exists or is being
+        /// created.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.InternalServerException">
+        /// An internal error occurred while processing the request. Retry your request. If the
+        /// problem persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ResourceNotFoundException">
+        /// The specified resource (dashboard, policy, or widget) was not found. Verify the ARN
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and use exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ValidationException">
+        /// The input parameters do not satisfy the requirements. Check the error message for
+        /// specific validation details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/ExecuteScheduledReport">REST API Reference for ExecuteScheduledReport Operation</seealso>
+        Task<ExecuteScheduledReportResponse> ExecuteScheduledReportAsync(ExecuteScheduledReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -208,6 +343,44 @@ namespace Amazon.BCMDashboards
 
         #endregion
                 
+        #region  GetScheduledReport
+
+
+
+        /// <summary>
+        /// Retrieves the configuration and metadata of a specified scheduled report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScheduledReport service method, as returned by BCMDashboards.</returns>
+        /// <exception cref="Amazon.BCMDashboards.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Verify your IAM permissions
+        /// and any resource policies.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.InternalServerException">
+        /// An internal error occurred while processing the request. Retry your request. If the
+        /// problem persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ResourceNotFoundException">
+        /// The specified resource (dashboard, policy, or widget) was not found. Verify the ARN
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and use exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ValidationException">
+        /// The input parameters do not satisfy the requirements. Check the error message for
+        /// specific validation details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/GetScheduledReport">REST API Reference for GetScheduledReport Operation</seealso>
+        Task<GetScheduledReportResponse> GetScheduledReportAsync(GetScheduledReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDashboards
 
 
@@ -239,6 +412,40 @@ namespace Amazon.BCMDashboards
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListScheduledReports
+
+
+
+        /// <summary>
+        /// Returns a list of scheduled reports in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScheduledReports service method, as returned by BCMDashboards.</returns>
+        /// <exception cref="Amazon.BCMDashboards.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Verify your IAM permissions
+        /// and any resource policies.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.InternalServerException">
+        /// An internal error occurred while processing the request. Retry your request. If the
+        /// problem persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and use exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ValidationException">
+        /// The input parameters do not satisfy the requirements. Check the error message for
+        /// specific validation details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/ListScheduledReports">REST API Reference for ListScheduledReports Operation</seealso>
+        Task<ListScheduledReportsResponse> ListScheduledReportsAsync(ListScheduledReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -380,6 +587,51 @@ namespace Amazon.BCMDashboards
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         Task<UpdateDashboardResponse> UpdateDashboardAsync(UpdateDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateScheduledReport
+
+
+
+        /// <summary>
+        /// Updates an existing scheduled report's properties, including its name, description,
+        /// schedule configuration, and widget settings. Only the parameters included in the request
+        /// are updated; all other properties remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateScheduledReport service method, as returned by BCMDashboards.</returns>
+        /// <exception cref="Amazon.BCMDashboards.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action. Verify your IAM permissions
+        /// and any resource policies.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. For example, attempting to create a resource that already exists or is being
+        /// created.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.InternalServerException">
+        /// An internal error occurred while processing the request. Retry your request. If the
+        /// problem persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ResourceNotFoundException">
+        /// The specified resource (dashboard, policy, or widget) was not found. Verify the ARN
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and use exponential backoff.
+        /// </exception>
+        /// <exception cref="Amazon.BCMDashboards.Model.ValidationException">
+        /// The input parameters do not satisfy the requirements. Check the error message for
+        /// specific validation details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-dashboards-2025-08-18/UpdateScheduledReport">REST API Reference for UpdateScheduledReport Operation</seealso>
+        Task<UpdateScheduledReportResponse> UpdateScheduledReportAsync(UpdateScheduledReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

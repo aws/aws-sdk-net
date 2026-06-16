@@ -56,43 +56,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExclusionPatterns", targetDepth))
+                if (context.TestExpression("ExclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldMappings", targetDepth))
+                if (context.TestExpression("FieldMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSourceToIndexFieldMapping, DataSourceToIndexFieldMappingUnmarshaller>(DataSourceToIndexFieldMappingUnmarshaller.Instance);
                     unmarshalledObject.FieldMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSystemId", targetDepth))
+                if (context.TestExpression("FileSystemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSystemType", targetDepth))
+                if (context.TestExpression("FileSystemType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InclusionPatterns", targetDepth))
+                if (context.TestExpression("InclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfiguration", targetDepth))
+                if (context.TestExpression("VpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceVpcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

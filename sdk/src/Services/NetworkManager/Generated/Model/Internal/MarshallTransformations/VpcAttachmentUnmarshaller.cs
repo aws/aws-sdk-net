@@ -56,19 +56,19 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attachment", targetDepth))
+                if (context.TestExpression("Attachment", targetDepth, ref reader))
                 {
                     var unmarshaller = AttachmentUnmarshaller.Instance;
                     unmarshalledObject.Attachment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Options", targetDepth))
+                if (context.TestExpression("Options", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcOptionsUnmarshaller.Instance;
                     unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetArns", targetDepth))
+                if (context.TestExpression("SubnetArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubnetArns = unmarshaller.Unmarshall(context, ref reader);

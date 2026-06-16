@@ -56,13 +56,13 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionAlgorithmOptions", targetDepth))
+                if (context.TestExpression("encryptionAlgorithmOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionAlgorithmOptionsUnmarshaller.Instance;
                     unmarshalledObject.EncryptionAlgorithmOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hashAlgorithmOptions", targetDepth))
+                if (context.TestExpression("hashAlgorithmOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = HashAlgorithmOptionsUnmarshaller.Instance;
                     unmarshalledObject.HashAlgorithmOptions = unmarshaller.Unmarshall(context, ref reader);

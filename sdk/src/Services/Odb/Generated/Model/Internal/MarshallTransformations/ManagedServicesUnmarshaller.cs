@@ -56,61 +56,61 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("crossRegionS3RestoreSourcesAccess", targetDepth))
+                if (context.TestExpression("crossRegionS3RestoreSourcesAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CrossRegionS3RestoreSourcesAccess, CrossRegionS3RestoreSourcesAccessUnmarshaller>(CrossRegionS3RestoreSourcesAccessUnmarshaller.Instance);
                     unmarshalledObject.CrossRegionS3RestoreSourcesAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsAccess", targetDepth))
+                if (context.TestExpression("kmsAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = KmsAccessUnmarshaller.Instance;
                     unmarshalledObject.KmsAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedS3BackupAccess", targetDepth))
+                if (context.TestExpression("managedS3BackupAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedS3BackupAccessUnmarshaller.Instance;
                     unmarshalledObject.ManagedS3BackupAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedServicesIpv4Cidrs", targetDepth))
+                if (context.TestExpression("managedServicesIpv4Cidrs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ManagedServicesIpv4Cidrs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceGatewayArn", targetDepth))
+                if (context.TestExpression("resourceGatewayArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceGatewayArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Access", targetDepth))
+                if (context.TestExpression("s3Access", targetDepth, ref reader))
                 {
                     var unmarshaller = S3AccessUnmarshaller.Instance;
                     unmarshalledObject.S3Access = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceNetworkArn", targetDepth))
+                if (context.TestExpression("serviceNetworkArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceNetworkArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceNetworkEndpoint", targetDepth))
+                if (context.TestExpression("serviceNetworkEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNetworkEndpointUnmarshaller.Instance;
                     unmarshalledObject.ServiceNetworkEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stsAccess", targetDepth))
+                if (context.TestExpression("stsAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = StsAccessUnmarshaller.Instance;
                     unmarshalledObject.StsAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("zeroEtlAccess", targetDepth))
+                if (context.TestExpression("zeroEtlAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = ZeroEtlAccessUnmarshaller.Instance;
                     unmarshalledObject.ZeroEtlAccess = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("credentials", targetDepth))
+                if (context.TestExpression("credentials", targetDepth, ref reader))
                 {
                     var unmarshaller = ProxyCredentialsUnmarshaller.Instance;
                     unmarshalledObject.Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainPatterns", targetDepth))
+                if (context.TestExpression("domainPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DomainPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("port", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("server", targetDepth))
+                if (context.TestExpression("server", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Server = unmarshaller.Unmarshall(context, ref reader);

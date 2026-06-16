@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("forwardErrorCorrection", targetDepth))
+                if (context.TestExpression("forwardErrorCorrection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ForwardErrorCorrection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("port", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);

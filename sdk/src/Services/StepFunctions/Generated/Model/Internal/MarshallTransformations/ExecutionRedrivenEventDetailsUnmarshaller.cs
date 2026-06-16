@@ -56,7 +56,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("redriveCount", targetDepth))
+                if (context.TestExpression("redriveCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RedriveCount = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("secretName", targetDepth))
+                if (context.TestExpression("secretName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretName = unmarshaller.Unmarshall(context, ref reader);

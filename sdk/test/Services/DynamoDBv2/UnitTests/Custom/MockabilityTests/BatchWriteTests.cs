@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 {
@@ -9,7 +11,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
     public class BatchWriteTests
     {
         [TestMethod]
-        public void TestMockability_BatchWrite()
+        public async Task TestMockability_BatchWrite()
         {
             var itemsToPut = new List<string>();
             var inMemoryTable = new List<string>();
@@ -30,7 +32,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             Assert.AreEqual(2, itemsToPut.Count);
             Assert.AreEqual(0, inMemoryTable.Count);
 
-            batchWrite.Execute();
+            await batchWrite.ExecuteAsync();
             Assert.AreEqual(0, itemsToPut.Count);
             Assert.AreEqual(2, inMemoryTable.Count);
             Assert.IsTrue(inMemoryTable.Contains("item1"));
@@ -38,7 +40,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
         }
 
         [TestMethod]
-        public void TestMockability_MultiTableBatchWrite()
+        public async Task TestMockability_MultiTableBatchWrite()
         {
             var itemsToPut_table1 = new List<string>();
             var inMemory_table1 = new List<string>();
@@ -63,7 +65,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             Assert.AreEqual(0, inMemory_table1.Count);
             Assert.AreEqual(0, inMemory_table2.Count);
 
-            multiBatchWrite.Execute();
+            await multiBatchWrite.ExecuteAsync();
             Assert.AreEqual(1, inMemory_table1.Count);
             Assert.AreEqual(1, inMemory_table2.Count);
             Assert.IsTrue(inMemory_table1.Contains("item1"));
@@ -78,8 +80,9 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 .Setup(x => x.AddPutItem(It.IsAny<T>()))
                 .Callback((T item) => itemsToPut.Add(item));
 
-            batchWrite.
-                Setup(x => x.Execute())
+            batchWrite
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
                 .Callback(() =>
                 {
                     foreach (var item in itemsToPut)
@@ -106,12 +109,12 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 });
 
             multiBatchWrite
-                .Setup(x => x.Execute())
-                .Callback(() =>
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(async () =>
                 {
                     foreach (var batch in batches)
                     {
-                        batch.Execute();
+                        await batch.ExecuteAsync();
                     }
                 });
 

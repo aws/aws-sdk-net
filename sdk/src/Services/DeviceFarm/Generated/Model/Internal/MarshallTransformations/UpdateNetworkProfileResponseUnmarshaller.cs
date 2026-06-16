@@ -52,7 +52,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("networkProfile", targetDepth))
+                if (context.TestExpression("networkProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkProfileUnmarshaller.Instance;
                     response.NetworkProfile = unmarshaller.Unmarshall(context, ref reader);

@@ -52,25 +52,25 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatastoreArn", targetDepth))
+                if (context.TestExpression("DatastoreArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatastoreArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreEndpoint", targetDepth))
+                if (context.TestExpression("DatastoreEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatastoreEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreId", targetDepth))
+                if (context.TestExpression("DatastoreId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatastoreId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreStatus", targetDepth))
+                if (context.TestExpression("DatastoreStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatastoreStatus = unmarshaller.Unmarshall(context, ref reader);

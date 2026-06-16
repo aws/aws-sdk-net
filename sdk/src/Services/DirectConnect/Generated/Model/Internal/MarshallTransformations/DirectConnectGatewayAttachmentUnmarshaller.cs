@@ -56,43 +56,43 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attachmentState", targetDepth))
+                if (context.TestExpression("attachmentState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttachmentState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("attachmentType", targetDepth))
+                if (context.TestExpression("attachmentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttachmentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("directConnectGatewayId", targetDepth))
+                if (context.TestExpression("directConnectGatewayId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateChangeError", targetDepth))
+                if (context.TestExpression("stateChangeError", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StateChangeError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualInterfaceId", targetDepth))
+                if (context.TestExpression("virtualInterfaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualInterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualInterfaceOwnerAccount", targetDepth))
+                if (context.TestExpression("virtualInterfaceOwnerAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualInterfaceOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualInterfaceRegion", targetDepth))
+                if (context.TestExpression("virtualInterfaceRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualInterfaceRegion = unmarshaller.Unmarshall(context, ref reader);

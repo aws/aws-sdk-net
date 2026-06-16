@@ -56,25 +56,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Canvas", targetDepth))
+                if (context.TestExpression("Canvas", targetDepth, ref reader))
                 {
                     var unmarshaller = PaletteCanvasUnmarshaller.Instance;
                     unmarshalledObject.Canvas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Header", targetDepth))
+                if (context.TestExpression("Header", targetDepth, ref reader))
                 {
                     var unmarshaller = PaletteHeaderUnmarshaller.Instance;
                     unmarshalledObject.Header = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Navigation", targetDepth))
+                if (context.TestExpression("Navigation", targetDepth, ref reader))
                 {
                     var unmarshaller = PaletteNavigationUnmarshaller.Instance;
                     unmarshalledObject.Navigation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Primary", targetDepth))
+                if (context.TestExpression("Primary", targetDepth, ref reader))
                 {
                     var unmarshaller = PalettePrimaryUnmarshaller.Instance;
                     unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UsageDimension", targetDepth))
+                if (context.TestExpression("UsageDimension", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsageDimension = unmarshaller.Unmarshall(context, ref reader);

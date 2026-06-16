@@ -52,13 +52,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeliveryStreamNames", targetDepth))
+                if (context.TestExpression("DeliveryStreamNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.DeliveryStreamNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HasMoreDeliveryStreams", targetDepth))
+                if (context.TestExpression("HasMoreDeliveryStreams", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasMoreDeliveryStreams = unmarshaller.Unmarshall(context, ref reader);

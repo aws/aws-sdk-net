@@ -56,7 +56,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contractingAuthorityCode", targetDepth))
+                if (context.TestExpression("contractingAuthorityCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContractingAuthorityCode = unmarshaller.Unmarshall(context, ref reader);

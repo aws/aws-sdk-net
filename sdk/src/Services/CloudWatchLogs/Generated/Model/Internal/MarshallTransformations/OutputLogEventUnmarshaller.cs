@@ -56,19 +56,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ingestionTime", targetDepth))
+                if (context.TestExpression("ingestionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.IngestionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("message", targetDepth))
+                if (context.TestExpression("message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestamp", targetDepth))
+                if (context.TestExpression("timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);

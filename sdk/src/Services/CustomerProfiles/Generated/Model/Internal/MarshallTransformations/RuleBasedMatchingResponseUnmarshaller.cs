@@ -56,49 +56,49 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeTypesSelector", targetDepth))
+                if (context.TestExpression("AttributeTypesSelector", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeTypesSelectorUnmarshaller.Instance;
                     unmarshalledObject.AttributeTypesSelector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConflictResolution", targetDepth))
+                if (context.TestExpression("ConflictResolution", targetDepth, ref reader))
                 {
                     var unmarshaller = ConflictResolutionUnmarshaller.Instance;
                     unmarshalledObject.ConflictResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportingConfig", targetDepth))
+                if (context.TestExpression("ExportingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportingConfigUnmarshaller.Instance;
                     unmarshalledObject.ExportingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MatchingRules", targetDepth))
+                if (context.TestExpression("MatchingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MatchingRule, MatchingRuleUnmarshaller>(MatchingRuleUnmarshaller.Instance);
                     unmarshalledObject.MatchingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxAllowedRuleLevelForMatching", targetDepth))
+                if (context.TestExpression("MaxAllowedRuleLevelForMatching", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAllowedRuleLevelForMatching = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxAllowedRuleLevelForMerging", targetDepth))
+                if (context.TestExpression("MaxAllowedRuleLevelForMerging", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAllowedRuleLevelForMerging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

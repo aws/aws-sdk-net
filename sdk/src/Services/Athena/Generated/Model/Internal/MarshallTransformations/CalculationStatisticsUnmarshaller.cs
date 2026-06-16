@@ -56,13 +56,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DpuExecutionInMillis", targetDepth))
+                if (context.TestExpression("DpuExecutionInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DpuExecutionInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Progress", targetDepth))
+                if (context.TestExpression("Progress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Progress = unmarshaller.Unmarshall(context, ref reader);

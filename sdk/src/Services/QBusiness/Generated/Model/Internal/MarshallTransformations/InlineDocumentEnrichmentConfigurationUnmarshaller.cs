@@ -56,19 +56,19 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("condition", targetDepth))
+                if (context.TestExpression("condition", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentAttributeConditionUnmarshaller.Instance;
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentContentOperator", targetDepth))
+                if (context.TestExpression("documentContentOperator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentContentOperator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("target", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentAttributeTargetUnmarshaller.Instance;
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);

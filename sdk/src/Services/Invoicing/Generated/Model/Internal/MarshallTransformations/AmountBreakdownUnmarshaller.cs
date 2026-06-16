@@ -56,25 +56,25 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Discounts", targetDepth))
+                if (context.TestExpression("Discounts", targetDepth, ref reader))
                 {
                     var unmarshaller = DiscountsBreakdownUnmarshaller.Instance;
                     unmarshalledObject.Discounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Fees", targetDepth))
+                if (context.TestExpression("Fees", targetDepth, ref reader))
                 {
                     var unmarshaller = FeesBreakdownUnmarshaller.Instance;
                     unmarshalledObject.Fees = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubTotalAmount", targetDepth))
+                if (context.TestExpression("SubTotalAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubTotalAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Taxes", targetDepth))
+                if (context.TestExpression("Taxes", targetDepth, ref reader))
                 {
                     var unmarshaller = TaxesBreakdownUnmarshaller.Instance;
                     unmarshalledObject.Taxes = unmarshaller.Unmarshall(context, ref reader);

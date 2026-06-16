@@ -52,7 +52,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Table", targetDepth))
+                if (context.TestExpression("Table", targetDepth, ref reader))
                 {
                     var unmarshaller = TableUnmarshaller.Instance;
                     response.Table = unmarshaller.Unmarshall(context, ref reader);

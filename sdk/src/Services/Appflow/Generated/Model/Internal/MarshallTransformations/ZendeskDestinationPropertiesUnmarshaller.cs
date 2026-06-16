@@ -56,25 +56,25 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errorHandlingConfig", targetDepth))
+                if (context.TestExpression("errorHandlingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorHandlingConfigUnmarshaller.Instance;
                     unmarshalledObject.ErrorHandlingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idFieldNames", targetDepth))
+                if (context.TestExpression("idFieldNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IdFieldNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("object", targetDepth))
+                if (context.TestExpression("object", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Object = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("writeOperationType", targetDepth))
+                if (context.TestExpression("writeOperationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WriteOperationType = unmarshaller.Unmarshall(context, ref reader);

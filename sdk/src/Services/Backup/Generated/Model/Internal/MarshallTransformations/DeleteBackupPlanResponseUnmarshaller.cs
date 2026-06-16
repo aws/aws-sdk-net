@@ -52,25 +52,25 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackupPlanArn", targetDepth))
+                if (context.TestExpression("BackupPlanArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BackupPlanArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackupPlanId", targetDepth))
+                if (context.TestExpression("BackupPlanId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BackupPlanId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeletionDate", targetDepth))
+                if (context.TestExpression("DeletionDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DeletionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionId", targetDepth))
+                if (context.TestExpression("VersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VersionId = unmarshaller.Unmarshall(context, ref reader);

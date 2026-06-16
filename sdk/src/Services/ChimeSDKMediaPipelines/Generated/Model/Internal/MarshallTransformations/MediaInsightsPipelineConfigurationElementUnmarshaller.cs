@@ -56,61 +56,61 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmazonTranscribeCallAnalyticsProcessorConfiguration", targetDepth))
+                if (context.TestExpression("AmazonTranscribeCallAnalyticsProcessorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonTranscribeCallAnalyticsProcessorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AmazonTranscribeCallAnalyticsProcessorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmazonTranscribeProcessorConfiguration", targetDepth))
+                if (context.TestExpression("AmazonTranscribeProcessorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonTranscribeProcessorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AmazonTranscribeProcessorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisDataStreamSinkConfiguration", targetDepth))
+                if (context.TestExpression("KinesisDataStreamSinkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisDataStreamSinkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KinesisDataStreamSinkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LambdaFunctionSinkConfiguration", targetDepth))
+                if (context.TestExpression("LambdaFunctionSinkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionSinkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionSinkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3RecordingSinkConfiguration", targetDepth))
+                if (context.TestExpression("S3RecordingSinkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3RecordingSinkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3RecordingSinkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnsTopicSinkConfiguration", targetDepth))
+                if (context.TestExpression("SnsTopicSinkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SnsTopicSinkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SnsTopicSinkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqsQueueSinkConfiguration", targetDepth))
+                if (context.TestExpression("SqsQueueSinkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SqsQueueSinkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SqsQueueSinkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VoiceAnalyticsProcessorConfiguration", targetDepth))
+                if (context.TestExpression("VoiceAnalyticsProcessorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VoiceAnalyticsProcessorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VoiceAnalyticsProcessorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VoiceEnhancementSinkConfiguration", targetDepth))
+                if (context.TestExpression("VoiceEnhancementSinkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VoiceEnhancementSinkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VoiceEnhancementSinkConfiguration = unmarshaller.Unmarshall(context, ref reader);

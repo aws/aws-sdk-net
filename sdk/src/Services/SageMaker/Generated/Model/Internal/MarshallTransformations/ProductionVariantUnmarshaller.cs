@@ -56,97 +56,109 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AcceleratorType", targetDepth))
+                if (context.TestExpression("AcceleratorType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityReservationConfig", targetDepth))
+                if (context.TestExpression("CapacityReservationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantCapacityReservationConfigUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerStartupHealthCheckTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("ContainerStartupHealthCheckTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContainerStartupHealthCheckTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CoreDumpConfig", targetDepth))
+                if (context.TestExpression("CoreDumpConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantCoreDumpConfigUnmarshaller.Instance;
                     unmarshalledObject.CoreDumpConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableSSMAccess", targetDepth))
+                if (context.TestExpression("EnableSSMAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableSSMAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceAmiVersion", targetDepth))
+                if (context.TestExpression("InferenceAmiVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InferenceAmiVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitialInstanceCount", targetDepth))
+                if (context.TestExpression("InitialInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InitialInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitialVariantWeight", targetDepth))
+                if (context.TestExpression("InitialVariantWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.InitialVariantWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstancePools", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InstancePool, InstancePoolUnmarshaller>(InstancePoolUnmarshaller.Instance);
+                    unmarshalledObject.InstancePools = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedInstanceScaling", targetDepth))
+                if (context.TestExpression("ManagedInstanceScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantManagedInstanceScalingUnmarshaller.Instance;
                     unmarshalledObject.ManagedInstanceScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataDownloadTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("ModelDataDownloadTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ModelDataDownloadTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelName", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingConfig", targetDepth))
+                if (context.TestExpression("RoutingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantRoutingConfigUnmarshaller.Instance;
                     unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerlessConfig", targetDepth))
+                if (context.TestExpression("ServerlessConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
                     unmarshalledObject.ServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VariantName", targetDepth))
+                if (context.TestExpression("VariantInstanceProvisionTimeoutInSeconds", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.VariantInstanceProvisionTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("VariantName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VariantName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeSizeInGB", targetDepth))
+                if (context.TestExpression("VolumeSizeInGB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeInGB = unmarshaller.Unmarshall(context, ref reader);

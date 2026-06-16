@@ -56,13 +56,13 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogGroupConfiguration", targetDepth))
+                if (context.TestExpression("LogGroupConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogGroupConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogGroupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricConfiguration", targetDepth))
+                if (context.TestExpression("MetricConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MetricConfiguration = unmarshaller.Unmarshall(context, ref reader);

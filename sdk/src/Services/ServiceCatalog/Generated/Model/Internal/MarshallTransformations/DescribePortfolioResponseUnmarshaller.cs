@@ -52,25 +52,25 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Budgets", targetDepth))
+                if (context.TestExpression("Budgets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BudgetDetail, BudgetDetailUnmarshaller>(BudgetDetailUnmarshaller.Instance);
                     response.Budgets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PortfolioDetail", targetDepth))
+                if (context.TestExpression("PortfolioDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = PortfolioDetailUnmarshaller.Instance;
                     response.PortfolioDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagOptions", targetDepth))
+                if (context.TestExpression("TagOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagOptionDetail, TagOptionDetailUnmarshaller>(TagOptionDetailUnmarshaller.Instance);
                     response.TagOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

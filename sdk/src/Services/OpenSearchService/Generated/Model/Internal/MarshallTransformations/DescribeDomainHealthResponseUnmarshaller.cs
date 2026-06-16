@@ -52,79 +52,79 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveAvailabilityZoneCount", targetDepth))
+                if (context.TestExpression("ActiveAvailabilityZoneCount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ActiveAvailabilityZoneCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailabilityZoneCount", targetDepth))
+                if (context.TestExpression("AvailabilityZoneCount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AvailabilityZoneCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterHealth", targetDepth))
+                if (context.TestExpression("ClusterHealth", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterHealth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataNodeCount", targetDepth))
+                if (context.TestExpression("DataNodeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DedicatedMaster", targetDepth))
+                if (context.TestExpression("DedicatedMaster", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DedicatedMaster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainState", targetDepth))
+                if (context.TestExpression("DomainState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnvironmentInformation", targetDepth))
+                if (context.TestExpression("EnvironmentInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnvironmentInfo, EnvironmentInfoUnmarshaller>(EnvironmentInfoUnmarshaller.Instance);
                     response.EnvironmentInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MasterEligibleNodeCount", targetDepth))
+                if (context.TestExpression("MasterEligibleNodeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MasterEligibleNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MasterNode", targetDepth))
+                if (context.TestExpression("MasterNode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MasterNode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandByAvailabilityZoneCount", targetDepth))
+                if (context.TestExpression("StandByAvailabilityZoneCount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StandByAvailabilityZoneCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalShards", targetDepth))
+                if (context.TestExpression("TotalShards", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TotalShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalUnAssignedShards", targetDepth))
+                if (context.TestExpression("TotalUnAssignedShards", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TotalUnAssignedShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmNodeCount", targetDepth))
+                if (context.TestExpression("WarmNodeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WarmNodeCount = unmarshaller.Unmarshall(context, ref reader);

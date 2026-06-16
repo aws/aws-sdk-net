@@ -39,6 +39,11 @@ namespace Amazon.CloudWatchLogs
 {
     /// <summary>
     /// <para>Implementation for accessing CloudWatchLogs</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
     /// EC2 instances, CloudTrail, and other sources. You can then retrieve the associated
@@ -1153,6 +1158,65 @@ namespace Amazon.CloudWatchLogs
         }
         #endregion
         
+        #region  CreateLookupTable
+
+        internal virtual CreateLookupTableResponse CreateLookupTable(CreateLookupTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLookupTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLookupTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a lookup table by uploading CSV data. You can use lookup tables to enrich
+        /// log data in CloudWatch Logs Insights queries with reference data such as user details,
+        /// application names, or error descriptions.
+        /// 
+        ///  
+        /// <para>
+        /// The table name must be unique within your account and Region. The CSV content must
+        /// include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLookupTable">REST API Reference for CreateLookupTable Operation</seealso>
+        public virtual Task<CreateLookupTableResponse> CreateLookupTableAsync(CreateLookupTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLookupTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLookupTableResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateScheduledQuery
 
         internal virtual CreateScheduledQueryResponse CreateScheduledQuery(CreateScheduledQueryRequest request)
@@ -1875,6 +1939,57 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = DeleteLogStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLogStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteLookupTable
+
+        internal virtual DeleteLookupTableResponse DeleteLookupTable(DeleteLookupTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLookupTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLookupTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a lookup table permanently. This operation cannot be undone.
+        /// 
+        ///  
+        /// <para>
+        /// Queries that reference a deleted table will return an error. Before deleting a lookup
+        /// table, review any saved queries or dashboards that may reference it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLookupTable">REST API Reference for DeleteLookupTable Operation</seealso>
+        public virtual Task<DeleteLookupTableResponse> DeleteLookupTableAsync(DeleteLookupTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLookupTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLookupTableResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2948,6 +3063,52 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = DescribeLogStreamsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLogStreamsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeLookupTables
+
+        internal virtual DescribeLookupTablesResponse DescribeLookupTables(DescribeLookupTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeLookupTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLookupTablesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLookupTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves metadata about lookup tables in your account. You can optionally filter
+        /// the results by table name prefix. Results are sorted by table name in ascending order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLookupTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLookupTables service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLookupTables">REST API Reference for DescribeLookupTables Operation</seealso>
+        public virtual Task<DescribeLookupTablesResponse> DescribeLookupTablesAsync(DescribeLookupTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeLookupTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLookupTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLookupTablesResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4086,6 +4247,51 @@ namespace Amazon.CloudWatchLogs
         }
         #endregion
         
+        #region  GetLookupTable
+
+        internal virtual GetLookupTableResponse GetLookupTable(GetLookupTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLookupTableResponseUnmarshaller.Instance;
+
+            return Invoke<GetLookupTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the full content of a lookup table, including the CSV data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLookupTable">REST API Reference for GetLookupTable Operation</seealso>
+        public virtual Task<GetLookupTableResponse> GetLookupTableAsync(GetLookupTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLookupTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLookupTableResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetQueryResults
 
         internal virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
@@ -4127,6 +4333,13 @@ namespace Amazon.CloudWatchLogs
         /// This operation is used both for retrieving results from interactive queries and from
         /// automated scheduled query executions. Scheduled queries use <c>GetQueryResults</c>
         /// internally to retrieve query results for processing and delivery to configured destinations.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can retrieve up to 100,000 log event results from a query, if available, by using
+        /// pagination. Use the <c>nextToken</c> returned in the response to request additional
+        /// pages of results, with each page returning up to 10,000 log events. This is only supported
+        /// for Logs Insights QL and is currently not supported for PPL and SQL query languages.
         /// </para>
         ///  
         /// <para>
@@ -4527,11 +4740,9 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can optionally filter the list by log group class, by using regular expressions
-        /// in your request to match strings in the log group names, by using the fieldIndexes
-        /// parameter to filter log groups based on which field indexes are configured, by using
-        /// the dataSources parameter to filter log groups by data source types, and by using
-        /// the fieldIndexNames parameter to filter by specific field index names.
+        /// You can optionally filter the results by log group class, log group name pattern,
+        /// field indexes, data sources, field index names, or log group tags. If you specify
+        /// more than one filter type, the results include log groups that satisfy all filters.
         /// </para>
         ///  
         /// <para>
@@ -6953,7 +7164,8 @@ namespace Amazon.CloudWatchLogs
         /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
         /// for the query. The <c>SOURCE</c> command can select log groups based on log group
         /// name prefix, account ID, and log class, or select data sources using dataSource syntax
-        /// in LogsQL, PPL, and SQL. 
+        /// in LogsQL, PPL, and SQL. In LogsQL, the <c>SOURCE</c> command also supports filtering
+        /// by log group tags. 
         /// </para>
         ///  
         /// <para>
@@ -6981,7 +7193,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
+        /// You can have up to 100 concurrent CloudWatch Logs insights queries, including queries
         /// that have been added to dashboards. 
         /// </para>
         /// </summary>
@@ -7556,6 +7768,61 @@ namespace Amazon.CloudWatchLogs
         }
         #endregion
         
+        #region  UpdateLookupTable
+
+        internal virtual UpdateLookupTableResponse UpdateLookupTable(UpdateLookupTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLookupTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLookupTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing lookup table by replacing all of its CSV content. After the update
+        /// completes, queries that use this table will use the new data.
+        /// 
+        ///  
+        /// <para>
+        /// This is a full replacement operation. All existing content is replaced with the new
+        /// CSV data.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLookupTable">REST API Reference for UpdateLookupTable Operation</seealso>
+        public virtual Task<UpdateLookupTableResponse> UpdateLookupTableAsync(UpdateLookupTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLookupTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLookupTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLookupTableResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateScheduledQuery
 
         internal virtual UpdateScheduledQueryResponse UpdateScheduledQuery(UpdateScheduledQueryRequest request)
@@ -7581,6 +7848,9 @@ namespace Amazon.CloudWatchLogs
         /// <returns>The response from the UpdateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
         /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
         /// An internal server error occurred while processing the request. This exception is

@@ -56,19 +56,19 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InvalidInputRecords", targetDepth))
+                if (context.TestExpression("InvalidInputRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InvalidInputRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecordsProcessed", targetDepth))
+                if (context.TestExpression("RecordsProcessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetryAttempts", targetDepth))
+                if (context.TestExpression("RetryAttempts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetryAttempts = unmarshaller.Unmarshall(context, ref reader);

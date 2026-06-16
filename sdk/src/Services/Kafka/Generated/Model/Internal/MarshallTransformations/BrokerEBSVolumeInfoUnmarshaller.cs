@@ -56,19 +56,19 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kafkaBrokerNodeId", targetDepth))
+                if (context.TestExpression("kafkaBrokerNodeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KafkaBrokerNodeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provisionedThroughput", targetDepth))
+                if (context.TestExpression("provisionedThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedThroughputUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("volumeSizeGB", targetDepth))
+                if (context.TestExpression("volumeSizeGB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeGB = unmarshaller.Unmarshall(context, ref reader);

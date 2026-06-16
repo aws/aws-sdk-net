@@ -56,61 +56,73 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("allowUserProvidedConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowUserProvidedConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainId", targetDepth))
+                if (context.TestExpression("domainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enabledRegions", targetDepth))
+                if (context.TestExpression("enabledRegions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EnabledRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentBlueprintId", targetDepth))
+                if (context.TestExpression("environmentBlueprintId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentBlueprintId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentRolePermissionBoundary", targetDepth))
+                if (context.TestExpression("environmentRolePermissionBoundary", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentRolePermissionBoundary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manageAccessRoleArn", targetDepth))
+                if (context.TestExpression("manageAccessRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManageAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provisioningConfigurations", targetDepth))
+                if (context.TestExpression("provisioningConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisioningConfiguration, ProvisioningConfigurationUnmarshaller>(ProvisioningConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ProvisioningConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provisioningRoleArn", targetDepth))
+                if (context.TestExpression("provisioningRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvisioningRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regionalParameters", targetDepth))
+                if (context.TestExpression("regionalParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                     unmarshalledObject.RegionalParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("resourceConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceConfiguration, ResourceConfigurationUnmarshaller>(ResourceConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ResourceConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

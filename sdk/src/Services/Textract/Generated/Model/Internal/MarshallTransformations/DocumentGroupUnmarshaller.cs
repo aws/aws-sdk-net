@@ -56,25 +56,25 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DetectedSignatures", targetDepth))
+                if (context.TestExpression("DetectedSignatures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DetectedSignature, DetectedSignatureUnmarshaller>(DetectedSignatureUnmarshaller.Instance);
                     unmarshalledObject.DetectedSignatures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SplitDocuments", targetDepth))
+                if (context.TestExpression("SplitDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SplitDocument, SplitDocumentUnmarshaller>(SplitDocumentUnmarshaller.Instance);
                     unmarshalledObject.SplitDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UndetectedSignatures", targetDepth))
+                if (context.TestExpression("UndetectedSignatures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UndetectedSignature, UndetectedSignatureUnmarshaller>(UndetectedSignatureUnmarshaller.Instance);
                     unmarshalledObject.UndetectedSignatures = unmarshaller.Unmarshall(context, ref reader);

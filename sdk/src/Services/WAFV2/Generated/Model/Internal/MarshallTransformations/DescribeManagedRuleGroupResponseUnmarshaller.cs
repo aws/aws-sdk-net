@@ -52,43 +52,43 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailableLabels", targetDepth))
+                if (context.TestExpression("AvailableLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
                     response.AvailableLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Capacity", targetDepth))
+                if (context.TestExpression("Capacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConsumedLabels", targetDepth))
+                if (context.TestExpression("ConsumedLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
                     response.ConsumedLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelNamespace", targetDepth))
+                if (context.TestExpression("LabelNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LabelNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rules", targetDepth))
+                if (context.TestExpression("Rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleSummary, RuleSummaryUnmarshaller>(RuleSummaryUnmarshaller.Instance);
                     response.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnsTopicArn", targetDepth))
+                if (context.TestExpression("SnsTopicArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SnsTopicArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionName", targetDepth))
+                if (context.TestExpression("VersionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VersionName = unmarshaller.Unmarshall(context, ref reader);

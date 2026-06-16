@@ -34,8 +34,32 @@ namespace Amazon.ObservabilityAdmin.Model
     /// </summary>
     public partial class SourceLogsConfiguration
     {
+        private string _dataSourceSelectionCriteria;
         private EncryptedLogGroupStrategy _encryptedLogGroupStrategy;
         private string _logGroupSelectionCriteria;
+
+        /// <summary>
+        /// Gets and sets the property DataSourceSelectionCriteria. 
+        /// <para>
+        /// The selection criteria that specifies which data sources to centralize. The selection
+        /// criteria uses the same filter expression format as <c>LogGroupSelectionCriteria</c>,
+        /// but operates on <c>DataSourceName</c> and <c>DataSourceType</c> operands. When both
+        /// <c>LogGroupSelectionCriteria</c> and <c>DataSourceSelectionCriteria</c> are specified,
+        /// a log event must match both criteria to be centralized.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string DataSourceSelectionCriteria
+        {
+            get { return this._dataSourceSelectionCriteria; }
+            set { this._dataSourceSelectionCriteria = value; }
+        }
+
+        // Check to see if DataSourceSelectionCriteria property is set
+        internal bool IsSetDataSourceSelectionCriteria()
+        {
+            return this._dataSourceSelectionCriteria != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptedLogGroupStrategy. 
@@ -66,7 +90,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// criteria uses the same format as OAM link filters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string LogGroupSelectionCriteria
         {
             get { return this._logGroupSelectionCriteria; }

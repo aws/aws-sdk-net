@@ -56,13 +56,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeFilterName", targetDepth))
+                if (context.TestExpression("AttributeFilterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttributeFilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttributeFilterValues", targetDepth))
+                if (context.TestExpression("AttributeFilterValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AttributeFilterValues = unmarshaller.Unmarshall(context, ref reader);

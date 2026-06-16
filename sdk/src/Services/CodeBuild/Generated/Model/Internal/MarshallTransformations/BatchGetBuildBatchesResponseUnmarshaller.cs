@@ -52,13 +52,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("buildBatches", targetDepth))
+                if (context.TestExpression("buildBatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BuildBatch, BuildBatchUnmarshaller>(BuildBatchUnmarshaller.Instance);
                     response.BuildBatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buildBatchesNotFound", targetDepth))
+                if (context.TestExpression("buildBatchesNotFound", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.BuildBatchesNotFound = unmarshaller.Unmarshall(context, ref reader);

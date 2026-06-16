@@ -56,73 +56,73 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Attainment", targetDepth))
+                if (context.TestExpression("Attainment", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Attainment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetRequestsRemaining", targetDepth))
+                if (context.TestExpression("BudgetRequestsRemaining", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BudgetRequestsRemaining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetSecondsRemaining", targetDepth))
+                if (context.TestExpression("BudgetSecondsRemaining", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BudgetSecondsRemaining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetStatus", targetDepth))
+                if (context.TestExpression("BudgetStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BudgetStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationType", targetDepth))
+                if (context.TestExpression("EvaluationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Goal", targetDepth))
+                if (context.TestExpression("Goal", targetDepth, ref reader))
                 {
                     var unmarshaller = GoalUnmarshaller.Instance;
                     unmarshalledObject.Goal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestBasedSli", targetDepth))
+                if (context.TestExpression("RequestBasedSli", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestBasedServiceLevelIndicatorUnmarshaller.Instance;
                     unmarshalledObject.RequestBasedSli = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sli", targetDepth))
+                if (context.TestExpression("Sli", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceLevelIndicatorUnmarshaller.Instance;
                     unmarshalledObject.Sli = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalBudgetRequests", targetDepth))
+                if (context.TestExpression("TotalBudgetRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalBudgetRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalBudgetSeconds", targetDepth))
+                if (context.TestExpression("TotalBudgetSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalBudgetSeconds = unmarshaller.Unmarshall(context, ref reader);

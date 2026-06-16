@@ -56,19 +56,19 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeFilters", targetDepth))
+                if (context.TestExpression("AttributeFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttributeFilter, AttributeFilterUnmarshaller>(AttributeFilterUnmarshaller.Instance);
                     unmarshalledObject.AttributeFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestChangeEvents", targetDepth))
+                if (context.TestExpression("LatestChangeEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ChangeEvent, ChangeEventUnmarshaller>(ChangeEventUnmarshaller.Instance);
                     unmarshalledObject.LatestChangeEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Service", targetDepth))
+                if (context.TestExpression("Service", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);

@@ -66,7 +66,7 @@ namespace Amazon.CloudWatch.Model
     /// For example, If you want to allow a user to create mute rules that target only specific
     /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
     /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
-    /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</c>),
+    /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute-rule:*</c>),
     /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
     /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
     /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
@@ -110,10 +110,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ExpireDate. 
         /// <para>
-        /// The date and time when the mute rule expires and is no longer evaluated. After this
-        /// time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.
-        /// This date and time is interpreted according to the schedule timezone, or UTC if no
-        /// timezone is specified.
+        /// The date and time when the mute rule expires and is no longer evaluated, specified
+        /// as a timestamp in ISO 8601 format (for example, <c>2026-12-31T23:59:59Z</c>). After
+        /// this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.
         /// </para>
         /// </summary>
         public DateTime? ExpireDate
@@ -188,10 +187,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The date and time after which the mute rule takes effect. If not specified, the mute
-        /// rule takes effect immediately upon creation and the mutes are applied as per the schedule
-        /// expression. This date and time is interpreted according to the schedule timezone,
-        /// or UTC if no timezone is specified.
+        /// The date and time after which the mute rule takes effect, specified as a timestamp
+        /// in ISO 8601 format (for example, <c>2026-04-15T08:00:00Z</c>). If not specified, the
+        /// mute rule takes effect immediately upon creation and the mutes are applied as per
+        /// the schedule expression.
         /// </para>
         /// </summary>
         public DateTime? StartDate

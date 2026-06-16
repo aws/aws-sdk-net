@@ -56,43 +56,43 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EvaluationLimitExceeded", targetDepth))
+                if (context.TestExpression("EvaluationLimitExceeded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EvaluationLimitExceeded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpiredAt", targetDepth))
+                if (context.TestExpression("ExpiredAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpiredAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IssueInfoMap", targetDepth))
+                if (context.TestExpression("IssueInfoMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.IssueInfoMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemberAccount", targetDepth))
+                if (context.TestExpression("MemberAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MemberAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyId", targetDepth))
+                if (context.TestExpression("PolicyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyOwner", targetDepth))
+                if (context.TestExpression("PolicyOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyOwner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Violators", targetDepth))
+                if (context.TestExpression("Violators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComplianceViolator, ComplianceViolatorUnmarshaller>(ComplianceViolatorUnmarshaller.Instance);
                     unmarshalledObject.Violators = unmarshaller.Unmarshall(context, ref reader);

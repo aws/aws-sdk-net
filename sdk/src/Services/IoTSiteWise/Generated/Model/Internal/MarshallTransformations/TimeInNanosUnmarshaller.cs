@@ -56,13 +56,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("offsetInNanos", targetDepth))
+                if (context.TestExpression("offsetInNanos", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OffsetInNanos = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeInSeconds", targetDepth))
+                if (context.TestExpression("timeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeInSeconds = unmarshaller.Unmarshall(context, ref reader);

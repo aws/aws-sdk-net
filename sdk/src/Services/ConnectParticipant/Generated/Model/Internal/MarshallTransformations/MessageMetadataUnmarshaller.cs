@@ -56,19 +56,19 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MessageId", targetDepth))
+                if (context.TestExpression("MessageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessageProcessingStatus", targetDepth))
+                if (context.TestExpression("MessageProcessingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MessageProcessingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Receipts", targetDepth))
+                if (context.TestExpression("Receipts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Receipt, ReceiptUnmarshaller>(ReceiptUnmarshaller.Instance);
                     unmarshalledObject.Receipts = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lowerBoundValue", targetDepth))
+                if (context.TestExpression("lowerBoundValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.LowerBoundValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("upperBoundValue", targetDepth))
+                if (context.TestExpression("upperBoundValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.UpperBoundValue = unmarshaller.Unmarshall(context, ref reader);

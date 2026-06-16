@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConstantType", targetDepth))
+                if (context.TestExpression("ConstantType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConstantType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Maximum", targetDepth))
+                if (context.TestExpression("Maximum", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Maximum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Minimum", targetDepth))
+                if (context.TestExpression("Minimum", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Minimum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Value", targetDepth))
+                if (context.TestExpression("Value", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueList", targetDepth))
+                if (context.TestExpression("ValueList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CollectiveConstantEntry, CollectiveConstantEntryUnmarshaller>(CollectiveConstantEntryUnmarshaller.Instance);
                     unmarshalledObject.ValueList = unmarshaller.Unmarshall(context, ref reader);

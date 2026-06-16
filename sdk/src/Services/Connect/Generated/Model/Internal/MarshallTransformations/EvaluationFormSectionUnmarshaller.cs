@@ -56,31 +56,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Instructions", targetDepth))
+                if (context.TestExpression("Instructions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Instructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Items", targetDepth))
+                if (context.TestExpression("Items", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationFormItem, EvaluationFormItemUnmarshaller>(EvaluationFormItemUnmarshaller.Instance);
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RefId", targetDepth))
+                if (context.TestExpression("RefId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RefId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Weight", targetDepth))
+                if (context.TestExpression("Weight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Weight = unmarshaller.Unmarshall(context, ref reader);

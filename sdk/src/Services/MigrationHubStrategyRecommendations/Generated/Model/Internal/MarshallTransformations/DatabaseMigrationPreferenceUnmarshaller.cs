@@ -56,19 +56,19 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("heterogeneous", targetDepth))
+                if (context.TestExpression("heterogeneous", targetDepth, ref reader))
                 {
                     var unmarshaller = HeterogeneousUnmarshaller.Instance;
                     unmarshalledObject.Heterogeneous = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("homogeneous", targetDepth))
+                if (context.TestExpression("homogeneous", targetDepth, ref reader))
                 {
                     var unmarshaller = HomogeneousUnmarshaller.Instance;
                     unmarshalledObject.Homogeneous = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noPreference", targetDepth))
+                if (context.TestExpression("noPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = NoDatabaseMigrationPreferenceUnmarshaller.Instance;
                     unmarshalledObject.NoPreference = unmarshaller.Unmarshall(context, ref reader);

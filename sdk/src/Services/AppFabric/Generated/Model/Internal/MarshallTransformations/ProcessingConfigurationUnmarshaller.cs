@@ -56,7 +56,7 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("auditLog", targetDepth))
+                if (context.TestExpression("auditLog", targetDepth, ref reader))
                 {
                     var unmarshaller = AuditLogProcessingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuditLog = unmarshaller.Unmarshall(context, ref reader);

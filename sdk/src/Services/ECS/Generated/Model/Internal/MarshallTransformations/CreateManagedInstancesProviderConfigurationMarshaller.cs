@@ -46,6 +46,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoRepairConfiguration())
+            {
+                context.Writer.WritePropertyName("autoRepairConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoRepairConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoRepairConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetInfrastructureOptimization())
             {
                 context.Writer.WritePropertyName("infrastructureOptimization");

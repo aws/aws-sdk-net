@@ -52,37 +52,55 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CmkSecretConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = CmkSecretConfigUnmarshaller.Instance;
+                    response.CmkSecretConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("CustomSecretConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = CustomSecretConfigUnmarshaller.Instance;
+                    response.CustomSecretConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocationArn", targetDepth))
+                if (context.TestExpression("LocationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocationUri", targetDepth))
+                if (context.TestExpression("LocationUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocationUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupArns", targetDepth))
+                if (context.TestExpression("ManagedSecretConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ManagedSecretConfigUnmarshaller.Instance;
+                    response.ManagedSecretConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SecurityGroupArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SecurityGroupArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("User", targetDepth))
+                if (context.TestExpression("User", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.User = unmarshaller.Unmarshall(context, ref reader);

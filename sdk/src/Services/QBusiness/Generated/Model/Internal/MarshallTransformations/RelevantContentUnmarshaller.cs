@@ -56,37 +56,37 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("content", targetDepth))
+                if (context.TestExpression("content", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentAttributes", targetDepth))
+                if (context.TestExpression("documentAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentAttribute, DocumentAttributeUnmarshaller>(DocumentAttributeUnmarshaller.Instance);
                     unmarshalledObject.DocumentAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentId", targetDepth))
+                if (context.TestExpression("documentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentTitle", targetDepth))
+                if (context.TestExpression("documentTitle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentUri", targetDepth))
+                if (context.TestExpression("documentUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scoreAttributes", targetDepth))
+                if (context.TestExpression("scoreAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = ScoreAttributesUnmarshaller.Instance;
                     unmarshalledObject.ScoreAttributes = unmarshaller.Unmarshall(context, ref reader);

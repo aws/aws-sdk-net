@@ -56,7 +56,7 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ungraceful", targetDepth))
+                if (context.TestExpression("ungraceful", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ungraceful = unmarshaller.Unmarshall(context, ref reader);

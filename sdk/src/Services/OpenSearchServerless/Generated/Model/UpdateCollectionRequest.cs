@@ -36,8 +36,10 @@ namespace Amazon.OpenSearchServerless.Model
     public partial class UpdateCollectionRequest : AmazonOpenSearchServerlessRequest
     {
         private string _clientToken;
+        private DeletionProtection _deletionProtection;
         private string _description;
         private string _id;
+        private VectorOptions _vectorOptions;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -56,6 +58,25 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Indicates whether to enable or disable deletion protection for the collection. When
+        /// set to <c>ENABLED</c>, the collection cannot be deleted.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
         }
 
         /// <summary>
@@ -94,6 +115,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorOptions. 
+        /// <para>
+        /// Configuration options for vector search capabilities in the collection.
+        /// </para>
+        /// </summary>
+        public VectorOptions VectorOptions
+        {
+            get { return this._vectorOptions; }
+            set { this._vectorOptions = value; }
+        }
+
+        // Check to see if VectorOptions property is set
+        internal bool IsSetVectorOptions()
+        {
+            return this._vectorOptions != null;
         }
 
     }

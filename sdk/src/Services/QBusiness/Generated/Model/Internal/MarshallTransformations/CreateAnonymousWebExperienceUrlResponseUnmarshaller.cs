@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("anonymousUrl", targetDepth))
+                if (context.TestExpression("anonymousUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnonymousUrl = unmarshaller.Unmarshall(context, ref reader);

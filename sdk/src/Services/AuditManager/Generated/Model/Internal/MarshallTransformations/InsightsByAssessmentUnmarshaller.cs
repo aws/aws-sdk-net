@@ -56,37 +56,37 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assessmentControlsCountByNoncompliantEvidence", targetDepth))
+                if (context.TestExpression("assessmentControlsCountByNoncompliantEvidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AssessmentControlsCountByNoncompliantEvidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("compliantEvidenceCount", targetDepth))
+                if (context.TestExpression("compliantEvidenceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inconclusiveEvidenceCount", targetDepth))
+                if (context.TestExpression("inconclusiveEvidenceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InconclusiveEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdated", targetDepth))
+                if (context.TestExpression("lastUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noncompliantEvidenceCount", targetDepth))
+                if (context.TestExpression("noncompliantEvidenceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoncompliantEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalAssessmentControlsCount", targetDepth))
+                if (context.TestExpression("totalAssessmentControlsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAssessmentControlsCount = unmarshaller.Unmarshall(context, ref reader);

@@ -1,47 +1,25 @@
-﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
-
-
-using Amazon.S3;
+﻿using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class PutBucketLoggingTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class PutBucketLoggingTests : IClassFixture<S3PublicAclBucketFixture>
     {
-        public static string bucketName;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
 
-        [TestInitialize]
-        public async Task Init()
+        public PutBucketLoggingTests(S3PublicAclBucketFixture fixture)
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
+            _client = fixture.Client;
+            _bucketName = fixture.BucketName;
         }
 
-        [TestCleanup]
-        public async Task Cleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-        }
-
-        [TestMethod]
+        [Fact]
         public async Task TestPutBucketLogging()
         {
             var grantList = new List<S3Grant>
@@ -53,16 +31,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            var response = await Client.PutBucketLoggingAsync(new PutBucketLoggingRequest
+            var response = await _client.PutBucketLoggingAsync(new PutBucketLoggingRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 LoggingConfig = new S3BucketLoggingConfig
                 {
-                    TargetBucketName = bucketName,
+                    TargetBucketName = _bucketName,
                     Grants = grantList
                 }
             });
-            Assert.IsNotNull(response);
+            Assert.NotNull(response);
         }
     }
 }

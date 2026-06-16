@@ -56,7 +56,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomRedirectDomain", targetDepth))
+                if (context.TestExpression("CustomRedirectDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomRedirectDomain = unmarshaller.Unmarshall(context, ref reader);

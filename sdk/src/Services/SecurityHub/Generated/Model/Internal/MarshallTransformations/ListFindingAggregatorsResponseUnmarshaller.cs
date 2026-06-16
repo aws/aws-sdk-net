@@ -52,13 +52,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FindingAggregators", targetDepth))
+                if (context.TestExpression("FindingAggregators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FindingAggregator, FindingAggregatorUnmarshaller>(FindingAggregatorUnmarshaller.Instance);
                     response.FindingAggregators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

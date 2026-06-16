@@ -56,37 +56,37 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DiskResourceUtilization", targetDepth))
+                if (context.TestExpression("DiskResourceUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = DiskResourceUtilizationUnmarshaller.Instance;
                     unmarshalledObject.DiskResourceUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EBSResourceUtilization", targetDepth))
+                if (context.TestExpression("EBSResourceUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = EBSResourceUtilizationUnmarshaller.Instance;
                     unmarshalledObject.EBSResourceUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxCpuUtilizationPercentage", targetDepth))
+                if (context.TestExpression("MaxCpuUtilizationPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaxCpuUtilizationPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxMemoryUtilizationPercentage", targetDepth))
+                if (context.TestExpression("MaxMemoryUtilizationPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaxMemoryUtilizationPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxStorageUtilizationPercentage", targetDepth))
+                if (context.TestExpression("MaxStorageUtilizationPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaxStorageUtilizationPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkResourceUtilization", targetDepth))
+                if (context.TestExpression("NetworkResourceUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkResourceUtilizationUnmarshaller.Instance;
                     unmarshalledObject.NetworkResourceUtilization = unmarshaller.Unmarshall(context, ref reader);

@@ -39,6 +39,11 @@ namespace Amazon.Signer
 {
     /// <summary>
     /// <para>Implementation for accessing Signer</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Signer is a fully managed code-signing service to help you ensure the trust and
     /// integrity of your code. 

@@ -56,19 +56,19 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedConstraints", targetDepth))
+                if (context.TestExpression("FailedConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WaypointOptimizationFailedConstraint, WaypointOptimizationFailedConstraintUnmarshaller>(WaypointOptimizationFailedConstraintUnmarshaller.Instance);
                     unmarshalledObject.FailedConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Position", targetDepth))
+                if (context.TestExpression("Position", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);

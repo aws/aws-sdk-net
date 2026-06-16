@@ -52,13 +52,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failures", targetDepth))
+                if (context.TestExpression("failures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Failure, FailureUnmarshaller>(FailureUnmarshaller.Instance);
                     response.Failures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tasks", targetDepth))
+                if (context.TestExpression("tasks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Task, TaskUnmarshaller>(TaskUnmarshaller.Instance);
                     response.Tasks = unmarshaller.Unmarshall(context, ref reader);
@@ -89,6 +89,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClientException"))
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -100,6 +104,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NamespaceNotFoundException"))
+                {
+                    return NamespaceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
                 {

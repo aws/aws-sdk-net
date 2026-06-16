@@ -52,13 +52,13 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PolicyDocument", targetDepth))
+                if (context.TestExpression("PolicyDocument", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PolicyDocument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyRevisionId", targetDepth))
+                if (context.TestExpression("PolicyRevisionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PolicyRevisionId = unmarshaller.Unmarshall(context, ref reader);

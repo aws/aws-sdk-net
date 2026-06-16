@@ -56,31 +56,31 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("consolidation", targetDepth))
+                if (context.TestExpression("consolidation", targetDepth, ref reader))
                 {
                     var unmarshaller = ConsolidationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Consolidation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("extraction", targetDepth))
+                if (context.TestExpression("extraction", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtractionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Extraction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reflection", targetDepth))
+                if (context.TestExpression("reflection", targetDepth, ref reader))
                 {
                     var unmarshaller = ReflectionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Reflection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selfManagedConfiguration", targetDepth))
+                if (context.TestExpression("selfManagedConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SelfManagedConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SelfManagedConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

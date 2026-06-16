@@ -52,13 +52,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManagedKeysIPV4", targetDepth))
+                if (context.TestExpression("ManagedKeysIPV4", targetDepth, ref reader))
                 {
                     var unmarshaller = RateBasedStatementManagedKeysIPSetUnmarshaller.Instance;
                     response.ManagedKeysIPV4 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedKeysIPV6", targetDepth))
+                if (context.TestExpression("ManagedKeysIPV6", targetDepth, ref reader))
                 {
                     var unmarshaller = RateBasedStatementManagedKeysIPSetUnmarshaller.Instance;
                     response.ManagedKeysIPV6 = unmarshaller.Unmarshall(context, ref reader);

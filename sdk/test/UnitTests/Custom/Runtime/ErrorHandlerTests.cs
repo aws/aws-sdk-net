@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Auth;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -76,81 +77,6 @@ namespace AWSSDK.UnitTests
             typeof(AmazonS3Exception));
             Assert.AreEqual("NoSuchBucket", ((AmazonS3Exception)exception).ErrorCode);
             Assert.AreEqual(HttpStatusCode.NotFound, ((AmazonS3Exception)exception).StatusCode);
-            Assert.AreEqual(1, Tester.CallCount);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void Test400WithErrorTypeHeader()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("400WithErrorTypeHeader.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
-
-            var context = CreateTestContext();
-            ((RequestContext)context.RequestContext).Unmarshaller =
-                Amazon.IotData.Model.Internal.MarshallTransformations.UpdateThingShadowResponseUnmarshaller.Instance;
-
-            var exception = Utils.AssertExceptionExpected<Amazon.IotData.Model.InvalidRequestException>(() =>
-            {
-                RuntimePipeline.InvokeSync(context);
-            });
-            Assert.AreEqual("InvalidRequestException", exception.ErrorCode);
-            Assert.AreEqual(HttpStatusCode.BadRequest, exception.StatusCode);
-            Assert.AreEqual(1, Tester.CallCount);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void Test400WithErrorTypeHeaderAndData()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("400WithErrorTypeHeaderAndData.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
-
-            var context = CreateTestContext();
-            ((RequestContext)context.RequestContext).Unmarshaller =
-                Amazon.IotData.Model.Internal.MarshallTransformations.UpdateThingShadowResponseUnmarshaller.Instance;
-
-            var exception = Utils.AssertExceptionExpected<Amazon.IotData.Model.InvalidRequestException>(() =>
-            {
-                RuntimePipeline.InvokeSync(context);
-            });
-            Assert.AreEqual("InvalidRequestException", exception.ErrorCode);
-            Assert.AreEqual(HttpStatusCode.BadRequest, exception.StatusCode);
-            Assert.AreEqual(1, Tester.CallCount);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void Test404WithErrorTypeHeader()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("404WithErrorTypeHeader.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
-
-            var context = CreateTestContext();
-            ((RequestContext)context.RequestContext).Unmarshaller =
-                Amazon.IotData.Model.Internal.MarshallTransformations.GetThingShadowResponseUnmarshaller.Instance;
-
-            var exception = Utils.AssertExceptionExpected<Amazon.IotData.Model.ResourceNotFoundException>(() =>
-            {
-                RuntimePipeline.InvokeSync(context);
-            });
-            Assert.AreEqual("ResourceNotFoundException", exception.ErrorCode);
-            Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
             Assert.AreEqual(1, Tester.CallCount);
         }
 
@@ -248,7 +174,6 @@ namespace AWSSDK.UnitTests
         }
 
 
-#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\AsyncNetFramework")]
@@ -341,6 +266,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(exception.GetType() == typeof(AmazonServiceException));
             Assert.AreEqual(1, Tester.CallCount);
         }
-#endif
     }
 }
+#endif

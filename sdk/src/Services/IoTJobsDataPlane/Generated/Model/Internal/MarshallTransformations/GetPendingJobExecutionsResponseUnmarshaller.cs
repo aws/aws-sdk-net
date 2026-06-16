@@ -52,13 +52,13 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inProgressJobs", targetDepth))
+                if (context.TestExpression("inProgressJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobExecutionSummary, JobExecutionSummaryUnmarshaller>(JobExecutionSummaryUnmarshaller.Instance);
                     response.InProgressJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queuedJobs", targetDepth))
+                if (context.TestExpression("queuedJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobExecutionSummary, JobExecutionSummaryUnmarshaller>(JobExecutionSummaryUnmarshaller.Instance);
                     response.QueuedJobs = unmarshaller.Unmarshall(context, ref reader);

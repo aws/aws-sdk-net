@@ -52,7 +52,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VersionDeleteError, VersionDeleteErrorUnmarshaller>(VersionDeleteErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);

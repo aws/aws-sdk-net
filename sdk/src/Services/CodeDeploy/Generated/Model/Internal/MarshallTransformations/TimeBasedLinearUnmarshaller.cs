@@ -56,13 +56,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("linearInterval", targetDepth))
+                if (context.TestExpression("linearInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LinearInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linearPercentage", targetDepth))
+                if (context.TestExpression("linearPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LinearPercentage = unmarshaller.Unmarshall(context, ref reader);

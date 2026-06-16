@@ -56,25 +56,25 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionConfiguration", targetDepth))
+                if (context.TestExpression("encryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vectorBucketArn", targetDepth))
+                if (context.TestExpression("vectorBucketArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VectorBucketArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vectorBucketName", targetDepth))
+                if (context.TestExpression("vectorBucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VectorBucketName = unmarshaller.Unmarshall(context, ref reader);

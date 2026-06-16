@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("automated", targetDepth))
+                if (context.TestExpression("automated", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedEvaluationConfigUnmarshaller.Instance;
                     unmarshalledObject.Automated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("human", targetDepth))
+                if (context.TestExpression("human", targetDepth, ref reader))
                 {
                     var unmarshaller = HumanEvaluationConfigUnmarshaller.Instance;
                     unmarshalledObject.Human = unmarshaller.Unmarshall(context, ref reader);

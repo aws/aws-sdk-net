@@ -56,31 +56,31 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageId", targetDepth))
+                if (context.TestExpression("imageId", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageIdentifierUnmarshaller.Instance;
                     unmarshalledObject.ImageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageManifest", targetDepth))
+                if (context.TestExpression("imageManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageManifestMediaType", targetDepth))
+                if (context.TestExpression("imageManifestMediaType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageManifestMediaType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registryId", targetDepth))
+                if (context.TestExpression("registryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryName", targetDepth))
+                if (context.TestExpression("repositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);

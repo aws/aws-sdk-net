@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("invocationLogsConfig", targetDepth))
+                if (context.TestExpression("invocationLogsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InvocationLogsConfigUnmarshaller.Instance;
                     unmarshalledObject.InvocationLogsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Uri", targetDepth))
+                if (context.TestExpression("s3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);

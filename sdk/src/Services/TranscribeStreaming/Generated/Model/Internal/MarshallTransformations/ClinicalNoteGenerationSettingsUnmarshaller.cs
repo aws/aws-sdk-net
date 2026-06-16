@@ -56,13 +56,13 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NoteTemplate", targetDepth))
+                if (context.TestExpression("NoteTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NoteTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputBucketName", targetDepth))
+                if (context.TestExpression("OutputBucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputBucketName = unmarshaller.Unmarshall(context, ref reader);

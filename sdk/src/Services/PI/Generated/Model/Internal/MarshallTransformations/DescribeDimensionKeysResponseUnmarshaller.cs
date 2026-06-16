@@ -52,31 +52,31 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlignedEndTime", targetDepth))
+                if (context.TestExpression("AlignedEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AlignedEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AlignedStartTime", targetDepth))
+                if (context.TestExpression("AlignedStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AlignedStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Keys", targetDepth))
+                if (context.TestExpression("Keys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionKeyDescription, DimensionKeyDescriptionUnmarshaller>(DimensionKeyDescriptionUnmarshaller.Instance);
                     response.Keys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartitionKeys", targetDepth))
+                if (context.TestExpression("PartitionKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResponsePartitionKey, ResponsePartitionKeyUnmarshaller>(ResponsePartitionKeyUnmarshaller.Instance);
                     response.PartitionKeys = unmarshaller.Unmarshall(context, ref reader);

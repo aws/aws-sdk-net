@@ -56,25 +56,25 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatabaseTableName", targetDepth))
+                if (context.TestExpression("DatabaseTableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseTableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlueConnectionName", targetDepth))
+                if (context.TestExpression("GlueConnectionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GlueConnectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryString", targetDepth))
+                if (context.TestExpression("QueryString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TempDirectory", targetDepth))
+                if (context.TestExpression("TempDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;
                     unmarshalledObject.TempDirectory = unmarshaller.Unmarshall(context, ref reader);

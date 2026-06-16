@@ -52,13 +52,13 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profiles", targetDepth))
+                if (context.TestExpression("profiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProfileSummary, ProfileSummaryUnmarshaller>(ProfileSummaryUnmarshaller.Instance);
                     response.Profiles = unmarshaller.Unmarshall(context, ref reader);

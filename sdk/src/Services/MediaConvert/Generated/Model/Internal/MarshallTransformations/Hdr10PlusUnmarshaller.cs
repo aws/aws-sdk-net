@@ -56,13 +56,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("masteringMonitorNits", targetDepth))
+                if (context.TestExpression("masteringMonitorNits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MasteringMonitorNits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetMonitorNits", targetDepth))
+                if (context.TestExpression("targetMonitorNits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetMonitorNits = unmarshaller.Unmarshall(context, ref reader);

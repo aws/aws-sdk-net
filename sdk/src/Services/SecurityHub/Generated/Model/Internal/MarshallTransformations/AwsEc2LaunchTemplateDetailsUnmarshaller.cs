@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultVersionNumber", targetDepth))
+                if (context.TestExpression("DefaultVersionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DefaultVersionNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestVersionNumber", targetDepth))
+                if (context.TestExpression("LatestVersionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LatestVersionNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchTemplateData", targetDepth))
+                if (context.TestExpression("LaunchTemplateData", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.LaunchTemplateData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchTemplateName", targetDepth))
+                if (context.TestExpression("LaunchTemplateName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LaunchTemplateName = unmarshaller.Unmarshall(context, ref reader);

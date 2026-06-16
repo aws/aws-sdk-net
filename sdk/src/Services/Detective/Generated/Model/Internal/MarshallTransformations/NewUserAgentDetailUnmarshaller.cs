@@ -56,13 +56,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IsNewForEntireAccount", targetDepth))
+                if (context.TestExpression("IsNewForEntireAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNewForEntireAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserAgent", targetDepth))
+                if (context.TestExpression("UserAgent", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserAgent = unmarshaller.Unmarshall(context, ref reader);

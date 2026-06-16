@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("internalAccess", targetDepth))
+                if (context.TestExpression("internalAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = InternalAccessConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InternalAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedAccess", targetDepth))
+                if (context.TestExpression("unusedAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = UnusedAccessConfigurationUnmarshaller.Instance;
                     unmarshalledObject.UnusedAccess = unmarshaller.Unmarshall(context, ref reader);

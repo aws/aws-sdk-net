@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idleRuntimeSessionTimeout", targetDepth))
+                if (context.TestExpression("idleRuntimeSessionTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleRuntimeSessionTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxLifetime", targetDepth))
+                if (context.TestExpression("maxLifetime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLifetime = unmarshaller.Unmarshall(context, ref reader);

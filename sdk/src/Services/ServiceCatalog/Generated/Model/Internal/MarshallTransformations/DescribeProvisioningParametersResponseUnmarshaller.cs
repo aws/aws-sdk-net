@@ -52,43 +52,43 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConstraintSummaries", targetDepth))
+                if (context.TestExpression("ConstraintSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConstraintSummary, ConstraintSummaryUnmarshaller>(ConstraintSummaryUnmarshaller.Instance);
                     response.ConstraintSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifactOutputKeys", targetDepth))
+                if (context.TestExpression("ProvisioningArtifactOutputKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisioningArtifactOutput, ProvisioningArtifactOutputUnmarshaller>(ProvisioningArtifactOutputUnmarshaller.Instance);
                     response.ProvisioningArtifactOutputKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifactOutputs", targetDepth))
+                if (context.TestExpression("ProvisioningArtifactOutputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisioningArtifactOutput, ProvisioningArtifactOutputUnmarshaller>(ProvisioningArtifactOutputUnmarshaller.Instance);
                     response.ProvisioningArtifactOutputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifactParameters", targetDepth))
+                if (context.TestExpression("ProvisioningArtifactParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisioningArtifactParameter, ProvisioningArtifactParameterUnmarshaller>(ProvisioningArtifactParameterUnmarshaller.Instance);
                     response.ProvisioningArtifactParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifactPreferences", targetDepth))
+                if (context.TestExpression("ProvisioningArtifactPreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisioningArtifactPreferencesUnmarshaller.Instance;
                     response.ProvisioningArtifactPreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagOptions", targetDepth))
+                if (context.TestExpression("TagOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagOptionSummary, TagOptionSummaryUnmarshaller>(TagOptionSummaryUnmarshaller.Instance);
                     response.TagOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsageInstructions", targetDepth))
+                if (context.TestExpression("UsageInstructions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageInstruction, UsageInstructionUnmarshaller>(UsageInstructionUnmarshaller.Instance);
                     response.UsageInstructions = unmarshaller.Unmarshall(context, ref reader);

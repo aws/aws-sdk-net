@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActivationTimestamp", targetDepth))
+                if (context.TestExpression("ActivationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ActivationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Index", targetDepth))
+                if (context.TestExpression("Index", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Steps", targetDepth))
+                if (context.TestExpression("Steps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Step, StepUnmarshaller>(StepUnmarshaller.Instance);
                     unmarshalledObject.Steps = unmarshaller.Unmarshall(context, ref reader);

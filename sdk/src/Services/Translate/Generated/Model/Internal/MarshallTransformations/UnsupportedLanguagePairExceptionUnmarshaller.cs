@@ -72,13 +72,13 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("SourceLanguageCode", targetDepth))
+                    if (context.TestExpression("SourceLanguageCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.SourceLanguageCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("TargetLanguageCode", targetDepth))
+                    if (context.TestExpression("TargetLanguageCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TargetLanguageCode = unmarshaller.Unmarshall(context, ref reader);

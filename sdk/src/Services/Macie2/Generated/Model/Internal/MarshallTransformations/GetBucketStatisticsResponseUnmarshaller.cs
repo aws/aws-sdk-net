@@ -52,85 +52,85 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bucketCount", targetDepth))
+                if (context.TestExpression("bucketCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BucketCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketCountByEffectivePermission", targetDepth))
+                if (context.TestExpression("bucketCountByEffectivePermission", targetDepth, ref reader))
                 {
                     var unmarshaller = BucketCountByEffectivePermissionUnmarshaller.Instance;
                     response.BucketCountByEffectivePermission = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketCountByEncryptionType", targetDepth))
+                if (context.TestExpression("bucketCountByEncryptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = BucketCountByEncryptionTypeUnmarshaller.Instance;
                     response.BucketCountByEncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketCountByObjectEncryptionRequirement", targetDepth))
+                if (context.TestExpression("bucketCountByObjectEncryptionRequirement", targetDepth, ref reader))
                 {
                     var unmarshaller = BucketCountPolicyAllowsUnencryptedObjectUploadsUnmarshaller.Instance;
                     response.BucketCountByObjectEncryptionRequirement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketCountBySharedAccessType", targetDepth))
+                if (context.TestExpression("bucketCountBySharedAccessType", targetDepth, ref reader))
                 {
                     var unmarshaller = BucketCountBySharedAccessTypeUnmarshaller.Instance;
                     response.BucketCountBySharedAccessType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketStatisticsBySensitivity", targetDepth))
+                if (context.TestExpression("bucketStatisticsBySensitivity", targetDepth, ref reader))
                 {
                     var unmarshaller = BucketStatisticsBySensitivityUnmarshaller.Instance;
                     response.BucketStatisticsBySensitivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("classifiableObjectCount", targetDepth))
+                if (context.TestExpression("classifiableObjectCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ClassifiableObjectCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("classifiableSizeInBytes", targetDepth))
+                if (context.TestExpression("classifiableSizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ClassifiableSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdated", targetDepth))
+                if (context.TestExpression("lastUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("objectCount", targetDepth))
+                if (context.TestExpression("objectCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ObjectCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sizeInBytes", targetDepth))
+                if (context.TestExpression("sizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.SizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sizeInBytesCompressed", targetDepth))
+                if (context.TestExpression("sizeInBytesCompressed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.SizeInBytesCompressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unclassifiableObjectCount", targetDepth))
+                if (context.TestExpression("unclassifiableObjectCount", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectLevelStatisticsUnmarshaller.Instance;
                     response.UnclassifiableObjectCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unclassifiableObjectSizeInBytes", targetDepth))
+                if (context.TestExpression("unclassifiableObjectSizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectLevelStatisticsUnmarshaller.Instance;
                     response.UnclassifiableObjectSizeInBytes = unmarshaller.Unmarshall(context, ref reader);

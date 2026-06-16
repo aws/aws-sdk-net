@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Isoline granularity related options.
+    /// Controls the detail level and smoothness of generated isolines. More detailed isolines
+    /// provide better visual representation of reachable areas but require more processing
+    /// time and result in larger responses.
     /// </summary>
     public partial class IsolineGranularityOptions
     {
@@ -40,7 +42,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property MaxPoints. 
         /// <para>
-        /// Maximum number of points of returned Isoline.
+        /// The maximum number of points used to define each isoline. Higher values create smoother,
+        /// more detailed shapes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=31)]
@@ -59,7 +62,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property MaxResolution. 
         /// <para>
-        /// Maximum resolution of the returned isoline.
+        /// The maximum distance in meters between points along the isoline. Smaller values create
+        /// more detailed shapes.
         /// </para>
         ///  
         /// <para>

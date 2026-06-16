@@ -39,6 +39,11 @@ namespace Amazon.ConnectParticipant
 {
     /// <summary>
     /// <para>Implementation for accessing ConnectParticipant</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// <ul> <li> 
     /// <para>
@@ -52,18 +57,18 @@ namespace Amazon.ConnectParticipant
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables
-    /// companies of any size to deliver superior customer service at a lower cost. Amazon
-    /// Connect communications capabilities make it easy for companies to deliver personalized
+    /// Connect Customer is an easy-to-use omnichannel cloud contact center service that enables
+    /// companies of any size to deliver superior customer service at a lower cost. Connect
+    /// Customer communications capabilities make it easy for companies to deliver personalized
     /// interactions across communication channels, including chat. 
     /// </para>
     ///  
     /// <para>
-    /// Use the Amazon Connect Participant Service to manage participants (for example, agents,
-    /// customers, and managers listening in), and to send messages and events within a chat
-    /// contact. The APIs in the service enable the following: sending chat messages, attachment
-    /// sharing, managing a participant's connection state and message events, and retrieving
-    /// chat transcripts.
+    /// Use the Connect Customer Participant Service to manage participants (for example,
+    /// agents, customers, and managers listening in), and to send messages and events within
+    /// a chat contact. The APIs in the service enable the following: sending chat messages,
+    /// attachment sharing, managing a participant's connection state and message events,
+    /// and retrieving chat transcripts.
     /// </para>
     /// </summary>
     public partial class AmazonConnectParticipantClient : AmazonServiceClient, IAmazonConnectParticipant
@@ -368,8 +373,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -435,13 +440,13 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  
         /// <para>
-        /// For WebRTC security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-webrtc-security">Amazon
-        /// Connect WebRTC security best practices</a>. 
+        /// For WebRTC security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-webrtc-security">Connect
+        /// Customer WebRTC security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -582,8 +587,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeView service method.</param>
@@ -636,8 +641,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -697,8 +702,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
@@ -764,8 +769,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>.
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
@@ -837,8 +842,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  
         /// <para>
@@ -938,8 +943,8 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1002,8 +1007,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1063,8 +1068,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>. 
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>

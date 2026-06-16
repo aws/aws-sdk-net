@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.AssociateCertificate(Amazon.RTBFabric.Model.AssociateCertificateRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.AssociateCertificate(Amazon.RTBFabric.Model.AssociateCertificateRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.AssociateCertificateRequest" />
+            <member name="T:Amazon.RTBFabric.Model.AssociateCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Associate an ACM certificate with a responder gateway
+                </para>
+                <code
+                    title="Associate a certificate with a responder gateway"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.CreateInboundExternalLink(Amazon.RTBFabric.Model.CreateInboundExternalLinkRequest)" />
             <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.CreateInboundExternalLink(Amazon.RTBFabric.Model.CreateInboundExternalLinkRequest)" />
             <member name="T:Amazon.RTBFabric.Model.CreateInboundExternalLinkRequest" />
@@ -48,10 +67,29 @@
         <value>
             <example>
                 <para>
-                    Creates a new link between RTB applications
+                    Creates a new link between two RTB applications. Requires peerGatewayId to specify the target gateway.
                 </para>
                 <code
-                    title="Create a new link"
+                    title="Create a standard link between gateways"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.CreateLinkRoutingRule(Amazon.RTBFabric.Model.CreateLinkRoutingRuleRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.CreateLinkRoutingRule(Amazon.RTBFabric.Model.CreateLinkRoutingRuleRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.CreateLinkRoutingRuleRequest" />
+            <member name="T:Amazon.RTBFabric.Model.CreateLinkRoutingRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Create a routing rule with host header and path prefix conditions
+                </para>
+                <code
+                    title="Create a link routing rule"
                     source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -154,6 +192,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.DeleteLinkRoutingRule(Amazon.RTBFabric.Model.DeleteLinkRoutingRuleRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.DeleteLinkRoutingRule(Amazon.RTBFabric.Model.DeleteLinkRoutingRuleRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.DeleteLinkRoutingRuleRequest" />
+            <member name="T:Amazon.RTBFabric.Model.DeleteLinkRoutingRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Delete a link routing rule
+                </para>
+                <code
+                    title="Delete a link routing rule"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.DeleteOutboundExternalLink(Amazon.RTBFabric.Model.DeleteOutboundExternalLinkRequest)" />
             <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.DeleteOutboundExternalLink(Amazon.RTBFabric.Model.DeleteOutboundExternalLinkRequest)" />
             <member name="T:Amazon.RTBFabric.Model.DeleteOutboundExternalLinkRequest" />
@@ -211,6 +268,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.DisassociateCertificate(Amazon.RTBFabric.Model.DisassociateCertificateRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.DisassociateCertificate(Amazon.RTBFabric.Model.DisassociateCertificateRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.DisassociateCertificateRequest" />
+            <member name="T:Amazon.RTBFabric.Model.DisassociateCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Remove an ACM certificate association from a responder gateway
+                </para>
+                <code
+                    title="Disassociate a certificate from a responder gateway"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.GetCertificateAssociation(Amazon.RTBFabric.Model.GetCertificateAssociationRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.GetCertificateAssociation(Amazon.RTBFabric.Model.GetCertificateAssociationRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.GetCertificateAssociationRequest" />
+            <member name="T:Amazon.RTBFabric.Model.GetCertificateAssociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieve details of an ACM certificate association with a responder gateway
+                </para>
+                <code
+                    title="Get certificate association details from a responder gateway"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.GetInboundExternalLink(Amazon.RTBFabric.Model.GetInboundExternalLinkRequest)" />
             <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.GetInboundExternalLink(Amazon.RTBFabric.Model.GetInboundExternalLinkRequest)" />
             <member name="T:Amazon.RTBFabric.Model.GetInboundExternalLinkRequest" />
@@ -242,6 +337,25 @@
                 </para>
                 <code
                     title="Get link details"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.GetLinkRoutingRule(Amazon.RTBFabric.Model.GetLinkRoutingRuleRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.GetLinkRoutingRule(Amazon.RTBFabric.Model.GetLinkRoutingRuleRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.GetLinkRoutingRuleRequest" />
+            <member name="T:Amazon.RTBFabric.Model.GetLinkRoutingRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Get details of a link routing rule
+                </para>
+                <code
+                    title="Get link routing rule details"
                     source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -299,6 +413,44 @@
                 </para>
                 <code
                     title="Get responder gateway details"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.ListCertificateAssociations(Amazon.RTBFabric.Model.ListCertificateAssociationsRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.ListCertificateAssociations(Amazon.RTBFabric.Model.ListCertificateAssociationsRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.ListCertificateAssociationsRequest" />
+            <member name="T:Amazon.RTBFabric.Model.ListCertificateAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieve all certificate associations for a responder gateway
+                </para>
+                <code
+                    title="List certificate associations for a responder gateway"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.ListLinkRoutingRules(Amazon.RTBFabric.Model.ListLinkRoutingRulesRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.ListLinkRoutingRules(Amazon.RTBFabric.Model.ListLinkRoutingRulesRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.ListLinkRoutingRulesRequest" />
+            <member name="T:Amazon.RTBFabric.Model.ListLinkRoutingRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    List all routing rules for a link
+                </para>
+                <code
+                    title="List link routing rules"
                     source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -508,6 +660,25 @@
                 </para>
                 <code
                     title="Update link module flow"
+                    source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.UpdateLinkRoutingRule(Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest)" />
+            <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.UpdateLinkRoutingRule(Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest)" />
+            <member name="T:Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest" />
+            <member name="T:Amazon.RTBFabric.Model.UpdateLinkRoutingRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Update the conditions of a routing rule
+                </para>
+                <code
+                    title="Update a link routing rule"
                     source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
                     region="example-1" />
             </example>

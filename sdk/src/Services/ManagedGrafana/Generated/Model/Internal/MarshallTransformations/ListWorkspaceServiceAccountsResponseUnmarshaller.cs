@@ -52,19 +52,19 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceAccounts", targetDepth))
+                if (context.TestExpression("serviceAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceAccountSummary, ServiceAccountSummaryUnmarshaller>(ServiceAccountSummaryUnmarshaller.Instance);
                     response.ServiceAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workspaceId", targetDepth))
+                if (context.TestExpression("workspaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkspaceId = unmarshaller.Unmarshall(context, ref reader);

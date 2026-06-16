@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationMetadata", targetDepth))
+                if (context.TestExpression("AuthenticationMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadAuthenticationMetadataUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);

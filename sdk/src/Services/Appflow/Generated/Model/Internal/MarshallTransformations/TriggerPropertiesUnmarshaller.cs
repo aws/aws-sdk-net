@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Scheduled", targetDepth))
+                if (context.TestExpression("Scheduled", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduledTriggerPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Scheduled = unmarshaller.Unmarshall(context, ref reader);

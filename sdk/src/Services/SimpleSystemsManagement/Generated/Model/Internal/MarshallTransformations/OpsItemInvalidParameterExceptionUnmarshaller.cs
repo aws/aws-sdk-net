@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ParameterNames", targetDepth))
+                    if (context.TestExpression("ParameterNames", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.ParameterNames = unmarshaller.Unmarshall(context, ref reader);

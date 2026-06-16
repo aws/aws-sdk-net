@@ -72,7 +72,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("RequestID", targetDepth))
+                    if (context.TestExpression("RequestID", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RequestID = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SchemaVersionErrors", targetDepth))
+                if (context.TestExpression("SchemaVersionErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SchemaVersionErrorItem, SchemaVersionErrorItemUnmarshaller>(SchemaVersionErrorItemUnmarshaller.Instance);
                     response.SchemaVersionErrors = unmarshaller.Unmarshall(context, ref reader);

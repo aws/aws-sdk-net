@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RequestBody", targetDepth))
+                if (context.TestExpression("RequestBody", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, RequestBodyAssociatedResourceTypeConfig, StringUnmarshaller, RequestBodyAssociatedResourceTypeConfigUnmarshaller>(StringUnmarshaller.Instance, RequestBodyAssociatedResourceTypeConfigUnmarshaller.Instance);
                     unmarshalledObject.RequestBody = unmarshaller.Unmarshall(context, ref reader);

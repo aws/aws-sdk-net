@@ -52,7 +52,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("branch", targetDepth))
+                if (context.TestExpression("branch", targetDepth, ref reader))
                 {
                     var unmarshaller = BranchUnmarshaller.Instance;
                     response.Branch = unmarshaller.Unmarshall(context, ref reader);

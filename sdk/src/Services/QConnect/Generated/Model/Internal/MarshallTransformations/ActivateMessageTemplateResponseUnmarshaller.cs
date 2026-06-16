@@ -52,19 +52,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("messageTemplateArn", targetDepth))
+                if (context.TestExpression("messageTemplateArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MessageTemplateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageTemplateId", targetDepth))
+                if (context.TestExpression("messageTemplateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MessageTemplateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("versionNumber", targetDepth))
+                if (context.TestExpression("versionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.VersionNumber = unmarshaller.Unmarshall(context, ref reader);

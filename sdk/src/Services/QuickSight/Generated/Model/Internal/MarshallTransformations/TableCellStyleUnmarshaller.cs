@@ -56,49 +56,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackgroundColor", targetDepth))
+                if (context.TestExpression("BackgroundColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackgroundColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Border", targetDepth))
+                if (context.TestExpression("Border", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalTableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.Border = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontConfiguration", targetDepth))
+                if (context.TestExpression("FontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Height", targetDepth))
+                if (context.TestExpression("Height", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HorizontalTextAlignment", targetDepth))
+                if (context.TestExpression("HorizontalTextAlignment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HorizontalTextAlignment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextWrap", targetDepth))
+                if (context.TestExpression("TextWrap", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TextWrap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerticalTextAlignment", targetDepth))
+                if (context.TestExpression("VerticalTextAlignment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerticalTextAlignment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visibility", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Visibility = unmarshaller.Unmarshall(context, ref reader);

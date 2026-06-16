@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClarifyExplainerConfig", targetDepth))
+                if (context.TestExpression("ClarifyExplainerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClarifyExplainerConfigUnmarshaller.Instance;
                     unmarshalledObject.ClarifyExplainerConfig = unmarshaller.Unmarshall(context, ref reader);

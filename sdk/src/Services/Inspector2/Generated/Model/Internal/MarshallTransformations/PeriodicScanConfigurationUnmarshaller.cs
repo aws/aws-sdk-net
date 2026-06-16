@@ -56,13 +56,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("frequency", targetDepth))
+                if (context.TestExpression("frequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frequencyExpression", targetDepth))
+                if (context.TestExpression("frequencyExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FrequencyExpression = unmarshaller.Unmarshall(context, ref reader);

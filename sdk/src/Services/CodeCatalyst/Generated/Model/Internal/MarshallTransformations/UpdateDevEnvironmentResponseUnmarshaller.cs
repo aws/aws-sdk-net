@@ -52,49 +52,49 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alias", targetDepth))
+                if (context.TestExpression("alias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clientToken", targetDepth))
+                if (context.TestExpression("clientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ides", targetDepth))
+                if (context.TestExpression("ides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdeConfiguration, IdeConfigurationUnmarshaller>(IdeConfigurationUnmarshaller.Instance);
                     response.Ides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inactivityTimeoutMinutes", targetDepth))
+                if (context.TestExpression("inactivityTimeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InactivityTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceType", targetDepth))
+                if (context.TestExpression("instanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("projectName", targetDepth))
+                if (context.TestExpression("projectName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProjectName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spaceName", targetDepth))
+                if (context.TestExpression("spaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SpaceName = unmarshaller.Unmarshall(context, ref reader);

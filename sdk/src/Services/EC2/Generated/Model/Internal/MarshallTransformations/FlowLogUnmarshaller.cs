@@ -139,6 +139,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tagFieldSpecificationSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagFieldSpecificationResponseUnmarshaller.Instance;
+                        if (unmarshalledObject.TagFieldSpecifications == null)
+                        {
+                            unmarshalledObject.TagFieldSpecifications = new List<TagFieldSpecificationResponse>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TagFieldSpecifications.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;

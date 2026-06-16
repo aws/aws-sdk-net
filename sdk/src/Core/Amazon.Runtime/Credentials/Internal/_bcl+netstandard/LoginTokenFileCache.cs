@@ -223,8 +223,13 @@ namespace Amazon.Runtime.Credentials.Internal
                 var json = JsonSerializerHelper.Serialize<LoginToken>(token, new LoginTokenJsonSerializerContexts(new Amazon.Util.Internal.JsonSerializerOptions { WriteIndented = true }));
 
 #endif
-                _directory.CreateDirectory(Path.GetDirectoryName(cacheFilePath));
+                var directoryPath = Path.GetDirectoryName(cacheFilePath);
+                var isNewDirectory = !_directory.Exists(directoryPath);
+                var isNewFile = !_file.Exists(cacheFilePath);
+                _directory.CreateDirectory(directoryPath);
+                FilePermissionHelper.SetDirectoryPermissionsOrCleanup(_directory, directoryPath, isNewDirectory, _logger);
                 _file.WriteAllText(cacheFilePath, json);
+                FilePermissionHelper.SetFilePermissionsOrCleanup(_file, cacheFilePath, isNewFile, _logger);
             }
             catch (Exception e)
             {
@@ -261,10 +266,14 @@ namespace Amazon.Runtime.Credentials.Internal
 
 #endif
 
-                _directory.CreateDirectory(Path.GetDirectoryName(cacheFilePath));
+                var directoryPath = Path.GetDirectoryName(cacheFilePath);
+                var isNewDirectory = !_directory.Exists(directoryPath);
+                var isNewFile = !_file.Exists(cacheFilePath);
+                _directory.CreateDirectory(directoryPath);
+                FilePermissionHelper.SetDirectoryPermissionsOrCleanup(_directory, directoryPath, isNewDirectory, _logger);
                 await _file.WriteAllTextAsync(cacheFilePath, json, cancellationToken).ConfigureAwait(false);
+                FilePermissionHelper.SetFilePermissionsOrCleanup(_file, cacheFilePath, isNewFile, _logger);
             }
-
             catch (Exception e)
             {
                 _logger.Error(e, "Warning: Unable to save Login Token Cache. Future retrieval will have to produce a token.");

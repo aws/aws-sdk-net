@@ -56,13 +56,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLog", targetDepth))
+                if (context.TestExpression("CloudWatchLog", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchDirectQueryDataSourceUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityLake", targetDepth))
+                if (context.TestExpression("Prometheus", targetDepth, ref reader))
+                {
+                    var unmarshaller = PrometheusDirectQueryDataSourceUnmarshaller.Instance;
+                    unmarshalledObject.Prometheus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SecurityLake", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityLakeDirectQueryDataSourceUnmarshaller.Instance;
                     unmarshalledObject.SecurityLake = unmarshaller.Unmarshall(context, ref reader);

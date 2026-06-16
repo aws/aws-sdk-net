@@ -52,121 +52,121 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessPoints", targetDepth))
+                if (context.TestExpression("AccessPoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccessPoint, AccessPointUnmarshaller>(AccessPointUnmarshaller.Instance);
                     response.AccessPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AccessRestrictions", targetDepth))
+                if (context.TestExpression("AccessRestrictions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccessRestriction, AccessRestrictionUnmarshaller>(AccessRestrictionUnmarshaller.Instance);
                     response.AccessRestrictions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Address", targetDepth))
+                if (context.TestExpression("Address", targetDepth, ref reader))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;
                     response.Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AddressNumberCorrected", targetDepth))
+                if (context.TestExpression("AddressNumberCorrected", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AddressNumberCorrected = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BusinessChains", targetDepth))
+                if (context.TestExpression("BusinessChains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BusinessChain, BusinessChainUnmarshaller>(BusinessChainUnmarshaller.Instance);
                     response.BusinessChains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Categories", targetDepth))
+                if (context.TestExpression("Categories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Category, CategoryUnmarshaller>(CategoryUnmarshaller.Instance);
                     response.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Contacts", targetDepth))
+                if (context.TestExpression("Contacts", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactsUnmarshaller.Instance;
                     response.Contacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoodTypes", targetDepth))
+                if (context.TestExpression("FoodTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FoodType, FoodTypeUnmarshaller>(FoodTypeUnmarshaller.Instance);
                     response.FoodTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MainAddress", targetDepth))
+                if (context.TestExpression("MainAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = RelatedPlaceUnmarshaller.Instance;
                     response.MainAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MapView", targetDepth))
+                if (context.TestExpression("MapView", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     response.MapView = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpeningHours", targetDepth))
+                if (context.TestExpression("OpeningHours", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OpeningHours, OpeningHoursUnmarshaller>(OpeningHoursUnmarshaller.Instance);
                     response.OpeningHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Phonemes", targetDepth))
+                if (context.TestExpression("Phonemes", targetDepth, ref reader))
                 {
                     var unmarshaller = PhonemeDetailsUnmarshaller.Instance;
                     response.Phonemes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlaceId", targetDepth))
+                if (context.TestExpression("PlaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PlaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlaceType", targetDepth))
+                if (context.TestExpression("PlaceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PlaceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PoliticalView", targetDepth))
+                if (context.TestExpression("PoliticalView", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PoliticalView = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Position", targetDepth))
+                if (context.TestExpression("Position", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     response.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostalCodeDetails", targetDepth))
+                if (context.TestExpression("PostalCodeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PostalCodeDetails, PostalCodeDetailsUnmarshaller>(PostalCodeDetailsUnmarshaller.Instance);
                     response.PostalCodeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryAddresses", targetDepth))
+                if (context.TestExpression("SecondaryAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RelatedPlace, RelatedPlaceUnmarshaller>(RelatedPlaceUnmarshaller.Instance);
                     response.SecondaryAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeZone", targetDepth))
+                if (context.TestExpression("TimeZone", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeZoneUnmarshaller.Instance;
                     response.TimeZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Title = unmarshaller.Unmarshall(context, ref reader);

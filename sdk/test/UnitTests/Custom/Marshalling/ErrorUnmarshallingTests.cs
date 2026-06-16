@@ -12,41 +12,37 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.DynamoDBv2.Model;
+
 using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
-using AWSSDK_DotNet.UnitTests;
 using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ServiceClientGenerator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.Custom.Marshalling
 {
     [TestClass]
     public class ErrorUnmarshallingTests
     {
-        static readonly ServiceModel DynmaoDBServiceModel = AWSSDK_DotNet.UnitTests.Utils.LoadServiceModel("dynamodb");
-
         private const string UnstructuredText = "not valid json or xml";
         private const string ValidJson = "{\"__type\":\"type\",\"message\":\"message\",\"code\":\"code\",\"ignore\":\"ignore\"}";
         private const string InvalidJson = "{\"__type\":\"type\",[[[break parsing before all properties can be read]]]\"message\":\"message\",\"code\":\"code\",\"ignore\":\"ignore\"}";
         private const string ValidJsonNoCodeOrType = "{\"message\":\"message\"}";
+        // Some services (e.g. Glacier) emit "Message"/"Code" in PascalCase; both casings must be matched.
+        private const string ValidJsonPascalCase = "{\"Message\":\"message\",\"Code\":\"code\"}";
         private const string ValidXml = "<Response><RequestId>xmlRequestId</RequestId><Error><Code>ServiceUnavailable</Code><Type>Receiver</Type>" +
             "<Message>xmlMessage</Message></Error></Response>";
         private const string InvalidXmlMissesTypeAndMessage = "<Response><RequestId>xmlRequestId</RequestId><Error><Code>ServiceUnavailable</Code><Type>Receiver" +
             "</Type[[[break parsing before all properties can be read]]]><Message>xmlMessage</Message></Error></Response>";
         private const string InvalidXmlMissesCodeAndTypeAndMessage = "<Response><RequestId>xmlRequestId</RequestId><Error><Code>ServiceUnavailable</Code[[[break parsing before all properties can be read]]]><Type>Receiver" +
             "</Type><Message>xmlMessage</Message></Error></Response>";
+        private const string HtmlProxyErrorPage = "<html><body>test<div>test</div>test</body></html>";
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -81,6 +77,14 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
         public void UnmarshalJsonErrorValidJsonHeaderCodeIfNoJsonCodeOrType()
         {
             RunJsonErrorUnmarshallingTest(ValidJsonNoCodeOrType, "header_type", null, "message", "header_type", ErrorType.Unknown);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void UnmarshalJsonErrorPascalCaseMessageAndCode()
+        {
+            // With no "__type" present, "Code" feeds the error code/type.
+            RunJsonErrorUnmarshallingTest(ValidJsonPascalCase, null, null, "message", "code", ErrorType.Unknown);
         }
 
         [TestMethod]
@@ -137,6 +141,60 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
         public void UnmarshalXmlErrorNoBody()
         {
             RunXmlErrorUnmarshallingTest(null, "The service returned an error. See inner exception for details.", null, ErrorType.Unknown);
+        }
+
+        /// <summary>
+        /// Regression test for https://github.com/aws/aws-sdk-net/issues/4346
+        /// Previously this caused an infinite loop in XmlUnmarshallerContext.Read() because the 
+        /// switch had no default case to advance past XmlNodeType.Text nodes.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void UnmarshalXmlErrorHtmlProxyResponseDoesNotInfiniteLoop()
+        {
+            // The test simply asserts it completes (no infinite loop) and returns a fallback message.
+            var response = GetXmlErrorResponse(HtmlProxyErrorPage);
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.Message);
+            Assert.AreEqual(ErrorType.Unknown, response.Type);
+        }
+
+        /// <summary>
+        /// Regression test for https://github.com/aws/aws-sdk-net/issues/4346 via the JSON path.
+        /// JsonErrorResponseUnmarshaller detects the leading '&lt;' and delegates to XmlErrorResponseUnmarshaller.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void UnmarshalJsonErrorHtmlProxyResponseDoesNotInfiniteLoop()
+        {
+            // The test simply asserts it completes (no infinite loop) and returns a fallback message.
+            var response = GetJsonErrorResponse(HtmlProxyErrorPage, null, null);
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.Message);
+            Assert.AreEqual(ErrorType.Unknown, response.Type);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [DataRow("{\"Item\":{\"topKey\":{\"M\":{\"deepKey\":{\"M\":{\"deeperKey\":{\"S\":[[[invalid}}}}}}}", "/Item/topKey/M/deepKey/M/deeperKey/S/", DisplayName = "Deeply nested")]
+        [DataRow("{\"Item\":{\"top\\u0041Key\":{\"S\":[[[invalid}}}", "/Item/topAKey/S/", DisplayName = "Escaped property name")]
+        public void UnmarshalJsonExceptionLastKnownLocationReflectsFullPath(string json, string expectedPath)
+        {
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            var webResponse = new WebResponseData { StatusCode = HttpStatusCode.OK };
+            webResponse.Headers.Add("Content-Length", stream.Length.ToString());
+            webResponse.Headers.Add(HeaderKeys.RequestIdHeader, "test-request-id");
+            var context = new JsonUnmarshallerContext(stream, false, webResponse);
+
+            try
+            {
+                GetItemResponseUnmarshaller.Instance.UnmarshallResponse(context);
+                Assert.Fail("Expected AmazonUnmarshallingException");
+            }
+            catch (AmazonUnmarshallingException ex)
+            {
+                Assert.AreEqual(expectedPath, ex.LastKnownLocation);
+            }
         }
 
         private void RunJsonErrorUnmarshallingTest(string body, string xAmzErrorTypeValue, string xAmznErrorMessageValue,

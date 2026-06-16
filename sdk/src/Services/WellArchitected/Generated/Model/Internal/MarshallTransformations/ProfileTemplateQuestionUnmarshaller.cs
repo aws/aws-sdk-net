@@ -56,37 +56,37 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxSelectedChoices", targetDepth))
+                if (context.TestExpression("MaxSelectedChoices", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSelectedChoices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinSelectedChoices", targetDepth))
+                if (context.TestExpression("MinSelectedChoices", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinSelectedChoices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuestionChoices", targetDepth))
+                if (context.TestExpression("QuestionChoices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProfileTemplateChoice, ProfileTemplateChoiceUnmarshaller>(ProfileTemplateChoiceUnmarshaller.Instance);
                     unmarshalledObject.QuestionChoices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuestionDescription", targetDepth))
+                if (context.TestExpression("QuestionDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuestionDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuestionId", targetDepth))
+                if (context.TestExpression("QuestionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuestionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuestionTitle", targetDepth))
+                if (context.TestExpression("QuestionTitle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context, ref reader);

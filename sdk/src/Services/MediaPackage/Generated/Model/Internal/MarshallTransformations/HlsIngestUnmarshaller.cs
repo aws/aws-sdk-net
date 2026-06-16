@@ -56,7 +56,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ingestEndpoints", targetDepth))
+                if (context.TestExpression("ingestEndpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IngestEndpoint, IngestEndpointUnmarshaller>(IngestEndpointUnmarshaller.Instance);
                     unmarshalledObject.IngestEndpoints = unmarshaller.Unmarshall(context, ref reader);

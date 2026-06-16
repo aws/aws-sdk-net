@@ -56,97 +56,97 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowListedUserList", targetDepth))
+                if (context.TestExpression("AllowListedUserList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowListedUserList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailablePackageConfiguration", targetDepth))
+                if (context.TestExpression("AvailablePackageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AvailablePackageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailablePackageVersion", targetDepth))
+                if (context.TestExpression("AvailablePackageVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AvailablePackageVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailablePluginProperties", targetDepth))
+                if (context.TestExpression("AvailablePluginProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = PluginPropertiesUnmarshaller.Instance;
                     unmarshalledObject.AvailablePluginProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngineVersion", targetDepth))
+                if (context.TestExpression("EngineVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorDetails", targetDepth))
+                if (context.TestExpression("ErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorDetailsUnmarshaller.Instance;
                     unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedAt", targetDepth))
+                if (context.TestExpression("LastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageDescription", targetDepth))
+                if (context.TestExpression("PackageDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackageDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageEncryptionOptions", targetDepth))
+                if (context.TestExpression("PackageEncryptionOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageEncryptionOptionsUnmarshaller.Instance;
                     unmarshalledObject.PackageEncryptionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageID", targetDepth))
+                if (context.TestExpression("PackageID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackageID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageName", targetDepth))
+                if (context.TestExpression("PackageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackageName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageOwner", targetDepth))
+                if (context.TestExpression("PackageOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackageOwner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageStatus", targetDepth))
+                if (context.TestExpression("PackageStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackageStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageType", targetDepth))
+                if (context.TestExpression("PackageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageVendingOptions", targetDepth))
+                if (context.TestExpression("PackageVendingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageVendingOptionsUnmarshaller.Instance;
                     unmarshalledObject.PackageVendingOptions = unmarshaller.Unmarshall(context, ref reader);

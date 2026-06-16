@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Calculation", targetDepth))
+                if (context.TestExpression("Calculation", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericalAggregationFunctionUnmarshaller.Instance;
                     unmarshalledObject.Calculation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Column", targetDepth))
+                if (context.TestExpression("Column", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeasureAggregationFunction", targetDepth))
+                if (context.TestExpression("MeasureAggregationFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregationFunctionUnmarshaller.Instance;
                     unmarshalledObject.MeasureAggregationFunction = unmarshaller.Unmarshall(context, ref reader);

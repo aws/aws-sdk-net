@@ -52,67 +52,67 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceFleetName", targetDepth))
+                if (context.TestExpression("DeviceFleetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceFleetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentFailed", targetDepth))
+                if (context.TestExpression("EdgeDeploymentFailed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.EdgeDeploymentFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentPending", targetDepth))
+                if (context.TestExpression("EdgeDeploymentPending", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.EdgeDeploymentPending = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentPlanArn", targetDepth))
+                if (context.TestExpression("EdgeDeploymentPlanArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EdgeDeploymentPlanArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentPlanName", targetDepth))
+                if (context.TestExpression("EdgeDeploymentPlanName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EdgeDeploymentPlanName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentSuccess", targetDepth))
+                if (context.TestExpression("EdgeDeploymentSuccess", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.EdgeDeploymentSuccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelConfigs", targetDepth))
+                if (context.TestExpression("ModelConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EdgeDeploymentModelConfig, EdgeDeploymentModelConfigUnmarshaller>(EdgeDeploymentModelConfigUnmarshaller.Instance);
                     response.ModelConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Stages", targetDepth))
+                if (context.TestExpression("Stages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeploymentStageStatusSummary, DeploymentStageStatusSummaryUnmarshaller>(DeploymentStageStatusSummaryUnmarshaller.Instance);
                     response.Stages = unmarshaller.Unmarshall(context, ref reader);

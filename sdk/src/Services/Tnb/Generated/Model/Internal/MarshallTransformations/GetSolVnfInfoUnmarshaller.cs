@@ -56,13 +56,13 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("vnfcResourceInfo", targetDepth))
+                if (context.TestExpression("vnfcResourceInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GetSolVnfcResourceInfo, GetSolVnfcResourceInfoUnmarshaller>(GetSolVnfcResourceInfoUnmarshaller.Instance);
                     unmarshalledObject.VnfcResourceInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vnfState", targetDepth))
+                if (context.TestExpression("vnfState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VnfState = unmarshaller.Unmarshall(context, ref reader);

@@ -46,7 +46,7 @@ namespace AWSSDK.UnitTests
         {
             if (!isValid)
             {
-                Assert.ThrowsException<ArgumentException>( 
+                Assert.ThrowsExactly<ArgumentException>( 
                     () => new TestClientConfig { RequestMinCompressionSizeBytes = requestMinCompression }
                 );
             }
@@ -59,7 +59,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("@external.com#")]
         [DataRow("us-east-1-")]
         [DataRow("-us-east-1")]
@@ -67,14 +67,14 @@ namespace AWSSDK.UnitTests
         [DataRow("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")] // Over 63 characters
         public void TestThrowsForInvalidRegion(string region)
         {
-            Assert.ThrowsException<AmazonClientException>(() => new TestClientConfig
+            Assert.ThrowsExactly<AmazonClientException>(() => new TestClientConfig
             {
                 RegionEndpoint = RegionEndpoint.GetBySystemName(region),
             });
 
             // The endpoint resolvers will check the AuthenticationRegion property as well,
             // so we validate it too.
-            Assert.ThrowsException<AmazonClientException>(() => new TestClientConfig
+            Assert.ThrowsExactly<AmazonClientException>(() => new TestClientConfig
             {
                 AuthenticationRegion = region,
             });
@@ -84,17 +84,20 @@ namespace AWSSDK.UnitTests
             try
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", region);
+                FallbackRegionFactory.Reset();
+
                 var config = new TestClientConfig();
                 
                 // Throws as expected here.
-                Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
+                Assert.ThrowsExactly<AmazonClientException>(() => config.RegionEndpoint);
 
                 // This verifies a second get (which could happen in another component) also fails.
-                Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
+                Assert.ThrowsExactly<AmazonClientException>(() => config.RegionEndpoint);
             }
             finally
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", currentRegion);
+                FallbackRegionFactory.Reset();
             }
         }
 
@@ -110,6 +113,72 @@ namespace AWSSDK.UnitTests
 
             Assert.IsNotNull(config.AuthenticationRegion);
             Assert.IsNotNull(config.ServiceURL);
+        }
+
+        [TestMethod]
+        public void RegionEndpointPreservedWhenServiceURLResolvedFromGlobalEnvVar()
+        {
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            var savedEndpoint = Environment.GetEnvironmentVariable("AWS_ENDPOINT_URL");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-2");
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", "http://localhost:4566");
+                FallbackRegionFactory.Reset();
+
+                var config = new TestClientConfig();
+                config.ServiceId = "S3";
+
+                Assert.AreEqual("http://localhost:4566/", config.ServiceURL);
+                Assert.AreEqual("us-east-2", config.RegionEndpoint.SystemName);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", savedEndpoint);
+                FallbackRegionFactory.Reset();
+            }
+        }
+
+        [TestMethod]
+        public void RegionEndpointPreservedWhenServiceURLResolvedFromServiceSpecificEnvVar()
+        {
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            var savedEndpoint = Environment.GetEnvironmentVariable("AWS_ENDPOINT_URL_S3");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", "eu-west-1");
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL_S3", "http://localhost:9000");
+                FallbackRegionFactory.Reset();
+
+                var config = new TestClientConfig();
+                config.ServiceId = "S3";
+
+                Assert.AreEqual("http://localhost:9000/", config.ServiceURL);
+                Assert.AreEqual("eu-west-1", config.RegionEndpoint.SystemName);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL_S3", savedEndpoint);
+                FallbackRegionFactory.Reset();
+            }
+        }
+
+        [TestMethod]
+        public void ExplicitServiceURLSetterStillClearsRegionEndpoint()
+        {
+            var config = new TestClientConfig
+            {
+                RegionEndpoint = RegionEndpoint.USWest2,
+            };
+
+            Assert.AreEqual("us-west-2", config.RegionEndpoint.SystemName);
+
+            config.ServiceURL = "http://localhost:4566";
+
+            Assert.IsNull(config.RegionEndpoint);
+            Assert.AreEqual("http://localhost:4566/", config.ServiceURL);
         }
     }
 

@@ -52,31 +52,31 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botId", targetDepth))
+                if (context.TestExpression("botId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botVersionReplicaSummaries", targetDepth))
+                if (context.TestExpression("botVersionReplicaSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BotVersionReplicaSummary, BotVersionReplicaSummaryUnmarshaller>(BotVersionReplicaSummaryUnmarshaller.Instance);
                     response.BotVersionReplicaSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicaRegion", targetDepth))
+                if (context.TestExpression("replicaRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicaRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceRegion", targetDepth))
+                if (context.TestExpression("sourceRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceRegion = unmarshaller.Unmarshall(context, ref reader);

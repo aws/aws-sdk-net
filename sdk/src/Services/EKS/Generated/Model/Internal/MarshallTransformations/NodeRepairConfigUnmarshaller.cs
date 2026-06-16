@@ -56,37 +56,37 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxParallelNodesRepairedCount", targetDepth))
+                if (context.TestExpression("maxParallelNodesRepairedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxParallelNodesRepairedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxParallelNodesRepairedPercentage", targetDepth))
+                if (context.TestExpression("maxParallelNodesRepairedPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxParallelNodesRepairedPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxUnhealthyNodeThresholdCount", targetDepth))
+                if (context.TestExpression("maxUnhealthyNodeThresholdCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUnhealthyNodeThresholdCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxUnhealthyNodeThresholdPercentage", targetDepth))
+                if (context.TestExpression("maxUnhealthyNodeThresholdPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUnhealthyNodeThresholdPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeRepairConfigOverrides", targetDepth))
+                if (context.TestExpression("nodeRepairConfigOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NodeRepairConfigOverrides, NodeRepairConfigOverridesUnmarshaller>(NodeRepairConfigOverridesUnmarshaller.Instance);
                     unmarshalledObject.NodeRepairConfigOverrides = unmarshaller.Unmarshall(context, ref reader);

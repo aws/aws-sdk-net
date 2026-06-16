@@ -2209,6 +2209,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly ModificationResourceEnum COMPUTE_TYPE = new ModificationResourceEnum("COMPUTE_TYPE");
         /// <summary>
+        /// Constant PROTOCOL for ModificationResourceEnum
+        /// </summary>
+        public static readonly ModificationResourceEnum PROTOCOL = new ModificationResourceEnum("PROTOCOL");
+        /// <summary>
         /// Constant ROOT_VOLUME for ModificationResourceEnum
         /// </summary>
         public static readonly ModificationResourceEnum ROOT_VOLUME = new ModificationResourceEnum("ROOT_VOLUME");
@@ -2258,6 +2262,10 @@ namespace Amazon.WorkSpaces
     public class ModificationStateEnum : ConstantClass
     {
 
+        /// <summary>
+        /// Constant UPDATE_FAILED for ModificationStateEnum
+        /// </summary>
+        public static readonly ModificationStateEnum UPDATE_FAILED = new ModificationStateEnum("UPDATE_FAILED");
         /// <summary>
         /// Constant UPDATE_IN_PROGRESS for ModificationStateEnum
         /// </summary>
@@ -2360,6 +2368,10 @@ namespace Amazon.WorkSpaces
         /// Constant WINDOWS_SERVER_2022 for OperatingSystemName
         /// </summary>
         public static readonly OperatingSystemName WINDOWS_SERVER_2022 = new OperatingSystemName("WINDOWS_SERVER_2022");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2025 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_SERVER_2025 = new OperatingSystemName("WINDOWS_SERVER_2025");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

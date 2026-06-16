@@ -56,13 +56,13 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationTagResourceGroup", targetDepth))
+                if (context.TestExpression("applicationTagResourceGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceGroupUnmarshaller.Instance;
                     unmarshalledObject.ApplicationTagResourceGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceGroup", targetDepth))
+                if (context.TestExpression("resourceGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceGroupUnmarshaller.Instance;
                     unmarshalledObject.ResourceGroup = unmarshaller.Unmarshall(context, ref reader);

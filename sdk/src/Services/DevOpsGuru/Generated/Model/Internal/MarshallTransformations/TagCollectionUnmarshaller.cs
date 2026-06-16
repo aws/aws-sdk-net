@@ -56,13 +56,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppBoundaryKey", targetDepth))
+                if (context.TestExpression("AppBoundaryKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppBoundaryKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagValues", targetDepth))
+                if (context.TestExpression("TagValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TagValues = unmarshaller.Unmarshall(context, ref reader);

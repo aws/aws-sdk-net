@@ -56,34 +56,46 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedAudience", targetDepth))
+                if (context.TestExpression("allowedAudience", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedAudience = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowedClients", targetDepth))
+                if (context.TestExpression("allowedClients", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedClients = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowedScopes", targetDepth))
+                if (context.TestExpression("allowedScopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedScopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customClaims", targetDepth))
+                if (context.TestExpression("customClaims", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomClaimValidationType, CustomClaimValidationTypeUnmarshaller>(CustomClaimValidationTypeUnmarshaller.Instance);
                     unmarshalledObject.CustomClaims = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("discoveryUrl", targetDepth))
+                if (context.TestExpression("discoveryUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiscoveryUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("privateEndpoint", targetDepth, ref reader))
+                {
+                    var unmarshaller = PrivateEndpointUnmarshaller.Instance;
+                    unmarshalledObject.PrivateEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("privateEndpointOverrides", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PrivateEndpointOverride, PrivateEndpointOverrideUnmarshaller>(PrivateEndpointOverrideUnmarshaller.Instance);
+                    unmarshalledObject.PrivateEndpointOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

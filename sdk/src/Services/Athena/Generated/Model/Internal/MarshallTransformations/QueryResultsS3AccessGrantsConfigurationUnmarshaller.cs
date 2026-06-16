@@ -56,19 +56,19 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateUserLevelPrefix", targetDepth))
+                if (context.TestExpression("CreateUserLevelPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CreateUserLevelPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableS3AccessGrants", targetDepth))
+                if (context.TestExpression("EnableS3AccessGrants", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableS3AccessGrants = unmarshaller.Unmarshall(context, ref reader);

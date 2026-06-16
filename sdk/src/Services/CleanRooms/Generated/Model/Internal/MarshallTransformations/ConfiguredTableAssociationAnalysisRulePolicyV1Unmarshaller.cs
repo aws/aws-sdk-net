@@ -56,19 +56,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregation", targetDepth))
+                if (context.TestExpression("aggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfiguredTableAssociationAnalysisRuleAggregationUnmarshaller.Instance;
                     unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("custom", targetDepth))
+                if (context.TestExpression("custom", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfiguredTableAssociationAnalysisRuleCustomUnmarshaller.Instance;
                     unmarshalledObject.Custom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("list", targetDepth))
+                if (context.TestExpression("list", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfiguredTableAssociationAnalysisRuleListUnmarshaller.Instance;
                     unmarshalledObject.List = unmarshaller.Unmarshall(context, ref reader);

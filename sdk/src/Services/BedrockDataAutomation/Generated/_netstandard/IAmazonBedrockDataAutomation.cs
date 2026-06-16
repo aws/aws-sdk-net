@@ -148,6 +148,42 @@ namespace Amazon.BedrockDataAutomation
 
         #endregion
                 
+        #region  CreateDataAutomationLibrary
+
+
+
+        /// <summary>
+        /// Creates an Amazon Bedrock Data Automation Library
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataAutomationLibrary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataAutomationLibrary service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateDataAutomationLibrary">REST API Reference for CreateDataAutomationLibrary Operation</seealso>
+        Task<CreateDataAutomationLibraryResponse> CreateDataAutomationLibraryAsync(CreateDataAutomationLibraryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDataAutomationProject
 
 
@@ -214,6 +250,42 @@ namespace Amazon.BedrockDataAutomation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
         Task<DeleteBlueprintResponse> DeleteBlueprintAsync(DeleteBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDataAutomationLibrary
+
+
+
+        /// <summary>
+        /// Deletes an existing Amazon Bedrock Data Automation Library
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataAutomationLibrary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataAutomationLibrary service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/DeleteDataAutomationLibrary">REST API Reference for DeleteDataAutomationLibrary Operation</seealso>
+        Task<DeleteDataAutomationLibraryResponse> DeleteDataAutomationLibraryAsync(DeleteDataAutomationLibraryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -316,6 +388,105 @@ namespace Amazon.BedrockDataAutomation
 
         #endregion
                 
+        #region  GetDataAutomationLibrary
+
+
+
+        /// <summary>
+        /// Gets an existing Amazon Bedrock Data Automation Library
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAutomationLibrary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataAutomationLibrary service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationLibrary">REST API Reference for GetDataAutomationLibrary Operation</seealso>
+        Task<GetDataAutomationLibraryResponse> GetDataAutomationLibraryAsync(GetDataAutomationLibraryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDataAutomationLibraryEntity
+
+
+
+        /// <summary>
+        /// Gets an existing entity based on entity type from the library
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAutomationLibraryEntity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataAutomationLibraryEntity service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationLibraryEntity">REST API Reference for GetDataAutomationLibraryEntity Operation</seealso>
+        Task<GetDataAutomationLibraryEntityResponse> GetDataAutomationLibraryEntityAsync(GetDataAutomationLibraryEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDataAutomationLibraryIngestionJob
+
+
+
+        /// <summary>
+        /// API used to get status of data automation library ingestion job
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAutomationLibraryIngestionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataAutomationLibraryIngestionJob service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationLibraryIngestionJob">REST API Reference for GetDataAutomationLibraryIngestionJob Operation</seealso>
+        Task<GetDataAutomationLibraryIngestionJobResponse> GetDataAutomationLibraryIngestionJobAsync(GetDataAutomationLibraryIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetDataAutomationProject
 
 
@@ -385,6 +556,45 @@ namespace Amazon.BedrockDataAutomation
 
         #endregion
                 
+        #region  InvokeDataAutomationLibraryIngestionJob
+
+
+
+        /// <summary>
+        /// Async API: Invoke data automation library ingestion job
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeDataAutomationLibraryIngestionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeDataAutomationLibraryIngestionJob service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeDataAutomationLibraryIngestionJob">REST API Reference for InvokeDataAutomationLibraryIngestionJob Operation</seealso>
+        Task<InvokeDataAutomationLibraryIngestionJobResponse> InvokeDataAutomationLibraryIngestionJobAsync(InvokeDataAutomationLibraryIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListBlueprints
 
 
@@ -415,6 +625,102 @@ namespace Amazon.BedrockDataAutomation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
         Task<ListBlueprintsResponse> ListBlueprintsAsync(ListBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataAutomationLibraries
+
+
+
+        /// <summary>
+        /// Lists all existing Amazon Bedrock Data Automation Libraries
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataAutomationLibraries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataAutomationLibraries service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationLibraries">REST API Reference for ListDataAutomationLibraries Operation</seealso>
+        Task<ListDataAutomationLibrariesResponse> ListDataAutomationLibrariesAsync(ListDataAutomationLibrariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataAutomationLibraryEntities
+
+
+
+        /// <summary>
+        /// Lists all stored entities in the library
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataAutomationLibraryEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataAutomationLibraryEntities service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationLibraryEntities">REST API Reference for ListDataAutomationLibraryEntities Operation</seealso>
+        Task<ListDataAutomationLibraryEntitiesResponse> ListDataAutomationLibraryEntitiesAsync(ListDataAutomationLibraryEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataAutomationLibraryIngestionJobs
+
+
+
+        /// <summary>
+        /// Lists all data automation library ingestion jobs
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataAutomationLibraryIngestionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataAutomationLibraryIngestionJobs service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationLibraryIngestionJobs">REST API Reference for ListDataAutomationLibraryIngestionJobs Operation</seealso>
+        Task<ListDataAutomationLibraryIngestionJobsResponse> ListDataAutomationLibraryIngestionJobsAsync(ListDataAutomationLibraryIngestionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -586,6 +892,42 @@ namespace Amazon.BedrockDataAutomation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
         Task<UpdateBlueprintResponse> UpdateBlueprintAsync(UpdateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDataAutomationLibrary
+
+
+
+        /// <summary>
+        /// Updates an existing Amazon Bedrock Data Automation Library
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataAutomationLibrary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataAutomationLibrary service method, as returned by BedrockDataAutomation.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomation.Model.ValidationException">
+        /// This exception is thrown when the request's input validation fails
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateDataAutomationLibrary">REST API Reference for UpdateDataAutomationLibrary Operation</seealso>
+        Task<UpdateDataAutomationLibraryResponse> UpdateDataAutomationLibraryAsync(UpdateDataAutomationLibraryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

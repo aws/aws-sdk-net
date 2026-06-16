@@ -56,13 +56,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("geoLocations", targetDepth))
+                if (context.TestExpression("connectivity", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConnectivityFilterUnmarshaller.Instance;
+                    unmarshalledObject.Connectivity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("geoLocations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GeoLocationTarget, GeoLocationTargetUnmarshaller>(GeoLocationTargetUnmarshaller.Instance);
                     unmarshalledObject.GeoLocations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("namedShadowNames", targetDepth))
+                if (context.TestExpression("namedShadowNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NamedShadowNames = unmarshaller.Unmarshall(context, ref reader);

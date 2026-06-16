@@ -56,43 +56,43 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsSesManagedStatus", targetDepth))
+                if (context.TestExpression("AwsSesManagedStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StatusRecordUnmarshaller.Instance;
                     unmarshalledObject.AwsSesManagedStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerManagedStatus", targetDepth))
+                if (context.TestExpression("CustomerManagedStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StatusRecordUnmarshaller.Instance;
                     unmarshalledObject.CustomerManagedStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReputationEntityReference", targetDepth))
+                if (context.TestExpression("ReputationEntityReference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReputationEntityReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReputationEntityType", targetDepth))
+                if (context.TestExpression("ReputationEntityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReputationEntityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReputationImpact", targetDepth))
+                if (context.TestExpression("ReputationImpact", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReputationImpact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReputationManagementPolicy", targetDepth))
+                if (context.TestExpression("ReputationManagementPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReputationManagementPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SendingStatusAggregate", targetDepth))
+                if (context.TestExpression("SendingStatusAggregate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SendingStatusAggregate = unmarshaller.Unmarshall(context, ref reader);

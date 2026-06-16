@@ -52,25 +52,25 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RouteMatrix", targetDepth))
+                if (context.TestExpression("RouteMatrix", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<RouteMatrixEntry>, JsonListUnmarshaller<RouteMatrixEntry,RouteMatrixEntryUnmarshaller>>(new JsonListUnmarshaller<RouteMatrixEntry, RouteMatrixEntryUnmarshaller>(RouteMatrixEntryUnmarshaller.Instance));
                     response.RouteMatrix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnappedDeparturePositions", targetDepth))
+                if (context.TestExpression("SnappedDeparturePositions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<double>, JsonListUnmarshaller<double,DoubleUnmarshaller>>(new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance));
                     response.SnappedDeparturePositions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnappedDestinationPositions", targetDepth))
+                if (context.TestExpression("SnappedDestinationPositions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<double>, JsonListUnmarshaller<double,DoubleUnmarshaller>>(new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance));
                     response.SnappedDestinationPositions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Summary", targetDepth))
+                if (context.TestExpression("Summary", targetDepth, ref reader))
                 {
                     var unmarshaller = CalculateRouteMatrixSummaryUnmarshaller.Instance;
                     response.Summary = unmarshaller.Unmarshall(context, ref reader);

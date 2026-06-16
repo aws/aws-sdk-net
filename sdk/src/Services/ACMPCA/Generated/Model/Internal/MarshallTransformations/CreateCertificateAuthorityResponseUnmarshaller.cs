@@ -52,7 +52,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateAuthorityArn", targetDepth))
+                if (context.TestExpression("CertificateAuthorityArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CertificateAuthorityArn = unmarshaller.Unmarshall(context, ref reader);

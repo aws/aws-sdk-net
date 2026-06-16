@@ -80,7 +80,7 @@ namespace AWSSDK.UnitTests
             using (new FallbackFactoryTestFixture(envVariables))
             {
                 // Act and Assert
-                Assert.ThrowsException<AmazonClientException>(() => webIdentityCredentials.GetCredentials());
+                Assert.ThrowsExactly<AmazonClientException>(() => webIdentityCredentials.GetCredentials());
             }
 
             Assert.AreEqual(defaultRetryPolicy.MaxRetries, retries);

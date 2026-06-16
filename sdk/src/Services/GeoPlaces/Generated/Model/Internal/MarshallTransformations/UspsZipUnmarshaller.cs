@@ -56,7 +56,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ZipClassificationCode", targetDepth))
+                if (context.TestExpression("ZipClassificationCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ZipClassificationCode = unmarshaller.Unmarshall(context, ref reader);

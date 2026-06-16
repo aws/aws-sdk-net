@@ -52,61 +52,61 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AudioMetadata", targetDepth))
+                if (context.TestExpression("AudioMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AudioMetadata, AudioMetadataUnmarshaller>(AudioMetadataUnmarshaller.Instance);
                     response.AudioMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("JobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("JobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobTag", targetDepth))
+                if (context.TestExpression("JobTag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobTag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Segments", targetDepth))
+                if (context.TestExpression("Segments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SegmentDetection, SegmentDetectionUnmarshaller>(SegmentDetectionUnmarshaller.Instance);
                     response.Segments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectedSegmentTypes", targetDepth))
+                if (context.TestExpression("SelectedSegmentTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SegmentTypeInfo, SegmentTypeInfoUnmarshaller>(SegmentTypeInfoUnmarshaller.Instance);
                     response.SelectedSegmentTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Video", targetDepth))
+                if (context.TestExpression("Video", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoUnmarshaller.Instance;
                     response.Video = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VideoMetadata", targetDepth))
+                if (context.TestExpression("VideoMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VideoMetadata, VideoMetadataUnmarshaller>(VideoMetadataUnmarshaller.Instance);
                     response.VideoMetadata = unmarshaller.Unmarshall(context, ref reader);

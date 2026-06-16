@@ -52,13 +52,13 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceSets", targetDepth))
+                if (context.TestExpression("resourceSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceSetOutput, ResourceSetOutputUnmarshaller>(ResourceSetOutputUnmarshaller.Instance);
                     response.ResourceSets = unmarshaller.Unmarshall(context, ref reader);

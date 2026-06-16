@@ -56,49 +56,49 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BinaryColumnStatisticsData", targetDepth))
+                if (context.TestExpression("BinaryColumnStatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = BinaryColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.BinaryColumnStatisticsData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BooleanColumnStatisticsData", targetDepth))
+                if (context.TestExpression("BooleanColumnStatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = BooleanColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.BooleanColumnStatisticsData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateColumnStatisticsData", targetDepth))
+                if (context.TestExpression("DateColumnStatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = DateColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.DateColumnStatisticsData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DecimalColumnStatisticsData", targetDepth))
+                if (context.TestExpression("DecimalColumnStatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = DecimalColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.DecimalColumnStatisticsData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DoubleColumnStatisticsData", targetDepth))
+                if (context.TestExpression("DoubleColumnStatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = DoubleColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.DoubleColumnStatisticsData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LongColumnStatisticsData", targetDepth))
+                if (context.TestExpression("LongColumnStatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = LongColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.LongColumnStatisticsData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringColumnStatisticsData", targetDepth))
+                if (context.TestExpression("StringColumnStatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = StringColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.StringColumnStatisticsData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

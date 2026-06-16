@@ -56,25 +56,25 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacity", targetDepth))
+                if (context.TestExpression("capacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectQueueId", targetDepth))
+                if (context.TestExpression("connectQueueId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectQueueId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultOutboundConfig", targetDepth))
+                if (context.TestExpression("defaultOutboundConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TelephonyOutboundConfigUnmarshaller.Instance;
                     unmarshalledObject.DefaultOutboundConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outboundMode", targetDepth))
+                if (context.TestExpression("outboundMode", targetDepth, ref reader))
                 {
                     var unmarshaller = TelephonyOutboundModeUnmarshaller.Instance;
                     unmarshalledObject.OutboundMode = unmarshaller.Unmarshall(context, ref reader);

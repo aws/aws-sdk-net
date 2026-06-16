@@ -56,19 +56,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mediaConnectFlow", targetDepth))
+                if (context.TestExpression("mediaConnectFlow", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaConnectFlowRouterOutputStreamDetailsUnmarshaller.Instance;
                     unmarshalledObject.MediaConnectFlow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaLiveInput", targetDepth))
+                if (context.TestExpression("mediaLiveInput", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaLiveInputRouterOutputStreamDetailsUnmarshaller.Instance;
                     unmarshalledObject.MediaLiveInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("standard", targetDepth))
+                if (context.TestExpression("standard", targetDepth, ref reader))
                 {
                     var unmarshaller = StandardRouterOutputStreamDetailsUnmarshaller.Instance;
                     unmarshalledObject.Standard = unmarshaller.Unmarshall(context, ref reader);

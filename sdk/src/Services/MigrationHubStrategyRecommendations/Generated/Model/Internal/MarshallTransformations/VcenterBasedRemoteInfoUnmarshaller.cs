@@ -56,13 +56,13 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("osType", targetDepth))
+                if (context.TestExpression("osType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OsType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vcenterConfigurationTimeStamp", targetDepth))
+                if (context.TestExpression("vcenterConfigurationTimeStamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VcenterConfigurationTimeStamp = unmarshaller.Unmarshall(context, ref reader);

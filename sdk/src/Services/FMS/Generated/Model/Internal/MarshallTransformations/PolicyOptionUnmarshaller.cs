@@ -56,19 +56,19 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NetworkAclCommonPolicy", targetDepth))
+                if (context.TestExpression("NetworkAclCommonPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkAclCommonPolicyUnmarshaller.Instance;
                     unmarshalledObject.NetworkAclCommonPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkFirewallPolicy", targetDepth))
+                if (context.TestExpression("NetworkFirewallPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkFirewallPolicyUnmarshaller.Instance;
                     unmarshalledObject.NetworkFirewallPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThirdPartyFirewallPolicy", targetDepth))
+                if (context.TestExpression("ThirdPartyFirewallPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ThirdPartyFirewallPolicyUnmarshaller.Instance;
                     unmarshalledObject.ThirdPartyFirewallPolicy = unmarshaller.Unmarshall(context, ref reader);

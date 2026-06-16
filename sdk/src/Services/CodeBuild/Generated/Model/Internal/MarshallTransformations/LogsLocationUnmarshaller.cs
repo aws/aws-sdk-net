@@ -56,49 +56,49 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLogs", targetDepth))
+                if (context.TestExpression("cloudWatchLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsConfigUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudWatchLogsArn", targetDepth))
+                if (context.TestExpression("cloudWatchLogsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deepLink", targetDepth))
+                if (context.TestExpression("deepLink", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeepLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupName", targetDepth))
+                if (context.TestExpression("groupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3DeepLink", targetDepth))
+                if (context.TestExpression("s3DeepLink", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3DeepLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Logs", targetDepth))
+                if (context.TestExpression("s3Logs", targetDepth, ref reader))
                 {
                     var unmarshaller = S3LogsConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3LogsArn", targetDepth))
+                if (context.TestExpression("s3LogsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3LogsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamName", targetDepth))
+                if (context.TestExpression("streamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamName = unmarshaller.Unmarshall(context, ref reader);

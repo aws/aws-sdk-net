@@ -56,37 +56,37 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationCodeProperties", targetDepth))
+                if (context.TestExpression("authorizationCodeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizationCodePropertiesUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationCodeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuth2ClientApplication", targetDepth))
+                if (context.TestExpression("oAuth2ClientApplication", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuth2ClientApplicationUnmarshaller.Instance;
                     unmarshalledObject.OAuth2ClientApplication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuth2Credentials", targetDepth))
+                if (context.TestExpression("oAuth2Credentials", targetDepth, ref reader))
                 {
                     var unmarshaller = GlueOAuth2CredentialsUnmarshaller.Instance;
                     unmarshalledObject.OAuth2Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuth2GrantType", targetDepth))
+                if (context.TestExpression("oAuth2GrantType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OAuth2GrantType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenUrl", targetDepth))
+                if (context.TestExpression("tokenUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TokenUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenUrlParametersMap", targetDepth))
+                if (context.TestExpression("tokenUrlParametersMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.TokenUrlParametersMap = unmarshaller.Unmarshall(context, ref reader);

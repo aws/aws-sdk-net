@@ -56,43 +56,43 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("integrationArn", targetDepth))
+                if (context.TestExpression("integrationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntegrationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastScannedCommitId", targetDepth))
+                if (context.TestExpression("lastScannedCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastScannedCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onDemandScan", targetDepth))
+                if (context.TestExpression("onDemandScan", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeRepositoryOnDemandScanUnmarshaller.Instance;
                     unmarshalledObject.OnDemandScan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("projectName", targetDepth))
+                if (context.TestExpression("projectName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerType", targetDepth))
+                if (context.TestExpression("providerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerTypeVisibility", targetDepth))
+                if (context.TestExpression("providerTypeVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProviderTypeVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanConfiguration", targetDepth))
+                if (context.TestExpression("scanConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectCodeSecurityScanConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ScanConfiguration = unmarshaller.Unmarshall(context, ref reader);

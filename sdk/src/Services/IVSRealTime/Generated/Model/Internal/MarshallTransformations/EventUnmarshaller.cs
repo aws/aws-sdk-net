@@ -56,61 +56,61 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("destinationSessionId", targetDepth))
+                if (context.TestExpression("destinationSessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationSessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationStageArn", targetDepth))
+                if (context.TestExpression("destinationStageArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationStageArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorCode", targetDepth))
+                if (context.TestExpression("errorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventTime", targetDepth))
+                if (context.TestExpression("eventTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newToken", targetDepth))
+                if (context.TestExpression("newToken", targetDepth, ref reader))
                 {
                     var unmarshaller = ExchangedParticipantTokenUnmarshaller.Instance;
                     unmarshalledObject.NewToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("participantId", targetDepth))
+                if (context.TestExpression("participantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("previousToken", targetDepth))
+                if (context.TestExpression("previousToken", targetDepth, ref reader))
                 {
                     var unmarshaller = ExchangedParticipantTokenUnmarshaller.Instance;
                     unmarshalledObject.PreviousToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remoteParticipantId", targetDepth))
+                if (context.TestExpression("remoteParticipantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteParticipantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replica", targetDepth))
+                if (context.TestExpression("replica", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Replica = unmarshaller.Unmarshall(context, ref reader);

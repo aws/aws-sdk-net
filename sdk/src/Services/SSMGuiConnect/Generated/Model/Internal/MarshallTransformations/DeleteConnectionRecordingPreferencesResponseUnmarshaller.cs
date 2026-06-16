@@ -52,7 +52,7 @@ namespace Amazon.SSMGuiConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientToken", targetDepth))
+                if (context.TestExpression("ClientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClientToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deepgramConfig", targetDepth))
+                if (context.TestExpression("deepgramConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DeepgramSpeechModelConfigUnmarshaller.Instance;
                     unmarshalledObject.DeepgramConfig = unmarshaller.Unmarshall(context, ref reader);

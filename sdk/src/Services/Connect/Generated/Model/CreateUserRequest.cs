@@ -31,13 +31,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Creates a user account for the specified Amazon Connect instance.
+    /// Creates a user account for the specified Connect Customer instance.
     /// 
     ///  <important> 
     /// <para>
     /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
     /// parameters are required in some situations. For example, <c>Email</c>, <c>FirstName</c>
-    /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
+    /// and <c>LastName</c> are required if you are using Connect Customer or SAML for identity
     /// management.
     /// </para>
     ///  </important> <note> 
@@ -72,9 +72,9 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For information about how to create users using the Amazon Connect admin website,
+    /// For information about how to create users using the Connect Customer admin website,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-    /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Users</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateUserRequest : AmazonConnectRequest
@@ -145,15 +145,15 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property DirectoryUserId. 
         /// <para>
         /// The identifier of the user account in the directory used for identity management.
-        /// If Amazon Connect cannot access the directory, you can specify this identifier to
-        /// authenticate users. If you include the identifier, we assume that Amazon Connect cannot
-        /// access the directory. Otherwise, the identity information is used to authenticate
+        /// If Connect Customer cannot access the directory, you can specify this identifier to
+        /// authenticate users. If you include the identifier, we assume that Connect Customer
+        /// cannot access the directory. Otherwise, the identity information is used to authenticate
         /// users from your directory.
         /// </para>
         ///  
         /// <para>
         /// This parameter is required if you are using an existing directory for identity management
-        /// in Amazon Connect when Amazon Connect cannot access your directory to authenticate
+        /// in Connect Customer when Connect Customer cannot access your directory to authenticate
         /// users. If you are using SAML for identity management and include this parameter, an
         /// error is returned.
         /// </para>
@@ -209,7 +209,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -229,8 +229,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password for the user account. A password is required if you are using Amazon
-        /// Connect for identity management. Otherwise, it is an error to include a password.
+        /// The password for the user account. A password is required if you are using Connect
+        /// Customer for identity management. Otherwise, it is an error to include a password.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

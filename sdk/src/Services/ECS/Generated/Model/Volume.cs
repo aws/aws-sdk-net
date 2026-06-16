@@ -35,9 +35,9 @@ namespace Amazon.ECS.Model
     /// may contain multiple volumes but only one volume configured at launch is supported.
     /// Each volume defined in the volume configuration may only specify a <c>name</c> and
     /// one of either <c>configuredAtLaunch</c>, <c>dockerVolumeConfiguration</c>, <c>efsVolumeConfiguration</c>,
-    /// <c>fsxWindowsFileServerVolumeConfiguration</c>, or <c>host</c>. If an empty volume
-    /// configuration is specified, by default Amazon ECS uses a host volume. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+    /// <c>s3filesVolumeConfiguration</c>, <c>fsxWindowsFileServerVolumeConfiguration</c>,
+    /// or <c>host</c>. If an empty volume configuration is specified, by default Amazon ECS
+    /// uses a host volume. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
     /// data volumes in tasks</a>.
     /// </summary>
     public partial class Volume
@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         private FSxWindowsFileServerVolumeConfiguration _fsxWindowsFileServerVolumeConfiguration;
         private HostVolumeProperties _host;
         private string _name;
+        private S3FilesVolumeConfiguration _s3filesVolumeConfiguration;
 
         /// <summary>
         /// Gets and sets the property ConfiguredAtLaunch. 
@@ -193,6 +194,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// When a volume is using the <c>efsVolumeConfiguration</c>, the name is required.
         /// </para>
+        ///  
+        /// <para>
+        /// When a volume is using the <c>s3filesVolumeConfiguration</c>, the name is required.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -204,6 +209,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3filesVolumeConfiguration. 
+        /// <para>
+        /// This parameter is specified when you use an Amazon S3 Files file system for task storage.
+        /// </para>
+        /// </summary>
+        public S3FilesVolumeConfiguration S3filesVolumeConfiguration
+        {
+            get { return this._s3filesVolumeConfiguration; }
+            set { this._s3filesVolumeConfiguration = value; }
+        }
+
+        // Check to see if S3filesVolumeConfiguration property is set
+        internal bool IsSetS3filesVolumeConfiguration()
+        {
+            return this._s3filesVolumeConfiguration != null;
         }
 
     }

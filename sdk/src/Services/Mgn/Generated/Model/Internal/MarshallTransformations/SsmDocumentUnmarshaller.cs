@@ -56,37 +56,37 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionName", targetDepth))
+                if (context.TestExpression("actionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("externalParameters", targetDepth))
+                if (context.TestExpression("externalParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, SsmExternalParameter, StringUnmarshaller, SsmExternalParameterUnmarshaller>(StringUnmarshaller.Instance, SsmExternalParameterUnmarshaller.Instance);
                     unmarshalledObject.ExternalParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mustSucceedForCutover", targetDepth))
+                if (context.TestExpression("mustSucceedForCutover", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MustSucceedForCutover = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parameters", targetDepth))
+                if (context.TestExpression("parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<SsmParameterStoreParameter>, StringUnmarshaller, JsonListUnmarshaller<SsmParameterStoreParameter,SsmParameterStoreParameterUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<SsmParameterStoreParameter, SsmParameterStoreParameterUnmarshaller>(SsmParameterStoreParameterUnmarshaller.Instance));
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmDocumentName", targetDepth))
+                if (context.TestExpression("ssmDocumentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SsmDocumentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutSeconds", targetDepth))
+                if (context.TestExpression("timeoutSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("environmentId", targetDepth))
+                if (context.TestExpression("environmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("glueLineageSyncEnabled", targetDepth))
+                if (context.TestExpression("glueLineageSyncEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GlueLineageSyncEnabled = unmarshaller.Unmarshall(context, ref reader);

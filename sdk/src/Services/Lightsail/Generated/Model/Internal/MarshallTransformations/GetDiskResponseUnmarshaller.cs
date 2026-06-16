@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("disk", targetDepth))
+                if (context.TestExpression("disk", targetDepth, ref reader))
                 {
                     var unmarshaller = DiskUnmarshaller.Instance;
                     response.Disk = unmarshaller.Unmarshall(context, ref reader);

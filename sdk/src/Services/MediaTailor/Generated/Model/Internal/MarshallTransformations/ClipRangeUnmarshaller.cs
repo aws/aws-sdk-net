@@ -56,13 +56,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndOffsetMillis", targetDepth))
+                if (context.TestExpression("EndOffsetMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartOffsetMillis", targetDepth))
+                if (context.TestExpression("StartOffsetMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartOffsetMillis = unmarshaller.Unmarshall(context, ref reader);

@@ -56,61 +56,61 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveServicesCount", targetDepth))
+                if (context.TestExpression("ActiveServicesCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveServicesCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityProviders", targetDepth))
+                if (context.TestExpression("CapacityProviders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.CapacityProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterArn", targetDepth))
+                if (context.TestExpression("ClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterName", targetDepth))
+                if (context.TestExpression("ClusterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterSettings", targetDepth))
+                if (context.TestExpression("ClusterSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsClusterClusterSettingsDetails, AwsEcsClusterClusterSettingsDetailsUnmarshaller>(AwsEcsClusterClusterSettingsDetailsUnmarshaller.Instance);
                     unmarshalledObject.ClusterSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Configuration", targetDepth))
+                if (context.TestExpression("Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsClusterConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultCapacityProviderStrategy", targetDepth))
+                if (context.TestExpression("DefaultCapacityProviderStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsClusterDefaultCapacityProviderStrategyDetails, AwsEcsClusterDefaultCapacityProviderStrategyDetailsUnmarshaller>(AwsEcsClusterDefaultCapacityProviderStrategyDetailsUnmarshaller.Instance);
                     unmarshalledObject.DefaultCapacityProviderStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegisteredContainerInstancesCount", targetDepth))
+                if (context.TestExpression("RegisteredContainerInstancesCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RegisteredContainerInstancesCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunningTasksCount", targetDepth))
+                if (context.TestExpression("RunningTasksCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RunningTasksCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

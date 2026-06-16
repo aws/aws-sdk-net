@@ -52,7 +52,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("playbackRestrictionPolicy", targetDepth))
+                if (context.TestExpression("playbackRestrictionPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = PlaybackRestrictionPolicyUnmarshaller.Instance;
                     response.PlaybackRestrictionPolicy = unmarshaller.Unmarshall(context, ref reader);

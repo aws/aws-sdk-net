@@ -1,0 +1,17 @@
+{
+  "version" : 2,
+  "testCases" : [ {
+    "id" : "ListPoliciesSuccess",
+    "operationName" : "ListPolicies",
+    "input" : { },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  } ]
+}

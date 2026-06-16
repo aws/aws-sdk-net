@@ -56,13 +56,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationConfig", targetDepth))
+                if (context.TestExpression("authorizationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizationConfigUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpoint", targetDepth))
+                if (context.TestExpression("endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);

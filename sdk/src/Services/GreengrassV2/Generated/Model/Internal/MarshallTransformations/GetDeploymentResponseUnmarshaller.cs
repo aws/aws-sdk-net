@@ -52,85 +52,85 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("components", targetDepth))
+                if (context.TestExpression("components", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ComponentDeploymentSpecification, StringUnmarshaller, ComponentDeploymentSpecificationUnmarshaller>(StringUnmarshaller.Instance, ComponentDeploymentSpecificationUnmarshaller.Instance);
                     response.Components = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTimestamp", targetDepth))
+                if (context.TestExpression("creationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentId", targetDepth))
+                if (context.TestExpression("deploymentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentName", targetDepth))
+                if (context.TestExpression("deploymentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeploymentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentPolicies", targetDepth))
+                if (context.TestExpression("deploymentPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentPoliciesUnmarshaller.Instance;
                     response.DeploymentPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentStatus", targetDepth))
+                if (context.TestExpression("deploymentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeploymentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iotJobArn", targetDepth))
+                if (context.TestExpression("iotJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IotJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iotJobConfiguration", targetDepth))
+                if (context.TestExpression("iotJobConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentIoTJobConfigurationUnmarshaller.Instance;
                     response.IotJobConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iotJobId", targetDepth))
+                if (context.TestExpression("iotJobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IotJobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isLatestForTarget", targetDepth))
+                if (context.TestExpression("isLatestForTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsLatestForTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentTargetArn", targetDepth))
+                if (context.TestExpression("parentTargetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ParentTargetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("revisionId", targetDepth))
+                if (context.TestExpression("revisionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RevisionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetArn", targetDepth))
+                if (context.TestExpression("targetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetArn = unmarshaller.Unmarshall(context, ref reader);

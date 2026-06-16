@@ -56,25 +56,25 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identifiers", targetDepth))
+                if (context.TestExpression("identifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Identifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("model", targetDepth))
+                if (context.TestExpression("model", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("predicate", targetDepth))
+                if (context.TestExpression("predicate", targetDepth, ref reader))
                 {
                     var unmarshaller = PredicateUnmarshaller.Instance;
                     unmarshalledObject.Predicate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sort", targetDepth))
+                if (context.TestExpression("sort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SortProperty, SortPropertyUnmarshaller>(SortPropertyUnmarshaller.Instance);
                     unmarshalledObject.Sort = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientToken", targetDepth))
+                if (context.TestExpression("clientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permissionStatus", targetDepth))
+                if (context.TestExpression("permissionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PermissionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("returnValue", targetDepth))
+                if (context.TestExpression("returnValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ReturnValue = unmarshaller.Unmarshall(context, ref reader);

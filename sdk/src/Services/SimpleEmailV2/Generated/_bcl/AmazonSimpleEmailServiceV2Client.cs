@@ -39,6 +39,11 @@ namespace Amazon.SimpleEmailV2
 {
     /// <summary>
     /// <para>Implementation for accessing SimpleEmailServiceV2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon SES API v2 
     /// <para>
@@ -1569,6 +1574,13 @@ namespace Amazon.SimpleEmailV2
         /// isolate and manage email sending for different customers or business units within
         /// your Amazon SES API v2 account.
         /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify <c>SuppressionAttributes</c> to configure tenant-level
+        /// suppression at creation time. When tenant-level suppression is enabled, Amazon SES
+        /// maintains a separate suppression list for the tenant instead of using the account-level
+        /// suppression list.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTenant service method.</param>
         /// 
@@ -1606,6 +1618,13 @@ namespace Amazon.SimpleEmailV2
         /// sets, and templates, along with reputation metrics and sending status. This helps
         /// isolate and manage email sending for different customers or business units within
         /// your Amazon SES API v2 account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify <c>SuppressionAttributes</c> to configure tenant-level
+        /// suppression at creation time. When tenant-level suppression is enabled, Amazon SES
+        /// maintains a separate suppression list for the tenant instead of using the account-level
+        /// suppression list.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTenant service method.</param>
@@ -2465,7 +2484,10 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Removes an email address from the suppression list for your account.
+        /// Removes an email address from the suppression list for your account or for a specific
+        /// tenant. To target a tenant's suppression list, specify the <c>TenantName</c> parameter.
+        /// If you omit <c>TenantName</c>, the address is removed from the account-level suppression
+        /// list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSuppressedDestination service method.</param>
         /// 
@@ -2491,7 +2513,10 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Removes an email address from the suppression list for your account.
+        /// Removes an email address from the suppression list for your account or for a specific
+        /// tenant. To target a tenant's suppression list, specify the <c>TenantName</c> parameter.
+        /// If you omit <c>TenantName</c>, the address is removed from the account-level suppression
+        /// list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSuppressedDestination service method.</param>
         /// <param name="cancellationToken">
@@ -3802,7 +3827,7 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// You can execute this operation no more than once per second.
+        /// You can execute this operation no more than 50 times per second.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEmailTemplate service method.</param>
@@ -3834,7 +3859,7 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// You can execute this operation no more than once per second.
+        /// You can execute this operation no more than 50 times per second.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEmailTemplate service method.</param>
@@ -4208,7 +4233,9 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Retrieves information about a specific email address that's on the suppression list
-        /// for your account.
+        /// for your account or for a specific tenant. To target a tenant's suppression list,
+        /// specify the <c>TenantName</c> parameter. If you omit <c>TenantName</c>, the operation
+        /// targets the account-level suppression list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSuppressedDestination service method.</param>
         /// 
@@ -4235,7 +4262,9 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Retrieves information about a specific email address that's on the suppression list
-        /// for your account.
+        /// for your account or for a specific tenant. To target a tenant's suppression list,
+        /// specify the <c>TenantName</c> parameter. If you omit <c>TenantName</c>, the operation
+        /// targets the account-level suppression list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSuppressedDestination service method.</param>
         /// <param name="cancellationToken">
@@ -4269,7 +4298,7 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Get information about a specific tenant, including the tenant's name, ID, ARN, creation
-        /// timestamp, tags, and sending status.
+        /// timestamp, tags, sending status, and suppression attributes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTenant service method.</param>
         /// 
@@ -4296,7 +4325,7 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Get information about a specific tenant, including the tenant's name, ID, ARN, creation
-        /// timestamp, tags, and sending status.
+        /// timestamp, tags, sending status, and suppression attributes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTenant service method.</param>
         /// <param name="cancellationToken">
@@ -5290,7 +5319,10 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Retrieves a list of email addresses that are on the suppression list for your account.
+        /// Retrieves a list of email addresses that are on the suppression list for your account
+        /// or for a specific tenant. To target a tenant's suppression list, specify the <c>TenantName</c>
+        /// parameter. If you omit <c>TenantName</c>, the operation targets the account-level
+        /// suppression list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuppressedDestinations service method.</param>
         /// 
@@ -5300,6 +5332,9 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.InvalidNextTokenException">
         /// The specified request includes an invalid or expired token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
@@ -5316,7 +5351,10 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Retrieves a list of email addresses that are on the suppression list for your account.
+        /// Retrieves a list of email addresses that are on the suppression list for your account
+        /// or for a specific tenant. To target a tenant's suppression list, specify the <c>TenantName</c>
+        /// parameter. If you omit <c>TenantName</c>, the operation targets the account-level
+        /// suppression list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuppressedDestinations service method.</param>
         /// <param name="cancellationToken">
@@ -5329,6 +5367,9 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.InvalidNextTokenException">
         /// The specified request includes an invalid or expired token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
@@ -6081,7 +6122,9 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Specify the account suppression list preferences for a configuration set.
+        /// Specify the suppression list preferences for a configuration set. You can also use
+        /// this operation to specify a <c>SuppressionScope</c> to override the suppression scope
+        /// of the tenant or account for emails sent using this configuration set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSuppressionOptions service method.</param>
         /// 
@@ -6107,7 +6150,9 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Specify the account suppression list preferences for a configuration set.
+        /// Specify the suppression list preferences for a configuration set. You can also use
+        /// this operation to specify a <c>SuppressionScope</c> to override the suppression scope
+        /// of the tenant or account for emails sent using this configuration set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSuppressionOptions service method.</param>
         /// <param name="cancellationToken">
@@ -6965,13 +7010,19 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Adds an email address to the suppression list for your account.
+        /// Adds an email address to the suppression list for your account or for a specific tenant.
+        /// To target a tenant's suppression list, specify the <c>TenantName</c> parameter. If
+        /// you omit <c>TenantName</c>, the address is added to the account-level suppression
+        /// list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSuppressedDestination service method.</param>
         /// 
         /// <returns>The response from the PutSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
         /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
         /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
@@ -6988,7 +7039,10 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Adds an email address to the suppression list for your account.
+        /// Adds an email address to the suppression list for your account or for a specific tenant.
+        /// To target a tenant's suppression list, specify the <c>TenantName</c> parameter. If
+        /// you omit <c>TenantName</c>, the address is added to the account-level suppression
+        /// list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSuppressedDestination service method.</param>
         /// <param name="cancellationToken">
@@ -6998,6 +7052,9 @@ namespace Amazon.SimpleEmailV2
         /// <returns>The response from the PutSuppressedDestination service method, as returned by SimpleEmailServiceV2.</returns>
         /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
         /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
@@ -7010,6 +7067,81 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = PutSuppressedDestinationResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutSuppressedDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutTenantSuppressionAttributes
+
+
+        /// <summary>
+        /// Configure the suppression list preferences for a tenant. Use this operation to enable
+        /// or disable tenant-level suppression, or to change the suppressed reasons for a tenant.
+        /// 
+        ///  
+        /// <para>
+        /// When you set the suppression scope to <c>TENANT</c>, Amazon SES maintains a separate
+        /// suppression list for the tenant. When you set the scope to <c>ACCOUNT</c>, the tenant
+        /// uses the account-level suppression list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTenantSuppressionAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutTenantSuppressionAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutTenantSuppressionAttributes">REST API Reference for PutTenantSuppressionAttributes Operation</seealso>
+        public virtual PutTenantSuppressionAttributesResponse PutTenantSuppressionAttributes(PutTenantSuppressionAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutTenantSuppressionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTenantSuppressionAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<PutTenantSuppressionAttributesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Configure the suppression list preferences for a tenant. Use this operation to enable
+        /// or disable tenant-level suppression, or to change the suppressed reasons for a tenant.
+        /// 
+        ///  
+        /// <para>
+        /// When you set the suppression scope to <c>TENANT</c>, Amazon SES maintains a separate
+        /// suppression list for the tenant. When you set the scope to <c>ACCOUNT</c>, the tenant
+        /// uses the account-level suppression list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTenantSuppressionAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTenantSuppressionAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutTenantSuppressionAttributes">REST API Reference for PutTenantSuppressionAttributes Operation</seealso>
+        public virtual Task<PutTenantSuppressionAttributesResponse> PutTenantSuppressionAttributesAsync(PutTenantSuppressionAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutTenantSuppressionAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTenantSuppressionAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutTenantSuppressionAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion

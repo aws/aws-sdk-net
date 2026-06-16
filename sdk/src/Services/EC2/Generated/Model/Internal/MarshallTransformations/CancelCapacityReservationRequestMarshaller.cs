@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetApplyCancellationCharges())
+                {
+                    request.Parameters.Add("ApplyCancellationCharges", StringUtils.FromString(publicRequest.ApplyCancellationCharges));
+                }
                 if(publicRequest.IsSetCapacityReservationId())
                 {
                     request.Parameters.Add("CapacityReservationId", StringUtils.FromString(publicRequest.CapacityReservationId));
@@ -66,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
+                if(publicRequest.IsSetQuoteId())
+                {
+                    request.Parameters.Add("QuoteId", StringUtils.FromString(publicRequest.QuoteId));
                 }
             }
 

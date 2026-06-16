@@ -56,19 +56,19 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Account", targetDepth))
+                if (context.TestExpression("Account", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountSummaryUnmarshaller.Instance;
                     unmarshalledObject.Account = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartnerProfile", targetDepth))
+                if (context.TestExpression("PartnerProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = PartnerProfileSummaryUnmarshaller.Instance;
                     unmarshalledObject.PartnerProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SellerProfile", targetDepth))
+                if (context.TestExpression("SellerProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = SellerProfileSummaryUnmarshaller.Instance;
                     unmarshalledObject.SellerProfile = unmarshaller.Unmarshall(context, ref reader);

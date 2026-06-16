@@ -36,6 +36,7 @@ namespace Amazon.TaxSettings.Model
     {
         private string _cigNumber;
         private string _cupNumber;
+        private CustomerType _customerType;
         private string _sdiAccountId;
         private string _taxCode;
 
@@ -75,6 +76,25 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetCupNumber()
         {
             return this._cupNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerType. 
+        /// <para>
+        /// The customer type for tax registration in Italy. Valid values are <c>Business</c>
+        /// or <c>Individual</c>.
+        /// </para>
+        /// </summary>
+        public CustomerType CustomerType
+        {
+            get { return this._customerType; }
+            set { this._customerType = value; }
+        }
+
+        // Check to see if CustomerType property is set
+        internal bool IsSetCustomerType()
+        {
+            return this._customerType != null;
         }
 
         /// <summary>

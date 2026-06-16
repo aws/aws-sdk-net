@@ -56,13 +56,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLogs", targetDepth))
+                if (context.TestExpression("cloudWatchLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsConfigUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Logs", targetDepth))
+                if (context.TestExpression("s3Logs", targetDepth, ref reader))
                 {
                     var unmarshaller = S3LogsConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);

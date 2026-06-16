@@ -56,19 +56,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signingProfileName", targetDepth))
+                if (context.TestExpression("signingProfileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SigningProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signingProfileParameter", targetDepth))
+                if (context.TestExpression("signingProfileParameter", targetDepth, ref reader))
                 {
                     var unmarshaller = SigningProfileParameterUnmarshaller.Instance;
                     unmarshalledObject.SigningProfileParameter = unmarshaller.Unmarshall(context, ref reader);

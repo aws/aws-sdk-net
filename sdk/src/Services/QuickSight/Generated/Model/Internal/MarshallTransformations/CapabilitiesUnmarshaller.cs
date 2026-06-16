@@ -56,1297 +56,1369 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("AccessAppsNativeDataStore", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccessAppsNativeDataStore = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AddOrRunAnomalyDetectionForAnalyses", targetDepth))
+                if (context.TestExpression("AddOrRunAnomalyDetectionForAnalyses", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddOrRunAnomalyDetectionForAnalyses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmazonBedrockARSAction", targetDepth))
+                if (context.TestExpression("AmazonBedrockARSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmazonBedrockARSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmazonBedrockFSAction", targetDepth))
+                if (context.TestExpression("AmazonBedrockFSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmazonBedrockFSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmazonBedrockKRSAction", targetDepth))
+                if (context.TestExpression("AmazonBedrockKRSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmazonBedrockKRSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmazonSThreeAction", targetDepth))
+                if (context.TestExpression("AmazonSThreeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmazonSThreeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Analysis", targetDepth))
+                if (context.TestExpression("Analysis", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Analysis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApproveFlowShareRequests", targetDepth))
+                if (context.TestExpression("ApproveFlowShareRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApproveFlowShareRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AsanaAction", targetDepth))
+                if (context.TestExpression("Apps", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Apps = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("AsanaAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AsanaAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Automate", targetDepth))
+                if (context.TestExpression("Automate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Automate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BambooHRAction", targetDepth))
+                if (context.TestExpression("BambooHRAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BambooHRAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BoxAgentAction", targetDepth))
+                if (context.TestExpression("BoxAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BoxAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BuildCalculatedFieldWithQ", targetDepth))
+                if (context.TestExpression("BuildCalculatedFieldWithQ", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuildCalculatedFieldWithQ = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CanvaAgentAction", targetDepth))
+                if (context.TestExpression("CanvaAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanvaAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChatAgent", targetDepth))
+                if (context.TestExpression("ChatAgent", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChatAgent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComprehendAction", targetDepth))
+                if (context.TestExpression("ComprehendAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComprehendAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComprehendMedicalAction", targetDepth))
+                if (context.TestExpression("ComprehendMedicalAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComprehendMedicalAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfluenceAction", targetDepth))
+                if (context.TestExpression("ConfluenceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfluenceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateAmazonBedrockARSAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateAmazonBedrockARSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateAmazonBedrockARSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateAmazonBedrockFSAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateAmazonBedrockFSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateAmazonBedrockFSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateAmazonBedrockKRSAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateAmazonBedrockKRSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateAmazonBedrockKRSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateAmazonSThreeAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateAmazonSThreeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateAmazonSThreeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateAsanaAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateApps", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreateAndUpdateApps = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CreateAndUpdateAsanaAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateAsanaAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateBambooHRAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateBambooHRAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateBambooHRAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateBoxAgentAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateBoxAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateBoxAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateCanvaAgentAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateCanvaAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateCanvaAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateComprehendAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateComprehendAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateComprehendAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateComprehendMedicalAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateComprehendMedicalAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateComprehendMedicalAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateConfluenceAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateConfluenceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateConfluenceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateDashboardEmailReports", targetDepth))
+                if (context.TestExpression("CreateAndUpdateDashboardEmailReports", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateDashboardEmailReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateDatasets", targetDepth))
+                if (context.TestExpression("CreateAndUpdateDatasets", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateDatasets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateDataSources", targetDepth))
+                if (context.TestExpression("CreateAndUpdateDataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateDataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateFactSetAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateFactSetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateFactSetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateGenericHTTPAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateGenericHTTPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateGenericHTTPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateGithubAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateGithubAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateGithubAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateGoogleCalendarAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateGoogleCalendarAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateGoogleCalendarAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateHubspotAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateHubspotAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateHubspotAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateHuggingFaceAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateHuggingFaceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateHuggingFaceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateIntercomAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateIntercomAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateIntercomAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateJiraAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateJiraAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateJiraAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateLinearAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateLinearAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateLinearAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateMCPAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateMCPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateMCPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateMondayAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateMondayAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateMondayAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateMSExchangeAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateMSExchangeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateMSExchangeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateMSTeamsAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateMSTeamsAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateMSTeamsAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateNewRelicAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateNewRelicAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateNewRelicAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateNotionAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateNotionAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateNotionAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateOneDriveAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateOneDriveAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateOneDriveAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateOpenAPIAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateOpenAPIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateOpenAPIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdatePagerDutyAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdatePagerDutyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdatePagerDutyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSalesforceAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSalesforceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSalesforceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSandPGlobalEnergyAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSandPGlobalEnergyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSandPGlobalEnergyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSandPGMIAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSandPGMIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSandPGMIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSAPBillOfMaterialAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSAPBillOfMaterialAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSAPBillOfMaterialAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSAPBusinessPartnerAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSAPBusinessPartnerAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSAPBusinessPartnerAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSAPMaterialStockAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSAPMaterialStockAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSAPMaterialStockAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSAPPhysicalInventoryAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSAPPhysicalInventoryAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSAPPhysicalInventoryAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSAPProductMasterDataAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSAPProductMasterDataAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSAPProductMasterDataAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateServiceNowAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateServiceNowAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateServiceNowAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSharePointAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSharePointAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSharePointAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSlackAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSlackAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSlackAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateSmartsheetAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateSmartsheetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateSmartsheetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateTextractAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateTextractAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateTextractAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateThemes", targetDepth))
+                if (context.TestExpression("CreateAndUpdateThemes", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateThemes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateThresholdAlerts", targetDepth))
+                if (context.TestExpression("CreateAndUpdateThresholdAlerts", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateThresholdAlerts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateAndUpdateZendeskAction", targetDepth))
+                if (context.TestExpression("CreateAndUpdateZendeskAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAndUpdateZendeskAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateChatAgents", targetDepth))
+                if (context.TestExpression("CreateChatAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateChatAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateDashboardExecutiveSummaryWithQ", targetDepth))
+                if (context.TestExpression("CreateDashboardExecutiveSummaryWithQ", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateDashboardExecutiveSummaryWithQ = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateSharedFolders", targetDepth))
+                if (context.TestExpression("CreateSharedFolders", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateSharedFolders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateSPICEDataset", targetDepth))
+                if (context.TestExpression("CreateSpaces", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreateSpaces = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CreateSPICEDataset", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateSPICEDataset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Dashboard", targetDepth))
+                if (context.TestExpression("Dashboard", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Dashboard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EditVisualWithQ", targetDepth))
+                if (context.TestExpression("EditVisualWithQ", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EditVisualWithQ = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportToCsv", targetDepth))
+                if (context.TestExpression("ExportToCsv", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportToCsv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportToCsvInScheduledReports", targetDepth))
+                if (context.TestExpression("ExportToCsvInScheduledReports", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportToCsvInScheduledReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportToExcel", targetDepth))
+                if (context.TestExpression("ExportToExcel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportToExcel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportToExcelInScheduledReports", targetDepth))
+                if (context.TestExpression("ExportToExcelInScheduledReports", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportToExcelInScheduledReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportToPdf", targetDepth))
+                if (context.TestExpression("ExportToPdf", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportToPdf = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportToPdfInScheduledReports", targetDepth))
+                if (context.TestExpression("ExportToPdfInScheduledReports", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportToPdfInScheduledReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Extension", targetDepth))
+                if (context.TestExpression("Extension", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Extension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FactSetAction", targetDepth))
+                if (context.TestExpression("FactSetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FactSetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Flow", targetDepth))
+                if (context.TestExpression("Flow", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Flow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GenericHTTPAction", targetDepth))
+                if (context.TestExpression("GenerateAnalyses", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GenerateAnalyses = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("GenericHTTPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GenericHTTPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GithubAction", targetDepth))
+                if (context.TestExpression("GithubAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GithubAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GoogleCalendarAction", targetDepth))
+                if (context.TestExpression("GoogleCalendarAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GoogleCalendarAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HubspotAction", targetDepth))
+                if (context.TestExpression("HubspotAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HubspotAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HuggingFaceAction", targetDepth))
+                if (context.TestExpression("HuggingFaceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HuggingFaceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeContentInScheduledReportsEmail", targetDepth))
+                if (context.TestExpression("IncludeContentInScheduledReportsEmail", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IncludeContentInScheduledReportsEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntercomAction", targetDepth))
+                if (context.TestExpression("IntercomAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntercomAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JiraAction", targetDepth))
+                if (context.TestExpression("InvokeAppsAIInference", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InvokeAppsAIInference = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("JiraAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JiraAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KnowledgeBase", targetDepth))
+                if (context.TestExpression("KnowledgeBase", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LinearAction", targetDepth))
+                if (context.TestExpression("LinearAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LinearAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MCPAction", targetDepth))
+                if (context.TestExpression("ManageSharedFolders", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManageSharedFolders = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MCPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MCPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MondayAction", targetDepth))
+                if (context.TestExpression("MondayAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MondayAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MSExchangeAction", targetDepth))
+                if (context.TestExpression("MSExchangeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MSExchangeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MSTeamsAction", targetDepth))
+                if (context.TestExpression("MSTeamsAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MSTeamsAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewRelicAction", targetDepth))
+                if (context.TestExpression("NewRelicAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NewRelicAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotionAction", targetDepth))
+                if (context.TestExpression("NotionAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotionAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OneDriveAction", targetDepth))
+                if (context.TestExpression("OneDriveAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OneDriveAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenAPIAction", targetDepth))
+                if (context.TestExpression("OpenAPIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OpenAPIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PagerDutyAction", targetDepth))
+                if (context.TestExpression("PagerDutyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PagerDutyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PerformFlowUiTask", targetDepth))
+                if (context.TestExpression("PerformFlowUiTask", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PerformFlowUiTask = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrintReports", targetDepth))
+                if (context.TestExpression("PrintReports", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrintReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublishWithoutApproval", targetDepth))
+                if (context.TestExpression("PublishWithoutApproval", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublishWithoutApproval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RenameSharedFolders", targetDepth))
+                if (context.TestExpression("RenameSharedFolders", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RenameSharedFolders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Research", targetDepth))
+                if (context.TestExpression("Research", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Research = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SalesforceAction", targetDepth))
+                if (context.TestExpression("SalesforceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SalesforceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SandPGlobalEnergyAction", targetDepth))
+                if (context.TestExpression("SandPGlobalEnergyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SandPGlobalEnergyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SandPGMIAction", targetDepth))
+                if (context.TestExpression("SandPGMIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SandPGMIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SAPBillOfMaterialAction", targetDepth))
+                if (context.TestExpression("SAPBillOfMaterialAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SAPBillOfMaterialAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SAPBusinessPartnerAction", targetDepth))
+                if (context.TestExpression("SAPBusinessPartnerAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SAPBusinessPartnerAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SAPMaterialStockAction", targetDepth))
+                if (context.TestExpression("SAPMaterialStockAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SAPMaterialStockAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SAPPhysicalInventoryAction", targetDepth))
+                if (context.TestExpression("SAPPhysicalInventoryAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SAPPhysicalInventoryAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SAPProductMasterDataAction", targetDepth))
+                if (context.TestExpression("SAPProductMasterDataAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SAPProductMasterDataAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfUpgradeUserRole", targetDepth))
+                if (context.TestExpression("Scenario", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scenario = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SelfUpgradeUserRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelfUpgradeUserRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceNowAction", targetDepth))
+                if (context.TestExpression("ServiceNowAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceNowAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareAmazonBedrockARSAction", targetDepth))
+                if (context.TestExpression("ShareAmazonBedrockARSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareAmazonBedrockARSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareAmazonBedrockFSAction", targetDepth))
+                if (context.TestExpression("ShareAmazonBedrockFSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareAmazonBedrockFSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareAmazonBedrockKRSAction", targetDepth))
+                if (context.TestExpression("ShareAmazonBedrockKRSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareAmazonBedrockKRSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareAmazonSThreeAction", targetDepth))
+                if (context.TestExpression("ShareAmazonSThreeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareAmazonSThreeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareAnalyses", targetDepth))
+                if (context.TestExpression("ShareAnalyses", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareAnalyses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareAsanaAction", targetDepth))
+                if (context.TestExpression("ShareApps", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareApps = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ShareAsanaAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareAsanaAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareBambooHRAction", targetDepth))
+                if (context.TestExpression("ShareBambooHRAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareBambooHRAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareBoxAgentAction", targetDepth))
+                if (context.TestExpression("ShareBoxAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareBoxAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareCanvaAgentAction", targetDepth))
+                if (context.TestExpression("ShareCanvaAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareCanvaAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareComprehendAction", targetDepth))
+                if (context.TestExpression("ShareChatAgents", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareChatAgents = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ShareComprehendAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareComprehendAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareComprehendMedicalAction", targetDepth))
+                if (context.TestExpression("ShareComprehendMedicalAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareComprehendMedicalAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareConfluenceAction", targetDepth))
+                if (context.TestExpression("ShareConfluenceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareConfluenceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareDashboards", targetDepth))
+                if (context.TestExpression("ShareDashboards", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareDashboards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareDatasets", targetDepth))
+                if (context.TestExpression("ShareDatasets", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareDatasets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareDataSources", targetDepth))
+                if (context.TestExpression("ShareDataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareDataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareFactSetAction", targetDepth))
+                if (context.TestExpression("ShareFactSetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareFactSetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareGenericHTTPAction", targetDepth))
+                if (context.TestExpression("ShareGenericHTTPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareGenericHTTPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareGithubAction", targetDepth))
+                if (context.TestExpression("ShareGithubAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareGithubAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareGoogleCalendarAction", targetDepth))
+                if (context.TestExpression("ShareGoogleCalendarAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareGoogleCalendarAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareHubspotAction", targetDepth))
+                if (context.TestExpression("ShareHubspotAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareHubspotAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareHuggingFaceAction", targetDepth))
+                if (context.TestExpression("ShareHuggingFaceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareHuggingFaceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareIntercomAction", targetDepth))
+                if (context.TestExpression("ShareIntercomAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareIntercomAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareJiraAction", targetDepth))
+                if (context.TestExpression("ShareJiraAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareJiraAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareLinearAction", targetDepth))
+                if (context.TestExpression("ShareLinearAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareLinearAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareMCPAction", targetDepth))
+                if (context.TestExpression("ShareMCPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareMCPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareMondayAction", targetDepth))
+                if (context.TestExpression("ShareMondayAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareMondayAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareMSExchangeAction", targetDepth))
+                if (context.TestExpression("ShareMSExchangeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareMSExchangeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareMSTeamsAction", targetDepth))
+                if (context.TestExpression("ShareMSTeamsAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareMSTeamsAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareNewRelicAction", targetDepth))
+                if (context.TestExpression("ShareNewRelicAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareNewRelicAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareNotionAction", targetDepth))
+                if (context.TestExpression("ShareNotionAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareNotionAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareOneDriveAction", targetDepth))
+                if (context.TestExpression("ShareOneDriveAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareOneDriveAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareOpenAPIAction", targetDepth))
+                if (context.TestExpression("ShareOpenAPIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareOpenAPIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SharePagerDutyAction", targetDepth))
+                if (context.TestExpression("SharePagerDutyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SharePagerDutyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SharePointAction", targetDepth))
+                if (context.TestExpression("SharePointAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SharePointAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSalesforceAction", targetDepth))
+                if (context.TestExpression("ShareSalesforceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSalesforceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSandPGlobalEnergyAction", targetDepth))
+                if (context.TestExpression("ShareSandPGlobalEnergyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSandPGlobalEnergyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSandPGMIAction", targetDepth))
+                if (context.TestExpression("ShareSandPGMIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSandPGMIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSAPBillOfMaterialAction", targetDepth))
+                if (context.TestExpression("ShareSAPBillOfMaterialAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSAPBillOfMaterialAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSAPBusinessPartnerAction", targetDepth))
+                if (context.TestExpression("ShareSAPBusinessPartnerAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSAPBusinessPartnerAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSAPMaterialStockAction", targetDepth))
+                if (context.TestExpression("ShareSAPMaterialStockAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSAPMaterialStockAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSAPPhysicalInventoryAction", targetDepth))
+                if (context.TestExpression("ShareSAPPhysicalInventoryAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSAPPhysicalInventoryAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSAPProductMasterDataAction", targetDepth))
+                if (context.TestExpression("ShareSAPProductMasterDataAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSAPProductMasterDataAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareServiceNowAction", targetDepth))
+                if (context.TestExpression("ShareServiceNowAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareServiceNowAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSharePointAction", targetDepth))
+                if (context.TestExpression("ShareSharePointAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSharePointAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSlackAction", targetDepth))
+                if (context.TestExpression("ShareSlackAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSlackAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareSmartsheetAction", targetDepth))
+                if (context.TestExpression("ShareSmartsheetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareSmartsheetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareTextractAction", targetDepth))
+                if (context.TestExpression("ShareSpaces", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareSpaces = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ShareTextractAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareTextractAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareZendeskAction", targetDepth))
+                if (context.TestExpression("ShareZendeskAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareZendeskAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SlackAction", targetDepth))
+                if (context.TestExpression("SlackAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SlackAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SmartsheetAction", targetDepth))
+                if (context.TestExpression("SmartsheetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SmartsheetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Space", targetDepth))
+                if (context.TestExpression("Space", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Space = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscribeDashboardEmailReports", targetDepth))
+                if (context.TestExpression("Story", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Story = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SubscribeDashboardEmailReports", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubscribeDashboardEmailReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextractAction", targetDepth))
+                if (context.TestExpression("TextractAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TextractAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Topic", targetDepth))
+                if (context.TestExpression("Topic", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Topic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseAgentWebSearch", targetDepth))
+                if (context.TestExpression("UseAgentWebSearch", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseAgentWebSearch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseAmazonBedrockARSAction", targetDepth))
+                if (context.TestExpression("UseAmazonBedrockARSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseAmazonBedrockARSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseAmazonBedrockFSAction", targetDepth))
+                if (context.TestExpression("UseAmazonBedrockFSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseAmazonBedrockFSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseAmazonBedrockKRSAction", targetDepth))
+                if (context.TestExpression("UseAmazonBedrockKRSAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseAmazonBedrockKRSAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseAmazonSThreeAction", targetDepth))
+                if (context.TestExpression("UseAmazonSThreeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseAmazonSThreeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseAsanaAction", targetDepth))
+                if (context.TestExpression("UseAsanaAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseAsanaAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseBambooHRAction", targetDepth))
+                if (context.TestExpression("UseBambooHRAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseBambooHRAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseBedrockModels", targetDepth))
+                if (context.TestExpression("UseBedrockModels", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseBedrockModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseBoxAgentAction", targetDepth))
+                if (context.TestExpression("UseBoxAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseBoxAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseCanvaAgentAction", targetDepth))
+                if (context.TestExpression("UseCanvaAgentAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseCanvaAgentAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseComprehendAction", targetDepth))
+                if (context.TestExpression("UseComprehendAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseComprehendAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseComprehendMedicalAction", targetDepth))
+                if (context.TestExpression("UseComprehendMedicalAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseComprehendMedicalAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseConfluenceAction", targetDepth))
+                if (context.TestExpression("UseConfluenceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseConfluenceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseFactSetAction", targetDepth))
+                if (context.TestExpression("UseFactSetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseFactSetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseGenericHTTPAction", targetDepth))
+                if (context.TestExpression("UseGenericHTTPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseGenericHTTPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseGithubAction", targetDepth))
+                if (context.TestExpression("UseGithubAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseGithubAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseGoogleCalendarAction", targetDepth))
+                if (context.TestExpression("UseGoogleCalendarAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseGoogleCalendarAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseHubspotAction", targetDepth))
+                if (context.TestExpression("UseHubspotAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseHubspotAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseHuggingFaceAction", targetDepth))
+                if (context.TestExpression("UseHuggingFaceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseHuggingFaceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseIntercomAction", targetDepth))
+                if (context.TestExpression("UseIntercomAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseIntercomAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseJiraAction", targetDepth))
+                if (context.TestExpression("UseJiraAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseJiraAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseLinearAction", targetDepth))
+                if (context.TestExpression("UseLinearAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseLinearAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseMCPAction", targetDepth))
+                if (context.TestExpression("UseMCPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseMCPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseMondayAction", targetDepth))
+                if (context.TestExpression("UseMondayAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseMondayAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseMSExchangeAction", targetDepth))
+                if (context.TestExpression("UseMSExchangeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseMSExchangeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseMSTeamsAction", targetDepth))
+                if (context.TestExpression("UseMSTeamsAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseMSTeamsAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseNewRelicAction", targetDepth))
+                if (context.TestExpression("UseNewRelicAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseNewRelicAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseNotionAction", targetDepth))
+                if (context.TestExpression("UseNotionAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseNotionAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseOneDriveAction", targetDepth))
+                if (context.TestExpression("UseOneDriveAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseOneDriveAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseOpenAPIAction", targetDepth))
+                if (context.TestExpression("UseOpenAPIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseOpenAPIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsePagerDutyAction", targetDepth))
+                if (context.TestExpression("UsePagerDutyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsePagerDutyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSalesforceAction", targetDepth))
+                if (context.TestExpression("UseSalesforceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSalesforceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSandPGlobalEnergyAction", targetDepth))
+                if (context.TestExpression("UseSandPGlobalEnergyAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSandPGlobalEnergyAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSandPGMIAction", targetDepth))
+                if (context.TestExpression("UseSandPGMIAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSandPGMIAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSAPBillOfMaterialAction", targetDepth))
+                if (context.TestExpression("UseSAPBillOfMaterialAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSAPBillOfMaterialAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSAPBusinessPartnerAction", targetDepth))
+                if (context.TestExpression("UseSAPBusinessPartnerAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSAPBusinessPartnerAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSAPMaterialStockAction", targetDepth))
+                if (context.TestExpression("UseSAPMaterialStockAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSAPMaterialStockAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSAPPhysicalInventoryAction", targetDepth))
+                if (context.TestExpression("UseSAPPhysicalInventoryAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSAPPhysicalInventoryAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSAPProductMasterDataAction", targetDepth))
+                if (context.TestExpression("UseSAPProductMasterDataAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSAPProductMasterDataAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseServiceNowAction", targetDepth))
+                if (context.TestExpression("UseServiceNowAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseServiceNowAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSharePointAction", targetDepth))
+                if (context.TestExpression("UseSharePointAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSharePointAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSlackAction", targetDepth))
+                if (context.TestExpression("UseSlackAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSlackAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseSmartsheetAction", targetDepth))
+                if (context.TestExpression("UseSmartsheetAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseSmartsheetAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseTextractAction", targetDepth))
+                if (context.TestExpression("UseTextractAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseTextractAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseZendeskAction", targetDepth))
+                if (context.TestExpression("UseZendeskAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseZendeskAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ViewAccountSPICECapacity", targetDepth))
+                if (context.TestExpression("ViewAccountSPICECapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ViewAccountSPICECapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ZendeskAction", targetDepth))
+                if (context.TestExpression("ZendeskAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ZendeskAction = unmarshaller.Unmarshall(context, ref reader);

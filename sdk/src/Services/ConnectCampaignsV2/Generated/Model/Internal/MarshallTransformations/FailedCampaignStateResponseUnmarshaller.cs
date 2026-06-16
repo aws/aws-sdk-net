@@ -56,13 +56,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("campaignId", targetDepth))
+                if (context.TestExpression("campaignId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CampaignId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureCode", targetDepth))
+                if (context.TestExpression("failureCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context, ref reader);

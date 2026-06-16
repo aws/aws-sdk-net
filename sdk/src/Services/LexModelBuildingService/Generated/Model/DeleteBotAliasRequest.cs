@@ -43,6 +43,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// referring association until the <c>DeleteBotAlias</c> operation is successful.
     /// </para>
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class DeleteBotAliasRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _botName;

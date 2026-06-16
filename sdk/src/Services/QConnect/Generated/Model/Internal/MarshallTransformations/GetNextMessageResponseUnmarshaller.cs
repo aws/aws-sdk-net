@@ -52,43 +52,43 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("chunkedResponseTerminated", targetDepth))
+                if (context.TestExpression("chunkedResponseTerminated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ChunkedResponseTerminated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conversationSessionData", targetDepth))
+                if (context.TestExpression("conversationSessionData", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuntimeSessionData, RuntimeSessionDataUnmarshaller>(RuntimeSessionDataUnmarshaller.Instance);
                     response.ConversationSessionData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conversationState", targetDepth))
+                if (context.TestExpression("conversationState", targetDepth, ref reader))
                 {
                     var unmarshaller = ConversationStateUnmarshaller.Instance;
                     response.ConversationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextMessageToken", targetDepth))
+                if (context.TestExpression("nextMessageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMessageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestMessageId", targetDepth))
+                if (context.TestExpression("requestMessageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestMessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("response", targetDepth))
+                if (context.TestExpression("response", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageOutputUnmarshaller.Instance;
                     response.Response = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Type = unmarshaller.Unmarshall(context, ref reader);

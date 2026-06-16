@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MediaStreamPipeline", targetDepth))
+                if (context.TestExpression("MediaStreamPipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaStreamPipelineUnmarshaller.Instance;
                     response.MediaStreamPipeline = unmarshaller.Unmarshall(context, ref reader);

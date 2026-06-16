@@ -66,7 +66,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("", false)]
         [DataRow("http://192.168.1.1/endpoint", false)] // Forbidden host
         [DataRow("http://169.254.170.3/endpoint", false)] // Forbidden link-local host
@@ -90,7 +90,7 @@ namespace AWSSDK.UnitTests
             }
             else
             {
-                Assert.ThrowsException<ArgumentException>(() => new GenericContainerCredentials());
+                Assert.ThrowsExactly<ArgumentException>(() => new GenericContainerCredentials());
             }
         }
 
@@ -112,7 +112,7 @@ namespace AWSSDK.UnitTests
             var nonExistentPath = Guid.NewGuid().ToString();
             Environment.SetEnvironmentVariable(GenericContainerCredentials.AuthorizationTokenFileEnvVariable, nonExistentPath);
 
-            Assert.ThrowsException<FileNotFoundException>(() => GenericContainerCredentials.CreateAuthorizationHeader());
+            Assert.ThrowsExactly<FileNotFoundException>(() => GenericContainerCredentials.CreateAuthorizationHeader());
         }
 
         [TestMethod]
@@ -120,7 +120,7 @@ namespace AWSSDK.UnitTests
         {
             Environment.SetEnvironmentVariable(GenericContainerCredentials.AuthorizationTokenEnvVariable, "basic\r\ntoken");
 
-            Assert.ThrowsException<InvalidOperationException>(() => GenericContainerCredentials.CreateAuthorizationHeader());
+            Assert.ThrowsExactly<InvalidOperationException>(() => GenericContainerCredentials.CreateAuthorizationHeader());
         }
 
         [TestMethod]
@@ -175,7 +175,7 @@ $@"{{
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(301)]
         [DataRow(401)]
         [DataRow(429)]

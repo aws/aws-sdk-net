@@ -56,13 +56,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("entityPropertyReference", targetDepth))
+                if (context.TestExpression("entityPropertyReference", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityPropertyReferenceUnmarshaller.Instance;
                     unmarshalledObject.EntityPropertyReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("values", targetDepth))
+                if (context.TestExpression("values", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PropertyValue, PropertyValueUnmarshaller>(PropertyValueUnmarshaller.Instance);
                     unmarshalledObject.Values = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RetentionConfiguration", targetDepth))
+                if (context.TestExpression("RetentionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RetentionConfigurationUnmarshaller.Instance;
                     response.RetentionConfiguration = unmarshaller.Unmarshall(context, ref reader);

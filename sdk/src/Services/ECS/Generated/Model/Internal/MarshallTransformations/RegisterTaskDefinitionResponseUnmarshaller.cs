@@ -52,13 +52,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskDefinition", targetDepth))
+                if (context.TestExpression("taskDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskDefinitionUnmarshaller.Instance;
                     response.TaskDefinition = unmarshaller.Unmarshall(context, ref reader);
@@ -89,6 +89,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClientException"))
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -96,6 +100,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
                 {

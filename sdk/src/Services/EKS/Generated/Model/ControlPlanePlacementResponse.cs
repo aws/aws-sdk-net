@@ -37,6 +37,7 @@ namespace Amazon.EKS.Model
     public partial class ControlPlanePlacementResponse
     {
         private string _groupName;
+        private SpreadLevel _spreadLevel;
 
         /// <summary>
         /// Gets and sets the property GroupName. 
@@ -54,6 +55,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpreadLevel. 
+        /// <para>
+        /// The spread level used with the placement group for control plane instances on your
+        /// local Amazon EKS cluster on Amazon Web Services Outposts.
+        /// </para>
+        /// </summary>
+        public SpreadLevel SpreadLevel
+        {
+            get { return this._spreadLevel; }
+            set { this._spreadLevel = value; }
+        }
+
+        // Check to see if SpreadLevel property is set
+        internal bool IsSetSpreadLevel()
+        {
+            return this._spreadLevel != null;
         }
 
     }

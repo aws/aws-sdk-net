@@ -56,103 +56,103 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutomatedDiscoveryInformation", targetDepth))
+                if (context.TestExpression("AutomatedDiscoveryInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedDiscoveryInformationUnmarshaller.Instance;
                     unmarshalledObject.AutomatedDiscoveryInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConsumedLicenses", targetDepth))
+                if (context.TestExpression("ConsumedLicenses", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConsumedLicenses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConsumedLicenseSummaryList", targetDepth))
+                if (context.TestExpression("ConsumedLicenseSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConsumedLicenseSummary, ConsumedLicenseSummaryUnmarshaller>(ConsumedLicenseSummaryUnmarshaller.Instance);
                     unmarshalledObject.ConsumedLicenseSummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisassociateWhenNotFound", targetDepth))
+                if (context.TestExpression("DisassociateWhenNotFound", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisassociateWhenNotFound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseConfigurationArn", targetDepth))
+                if (context.TestExpression("LicenseConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LicenseConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseConfigurationId", targetDepth))
+                if (context.TestExpression("LicenseConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LicenseConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseCount", targetDepth))
+                if (context.TestExpression("LicenseCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LicenseCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseCountHardLimit", targetDepth))
+                if (context.TestExpression("LicenseCountHardLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LicenseCountHardLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseCountingType", targetDepth))
+                if (context.TestExpression("LicenseCountingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LicenseCountingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseExpiry", targetDepth))
+                if (context.TestExpression("LicenseExpiry", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LicenseExpiry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseRules", targetDepth))
+                if (context.TestExpression("LicenseRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LicenseRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedResourceSummaryList", targetDepth))
+                if (context.TestExpression("ManagedResourceSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedResourceSummary, ManagedResourceSummaryUnmarshaller>(ManagedResourceSummaryUnmarshaller.Instance);
                     unmarshalledObject.ManagedResourceSummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerAccountId", targetDepth))
+                if (context.TestExpression("OwnerAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductInformationList", targetDepth))
+                if (context.TestExpression("ProductInformationList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProductInformation, ProductInformationUnmarshaller>(ProductInformationUnmarshaller.Instance);
                     unmarshalledObject.ProductInformationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

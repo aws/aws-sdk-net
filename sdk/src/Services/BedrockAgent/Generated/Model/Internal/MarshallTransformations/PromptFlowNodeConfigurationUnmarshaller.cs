@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("guardrailConfiguration", targetDepth))
+                if (context.TestExpression("guardrailConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceConfiguration", targetDepth))
+                if (context.TestExpression("sourceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptFlowNodeSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context, ref reader);

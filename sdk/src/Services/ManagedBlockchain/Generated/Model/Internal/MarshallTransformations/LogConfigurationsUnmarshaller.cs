@@ -56,7 +56,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Cloudwatch", targetDepth))
+                if (context.TestExpression("Cloudwatch", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Cloudwatch = unmarshaller.Unmarshall(context, ref reader);

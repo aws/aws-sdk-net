@@ -72,7 +72,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("parameterName", targetDepth))
+                    if (context.TestExpression("parameterName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context, ref reader);

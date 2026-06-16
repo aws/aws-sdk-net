@@ -56,7 +56,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("headline", targetDepth))
+                if (context.TestExpression("headline", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Headline = unmarshaller.Unmarshall(context, ref reader);

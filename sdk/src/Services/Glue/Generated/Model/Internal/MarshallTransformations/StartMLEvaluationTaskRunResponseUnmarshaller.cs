@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TaskRunId", targetDepth))
+                if (context.TestExpression("TaskRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskRunId = unmarshaller.Unmarshall(context, ref reader);

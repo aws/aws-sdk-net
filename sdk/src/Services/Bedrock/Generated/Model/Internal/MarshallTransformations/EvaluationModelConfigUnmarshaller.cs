@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockModel", targetDepth))
+                if (context.TestExpression("bedrockModel", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationBedrockModelUnmarshaller.Instance;
                     unmarshalledObject.BedrockModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("precomputedInferenceSource", targetDepth))
+                if (context.TestExpression("precomputedInferenceSource", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationPrecomputedInferenceSourceUnmarshaller.Instance;
                     unmarshalledObject.PrecomputedInferenceSource = unmarshaller.Unmarshall(context, ref reader);

@@ -53,7 +53,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow(SignatureVersion.SigV4)]
         [DataRow(SignatureVersion.SigV4a)]

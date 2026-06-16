@@ -56,49 +56,49 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createStatus", targetDepth))
+                if (context.TestExpression("createStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataLakeArn", targetDepth))
+                if (context.TestExpression("dataLakeArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataLakeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionConfiguration", targetDepth))
+                if (context.TestExpression("encryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakeEncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleConfiguration", targetDepth))
+                if (context.TestExpression("lifecycleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakeLifecycleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LifecycleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationConfiguration", targetDepth))
+                if (context.TestExpression("replicationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakeReplicationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ReplicationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3BucketArn", targetDepth))
+                if (context.TestExpression("s3BucketArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateStatus", targetDepth))
+                if (context.TestExpression("updateStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakeUpdateStatusUnmarshaller.Instance;
                     unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context, ref reader);

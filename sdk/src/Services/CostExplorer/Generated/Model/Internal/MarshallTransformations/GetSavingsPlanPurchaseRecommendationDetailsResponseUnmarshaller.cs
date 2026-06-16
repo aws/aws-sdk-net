@@ -52,13 +52,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RecommendationDetailData", targetDepth))
+                if (context.TestExpression("RecommendationDetailData", targetDepth, ref reader))
                 {
                     var unmarshaller = RecommendationDetailDataUnmarshaller.Instance;
                     response.RecommendationDetailData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendationDetailId", targetDepth))
+                if (context.TestExpression("RecommendationDetailId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecommendationDetailId = unmarshaller.Unmarshall(context, ref reader);

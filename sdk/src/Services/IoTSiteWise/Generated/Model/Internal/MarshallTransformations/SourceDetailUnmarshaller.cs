@@ -56,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kendra", targetDepth))
+                if (context.TestExpression("kendra", targetDepth, ref reader))
                 {
                     var unmarshaller = KendraSourceDetailUnmarshaller.Instance;
                     unmarshalledObject.Kendra = unmarshaller.Unmarshall(context, ref reader);

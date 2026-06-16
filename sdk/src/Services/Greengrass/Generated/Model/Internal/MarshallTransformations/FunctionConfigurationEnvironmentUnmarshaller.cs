@@ -56,25 +56,25 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessSysfs", targetDepth))
+                if (context.TestExpression("AccessSysfs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AccessSysfs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Execution", targetDepth))
+                if (context.TestExpression("Execution", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionExecutionConfigUnmarshaller.Instance;
                     unmarshalledObject.Execution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceAccessPolicies", targetDepth))
+                if (context.TestExpression("ResourceAccessPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceAccessPolicy, ResourceAccessPolicyUnmarshaller>(ResourceAccessPolicyUnmarshaller.Instance);
                     unmarshalledObject.ResourceAccessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Variables", targetDepth))
+                if (context.TestExpression("Variables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);

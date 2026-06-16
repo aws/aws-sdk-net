@@ -56,25 +56,25 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalInfo", targetDepth))
+                if (context.TestExpression("additionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = AdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.AdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hash", targetDepth))
+                if (context.TestExpression("hash", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Hash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("itemPath", targetDepth))
+                if (context.TestExpression("itemPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ItemPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceArn", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);

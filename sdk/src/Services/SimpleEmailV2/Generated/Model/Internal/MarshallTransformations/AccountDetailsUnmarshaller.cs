@@ -56,37 +56,37 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalContactEmailAddresses", targetDepth))
+                if (context.TestExpression("AdditionalContactEmailAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalContactEmailAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContactLanguage", targetDepth))
+                if (context.TestExpression("ContactLanguage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContactLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MailType", targetDepth))
+                if (context.TestExpression("MailType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MailType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReviewDetails", targetDepth))
+                if (context.TestExpression("ReviewDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ReviewDetailsUnmarshaller.Instance;
                     unmarshalledObject.ReviewDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseCaseDescription", targetDepth))
+                if (context.TestExpression("UseCaseDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseCaseDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebsiteURL", targetDepth))
+                if (context.TestExpression("WebsiteURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebsiteURL = unmarshaller.Unmarshall(context, ref reader);

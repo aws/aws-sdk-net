@@ -39,6 +39,11 @@ namespace Amazon.Redshift
 {
     /// <summary>
     /// <para>Implementation for accessing Redshift</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Redshift 
     /// <para>
@@ -7548,6 +7553,14 @@ namespace Amazon.Redshift
         ///  </li> <li> 
         /// <para>
         /// dc2.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// rg.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// rg.4xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>

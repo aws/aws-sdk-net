@@ -56,7 +56,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("forced", targetDepth))
+                if (context.TestExpression("forced", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Forced = unmarshaller.Unmarshall(context, ref reader);

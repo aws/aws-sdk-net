@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customJWTAuthorizer", targetDepth))
+                if (context.TestExpression("customJWTAuthorizer", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomJWTAuthorizerConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomJWTAuthorizer = unmarshaller.Unmarshall(context, ref reader);

@@ -650,6 +650,13 @@ namespace Amazon.EC2.Model
         /// You can view unsupported requests for 30 days. The Capacity Reservation will not be
         /// delivered.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cancelling</c> - (<i>Future-dated Capacity Reservations</i>) The Capacity Reservation
+        /// is being cancelled. Capacity has been released but charges continue for the commitment
+        /// wind-down period. The reservation transitions to <c>cancelled</c> when the wind-down
+        /// completes.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public CapacityReservationState State

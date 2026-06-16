@@ -56,52 +56,58 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Consumption", targetDepth))
+                if (context.TestExpression("Consumption", targetDepth, ref reader))
                 {
                     var unmarshaller = PrefetchConsumptionUnmarshaller.Instance;
                     unmarshalledObject.Consumption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlaybackConfigurationName", targetDepth))
+                if (context.TestExpression("PlaybackConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlaybackConfigurationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurringPrefetchConfiguration", targetDepth))
+                if (context.TestExpression("RecurringPrefetchConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RecurringPrefetchConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RecurringPrefetchConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Retrieval", targetDepth))
+                if (context.TestExpression("Retrieval", targetDepth, ref reader))
                 {
                     var unmarshaller = PrefetchRetrievalUnmarshaller.Instance;
                     unmarshalledObject.Retrieval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduleType", targetDepth))
+                if (context.TestExpression("ScheduleType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScheduleType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamId", targetDepth))
+                if (context.TestExpression("StreamId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -86,7 +86,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// key to its partner node for validation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=32, Max=48)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=48)]
         public string RandomKeyReceive
         {
             get { return this._randomKeyReceive; }
@@ -105,7 +105,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The random key generated for sending KEK validation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=32, Max=48)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=48)]
         public string RandomKeySend
         {
             get { return this._randomKeySend; }

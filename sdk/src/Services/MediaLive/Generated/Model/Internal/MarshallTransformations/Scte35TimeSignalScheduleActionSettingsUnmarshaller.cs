@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scte35Descriptors", targetDepth))
+                if (context.TestExpression("scte35Descriptors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Scte35Descriptor, Scte35DescriptorUnmarshaller>(Scte35DescriptorUnmarshaller.Instance);
                     unmarshalledObject.Scte35Descriptors = unmarshaller.Unmarshall(context, ref reader);

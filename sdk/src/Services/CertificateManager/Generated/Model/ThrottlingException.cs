@@ -37,6 +37,7 @@ namespace Amazon.CertificateManager.Model
     #endif
     public partial class ThrottlingException : AmazonCertificateManagerException
     {
+        private List<ThrottlingReason> _throttlingReasons = AWSConfigs.InitializeCollections ? new List<ThrottlingReason>() : null;
 
         /// <summary>
         /// Default constructor for ThrottlingException
@@ -105,6 +106,7 @@ namespace Amazon.CertificateManager.Model
         protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ThrottlingReasons = (List<ThrottlingReason>)info.GetValue("ThrottlingReasons", typeof(List<ThrottlingReason>));
         }
 
         /// <summary>
@@ -120,8 +122,32 @@ namespace Amazon.CertificateManager.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ThrottlingReasons", this.ThrottlingReasons);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ThrottlingReasons. 
+        /// <para>
+        /// One or more reasons why the request was throttled.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ThrottlingReason> ThrottlingReasons
+        {
+            get { return this._throttlingReasons; }
+            set { this._throttlingReasons = value; }
+        }
+
+        // Check to see if ThrottlingReasons property is set
+        internal bool IsSetThrottlingReasons()
+        {
+            return this._throttlingReasons != null && (this._throttlingReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

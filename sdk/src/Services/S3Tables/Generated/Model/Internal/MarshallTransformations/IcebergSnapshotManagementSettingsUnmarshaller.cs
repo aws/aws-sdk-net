@@ -56,13 +56,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxSnapshotAgeHours", targetDepth))
+                if (context.TestExpression("maxSnapshotAgeHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSnapshotAgeHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minSnapshotsToKeep", targetDepth))
+                if (context.TestExpression("minSnapshotsToKeep", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinSnapshotsToKeep = unmarshaller.Unmarshall(context, ref reader);

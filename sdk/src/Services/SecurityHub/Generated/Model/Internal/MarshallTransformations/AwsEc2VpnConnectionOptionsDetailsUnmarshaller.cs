@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StaticRoutesOnly", targetDepth))
+                if (context.TestExpression("StaticRoutesOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StaticRoutesOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TunnelOptions", targetDepth))
+                if (context.TestExpression("TunnelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2VpnConnectionOptionsTunnelOptionsDetails, AwsEc2VpnConnectionOptionsTunnelOptionsDetailsUnmarshaller>(AwsEc2VpnConnectionOptionsTunnelOptionsDetailsUnmarshaller.Instance);
                     unmarshalledObject.TunnelOptions = unmarshaller.Unmarshall(context, ref reader);

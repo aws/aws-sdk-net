@@ -56,19 +56,19 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kendraIndex", targetDepth))
+                if (context.TestExpression("kendraIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KendraIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryFilterString", targetDepth))
+                if (context.TestExpression("queryFilterString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryFilterString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("role", targetDepth))
+                if (context.TestExpression("role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);

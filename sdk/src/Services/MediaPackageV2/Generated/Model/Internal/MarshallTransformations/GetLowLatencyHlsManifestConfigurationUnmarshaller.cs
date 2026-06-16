@@ -56,55 +56,61 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChildManifestName", targetDepth))
+                if (context.TestExpression("ChildManifestName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChildManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterConfiguration", targetDepth))
+                if (context.TestExpression("FilterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestName", targetDepth))
+                if (context.TestExpression("ManifestName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestWindowSeconds", targetDepth))
+                if (context.TestExpression("ManifestWindowSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProgramDateTimeIntervalSeconds", targetDepth))
+                if (context.TestExpression("ProgramDateTimeIntervalSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramDateTimeIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScteHls", targetDepth))
+                if (context.TestExpression("ScteHls", targetDepth, ref reader))
                 {
                     var unmarshaller = ScteHlsUnmarshaller.Instance;
                     unmarshalledObject.ScteHls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTag", targetDepth))
+                if (context.TestExpression("StartTag", targetDepth, ref reader))
                 {
                     var unmarshaller = StartTagUnmarshaller.Instance;
                     unmarshalledObject.StartTag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Url", targetDepth))
+                if (context.TestExpression("UriPathType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UriPathType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Url", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UrlEncodeChildManifest", targetDepth))
+                if (context.TestExpression("UrlEncodeChildManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UrlEncodeChildManifest = unmarshaller.Unmarshall(context, ref reader);

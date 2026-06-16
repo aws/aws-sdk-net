@@ -35,6 +35,7 @@ namespace Amazon.Outposts.Model
     public partial class Subscription
     {
         private DateTime? _beginDate;
+        private CurrencyCode _currency;
         private DateTime? _endDate;
         private double? _monthlyRecurringPrice;
         private List<string> _orderIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -59,6 +60,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetBeginDate()
         {
             return this._beginDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Currency. 
+        /// <para>
+        /// The currency of the subscription price. Currently only <c>USD</c> is supported.
+        /// </para>
+        /// </summary>
+        public CurrencyCode Currency
+        {
+            get { return this._currency; }
+            set { this._currency = value; }
+        }
+
+        // Check to see if Currency property is set
+        internal bool IsSetCurrency()
+        {
+            return this._currency != null;
         }
 
         /// <summary>
@@ -153,6 +172,11 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  <b>ACTIVE</b> - Subscription requests that are in progress and have an end date in
         /// the future.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>PENDING</b> - Subscription has been created but billing has not yet commenced
+        /// because the subscription begin date has not been reached.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -56,37 +56,37 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientAliases", targetDepth))
+                if (context.TestExpression("clientAliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceConnectClientAlias, ServiceConnectClientAliasUnmarshaller>(ServiceConnectClientAliasUnmarshaller.Instance);
                     unmarshalledObject.ClientAliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("discoveryName", targetDepth))
+                if (context.TestExpression("discoveryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiscoveryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ingressPortOverride", targetDepth))
+                if (context.TestExpression("ingressPortOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IngressPortOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portName", targetDepth))
+                if (context.TestExpression("portName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PortName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeout", targetDepth))
+                if (context.TestExpression("timeout", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Timeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tls", targetDepth))
+                if (context.TestExpression("tls", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceConnectTlsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);

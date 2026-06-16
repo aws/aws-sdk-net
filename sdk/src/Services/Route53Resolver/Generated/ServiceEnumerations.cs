@@ -341,6 +341,56 @@ namespace Amazon.Route53Resolver
 
 
     /// <summary>
+    /// Constants used for properties of type DomainListType.
+    /// </summary>
+    public class DomainListType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTENT for DomainListType
+        /// </summary>
+        public static readonly DomainListType CONTENT = new DomainListType("CONTENT");
+        /// <summary>
+        /// Constant THREAT for DomainListType
+        /// </summary>
+        public static readonly DomainListType THREAT = new DomainListType("THREAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainListType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainListType FindValue(string value)
+        {
+            return FindValue<DomainListType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainListType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FirewallDomainImportOperation.
     /// </summary>
     public class FirewallDomainImportOperation : ConstantClass

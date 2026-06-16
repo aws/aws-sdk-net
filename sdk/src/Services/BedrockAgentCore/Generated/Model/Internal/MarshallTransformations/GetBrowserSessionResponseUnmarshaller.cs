@@ -52,79 +52,91 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("browserIdentifier", targetDepth))
+                if (context.TestExpression("browserIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BrowserIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("certificates", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Certificate, CertificateUnmarshaller>(CertificateUnmarshaller.Instance);
+                    response.Certificates = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("extensions", targetDepth))
+                if (context.TestExpression("enterprisePolicies", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<BrowserEnterprisePolicy, BrowserEnterprisePolicyUnmarshaller>(BrowserEnterprisePolicyUnmarshaller.Instance);
+                    response.EnterprisePolicies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("extensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BrowserExtension, BrowserExtensionUnmarshaller>(BrowserExtensionUnmarshaller.Instance);
                     response.Extensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profileConfiguration", targetDepth))
+                if (context.TestExpression("profileConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BrowserProfileConfigurationUnmarshaller.Instance;
                     response.ProfileConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("proxyConfiguration", targetDepth))
+                if (context.TestExpression("proxyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
                     response.ProxyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionReplayArtifact", targetDepth))
+                if (context.TestExpression("sessionReplayArtifact", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionReplayArtifact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionTimeoutSeconds", targetDepth))
+                if (context.TestExpression("sessionTimeoutSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.SessionTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streams", targetDepth))
+                if (context.TestExpression("streams", targetDepth, ref reader))
                 {
                     var unmarshaller = BrowserSessionStreamUnmarshaller.Instance;
                     response.Streams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("viewPort", targetDepth))
+                if (context.TestExpression("viewPort", targetDepth, ref reader))
                 {
                     var unmarshaller = ViewPortUnmarshaller.Instance;
                     response.ViewPort = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("statements", targetDepth))
+                if (context.TestExpression("statements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ApplicationPolicyStatement, ApplicationPolicyStatementUnmarshaller>(ApplicationPolicyStatementUnmarshaller.Instance);
                     response.Statements = unmarshaller.Unmarshall(context, ref reader);

@@ -56,277 +56,277 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsAccountId", targetDepth))
+                if (context.TestExpression("awsAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeRepositoryProjectName", targetDepth))
+                if (context.TestExpression("codeRepositoryProjectName", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.CodeRepositoryProjectName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeRepositoryProviderType", targetDepth))
+                if (context.TestExpression("codeRepositoryProviderType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.CodeRepositoryProviderType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeVulnerabilityDetectorName", targetDepth))
+                if (context.TestExpression("codeVulnerabilityDetectorName", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.CodeVulnerabilityDetectorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeVulnerabilityDetectorTags", targetDepth))
+                if (context.TestExpression("codeVulnerabilityDetectorTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.CodeVulnerabilityDetectorTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeVulnerabilityFilePath", targetDepth))
+                if (context.TestExpression("codeVulnerabilityFilePath", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.CodeVulnerabilityFilePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("componentId", targetDepth))
+                if (context.TestExpression("componentId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.ComponentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("componentType", targetDepth))
+                if (context.TestExpression("componentType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.ComponentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2InstanceImageId", targetDepth))
+                if (context.TestExpression("ec2InstanceImageId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.Ec2InstanceImageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2InstanceSubnetId", targetDepth))
+                if (context.TestExpression("ec2InstanceSubnetId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.Ec2InstanceSubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2InstanceVpcId", targetDepth))
+                if (context.TestExpression("ec2InstanceVpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.Ec2InstanceVpcId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageArchitecture", targetDepth))
+                if (context.TestExpression("ecrImageArchitecture", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageArchitecture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageHash", targetDepth))
+                if (context.TestExpression("ecrImageHash", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageHash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageInUseCount", targetDepth))
+                if (context.TestExpression("ecrImageInUseCount", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageInUseCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageLastInUseAt", targetDepth))
+                if (context.TestExpression("ecrImageLastInUseAt", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageLastInUseAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImagePushedAt", targetDepth))
+                if (context.TestExpression("ecrImagePushedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImagePushedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageRegistry", targetDepth))
+                if (context.TestExpression("ecrImageRegistry", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageRegistry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageRepositoryName", targetDepth))
+                if (context.TestExpression("ecrImageRepositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageRepositoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageTags", targetDepth))
+                if (context.TestExpression("ecrImageTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("epssScore", targetDepth))
+                if (context.TestExpression("epssScore", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
                     unmarshalledObject.EpssScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exploitAvailable", targetDepth))
+                if (context.TestExpression("exploitAvailable", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.ExploitAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingArn", targetDepth))
+                if (context.TestExpression("findingArn", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.FindingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingStatus", targetDepth))
+                if (context.TestExpression("findingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.FindingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingType", targetDepth))
+                if (context.TestExpression("findingType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.FindingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstObservedAt", targetDepth))
+                if (context.TestExpression("firstObservedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
                     unmarshalledObject.FirstObservedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fixAvailable", targetDepth))
+                if (context.TestExpression("fixAvailable", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.FixAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inspectorScore", targetDepth))
+                if (context.TestExpression("inspectorScore", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NumberFilter, NumberFilterUnmarshaller>(NumberFilterUnmarshaller.Instance);
                     unmarshalledObject.InspectorScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionExecutionRoleArn", targetDepth))
+                if (context.TestExpression("lambdaFunctionExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.LambdaFunctionExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionLastModifiedAt", targetDepth))
+                if (context.TestExpression("lambdaFunctionLastModifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
                     unmarshalledObject.LambdaFunctionLastModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionLayers", targetDepth))
+                if (context.TestExpression("lambdaFunctionLayers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.LambdaFunctionLayers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionName", targetDepth))
+                if (context.TestExpression("lambdaFunctionName", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.LambdaFunctionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionRuntime", targetDepth))
+                if (context.TestExpression("lambdaFunctionRuntime", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.LambdaFunctionRuntime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastObservedAt", targetDepth))
+                if (context.TestExpression("lastObservedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
                     unmarshalledObject.LastObservedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkProtocol", targetDepth))
+                if (context.TestExpression("networkProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.NetworkProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portRange", targetDepth))
+                if (context.TestExpression("portRange", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PortRangeFilter, PortRangeFilterUnmarshaller>(PortRangeFilterUnmarshaller.Instance);
                     unmarshalledObject.PortRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relatedVulnerabilities", targetDepth))
+                if (context.TestExpression("relatedVulnerabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.RelatedVulnerabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("resourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceTags", targetDepth))
+                if (context.TestExpression("resourceTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MapFilter, MapFilterUnmarshaller>(MapFilterUnmarshaller.Instance);
                     unmarshalledObject.ResourceTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("severity", targetDepth))
+                if (context.TestExpression("severity", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.Severity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("title", targetDepth))
+                if (context.TestExpression("title", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateFilter, DateFilterUnmarshaller>(DateFilterUnmarshaller.Instance);
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vendorSeverity", targetDepth))
+                if (context.TestExpression("vendorSeverity", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.VendorSeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vulnerabilityId", targetDepth))
+                if (context.TestExpression("vulnerabilityId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.VulnerabilityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vulnerabilitySource", targetDepth))
+                if (context.TestExpression("vulnerabilitySource", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.VulnerabilitySource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vulnerablePackages", targetDepth))
+                if (context.TestExpression("vulnerablePackages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PackageFilter, PackageFilterUnmarshaller>(PackageFilterUnmarshaller.Instance);
                     unmarshalledObject.VulnerablePackages = unmarshaller.Unmarshall(context, ref reader);

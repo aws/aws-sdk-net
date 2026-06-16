@@ -52,31 +52,31 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaseModelName", targetDepth))
+                if (context.TestExpression("BaseModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BaseModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputDataConfig", targetDepth))
+                if (context.TestExpression("InputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InputDataConfigUnmarshaller.Instance;
                     response.InputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageCode", targetDepth))
+                if (context.TestExpression("LanguageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelName", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelStatus", targetDepth))
+                if (context.TestExpression("ModelStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelStatus = unmarshaller.Unmarshall(context, ref reader);

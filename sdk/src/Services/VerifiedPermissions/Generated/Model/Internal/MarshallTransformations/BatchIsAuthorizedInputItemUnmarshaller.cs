@@ -56,25 +56,25 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("context", targetDepth))
+                if (context.TestExpression("context", targetDepth, ref reader))
                 {
                     var unmarshaller = ContextDefinitionUnmarshaller.Instance;
                     unmarshalledObject.Context = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("principal", targetDepth))
+                if (context.TestExpression("principal", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Principal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resource", targetDepth))
+                if (context.TestExpression("resource", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);

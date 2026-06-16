@@ -56,25 +56,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CoverageNormalizedUnitsPercentage", targetDepth))
+                if (context.TestExpression("CoverageNormalizedUnitsPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CoverageNormalizedUnitsPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandNormalizedUnits", targetDepth))
+                if (context.TestExpression("OnDemandNormalizedUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OnDemandNormalizedUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservedNormalizedUnits", targetDepth))
+                if (context.TestExpression("ReservedNormalizedUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReservedNormalizedUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRunningNormalizedUnits", targetDepth))
+                if (context.TestExpression("TotalRunningNormalizedUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalRunningNormalizedUnits = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("duration", targetDepth))
+                if (context.TestExpression("duration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTimestamp", targetDepth))
+                if (context.TestExpression("startTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stopTimestamp", targetDepth))
+                if (context.TestExpression("stopTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopTimestamp = unmarshaller.Unmarshall(context, ref reader);

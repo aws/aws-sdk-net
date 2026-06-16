@@ -52,13 +52,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpendLimits", targetDepth))
+                if (context.TestExpression("SpendLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SpendLimit, SpendLimitUnmarshaller>(SpendLimitUnmarshaller.Instance);
                     response.SpendLimits = unmarshaller.Unmarshall(context, ref reader);

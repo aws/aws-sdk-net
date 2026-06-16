@@ -52,31 +52,31 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FileSystemId", targetDepth))
+                if (context.TestExpression("FileSystemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FileSystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Lifecycle", targetDepth))
+                if (context.TestExpression("Lifecycle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Lifecycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LustreResponse", targetDepth))
+                if (context.TestExpression("LustreResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteFileSystemLustreResponseUnmarshaller.Instance;
                     response.LustreResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenZFSResponse", targetDepth))
+                if (context.TestExpression("OpenZFSResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteFileSystemOpenZFSResponseUnmarshaller.Instance;
                     response.OpenZFSResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WindowsResponse", targetDepth))
+                if (context.TestExpression("WindowsResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteFileSystemWindowsResponseUnmarshaller.Instance;
                     response.WindowsResponse = unmarshaller.Unmarshall(context, ref reader);

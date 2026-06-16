@@ -141,6 +141,31 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceCreateGrant()
+        {
+            #region to-create-a-grant-for-a-service-principal-1477972226783
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateGrant(new CreateGrantRequest 
+            {
+                Constraints = new GrantConstraints { SourceArn = "arn:aws:dynamodb:us-east-2:444455556666:table/ExampleTable" }, // The SourceArn grant constraint restricts the grant permissions to requests associated with the specified AWS resource.
+                GranteeServicePrincipal = "service-name.amazonaws.com", // The AWS service principal that is given permission to perform the operations specified in the grant.
+                KeyId = "arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to which the grant applies. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                Operations = new List<string> {
+                    "Encrypt",
+                    "Decrypt",
+                    "GenerateDataKey",
+                    "DescribeKey"
+                }, // A list of operations that the grant allows.
+                RetiringServicePrincipal = "service-name.amazonaws.com" // The AWS service principal that can retire the grant.
+            });
+
+            string grantId = response.GrantId; // The unique identifier of the grant.
+            string grantToken = response.GrantToken; // The grant token.
+
+            #endregion
+        }
+
         public void KeyManagementServiceCreateKey()
         {
             #region to-create-a-cmk-1
@@ -868,6 +893,24 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceGetKeyLastUsage()
+        {
+            #region to-retrieve-the-last-usage-for-a-kms-key-1773253500001
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GetKeyLastUsage(new GetKeyLastUsageRequest 
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to get usage information for. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key. Alias names are not supported.
+            });
+
+            DateTime keyCreationDate = response.KeyCreationDate; // The date and time when the KMS key was created.
+            string keyId = response.KeyId; // The globally unique identifier for the KMS key.
+            KeyLastUsageData keyLastUsage = response.KeyLastUsage; // Contains usage information about the last time the KMS key was used for a successful cryptographic operation.
+            DateTime trackingStartDate = response.TrackingStartDate; // The date from which AWS KMS began recording cryptographic activity for this key, or the date the KMS key was created, whichever is later.
+
+            #endregion
+        }
+
         public void KeyManagementServiceGetKeyPolicy()
         {
             #region to-retrieve-a-key-policy-1479170128325
@@ -1072,6 +1115,23 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceListGrants()
+        {
+            #region to-list-grants-by-grantee-service-principal-1481067365390
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ListGrants(new ListGrantsRequest 
+            {
+                GranteeServicePrincipal = "service-name.amazonaws.com", // Returns only grants where the specified AWS service principal is the grantee service principal.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose grants you want to list. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+            });
+
+            List<GrantListEntry> grants = response.Grants; // A list of grants.
+            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
+
+            #endregion
+        }
+
         public void KeyManagementServiceListKeyPolicies()
         {
             #region to-list-key-policies-for-a-cmk-1481069780998
@@ -1146,6 +1206,22 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             });
 
             List<GrantListEntry> grants = response.Grants; // A list of grants that the specified principal can retire.
+            bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceListRetirableGrants()
+        {
+            #region to-list-grants-by-retiring-service-principal-1481140499621
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ListRetirableGrants(new ListRetirableGrantsRequest 
+            {
+                RetiringServicePrincipal = "service-name.amazonaws.com" // The retiring service principal whose grants you want to list. Use the AWS service principal name of the service (for example, service-name.amazonaws.com).
+            });
+
+            List<GrantListEntry> grants = response.Grants; // A list of grants that the specified service principal can retire.
             bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
 
             #endregion

@@ -35,7 +35,32 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SemanticModelConfiguration
     {
+        private List<DataSetSemanticMetadata> _semanticMetadata = AWSConfigs.InitializeCollections ? new List<DataSetSemanticMetadata>() : null;
         private Dictionary<string, SemanticTable> _tableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SemanticTable>() : null;
+
+        /// <summary>
+        /// Gets and sets the property SemanticMetadata. 
+        /// <para>
+        /// The dataset-level semantic metadata, including a description and custom instructions.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<DataSetSemanticMetadata> SemanticMetadata
+        {
+            get { return this._semanticMetadata; }
+            set { this._semanticMetadata = value; }
+        }
+
+        // Check to see if SemanticMetadata property is set
+        internal bool IsSetSemanticMetadata()
+        {
+            return this._semanticMetadata != null && (this._semanticMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property TableMap. 

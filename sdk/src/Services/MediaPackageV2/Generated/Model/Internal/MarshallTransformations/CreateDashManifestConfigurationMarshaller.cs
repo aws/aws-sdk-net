@@ -46,6 +46,23 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioTimelinePattern())
+            {
+                context.Writer.WritePropertyName("AudioTimelinePattern");
+                context.Writer.WriteStringValue(requestObject.AudioTimelinePattern);
+            }
+
+            if(requestObject.IsSetAvailabilityStartTimeConfiguration())
+            {
+                context.Writer.WritePropertyName("AvailabilityStartTimeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DashAvailabilityStartTimeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AvailabilityStartTimeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetBaseUrls())
             {
                 context.Writer.WritePropertyName("BaseUrls");
@@ -185,6 +202,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SuggestedPresentationDelaySeconds");
                 context.Writer.WriteNumberValue(requestObject.SuggestedPresentationDelaySeconds.Value);
+            }
+
+            if(requestObject.IsSetUriPathType())
+            {
+                context.Writer.WritePropertyName("UriPathType");
+                context.Writer.WriteStringValue(requestObject.UriPathType);
             }
 
             if(requestObject.IsSetUtcTiming())

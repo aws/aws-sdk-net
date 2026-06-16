@@ -56,13 +56,13 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("email", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verified", targetDepth))
+                if (context.TestExpression("verified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Verified = unmarshaller.Unmarshall(context, ref reader);

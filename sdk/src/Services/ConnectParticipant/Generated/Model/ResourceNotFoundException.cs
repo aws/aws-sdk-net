@@ -150,7 +150,7 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of Amazon Connect resource.
+        /// The type of Connect Customer resource.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

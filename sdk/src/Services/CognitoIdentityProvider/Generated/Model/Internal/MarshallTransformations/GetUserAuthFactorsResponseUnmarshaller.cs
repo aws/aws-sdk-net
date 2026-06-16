@@ -52,25 +52,25 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConfiguredUserAuthFactors", targetDepth))
+                if (context.TestExpression("ConfiguredUserAuthFactors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ConfiguredUserAuthFactors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreferredMfaSetting", targetDepth))
+                if (context.TestExpression("PreferredMfaSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PreferredMfaSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserMFASettingList", targetDepth))
+                if (context.TestExpression("UserMFASettingList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.UserMFASettingList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Username", targetDepth))
+                if (context.TestExpression("Username", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Username = unmarshaller.Unmarshall(context, ref reader);
@@ -116,6 +116,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
                 {
                     return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotEnabledException"))
+                {
+                    return OperationNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PasswordResetRequiredException"))
                 {

@@ -52,19 +52,19 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthToken", targetDepth))
+                if (context.TestExpression("AuthToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthTokenExpirationTime", targetDepth))
+                if (context.TestExpression("AuthTokenExpirationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AuthTokenExpirationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookUrl", targetDepth))
+                if (context.TestExpression("NotebookUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NotebookUrl = unmarshaller.Unmarshall(context, ref reader);

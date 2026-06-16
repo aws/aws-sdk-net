@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmergencyCallingConfiguration", targetDepth))
+                if (context.TestExpression("EmergencyCallingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EmergencyCallingConfigurationUnmarshaller.Instance;
                     response.EmergencyCallingConfiguration = unmarshaller.Unmarshall(context, ref reader);

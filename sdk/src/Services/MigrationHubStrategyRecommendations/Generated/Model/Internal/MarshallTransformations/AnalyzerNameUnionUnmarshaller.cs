@@ -56,19 +56,19 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("binaryAnalyzerName", targetDepth))
+                if (context.TestExpression("binaryAnalyzerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BinaryAnalyzerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runTimeAnalyzerName", targetDepth))
+                if (context.TestExpression("runTimeAnalyzerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RunTimeAnalyzerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceCodeAnalyzerName", targetDepth))
+                if (context.TestExpression("sourceCodeAnalyzerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceCodeAnalyzerName = unmarshaller.Unmarshall(context, ref reader);

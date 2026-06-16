@@ -56,13 +56,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrencyCode", targetDepth))
+                if (context.TestExpression("CurrencyCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedMonthlySavings", targetDepth))
+                if (context.TestExpression("EstimatedMonthlySavings", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);

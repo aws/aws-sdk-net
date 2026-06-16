@@ -52,7 +52,7 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("securityGroup", targetDepth))
+                if (context.TestExpression("securityGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityGroupUnmarshaller.Instance;
                     response.SecurityGroup = unmarshaller.Unmarshall(context, ref reader);

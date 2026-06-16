@@ -56,31 +56,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutomaticFail", targetDepth))
+                if (context.TestExpression("AutomaticFail", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutomaticFail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutomaticFailConfiguration", targetDepth))
+                if (context.TestExpression("AutomaticFailConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomaticFailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AutomaticFailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxValue", targetDepth))
+                if (context.TestExpression("MaxValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinValue", targetDepth))
+                if (context.TestExpression("MinValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Score", targetDepth))
+                if (context.TestExpression("Score", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Score = unmarshaller.Unmarshall(context, ref reader);

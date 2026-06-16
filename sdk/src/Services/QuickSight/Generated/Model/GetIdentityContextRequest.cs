@@ -133,6 +133,7 @@ namespace Amazon.QuickSight.Model
     public partial class GetIdentityContextRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private string _contextRegion;
         private string _awsNamespace;
         private DateTime? _sessionExpiresAt;
         private UserIdentifier _userIdentifier;
@@ -156,6 +157,49 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextRegion. 
+        /// <para>
+        /// The region in which the context is to be used. Use this parameter to obtain an identity
+        /// context for cross-region use.
+        /// </para>
+        ///  
+        /// <para>
+        /// The specified region must meet the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The region must be in the same Amazon Web Services partition as the region you are
+        /// calling from. Cross-partition requests are not supported. For example, you cannot
+        /// specify a region in the <c>aws-cn</c> partition when calling from a region in the
+        /// <c>aws</c> partition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must be a valid Amazon QuickSight supported region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The calling customer account must be enabled in the specified context region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This parameter is not supported when calling from an opt-in region.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ContextRegion
+        {
+            get { return this._contextRegion; }
+            set { this._contextRegion = value; }
+        }
+
+        // Check to see if ContextRegion property is set
+        internal bool IsSetContextRegion()
+        {
+            return this._contextRegion != null;
         }
 
         /// <summary>

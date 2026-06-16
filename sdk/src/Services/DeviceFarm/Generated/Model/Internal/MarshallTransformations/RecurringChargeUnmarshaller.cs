@@ -56,13 +56,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cost", targetDepth))
+                if (context.TestExpression("cost", targetDepth, ref reader))
                 {
                     var unmarshaller = MonetaryAmountUnmarshaller.Instance;
                     unmarshalledObject.Cost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frequency", targetDepth))
+                if (context.TestExpression("frequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context, ref reader);

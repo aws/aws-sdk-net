@@ -52,55 +52,55 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("directParentTypes", targetDepth))
+                if (context.TestExpression("directParentTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.DirectParentTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("directReferringTables", targetDepth))
+                if (context.TestExpression("directReferringTables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.DirectReferringTables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fieldDefinitions", targetDepth))
+                if (context.TestExpression("fieldDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldDefinition, FieldDefinitionUnmarshaller>(FieldDefinitionUnmarshaller.Instance);
                     response.FieldDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("keyspaceArn", targetDepth))
+                if (context.TestExpression("keyspaceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyspaceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("keyspaceName", targetDepth))
+                if (context.TestExpression("keyspaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyspaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedTimestamp", targetDepth))
+                if (context.TestExpression("lastModifiedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxNestingDepth", targetDepth))
+                if (context.TestExpression("maxNestingDepth", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxNestingDepth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("typeName", targetDepth))
+                if (context.TestExpression("typeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TypeName = unmarshaller.Unmarshall(context, ref reader);

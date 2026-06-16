@@ -56,13 +56,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amis", targetDepth))
+                if (context.TestExpression("amis", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecyclePolicyDetailExclusionRulesAmisUnmarshaller.Instance;
                     unmarshalledObject.Amis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagMap", targetDepth))
+                if (context.TestExpression("tagMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.TagMap = unmarshaller.Unmarshall(context, ref reader);

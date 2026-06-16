@@ -56,31 +56,31 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MediaCapturePipeline", targetDepth))
+                if (context.TestExpression("MediaCapturePipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaCapturePipelineUnmarshaller.Instance;
                     unmarshalledObject.MediaCapturePipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaConcatenationPipeline", targetDepth))
+                if (context.TestExpression("MediaConcatenationPipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaConcatenationPipelineUnmarshaller.Instance;
                     unmarshalledObject.MediaConcatenationPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipeline", targetDepth))
+                if (context.TestExpression("MediaInsightsPipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaInsightsPipelineUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaLiveConnectorPipeline", targetDepth))
+                if (context.TestExpression("MediaLiveConnectorPipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaLiveConnectorPipelineUnmarshaller.Instance;
                     unmarshalledObject.MediaLiveConnectorPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaStreamPipeline", targetDepth))
+                if (context.TestExpression("MediaStreamPipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaStreamPipelineUnmarshaller.Instance;
                     unmarshalledObject.MediaStreamPipeline = unmarshaller.Unmarshall(context, ref reader);

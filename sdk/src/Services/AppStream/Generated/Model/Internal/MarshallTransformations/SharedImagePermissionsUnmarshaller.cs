@@ -56,13 +56,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imagePermissions", targetDepth))
+                if (context.TestExpression("imagePermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = ImagePermissionsUnmarshaller.Instance;
                     unmarshalledObject.ImagePermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sharedAccountId", targetDepth))
+                if (context.TestExpression("sharedAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SharedAccountId = unmarshaller.Unmarshall(context, ref reader);

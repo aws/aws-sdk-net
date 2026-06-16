@@ -52,7 +52,7 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("roleCredentials", targetDepth))
+                if (context.TestExpression("roleCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = RoleCredentialsUnmarshaller.Instance;
                     response.RoleCredentials = unmarshaller.Unmarshall(context, ref reader);

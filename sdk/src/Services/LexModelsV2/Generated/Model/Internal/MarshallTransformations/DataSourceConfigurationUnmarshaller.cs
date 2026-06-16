@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockKnowledgeStoreConfiguration", targetDepth))
+                if (context.TestExpression("bedrockKnowledgeStoreConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BedrockKnowledgeStoreConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BedrockKnowledgeStoreConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kendraConfiguration", targetDepth))
+                if (context.TestExpression("kendraConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QnAKendraConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KendraConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("opensearchConfiguration", targetDepth))
+                if (context.TestExpression("opensearchConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OpensearchConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OpensearchConfiguration = unmarshaller.Unmarshall(context, ref reader);

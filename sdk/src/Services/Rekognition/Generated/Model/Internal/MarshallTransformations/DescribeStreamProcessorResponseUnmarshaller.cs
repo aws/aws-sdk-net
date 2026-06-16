@@ -52,85 +52,85 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTimestamp", targetDepth))
+                if (context.TestExpression("CreationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSharingPreference", targetDepth))
+                if (context.TestExpression("DataSharingPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamProcessorDataSharingPreferenceUnmarshaller.Instance;
                     response.DataSharingPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Input", targetDepth))
+                if (context.TestExpression("Input", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamProcessorInputUnmarshaller.Instance;
                     response.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyId", targetDepth))
+                if (context.TestExpression("KmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateTimestamp", targetDepth))
+                if (context.TestExpression("LastUpdateTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdateTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationChannel", targetDepth))
+                if (context.TestExpression("NotificationChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamProcessorNotificationChannelUnmarshaller.Instance;
                     response.NotificationChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Output", targetDepth))
+                if (context.TestExpression("Output", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamProcessorOutputUnmarshaller.Instance;
                     response.Output = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegionsOfInterest", targetDepth))
+                if (context.TestExpression("RegionsOfInterest", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegionOfInterest, RegionOfInterestUnmarshaller>(RegionOfInterestUnmarshaller.Instance);
                     response.RegionsOfInterest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Settings", targetDepth))
+                if (context.TestExpression("Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamProcessorSettingsUnmarshaller.Instance;
                     response.Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamProcessorArn", targetDepth))
+                if (context.TestExpression("StreamProcessorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StreamProcessorArn = unmarshaller.Unmarshall(context, ref reader);

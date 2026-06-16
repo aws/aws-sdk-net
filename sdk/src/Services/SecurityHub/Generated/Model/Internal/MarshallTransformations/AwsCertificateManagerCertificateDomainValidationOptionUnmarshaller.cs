@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceRecord", targetDepth))
+                if (context.TestExpression("ResourceRecord", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCertificateManagerCertificateResourceRecordUnmarshaller.Instance;
                     unmarshalledObject.ResourceRecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationDomain", targetDepth))
+                if (context.TestExpression("ValidationDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValidationDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationEmails", targetDepth))
+                if (context.TestExpression("ValidationEmails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ValidationEmails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationMethod", targetDepth))
+                if (context.TestExpression("ValidationMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValidationMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationStatus", targetDepth))
+                if (context.TestExpression("ValidationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context, ref reader);

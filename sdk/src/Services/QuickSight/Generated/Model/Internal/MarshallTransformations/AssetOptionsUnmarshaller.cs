@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomActionDefaults", targetDepth))
+                if (context.TestExpression("CustomActionDefaults", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualCustomActionDefaultsUnmarshaller.Instance;
                     unmarshalledObject.CustomActionDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludedDataSetArns", targetDepth))
+                if (context.TestExpression("ExcludedDataSetArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludedDataSetArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QBusinessInsightsStatus", targetDepth))
+                if (context.TestExpression("QBusinessInsightsStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QBusinessInsightsStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timezone", targetDepth))
+                if (context.TestExpression("Timezone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Timezone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WeekStart", targetDepth))
+                if (context.TestExpression("WeekStart", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WeekStart = unmarshaller.Unmarshall(context, ref reader);

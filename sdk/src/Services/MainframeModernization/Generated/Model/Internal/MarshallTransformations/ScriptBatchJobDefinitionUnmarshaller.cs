@@ -56,7 +56,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scriptName", targetDepth))
+                if (context.TestExpression("scriptName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScriptName = unmarshaller.Unmarshall(context, ref reader);

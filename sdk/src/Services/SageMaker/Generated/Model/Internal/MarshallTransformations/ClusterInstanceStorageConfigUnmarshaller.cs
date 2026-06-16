@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EbsVolumeConfig", targetDepth))
+                if (context.TestExpression("EbsVolumeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterEbsVolumeConfigUnmarshaller.Instance;
                     unmarshalledObject.EbsVolumeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FsxLustreConfig", targetDepth))
+                if (context.TestExpression("FsxLustreConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterFsxLustreConfigUnmarshaller.Instance;
                     unmarshalledObject.FsxLustreConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FsxOpenZfsConfig", targetDepth))
+                if (context.TestExpression("FsxOpenZfsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterFsxOpenZfsConfigUnmarshaller.Instance;
                     unmarshalledObject.FsxOpenZfsConfig = unmarshaller.Unmarshall(context, ref reader);

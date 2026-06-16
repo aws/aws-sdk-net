@@ -56,13 +56,13 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IsolationMode", targetDepth))
+                if (context.TestExpression("IsolationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IsolationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunAs", targetDepth))
+                if (context.TestExpression("RunAs", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionRunAsConfigUnmarshaller.Instance;
                     unmarshalledObject.RunAs = unmarshaller.Unmarshall(context, ref reader);

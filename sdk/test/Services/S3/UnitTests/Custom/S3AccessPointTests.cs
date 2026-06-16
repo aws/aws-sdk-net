@@ -38,46 +38,40 @@ namespace AWSSDK.UnitTests
     {
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ThrowExceptionUsingServiceUrl()
         {
             var accessPointArn = "arn:aws:s3:eu-central-1:000011112222:accesspoint/testpoint";
-
             var request = new PutObjectRequest
             {
                 BucketName = accessPointArn,
                 Key = "foo.txt",
                 ContentBody = "data"
             };
-
             var config = new AmazonS3Config
             {
                 ServiceURL = "https://s3.amazonaws.com"
             };
-
-            S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ThrowExceptionAccessPointAndServiceClientDifferentRegions()
         {
             var accessPointArn = "arn:aws:s3:eu-central-1:000011112222:accesspoint/testpoint";
-
             var request = new PutObjectRequest
             {
                 BucketName = accessPointArn,
                 Key = "foo.txt",
                 ContentBody = "data"
             };
-
             var config = new AmazonS3Config
             {
                 RegionEndpoint = RegionEndpoint.USEast2
             };
-
-            S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config));
         }
 
         [TestMethod]
@@ -104,25 +98,22 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ThrowExceptionWhenUsingDifferentPartitions()
         {
             var accessPointArn = "arn:aws-cn:s3:cn-north-1:000011112222:accesspoint/testpoint";
-
             var request = new PutObjectRequest
             {
                 BucketName = accessPointArn,
                 Key = "foo.txt",
                 ContentBody = "data"
             };
-
             var config = new AmazonS3Config
             {
                 RegionEndpoint = RegionEndpoint.USEast2,
                 UseArnRegion = true
             };
-
-            S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                S3ArnTestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config));
         }
 
         [TestMethod]
@@ -360,7 +351,7 @@ namespace AWSSDK.UnitTests
         }
 
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("arn:aws:s3:us-east-1:000011112222:accesspoint/testpoint", S3ConfigFlags.None, "testpoint-000011112222.s3-accesspoint.us-east-1.amazonaws.com", "X-Amz-Algorithm=AWS4-HMAC-SHA256", "")]
         [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", S3ConfigFlags.None, "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", "X-Amz-Region-Set=%2A", "")]
         [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", S3ConfigFlags.DisableMRAP, "", "", "Invalid configuration: Multi-Region Access Point ARNs are disabled.")]
@@ -436,11 +427,6 @@ namespace AWSSDK.UnitTests
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "s3-external-1", S3ConfigFlags.None, "", "Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`")]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "aws-global", S3ConfigFlags.ArnRegion, "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", "")]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "aws-global", S3ConfigFlags.None, "", "Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`")]
-        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.DisableMRAP, "", "Invalid configuration: Multi-Region Access Point ARNs are disabled.")]
-        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "aws-global", S3ConfigFlags.DisableMRAP, "", "Invalid configuration: Multi-Region Access Point ARNs are disabled.")]
-        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.Dualstack, "", "S3 MRAP does not support dual-stack")]
-        [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.Accelerate, "", "S3 MRAP does not support S3 Accelerate")]
-        [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.DisableMRAP, "", "Invalid configuration: Multi-Region Access Point ARNs are disabled.")]
         [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.DisableMRAP, "", "Invalid configuration: Multi-Region Access Point ARNs are disabled.")]
         [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "aws-global", S3ConfigFlags.DisableMRAP, "", "Invalid configuration: Multi-Region Access Point ARNs are disabled.")]
         [DataRow("arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "us-west-2", S3ConfigFlags.Dualstack, "", "S3 MRAP does not support dual-stack")]

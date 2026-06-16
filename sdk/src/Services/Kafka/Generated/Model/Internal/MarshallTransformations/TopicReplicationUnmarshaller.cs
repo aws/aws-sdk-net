@@ -56,43 +56,43 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("copyAccessControlListsForTopics", targetDepth))
+                if (context.TestExpression("copyAccessControlListsForTopics", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyAccessControlListsForTopics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("copyTopicConfigurations", targetDepth))
+                if (context.TestExpression("copyTopicConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTopicConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("detectAndCopyNewTopics", targetDepth))
+                if (context.TestExpression("detectAndCopyNewTopics", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetectAndCopyNewTopics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startingPosition", targetDepth))
+                if (context.TestExpression("startingPosition", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationStartingPositionUnmarshaller.Instance;
                     unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicNameConfiguration", targetDepth))
+                if (context.TestExpression("topicNameConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationTopicNameConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TopicNameConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicsToExclude", targetDepth))
+                if (context.TestExpression("topicsToExclude", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TopicsToExclude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicsToReplicate", targetDepth))
+                if (context.TestExpression("topicsToReplicate", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TopicsToReplicate = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColorConfiguration", targetDepth))
+                if (context.TestExpression("ColorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GaugeChartColorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ColorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLabels", targetDepth))
+                if (context.TestExpression("DataLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.DataLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("FieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = GaugeChartFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GaugeChartOptions", targetDepth))
+                if (context.TestExpression("GaugeChartOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = GaugeChartOptionsUnmarshaller.Instance;
                     unmarshalledObject.GaugeChartOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Interactions", targetDepth))
+                if (context.TestExpression("Interactions", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
                     unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TooltipOptions", targetDepth))
+                if (context.TestExpression("TooltipOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TooltipOptionsUnmarshaller.Instance;
                     unmarshalledObject.TooltipOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualPalette", targetDepth))
+                if (context.TestExpression("VisualPalette", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualPaletteUnmarshaller.Instance;
                     unmarshalledObject.VisualPalette = unmarshaller.Unmarshall(context, ref reader);

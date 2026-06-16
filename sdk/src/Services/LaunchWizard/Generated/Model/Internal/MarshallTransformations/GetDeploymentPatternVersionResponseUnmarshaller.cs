@@ -52,7 +52,7 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deploymentPatternVersion", targetDepth))
+                if (context.TestExpression("deploymentPatternVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentPatternVersionDataSummaryUnmarshaller.Instance;
                     response.DeploymentPatternVersion = unmarshaller.Unmarshall(context, ref reader);

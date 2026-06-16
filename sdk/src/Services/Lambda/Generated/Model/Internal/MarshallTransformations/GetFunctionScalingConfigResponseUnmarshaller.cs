@@ -52,19 +52,19 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppliedFunctionScalingConfig", targetDepth))
+                if (context.TestExpression("AppliedFunctionScalingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionScalingConfigUnmarshaller.Instance;
                     response.AppliedFunctionScalingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionArn", targetDepth))
+                if (context.TestExpression("FunctionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FunctionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestedFunctionScalingConfig", targetDepth))
+                if (context.TestExpression("RequestedFunctionScalingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionScalingConfigUnmarshaller.Instance;
                     response.RequestedFunctionScalingConfig = unmarshaller.Unmarshall(context, ref reader);

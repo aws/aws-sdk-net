@@ -56,49 +56,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryFilter", targetDepth))
+                if (context.TestExpression("CategoryFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = CategoryFilterUnmarshaller.Instance;
                     unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NestedFilter", targetDepth))
+                if (context.TestExpression("NestedFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = NestedFilterUnmarshaller.Instance;
                     unmarshalledObject.NestedFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericEqualityFilter", targetDepth))
+                if (context.TestExpression("NumericEqualityFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericEqualityFilterUnmarshaller.Instance;
                     unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericRangeFilter", targetDepth))
+                if (context.TestExpression("NumericRangeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericRangeFilterUnmarshaller.Instance;
                     unmarshalledObject.NumericRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelativeDatesFilter", targetDepth))
+                if (context.TestExpression("RelativeDatesFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = RelativeDatesFilterUnmarshaller.Instance;
                     unmarshalledObject.RelativeDatesFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeEqualityFilter", targetDepth))
+                if (context.TestExpression("TimeEqualityFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeEqualityFilterUnmarshaller.Instance;
                     unmarshalledObject.TimeEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeRangeFilter", targetDepth))
+                if (context.TestExpression("TimeRangeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeRangeFilterUnmarshaller.Instance;
                     unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopBottomFilter", targetDepth))
+                if (context.TestExpression("TopBottomFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TopBottomFilterUnmarshaller.Instance;
                     unmarshalledObject.TopBottomFilter = unmarshaller.Unmarshall(context, ref reader);

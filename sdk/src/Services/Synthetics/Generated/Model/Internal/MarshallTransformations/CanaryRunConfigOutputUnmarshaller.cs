@@ -56,25 +56,25 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveTracing", targetDepth))
+                if (context.TestExpression("ActiveTracing", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ActiveTracing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EphemeralStorage", targetDepth))
+                if (context.TestExpression("EphemeralStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemoryInMB", targetDepth))
+                if (context.TestExpression("MemoryInMB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemoryInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeoutInSeconds", targetDepth))
+                if (context.TestExpression("TimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);

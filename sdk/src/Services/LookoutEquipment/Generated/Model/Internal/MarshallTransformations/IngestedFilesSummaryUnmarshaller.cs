@@ -56,19 +56,19 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DiscardedFiles", targetDepth))
+                if (context.TestExpression("DiscardedFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3Object, S3ObjectUnmarshaller>(S3ObjectUnmarshaller.Instance);
                     unmarshalledObject.DiscardedFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngestedNumberOfFiles", targetDepth))
+                if (context.TestExpression("IngestedNumberOfFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IngestedNumberOfFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfFiles", targetDepth))
+                if (context.TestExpression("TotalNumberOfFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfFiles = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Operands", targetDepth))
+                if (context.TestExpression("Operands", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationFormItemEnablementConditionOperand, EvaluationFormItemEnablementConditionOperandUnmarshaller>(EvaluationFormItemEnablementConditionOperandUnmarshaller.Instance);
                     unmarshalledObject.Operands = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Operator", targetDepth))
+                if (context.TestExpression("Operator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Operator = unmarshaller.Unmarshall(context, ref reader);

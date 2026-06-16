@@ -56,55 +56,55 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClusterArn", targetDepth))
+                if (context.TestExpression("ClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Containers", targetDepth))
+                if (context.TestExpression("Containers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsContainerDetails, AwsEcsContainerDetailsUnmarshaller>(AwsEcsContainerDetailsUnmarshaller.Instance);
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Group", targetDepth))
+                if (context.TestExpression("Group", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Group = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartedAt", targetDepth))
+                if (context.TestExpression("StartedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartedBy", targetDepth))
+                if (context.TestExpression("StartedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskDefinitionArn", targetDepth))
+                if (context.TestExpression("TaskDefinitionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Version", targetDepth))
+                if (context.TestExpression("Version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Volumes", targetDepth))
+                if (context.TestExpression("Volumes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskVolumeDetails, AwsEcsTaskVolumeDetailsUnmarshaller>(AwsEcsTaskVolumeDetailsUnmarshaller.Instance);
                     unmarshalledObject.Volumes = unmarshaller.Unmarshall(context, ref reader);

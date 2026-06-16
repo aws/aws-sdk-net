@@ -52,7 +52,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventsConfiguration", targetDepth))
+                if (context.TestExpression("EventsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EventsConfigurationUnmarshaller.Instance;
                     response.EventsConfiguration = unmarshaller.Unmarshall(context, ref reader);

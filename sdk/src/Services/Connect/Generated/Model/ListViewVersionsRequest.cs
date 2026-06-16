@@ -31,8 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListViewVersions operation.
-    /// Returns all the available versions for the specified Amazon Connect instance and view
-    /// identifier.
+    /// Returns all the available versions for the specified Connect Customer instance and
+    /// view identifier.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// The identifier of the Connect Customer instance. You can find the instanceId in the
         /// ARN of the instance.
         /// </para>
         /// </summary>

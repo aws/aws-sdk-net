@@ -56,7 +56,7 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TimestampRanges", targetDepth))
+                if (context.TestExpression("TimestampRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimestampRange, TimestampRangeUnmarshaller>(TimestampRangeUnmarshaller.Instance);
                     unmarshalledObject.TimestampRanges = unmarshaller.Unmarshall(context, ref reader);

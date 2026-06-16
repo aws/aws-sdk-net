@@ -59,6 +59,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListBrowserProfilesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BedrockAgentCoreControl");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-06-05";
             request.HttpMethod = "POST";
 
@@ -69,6 +70,28 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/browser-profiles";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+            
+
             request.UseQueryString = true;
 
             return request;

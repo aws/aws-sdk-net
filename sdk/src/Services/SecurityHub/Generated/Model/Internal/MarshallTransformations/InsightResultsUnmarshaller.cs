@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupByAttribute", targetDepth))
+                if (context.TestExpression("GroupByAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupByAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsightArn", targetDepth))
+                if (context.TestExpression("InsightArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InsightArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultValues", targetDepth))
+                if (context.TestExpression("ResultValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InsightResultValue, InsightResultValueUnmarshaller>(InsightResultValueUnmarshaller.Instance);
                     unmarshalledObject.ResultValues = unmarshaller.Unmarshall(context, ref reader);

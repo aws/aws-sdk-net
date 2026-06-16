@@ -52,19 +52,19 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DesiredState", targetDepth))
+                if (context.TestExpression("DesiredState", targetDepth, ref reader))
                 {
                     var unmarshaller = RevisionUnmarshaller.Instance;
                     response.DesiredState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestSuccessfulSync", targetDepth))
+                if (context.TestExpression("LatestSuccessfulSync", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSyncAttemptUnmarshaller.Instance;
                     response.LatestSuccessfulSync = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestSync", targetDepth))
+                if (context.TestExpression("LatestSync", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSyncAttemptUnmarshaller.Instance;
                     response.LatestSync = unmarshaller.Unmarshall(context, ref reader);

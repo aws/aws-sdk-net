@@ -45,7 +45,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Abbreviated code for a the state, province or region of the country. 
+        ///  Abbreviated code for a the state, province or region of the country. Not available
+        /// in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>

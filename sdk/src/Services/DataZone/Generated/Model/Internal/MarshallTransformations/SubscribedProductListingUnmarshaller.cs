@@ -56,37 +56,37 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetListings", targetDepth))
+                if (context.TestExpression("assetListings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetInDataProductListingItem, AssetInDataProductListingItemUnmarshaller>(AssetInDataProductListingItemUnmarshaller.Instance);
                     unmarshalledObject.AssetListings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityId", targetDepth))
+                if (context.TestExpression("entityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityRevision", targetDepth))
+                if (context.TestExpression("entityRevision", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityRevision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("glossaryTerms", targetDepth))
+                if (context.TestExpression("glossaryTerms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DetailedGlossaryTerm, DetailedGlossaryTermUnmarshaller>(DetailedGlossaryTermUnmarshaller.Instance);
                     unmarshalledObject.GlossaryTerms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("container", targetDepth))
+                if (context.TestExpression("container", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerUnmarshaller.Instance;
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = MetadataUnmarshaller.Instance;
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trackMappings", targetDepth))
+                if (context.TestExpression("trackMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TrackMapping, TrackMappingUnmarshaller>(TrackMappingUnmarshaller.Instance);
                     unmarshalledObject.TrackMappings = unmarshaller.Unmarshall(context, ref reader);

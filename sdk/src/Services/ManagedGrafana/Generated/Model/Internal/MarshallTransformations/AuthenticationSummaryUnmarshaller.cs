@@ -56,13 +56,13 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("providers", targetDepth))
+                if (context.TestExpression("providers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Providers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("samlConfigurationStatus", targetDepth))
+                if (context.TestExpression("samlConfigurationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SamlConfigurationStatus = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computePlatform", targetDepth))
+                if (context.TestExpression("computePlatform", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createTime", targetDepth))
+                if (context.TestExpression("createTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentConfigId", targetDepth))
+                if (context.TestExpression("deploymentConfigId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentConfigId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentConfigName", targetDepth))
+                if (context.TestExpression("deploymentConfigName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumHealthyHosts", targetDepth))
+                if (context.TestExpression("minimumHealthyHosts", targetDepth, ref reader))
                 {
                     var unmarshaller = MinimumHealthyHostsUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyHosts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trafficRoutingConfig", targetDepth))
+                if (context.TestExpression("trafficRoutingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficRoutingConfigUnmarshaller.Instance;
                     unmarshalledObject.TrafficRoutingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("zonalConfig", targetDepth))
+                if (context.TestExpression("zonalConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ZonalConfigUnmarshaller.Instance;
                     unmarshalledObject.ZonalConfig = unmarshaller.Unmarshall(context, ref reader);

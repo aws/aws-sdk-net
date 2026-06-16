@@ -56,43 +56,43 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("constantInitializationVector", targetDepth))
+                if (context.TestExpression("constantInitializationVector", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConstantInitializationVector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionMethod", targetDepth))
+                if (context.TestExpression("encryptionMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initializationVectorInManifest", targetDepth))
+                if (context.TestExpression("initializationVectorInManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InitializationVectorInManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offlineEncrypted", targetDepth))
+                if (context.TestExpression("offlineEncrypted", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OfflineEncrypted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spekeKeyProvider", targetDepth))
+                if (context.TestExpression("spekeKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = SpekeKeyProviderUnmarshaller.Instance;
                     unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("staticKeyProvider", targetDepth))
+                if (context.TestExpression("staticKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticKeyProviderUnmarshaller.Instance;
                     unmarshalledObject.StaticKeyProvider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

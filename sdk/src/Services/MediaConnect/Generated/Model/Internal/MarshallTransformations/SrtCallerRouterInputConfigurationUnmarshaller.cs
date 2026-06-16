@@ -56,31 +56,31 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("decryptionConfiguration", targetDepth))
+                if (context.TestExpression("decryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SrtDecryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DecryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumLatencyMilliseconds", targetDepth))
+                if (context.TestExpression("minimumLatencyMilliseconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinimumLatencyMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceAddress", targetDepth))
+                if (context.TestExpression("sourceAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourcePort", targetDepth))
+                if (context.TestExpression("sourcePort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SourcePort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamId", targetDepth))
+                if (context.TestExpression("streamId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamId = unmarshaller.Unmarshall(context, ref reader);

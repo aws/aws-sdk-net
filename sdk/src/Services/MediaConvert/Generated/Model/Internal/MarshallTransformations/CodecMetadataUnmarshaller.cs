@@ -56,67 +56,79 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bitDepth", targetDepth))
+                if (context.TestExpression("bitDepth", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("chromaSubsampling", targetDepth))
+                if (context.TestExpression("chromaSubsampling", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChromaSubsampling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codedFrameRate", targetDepth))
+                if (context.TestExpression("codedFrameRate", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameRateUnmarshaller.Instance;
                     unmarshalledObject.CodedFrameRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("colorPrimaries", targetDepth))
+                if (context.TestExpression("colorPrimaries", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColorPrimaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("height", targetDepth))
+                if (context.TestExpression("contentLightLevel", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContentLightLevelUnmarshaller.Instance;
+                    unmarshalledObject.ContentLightLevel = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("height", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("level", targetDepth))
+                if (context.TestExpression("level", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Level = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matrixCoefficients", targetDepth))
+                if (context.TestExpression("matrixCoefficients", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MatrixCoefficients = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profile", targetDepth))
+                if (context.TestExpression("profile", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanType", targetDepth))
+                if (context.TestExpression("rotation", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Rotation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("scanType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScanType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transferCharacteristics", targetDepth))
+                if (context.TestExpression("transferCharacteristics", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransferCharacteristics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("width", targetDepth))
+                if (context.TestExpression("width", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Width = unmarshaller.Unmarshall(context, ref reader);

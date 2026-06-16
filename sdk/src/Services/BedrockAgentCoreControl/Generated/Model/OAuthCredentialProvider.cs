@@ -100,6 +100,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  <c>AUTHORIZATION_CODE</c> - Authorization with a token that is specific to an individual
         /// end user.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TOKEN_EXCHANGE</c> - Authorization using on-behalf-of token exchange. An inbound
+        /// user token is exchanged for a downstream access token scoped to the target audience.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public OAuthGrantType GrantType

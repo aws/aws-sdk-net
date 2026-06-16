@@ -122,8 +122,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseInstallationFiles. 
         /// <para>
-        /// The database installation files (ISO and EXE) uploaded to Amazon S3 for your database
-        /// engine version to import to Amazon RDS. Required for <c>sqlserver-dev-ee</c>.
+        /// The database installation files (ISO and EXE) that were uploaded to Amazon S3 and
+        /// used to import the database engine version to Amazon RDS. Returned for RDS for SQL
+        /// Server engine versions (<c>sqlserver-ee</c>, <c>sqlserver-se</c>, and <c>sqlserver-dev-ee</c>)
+        /// created from customer-supplied installation media.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -201,8 +203,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBEngineMediaType. 
         /// <para>
-        /// A value that indicates the source media provider of the AMI based on the usage operation.
-        /// Applicable for RDS Custom for SQL Server.
+        /// The source of the installation media for this engine version. A value of <c>Customer
+        /// Provided</c> indicates that the engine version was created from customer-supplied
+        /// installation media using <c>CreateCustomDBEngineVersion</c>. Applicable to RDS Custom
+        /// for SQL Server and to RDS for SQL Server engine versions (<c>sqlserver-ee</c> and
+        /// <c>sqlserver-se</c> with the <c>bring-your-own-media</c> license model, and <c>sqlserver-dev-ee</c>).
         /// </para>
         /// </summary>
         public string DBEngineMediaType
@@ -353,8 +358,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason that the custom engine version creation for <c>sqlserver-dev-ee</c> failed
-        /// with an <c>incompatible-installation-media</c> status.
+        /// The reason that the custom engine version creation failed with an <c>incompatible-installation-media</c>
+        /// status. Applicable to RDS for SQL Server engine versions (<c>sqlserver-ee</c>, <c>sqlserver-se</c>,
+        /// and <c>sqlserver-dev-ee</c>).
         /// </para>
         /// </summary>
         public string FailureReason

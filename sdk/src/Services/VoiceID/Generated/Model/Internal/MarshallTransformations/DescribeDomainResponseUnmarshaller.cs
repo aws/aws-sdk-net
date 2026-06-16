@@ -52,7 +52,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainUnmarshaller.Instance;
                     response.Domain = unmarshaller.Unmarshall(context, ref reader);

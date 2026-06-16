@@ -52,13 +52,13 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lags", targetDepth))
+                if (context.TestExpression("lags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Lag, LagUnmarshaller>(LagUnmarshaller.Instance);
                     response.Lags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

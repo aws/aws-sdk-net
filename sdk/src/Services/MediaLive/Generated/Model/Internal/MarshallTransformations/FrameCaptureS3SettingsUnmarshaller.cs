@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cannedAcl", targetDepth))
+                if (context.TestExpression("cannedAcl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CannedAcl = unmarshaller.Unmarshall(context, ref reader);

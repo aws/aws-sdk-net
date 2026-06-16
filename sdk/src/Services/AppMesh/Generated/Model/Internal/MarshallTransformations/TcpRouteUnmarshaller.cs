@@ -56,19 +56,19 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = TcpRouteActionUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("match", targetDepth))
+                if (context.TestExpression("match", targetDepth, ref reader))
                 {
                     var unmarshaller = TcpRouteMatchUnmarshaller.Instance;
                     unmarshalledObject.Match = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeout", targetDepth))
+                if (context.TestExpression("timeout", targetDepth, ref reader))
                 {
                     var unmarshaller = TcpTimeoutUnmarshaller.Instance;
                     unmarshalledObject.Timeout = unmarshaller.Unmarshall(context, ref reader);

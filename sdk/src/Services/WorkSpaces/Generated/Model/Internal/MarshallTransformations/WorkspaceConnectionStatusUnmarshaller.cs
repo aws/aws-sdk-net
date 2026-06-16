@@ -56,25 +56,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionState", targetDepth))
+                if (context.TestExpression("ConnectionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionStateCheckTimestamp", targetDepth))
+                if (context.TestExpression("ConnectionStateCheckTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConnectionStateCheckTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastKnownUserConnectionTimestamp", targetDepth))
+                if (context.TestExpression("LastKnownUserConnectionTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastKnownUserConnectionTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceId", targetDepth))
+                if (context.TestExpression("WorkspaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceId = unmarshaller.Unmarshall(context, ref reader);

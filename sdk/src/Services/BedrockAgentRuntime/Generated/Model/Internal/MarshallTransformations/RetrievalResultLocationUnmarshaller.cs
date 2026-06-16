@@ -56,55 +56,55 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("confluenceLocation", targetDepth))
+                if (context.TestExpression("confluenceLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultConfluenceLocationUnmarshaller.Instance;
                     unmarshalledObject.ConfluenceLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customDocumentLocation", targetDepth))
+                if (context.TestExpression("customDocumentLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultCustomDocumentLocationUnmarshaller.Instance;
                     unmarshalledObject.CustomDocumentLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kendraDocumentLocation", targetDepth))
+                if (context.TestExpression("kendraDocumentLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultKendraDocumentLocationUnmarshaller.Instance;
                     unmarshalledObject.KendraDocumentLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Location", targetDepth))
+                if (context.TestExpression("s3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultS3LocationUnmarshaller.Instance;
                     unmarshalledObject.S3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("salesforceLocation", targetDepth))
+                if (context.TestExpression("salesforceLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultSalesforceLocationUnmarshaller.Instance;
                     unmarshalledObject.SalesforceLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sharePointLocation", targetDepth))
+                if (context.TestExpression("sharePointLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultSharePointLocationUnmarshaller.Instance;
                     unmarshalledObject.SharePointLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sqlLocation", targetDepth))
+                if (context.TestExpression("sqlLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultSqlLocationUnmarshaller.Instance;
                     unmarshalledObject.SqlLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webLocation", targetDepth))
+                if (context.TestExpression("webLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultWebLocationUnmarshaller.Instance;
                     unmarshalledObject.WebLocation = unmarshaller.Unmarshall(context, ref reader);

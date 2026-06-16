@@ -52,103 +52,103 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionMetadata", targetDepth))
+                if (context.TestExpression("actionMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionMetadataUnmarshaller.Instance;
                     response.ActionMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associations", targetDepth))
+                if (context.TestExpression("associations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Association, AssociationUnmarshaller>(AssociationUnmarshaller.Instance);
                     response.Associations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceArn", targetDepth))
+                if (context.TestExpression("deviceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceParameters", targetDepth))
+                if (context.TestExpression("deviceParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endedAt", targetDepth))
+                if (context.TestExpression("endedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("experimentalCapabilities", targetDepth))
+                if (context.TestExpression("experimentalCapabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = ExperimentalCapabilitiesUnmarshaller.Instance;
                     response.ExperimentalCapabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureReason", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobArn", targetDepth))
+                if (context.TestExpression("jobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numSuccessfulShots", targetDepth))
+                if (context.TestExpression("numSuccessfulShots", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumSuccessfulShots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputS3Bucket", targetDepth))
+                if (context.TestExpression("outputS3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OutputS3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputS3Directory", targetDepth))
+                if (context.TestExpression("outputS3Directory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OutputS3Directory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("quantumTaskArn", targetDepth))
+                if (context.TestExpression("quantumTaskArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QuantumTaskArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queueInfo", targetDepth))
+                if (context.TestExpression("queueInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = QuantumTaskQueueInfoUnmarshaller.Instance;
                     response.QueueInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shots", targetDepth))
+                if (context.TestExpression("shots", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Shots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

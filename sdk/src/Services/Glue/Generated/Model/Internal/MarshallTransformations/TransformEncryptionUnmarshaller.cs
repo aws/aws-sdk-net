@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MlUserDataEncryption", targetDepth))
+                if (context.TestExpression("MlUserDataEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = MLUserDataEncryptionUnmarshaller.Instance;
                     unmarshalledObject.MlUserDataEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskRunSecurityConfigurationName", targetDepth))
+                if (context.TestExpression("TaskRunSecurityConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskRunSecurityConfigurationName = unmarshaller.Unmarshall(context, ref reader);

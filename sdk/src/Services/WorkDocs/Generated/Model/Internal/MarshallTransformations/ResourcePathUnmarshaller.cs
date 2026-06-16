@@ -56,7 +56,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Components", targetDepth))
+                if (context.TestExpression("Components", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourcePathComponent, ResourcePathComponentUnmarshaller>(ResourcePathComponentUnmarshaller.Instance);
                     unmarshalledObject.Components = unmarshaller.Unmarshall(context, ref reader);

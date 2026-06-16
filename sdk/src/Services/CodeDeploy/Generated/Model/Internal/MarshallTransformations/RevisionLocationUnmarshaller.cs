@@ -56,31 +56,31 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appSpecContent", targetDepth))
+                if (context.TestExpression("appSpecContent", targetDepth, ref reader))
                 {
                     var unmarshaller = AppSpecContentUnmarshaller.Instance;
                     unmarshalledObject.AppSpecContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gitHubLocation", targetDepth))
+                if (context.TestExpression("gitHubLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = GitHubLocationUnmarshaller.Instance;
                     unmarshalledObject.GitHubLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("revisionType", targetDepth))
+                if (context.TestExpression("revisionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RevisionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Location", targetDepth))
+                if (context.TestExpression("s3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;
                     unmarshalledObject.S3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("string", targetDepth))
+                if (context.TestExpression("string", targetDepth, ref reader))
                 {
                     var unmarshaller = RawStringUnmarshaller.Instance;
                     unmarshalledObject.String = unmarshaller.Unmarshall(context, ref reader);

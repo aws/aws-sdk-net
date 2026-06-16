@@ -52,13 +52,13 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExportJobPropertiesList", targetDepth))
+                if (context.TestExpression("ExportJobPropertiesList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExportJobProperties, ExportJobPropertiesUnmarshaller>(ExportJobPropertiesUnmarshaller.Instance);
                     response.ExportJobPropertiesList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

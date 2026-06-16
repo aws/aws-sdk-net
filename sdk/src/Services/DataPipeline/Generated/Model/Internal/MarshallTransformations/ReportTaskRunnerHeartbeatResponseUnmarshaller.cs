@@ -52,7 +52,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("terminate", targetDepth))
+                if (context.TestExpression("terminate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Terminate = unmarshaller.Unmarshall(context, ref reader);

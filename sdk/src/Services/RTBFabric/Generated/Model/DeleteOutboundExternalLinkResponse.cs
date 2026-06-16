@@ -43,7 +43,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the link.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=6, Max=30)]
         public string LinkId
         {
             get { return this._linkId; }

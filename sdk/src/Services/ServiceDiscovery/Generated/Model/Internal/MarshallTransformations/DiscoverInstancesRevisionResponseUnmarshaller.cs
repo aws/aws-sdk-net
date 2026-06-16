@@ -52,7 +52,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstancesRevision", targetDepth))
+                if (context.TestExpression("InstancesRevision", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.InstancesRevision = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("control", targetDepth))
+                if (context.TestExpression("control", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Control = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startToFireTimeout", targetDepth))
+                if (context.TestExpression("startToFireTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartToFireTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timerId", targetDepth))
+                if (context.TestExpression("timerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimerId = unmarshaller.Unmarshall(context, ref reader);

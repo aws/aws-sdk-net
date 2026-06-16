@@ -56,7 +56,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("stackArn", targetDepth))
+                if (context.TestExpression("stackArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StackArn = unmarshaller.Unmarshall(context, ref reader);

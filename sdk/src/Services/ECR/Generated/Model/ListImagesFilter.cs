@@ -41,7 +41,8 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property ImageStatus. 
         /// <para>
         /// The image status with which to filter your <a>ListImages</a> results. Valid values
-        /// are <c>ACTIVE</c>, <c>ARCHIVED</c>, and <c>ACTIVATING</c>.
+        /// are <c>ACTIVE</c>, <c>ARCHIVED</c>, and <c>ACTIVATING</c>. If not specified, only
+        /// images with <c>ACTIVE</c> status are returned.
         /// </para>
         /// </summary>
         public ImageStatusFilter ImageStatus

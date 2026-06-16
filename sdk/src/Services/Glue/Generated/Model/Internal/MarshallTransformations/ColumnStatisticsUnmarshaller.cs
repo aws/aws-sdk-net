@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalyzedTime", targetDepth))
+                if (context.TestExpression("AnalyzedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AnalyzedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnName", targetDepth))
+                if (context.TestExpression("ColumnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnType", targetDepth))
+                if (context.TestExpression("ColumnType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatisticsData", targetDepth))
+                if (context.TestExpression("StatisticsData", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnStatisticsDataUnmarshaller.Instance;
                     unmarshalledObject.StatisticsData = unmarshaller.Unmarshall(context, ref reader);

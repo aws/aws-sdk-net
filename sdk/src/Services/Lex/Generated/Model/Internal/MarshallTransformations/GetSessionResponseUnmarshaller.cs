@@ -52,31 +52,31 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeContexts", targetDepth))
+                if (context.TestExpression("activeContexts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActiveContext, ActiveContextUnmarshaller>(ActiveContextUnmarshaller.Instance);
                     response.ActiveContexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dialogAction", targetDepth))
+                if (context.TestExpression("dialogAction", targetDepth, ref reader))
                 {
                     var unmarshaller = DialogActionUnmarshaller.Instance;
                     response.DialogAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recentIntentSummaryView", targetDepth))
+                if (context.TestExpression("recentIntentSummaryView", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntentSummary, IntentSummaryUnmarshaller>(IntentSummaryUnmarshaller.Instance);
                     response.RecentIntentSummaryView = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionAttributes", targetDepth))
+                if (context.TestExpression("sessionAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.SessionAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionId = unmarshaller.Unmarshall(context, ref reader);

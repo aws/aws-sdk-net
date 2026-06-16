@@ -52,7 +52,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("flowExecution", targetDepth))
+                if (context.TestExpression("flowExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = DataIntegrationFlowExecutionUnmarshaller.Instance;
                     response.FlowExecution = unmarshaller.Unmarshall(context, ref reader);

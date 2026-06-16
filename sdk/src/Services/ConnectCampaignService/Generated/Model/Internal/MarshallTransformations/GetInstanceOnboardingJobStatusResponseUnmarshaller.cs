@@ -52,7 +52,7 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectInstanceOnboardingJobStatus", targetDepth))
+                if (context.TestExpression("connectInstanceOnboardingJobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceOnboardingJobStatusUnmarshaller.Instance;
                     response.ConnectInstanceOnboardingJobStatus = unmarshaller.Unmarshall(context, ref reader);

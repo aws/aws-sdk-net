@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnomalyId", targetDepth))
+                if (context.TestExpression("AnomalyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnomalyId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionStatus", targetDepth))
+                if (context.TestExpression("ConnectionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = InboundCrossClusterSearchConnectionStatusUnmarshaller.Instance;
                     unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossClusterSearchConnectionId", targetDepth))
+                if (context.TestExpression("CrossClusterSearchConnectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CrossClusterSearchConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationDomainInfo", targetDepth))
+                if (context.TestExpression("DestinationDomainInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainInformationUnmarshaller.Instance;
                     unmarshalledObject.DestinationDomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDomainInfo", targetDepth))
+                if (context.TestExpression("SourceDomainInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainInformationUnmarshaller.Instance;
                     unmarshalledObject.SourceDomainInfo = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobId", targetDepth))
+                if (context.TestExpression("jobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logConfiguration", targetDepth))
+                if (context.TestExpression("logConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queueId", targetDepth))
+                if (context.TestExpression("queueId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueueId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionActions", targetDepth))
+                if (context.TestExpression("sessionActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssignedSessionAction, AssignedSessionActionUnmarshaller>(AssignedSessionActionUnmarshaller.Instance);
                     unmarshalledObject.SessionActions = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VectorType", targetDepth))
+                if (context.TestExpression("VectorType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VectorType = unmarshaller.Unmarshall(context, ref reader);

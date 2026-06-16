@@ -56,49 +56,49 @@ namespace Amazon.KeyspacesStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clusteringKeys", targetDepth))
+                if (context.TestExpression("clusteringKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, KeyspacesCellValue, StringUnmarshaller, KeyspacesCellValueUnmarshaller>(StringUnmarshaller.Instance, KeyspacesCellValueUnmarshaller.Instance);
                     unmarshalledObject.ClusteringKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventVersion", targetDepth))
+                if (context.TestExpression("eventVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newImage", targetDepth))
+                if (context.TestExpression("newImage", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyspacesRowUnmarshaller.Instance;
                     unmarshalledObject.NewImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oldImage", targetDepth))
+                if (context.TestExpression("oldImage", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyspacesRowUnmarshaller.Instance;
                     unmarshalledObject.OldImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("origin", targetDepth))
+                if (context.TestExpression("origin", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Origin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("partitionKeys", targetDepth))
+                if (context.TestExpression("partitionKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, KeyspacesCellValue, StringUnmarshaller, KeyspacesCellValueUnmarshaller>(StringUnmarshaller.Instance, KeyspacesCellValueUnmarshaller.Instance);
                     unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sequenceNumber", targetDepth))
+                if (context.TestExpression("sequenceNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SequenceNumber = unmarshaller.Unmarshall(context, ref reader);

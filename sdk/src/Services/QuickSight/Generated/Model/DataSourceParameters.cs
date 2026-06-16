@@ -59,6 +59,7 @@ namespace Amazon.QuickSight.Model
         private RedshiftParameters _redshiftParameters;
         private S3KnowledgeBaseParameters _s3KnowledgeBaseParameters;
         private S3Parameters _s3Parameters;
+        private S3TablesParameters _s3TablesParameters;
         private ServiceNowParameters _serviceNowParameters;
         private SnowflakeParameters _snowflakeParameters;
         private SparkParameters _sparkParameters;
@@ -481,6 +482,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetS3Parameters()
         {
             return this._s3Parameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TablesParameters. 
+        /// <para>
+        /// The parameters for S3 Tables.
+        /// </para>
+        /// </summary>
+        public S3TablesParameters S3TablesParameters
+        {
+            get { return this._s3TablesParameters; }
+            set { this._s3TablesParameters = value; }
+        }
+
+        // Check to see if S3TablesParameters property is set
+        internal bool IsSetS3TablesParameters()
+        {
+            return this._s3TablesParameters != null;
         }
 
         /// <summary>

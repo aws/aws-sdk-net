@@ -56,25 +56,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AndExpression", targetDepth))
+                if (context.TestExpression("AndExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
                     unmarshalledObject.AndExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttributeCondition", targetDepth))
+                if (context.TestExpression("AttributeCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeConditionUnmarshaller.Instance;
                     unmarshalledObject.AttributeCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotAttributeCondition", targetDepth))
+                if (context.TestExpression("NotAttributeCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeConditionUnmarshaller.Instance;
                     unmarshalledObject.NotAttributeCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrExpression", targetDepth))
+                if (context.TestExpression("OrExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
                     unmarshalledObject.OrExpression = unmarshaller.Unmarshall(context, ref reader);

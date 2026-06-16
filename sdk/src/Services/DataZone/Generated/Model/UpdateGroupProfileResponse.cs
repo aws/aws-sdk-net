@@ -37,6 +37,8 @@ namespace Amazon.DataZone.Model
         private string _domainId;
         private string _groupName;
         private string _id;
+        private string _rolePrincipalArn;
+        private string _rolePrincipalId;
         private GroupProfileStatus _status;
 
         /// <summary>
@@ -92,6 +94,44 @@ namespace Amazon.DataZone.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RolePrincipalArn. 
+        /// <para>
+        /// The ARN of the IAM role principal. This role is associated with the updated group
+        /// profile.
+        /// </para>
+        /// </summary>
+        public string RolePrincipalArn
+        {
+            get { return this._rolePrincipalArn; }
+            set { this._rolePrincipalArn = value; }
+        }
+
+        // Check to see if RolePrincipalArn property is set
+        internal bool IsSetRolePrincipalArn()
+        {
+            return this._rolePrincipalArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RolePrincipalId. 
+        /// <para>
+        /// The unique identifier of the IAM role principal. This principal is associated with
+        /// the updated group profile.
+        /// </para>
+        /// </summary>
+        public string RolePrincipalId
+        {
+            get { return this._rolePrincipalId; }
+            set { this._rolePrincipalId = value; }
+        }
+
+        // Check to see if RolePrincipalId property is set
+        internal bool IsSetRolePrincipalId()
+        {
+            return this._rolePrincipalId != null;
         }
 
         /// <summary>

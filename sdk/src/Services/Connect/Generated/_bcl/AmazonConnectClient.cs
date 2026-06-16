@@ -39,40 +39,50 @@ namespace Amazon.Connect
 {
     /// <summary>
     /// <para>Implementation for accessing Connect</para>
-    ///
-    /// <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Amazon
-    /// Connect actions</a> 
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
+    ///
+    /// <note> 
+    /// <para>
+    /// Amazon Connect now refers to a portfolio of agentic solutions for business functions.
+    /// The legacy product is now called Amazon Connect Customer, or simply Customer. The
+    /// legacy name is used interchangeably in this documentation.
+    /// </para>
+    ///  </note> <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Connect
+    /// Customer Customer actions</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Amazon
-    /// Connect data types</a> 
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Connect
+    /// Customer Customer data types</a> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Amazon Connect is a cloud-based contact center solution that you use to set up and
-    /// manage a customer contact center and provide reliable customer engagement at any scale.
+    /// Connect Customer Customer engages customers at every touchpoint and creates deeper
+    /// relationships with AI powered capabilities.
     /// </para>
     ///  
     /// <para>
-    /// Amazon Connect provides metrics and real-time reporting that enable you to optimize
-    /// contact routing. You can also resolve customer issues more efficiently by getting
-    /// customers in touch with the appropriate agents.
+    /// Build and manage customer communication experiences. Connect customers to agents,
+    /// enable intelligent routing, and track performance in real-time.
     /// </para>
     ///  
     /// <para>
-    /// There are limits to the number of Amazon Connect resources that you can create. There
-    /// are also limits to the number of requests that you can make per second. For more information,
-    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-    /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// There are limits to the number of Connect Customer resources that you can create.
+    /// There are also limits to the number of requests that you can make per second. For
+    /// more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+    /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// You can use an endpoint to connect programmatically to an Amazon Web Services service.
-    /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect Endpoints</a>.
+    /// For a list of Connect Customer endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer Endpoints</a>.
     /// </para>
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
@@ -296,8 +306,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Activates an evaluation form in the specified Amazon Connect instance. After the evaluation
-        /// form is activated, it is available to start new evaluations based on the form.
+        /// Activates an evaluation form in the specified Connect Customer instance. After the
+        /// evaluation form is activated, it is available to start new evaluations based on the
+        /// form.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateEvaluationForm service method.</param>
         /// 
@@ -329,8 +340,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Activates an evaluation form in the specified Amazon Connect instance. After the evaluation
-        /// form is activated, it is available to start new evaluations based on the form.
+        /// Activates an evaluation form in the specified Connect Customer instance. After the
+        /// evaluation form is activated, it is available to start new evaluations based on the
+        /// form.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateEvaluationForm service method.</param>
         /// <param name="cancellationToken">
@@ -369,7 +381,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates the specified dataset for a Amazon Connect instance with the target account.
+        /// Associates the specified dataset for a Connect Customer instance with the target account.
         /// You can associate only one dataset in a single call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
@@ -402,7 +414,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates the specified dataset for a Amazon Connect instance with the target account.
+        /// Associates the specified dataset for a Connect Customer instance with the target account.
         /// You can associate only one dataset in a single call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
@@ -442,11 +454,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Associates an approved origin to an Amazon Connect instance.
+        /// Associates an approved origin to an Connect Customer instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateApprovedOrigin service method.</param>
@@ -485,11 +497,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Associates an approved origin to an Amazon Connect instance.
+        /// Associates an approved origin to an Connect Customer instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateApprovedOrigin service method.</param>
@@ -535,12 +547,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex or
-        /// Amazon Lex V2 bot.
+        /// Allows the specified Connect Customer instance to access the specified Amazon Lex
+        /// or Amazon Lex V2 bot.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateBot service method.</param>
@@ -579,12 +591,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex or
-        /// Amazon Lex V2 bot.
+        /// Allows the specified Connect Customer instance to access the specified Amazon Lex
+        /// or Amazon Lex V2 bot.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateBot service method.</param>
@@ -677,13 +689,13 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         /// The service quota <i>Queues per routing profile per instance</i> applies to manually
-        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithUser service method.</param>
@@ -766,13 +778,13 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         /// The service quota <i>Queues per routing profile per instance</i> applies to manually
-        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithUser service method.</param>
@@ -815,7 +827,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates an existing vocabulary as the default. Contact Lens for Amazon Connect
+        /// Associates an existing vocabulary as the default. Contact Lens for Connect Customer
         /// uses the vocabulary in post-call and real-time analysis sessions for the given language.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDefaultVocabulary service method.</param>
@@ -848,7 +860,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates an existing vocabulary as the default. Contact Lens for Amazon Connect
+        /// Associates an existing vocabulary as the default. Contact Lens for Connect Customer
         /// uses the vocabulary in post-call and real-time analysis sessions for the given language.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDefaultVocabulary service method.</param>
@@ -888,7 +900,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// Associates an email address alias with an existing email address in an Connect Customer
         /// instance. This creates a forwarding relationship where emails sent to the alias email
         /// address are automatically forwarded to the primary email address. 
         /// 
@@ -915,7 +927,7 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
-        /// that forward to the appropriate Amazon Connect instance email address.
+        /// that forward to the appropriate Connect Customer instance email address.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -954,8 +966,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -964,7 +976,7 @@ namespace Amazon.Connect
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
-        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// Removes the alias association between two email addresses in an Connect Customer instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1032,7 +1044,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// Associates an email address alias with an existing email address in an Connect Customer
         /// instance. This creates a forwarding relationship where emails sent to the alias email
         /// address are automatically forwarded to the primary email address. 
         /// 
@@ -1059,7 +1071,7 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
-        /// that forward to the appropriate Amazon Connect instance email address.
+        /// that forward to the appropriate Connect Customer instance email address.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1098,8 +1110,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -1108,7 +1120,7 @@ namespace Amazon.Connect
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
-        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// Removes the alias association between two email addresses in an Connect Customer instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1347,7 +1359,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -1395,7 +1407,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -1450,11 +1462,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+        /// Allows the specified Connect Customer instance to access the specified Lambda function.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLambdaFunction service method.</param>
@@ -1493,11 +1505,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+        /// Allows the specified Connect Customer instance to access the specified Lambda function.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLambdaFunction service method.</param>
@@ -1543,12 +1555,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex V1
-        /// bot. This API only supports the association of Amazon Lex V1 bots.
+        /// Allows the specified Connect Customer instance to access the specified Amazon Lex
+        /// V1 bot. This API only supports the association of Amazon Lex V1 bots.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot service method.</param>
@@ -1587,12 +1599,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex V1
-        /// bot. This API only supports the association of Amazon Lex V1 bots.
+        /// Allows the specified Connect Customer instance to access the specified Amazon Lex
+        /// V1 bot. This API only supports the association of Amazon Lex V1 bots.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot service method.</param>
@@ -1638,7 +1650,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates a flow with a phone number claimed to your Amazon Connect instance.
+        /// Associates a flow with a phone number claimed to your Connect Customer instance.
         /// 
         ///  <important> 
         /// <para>
@@ -1683,7 +1695,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates a flow with a phone number claimed to your Amazon Connect instance.
+        /// Associates a flow with a phone number claimed to your Connect Customer instance.
         /// 
         ///  <important> 
         /// <para>
@@ -1751,7 +1763,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// The email addresses must already exist in the Connect Customer instance before they
         /// can be associated with a queue.
         /// </para>
         ///  </li> <li> 
@@ -1823,7 +1835,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// The email addresses must already exist in the Connect Customer instance before they
         /// can be associated with a queue.
         /// </para>
         ///  </li> <li> 
@@ -2034,7 +2046,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -2077,7 +2089,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -2445,8 +2457,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
-        /// account. You can associate multiple datasets in a single call.
+        /// Associates a list of analytics datasets for a given Connect Customer instance to a
+        /// target account. You can associate multiple datasets in a single call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
         /// 
@@ -2478,8 +2490,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
-        /// account. You can associate multiple datasets in a single call.
+        /// Associates a list of analytics datasets for a given Connect Customer instance to a
+        /// target account. You can associate multiple datasets in a single call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -2801,7 +2813,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
+        /// Removes a list of analytics datasets associated with a given Connect Customer instance.
         /// You can disassociate multiple datasets in a single call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
@@ -2834,7 +2846,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
+        /// Removes a list of analytics datasets associated with a given Connect Customer instance.
         /// You can disassociate multiple datasets in a single call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
@@ -3026,12 +3038,12 @@ namespace Amazon.Connect
         /// <summary>
         /// <note> 
         /// <para>
-        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// Only the Connect Customer outbound campaigns service principal is allowed to assume
         /// a role in your account and call this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns
+        /// Allows you to create a batch of contacts in Connect Customer. The outbound campaigns
         /// capability ingests dial requests via the <a href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
         /// API. It then uses BatchPutContact to create contacts corresponding to those dial requests.
         /// If agents are available, the dial requests are dialed out, which results in a voice
@@ -3074,12 +3086,12 @@ namespace Amazon.Connect
         /// <summary>
         /// <note> 
         /// <para>
-        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// Only the Connect Customer outbound campaigns service principal is allowed to assume
         /// a role in your account and call this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns
+        /// Allows you to create a batch of contacts in Connect Customer. The outbound campaigns
         /// capability ingests dial requests via the <a href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
         /// API. It then uses BatchPutContact to create contacts corresponding to those dial requests.
         /// If agents are available, the dial requests are dialed out, which results in a voice
@@ -3216,15 +3228,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Claims an available phone number to your Amazon Connect instance or traffic distribution
+        /// Claims an available phone number to your Connect Customer instance or traffic distribution
         /// group. You can call this API only in the same Amazon Web Services Region where the
-        /// Amazon Connect instance or traffic distribution group was created.
+        /// Connect Customer instance or traffic distribution group was created.
         /// 
         ///  
         /// <para>
         /// For more information about how to use this operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim
         /// a phone number in your country</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html">Claim
-        /// phone numbers to traffic distribution groups</a> in the <i>Amazon Connect Administrator
+        /// phone numbers to traffic distribution groups</a> in the <i>Connect Customer Administrator
         /// Guide</i>. 
         /// </para>
         ///  <important> 
@@ -3289,15 +3301,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Claims an available phone number to your Amazon Connect instance or traffic distribution
+        /// Claims an available phone number to your Connect Customer instance or traffic distribution
         /// group. You can call this API only in the same Amazon Web Services Region where the
-        /// Amazon Connect instance or traffic distribution group was created.
+        /// Connect Customer instance or traffic distribution group was created.
         /// 
         ///  
         /// <para>
         /// For more information about how to use this operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim
         /// a phone number in your country</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html">Claim
-        /// phone numbers to traffic distribution groups</a> in the <i>Amazon Connect Administrator
+        /// phone numbers to traffic distribution groups</a> in the <i>Connect Customer Administrator
         /// Guide</i>. 
         /// </para>
         ///  <important> 
@@ -3442,7 +3454,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an agent status for the specified Amazon Connect instance.
+        /// Creates an agent status for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentStatus service method.</param>
         /// 
@@ -3480,7 +3492,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an agent status for the specified Amazon Connect instance.
+        /// Creates an agent status for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3682,12 +3694,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a flow for the specified Amazon Connect instance.
+        /// Creates a flow for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlow service method.</param>
@@ -3729,12 +3741,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a flow for the specified Amazon Connect instance.
+        /// Creates a flow for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlow service method.</param>
@@ -3783,7 +3795,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a flow module for the specified Amazon Connect instance.
+        /// Creates a flow module for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModule service method.</param>
         /// 
@@ -3830,7 +3842,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a flow module for the specified Amazon Connect instance.
+        /// Creates a flow module for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModule service method.</param>
         /// <param name="cancellationToken">
@@ -4357,9 +4369,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Create new email address in the specified Amazon Connect instance. For more information
+        /// Create new email address in the specified Connect Customer instance. For more information
         /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// email addresses</a> in the Connect Customer Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailAddress service method.</param>
         /// 
@@ -4406,9 +4418,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Create new email address in the specified Amazon Connect instance. For more information
+        /// Create new email address in the specified Connect Customer instance. For more information
         /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// email addresses</a> in the Connect Customer Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailAddress service method.</param>
         /// <param name="cancellationToken">
@@ -4462,7 +4474,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an evaluation form in the specified Amazon Connect instance. The form can
+        /// Creates an evaluation form in the specified Connect Customer instance. The form can
         /// be used to define questions related to agent performance, and create sections to organize
         /// such questions. Question and section identifiers cannot be duplicated within the same
         /// evaluation form.
@@ -4500,7 +4512,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an evaluation form in the specified Amazon Connect instance. The form can
+        /// Creates an evaluation form in the specified Connect Customer instance. The form can
         /// be used to define questions related to agent performance, and create sections to organize
         /// such questions. Question and section identifiers cannot be duplicated within the same
         /// evaluation form.
@@ -4634,7 +4646,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an hours of operation override in an Amazon Connect hours of operation resource.
+        /// Creates an hours of operation override in an Connect Customer hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
         /// 
@@ -4672,7 +4684,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an hours of operation override in an Amazon Connect hours of operation resource.
+        /// Creates an hours of operation override in an Connect Customer hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -4717,23 +4729,23 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
-        /// not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon
-        /// Kinesis. It also does not allow for any configurations on features, such as Contact
-        /// Lens for Amazon Connect. 
+        /// Initiates an Connect Customer instance with all the supported channels enabled. It
+        /// does not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or
+        /// Amazon Kinesis. It also does not allow for any configurations on features, such as
+        /// Contact Lens for Connect Customer. 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create
-        /// an Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// an Connect Customer instance</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Connect enforces a limit on the total number of instances that you can create
+        /// Connect Customer enforces a limit on the total number of instances that you can create
         /// or delete in 30 days. If you exceed this limit, you will get an error message indicating
         /// there has been an excessive number of attempts at creating or deleting instances.
         /// You must wait 30 days before you can restart creating and deleting instances in your
@@ -4770,23 +4782,23 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
-        /// not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon
-        /// Kinesis. It also does not allow for any configurations on features, such as Contact
-        /// Lens for Amazon Connect. 
+        /// Initiates an Connect Customer instance with all the supported channels enabled. It
+        /// does not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or
+        /// Amazon Kinesis. It also does not allow for any configurations on features, such as
+        /// Contact Lens for Connect Customer. 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create
-        /// an Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// an Connect Customer instance</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Connect enforces a limit on the total number of instances that you can create
+        /// Connect Customer enforces a limit on the total number of instances that you can create
         /// or delete in 30 days. If you exceed this limit, you will get an error message indicating
         /// there has been an excessive number of attempts at creating or deleting instances.
         /// You must wait 30 days before you can restart creating and deleting instances in your
@@ -4830,7 +4842,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
+        /// Creates an Amazon Web Services resource association with an Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// 
@@ -4862,7 +4874,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
+        /// Creates an Amazon Web Services resource association with an Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -5077,7 +5089,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Enables rehydration of chats for the lifespan of a contact. For more information about
         /// chat rehydration, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
-        /// persistent chat</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// persistent chat</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePersistentContactAssociation service method.</param>
         /// 
@@ -5114,7 +5126,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Enables rehydration of chats for the lifespan of a contact. For more information about
         /// chat rehydration, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
-        /// persistent chat</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// persistent chat</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePersistentContactAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -5156,13 +5168,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
-        /// attribute</i> is made up of a name and a value.
+        /// Creates a new predefined attribute for the specified Connect Customer instance. A
+        /// <i>predefined attribute</i> is made up of a name and a value.
         /// 
         ///  
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -5188,8 +5200,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
@@ -5228,13 +5240,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
-        /// attribute</i> is made up of a name and a value.
+        /// Creates a new predefined attribute for the specified Connect Customer instance. A
+        /// <i>predefined attribute</i> is made up of a name and a value.
         /// 
         ///  
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -5260,8 +5272,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
@@ -5309,7 +5321,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates a prompt. For more information about prompts, such as supported file types
         /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
-        /// prompts</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// prompts</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
         /// 
@@ -5346,7 +5358,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates a prompt. For more information about prompts, such as supported file types
         /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
-        /// prompts</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// prompts</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
         /// <param name="cancellationToken">
@@ -5390,7 +5402,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates registration for a device token and a chat contact to receive real-time push
         /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set
-        /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
+        /// up push notifications in Connect Customer for mobile chat</a> in the <i>Connect Customer
         /// Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration service method.</param>
@@ -5428,7 +5440,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates registration for a device token and a chat contact to receive real-time push
         /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set
-        /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
+        /// up push notifications in Connect Customer for mobile chat</a> in the <i>Connect Customer
         /// Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration service method.</param>
@@ -5471,12 +5483,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new queue for the specified Amazon Connect instance.
+        /// Creates a new queue for the specified Connect Customer instance.
         /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
-        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// the same Region as the Connect Customer instance where you are calling this API, then
         /// you can use a full phone number ARN or a UUID for <c>OutboundCallerIdNumberId</c>.
         /// However, if the phone number is claimed to a traffic distribution group that is in
         /// one Region, and you are calling this API from an instance in another Amazon Web Services
@@ -5535,12 +5547,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new queue for the specified Amazon Connect instance.
+        /// Creates a new queue for the specified Connect Customer instance.
         /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
-        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// the same Region as the Connect Customer instance where you are calling this API, then
         /// you can use a full phone number ARN or a UUID for <c>OutboundCallerIdNumberId</c>.
         /// However, if the phone number is claimed to a traffic distribution group that is in
         /// one Region, and you are calling this API from an instance in another Amazon Web Services
@@ -5606,7 +5618,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a quick connect for the specified Amazon Connect instance.
+        /// Creates a quick connect for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuickConnect service method.</param>
         /// 
@@ -5644,7 +5656,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a quick connect for the specified Amazon Connect instance.
+        /// Creates a quick connect for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuickConnect service method.</param>
         /// <param name="cancellationToken">
@@ -5772,7 +5784,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a rule for the specified Amazon Connect instance.
+        /// Creates a rule for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
@@ -5816,7 +5828,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a rule for the specified Amazon Connect instance.
+        /// Creates a rule for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
@@ -5872,8 +5884,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -5918,8 +5930,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -5966,7 +5978,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new task template in the specified Amazon Connect instance.
+        /// Creates a new task template in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTaskTemplate service method.</param>
         /// 
@@ -6001,7 +6013,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new task template in the specified Amazon Connect instance.
+        /// Creates a new task template in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTaskTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -6152,7 +6164,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a traffic distribution group given an Amazon Connect instance that has been
+        /// Creates a traffic distribution group given an Connect Customer instance that has been
         /// replicated.
         /// 
         ///  <note> 
@@ -6166,7 +6178,7 @@ namespace Amazon.Connect
         ///  </note> 
         /// <para>
         /// For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
-        /// up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// up traffic distribution groups</a> in the <i>Connect Customer Administrator Guide</i>.
         /// 
         /// </para>
         /// </summary>
@@ -6209,7 +6221,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a traffic distribution group given an Amazon Connect instance that has been
+        /// Creates a traffic distribution group given an Connect Customer instance that has been
         /// replicated.
         /// 
         ///  <note> 
@@ -6223,7 +6235,7 @@ namespace Amazon.Connect
         ///  </note> 
         /// <para>
         /// For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
-        /// up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// up traffic distribution groups</a> in the <i>Connect Customer Administrator Guide</i>.
         /// 
         /// </para>
         /// </summary>
@@ -6344,13 +6356,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a user account for the specified Amazon Connect instance.
+        /// Creates a user account for the specified Connect Customer instance.
         /// 
         ///  <important> 
         /// <para>
         /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
         /// parameters are required in some situations. For example, <c>Email</c>, <c>FirstName</c>
-        /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
+        /// and <c>LastName</c> are required if you are using Connect Customer or SAML for identity
         /// management.
         /// </para>
         ///  </important> <note> 
@@ -6385,9 +6397,9 @@ namespace Amazon.Connect
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about how to create users using the Amazon Connect admin website,
+        /// For information about how to create users using the Connect Customer admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-        /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Users</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -6426,13 +6438,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a user account for the specified Amazon Connect instance.
+        /// Creates a user account for the specified Connect Customer instance.
         /// 
         ///  <important> 
         /// <para>
         /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
         /// parameters are required in some situations. For example, <c>Email</c>, <c>FirstName</c>
-        /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
+        /// and <c>LastName</c> are required if you are using Connect Customer or SAML for identity
         /// management.
         /// </para>
         ///  </important> <note> 
@@ -6467,9 +6479,9 @@ namespace Amazon.Connect
         /// </para>
         ///  </note> 
         /// <para>
-        /// For information about how to create users using the Amazon Connect admin website,
+        /// For information about how to create users using the Connect Customer admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-        /// Users</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Users</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -6842,9 +6854,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a custom vocabulary associated with your Amazon Connect instance. You can
+        /// Creates a custom vocabulary associated with your Connect Customer instance. You can
         /// set a custom vocabulary to be your default vocabulary for a given language. Contact
-        /// Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact
+        /// Lens for Connect Customer uses the default vocabulary in post-call and real-time contact
         /// analysis sessions for that language.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
@@ -6883,9 +6895,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a custom vocabulary associated with your Amazon Connect instance. You can
+        /// Creates a custom vocabulary associated with your Connect Customer instance. You can
         /// set a custom vocabulary to be your default vocabulary for a given language. Contact
-        /// Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact
+        /// Lens for Connect Customer uses the default vocabulary in post-call and real-time contact
         /// analysis sessions for that language.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
@@ -7131,9 +7143,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deactivates an evaluation form in the specified Amazon Connect instance. After a form
-        /// is deactivated, it is no longer available for users to start new evaluations based
-        /// on the form.
+        /// Deactivates an evaluation form in the specified Connect Customer instance. After a
+        /// form is deactivated, it is no longer available for users to start new evaluations
+        /// based on the form.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateEvaluationForm service method.</param>
         /// 
@@ -7165,9 +7177,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deactivates an evaluation form in the specified Amazon Connect instance. After a form
-        /// is deactivated, it is no longer available for users to start new evaluations based
-        /// on the form.
+        /// Deactivates an evaluation form in the specified Connect Customer instance. After a
+        /// form is deactivated, it is no longer available for users to start new evaluations
+        /// based on the form.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateEvaluationForm service method.</param>
         /// <param name="cancellationToken">
@@ -7289,7 +7301,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a contact evaluation in the specified Amazon Connect instance.
+        /// Deletes a contact evaluation in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContactEvaluation service method.</param>
         /// 
@@ -7321,7 +7333,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a contact evaluation in the specified Amazon Connect instance.
+        /// Deletes a contact evaluation in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContactEvaluation service method.</param>
         /// <param name="cancellationToken">
@@ -7360,7 +7372,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a flow for the specified Amazon Connect instance.
+        /// Deletes a flow for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlow service method.</param>
         /// 
@@ -7395,7 +7407,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a flow for the specified Amazon Connect instance.
+        /// Deletes a flow for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlow service method.</param>
         /// <param name="cancellationToken">
@@ -7927,7 +7939,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes email address from the specified Amazon Connect instance.
+        /// Deletes email address from the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEmailAddress service method.</param>
         /// 
@@ -7965,7 +7977,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes email address from the specified Amazon Connect instance.
+        /// Deletes email address from the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEmailAddress service method.</param>
         /// <param name="cancellationToken">
@@ -8010,7 +8022,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an evaluation form in the specified Amazon Connect instance. 
+        /// Deletes an evaluation form in the specified Connect Customer instance. 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -8053,7 +8065,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an evaluation form in the specified Amazon Connect instance. 
+        /// Deletes an evaluation form in the specified Connect Customer instance. 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -8174,7 +8186,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
+        /// Deletes an hours of operation override in an Connect Customer hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
         /// 
@@ -8206,7 +8218,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
+        /// Deletes an hours of operation override in an Connect Customer hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -8245,16 +8257,16 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Deletes the Amazon Connect instance. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
-        /// your Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Deletes the Connect Customer instance. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
+        /// your Connect Customer instance</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Connect enforces a limit on the total number of instances that you can create
+        /// Connect Customer enforces a limit on the total number of instances that you can create
         /// or delete in 30 days. If you exceed this limit, you will get an error message indicating
         /// there has been an excessive number of attempts at creating or deleting instances.
         /// You must wait 30 days before you can restart creating and deleting instances in your
@@ -8285,16 +8297,16 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Deletes the Amazon Connect instance. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
-        /// your Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Deletes the Connect Customer instance. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
+        /// your Connect Customer instance</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Connect enforces a limit on the total number of instances that you can create
+        /// Connect Customer enforces a limit on the total number of instances that you can create
         /// or delete in 30 days. If you exceed this limit, you will get an error message indicating
         /// there has been an excessive number of attempts at creating or deleting instances.
         /// You must wait 30 days before you can restart creating and deleting instances in your
@@ -8332,7 +8344,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+        /// Deletes an Amazon Web Services resource association from an Connect Customer instance.
         /// The association must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
@@ -8362,7 +8374,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+        /// Deletes an Amazon Web Services resource association from an Connect Customer instance.
         /// The association must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
@@ -8478,7 +8490,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a predefined attribute from the specified Amazon Connect instance.
+        /// Deletes a predefined attribute from the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePredefinedAttribute service method.</param>
         /// 
@@ -8516,7 +8528,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a predefined attribute from the specified Amazon Connect instance.
+        /// Deletes a predefined attribute from the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -8804,9 +8816,9 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
-        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
-        /// Connect Global Resiliency</a>. 
+        /// Avoid the disruption of other Connect Customer processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Connect
+        /// Customer Global Resiliency</a>. 
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -8858,9 +8870,9 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
-        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
-        /// Connect Global Resiliency</a>. 
+        /// Avoid the disruption of other Connect Customer processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Connect
+        /// Customer Global Resiliency</a>. 
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -8984,7 +8996,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a rule for the specified Amazon Connect instance.
+        /// Deletes a rule for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// 
@@ -9016,7 +9028,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a rule for the specified Amazon Connect instance.
+        /// Deletes a rule for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// <param name="cancellationToken">
@@ -9300,7 +9312,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
-        /// traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// traffic distribution groups</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficDistributionGroup service method.</param>
@@ -9342,7 +9354,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
-        /// traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// traffic distribution groups</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficDistributionGroup service method.</param>
@@ -9450,13 +9462,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a user account from the specified Amazon Connect instance.
+        /// Deletes a user account from the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
         /// For information about what happens to a user's data when their account is deleted,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-        /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
+        /// Users from Your Connect Customer Instance</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         ///  <important> 
@@ -9474,9 +9486,9 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
-        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
-        /// Connect Global Resiliency</a>. 
+        /// Avoid the disruption of other Connect Customer processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Connect
+        /// Customer Global Resiliency</a>. 
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -9510,13 +9522,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a user account from the specified Amazon Connect instance.
+        /// Deletes a user account from the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
         /// For information about what happens to a user's data when their account is deleted,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-        /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
+        /// Users from Your Connect Customer Instance</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         ///  <important> 
@@ -9534,9 +9546,9 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
-        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
-        /// Connect Global Resiliency</a>. 
+        /// Avoid the disruption of other Connect Customer processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Connect
+        /// Customer Global Resiliency</a>. 
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -10225,11 +10237,98 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeAttachedFilesConfiguration
+
+
+        /// <summary>
+        /// Describes the attached files configuration for the specified Connect Customer instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If a custom configuration exists for the specified attachment scope, the custom configuration
+        /// is returned. If no custom configuration exists, the default configuration values for
+        /// that attachment scope are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttachedFilesConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAttachedFilesConfiguration">REST API Reference for DescribeAttachedFilesConfiguration Operation</seealso>
+        public virtual DescribeAttachedFilesConfigurationResponse DescribeAttachedFilesConfiguration(DescribeAttachedFilesConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttachedFilesConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAttachedFilesConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the attached files configuration for the specified Connect Customer instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If a custom configuration exists for the specified attachment scope, the custom configuration
+        /// is returned. If no custom configuration exists, the default configuration values for
+        /// that attachment scope are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttachedFilesConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAttachedFilesConfiguration">REST API Reference for DescribeAttachedFilesConfiguration Operation</seealso>
+        public virtual Task<DescribeAttachedFilesConfigurationResponse> DescribeAttachedFilesConfigurationAsync(DescribeAttachedFilesConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttachedFilesConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAttachedFilesConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAuthenticationProfile
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// This API is in preview release for Connect Customer and is subject to change. To request
         /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
@@ -10267,7 +10366,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// This API is in preview release for Connect Customer and is subject to change. To request
         /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
@@ -10312,7 +10411,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -10354,14 +10453,14 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contact information remains available in Amazon Connect for 24 months from the <c>InitiationTimestamp</c>,
-        /// and then it is deleted. Only contact information that is available in Amazon Connect
+        /// Contact information remains available in Connect Customer for 24 months from the <c>InitiationTimestamp</c>,
+        /// and then it is deleted. Only contact information that is available in Connect Customer
         /// is returned by this API.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
@@ -10394,7 +10493,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -10436,14 +10535,14 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Contact information remains available in Amazon Connect for 24 months from the <c>InitiationTimestamp</c>,
-        /// and then it is deleted. Only contact information that is available in Amazon Connect
+        /// Contact information remains available in Connect Customer for 24 months from the <c>InitiationTimestamp</c>,
+        /// and then it is deleted. Only contact information that is available in Connect Customer
         /// is returned by this API.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
@@ -10483,7 +10582,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a contact evaluation in the specified Amazon Connect instance.
+        /// Describes a contact evaluation in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactEvaluation service method.</param>
         /// 
@@ -10512,7 +10611,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a contact evaluation in the specified Amazon Connect instance.
+        /// Describes a contact evaluation in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactEvaluation service method.</param>
         /// <param name="cancellationToken">
@@ -10552,8 +10651,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         ///  
         /// <para>
@@ -10612,8 +10711,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         ///  
         /// <para>
@@ -11011,7 +11110,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describe email address form the specified Amazon Connect instance.
+        /// Describe email address form the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEmailAddress service method.</param>
         /// 
@@ -11046,7 +11145,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describe email address form the specified Amazon Connect instance.
+        /// Describe email address form the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEmailAddress service method.</param>
         /// <param name="cancellationToken">
@@ -11088,7 +11187,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes an evaluation form in the specified Amazon Connect instance. If the version
+        /// Describes an evaluation form in the specified Connect Customer instance. If the version
         /// property is not provided, the latest version of the evaluation form is described.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvaluationForm service method.</param>
@@ -11118,7 +11217,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes an evaluation form in the specified Amazon Connect instance. If the version
+        /// Describes an evaluation form in the specified Connect Customer instance. If the version
         /// property is not provided, the latest version of the evaluation form is described.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvaluationForm service method.</param>
@@ -11297,7 +11396,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -11335,7 +11434,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -11380,7 +11479,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -11417,7 +11516,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -11461,7 +11560,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -11499,7 +11598,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -11623,8 +11722,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
-        /// or traffic distribution group.
+        /// Gets details and status of a phone number that’s claimed to your Connect Customer
+        /// instance or traffic distribution group.
         /// 
         ///  <important> 
         /// <para>
@@ -11668,8 +11767,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
-        /// or traffic distribution group.
+        /// Gets details and status of a phone number that’s claimed to your Connect Customer
+        /// instance or traffic distribution group.
         /// 
         ///  <important> 
         /// <para>
@@ -11720,7 +11819,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// Describes a predefined attribute for the specified Connect Customer instance. A <i>predefined
         /// attribute</i> is made up of a name and a value. You can use predefined attributes
         /// for:
         /// 
@@ -11738,13 +11837,13 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
@@ -11777,7 +11876,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// Describes a predefined attribute for the specified Connect Customer instance. A <i>predefined
         /// attribute</i> is made up of a name and a value. You can use predefined attributes
         /// for:
         /// 
@@ -11795,13 +11894,13 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
@@ -12143,7 +12242,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a rule for the specified Amazon Connect instance.
+        /// Describes a rule for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRule service method.</param>
         /// 
@@ -12175,7 +12274,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a rule for the specified Amazon Connect instance.
+        /// Describes a rule for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRule service method.</param>
         /// <param name="cancellationToken">
@@ -12219,8 +12318,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -12259,8 +12358,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -12452,7 +12551,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Describes the specified user. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-        /// the instance ID in the Amazon Connect console</a> (it’s the final part of the ARN).
+        /// the instance ID in the Connect Customer console</a> (it’s the final part of the ARN).
         /// The console does not display the user IDs. Instead, list the users and note the IDs
         /// provided in the output.
         /// </summary>
@@ -12487,7 +12586,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Describes the specified user. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-        /// the instance ID in the Amazon Connect console</a> (it’s the final part of the ARN).
+        /// the instance ID in the Connect Customer console</a> (it’s the final part of the ARN).
         /// The console does not display the user IDs. Instead, list the users and note the IDs
         /// provided in the output.
         /// </summary>
@@ -12599,7 +12698,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes the hierarchy structure of the specified Amazon Connect instance.
+        /// Describes the hierarchy structure of the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserHierarchyStructure service method.</param>
         /// 
@@ -12631,7 +12730,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes the hierarchy structure of the specified Amazon Connect instance.
+        /// Describes the hierarchy structure of the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserHierarchyStructure service method.</param>
         /// <param name="cancellationToken">
@@ -12670,7 +12769,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Retrieves the view for the specified Amazon Connect instance and view identifier.
+        /// Retrieves the view for the specified Connect Customer instance and view identifier.
         /// 
         ///  
         /// <para>
@@ -12683,9 +12782,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// The view identifier can contain an optional qualifier, for example, <c>&lt;view-id&gt;:$SAVED</c>,
-        /// which is either an actual version number or an Amazon Connect managed qualifier <c>$SAVED
-        /// | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for customer
-        /// managed views and an error is returned if there is no published content available.
+        /// which is either an actual version number or an Connect Customer managed qualifier
+        /// <c>$SAVED | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for
+        /// customer managed views and an error is returned if there is no published content available.
         /// Version 1 is assumed for Amazon Web Services managed views.
         /// </para>
         /// </summary>
@@ -12722,7 +12821,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Retrieves the view for the specified Amazon Connect instance and view identifier.
+        /// Retrieves the view for the specified Connect Customer instance and view identifier.
         /// 
         ///  
         /// <para>
@@ -12735,9 +12834,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// The view identifier can contain an optional qualifier, for example, <c>&lt;view-id&gt;:$SAVED</c>,
-        /// which is either an actual version number or an Amazon Connect managed qualifier <c>$SAVED
-        /// | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for customer
-        /// managed views and an error is returned if there is no published content available.
+        /// which is either an actual version number or an Connect Customer managed qualifier
+        /// <c>$SAVED | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for
+        /// customer managed views and an error is returned if there is no published content available.
         /// Version 1 is assumed for Amazon Web Services managed views.
         /// </para>
         /// </summary>
@@ -12929,7 +13028,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the dataset ID associated with a given Amazon Connect instance.
+        /// Removes the dataset ID associated with a given Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
         /// 
@@ -12961,7 +13060,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the dataset ID associated with a given Amazon Connect instance.
+        /// Removes the dataset ID associated with a given Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -13000,11 +13099,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Revokes access to integrated applications from Amazon Connect.
+        /// Revokes access to integrated applications from Connect Customer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovedOrigin service method.</param>
@@ -13037,11 +13136,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
-        /// Revokes access to integrated applications from Amazon Connect.
+        /// Revokes access to integrated applications from Connect Customer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovedOrigin service method.</param>
@@ -13081,7 +13180,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13116,7 +13215,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13158,7 +13257,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// Removes the alias association between two email addresses in an Connect Customer instance.
         /// After disassociation, emails sent to the former alias email address are no longer
         /// forwarded to the primary email address. Both email addresses continue to exist independently
         /// and can receive emails directly.
@@ -13229,8 +13328,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -13239,7 +13338,7 @@ namespace Amazon.Connect
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
-        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// Associates an email address alias with an existing email address in an Connect Customer
         /// instance.
         /// </para>
         ///  </li> <li> 
@@ -13305,7 +13404,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// Removes the alias association between two email addresses in an Connect Customer instance.
         /// After disassociation, emails sent to the former alias email address are no longer
         /// forwarded to the primary email address. Both email addresses continue to exist independently
         /// and can receive emails directly.
@@ -13376,8 +13475,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -13386,7 +13485,7 @@ namespace Amazon.Connect
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
-        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// Associates an email address alias with an existing email address in an Connect Customer
         /// instance.
         /// </para>
         ///  </li> <li> 
@@ -13617,7 +13716,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13655,7 +13754,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13700,7 +13799,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13738,7 +13837,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13783,7 +13882,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13821,7 +13920,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -13866,7 +13965,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the flow association from a phone number claimed to your Amazon Connect instance.
+        /// Removes the flow association from a phone number claimed to your Connect Customer
+        /// instance.
         /// 
         ///  <important> 
         /// <para>
@@ -13911,7 +14011,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the flow association from a phone number claimed to your Amazon Connect instance.
+        /// Removes the flow association from a phone number claimed to your Connect Customer
+        /// instance.
         /// 
         ///  <important> 
         /// <para>
@@ -14242,7 +14343,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -14279,7 +14380,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -14982,12 +15083,12 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         /// For more information, see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Position
-        /// in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. 
+        /// in queue</a> metric in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContactMetrics service method.</param>
@@ -15064,12 +15165,12 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         /// For more information, see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Position
-        /// in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. 
+        /// in queue</a> metric in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContactMetrics service method.</param>
@@ -15112,12 +15213,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets the real-time metric data from the specified Amazon Connect instance.
+        /// Gets the real-time metric data from the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
         /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15190,12 +15291,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets the real-time metric data from the specified Amazon Connect instance.
+        /// Gets the real-time metric data from the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
         /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15275,7 +15376,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets the real-time active user data from the specified Amazon Connect instance.
+        /// Gets the real-time active user data from the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentUserData service method.</param>
         /// 
@@ -15307,7 +15408,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets the real-time active user data from the specified Amazon Connect instance.
+        /// Gets the real-time active user data from the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentUserData service method.</param>
         /// <param name="cancellationToken">
@@ -15417,14 +15518,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Supports SAML sign-in for Amazon Connect. Retrieves a token for federation. The token
-        /// is for the Amazon Connect user which corresponds to the IAM credentials that were
-        /// used to invoke this action. 
+        /// Supports SAML sign-in for Connect Customer. Retrieves a token for federation. The
+        /// token is for the Connect Customer user which corresponds to the IAM credentials that
+        /// were used to invoke this action. 
         /// 
         ///  
         /// <para>
-        /// For more information about how SAML sign-in works in Amazon Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
-        /// ">Configure SAML with IAM for Amazon Connect in the <i>Amazon Connect Administrator
+        /// For more information about how SAML sign-in works in Connect Customer, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
+        /// ">Configure SAML with IAM for Connect Customer in the <i>Connect Customer Administrator
         /// Guide</i>.</a> 
         /// </para>
         ///  <note> 
@@ -15435,7 +15536,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         ///  <c>Provided identity: Principal: .... User: .... cannot be used for federation with
-        /// Amazon Connect</c> 
+        /// Connect Customer</c> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -15458,7 +15559,7 @@ namespace Amazon.Connect
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.UserNotFoundException">
-        /// No user with the specified credentials was found in the Amazon Connect instance.
+        /// No user with the specified credentials was found in the Connect Customer instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
@@ -15472,14 +15573,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Supports SAML sign-in for Amazon Connect. Retrieves a token for federation. The token
-        /// is for the Amazon Connect user which corresponds to the IAM credentials that were
-        /// used to invoke this action. 
+        /// Supports SAML sign-in for Connect Customer. Retrieves a token for federation. The
+        /// token is for the Connect Customer user which corresponds to the IAM credentials that
+        /// were used to invoke this action. 
         /// 
         ///  
         /// <para>
-        /// For more information about how SAML sign-in works in Amazon Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
-        /// ">Configure SAML with IAM for Amazon Connect in the <i>Amazon Connect Administrator
+        /// For more information about how SAML sign-in works in Connect Customer, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
+        /// ">Configure SAML with IAM for Connect Customer in the <i>Connect Customer Administrator
         /// Guide</i>.</a> 
         /// </para>
         ///  <note> 
@@ -15490,7 +15591,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         ///  <c>Provided identity: Principal: .... User: .... cannot be used for federation with
-        /// Amazon Connect</c> 
+        /// Connect Customer</c> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -15516,7 +15617,7 @@ namespace Amazon.Connect
         /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.UserNotFoundException">
-        /// No user with the specified credentials was found in the Amazon Connect instance.
+        /// No user with the specified credentials was found in the Connect Customer instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -15611,12 +15712,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets historical metric data from the specified Amazon Connect instance.
+        /// Gets historical metric data from the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
         /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15660,12 +15761,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets historical metric data from the specified Amazon Connect instance.
+        /// Gets historical metric data from the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
         /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15716,7 +15817,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets metric data from the specified Amazon Connect instance. 
+        /// Gets metric data from the specified Connect Customer instance. 
         /// 
         ///  
         /// <para>
@@ -15730,7 +15831,7 @@ namespace Amazon.Connect
         /// <para>
         /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15807,7 +15908,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets metric data from the specified Amazon Connect instance. 
+        /// Gets metric data from the specified Connect Customer instance. 
         /// 
         ///  
         /// <para>
@@ -15821,7 +15922,7 @@ namespace Amazon.Connect
         /// <para>
         /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15976,7 +16077,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets details about a specific task template in the specified Amazon Connect instance.
+        /// Gets details about a specific task template in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTaskTemplate service method.</param>
         /// 
@@ -16008,7 +16109,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets details about a specific task template in the specified Amazon Connect instance.
+        /// Gets details about a specific task template in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTaskTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -16198,8 +16299,8 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Imports a claimed phone number from an external service, such as Amazon Web Services
-        /// End User Messaging, into an Amazon Connect instance. You can call this API only in
-        /// the same Amazon Web Services Region where the Amazon Connect instance was created.
+        /// End User Messaging, into an Connect Customer instance. You can call this API only
+        /// in the same Amazon Web Services Region where the Connect Customer instance was created.
         /// 
         ///  <important> 
         /// <para>
@@ -16264,8 +16365,8 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Imports a claimed phone number from an external service, such as Amazon Web Services
-        /// End User Messaging, into an Amazon Connect instance. You can call this API only in
-        /// the same Amazon Web Services Region where the Amazon Connect instance was created.
+        /// End User Messaging, into an Connect Customer instance. You can call this API only
+        /// in the same Amazon Web Services Region where the Connect Customer instance was created.
         /// 
         ///  <important> 
         /// <para>
@@ -16478,7 +16579,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
+        /// Lists the association status of requested dataset ID for a given Connect Customer
+        /// instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
         /// 
@@ -16510,7 +16612,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
+        /// Lists the association status of requested dataset ID for a given Connect Customer
+        /// instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -16549,7 +16652,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the data lake datasets available to associate with for a given Amazon Connect
+        /// Lists the data lake datasets available to associate with for a given Connect Customer
         /// instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataLakeDataSets service method.</param>
@@ -16582,7 +16685,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the data lake datasets available to associate with for a given Amazon Connect
+        /// Lists the data lake datasets available to associate with for a given Connect Customer
         /// instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataLakeDataSets service method.</param>
@@ -16622,7 +16725,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -16659,7 +16762,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -16772,17 +16875,104 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListAttachedFilesConfigurations
+
+
+        /// <summary>
+        /// Provides summary information about the attached files configurations for the specified
+        /// Connect Customer instance.
+        /// 
+        ///  
+        /// <para>
+        /// This API returns effective configurations (custom overrides or defaults) for each
+        /// attachment scope. If no custom configuration exists for a scope, the default configuration
+        /// values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedFilesConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachedFilesConfigurations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAttachedFilesConfigurations">REST API Reference for ListAttachedFilesConfigurations Operation</seealso>
+        public virtual ListAttachedFilesConfigurationsResponse ListAttachedFilesConfigurations(ListAttachedFilesConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAttachedFilesConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachedFilesConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedFilesConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides summary information about the attached files configurations for the specified
+        /// Connect Customer instance.
+        /// 
+        ///  
+        /// <para>
+        /// This API returns effective configurations (custom overrides or defaults) for each
+        /// attachment scope. If no custom configuration exists for a scope, the default configuration
+        /// values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedFilesConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttachedFilesConfigurations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAttachedFilesConfigurations">REST API Reference for ListAttachedFilesConfigurations Operation</seealso>
+        public virtual Task<ListAttachedFilesConfigurationsResponse> ListAttachedFilesConfigurationsAsync(ListAttachedFilesConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAttachedFilesConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachedFilesConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAttachedFilesConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAuthenticationProfiles
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// This API is in preview release for Connect Customer and is subject to change. To request
         /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
-        /// Provides summary information about the authentication profiles in a specified Amazon
-        /// Connect instance.
+        /// Provides summary information about the authentication profiles in a specified Connect
+        /// Customer instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuthenticationProfiles service method.</param>
@@ -16815,13 +17005,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// This API is in preview release for Connect Customer and is subject to change. To request
         /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
-        /// Provides summary information about the authentication profiles in a specified Amazon
-        /// Connect instance.
+        /// Provides summary information about the authentication profiles in a specified Connect
+        /// Customer instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuthenticationProfiles service method.</param>
@@ -16861,7 +17051,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -16897,7 +17087,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -17025,7 +17215,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists contact evaluations in the specified Amazon Connect instance.
+        /// Lists contact evaluations in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactEvaluations service method.</param>
         /// 
@@ -17054,7 +17244,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists contact evaluations in the specified Amazon Connect instance.
+        /// Lists contact evaluations in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactEvaluations service method.</param>
         /// <param name="cancellationToken">
@@ -17169,7 +17359,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the flow modules for the specified Amazon Connect instance.
+        /// Provides information about the flow modules for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModules service method.</param>
         /// 
@@ -17204,7 +17394,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the flow modules for the specified Amazon Connect instance.
+        /// Provides information about the flow modules for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModules service method.</param>
         /// <param name="cancellationToken">
@@ -17323,17 +17513,17 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the flows for the specified Amazon Connect instance.
+        /// Provides information about the flows for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         ///  
         /// <para>
         /// For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>.
+        /// in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlows service method.</param>
@@ -17366,17 +17556,17 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the flows for the specified Amazon Connect instance.
+        /// Provides information about the flows for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         ///  
         /// <para>
         /// For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>.
+        /// in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlows service method.</param>
@@ -17416,8 +17606,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns all the available versions for the specified Amazon Connect instance and flow
-        /// identifier.
+        /// Returns all the available versions for the specified Connect Customer instance and
+        /// flow identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlowVersions service method.</param>
         /// 
@@ -17452,8 +17642,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns all the available versions for the specified Amazon Connect instance and flow
-        /// identifier.
+        /// Returns all the available versions for the specified Connect Customer instance and
+        /// flow identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlowVersions service method.</param>
         /// <param name="cancellationToken">
@@ -17495,7 +17685,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -17534,7 +17724,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -17904,7 +18094,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the default vocabularies for the specified Amazon Connect instance.
+        /// Lists the default vocabularies for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDefaultVocabularies service method.</param>
         /// 
@@ -17933,7 +18123,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the default vocabularies for the specified Amazon Connect instance.
+        /// Lists the default vocabularies for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDefaultVocabularies service method.</param>
         /// <param name="cancellationToken">
@@ -18042,7 +18232,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists evaluation forms in the specified Amazon Connect instance.
+        /// Lists evaluation forms in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationForms service method.</param>
         /// 
@@ -18071,7 +18261,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists evaluation forms in the specified Amazon Connect instance.
+        /// Lists evaluation forms in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationForms service method.</param>
         /// <param name="cancellationToken">
@@ -18107,7 +18297,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists versions of an evaluation form in the specified Amazon Connect instance.
+        /// Lists versions of an evaluation form in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationFormVersions service method.</param>
         /// 
@@ -18136,7 +18326,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists versions of an evaluation form in the specified Amazon Connect instance.
+        /// Lists versions of an evaluation form in the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationFormVersions service method.</param>
         /// <param name="cancellationToken">
@@ -18320,13 +18510,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the hours of operation for the specified Amazon Connect
+        /// Provides information about the hours of operation for the specified Connect Customer
         /// instance.
         /// 
         ///  
         /// <para>
         /// For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
-        /// the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// the Hours of Operation for a Queue</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperations service method.</param>
@@ -18359,13 +18549,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the hours of operation for the specified Amazon Connect
+        /// Provides information about the hours of operation for the specified Connect Customer
         /// instance.
         /// 
         ///  
         /// <para>
         /// For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
-        /// the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// the Hours of Operation for a Queue</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperations service method.</param>
@@ -18405,7 +18595,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18442,7 +18632,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18486,7 +18676,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18516,7 +18706,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18553,7 +18743,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18591,7 +18781,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18637,7 +18827,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides summary information about the Amazon Web Services resource associations for
-        /// the specified Amazon Connect instance.
+        /// the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// 
@@ -18667,7 +18857,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Provides summary information about the Amazon Web Services resource associations for
-        /// the specified Amazon Connect instance.
+        /// the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -18703,7 +18893,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18741,7 +18931,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18786,7 +18976,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18825,7 +19015,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -18948,13 +19138,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the phone numbers for the specified Amazon Connect instance.
+        /// Provides information about the phone numbers for the specified Connect Customer instance.
         /// 
         /// 
         ///  
         /// <para>
         /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-        /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
+        /// Up Phone Numbers for Your Contact Center</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         ///  <important> <ul> <li> 
@@ -19005,13 +19195,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the phone numbers for the specified Amazon Connect instance.
+        /// Provides information about the phone numbers for the specified Connect Customer instance.
         /// 
         /// 
         ///  
         /// <para>
         /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-        /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
+        /// Up Phone Numbers for Your Contact Center</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         ///  <important> <ul> <li> 
@@ -19069,7 +19259,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists phone numbers claimed to your Amazon Connect instance or traffic distribution
+        /// Lists phone numbers claimed to your Connect Customer instance or traffic distribution
         /// group. If the provided <c>TargetArn</c> is a traffic distribution group, you can call
         /// this API in both Amazon Web Services Regions associated with traffic distribution
         /// group.
@@ -19077,7 +19267,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-        /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
+        /// Up Phone Numbers for Your Contact Center</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         ///  <note> <ul> <li> 
@@ -19122,7 +19312,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists phone numbers claimed to your Amazon Connect instance or traffic distribution
+        /// Lists phone numbers claimed to your Connect Customer instance or traffic distribution
         /// group. If the provided <c>TargetArn</c> is a traffic distribution group, you can call
         /// this API in both Amazon Web Services Regions associated with traffic distribution
         /// group.
@@ -19130,7 +19320,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-        /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
+        /// Up Phone Numbers for Your Contact Center</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         ///  <note> <ul> <li> 
@@ -19182,7 +19372,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists predefined attributes for the specified Amazon Connect instance. A <i>predefined
+        /// Lists predefined attributes for the specified Connect Customer instance. A <i>predefined
         /// attribute</i> is made up of a name and a value. You can use predefined attributes
         /// for:
         /// 
@@ -19200,13 +19390,13 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
@@ -19239,7 +19429,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists predefined attributes for the specified Amazon Connect instance. A <i>predefined
+        /// Lists predefined attributes for the specified Connect Customer instance. A <i>predefined
         /// attribute</i> is made up of a name and a value. You can use predefined attributes
         /// for:
         /// 
@@ -19257,13 +19447,13 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
@@ -19303,7 +19493,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the prompts for the specified Amazon Connect instance.
+        /// Provides information about the prompts for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrompts service method.</param>
         /// 
@@ -19335,7 +19525,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the prompts for the specified Amazon Connect instance.
+        /// Provides information about the prompts for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrompts service method.</param>
         /// <param name="cancellationToken">
@@ -19580,7 +19770,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the queues for the specified Amazon Connect instance.
+        /// Provides information about the queues for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
@@ -19591,7 +19781,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-        /// Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Standard and Agent</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
@@ -19624,7 +19814,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the queues for the specified Amazon Connect instance.
+        /// Provides information about the queues for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
@@ -19635,7 +19825,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-        /// Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Standard and Agent</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
@@ -19675,7 +19865,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the quick connects for the specified Amazon Connect instance.
+        /// Provides information about the quick connects for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQuickConnects service method.</param>
         /// 
@@ -19707,7 +19897,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides information about the quick connects for the specified Amazon Connect instance.
+        /// Provides information about the quick connects for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -19864,7 +20054,7 @@ namespace Amazon.Connect
         /// <para>
         /// For information about how manual contact assignment works in the agent workspace,
         /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+        /// the Worklist app in the Connect Customer agent workspace</a> in the <i>Connect Customer
         /// Administrator Guide</i>. 
         /// </para>
         ///  </li> </ul> 
@@ -19879,8 +20069,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileManualAssignmentQueues service method.</param>
@@ -19934,7 +20124,7 @@ namespace Amazon.Connect
         /// <para>
         /// For information about how manual contact assignment works in the agent workspace,
         /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+        /// the Worklist app in the Connect Customer agent workspace</a> in the <i>Connect Customer
         /// Administrator Guide</i>. 
         /// </para>
         ///  </li> </ul> 
@@ -19949,8 +20139,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileManualAssignmentQueues service method.</param>
@@ -20061,14 +20251,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the routing profiles for the specified Amazon Connect
-        /// instance.
+        /// Provides summary information about the routing profiles for the specified Connect
+        /// Customer instance.
         /// 
         ///  
         /// <para>
         /// For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
         /// Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
-        /// a Routing Profile</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// a Routing Profile</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfiles service method.</param>
@@ -20101,14 +20291,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the routing profiles for the specified Amazon Connect
-        /// instance.
+        /// Provides summary information about the routing profiles for the specified Connect
+        /// Customer instance.
         /// 
         ///  
         /// <para>
         /// For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
         /// Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
-        /// a Routing Profile</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// a Routing Profile</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfiles service method.</param>
@@ -20148,7 +20338,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// List all rules for the specified Amazon Connect instance.
+        /// List all rules for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
         /// 
@@ -20180,7 +20370,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// List all rules for the specified Amazon Connect instance.
+        /// List all rules for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
         /// <param name="cancellationToken">
@@ -20219,7 +20409,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -20256,7 +20446,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -20447,8 +20637,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -20487,8 +20677,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -20529,14 +20719,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the security profiles for the specified Amazon
-        /// Connect instance.
+        /// Provides summary information about the security profiles for the specified Connect
+        /// Customer instance.
         /// 
         ///  
         /// <para>
         /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -20570,14 +20760,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the security profiles for the specified Amazon
-        /// Connect instance.
+        /// Provides summary information about the security profiles for the specified Connect
+        /// Customer instance.
         /// 
         ///  
         /// <para>
         /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -20622,8 +20812,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Connect
+        /// Customer Identity-Based Policy Examples</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -20661,8 +20851,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Connect
+        /// Customer Identity-Based Policy Examples</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -20703,7 +20893,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists task templates for the specified Amazon Connect instance.
+        /// Lists task templates for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskTemplates service method.</param>
         /// 
@@ -20735,7 +20925,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists task templates for the specified Amazon Connect instance.
+        /// Lists task templates for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -21210,13 +21400,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the hierarchy groups for the specified Amazon Connect
-        /// instance.
+        /// Provides summary information about the hierarchy groups for the specified Connect
+        /// Customer instance.
         /// 
         ///  
         /// <para>
         /// For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-        /// Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Up Agent Hierarchies</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserHierarchyGroups service method.</param>
@@ -21249,13 +21439,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the hierarchy groups for the specified Amazon Connect
-        /// instance.
+        /// Provides summary information about the hierarchy groups for the specified Connect
+        /// Customer instance.
         /// 
         ///  
         /// <para>
         /// For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-        /// Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Up Agent Hierarchies</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserHierarchyGroups service method.</param>
@@ -21445,7 +21635,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the users for the specified Amazon Connect instance.
+        /// Provides summary information about the users for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 
@@ -21477,7 +21667,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the users for the specified Amazon Connect instance.
+        /// Provides summary information about the users for the specified Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// <param name="cancellationToken">
@@ -21603,8 +21793,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns all the available versions for the specified Amazon Connect instance and view
-        /// identifier.
+        /// Returns all the available versions for the specified Connect Customer instance and
+        /// view identifier.
         /// 
         ///  
         /// <para>
@@ -21644,8 +21834,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns all the available versions for the specified Amazon Connect instance and view
-        /// identifier.
+        /// Returns all the available versions for the specified Connect Customer instance and
+        /// view identifier.
         /// 
         ///  
         /// <para>
@@ -22101,14 +22291,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Changes the current status of a user or agent in Amazon Connect. If the agent is currently
-        /// handling a contact, this sets the agent's next status.
+        /// Changes the current status of a user or agent in Connect Customer. If the agent is
+        /// currently handling a contact, this sets the agent's next status.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent
         /// status</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set
-        /// your next status</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// your next status</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUserStatus service method.</param>
@@ -22144,14 +22334,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Changes the current status of a user or agent in Amazon Connect. If the agent is currently
-        /// handling a contact, this sets the agent's next status.
+        /// Changes the current status of a user or agent in Connect Customer. If the agent is
+        /// currently handling a contact, this sets the agent's next status.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent
         /// status</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set
-        /// your next status</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// your next status</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUserStatus service method.</param>
@@ -22194,14 +22384,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Releases a phone number previously claimed to an Amazon Connect instance or traffic
+        /// Releases a phone number previously claimed to an Connect Customer instance or traffic
         /// distribution group. You can call this API only in the Amazon Web Services Region where
         /// the number was claimed.
         /// 
         ///  <important> 
         /// <para>
         /// To release phone numbers from a traffic distribution group, use the <c>ReleasePhoneNumber</c>
-        /// API, not the Amazon Connect admin website.
+        /// API, not the Connect Customer admin website.
         /// </para>
         ///  
         /// <para>
@@ -22270,14 +22460,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Releases a phone number previously claimed to an Amazon Connect instance or traffic
+        /// Releases a phone number previously claimed to an Connect Customer instance or traffic
         /// distribution group. You can call this API only in the Amazon Web Services Region where
         /// the number was claimed.
         /// 
         ///  <important> 
         /// <para>
         /// To release phone numbers from a traffic distribution group, use the <c>ReleasePhoneNumber</c>
-        /// API, not the Amazon Connect admin website.
+        /// API, not the Connect Customer admin website.
         /// </para>
         ///  
         /// <para>
@@ -22353,15 +22543,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region
-        /// and copies configuration information for Amazon Connect resources across Amazon Web
-        /// Services Regions. 
+        /// Replicates an Connect Customer instance in the specified Amazon Web Services Region
+        /// and copies configuration information for Connect Customer resources across Amazon
+        /// Web Services Regions. 
         /// 
         ///  
         /// <para>
-        /// For more information about replicating an Amazon Connect instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
-        /// a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.
+        /// For more information about replicating an Connect Customer instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+        /// a replica of your existing Connect Customer instance</a> in the <i>Connect Customer
+        /// Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateInstance service method.</param>
@@ -22403,15 +22593,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region
-        /// and copies configuration information for Amazon Connect resources across Amazon Web
-        /// Services Regions. 
+        /// Replicates an Connect Customer instance in the specified Amazon Web Services Region
+        /// and copies configuration information for Connect Customer resources across Amazon
+        /// Web Services Regions. 
         /// 
         ///  
         /// <para>
-        /// For more information about replicating an Amazon Connect instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
-        /// a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.
+        /// For more information about replicating an Connect Customer instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+        /// a replica of your existing Connect Customer instance</a> in the <i>Connect Customer
+        /// Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateInstance service method.</param>
@@ -22632,7 +22822,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches AgentStatuses in an Amazon Connect instance, with optional filtering.
+        /// Searches AgentStatuses in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses service method.</param>
         /// 
@@ -22664,7 +22854,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches AgentStatuses in an Amazon Connect instance, with optional filtering.
+        /// Searches AgentStatuses in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses service method.</param>
         /// <param name="cancellationToken">
@@ -22703,7 +22893,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches for available phone numbers that you can claim to your Amazon Connect instance
+        /// Searches for available phone numbers that you can claim to your Connect Customer instance
         /// or traffic distribution group. If the provided <c>TargetArn</c> is a traffic distribution
         /// group, you can call this API in both Amazon Web Services Regions associated with the
         /// traffic distribution group.
@@ -22735,7 +22925,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches for available phone numbers that you can claim to your Amazon Connect instance
+        /// Searches for available phone numbers that you can claim to your Connect Customer instance
         /// or traffic distribution group. If the provided <c>TargetArn</c> is a traffic distribution
         /// group, you can call this API in both Amazon Web Services Regions associated with the
         /// traffic distribution group.
@@ -22774,7 +22964,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// Searches contact evaluations in an Connect Customer instance, with optional filtering.
         /// 
         /// 
         ///  
@@ -22805,8 +22995,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
@@ -22839,7 +23029,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// Searches contact evaluations in an Connect Customer instance, with optional filtering.
         /// 
         /// 
         ///  
@@ -22870,8 +23060,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
@@ -22911,7 +23101,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the flow modules in an Amazon Connect instance, with optional filtering.
+        /// Searches the flow modules in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlowModules service method.</param>
         /// 
@@ -22943,7 +23133,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the flow modules in an Amazon Connect instance, with optional filtering.
+        /// Searches the flow modules in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlowModules service method.</param>
         /// <param name="cancellationToken">
@@ -22982,7 +23172,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the flows in an Amazon Connect instance, with optional filtering.
+        /// Searches the flows in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
         /// 
@@ -23014,7 +23204,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the flows in an Amazon Connect instance, with optional filtering.
+        /// Searches the flows in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
         /// <param name="cancellationToken">
@@ -23053,7 +23243,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches contacts in an Amazon Connect instance.
+        /// Searches contacts in an Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContacts service method.</param>
         /// 
@@ -23085,7 +23275,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches contacts in an Amazon Connect instance.
+        /// Searches contacts in an Connect Customer instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContacts service method.</param>
         /// <param name="cancellationToken">
@@ -23276,7 +23466,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// Searches evaluation forms in an Connect Customer instance, with optional filtering.
         /// 
         ///  
         /// <para>
@@ -23311,8 +23501,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
@@ -23345,7 +23535,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// Searches evaluation forms in an Connect Customer instance, with optional filtering.
         /// 
         ///  
         /// <para>
@@ -23380,8 +23570,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
@@ -23492,7 +23682,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the hours of operation in an Amazon Connect instance, with optional filtering.
+        /// Searches the hours of operation in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations service method.</param>
         /// 
@@ -23524,7 +23714,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the hours of operation in an Amazon Connect instance, with optional filtering.
+        /// Searches the hours of operation in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations service method.</param>
         /// <param name="cancellationToken">
@@ -23661,13 +23851,13 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
@@ -23717,13 +23907,13 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
@@ -23763,7 +23953,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches prompts in an Amazon Connect instance, with optional filtering.
+        /// Searches prompts in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPrompts service method.</param>
         /// 
@@ -23795,7 +23985,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches prompts in an Amazon Connect instance, with optional filtering.
+        /// Searches prompts in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPrompts service method.</param>
         /// <param name="cancellationToken">
@@ -23834,7 +24024,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches queues in an Amazon Connect instance, with optional filtering.
+        /// Searches queues in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQueues service method.</param>
         /// 
@@ -23866,7 +24056,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches queues in an Amazon Connect instance, with optional filtering.
+        /// Searches queues in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQueues service method.</param>
         /// <param name="cancellationToken">
@@ -23905,7 +24095,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches quick connects in an Amazon Connect instance, with optional filtering.
+        /// Searches quick connects in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects service method.</param>
         /// 
@@ -23937,7 +24127,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches quick connects in an Amazon Connect instance, with optional filtering.
+        /// Searches quick connects in an Connect Customer instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -23976,7 +24166,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches tags used in an Amazon Connect instance using optional search criteria.
+        /// Searches tags used in an Connect Customer instance using optional search criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResourceTags service method.</param>
         /// 
@@ -24012,7 +24202,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches tags used in an Amazon Connect instance using optional search criteria.
+        /// Searches tags used in an Connect Customer instance using optional search criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResourceTags service method.</param>
         /// <param name="cancellationToken">
@@ -24055,7 +24245,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
+        /// Searches routing profiles in an Connect Customer instance, with optional filtering.
         /// 
         ///  <note> 
         /// <para>
@@ -24096,7 +24286,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
+        /// Searches routing profiles in an Connect Customer instance, with optional filtering.
         /// 
         ///  <note> 
         /// <para>
@@ -24144,13 +24334,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches security profiles in an Amazon Connect instance, with optional filtering.
+        /// Searches security profiles in an Connect Customer instance, with optional filtering.
         /// 
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -24184,13 +24374,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches security profiles in an Amazon Connect instance, with optional filtering.
+        /// Searches security profiles in an Connect Customer instance, with optional filtering.
         /// 
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -24308,7 +24498,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+        /// Searches UserHierarchyGroups in an Connect Customer instance, with optional filtering.
         /// 
         ///  <important> 
         /// <para>
@@ -24347,7 +24537,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+        /// Searches UserHierarchyGroups in an Connect Customer instance, with optional filtering.
         /// 
         ///  <important> 
         /// <para>
@@ -24393,7 +24583,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches users in an Amazon Connect instance, with optional filtering. 
+        /// Searches users in an Connect Customer instance, with optional filtering. 
         /// 
         ///  <note> 
         /// <para>
@@ -24431,7 +24621,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches users in an Amazon Connect instance, with optional filtering. 
+        /// Searches users in an Connect Customer instance, with optional filtering. 
         /// 
         ///  <note> 
         /// <para>
@@ -24553,7 +24743,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches for vocabularies within a specific Amazon Connect instance using <c>State</c>,
+        /// Searches for vocabularies within a specific Connect Customer instance using <c>State</c>,
         /// <c>NameStartsWith</c>, and <c>LanguageCode</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchVocabularies service method.</param>
@@ -24583,7 +24773,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches for vocabularies within a specific Amazon Connect instance using <c>State</c>,
+        /// Searches for vocabularies within a specific Connect Customer instance using <c>State</c>,
         /// <c>NameStartsWith</c>, and <c>LanguageCode</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchVocabularies service method.</param>
@@ -24777,7 +24967,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Processes chat integration events from Amazon Web Services or external integrations
-        /// to Amazon Connect. A chat integration event includes:
+        /// to Connect Customer. A chat integration event includes:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -24832,7 +25022,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Processes chat integration events from Amazon Web Services or external integrations
-        /// to Amazon Connect. A chat integration event includes:
+        /// to Connect Customer. A chat integration event includes:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -24895,11 +25085,11 @@ namespace Amazon.Connect
         /// <summary>
         /// Send outbound email for outbound campaigns. For more information about outbound campaigns,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
-        /// up Amazon Connect outbound campaigns</a>.
+        /// up Connect Customer outbound campaigns</a>.
         /// 
         ///  <note> 
         /// <para>
-        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// Only the Connect Customer outbound campaigns service principal is allowed to assume
         /// a role in your account and call this API.
         /// </para>
         ///  </note>
@@ -24942,11 +25132,11 @@ namespace Amazon.Connect
         /// <summary>
         /// Send outbound email for outbound campaigns. For more information about outbound campaigns,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
-        /// up Amazon Connect outbound campaigns</a>.
+        /// up Connect Customer outbound campaigns</a>.
         /// 
         ///  <note> 
         /// <para>
-        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// Only the Connect Customer outbound campaigns service principal is allowed to assume
         /// a role in your account and call this API.
         /// </para>
         ///  </note>
@@ -24998,9 +25188,9 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-        /// Connect Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
-        /// Connect Email</a>. 
+        /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+        /// Customer Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
+        /// Customer Email</a>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -25041,9 +25231,9 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-        /// Connect Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
-        /// Connect Email</a>. 
+        /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+        /// Customer Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
+        /// Customer Email</a>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -25089,7 +25279,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Initiates a flow to start a new chat for the customer. Response of this API provides
         /// a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-        /// API in the Amazon Connect Participant Service.
+        /// API in the Connect Customer Participant Service.
         /// 
         ///  
         /// <para>
@@ -25119,18 +25309,18 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// For more information about chat, see the following topics in the <i>Connect Customer
         /// Administrator Guide</i>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
-        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// Web and mobile messaging capabilities in Connect Customer</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a> 
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -25166,7 +25356,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Initiates a flow to start a new chat for the customer. Response of this API provides
         /// a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-        /// API in the Amazon Connect Participant Service.
+        /// API in the Connect Customer Participant Service.
         /// 
         ///  
         /// <para>
@@ -25196,18 +25386,18 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// For more information about chat, see the following topics in the <i>Connect Customer
         /// Administrator Guide</i>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
-        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// Web and mobile messaging capabilities in Connect Customer</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a> 
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -25248,7 +25438,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Starts an empty evaluation in the specified Amazon Connect instance, using the given
+        /// Starts an empty evaluation in the specified Connect Customer instance, using the given
         /// evaluation form for the particular contact. The evaluation form version used for the
         /// contact evaluation corresponds to the currently activated version. If no version is
         /// activated for the evaluation form, the contact evaluation cannot be started. 
@@ -25293,7 +25483,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Starts an empty evaluation in the specified Amazon Connect instance, using the given
+        /// Starts an empty evaluation in the specified Connect Customer instance, using the given
         /// evaluation form for the particular contact. The evaluation form version used for the
         /// contact evaluation corresponds to the currently activated version. If no version is
         /// activated for the evaluation form, the contact evaluation cannot be started. 
@@ -25568,22 +25758,22 @@ namespace Amazon.Connect
         ///  
         /// <para>
         ///  For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
-        /// real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// real-time chat message streaming</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// For more information about chat, see the following topics in the <i>Connect Customer
         /// Administrator Guide</i>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
-        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// Web and mobile messaging capabilities in Connect Customer</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a> 
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -25622,22 +25812,22 @@ namespace Amazon.Connect
         ///  
         /// <para>
         ///  For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
-        /// real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// real-time chat message streaming</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// For more information about chat, see the following topics in the <i>Connect Customer
         /// Administrator Guide</i>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
-        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// Web and mobile messaging capabilities in Connect Customer</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a> 
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -25781,8 +25971,8 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
-        /// topics in the <i>Amazon Connect Administrator Guide</i>:
+        /// For more information about using SMS or WhatsApp in Connect Customer, see the following
+        /// topics in the <i>Connect Customer Administrator Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -25857,8 +26047,8 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
-        /// topics in the <i>Amazon Connect Administrator Guide</i>:
+        /// For more information about using SMS or WhatsApp in Connect Customer, see the following
+        /// topics in the <i>Connect Customer Administrator Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -26026,15 +26216,15 @@ namespace Amazon.Connect
         /// <para>
         /// UK numbers with a 447 prefix are not allowed by default. Before you can dial these
         /// UK mobile numbers, you must submit a service quota increase request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         ///  </note> <note> 
         /// <para>
         /// Campaign calls are not allowed by default. Before you can make a call with <c>TrafficType</c>
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
-        /// Connect campaigns</a>. 
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Connect
+        /// Customer campaigns</a>. 
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -26099,15 +26289,15 @@ namespace Amazon.Connect
         /// <para>
         /// UK numbers with a 447 prefix are not allowed by default. Before you can dial these
         /// UK mobile numbers, you must submit a service quota increase request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         ///  </note> <note> 
         /// <para>
         /// Campaign calls are not allowed by default. Before you can make a call with <c>TrafficType</c>
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
-        /// Connect campaigns</a>. 
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Connect
+        /// Customer campaigns</a>. 
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -26162,8 +26352,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Starts screen sharing for a contact. For more information about screen sharing, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
-        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon
-        /// Connect Administrator Guide</i>.
+        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Connect
+        /// Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing service method.</param>
         /// 
@@ -26200,8 +26390,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Starts screen sharing for a contact. For more information about screen sharing, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
-        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon
-        /// Connect Administrator Guide</i>.
+        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Connect
+        /// Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing service method.</param>
         /// <param name="cancellationToken">
@@ -26245,7 +26435,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Initiates a flow to start a new task contact. For more information about task contacts,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html">Concepts:
-        /// Tasks in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// Tasks in Connect Customer</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -26290,15 +26481,15 @@ namespace Amazon.Connect
         /// <c>QuickConnectID</c>, or <c>TaskTemplateID</c>. Only one parameter is required as
         /// long as the task template has a flow configured to run it. If more than one parameter
         /// is specified, or only the <c>TaskTemplateID</c> is specified but it does not have
-        /// a flow configured, the request returns an error because Amazon Connect cannot identify
+        /// a flow configured, the request returns an error because Connect Customer cannot identify
         /// the unique flow to run when the task is created.
         /// </para>
         ///  
         /// <para>
         /// A <c>ServiceQuotaExceededException</c> occurs when the number of open tasks exceeds
         /// the active tasks quota or there are already 12 tasks referencing the same <c>PreviousContactId</c>.
-        /// For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer service quotas</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
@@ -26336,7 +26527,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Initiates a flow to start a new task contact. For more information about task contacts,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html">Concepts:
-        /// Tasks in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// Tasks in Connect Customer</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -26381,15 +26573,15 @@ namespace Amazon.Connect
         /// <c>QuickConnectID</c>, or <c>TaskTemplateID</c>. Only one parameter is required as
         /// long as the task template has a flow configured to run it. If more than one parameter
         /// is specified, or only the <c>TaskTemplateID</c> is specified but it does not have
-        /// a flow configured, the request returns an error because Amazon Connect cannot identify
+        /// a flow configured, the request returns an error because Connect Customer cannot identify
         /// the unique flow to run when the task is created.
         /// </para>
         ///  
         /// <para>
         /// A <c>ServiceQuotaExceededException</c> occurs when the number of open tasks exceeds
         /// the active tasks quota or there are already 12 tasks referencing the same <c>PreviousContactId</c>.
-        /// For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer service quotas</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
@@ -26517,7 +26709,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Places an inbound in-app, web, or video call to a contact, and then initiates the
         /// flow. It performs the actions in the flow that are specified (in ContactFlowId) and
-        /// present in the Amazon Connect instance (specified as InstanceId).
+        /// present in the Connect Customer instance (specified as InstanceId).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWebRTCContact service method.</param>
         /// 
@@ -26551,7 +26743,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Places an inbound in-app, web, or video call to a contact, and then initiates the
         /// flow. It performs the actions in the flow that are specified (in ContactFlowId) and
-        /// present in the Amazon Connect instance (specified as InstanceId).
+        /// present in the Connect Customer instance (specified as InstanceId).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWebRTCContact service method.</param>
         /// <param name="cancellationToken">
@@ -27039,7 +27231,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Submits a contact evaluation in the specified Amazon Connect instance. Answers included
+        /// Submits a contact evaluation in the specified Connect Customer instance. Answers included
         /// in the request are merged with existing answers for the given evaluation. If no answers
         /// or notes are passed, the evaluation is submitted with the existing answers and notes.
         /// You can delete an answer or note by passing an empty object (<c>{}</c>) to the question
@@ -27081,7 +27273,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Submits a contact evaluation in the specified Amazon Connect instance. Answers included
+        /// Submits a contact evaluation in the specified Connect Customer instance. Answers included
         /// in the request are merged with existing answers for the given evaluation. If no answers
         /// or notes are passed, the evaluation is submitted with the existing answers and notes.
         /// You can delete an answer or note by passing an empty object (<c>{}</c>) to the question
@@ -27233,7 +27425,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Adds the specified tags to the contact resource. For more information about this API
         /// is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
-        /// up granular billing for a detailed view of your Amazon Connect usage</a>.
+        /// up granular billing for a detailed view of your Connect Customer usage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagContact service method.</param>
         /// 
@@ -27273,7 +27465,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Adds the specified tags to the contact resource. For more information about this API
         /// is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
-        /// up granular billing for a detailed view of your Amazon Connect usage</a>.
+        /// up granular billing for a detailed view of your Connect Customer usage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagContact service method.</param>
         /// <param name="cancellationToken">
@@ -27325,12 +27517,12 @@ namespace Amazon.Connect
         /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
         /// flows, agent statuses, hours of operation, phone numbers, security profiles, and task
         /// templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
-        /// resources in Amazon Connect</a>.
+        /// resources in Connect Customer</a>.
         /// </para>
         ///  
         /// <para>
-        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Connect
+        /// Customer Identity-Based Policy Examples</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -27371,12 +27563,12 @@ namespace Amazon.Connect
         /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
         /// flows, agent statuses, hours of operation, phone numbers, security profiles, and task
         /// templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
-        /// resources in Amazon Connect</a>.
+        /// resources in Connect Customer</a>.
         /// </para>
         ///  
         /// <para>
-        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-        /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+        /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Connect
+        /// Customer Identity-Based Policy Examples</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -27564,7 +27756,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Removes the specified tags from the contact resource. For more information about this
         /// API is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
-        /// up granular billing for a detailed view of your Amazon Connect usage</a>.
+        /// up granular billing for a detailed view of your Connect Customer usage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagContact service method.</param>
         /// 
@@ -27604,7 +27796,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Removes the specified tags from the contact resource. For more information about this
         /// API is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
-        /// up granular billing for a detailed view of your Amazon Connect usage</a>.
+        /// up granular billing for a detailed view of your Connect Customer usage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagContact service method.</param>
         /// <param name="cancellationToken">
@@ -27799,11 +27991,98 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateAttachedFilesConfiguration
+
+
+        /// <summary>
+        /// Updates the attached files configuration for the specified Connect Customer instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If no instance-specific configuration exists, this operation creates one. Partial
+        /// updates are supported—only specified fields are updated, while unspecified fields
+        /// retain their current values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachedFilesConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAttachedFilesConfiguration">REST API Reference for UpdateAttachedFilesConfiguration Operation</seealso>
+        public virtual UpdateAttachedFilesConfigurationResponse UpdateAttachedFilesConfiguration(UpdateAttachedFilesConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAttachedFilesConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAttachedFilesConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the attached files configuration for the specified Connect Customer instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If no instance-specific configuration exists, this operation creates one. Partial
+        /// updates are supported—only specified fields are updated, while unspecified fields
+        /// retain their current values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachedFilesConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAttachedFilesConfiguration">REST API Reference for UpdateAttachedFilesConfiguration Operation</seealso>
+        public virtual Task<UpdateAttachedFilesConfigurationResponse> UpdateAttachedFilesConfigurationAsync(UpdateAttachedFilesConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAttachedFilesConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAttachedFilesConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAuthenticationProfile
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// This API is in preview release for Connect Customer and is subject to change. To request
         /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
@@ -27841,7 +28120,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// This API is in preview release for Connect Customer and is subject to change. To request
         /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
@@ -27886,7 +28165,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -27943,7 +28222,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -28016,15 +28295,15 @@ namespace Amazon.Connect
         /// the customer called. You can add notes about steps that the agent took during the
         /// call that display to the next agent that takes the call. You can also update attributes
         /// for a contact using data from your CRM application and save the data with the contact
-        /// in Amazon Connect. You could also flag calls for additional analysis, such as legal
+        /// in Connect Customer. You could also flag calls for additional analysis, such as legal
         /// review or to identify abusive callers.
         /// </para>
         ///  
         /// <para>
-        /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+        /// Contact attributes are available in Connect Customer for 24 months, and are then deleted.
         /// For information about contact record retention and the maximum size of the contact
         /// record attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
-        /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// specifications</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes service method.</param>
@@ -28069,15 +28348,15 @@ namespace Amazon.Connect
         /// the customer called. You can add notes about steps that the agent took during the
         /// call that display to the next agent that takes the call. You can also update attributes
         /// for a contact using data from your CRM application and save the data with the contact
-        /// in Amazon Connect. You could also flag calls for additional analysis, such as legal
+        /// in Connect Customer. You could also flag calls for additional analysis, such as legal
         /// review or to identify abusive callers.
         /// </para>
         ///  
         /// <para>
-        /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+        /// Contact attributes are available in Connect Customer for 24 months, and are then deleted.
         /// For information about contact record retention and the maximum size of the contact
         /// record attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
-        /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// specifications</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes service method.</param>
@@ -28120,7 +28399,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates details about a contact evaluation in the specified Amazon Connect instance.
+        /// Updates details about a contact evaluation in the specified Connect Customer instance.
         /// A contact evaluation must be in draft state. Answers included in the request are merged
         /// with existing answers for the given evaluation. An answer or note can be deleted by
         /// passing an empty object (<c>{}</c>) to the question identifier.
@@ -28155,7 +28434,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates details about a contact evaluation in the specified Amazon Connect instance.
+        /// Updates details about a contact evaluation in the specified Connect Customer instance.
         /// A contact evaluation must be in draft state. Answers included in the request are merged
         /// with existing answers for the given evaluation. An answer or note can be deleted by
         /// passing an empty object (<c>{}</c>) to the question identifier.
@@ -28201,8 +28480,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         ///  
         /// <para>
@@ -28249,8 +28528,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         ///  
         /// <para>
@@ -28468,7 +28747,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates specified flow module for the specified Amazon Connect instance. 
+        /// Updates specified flow module for the specified Connect Customer instance. 
         /// 
         ///  
         /// <para>
@@ -28511,7 +28790,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates specified flow module for the specified Amazon Connect instance. 
+        /// Updates specified flow module for the specified Connect Customer instance. 
         /// 
         ///  
         /// <para>
@@ -28648,8 +28927,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowName service method.</param>
@@ -28689,8 +28968,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-        /// Connect Flow language</a>.
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+        /// Customer Flow language</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowName service method.</param>
@@ -29226,7 +29505,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates an email address metadata. For more information about email addresses, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// email addresses</a> in the Connect Customer Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailAddressMetadata service method.</param>
         /// 
@@ -29266,7 +29545,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates an email address metadata. For more information about email addresses, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// email addresses</a> in the Connect Customer Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailAddressMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -29311,9 +29590,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates details about a specific evaluation form version in the specified Amazon Connect
-        /// instance. Question and section identifiers cannot be duplicated within the same evaluation
-        /// form.
+        /// Updates details about a specific evaluation form version in the specified Connect
+        /// Customer instance. Question and section identifiers cannot be duplicated within the
+        /// same evaluation form.
         /// 
         ///  
         /// <para>
@@ -29354,9 +29633,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates details about a specific evaluation form version in the specified Amazon Connect
-        /// instance. Question and section identifiers cannot be duplicated within the same evaluation
-        /// form.
+        /// Updates details about a specific evaluation form version in the specified Connect
+        /// Customer instance. Question and section identifiers cannot be duplicated within the
+        /// same evaluation form.
         /// 
         ///  
         /// <para>
@@ -29564,7 +29843,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -29601,7 +29880,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -29645,7 +29924,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -29682,7 +29961,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// This API is in preview release for Connect Customer and is subject to change.
         /// 
         ///  
         /// <para>
@@ -29805,7 +30084,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Instructs Amazon Connect to resume the authentication process. The subsequent actions
+        /// Instructs Connect Customer to resume the authentication process. The subsequent actions
         /// depend on the request body contents:
         /// 
         ///  <ul> <li> 
@@ -29859,7 +30138,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Instructs Amazon Connect to resume the authentication process. The subsequent actions
+        /// Instructs Connect Customer to resume the authentication process. The subsequent actions
         /// depend on the request body contents:
         /// 
         ///  <ul> <li> 
@@ -30045,8 +30324,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates your claimed phone number from its current Amazon Connect instance or traffic
-        /// distribution group to another Amazon Connect instance or traffic distribution group
+        /// Updates your claimed phone number from its current Connect Customer instance or traffic
+        /// distribution group to another Connect Customer instance or traffic distribution group
         /// in the same Amazon Web Services Region.
         /// 
         ///  <important> 
@@ -30103,8 +30382,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates your claimed phone number from its current Amazon Connect instance or traffic
-        /// distribution group to another Amazon Connect instance or traffic distribution group
+        /// Updates your claimed phone number from its current Connect Customer instance or traffic
+        /// distribution group to another Connect Customer instance or traffic distribution group
         /// in the same Amazon Web Services Region.
         /// 
         ///  <important> 
@@ -30279,13 +30558,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// Updates a predefined attribute for the specified Connect Customer instance. A <i>predefined
         /// attribute</i> is made up of a name and a value.
         /// 
         ///  
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -30311,8 +30590,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
@@ -30345,13 +30624,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// Updates a predefined attribute for the specified Connect Customer instance. A <i>predefined
         /// attribute</i> is made up of a name and a value.
         /// 
         ///  
         /// <para>
-        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-        /// Connect quotas</a>.
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+        /// Customer quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -30377,8 +30656,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
@@ -30718,7 +30997,7 @@ namespace Amazon.Connect
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
-        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// the same Region as the Connect Customer instance where you are calling this API, then
         /// you can use a full phone number ARN or a UUID for <c>OutboundCallerIdNumberId</c>.
         /// However, if the phone number is claimed to a traffic distribution group that is in
         /// one Region, and you are calling this API from an instance in another Amazon Web Services
@@ -30777,7 +31056,7 @@ namespace Amazon.Connect
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
-        /// the same Region as the Amazon Connect instance where you are calling this API, then
+        /// the same Region as the Connect Customer instance where you are calling this API, then
         /// you can use a full phone number ARN or a UUID for <c>OutboundCallerIdNumberId</c>.
         /// However, if the phone number is claimed to a traffic distribution group that is in
         /// one Region, and you are calling this API from an instance in another Amazon Web Services
@@ -31502,7 +31781,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a rule for the specified Amazon Connect instance.
+        /// Updates a rule for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
@@ -31543,7 +31822,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a rule for the specified Amazon Connect instance.
+        /// Updates a rule for the specified Connect Customer instance.
         /// 
         ///  
         /// <para>
@@ -31596,8 +31875,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -31636,8 +31915,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
-        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// Profiles</a> in the <i>Connect Customer Administrator Guide</i>. For a mapping of
+        /// the API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
         /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
@@ -31678,7 +31957,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates details about a specific task template in the specified Amazon Connect instance.
+        /// Updates details about a specific task template in the specified Connect Customer instance.
         /// This operation does not support partial updates. Instead it does a full update of
         /// template content.
         /// </summary>
@@ -31715,7 +31994,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates details about a specific task template in the specified Amazon Connect instance.
+        /// Updates details about a specific task template in the specified Connect Customer instance.
         /// This operation does not support partial updates. Instead it does a full update of
         /// template content.
         /// </summary>
@@ -31872,9 +32151,18 @@ namespace Amazon.Connect
         ///  </note> 
         /// <para>
         /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
-        /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
-        /// Connect Administrator Guide</i>. 
+        /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Connect
+        /// Customer Administrator Guide</i>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the UpdateTrafficDistribution API in the region that should handle traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
         /// 
@@ -31929,9 +32217,18 @@ namespace Amazon.Connect
         ///  </note> 
         /// <para>
         /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
-        /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
-        /// Connect Administrator Guide</i>. 
+        /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Connect
+        /// Customer Administrator Guide</i>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the UpdateTrafficDistribution API in the region that should handle traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
         /// <param name="cancellationToken">
@@ -32308,7 +32605,7 @@ namespace Amazon.Connect
         /// their email address. This poses a security risk to your organization. They can change
         /// the email address of a user to the attacker's email address, and then reset the password
         /// through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-        /// Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Practices for Security Profiles</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -32351,7 +32648,7 @@ namespace Amazon.Connect
         /// their email address. This poses a security risk to your organization. They can change
         /// the email address of a user to the attacker's email address, and then reset the password
         /// through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-        /// Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Practices for Security Profiles</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -32779,7 +33076,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates the view content of the given view identifier in the specified Amazon Connect
+        /// Updates the view content of the given view identifier in the specified Connect Customer
         /// instance.
         /// 
         ///  
@@ -32829,7 +33126,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates the view content of the given view identifier in the specified Amazon Connect
+        /// Updates the view content of the given view identifier in the specified Connect Customer
         /// instance.
         /// 
         ///  

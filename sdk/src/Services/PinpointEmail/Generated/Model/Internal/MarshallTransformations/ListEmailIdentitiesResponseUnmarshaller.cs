@@ -52,13 +52,13 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmailIdentities", targetDepth))
+                if (context.TestExpression("EmailIdentities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdentityInfo, IdentityInfoUnmarshaller>(IdentityInfoUnmarshaller.Instance);
                     response.EmailIdentities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

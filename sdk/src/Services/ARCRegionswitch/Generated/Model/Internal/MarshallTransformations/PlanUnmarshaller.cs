@@ -56,91 +56,91 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associatedAlarms", targetDepth))
+                if (context.TestExpression("associatedAlarms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AssociatedAlarm, StringUnmarshaller, AssociatedAlarmUnmarshaller>(StringUnmarshaller.Instance, AssociatedAlarmUnmarshaller.Instance);
                     unmarshalledObject.AssociatedAlarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionRole", targetDepth))
+                if (context.TestExpression("executionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("owner", targetDepth))
+                if (context.TestExpression("owner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primaryRegion", targetDepth))
+                if (context.TestExpression("primaryRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recoveryApproach", targetDepth))
+                if (context.TestExpression("recoveryApproach", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecoveryApproach = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recoveryTimeObjectiveMinutes", targetDepth))
+                if (context.TestExpression("recoveryTimeObjectiveMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecoveryTimeObjectiveMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regions", targetDepth))
+                if (context.TestExpression("regions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Regions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reportConfiguration", targetDepth))
+                if (context.TestExpression("reportConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ReportConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("triggers", targetDepth))
+                if (context.TestExpression("triggers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Trigger, TriggerUnmarshaller>(TriggerUnmarshaller.Instance);
                     unmarshalledObject.Triggers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflows", targetDepth))
+                if (context.TestExpression("workflows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Workflow, WorkflowUnmarshaller>(WorkflowUnmarshaller.Instance);
                     unmarshalledObject.Workflows = unmarshaller.Unmarshall(context, ref reader);

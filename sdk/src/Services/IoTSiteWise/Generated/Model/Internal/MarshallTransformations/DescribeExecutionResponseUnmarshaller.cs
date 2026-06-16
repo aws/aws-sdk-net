@@ -52,67 +52,67 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionType", targetDepth))
+                if (context.TestExpression("actionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionDetails", targetDepth))
+                if (context.TestExpression("executionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.ExecutionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionEndTime", targetDepth))
+                if (context.TestExpression("executionEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExecutionEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionEntityVersion", targetDepth))
+                if (context.TestExpression("executionEntityVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExecutionEntityVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionId", targetDepth))
+                if (context.TestExpression("executionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionResult", targetDepth))
+                if (context.TestExpression("executionResult", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.ExecutionResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionStartTime", targetDepth))
+                if (context.TestExpression("executionStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExecutionStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionStatus", targetDepth))
+                if (context.TestExpression("executionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionStatusUnmarshaller.Instance;
                     response.ExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolveTo", targetDepth))
+                if (context.TestExpression("resolveTo", targetDepth, ref reader))
                 {
                     var unmarshaller = ResolveToUnmarshaller.Instance;
                     response.ResolveTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetResource", targetDepth))
+                if (context.TestExpression("targetResource", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetResourceUnmarshaller.Instance;
                     response.TargetResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetResourceVersion", targetDepth))
+                if (context.TestExpression("targetResourceVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetResourceVersion = unmarshaller.Unmarshall(context, ref reader);

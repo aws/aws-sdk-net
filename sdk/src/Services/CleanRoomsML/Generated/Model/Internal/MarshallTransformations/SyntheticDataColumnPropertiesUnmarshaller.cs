@@ -56,19 +56,19 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("columnName", targetDepth))
+                if (context.TestExpression("columnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("columnType", targetDepth))
+                if (context.TestExpression("columnType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isPredictiveValue", targetDepth))
+                if (context.TestExpression("isPredictiveValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPredictiveValue = unmarshaller.Unmarshall(context, ref reader);

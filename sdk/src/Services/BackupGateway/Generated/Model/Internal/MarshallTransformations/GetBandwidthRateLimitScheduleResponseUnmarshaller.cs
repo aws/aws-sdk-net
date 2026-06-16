@@ -52,13 +52,13 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BandwidthRateLimitIntervals", targetDepth))
+                if (context.TestExpression("BandwidthRateLimitIntervals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BandwidthRateLimitInterval, BandwidthRateLimitIntervalUnmarshaller>(BandwidthRateLimitIntervalUnmarshaller.Instance);
                     response.BandwidthRateLimitIntervals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayArn", targetDepth))
+                if (context.TestExpression("GatewayArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayArn = unmarshaller.Unmarshall(context, ref reader);

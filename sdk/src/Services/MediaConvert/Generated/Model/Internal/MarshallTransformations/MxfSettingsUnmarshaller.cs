@@ -56,25 +56,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("afdSignaling", targetDepth))
+                if (context.TestExpression("afdSignaling", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AfdSignaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profile", targetDepth))
+                if (context.TestExpression("profile", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uncompressedAudioWrapping", targetDepth))
+                if (context.TestExpression("uncompressedAudioWrapping", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UncompressedAudioWrapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("xavcProfileSettings", targetDepth))
+                if (context.TestExpression("xavcProfileSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MxfXavcProfileSettingsUnmarshaller.Instance;
                     unmarshalledObject.XavcProfileSettings = unmarshaller.Unmarshall(context, ref reader);

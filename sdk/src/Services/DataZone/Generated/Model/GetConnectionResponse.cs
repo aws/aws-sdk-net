@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class GetConnectionResponse : AmazonWebServiceResponse
     {
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private ConnectionCredentials _connectionCredentials;
         private string _connectionId;
         private string _description;
@@ -47,6 +48,29 @@ namespace Amazon.DataZone.Model
         private ConnectionPropertiesOutput _props;
         private ConnectionScope _scope;
         private ConnectionType _type;
+
+        /// <summary>
+        /// Gets and sets the property Configurations. 
+        /// <para>
+        /// The configurations of the connection.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Configuration> Configurations
+        {
+            get { return this._configurations; }
+            set { this._configurations = value; }
+        }
+
+        // Check to see if Configurations property is set
+        internal bool IsSetConfigurations()
+        {
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectionCredentials. 

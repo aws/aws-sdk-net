@@ -34,6 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// Adds the specified tags to the specified resource. If a tag key already exists, the
     /// existing value is replaced with the new value.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class TagResourceRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _resourceArn;

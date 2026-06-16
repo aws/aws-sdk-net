@@ -56,19 +56,19 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HumanLoopActivationConditionsEvaluationResults", targetDepth))
+                if (context.TestExpression("HumanLoopActivationConditionsEvaluationResults", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HumanLoopActivationConditionsEvaluationResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanLoopActivationReasons", targetDepth))
+                if (context.TestExpression("HumanLoopActivationReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HumanLoopActivationReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanLoopArn", targetDepth))
+                if (context.TestExpression("HumanLoopArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HumanLoopArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CalendarInterval", targetDepth))
+                if (context.TestExpression("CalendarInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = CalendarIntervalUnmarshaller.Instance;
                     unmarshalledObject.CalendarInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RollingInterval", targetDepth))
+                if (context.TestExpression("RollingInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = RollingIntervalUnmarshaller.Instance;
                     unmarshalledObject.RollingInterval = unmarshaller.Unmarshall(context, ref reader);

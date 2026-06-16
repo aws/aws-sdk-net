@@ -36,12 +36,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _callbackUrl;
         private Secret _clientSecretArn;
+        private string _clientSecretJsonKey;
+        private SecretSourceType _clientSecretSource;
         private DateTime? _createdTime;
         private string _credentialProviderArn;
         private CredentialProviderVendorType _credentialProviderVendor;
+        private string _failureReason;
         private DateTime? _lastUpdatedTime;
         private string _name;
         private Oauth2ProviderConfigOutput _oauth2ProviderConfigOutput;
+        private Status _status;
 
         /// <summary>
         /// Gets and sets the property CallbackUrl. 
@@ -80,6 +84,45 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetClientSecretArn()
         {
             return this._clientSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretJsonKey. 
+        /// <para>
+        /// The JSON key used to extract the client secret value from the AWS Secrets Manager
+        /// secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ClientSecretJsonKey
+        {
+            get { return this._clientSecretJsonKey; }
+            set { this._clientSecretJsonKey = value; }
+        }
+
+        // Check to see if ClientSecretJsonKey property is set
+        internal bool IsSetClientSecretJsonKey()
+        {
+            return this._clientSecretJsonKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretSource. 
+        /// <para>
+        /// The source type of the client secret. Either <c>MANAGED</c> if the secret is managed
+        /// by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType ClientSecretSource
+        {
+            get { return this._clientSecretSource; }
+            set { this._clientSecretSource = value; }
+        }
+
+        // Check to see if ClientSecretSource property is set
+        internal bool IsSetClientSecretSource()
+        {
+            return this._clientSecretSource != null;
         }
 
         /// <summary>
@@ -140,6 +183,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason for failure if the OAuth2 credential provider is in a failed state.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
         /// The timestamp when the OAuth2 credential provider was last updated.
@@ -194,6 +255,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetOauth2ProviderConfigOutput()
         {
             return this._oauth2ProviderConfigOutput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the OAuth2 credential provider.
+        /// </para>
+        /// </summary>
+        public Status Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

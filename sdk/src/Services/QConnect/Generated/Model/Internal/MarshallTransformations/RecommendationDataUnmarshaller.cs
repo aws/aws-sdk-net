@@ -56,37 +56,37 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("data", targetDepth))
+                if (context.TestExpression("data", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSummaryUnmarshaller.Instance;
                     unmarshalledObject.Data = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("document", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentUnmarshaller.Instance;
                     unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendationId", targetDepth))
+                if (context.TestExpression("recommendationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relevanceLevel", targetDepth))
+                if (context.TestExpression("relevanceLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RelevanceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relevanceScore", targetDepth))
+                if (context.TestExpression("relevanceScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RelevanceScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

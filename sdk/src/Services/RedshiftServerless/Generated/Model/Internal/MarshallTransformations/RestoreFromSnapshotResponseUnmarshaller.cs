@@ -52,19 +52,19 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("namespace", targetDepth, ref reader))
                 {
                     var unmarshaller = NamespaceUnmarshaller.Instance;
                     response.Namespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ownerAccount", targetDepth))
+                if (context.TestExpression("ownerAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotName", targetDepth))
+                if (context.TestExpression("snapshotName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SnapshotName = unmarshaller.Unmarshall(context, ref reader);

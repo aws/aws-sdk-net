@@ -40,6 +40,7 @@ namespace Amazon.Runtime.Internal
         readonly IDictionary<string, string> trailingHeaders = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> subResources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> pathResources = new Dictionary<string, string>(StringComparer.Ordinal);
+        readonly List<EventStreamHeader> eventHeaders = new List<EventStreamHeader>();
 
         Uri endpoint;
         string resourcePath;
@@ -159,6 +160,14 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return this.headers;
+            }
+        }
+
+        public IList<EventStreamHeader> EventHeaders
+        {
+            get
+            {
+                return this.eventHeaders;
             }
         }
 
@@ -349,13 +358,37 @@ namespace Amazon.Runtime.Internal
 
             if (this.contentStreamHash == null)
             {
-                var seekableStream = WrapperStream.SearchWrappedStream(this.contentStream, s => s.CanSeek);
-                if (seekableStream != null)
+#if !NETFRAMEWORK
+                // Fast path: hash directly from the pooled buffer without stream seek overhead.
+                if (this.contentStream is PooledContentStream pooledStream)
                 {
-                    var position = seekableStream.Position;
-                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(seekableStream);
+                    var memory = pooledStream.Content;
+#if NET8_0_OR_GREATER
+                    byte[] payloadHashBytes = System.Security.Cryptography.SHA256.HashData(memory.Span);
+#else
+                    byte[] payloadHashBytes;
+                    if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(memory, out var segment))
+                    {
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(segment.Array, segment.Offset, segment.Count);
+                    }
+                    else
+                    {
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(memory.ToArray());
+                    }
+#endif
                     this.contentStreamHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
-                    seekableStream.Seek(position, SeekOrigin.Begin);
+                }
+                else
+#endif
+                {
+                    var seekableStream = WrapperStream.SearchWrappedStream(this.contentStream, s => s.CanSeek);
+                    if (seekableStream != null)
+                    {
+                        var position = seekableStream.Position;
+                        byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(seekableStream);
+                        this.contentStreamHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
+                        seekableStream.Seek(position, SeekOrigin.Begin);
+                    }
                 }
             }
 
@@ -515,6 +548,12 @@ namespace Amazon.Runtime.Internal
         /// else false.</returns>
         public bool IsRequestStreamRewindable()
         {
+            // Event stream requests (bidirectional streaming) cannot be retried by the SDK because
+            // the event publisher is a forward-only stream that cannot be rewound. Operation-level
+            // errors (e.g., throttling) are surfaced to the caller for application-level retry.
+            if (this.EventStreamPublisher != null)
+                return false;
+
             var stream = this.ContentStream;
             // Retries may not be possible with a stream
             if (stream != null)
@@ -574,5 +613,28 @@ namespace Amazon.Runtime.Internal
         /// Auth scheme chosen for the current request.
         /// </summary>
         public IAuthSchemeOption ChosenAuthScheme { get; set; }
+
+        /// <summary>
+        /// Disposes pooled resources held by this request.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes managed resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+#if !NETFRAMEWORK
+            if (disposing && contentStream is PooledContentStream)
+            {
+                contentStream.Dispose();
+                contentStream = null;
+            }
+#endif
+        }
     }
 }

@@ -52,19 +52,19 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("projectArn", targetDepth))
+                if (context.TestExpression("projectArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProjectArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("projectVisibility", targetDepth))
+                if (context.TestExpression("projectVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProjectVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicProjectAlias", targetDepth))
+                if (context.TestExpression("publicProjectAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PublicProjectAlias = unmarshaller.Unmarshall(context, ref reader);

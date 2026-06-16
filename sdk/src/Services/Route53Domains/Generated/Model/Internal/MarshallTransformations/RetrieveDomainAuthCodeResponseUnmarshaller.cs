@@ -52,7 +52,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthCode", targetDepth))
+                if (context.TestExpression("AuthCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthCode = unmarshaller.Unmarshall(context, ref reader);
@@ -86,6 +86,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
                 {
                     return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TLDInMaintenance"))
+                {
+                    return TLDInMaintenanceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
                 {

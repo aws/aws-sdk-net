@@ -52,19 +52,19 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecutionId", targetDepth))
+                if (context.TestExpression("ExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionStatus", targetDepth))
+                if (context.TestExpression("ExecutionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionStatusUnmarshaller.Instance;
                     response.ExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Export", targetDepth))
+                if (context.TestExpression("Export", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportUnmarshaller.Instance;
                     response.Export = unmarshaller.Unmarshall(context, ref reader);

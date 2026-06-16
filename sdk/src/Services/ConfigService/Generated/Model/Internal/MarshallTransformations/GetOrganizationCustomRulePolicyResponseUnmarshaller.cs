@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PolicyText", targetDepth))
+                if (context.TestExpression("PolicyText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PolicyText = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clinicalNoteGenerationSettings", targetDepth))
+                if (context.TestExpression("clinicalNoteGenerationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ClinicalNoteGenerationSettingsResponseUnmarshaller.Instance;
                     unmarshalledObject.ClinicalNoteGenerationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputS3Uri", targetDepth))
+                if (context.TestExpression("outputS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputS3Uri = unmarshaller.Unmarshall(context, ref reader);

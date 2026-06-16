@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createCollectionGroupDetail", targetDepth))
+                if (context.TestExpression("createCollectionGroupDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateCollectionGroupDetailUnmarshaller.Instance;
                     response.CreateCollectionGroupDetail = unmarshaller.Unmarshall(context, ref reader);

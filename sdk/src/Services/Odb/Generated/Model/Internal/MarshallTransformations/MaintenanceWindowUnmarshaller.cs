@@ -56,61 +56,61 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customActionTimeoutInMins", targetDepth))
+                if (context.TestExpression("customActionTimeoutInMins", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CustomActionTimeoutInMins = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("daysOfWeek", targetDepth))
+                if (context.TestExpression("daysOfWeek", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DayOfWeek, DayOfWeekUnmarshaller>(DayOfWeekUnmarshaller.Instance);
                     unmarshalledObject.DaysOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hoursOfDay", targetDepth))
+                if (context.TestExpression("hoursOfDay", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.HoursOfDay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isCustomActionTimeoutEnabled", targetDepth))
+                if (context.TestExpression("isCustomActionTimeoutEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCustomActionTimeoutEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("leadTimeInWeeks", targetDepth))
+                if (context.TestExpression("leadTimeInWeeks", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LeadTimeInWeeks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("months", targetDepth))
+                if (context.TestExpression("months", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Month, MonthUnmarshaller>(MonthUnmarshaller.Instance);
                     unmarshalledObject.Months = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("patchingMode", targetDepth))
+                if (context.TestExpression("patchingMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PatchingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preference", targetDepth))
+                if (context.TestExpression("preference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Preference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("skipRu", targetDepth))
+                if (context.TestExpression("skipRu", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SkipRu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("weeksOfMonth", targetDepth))
+                if (context.TestExpression("weeksOfMonth", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.WeeksOfMonth = unmarshaller.Unmarshall(context, ref reader);

@@ -127,6 +127,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Durability", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Durability = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EffectiveDurability", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EffectiveDurability = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Engine", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -247,6 +259,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageEncryptionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageEncryptionType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TransitEncryptionEnabled", targetDepth))

@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
-using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
-using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime.EventStreams;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -162,56 +162,20 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void UnmarshallJsonWithForwardSlashes()
         {
-            string jsonResponse = @"
-            {
-                ""Cluster"": {    
-                    ""Configurations"": [                    
-                        {
-                            ""Classification"": ""value1"",
-                            ""Properties"": {
-                                ""/"": ""xyz""
-                            }
-                        },
-                        {
-                            ""Classification"": ""value2"",
-                            ""Properties"": {
-                                ""the/name"": ""true""
-                            }
-                        },
-                        {
-                            ""Classification"": ""value3"",
-                            ""Properties"": {
-                                ""name"": ""true""
-                            }
-                        },            
-                    ]        
-                }
-            }";
+            string json = @"{""/"": ""xyz"", ""the/name"": ""true"", ""name"": ""value""}";
 
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(json), false, new WebResponseData());
+            var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(
+                StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+            var reader = new StreamingUtf8JsonReader(Utils.CreateStreamFromString(json));
+            var result = unmarshaller.Unmarshall(context, ref reader);
 
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as DescribeClusterResponse;
-            Assert.IsNotNull(response);
-            Assert.IsNotNull(response.Cluster);
-
-            var configurations = response.Cluster.Configurations;
-            Assert.IsNotNull(configurations);
-            Assert.AreEqual(3, configurations.Count);
-            Assert.IsTrue(configurations[0].Properties.ContainsKey("/"));
-            Assert.IsTrue(configurations[1].Properties.ContainsKey("the/name"));
-            Assert.IsTrue(configurations[2].Properties.ContainsKey("name"));
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual("xyz", result["/"]);
+            Assert.AreEqual("true", result["the/name"]);
+            Assert.AreEqual("value", result["name"]);
         }
 
-#if BCL
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -236,7 +200,6 @@ namespace AWSSDK.UnitTests
             Assert.IsInstanceOfType(context.ResponseContext.Response, typeof(ListBucketsResponse));
             Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
         }
-#endif
 
 
         [TestMethod]
@@ -329,6 +292,12 @@ namespace AWSSDK.UnitTests
             public IHttpResponseBody ResponseBody { get; set; }
 
             public HttpStatusCode StatusCode { get; set; }
+            public Dictionary<string, IEventStreamHeader> EventHeaders { get; set; }
+
+            public IEventStreamHeader GetEventStreamHeader(string headerName)
+            {
+                return null;
+            }
 
             public string[] GetHeaderNames()
             {
@@ -338,6 +307,11 @@ namespace AWSSDK.UnitTests
             public string GetHeaderValue(string headerName)
             {
                 return null;
+            }
+
+            public bool IsEventHeaderPresent(string headerName)
+            {
+                return false;
             }
 
             public bool IsHeaderPresent(string headerName)
@@ -361,3 +335,4 @@ namespace AWSSDK.UnitTests
 
     }
 }
+#endif

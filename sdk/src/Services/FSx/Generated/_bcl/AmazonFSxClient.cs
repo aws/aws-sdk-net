@@ -39,6 +39,11 @@ namespace Amazon.FSx
 {
     /// <summary>
     /// <para>Implementation for accessing FSx</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon FSx is a fully managed service that makes it easy for storage and application
     /// administrators to launch and use shared file storage.

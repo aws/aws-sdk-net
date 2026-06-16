@@ -52,7 +52,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("threatEntitySetId", targetDepth))
+                if (context.TestExpression("threatEntitySetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ThreatEntitySetId = unmarshaller.Unmarshall(context, ref reader);

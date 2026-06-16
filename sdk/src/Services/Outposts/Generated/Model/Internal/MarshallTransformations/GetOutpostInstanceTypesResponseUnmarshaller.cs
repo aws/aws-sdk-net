@@ -52,25 +52,25 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstanceTypes", targetDepth))
+                if (context.TestExpression("InstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceTypeItem, InstanceTypeItemUnmarshaller>(InstanceTypeItemUnmarshaller.Instance);
                     response.InstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutpostArn", targetDepth))
+                if (context.TestExpression("OutpostArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OutpostArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutpostId", targetDepth))
+                if (context.TestExpression("OutpostId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OutpostId = unmarshaller.Unmarshall(context, ref reader);

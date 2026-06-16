@@ -31,9 +31,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEvaluator operation.
-    /// Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge
-    /// configurations with user-defined prompts, rating scales, and model settings to evaluate
-    /// agent performance at tool call, trace, or session levels.
+    /// Creates a custom evaluator for agent quality assessment. Custom evaluators can use
+    /// either LLM-as-a-Judge configurations with user-defined prompts, rating scales, and
+    /// model settings, or code-based configurations with customer-managed Lambda functions
+    /// to evaluate agent performance at tool call, trace, or session levels.
     /// </summary>
     public partial class CreateEvaluatorRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -41,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private EvaluatorConfig _evaluatorConfig;
         private string _evaluatorName;
+        private string _kmsKeyArn;
         private EvaluatorLevel _level;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -90,8 +92,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EvaluatorConfig. 
         /// <para>
-        ///  The configuration for the evaluator, including LLM-as-a-Judge settings with instructions,
-        /// rating scale, and model configuration. 
+        ///  The configuration for the evaluator. Specify either LLM-as-a-Judge settings with
+        /// instructions, rating scale, and model configuration, or code-based settings with a
+        /// customer-managed Lambda function. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,6 +127,29 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEvaluatorName()
         {
             return this._evaluatorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting
+        /// sensitive evaluator data, including instructions and rating scale. If you don't specify
+        /// a KMS key, the evaluator data is encrypted with an Amazon Web Services owned key.
+        /// Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption
+        /// at rest for AgentCore Evaluations</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

@@ -170,6 +170,10 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Proton 10.0-4 (<c>Type=PROTON, Version=20260204</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Proton 9.0-2 (<c>Type=PROTON, Version=20250516</c>)
         /// </para>
         ///  </li> <li> 

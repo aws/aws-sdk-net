@@ -56,13 +56,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sessionMetadata", targetDepth))
+                if (context.TestExpression("sessionMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = LiveTailSessionMetadataUnmarshaller.Instance;
                     unmarshalledObject.SessionMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionResults", targetDepth))
+                if (context.TestExpression("sessionResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LiveTailSessionLogEvent, LiveTailSessionLogEventUnmarshaller>(LiveTailSessionLogEventUnmarshaller.Instance);
                     unmarshalledObject.SessionResults = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PivotTableDataPathType", targetDepth))
+                if (context.TestExpression("PivotTableDataPathType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PivotTableDataPathType = unmarshaller.Unmarshall(context, ref reader);

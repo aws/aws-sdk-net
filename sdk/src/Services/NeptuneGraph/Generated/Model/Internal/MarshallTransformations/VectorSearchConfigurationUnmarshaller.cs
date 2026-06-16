@@ -56,7 +56,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dimension", targetDepth))
+                if (context.TestExpression("dimension", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Dimension = unmarshaller.Unmarshall(context, ref reader);

@@ -26,6 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Route53Domains.Model;
 using Amazon.Route53Domains;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
@@ -47,3 +48,4 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         }
     }
 }
+#endif

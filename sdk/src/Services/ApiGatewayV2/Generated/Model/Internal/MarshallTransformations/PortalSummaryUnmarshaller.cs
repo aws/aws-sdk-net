@@ -56,85 +56,85 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorization", targetDepth))
+                if (context.TestExpression("authorization", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizationUnmarshaller.Instance;
                     unmarshalledObject.Authorization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpointConfiguration", targetDepth))
+                if (context.TestExpression("endpointConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EndpointConfigurationResponseUnmarshaller.Instance;
                     unmarshalledObject.EndpointConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includedPortalProductArns", targetDepth))
+                if (context.TestExpression("includedPortalProductArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludedPortalProductArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModified", targetDepth))
+                if (context.TestExpression("lastModified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastPublished", targetDepth))
+                if (context.TestExpression("lastPublished", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastPublished = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastPublishedDescription", targetDepth))
+                if (context.TestExpression("lastPublishedDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastPublishedDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portalArn", targetDepth))
+                if (context.TestExpression("portalArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PortalArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portalContent", targetDepth))
+                if (context.TestExpression("portalContent", targetDepth, ref reader))
                 {
                     var unmarshaller = PortalContentUnmarshaller.Instance;
                     unmarshalledObject.PortalContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portalId", targetDepth))
+                if (context.TestExpression("portalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PortalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preview", targetDepth))
+                if (context.TestExpression("preview", targetDepth, ref reader))
                 {
                     var unmarshaller = PreviewUnmarshaller.Instance;
                     unmarshalledObject.Preview = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publishStatus", targetDepth))
+                if (context.TestExpression("publishStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublishStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rumAppMonitorName", targetDepth))
+                if (context.TestExpression("rumAppMonitorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RumAppMonitorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusException", targetDepth))
+                if (context.TestExpression("statusException", targetDepth, ref reader))
                 {
                     var unmarshaller = StatusExceptionUnmarshaller.Instance;
                     unmarshalledObject.StatusException = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

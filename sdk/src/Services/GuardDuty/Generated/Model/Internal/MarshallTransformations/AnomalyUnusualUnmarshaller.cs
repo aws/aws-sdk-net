@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("behavior", targetDepth))
+                if (context.TestExpression("behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, AnomalyObject>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, AnomalyObject, StringUnmarshaller, AnomalyObjectUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, AnomalyObject, StringUnmarshaller, AnomalyObjectUnmarshaller>(StringUnmarshaller.Instance, AnomalyObjectUnmarshaller.Instance));
                     unmarshalledObject.Behavior = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectionId", targetDepth))
+                if (context.TestExpression("connectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("macSecKeys", targetDepth))
+                if (context.TestExpression("macSecKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MacSecKey, MacSecKeyUnmarshaller>(MacSecKeyUnmarshaller.Instance);
                     response.MacSecKeys = unmarshaller.Unmarshall(context, ref reader);

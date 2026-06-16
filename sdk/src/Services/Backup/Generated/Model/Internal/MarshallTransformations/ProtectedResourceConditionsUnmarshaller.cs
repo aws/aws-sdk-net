@@ -56,13 +56,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StringEquals", targetDepth))
+                if (context.TestExpression("StringEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyValue, KeyValueUnmarshaller>(KeyValueUnmarshaller.Instance);
                     unmarshalledObject.StringEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringNotEquals", targetDepth))
+                if (context.TestExpression("StringNotEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyValue, KeyValueUnmarshaller>(KeyValueUnmarshaller.Instance);
                     unmarshalledObject.StringNotEquals = unmarshaller.Unmarshall(context, ref reader);

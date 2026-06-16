@@ -56,13 +56,13 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudMetricEnabled", targetDepth))
+                if (context.TestExpression("cloudMetricEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CloudMetricEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricRuleRoleArn", targetDepth))
+                if (context.TestExpression("metricRuleRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricRuleRoleArn = unmarshaller.Unmarshall(context, ref reader);

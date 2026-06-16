@@ -56,67 +56,67 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateAuthority", targetDepth))
+                if (context.TestExpression("CertificateAuthority", targetDepth, ref reader))
                 {
                     var unmarshaller = TlsCertificateDataUnmarshaller.Instance;
                     unmarshalledObject.CertificateAuthority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Certificates", targetDepth))
+                if (context.TestExpression("Certificates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TlsCertificateData, TlsCertificateDataUnmarshaller>(TlsCertificateDataUnmarshaller.Instance);
                     unmarshalledObject.Certificates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfAssociations", targetDepth))
+                if (context.TestExpression("NumberOfAssociations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfAssociations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth))
+                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TLSInspectionConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TLSInspectionConfigurationId", targetDepth))
+                if (context.TestExpression("TLSInspectionConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TLSInspectionConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TLSInspectionConfigurationName", targetDepth))
+                if (context.TestExpression("TLSInspectionConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TLSInspectionConfigurationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TLSInspectionConfigurationStatus", targetDepth))
+                if (context.TestExpression("TLSInspectionConfigurationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TLSInspectionConfigurationStatus = unmarshaller.Unmarshall(context, ref reader);

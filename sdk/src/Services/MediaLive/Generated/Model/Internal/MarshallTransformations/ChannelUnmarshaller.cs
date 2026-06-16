@@ -56,139 +56,139 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("anywhereSettings", targetDepth))
+                if (context.TestExpression("anywhereSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribeAnywhereSettingsUnmarshaller.Instance;
                     unmarshalledObject.AnywhereSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cdiInputSpecification", targetDepth))
+                if (context.TestExpression("cdiInputSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CdiInputSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CdiInputSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelClass", targetDepth))
+                if (context.TestExpression("channelClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelEngineVersion", targetDepth))
+                if (context.TestExpression("channelEngineVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelEngineVersionResponseUnmarshaller.Instance;
                     unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelSecurityGroups", targetDepth))
+                if (context.TestExpression("channelSecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ChannelSecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinations", targetDepth))
+                if (context.TestExpression("destinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputDestination, OutputDestinationUnmarshaller>(OutputDestinationUnmarshaller.Instance);
                     unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("egressEndpoints", targetDepth))
+                if (context.TestExpression("egressEndpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ChannelEgressEndpoint, ChannelEgressEndpointUnmarshaller>(ChannelEgressEndpointUnmarshaller.Instance);
                     unmarshalledObject.EgressEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encoderSettings", targetDepth))
+                if (context.TestExpression("encoderSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EncoderSettingsUnmarshaller.Instance;
                     unmarshalledObject.EncoderSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inferenceSettings", targetDepth))
+                if (context.TestExpression("inferenceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribeInferenceSettingsUnmarshaller.Instance;
                     unmarshalledObject.InferenceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputAttachments", targetDepth))
+                if (context.TestExpression("inputAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputAttachment, InputAttachmentUnmarshaller>(InputAttachmentUnmarshaller.Instance);
                     unmarshalledObject.InputAttachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputSpecification", targetDepth))
+                if (context.TestExpression("inputSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = InputSpecificationUnmarshaller.Instance;
                     unmarshalledObject.InputSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linkedChannelSettings", targetDepth))
+                if (context.TestExpression("linkedChannelSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribeLinkedChannelSettingsUnmarshaller.Instance;
                     unmarshalledObject.LinkedChannelSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logLevel", targetDepth))
+                if (context.TestExpression("logLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maintenance", targetDepth))
+                if (context.TestExpression("maintenance", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceStatusUnmarshaller.Instance;
                     unmarshalledObject.Maintenance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineDetails", targetDepth))
+                if (context.TestExpression("pipelineDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PipelineDetail, PipelineDetailUnmarshaller>(PipelineDetailUnmarshaller.Instance);
                     unmarshalledObject.PipelineDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelinesRunningCount", targetDepth))
+                if (context.TestExpression("pipelinesRunningCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PipelinesRunningCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpc", targetDepth))
+                if (context.TestExpression("vpc", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcOutputSettingsDescriptionUnmarshaller.Instance;
                     unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);

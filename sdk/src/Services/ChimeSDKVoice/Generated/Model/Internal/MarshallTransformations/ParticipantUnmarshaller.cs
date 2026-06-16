@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PhoneNumber", targetDepth))
+                if (context.TestExpression("PhoneNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProxyPhoneNumber", targetDepth))
+                if (context.TestExpression("ProxyPhoneNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProxyPhoneNumber = unmarshaller.Unmarshall(context, ref reader);

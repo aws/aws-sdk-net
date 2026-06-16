@@ -56,31 +56,31 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BooleanExpression", targetDepth))
+                if (context.TestExpression("BooleanExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressBooleanExpressionUnmarshaller.Instance;
                     unmarshalledObject.BooleanExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpExpression", targetDepth))
+                if (context.TestExpression("IpExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressIpv4ExpressionUnmarshaller.Instance;
                     unmarshalledObject.IpExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ipv6Expression", targetDepth))
+                if (context.TestExpression("Ipv6Expression", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressIpv6ExpressionUnmarshaller.Instance;
                     unmarshalledObject.Ipv6Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringExpression", targetDepth))
+                if (context.TestExpression("StringExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressStringExpressionUnmarshaller.Instance;
                     unmarshalledObject.StringExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TlsExpression", targetDepth))
+                if (context.TestExpression("TlsExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressTlsProtocolExpressionUnmarshaller.Instance;
                     unmarshalledObject.TlsExpression = unmarshaller.Unmarshall(context, ref reader);

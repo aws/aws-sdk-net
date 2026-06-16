@@ -56,7 +56,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ssoIdentity", targetDepth))
+                if (context.TestExpression("ssoIdentity", targetDepth, ref reader))
                 {
                     var unmarshaller = SSOIdentityUnmarshaller.Instance;
                     unmarshalledObject.SsoIdentity = unmarshaller.Unmarshall(context, ref reader);

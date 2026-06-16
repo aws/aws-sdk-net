@@ -52,37 +52,37 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoEnable", targetDepth))
+                if (context.TestExpression("autoEnable", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoEnable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("autoEnableOrganizationMembers", targetDepth))
+                if (context.TestExpression("autoEnableOrganizationMembers", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AutoEnableOrganizationMembers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataSources", targetDepth))
+                if (context.TestExpression("dataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationDataSourceConfigurationsResultUnmarshaller.Instance;
                     response.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("features", targetDepth))
+                if (context.TestExpression("features", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OrganizationFeatureConfigurationResult, OrganizationFeatureConfigurationResultUnmarshaller>(OrganizationFeatureConfigurationResultUnmarshaller.Instance);
                     response.Features = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memberAccountLimitReached", targetDepth))
+                if (context.TestExpression("memberAccountLimitReached", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MemberAccountLimitReached = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

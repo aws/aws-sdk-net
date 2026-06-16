@@ -52,13 +52,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CsvReport", targetDepth))
+                if (context.TestExpression("CsvReport", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportMetadataModelAssessmentResultEntryUnmarshaller.Instance;
                     response.CsvReport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PdfReport", targetDepth))
+                if (context.TestExpression("PdfReport", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportMetadataModelAssessmentResultEntryUnmarshaller.Instance;
                     response.PdfReport = unmarshaller.Unmarshall(context, ref reader);

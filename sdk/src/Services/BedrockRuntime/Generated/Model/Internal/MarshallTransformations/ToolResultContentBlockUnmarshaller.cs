@@ -56,37 +56,37 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("document", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentBlockUnmarshaller.Instance;
                     unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageBlockUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("json", targetDepth))
+                if (context.TestExpression("json", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.Json = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("searchResult", targetDepth))
+                if (context.TestExpression("searchResult", targetDepth, ref reader))
                 {
                     var unmarshaller = SearchResultBlockUnmarshaller.Instance;
                     unmarshalledObject.SearchResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("text", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("video", targetDepth))
+                if (context.TestExpression("video", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoBlockUnmarshaller.Instance;
                     unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);

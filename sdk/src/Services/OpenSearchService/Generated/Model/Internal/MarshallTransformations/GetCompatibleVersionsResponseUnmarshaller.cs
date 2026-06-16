@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompatibleVersions", targetDepth))
+                if (context.TestExpression("CompatibleVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompatibleVersionsMap, CompatibleVersionsMapUnmarshaller>(CompatibleVersionsMapUnmarshaller.Instance);
                     response.CompatibleVersions = unmarshaller.Unmarshall(context, ref reader);

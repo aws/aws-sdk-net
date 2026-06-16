@@ -57,6 +57,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetS3LoggingConfiguration())
+            {
+                context.Writer.WritePropertyName("S3LoggingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3LoggingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3LoggingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

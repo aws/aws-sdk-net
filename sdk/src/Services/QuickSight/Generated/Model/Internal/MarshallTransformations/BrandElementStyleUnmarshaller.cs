@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NavbarStyle", targetDepth))
+                if (context.TestExpression("NavbarStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = NavbarStyleUnmarshaller.Instance;
                     unmarshalledObject.NavbarStyle = unmarshaller.Unmarshall(context, ref reader);

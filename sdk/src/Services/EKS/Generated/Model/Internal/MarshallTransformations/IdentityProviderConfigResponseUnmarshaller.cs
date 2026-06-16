@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("oidc", targetDepth))
+                if (context.TestExpression("oidc", targetDepth, ref reader))
                 {
                     var unmarshaller = OidcIdentityProviderConfigUnmarshaller.Instance;
                     unmarshalledObject.Oidc = unmarshaller.Unmarshall(context, ref reader);

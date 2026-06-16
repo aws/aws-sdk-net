@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mapEquals", targetDepth))
+                if (context.TestExpression("mapEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScanConditionPair, ScanConditionPairUnmarshaller>(ScanConditionPairUnmarshaller.Instance);
                     unmarshalledObject.MapEquals = unmarshaller.Unmarshall(context, ref reader);

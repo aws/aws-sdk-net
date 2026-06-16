@@ -52,19 +52,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CalculatedAttributeValues", targetDepth))
+                if (context.TestExpression("CalculatedAttributeValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CalculatedAttributeValue, CalculatedAttributeValueUnmarshaller>(CalculatedAttributeValueUnmarshaller.Instance);
                     response.CalculatedAttributeValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConditionOverrides", targetDepth))
+                if (context.TestExpression("ConditionOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionOverridesUnmarshaller.Instance;
                     response.ConditionOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetCalculatedAttributeForProfileError, BatchGetCalculatedAttributeForProfileErrorUnmarshaller>(BatchGetCalculatedAttributeForProfileErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);

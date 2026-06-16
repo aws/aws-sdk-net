@@ -56,31 +56,31 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("codeSnippet", targetDepth))
+                if (context.TestExpression("codeSnippet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CodeLine, CodeLineUnmarshaller>(CodeLineUnmarshaller.Instance);
                     unmarshalledObject.CodeSnippet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endLine", targetDepth))
+                if (context.TestExpression("endLine", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndLine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("path", targetDepth))
+                if (context.TestExpression("path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startLine", targetDepth))
+                if (context.TestExpression("startLine", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartLine = unmarshaller.Unmarshall(context, ref reader);

@@ -31,16 +31,44 @@ namespace Amazon.Invoicing.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProcurementPortalPreferenceStatus operation.
+    /// <i> <b>This feature API is subject to changing at any time. For more information,
+    /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+    /// Terms</a> (Betas and Previews).</b> </i> 
+    /// 
+    ///  
+    /// <para>
     /// Updates the status of a procurement portal preference, including the activation state
     /// of e-invoice delivery and purchase order retrieval features.
+    /// </para>
     /// </summary>
     public partial class UpdateProcurementPortalPreferenceStatusRequest : AmazonInvoicingRequest
     {
+        private string _clientToken;
         private ProcurementPortalPreferenceStatus _einvoiceDeliveryPreferenceStatus;
         private string _einvoiceDeliveryPreferenceStatusReason;
         private string _procurementPortalPreferenceArn;
         private ProcurementPortalPreferenceStatus _purchaseOrderRetrievalPreferenceStatus;
         private string _purchaseOrderRetrievalPreferenceStatusReason;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure idempotency of the
+        /// request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EinvoiceDeliveryPreferenceStatus. 

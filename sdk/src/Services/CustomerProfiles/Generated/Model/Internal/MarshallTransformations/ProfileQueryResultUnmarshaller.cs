@@ -56,19 +56,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Profile", targetDepth))
+                if (context.TestExpression("Profile", targetDepth, ref reader))
                 {
                     var unmarshaller = ProfileUnmarshaller.Instance;
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProfileId", targetDepth))
+                if (context.TestExpression("ProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryResult", targetDepth))
+                if (context.TestExpression("QueryResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryResult = unmarshaller.Unmarshall(context, ref reader);

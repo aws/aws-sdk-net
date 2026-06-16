@@ -56,19 +56,19 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("detectionMode", targetDepth))
+                if (context.TestExpression("detectionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DetectionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("detectionScope", targetDepth))
+                if (context.TestExpression("detectionScope", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DetectionScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("piiEntitiesConfiguration", targetDepth))
+                if (context.TestExpression("piiEntitiesConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PIIEntitiesConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PiiEntitiesConfiguration = unmarshaller.Unmarshall(context, ref reader);

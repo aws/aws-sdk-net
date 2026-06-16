@@ -56,19 +56,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectSourceEmailAddress", targetDepth))
+                if (context.TestExpression("connectSourceEmailAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectSourceEmailAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceEmailAddressDisplayName", targetDepth))
+                if (context.TestExpression("sourceEmailAddressDisplayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceEmailAddressDisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wisdomTemplateArn", targetDepth))
+                if (context.TestExpression("wisdomTemplateArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WisdomTemplateArn = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizedColumns", targetDepth))
+                if (context.TestExpression("AuthorizedColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.AuthorizedColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
+                if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsRegisteredWithLakeFormation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Partition", targetDepth))
+                if (context.TestExpression("Partition", targetDepth, ref reader))
                 {
                     var unmarshaller = PartitionUnmarshaller.Instance;
                     response.Partition = unmarshaller.Unmarshall(context, ref reader);

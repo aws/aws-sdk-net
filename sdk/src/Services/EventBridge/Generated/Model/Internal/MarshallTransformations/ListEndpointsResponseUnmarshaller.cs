@@ -52,13 +52,13 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Endpoints", targetDepth))
+                if (context.TestExpression("Endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Endpoint, EndpointUnmarshaller>(EndpointUnmarshaller.Instance);
                     response.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

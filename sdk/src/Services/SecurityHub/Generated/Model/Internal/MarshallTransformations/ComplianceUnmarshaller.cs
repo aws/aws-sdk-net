@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssociatedStandards", targetDepth))
+                if (context.TestExpression("AssociatedStandards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociatedStandard, AssociatedStandardUnmarshaller>(AssociatedStandardUnmarshaller.Instance);
                     unmarshalledObject.AssociatedStandards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedRequirements", targetDepth))
+                if (context.TestExpression("RelatedRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RelatedRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityControlId", targetDepth))
+                if (context.TestExpression("SecurityControlId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecurityControlId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityControlParameters", targetDepth))
+                if (context.TestExpression("SecurityControlParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecurityControlParameter, SecurityControlParameterUnmarshaller>(SecurityControlParameterUnmarshaller.Instance);
                     unmarshalledObject.SecurityControlParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusReasons", targetDepth))
+                if (context.TestExpression("StatusReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StatusReason, StatusReasonUnmarshaller>(StatusReasonUnmarshaller.Instance);
                     unmarshalledObject.StatusReasons = unmarshaller.Unmarshall(context, ref reader);

@@ -36,6 +36,7 @@ namespace Amazon.MailManager.Model
     {
         private IngressPointPasswordConfiguration _ingressPointPasswordConfiguration;
         private string _secretArn;
+        private TlsAuthConfiguration _tlsAuthConfiguration;
 
         /// <summary>
         /// Gets and sets the property IngressPointPasswordConfiguration. 
@@ -72,6 +73,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsAuthConfiguration. 
+        /// <para>
+        /// The mutual TLS authentication configuration for the ingress endpoint resource.
+        /// </para>
+        /// </summary>
+        public TlsAuthConfiguration TlsAuthConfiguration
+        {
+            get { return this._tlsAuthConfiguration; }
+            set { this._tlsAuthConfiguration = value; }
+        }
+
+        // Check to see if TlsAuthConfiguration property is set
+        internal bool IsSetTlsAuthConfiguration()
+        {
+            return this._tlsAuthConfiguration != null;
         }
 
     }

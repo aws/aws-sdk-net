@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldsToExclude", targetDepth))
+                if (context.TestExpression("fieldsToExclude", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldForReranking, FieldForRerankingUnmarshaller>(FieldForRerankingUnmarshaller.Instance);
                     unmarshalledObject.FieldsToExclude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fieldsToInclude", targetDepth))
+                if (context.TestExpression("fieldsToInclude", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldForReranking, FieldForRerankingUnmarshaller>(FieldForRerankingUnmarshaller.Instance);
                     unmarshalledObject.FieldsToInclude = unmarshaller.Unmarshall(context, ref reader);

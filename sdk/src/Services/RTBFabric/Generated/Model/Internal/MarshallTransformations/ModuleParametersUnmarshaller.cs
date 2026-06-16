@@ -56,19 +56,19 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("noBid", targetDepth))
+                if (context.TestExpression("noBid", targetDepth, ref reader))
                 {
                     var unmarshaller = NoBidModuleParametersUnmarshaller.Instance;
                     unmarshalledObject.NoBid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openRtbAttribute", targetDepth))
+                if (context.TestExpression("openRtbAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenRtbAttributeModuleParametersUnmarshaller.Instance;
                     unmarshalledObject.OpenRtbAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rateLimiter", targetDepth))
+                if (context.TestExpression("rateLimiter", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimiterModuleParametersUnmarshaller.Instance;
                     unmarshalledObject.RateLimiter = unmarshaller.Unmarshall(context, ref reader);

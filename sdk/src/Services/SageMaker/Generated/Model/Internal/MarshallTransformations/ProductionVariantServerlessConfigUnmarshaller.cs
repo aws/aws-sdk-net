@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxConcurrency", targetDepth))
+                if (context.TestExpression("MaxConcurrency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemorySizeInMB", targetDepth))
+                if (context.TestExpression("MemorySizeInMB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemorySizeInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedConcurrency", targetDepth))
+                if (context.TestExpression("ProvisionedConcurrency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedConcurrency = unmarshaller.Unmarshall(context, ref reader);

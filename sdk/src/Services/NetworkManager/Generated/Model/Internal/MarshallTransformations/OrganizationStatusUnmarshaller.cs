@@ -56,25 +56,25 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountStatusList", targetDepth))
+                if (context.TestExpression("AccountStatusList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountStatus, AccountStatusUnmarshaller>(AccountStatusUnmarshaller.Instance);
                     unmarshalledObject.AccountStatusList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationAwsServiceAccessStatus", targetDepth))
+                if (context.TestExpression("OrganizationAwsServiceAccessStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationAwsServiceAccessStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationId", targetDepth))
+                if (context.TestExpression("OrganizationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SLRDeploymentStatus", targetDepth))
+                if (context.TestExpression("SLRDeploymentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SLRDeploymentStatus = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("batchReportMode", targetDepth))
+                if (context.TestExpression("batchReportMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BatchReportMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("combineArtifacts", targetDepth))
+                if (context.TestExpression("combineArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CombineArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("restrictions", targetDepth))
+                if (context.TestExpression("restrictions", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchRestrictionsUnmarshaller.Instance;
                     unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceRole", targetDepth))
+                if (context.TestExpression("serviceRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutInMins", targetDepth))
+                if (context.TestExpression("timeoutInMins", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInMins = unmarshaller.Unmarshall(context, ref reader);

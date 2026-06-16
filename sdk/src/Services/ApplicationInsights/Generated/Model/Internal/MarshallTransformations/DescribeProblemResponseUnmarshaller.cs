@@ -52,13 +52,13 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Problem", targetDepth))
+                if (context.TestExpression("Problem", targetDepth, ref reader))
                 {
                     var unmarshaller = ProblemUnmarshaller.Instance;
                     response.Problem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SNSNotificationArn", targetDepth))
+                if (context.TestExpression("SNSNotificationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SNSNotificationArn = unmarshaller.Unmarshall(context, ref reader);

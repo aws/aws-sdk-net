@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxHumanLabeledObjectCount", targetDepth))
+                if (context.TestExpression("MaxHumanLabeledObjectCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxHumanLabeledObjectCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxPercentageOfInputDatasetLabeled", targetDepth))
+                if (context.TestExpression("MaxPercentageOfInputDatasetLabeled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPercentageOfInputDatasetLabeled = unmarshaller.Unmarshall(context, ref reader);

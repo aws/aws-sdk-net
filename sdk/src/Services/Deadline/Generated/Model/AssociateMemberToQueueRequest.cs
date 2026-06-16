@@ -36,6 +36,7 @@ namespace Amazon.Deadline.Model
     public partial class AssociateMemberToQueueRequest : AmazonDeadlineRequest
     {
         private string _farmId;
+        private string _identityCenterRegion;
         private string _identityStoreId;
         private MembershipLevel _membershipLevel;
         private string _principalId;
@@ -59,6 +60,26 @@ namespace Amazon.Deadline.Model
         internal bool IsSetFarmId()
         {
             return this._farmId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterRegion. 
+        /// <para>
+        /// The Region of the IAM Identity Center instance. If not provided, the service defaults
+        /// to the Region of the farm.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string IdentityCenterRegion
+        {
+            get { return this._identityCenterRegion; }
+            set { this._identityCenterRegion = value; }
+        }
+
+        // Check to see if IdentityCenterRegion property is set
+        internal bool IsSetIdentityCenterRegion()
+        {
+            return this._identityCenterRegion != null;
         }
 
         /// <summary>

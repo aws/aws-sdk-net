@@ -56,7 +56,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currentAttemptCount", targetDepth))
+                if (context.TestExpression("currentAttemptCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentAttemptCount = unmarshaller.Unmarshall(context, ref reader);

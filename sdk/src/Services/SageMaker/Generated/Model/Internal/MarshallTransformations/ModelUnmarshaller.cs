@@ -56,67 +56,67 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Containers", targetDepth))
+                if (context.TestExpression("Containers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContainerDefinition, ContainerDefinitionUnmarshaller>(ContainerDefinitionUnmarshaller.Instance);
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentRecommendation", targetDepth))
+                if (context.TestExpression("DeploymentRecommendation", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentRecommendationUnmarshaller.Instance;
                     unmarshalledObject.DeploymentRecommendation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableNetworkIsolation", targetDepth))
+                if (context.TestExpression("EnableNetworkIsolation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableNetworkIsolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRoleArn", targetDepth))
+                if (context.TestExpression("ExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceExecutionConfig", targetDepth))
+                if (context.TestExpression("InferenceExecutionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceExecutionConfigUnmarshaller.Instance;
                     unmarshalledObject.InferenceExecutionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelArn", targetDepth))
+                if (context.TestExpression("ModelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelName", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryContainer", targetDepth))
+                if (context.TestExpression("PrimaryContainer", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerDefinitionUnmarshaller.Instance;
                     unmarshalledObject.PrimaryContainer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigUnmarshaller.Instance;
                     unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

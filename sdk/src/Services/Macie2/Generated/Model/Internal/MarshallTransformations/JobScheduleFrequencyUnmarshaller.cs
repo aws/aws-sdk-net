@@ -56,19 +56,19 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dailySchedule", targetDepth))
+                if (context.TestExpression("dailySchedule", targetDepth, ref reader))
                 {
                     var unmarshaller = DailyScheduleUnmarshaller.Instance;
                     unmarshalledObject.DailySchedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthlySchedule", targetDepth))
+                if (context.TestExpression("monthlySchedule", targetDepth, ref reader))
                 {
                     var unmarshaller = MonthlyScheduleUnmarshaller.Instance;
                     unmarshalledObject.MonthlySchedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("weeklySchedule", targetDepth))
+                if (context.TestExpression("weeklySchedule", targetDepth, ref reader))
                 {
                     var unmarshaller = WeeklyScheduleUnmarshaller.Instance;
                     unmarshalledObject.WeeklySchedule = unmarshaller.Unmarshall(context, ref reader);

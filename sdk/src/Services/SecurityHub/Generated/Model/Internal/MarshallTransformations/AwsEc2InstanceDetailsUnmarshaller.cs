@@ -56,79 +56,79 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IamInstanceProfileArn", targetDepth))
+                if (context.TestExpression("IamInstanceProfileArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IamInstanceProfileArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageId", targetDepth))
+                if (context.TestExpression("ImageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpV4Addresses", targetDepth))
+                if (context.TestExpression("IpV4Addresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IpV4Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpV6Addresses", targetDepth))
+                if (context.TestExpression("IpV6Addresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IpV6Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyName", targetDepth))
+                if (context.TestExpression("KeyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchedAt", targetDepth))
+                if (context.TestExpression("LaunchedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LaunchedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataOptions", targetDepth))
+                if (context.TestExpression("MetadataOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2InstanceMetadataOptionsUnmarshaller.Instance;
                     unmarshalledObject.MetadataOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Monitoring", targetDepth))
+                if (context.TestExpression("Monitoring", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2InstanceMonitoringDetailsUnmarshaller.Instance;
                     unmarshalledObject.Monitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkInterfaces", targetDepth))
+                if (context.TestExpression("NetworkInterfaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2InstanceNetworkInterfacesDetails, AwsEc2InstanceNetworkInterfacesDetailsUnmarshaller>(AwsEc2InstanceNetworkInterfacesDetailsUnmarshaller.Instance);
                     unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetId", targetDepth))
+                if (context.TestExpression("SubnetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VirtualizationType", targetDepth))
+                if (context.TestExpression("VirtualizationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualizationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcId", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);

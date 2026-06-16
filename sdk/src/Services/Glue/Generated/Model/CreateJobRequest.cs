@@ -292,7 +292,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Jobs that are created without specifying a Glue version default to Glue 0.9.
+        /// Jobs that are created without specifying a Glue version default to Glue 5.1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -659,7 +659,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// When the value is left blank, the timeout is defaulted to 2880 minutes.
+        /// When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version
+        /// 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.
         /// </para>
         ///  
         /// <para>

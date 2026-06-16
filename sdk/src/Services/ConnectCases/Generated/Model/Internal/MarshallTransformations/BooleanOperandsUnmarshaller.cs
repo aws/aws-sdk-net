@@ -56,19 +56,19 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("operandOne", targetDepth))
+                if (context.TestExpression("operandOne", targetDepth, ref reader))
                 {
                     var unmarshaller = OperandOneUnmarshaller.Instance;
                     unmarshalledObject.OperandOne = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operandTwo", targetDepth))
+                if (context.TestExpression("operandTwo", targetDepth, ref reader))
                 {
                     var unmarshaller = OperandTwoUnmarshaller.Instance;
                     unmarshalledObject.OperandTwo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("result", targetDepth))
+                if (context.TestExpression("result", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Result = unmarshaller.Unmarshall(context, ref reader);

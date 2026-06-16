@@ -52,7 +52,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sqlStatementResults", targetDepth))
+                if (context.TestExpression("sqlStatementResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SqlStatementResult, SqlStatementResultUnmarshaller>(SqlStatementResultUnmarshaller.Instance);
                     response.SqlStatementResults = unmarshaller.Unmarshall(context, ref reader);

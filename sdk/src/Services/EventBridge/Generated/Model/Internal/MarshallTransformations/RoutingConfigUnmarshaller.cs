@@ -56,7 +56,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailoverConfig", targetDepth))
+                if (context.TestExpression("FailoverConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FailoverConfigUnmarshaller.Instance;
                     unmarshalledObject.FailoverConfig = unmarshaller.Unmarshall(context, ref reader);

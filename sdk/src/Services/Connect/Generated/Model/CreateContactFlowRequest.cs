@@ -31,12 +31,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContactFlow operation.
-    /// Creates a flow for the specified Amazon Connect instance.
+    /// Creates a flow for the specified Connect Customer instance.
     /// 
     ///  
     /// <para>
-    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-    /// Connect Flow language</a>.
+    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+    /// Customer Flow language</a>.
     /// </para>
     /// </summary>
     public partial class CreateContactFlowRequest : AmazonConnectRequest
@@ -53,7 +53,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-        /// flow in Amazon Connect Flow language</a>. 
+        /// flow in Connect Customer Flow language</a>. 
         /// </para>
         ///  
         /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -178,7 +178,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose
-        /// a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// a flow type</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -56,31 +56,31 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addonDetails", targetDepth))
+                if (context.TestExpression("addonDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AddonDetailsUnmarshaller.Instance;
                     unmarshalledObject.AddonDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterName", targetDepth))
+                if (context.TestExpression("clusterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("compatibleNodes", targetDepth))
+                if (context.TestExpression("compatibleNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CompatibleNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("coveredNodes", targetDepth))
+                if (context.TestExpression("coveredNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CoveredNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managementType", targetDepth))
+                if (context.TestExpression("managementType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManagementType = unmarshaller.Unmarshall(context, ref reader);

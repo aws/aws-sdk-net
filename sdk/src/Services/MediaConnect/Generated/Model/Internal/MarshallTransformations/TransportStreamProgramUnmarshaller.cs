@@ -56,31 +56,31 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pcrPid", targetDepth))
+                if (context.TestExpression("pcrPid", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PcrPid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programName", targetDepth))
+                if (context.TestExpression("programName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programNumber", targetDepth))
+                if (context.TestExpression("programNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programPid", targetDepth))
+                if (context.TestExpression("programPid", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramPid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streams", targetDepth))
+                if (context.TestExpression("streams", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TransportStream, TransportStreamUnmarshaller>(TransportStreamUnmarshaller.Instance);
                     unmarshalledObject.Streams = unmarshaller.Unmarshall(context, ref reader);

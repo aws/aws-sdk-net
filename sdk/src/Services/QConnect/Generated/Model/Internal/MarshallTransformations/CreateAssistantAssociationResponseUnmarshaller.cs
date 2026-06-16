@@ -52,7 +52,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assistantAssociation", targetDepth))
+                if (context.TestExpression("assistantAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = AssistantAssociationDataUnmarshaller.Instance;
                     response.AssistantAssociation = unmarshaller.Unmarshall(context, ref reader);

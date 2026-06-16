@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("snapshotArn", targetDepth))
+                if (context.TestExpression("snapshotArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotArn = unmarshaller.Unmarshall(context, ref reader);

@@ -1378,6 +1378,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetDashboardUrlRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDashboardUrlRequest.ResourceId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetDashboardUrlResponse.Url</property>
+    <max>40000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetDatabaseRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -1947,6 +1962,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetSessionEndpointRequest.SessionId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetStatementRequest.RequestOrigin</property>
@@ -4735,6 +4755,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityRulesetEvaluationRunFilter.RulesetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityRulesetFilterCriteria.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -5256,6 +5281,19 @@
     <property>Amazon.Glue.Model.IcebergStructField.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergTableMetadata.FormatVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergTableMetadata.Location</property>
+    <max>2056</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergTableMetadata.TableUuid</property>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.IcebergTableUpdate.KeyId</property>
@@ -6661,6 +6699,15 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.SessionCommand.PythonVersion</property>
     <pattern>^([2-3]|3[.]9)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SessionEndpoint.AuthToken</property>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SessionEndpoint.Url</property>
+    <max>2048</max>
+    <pattern>^sc://.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SnowflakeNodeData.MergeAction</property>

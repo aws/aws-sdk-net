@@ -56,31 +56,31 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currency", targetDepth))
+                if (context.TestExpression("currency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Currency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pricingUnit", targetDepth))
+                if (context.TestExpression("pricingUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PricingUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timePeriod", targetDepth))
+                if (context.TestExpression("timePeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = TimePeriodUnmarshaller.Instance;
                     unmarshalledObject.TimePeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unit", targetDepth))
+                if (context.TestExpression("unit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Unit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageCost", targetDepth))
+                if (context.TestExpression("usageCost", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.UsageCost = unmarshaller.Unmarshall(context, ref reader);

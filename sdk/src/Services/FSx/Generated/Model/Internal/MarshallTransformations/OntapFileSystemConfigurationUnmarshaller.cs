@@ -56,85 +56,85 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
+                if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth))
+                if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentType", targetDepth))
+                if (context.TestExpression("DeploymentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DiskIopsConfiguration", targetDepth))
+                if (context.TestExpression("DiskIopsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DiskIopsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DiskIopsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointIpAddressRange", targetDepth))
+                if (context.TestExpression("EndpointIpAddressRange", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointIpAddressRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointIpv6AddressRange", targetDepth))
+                if (context.TestExpression("EndpointIpv6AddressRange", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointIpv6AddressRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Endpoints", targetDepth))
+                if (context.TestExpression("Endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = FileSystemEndpointsUnmarshaller.Instance;
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FsxAdminPassword", targetDepth))
+                if (context.TestExpression("FsxAdminPassword", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FsxAdminPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HAPairs", targetDepth))
+                if (context.TestExpression("HAPairs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HAPairs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreferredSubnetId", targetDepth))
+                if (context.TestExpression("PreferredSubnetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreferredSubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteTableIds", targetDepth))
+                if (context.TestExpression("RouteTableIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RouteTableIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThroughputCapacity", targetDepth))
+                if (context.TestExpression("ThroughputCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThroughputCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThroughputCapacityPerHAPair", targetDepth))
+                if (context.TestExpression("ThroughputCapacityPerHAPair", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThroughputCapacityPerHAPair = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))
+                if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WeeklyMaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);

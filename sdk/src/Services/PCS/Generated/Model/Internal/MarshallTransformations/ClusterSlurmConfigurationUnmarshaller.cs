@@ -56,37 +56,49 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accounting", targetDepth))
+                if (context.TestExpression("accounting", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountingUnmarshaller.Instance;
                     unmarshalledObject.Accounting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authKey", targetDepth))
+                if (context.TestExpression("authKey", targetDepth, ref reader))
                 {
                     var unmarshaller = SlurmAuthKeyUnmarshaller.Instance;
                     unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jwtAuth", targetDepth))
+                if (context.TestExpression("cgroupCustomSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CgroupCustomSetting, CgroupCustomSettingUnmarshaller>(CgroupCustomSettingUnmarshaller.Instance);
+                    unmarshalledObject.CgroupCustomSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("jwtAuth", targetDepth, ref reader))
                 {
                     var unmarshaller = JwtAuthUnmarshaller.Instance;
                     unmarshalledObject.JwtAuth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth))
+                if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleDownIdleTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slurmCustomSettings", targetDepth))
+                if (context.TestExpression("slurmCustomSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
                     unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slurmRest", targetDepth))
+                if (context.TestExpression("slurmdbdCustomSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SlurmdbdCustomSetting, SlurmdbdCustomSettingUnmarshaller>(SlurmdbdCustomSettingUnmarshaller.Instance);
+                    unmarshalledObject.SlurmdbdCustomSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("slurmRest", targetDepth, ref reader))
                 {
                     var unmarshaller = SlurmRestUnmarshaller.Instance;
                     unmarshalledObject.SlurmRest = unmarshaller.Unmarshall(context, ref reader);

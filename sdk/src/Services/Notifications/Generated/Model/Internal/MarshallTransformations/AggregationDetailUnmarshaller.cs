@@ -56,7 +56,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("summarizationDimensions", targetDepth))
+                if (context.TestExpression("summarizationDimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SummarizationDimensionDetail, SummarizationDimensionDetailUnmarshaller>(SummarizationDimensionDetailUnmarshaller.Instance);
                     unmarshalledObject.SummarizationDimensions = unmarshaller.Unmarshall(context, ref reader);

@@ -52,31 +52,31 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("anomalies", targetDepth))
+                if (context.TestExpression("anomalies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Anomaly, AnomalyUnmarshaller>(AnomalyUnmarshaller.Instance);
                     response.Anomalies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profileEndTime", targetDepth))
+                if (context.TestExpression("profileEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ProfileEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profileStartTime", targetDepth))
+                if (context.TestExpression("profileStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ProfileStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profilingGroupName", targetDepth))
+                if (context.TestExpression("profilingGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProfilingGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendations", targetDepth))
+                if (context.TestExpression("recommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Recommendation, RecommendationUnmarshaller>(RecommendationUnmarshaller.Instance);
                     response.Recommendations = unmarshaller.Unmarshall(context, ref reader);

@@ -52,37 +52,37 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArchiveId", targetDepth))
+                if (context.TestExpression("ArchiveId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ArchiveId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Filters", targetDepth))
+                if (context.TestExpression("Filters", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveFiltersUnmarshaller.Instance;
                     response.Filters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FromTimestamp", targetDepth))
+                if (context.TestExpression("FromTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.FromTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxResults", targetDepth))
+                if (context.TestExpression("MaxResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = SearchStatusUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ToTimestamp", targetDepth))
+                if (context.TestExpression("ToTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ToTimestamp = unmarshaller.Unmarshall(context, ref reader);

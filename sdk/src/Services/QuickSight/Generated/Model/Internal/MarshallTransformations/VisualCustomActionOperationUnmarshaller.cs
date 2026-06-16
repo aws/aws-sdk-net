@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FilterOperation", targetDepth))
+                if (context.TestExpression("FilterOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomActionFilterOperationUnmarshaller.Instance;
                     unmarshalledObject.FilterOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NavigationOperation", targetDepth))
+                if (context.TestExpression("NavigationOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomActionNavigationOperationUnmarshaller.Instance;
                     unmarshalledObject.NavigationOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SetParametersOperation", targetDepth))
+                if (context.TestExpression("SetParametersOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomActionSetParametersOperationUnmarshaller.Instance;
                     unmarshalledObject.SetParametersOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("URLOperation", targetDepth))
+                if (context.TestExpression("URLOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomActionURLOperationUnmarshaller.Instance;
                     unmarshalledObject.URLOperation = unmarshaller.Unmarshall(context, ref reader);

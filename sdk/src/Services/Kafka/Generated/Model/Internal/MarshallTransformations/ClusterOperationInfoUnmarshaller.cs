@@ -56,73 +56,73 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientRequestId", targetDepth))
+                if (context.TestExpression("clientRequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterArn", targetDepth))
+                if (context.TestExpression("clusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endTime", targetDepth))
+                if (context.TestExpression("endTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorInfo", targetDepth))
+                if (context.TestExpression("errorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorInfoUnmarshaller.Instance;
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operationArn", targetDepth))
+                if (context.TestExpression("operationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operationState", targetDepth))
+                if (context.TestExpression("operationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operationSteps", targetDepth))
+                if (context.TestExpression("operationSteps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterOperationStep, ClusterOperationStepUnmarshaller>(ClusterOperationStepUnmarshaller.Instance);
                     unmarshalledObject.OperationSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operationType", targetDepth))
+                if (context.TestExpression("operationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceClusterInfo", targetDepth))
+                if (context.TestExpression("sourceClusterInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = MutableClusterInfoUnmarshaller.Instance;
                     unmarshalledObject.SourceClusterInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetClusterInfo", targetDepth))
+                if (context.TestExpression("targetClusterInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = MutableClusterInfoUnmarshaller.Instance;
                     unmarshalledObject.TargetClusterInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConnectionInfo", targetDepth))
+                if (context.TestExpression("vpcConnectionInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConnectionInfoUnmarshaller.Instance;
                     unmarshalledObject.VpcConnectionInfo = unmarshaller.Unmarshall(context, ref reader);

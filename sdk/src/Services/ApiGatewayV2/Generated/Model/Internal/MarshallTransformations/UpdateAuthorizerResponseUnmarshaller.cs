@@ -52,67 +52,67 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizerCredentialsArn", targetDepth))
+                if (context.TestExpression("authorizerCredentialsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizerCredentialsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerId", targetDepth))
+                if (context.TestExpression("authorizerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerPayloadFormatVersion", targetDepth))
+                if (context.TestExpression("authorizerPayloadFormatVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizerPayloadFormatVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerResultTtlInSeconds", targetDepth))
+                if (context.TestExpression("authorizerResultTtlInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.AuthorizerResultTtlInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerType", targetDepth))
+                if (context.TestExpression("authorizerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerUri", targetDepth))
+                if (context.TestExpression("authorizerUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizerUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableSimpleResponses", targetDepth))
+                if (context.TestExpression("enableSimpleResponses", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableSimpleResponses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identitySource", targetDepth))
+                if (context.TestExpression("identitySource", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.IdentitySource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identityValidationExpression", targetDepth))
+                if (context.TestExpression("identityValidationExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IdentityValidationExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jwtConfiguration", targetDepth))
+                if (context.TestExpression("jwtConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = JWTConfigurationUnmarshaller.Instance;
                     response.JwtConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);

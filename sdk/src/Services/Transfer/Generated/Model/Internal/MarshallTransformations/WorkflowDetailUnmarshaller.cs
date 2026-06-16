@@ -56,13 +56,13 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("ExecutionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkflowId", targetDepth))
+                if (context.TestExpression("WorkflowId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkflowId = unmarshaller.Unmarshall(context, ref reader);

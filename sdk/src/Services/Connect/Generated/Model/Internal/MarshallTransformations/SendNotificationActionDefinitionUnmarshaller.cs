@@ -56,37 +56,37 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("Content", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContentType", targetDepth))
+                if (context.TestExpression("ContentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryMethod", targetDepth))
+                if (context.TestExpression("DeliveryMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Exclusion", targetDepth))
+                if (context.TestExpression("Exclusion", targetDepth, ref reader))
                 {
                     var unmarshaller = NotificationRecipientTypeUnmarshaller.Instance;
                     unmarshalledObject.Exclusion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Recipient", targetDepth))
+                if (context.TestExpression("Recipient", targetDepth, ref reader))
                 {
                     var unmarshaller = NotificationRecipientTypeUnmarshaller.Instance;
                     unmarshalledObject.Recipient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subject", targetDepth))
+                if (context.TestExpression("Subject", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Subject = unmarshaller.Unmarshall(context, ref reader);

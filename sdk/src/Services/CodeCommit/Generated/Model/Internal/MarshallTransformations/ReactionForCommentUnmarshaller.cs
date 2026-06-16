@@ -56,19 +56,19 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reaction", targetDepth))
+                if (context.TestExpression("reaction", targetDepth, ref reader))
                 {
                     var unmarshaller = ReactionValueFormatsUnmarshaller.Instance;
                     unmarshalledObject.Reaction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reactionsFromDeletedUsersCount", targetDepth))
+                if (context.TestExpression("reactionsFromDeletedUsersCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReactionsFromDeletedUsersCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reactionUsers", targetDepth))
+                if (context.TestExpression("reactionUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ReactionUsers = unmarshaller.Unmarshall(context, ref reader);

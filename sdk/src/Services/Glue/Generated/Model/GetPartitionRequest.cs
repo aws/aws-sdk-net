@@ -35,10 +35,26 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetPartitionRequest : AmazonGlueRequest
     {
+        private AuditContext _auditContext;
         private string _catalogId;
         private string _databaseName;
         private List<string> _partitionValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property AuditContext.
+        /// </summary>
+        public AuditContext AuditContext
+        {
+            get { return this._auditContext; }
+            set { this._auditContext = value; }
+        }
+
+        // Check to see if AuditContext property is set
+        internal bool IsSetAuditContext()
+        {
+            return this._auditContext != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 

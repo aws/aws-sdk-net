@@ -56,13 +56,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("regex", targetDepth))
+                if (context.TestExpression("regex", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Regex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3WordsList", targetDepth))
+                if (context.TestExpression("s3WordsList", targetDepth, ref reader))
                 {
                     var unmarshaller = S3WordsListUnmarshaller.Instance;
                     unmarshalledObject.S3WordsList = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3BucketAccessRoleArn", targetDepth))
+                if (context.TestExpression("S3BucketAccessRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BucketRegion", targetDepth))
+                if (context.TestExpression("S3BucketRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3LocationUri", targetDepth))
+                if (context.TestExpression("S3LocationUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3LocationUri = unmarshaller.Unmarshall(context, ref reader);

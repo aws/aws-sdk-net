@@ -56,103 +56,115 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("command", targetDepth))
+                if (context.TestExpression("command", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dependsOn", targetDepth))
+                if (context.TestExpression("dependsOn", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TaskContainerDependency, TaskContainerDependencyUnmarshaller>(TaskContainerDependencyUnmarshaller.Instance);
                     unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environment", targetDepth))
+                if (context.TestExpression("environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("essential", targetDepth))
+                if (context.TestExpression("essential", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Essential = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firelensConfiguration", targetDepth))
+                if (context.TestExpression("firelensConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FirelensConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FirelensConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linuxParameters", targetDepth))
+                if (context.TestExpression("linuxParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = LinuxParametersUnmarshaller.Instance;
                     unmarshalledObject.LinuxParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logConfiguration", targetDepth))
+                if (context.TestExpression("logConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mountPoints", targetDepth))
+                if (context.TestExpression("mountPoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MountPoint, MountPointUnmarshaller>(MountPointUnmarshaller.Instance);
                     unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privileged", targetDepth))
+                if (context.TestExpression("privileged", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Privileged = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("readonlyRootFilesystem", targetDepth))
+                if (context.TestExpression("readonlyRootFilesystem", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReadonlyRootFilesystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryCredentials", targetDepth))
+                if (context.TestExpression("repositoryCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = RepositoryCredentialsUnmarshaller.Instance;
                     unmarshalledObject.RepositoryCredentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceRequirements", targetDepth))
+                if (context.TestExpression("resourceRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceRequirement, ResourceRequirementUnmarshaller>(ResourceRequirementUnmarshaller.Instance);
                     unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secrets", targetDepth))
+                if (context.TestExpression("secrets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);
                     unmarshalledObject.Secrets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ulimits", targetDepth))
+                if (context.TestExpression("startTimeout", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StartTimeout = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("stopTimeout", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StopTimeout = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ulimits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Ulimit, UlimitUnmarshaller>(UlimitUnmarshaller.Instance);
                     unmarshalledObject.Ulimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("user", targetDepth))
+                if (context.TestExpression("user", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PredefinedScalingMetricType", targetDepth))
+                if (context.TestExpression("PredefinedScalingMetricType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PredefinedScalingMetricType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceLabel", targetDepth))
+                if (context.TestExpression("ResourceLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceLabel = unmarshaller.Unmarshall(context, ref reader);

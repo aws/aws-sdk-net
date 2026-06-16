@@ -52,97 +52,97 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityUnits", targetDepth))
+                if (context.TestExpression("CapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityUnitsConfigurationUnmarshaller.Instance;
                     response.CapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentMetadataConfigurations", targetDepth))
+                if (context.TestExpression("DocumentMetadataConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentMetadataConfiguration, DocumentMetadataConfigurationUnmarshaller>(DocumentMetadataConfigurationUnmarshaller.Instance);
                     response.DocumentMetadataConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Edition", targetDepth))
+                if (context.TestExpression("Edition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Edition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorMessage", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexStatistics", targetDepth))
+                if (context.TestExpression("IndexStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = IndexStatisticsUnmarshaller.Instance;
                     response.IndexStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerSideEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("ServerSideEncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerSideEncryptionConfigurationUnmarshaller.Instance;
                     response.ServerSideEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdatedAt", targetDepth))
+                if (context.TestExpression("UpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserContextPolicy", targetDepth))
+                if (context.TestExpression("UserContextPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UserContextPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserGroupResolutionConfiguration", targetDepth))
+                if (context.TestExpression("UserGroupResolutionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = UserGroupResolutionConfigurationUnmarshaller.Instance;
                     response.UserGroupResolutionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserTokenConfigurations", targetDepth))
+                if (context.TestExpression("UserTokenConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserTokenConfiguration, UserTokenConfigurationUnmarshaller>(UserTokenConfigurationUnmarshaller.Instance);
                     response.UserTokenConfigurations = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FPort", targetDepth))
+                if (context.TestExpression("FPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParticipatingGateways", targetDepth))
+                if (context.TestExpression("ParticipatingGateways", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipatingGatewaysUnmarshaller.Instance;
                     unmarshalledObject.ParticipatingGateways = unmarshaller.Unmarshall(context, ref reader);

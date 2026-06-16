@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _databaseName;
         private string _description;
         private FederatedTable _federatedTable;
+        private IcebergTableMetadata _icebergTableMetadata;
         private bool? _isMaterializedView;
         private bool? _isMultiDialectView;
         private bool? _isRegisteredWithLakeFormation;
@@ -172,6 +173,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetFederatedTable()
         {
             return this._federatedTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IcebergTableMetadata. 
+        /// <para>
+        /// The latest Apache Iceberg table metadata for the table, including format version,
+        /// schemas, partition specifications, and sort orders. This field is populated for Iceberg
+        /// tables and reflects the current state of the table's Iceberg metadata.
+        /// </para>
+        /// </summary>
+        public IcebergTableMetadata IcebergTableMetadata
+        {
+            get { return this._icebergTableMetadata; }
+            set { this._icebergTableMetadata = value; }
+        }
+
+        // Check to see if IcebergTableMetadata property is set
+        internal bool IsSetIcebergTableMetadata()
+        {
+            return this._icebergTableMetadata != null;
         }
 
         /// <summary>

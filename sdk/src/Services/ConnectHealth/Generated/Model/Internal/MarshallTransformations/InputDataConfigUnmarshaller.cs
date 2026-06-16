@@ -56,13 +56,13 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fhirServer", targetDepth))
+                if (context.TestExpression("fhirServer", targetDepth, ref reader))
                 {
                     var unmarshaller = FHIRServerUnmarshaller.Instance;
                     unmarshalledObject.FhirServer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Sources", targetDepth))
+                if (context.TestExpression("s3Sources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3Source, S3SourceUnmarshaller>(S3SourceUnmarshaller.Instance);
                     unmarshalledObject.S3Sources = unmarshaller.Unmarshall(context, ref reader);

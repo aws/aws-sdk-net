@@ -56,25 +56,25 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EarliestRestorableDateTime", targetDepth))
+                if (context.TestExpression("EarliestRestorableDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EarliestRestorableDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestRestorableDateTime", targetDepth))
+                if (context.TestExpression("LatestRestorableDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestRestorableDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PointInTimeRecoveryStatus", targetDepth))
+                if (context.TestExpression("PointInTimeRecoveryStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PointInTimeRecoveryStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecoveryPeriodInDays", targetDepth))
+                if (context.TestExpression("RecoveryPeriodInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecoveryPeriodInDays = unmarshaller.Unmarshall(context, ref reader);

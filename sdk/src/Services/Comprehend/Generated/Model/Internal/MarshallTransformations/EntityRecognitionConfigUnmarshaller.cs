@@ -56,7 +56,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EntityTypes", targetDepth))
+                if (context.TestExpression("EntityTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntityTypesListItem, EntityTypesListItemUnmarshaller>(EntityTypesListItemUnmarshaller.Instance);
                     unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context, ref reader);

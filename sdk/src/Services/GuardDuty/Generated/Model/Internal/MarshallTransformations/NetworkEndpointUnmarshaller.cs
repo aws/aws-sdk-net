@@ -56,43 +56,43 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autonomousSystem", targetDepth))
+                if (context.TestExpression("autonomousSystem", targetDepth, ref reader))
                 {
                     var unmarshaller = AutonomousSystemUnmarshaller.Instance;
                     unmarshalledObject.AutonomousSystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connection", targetDepth))
+                if (context.TestExpression("connection", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConnectionUnmarshaller.Instance;
                     unmarshalledObject.Connection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domain", targetDepth))
+                if (context.TestExpression("domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ip", targetDepth))
+                if (context.TestExpression("ip", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("location", targetDepth))
+                if (context.TestExpression("location", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkGeoLocationUnmarshaller.Instance;
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("port", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioOnlyHlsSettings", targetDepth))
+                if (context.TestExpression("audioOnlyHlsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioOnlyHlsSettingsUnmarshaller.Instance;
                     unmarshalledObject.AudioOnlyHlsSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fmp4HlsSettings", targetDepth))
+                if (context.TestExpression("fmp4HlsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Fmp4HlsSettingsUnmarshaller.Instance;
                     unmarshalledObject.Fmp4HlsSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frameCaptureHlsSettings", targetDepth))
+                if (context.TestExpression("frameCaptureHlsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameCaptureHlsSettingsUnmarshaller.Instance;
                     unmarshalledObject.FrameCaptureHlsSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("standardHlsSettings", targetDepth))
+                if (context.TestExpression("standardHlsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = StandardHlsSettingsUnmarshaller.Instance;
                     unmarshalledObject.StandardHlsSettings = unmarshaller.Unmarshall(context, ref reader);

@@ -101,6 +101,14 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Paginator for ListOrderableInstanceTypes operation
+        ///</summary>
+        public IListOrderableInstanceTypesPaginator ListOrderableInstanceTypes(ListOrderableInstanceTypesRequest request) 
+        {
+            return new ListOrderableInstanceTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOrders operation
         ///</summary>
         public IListOrdersPaginator ListOrders(ListOrdersRequest request) 
@@ -114,6 +122,14 @@ namespace Amazon.Outposts.Model
         public IListOutpostsPaginator ListOutposts(ListOutpostsRequest request) 
         {
             return new ListOutpostsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQuotes operation
+        ///</summary>
+        public IListQuotesPaginator ListQuotes(ListQuotesRequest request) 
+        {
+            return new ListQuotesPaginator(this.client, request);
         }
 
         /// <summary>

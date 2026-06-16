@@ -56,25 +56,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("isPreferred", targetDepth))
+                if (context.TestExpression("isPreferred", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPreferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfApplicationComponents", targetDepth))
+                if (context.TestExpression("numberOfApplicationComponents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfApplicationComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendation", targetDepth))
+                if (context.TestExpression("recommendation", targetDepth, ref reader))
                 {
                     var unmarshaller = RecommendationSetUnmarshaller.Instance;
                     unmarshalledObject.Recommendation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

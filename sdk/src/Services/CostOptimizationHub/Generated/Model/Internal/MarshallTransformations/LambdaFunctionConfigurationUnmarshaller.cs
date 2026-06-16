@@ -56,7 +56,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compute", targetDepth))
+                if (context.TestExpression("compute", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Compute = unmarshaller.Unmarshall(context, ref reader);

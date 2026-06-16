@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsVpcConfiguration", targetDepth))
+                if (context.TestExpression("AwsVpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsVpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

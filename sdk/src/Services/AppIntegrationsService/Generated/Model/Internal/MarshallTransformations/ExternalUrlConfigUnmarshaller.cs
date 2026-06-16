@@ -56,13 +56,13 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessUrl", targetDepth))
+                if (context.TestExpression("AccessUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApprovedOrigins", targetDepth))
+                if (context.TestExpression("ApprovedOrigins", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ApprovedOrigins = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("truncated", targetDepth))
+                if (context.TestExpression("truncated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Truncated = unmarshaller.Unmarshall(context, ref reader);

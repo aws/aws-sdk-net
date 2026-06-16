@@ -56,121 +56,121 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Classifiers", targetDepth))
+                if (context.TestExpression("Classifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Classifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Configuration", targetDepth))
+                if (context.TestExpression("Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrawlElapsedTime", targetDepth))
+                if (context.TestExpression("CrawlElapsedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CrawlElapsedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrawlerSecurityConfiguration", targetDepth))
+                if (context.TestExpression("CrawlerSecurityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CrawlerSecurityConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseName", targetDepth))
+                if (context.TestExpression("DatabaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LakeFormationConfiguration", targetDepth))
+                if (context.TestExpression("LakeFormationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LakeFormationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LakeFormationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastCrawl", targetDepth))
+                if (context.TestExpression("LastCrawl", targetDepth, ref reader))
                 {
                     var unmarshaller = LastCrawlInfoUnmarshaller.Instance;
                     unmarshalledObject.LastCrawl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdated", targetDepth))
+                if (context.TestExpression("LastUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineageConfiguration", targetDepth))
+                if (context.TestExpression("LineageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LineageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LineageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecrawlPolicy", targetDepth))
+                if (context.TestExpression("RecrawlPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = RecrawlPolicyUnmarshaller.Instance;
                     unmarshalledObject.RecrawlPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Role", targetDepth))
+                if (context.TestExpression("Role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schedule", targetDepth))
+                if (context.TestExpression("Schedule", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduleUnmarshaller.Instance;
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaChangePolicy", targetDepth))
+                if (context.TestExpression("SchemaChangePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaChangePolicyUnmarshaller.Instance;
                     unmarshalledObject.SchemaChangePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TablePrefix", targetDepth))
+                if (context.TestExpression("TablePrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TablePrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Targets", targetDepth))
+                if (context.TestExpression("Targets", targetDepth, ref reader))
                 {
                     var unmarshaller = CrawlerTargetsUnmarshaller.Instance;
                     unmarshalledObject.Targets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Version", targetDepth))
+                if (context.TestExpression("Version", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);

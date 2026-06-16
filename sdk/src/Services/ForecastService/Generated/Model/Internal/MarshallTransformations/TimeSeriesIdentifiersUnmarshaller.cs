@@ -56,19 +56,19 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataSource", targetDepth))
+                if (context.TestExpression("DataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceUnmarshaller.Instance;
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Format", targetDepth))
+                if (context.TestExpression("Format", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Format = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schema", targetDepth))
+                if (context.TestExpression("Schema", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaUnmarshaller.Instance;
                     unmarshalledObject.Schema = unmarshaller.Unmarshall(context, ref reader);

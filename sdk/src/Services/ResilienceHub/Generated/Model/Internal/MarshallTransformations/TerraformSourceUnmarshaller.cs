@@ -56,7 +56,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3StateFileUrl", targetDepth))
+                if (context.TestExpression("s3StateFileUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3StateFileUrl = unmarshaller.Unmarshall(context, ref reader);

@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
         private DateTime? _lastStatusChange;
         private DateTime? _lastUpdated;
         private InstanceHealthCheckState _status;
+        private string _statusReason;
         private InstanceHealthCheckType _type;
 
         /// <summary>
@@ -91,6 +92,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The reason for the container instance health status.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

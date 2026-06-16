@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("detectSentiment", targetDepth))
+                if (context.TestExpression("detectSentiment", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetectSentiment = unmarshaller.Unmarshall(context, ref reader);

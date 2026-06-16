@@ -56,13 +56,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("format", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingFormatUnmarshaller.Instance;
                     unmarshalledObject.Format = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("path", targetDepth))
+                if (context.TestExpression("path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);

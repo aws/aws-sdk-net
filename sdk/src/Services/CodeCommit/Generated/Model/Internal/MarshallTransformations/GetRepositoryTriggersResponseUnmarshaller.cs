@@ -52,13 +52,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configurationId", targetDepth))
+                if (context.TestExpression("configurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("triggers", targetDepth))
+                if (context.TestExpression("triggers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RepositoryTrigger, RepositoryTriggerUnmarshaller>(RepositoryTriggerUnmarshaller.Instance);
                     response.Triggers = unmarshaller.Unmarshall(context, ref reader);

@@ -211,6 +211,10 @@ namespace Amazon.Route53Domains
         /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
         /// be invalid.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
@@ -237,6 +241,10 @@ namespace Amazon.Route53Domains
         /// the request might specify a domain name that doesn't belong to the account that submitted
         /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
         /// be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
@@ -273,7 +281,8 @@ namespace Amazon.Route53Domains
         ///  </li> <li> 
         /// <para>
         /// When the registration has been deleted, we'll send you a confirmation to the registrant
-        /// contact. The email will come from <c>noreply@domainnameverification.net</c> or <c>noreply@registrar.amazon.com</c>.
+        /// contact. The email will come from <c>noreply@domainnameverification.net</c> or <c>noreply@emailverification.info</c>
+        /// or <c>noreply@registrar.amazon</c>.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -641,6 +650,10 @@ namespace Amazon.Route53Domains
         /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
         /// be invalid.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
@@ -920,6 +933,10 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
@@ -1122,6 +1139,10 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
         /// The number of operations or jobs running exceeded the allowed threshold for the account.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).
         /// </exception>
@@ -1149,6 +1170,10 @@ namespace Amazon.Route53Domains
         /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
         /// be invalid.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">REST API Reference for ResendOperationAuthorization Operation</seealso>
         Task<ResendOperationAuthorizationResponse> ResendOperationAuthorizationAsync(ResendOperationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1173,6 +1198,10 @@ namespace Amazon.Route53Domains
         /// the request might specify a domain name that doesn't belong to the account that submitted
         /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
         /// be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDInMaintenanceException">
+        /// The top-level domain is currently undergoing maintenance and the request cannot be
+        /// processed. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain (TLD).

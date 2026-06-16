@@ -63,6 +63,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Attribute);
             }
 
+            if(requestObject.IsSetClientCertificateAttribute())
+            {
+                context.Writer.WritePropertyName("ClientCertificateAttribute");
+                context.Writer.WriteStringValue(requestObject.ClientCertificateAttribute);
+            }
+
             if(requestObject.IsSetMimeHeaderAttribute())
             {
                 context.Writer.WritePropertyName("MimeHeaderAttribute");

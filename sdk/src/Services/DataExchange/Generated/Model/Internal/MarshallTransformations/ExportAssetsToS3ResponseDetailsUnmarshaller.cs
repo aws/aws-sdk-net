@@ -56,25 +56,25 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssetDestinations", targetDepth))
+                if (context.TestExpression("AssetDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetDestinationEntry, AssetDestinationEntryUnmarshaller>(AssetDestinationEntryUnmarshaller.Instance);
                     unmarshalledObject.AssetDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSetId", targetDepth))
+                if (context.TestExpression("DataSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Encryption", targetDepth))
+                if (context.TestExpression("Encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RevisionId", targetDepth))
+                if (context.TestExpression("RevisionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context, ref reader);

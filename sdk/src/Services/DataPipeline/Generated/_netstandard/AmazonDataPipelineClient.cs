@@ -39,6 +39,11 @@ namespace Amazon.DataPipeline
 {
     /// <summary>
     /// <para>Implementation for accessing DataPipeline</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Data Pipeline configures and manages a data-driven workflow called a pipeline.
     /// AWS Data Pipeline handles the details of scheduling and ensuring that data dependencies

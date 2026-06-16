@@ -72,7 +72,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Code", targetDepth))
+                    if (context.TestExpression("Code", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);

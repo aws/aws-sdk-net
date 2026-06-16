@@ -56,43 +56,43 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Beaconing", targetDepth))
+                if (context.TestExpression("Beaconing", targetDepth, ref reader))
                 {
                     var unmarshaller = BeaconingUnmarshaller.Instance;
                     unmarshalledObject.Beaconing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayEui", targetDepth))
+                if (context.TestExpression("GatewayEui", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GatewayEui = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JoinEuiFilters", targetDepth))
+                if (context.TestExpression("JoinEuiFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.JoinEuiFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxEirp", targetDepth))
+                if (context.TestExpression("MaxEirp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MaxEirp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetIdFilters", targetDepth))
+                if (context.TestExpression("NetIdFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NetIdFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RfRegion", targetDepth))
+                if (context.TestExpression("RfRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubBands", targetDepth))
+                if (context.TestExpression("SubBands", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.SubBands = unmarshaller.Unmarshall(context, ref reader);

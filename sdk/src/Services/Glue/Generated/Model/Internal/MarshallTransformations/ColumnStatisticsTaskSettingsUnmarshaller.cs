@@ -56,67 +56,67 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CatalogID", targetDepth))
+                if (context.TestExpression("CatalogID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CatalogID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnNameList", targetDepth))
+                if (context.TestExpression("ColumnNameList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ColumnNameList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseName", targetDepth))
+                if (context.TestExpression("DatabaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastExecutionAttempt", targetDepth))
+                if (context.TestExpression("LastExecutionAttempt", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionAttemptUnmarshaller.Instance;
                     unmarshalledObject.LastExecutionAttempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Role", targetDepth))
+                if (context.TestExpression("Role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SampleSize", targetDepth))
+                if (context.TestExpression("SampleSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SampleSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schedule", targetDepth))
+                if (context.TestExpression("Schedule", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduleUnmarshaller.Instance;
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduleType", targetDepth))
+                if (context.TestExpression("ScheduleType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScheduleType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityConfiguration", targetDepth))
+                if (context.TestExpression("SecurityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecurityConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SettingSource", targetDepth))
+                if (context.TestExpression("SettingSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SettingSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);

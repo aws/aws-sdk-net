@@ -56,43 +56,61 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FerryLegDetails", targetDepth))
+                if (context.TestExpression("FerryLegDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteFerryLegDetailsUnmarshaller.Instance;
                     unmarshalledObject.FerryLegDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Geometry", targetDepth))
+                if (context.TestExpression("Geometry", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteLegGeometryUnmarshaller.Instance;
                     unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Language", targetDepth))
+                if (context.TestExpression("Language", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Language = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PedestrianLegDetails", targetDepth))
+                if (context.TestExpression("PedestrianLegDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutePedestrianLegDetailsUnmarshaller.Instance;
                     unmarshalledObject.PedestrianLegDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TravelMode", targetDepth))
+                if (context.TestExpression("RentalLegDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = RouteRentalLegDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RentalLegDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TaxiLegDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = RouteTaxiLegDetailsUnmarshaller.Instance;
+                    unmarshalledObject.TaxiLegDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TransitLegDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = RouteTransitLegDetailsUnmarshaller.Instance;
+                    unmarshalledObject.TransitLegDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TravelMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TravelMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VehicleLegDetails", targetDepth))
+                if (context.TestExpression("VehicleLegDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteVehicleLegDetailsUnmarshaller.Instance;
                     unmarshalledObject.VehicleLegDetails = unmarshaller.Unmarshall(context, ref reader);

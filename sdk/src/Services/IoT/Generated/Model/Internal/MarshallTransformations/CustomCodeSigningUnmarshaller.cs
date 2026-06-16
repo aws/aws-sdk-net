@@ -56,25 +56,25 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificateChain", targetDepth))
+                if (context.TestExpression("certificateChain", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeSigningCertificateChainUnmarshaller.Instance;
                     unmarshalledObject.CertificateChain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hashAlgorithm", targetDepth))
+                if (context.TestExpression("hashAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signature", targetDepth))
+                if (context.TestExpression("signature", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeSigningSignatureUnmarshaller.Instance;
                     unmarshalledObject.Signature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signatureAlgorithm", targetDepth))
+                if (context.TestExpression("signatureAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SignatureAlgorithm = unmarshaller.Unmarshall(context, ref reader);

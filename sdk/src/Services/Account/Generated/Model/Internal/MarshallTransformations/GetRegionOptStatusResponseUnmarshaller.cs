@@ -52,13 +52,13 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RegionName", targetDepth))
+                if (context.TestExpression("RegionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegionOptStatus", targetDepth))
+                if (context.TestExpression("RegionOptStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegionOptStatus = unmarshaller.Unmarshall(context, ref reader);

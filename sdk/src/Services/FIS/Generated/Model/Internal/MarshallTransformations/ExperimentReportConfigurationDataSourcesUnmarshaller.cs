@@ -56,7 +56,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchDashboards", targetDepth))
+                if (context.TestExpression("cloudWatchDashboards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExperimentReportConfigurationCloudWatchDashboard, ExperimentReportConfigurationCloudWatchDashboardUnmarshaller>(ExperimentReportConfigurationCloudWatchDashboardUnmarshaller.Instance);
                     unmarshalledObject.CloudWatchDashboards = unmarshaller.Unmarshall(context, ref reader);

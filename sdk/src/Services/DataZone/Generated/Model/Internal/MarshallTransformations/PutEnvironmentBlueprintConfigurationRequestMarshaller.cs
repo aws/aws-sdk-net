@@ -71,14 +71,20 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.AddPathResource("{environmentBlueprintIdentifier}", StringUtils.FromString(publicRequest.EnvironmentBlueprintIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/environment-blueprint-configurations/{environmentBlueprintIdentifier}";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowUserProvidedConfigurations())
+            {
+                context.Writer.WritePropertyName("allowUserProvidedConfigurations");
+                context.Writer.WriteBooleanValue(publicRequest.AllowUserProvidedConfigurations.Value);
+            }
+
             if(publicRequest.IsSetEnabledRegions())
             {
                 context.Writer.WritePropertyName("enabledRegions");
@@ -160,12 +166,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetResourceConfigurations())
+            {
+                context.Writer.WritePropertyName("resourceConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceConfigurationsListValue in publicRequest.ResourceConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PutResourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResourceConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

@@ -56,25 +56,25 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FirstEntries", targetDepth))
+                if (context.TestExpression("FirstEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkAclEntry, NetworkAclEntryUnmarshaller>(NetworkAclEntryUnmarshaller.Instance);
                     unmarshalledObject.FirstEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForceRemediateForFirstEntries", targetDepth))
+                if (context.TestExpression("ForceRemediateForFirstEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceRemediateForFirstEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForceRemediateForLastEntries", targetDepth))
+                if (context.TestExpression("ForceRemediateForLastEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceRemediateForLastEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastEntries", targetDepth))
+                if (context.TestExpression("LastEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkAclEntry, NetworkAclEntryUnmarshaller>(NetworkAclEntryUnmarshaller.Instance);
                     unmarshalledObject.LastEntries = unmarshaller.Unmarshall(context, ref reader);

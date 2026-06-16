@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxRecentSessions", targetDepth))
+                if (context.TestExpression("maxRecentSessions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRecentSessions = unmarshaller.Unmarshall(context, ref reader);

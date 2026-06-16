@@ -52,7 +52,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hooksNotCleanedUp", targetDepth))
+                if (context.TestExpression("hooksNotCleanedUp", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutoScalingGroup, AutoScalingGroupUnmarshaller>(AutoScalingGroupUnmarshaller.Instance);
                     response.HooksNotCleanedUp = unmarshaller.Unmarshall(context, ref reader);

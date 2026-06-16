@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("virtualGateways", targetDepth))
+                if (context.TestExpression("virtualGateways", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VirtualGateway, VirtualGatewayUnmarshaller>(VirtualGatewayUnmarshaller.Instance);
                     response.VirtualGateways = unmarshaller.Unmarshall(context, ref reader);

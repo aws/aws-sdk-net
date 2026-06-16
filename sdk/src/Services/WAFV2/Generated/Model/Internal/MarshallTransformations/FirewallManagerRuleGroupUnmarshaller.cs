@@ -56,31 +56,31 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FirewallManagerStatement", targetDepth))
+                if (context.TestExpression("FirewallManagerStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = FirewallManagerStatementUnmarshaller.Instance;
                     unmarshalledObject.FirewallManagerStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverrideAction", targetDepth))
+                if (context.TestExpression("OverrideAction", targetDepth, ref reader))
                 {
                     var unmarshaller = OverrideActionUnmarshaller.Instance;
                     unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Priority", targetDepth))
+                if (context.TestExpression("Priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisibilityConfig", targetDepth))
+                if (context.TestExpression("VisibilityConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VisibilityConfigUnmarshaller.Instance;
                     unmarshalledObject.VisibilityConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationConfig", targetDepth))
+                if (context.TestExpression("authorizationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FSxWindowsFileServerAuthorizationConfigUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileSystemId", targetDepth))
+                if (context.TestExpression("fileSystemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rootDirectory", targetDepth))
+                if (context.TestExpression("rootDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context, ref reader);

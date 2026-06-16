@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FormLanguage", targetDepth))
+                if (context.TestExpression("FormLanguage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FormLanguage = unmarshaller.Unmarshall(context, ref reader);

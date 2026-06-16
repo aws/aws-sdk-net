@@ -52,67 +52,73 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attributes", targetDepth))
+                if (context.TestExpression("attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkAttributesUnmarshaller.Instance;
                     response.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("connectivityType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectivityType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("domainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowModules", targetDepth))
+                if (context.TestExpression("flowModules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModuleConfiguration, ModuleConfigurationUnmarshaller>(ModuleConfigurationUnmarshaller.Instance);
                     response.FlowModules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayId", targetDepth))
+                if (context.TestExpression("gatewayId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linkId", targetDepth))
+                if (context.TestExpression("linkId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LinkId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logSettings", targetDepth))
+                if (context.TestExpression("logSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkLogSettingsUnmarshaller.Instance;
                     response.LogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pendingFlowModules", targetDepth))
+                if (context.TestExpression("pendingFlowModules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModuleConfiguration, ModuleConfigurationUnmarshaller>(ModuleConfigurationUnmarshaller.Instance);
                     response.PendingFlowModules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

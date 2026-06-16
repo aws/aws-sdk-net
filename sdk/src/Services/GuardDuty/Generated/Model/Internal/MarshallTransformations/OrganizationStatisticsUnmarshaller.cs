@@ -56,31 +56,31 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeAccountsCount", targetDepth))
+                if (context.TestExpression("activeAccountsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveAccountsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("countByFeature", targetDepth))
+                if (context.TestExpression("countByFeature", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OrganizationFeatureStatistics, OrganizationFeatureStatisticsUnmarshaller>(OrganizationFeatureStatisticsUnmarshaller.Instance);
                     unmarshalledObject.CountByFeature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enabledAccountsCount", targetDepth))
+                if (context.TestExpression("enabledAccountsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EnabledAccountsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memberAccountsCount", targetDepth))
+                if (context.TestExpression("memberAccountsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemberAccountsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalAccountsCount", targetDepth))
+                if (context.TestExpression("totalAccountsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAccountsCount = unmarshaller.Unmarshall(context, ref reader);

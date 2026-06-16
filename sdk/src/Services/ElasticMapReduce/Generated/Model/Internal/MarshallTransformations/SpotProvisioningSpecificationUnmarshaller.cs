@@ -56,25 +56,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllocationStrategy", targetDepth))
+                if (context.TestExpression("AllocationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BlockDurationMinutes", targetDepth))
+                if (context.TestExpression("BlockDurationMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlockDurationMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeoutAction", targetDepth))
+                if (context.TestExpression("TimeoutAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeoutAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeoutDurationMinutes", targetDepth))
+                if (context.TestExpression("TimeoutDurationMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutDurationMinutes = unmarshaller.Unmarshall(context, ref reader);

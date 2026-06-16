@@ -39,6 +39,11 @@ namespace Amazon.LookoutEquipment
 {
     /// <summary>
     /// <para>Implementation for accessing LookoutEquipment</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Lookout for Equipment is a machine learning service that uses advanced analytics
     /// to identify anomalies in machines from sensor data for use in predictive maintenance.

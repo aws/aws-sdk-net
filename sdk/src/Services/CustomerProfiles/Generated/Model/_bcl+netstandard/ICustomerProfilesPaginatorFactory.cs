@@ -88,6 +88,16 @@ namespace Amazon.CustomerProfiles.Model
         IListObjectTypeAttributesPaginator ListObjectTypeAttributes(ListObjectTypeAttributesRequest request);
 
         /// <summary>
+        /// Paginator for ListRecommenderFilters operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecommenderFiltersPaginator ListRecommenderFilters(ListRecommenderFiltersRequest request);
+
+        /// <summary>
         /// Paginator for ListRecommenderRecipes operation
         ///</summary>
         [AWSPaginator(
@@ -106,6 +116,16 @@ namespace Amazon.CustomerProfiles.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListRecommendersPaginator ListRecommenders(ListRecommendersRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecommenderSchemas operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecommenderSchemasPaginator ListRecommenderSchemas(ListRecommenderSchemasRequest request);
 
         /// <summary>
         /// Paginator for ListRuleBasedMatches operation

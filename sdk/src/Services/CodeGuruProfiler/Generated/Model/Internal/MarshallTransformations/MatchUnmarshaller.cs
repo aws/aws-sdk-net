@@ -56,19 +56,19 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("frameAddress", targetDepth))
+                if (context.TestExpression("frameAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FrameAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetFramesIndex", targetDepth))
+                if (context.TestExpression("targetFramesIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetFramesIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thresholdBreachValue", targetDepth))
+                if (context.TestExpression("thresholdBreachValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThresholdBreachValue = unmarshaller.Unmarshall(context, ref reader);

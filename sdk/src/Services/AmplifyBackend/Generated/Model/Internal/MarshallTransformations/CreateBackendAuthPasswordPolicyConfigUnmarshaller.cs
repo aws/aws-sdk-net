@@ -56,13 +56,13 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalConstraints", targetDepth))
+                if (context.TestExpression("additionalConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumLength", targetDepth))
+                if (context.TestExpression("minimumLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MinimumLength = unmarshaller.Unmarshall(context, ref reader);

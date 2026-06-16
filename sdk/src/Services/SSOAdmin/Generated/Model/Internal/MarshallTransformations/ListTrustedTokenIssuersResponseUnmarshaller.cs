@@ -52,13 +52,13 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrustedTokenIssuers", targetDepth))
+                if (context.TestExpression("TrustedTokenIssuers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TrustedTokenIssuerMetadata, TrustedTokenIssuerMetadataUnmarshaller>(TrustedTokenIssuerMetadataUnmarshaller.Instance);
                     response.TrustedTokenIssuers = unmarshaller.Unmarshall(context, ref reader);

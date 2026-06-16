@@ -56,31 +56,31 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Request", targetDepth))
+                if (context.TestExpression("Request", targetDepth, ref reader))
                 {
                     var unmarshaller = HTTPRequestUnmarshaller.Instance;
                     unmarshalledObject.Request = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleWithinRuleGroup", targetDepth))
+                if (context.TestExpression("RuleWithinRuleGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleWithinRuleGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Weight", targetDepth))
+                if (context.TestExpression("Weight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Weight = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrossSheet", targetDepth))
+                if (context.TestExpression("CrossSheet", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterCrossSheetControlUnmarshaller.Instance;
                     unmarshalledObject.CrossSheet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateTimePicker", targetDepth))
+                if (context.TestExpression("DateTimePicker", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterDateTimePickerControlUnmarshaller.Instance;
                     unmarshalledObject.DateTimePicker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Dropdown", targetDepth))
+                if (context.TestExpression("Dropdown", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterDropDownControlUnmarshaller.Instance;
                     unmarshalledObject.Dropdown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("List", targetDepth))
+                if (context.TestExpression("List", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterListControlUnmarshaller.Instance;
                     unmarshalledObject.List = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelativeDateTime", targetDepth))
+                if (context.TestExpression("RelativeDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterRelativeDateTimeControlUnmarshaller.Instance;
                     unmarshalledObject.RelativeDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Slider", targetDepth))
+                if (context.TestExpression("Slider", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterSliderControlUnmarshaller.Instance;
                     unmarshalledObject.Slider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextArea", targetDepth))
+                if (context.TestExpression("TextArea", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterTextAreaControlUnmarshaller.Instance;
                     unmarshalledObject.TextArea = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextField", targetDepth))
+                if (context.TestExpression("TextField", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterTextFieldControlUnmarshaller.Instance;
                     unmarshalledObject.TextField = unmarshaller.Unmarshall(context, ref reader);

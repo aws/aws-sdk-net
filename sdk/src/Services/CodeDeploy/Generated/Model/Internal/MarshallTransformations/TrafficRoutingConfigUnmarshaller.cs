@@ -56,19 +56,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("timeBasedCanary", targetDepth))
+                if (context.TestExpression("timeBasedCanary", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeBasedCanaryUnmarshaller.Instance;
                     unmarshalledObject.TimeBasedCanary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeBasedLinear", targetDepth))
+                if (context.TestExpression("timeBasedLinear", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeBasedLinearUnmarshaller.Instance;
                     unmarshalledObject.TimeBasedLinear = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -68,6 +68,22 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "ResourceId":
+                        {
+                            context.AddPathSegment("ResourceId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ResourceType":
+                        {
+                            context.AddPathSegment("ResourceType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     default:
                         reader.SkipValue();
                         break;

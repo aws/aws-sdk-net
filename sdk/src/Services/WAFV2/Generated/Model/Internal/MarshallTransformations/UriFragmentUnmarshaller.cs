@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FallbackBehavior", targetDepth))
+                if (context.TestExpression("FallbackBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FallbackBehavior = unmarshaller.Unmarshall(context, ref reader);

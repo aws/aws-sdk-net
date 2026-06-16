@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisplayFormat", targetDepth))
+                if (context.TestExpression("DisplayFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisplayFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisplayFormatOptions", targetDepth))
+                if (context.TestExpression("DisplayFormatOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DisplayFormatOptionsUnmarshaller.Instance;
                     unmarshalledObject.DisplayFormatOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldName", targetDepth))
+                if (context.TestExpression("FieldName", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentifierUnmarshaller.Instance;
                     unmarshalledObject.FieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NamedEntity", targetDepth))
+                if (context.TestExpression("NamedEntity", targetDepth, ref reader))
                 {
                     var unmarshaller = NamedEntityRefUnmarshaller.Instance;
                     unmarshalledObject.NamedEntity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sort", targetDepth))
+                if (context.TestExpression("Sort", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicSortClauseUnmarshaller.Instance;
                     unmarshalledObject.Sort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeGranularity", targetDepth))
+                if (context.TestExpression("TimeGranularity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);

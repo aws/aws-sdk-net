@@ -56,49 +56,49 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Frequency", targetDepth))
+                if (context.TestExpression("Frequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitorArnList", targetDepth))
+                if (context.TestExpression("MonitorArnList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.MonitorArnList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subscribers", targetDepth))
+                if (context.TestExpression("Subscribers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Subscriber, SubscriberUnmarshaller>(SubscriberUnmarshaller.Instance);
                     unmarshalledObject.Subscribers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionArn", targetDepth))
+                if (context.TestExpression("SubscriptionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionName", targetDepth))
+                if (context.TestExpression("SubscriptionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Threshold", targetDepth))
+                if (context.TestExpression("Threshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThresholdExpression", targetDepth))
+                if (context.TestExpression("ThresholdExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpressionUnmarshaller.Instance;
                     unmarshalledObject.ThresholdExpression = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SizingOptions", targetDepth))
+                if (context.TestExpression("SizingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellImageSizingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SizingOptions = unmarshaller.Unmarshall(context, ref reader);

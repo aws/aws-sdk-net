@@ -56,31 +56,31 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currentSubscription", targetDepth))
+                if (context.TestExpression("currentSubscription", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionDetailsUnmarshaller.Instance;
                     unmarshalledObject.CurrentSubscription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextSubscription", targetDepth))
+                if (context.TestExpression("nextSubscription", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionDetailsUnmarshaller.Instance;
                     unmarshalledObject.NextSubscription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("principal", targetDepth))
+                if (context.TestExpression("principal", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionPrincipalUnmarshaller.Instance;
                     unmarshalledObject.Principal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subscriptionArn", targetDepth))
+                if (context.TestExpression("subscriptionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subscriptionId", targetDepth))
+                if (context.TestExpression("subscriptionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionId = unmarshaller.Unmarshall(context, ref reader);

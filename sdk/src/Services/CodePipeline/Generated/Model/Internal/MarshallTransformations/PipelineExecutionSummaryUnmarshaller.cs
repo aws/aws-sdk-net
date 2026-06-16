@@ -56,67 +56,67 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executionMode", targetDepth))
+                if (context.TestExpression("executionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionType", targetDepth))
+                if (context.TestExpression("executionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdateTime", targetDepth))
+                if (context.TestExpression("lastUpdateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineExecutionId", targetDepth))
+                if (context.TestExpression("pipelineExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rollbackMetadata", targetDepth))
+                if (context.TestExpression("rollbackMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = PipelineRollbackMetadataUnmarshaller.Instance;
                     unmarshalledObject.RollbackMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceRevisions", targetDepth))
+                if (context.TestExpression("sourceRevisions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceRevision, SourceRevisionUnmarshaller>(SourceRevisionUnmarshaller.Instance);
                     unmarshalledObject.SourceRevisions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
+                if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusSummary", targetDepth))
+                if (context.TestExpression("statusSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stopTrigger", targetDepth))
+                if (context.TestExpression("stopTrigger", targetDepth, ref reader))
                 {
                     var unmarshaller = StopExecutionTriggerUnmarshaller.Instance;
                     unmarshalledObject.StopTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trigger", targetDepth))
+                if (context.TestExpression("trigger", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionTriggerUnmarshaller.Instance;
                     unmarshalledObject.Trigger = unmarshaller.Unmarshall(context, ref reader);

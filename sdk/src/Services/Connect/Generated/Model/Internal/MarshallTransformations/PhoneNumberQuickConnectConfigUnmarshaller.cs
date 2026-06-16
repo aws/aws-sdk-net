@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PhoneNumber", targetDepth))
+                if (context.TestExpression("PhoneNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context, ref reader);

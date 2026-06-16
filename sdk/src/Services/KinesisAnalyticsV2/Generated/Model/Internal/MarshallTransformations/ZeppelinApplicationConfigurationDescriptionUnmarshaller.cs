@@ -56,25 +56,25 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CatalogConfigurationDescription", targetDepth))
+                if (context.TestExpression("CatalogConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = CatalogConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.CatalogConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomArtifactsConfigurationDescription", targetDepth))
+                if (context.TestExpression("CustomArtifactsConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomArtifactConfigurationDescription, CustomArtifactConfigurationDescriptionUnmarshaller>(CustomArtifactConfigurationDescriptionUnmarshaller.Instance);
                     unmarshalledObject.CustomArtifactsConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeployAsApplicationConfigurationDescription", targetDepth))
+                if (context.TestExpression("DeployAsApplicationConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = DeployAsApplicationConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.DeployAsApplicationConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringConfigurationDescription", targetDepth))
+                if (context.TestExpression("MonitoringConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ZeppelinMonitoringConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.MonitoringConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IamIdentityCenter", targetDepth))
+                if (context.TestExpression("IamIdentityCenter", targetDepth, ref reader))
                 {
                     var unmarshaller = IamIdentityCenterForGetUnmarshaller.Instance;
                     unmarshalledObject.IamIdentityCenter = unmarshaller.Unmarshall(context, ref reader);

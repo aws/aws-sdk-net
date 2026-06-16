@@ -39,6 +39,11 @@ namespace Amazon.ManagedBlockchainQuery
 {
     /// <summary>
     /// <para>Implementation for accessing ManagedBlockchainQuery</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Managed Blockchain (AMB) Query provides you with convenient access to multi-blockchain
     /// network data, which makes it easier for you to extract contextual data related to

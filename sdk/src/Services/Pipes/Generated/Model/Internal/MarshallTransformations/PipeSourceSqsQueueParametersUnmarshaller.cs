@@ -56,13 +56,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BatchSize", targetDepth))
+                if (context.TestExpression("BatchSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth))
+                if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context, ref reader);

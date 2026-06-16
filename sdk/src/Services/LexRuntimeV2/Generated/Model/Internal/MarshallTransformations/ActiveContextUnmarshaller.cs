@@ -56,19 +56,19 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contextAttributes", targetDepth))
+                if (context.TestExpression("contextAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ContextAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeToLive", targetDepth))
+                if (context.TestExpression("timeToLive", targetDepth, ref reader))
                 {
                     var unmarshaller = ActiveContextTimeToLiveUnmarshaller.Instance;
                     unmarshalledObject.TimeToLive = unmarshaller.Unmarshall(context, ref reader);

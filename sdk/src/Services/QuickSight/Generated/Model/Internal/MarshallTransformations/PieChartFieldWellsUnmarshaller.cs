@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PieChartAggregatedFieldWells", targetDepth))
+                if (context.TestExpression("PieChartAggregatedFieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = PieChartAggregatedFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.PieChartAggregatedFieldWells = unmarshaller.Unmarshall(context, ref reader);

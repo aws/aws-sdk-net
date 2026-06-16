@@ -52,13 +52,13 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationSummaries", targetDepth))
+                if (context.TestExpression("ApplicationSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ApplicationSummary, ApplicationSummaryUnmarshaller>(ApplicationSummaryUnmarshaller.Instance);
                     response.ApplicationSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HasMoreApplications", targetDepth))
+                if (context.TestExpression("HasMoreApplications", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasMoreApplications = unmarshaller.Unmarshall(context, ref reader);

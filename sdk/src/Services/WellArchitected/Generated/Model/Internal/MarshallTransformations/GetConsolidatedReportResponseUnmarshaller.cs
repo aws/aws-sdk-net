@@ -52,19 +52,19 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Base64String", targetDepth))
+                if (context.TestExpression("Base64String", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Base64String = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metrics", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConsolidatedReportMetric, ConsolidatedReportMetricUnmarshaller>(ConsolidatedReportMetricUnmarshaller.Instance);
                     response.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EbsStorageSettings", targetDepth))
+                if (context.TestExpression("EbsStorageSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EbsStorageSettingsUnmarshaller.Instance;
                     unmarshalledObject.EbsStorageSettings = unmarshaller.Unmarshall(context, ref reader);

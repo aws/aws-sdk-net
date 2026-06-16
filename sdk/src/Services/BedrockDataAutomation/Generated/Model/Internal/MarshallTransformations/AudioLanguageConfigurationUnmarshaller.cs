@@ -56,19 +56,19 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("generativeOutputLanguage", targetDepth))
+                if (context.TestExpression("generativeOutputLanguage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GenerativeOutputLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identifyMultipleLanguages", targetDepth))
+                if (context.TestExpression("identifyMultipleLanguages", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputLanguages", targetDepth))
+                if (context.TestExpression("inputLanguages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InputLanguages = unmarshaller.Unmarshall(context, ref reader);

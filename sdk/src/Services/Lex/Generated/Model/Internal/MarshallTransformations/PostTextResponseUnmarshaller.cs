@@ -52,85 +52,85 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeContexts", targetDepth))
+                if (context.TestExpression("activeContexts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActiveContext, ActiveContextUnmarshaller>(ActiveContextUnmarshaller.Instance);
                     response.ActiveContexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("alternativeIntents", targetDepth))
+                if (context.TestExpression("alternativeIntents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PredictedIntent, PredictedIntentUnmarshaller>(PredictedIntentUnmarshaller.Instance);
                     response.AlternativeIntents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botVersion", targetDepth))
+                if (context.TestExpression("botVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dialogState", targetDepth))
+                if (context.TestExpression("dialogState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DialogState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intentName", targetDepth))
+                if (context.TestExpression("intentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("message", targetDepth))
+                if (context.TestExpression("message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageFormat", targetDepth))
+                if (context.TestExpression("messageFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MessageFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nluIntentConfidence", targetDepth))
+                if (context.TestExpression("nluIntentConfidence", targetDepth, ref reader))
                 {
                     var unmarshaller = IntentConfidenceUnmarshaller.Instance;
                     response.NluIntentConfidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("responseCard", targetDepth))
+                if (context.TestExpression("responseCard", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseCardUnmarshaller.Instance;
                     response.ResponseCard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sentimentResponse", targetDepth))
+                if (context.TestExpression("sentimentResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = SentimentResponseUnmarshaller.Instance;
                     response.SentimentResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionAttributes", targetDepth))
+                if (context.TestExpression("sessionAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.SessionAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slots", targetDepth))
+                if (context.TestExpression("slots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Slots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotToElicit", targetDepth))
+                if (context.TestExpression("slotToElicit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SlotToElicit = unmarshaller.Unmarshall(context, ref reader);

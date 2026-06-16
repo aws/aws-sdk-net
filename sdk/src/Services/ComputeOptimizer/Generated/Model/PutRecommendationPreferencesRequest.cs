@@ -155,18 +155,44 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling
-        /// group resource types. 
+        /// You can only set this preference for the Amazon EC2 instance, Auto Scaling group,
+        /// Amazon EBS volume, Amazon ECS service on Fargate, Amazon RDS DB instance, and Aurora
+        /// DB cluster storage resource types. 
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Amazon EC2 instance lookback preferences can be set at the organization, account,
+        /// Lookback period preferences for Amazon EC2 instances, Amazon EBS volumes, Amazon ECS
+        /// services, Amazon RDS DB instances, and Aurora DB cluster storage resource types can
+        /// be set at the organization, account, and resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Auto Scaling group lookback preferences can only be set at the resource level.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon EBS volume lookback preferences can be set at the organization, account, and
+        /// resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon ECS service on Fargate lookback preferences can be set at the organization,
+        /// account, and resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon RDS DB instance lookback preferences can be set at the organization, account,
         /// and resource levels.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 Auto Scaling group lookback preferences can only be set at the resource
-        /// level.
+        /// Aurora DB cluster storage lookback preferences can be set at the organization, account,
+        /// and resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changing the lookback period for Amazon EBS volumes to 14 days does not affect the
+        /// 32-day lookback period used to determine whether an Amazon EBS volume is unattached.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -192,8 +218,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling
-        /// group resource types.
+        /// You can only set this preference for the Amazon EC2 instance, Auto Scaling group,
+        /// Amazon EBS volume, Amazon ECS service, Amazon RDS DB instance, and Aurora DB cluster
+        /// storage resource types.
         /// </para>
         ///  </note>
         /// <para />
@@ -222,8 +249,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// The <c>Ec2Instance</c> option encompasses standalone instances and instances that
-        /// are part of Amazon EC2 Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses
-        /// only instances that are part of an Amazon EC2 Auto Scaling group.
+        /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
+        /// instances that are part of an Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -286,15 +313,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at
-        /// the organization and account levels. You can create recommendation preferences for
-        /// Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name
-        /// of <c>ResourceArn</c> and a scope value of the Amazon EC2 Auto Scaling group Amazon
-        /// Resource Name (ARN). This will configure the preference for all instances that are
-        /// part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation
-        /// preferences at the resource level for instances that are part of an Amazon EC2 Auto
-        /// Scaling group. You can create recommendation preferences at the resource level only
-        /// for standalone instances.
+        /// You cannot create recommendation preferences for Auto Scaling groups at the organization
+        /// and account levels. You can create recommendation preferences for Auto Scaling groups
+        /// only at the resource level by specifying a scope name of <c>ResourceArn</c> and a
+        /// scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure
+        /// the preference for all instances that are part of the specified Auto Scaling group.
+        /// You also cannot create recommendation preferences at the resource level for instances
+        /// that are part of an Auto Scaling group. You can create recommendation preferences
+        /// at the resource level only for standalone instances.
         /// </para>
         ///  </note>
         /// </summary>

@@ -65,8 +65,8 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/runtimes/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -130,6 +130,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestEnvironmentVariablesValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFilesystemConfigurations())
+            {
+                context.Writer.WritePropertyName("filesystemConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilesystemConfigurationsListValue in publicRequest.FilesystemConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FilesystemConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilesystemConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetLifecycleConfiguration())
@@ -198,10 +214,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

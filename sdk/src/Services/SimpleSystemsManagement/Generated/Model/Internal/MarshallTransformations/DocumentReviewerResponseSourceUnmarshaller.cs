@@ -56,31 +56,31 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Comment", targetDepth))
+                if (context.TestExpression("Comment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentReviewCommentSource, DocumentReviewCommentSourceUnmarshaller>(DocumentReviewCommentSourceUnmarshaller.Instance);
                     unmarshalledObject.Comment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateTime", targetDepth))
+                if (context.TestExpression("CreateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Reviewer", targetDepth))
+                if (context.TestExpression("Reviewer", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Reviewer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReviewStatus", targetDepth))
+                if (context.TestExpression("ReviewStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReviewStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdatedTime", targetDepth))
+                if (context.TestExpression("UpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedTime = unmarshaller.Unmarshall(context, ref reader);

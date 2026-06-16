@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedEvaluations", targetDepth))
+                if (context.TestExpression("FailedEvaluations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Evaluation, EvaluationUnmarshaller>(EvaluationUnmarshaller.Instance);
                     response.FailedEvaluations = unmarshaller.Unmarshall(context, ref reader);

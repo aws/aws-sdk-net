@@ -52,37 +52,37 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hpoJob", targetDepth))
+                if (context.TestExpression("hpoJob", targetDepth, ref reader))
                 {
                     var unmarshaller = MlResourceDefinitionUnmarshaller.Instance;
                     response.HpoJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mlModels", targetDepth))
+                if (context.TestExpression("mlModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MlConfigDefinition, MlConfigDefinitionUnmarshaller>(MlConfigDefinitionUnmarshaller.Instance);
                     response.MlModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelTransformJob", targetDepth))
+                if (context.TestExpression("modelTransformJob", targetDepth, ref reader))
                 {
                     var unmarshaller = MlResourceDefinitionUnmarshaller.Instance;
                     response.ModelTransformJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("processingJob", targetDepth))
+                if (context.TestExpression("processingJob", targetDepth, ref reader))
                 {
                     var unmarshaller = MlResourceDefinitionUnmarshaller.Instance;
                     response.ProcessingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

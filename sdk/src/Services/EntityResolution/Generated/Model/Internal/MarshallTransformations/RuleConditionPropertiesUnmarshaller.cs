@@ -56,7 +56,13 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rules", targetDepth))
+                if (context.TestExpression("matchingConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = MatchingConfigUnmarshaller.Instance;
+                    unmarshalledObject.MatchingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleCondition, RuleConditionUnmarshaller>(RuleConditionUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);

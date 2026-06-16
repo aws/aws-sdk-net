@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FSxLustreConfig", targetDepth))
+                if (context.TestExpression("FSxLustreConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FSxLustreConfigUnmarshaller.Instance;
                     unmarshalledObject.FSxLustreConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3OutputPath", targetDepth))
+                if (context.TestExpression("S3OutputPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3OutputPath = unmarshaller.Unmarshall(context, ref reader);

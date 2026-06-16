@@ -56,19 +56,19 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("extraction", targetDepth))
+                if (context.TestExpression("extraction", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentStandardExtractionUnmarshaller.Instance;
                     unmarshalledObject.Extraction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generativeField", targetDepth))
+                if (context.TestExpression("generativeField", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentStandardGenerativeFieldUnmarshaller.Instance;
                     unmarshalledObject.GenerativeField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputFormat", targetDepth))
+                if (context.TestExpression("outputFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentOutputFormatUnmarshaller.Instance;
                     unmarshalledObject.OutputFormat = unmarshaller.Unmarshall(context, ref reader);

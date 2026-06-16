@@ -56,163 +56,163 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buildType", targetDepth))
+                if (context.TestExpression("buildType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuildType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerRecipe", targetDepth))
+                if (context.TestExpression("containerRecipe", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerRecipeUnmarshaller.Instance;
                     unmarshalledObject.ContainerRecipe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dateCreated", targetDepth))
+                if (context.TestExpression("dateCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deprecationTime", targetDepth))
+                if (context.TestExpression("deprecationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeprecationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("distributionConfiguration", targetDepth))
+                if (context.TestExpression("distributionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DistributionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DistributionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enhancedImageMetadataEnabled", targetDepth))
+                if (context.TestExpression("enhancedImageMetadataEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnhancedImageMetadataEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionRole", targetDepth))
+                if (context.TestExpression("executionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageRecipe", targetDepth))
+                if (context.TestExpression("imageRecipe", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageRecipeUnmarshaller.Instance;
                     unmarshalledObject.ImageRecipe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageScanningConfiguration", targetDepth))
+                if (context.TestExpression("imageScanningConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageScanningConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ImageScanningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageSource", targetDepth))
+                if (context.TestExpression("imageSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageTestsConfiguration", targetDepth))
+                if (context.TestExpression("imageTestsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageTestsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ImageTestsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("infrastructureConfiguration", targetDepth))
+                if (context.TestExpression("infrastructureConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InfrastructureConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InfrastructureConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleExecutionId", targetDepth))
+                if (context.TestExpression("lifecycleExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LifecycleExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loggingConfiguration", targetDepth))
+                if (context.TestExpression("loggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("osVersion", targetDepth))
+                if (context.TestExpression("osVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OsVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputResources", targetDepth))
+                if (context.TestExpression("outputResources", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputResourcesUnmarshaller.Instance;
                     unmarshalledObject.OutputResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("platform", targetDepth))
+                if (context.TestExpression("platform", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanState", targetDepth))
+                if (context.TestExpression("scanState", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageScanStateUnmarshaller.Instance;
                     unmarshalledObject.ScanState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourcePipelineArn", targetDepth))
+                if (context.TestExpression("sourcePipelineArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourcePipelineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourcePipelineName", targetDepth))
+                if (context.TestExpression("sourcePipelineName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourcePipelineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageStateUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflows", targetDepth))
+                if (context.TestExpression("workflows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkflowConfiguration, WorkflowConfigurationUnmarshaller>(WorkflowConfigurationUnmarshaller.Instance);
                     unmarshalledObject.Workflows = unmarshaller.Unmarshall(context, ref reader);

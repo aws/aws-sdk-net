@@ -98,6 +98,56 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListCodeInterpretersPaginator ListCodeInterpreters(ListCodeInterpretersRequest request);
 
         /// <summary>
+        /// Paginator for ListConfigurationBundles operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConfigurationBundlesPaginator ListConfigurationBundles(ListConfigurationBundlesRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfigurationBundleVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConfigurationBundleVersionsPaginator ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasetExamples operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetExamplesPaginator ListDatasetExamples(ListDatasetExamplesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasetVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetVersionsPaginator ListDatasetVersions(ListDatasetVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListEvaluators operation
         ///</summary>
         [AWSPaginator(
@@ -106,6 +156,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGatewayRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListGatewayRulesPaginator ListGatewayRules(ListGatewayRulesRequest request);
 
         /// <summary>
         /// Paginator for ListGateways operation
@@ -126,6 +186,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListGatewayTargetsPaginator ListGatewayTargets(ListGatewayTargetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListHarnesses operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request);
 
         /// <summary>
         /// Paginator for ListMemories operation
@@ -158,6 +228,36 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListOnlineEvaluationConfigsPaginator ListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request);
 
         /// <summary>
+        /// Paginator for ListPaymentConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentConnectorsPaginator ListPaymentConnectors(ListPaymentConnectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPaymentCredentialProviders operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentCredentialProvidersPaginator ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request);
+
+        /// <summary>
+        /// Paginator for ListPaymentManagers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentManagersPaginator ListPaymentManagers(ListPaymentManagersRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         [AWSPaginator(
@@ -178,6 +278,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListPolicyEnginesPaginator ListPolicyEngines(ListPolicyEnginesRequest request);
 
         /// <summary>
+        /// Paginator for ListPolicyEngineSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicyEngineSummariesPaginator ListPolicyEngineSummaries(ListPolicyEngineSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicyGenerationAssets operation
         ///</summary>
         [AWSPaginator(
@@ -196,6 +306,46 @@ namespace Amazon.BedrockAgentCoreControl.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerationSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicyGenerationSummariesPaginator ListPolicyGenerationSummaries(ListPolicyGenerationSummariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPolicySummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicySummariesPaginator ListPolicySummaries(ListPolicySummariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegistries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRegistriesPaginator ListRegistries(ListRegistriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegistryRecords operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRegistryRecordsPaginator ListRegistryRecords(ListRegistryRecordsRequest request);
 
         /// <summary>
         /// Paginator for ListWorkloadIdentities operation

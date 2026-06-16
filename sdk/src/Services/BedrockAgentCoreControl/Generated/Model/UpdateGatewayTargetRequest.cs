@@ -32,6 +32,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Container for the parameters to the UpdateGatewayTarget operation.
     /// Updates an existing gateway target.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot update a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+    /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+    /// to complete or fail before updating the target.
+    /// </para>
     /// </summary>
     public partial class UpdateGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -40,6 +47,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _gatewayIdentifier;
         private MetadataConfiguration _metadataConfiguration;
         private string _name;
+        private PrivateEndpoint _privateEndpoint;
         private TargetConfiguration _targetConfiguration;
         private string _targetId;
 
@@ -140,6 +148,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateEndpoint. 
+        /// <para>
+        /// The private endpoint configuration for the gateway target. Use this to connect the
+        /// gateway to private resources in your VPC.
+        /// </para>
+        /// </summary>
+        public PrivateEndpoint PrivateEndpoint
+        {
+            get { return this._privateEndpoint; }
+            set { this._privateEndpoint = value; }
+        }
+
+        // Check to see if PrivateEndpoint property is set
+        internal bool IsSetPrivateEndpoint()
+        {
+            return this._privateEndpoint != null;
         }
 
         /// <summary>

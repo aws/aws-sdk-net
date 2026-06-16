@@ -56,43 +56,43 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("definition", targetDepth))
+                if (context.TestExpression("definition", targetDepth, ref reader))
                 {
                     var unmarshaller = DefinitionDocumentUnmarshaller.Instance;
                     unmarshalledObject.Definition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowActionsRoleArn", targetDepth))
+                if (context.TestExpression("flowActionsRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FlowActionsRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsConfiguration", targetDepth))
+                if (context.TestExpression("metricsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MetricsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3BucketName", targetDepth))
+                if (context.TestExpression("s3BucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("summary", targetDepth))
+                if (context.TestExpression("summary", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemInstanceSummaryUnmarshaller.Instance;
                     unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validatedDependencyRevisions", targetDepth))
+                if (context.TestExpression("validatedDependencyRevisions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DependencyRevision, DependencyRevisionUnmarshaller>(DependencyRevisionUnmarshaller.Instance);
                     unmarshalledObject.ValidatedDependencyRevisions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validatedNamespaceVersion", targetDepth))
+                if (context.TestExpression("validatedNamespaceVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValidatedNamespaceVersion = unmarshaller.Unmarshall(context, ref reader);

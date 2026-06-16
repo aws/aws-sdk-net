@@ -52,7 +52,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identityProviderConfig", targetDepth))
+                if (context.TestExpression("identityProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityProviderConfigResponseUnmarshaller.Instance;
                     response.IdentityProviderConfig = unmarshaller.Unmarshall(context, ref reader);

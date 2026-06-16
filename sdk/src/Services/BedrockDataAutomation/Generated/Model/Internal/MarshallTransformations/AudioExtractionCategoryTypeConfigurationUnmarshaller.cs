@@ -56,7 +56,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("transcript", targetDepth))
+                if (context.TestExpression("transcript", targetDepth, ref reader))
                 {
                     var unmarshaller = TranscriptConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);

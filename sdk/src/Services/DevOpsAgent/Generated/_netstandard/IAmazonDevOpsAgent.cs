@@ -1,0 +1,2896 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the devops-agent-2026-01-01.normal.json service model.
+ */
+
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+using Amazon.Runtime;
+using Amazon.DevOpsAgent.Model;
+
+#pragma warning disable CS1570
+namespace Amazon.DevOpsAgent
+{
+    /// <summary>
+    /// <para>Interface for accessing DevOpsAgent</para>
+    ///
+    /// AWS DevOps Agent is your always-available operations teammate. It resolves and proactively
+    /// prevents incidents, optimizes application reliability and performance, and handles
+    /// on-demand SRE tasks across AWS, multicloud, and on-premises environments. AWS DevOps
+    /// Agent investigates incidents as an experienced DevOps engineer would. It learns your
+    /// applications and their relationships. It works with your observability tools, runbooks,
+    /// code repositories, and CI/CD pipelines. The agent correlates telemetry, code, and
+    /// deployment data across all of them.
+    /// </summary>
+    public partial interface IAmazonDevOpsAgent : IAmazonService, IDisposable
+    {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IDevOpsAgentPaginatorFactory Paginators { get; }
+#endif
+                
+        #region  AssociateService
+
+
+
+        /// <summary>
+        /// Adds a specific service association to an AgentSpace. It overwrites the existing association
+        /// of the same service. Returns 201 Created on success.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateService service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/AssociateService">REST API Reference for AssociateService Operation</seealso>
+        Task<AssociateServiceResponse> AssociateServiceAsync(AssociateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateAgentSpace
+
+
+
+        /// <summary>
+        /// Creates a new AgentSpace with the specified name and description. Duplicate space
+        /// names are allowed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAgentSpace service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateAgentSpace">REST API Reference for CreateAgentSpace Operation</seealso>
+        Task<CreateAgentSpaceResponse> CreateAgentSpaceAsync(CreateAgentSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateAsset
+
+
+
+        /// <summary>
+        /// Creates a new asset in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAsset service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
+        Task<CreateAssetResponse> CreateAssetAsync(CreateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateAssetFile
+
+
+
+        /// <summary>
+        /// Creates a file in an asset
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssetFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAssetFile service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateAssetFile">REST API Reference for CreateAssetFile Operation</seealso>
+        Task<CreateAssetFileResponse> CreateAssetFileAsync(CreateAssetFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateBacklogTask
+
+
+
+        /// <summary>
+        /// Creates a new backlog task in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBacklogTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBacklogTask service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateBacklogTask">REST API Reference for CreateBacklogTask Operation</seealso>
+        Task<CreateBacklogTaskResponse> CreateBacklogTaskAsync(CreateBacklogTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateChat
+
+
+
+        /// <summary>
+        /// Creates a new chat execution in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChat service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateChat service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateChat">REST API Reference for CreateChat Operation</seealso>
+        Task<CreateChatResponse> CreateChatAsync(CreateChatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreatePrivateConnection
+
+
+
+        /// <summary>
+        /// Creates a Private Connection to a target resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrivateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePrivateConnection service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreatePrivateConnection">REST API Reference for CreatePrivateConnection Operation</seealso>
+        Task<CreatePrivateConnectionResponse> CreatePrivateConnectionAsync(CreatePrivateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTrigger
+
+
+
+        /// <summary>
+        /// Creates a new Trigger in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
+        Task<CreateTriggerResponse> CreateTriggerAsync(CreateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAgentSpace
+
+
+
+        /// <summary>
+        /// Deletes an AgentSpace. This operation is idempotent and returns a 204 No Content response
+        /// on success.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAgentSpace service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAgentSpace">REST API Reference for DeleteAgentSpace Operation</seealso>
+        Task<DeleteAgentSpaceResponse> DeleteAgentSpaceAsync(DeleteAgentSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAsset
+
+
+
+        /// <summary>
+        /// Deletes an asset and all its files from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAsset service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
+        Task<DeleteAssetResponse> DeleteAssetAsync(DeleteAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAssetFile
+
+
+
+        /// <summary>
+        /// Deletes a file from an asset
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssetFile service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAssetFile">REST API Reference for DeleteAssetFile Operation</seealso>
+        Task<DeleteAssetFileResponse> DeleteAssetFileAsync(DeleteAssetFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeletePrivateConnection
+
+
+
+        /// <summary>
+        /// Deletes a Private Connection. The deletion is asynchronous and returns DELETE_IN_PROGRESS
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrivateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePrivateConnection service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeletePrivateConnection">REST API Reference for DeletePrivateConnection Operation</seealso>
+        Task<DeletePrivateConnectionResponse> DeletePrivateConnectionAsync(DeletePrivateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTrigger
+
+
+
+        /// <summary>
+        /// Deletes a Trigger from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
+        Task<DeleteTriggerResponse> DeleteTriggerAsync(DeleteTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeregisterService
+
+
+
+        /// <summary>
+        /// Deregister a service
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterService service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeregisterService">REST API Reference for DeregisterService Operation</seealso>
+        Task<DeregisterServiceResponse> DeregisterServiceAsync(DeregisterServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePrivateConnection
+
+
+
+        /// <summary>
+        /// Retrieves details of an existing Private Connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrivateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePrivateConnection service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DescribePrivateConnection">REST API Reference for DescribePrivateConnection Operation</seealso>
+        Task<DescribePrivateConnectionResponse> DescribePrivateConnectionAsync(DescribePrivateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisableOperatorApp
+
+
+
+        /// <summary>
+        /// Disable the Operator App for the specified AgentSpace
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOperatorApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOperatorApp service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.IdentityCenterServiceException">
+        /// Calls to the customer Identity Center have failed
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DisableOperatorApp">REST API Reference for DisableOperatorApp Operation</seealso>
+        Task<DisableOperatorAppResponse> DisableOperatorAppAsync(DisableOperatorAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateService
+
+
+
+        /// <summary>
+        /// Deletes a specific service association from an AgentSpace. This operation is idempotent
+        /// and returns a 204 No Content response on success.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateService service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DisassociateService">REST API Reference for DisassociateService Operation</seealso>
+        Task<DisassociateServiceResponse> DisassociateServiceAsync(DisassociateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableOperatorApp
+
+
+
+        /// <summary>
+        /// Enable the Operator App to access the given AgentSpace
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOperatorApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOperatorApp service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.IdentityCenterServiceException">
+        /// Calls to the customer Identity Center have failed
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/EnableOperatorApp">REST API Reference for EnableOperatorApp Operation</seealso>
+        Task<EnableOperatorAppResponse> EnableOperatorAppAsync(EnableOperatorAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccountUsage
+
+
+
+        /// <summary>
+        /// Retrieves monthly account usage metrics and limits for the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountUsage service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAccountUsage">REST API Reference for GetAccountUsage Operation</seealso>
+        Task<GetAccountUsageResponse> GetAccountUsageAsync(GetAccountUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAgentSpace
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific AgentSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentSpace service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAgentSpace">REST API Reference for GetAgentSpace Operation</seealso>
+        Task<GetAgentSpaceResponse> GetAgentSpaceAsync(GetAgentSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAsset
+
+
+
+        /// <summary>
+        /// Gets an asset from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAsset service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAsset">REST API Reference for GetAsset Operation</seealso>
+        Task<GetAssetResponse> GetAssetAsync(GetAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAssetContent
+
+
+
+        /// <summary>
+        /// Gets an asset's content as a zip bundle
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssetContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssetContent service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssetContent">REST API Reference for GetAssetContent Operation</seealso>
+        Task<GetAssetContentResponse> GetAssetContentAsync(GetAssetContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAssetFile
+
+
+
+        /// <summary>
+        /// Gets a file from an asset
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssetFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssetFile service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssetFile">REST API Reference for GetAssetFile Operation</seealso>
+        Task<GetAssetFileResponse> GetAssetFileAsync(GetAssetFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAssociation
+
+
+
+        /// <summary>
+        /// Retrieves given associations configured for a specific AgentSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssociation service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssociation">REST API Reference for GetAssociation Operation</seealso>
+        Task<GetAssociationResponse> GetAssociationAsync(GetAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetBacklogTask
+
+
+
+        /// <summary>
+        /// Gets a backlog task for the specified agent space and task id
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBacklogTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBacklogTask service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetBacklogTask">REST API Reference for GetBacklogTask Operation</seealso>
+        Task<GetBacklogTaskResponse> GetBacklogTaskAsync(GetBacklogTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetOperatorApp
+
+
+
+        /// <summary>
+        /// Get the full auth configuration of operator including any enabled auth flow
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOperatorApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOperatorApp service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetOperatorApp">REST API Reference for GetOperatorApp Operation</seealso>
+        Task<GetOperatorAppResponse> GetOperatorAppAsync(GetOperatorAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRecommendation
+
+
+
+        /// <summary>
+        /// Retrieves a specific recommendation by its ID
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommendation service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetRecommendation">REST API Reference for GetRecommendation Operation</seealso>
+        Task<GetRecommendationResponse> GetRecommendationAsync(GetRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetService
+
+
+
+        /// <summary>
+        /// Retrieves given service by it's unique identifier
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetService service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetService">REST API Reference for GetService Operation</seealso>
+        Task<GetServiceResponse> GetServiceAsync(GetServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTrigger
+
+
+
+        /// <summary>
+        /// Gets a Trigger from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
+        Task<GetTriggerResponse> GetTriggerAsync(GetTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAgentSpaces
+
+
+
+        /// <summary>
+        /// Lists all AgentSpaces with optional pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentSpaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentSpaces service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAgentSpaces">REST API Reference for ListAgentSpaces Operation</seealso>
+        Task<ListAgentSpacesResponse> ListAgentSpacesAsync(ListAgentSpacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssetFiles
+
+
+
+        /// <summary>
+        /// Lists files in an asset
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetFiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssetFiles service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssetFiles">REST API Reference for ListAssetFiles Operation</seealso>
+        Task<ListAssetFilesResponse> ListAssetFilesAsync(ListAssetFilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssets
+
+
+
+        /// <summary>
+        /// Lists assets in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssets service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssets">REST API Reference for ListAssets Operation</seealso>
+        Task<ListAssetsResponse> ListAssetsAsync(ListAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssetTypes
+
+
+
+        /// <summary>
+        /// Lists the supported asset types
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssetTypes service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssetTypes">REST API Reference for ListAssetTypes Operation</seealso>
+        Task<ListAssetTypesResponse> ListAssetTypesAsync(ListAssetTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssetVersions
+
+
+
+        /// <summary>
+        /// Lists versions of an asset in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssetVersions service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssetVersions">REST API Reference for ListAssetVersions Operation</seealso>
+        Task<ListAssetVersionsResponse> ListAssetVersionsAsync(ListAssetVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssociations
+
+
+
+        /// <summary>
+        /// List all associations for given AgentSpace
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociations service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListBacklogTasks
+
+
+
+        /// <summary>
+        /// Lists backlog tasks in the specified agent space with optional filtering and sorting
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBacklogTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBacklogTasks service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListBacklogTasks">REST API Reference for ListBacklogTasks Operation</seealso>
+        Task<ListBacklogTasksResponse> ListBacklogTasksAsync(ListBacklogTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListChats
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of the user's recent chat executions
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChats service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChats service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListChats">REST API Reference for ListChats Operation</seealso>
+        Task<ListChatsResponse> ListChatsAsync(ListChatsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListExecutions
+
+
+
+        /// <summary>
+        /// List executions
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExecutions service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListGoals
+
+
+
+        /// <summary>
+        /// Lists goals in the specified agent space with optional filtering
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGoals service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGoals service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListGoals">REST API Reference for ListGoals Operation</seealso>
+        Task<ListGoalsResponse> ListGoalsAsync(ListGoalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListJournalRecords
+
+
+
+        /// <summary>
+        /// List journal records for a specific execution
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJournalRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJournalRecords service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListJournalRecords">REST API Reference for ListJournalRecords Operation</seealso>
+        Task<ListJournalRecordsResponse> ListJournalRecordsAsync(ListJournalRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPendingMessages
+
+
+
+        /// <summary>
+        /// List pending messages for a specific execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPendingMessages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPendingMessages service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListPendingMessages">REST API Reference for ListPendingMessages Operation</seealso>
+        Task<ListPendingMessagesResponse> ListPendingMessagesAsync(ListPendingMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPrivateConnections
+
+
+
+        /// <summary>
+        /// Lists all Private Connections in the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrivateConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPrivateConnections service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListPrivateConnections">REST API Reference for ListPrivateConnections Operation</seealso>
+        Task<ListPrivateConnectionsResponse> ListPrivateConnectionsAsync(ListPrivateConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRecommendations
+
+
+
+        /// <summary>
+        /// Lists recommendations for the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommendations service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListServices
+
+
+
+        /// <summary>
+        /// List a list of registered service on the account level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServices service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListServices">REST API Reference for ListServices Operation</seealso>
+        Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Lists tags for the specified AWS DevOps Agent resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTriggers
+
+
+
+        /// <summary>
+        /// Lists Triggers in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTriggers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTriggers service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
+        Task<ListTriggersResponse> ListTriggersAsync(ListTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWebhooks
+
+
+
+        /// <summary>
+        /// List all webhooks for given Association
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWebhooks service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        Task<ListWebhooksResponse> ListWebhooksAsync(ListWebhooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterService
+
+
+
+        /// <summary>
+        /// This operation registers the specified service
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterService service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/RegisterService">REST API Reference for RegisterService Operation</seealso>
+        Task<RegisterServiceResponse> RegisterServiceAsync(RegisterServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SendMessage
+
+
+
+        /// <summary>
+        /// Sends a chat message and streams the response for the specified agent space execution
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendMessage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendMessage service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/SendMessage">REST API Reference for SendMessage Operation</seealso>
+        Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Adds or overwrites tags for the specified AWS DevOps Agent resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes tags from the specified AWS DevOps Agent resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAgentSpace
+
+
+
+        /// <summary>
+        /// Updates the information of an existing AgentSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentSpace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentSpace service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAgentSpace">REST API Reference for UpdateAgentSpace Operation</seealso>
+        Task<UpdateAgentSpaceResponse> UpdateAgentSpaceAsync(UpdateAgentSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAsset
+
+
+
+        /// <summary>
+        /// Updates an asset in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAsset service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
+        Task<UpdateAssetResponse> UpdateAssetAsync(UpdateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAssetFile
+
+
+
+        /// <summary>
+        /// Updates a file in an asset
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssetFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAssetFile service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAssetFile">REST API Reference for UpdateAssetFile Operation</seealso>
+        Task<UpdateAssetFileResponse> UpdateAssetFileAsync(UpdateAssetFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAssociation
+
+
+
+        /// <summary>
+        /// Partially updates the configuration of an existing service association for an AgentSpace.
+        /// Present fields are fully replaced; absent fields are left unchanged. Returns 200 OK
+        /// on success.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAssociation service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
+        Task<UpdateAssociationResponse> UpdateAssociationAsync(UpdateAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateBacklogTask
+
+
+
+        /// <summary>
+        /// Update an existing backlog task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBacklogTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBacklogTask service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateBacklogTask">REST API Reference for UpdateBacklogTask Operation</seealso>
+        Task<UpdateBacklogTaskResponse> UpdateBacklogTaskAsync(UpdateBacklogTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateGoal
+
+
+
+        /// <summary>
+        /// Update an existing goal
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGoal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGoal service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateGoal">REST API Reference for UpdateGoal Operation</seealso>
+        Task<UpdateGoalResponse> UpdateGoalAsync(UpdateGoalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateOperatorAppIdpConfig
+
+
+
+        /// <summary>
+        /// Update the external Identity Provider configuration for the Operator App
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOperatorAppIdpConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOperatorAppIdpConfig service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateOperatorAppIdpConfig">REST API Reference for UpdateOperatorAppIdpConfig Operation</seealso>
+        Task<UpdateOperatorAppIdpConfigResponse> UpdateOperatorAppIdpConfigAsync(UpdateOperatorAppIdpConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePrivateConnectionCertificate
+
+
+
+        /// <summary>
+        /// Updates the certificate associated with a Private Connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrivateConnectionCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePrivateConnectionCertificate service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdatePrivateConnectionCertificate">REST API Reference for UpdatePrivateConnectionCertificate Operation</seealso>
+        Task<UpdatePrivateConnectionCertificateResponse> UpdatePrivateConnectionCertificateAsync(UpdatePrivateConnectionCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateRecommendation
+
+
+
+        /// <summary>
+        /// Updates an existing recommendation with new content, status, or metadata
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecommendation service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateRecommendation">REST API Reference for UpdateRecommendation Operation</seealso>
+        Task<UpdateRecommendationResponse> UpdateRecommendationAsync(UpdateRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTrigger
+
+
+
+        /// <summary>
+        /// Updates the status of an existing Trigger
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
+        Task<UpdateTriggerResponse> UpdateTriggerAsync(UpdateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ValidateAwsAssociations
+
+
+
+        /// <summary>
+        /// Validates an aws association and set status and returns a 204 No Content response
+        /// on success.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateAwsAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateAwsAssociations service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ValidateAwsAssociations">REST API Reference for ValidateAwsAssociations Operation</seealso>
+        Task<ValidateAwsAssociationsResponse> ValidateAwsAssociationsAsync(ValidateAwsAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region DetermineServiceOperationEndpoint
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+        
+        #endregion
+
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonDevOpsAgentConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonDevOpsAgentConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonDevOpsAgentConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonDevOpsAgentConfig to create AmazonDevOpsAgentClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonDevOpsAgentClient(serviceClientConfig) :
+                    new AmazonDevOpsAgentClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
+    }
+}

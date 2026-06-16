@@ -56,7 +56,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NtpServers", targetDepth))
+                if (context.TestExpression("NtpServers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NtpServers = unmarshaller.Unmarshall(context, ref reader);

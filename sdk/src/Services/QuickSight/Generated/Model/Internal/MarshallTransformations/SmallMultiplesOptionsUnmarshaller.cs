@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxVisibleColumns", targetDepth))
+                if (context.TestExpression("MaxVisibleColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxVisibleColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxVisibleRows", targetDepth))
+                if (context.TestExpression("MaxVisibleRows", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxVisibleRows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PanelConfiguration", targetDepth))
+                if (context.TestExpression("PanelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PanelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PanelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XAxis", targetDepth))
+                if (context.TestExpression("XAxis", targetDepth, ref reader))
                 {
                     var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
                     unmarshalledObject.XAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("YAxis", targetDepth))
+                if (context.TestExpression("YAxis", targetDepth, ref reader))
                 {
                     var unmarshaller = SmallMultiplesAxisPropertiesUnmarshaller.Instance;
                     unmarshalledObject.YAxis = unmarshaller.Unmarshall(context, ref reader);

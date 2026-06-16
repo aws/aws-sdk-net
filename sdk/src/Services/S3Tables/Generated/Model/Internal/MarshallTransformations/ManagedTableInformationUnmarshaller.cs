@@ -56,7 +56,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("replicationInformation", targetDepth))
+                if (context.TestExpression("replicationInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationInformationUnmarshaller.Instance;
                     unmarshalledObject.ReplicationInformation = unmarshaller.Unmarshall(context, ref reader);

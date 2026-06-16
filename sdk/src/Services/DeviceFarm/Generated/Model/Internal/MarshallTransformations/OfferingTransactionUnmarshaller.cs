@@ -56,31 +56,31 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cost", targetDepth))
+                if (context.TestExpression("cost", targetDepth, ref reader))
                 {
                     var unmarshaller = MonetaryAmountUnmarshaller.Instance;
                     unmarshalledObject.Cost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdOn", targetDepth))
+                if (context.TestExpression("createdOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offeringPromotionId", targetDepth))
+                if (context.TestExpression("offeringPromotionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OfferingPromotionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offeringStatus", targetDepth))
+                if (context.TestExpression("offeringStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = OfferingStatusUnmarshaller.Instance;
                     unmarshalledObject.OfferingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transactionId", targetDepth))
+                if (context.TestExpression("transactionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransactionId = unmarshaller.Unmarshall(context, ref reader);

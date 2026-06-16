@@ -56,49 +56,49 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContentRedaction", targetDepth))
+                if (context.TestExpression("ContentRedaction", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentRedactionUnmarshaller.Instance;
                     unmarshalledObject.ContentRedaction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageIdSettings", targetDepth))
+                if (context.TestExpression("LanguageIdSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, LanguageIdSettings, StringUnmarshaller, LanguageIdSettingsUnmarshaller>(StringUnmarshaller.Instance, LanguageIdSettingsUnmarshaller.Instance);
                     unmarshalledObject.LanguageIdSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageModelName", targetDepth))
+                if (context.TestExpression("LanguageModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageOptions", targetDepth))
+                if (context.TestExpression("LanguageOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LanguageOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Summarization", targetDepth))
+                if (context.TestExpression("Summarization", targetDepth, ref reader))
                 {
                     var unmarshaller = SummarizationUnmarshaller.Instance;
                     unmarshalledObject.Summarization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VocabularyFilterMethod", targetDepth))
+                if (context.TestExpression("VocabularyFilterMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VocabularyFilterName", targetDepth))
+                if (context.TestExpression("VocabularyFilterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VocabularyName", targetDepth))
+                if (context.TestExpression("VocabularyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context, ref reader);

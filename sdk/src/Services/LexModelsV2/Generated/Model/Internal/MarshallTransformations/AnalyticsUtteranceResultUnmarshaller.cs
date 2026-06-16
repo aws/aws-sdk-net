@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attributeResults", targetDepth))
+                if (context.TestExpression("attributeResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsUtteranceAttributeResult, AnalyticsUtteranceAttributeResultUnmarshaller>(AnalyticsUtteranceAttributeResultUnmarshaller.Instance);
                     unmarshalledObject.AttributeResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("binKeys", targetDepth))
+                if (context.TestExpression("binKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsBinKey, AnalyticsBinKeyUnmarshaller>(AnalyticsBinKeyUnmarshaller.Instance);
                     unmarshalledObject.BinKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupByKeys", targetDepth))
+                if (context.TestExpression("groupByKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsUtteranceGroupByKey, AnalyticsUtteranceGroupByKeyUnmarshaller>(AnalyticsUtteranceGroupByKeyUnmarshaller.Instance);
                     unmarshalledObject.GroupByKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsResults", targetDepth))
+                if (context.TestExpression("metricsResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsUtteranceMetricResult, AnalyticsUtteranceMetricResultUnmarshaller>(AnalyticsUtteranceMetricResultUnmarshaller.Instance);
                     unmarshalledObject.MetricsResults = unmarshaller.Unmarshall(context, ref reader);

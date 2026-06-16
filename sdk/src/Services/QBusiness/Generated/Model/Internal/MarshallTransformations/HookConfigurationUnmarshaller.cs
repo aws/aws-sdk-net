@@ -56,25 +56,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("invocationCondition", targetDepth))
+                if (context.TestExpression("invocationCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentAttributeConditionUnmarshaller.Instance;
                     unmarshalledObject.InvocationCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaArn", targetDepth))
+                if (context.TestExpression("lambdaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LambdaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3BucketName", targetDepth))
+                if (context.TestExpression("s3BucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);

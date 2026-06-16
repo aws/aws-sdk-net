@@ -56,25 +56,25 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("changesetId", targetDepth))
+                if (context.TestExpression("changesetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChangesetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataviewName", targetDepth))
+                if (context.TestExpression("dataviewName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataviewName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataviewVersionId", targetDepth))
+                if (context.TestExpression("dataviewVersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataviewVersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentConfigurations", targetDepth))
+                if (context.TestExpression("segmentConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KxDataviewSegmentConfiguration, KxDataviewSegmentConfigurationUnmarshaller>(KxDataviewSegmentConfigurationUnmarshaller.Instance);
                     unmarshalledObject.SegmentConfigurations = unmarshaller.Unmarshall(context, ref reader);

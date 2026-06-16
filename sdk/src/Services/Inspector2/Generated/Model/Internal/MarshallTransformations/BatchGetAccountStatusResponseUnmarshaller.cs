@@ -52,13 +52,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accounts", targetDepth))
+                if (context.TestExpression("accounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountState, AccountStateUnmarshaller>(AccountStateUnmarshaller.Instance);
                     response.Accounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failedAccounts", targetDepth))
+                if (context.TestExpression("failedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedAccount, FailedAccountUnmarshaller>(FailedAccountUnmarshaller.Instance);
                     response.FailedAccounts = unmarshaller.Unmarshall(context, ref reader);

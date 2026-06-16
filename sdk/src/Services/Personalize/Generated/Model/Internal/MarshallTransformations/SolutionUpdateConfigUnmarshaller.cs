@@ -56,13 +56,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoTrainingConfig", targetDepth))
+                if (context.TestExpression("autoTrainingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoTrainingConfigUnmarshaller.Instance;
                     unmarshalledObject.AutoTrainingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventsConfig", targetDepth))
+                if (context.TestExpression("eventsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventsConfigUnmarshaller.Instance;
                     unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The ARN or name of the scheduled query to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Identifier
         {
             get { return this._identifier; }

@@ -1,0 +1,470 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the securityagent-2025-09-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.SecurityAgent.Model
+{
+    /// <summary>
+    /// Represents a security finding discovered during a pentest job. A finding contains
+    /// details about a vulnerability, including its risk level, confidence, and remediation
+    /// status.
+    /// </summary>
+    public partial class Finding
+    {
+        private string _agentSpaceId;
+        private string _attackScript;
+        private List<CodeLocation> _codeLocations = AWSConfigs.InitializeCollections ? new List<CodeLocation>() : null;
+        private CodeRemediationTask _codeRemediationTask;
+        private string _codeReviewId;
+        private string _codeReviewJobId;
+        private ConfidenceLevel _confidence;
+        private DateTime? _createdAt;
+        private string _description;
+        private string _findingId;
+        private string _lastUpdatedBy;
+        private string _name;
+        private string _pentestId;
+        private string _pentestJobId;
+        private string _reasoning;
+        private RiskLevel _riskLevel;
+        private string _riskScore;
+        private string _riskType;
+        private FindingStatus _status;
+        private string _taskId;
+        private DateTime? _updatedAt;
+        private VerificationScript _verificationScript;
+
+        /// <summary>
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The unique identifier of the agent space associated with the finding.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string AgentSpaceId
+        {
+            get { return this._agentSpaceId; }
+            set { this._agentSpaceId = value; }
+        }
+
+        // Check to see if AgentSpaceId property is set
+        internal bool IsSetAgentSpaceId()
+        {
+            return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttackScript. 
+        /// <para>
+        /// The attack script used to reproduce the finding.
+        /// </para>
+        /// </summary>
+        public string AttackScript
+        {
+            get { return this._attackScript; }
+            set { this._attackScript = value; }
+        }
+
+        // Check to see if AttackScript property is set
+        internal bool IsSetAttackScript()
+        {
+            return this._attackScript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeLocations. 
+        /// <para>
+        /// The file locations involved in the vulnerability, as reported by the code scanner.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CodeLocation> CodeLocations
+        {
+            get { return this._codeLocations; }
+            set { this._codeLocations = value; }
+        }
+
+        // Check to see if CodeLocations property is set
+        internal bool IsSetCodeLocations()
+        {
+            return this._codeLocations != null && (this._codeLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRemediationTask. 
+        /// <para>
+        /// The code remediation task associated with the finding, if code remediation was initiated.
+        /// </para>
+        /// </summary>
+        public CodeRemediationTask CodeRemediationTask
+        {
+            get { return this._codeRemediationTask; }
+            set { this._codeRemediationTask = value; }
+        }
+
+        // Check to see if CodeRemediationTask property is set
+        internal bool IsSetCodeRemediationTask()
+        {
+            return this._codeRemediationTask != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewId. 
+        /// <para>
+        /// The unique identifier of the code review associated with the finding.
+        /// </para>
+        /// </summary>
+        public string CodeReviewId
+        {
+            get { return this._codeReviewId; }
+            set { this._codeReviewId = value; }
+        }
+
+        // Check to see if CodeReviewId property is set
+        internal bool IsSetCodeReviewId()
+        {
+            return this._codeReviewId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewJobId. 
+        /// <para>
+        /// The unique identifier of the code review job that produced the finding.
+        /// </para>
+        /// </summary>
+        public string CodeReviewJobId
+        {
+            get { return this._codeReviewJobId; }
+            set { this._codeReviewJobId = value; }
+        }
+
+        // Check to see if CodeReviewJobId property is set
+        internal bool IsSetCodeReviewJobId()
+        {
+            return this._codeReviewJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Confidence. 
+        /// <para>
+        /// The confidence level of the finding. Valid values include FALSE_POSITIVE, UNCONFIRMED,
+        /// LOW, MEDIUM, and HIGH.
+        /// </para>
+        /// </summary>
+        public ConfidenceLevel Confidence
+        {
+            get { return this._confidence; }
+            set { this._confidence = value; }
+        }
+
+        // Check to see if Confidence property is set
+        internal bool IsSetConfidence()
+        {
+            return this._confidence != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time the finding was created, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the finding.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingId. 
+        /// <para>
+        /// The unique identifier of the finding.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string FindingId
+        {
+            get { return this._findingId; }
+            set { this._findingId = value; }
+        }
+
+        // Check to see if FindingId property is set
+        internal bool IsSetFindingId()
+        {
+            return this._findingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedBy. 
+        /// <para>
+        /// The identifier of the entity that last updated the finding.
+        /// </para>
+        /// </summary>
+        public string LastUpdatedBy
+        {
+            get { return this._lastUpdatedBy; }
+            set { this._lastUpdatedBy = value; }
+        }
+
+        // Check to see if LastUpdatedBy property is set
+        internal bool IsSetLastUpdatedBy()
+        {
+            return this._lastUpdatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the finding.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PentestId. 
+        /// <para>
+        /// The unique identifier of the pentest associated with the finding.
+        /// </para>
+        /// </summary>
+        public string PentestId
+        {
+            get { return this._pentestId; }
+            set { this._pentestId = value; }
+        }
+
+        // Check to see if PentestId property is set
+        internal bool IsSetPentestId()
+        {
+            return this._pentestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PentestJobId. 
+        /// <para>
+        /// The unique identifier of the pentest job that produced the finding.
+        /// </para>
+        /// </summary>
+        public string PentestJobId
+        {
+            get { return this._pentestJobId; }
+            set { this._pentestJobId = value; }
+        }
+
+        // Check to see if PentestJobId property is set
+        internal bool IsSetPentestJobId()
+        {
+            return this._pentestJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reasoning. 
+        /// <para>
+        /// The reasoning behind the finding, explaining why it was identified as a vulnerability.
+        /// </para>
+        /// </summary>
+        public string Reasoning
+        {
+            get { return this._reasoning; }
+            set { this._reasoning = value; }
+        }
+
+        // Check to see if Reasoning property is set
+        internal bool IsSetReasoning()
+        {
+            return this._reasoning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RiskLevel. 
+        /// <para>
+        /// The risk level of the finding. Valid values include UNKNOWN, INFORMATIONAL, LOW, MEDIUM,
+        /// HIGH, and CRITICAL.
+        /// </para>
+        /// </summary>
+        public RiskLevel RiskLevel
+        {
+            get { return this._riskLevel; }
+            set { this._riskLevel = value; }
+        }
+
+        // Check to see if RiskLevel property is set
+        internal bool IsSetRiskLevel()
+        {
+            return this._riskLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RiskScore. 
+        /// <para>
+        /// The numerical risk score of the finding.
+        /// </para>
+        /// </summary>
+        public string RiskScore
+        {
+            get { return this._riskScore; }
+            set { this._riskScore = value; }
+        }
+
+        // Check to see if RiskScore property is set
+        internal bool IsSetRiskScore()
+        {
+            return this._riskScore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RiskType. 
+        /// <para>
+        /// The type of security risk identified by the finding.
+        /// </para>
+        /// </summary>
+        public string RiskType
+        {
+            get { return this._riskType; }
+            set { this._riskType = value; }
+        }
+
+        // Check to see if RiskType property is set
+        internal bool IsSetRiskType()
+        {
+            return this._riskType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the finding. Valid values include ACTIVE, RESOLVED, ACCEPTED,
+        /// and FALSE_POSITIVE.
+        /// </para>
+        /// </summary>
+        public FindingStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskId. 
+        /// <para>
+        /// The unique identifier of the task that produced the finding.
+        /// </para>
+        /// </summary>
+        public string TaskId
+        {
+            get { return this._taskId; }
+            set { this._taskId = value; }
+        }
+
+        // Check to see if TaskId property is set
+        internal bool IsSetTaskId()
+        {
+            return this._taskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time the finding was last updated, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationScript. 
+        /// <para>
+        /// The verification script metadata for reproducing the finding, including download URL,
+        /// instructions, and required environment variables.
+        /// </para>
+        /// </summary>
+        public VerificationScript VerificationScript
+        {
+            get { return this._verificationScript; }
+            set { this._verificationScript = value; }
+        }
+
+        // Check to see if VerificationScript property is set
+        internal bool IsSetVerificationScript()
+        {
+            return this._verificationScript != null;
+        }
+
+    }
+}

@@ -56,7 +56,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eksInfo", targetDepth))
+                if (context.TestExpression("eksInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = EksInfoUnmarshaller.Instance;
                     unmarshalledObject.EksInfo = unmarshaller.Unmarshall(context, ref reader);

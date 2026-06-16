@@ -56,7 +56,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PageFieldMappings", targetDepth))
+                if (context.TestExpression("PageFieldMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConfluencePageToIndexFieldMapping, ConfluencePageToIndexFieldMappingUnmarshaller>(ConfluencePageToIndexFieldMappingUnmarshaller.Instance);
                     unmarshalledObject.PageFieldMappings = unmarshaller.Unmarshall(context, ref reader);

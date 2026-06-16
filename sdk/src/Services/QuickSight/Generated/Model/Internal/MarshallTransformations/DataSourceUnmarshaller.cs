@@ -56,79 +56,79 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlternateDataSourceParameters", targetDepth))
+                if (context.TestExpression("AlternateDataSourceParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSourceParameters, DataSourceParametersUnmarshaller>(DataSourceParametersUnmarshaller.Instance);
                     unmarshalledObject.AlternateDataSourceParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSourceId", targetDepth))
+                if (context.TestExpression("DataSourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSourceParameters", targetDepth))
+                if (context.TestExpression("DataSourceParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceParametersUnmarshaller.Instance;
                     unmarshalledObject.DataSourceParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorInfo", targetDepth))
+                if (context.TestExpression("ErrorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceErrorInfoUnmarshaller.Instance;
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SslProperties", targetDepth))
+                if (context.TestExpression("SslProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SslPropertiesUnmarshaller.Instance;
                     unmarshalledObject.SslProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConnectionProperties", targetDepth))
+                if (context.TestExpression("VpcConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConnectionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.VpcConnectionProperties = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChannelName", targetDepth))
+                if (context.TestExpression("ChannelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3DataSource", targetDepth))
+                if (context.TestExpression("S3DataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ModelDataSourceUnmarshaller.Instance;
                     unmarshalledObject.S3DataSource = unmarshaller.Unmarshall(context, ref reader);

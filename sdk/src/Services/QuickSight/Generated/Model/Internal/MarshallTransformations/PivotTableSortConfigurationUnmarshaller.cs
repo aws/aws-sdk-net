@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldSortOptions", targetDepth))
+                if (context.TestExpression("FieldSortOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PivotFieldSortOptions, PivotFieldSortOptionsUnmarshaller>(PivotFieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.FieldSortOptions = unmarshaller.Unmarshall(context, ref reader);

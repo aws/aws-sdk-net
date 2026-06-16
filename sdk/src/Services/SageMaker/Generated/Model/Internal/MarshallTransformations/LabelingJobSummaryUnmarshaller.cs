@@ -56,73 +56,73 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnnotationConsolidationLambdaArn", targetDepth))
+                if (context.TestExpression("AnnotationConsolidationLambdaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AnnotationConsolidationLambdaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputConfig", targetDepth))
+                if (context.TestExpression("InputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobInputConfigUnmarshaller.Instance;
                     unmarshalledObject.InputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelCounters", targetDepth))
+                if (context.TestExpression("LabelCounters", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelCountersUnmarshaller.Instance;
                     unmarshalledObject.LabelCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobArn", targetDepth))
+                if (context.TestExpression("LabelingJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelingJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobName", targetDepth))
+                if (context.TestExpression("LabelingJobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelingJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobOutput", targetDepth))
+                if (context.TestExpression("LabelingJobOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobOutputUnmarshaller.Instance;
                     unmarshalledObject.LabelingJobOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobStatus", targetDepth))
+                if (context.TestExpression("LabelingJobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelingJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreHumanTaskLambdaArn", targetDepth))
+                if (context.TestExpression("PreHumanTaskLambdaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreHumanTaskLambdaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkteamArn", targetDepth))
+                if (context.TestExpression("WorkteamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkteamArn = unmarshaller.Unmarshall(context, ref reader);

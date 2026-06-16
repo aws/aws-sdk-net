@@ -56,19 +56,19 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Index", targetDepth))
+                if (context.TestExpression("Index", targetDepth, ref reader))
                 {
                     var unmarshaller = IndexStatusUnmarshaller.Instance;
                     unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Region", targetDepth))
+                if (context.TestExpression("Region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("View", targetDepth))
+                if (context.TestExpression("View", targetDepth, ref reader))
                 {
                     var unmarshaller = ViewStatusUnmarshaller.Instance;
                     unmarshalledObject.View = unmarshaller.Unmarshall(context, ref reader);

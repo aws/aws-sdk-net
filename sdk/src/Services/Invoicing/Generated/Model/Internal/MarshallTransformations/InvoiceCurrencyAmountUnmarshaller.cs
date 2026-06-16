@@ -56,31 +56,31 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmountBreakdown", targetDepth))
+                if (context.TestExpression("AmountBreakdown", targetDepth, ref reader))
                 {
                     var unmarshaller = AmountBreakdownUnmarshaller.Instance;
                     unmarshalledObject.AmountBreakdown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrencyCode", targetDepth))
+                if (context.TestExpression("CurrencyCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrencyExchangeDetails", targetDepth))
+                if (context.TestExpression("CurrencyExchangeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CurrencyExchangeDetailsUnmarshaller.Instance;
                     unmarshalledObject.CurrencyExchangeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAmount", targetDepth))
+                if (context.TestExpression("TotalAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAmountBeforeTax", targetDepth))
+                if (context.TestExpression("TotalAmountBeforeTax", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalAmountBeforeTax = unmarshaller.Unmarshall(context, ref reader);

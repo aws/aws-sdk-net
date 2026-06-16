@@ -52,7 +52,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregationId", targetDepth))
+                if (context.TestExpression("aggregationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AggregationId = unmarshaller.Unmarshall(context, ref reader);

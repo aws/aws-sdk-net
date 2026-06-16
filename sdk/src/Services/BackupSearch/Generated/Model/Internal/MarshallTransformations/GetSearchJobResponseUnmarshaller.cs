@@ -52,73 +52,73 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompletionTime", targetDepth))
+                if (context.TestExpression("CompletionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CompletionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentSearchProgress", targetDepth))
+                if (context.TestExpression("CurrentSearchProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = CurrentSearchProgressUnmarshaller.Instance;
                     response.CurrentSearchProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionKeyArn", targetDepth))
+                if (context.TestExpression("EncryptionKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ItemFilters", targetDepth))
+                if (context.TestExpression("ItemFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemFiltersUnmarshaller.Instance;
                     response.ItemFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchJobArn", targetDepth))
+                if (context.TestExpression("SearchJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SearchJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchJobIdentifier", targetDepth))
+                if (context.TestExpression("SearchJobIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SearchJobIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchScope", targetDepth))
+                if (context.TestExpression("SearchScope", targetDepth, ref reader))
                 {
                     var unmarshaller = SearchScopeUnmarshaller.Instance;
                     response.SearchScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchScopeSummary", targetDepth))
+                if (context.TestExpression("SearchScopeSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = SearchScopeSummaryUnmarshaller.Instance;
                     response.SearchScopeSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);

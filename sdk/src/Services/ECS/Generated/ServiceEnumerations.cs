@@ -451,6 +451,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type AutoRepairActionsStatus.
+    /// </summary>
+    public class AutoRepairActionsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutoRepairActionsStatus
+        /// </summary>
+        public static readonly AutoRepairActionsStatus DISABLED = new AutoRepairActionsStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutoRepairActionsStatus
+        /// </summary>
+        public static readonly AutoRepairActionsStatus ENABLED = new AutoRepairActionsStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoRepairActionsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoRepairActionsStatus FindValue(string value)
+        {
+            return FindValue<AutoRepairActionsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoRepairActionsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvailabilityZoneRebalancing.
     /// </summary>
     public class AvailabilityZoneRebalancing : ConstantClass
@@ -1447,6 +1497,492 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type DaemonDeploymentRollbackMonitorsStatus.
+    /// </summary>
+    public class DaemonDeploymentRollbackMonitorsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DaemonDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly DaemonDeploymentRollbackMonitorsStatus DISABLED = new DaemonDeploymentRollbackMonitorsStatus("DISABLED");
+        /// <summary>
+        /// Constant MONITORING for DaemonDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly DaemonDeploymentRollbackMonitorsStatus MONITORING = new DaemonDeploymentRollbackMonitorsStatus("MONITORING");
+        /// <summary>
+        /// Constant MONITORING_COMPLETE for DaemonDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly DaemonDeploymentRollbackMonitorsStatus MONITORING_COMPLETE = new DaemonDeploymentRollbackMonitorsStatus("MONITORING_COMPLETE");
+        /// <summary>
+        /// Constant TRIGGERED for DaemonDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly DaemonDeploymentRollbackMonitorsStatus TRIGGERED = new DaemonDeploymentRollbackMonitorsStatus("TRIGGERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonDeploymentRollbackMonitorsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonDeploymentRollbackMonitorsStatus FindValue(string value)
+        {
+            return FindValue<DaemonDeploymentRollbackMonitorsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonDeploymentRollbackMonitorsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonDeploymentStatus.
+    /// </summary>
+    public class DaemonDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN_PROGRESS for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus IN_PROGRESS = new DaemonDeploymentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus PENDING = new DaemonDeploymentStatus("PENDING");
+        /// <summary>
+        /// Constant ROLLBACK_FAILED for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus ROLLBACK_FAILED = new DaemonDeploymentStatus("ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus ROLLBACK_IN_PROGRESS = new DaemonDeploymentStatus("ROLLBACK_IN_PROGRESS");
+        /// <summary>
+        /// Constant ROLLBACK_SUCCESSFUL for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus ROLLBACK_SUCCESSFUL = new DaemonDeploymentStatus("ROLLBACK_SUCCESSFUL");
+        /// <summary>
+        /// Constant STOP_REQUESTED for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus STOP_REQUESTED = new DaemonDeploymentStatus("STOP_REQUESTED");
+        /// <summary>
+        /// Constant STOPPED for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus STOPPED = new DaemonDeploymentStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCESSFUL for DaemonDeploymentStatus
+        /// </summary>
+        public static readonly DaemonDeploymentStatus SUCCESSFUL = new DaemonDeploymentStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonDeploymentStatus FindValue(string value)
+        {
+            return FindValue<DaemonDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonIpcMode.
+    /// </summary>
+    public class DaemonIpcMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for DaemonIpcMode
+        /// </summary>
+        public static readonly DaemonIpcMode None = new DaemonIpcMode("none");
+        /// <summary>
+        /// Constant Shared for DaemonIpcMode
+        /// </summary>
+        public static readonly DaemonIpcMode Shared = new DaemonIpcMode("shared");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonIpcMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonIpcMode FindValue(string value)
+        {
+            return FindValue<DaemonIpcMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonIpcMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonPidMode.
+    /// </summary>
+    public class DaemonPidMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for DaemonPidMode
+        /// </summary>
+        public static readonly DaemonPidMode None = new DaemonPidMode("none");
+        /// <summary>
+        /// Constant Shared for DaemonPidMode
+        /// </summary>
+        public static readonly DaemonPidMode Shared = new DaemonPidMode("shared");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonPidMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonPidMode FindValue(string value)
+        {
+            return FindValue<DaemonPidMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonPidMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonPropagateTags.
+    /// </summary>
+    public class DaemonPropagateTags : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAEMON for DaemonPropagateTags
+        /// </summary>
+        public static readonly DaemonPropagateTags DAEMON = new DaemonPropagateTags("DAEMON");
+        /// <summary>
+        /// Constant NONE for DaemonPropagateTags
+        /// </summary>
+        public static readonly DaemonPropagateTags NONE = new DaemonPropagateTags("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonPropagateTags(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonPropagateTags FindValue(string value)
+        {
+            return FindValue<DaemonPropagateTags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonPropagateTags(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonStatus.
+    /// </summary>
+    public class DaemonStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DaemonStatus
+        /// </summary>
+        public static readonly DaemonStatus ACTIVE = new DaemonStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for DaemonStatus
+        /// </summary>
+        public static readonly DaemonStatus DELETE_IN_PROGRESS = new DaemonStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonStatus FindValue(string value)
+        {
+            return FindValue<DaemonStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonTaskDefinitionRevisionFilter.
+    /// </summary>
+    public class DaemonTaskDefinitionRevisionFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAST_REGISTERED for DaemonTaskDefinitionRevisionFilter
+        /// </summary>
+        public static readonly DaemonTaskDefinitionRevisionFilter LAST_REGISTERED = new DaemonTaskDefinitionRevisionFilter("LAST_REGISTERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonTaskDefinitionRevisionFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonTaskDefinitionRevisionFilter FindValue(string value)
+        {
+            return FindValue<DaemonTaskDefinitionRevisionFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonTaskDefinitionRevisionFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonTaskDefinitionStatus.
+    /// </summary>
+    public class DaemonTaskDefinitionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DaemonTaskDefinitionStatus
+        /// </summary>
+        public static readonly DaemonTaskDefinitionStatus ACTIVE = new DaemonTaskDefinitionStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for DaemonTaskDefinitionStatus
+        /// </summary>
+        public static readonly DaemonTaskDefinitionStatus DELETE_IN_PROGRESS = new DaemonTaskDefinitionStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETED for DaemonTaskDefinitionStatus
+        /// </summary>
+        public static readonly DaemonTaskDefinitionStatus DELETED = new DaemonTaskDefinitionStatus("DELETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonTaskDefinitionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonTaskDefinitionStatus FindValue(string value)
+        {
+            return FindValue<DaemonTaskDefinitionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonTaskDefinitionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonTaskDefinitionStatusFilter.
+    /// </summary>
+    public class DaemonTaskDefinitionStatusFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DaemonTaskDefinitionStatusFilter
+        /// </summary>
+        public static readonly DaemonTaskDefinitionStatusFilter ACTIVE = new DaemonTaskDefinitionStatusFilter("ACTIVE");
+        /// <summary>
+        /// Constant ALL for DaemonTaskDefinitionStatusFilter
+        /// </summary>
+        public static readonly DaemonTaskDefinitionStatusFilter ALL = new DaemonTaskDefinitionStatusFilter("ALL");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for DaemonTaskDefinitionStatusFilter
+        /// </summary>
+        public static readonly DaemonTaskDefinitionStatusFilter DELETE_IN_PROGRESS = new DaemonTaskDefinitionStatusFilter("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonTaskDefinitionStatusFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonTaskDefinitionStatusFilter FindValue(string value)
+        {
+            return FindValue<DaemonTaskDefinitionStatusFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonTaskDefinitionStatusFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentControllerType.
     /// </summary>
     public class DeploymentControllerType : ConstantClass
@@ -1501,6 +2037,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type DeploymentLifecycleHookAction.
+    /// </summary>
+    public class DeploymentLifecycleHookAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE for DeploymentLifecycleHookAction
+        /// </summary>
+        public static readonly DeploymentLifecycleHookAction CONTINUE = new DeploymentLifecycleHookAction("CONTINUE");
+        /// <summary>
+        /// Constant ROLLBACK for DeploymentLifecycleHookAction
+        /// </summary>
+        public static readonly DeploymentLifecycleHookAction ROLLBACK = new DeploymentLifecycleHookAction("ROLLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentLifecycleHookAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentLifecycleHookAction FindValue(string value)
+        {
+            return FindValue<DeploymentLifecycleHookAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentLifecycleHookAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentLifecycleHookStage.
     /// </summary>
     public class DeploymentLifecycleHookStage : ConstantClass
@@ -1518,6 +2104,10 @@ namespace Amazon.ECS
         /// Constant POST_TEST_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
         /// </summary>
         public static readonly DeploymentLifecycleHookStage POST_TEST_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("POST_TEST_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant PRE_PRODUCTION_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage PRE_PRODUCTION_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("PRE_PRODUCTION_TRAFFIC_SHIFT");
         /// <summary>
         /// Constant PRE_SCALE_UP for DeploymentLifecycleHookStage
         /// </summary>
@@ -1564,6 +2154,118 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentLifecycleHookStage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentLifecycleHookStatus.
+    /// </summary>
+    public class DeploymentLifecycleHookStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWAITING_ACTION for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus AWAITING_ACTION = new DeploymentLifecycleHookStatus("AWAITING_ACTION");
+        /// <summary>
+        /// Constant FAILED for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus FAILED = new DeploymentLifecycleHookStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus IN_PROGRESS = new DeploymentLifecycleHookStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus SUCCEEDED = new DeploymentLifecycleHookStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus TIMED_OUT = new DeploymentLifecycleHookStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentLifecycleHookStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentLifecycleHookStatus FindValue(string value)
+        {
+            return FindValue<DeploymentLifecycleHookStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentLifecycleHookStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentLifecycleHookTargetType.
+    /// </summary>
+    public class DeploymentLifecycleHookTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_LAMBDA for DeploymentLifecycleHookTargetType
+        /// </summary>
+        public static readonly DeploymentLifecycleHookTargetType AWS_LAMBDA = new DeploymentLifecycleHookTargetType("AWS_LAMBDA");
+        /// <summary>
+        /// Constant PAUSE for DeploymentLifecycleHookTargetType
+        /// </summary>
+        public static readonly DeploymentLifecycleHookTargetType PAUSE = new DeploymentLifecycleHookTargetType("PAUSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentLifecycleHookTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentLifecycleHookTargetType FindValue(string value)
+        {
+            return FindValue<DeploymentLifecycleHookTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentLifecycleHookTargetType(string value)
         {
             return FindValue(value);
         }
@@ -2409,9 +3111,17 @@ namespace Amazon.ECS
     {
 
         /// <summary>
+        /// Constant ACCELERATED_COMPUTE for InstanceHealthCheckType
+        /// </summary>
+        public static readonly InstanceHealthCheckType ACCELERATED_COMPUTE = new InstanceHealthCheckType("ACCELERATED_COMPUTE");
+        /// <summary>
         /// Constant CONTAINER_RUNTIME for InstanceHealthCheckType
         /// </summary>
         public static readonly InstanceHealthCheckType CONTAINER_RUNTIME = new InstanceHealthCheckType("CONTAINER_RUNTIME");
+        /// <summary>
+        /// Constant DAEMON for InstanceHealthCheckType
+        /// </summary>
+        public static readonly InstanceHealthCheckType DAEMON = new InstanceHealthCheckType("DAEMON");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3350,6 +4060,10 @@ namespace Amazon.ECS
         /// Constant GPU for PlatformDeviceType
         /// </summary>
         public static readonly PlatformDeviceType GPU = new PlatformDeviceType("GPU");
+        /// <summary>
+        /// Constant NEURON_DEVICE for PlatformDeviceType
+        /// </summary>
+        public static readonly PlatformDeviceType NEURON_DEVICE = new PlatformDeviceType("NEURON_DEVICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3600,6 +4314,10 @@ namespace Amazon.ECS
         /// Constant InferenceAccelerator for ResourceType
         /// </summary>
         public static readonly ResourceType InferenceAccelerator = new ResourceType("InferenceAccelerator");
+        /// <summary>
+        /// Constant NeuronDevice for ResourceType
+        /// </summary>
+        public static readonly ResourceType NeuronDevice = new ResourceType("NeuronDevice");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

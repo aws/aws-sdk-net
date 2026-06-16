@@ -56,25 +56,31 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Bucket", targetDepth))
+                if (context.TestExpression("S3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3OutputConfigurations", targetDepth))
+                if (context.TestExpression("S3BucketOwner", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketOwner = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("S3OutputConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = S3OutputConfigurationsUnmarshaller.Instance;
                     unmarshalledObject.S3OutputConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Prefix", targetDepth))
+                if (context.TestExpression("S3Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Region", targetDepth))
+                if (context.TestExpression("S3Region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Region = unmarshaller.Unmarshall(context, ref reader);

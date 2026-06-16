@@ -52,7 +52,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inlineDocument", targetDepth))
+                if (context.TestExpression("inlineDocument", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     response.InlineDocument = unmarshaller.Unmarshall(context, ref reader);

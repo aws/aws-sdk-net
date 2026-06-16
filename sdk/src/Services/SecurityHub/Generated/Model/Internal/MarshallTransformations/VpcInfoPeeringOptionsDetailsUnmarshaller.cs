@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowDnsResolutionFromRemoteVpc", targetDepth))
+                if (context.TestExpression("AllowDnsResolutionFromRemoteVpc", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDnsResolutionFromRemoteVpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowEgressFromLocalClassicLinkToRemoteVpc", targetDepth))
+                if (context.TestExpression("AllowEgressFromLocalClassicLinkToRemoteVpc", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowEgressFromLocalClassicLinkToRemoteVpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowEgressFromLocalVpcToRemoteClassicLink", targetDepth))
+                if (context.TestExpression("AllowEgressFromLocalVpcToRemoteClassicLink", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowEgressFromLocalVpcToRemoteClassicLink = unmarshaller.Unmarshall(context, ref reader);

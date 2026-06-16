@@ -52,7 +52,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Group", targetDepth))
+                if (context.TestExpression("Group", targetDepth, ref reader))
                 {
                     var unmarshaller = GroupUnmarshaller.Instance;
                     response.Group = unmarshaller.Unmarshall(context, ref reader);

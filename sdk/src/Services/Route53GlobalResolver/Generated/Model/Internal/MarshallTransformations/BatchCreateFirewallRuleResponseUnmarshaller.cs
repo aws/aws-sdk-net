@@ -52,13 +52,13 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failures", targetDepth))
+                if (context.TestExpression("failures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchCreateFirewallRuleOutputItem, BatchCreateFirewallRuleOutputItemUnmarshaller>(BatchCreateFirewallRuleOutputItemUnmarshaller.Instance);
                     response.Failures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successes", targetDepth))
+                if (context.TestExpression("successes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchCreateFirewallRuleOutputItem, BatchCreateFirewallRuleOutputItemUnmarshaller>(BatchCreateFirewallRuleOutputItemUnmarshaller.Instance);
                     response.Successes = unmarshaller.Unmarshall(context, ref reader);

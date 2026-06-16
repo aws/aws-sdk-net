@@ -72,7 +72,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("errorCode", targetDepth))
+                    if (context.TestExpression("errorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);

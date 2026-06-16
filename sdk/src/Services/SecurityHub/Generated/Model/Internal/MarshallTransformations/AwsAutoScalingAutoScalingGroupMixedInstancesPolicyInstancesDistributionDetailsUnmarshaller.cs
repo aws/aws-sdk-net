@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OnDemandAllocationStrategy", targetDepth))
+                if (context.TestExpression("OnDemandAllocationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OnDemandAllocationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandBaseCapacity", targetDepth))
+                if (context.TestExpression("OnDemandBaseCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OnDemandBaseCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandPercentageAboveBaseCapacity", targetDepth))
+                if (context.TestExpression("OnDemandPercentageAboveBaseCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OnDemandPercentageAboveBaseCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpotAllocationStrategy", targetDepth))
+                if (context.TestExpression("SpotAllocationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpotAllocationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpotInstancePools", targetDepth))
+                if (context.TestExpression("SpotInstancePools", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SpotInstancePools = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpotMaxPrice", targetDepth))
+                if (context.TestExpression("SpotMaxPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpotMaxPrice = unmarshaller.Unmarshall(context, ref reader);

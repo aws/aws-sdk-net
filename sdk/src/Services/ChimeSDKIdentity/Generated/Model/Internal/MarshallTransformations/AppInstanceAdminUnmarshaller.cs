@@ -56,19 +56,19 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Admin", targetDepth))
+                if (context.TestExpression("Admin", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityUnmarshaller.Instance;
                     unmarshalledObject.Admin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AppInstanceArn", targetDepth))
+                if (context.TestExpression("AppInstanceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppInstanceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
+                if (context.TestExpression("CreatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);

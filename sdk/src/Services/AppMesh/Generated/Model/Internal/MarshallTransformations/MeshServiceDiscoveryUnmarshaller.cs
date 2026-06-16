@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ipPreference", targetDepth))
+                if (context.TestExpression("ipPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpPreference = unmarshaller.Unmarshall(context, ref reader);

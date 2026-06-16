@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SimpleTotalAggregationFunction", targetDepth))
+                if (context.TestExpression("SimpleTotalAggregationFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SimpleTotalAggregationFunction = unmarshaller.Unmarshall(context, ref reader);

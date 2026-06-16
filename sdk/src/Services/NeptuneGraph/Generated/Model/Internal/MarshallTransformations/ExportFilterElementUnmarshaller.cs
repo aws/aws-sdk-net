@@ -56,7 +56,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("properties", targetDepth))
+                if (context.TestExpression("properties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ExportFilterPropertyAttributes, StringUnmarshaller, ExportFilterPropertyAttributesUnmarshaller>(StringUnmarshaller.Instance, ExportFilterPropertyAttributesUnmarshaller.Instance);
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);

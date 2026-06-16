@@ -56,49 +56,49 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachmentId", targetDepth))
+                if (context.TestExpression("AttachmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Cidr", targetDepth))
+                if (context.TestExpression("Cidr", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Cidr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeLocation", targetDepth))
+                if (context.TestExpression("EdgeLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkFunctionGroupName", targetDepth))
+                if (context.TestExpression("NetworkFunctionGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PeerEdgeLocation", targetDepth))
+                if (context.TestExpression("PeerEdgeLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PeerEdgeLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingPolicyAssociationDetails", targetDepth))
+                if (context.TestExpression("RoutingPolicyAssociationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RoutingPolicyAssociationDetail, RoutingPolicyAssociationDetailUnmarshaller>(RoutingPolicyAssociationDetailUnmarshaller.Instance);
                     unmarshalledObject.RoutingPolicyAssociationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingPolicyDirection", targetDepth))
+                if (context.TestExpression("RoutingPolicyDirection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoutingPolicyDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SegmentName", targetDepth))
+                if (context.TestExpression("SegmentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentName = unmarshaller.Unmarshall(context, ref reader);

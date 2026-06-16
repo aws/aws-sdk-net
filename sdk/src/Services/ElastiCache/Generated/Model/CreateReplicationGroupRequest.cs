@@ -95,6 +95,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSubnetGroupName;
         private ClusterMode _clusterMode;
         private bool? _dataTieringEnabled;
+        private Durability _durability;
         private string _engine;
         private string _engineVersion;
         private string _globalReplicationGroupId;
@@ -128,20 +129,14 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
         /// <para>
-        /// A flag that enables encryption at rest when set to <c>true</c>.
+        /// A flag that enables encryption at-rest on the replication group when set to <c>true</c>.
+        /// In some cases, encryption at-rest may be enabled even when this value is false. Use
+        /// <c>StorageEncryptionType</c> to view the effective encryption state of a cluster.
         /// </para>
         ///  
         /// <para>
         /// You cannot modify the value of <c>AtRestEncryptionEnabled</c> after the replication
-        /// group is created. To enable encryption at rest on a replication group you must set
-        /// <c>AtRestEncryptionEnabled</c> to <c>true</c> when you create the replication group.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using Valkey 7.2 and later, Redis OSS version <c>3.2.6</c>, or Redis OSS <c>4.x</c>
-        /// and later.
+        /// group is created.
         /// </para>
         ///  
         /// <para>
@@ -563,6 +558,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetDataTieringEnabled()
         {
             return this._dataTieringEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Durability. 
+        /// <para>
+        /// Specifies the durability setting for the replication group. When set to <c>default</c>,
+        /// the service determines the effective durability based on the engine version, cluster
+        /// mode, and other parameters. The resolved setting is reflected in the <c>EffectiveDurability</c>
+        /// property of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.
+        /// </para>
+        /// </summary>
+        public Durability Durability
+        {
+            get { return this._durability; }
+            set { this._durability = value; }
+        }
+
+        // Check to see if Durability property is set
+        internal bool IsSetDurability()
+        {
+            return this._durability != null;
         }
 
         /// <summary>

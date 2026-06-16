@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataSources", targetDepth))
+                if (context.TestExpression("DataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesDetailsUnmarshaller.Instance;
                     unmarshalledObject.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Features", targetDepth))
+                if (context.TestExpression("Features", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsGuardDutyDetectorFeaturesDetails, AwsGuardDutyDetectorFeaturesDetailsUnmarshaller>(AwsGuardDutyDetectorFeaturesDetailsUnmarshaller.Instance);
                     unmarshalledObject.Features = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FindingPublishingFrequency", targetDepth))
+                if (context.TestExpression("FindingPublishingFrequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FindingPublishingFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceRole", targetDepth))
+                if (context.TestExpression("ServiceRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

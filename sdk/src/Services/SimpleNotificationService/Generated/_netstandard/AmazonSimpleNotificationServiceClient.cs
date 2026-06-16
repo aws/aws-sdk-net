@@ -39,6 +39,11 @@ namespace Amazon.SimpleNotificationService
 {
     /// <summary>
     /// <para>Implementation for accessing SimpleNotificationService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Simple Notification Service 
     /// <para>
@@ -472,7 +477,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web ServicesSupport Center.
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -521,7 +526,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web ServicesSupport Center.
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -569,7 +574,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web ServicesSupport Center.
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3228,7 +3233,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web ServicesSupport Center.
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3270,7 +3275,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web ServicesSupport Center.
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3440,7 +3445,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web ServicesSupport Center.
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3501,7 +3506,7 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
         /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
         /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-        /// the Amazon Web ServicesSupport Center.
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.

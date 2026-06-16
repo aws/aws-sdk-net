@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("JavaScriptSourceMaps", targetDepth))
+                if (context.TestExpression("JavaScriptSourceMaps", targetDepth, ref reader))
                 {
                     var unmarshaller = JavaScriptSourceMapsUnmarshaller.Instance;
                     unmarshalledObject.JavaScriptSourceMaps = unmarshaller.Unmarshall(context, ref reader);

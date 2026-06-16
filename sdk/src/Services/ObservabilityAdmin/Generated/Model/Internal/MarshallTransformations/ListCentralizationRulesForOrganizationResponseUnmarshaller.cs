@@ -52,13 +52,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CentralizationRuleSummaries", targetDepth))
+                if (context.TestExpression("CentralizationRuleSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CentralizationRuleSummary, CentralizationRuleSummaryUnmarshaller>(CentralizationRuleSummaryUnmarshaller.Instance);
                     response.CentralizationRuleSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

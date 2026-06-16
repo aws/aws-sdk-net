@@ -56,49 +56,49 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applyOnTransformedLogs", targetDepth))
+                if (context.TestExpression("applyOnTransformedLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApplyOnTransformedLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emitSystemFieldDimensions", targetDepth))
+                if (context.TestExpression("emitSystemFieldDimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EmitSystemFieldDimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fieldSelectionCriteria", targetDepth))
+                if (context.TestExpression("fieldSelectionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldSelectionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filterName", targetDepth))
+                if (context.TestExpression("filterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filterPattern", targetDepth))
+                if (context.TestExpression("filterPattern", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logGroupName", targetDepth))
+                if (context.TestExpression("logGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricTransformations", targetDepth))
+                if (context.TestExpression("metricTransformations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricTransformation, MetricTransformationUnmarshaller>(MetricTransformationUnmarshaller.Instance);
                     unmarshalledObject.MetricTransformations = unmarshaller.Unmarshall(context, ref reader);

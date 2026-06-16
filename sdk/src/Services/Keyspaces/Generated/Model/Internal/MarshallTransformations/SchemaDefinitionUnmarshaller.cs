@@ -56,25 +56,25 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allColumns", targetDepth))
+                if (context.TestExpression("allColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnDefinition, ColumnDefinitionUnmarshaller>(ColumnDefinitionUnmarshaller.Instance);
                     unmarshalledObject.AllColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusteringKeys", targetDepth))
+                if (context.TestExpression("clusteringKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusteringKey, ClusteringKeyUnmarshaller>(ClusteringKeyUnmarshaller.Instance);
                     unmarshalledObject.ClusteringKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("partitionKeys", targetDepth))
+                if (context.TestExpression("partitionKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PartitionKey, PartitionKeyUnmarshaller>(PartitionKeyUnmarshaller.Instance);
                     unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("staticColumns", targetDepth))
+                if (context.TestExpression("staticColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StaticColumn, StaticColumnUnmarshaller>(StaticColumnUnmarshaller.Instance);
                     unmarshalledObject.StaticColumns = unmarshaller.Unmarshall(context, ref reader);

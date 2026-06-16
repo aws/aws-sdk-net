@@ -52,25 +52,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoScalingPolicy", targetDepth))
+                if (context.TestExpression("AutoScalingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingPolicyDescriptionUnmarshaller.Instance;
                     response.AutoScalingPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterArn", targetDepth))
+                if (context.TestExpression("ClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterId", targetDepth))
+                if (context.TestExpression("ClusterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroupId", targetDepth))
+                if (context.TestExpression("InstanceGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InstanceGroupId = unmarshaller.Unmarshall(context, ref reader);

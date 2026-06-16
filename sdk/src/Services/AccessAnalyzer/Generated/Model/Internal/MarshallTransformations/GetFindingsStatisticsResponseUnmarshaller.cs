@@ -52,13 +52,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("findingsStatistics", targetDepth))
+                if (context.TestExpression("findingsStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FindingsStatistics, FindingsStatisticsUnmarshaller>(FindingsStatisticsUnmarshaller.Instance);
                     response.FindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);

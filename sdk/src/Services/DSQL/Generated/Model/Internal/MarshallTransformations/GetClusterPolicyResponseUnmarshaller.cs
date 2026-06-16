@@ -52,13 +52,13 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("policy", targetDepth))
+                if (context.TestExpression("policy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Policy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyVersion", targetDepth))
+                if (context.TestExpression("policyVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PolicyVersion = unmarshaller.Unmarshall(context, ref reader);

@@ -59,6 +59,7 @@ namespace Amazon.Neptune.Model
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
+        private string _networkType;
         private string _optionGroupName;
         private int? _port;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
@@ -373,6 +374,39 @@ namespace Amazon.Neptune.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <c>IPV4</c> </b>   –   ( <i>the default</i> ) The DB cluster uses only IPv4 addresses
+        /// for communication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>DUAL</c> </b>   –   The DB cluster uses both IPv4 and IPv6 addresses for communication.
+        /// The DB subnet group associated with the cluster must support IPv6.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

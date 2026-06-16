@@ -52,13 +52,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("metaLibraryTemplates", targetDepth))
+                if (context.TestExpression("metaLibraryTemplates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetaLibraryTemplateDefinition, MetaLibraryTemplateDefinitionUnmarshaller>(MetaLibraryTemplateDefinitionUnmarshaller.Instance);
                     response.MetaLibraryTemplates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
@@ -89,6 +89,10 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedByMetaException"))
+                {
+                    return AccessDeniedByMetaExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

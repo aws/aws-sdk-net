@@ -52,31 +52,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregationConfigurations", targetDepth))
+                if (context.TestExpression("AggregationConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AggregationConfiguration, AggregationConfigurationUnmarshaller>(AggregationConfigurationUnmarshaller.Instance);
                     response.AggregationConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContextKeySelectors", targetDepth))
+                if (context.TestExpression("ContextKeySelectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContextKeySelector, ContextKeySelectorUnmarshaller>(ContextKeySelectorUnmarshaller.Instance);
                     response.ContextKeySelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventDataStoreArn", targetDepth))
+                if (context.TestExpression("EventDataStoreArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventDataStoreArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxEventSize", targetDepth))
+                if (context.TestExpression("MaxEventSize", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MaxEventSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrailARN", targetDepth))
+                if (context.TestExpression("TrailARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrailARN = unmarshaller.Unmarshall(context, ref reader);

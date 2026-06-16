@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bytesImported", targetDepth))
+                if (context.TestExpression("bytesImported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesImported = unmarshaller.Unmarshall(context, ref reader);

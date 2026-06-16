@@ -56,13 +56,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FaultCountHigh", targetDepth))
+                if (context.TestExpression("FaultCountHigh", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FaultCountHigh = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FaultCountLow", targetDepth))
+                if (context.TestExpression("FaultCountLow", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FaultCountLow = unmarshaller.Unmarshall(context, ref reader);

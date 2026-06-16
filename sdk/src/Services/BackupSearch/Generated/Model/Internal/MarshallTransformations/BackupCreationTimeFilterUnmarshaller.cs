@@ -56,13 +56,13 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAfter", targetDepth))
+                if (context.TestExpression("CreatedAfter", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAfter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedBefore", targetDepth))
+                if (context.TestExpression("CreatedBefore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedBefore = unmarshaller.Unmarshall(context, ref reader);

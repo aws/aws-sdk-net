@@ -39,6 +39,11 @@ namespace Amazon.ManagedGrafana
 {
     /// <summary>
     /// <para>Implementation for accessing ManagedGrafana</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Managed Grafana is a fully managed and secure data visualization service that
     /// you can use to instantly query, correlate, and visualize operational metrics, logs,

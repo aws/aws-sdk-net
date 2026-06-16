@@ -52,19 +52,19 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregationPeriod", targetDepth))
+                if (context.TestExpression("AggregationPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AggregationPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CopyJobSummaries", targetDepth))
+                if (context.TestExpression("CopyJobSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CopyJobSummary, CopyJobSummaryUnmarshaller>(CopyJobSummaryUnmarshaller.Instance);
                     response.CopyJobSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

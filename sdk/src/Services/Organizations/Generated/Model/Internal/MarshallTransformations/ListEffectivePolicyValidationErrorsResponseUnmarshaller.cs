@@ -52,37 +52,37 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EffectivePolicyValidationErrors", targetDepth))
+                if (context.TestExpression("EffectivePolicyValidationErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EffectivePolicyValidationError, EffectivePolicyValidationErrorUnmarshaller>(EffectivePolicyValidationErrorUnmarshaller.Instance);
                     response.EffectivePolicyValidationErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationTimestamp", targetDepth))
+                if (context.TestExpression("EvaluationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EvaluationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Path", targetDepth))
+                if (context.TestExpression("Path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyType", targetDepth))
+                if (context.TestExpression("PolicyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PolicyType = unmarshaller.Unmarshall(context, ref reader);

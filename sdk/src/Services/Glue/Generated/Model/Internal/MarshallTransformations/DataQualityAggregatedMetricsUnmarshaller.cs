@@ -56,37 +56,37 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TotalRowsFailed", targetDepth))
+                if (context.TestExpression("TotalRowsFailed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalRowsFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRowsPassed", targetDepth))
+                if (context.TestExpression("TotalRowsPassed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalRowsPassed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRowsProcessed", targetDepth))
+                if (context.TestExpression("TotalRowsProcessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalRowsProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRulesFailed", targetDepth))
+                if (context.TestExpression("TotalRulesFailed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalRulesFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRulesPassed", targetDepth))
+                if (context.TestExpression("TotalRulesPassed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalRulesPassed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRulesProcessed", targetDepth))
+                if (context.TestExpression("TotalRulesProcessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalRulesProcessed = unmarshaller.Unmarshall(context, ref reader);

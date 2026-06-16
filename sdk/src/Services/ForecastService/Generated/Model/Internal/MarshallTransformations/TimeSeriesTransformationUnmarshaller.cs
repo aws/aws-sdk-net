@@ -56,13 +56,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesConditions", targetDepth))
+                if (context.TestExpression("TimeSeriesConditions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimeSeriesCondition, TimeSeriesConditionUnmarshaller>(TimeSeriesConditionUnmarshaller.Instance);
                     unmarshalledObject.TimeSeriesConditions = unmarshaller.Unmarshall(context, ref reader);

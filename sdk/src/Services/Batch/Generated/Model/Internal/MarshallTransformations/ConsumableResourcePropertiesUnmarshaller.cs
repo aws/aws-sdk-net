@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("consumableResourceList", targetDepth))
+                if (context.TestExpression("consumableResourceList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConsumableResourceRequirement, ConsumableResourceRequirementUnmarshaller>(ConsumableResourceRequirementUnmarshaller.Instance);
                     unmarshalledObject.ConsumableResourceList = unmarshaller.Unmarshall(context, ref reader);

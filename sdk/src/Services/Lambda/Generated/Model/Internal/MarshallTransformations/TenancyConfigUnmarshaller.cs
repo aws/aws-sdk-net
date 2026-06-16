@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TenantIsolationMode", targetDepth))
+                if (context.TestExpression("TenantIsolationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TenantIsolationMode = unmarshaller.Unmarshall(context, ref reader);

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Player Marshaller
     /// </summary>
-    public class PlayerMarshaller : IRequestMarshaller<Player, JsonMarshallerContext> 
+    public class PlayerMarshaller : IRequestMarshaller<Player, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,55 +45,52 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Player requestObject, JsonMarshallerContext context)
+        public void Marshall(Player requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetLatencyInMs())
+
+            if (requestObject.IsSetLatencyInMs())
             {
-                context.Writer.WritePropertyName("LatencyInMs");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("LatencyInMs");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectLatencyInMsKvp in requestObject.LatencyInMs)
                 {
-                    context.Writer.WritePropertyName(requestObjectLatencyInMsKvp.Key);
+                    context.Writer.WriteTextString(requestObjectLatencyInMsKvp.Key);
                     var requestObjectLatencyInMsValue = requestObjectLatencyInMsKvp.Value;
 
-                        context.Writer.WriteNumberValue(requestObjectLatencyInMsValue);
+                        context.Writer.WriteInt32(requestObjectLatencyInMsValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPlayerAttributes())
+            if (requestObject.IsSetPlayerAttributes())
             {
-                context.Writer.WritePropertyName("PlayerAttributes");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PlayerAttributes");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectPlayerAttributesKvp in requestObject.PlayerAttributes)
                 {
-                    context.Writer.WritePropertyName(requestObjectPlayerAttributesKvp.Key);
+                    context.Writer.WriteTextString(requestObjectPlayerAttributesKvp.Key);
                     var requestObjectPlayerAttributesValue = requestObjectPlayerAttributesKvp.Value;
 
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectPlayerAttributesValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPlayerId())
+            if (requestObject.IsSetPlayerId())
             {
-                context.Writer.WritePropertyName("PlayerId");
-                context.Writer.WriteStringValue(requestObject.PlayerId);
+                context.Writer.WriteTextString("PlayerId");
+                context.Writer.WriteTextString(requestObject.PlayerId);
             }
-
-            if(requestObject.IsSetTeam())
+            if (requestObject.IsSetTeam())
             {
-                context.Writer.WritePropertyName("Team");
-                context.Writer.WriteStringValue(requestObject.Team);
+                context.Writer.WriteTextString("Team");
+                context.Writer.WriteTextString(requestObject.Team);
             }
-
         }
 
         /// <summary>

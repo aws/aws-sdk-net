@@ -56,19 +56,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentTagFilter", targetDepth))
+                if (context.TestExpression("contentTagFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TagFilterUnmarshaller.Instance;
                     unmarshalledObject.ContentTagFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxResults", targetDepth))
+                if (context.TestExpression("maxResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overrideKnowledgeBaseSearchType", targetDepth))
+                if (context.TestExpression("overrideKnowledgeBaseSearchType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverrideKnowledgeBaseSearchType = unmarshaller.Unmarshall(context, ref reader);

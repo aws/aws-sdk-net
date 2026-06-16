@@ -56,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tumbling", targetDepth))
+                if (context.TestExpression("tumbling", targetDepth, ref reader))
                 {
                     var unmarshaller = TumblingWindowUnmarshaller.Instance;
                     unmarshalledObject.Tumbling = unmarshaller.Unmarshall(context, ref reader);

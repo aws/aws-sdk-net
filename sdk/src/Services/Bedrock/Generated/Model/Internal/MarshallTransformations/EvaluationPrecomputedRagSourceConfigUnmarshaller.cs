@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("retrieveAndGenerateSourceConfig", targetDepth))
+                if (context.TestExpression("retrieveAndGenerateSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationPrecomputedRetrieveAndGenerateSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.RetrieveAndGenerateSourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retrieveSourceConfig", targetDepth))
+                if (context.TestExpression("retrieveSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationPrecomputedRetrieveSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.RetrieveSourceConfig = unmarshaller.Unmarshall(context, ref reader);

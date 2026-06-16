@@ -56,13 +56,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventExpiration", targetDepth))
+                if (context.TestExpression("EventExpiration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EventExpiration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Periods", targetDepth))
+                if (context.TestExpression("Periods", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Period, PeriodUnmarshaller>(PeriodUnmarshaller.Instance);
                     unmarshalledObject.Periods = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("marketplaceConfiguration", targetDepth))
+                if (context.TestExpression("marketplaceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProviderMarketplaceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MarketplaceConfiguration = unmarshaller.Unmarshall(context, ref reader);

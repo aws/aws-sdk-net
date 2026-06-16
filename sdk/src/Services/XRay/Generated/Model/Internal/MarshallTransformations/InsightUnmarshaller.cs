@@ -56,73 +56,73 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Categories", targetDepth))
+                if (context.TestExpression("Categories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientRequestImpactStatistics", targetDepth))
+                if (context.TestExpression("ClientRequestImpactStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestImpactStatisticsUnmarshaller.Instance;
                     unmarshalledObject.ClientRequestImpactStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupARN", targetDepth))
+                if (context.TestExpression("GroupARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupName", targetDepth))
+                if (context.TestExpression("GroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsightId", targetDepth))
+                if (context.TestExpression("InsightId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InsightId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RootCauseServiceId", targetDepth))
+                if (context.TestExpression("RootCauseServiceId", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceIdUnmarshaller.Instance;
                     unmarshalledObject.RootCauseServiceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RootCauseServiceRequestImpactStatistics", targetDepth))
+                if (context.TestExpression("RootCauseServiceRequestImpactStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestImpactStatisticsUnmarshaller.Instance;
                     unmarshalledObject.RootCauseServiceRequestImpactStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Summary", targetDepth))
+                if (context.TestExpression("Summary", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopAnomalousServices", targetDepth))
+                if (context.TestExpression("TopAnomalousServices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnomalousService, AnomalousServiceUnmarshaller>(AnomalousServiceUnmarshaller.Instance);
                     unmarshalledObject.TopAnomalousServices = unmarshaller.Unmarshall(context, ref reader);

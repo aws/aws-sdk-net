@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     /// with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container
     /// Service Developer Guide</i>.
     /// </summary>
+    [Obsolete("This feature is no longer available.")]
     public partial class InferenceAccelerator
     {
         private string _deviceName;

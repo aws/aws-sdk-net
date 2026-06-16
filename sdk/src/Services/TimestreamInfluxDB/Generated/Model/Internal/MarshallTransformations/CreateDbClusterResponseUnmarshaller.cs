@@ -52,13 +52,13 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dbClusterId", targetDepth))
+                if (context.TestExpression("dbClusterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DbClusterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dbClusterStatus", targetDepth))
+                if (context.TestExpression("dbClusterStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DbClusterStatus = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SubnetGroup", targetDepth))
+                if (context.TestExpression("SubnetGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = SubnetGroupUnmarshaller.Instance;
                     response.SubnetGroup = unmarshaller.Unmarshall(context, ref reader);

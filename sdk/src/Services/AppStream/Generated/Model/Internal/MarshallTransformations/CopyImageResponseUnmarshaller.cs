@@ -52,7 +52,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationImageName", targetDepth))
+                if (context.TestExpression("DestinationImageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DestinationImageName = unmarshaller.Unmarshall(context, ref reader);

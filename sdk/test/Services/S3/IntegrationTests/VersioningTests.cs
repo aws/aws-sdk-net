@@ -1,26 +1,32 @@
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class VersioningTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class VersioningTests : IClassFixture<S3BucketFixture>, IAsyncLifetime
     {
         private const string content = "Test content";
         private const string key = "test.txt";
-        private static string bucketName;
 
-        [ClassInitialize]
-        public static async Task Initialize(TestContext tc)
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+
+        public VersioningTests(S3BucketFixture bucket)
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
-            await Client.PutBucketVersioningAsync(new PutBucketVersioningRequest
+            _client = bucket.Client;
+            _bucketName = bucket.BucketName;
+        }
+
+        public async ValueTask InitializeAsync()
+        {
+            // Enable versioning once for the class-level bucket
+            await _client.PutBucketVersioningAsync(new PutBucketVersioningRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 VersioningConfig = new S3BucketVersioningConfig
                 {
                     Status = VersionStatus.Enabled
@@ -29,30 +35,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetBucketVersioningAsync(new GetBucketVersioningRequest
+                var res = await _client.GetBucketVersioningAsync(new GetBucketVersioningRequest
                 {
-                    BucketName = bucketName
+                    BucketName = _bucketName
                 });
                 return res.VersioningConfig?.Status == VersionStatus.Enabled ? res : null;
             });
         }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-            BaseClean();
-        }
+        public ValueTask DisposeAsync() => new ValueTask();
 
-        [TestMethod]
+        [Fact]
         public async Task TestVersionBucketName()
         {
             var count = 5;
             for (int i = 0; i < count; i++)
             {
-                await Client.PutObjectAsync(new PutObjectRequest
+                await _client.PutObjectAsync(new PutObjectRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     ContentBody = content
                 });
@@ -60,15 +61,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         
             var response = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.ListVersionsAsync(bucketName);                
+                var res = await _client.ListVersionsAsync(_bucketName);                
                 return res.Versions?.Count == count ? res : null;
             });
 
-            Assert.AreEqual(count, response.Versions.Count);
+            Assert.Equal(count, response.Versions.Count);
             foreach (var version in response.Versions)
             {
-                Assert.AreEqual(bucketName, version.BucketName);
-                Assert.AreEqual(key, version.Key);
+                Assert.Equal(_bucketName, version.BucketName);
+                Assert.Equal(key, version.Key);
             }
         }
     }

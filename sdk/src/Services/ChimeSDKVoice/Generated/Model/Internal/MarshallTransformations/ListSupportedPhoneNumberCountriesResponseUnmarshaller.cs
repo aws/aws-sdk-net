@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PhoneNumberCountries", targetDepth))
+                if (context.TestExpression("PhoneNumberCountries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PhoneNumberCountry, PhoneNumberCountryUnmarshaller>(PhoneNumberCountryUnmarshaller.Instance);
                     response.PhoneNumberCountries = unmarshaller.Unmarshall(context, ref reader);

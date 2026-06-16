@@ -52,13 +52,13 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provisionedResources", targetDepth))
+                if (context.TestExpression("provisionedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisionedResource, ProvisionedResourceUnmarshaller>(ProvisionedResourceUnmarshaller.Instance);
                     response.ProvisionedResources = unmarshaller.Unmarshall(context, ref reader);

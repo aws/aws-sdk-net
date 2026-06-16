@@ -56,49 +56,49 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessControlList", targetDepth))
+                if (context.TestExpression("AccessControlList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Grant, GrantUnmarshaller>(GrantUnmarshaller.Instance);
                     unmarshalledObject.AccessControlList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BucketName", targetDepth))
+                if (context.TestExpression("BucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CannedACL", targetDepth))
+                if (context.TestExpression("CannedACL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CannedACL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Encryption", targetDepth))
+                if (context.TestExpression("Encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prefix", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageClass", targetDepth))
+                if (context.TestExpression("StorageClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tagging", targetDepth))
+                if (context.TestExpression("Tagging", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tagging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserMetadata", targetDepth))
+                if (context.TestExpression("UserMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.UserMetadata = unmarshaller.Unmarshall(context, ref reader);

@@ -56,34 +56,40 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Allow", targetDepth))
+                if (context.TestExpression("Allow", targetDepth, ref reader))
                 {
                     var unmarshaller = AllowActionUnmarshaller.Instance;
                     unmarshalledObject.Allow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Block", targetDepth))
+                if (context.TestExpression("Block", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockActionUnmarshaller.Instance;
                     unmarshalledObject.Block = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Captcha", targetDepth))
+                if (context.TestExpression("Captcha", targetDepth, ref reader))
                 {
                     var unmarshaller = CaptchaActionUnmarshaller.Instance;
                     unmarshalledObject.Captcha = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Challenge", targetDepth))
+                if (context.TestExpression("Challenge", targetDepth, ref reader))
                 {
                     var unmarshaller = ChallengeActionUnmarshaller.Instance;
                     unmarshalledObject.Challenge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Count", targetDepth))
+                if (context.TestExpression("Count", targetDepth, ref reader))
                 {
                     var unmarshaller = CountActionUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Monetize", targetDepth, ref reader))
+                {
+                    var unmarshaller = MonetizeActionUnmarshaller.Instance;
+                    unmarshalledObject.Monetize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

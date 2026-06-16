@@ -52,25 +52,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domainId", targetDepth))
+                if (context.TestExpression("domainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityId", targetDepth))
+                if (context.TestExpression("entityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityType", targetDepth))
+                if (context.TestExpression("entityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EntityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forms", targetDepth))
+                if (context.TestExpression("forms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimeSeriesDataPointFormOutput, TimeSeriesDataPointFormOutputUnmarshaller>(TimeSeriesDataPointFormOutputUnmarshaller.Instance);
                     response.Forms = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Enablement", targetDepth))
+                if (context.TestExpression("Enablement", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormItemEnablementConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Enablement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Instructions", targetDepth))
+                if (context.TestExpression("Instructions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Instructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotApplicableEnabled", targetDepth))
+                if (context.TestExpression("NotApplicableEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotApplicableEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuestionType", targetDepth))
+                if (context.TestExpression("QuestionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuestionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuestionTypeProperties", targetDepth))
+                if (context.TestExpression("QuestionTypeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormQuestionTypePropertiesUnmarshaller.Instance;
                     unmarshalledObject.QuestionTypeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RefId", targetDepth))
+                if (context.TestExpression("RefId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RefId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Weight", targetDepth))
+                if (context.TestExpression("Weight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Weight = unmarshaller.Unmarshall(context, ref reader);

@@ -52,25 +52,25 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImportToken", targetDepth))
+                if (context.TestExpression("ImportToken", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     response.ImportToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyId", targetDepth))
+                if (context.TestExpression("KeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParametersValidTo", targetDepth))
+                if (context.TestExpression("ParametersValidTo", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ParametersValidTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicKey", targetDepth))
+                if (context.TestExpression("PublicKey", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     response.PublicKey = unmarshaller.Unmarshall(context, ref reader);

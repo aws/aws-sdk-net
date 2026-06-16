@@ -56,7 +56,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SlotMigration", targetDepth))
+                if (context.TestExpression("SlotMigration", targetDepth, ref reader))
                 {
                     var unmarshaller = SlotMigrationUnmarshaller.Instance;
                     unmarshalledObject.SlotMigration = unmarshaller.Unmarshall(context, ref reader);

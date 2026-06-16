@@ -52,13 +52,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountQuotas", targetDepth))
+                if (context.TestExpression("AccountQuotas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountQuota, AccountQuotaUnmarshaller>(AccountQuotaUnmarshaller.Instance);
                     response.AccountQuotas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UniqueAccountIdentifier", targetDepth))
+                if (context.TestExpression("UniqueAccountIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UniqueAccountIdentifier = unmarshaller.Unmarshall(context, ref reader);

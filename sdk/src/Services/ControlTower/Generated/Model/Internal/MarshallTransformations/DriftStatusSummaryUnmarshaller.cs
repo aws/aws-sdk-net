@@ -56,13 +56,13 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("driftStatus", targetDepth))
+                if (context.TestExpression("driftStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("types", targetDepth))
+                if (context.TestExpression("types", targetDepth, ref reader))
                 {
                     var unmarshaller = EnabledControlDriftTypesUnmarshaller.Instance;
                     unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdleTimeout", targetDepth))
+                if (context.TestExpression("IdleTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IdleTimeout = unmarshaller.Unmarshall(context, ref reader);

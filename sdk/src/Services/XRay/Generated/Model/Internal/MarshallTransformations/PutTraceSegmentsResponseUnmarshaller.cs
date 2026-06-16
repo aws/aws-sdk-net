@@ -52,7 +52,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UnprocessedTraceSegments", targetDepth))
+                if (context.TestExpression("UnprocessedTraceSegments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedTraceSegment, UnprocessedTraceSegmentUnmarshaller>(UnprocessedTraceSegmentUnmarshaller.Instance);
                     response.UnprocessedTraceSegments = unmarshaller.Unmarshall(context, ref reader);

@@ -43,10 +43,18 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobExecutionTimeoutMinutes. 
         /// <para>
         /// Specifies the job timeout (in minutes) when the compute environment infrastructure
-        /// is updated. The default value is 30.
+        /// is updated. The default value is 30. The maximum value is 7200.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Increasing <c>jobExecutionTimeoutMinutes</c> during infrastructure updates delays
+        /// the replacement of instances with new instances that include updates such as security
+        /// patches, but provides more time for jobs to execute. Consider the security implications
+        /// of this tradeoff when setting timeout values.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=360)]
+        [AWSProperty(Min=1, Max=7200)]
         public long? JobExecutionTimeoutMinutes
         {
             get { return this._jobExecutionTimeoutMinutes; }

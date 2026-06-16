@@ -52,7 +52,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Prediction", targetDepth))
+                if (context.TestExpression("Prediction", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictionUnmarshaller.Instance;
                     response.Prediction = unmarshaller.Unmarshall(context, ref reader);

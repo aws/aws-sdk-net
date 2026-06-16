@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pipelines", targetDepth))
+                if (context.TestExpression("pipelines", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PipelinePauseStateSettings, PipelinePauseStateSettingsUnmarshaller>(PipelinePauseStateSettingsUnmarshaller.Instance);
                     unmarshalledObject.Pipelines = unmarshaller.Unmarshall(context, ref reader);

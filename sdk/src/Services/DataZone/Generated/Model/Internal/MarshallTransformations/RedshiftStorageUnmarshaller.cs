@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("redshiftClusterSource", targetDepth))
+                if (context.TestExpression("redshiftClusterSource", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftClusterStorageUnmarshaller.Instance;
                     unmarshalledObject.RedshiftClusterSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftServerlessSource", targetDepth))
+                if (context.TestExpression("redshiftServerlessSource", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftServerlessStorageUnmarshaller.Instance;
                     unmarshalledObject.RedshiftServerlessSource = unmarshaller.Unmarshall(context, ref reader);

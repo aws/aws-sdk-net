@@ -56,7 +56,7 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxLifetimeTimeoutMinutes", targetDepth))
+                if (context.TestExpression("maxLifetimeTimeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLifetimeTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);

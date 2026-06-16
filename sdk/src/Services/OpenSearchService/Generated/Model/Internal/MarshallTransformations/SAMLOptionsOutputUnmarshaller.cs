@@ -56,31 +56,31 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Idp", targetDepth))
+                if (context.TestExpression("Idp", targetDepth, ref reader))
                 {
                     var unmarshaller = SAMLIdpUnmarshaller.Instance;
                     unmarshalledObject.Idp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RolesKey", targetDepth))
+                if (context.TestExpression("RolesKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RolesKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionTimeoutMinutes", targetDepth))
+                if (context.TestExpression("SessionTimeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SessionTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubjectKey", targetDepth))
+                if (context.TestExpression("SubjectKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubjectKey = unmarshaller.Unmarshall(context, ref reader);

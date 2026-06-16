@@ -56,37 +56,37 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Issuer", targetDepth))
+                if (context.TestExpression("Issuer", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Issuer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReceiverAddress", targetDepth))
+                if (context.TestExpression("ReceiverAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = ReceiverAddressUnmarshaller.Instance;
                     unmarshalledObject.ReceiverAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReceiverEmail", targetDepth))
+                if (context.TestExpression("ReceiverEmail", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReceiverEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReceiverName", targetDepth))
+                if (context.TestExpression("ReceiverName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReceiverName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaxRegistrationNumber", targetDepth))
+                if (context.TestExpression("TaxRegistrationNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaxRegistrationNumber = unmarshaller.Unmarshall(context, ref reader);

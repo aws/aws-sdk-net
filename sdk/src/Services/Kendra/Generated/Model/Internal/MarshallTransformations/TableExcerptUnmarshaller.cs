@@ -56,13 +56,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Rows", targetDepth))
+                if (context.TestExpression("Rows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TableRow, TableRowUnmarshaller>(TableRowUnmarshaller.Instance);
                     unmarshalledObject.Rows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfRows", targetDepth))
+                if (context.TestExpression("TotalNumberOfRows", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfRows = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blackFrames", targetDepth))
+                if (context.TestExpression("blackFrames", targetDepth, ref reader))
                 {
                     var unmarshaller = BlackFramesUnmarshaller.Instance;
                     unmarshalledObject.BlackFrames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frozenFrames", targetDepth))
+                if (context.TestExpression("frozenFrames", targetDepth, ref reader))
                 {
                     var unmarshaller = FrozenFramesUnmarshaller.Instance;
                     unmarshalledObject.FrozenFrames = unmarshaller.Unmarshall(context, ref reader);

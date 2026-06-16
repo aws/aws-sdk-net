@@ -187,7 +187,7 @@ namespace Amazon.CertificateManager.Model
         /// only support ECDSA keys of a particular size, while others allow the use of either
         /// RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements
         /// for the Amazon Web Services service where you plan to deploy your certificate. For
-        /// more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key
+        /// more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate-characteristics.html#algorithms-term">Key
         /// algorithms</a>.
         /// </para>
         ///  <note> 
@@ -255,15 +255,13 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// You can use this parameter to specify whether to add the certificate to a certificate
-        /// transparency log and export your certificate.
+        /// You can use this parameter to specify whether to export your certificate.
         /// </para>
         ///  
         /// <para>
-        /// Certificate transparency makes it possible to detect SSL/TLS certificates that have
-        /// been mistakenly or maliciously issued. Certificates that have not been logged typically
-        /// produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
-        /// Out of Certificate Transparency Logging</a>.
+        /// Certificate transparency logging opt-out is no longer available. All public certificates
+        /// are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
+        /// Transparency Logging</a>.
         /// </para>
         ///  
         /// <para>

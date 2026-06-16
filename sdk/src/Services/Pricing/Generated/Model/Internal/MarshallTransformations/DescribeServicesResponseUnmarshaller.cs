@@ -52,19 +52,19 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FormatVersion", targetDepth))
+                if (context.TestExpression("FormatVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FormatVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Services", targetDepth))
+                if (context.TestExpression("Services", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Service, ServiceUnmarshaller>(ServiceUnmarshaller.Instance);
                     response.Services = unmarshaller.Unmarshall(context, ref reader);
@@ -95,6 +95,10 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ExpiredNextTokenException"))
                 {
                     return ExpiredNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

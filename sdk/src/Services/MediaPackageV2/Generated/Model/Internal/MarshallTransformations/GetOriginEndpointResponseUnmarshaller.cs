@@ -52,112 +52,118 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelGroupName", targetDepth))
+                if (context.TestExpression("ChannelGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChannelGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelName", targetDepth))
+                if (context.TestExpression("ChannelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerType", targetDepth))
+                if (context.TestExpression("ContainerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ContainerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DashManifests", targetDepth))
+                if (context.TestExpression("DashManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GetDashManifestConfiguration, GetDashManifestConfigurationUnmarshaller>(GetDashManifestConfigurationUnmarshaller.Instance);
                     response.DashManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ETag", targetDepth))
+                if (context.TestExpression("ETag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ETag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth))
+                if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ForceEndpointErrorConfigurationUnmarshaller.Instance;
                     response.ForceEndpointErrorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HlsManifests", targetDepth))
+                if (context.TestExpression("HlsManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GetHlsManifestConfiguration, GetHlsManifestConfigurationUnmarshaller>(GetHlsManifestConfigurationUnmarshaller.Instance);
                     response.HlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LowLatencyHlsManifests", targetDepth))
+                if (context.TestExpression("LowLatencyHlsManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GetLowLatencyHlsManifestConfiguration, GetLowLatencyHlsManifestConfigurationUnmarshaller>(GetLowLatencyHlsManifestConfigurationUnmarshaller.Instance);
                     response.LowLatencyHlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModifiedAt", targetDepth))
+                if (context.TestExpression("ModifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MssManifests", targetDepth))
+                if (context.TestExpression("MssManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GetMssManifestConfiguration, GetMssManifestConfigurationUnmarshaller>(GetMssManifestConfigurationUnmarshaller.Instance);
                     response.MssManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginEndpointName", targetDepth))
+                if (context.TestExpression("OriginEndpointName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OriginEndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResetAt", targetDepth))
+                if (context.TestExpression("ResetAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ResetAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Segment", targetDepth))
+                if (context.TestExpression("Segment", targetDepth, ref reader))
                 {
                     var unmarshaller = SegmentUnmarshaller.Instance;
                     response.Segment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartoverWindowSeconds", targetDepth))
+                if (context.TestExpression("StartoverWindowSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.StartoverWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UriSeparator", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UriSeparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -52,37 +52,37 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BillingConfiguration", targetDepth))
+                if (context.TestExpression("BillingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BillingConfigurationUnmarshaller.Instance;
                     response.BillingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2InstanceErrors", targetDepth))
+                if (context.TestExpression("EC2InstanceErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EC2InstanceError, EC2InstanceErrorUnmarshaller>(EC2InstanceErrorUnmarshaller.Instance);
                     response.EC2InstanceErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2ManagedInstance", targetDepth))
+                if (context.TestExpression("EC2ManagedInstance", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2ManagedInstanceUnmarshaller.Instance;
                     response.EC2ManagedInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionState", targetDepth))
+                if (context.TestExpression("ProvisionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProvisionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceInstanceErrors", targetDepth))
+                if (context.TestExpression("WorkspaceInstanceErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkspaceInstanceError, WorkspaceInstanceErrorUnmarshaller>(WorkspaceInstanceErrorUnmarshaller.Instance);
                     response.WorkspaceInstanceErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceInstanceId", targetDepth))
+                if (context.TestExpression("WorkspaceInstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkspaceInstanceId = unmarshaller.Unmarshall(context, ref reader);

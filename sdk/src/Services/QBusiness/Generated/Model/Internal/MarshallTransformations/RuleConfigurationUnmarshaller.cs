@@ -56,13 +56,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentBlockerRule", targetDepth))
+                if (context.TestExpression("contentBlockerRule", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentBlockerRuleUnmarshaller.Instance;
                     unmarshalledObject.ContentBlockerRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentRetrievalRule", targetDepth))
+                if (context.TestExpression("contentRetrievalRule", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentRetrievalRuleUnmarshaller.Instance;
                     unmarshalledObject.ContentRetrievalRule = unmarshaller.Unmarshall(context, ref reader);

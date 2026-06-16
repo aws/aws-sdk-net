@@ -56,73 +56,73 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompletionTimestamp", targetDepth))
+                if (context.TestExpression("CompletionTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletionTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTimestamp", targetDepth))
+                if (context.TestExpression("CreationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureDetails", targetDepth))
+                if (context.TestExpression("FailureDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaAnalysisJobFailureDetailsUnmarshaller.Instance;
                     unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Input", targetDepth))
+                if (context.TestExpression("Input", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaAnalysisInputUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("JobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobName", targetDepth))
+                if (context.TestExpression("JobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyId", targetDepth))
+                if (context.TestExpression("KmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestSummary", targetDepth))
+                if (context.TestExpression("ManifestSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaAnalysisManifestSummaryUnmarshaller.Instance;
                     unmarshalledObject.ManifestSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperationsConfig", targetDepth))
+                if (context.TestExpression("OperationsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaAnalysisOperationsConfigUnmarshaller.Instance;
                     unmarshalledObject.OperationsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputConfig", targetDepth))
+                if (context.TestExpression("OutputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaAnalysisOutputConfigUnmarshaller.Instance;
                     unmarshalledObject.OutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("Results", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaAnalysisResultsUnmarshaller.Instance;
                     unmarshalledObject.Results = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Parameters", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CfnStackParameter, CfnStackParameterUnmarshaller>(CfnStackParameterUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleARN", targetDepth))
+                if (context.TestExpression("RoleARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackDetail", targetDepth))
+                if (context.TestExpression("StackDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = CfnStackDetailUnmarshaller.Instance;
                     unmarshalledObject.StackDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateName", targetDepth))
+                if (context.TestExpression("TemplateName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateURL", targetDepth))
+                if (context.TestExpression("TemplateURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TemplateURL = unmarshaller.Unmarshall(context, ref reader);

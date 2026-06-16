@@ -56,73 +56,73 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CacheBehaviors", targetDepth))
+                if (context.TestExpression("CacheBehaviors", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionCacheBehaviorsUnmarshaller.Instance;
                     unmarshalledObject.CacheBehaviors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultCacheBehavior", targetDepth))
+                if (context.TestExpression("DefaultCacheBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionDefaultCacheBehaviorUnmarshaller.Instance;
                     unmarshalledObject.DefaultCacheBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultRootObject", targetDepth))
+                if (context.TestExpression("DefaultRootObject", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultRootObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ETag", targetDepth))
+                if (context.TestExpression("ETag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ETag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Logging", targetDepth))
+                if (context.TestExpression("Logging", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionLoggingUnmarshaller.Instance;
                     unmarshalledObject.Logging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginGroups", targetDepth))
+                if (context.TestExpression("OriginGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionOriginGroupsUnmarshaller.Instance;
                     unmarshalledObject.OriginGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Origins", targetDepth))
+                if (context.TestExpression("Origins", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionOriginsUnmarshaller.Instance;
                     unmarshalledObject.Origins = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ViewerCertificate", targetDepth))
+                if (context.TestExpression("ViewerCertificate", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionViewerCertificateUnmarshaller.Instance;
                     unmarshalledObject.ViewerCertificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebAclId", targetDepth))
+                if (context.TestExpression("WebAclId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebAclId = unmarshaller.Unmarshall(context, ref reader);

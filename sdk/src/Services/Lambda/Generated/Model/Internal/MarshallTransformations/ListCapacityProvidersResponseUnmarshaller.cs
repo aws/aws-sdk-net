@@ -52,13 +52,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityProviders", targetDepth))
+                if (context.TestExpression("CapacityProviders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CapacityProvider, CapacityProviderUnmarshaller>(CapacityProviderUnmarshaller.Instance);
                     response.CapacityProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);

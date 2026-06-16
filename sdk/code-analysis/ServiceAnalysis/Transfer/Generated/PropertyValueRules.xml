@@ -877,7 +877,6 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.StartDirectoryListingRequest.MaxItems</property>
     <min>1</min>
-    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.StartDirectoryListingRequest.OutputDirectoryPath</property>

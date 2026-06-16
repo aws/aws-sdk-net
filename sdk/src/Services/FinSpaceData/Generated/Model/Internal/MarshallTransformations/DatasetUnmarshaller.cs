@@ -56,61 +56,61 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alias", targetDepth))
+                if (context.TestExpression("alias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createTime", targetDepth))
+                if (context.TestExpression("createTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetArn", targetDepth))
+                if (context.TestExpression("datasetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetDescription", targetDepth))
+                if (context.TestExpression("datasetDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetId", targetDepth))
+                if (context.TestExpression("datasetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetTitle", targetDepth))
+                if (context.TestExpression("datasetTitle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kind", targetDepth))
+                if (context.TestExpression("kind", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Kind = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedTime", targetDepth))
+                if (context.TestExpression("lastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ownerInfo", targetDepth))
+                if (context.TestExpression("ownerInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DatasetOwnerInfoUnmarshaller.Instance;
                     unmarshalledObject.OwnerInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schemaDefinition", targetDepth))
+                if (context.TestExpression("schemaDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaUnionUnmarshaller.Instance;
                     unmarshalledObject.SchemaDefinition = unmarshaller.Unmarshall(context, ref reader);

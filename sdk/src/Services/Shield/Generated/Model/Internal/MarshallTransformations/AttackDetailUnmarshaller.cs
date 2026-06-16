@@ -56,49 +56,49 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttackCounters", targetDepth))
+                if (context.TestExpression("AttackCounters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance);
                     unmarshalledObject.AttackCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttackId", targetDepth))
+                if (context.TestExpression("AttackId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttackId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttackProperties", targetDepth))
+                if (context.TestExpression("AttackProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttackProperty, AttackPropertyUnmarshaller>(AttackPropertyUnmarshaller.Instance);
                     unmarshalledObject.AttackProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mitigations", targetDepth))
+                if (context.TestExpression("Mitigations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Mitigation, MitigationUnmarshaller>(MitigationUnmarshaller.Instance);
                     unmarshalledObject.Mitigations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubResources", targetDepth))
+                if (context.TestExpression("SubResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SubResourceSummary, SubResourceSummaryUnmarshaller>(SubResourceSummaryUnmarshaller.Instance);
                     unmarshalledObject.SubResources = unmarshaller.Unmarshall(context, ref reader);

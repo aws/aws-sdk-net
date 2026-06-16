@@ -56,19 +56,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Events", targetDepth))
+                if (context.TestExpression("Events", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FuotaTaskEventLogOption, FuotaTaskEventLogOptionUnmarshaller>(FuotaTaskEventLogOptionUnmarshaller.Instance);
                     unmarshalledObject.Events = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogLevel", targetDepth))
+                if (context.TestExpression("LogLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

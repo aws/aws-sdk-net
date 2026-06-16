@@ -56,55 +56,55 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditDestinationARN", targetDepth))
+                if (context.TestExpression("AuditDestinationARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuditDestinationARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CacheAttributes", targetDepth))
+                if (context.TestExpression("CacheAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = CacheAttributesUnmarshaller.Instance;
                     unmarshalledObject.CacheAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointNetworkConfiguration", targetDepth))
+                if (context.TestExpression("EndpointNetworkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EndpointNetworkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EndpointNetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSystemAssociationARN", targetDepth))
+                if (context.TestExpression("FileSystemAssociationARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemAssociationARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSystemAssociationStatus", targetDepth))
+                if (context.TestExpression("FileSystemAssociationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemAssociationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSystemAssociationStatusDetails", targetDepth))
+                if (context.TestExpression("FileSystemAssociationStatusDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FileSystemAssociationStatusDetail, FileSystemAssociationStatusDetailUnmarshaller>(FileSystemAssociationStatusDetailUnmarshaller.Instance);
                     unmarshalledObject.FileSystemAssociationStatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("GatewayARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GatewayARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocationARN", targetDepth))
+                if (context.TestExpression("LocationARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocationARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

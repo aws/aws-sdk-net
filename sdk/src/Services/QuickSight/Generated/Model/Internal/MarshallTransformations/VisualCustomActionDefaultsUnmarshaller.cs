@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("highlightOperation", targetDepth))
+                if (context.TestExpression("highlightOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualHighlightOperationUnmarshaller.Instance;
                     unmarshalledObject.HighlightOperation = unmarshaller.Unmarshall(context, ref reader);

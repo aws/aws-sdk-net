@@ -56,25 +56,25 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoDisablePolicy", targetDepth))
+                if (context.TestExpression("autoDisablePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoDisablePolicyUnmarshaller.Instance;
                     unmarshalledObject.AutoDisablePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineExecutionStartCondition", targetDepth))
+                if (context.TestExpression("pipelineExecutionStartCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineExecutionStartCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduleExpression", targetDepth))
+                if (context.TestExpression("scheduleExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timezone", targetDepth))
+                if (context.TestExpression("timezone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Timezone = unmarshaller.Unmarshall(context, ref reader);

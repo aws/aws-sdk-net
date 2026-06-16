@@ -56,13 +56,13 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudAutonomousVmClusterId", targetDepth))
+                if (context.TestExpression("cloudAutonomousVmClusterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudAutonomousVmClusterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unallocatedAdbStorageInTBs", targetDepth))
+                if (context.TestExpression("unallocatedAdbStorageInTBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.UnallocatedAdbStorageInTBs = unmarshaller.Unmarshall(context, ref reader);

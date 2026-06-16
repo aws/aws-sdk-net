@@ -56,49 +56,49 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BucketARN", targetDepth))
+                if (context.TestExpression("BucketARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BufferingHints", targetDepth))
+                if (context.TestExpression("BufferingHints", targetDepth, ref reader))
                 {
                     var unmarshaller = BufferingHintsUnmarshaller.Instance;
                     unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
+                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompressionFormat", targetDepth))
+                if (context.TestExpression("CompressionFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompressionFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorOutputPrefix", targetDepth))
+                if (context.TestExpression("ErrorOutputPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorOutputPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prefix", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleARN", targetDepth))
+                if (context.TestExpression("RoleARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context, ref reader);

@@ -52,67 +52,67 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessKey", targetDepth))
+                if (context.TestExpression("AccessKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccessKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AgentArns", targetDepth))
+                if (context.TestExpression("AgentArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.AgentArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CmkSecretConfig", targetDepth))
+                if (context.TestExpression("CmkSecretConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CmkSecretConfigUnmarshaller.Instance;
                     response.CmkSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomSecretConfig", targetDepth))
+                if (context.TestExpression("CustomSecretConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomSecretConfigUnmarshaller.Instance;
                     response.CustomSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocationArn", targetDepth))
+                if (context.TestExpression("LocationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocationUri", targetDepth))
+                if (context.TestExpression("LocationUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocationUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedSecretConfig", targetDepth))
+                if (context.TestExpression("ManagedSecretConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedSecretConfigUnmarshaller.Instance;
                     response.ManagedSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerCertificate", targetDepth))
+                if (context.TestExpression("ServerCertificate", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     response.ServerCertificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerPort", targetDepth))
+                if (context.TestExpression("ServerPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ServerPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerProtocol", targetDepth))
+                if (context.TestExpression("ServerProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServerProtocol = unmarshaller.Unmarshall(context, ref reader);

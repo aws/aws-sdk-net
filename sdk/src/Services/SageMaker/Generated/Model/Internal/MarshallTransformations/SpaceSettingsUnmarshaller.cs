@@ -56,55 +56,55 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppType", targetDepth))
+                if (context.TestExpression("AppType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeEditorAppSettings", targetDepth))
+                if (context.TestExpression("CodeEditorAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SpaceCodeEditorAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.CodeEditorAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomFileSystems", targetDepth))
+                if (context.TestExpression("CustomFileSystems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomFileSystem, CustomFileSystemUnmarshaller>(CustomFileSystemUnmarshaller.Instance);
                     unmarshalledObject.CustomFileSystems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JupyterLabAppSettings", targetDepth))
+                if (context.TestExpression("JupyterLabAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SpaceJupyterLabAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JupyterServerAppSettings", targetDepth))
+                if (context.TestExpression("JupyterServerAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = JupyterServerAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.JupyterServerAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KernelGatewayAppSettings", targetDepth))
+                if (context.TestExpression("KernelGatewayAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = KernelGatewayAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoteAccess", targetDepth))
+                if (context.TestExpression("RemoteAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpaceManagedResources", targetDepth))
+                if (context.TestExpression("SpaceManagedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpaceManagedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpaceStorageSettings", targetDepth))
+                if (context.TestExpression("SpaceStorageSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SpaceStorageSettingsUnmarshaller.Instance;
                     unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context, ref reader);

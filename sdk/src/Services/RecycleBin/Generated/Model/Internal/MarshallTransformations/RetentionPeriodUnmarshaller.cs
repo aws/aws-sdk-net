@@ -56,13 +56,13 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RetentionPeriodUnit", targetDepth))
+                if (context.TestExpression("RetentionPeriodUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetentionPeriodValue", targetDepth))
+                if (context.TestExpression("RetentionPeriodValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodValue = unmarshaller.Unmarshall(context, ref reader);

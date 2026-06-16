@@ -52,109 +52,109 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanTaskConfig", targetDepth))
+                if (context.TestExpression("HumanTaskConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HumanTaskConfigUnmarshaller.Instance;
                     response.HumanTaskConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputConfig", targetDepth))
+                if (context.TestExpression("InputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobInputConfigUnmarshaller.Instance;
                     response.InputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobReferenceCode", targetDepth))
+                if (context.TestExpression("JobReferenceCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobReferenceCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelAttributeName", targetDepth))
+                if (context.TestExpression("LabelAttributeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LabelAttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelCategoryConfigS3Uri", targetDepth))
+                if (context.TestExpression("LabelCategoryConfigS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LabelCategoryConfigS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelCounters", targetDepth))
+                if (context.TestExpression("LabelCounters", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelCountersUnmarshaller.Instance;
                     response.LabelCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobAlgorithmsConfig", targetDepth))
+                if (context.TestExpression("LabelingJobAlgorithmsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobAlgorithmsConfigUnmarshaller.Instance;
                     response.LabelingJobAlgorithmsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobArn", targetDepth))
+                if (context.TestExpression("LabelingJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LabelingJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobName", targetDepth))
+                if (context.TestExpression("LabelingJobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LabelingJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobOutput", targetDepth))
+                if (context.TestExpression("LabelingJobOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobOutputUnmarshaller.Instance;
                     response.LabelingJobOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobStatus", targetDepth))
+                if (context.TestExpression("LabelingJobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LabelingJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputConfig", targetDepth))
+                if (context.TestExpression("OutputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobOutputConfigUnmarshaller.Instance;
                     response.OutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StoppingConditions", targetDepth))
+                if (context.TestExpression("StoppingConditions", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobStoppingConditionsUnmarshaller.Instance;
                     response.StoppingConditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

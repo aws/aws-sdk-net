@@ -56,19 +56,19 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dayOfWeek", targetDepth))
+                if (context.TestExpression("dayOfWeek", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DayOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeOfDay", targetDepth))
+                if (context.TestExpression("timeOfDay", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeOfDay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeZone", targetDepth))
+                if (context.TestExpression("timeZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeZone = unmarshaller.Unmarshall(context, ref reader);

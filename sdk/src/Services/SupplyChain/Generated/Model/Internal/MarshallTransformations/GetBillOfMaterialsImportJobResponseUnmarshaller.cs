@@ -52,7 +52,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("job", targetDepth))
+                if (context.TestExpression("job", targetDepth, ref reader))
                 {
                     var unmarshaller = BillOfMaterialsImportJobUnmarshaller.Instance;
                     response.Job = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowFleet", targetDepth))
+                if (context.TestExpression("allowFleet", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowFleet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowImageBuilder", targetDepth))
+                if (context.TestExpression("allowImageBuilder", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowImageBuilder = unmarshaller.Unmarshall(context, ref reader);

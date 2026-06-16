@@ -56,13 +56,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("burstLimit", targetDepth))
+                if (context.TestExpression("burstLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BurstLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rateLimit", targetDepth))
+                if (context.TestExpression("rateLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RateLimit = unmarshaller.Unmarshall(context, ref reader);

@@ -56,79 +56,79 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CellStyle", targetDepth))
+                if (context.TestExpression("CellStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.CellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CollapsedRowDimensionsVisibility", targetDepth))
+                if (context.TestExpression("CollapsedRowDimensionsVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CollapsedRowDimensionsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnHeaderStyle", targetDepth))
+                if (context.TestExpression("ColumnHeaderStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.ColumnHeaderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnNamesVisibility", targetDepth))
+                if (context.TestExpression("ColumnNamesVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnNamesVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultCellWidth", targetDepth))
+                if (context.TestExpression("DefaultCellWidth", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultCellWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricPlacement", targetDepth))
+                if (context.TestExpression("MetricPlacement", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricPlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowAlternateColorOptions", targetDepth))
+                if (context.TestExpression("RowAlternateColorOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = RowAlternateColorOptionsUnmarshaller.Instance;
                     unmarshalledObject.RowAlternateColorOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowFieldNamesStyle", targetDepth))
+                if (context.TestExpression("RowFieldNamesStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.RowFieldNamesStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowHeaderStyle", targetDepth))
+                if (context.TestExpression("RowHeaderStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.RowHeaderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowsLabelOptions", targetDepth))
+                if (context.TestExpression("RowsLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = PivotTableRowsLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.RowsLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowsLayout", targetDepth))
+                if (context.TestExpression("RowsLayout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RowsLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SingleMetricVisibility", targetDepth))
+                if (context.TestExpression("SingleMetricVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SingleMetricVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ToggleButtonsVisibility", targetDepth))
+                if (context.TestExpression("ToggleButtonsVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ToggleButtonsVisibility = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Languages", targetDepth))
+                if (context.TestExpression("Languages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DominantLanguage, DominantLanguageUnmarshaller>(DominantLanguageUnmarshaller.Instance);
                     response.Languages = unmarshaller.Unmarshall(context, ref reader);

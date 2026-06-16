@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("webCrawlerConfiguration", targetDepth))
+                if (context.TestExpression("webCrawlerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WebCrawlerConfigurationUnmarshaller.Instance;
                     unmarshalledObject.WebCrawlerConfiguration = unmarshaller.Unmarshall(context, ref reader);

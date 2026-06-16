@@ -56,19 +56,19 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalDatasets", targetDepth))
+                if (context.TestExpression("AdditionalDatasets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdditionalDataset, AdditionalDatasetUnmarshaller>(AdditionalDatasetUnmarshaller.Instance);
                     unmarshalledObject.AdditionalDatasets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttributeConfigs", targetDepth))
+                if (context.TestExpression("AttributeConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttributeConfig, AttributeConfigUnmarshaller>(AttributeConfigUnmarshaller.Instance);
                     unmarshalledObject.AttributeConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetGroupArn", targetDepth))
+                if (context.TestExpression("DatasetGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetGroupArn = unmarshaller.Unmarshall(context, ref reader);

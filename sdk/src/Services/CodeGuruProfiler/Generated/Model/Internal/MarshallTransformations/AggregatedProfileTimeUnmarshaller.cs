@@ -56,13 +56,13 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("period", targetDepth))
+                if (context.TestExpression("period", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Period = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("start", targetDepth))
+                if (context.TestExpression("start", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Start = unmarshaller.Unmarshall(context, ref reader);

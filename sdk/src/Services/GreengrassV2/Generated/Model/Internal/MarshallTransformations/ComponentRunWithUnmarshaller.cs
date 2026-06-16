@@ -56,19 +56,19 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("posixUser", targetDepth))
+                if (context.TestExpression("posixUser", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PosixUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemResourceLimits", targetDepth))
+                if (context.TestExpression("systemResourceLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemResourceLimitsUnmarshaller.Instance;
                     unmarshalledObject.SystemResourceLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("windowsUser", targetDepth))
+                if (context.TestExpression("windowsUser", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WindowsUser = unmarshaller.Unmarshall(context, ref reader);

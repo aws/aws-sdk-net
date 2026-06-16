@@ -56,13 +56,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Coordinates", targetDepth))
+                if (context.TestExpression("Coordinates", targetDepth, ref reader))
                 {
                     var unmarshaller = GPSCoordinatesUnmarshaller.Instance;
                     unmarshalledObject.Coordinates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RangeInKilometers", targetDepth))
+                if (context.TestExpression("RangeInKilometers", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RangeInKilometers = unmarshaller.Unmarshall(context, ref reader);

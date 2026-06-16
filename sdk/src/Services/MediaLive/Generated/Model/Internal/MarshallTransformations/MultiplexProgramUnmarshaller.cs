@@ -56,31 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelId", targetDepth))
+                if (context.TestExpression("channelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiplexProgramSettings", targetDepth))
+                if (context.TestExpression("multiplexProgramSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexProgramSettingsUnmarshaller.Instance;
                     unmarshalledObject.MultiplexProgramSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packetIdentifiersMap", targetDepth))
+                if (context.TestExpression("packetIdentifiersMap", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexProgramPacketIdentifiersMapUnmarshaller.Instance;
                     unmarshalledObject.PacketIdentifiersMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineDetails", targetDepth))
+                if (context.TestExpression("pipelineDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiplexProgramPipelineDetail, MultiplexProgramPipelineDetailUnmarshaller>(MultiplexProgramPipelineDetailUnmarshaller.Instance);
                     unmarshalledObject.PipelineDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programName", targetDepth))
+                if (context.TestExpression("programName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context, ref reader);

@@ -38,6 +38,8 @@ namespace Amazon.Backup.Model
         private string _backupVaultArn;
         private string _backupVaultName;
         private DateTime? _completionDate;
+        private DateTime? _continuousScanEndTime;
+        private DateTime? _continuousScanStartTime;
         private ScanJobCreator _createdBy;
         private DateTime? _creationDate;
         private string _iamRoleArn;
@@ -142,6 +144,42 @@ namespace Amazon.Backup.Model
         internal bool IsSetCompletionDate()
         {
             return this._completionDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuousScanEndTime. 
+        /// <para>
+        /// The point in time the scan job scanned up to for a continuous backup.
+        /// </para>
+        /// </summary>
+        public DateTime? ContinuousScanEndTime
+        {
+            get { return this._continuousScanEndTime; }
+            set { this._continuousScanEndTime = value; }
+        }
+
+        // Check to see if ContinuousScanEndTime property is set
+        internal bool IsSetContinuousScanEndTime()
+        {
+            return this._continuousScanEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuousScanStartTime. 
+        /// <para>
+        /// The point in time the scan job started scan from for a continuous backup.
+        /// </para>
+        /// </summary>
+        public DateTime? ContinuousScanStartTime
+        {
+            get { return this._continuousScanStartTime; }
+            set { this._continuousScanStartTime = value; }
+        }
+
+        // Check to see if ContinuousScanStartTime property is set
+        internal bool IsSetContinuousScanStartTime()
+        {
+            return this._continuousScanStartTime.HasValue; 
         }
 
         /// <summary>

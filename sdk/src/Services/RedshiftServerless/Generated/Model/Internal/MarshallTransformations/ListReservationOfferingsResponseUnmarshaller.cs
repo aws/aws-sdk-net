@@ -52,13 +52,13 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reservationOfferingsList", targetDepth))
+                if (context.TestExpression("reservationOfferingsList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReservationOffering, ReservationOfferingUnmarshaller>(ReservationOfferingUnmarshaller.Instance);
                     response.ReservationOfferingsList = unmarshaller.Unmarshall(context, ref reader);

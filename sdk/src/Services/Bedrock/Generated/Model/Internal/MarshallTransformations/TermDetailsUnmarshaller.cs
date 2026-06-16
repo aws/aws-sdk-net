@@ -56,25 +56,25 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("legalTerm", targetDepth))
+                if (context.TestExpression("legalTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = LegalTermUnmarshaller.Instance;
                     unmarshalledObject.LegalTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportTerm", targetDepth))
+                if (context.TestExpression("supportTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = SupportTermUnmarshaller.Instance;
                     unmarshalledObject.SupportTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageBasedPricingTerm", targetDepth))
+                if (context.TestExpression("usageBasedPricingTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = PricingTermUnmarshaller.Instance;
                     unmarshalledObject.UsageBasedPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validityTerm", targetDepth))
+                if (context.TestExpression("validityTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = ValidityTermUnmarshaller.Instance;
                     unmarshalledObject.ValidityTerm = unmarshaller.Unmarshall(context, ref reader);

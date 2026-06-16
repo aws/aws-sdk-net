@@ -43,6 +43,9 @@ namespace Amazon.Batch.Model
         private string _jobName;
         private string _jobQueue;
         private LatestServiceJobAttempt _latestAttempt;
+        private ServiceJobPreemptionConfiguration _preemptionConfiguration;
+        private ServiceJobPreemptionSummary _preemptionSummary;
+        private string _quotaShareName;
         private ServiceJobRetryStrategy _retryStrategy;
         private long? _scheduledAt;
         private int? _schedulingPriority;
@@ -231,6 +234,61 @@ namespace Amazon.Batch.Model
         internal bool IsSetLatestAttempt()
         {
             return this._latestAttempt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreemptionConfiguration. 
+        /// <para>
+        /// Specifies the service job behavior when preempted.
+        /// </para>
+        /// </summary>
+        public ServiceJobPreemptionConfiguration PreemptionConfiguration
+        {
+            get { return this._preemptionConfiguration; }
+            set { this._preemptionConfiguration = value; }
+        }
+
+        // Check to see if PreemptionConfiguration property is set
+        internal bool IsSetPreemptionConfiguration()
+        {
+            return this._preemptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreemptionSummary. 
+        /// <para>
+        /// Summarizes the preemptions of the service job. This field appears on a service job
+        /// when it has been preempted.
+        /// </para>
+        /// </summary>
+        public ServiceJobPreemptionSummary PreemptionSummary
+        {
+            get { return this._preemptionSummary; }
+            set { this._preemptionSummary = value; }
+        }
+
+        // Check to see if PreemptionSummary property is set
+        internal bool IsSetPreemptionSummary()
+        {
+            return this._preemptionSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaShareName. 
+        /// <para>
+        /// The name of the quota share that the service job is associated with.
+        /// </para>
+        /// </summary>
+        public string QuotaShareName
+        {
+            get { return this._quotaShareName; }
+            set { this._quotaShareName = value; }
+        }
+
+        // Check to see if QuotaShareName property is set
+        internal bool IsSetQuotaShareName()
+        {
+            return this._quotaShareName != null;
         }
 
         /// <summary>

@@ -52,37 +52,37 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("endTime", targetDepth))
+                if (context.TestExpression("endTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endTimes", targetDepth))
+                if (context.TestExpression("endTimes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimestampStructure, TimestampStructureUnmarshaller>(TimestampStructureUnmarshaller.Instance);
                     response.EndTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frameMetricData", targetDepth))
+                if (context.TestExpression("frameMetricData", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FrameMetricDatum, FrameMetricDatumUnmarshaller>(FrameMetricDatumUnmarshaller.Instance);
                     response.FrameMetricData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolution", targetDepth))
+                if (context.TestExpression("resolution", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Resolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
+                if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unprocessedEndTimes", targetDepth))
+                if (context.TestExpression("unprocessedEndTimes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<TimestampStructure>, StringUnmarshaller, JsonListUnmarshaller<TimestampStructure,TimestampStructureUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<TimestampStructure, TimestampStructureUnmarshaller>(TimestampStructureUnmarshaller.Instance));
                     response.UnprocessedEndTimes = unmarshaller.Unmarshall(context, ref reader);

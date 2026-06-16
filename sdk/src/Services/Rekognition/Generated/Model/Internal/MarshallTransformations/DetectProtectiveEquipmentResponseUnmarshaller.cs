@@ -52,19 +52,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Persons", targetDepth))
+                if (context.TestExpression("Persons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProtectiveEquipmentPerson, ProtectiveEquipmentPersonUnmarshaller>(ProtectiveEquipmentPersonUnmarshaller.Instance);
                     response.Persons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProtectiveEquipmentModelVersion", targetDepth))
+                if (context.TestExpression("ProtectiveEquipmentModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProtectiveEquipmentModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Summary", targetDepth))
+                if (context.TestExpression("Summary", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectiveEquipmentSummaryUnmarshaller.Instance;
                     response.Summary = unmarshaller.Unmarshall(context, ref reader);

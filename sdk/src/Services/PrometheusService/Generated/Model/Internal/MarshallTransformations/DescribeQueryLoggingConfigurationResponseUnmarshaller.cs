@@ -52,7 +52,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("queryLoggingConfiguration", targetDepth))
+                if (context.TestExpression("queryLoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryLoggingConfigurationMetadataUnmarshaller.Instance;
                     response.QueryLoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);

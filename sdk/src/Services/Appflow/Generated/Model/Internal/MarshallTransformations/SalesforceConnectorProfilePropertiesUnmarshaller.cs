@@ -56,19 +56,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instanceUrl", targetDepth))
+                if (context.TestExpression("instanceUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isSandboxEnvironment", targetDepth))
+                if (context.TestExpression("isSandboxEnvironment", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSandboxEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usePrivateLinkForMetadataAndAuthorization", targetDepth))
+                if (context.TestExpression("usePrivateLinkForMetadataAndAuthorization", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UsePrivateLinkForMetadataAndAuthorization = unmarshaller.Unmarshall(context, ref reader);

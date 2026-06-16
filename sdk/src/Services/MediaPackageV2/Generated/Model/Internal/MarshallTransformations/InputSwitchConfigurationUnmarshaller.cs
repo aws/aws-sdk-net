@@ -56,13 +56,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MQCSInputSwitching", targetDepth))
+                if (context.TestExpression("MQCSInputSwitching", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MQCSInputSwitching = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreferredInput", targetDepth))
+                if (context.TestExpression("PreferredInput", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PreferredInput = unmarshaller.Unmarshall(context, ref reader);

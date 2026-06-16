@@ -52,6 +52,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Description);
             }
 
+            if(requestObject.IsSetMemoryRecordSchema())
+            {
+                context.Writer.WritePropertyName("memoryRecordSchema");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MemoryRecordSchemaMarshaller.Instance;
+                marshaller.Marshall(requestObject.MemoryRecordSchema, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -65,6 +76,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 foreach(var requestObjectNamespacesListValue in requestObject.Namespaces)
                 {
                         context.Writer.WriteStringValue(requestObjectNamespacesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetNamespaceTemplates())
+            {
+                context.Writer.WritePropertyName("namespaceTemplates");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectNamespaceTemplatesListValue in requestObject.NamespaceTemplates)
+                {
+                        context.Writer.WriteStringValue(requestObjectNamespaceTemplatesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

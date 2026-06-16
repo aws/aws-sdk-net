@@ -56,13 +56,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BadCountMetric", targetDepth))
+                if (context.TestExpression("BadCountMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
                     unmarshalledObject.BadCountMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GoodCountMetric", targetDepth))
+                if (context.TestExpression("GoodCountMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
                     unmarshalledObject.GoodCountMetric = unmarshaller.Unmarshall(context, ref reader);

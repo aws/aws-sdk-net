@@ -56,19 +56,19 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BillingMode", targetDepth))
+                if (context.TestExpression("BillingMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BillingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlatformType", targetDepth))
+                if (context.TestExpression("PlatformType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlatformType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tenancy", targetDepth))
+                if (context.TestExpression("Tenancy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context, ref reader);

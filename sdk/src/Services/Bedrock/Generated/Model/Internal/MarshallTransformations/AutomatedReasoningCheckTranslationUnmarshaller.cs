@@ -56,31 +56,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("claims", targetDepth))
+                if (context.TestExpression("claims", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningLogicStatement, AutomatedReasoningLogicStatementUnmarshaller>(AutomatedReasoningLogicStatementUnmarshaller.Instance);
                     unmarshalledObject.Claims = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("confidence", targetDepth))
+                if (context.TestExpression("confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("premises", targetDepth))
+                if (context.TestExpression("premises", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningLogicStatement, AutomatedReasoningLogicStatementUnmarshaller>(AutomatedReasoningLogicStatementUnmarshaller.Instance);
                     unmarshalledObject.Premises = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("untranslatedClaims", targetDepth))
+                if (context.TestExpression("untranslatedClaims", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningCheckInputTextReference, AutomatedReasoningCheckInputTextReferenceUnmarshaller>(AutomatedReasoningCheckInputTextReferenceUnmarshaller.Instance);
                     unmarshalledObject.UntranslatedClaims = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("untranslatedPremises", targetDepth))
+                if (context.TestExpression("untranslatedPremises", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningCheckInputTextReference, AutomatedReasoningCheckInputTextReferenceUnmarshaller>(AutomatedReasoningCheckInputTextReferenceUnmarshaller.Instance);
                     unmarshalledObject.UntranslatedPremises = unmarshaller.Unmarshall(context, ref reader);

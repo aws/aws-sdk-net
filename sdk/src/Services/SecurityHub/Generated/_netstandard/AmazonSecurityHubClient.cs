@@ -39,6 +39,11 @@ namespace Amazon.SecurityHub
 {
     /// <summary>
     /// <para>Implementation for accessing SecurityHub</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Security Hub CSPM provides you with a comprehensive view of your security state in
     /// Amazon Web Services and helps you assess your Amazon Web Services environment against
@@ -1198,14 +1203,32 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Used by customers to update information about their investigation into a finding.
-        /// Requested by delegated administrator accounts or member accounts. Delegated administrator
+        /// Updates information about a customer's investigation into a finding. Delegated administrator
         /// accounts can update findings for their account and their member accounts. Member accounts
-        /// can update findings for their account. <c>BatchUpdateFindings</c> and <c>BatchUpdateFindingV2</c>
-        /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
-        /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
-        /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
-        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>.
+        /// can update findings for their own account.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>BatchUpdateFindings</c> and <c>BatchUpdateFindingsV2</c> both use <c>securityhub:BatchUpdateFindings</c>
+        /// in the <c>Action</c> element of an IAM policy statement. You must have permission
+        /// to perform the <c>securityhub:BatchUpdateFindings</c> action. You can configure IAM
+        /// policies to restrict access to specific finding fields or field values by using the
+        /// <c>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</c> condition key, where <c>&lt;fieldName&gt;</c>
+        /// is one of the following supported fields: <c>SeverityId</c>, <c>StatusId</c>, or <c>Comment</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To prevent a user from updating a specific field, use a <c>Null</c> condition with
+        /// <c>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</c> set to <c>"false"</c>. To prevent
+        /// a user from setting a field to a specific value, use a <c>StringEquals</c> condition
+        /// with <c>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</c> set to the disallowed value
+        /// or list of values.
+        /// </para>
+        ///  
+        /// <para>
+        /// Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of <c>finding_info.modified_time</c>,
+        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, or <c>time_dt</c> for a finding.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3558,6 +3581,60 @@ namespace Amazon.SecurityHub
         }
         #endregion
         
+        #region  GenerateRecommendedPolicyV2
+
+        internal virtual GenerateRecommendedPolicyV2Response GenerateRecommendedPolicyV2(GenerateRecommendedPolicyV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GenerateRecommendedPolicyV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateRecommendedPolicyV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateRecommendedPolicyV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Begins the recommended policy generation to remediate a Security Hub finding. <c>GenerateRecommendedPolicyV2</c>
+        /// only supports findings for unused permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendedPolicyV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateRecommendedPolicyV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GenerateRecommendedPolicyV2">REST API Reference for GenerateRecommendedPolicyV2 Operation</seealso>
+        public virtual Task<GenerateRecommendedPolicyV2Response> GenerateRecommendedPolicyV2Async(GenerateRecommendedPolicyV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GenerateRecommendedPolicyV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateRecommendedPolicyV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GenerateRecommendedPolicyV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetAdministratorAccount
 
         internal virtual GetAdministratorAccountResponse GetAdministratorAccount(GetAdministratorAccountRequest request)
@@ -4126,9 +4203,21 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
-        /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
-        /// policy statement. You must have permission to perform the <c>s</c> action.
+        /// Returns aggregated statistical data about findings.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
+        /// findings from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>GetFindingStatisticsV2</c> uses <c>securityhub:GetAdhocInsightResults</c> in the
+        /// <c>Action</c> element of an IAM policy statement. You must have permission to perform
+        /// the <c>securityhub:GetAdhocInsightResults</c> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4144,6 +4233,14 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
         /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -4224,10 +4321,28 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
-        /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
-        /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
-        /// action.
+        /// Returns a list of findings that match the specified criteria.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
+        /// findings from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Filters</c> parameter to refine results based on finding attributes.
+        /// You can use <c>Scopes</c> and <c>Filters</c> independently or together. When both
+        /// are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c> refines
+        /// results within that scoped data set.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>GetFindings</c> and <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c>
+        /// in the <c>Action</c> element of an IAM policy statement. You must have permission
+        /// to perform the <c>securityhub:GetFindings</c> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4243,6 +4358,14 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
         /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -4559,6 +4682,60 @@ namespace Amazon.SecurityHub
         }
         #endregion
         
+        #region  GetRecommendedPolicyV2
+
+        internal virtual GetRecommendedPolicyV2Response GetRecommendedPolicyV2(GetRecommendedPolicyV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommendedPolicyV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommendedPolicyV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommendedPolicyV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the recommended policy to remediate a Security Hub finding. <c>GetRecommendedPolicyV2</c>
+        /// only supports findings for unused permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendedPolicyV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommendedPolicyV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetRecommendedPolicyV2">REST API Reference for GetRecommendedPolicyV2 Operation</seealso>
+        public virtual Task<GetRecommendedPolicyV2Response> GetRecommendedPolicyV2Async(GetRecommendedPolicyV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommendedPolicyV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommendedPolicyV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRecommendedPolicyV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetResourcesStatisticsV2
 
         internal virtual GetResourcesStatisticsV2Response GetResourcesStatisticsV2(GetResourcesStatisticsV2Request request)
@@ -4575,6 +4752,14 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Retrieves statistical information about Amazon Web Services resources and their associated
         /// security findings.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
+        /// resources from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4590,6 +4775,14 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
         /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -4674,6 +4867,21 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Returns a list of resources.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+        /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
+        /// resources from your entire organization or from specific organizational units. Only
+        /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>Filters</c> parameter to refine results based on resource attributes.
+        /// You can use <c>Scopes</c> and <c>Filters</c> independently or together. When both
+        /// are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c> refines
+        /// results within that scoped data set.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4689,6 +4897,14 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
         /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.

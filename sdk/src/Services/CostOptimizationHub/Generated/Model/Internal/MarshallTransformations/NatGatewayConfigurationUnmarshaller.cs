@@ -56,19 +56,19 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeConnectionCount", targetDepth))
+                if (context.TestExpression("activeConnectionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ActiveConnectionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packetsInFromDestination", targetDepth))
+                if (context.TestExpression("packetsInFromDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PacketsInFromDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packetsInFromSource", targetDepth))
+                if (context.TestExpression("packetsInFromSource", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PacketsInFromSource = unmarshaller.Unmarshall(context, ref reader);

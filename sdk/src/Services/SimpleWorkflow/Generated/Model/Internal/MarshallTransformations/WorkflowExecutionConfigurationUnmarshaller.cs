@@ -56,37 +56,37 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("childPolicy", targetDepth))
+                if (context.TestExpression("childPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChildPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionStartToCloseTimeout", targetDepth))
+                if (context.TestExpression("executionStartToCloseTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionStartToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaRole", targetDepth))
+                if (context.TestExpression("lambdaRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LambdaRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskList", targetDepth))
+                if (context.TestExpression("taskList", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskListUnmarshaller.Instance;
                     unmarshalledObject.TaskList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskPriority", targetDepth))
+                if (context.TestExpression("taskPriority", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskPriority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStartToCloseTimeout", targetDepth))
+                if (context.TestExpression("taskStartToCloseTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskStartToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);

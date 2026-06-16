@@ -52,13 +52,13 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scopes", targetDepth))
+                if (context.TestExpression("scopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScopeSummary, ScopeSummaryUnmarshaller>(ScopeSummaryUnmarshaller.Instance);
                     response.Scopes = unmarshaller.Unmarshall(context, ref reader);

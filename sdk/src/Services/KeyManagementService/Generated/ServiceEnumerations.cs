@@ -1045,6 +1045,96 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type KeyLastUsageTrackingOperation.
+    /// </summary>
+    public class KeyLastUsageTrackingOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Decrypt for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation Decrypt = new KeyLastUsageTrackingOperation("Decrypt");
+        /// <summary>
+        /// Constant DeriveSharedSecret for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation DeriveSharedSecret = new KeyLastUsageTrackingOperation("DeriveSharedSecret");
+        /// <summary>
+        /// Constant Encrypt for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation Encrypt = new KeyLastUsageTrackingOperation("Encrypt");
+        /// <summary>
+        /// Constant GenerateDataKey for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation GenerateDataKey = new KeyLastUsageTrackingOperation("GenerateDataKey");
+        /// <summary>
+        /// Constant GenerateDataKeyPair for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation GenerateDataKeyPair = new KeyLastUsageTrackingOperation("GenerateDataKeyPair");
+        /// <summary>
+        /// Constant GenerateDataKeyPairWithoutPlaintext for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation GenerateDataKeyPairWithoutPlaintext = new KeyLastUsageTrackingOperation("GenerateDataKeyPairWithoutPlaintext");
+        /// <summary>
+        /// Constant GenerateDataKeyWithoutPlaintext for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation GenerateDataKeyWithoutPlaintext = new KeyLastUsageTrackingOperation("GenerateDataKeyWithoutPlaintext");
+        /// <summary>
+        /// Constant GenerateMac for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation GenerateMac = new KeyLastUsageTrackingOperation("GenerateMac");
+        /// <summary>
+        /// Constant ReEncrypt for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation ReEncrypt = new KeyLastUsageTrackingOperation("ReEncrypt");
+        /// <summary>
+        /// Constant Sign for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation Sign = new KeyLastUsageTrackingOperation("Sign");
+        /// <summary>
+        /// Constant Verify for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation Verify = new KeyLastUsageTrackingOperation("Verify");
+        /// <summary>
+        /// Constant VerifyMac for KeyLastUsageTrackingOperation
+        /// </summary>
+        public static readonly KeyLastUsageTrackingOperation VerifyMac = new KeyLastUsageTrackingOperation("VerifyMac");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyLastUsageTrackingOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyLastUsageTrackingOperation FindValue(string value)
+        {
+            return FindValue<KeyLastUsageTrackingOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyLastUsageTrackingOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyManagerType.
     /// </summary>
     public class KeyManagerType : ConstantClass

@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataCatalogConfig", targetDepth))
+                if (context.TestExpression("DataCatalogConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataCatalogConfigUnmarshaller.Instance;
                     unmarshalledObject.DataCatalogConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisableGlueTableCreation", targetDepth))
+                if (context.TestExpression("DisableGlueTableCreation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableGlueTableCreation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3StorageConfig", targetDepth))
+                if (context.TestExpression("S3StorageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = S3StorageConfigUnmarshaller.Instance;
                     unmarshalledObject.S3StorageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableFormat", targetDepth))
+                if (context.TestExpression("TableFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableFormat = unmarshaller.Unmarshall(context, ref reader);

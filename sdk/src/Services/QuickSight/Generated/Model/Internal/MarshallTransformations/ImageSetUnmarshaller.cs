@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Height32", targetDepth))
+                if (context.TestExpression("Height32", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageUnmarshaller.Instance;
                     unmarshalledObject.Height32 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Height64", targetDepth))
+                if (context.TestExpression("Height64", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageUnmarshaller.Instance;
                     unmarshalledObject.Height64 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Original", targetDepth))
+                if (context.TestExpression("Original", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageUnmarshaller.Instance;
                     unmarshalledObject.Original = unmarshaller.Unmarshall(context, ref reader);

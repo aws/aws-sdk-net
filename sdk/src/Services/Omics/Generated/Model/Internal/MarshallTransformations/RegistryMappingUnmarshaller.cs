@@ -56,25 +56,25 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ecrAccountId", targetDepth))
+                if (context.TestExpression("ecrAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EcrAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrRepositoryPrefix", targetDepth))
+                if (context.TestExpression("ecrRepositoryPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EcrRepositoryPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("upstreamRegistryUrl", targetDepth))
+                if (context.TestExpression("upstreamRegistryUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpstreamRegistryUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("upstreamRepositoryPrefix", targetDepth))
+                if (context.TestExpression("upstreamRepositoryPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpstreamRepositoryPrefix = unmarshaller.Unmarshall(context, ref reader);

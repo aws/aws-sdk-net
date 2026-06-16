@@ -56,25 +56,25 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Expression", targetDepth))
+                if (context.TestExpression("Expression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpressionType", targetDepth))
+                if (context.TestExpression("ExpressionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExpressionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputSerialization", targetDepth))
+                if (context.TestExpression("InputSerialization", targetDepth, ref reader))
                 {
                     var unmarshaller = InputSerializationUnmarshaller.Instance;
                     unmarshalledObject.InputSerialization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputSerialization", targetDepth))
+                if (context.TestExpression("OutputSerialization", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputSerializationUnmarshaller.Instance;
                     unmarshalledObject.OutputSerialization = unmarshaller.Unmarshall(context, ref reader);

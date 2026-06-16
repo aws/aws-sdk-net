@@ -56,31 +56,31 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BinaryListValues", targetDepth))
+                if (context.TestExpression("BinaryListValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MemoryStream, MemoryStreamUnmarshaller>(MemoryStreamUnmarshaller.Instance);
                     unmarshalledObject.BinaryListValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BinaryValue", targetDepth))
+                if (context.TestExpression("BinaryValue", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.BinaryValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataType", targetDepth))
+                if (context.TestExpression("DataType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringListValues", targetDepth))
+                if (context.TestExpression("StringListValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StringListValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringValue", targetDepth))
+                if (context.TestExpression("StringValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StringValue = unmarshaller.Unmarshall(context, ref reader);

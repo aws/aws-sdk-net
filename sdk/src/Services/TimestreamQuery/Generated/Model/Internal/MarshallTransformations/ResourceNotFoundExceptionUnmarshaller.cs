@@ -72,7 +72,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ScheduledQueryArn", targetDepth))
+                    if (context.TestExpression("ScheduledQueryArn", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ScheduledQueryArn = unmarshaller.Unmarshall(context, ref reader);

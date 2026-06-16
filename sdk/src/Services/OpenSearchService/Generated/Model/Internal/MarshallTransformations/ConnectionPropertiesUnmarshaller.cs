@@ -56,13 +56,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrossClusterSearch", targetDepth))
+                if (context.TestExpression("CrossClusterSearch", targetDepth, ref reader))
                 {
                     var unmarshaller = CrossClusterSearchConnectionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.CrossClusterSearch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Endpoint", targetDepth))
+                if (context.TestExpression("Endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);

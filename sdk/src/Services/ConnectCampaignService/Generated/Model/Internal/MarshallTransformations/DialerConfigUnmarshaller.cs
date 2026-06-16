@@ -56,19 +56,19 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentlessDialerConfig", targetDepth))
+                if (context.TestExpression("agentlessDialerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentlessDialerConfigUnmarshaller.Instance;
                     unmarshalledObject.AgentlessDialerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("predictiveDialerConfig", targetDepth))
+                if (context.TestExpression("predictiveDialerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveDialerConfigUnmarshaller.Instance;
                     unmarshalledObject.PredictiveDialerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("progressiveDialerConfig", targetDepth))
+                if (context.TestExpression("progressiveDialerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProgressiveDialerConfigUnmarshaller.Instance;
                     unmarshalledObject.ProgressiveDialerConfig = unmarshaller.Unmarshall(context, ref reader);

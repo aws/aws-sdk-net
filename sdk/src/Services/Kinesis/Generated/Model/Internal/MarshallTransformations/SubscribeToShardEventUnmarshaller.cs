@@ -56,25 +56,25 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChildShards", targetDepth))
+                if (context.TestExpression("ChildShards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ChildShard, ChildShardUnmarshaller>(ChildShardUnmarshaller.Instance);
                     unmarshalledObject.ChildShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContinuationSequenceNumber", targetDepth))
+                if (context.TestExpression("ContinuationSequenceNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContinuationSequenceNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MillisBehindLatest", targetDepth))
+                if (context.TestExpression("MillisBehindLatest", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MillisBehindLatest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Records", targetDepth))
+                if (context.TestExpression("Records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Record, RecordUnmarshaller>(RecordUnmarshaller.Instance);
                     unmarshalledObject.Records = unmarshaller.Unmarshall(context, ref reader);

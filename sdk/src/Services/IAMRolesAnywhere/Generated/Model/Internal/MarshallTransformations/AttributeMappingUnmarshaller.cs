@@ -56,13 +56,13 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificateField", targetDepth))
+                if (context.TestExpression("certificateField", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CertificateField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mappingRules", targetDepth))
+                if (context.TestExpression("mappingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MappingRule, MappingRuleUnmarshaller>(MappingRuleUnmarshaller.Instance);
                     unmarshalledObject.MappingRules = unmarshaller.Unmarshall(context, ref reader);

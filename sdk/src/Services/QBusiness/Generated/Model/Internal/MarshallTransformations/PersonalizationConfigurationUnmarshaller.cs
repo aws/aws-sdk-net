@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("personalizationControlMode", targetDepth))
+                if (context.TestExpression("personalizationControlMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PersonalizationControlMode = unmarshaller.Unmarshall(context, ref reader);

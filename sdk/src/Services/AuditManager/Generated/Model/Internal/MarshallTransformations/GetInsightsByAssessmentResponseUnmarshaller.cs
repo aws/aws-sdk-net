@@ -52,7 +52,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("insights", targetDepth))
+                if (context.TestExpression("insights", targetDepth, ref reader))
                 {
                     var unmarshaller = InsightsByAssessmentUnmarshaller.Instance;
                     response.Insights = unmarshaller.Unmarshall(context, ref reader);

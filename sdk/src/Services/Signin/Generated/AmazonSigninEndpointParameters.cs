@@ -75,5 +75,14 @@ namespace Amazon.Signin.Endpoints
             get { return (string)this["Region"]; }
             set { this["Region"] = value; } 
         }
+
+        /// <summary>
+        /// IsControlPlane parameter
+        /// </summary>
+        public bool? IsControlPlane 
+        { 
+            get { return (bool?)this["IsControlPlane"]; }
+            set { this["IsControlPlane"] = value; } 
+        }
     }
 }

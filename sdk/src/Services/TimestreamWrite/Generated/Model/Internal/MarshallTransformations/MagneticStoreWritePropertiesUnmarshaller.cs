@@ -56,13 +56,13 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableMagneticStoreWrites", targetDepth))
+                if (context.TestExpression("EnableMagneticStoreWrites", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMagneticStoreWrites = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MagneticStoreRejectedDataLocation", targetDepth))
+                if (context.TestExpression("MagneticStoreRejectedDataLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = MagneticStoreRejectedDataLocationUnmarshaller.Instance;
                     unmarshalledObject.MagneticStoreRejectedDataLocation = unmarshaller.Unmarshall(context, ref reader);

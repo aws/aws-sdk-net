@@ -56,13 +56,13 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("readiness", targetDepth))
+                if (context.TestExpression("readiness", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Readiness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("readinessCheckName", targetDepth))
+                if (context.TestExpression("readinessCheckName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReadinessCheckName = unmarshaller.Unmarshall(context, ref reader);

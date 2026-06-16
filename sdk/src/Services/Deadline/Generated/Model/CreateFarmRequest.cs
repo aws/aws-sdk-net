@@ -67,7 +67,9 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property CostScaleFactor. 
         /// <para>
-        /// The cost scale factor to apply on the farm.
+        /// A multiplier applied to the farm's calculated costs for usage data and budget tracking.
+        /// A value less than 1 represents a discount, a value greater than 1 represents a premium,
+        /// and a value of 1 represents no adjustment. The default value is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

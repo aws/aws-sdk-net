@@ -52,7 +52,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PreparedStatement", targetDepth))
+                if (context.TestExpression("PreparedStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = PreparedStatementUnmarshaller.Instance;
                     response.PreparedStatement = unmarshaller.Unmarshall(context, ref reader);

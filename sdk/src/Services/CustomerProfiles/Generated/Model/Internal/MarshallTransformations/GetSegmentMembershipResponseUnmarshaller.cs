@@ -52,25 +52,25 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Failures", targetDepth))
+                if (context.TestExpression("Failures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProfileQueryFailures, ProfileQueryFailuresUnmarshaller>(ProfileQueryFailuresUnmarshaller.Instance);
                     response.Failures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastComputedAt", targetDepth))
+                if (context.TestExpression("LastComputedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastComputedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Profiles", targetDepth))
+                if (context.TestExpression("Profiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProfileQueryResult, ProfileQueryResultUnmarshaller>(ProfileQueryResultUnmarshaller.Instance);
                     response.Profiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SegmentDefinitionName", targetDepth))
+                if (context.TestExpression("SegmentDefinitionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SegmentDefinitionName = unmarshaller.Unmarshall(context, ref reader);

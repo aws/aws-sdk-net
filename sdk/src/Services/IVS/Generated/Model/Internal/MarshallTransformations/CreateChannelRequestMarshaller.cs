@@ -65,14 +65,20 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/CreateChannel";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdConfigurationArn())
+            {
+                context.Writer.WritePropertyName("adConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.AdConfigurationArn);
+            }
+
             if(publicRequest.IsSetAuthorized())
             {
                 context.Writer.WritePropertyName("authorized");
@@ -154,10 +160,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

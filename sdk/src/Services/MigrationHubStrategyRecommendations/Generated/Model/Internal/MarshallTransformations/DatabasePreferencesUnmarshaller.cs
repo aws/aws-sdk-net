@@ -56,13 +56,13 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("databaseManagementPreference", targetDepth))
+                if (context.TestExpression("databaseManagementPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseManagementPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("databaseMigrationPreference", targetDepth))
+                if (context.TestExpression("databaseMigrationPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseMigrationPreferenceUnmarshaller.Instance;
                     unmarshalledObject.DatabaseMigrationPreference = unmarshaller.Unmarshall(context, ref reader);

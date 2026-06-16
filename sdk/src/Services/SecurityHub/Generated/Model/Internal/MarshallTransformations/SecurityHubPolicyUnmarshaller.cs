@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnabledStandardIdentifiers", targetDepth))
+                if (context.TestExpression("EnabledStandardIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EnabledStandardIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityControlsConfiguration", targetDepth))
+                if (context.TestExpression("SecurityControlsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityControlsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SecurityControlsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceEnabled", targetDepth))
+                if (context.TestExpression("ServiceEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ServiceEnabled = unmarshaller.Unmarshall(context, ref reader);

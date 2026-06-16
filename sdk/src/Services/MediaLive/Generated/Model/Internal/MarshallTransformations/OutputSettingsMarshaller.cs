@@ -90,6 +90,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMediaConnectRouterOutputSettings())
+            {
+                context.Writer.WritePropertyName("mediaConnectRouterOutputSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MediaConnectRouterOutputSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaConnectRouterOutputSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMediaPackageOutputSettings())
             {
                 context.Writer.WritePropertyName("mediaPackageOutputSettings");

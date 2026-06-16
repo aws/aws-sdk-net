@@ -56,13 +56,13 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalStagingLabelsToDownload", targetDepth))
+                if (context.TestExpression("AdditionalStagingLabelsToDownload", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalStagingLabelsToDownload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ARN", targetDepth))
+                if (context.TestExpression("ARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context, ref reader);

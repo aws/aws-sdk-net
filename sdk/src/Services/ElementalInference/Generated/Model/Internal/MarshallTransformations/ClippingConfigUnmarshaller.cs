@@ -56,7 +56,7 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("callbackMetadata", targetDepth))
+                if (context.TestExpression("callbackMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CallbackMetadata = unmarshaller.Unmarshall(context, ref reader);

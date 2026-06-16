@@ -56,49 +56,49 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationSource", targetDepth))
+                if (context.TestExpression("ApplicationSource", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationSourceUnmarshaller.Instance;
                     unmarshalledObject.ApplicationSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingInstructions", targetDepth))
+                if (context.TestExpression("ScalingInstructions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScalingInstruction, ScalingInstructionUnmarshaller>(ScalingInstructionUnmarshaller.Instance);
                     unmarshalledObject.ScalingInstructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingPlanName", targetDepth))
+                if (context.TestExpression("ScalingPlanName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalingPlanName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingPlanVersion", targetDepth))
+                if (context.TestExpression("ScalingPlanVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ScalingPlanVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusCode", targetDepth))
+                if (context.TestExpression("StatusCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusStartTime", targetDepth))
+                if (context.TestExpression("StatusStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StatusStartTime = unmarshaller.Unmarshall(context, ref reader);

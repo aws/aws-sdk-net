@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorDetails", targetDepth))
+                if (context.TestExpression("ErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorDetailsUnmarshaller.Instance;
                     unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionNumber", targetDepth))
+                if (context.TestExpression("VersionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context, ref reader);

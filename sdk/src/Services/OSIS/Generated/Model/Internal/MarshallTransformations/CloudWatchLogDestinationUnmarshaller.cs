@@ -56,7 +56,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogGroup", targetDepth))
+                if (context.TestExpression("LogGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogGroup = unmarshaller.Unmarshall(context, ref reader);

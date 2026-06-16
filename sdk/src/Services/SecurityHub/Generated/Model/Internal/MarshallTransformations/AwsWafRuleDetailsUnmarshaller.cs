@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MetricName", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredicateList", targetDepth))
+                if (context.TestExpression("PredicateList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsWafRulePredicateListDetails, AwsWafRulePredicateListDetailsUnmarshaller>(AwsWafRulePredicateListDetailsUnmarshaller.Instance);
                     unmarshalledObject.PredicateList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleId", targetDepth))
+                if (context.TestExpression("RuleId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleId = unmarshaller.Unmarshall(context, ref reader);

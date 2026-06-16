@@ -52,28 +52,52 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("existingTenancyActivationLink", targetDepth))
+                if (context.TestExpression("autonomousDatabaseOciIntegrationIamRoles", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<OciIamRole, OciIamRoleUnmarshaller>(OciIamRoleUnmarshaller.Instance);
+                    response.AutonomousDatabaseOciIntegrationIamRoles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("existingTenancyActivationLink", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExistingTenancyActivationLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newTenancyActivationLink", targetDepth))
+                if (context.TestExpression("linkedOciCompartmentId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LinkedOciCompartmentId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("linkedOciTenancyId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LinkedOciTenancyId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("newTenancyActivationLink", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NewTenancyActivationLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociIdentityDomain", targetDepth))
+                if (context.TestExpression("ociIdentityDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = OciIdentityDomainUnmarshaller.Instance;
                     response.OciIdentityDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("subscriptionErrors", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SubscriptionError, SubscriptionErrorUnmarshaller>(SubscriptionErrorUnmarshaller.Instance);
+                    response.SubscriptionErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

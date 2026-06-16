@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateAxisOptions", targetDepth))
+                if (context.TestExpression("DateAxisOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DateAxisOptionsUnmarshaller.Instance;
                     unmarshalledObject.DateAxisOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericAxisOptions", targetDepth))
+                if (context.TestExpression("NumericAxisOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericAxisOptionsUnmarshaller.Instance;
                     unmarshalledObject.NumericAxisOptions = unmarshaller.Unmarshall(context, ref reader);

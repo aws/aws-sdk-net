@@ -52,13 +52,13 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Quotas", targetDepth))
+                if (context.TestExpression("Quotas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceQuota, ServiceQuotaUnmarshaller>(ServiceQuotaUnmarshaller.Instance);
                     response.Quotas = unmarshaller.Unmarshall(context, ref reader);

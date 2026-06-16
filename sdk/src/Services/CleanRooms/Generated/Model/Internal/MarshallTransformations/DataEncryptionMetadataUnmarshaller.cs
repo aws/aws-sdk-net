@@ -56,25 +56,25 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowCleartext", targetDepth))
+                if (context.TestExpression("allowCleartext", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowCleartext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowDuplicates", targetDepth))
+                if (context.TestExpression("allowDuplicates", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDuplicates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowJoinsOnColumnsWithDifferentNames", targetDepth))
+                if (context.TestExpression("allowJoinsOnColumnsWithDifferentNames", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowJoinsOnColumnsWithDifferentNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preserveNulls", targetDepth))
+                if (context.TestExpression("preserveNulls", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveNulls = unmarshaller.Unmarshall(context, ref reader);

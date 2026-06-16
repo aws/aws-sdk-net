@@ -52,13 +52,13 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountList", targetDepth))
+                if (context.TestExpression("accountList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountInfo, AccountInfoUnmarshaller>(AccountInfoUnmarshaller.Instance);
                     response.AccountList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

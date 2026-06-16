@@ -52,7 +52,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FirewallConfig", targetDepth))
+                if (context.TestExpression("FirewallConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FirewallConfigUnmarshaller.Instance;
                     response.FirewallConfig = unmarshaller.Unmarshall(context, ref reader);

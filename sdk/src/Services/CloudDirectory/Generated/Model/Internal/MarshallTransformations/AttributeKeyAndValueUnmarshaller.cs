@@ -56,13 +56,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Key", targetDepth))
+                if (context.TestExpression("Key", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeKeyUnmarshaller.Instance;
                     unmarshalledObject.Key = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Value", targetDepth))
+                if (context.TestExpression("Value", targetDepth, ref reader))
                 {
                     var unmarshaller = TypedAttributeValueUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);

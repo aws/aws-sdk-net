@@ -33,6 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// Container for the parameters to the StartImport operation.
     /// Starts a job to import a resource to Amazon Lex.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class StartImportRequest : AmazonLexModelBuildingServiceRequest
     {
         private MergeStrategy _mergeStrategy;

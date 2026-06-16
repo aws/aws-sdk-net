@@ -56,7 +56,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, FilterAttributeDimension, StringUnmarshaller, FilterAttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, FilterAttributeDimensionUnmarshaller.Instance);
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);

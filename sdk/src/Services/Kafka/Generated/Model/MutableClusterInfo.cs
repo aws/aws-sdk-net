@@ -48,6 +48,7 @@ namespace Amazon.Kafka.Model
         private OpenMonitoring _openMonitoring;
         private Rebalancing _rebalancing;
         private StorageMode _storageMode;
+        private ZookeeperAccess _zookeeperAccess;
 
         /// <summary>
         /// Gets and sets the property BrokerCountUpdateInfo.             
@@ -308,6 +309,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetStorageMode()
         {
             return this._storageMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZookeeperAccess.             
+        /// <para>
+        /// Access control settings for zookeeper
+        /// </para>
+        /// </summary>
+        public ZookeeperAccess ZookeeperAccess
+        {
+            get { return this._zookeeperAccess; }
+            set { this._zookeeperAccess = value; }
+        }
+
+        // Check to see if ZookeeperAccess property is set
+        internal bool IsSetZookeeperAccess()
+        {
+            return this._zookeeperAccess != null;
         }
 
     }

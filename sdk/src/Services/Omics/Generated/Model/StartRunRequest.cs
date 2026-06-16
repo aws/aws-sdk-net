@@ -122,8 +122,11 @@ namespace Amazon.Omics.Model
     {
         private CacheBehavior _cacheBehavior;
         private string _cacheId;
+        private string _configurationName;
+        private Amazon.Runtime.Documents.Document _engineSettings;
         private RunLogLevel _logLevel;
         private string _name;
+        private NetworkingMode _networkingMode;
         private string _outputUri;
         private Amazon.Runtime.Documents.Document _parameters;
         private int? _priority;
@@ -183,6 +186,44 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigurationName. 
+        /// <para>
+        /// Optional configuration name to use for the workflow run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ConfigurationName
+        {
+            get { return this._configurationName; }
+            set { this._configurationName = value; }
+        }
+
+        // Check to see if ConfigurationName property is set
+        internal bool IsSetConfigurationName()
+        {
+            return this._configurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineSettings. 
+        /// <para>
+        /// Engine-specific settings for the workflow run. Use this field to specify configuration
+        /// options that are specific to the workflow engine (for example, Nextflow profiles).
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document EngineSettings
+        {
+            get { return this._engineSettings; }
+            set { this._engineSettings = value; }
+        }
+
+        // Check to see if EngineSettings property is set
+        internal bool IsSetEngineSettings()
+        {
+            return !this._engineSettings.IsNull();
+        }
+
+        /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
         /// A log level for the run.
@@ -219,6 +260,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkingMode. 
+        /// <para>
+        /// Optional configuration for run networking behavior. If not specified, this will default
+        /// to RESTRICTED.
+        /// </para>
+        /// </summary>
+        public NetworkingMode NetworkingMode
+        {
+            get { return this._networkingMode; }
+            set { this._networkingMode = value; }
+        }
+
+        // Check to see if NetworkingMode property is set
+        internal bool IsSetNetworkingMode()
+        {
+            return this._networkingMode != null;
         }
 
         /// <summary>

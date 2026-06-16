@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryFilter", targetDepth))
+                if (context.TestExpression("CategoryFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = CategoryDrillDownFilterUnmarshaller.Instance;
                     unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericEqualityFilter", targetDepth))
+                if (context.TestExpression("NumericEqualityFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericEqualityDrillDownFilterUnmarshaller.Instance;
                     unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeRangeFilter", targetDepth))
+                if (context.TestExpression("TimeRangeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeRangeDrillDownFilterUnmarshaller.Instance;
                     unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context, ref reader);

@@ -46,6 +46,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.WriteStringValue(requestObject.IpAddressType);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

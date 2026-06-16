@@ -56,19 +56,19 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetModelProperty", targetDepth))
+                if (context.TestExpression("assetModelProperty", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetModelPropertyBindingValueUnmarshaller.Instance;
                     unmarshalledObject.AssetModelProperty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetProperty", targetDepth))
+                if (context.TestExpression("assetProperty", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetPropertyBindingValueUnmarshaller.Instance;
                     unmarshalledObject.AssetProperty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("list", targetDepth))
+                if (context.TestExpression("list", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComputationModelDataBindingValue, ComputationModelDataBindingValueUnmarshaller>(ComputationModelDataBindingValueUnmarshaller.Instance);
                     unmarshalledObject.List = unmarshaller.Unmarshall(context, ref reader);

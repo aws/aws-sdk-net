@@ -72,13 +72,13 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ReferencedBy", targetDepth))
+                    if (context.TestExpression("ReferencedBy", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         unmarshalledObject.ReferencedBy = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ResourceType", targetDepth))
+                    if (context.TestExpression("ResourceType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);

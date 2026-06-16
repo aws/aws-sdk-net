@@ -45,7 +45,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property IntervalCadence. The cadence MediaConvert follows for generating
         /// thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR
         /// frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert
-        /// generates thumbnails according to the interval you specify in thumbnailInterval.
+        /// generates thumbnails according to the interval you specify in thumbnailInterval. If
+        /// set to FOLLOW_SEGMENTATION, MediaConvert generates thumbnail playlist entries that
+        /// align exactly with video segment boundaries. FOLLOW_SEGMENTATION requires 1x1 tiling.
         /// </summary>
         public CmafIntervalCadence IntervalCadence
         {
@@ -116,7 +118,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TileHeight. Number of thumbnails in each column of a tile
-        /// image. Set a value between 2 and 2048. Must be divisible by 2.
+        /// image. Set a value between 1 and 2048.
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public int? TileHeight

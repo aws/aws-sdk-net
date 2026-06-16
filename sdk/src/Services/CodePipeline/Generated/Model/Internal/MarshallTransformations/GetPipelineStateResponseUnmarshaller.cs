@@ -52,31 +52,31 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("created", targetDepth))
+                if (context.TestExpression("created", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Created = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineName", targetDepth))
+                if (context.TestExpression("pipelineName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PipelineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineVersion", targetDepth))
+                if (context.TestExpression("pipelineVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.PipelineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stageStates", targetDepth))
+                if (context.TestExpression("stageStates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StageState, StageStateUnmarshaller>(StageStateUnmarshaller.Instance);
                     response.StageStates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updated", targetDepth))
+                if (context.TestExpression("updated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Updated = unmarshaller.Unmarshall(context, ref reader);

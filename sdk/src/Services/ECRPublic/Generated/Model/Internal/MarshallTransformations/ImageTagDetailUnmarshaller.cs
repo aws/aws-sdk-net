@@ -56,19 +56,19 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageDetail", targetDepth))
+                if (context.TestExpression("imageDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferencedImageDetailUnmarshaller.Instance;
                     unmarshalledObject.ImageDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageTag", targetDepth))
+                if (context.TestExpression("imageTag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageTag = unmarshaller.Unmarshall(context, ref reader);

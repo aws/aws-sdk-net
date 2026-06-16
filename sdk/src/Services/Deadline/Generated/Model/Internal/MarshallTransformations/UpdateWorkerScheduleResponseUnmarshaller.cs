@@ -52,25 +52,25 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assignedSessions", targetDepth))
+                if (context.TestExpression("assignedSessions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AssignedSession, StringUnmarshaller, AssignedSessionUnmarshaller>(StringUnmarshaller.Instance, AssignedSessionUnmarshaller.Instance);
                     response.AssignedSessions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cancelSessionActions", targetDepth))
+                if (context.TestExpression("cancelSessionActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     response.CancelSessionActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("desiredWorkerStatus", targetDepth))
+                if (context.TestExpression("desiredWorkerStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DesiredWorkerStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateIntervalSeconds", targetDepth))
+                if (context.TestExpression("updateIntervalSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.UpdateIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);

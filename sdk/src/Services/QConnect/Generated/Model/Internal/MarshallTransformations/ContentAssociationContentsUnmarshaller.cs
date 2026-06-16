@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amazonConnectGuideAssociation", targetDepth))
+                if (context.TestExpression("amazonConnectGuideAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonConnectGuideAssociationDataUnmarshaller.Instance;
                     unmarshalledObject.AmazonConnectGuideAssociation = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("availabilityZones", targetDepth))
+                if (context.TestExpression("availabilityZones", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AvailabilityZone, AvailabilityZoneUnmarshaller>(AvailabilityZoneUnmarshaller.Instance);
                     unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("engineType", targetDepth))
+                if (context.TestExpression("engineType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngineType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hostInstanceType", targetDepth))
+                if (context.TestExpression("hostInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageType", targetDepth))
+                if (context.TestExpression("storageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportedDeploymentModes", targetDepth))
+                if (context.TestExpression("supportedDeploymentModes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedDeploymentModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportedEngineVersions", targetDepth))
+                if (context.TestExpression("supportedEngineVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedEngineVersions = unmarshaller.Unmarshall(context, ref reader);

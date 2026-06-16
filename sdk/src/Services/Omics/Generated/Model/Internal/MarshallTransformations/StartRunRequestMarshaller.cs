@@ -65,8 +65,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/run";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -85,6 +85,18 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CacheId);
             }
 
+            if(publicRequest.IsSetConfigurationName())
+            {
+                context.Writer.WritePropertyName("configurationName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationName);
+            }
+
+            if(publicRequest.IsSetEngineSettings())
+            {
+                context.Writer.WritePropertyName("engineSettings");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.EngineSettings);
+            }
+
             if(publicRequest.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("logLevel");
@@ -95,6 +107,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNetworkingMode())
+            {
+                context.Writer.WritePropertyName("networkingMode");
+                context.Writer.WriteStringValue(publicRequest.NetworkingMode);
             }
 
             if(publicRequest.IsSetOutputUri())
@@ -202,10 +220,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

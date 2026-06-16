@@ -52,7 +52,7 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("organizationRecommendation", targetDepth))
+                if (context.TestExpression("organizationRecommendation", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationRecommendationUnmarshaller.Instance;
                     response.OrganizationRecommendation = unmarshaller.Unmarshall(context, ref reader);

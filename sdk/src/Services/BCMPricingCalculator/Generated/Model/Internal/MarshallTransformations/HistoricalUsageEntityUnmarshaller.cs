@@ -56,43 +56,43 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("billInterval", targetDepth))
+                if (context.TestExpression("billInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = BillIntervalUnmarshaller.Instance;
                     unmarshalledObject.BillInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filterExpression", targetDepth))
+                if (context.TestExpression("filterExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpressionUnmarshaller.Instance;
                     unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("location", targetDepth))
+                if (context.TestExpression("location", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operation", targetDepth))
+                if (context.TestExpression("operation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Operation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceCode", targetDepth))
+                if (context.TestExpression("serviceCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageAccountId", targetDepth))
+                if (context.TestExpression("usageAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsageAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageType", targetDepth))
+                if (context.TestExpression("usageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsageType = unmarshaller.Unmarshall(context, ref reader);

@@ -19,7 +19,8 @@ using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using  Amazon.Runtime.EventStreams;
+using System.Collections.Generic;
 namespace Amazon.Echo.Internal
 {
     /// <summary>
@@ -62,6 +63,8 @@ namespace Amazon.Echo.Internal
 
         public HttpStatusCode StatusCode { get; set; }
 
+        public Dictionary<string, IEventStreamHeader> EventHeaders {get; set; }
+
         public string[] GetHeaderNames()
         {
             return new string[0];
@@ -75,6 +78,16 @@ namespace Amazon.Echo.Internal
         public bool IsHeaderPresent(string headerName)
         {
             return false;
+        }
+        public IEventStreamHeader GetEventStreamHeader(string headerName)
+        {
+            if (EventHeaders.ContainsKey(headerName))
+                return EventHeaders[headerName];
+            return null;
+        }
+        public bool IsEventHeaderPresent(string headerName)
+        {
+            return EventHeaders.ContainsKey(headerName);
         }
     }
 

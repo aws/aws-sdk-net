@@ -56,7 +56,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allChannelSubtypes", targetDepth))
+                if (context.TestExpression("allChannelSubtypes", targetDepth, ref reader))
                 {
                     var unmarshaller = CommunicationLimitsUnmarshaller.Instance;
                     unmarshalledObject.AllChannelSubtypes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionStatus", targetDepth))
+                if (context.TestExpression("ConnectionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionStatusEventConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceRegistrationState", targetDepth))
+                if (context.TestExpression("DeviceRegistrationState", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceRegistrationStateEventConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DeviceRegistrationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Join", targetDepth))
+                if (context.TestExpression("Join", targetDepth, ref reader))
                 {
                     var unmarshaller = JoinEventConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Join = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessageDeliveryStatus", targetDepth))
+                if (context.TestExpression("MessageDeliveryStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageDeliveryStatusEventConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MessageDeliveryStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Proximity", targetDepth))
+                if (context.TestExpression("Proximity", targetDepth, ref reader))
                 {
                     var unmarshaller = ProximityEventConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Proximity = unmarshaller.Unmarshall(context, ref reader);

@@ -52,37 +52,37 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedDate", targetDepth))
+                if (context.TestExpression("CreatedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModificationDate", targetDepth))
+                if (context.TestExpression("LastModificationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModificationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rules", targetDepth))
+                if (context.TestExpression("Rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Rule, RuleUnmarshaller>(RuleUnmarshaller.Instance);
                     response.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleSetArn", targetDepth))
+                if (context.TestExpression("RuleSetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RuleSetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleSetId", targetDepth))
+                if (context.TestExpression("RuleSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RuleSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleSetName", targetDepth))
+                if (context.TestExpression("RuleSetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RuleSetName = unmarshaller.Unmarshall(context, ref reader);

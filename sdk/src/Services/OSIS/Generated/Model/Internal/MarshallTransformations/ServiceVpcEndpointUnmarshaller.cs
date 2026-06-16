@@ -56,13 +56,13 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ServiceName", targetDepth))
+                if (context.TestExpression("ServiceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcEndpointId", targetDepth))
+                if (context.TestExpression("VpcEndpointId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context, ref reader);

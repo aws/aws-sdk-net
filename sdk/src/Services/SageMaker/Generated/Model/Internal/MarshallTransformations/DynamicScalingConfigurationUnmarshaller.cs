@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxCapacity", targetDepth))
+                if (context.TestExpression("MaxCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinCapacity", targetDepth))
+                if (context.TestExpression("MinCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScaleInCooldown", targetDepth))
+                if (context.TestExpression("ScaleInCooldown", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleInCooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScaleOutCooldown", targetDepth))
+                if (context.TestExpression("ScaleOutCooldown", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleOutCooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingPolicies", targetDepth))
+                if (context.TestExpression("ScalingPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScalingPolicy, ScalingPolicyUnmarshaller>(ScalingPolicyUnmarshaller.Instance);
                     unmarshalledObject.ScalingPolicies = unmarshaller.Unmarshall(context, ref reader);

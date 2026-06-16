@@ -85,6 +85,14 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for ListRecommenderFilters operation
+        ///</summary>
+        public IListRecommenderFiltersPaginator ListRecommenderFilters(ListRecommenderFiltersRequest request) 
+        {
+            return new ListRecommenderFiltersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecommenderRecipes operation
         ///</summary>
         public IListRecommenderRecipesPaginator ListRecommenderRecipes(ListRecommenderRecipesRequest request) 
@@ -98,6 +106,14 @@ namespace Amazon.CustomerProfiles.Model
         public IListRecommendersPaginator ListRecommenders(ListRecommendersRequest request) 
         {
             return new ListRecommendersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecommenderSchemas operation
+        ///</summary>
+        public IListRecommenderSchemasPaginator ListRecommenderSchemas(ListRecommenderSchemasRequest request) 
+        {
+            return new ListRecommenderSchemasPaginator(this.client, request);
         }
 
         /// <summary>

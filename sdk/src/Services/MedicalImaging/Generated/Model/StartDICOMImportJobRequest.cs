@@ -32,15 +32,17 @@ namespace Amazon.MedicalImaging.Model
     /// <summary>
     /// Container for the parameters to the StartDICOMImportJob operation.
     /// Start importing bulk data into an <c>ACTIVE</c> data store. The import job imports
-    /// DICOM P10 files found in the S3 prefix specified by the <c>inputS3Uri</c> parameter.
-    /// The import job stores processing results in the file specified by the <c>outputS3Uri</c>
-    /// parameter.
+    /// DICOM P10 files or enhances existing DICOM files with JSON metadata. The <c>importConfiguration</c>
+    /// parameter specifies the import type. The data is found in the S3 prefix specified
+    /// by the <c>inputS3Uri</c> parameter. The import job stores processing results in the
+    /// file specified by the <c>outputS3Uri</c> parameter.
     /// </summary>
     public partial class StartDICOMImportJobRequest : AmazonMedicalImagingRequest
     {
         private string _clientToken;
         private string _dataAccessRoleArn;
         private string _datastoreId;
+        private ImportConfiguration _importConfiguration;
         private string _inputOwnerAccountId;
         private string _inputs3Uri;
         private string _jobName;
@@ -102,6 +104,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetDatastoreId()
         {
             return this._datastoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportConfiguration. 
+        /// <para>
+        /// The import configuration for the import job.
+        /// </para>
+        /// </summary>
+        public ImportConfiguration ImportConfiguration
+        {
+            get { return this._importConfiguration; }
+            set { this._importConfiguration = value; }
+        }
+
+        // Check to see if ImportConfiguration property is set
+        internal bool IsSetImportConfiguration()
+        {
+            return this._importConfiguration != null;
         }
 
         /// <summary>

@@ -56,13 +56,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AtDestinationForDelete", targetDepth))
+                if (context.TestExpression("AtDestinationForDelete", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AtDestinationForDelete = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AtSource", targetDepth))
+                if (context.TestExpression("AtSource", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AtSource = unmarshaller.Unmarshall(context, ref reader);

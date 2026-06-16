@@ -72,13 +72,13 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("programSetValidationFailures", targetDepth))
+                    if (context.TestExpression("programSetValidationFailures", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ProgramSetValidationFailure, ProgramSetValidationFailureUnmarshaller>(ProgramSetValidationFailureUnmarshaller.Instance);
                         unmarshalledObject.ProgramSetValidationFailures = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("reason", targetDepth))
+                    if (context.TestExpression("reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

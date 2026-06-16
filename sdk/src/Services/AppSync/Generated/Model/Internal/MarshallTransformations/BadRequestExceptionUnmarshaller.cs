@@ -72,13 +72,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("detail", targetDepth))
+                    if (context.TestExpression("detail", targetDepth, ref reader))
                     {
                         var unmarshaller = BadRequestDetailUnmarshaller.Instance;
                         unmarshalledObject.Detail = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("reason", targetDepth))
+                    if (context.TestExpression("reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

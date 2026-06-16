@@ -56,7 +56,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BasicAuth", targetDepth))
+                if (context.TestExpression("BasicAuth", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BasicAuth = unmarshaller.Unmarshall(context, ref reader);

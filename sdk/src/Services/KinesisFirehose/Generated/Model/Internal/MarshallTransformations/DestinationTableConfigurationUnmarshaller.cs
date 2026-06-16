@@ -56,31 +56,31 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationDatabaseName", targetDepth))
+                if (context.TestExpression("DestinationDatabaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationDatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationTableName", targetDepth))
+                if (context.TestExpression("DestinationTableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationTableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartitionSpec", targetDepth))
+                if (context.TestExpression("PartitionSpec", targetDepth, ref reader))
                 {
                     var unmarshaller = PartitionSpecUnmarshaller.Instance;
                     unmarshalledObject.PartitionSpec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3ErrorOutputPrefix", targetDepth))
+                if (context.TestExpression("S3ErrorOutputPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3ErrorOutputPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UniqueKeys", targetDepth))
+                if (context.TestExpression("UniqueKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UniqueKeys = unmarshaller.Unmarshall(context, ref reader);

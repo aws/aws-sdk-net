@@ -52,13 +52,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchUpdateExclusionWindowsError, BatchUpdateExclusionWindowsErrorUnmarshaller>(BatchUpdateExclusionWindowsErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SloIds", targetDepth))
+                if (context.TestExpression("SloIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SloIds = unmarshaller.Unmarshall(context, ref reader);

@@ -133,7 +133,7 @@ namespace Amazon.EC2.Model
         /// A name for the launch template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=128)]
+        [AWSProperty(Required=true)]
         public string LaunchTemplateName
         {
             get { return this._launchTemplateName; }

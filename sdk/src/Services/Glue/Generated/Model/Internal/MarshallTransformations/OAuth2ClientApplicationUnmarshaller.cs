@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AWSManagedClientApplicationReference", targetDepth))
+                if (context.TestExpression("AWSManagedClientApplicationReference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AWSManagedClientApplicationReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserManagedClientApplicationClientId", targetDepth))
+                if (context.TestExpression("UserManagedClientApplicationClientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserManagedClientApplicationClientId = unmarshaller.Unmarshall(context, ref reader);

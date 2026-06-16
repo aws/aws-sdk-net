@@ -56,13 +56,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Intercluster", targetDepth))
+                if (context.TestExpression("Intercluster", targetDepth, ref reader))
                 {
                     var unmarshaller = FileSystemEndpointUnmarshaller.Instance;
                     unmarshalledObject.Intercluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Management", targetDepth))
+                if (context.TestExpression("Management", targetDepth, ref reader))
                 {
                     var unmarshaller = FileSystemEndpointUnmarshaller.Instance;
                     unmarshalledObject.Management = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("resourceId", targetDepth))
+                    if (context.TestExpression("resourceId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OwnerGid", targetDepth))
+                if (context.TestExpression("OwnerGid", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OwnerGid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerUid", targetDepth))
+                if (context.TestExpression("OwnerUid", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OwnerUid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Permissions", targetDepth))
+                if (context.TestExpression("Permissions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Permissions = unmarshaller.Unmarshall(context, ref reader);

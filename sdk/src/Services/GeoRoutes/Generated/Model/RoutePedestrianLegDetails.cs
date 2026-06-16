@@ -34,6 +34,7 @@ namespace Amazon.GeoRoutes.Model
     /// </summary>
     public partial class RoutePedestrianLegDetails
     {
+        private List<RoutePedestrianAfterTravelStep> _afterTravelSteps = AWSConfigs.InitializeCollections ? new List<RoutePedestrianAfterTravelStep>() : null;
         private RoutePedestrianArrival _arrival;
         private RoutePedestrianDeparture _departure;
         private List<RoutePedestrianNotice> _notices = AWSConfigs.InitializeCollections ? new List<RoutePedestrianNotice>() : null;
@@ -41,6 +42,30 @@ namespace Amazon.GeoRoutes.Model
         private List<RoutePedestrianSpan> _spans = AWSConfigs.InitializeCollections ? new List<RoutePedestrianSpan>() : null;
         private RoutePedestrianSummary _summary;
         private List<RoutePedestrianTravelStep> _travelSteps = AWSConfigs.InitializeCollections ? new List<RoutePedestrianTravelStep>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AfterTravelSteps. 
+        /// <para>
+        /// Steps of a leg that must be performed after the travel portion of the leg.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<RoutePedestrianAfterTravelStep> AfterTravelSteps
+        {
+            get { return this._afterTravelSteps; }
+            set { this._afterTravelSteps = value; }
+        }
+
+        // Check to see if AfterTravelSteps property is set
+        internal bool IsSetAfterTravelSteps()
+        {
+            return this._afterTravelSteps != null && (this._afterTravelSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Arrival. 
@@ -83,8 +108,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Notices. 
         /// <para>
-        /// Notices are additional information returned that indicate issues that occurred during
-        /// route calculation.
+        ///  Notices are additional information returned that indicate issues that occurred during
+        /// route calculation. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -133,7 +160,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Spans. 
         /// <para>
-        /// Spans that were computed for the requested SpanAdditionalFeatures.
+        ///  Spans that were computed for the requested SpanAdditionalFeatures. Not supported
+        /// in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

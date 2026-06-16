@@ -56,25 +56,25 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LastGeneratedReportDate", targetDepth))
+                if (context.TestExpression("LastGeneratedReportDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastGeneratedReportDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BucketName", targetDepth))
+                if (context.TestExpression("S3BucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schedule", targetDepth))
+                if (context.TestExpression("Schedule", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionErrors", targetDepth))
+                if (context.TestExpression("SubscriptionErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LastReportGenerationExecutionError, LastReportGenerationExecutionErrorUnmarshaller>(LastReportGenerationExecutionErrorUnmarshaller.Instance);
                     unmarshalledObject.SubscriptionErrors = unmarshaller.Unmarshall(context, ref reader);

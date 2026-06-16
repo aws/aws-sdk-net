@@ -56,19 +56,19 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PolicyName", targetDepth))
+                if (context.TestExpression("PolicyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyType", targetDepth))
+                if (context.TestExpression("PolicyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetTrackingConfiguration", targetDepth))
+                if (context.TestExpression("TargetTrackingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetTrackingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TargetTrackingConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,97 +56,97 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AddressNumber", targetDepth))
+                if (context.TestExpression("AddressNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddressNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Block", targetDepth))
+                if (context.TestExpression("Block", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Block = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Building", targetDepth))
+                if (context.TestExpression("Building", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Building = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Country", targetDepth))
+                if (context.TestExpression("Country", targetDepth, ref reader))
                 {
                     var unmarshaller = CountryUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("District", targetDepth))
+                if (context.TestExpression("District", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.District = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Intersection", targetDepth))
+                if (context.TestExpression("Intersection", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Intersection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Label", targetDepth))
+                if (context.TestExpression("Label", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Locality", targetDepth))
+                if (context.TestExpression("Locality", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Locality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostalCode", targetDepth))
+                if (context.TestExpression("PostalCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Region", targetDepth))
+                if (context.TestExpression("Region", targetDepth, ref reader))
                 {
                     var unmarshaller = RegionUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryAddressComponents", targetDepth))
+                if (context.TestExpression("SecondaryAddressComponents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecondaryAddressComponent, SecondaryAddressComponentUnmarshaller>(SecondaryAddressComponentUnmarshaller.Instance);
                     unmarshalledObject.SecondaryAddressComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Street", targetDepth))
+                if (context.TestExpression("Street", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Street = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreetComponents", targetDepth))
+                if (context.TestExpression("StreetComponents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StreetComponents, StreetComponentsUnmarshaller>(StreetComponentsUnmarshaller.Instance);
                     unmarshalledObject.StreetComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubBlock", targetDepth))
+                if (context.TestExpression("SubBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubDistrict", targetDepth))
+                if (context.TestExpression("SubDistrict", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubDistrict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubRegion", targetDepth))
+                if (context.TestExpression("SubRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = SubRegionUnmarshaller.Instance;
                     unmarshalledObject.SubRegion = unmarshaller.Unmarshall(context, ref reader);

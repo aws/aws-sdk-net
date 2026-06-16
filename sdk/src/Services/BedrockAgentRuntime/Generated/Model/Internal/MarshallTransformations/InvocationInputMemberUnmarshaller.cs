@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiInvocationInput", targetDepth))
+                if (context.TestExpression("apiInvocationInput", targetDepth, ref reader))
                 {
                     var unmarshaller = ApiInvocationInputUnmarshaller.Instance;
                     unmarshalledObject.ApiInvocationInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("functionInvocationInput", targetDepth))
+                if (context.TestExpression("functionInvocationInput", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionInvocationInputUnmarshaller.Instance;
                     unmarshalledObject.FunctionInvocationInput = unmarshaller.Unmarshall(context, ref reader);

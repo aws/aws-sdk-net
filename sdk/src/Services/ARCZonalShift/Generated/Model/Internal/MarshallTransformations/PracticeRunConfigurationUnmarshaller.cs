@@ -56,31 +56,31 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedWindows", targetDepth))
+                if (context.TestExpression("allowedWindows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedWindows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blockedDates", targetDepth))
+                if (context.TestExpression("blockedDates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.BlockedDates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blockedWindows", targetDepth))
+                if (context.TestExpression("blockedWindows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.BlockedWindows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blockingAlarms", targetDepth))
+                if (context.TestExpression("blockingAlarms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ControlCondition, ControlConditionUnmarshaller>(ControlConditionUnmarshaller.Instance);
                     unmarshalledObject.BlockingAlarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outcomeAlarms", targetDepth))
+                if (context.TestExpression("outcomeAlarms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ControlCondition, ControlConditionUnmarshaller>(ControlConditionUnmarshaller.Instance);
                     unmarshalledObject.OutcomeAlarms = unmarshaller.Unmarshall(context, ref reader);

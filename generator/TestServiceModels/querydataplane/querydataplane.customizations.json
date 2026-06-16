@@ -1,0 +1,10 @@
+{
+    "operationModifiers": {
+        "PutItem": {
+            "exclude": true
+        },
+        "GetItem": {
+            "exclude": true
+        }
+    }
+}

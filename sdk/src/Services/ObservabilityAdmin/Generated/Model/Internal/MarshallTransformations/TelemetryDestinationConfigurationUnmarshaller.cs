@@ -56,49 +56,55 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudtrailParameters", targetDepth))
+                if (context.TestExpression("CloudtrailParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudtrailParametersUnmarshaller.Instance;
                     unmarshalledObject.CloudtrailParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationPattern", targetDepth))
+                if (context.TestExpression("DestinationPattern", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationType", targetDepth))
+                if (context.TestExpression("DestinationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ELBLoadBalancerLoggingParameters", targetDepth))
+                if (context.TestExpression("ELBLoadBalancerLoggingParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ELBLoadBalancerLoggingParametersUnmarshaller.Instance;
                     unmarshalledObject.ELBLoadBalancerLoggingParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogDeliveryParameters", targetDepth))
+                if (context.TestExpression("LogDeliveryParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = LogDeliveryParametersUnmarshaller.Instance;
                     unmarshalledObject.LogDeliveryParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetentionInDays", targetDepth))
+                if (context.TestExpression("MskMonitoringParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = MskMonitoringParametersUnmarshaller.Instance;
+                    unmarshalledObject.MskMonitoringParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RetentionInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VPCFlowLogParameters", targetDepth))
+                if (context.TestExpression("VPCFlowLogParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = VPCFlowLogParametersUnmarshaller.Instance;
                     unmarshalledObject.VPCFlowLogParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WAFLoggingParameters", targetDepth))
+                if (context.TestExpression("WAFLoggingParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = WAFLoggingParametersUnmarshaller.Instance;
                     unmarshalledObject.WAFLoggingParameters = unmarshaller.Unmarshall(context, ref reader);

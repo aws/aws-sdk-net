@@ -483,6 +483,7 @@
         "requestUri":"/StartTelemetryEvaluation",
         "responseCode":200
       },
+      "input":{"shape":"StartTelemetryEvaluationInput"},
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"},
@@ -497,6 +498,7 @@
         "requestUri":"/StartTelemetryEvaluationForOrganization",
         "responseCode":200
       },
+      "input":{"shape":"StartTelemetryEvaluationForOrganizationInput"},
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"},
@@ -756,6 +758,10 @@
         "NotEndsWith":{"shape":"StringList"}
       }
     },
+    "AllRegions":{
+      "type":"boolean",
+      "box":true
+    },
     "AwsResourceExplorerManagedViewArn":{
       "type":"string",
       "max":2048,
@@ -791,7 +797,8 @@
       "members":{
         "Region":{"shape":"Region"},
         "Account":{"shape":"AccountIdentifier"},
-        "DestinationLogsConfiguration":{"shape":"DestinationLogsConfiguration"}
+        "DestinationLogsConfiguration":{"shape":"DestinationLogsConfiguration"},
+        "DestinationMetricsConfiguration":{"shape":"DestinationMetricsConfiguration"}
       }
     },
     "CentralizationRuleSource":{
@@ -800,7 +807,8 @@
       "members":{
         "Regions":{"shape":"Regions"},
         "Scope":{"shape":"SourceFilterString"},
-        "SourceLogsConfiguration":{"shape":"SourceLogsConfiguration"}
+        "SourceLogsConfiguration":{"shape":"SourceLogsConfiguration"},
+        "SourceMetricsConfiguration":{"shape":"SourceMetricsConfiguration"}
       }
     },
     "CentralizationRuleSummaries":{
@@ -961,6 +969,11 @@
         "Type":{"shape":"String"}
       }
     },
+    "DataSourceFilterString":{
+      "type":"string",
+      "max":2000,
+      "min":1
+    },
     "DataSources":{
       "type":"list",
       "member":{"shape":"DataSource"}
@@ -1010,6 +1023,12 @@
         "LogsEncryptionConfiguration":{"shape":"LogsEncryptionConfiguration"},
         "BackupConfiguration":{"shape":"LogsBackupConfiguration"},
         "LogGroupNameConfiguration":{"shape":"LogGroupNameConfiguration"}
+      }
+    },
+    "DestinationMetricsConfiguration":{
+      "type":"structure",
+      "members":{
+        "BackupConfiguration":{"shape":"MetricsBackupConfiguration"}
       }
     },
     "DestinationType":{
@@ -1148,14 +1167,18 @@
       "type":"structure",
       "members":{
         "Status":{"shape":"Status"},
-        "FailureReason":{"shape":"FailureReason"}
+        "FailureReason":{"shape":"FailureReason"},
+        "HomeRegion":{"shape":"Region"},
+        "RegionStatuses":{"shape":"RegionStatuses"}
       }
     },
     "GetTelemetryEvaluationStatusOutput":{
       "type":"structure",
       "members":{
         "Status":{"shape":"Status"},
-        "FailureReason":{"shape":"FailureReason"}
+        "FailureReason":{"shape":"FailureReason"},
+        "HomeRegion":{"shape":"Region"},
+        "RegionStatuses":{"shape":"RegionStatuses"}
       }
     },
     "GetTelemetryPipelineInput":{
@@ -1185,7 +1208,10 @@
         "RuleArn":{"shape":"ResourceArn"},
         "CreatedTimeStamp":{"shape":"Long"},
         "LastUpdateTimeStamp":{"shape":"Long"},
-        "TelemetryRule":{"shape":"TelemetryRule"}
+        "TelemetryRule":{"shape":"TelemetryRule"},
+        "HomeRegion":{"shape":"Region"},
+        "IsReplicated":{"shape":"IsReplicated"},
+        "RegionStatuses":{"shape":"RegionStatuses"}
       }
     },
     "GetTelemetryRuleInput":{
@@ -1202,7 +1228,10 @@
         "RuleArn":{"shape":"ResourceArn"},
         "CreatedTimeStamp":{"shape":"Long"},
         "LastUpdateTimeStamp":{"shape":"Long"},
-        "TelemetryRule":{"shape":"TelemetryRule"}
+        "TelemetryRule":{"shape":"TelemetryRule"},
+        "HomeRegion":{"shape":"Region"},
+        "IsReplicated":{"shape":"IsReplicated"},
+        "RegionStatuses":{"shape":"RegionStatuses"}
       }
     },
     "Integer":{
@@ -1256,6 +1285,10 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "IsReplicated":{
+      "type":"boolean",
+      "box":true
     },
     "LabelNameCondition":{
       "type":"structure",
@@ -1466,7 +1499,10 @@
       "type":"string",
       "enum":[
         "APPLICATION_LOGS",
-        "USAGE_LOGS"
+        "USAGE_LOGS",
+        "SECURITY_FINDING_LOGS",
+        "ACCESS_LOGS",
+        "CONNECTION_LOGS"
       ]
     },
     "LogTypes":{
@@ -1505,6 +1541,33 @@
     "Long":{
       "type":"long",
       "box":true
+    },
+    "MetricsBackupConfiguration":{
+      "type":"structure",
+      "required":["Region"],
+      "members":{
+        "Region":{"shape":"Region"}
+      }
+    },
+    "MetricsFilterString":{
+      "type":"string",
+      "max":2000,
+      "min":1
+    },
+    "MskEnhancedMonitoringLevel":{
+      "type":"string",
+      "enum":[
+        "DEFAULT",
+        "PER_BROKER",
+        "PER_TOPIC_PER_BROKER",
+        "PER_TOPIC_PER_PARTITION"
+      ]
+    },
+    "MskMonitoringParameters":{
+      "type":"structure",
+      "members":{
+        "EnhancedMonitoring":{"shape":"MskEnhancedMonitoringLevel"}
+      }
     },
     "NextToken":{"type":"string"},
     "OrganizationUnitIdentifier":{
@@ -1572,6 +1635,19 @@
       "type":"string",
       "min":1
     },
+    "RegionStatus":{
+      "type":"structure",
+      "members":{
+        "Region":{"shape":"Region"},
+        "Status":{"shape":"String"},
+        "FailureReason":{"shape":"String"},
+        "RuleArn":{"shape":"ResourceArn"}
+      }
+    },
+    "RegionStatuses":{
+      "type":"list",
+      "member":{"shape":"RegionStatus"}
+    },
     "Regions":{
       "type":"list",
       "member":{"shape":"Region"},
@@ -1615,7 +1691,15 @@
         "AWS::Route53Resolver::ResolverEndpoint",
         "AWS::BedrockAgentCore::Runtime",
         "AWS::BedrockAgentCore::Browser",
-        "AWS::BedrockAgentCore::CodeInterpreter"
+        "AWS::BedrockAgentCore::CodeInterpreter",
+        "AWS::BedrockAgentCore::Gateway",
+        "AWS::BedrockAgentCore::Memory",
+        "AWS::BedrockAgentCore::WorkloadIdentity",
+        "AWS::SecurityHub::Hub",
+        "AWS::CloudFront::Distribution",
+        "AWS::SecurityHub::HubV2",
+        "AWS::CloudWatch::OTelEnrichment",
+        "AWS::MSK::Cluster"
       ]
     },
     "ResourceTypes":{
@@ -1704,13 +1788,17 @@
     },
     "SourceLogsConfiguration":{
       "type":"structure",
-      "required":[
-        "LogGroupSelectionCriteria",
-        "EncryptedLogGroupStrategy"
-      ],
+      "required":["EncryptedLogGroupStrategy"],
       "members":{
         "LogGroupSelectionCriteria":{"shape":"LogsFilterString"},
+        "DataSourceSelectionCriteria":{"shape":"DataSourceFilterString"},
         "EncryptedLogGroupStrategy":{"shape":"EncryptedLogGroupStrategy"}
+      }
+    },
+    "SourceMetricsConfiguration":{
+      "type":"structure",
+      "members":{
+        "MetricsSelectionCriteria":{"shape":"MetricsFilterString"}
       }
     },
     "Sources":{
@@ -1722,6 +1810,20 @@
       "members":{
         "Status":{"shape":"TelemetryEnrichmentStatus"},
         "AwsResourceExplorerManagedViewArn":{"shape":"AwsResourceExplorerManagedViewArn"}
+      }
+    },
+    "StartTelemetryEvaluationForOrganizationInput":{
+      "type":"structure",
+      "members":{
+        "Regions":{"shape":"Regions"},
+        "AllRegions":{"shape":"AllRegions"}
+      }
+    },
+    "StartTelemetryEvaluationInput":{
+      "type":"structure",
+      "members":{
+        "Regions":{"shape":"Regions"},
+        "AllRegions":{"shape":"AllRegions"}
       }
     },
     "Status":{
@@ -1819,7 +1921,8 @@
         "CloudtrailParameters":{"shape":"CloudtrailParameters"},
         "ELBLoadBalancerLoggingParameters":{"shape":"ELBLoadBalancerLoggingParameters"},
         "WAFLoggingParameters":{"shape":"WAFLoggingParameters"},
-        "LogDeliveryParameters":{"shape":"LogDeliveryParameters"}
+        "LogDeliveryParameters":{"shape":"LogDeliveryParameters"},
+        "MskMonitoringParameters":{"shape":"MskMonitoringParameters"}
       }
     },
     "TelemetryEnrichmentStatus":{
@@ -1908,7 +2011,10 @@
         "TelemetrySourceTypes":{"shape":"TelemetrySourceTypes"},
         "DestinationConfiguration":{"shape":"TelemetryDestinationConfiguration"},
         "Scope":{"shape":"String"},
-        "SelectionCriteria":{"shape":"String"}
+        "SelectionCriteria":{"shape":"String"},
+        "AllowFieldUpdates":{"shape":"Boolean"},
+        "Regions":{"shape":"Regions"},
+        "AllRegions":{"shape":"AllRegions"}
       }
     },
     "TelemetryRuleSummaries":{

@@ -56,7 +56,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChainId", targetDepth))
+                if (context.TestExpression("ChainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChainId = unmarshaller.Unmarshall(context, ref reader);

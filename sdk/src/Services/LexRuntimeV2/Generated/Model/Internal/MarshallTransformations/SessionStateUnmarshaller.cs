@@ -56,37 +56,37 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeContexts", targetDepth))
+                if (context.TestExpression("activeContexts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActiveContext, ActiveContextUnmarshaller>(ActiveContextUnmarshaller.Instance);
                     unmarshalledObject.ActiveContexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dialogAction", targetDepth))
+                if (context.TestExpression("dialogAction", targetDepth, ref reader))
                 {
                     var unmarshaller = DialogActionUnmarshaller.Instance;
                     unmarshalledObject.DialogAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intent", targetDepth))
+                if (context.TestExpression("intent", targetDepth, ref reader))
                 {
                     var unmarshaller = IntentUnmarshaller.Instance;
                     unmarshalledObject.Intent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("originatingRequestId", targetDepth))
+                if (context.TestExpression("originatingRequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OriginatingRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runtimeHints", targetDepth))
+                if (context.TestExpression("runtimeHints", targetDepth, ref reader))
                 {
                     var unmarshaller = RuntimeHintsUnmarshaller.Instance;
                     unmarshalledObject.RuntimeHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionAttributes", targetDepth))
+                if (context.TestExpression("sessionAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.SessionAttributes = unmarshaller.Unmarshall(context, ref reader);

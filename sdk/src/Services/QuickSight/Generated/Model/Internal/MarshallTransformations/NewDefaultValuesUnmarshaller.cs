@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateTimeStaticValues", targetDepth))
+                if (context.TestExpression("DateTimeStaticValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);
                     unmarshalledObject.DateTimeStaticValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DecimalStaticValues", targetDepth))
+                if (context.TestExpression("DecimalStaticValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     unmarshalledObject.DecimalStaticValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntegerStaticValues", targetDepth))
+                if (context.TestExpression("IntegerStaticValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance);
                     unmarshalledObject.IntegerStaticValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringStaticValues", targetDepth))
+                if (context.TestExpression("StringStaticValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StringStaticValues = unmarshaller.Unmarshall(context, ref reader);

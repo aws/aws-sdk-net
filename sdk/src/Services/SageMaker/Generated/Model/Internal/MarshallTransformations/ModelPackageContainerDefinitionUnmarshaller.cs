@@ -56,91 +56,97 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalS3DataSource", targetDepth))
+                if (context.TestExpression("AdditionalModelDataSources", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AdditionalModelDataSource, AdditionalModelDataSourceUnmarshaller>(AdditionalModelDataSourceUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalModelDataSources = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("AdditionalS3DataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = AdditionalS3DataSourceUnmarshaller.Instance;
                     unmarshalledObject.AdditionalS3DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BaseModel", targetDepth))
+                if (context.TestExpression("BaseModel", targetDepth, ref reader))
                 {
                     var unmarshaller = BaseModelUnmarshaller.Instance;
                     unmarshalledObject.BaseModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerHostname", targetDepth))
+                if (context.TestExpression("ContainerHostname", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerHostname = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Framework", targetDepth))
+                if (context.TestExpression("Framework", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Framework = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FrameworkVersion", targetDepth))
+                if (context.TestExpression("FrameworkVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FrameworkVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Image", targetDepth))
+                if (context.TestExpression("Image", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageDigest", targetDepth))
+                if (context.TestExpression("ImageDigest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageDigest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsCheckpoint", targetDepth))
+                if (context.TestExpression("IsCheckpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCheckpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataETag", targetDepth))
+                if (context.TestExpression("ModelDataETag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelDataETag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataSource", targetDepth))
+                if (context.TestExpression("ModelDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelDataSourceUnmarshaller.Instance;
                     unmarshalledObject.ModelDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataUrl", targetDepth))
+                if (context.TestExpression("ModelDataUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelDataUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelInput", targetDepth))
+                if (context.TestExpression("ModelInput", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelInputUnmarshaller.Instance;
                     unmarshalledObject.ModelInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NearestModelName", targetDepth))
+                if (context.TestExpression("NearestModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NearestModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductId", targetDepth))
+                if (context.TestExpression("ProductId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProductId = unmarshaller.Unmarshall(context, ref reader);

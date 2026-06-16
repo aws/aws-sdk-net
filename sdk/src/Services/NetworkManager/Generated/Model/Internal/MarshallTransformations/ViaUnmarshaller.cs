@@ -56,13 +56,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NetworkFunctionGroups", targetDepth))
+                if (context.TestExpression("NetworkFunctionGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkFunctionGroup, NetworkFunctionGroupUnmarshaller>(NetworkFunctionGroupUnmarshaller.Instance);
                     unmarshalledObject.NetworkFunctionGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WithEdgeOverrides", targetDepth))
+                if (context.TestExpression("WithEdgeOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EdgeOverride, EdgeOverrideUnmarshaller>(EdgeOverrideUnmarshaller.Instance);
                     unmarshalledObject.WithEdgeOverrides = unmarshaller.Unmarshall(context, ref reader);

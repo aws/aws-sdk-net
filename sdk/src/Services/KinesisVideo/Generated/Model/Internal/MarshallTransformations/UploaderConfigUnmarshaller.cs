@@ -56,7 +56,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScheduleConfig", targetDepth))
+                if (context.TestExpression("ScheduleConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduleConfigUnmarshaller.Instance;
                     unmarshalledObject.ScheduleConfig = unmarshaller.Unmarshall(context, ref reader);

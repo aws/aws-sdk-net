@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("integrationSummaries", targetDepth))
+                if (context.TestExpression("integrationSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntegrationSummary, IntegrationSummaryUnmarshaller>(IntegrationSummaryUnmarshaller.Instance);
                     response.IntegrationSummaries = unmarshaller.Unmarshall(context, ref reader);

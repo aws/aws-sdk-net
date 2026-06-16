@@ -52,127 +52,133 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("collaborationIdentifier", targetDepth))
+                if (context.TestExpression("collaborationIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CollaborationIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configuredModelAlgorithmAssociationArn", targetDepth))
+                if (context.TestExpression("configuredModelAlgorithmAssociationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConfiguredModelAlgorithmAssociationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createTime", targetDepth))
+                if (context.TestExpression("createTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creatorAccountId", targetDepth))
+                if (context.TestExpression("creatorAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CreatorAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("incrementalTrainingDataChannels", targetDepth))
+                if (context.TestExpression("incrementalTrainingDataChannels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IncrementalTrainingDataChannelOutput, IncrementalTrainingDataChannelOutputUnmarshaller>(IncrementalTrainingDataChannelOutputUnmarshaller.Instance);
                     response.IncrementalTrainingDataChannels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logsStatus", targetDepth))
+                if (context.TestExpression("logsStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LogsStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logsStatusDetails", targetDepth))
+                if (context.TestExpression("logsStatusDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LogsStatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipIdentifier", targetDepth))
+                if (context.TestExpression("membershipIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MembershipIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsStatus", targetDepth))
+                if (context.TestExpression("metricsStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MetricsStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsStatusDetails", targetDepth))
+                if (context.TestExpression("metricsStatusDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MetricsStatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("mlModelTrainingPayerAccountId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MlModelTrainingPayerAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceConfig", targetDepth))
+                if (context.TestExpression("resourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceConfigUnmarshaller.Instance;
                     response.ResourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusDetails", targetDepth))
+                if (context.TestExpression("statusDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StatusDetailsUnmarshaller.Instance;
                     response.StatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stoppingCondition", targetDepth))
+                if (context.TestExpression("stoppingCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = StoppingConditionUnmarshaller.Instance;
                     response.StoppingCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainedModelArn", targetDepth))
+                if (context.TestExpression("trainedModelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrainedModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingContainerImageDigest", targetDepth))
+                if (context.TestExpression("trainingContainerImageDigest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrainingContainerImageDigest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingInputMode", targetDepth))
+                if (context.TestExpression("trainingInputMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrainingInputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateTime", targetDepth))
+                if (context.TestExpression("updateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("versionIdentifier", targetDepth))
+                if (context.TestExpression("versionIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VersionIdentifier = unmarshaller.Unmarshall(context, ref reader);

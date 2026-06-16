@@ -39,6 +39,11 @@ namespace Amazon.Deadline
 {
     /// <summary>
     /// <para>Implementation for accessing Deadline</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Web Services Deadline Cloud API provides infrastructure and centralized
     /// management for your projects. Use the Deadline Cloud API to onboard users, assign
@@ -741,6 +746,61 @@ namespace Amazon.Deadline
         }
         #endregion
         
+        #region  BatchGetJob
+
+        internal virtual BatchGetJobResponse BatchGetJob(BatchGetJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetJobResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple jobs in a single request. This is a batch version of the <c>GetJob</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each job is reported individually in the response. Because the
+        /// batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetJob service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJob">REST API Reference for BatchGetJob Operation</seealso>
+        public virtual Task<BatchGetJobResponse> BatchGetJobAsync(BatchGetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchGetJobEntity
 
         internal virtual BatchGetJobEntityResponse BatchGetJobEntity(BatchGetJobEntityRequest request)
@@ -787,6 +847,402 @@ namespace Amazon.Deadline
             options.ResponseUnmarshaller = BatchGetJobEntityResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetJobEntityResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetSession
+
+        internal virtual BatchGetSessionResponse BatchGetSession(BatchGetSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSessionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple sessions in a single request. This is a batch version of the <c>GetSession</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each session is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSession service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSession">REST API Reference for BatchGetSession Operation</seealso>
+        public virtual Task<BatchGetSessionResponse> BatchGetSessionAsync(BatchGetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetSessionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetSessionAction
+
+        internal virtual BatchGetSessionActionResponse BatchGetSessionAction(BatchGetSessionActionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetSessionActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSessionActionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetSessionActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple session actions in a single request. This is a batch version of
+        /// the <c>GetSessionAction</c> API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each session action is reported individually in the response.
+        /// Because the batch request can result in a combination of successful and unsuccessful
+        /// actions, you should check for batch errors even when the call returns an HTTP status
+        /// code of 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSessionAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSessionAction service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSessionAction">REST API Reference for BatchGetSessionAction Operation</seealso>
+        public virtual Task<BatchGetSessionActionResponse> BatchGetSessionActionAsync(BatchGetSessionActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetSessionActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSessionActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetSessionActionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetStep
+
+        internal virtual BatchGetStepResponse BatchGetStep(BatchGetStepRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetStepRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetStepResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetStepResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple steps in a single request. This is a batch version of the <c>GetStep</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each step is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetStep service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetStep">REST API Reference for BatchGetStep Operation</seealso>
+        public virtual Task<BatchGetStepResponse> BatchGetStepAsync(BatchGetStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetStepRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetStepResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetStepResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetTask
+
+        internal virtual BatchGetTaskResponse BatchGetTask(BatchGetTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaskResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple tasks in a single request. This is a batch version of the <c>GetTask</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each task is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetTask service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetTask">REST API Reference for BatchGetTask Operation</seealso>
+        public virtual Task<BatchGetTaskResponse> BatchGetTaskAsync(BatchGetTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetTaskResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetWorker
+
+        internal virtual BatchGetWorkerResponse BatchGetWorker(BatchGetWorkerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetWorkerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetWorkerResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetWorkerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple workers in a single request. This is a batch version of the <c>GetWorker</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each worker is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetWorker service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetWorker service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetWorker">REST API Reference for BatchGetWorker Operation</seealso>
+        public virtual Task<BatchGetWorkerResponse> BatchGetWorkerAsync(BatchGetWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetWorkerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetWorkerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetWorkerResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchUpdateJob
+
+        internal virtual BatchUpdateJobResponse BatchUpdateJob(BatchUpdateJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateJobResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates multiple jobs in a single request. This is a batch version of the <c>UpdateJob</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of updating each job is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you change the status of a job to <c>ARCHIVED</c>, the job can't be scheduled
+        /// or archived.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived job and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateJob service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateJob">REST API Reference for BatchUpdateJob Operation</seealso>
+        public virtual Task<BatchUpdateJobResponse> BatchUpdateJobAsync(BatchUpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchUpdateJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchUpdateTask
+
+        internal virtual BatchUpdateTaskResponse BatchUpdateTask(BatchUpdateTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateTaskResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates multiple tasks in a single request. This is a batch version of the <c>UpdateTask</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of updating each task is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateTask service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateTask">REST API Reference for BatchUpdateTask Operation</seealso>
+        public virtual Task<BatchUpdateTaskResponse> BatchUpdateTaskAsync(BatchUpdateTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchUpdateTaskResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2166,6 +2622,59 @@ namespace Amazon.Deadline
         }
         #endregion
         
+        #region  DeleteVolume
+
+        internal virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVolumeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a persistent volume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVolume service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
+        public virtual Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVolumeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteWorker
 
         internal virtual DeleteWorkerResponse DeleteWorker(DeleteWorkerRequest request)
@@ -2766,6 +3275,55 @@ namespace Amazon.Deadline
         }
         #endregion
         
+        #region  GetMonitorSettings
+
+        internal virtual GetMonitorSettingsResponse GetMonitorSettings(GetMonitorSettingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitorSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMonitorSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the settings for a Deadline Cloud monitor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitorSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMonitorSettings service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitorSettings">REST API Reference for GetMonitorSettings Operation</seealso>
+        public virtual Task<GetMonitorSettingsResponse> GetMonitorSettingsAsync(GetMonitorSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitorSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMonitorSettingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetQueue
 
         internal virtual GetQueueResponse GetQueue(GetQueueRequest request)
@@ -3305,6 +3863,55 @@ namespace Amazon.Deadline
             options.ResponseUnmarshaller = GetTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTaskResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetVolume
+
+        internal virtual GetVolumeResponse GetVolume(GetVolumeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<GetVolumeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a persistent volume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVolume service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetVolume">REST API Reference for GetVolume Operation</seealso>
+        public virtual Task<GetVolumeResponse> GetVolumeAsync(GetVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVolumeResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4705,6 +5312,55 @@ namespace Amazon.Deadline
         }
         #endregion
         
+        #region  ListVolumes
+
+        internal virtual ListVolumesResponse ListVolumes(ListVolumesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVolumesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the persistent volumes in a fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVolumes service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
+        public virtual Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVolumesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListWorkers
 
         internal virtual ListWorkersResponse ListWorkers(ListWorkersRequest request)
@@ -5471,6 +6127,56 @@ namespace Amazon.Deadline
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateMonitorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateMonitorSettings
+
+        internal virtual UpdateMonitorSettingsResponse UpdateMonitorSettings(UpdateMonitorSettingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitorSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMonitorSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the settings for a Deadline Cloud monitor. Keys present in the request are
+        /// upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitorSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMonitorSettings service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateMonitorSettings">REST API Reference for UpdateMonitorSettings Operation</seealso>
+        public virtual Task<UpdateMonitorSettingsResponse> UpdateMonitorSettingsAsync(UpdateMonitorSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitorSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMonitorSettingsResponse>(request, options, cancellationToken);
         }
         #endregion
         

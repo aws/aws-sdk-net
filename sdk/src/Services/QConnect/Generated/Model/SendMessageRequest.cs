@@ -43,6 +43,7 @@ namespace Amazon.QConnect.Model
         private MessageInput _message;
         private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _orchestratorUseCase;
+        private string _originRequestId;
         private string _sessionId;
         private MessageType _type;
 
@@ -200,6 +201,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetOrchestratorUseCase()
         {
             return this._orchestratorUseCase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginRequestId. 
+        /// <para>
+        /// Request identifier from the origin system, used for end-to-end tracing across spans.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string OriginRequestId
+        {
+            get { return this._originRequestId; }
+            set { this._originRequestId = value; }
+        }
+
+        // Check to see if OriginRequestId property is set
+        internal bool IsSetOriginRequestId()
+        {
+            return this._originRequestId != null;
         }
 
         /// <summary>

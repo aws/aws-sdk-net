@@ -68,8 +68,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/group-profiles";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -93,12 +93,15 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.GroupIdentifier);
             }
 
+            if(publicRequest.IsSetRolePrincipalArn())
+            {
+                context.Writer.WritePropertyName("rolePrincipalArn");
+                context.Writer.WriteStringValue(publicRequest.RolePrincipalArn);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

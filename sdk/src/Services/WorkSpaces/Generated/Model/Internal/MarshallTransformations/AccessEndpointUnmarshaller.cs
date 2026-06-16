@@ -56,13 +56,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessEndpointType", targetDepth))
+                if (context.TestExpression("AccessEndpointType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessEndpointType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcEndpointId", targetDepth))
+                if (context.TestExpression("VpcEndpointId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context, ref reader);

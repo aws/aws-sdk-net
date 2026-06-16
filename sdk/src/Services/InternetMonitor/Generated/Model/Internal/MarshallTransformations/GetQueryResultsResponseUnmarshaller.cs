@@ -52,19 +52,19 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Data", targetDepth))
+                if (context.TestExpression("Data", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     response.Data = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Fields", targetDepth))
+                if (context.TestExpression("Fields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueryField, QueryFieldUnmarshaller>(QueryFieldUnmarshaller.Instance);
                     response.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

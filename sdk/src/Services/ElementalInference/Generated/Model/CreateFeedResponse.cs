@@ -66,7 +66,7 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property Association. 
         /// <para>
         /// The association for this feed. When you create the feed, this property is empty. You
-        /// must associate a resource with the feed using AssociateFeed.
+        /// must associate a resource with the feed using AssociateFeed or UpdateFeed. 
         /// </para>
         /// </summary>
         public FeedAssociation Association
@@ -84,7 +84,10 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property DataEndpoints. 
         /// <para>
-        /// A unique ARN that Elemental Inference assigns to the feed.
+        /// An array of endpoints for the feed. Typically, there is only one endpoint. The feed
+        /// receives source media at this endpoint (when the calling application calls PutMedia)
+        /// and returns the resulting metadata to this endpoint (when the calling application
+        /// calls GetMetadata). 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -127,7 +130,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that you specified.
+        /// The name that you specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,7 +149,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// Data endpoints that Elemental Inference assigns to the feed.
+        /// Repeats the outputs that you specified in the request.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -171,7 +174,7 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the feed. After creation of the feed has succeeded, the status
-        /// will be AVAILABLE.
+        /// will be AVAILABLE. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

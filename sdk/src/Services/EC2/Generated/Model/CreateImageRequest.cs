@@ -139,6 +139,7 @@ namespace Amazon.EC2.Model
         /// A description for the new image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -202,7 +203,7 @@ namespace Amazon.EC2.Model
         /// or underscores(_)
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }

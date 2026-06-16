@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnvironmentParameterRanges", targetDepth))
+                if (context.TestExpression("EnvironmentParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = EnvironmentParameterRangesUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceSpecificationName", targetDepth))
+                if (context.TestExpression("InferenceSpecificationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InferenceSpecificationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerlessConfig", targetDepth))
+                if (context.TestExpression("ServerlessConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
                     unmarshalledObject.ServerlessConfig = unmarshaller.Unmarshall(context, ref reader);

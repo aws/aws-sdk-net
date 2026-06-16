@@ -1710,6 +1710,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
         /// </exception>
@@ -3912,6 +3915,39 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  GetDashboardUrl
+
+
+
+        /// <summary>
+        /// Retrieves the URL for the Spark monitoring dashboard for a Glue resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboardUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDashboardUrl service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDashboardUrl">REST API Reference for GetDashboardUrl Operation</seealso>
+        Task<GetDashboardUrlResponse> GetDashboardUrlAsync(GetDashboardUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetDatabase
 
 
@@ -5316,6 +5352,46 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSession">REST API Reference for GetSession Operation</seealso>
         Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSessionEndpoint
+
+
+
+        /// <summary>
+        /// Returns the Spark Connect endpoint URL and authentication token for an interactive
+        /// session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionEndpoint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSessionEndpoint">REST API Reference for GetSessionEndpoint Operation</seealso>
+        Task<GetSessionEndpointResponse> GetSessionEndpointAsync(GetSessionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7373,11 +7449,17 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
         /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.SessionBusyException">
+        /// The session is currently busy processing another request and cannot accept new operations.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.ValidationException">
         /// A value could not be validated.

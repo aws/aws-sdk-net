@@ -52,13 +52,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoEnable", targetDepth))
+                if (context.TestExpression("autoEnable", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoEnable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxAccountLimitReached", targetDepth))
+                if (context.TestExpression("maxAccountLimitReached", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MaxAccountLimitReached = unmarshaller.Unmarshall(context, ref reader);

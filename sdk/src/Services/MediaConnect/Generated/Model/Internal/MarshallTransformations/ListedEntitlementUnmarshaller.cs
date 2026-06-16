@@ -56,19 +56,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth))
+                if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataTransferSubscriberFeePercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entitlementArn", targetDepth))
+                if (context.TestExpression("entitlementArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntitlementArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entitlementName", targetDepth))
+                if (context.TestExpression("entitlementName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntitlementName = unmarshaller.Unmarshall(context, ref reader);

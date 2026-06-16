@@ -458,8 +458,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property WorkDocsConfiguration. 
         /// <para>
-        /// Provides the configuration information to connect to Amazon WorkDocs as your data
-        /// source.
+        /// Provides the configuration information to connect to WorkDocs as your data source.
         /// </para>
         /// </summary>
         public WorkDocsConfiguration WorkDocsConfiguration

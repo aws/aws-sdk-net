@@ -56,19 +56,19 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authenticationConfiguration", targetDepth))
+                if (context.TestExpression("authenticationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataAccessorAuthenticationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authenticationType", targetDepth))
+                if (context.TestExpression("authenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("externalIds", targetDepth))
+                if (context.TestExpression("externalIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExternalIds = unmarshaller.Unmarshall(context, ref reader);

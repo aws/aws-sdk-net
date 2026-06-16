@@ -52,79 +52,85 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("currentVersion", targetDepth))
+                if (context.TestExpression("currentVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isReplicatorReference", targetDepth))
+                if (context.TestExpression("isReplicatorReference", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsReplicatorReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kafkaClusters", targetDepth))
+                if (context.TestExpression("kafkaClusters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KafkaClusterDescription, KafkaClusterDescriptionUnmarshaller>(KafkaClusterDescriptionUnmarshaller.Instance);
                     response.KafkaClusters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationInfoList", targetDepth))
+                if (context.TestExpression("logDelivery", targetDepth, ref reader))
+                {
+                    var unmarshaller = LogDeliveryUnmarshaller.Instance;
+                    response.LogDelivery = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("replicationInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationInfoDescription, ReplicationInfoDescriptionUnmarshaller>(ReplicationInfoDescriptionUnmarshaller.Instance);
                     response.ReplicationInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorArn", targetDepth))
+                if (context.TestExpression("replicatorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicatorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorDescription", targetDepth))
+                if (context.TestExpression("replicatorDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicatorDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorName", targetDepth))
+                if (context.TestExpression("replicatorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicatorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorResourceArn", targetDepth))
+                if (context.TestExpression("replicatorResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicatorResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorState", targetDepth))
+                if (context.TestExpression("replicatorState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicatorState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceExecutionRoleArn", targetDepth))
+                if (context.TestExpression("serviceExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateInfo", targetDepth))
+                if (context.TestExpression("stateInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationStateInfoUnmarshaller.Instance;
                     response.StateInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

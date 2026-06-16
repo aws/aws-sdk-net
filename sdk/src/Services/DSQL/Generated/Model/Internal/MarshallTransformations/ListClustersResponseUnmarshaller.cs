@@ -52,13 +52,13 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clusters", targetDepth))
+                if (context.TestExpression("clusters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterSummary, ClusterSummaryUnmarshaller>(ClusterSummaryUnmarshaller.Instance);
                     response.Clusters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

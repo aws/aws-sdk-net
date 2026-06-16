@@ -52,13 +52,13 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalableTargets", targetDepth))
+                if (context.TestExpression("ScalableTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScalableTarget, ScalableTargetUnmarshaller>(ScalableTargetUnmarshaller.Instance);
                     response.ScalableTargets = unmarshaller.Unmarshall(context, ref reader);

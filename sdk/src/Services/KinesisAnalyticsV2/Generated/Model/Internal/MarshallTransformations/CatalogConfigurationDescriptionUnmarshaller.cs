@@ -56,7 +56,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlueDataCatalogConfigurationDescription", targetDepth))
+                if (context.TestExpression("GlueDataCatalogConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = GlueDataCatalogConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.GlueDataCatalogConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);

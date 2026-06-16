@@ -56,31 +56,31 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("consumerGroupReplication", targetDepth))
+                if (context.TestExpression("consumerGroupReplication", targetDepth, ref reader))
                 {
                     var unmarshaller = ConsumerGroupReplicationUnmarshaller.Instance;
                     unmarshalledObject.ConsumerGroupReplication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceKafkaClusterAlias", targetDepth))
+                if (context.TestExpression("sourceKafkaClusterAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceKafkaClusterAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetCompressionType", targetDepth))
+                if (context.TestExpression("targetCompressionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetCompressionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetKafkaClusterAlias", targetDepth))
+                if (context.TestExpression("targetKafkaClusterAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetKafkaClusterAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicReplication", targetDepth))
+                if (context.TestExpression("topicReplication", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicReplicationUnmarshaller.Instance;
                     unmarshalledObject.TopicReplication = unmarshaller.Unmarshall(context, ref reader);

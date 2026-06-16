@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("OpsItemId", targetDepth))
+                    if (context.TestExpression("OpsItemId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.OpsItemId = unmarshaller.Unmarshall(context, ref reader);

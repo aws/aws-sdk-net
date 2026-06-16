@@ -59,6 +59,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetThingConnectivityDataRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "POST";
 
@@ -66,6 +67,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}/connectivity-data";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIncludeSocketInformation())
+            {
+                context.Writer.WritePropertyName("includeSocketInformation");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeSocketInformation.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+            
+
 
             return request;
         }

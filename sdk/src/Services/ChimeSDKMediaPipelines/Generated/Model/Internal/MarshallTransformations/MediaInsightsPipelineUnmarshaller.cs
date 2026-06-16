@@ -56,61 +56,61 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
+                if (context.TestExpression("CreatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElementStatuses", targetDepth))
+                if (context.TestExpression("ElementStatuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MediaInsightsPipelineElementStatus, MediaInsightsPipelineElementStatusUnmarshaller>(MediaInsightsPipelineElementStatusUnmarshaller.Instance);
                     unmarshalledObject.ElementStatuses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisVideoStreamRecordingSourceRuntimeConfiguration", targetDepth))
+                if (context.TestExpression("KinesisVideoStreamRecordingSourceRuntimeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisVideoStreamRecordingSourceRuntimeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KinesisVideoStreamRecordingSourceRuntimeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisVideoStreamSourceRuntimeConfiguration", targetDepth))
+                if (context.TestExpression("KinesisVideoStreamSourceRuntimeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisVideoStreamSourceRuntimeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KinesisVideoStreamSourceRuntimeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipelineConfigurationArn", targetDepth))
+                if (context.TestExpression("MediaInsightsPipelineConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipelineConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsRuntimeMetadata", targetDepth))
+                if (context.TestExpression("MediaInsightsRuntimeMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.MediaInsightsRuntimeMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaPipelineArn", targetDepth))
+                if (context.TestExpression("MediaPipelineArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaPipelineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaPipelineId", targetDepth))
+                if (context.TestExpression("MediaPipelineId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaPipelineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3RecordingSinkRuntimeConfiguration", targetDepth))
+                if (context.TestExpression("S3RecordingSinkRuntimeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3RecordingSinkRuntimeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3RecordingSinkRuntimeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

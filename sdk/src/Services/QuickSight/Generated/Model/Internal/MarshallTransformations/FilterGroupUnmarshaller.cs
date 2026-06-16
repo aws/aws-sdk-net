@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrossDataset", targetDepth))
+                if (context.TestExpression("CrossDataset", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CrossDataset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterGroupId", targetDepth))
+                if (context.TestExpression("FilterGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Filters", targetDepth))
+                if (context.TestExpression("Filters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Filter, FilterUnmarshaller>(FilterUnmarshaller.Instance);
                     unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScopeConfiguration", targetDepth))
+                if (context.TestExpression("ScopeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterScopeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ScopeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

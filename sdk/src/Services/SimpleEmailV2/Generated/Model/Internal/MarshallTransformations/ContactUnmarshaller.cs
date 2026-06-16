@@ -56,31 +56,31 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmailAddress", targetDepth))
+                if (context.TestExpression("EmailAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
+                if (context.TestExpression("LastUpdatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicDefaultPreferences", targetDepth))
+                if (context.TestExpression("TopicDefaultPreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicPreference, TopicPreferenceUnmarshaller>(TopicPreferenceUnmarshaller.Instance);
                     unmarshalledObject.TopicDefaultPreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicPreferences", targetDepth))
+                if (context.TestExpression("TopicPreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicPreference, TopicPreferenceUnmarshaller>(TopicPreferenceUnmarshaller.Instance);
                     unmarshalledObject.TopicPreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnsubscribeAll", targetDepth))
+                if (context.TestExpression("UnsubscribeAll", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UnsubscribeAll = unmarshaller.Unmarshall(context, ref reader);

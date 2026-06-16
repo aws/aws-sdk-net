@@ -56,7 +56,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("latencyMs", targetDepth))
+                if (context.TestExpression("latencyMs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LatencyMs = unmarshaller.Unmarshall(context, ref reader);

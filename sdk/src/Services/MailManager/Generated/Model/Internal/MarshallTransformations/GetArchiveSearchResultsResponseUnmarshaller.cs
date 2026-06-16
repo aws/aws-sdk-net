@@ -52,7 +52,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Rows", targetDepth))
+                if (context.TestExpression("Rows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Row, RowUnmarshaller>(RowUnmarshaller.Instance);
                     response.Rows = unmarshaller.Unmarshall(context, ref reader);

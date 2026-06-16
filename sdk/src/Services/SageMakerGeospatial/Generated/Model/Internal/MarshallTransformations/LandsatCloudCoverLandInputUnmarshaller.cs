@@ -56,13 +56,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LowerBound", targetDepth))
+                if (context.TestExpression("LowerBound", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.LowerBound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpperBound", targetDepth))
+                if (context.TestExpression("UpperBound", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.UpperBound = unmarshaller.Unmarshall(context, ref reader);

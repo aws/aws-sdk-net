@@ -56,19 +56,19 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisconnectTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("DisconnectTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DisconnectTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdleDisconnectTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("IdleDisconnectTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleDisconnectTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxUserDurationInSeconds", targetDepth))
+                if (context.TestExpression("MaxUserDurationInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUserDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);

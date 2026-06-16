@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationTheme", targetDepth))
+                if (context.TestExpression("ApplicationTheme", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationThemeUnmarshaller.Instance;
                     unmarshalledObject.ApplicationTheme = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BrandName", targetDepth))
+                if (context.TestExpression("BrandName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BrandName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogoConfiguration", targetDepth))
+                if (context.TestExpression("LogoConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogoConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogoConfiguration = unmarshaller.Unmarshall(context, ref reader);

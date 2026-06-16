@@ -173,6 +173,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     return KMSKeyNotAccessibleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NetworkTypeNotSupported"))
+                {
+                    return NetworkTypeNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OptionGroupNotFoundFault"))
                 {
                     return OptionGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

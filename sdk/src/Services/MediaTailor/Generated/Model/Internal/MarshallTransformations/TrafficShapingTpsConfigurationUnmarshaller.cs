@@ -56,13 +56,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PeakConcurrentUsers", targetDepth))
+                if (context.TestExpression("PeakConcurrentUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PeakConcurrentUsers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PeakTps", targetDepth))
+                if (context.TestExpression("PeakTps", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PeakTps = unmarshaller.Unmarshall(context, ref reader);

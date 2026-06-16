@@ -56,19 +56,19 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlockIndex", targetDepth))
+                if (context.TestExpression("BlockIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlockIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirstBlockToken", targetDepth))
+                if (context.TestExpression("FirstBlockToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirstBlockToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondBlockToken", targetDepth))
+                if (context.TestExpression("SecondBlockToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecondBlockToken = unmarshaller.Unmarshall(context, ref reader);

@@ -65,7 +65,8 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Association. 
         /// <para>
-        /// Information about the resource, if any, associated with the feed being queried.
+        /// Information about the resource that is associated with the feed. It's possible that
+        /// there is no associated resource. This is not an error. 
         /// </para>
         /// </summary>
         public FeedAssociation Association
@@ -83,7 +84,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property DataEndpoints. 
         /// <para>
-        /// The dataEndpoints of the feed being queried.
+        /// The dataEndpoints of the feed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -107,7 +108,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the feed being queried.
+        /// The ID of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +127,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the feed being queried.
+        /// The name of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,7 +146,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// An array of the outputs in the feed being queried.
+        /// An array of the outputs in the feed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -169,7 +170,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the feed being queried.
+        /// The status of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -188,7 +189,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of the tags, if any, for the feed being queried.
+        /// A list of the tags, if any, for the feed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

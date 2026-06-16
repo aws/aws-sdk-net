@@ -56,55 +56,55 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("booleanValue", targetDepth))
+                if (context.TestExpression("booleanValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("doubleValue", targetDepth))
+                if (context.TestExpression("doubleValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("expression", targetDepth))
+                if (context.TestExpression("expression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integerValue", targetDepth))
+                if (context.TestExpression("integerValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntegerValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listValue", targetDepth))
+                if (context.TestExpression("listValue", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataValue, DataValueUnmarshaller>(DataValueUnmarshaller.Instance);
                     unmarshalledObject.ListValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("longValue", targetDepth))
+                if (context.TestExpression("longValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LongValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapValue", targetDepth))
+                if (context.TestExpression("mapValue", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, DataValue, StringUnmarshaller, DataValueUnmarshaller>(StringUnmarshaller.Instance, DataValueUnmarshaller.Instance);
                     unmarshalledObject.MapValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relationshipValue", targetDepth))
+                if (context.TestExpression("relationshipValue", targetDepth, ref reader))
                 {
                     var unmarshaller = RelationshipValueUnmarshaller.Instance;
                     unmarshalledObject.RelationshipValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringValue", targetDepth))
+                if (context.TestExpression("stringValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StringValue = unmarshaller.Unmarshall(context, ref reader);

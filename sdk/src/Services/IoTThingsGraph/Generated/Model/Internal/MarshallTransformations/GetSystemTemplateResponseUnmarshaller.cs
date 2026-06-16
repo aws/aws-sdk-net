@@ -52,7 +52,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemTemplateDescriptionUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);

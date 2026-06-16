@@ -56,55 +56,55 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RegionName", targetDepth))
+                if (context.TestExpression("RegionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaBillingModeSummary", targetDepth))
+                if (context.TestExpression("ReplicaBillingModeSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = BillingModeSummaryUnmarshaller.Instance;
                     unmarshalledObject.ReplicaBillingModeSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaGlobalSecondaryIndexSettings", targetDepth))
+                if (context.TestExpression("ReplicaGlobalSecondaryIndexSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicaGlobalSecondaryIndexSettingsDescription, ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller>(ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller.Instance);
                     unmarshalledObject.ReplicaGlobalSecondaryIndexSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth))
+                if (context.TestExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ReplicaProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaProvisionedReadCapacityUnits", targetDepth))
+                if (context.TestExpression("ReplicaProvisionedReadCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReplicaProvisionedReadCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth))
+                if (context.TestExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ReplicaProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaProvisionedWriteCapacityUnits", targetDepth))
+                if (context.TestExpression("ReplicaProvisionedWriteCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReplicaProvisionedWriteCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaStatus", targetDepth))
+                if (context.TestExpression("ReplicaStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaTableClassSummary", targetDepth))
+                if (context.TestExpression("ReplicaTableClassSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = TableClassSummaryUnmarshaller.Instance;
                     unmarshalledObject.ReplicaTableClassSummary = unmarshaller.Unmarshall(context, ref reader);

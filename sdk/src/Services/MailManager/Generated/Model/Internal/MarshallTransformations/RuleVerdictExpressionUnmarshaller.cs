@@ -56,19 +56,19 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Evaluate", targetDepth))
+                if (context.TestExpression("Evaluate", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleVerdictToEvaluateUnmarshaller.Instance;
                     unmarshalledObject.Evaluate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Operator", targetDepth))
+                if (context.TestExpression("Operator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Operator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Values", targetDepth))
+                if (context.TestExpression("Values", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Values = unmarshaller.Unmarshall(context, ref reader);

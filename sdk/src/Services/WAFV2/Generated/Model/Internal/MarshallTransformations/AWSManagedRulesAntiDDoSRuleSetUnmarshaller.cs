@@ -56,13 +56,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientSideActionConfig", targetDepth))
+                if (context.TestExpression("ClientSideActionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClientSideActionConfigUnmarshaller.Instance;
                     unmarshalledObject.ClientSideActionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SensitivityToBlock", targetDepth))
+                if (context.TestExpression("SensitivityToBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SensitivityToBlock = unmarshaller.Unmarshall(context, ref reader);

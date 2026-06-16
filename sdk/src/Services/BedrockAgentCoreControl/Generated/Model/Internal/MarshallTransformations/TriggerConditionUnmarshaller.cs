@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("messageBasedTrigger", targetDepth))
+                if (context.TestExpression("messageBasedTrigger", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageBasedTriggerUnmarshaller.Instance;
                     unmarshalledObject.MessageBasedTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeBasedTrigger", targetDepth))
+                if (context.TestExpression("timeBasedTrigger", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeBasedTriggerUnmarshaller.Instance;
                     unmarshalledObject.TimeBasedTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenBasedTrigger", targetDepth))
+                if (context.TestExpression("tokenBasedTrigger", targetDepth, ref reader))
                 {
                     var unmarshaller = TokenBasedTriggerUnmarshaller.Instance;
                     unmarshalledObject.TokenBasedTrigger = unmarshaller.Unmarshall(context, ref reader);

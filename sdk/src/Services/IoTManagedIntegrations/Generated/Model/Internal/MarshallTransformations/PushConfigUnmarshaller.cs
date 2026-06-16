@@ -56,19 +56,19 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AbortConfig", targetDepth))
+                if (context.TestExpression("AbortConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OtaTaskAbortConfigUnmarshaller.Instance;
                     unmarshalledObject.AbortConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RolloutConfig", targetDepth))
+                if (context.TestExpression("RolloutConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OtaTaskExecutionRolloutConfigUnmarshaller.Instance;
                     unmarshalledObject.RolloutConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeoutConfig", targetDepth))
+                if (context.TestExpression("TimeoutConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OtaTaskTimeoutConfigUnmarshaller.Instance;
                     unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context, ref reader);

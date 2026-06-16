@@ -56,49 +56,49 @@ namespace Amazon.MWAAServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefinitionS3Location", targetDepth))
+                if (context.TestExpression("DefinitionS3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = DefinitionS3LocationUnmarshaller.Instance;
                     unmarshalledObject.DefinitionS3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsLatestVersion", targetDepth))
+                if (context.TestExpression("IsLatestVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLatestVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModifiedAt", targetDepth))
+                if (context.TestExpression("ModifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduleConfiguration", targetDepth))
+                if (context.TestExpression("ScheduleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ScheduleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TriggerMode", targetDepth))
+                if (context.TestExpression("TriggerMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TriggerMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkflowArn", targetDepth))
+                if (context.TestExpression("WorkflowArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkflowArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkflowVersion", targetDepth))
+                if (context.TestExpression("WorkflowVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkflowVersion = unmarshaller.Unmarshall(context, ref reader);

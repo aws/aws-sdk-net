@@ -71,14 +71,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             request.AddPathResource("{botVersion}", StringUtils.FromString(publicRequest.BotVersion));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAudioFillerSettings())
+            {
+                context.Writer.WritePropertyName("audioFillerSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioFillerSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AudioFillerSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -156,10 +167,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

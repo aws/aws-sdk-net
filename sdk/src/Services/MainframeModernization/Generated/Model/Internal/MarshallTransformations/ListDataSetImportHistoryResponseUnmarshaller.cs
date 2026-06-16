@@ -52,13 +52,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataSetImportTasks", targetDepth))
+                if (context.TestExpression("dataSetImportTasks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSetImportTask, DataSetImportTaskUnmarshaller>(DataSetImportTaskUnmarshaller.Instance);
                     response.DataSetImportTasks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

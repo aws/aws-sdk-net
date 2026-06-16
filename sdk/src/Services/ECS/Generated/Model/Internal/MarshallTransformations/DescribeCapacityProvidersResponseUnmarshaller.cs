@@ -52,19 +52,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacityProviders", targetDepth))
+                if (context.TestExpression("capacityProviders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CapacityProvider, CapacityProviderUnmarshaller>(CapacityProviderUnmarshaller.Instance);
                     response.CapacityProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failures", targetDepth))
+                if (context.TestExpression("failures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Failure, FailureUnmarshaller>(FailureUnmarshaller.Instance);
                     response.Failures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
@@ -95,6 +95,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClientException"))
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

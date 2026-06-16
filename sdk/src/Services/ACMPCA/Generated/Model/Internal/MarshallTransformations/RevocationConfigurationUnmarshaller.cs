@@ -56,13 +56,13 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrlConfiguration", targetDepth))
+                if (context.TestExpression("CrlConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CrlConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CrlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OcspConfiguration", targetDepth))
+                if (context.TestExpression("OcspConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OcspConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OcspConfiguration = unmarshaller.Unmarshall(context, ref reader);

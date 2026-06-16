@@ -56,61 +56,61 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentConflict", targetDepth))
+                if (context.TestExpression("contentConflict", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ContentConflict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileModeConflict", targetDepth))
+                if (context.TestExpression("fileModeConflict", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FileModeConflict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileModes", targetDepth))
+                if (context.TestExpression("fileModes", targetDepth, ref reader))
                 {
                     var unmarshaller = FileModesUnmarshaller.Instance;
                     unmarshalledObject.FileModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filePath", targetDepth))
+                if (context.TestExpression("filePath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileSizes", targetDepth))
+                if (context.TestExpression("fileSizes", targetDepth, ref reader))
                 {
                     var unmarshaller = FileSizesUnmarshaller.Instance;
                     unmarshalledObject.FileSizes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isBinaryFile", targetDepth))
+                if (context.TestExpression("isBinaryFile", targetDepth, ref reader))
                 {
                     var unmarshaller = IsBinaryFileUnmarshaller.Instance;
                     unmarshalledObject.IsBinaryFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mergeOperations", targetDepth))
+                if (context.TestExpression("mergeOperations", targetDepth, ref reader))
                 {
                     var unmarshaller = MergeOperationsUnmarshaller.Instance;
                     unmarshalledObject.MergeOperations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfConflicts", targetDepth))
+                if (context.TestExpression("numberOfConflicts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfConflicts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("objectTypeConflict", targetDepth))
+                if (context.TestExpression("objectTypeConflict", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ObjectTypeConflict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("objectTypes", targetDepth))
+                if (context.TestExpression("objectTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectTypesUnmarshaller.Instance;
                     unmarshalledObject.ObjectTypes = unmarshaller.Unmarshall(context, ref reader);

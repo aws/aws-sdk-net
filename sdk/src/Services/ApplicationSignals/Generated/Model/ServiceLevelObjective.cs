@@ -41,6 +41,7 @@ namespace Amazon.ApplicationSignals.Model
     public partial class ServiceLevelObjective
     {
         private string _arn;
+        private bool? _autoInvestigationEnabled;
         private List<BurnRateConfiguration> _burnRateConfigurations = AWSConfigs.InitializeCollections ? new List<BurnRateConfiguration>() : null;
         private DateTime? _createdTime;
         private string _description;
@@ -69,6 +70,25 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoInvestigationEnabled. 
+        /// <para>
+        /// Indicates whether DevOps Agent will automatically investigate this SLO when it is
+        /// breached
+        /// </para>
+        /// </summary>
+        public bool? AutoInvestigationEnabled
+        {
+            get { return this._autoInvestigationEnabled; }
+            set { this._autoInvestigationEnabled = value; }
+        }
+
+        // Check to see if AutoInvestigationEnabled property is set
+        internal bool IsSetAutoInvestigationEnabled()
+        {
+            return this._autoInvestigationEnabled.HasValue; 
         }
 
         /// <summary>
@@ -205,7 +225,19 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CloudWatch metric
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppMonitor
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canary
         /// </para>
         ///  </li> </ul>
         /// </summary>

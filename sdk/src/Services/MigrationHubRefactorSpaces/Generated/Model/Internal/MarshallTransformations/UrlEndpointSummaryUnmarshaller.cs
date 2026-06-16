@@ -56,13 +56,13 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HealthUrl", targetDepth))
+                if (context.TestExpression("HealthUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HealthUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Url", targetDepth))
+                if (context.TestExpression("Url", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);

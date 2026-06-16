@@ -56,97 +56,97 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessLogSettings", targetDepth))
+                if (context.TestExpression("AccessLogSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsApiGatewayAccessLogSettingsUnmarshaller.Instance;
                     unmarshalledObject.AccessLogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CacheClusterEnabled", targetDepth))
+                if (context.TestExpression("CacheClusterEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CacheClusterEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CacheClusterSize", targetDepth))
+                if (context.TestExpression("CacheClusterSize", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CacheClusterSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CacheClusterStatus", targetDepth))
+                if (context.TestExpression("CacheClusterStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CacheClusterStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CanarySettings", targetDepth))
+                if (context.TestExpression("CanarySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsApiGatewayCanarySettingsUnmarshaller.Instance;
                     unmarshalledObject.CanarySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientCertificateId", targetDepth))
+                if (context.TestExpression("ClientCertificateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientCertificateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedDate", targetDepth))
+                if (context.TestExpression("CreatedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentId", targetDepth))
+                if (context.TestExpression("DeploymentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentationVersion", targetDepth))
+                if (context.TestExpression("DocumentationVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentationVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedDate", targetDepth))
+                if (context.TestExpression("LastUpdatedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MethodSettings", targetDepth))
+                if (context.TestExpression("MethodSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsApiGatewayMethodSettings, AwsApiGatewayMethodSettingsUnmarshaller>(AwsApiGatewayMethodSettingsUnmarshaller.Instance);
                     unmarshalledObject.MethodSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StageName", targetDepth))
+                if (context.TestExpression("StageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StageName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TracingEnabled", targetDepth))
+                if (context.TestExpression("TracingEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TracingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Variables", targetDepth))
+                if (context.TestExpression("Variables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebAclArn", targetDepth))
+                if (context.TestExpression("WebAclArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebAclArn = unmarshaller.Unmarshall(context, ref reader);

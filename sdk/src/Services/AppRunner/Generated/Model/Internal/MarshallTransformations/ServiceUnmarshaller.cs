@@ -56,91 +56,91 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoScalingConfigurationSummary", targetDepth))
+                if (context.TestExpression("AutoScalingConfigurationSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingConfigurationSummaryUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingConfigurationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeletedAt", targetDepth))
+                if (context.TestExpression("DeletedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeletedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckConfiguration", targetDepth))
+                if (context.TestExpression("HealthCheckConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HealthCheckConfigurationUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceConfiguration", targetDepth))
+                if (context.TestExpression("InstanceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InstanceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkConfiguration", targetDepth))
+                if (context.TestExpression("NetworkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObservabilityConfiguration", targetDepth))
+                if (context.TestExpression("ObservabilityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceObservabilityConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceArn", targetDepth))
+                if (context.TestExpression("ServiceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceId", targetDepth))
+                if (context.TestExpression("ServiceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceName", targetDepth))
+                if (context.TestExpression("ServiceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceUrl", targetDepth))
+                if (context.TestExpression("ServiceUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceConfiguration", targetDepth))
+                if (context.TestExpression("SourceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdatedAt", targetDepth))
+                if (context.TestExpression("UpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

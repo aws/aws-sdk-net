@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RuleVariables", targetDepth))
+                if (context.TestExpression("RuleVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, IPSet, StringUnmarshaller, IPSetUnmarshaller>(StringUnmarshaller.Instance, IPSetUnmarshaller.Instance);
                     unmarshalledObject.RuleVariables = unmarshaller.Unmarshall(context, ref reader);

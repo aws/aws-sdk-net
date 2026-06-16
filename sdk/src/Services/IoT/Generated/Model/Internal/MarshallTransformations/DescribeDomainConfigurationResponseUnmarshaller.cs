@@ -52,85 +52,85 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationProtocol", targetDepth))
+                if (context.TestExpression("applicationProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authenticationType", targetDepth))
+                if (context.TestExpression("authenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerConfig", targetDepth))
+                if (context.TestExpression("authorizerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizerConfigUnmarshaller.Instance;
                     response.AuthorizerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clientCertificateConfig", targetDepth))
+                if (context.TestExpression("clientCertificateConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClientCertificateConfigUnmarshaller.Instance;
                     response.ClientCertificateConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainConfigurationArn", targetDepth))
+                if (context.TestExpression("domainConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainConfigurationName", targetDepth))
+                if (context.TestExpression("domainConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainConfigurationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainConfigurationStatus", targetDepth))
+                if (context.TestExpression("domainConfigurationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainConfigurationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("domainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainType", targetDepth))
+                if (context.TestExpression("domainType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastStatusChangeDate", targetDepth))
+                if (context.TestExpression("lastStatusChangeDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastStatusChangeDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serverCertificateConfig", targetDepth))
+                if (context.TestExpression("serverCertificateConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerCertificateConfigUnmarshaller.Instance;
                     response.ServerCertificateConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serverCertificates", targetDepth))
+                if (context.TestExpression("serverCertificates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServerCertificateSummary, ServerCertificateSummaryUnmarshaller>(ServerCertificateSummaryUnmarshaller.Instance);
                     response.ServerCertificates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceType", targetDepth))
+                if (context.TestExpression("serviceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tlsConfig", targetDepth))
+                if (context.TestExpression("tlsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TlsConfigUnmarshaller.Instance;
                     response.TlsConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -98,6 +98,16 @@ namespace Amazon.Connect.Model
         IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request);
 
         /// <summary>
+        /// Paginator for ListAttachedFilesConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAttachedFilesConfigurationsPaginator ListAttachedFilesConfigurations(ListAttachedFilesConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListAuthenticationProfiles operation
         ///</summary>
         [AWSPaginator(

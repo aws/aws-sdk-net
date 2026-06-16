@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("graderConfig", targetDepth))
+                if (context.TestExpression("graderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GraderConfigUnmarshaller.Instance;
                     unmarshalledObject.GraderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hyperParameters", targetDepth))
+                if (context.TestExpression("hyperParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = RFTHyperParametersUnmarshaller.Instance;
                     unmarshalledObject.HyperParameters = unmarshaller.Unmarshall(context, ref reader);

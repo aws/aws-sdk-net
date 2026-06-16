@@ -46,6 +46,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioFeedInputs())
+            {
+                context.Writer.WritePropertyName("audioFeedInputs");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAudioFeedInputsListValue in requestObject.AudioFeedInputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AudioFeedInputMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAudioFeedInputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetFeedArn())
             {
                 context.Writer.WritePropertyName("feedArn");

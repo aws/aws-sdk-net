@@ -56,7 +56,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("invokedBy", targetDepth))
+                if (context.TestExpression("invokedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InvokedBy = unmarshaller.Unmarshall(context, ref reader);

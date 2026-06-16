@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Logo", targetDepth))
+                if (context.TestExpression("Logo", targetDepth, ref reader))
                 {
                     var unmarshaller = ImagesLogoUnmarshaller.Instance;
                     unmarshalledObject.Logo = unmarshaller.Unmarshall(context, ref reader);

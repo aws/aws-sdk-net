@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("matchCount", targetDepth))
+                if (context.TestExpression("matchCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MatchCount = unmarshaller.Unmarshall(context, ref reader);

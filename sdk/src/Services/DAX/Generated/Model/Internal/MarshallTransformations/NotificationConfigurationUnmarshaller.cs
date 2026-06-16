@@ -56,13 +56,13 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TopicArn", targetDepth))
+                if (context.TestExpression("TopicArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicStatus", targetDepth))
+                if (context.TestExpression("TopicStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicStatus = unmarshaller.Unmarshall(context, ref reader);

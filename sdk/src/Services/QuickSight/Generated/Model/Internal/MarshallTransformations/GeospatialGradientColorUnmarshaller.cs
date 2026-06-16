@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultOpacity", targetDepth))
+                if (context.TestExpression("DefaultOpacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DefaultOpacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NullDataSettings", targetDepth))
+                if (context.TestExpression("NullDataSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialNullDataSettingsUnmarshaller.Instance;
                     unmarshalledObject.NullDataSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NullDataVisibility", targetDepth))
+                if (context.TestExpression("NullDataVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NullDataVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepColors", targetDepth))
+                if (context.TestExpression("StepColors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GeospatialGradientStepColor, GeospatialGradientStepColorUnmarshaller>(GeospatialGradientStepColorUnmarshaller.Instance);
                     unmarshalledObject.StepColors = unmarshaller.Unmarshall(context, ref reader);

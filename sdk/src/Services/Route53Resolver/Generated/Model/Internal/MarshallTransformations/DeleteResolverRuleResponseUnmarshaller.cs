@@ -52,7 +52,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResolverRule", targetDepth))
+                if (context.TestExpression("ResolverRule", targetDepth, ref reader))
                 {
                     var unmarshaller = ResolverRuleUnmarshaller.Instance;
                     response.ResolverRule = unmarshaller.Unmarshall(context, ref reader);
@@ -90,6 +90,10 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+                {
+                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
                 {

@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that contains additional attributes that are related an email address that
-    /// is on the suppression list for your account.
+    /// is on the suppression list for your account or for a specific tenant.
     /// </summary>
     public partial class SuppressedDestinationAttributes
     {
@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property FeedbackId. 
         /// <para>
         /// A unique identifier that's generated when an email address is added to the suppression
-        /// list for your account.
+        /// list for your account or for a specific tenant.
         /// </para>
         /// </summary>
         public string FeedbackId
@@ -61,7 +61,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property MessageId. 
         /// <para>
         /// The unique identifier of the email message that caused the email address to be added
-        /// to the suppression list for your account.
+        /// to the suppression list for your account or for a specific tenant.
         /// </para>
         /// </summary>
         public string MessageId

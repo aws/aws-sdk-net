@@ -56,25 +56,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompositedVideo", targetDepth))
+                if (context.TestExpression("CompositedVideo", targetDepth, ref reader))
                 {
                     var unmarshaller = CompositedVideoArtifactsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CompositedVideo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MuxType", targetDepth))
+                if (context.TestExpression("MuxType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MuxType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceConfiguration", targetDepth))
+                if (context.TestExpression("SourceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context, ref reader);

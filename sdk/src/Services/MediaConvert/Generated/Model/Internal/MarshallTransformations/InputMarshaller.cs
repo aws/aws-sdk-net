@@ -230,6 +230,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InputScanType);
             }
 
+            if(requestObject.IsSetMultiViewSettings())
+            {
+                context.Writer.WritePropertyName("multiViewSettings");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMultiViewSettingsListValue in requestObject.MultiViewSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MultiViewSettingsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMultiViewSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");

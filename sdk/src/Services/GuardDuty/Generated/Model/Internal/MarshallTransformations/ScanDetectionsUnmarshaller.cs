@@ -56,25 +56,25 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("highestSeverityThreatDetails", targetDepth))
+                if (context.TestExpression("highestSeverityThreatDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = HighestSeverityThreatDetailsUnmarshaller.Instance;
                     unmarshalledObject.HighestSeverityThreatDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scannedItemCount", targetDepth))
+                if (context.TestExpression("scannedItemCount", targetDepth, ref reader))
                 {
                     var unmarshaller = ScannedItemCountUnmarshaller.Instance;
                     unmarshalledObject.ScannedItemCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("threatDetectedByName", targetDepth))
+                if (context.TestExpression("threatDetectedByName", targetDepth, ref reader))
                 {
                     var unmarshaller = ThreatDetectedByNameUnmarshaller.Instance;
                     unmarshalledObject.ThreatDetectedByName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("threatsDetectedItemCount", targetDepth))
+                if (context.TestExpression("threatsDetectedItemCount", targetDepth, ref reader))
                 {
                     var unmarshaller = ThreatsDetectedItemCountUnmarshaller.Instance;
                     unmarshalledObject.ThreatsDetectedItemCount = unmarshaller.Unmarshall(context, ref reader);

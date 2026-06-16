@@ -56,79 +56,79 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomConnector", targetDepth))
+                if (context.TestExpression("CustomConnector", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomConnectorDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.CustomConnector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerProfiles", targetDepth))
+                if (context.TestExpression("CustomerProfiles", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerProfilesDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.CustomerProfiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventBridge", targetDepth))
+                if (context.TestExpression("EventBridge", targetDepth, ref reader))
                 {
                     var unmarshaller = EventBridgeDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.EventBridge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Honeycode", targetDepth))
+                if (context.TestExpression("Honeycode", targetDepth, ref reader))
                 {
                     var unmarshaller = HoneycodeDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Honeycode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LookoutMetrics", targetDepth))
+                if (context.TestExpression("LookoutMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = LookoutMetricsDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.LookoutMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Marketo", targetDepth))
+                if (context.TestExpression("Marketo", targetDepth, ref reader))
                 {
                     var unmarshaller = MarketoDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Marketo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Redshift", targetDepth))
+                if (context.TestExpression("Redshift", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Redshift = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3", targetDepth))
+                if (context.TestExpression("S3", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Salesforce", targetDepth))
+                if (context.TestExpression("Salesforce", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Salesforce = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SAPOData", targetDepth))
+                if (context.TestExpression("SAPOData", targetDepth, ref reader))
                 {
                     var unmarshaller = SAPODataDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.SAPOData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Snowflake", targetDepth))
+                if (context.TestExpression("Snowflake", targetDepth, ref reader))
                 {
                     var unmarshaller = SnowflakeDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Upsolver", targetDepth))
+                if (context.TestExpression("Upsolver", targetDepth, ref reader))
                 {
                     var unmarshaller = UpsolverDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Upsolver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Zendesk", targetDepth))
+                if (context.TestExpression("Zendesk", targetDepth, ref reader))
                 {
                     var unmarshaller = ZendeskDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Zendesk = unmarshaller.Unmarshall(context, ref reader);

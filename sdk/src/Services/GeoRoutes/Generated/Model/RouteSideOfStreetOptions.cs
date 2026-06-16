@@ -40,7 +40,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Position defined as <c>[longitude, latitude]</c>.
+        /// Position in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -68,7 +68,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>DividedStreetOnly</c> 
+        /// Default value: <c>DividedStreetOnly</c> 
         /// </para>
         /// </summary>
         public SideOfStreetMatchingStrategy UseWith

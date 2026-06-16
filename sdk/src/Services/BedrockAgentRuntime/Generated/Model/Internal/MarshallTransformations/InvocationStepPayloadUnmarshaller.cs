@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentBlocks", targetDepth))
+                if (context.TestExpression("contentBlocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BedrockSessionContentBlock, BedrockSessionContentBlockUnmarshaller>(BedrockSessionContentBlockUnmarshaller.Instance);
                     unmarshalledObject.ContentBlocks = unmarshaller.Unmarshall(context, ref reader);

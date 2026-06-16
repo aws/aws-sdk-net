@@ -56,37 +56,49 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conversionProperties", targetDepth))
+                if (context.TestExpression("attemptCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.AttemptCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("conversionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ConversionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ConversionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conversionServerID", targetDepth))
+                if (context.TestExpression("conversionServerID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConversionServerID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventResourceData", targetDepth))
+                if (context.TestExpression("eventResourceData", targetDepth, ref reader))
                 {
                     var unmarshaller = EventResourceDataUnmarshaller.Instance;
                     unmarshalledObject.EventResourceData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rawError", targetDepth))
+                if (context.TestExpression("maxAttemptsCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.MaxAttemptsCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("rawError", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RawError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("sourceServerID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetInstanceID", targetDepth))
+                if (context.TestExpression("targetInstanceID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetInstanceID = unmarshaller.Unmarshall(context, ref reader);

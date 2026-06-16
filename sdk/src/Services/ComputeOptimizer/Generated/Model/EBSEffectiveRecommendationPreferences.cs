@@ -34,7 +34,26 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class EBSEffectiveRecommendationPreferences
     {
+        private LookBackPeriodPreference _lookBackPeriod;
         private EBSSavingsEstimationMode _savingsEstimationMode;
+
+        /// <summary>
+        /// Gets and sets the property LookBackPeriod. 
+        /// <para>
+        /// The number of days for which utilization metrics were analyzed for the volume.
+        /// </para>
+        /// </summary>
+        public LookBackPeriodPreference LookBackPeriod
+        {
+            get { return this._lookBackPeriod; }
+            set { this._lookBackPeriod = value; }
+        }
+
+        // Check to see if LookBackPeriod property is set
+        internal bool IsSetLookBackPeriod()
+        {
+            return this._lookBackPeriod != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SavingsEstimationMode. 

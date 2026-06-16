@@ -56,31 +56,31 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conditionNodeResultTrace", targetDepth))
+                if (context.TestExpression("conditionNodeResultTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTraceConditionNodeResultEventUnmarshaller.Instance;
                     unmarshalledObject.ConditionNodeResultTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeActionTrace", targetDepth))
+                if (context.TestExpression("nodeActionTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTraceNodeActionEventUnmarshaller.Instance;
                     unmarshalledObject.NodeActionTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeDependencyTrace", targetDepth))
+                if (context.TestExpression("nodeDependencyTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTraceDependencyEventUnmarshaller.Instance;
                     unmarshalledObject.NodeDependencyTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeInputTrace", targetDepth))
+                if (context.TestExpression("nodeInputTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTraceNodeInputEventUnmarshaller.Instance;
                     unmarshalledObject.NodeInputTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeOutputTrace", targetDepth))
+                if (context.TestExpression("nodeOutputTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTraceNodeOutputEventUnmarshaller.Instance;
                     unmarshalledObject.NodeOutputTrace = unmarshaller.Unmarshall(context, ref reader);

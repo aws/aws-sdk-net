@@ -56,13 +56,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Grantee", targetDepth))
+                if (context.TestExpression("Grantee", targetDepth, ref reader))
                 {
                     var unmarshaller = GranteeUnmarshaller.Instance;
                     unmarshalledObject.Grantee = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Permission", targetDepth))
+                if (context.TestExpression("Permission", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Permission = unmarshaller.Unmarshall(context, ref reader);

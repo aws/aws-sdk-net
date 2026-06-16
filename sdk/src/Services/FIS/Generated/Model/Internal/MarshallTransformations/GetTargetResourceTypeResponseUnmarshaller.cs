@@ -52,7 +52,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("targetResourceType", targetDepth))
+                if (context.TestExpression("targetResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetResourceTypeUnmarshaller.Instance;
                     response.TargetResourceType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("qInConnectAssistantConfiguration", targetDepth))
+                if (context.TestExpression("qInConnectAssistantConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QInConnectAssistantConfigurationUnmarshaller.Instance;
                     unmarshalledObject.QInConnectAssistantConfiguration = unmarshaller.Unmarshall(context, ref reader);

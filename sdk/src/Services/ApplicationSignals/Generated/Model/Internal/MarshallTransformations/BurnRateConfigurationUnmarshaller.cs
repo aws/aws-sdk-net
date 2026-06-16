@@ -56,7 +56,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LookBackWindowMinutes", targetDepth))
+                if (context.TestExpression("LookBackWindowMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LookBackWindowMinutes = unmarshaller.Unmarshall(context, ref reader);

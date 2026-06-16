@@ -56,13 +56,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("approvalRuleTemplateId", targetDepth))
+                if (context.TestExpression("approvalRuleTemplateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApprovalRuleTemplateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("approvalRuleTemplateName", targetDepth))
+                if (context.TestExpression("approvalRuleTemplateName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApprovalRuleTemplateName = unmarshaller.Unmarshall(context, ref reader);

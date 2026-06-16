@@ -56,13 +56,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("onChange", targetDepth))
+                if (context.TestExpression("onChange", targetDepth, ref reader))
                 {
                     var unmarshaller = OnChangeStateTemplateUpdateStrategyUnmarshaller.Instance;
                     unmarshalledObject.OnChange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("periodic", targetDepth))
+                if (context.TestExpression("periodic", targetDepth, ref reader))
                 {
                     var unmarshaller = PeriodicStateTemplateUpdateStrategyUnmarshaller.Instance;
                     unmarshalledObject.Periodic = unmarshaller.Unmarshall(context, ref reader);

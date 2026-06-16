@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TrafficDistributionGroup", targetDepth))
+                if (context.TestExpression("TrafficDistributionGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficDistributionGroupUnmarshaller.Instance;
                     response.TrafficDistributionGroup = unmarshaller.Unmarshall(context, ref reader);

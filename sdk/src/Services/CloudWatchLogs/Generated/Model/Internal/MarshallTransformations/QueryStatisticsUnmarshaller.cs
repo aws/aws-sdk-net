@@ -56,37 +56,37 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bytesScanned", targetDepth))
+                if (context.TestExpression("bytesScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BytesScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedBytesSkipped", targetDepth))
+                if (context.TestExpression("estimatedBytesSkipped", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedBytesSkipped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedRecordsSkipped", targetDepth))
+                if (context.TestExpression("estimatedRecordsSkipped", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedRecordsSkipped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logGroupsScanned", targetDepth))
+                if (context.TestExpression("logGroupsScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LogGroupsScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordsMatched", targetDepth))
+                if (context.TestExpression("recordsMatched", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RecordsMatched = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordsScanned", targetDepth))
+                if (context.TestExpression("recordsScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RecordsScanned = unmarshaller.Unmarshall(context, ref reader);

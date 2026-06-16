@@ -33,7 +33,8 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the StartTaskContact operation.
     /// Initiates a flow to start a new task contact. For more information about task contacts,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html">Concepts:
-    /// Tasks in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>. 
+    /// Tasks in Connect Customer</a> in the <i>Connect Customer Administrator Guide</i>.
+    /// 
     /// 
     ///  
     /// <para>
@@ -78,15 +79,15 @@ namespace Amazon.Connect.Model
     /// <c>QuickConnectID</c>, or <c>TaskTemplateID</c>. Only one parameter is required as
     /// long as the task template has a flow configured to run it. If more than one parameter
     /// is specified, or only the <c>TaskTemplateID</c> is specified but it does not have
-    /// a flow configured, the request returns an error because Amazon Connect cannot identify
+    /// a flow configured, the request returns an error because Connect Customer cannot identify
     /// the unique flow to run when the task is created.
     /// </para>
     ///  
     /// <para>
     /// A <c>ServiceQuotaExceededException</c> occurs when the number of open tasks exceeds
     /// the active tasks quota or there are already 12 tasks referencing the same <c>PreviousContactId</c>.
-    /// For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-    /// Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+    /// For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+    /// Customer service quotas</a> in the <i>Connect Customer Administrator Guide</i>. 
     /// </para>
     /// </summary>
     public partial class StartTaskContactRequest : AmazonConnectRequest
@@ -134,8 +135,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
+        /// A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         ///  
         /// <para>
@@ -186,7 +187,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ContactFlowId. 
         /// <para>
         /// The identifier of the flow for initiating the tasks. To see the ContactFlowId in the
-        /// Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
+        /// Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
         /// Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional
         /// flow information</b>. The ContactFlowId is the last part of the ARN, shown here in
         /// bold: 
@@ -232,7 +233,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -386,7 +387,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
         /// A set of system defined key-value pairs stored on individual contact segments (unique
-        /// contact ID) using an attribute map. The attributes are standard Amazon Connect attributes.
+        /// contact ID) using an attribute map. The attributes are standard Connect Customer attributes.
         /// They can be accessed in flows.
         /// </para>
         ///  
@@ -435,7 +436,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A unique identifier for the task template. For more information about task templates,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create
-        /// task templates</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// task templates</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

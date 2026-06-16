@@ -56,7 +56,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogAnomalyClasses", targetDepth))
+                if (context.TestExpression("LogAnomalyClasses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LogAnomalyClass, LogAnomalyClassUnmarshaller>(LogAnomalyClassUnmarshaller.Instance);
                     unmarshalledObject.LogAnomalyClasses = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyAlgorithm", targetDepth))
+                if (context.TestExpression("KeyAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyClass", targetDepth))
+                if (context.TestExpression("KeyClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyModesOfUse", targetDepth))
+                if (context.TestExpression("KeyModesOfUse", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyModesOfUseUnmarshaller.Instance;
                     unmarshalledObject.KeyModesOfUse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyUsage", targetDepth))
+                if (context.TestExpression("KeyUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context, ref reader);

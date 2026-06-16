@@ -52,7 +52,7 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MedicalScribeStreamDetails", targetDepth))
+                if (context.TestExpression("MedicalScribeStreamDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MedicalScribeStreamDetailsUnmarshaller.Instance;
                     response.MedicalScribeStreamDetails = unmarshaller.Unmarshall(context, ref reader);

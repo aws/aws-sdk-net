@@ -56,13 +56,13 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("beginDateInclusive", targetDepth))
+                if (context.TestExpression("beginDateInclusive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.BeginDateInclusive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endDateInclusive", targetDepth))
+                if (context.TestExpression("endDateInclusive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndDateInclusive = unmarshaller.Unmarshall(context, ref reader);

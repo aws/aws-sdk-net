@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("content", targetDepth))
+                if (context.TestExpression("content", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentType", targetDepth))
+                if (context.TestExpression("contentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageResponseCard", targetDepth))
+                if (context.TestExpression("imageResponseCard", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageResponseCardUnmarshaller.Instance;
                     unmarshalledObject.ImageResponseCard = unmarshaller.Unmarshall(context, ref reader);

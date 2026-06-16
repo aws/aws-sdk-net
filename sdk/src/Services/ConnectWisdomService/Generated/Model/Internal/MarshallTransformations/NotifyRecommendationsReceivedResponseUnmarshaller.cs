@@ -52,13 +52,13 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NotifyRecommendationsReceivedError, NotifyRecommendationsReceivedErrorUnmarshaller>(NotifyRecommendationsReceivedErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendationIds", targetDepth))
+                if (context.TestExpression("recommendationIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.RecommendationIds = unmarshaller.Unmarshall(context, ref reader);

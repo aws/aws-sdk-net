@@ -56,49 +56,49 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Age", targetDepth))
+                if (context.TestExpression("Age", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Age = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ByteCount", targetDepth))
+                if (context.TestExpression("ByteCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ByteCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationAddress", targetDepth))
+                if (context.TestExpression("DestinationAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;
                     unmarshalledObject.DestinationAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationPort", targetDepth))
+                if (context.TestExpression("DestinationPort", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PacketCount", targetDepth))
+                if (context.TestExpression("PacketCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PacketCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocol", targetDepth))
+                if (context.TestExpression("Protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceAddress", targetDepth))
+                if (context.TestExpression("SourceAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;
                     unmarshalledObject.SourceAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourcePort", targetDepth))
+                if (context.TestExpression("SourcePort", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourcePort = unmarshaller.Unmarshall(context, ref reader);

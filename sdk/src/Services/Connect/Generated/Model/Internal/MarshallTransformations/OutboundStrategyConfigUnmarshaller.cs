@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentFirst", targetDepth))
+                if (context.TestExpression("AgentFirst", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentFirstUnmarshaller.Instance;
                     unmarshalledObject.AgentFirst = unmarshaller.Unmarshall(context, ref reader);

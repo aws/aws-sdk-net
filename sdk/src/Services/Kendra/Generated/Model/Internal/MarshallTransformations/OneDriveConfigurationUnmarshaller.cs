@@ -56,43 +56,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisableLocalGroups", targetDepth))
+                if (context.TestExpression("DisableLocalGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableLocalGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExclusionPatterns", targetDepth))
+                if (context.TestExpression("ExclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldMappings", targetDepth))
+                if (context.TestExpression("FieldMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSourceToIndexFieldMapping, DataSourceToIndexFieldMappingUnmarshaller>(DataSourceToIndexFieldMappingUnmarshaller.Instance);
                     unmarshalledObject.FieldMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InclusionPatterns", targetDepth))
+                if (context.TestExpression("InclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OneDriveUsers", targetDepth))
+                if (context.TestExpression("OneDriveUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = OneDriveUsersUnmarshaller.Instance;
                     unmarshalledObject.OneDriveUsers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TenantDomain", targetDepth))
+                if (context.TestExpression("TenantDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TenantDomain = unmarshaller.Unmarshall(context, ref reader);

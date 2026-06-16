@@ -56,19 +56,19 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inlineConfigurations", targetDepth))
+                if (context.TestExpression("inlineConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InlineDocumentEnrichmentConfiguration, InlineDocumentEnrichmentConfigurationUnmarshaller>(InlineDocumentEnrichmentConfigurationUnmarshaller.Instance);
                     unmarshalledObject.InlineConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("postExtractionHookConfiguration", targetDepth))
+                if (context.TestExpression("postExtractionHookConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HookConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PostExtractionHookConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preExtractionHookConfiguration", targetDepth))
+                if (context.TestExpression("preExtractionHookConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HookConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PreExtractionHookConfiguration = unmarshaller.Unmarshall(context, ref reader);

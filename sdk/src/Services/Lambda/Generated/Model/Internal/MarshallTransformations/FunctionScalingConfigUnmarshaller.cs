@@ -56,13 +56,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxExecutionEnvironments", targetDepth))
+                if (context.TestExpression("MaxExecutionEnvironments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxExecutionEnvironments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinExecutionEnvironments", targetDepth))
+                if (context.TestExpression("MinExecutionEnvironments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinExecutionEnvironments = unmarshaller.Unmarshall(context, ref reader);

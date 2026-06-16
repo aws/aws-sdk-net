@@ -56,49 +56,49 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoDataQuality", targetDepth))
+                if (context.TestExpression("AutoDataQuality", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoDataQualityUnmarshaller.Instance;
                     unmarshalledObject.AutoDataQuality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Compression", targetDepth))
+                if (context.TestExpression("Compression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Compression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Inputs", targetDepth))
+                if (context.TestExpression("Inputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Inputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberTargetPartitions", targetDepth))
+                if (context.TestExpression("NumberTargetPartitions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NumberTargetPartitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartitionKeys", targetDepth))
+                if (context.TestExpression("PartitionKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Path", targetDepth))
+                if (context.TestExpression("Path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaChangePolicy", targetDepth))
+                if (context.TestExpression("SchemaChangePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = DirectSchemaChangePolicyUnmarshaller.Instance;
                     unmarshalledObject.SchemaChangePolicy = unmarshaller.Unmarshall(context, ref reader);

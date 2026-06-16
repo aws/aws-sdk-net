@@ -56,7 +56,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scanOnPush", targetDepth))
+                if (context.TestExpression("scanOnPush", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ScanOnPush = unmarshaller.Unmarshall(context, ref reader);

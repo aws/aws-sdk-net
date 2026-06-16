@@ -52,91 +52,91 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregatedMetrics", targetDepth))
+                if (context.TestExpression("AggregatedMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = DataQualityAggregatedMetricsUnmarshaller.Instance;
                     response.AggregatedMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnalyzerResults", targetDepth))
+                if (context.TestExpression("AnalyzerResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataQualityAnalyzerResult, DataQualityAnalyzerResultUnmarshaller>(DataQualityAnalyzerResultUnmarshaller.Instance);
                     response.AnalyzerResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompletedOn", targetDepth))
+                if (context.TestExpression("CompletedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CompletedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSource", targetDepth))
+                if (context.TestExpression("DataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceUnmarshaller.Instance;
                     response.DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationContext", targetDepth))
+                if (context.TestExpression("EvaluationContext", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EvaluationContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobName", targetDepth))
+                if (context.TestExpression("JobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobRunId", targetDepth))
+                if (context.TestExpression("JobRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Observations", targetDepth))
+                if (context.TestExpression("Observations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataQualityObservation, DataQualityObservationUnmarshaller>(DataQualityObservationUnmarshaller.Instance);
                     response.Observations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProfileId", targetDepth))
+                if (context.TestExpression("ProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultId", targetDepth))
+                if (context.TestExpression("ResultId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResultId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleResults", targetDepth))
+                if (context.TestExpression("RuleResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataQualityRuleResult, DataQualityRuleResultUnmarshaller>(DataQualityRuleResultUnmarshaller.Instance);
                     response.RuleResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RulesetEvaluationRunId", targetDepth))
+                if (context.TestExpression("RulesetEvaluationRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RulesetEvaluationRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RulesetName", targetDepth))
+                if (context.TestExpression("RulesetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RulesetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Score", targetDepth))
+                if (context.TestExpression("Score", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.Score = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartedOn", targetDepth))
+                if (context.TestExpression("StartedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartedOn = unmarshaller.Unmarshall(context, ref reader);

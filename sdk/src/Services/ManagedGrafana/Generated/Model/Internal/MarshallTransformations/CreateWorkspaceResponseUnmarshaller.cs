@@ -52,7 +52,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("workspace", targetDepth))
+                if (context.TestExpression("workspace", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceDescriptionUnmarshaller.Instance;
                     response.Workspace = unmarshaller.Unmarshall(context, ref reader);

@@ -56,103 +56,103 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("afdSignaling", targetDepth))
+                if (context.TestExpression("afdSignaling", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AfdSignaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("antiAlias", targetDepth))
+                if (context.TestExpression("antiAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AntiAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("chromaPositionMode", targetDepth))
+                if (context.TestExpression("chromaPositionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChromaPositionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codecSettings", targetDepth))
+                if (context.TestExpression("codecSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoCodecSettingsUnmarshaller.Instance;
                     unmarshalledObject.CodecSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("colorMetadata", targetDepth))
+                if (context.TestExpression("colorMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColorMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("crop", targetDepth))
+                if (context.TestExpression("crop", targetDepth, ref reader))
                 {
                     var unmarshaller = RectangleUnmarshaller.Instance;
                     unmarshalledObject.Crop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dropFrameTimecode", targetDepth))
+                if (context.TestExpression("dropFrameTimecode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DropFrameTimecode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fixedAfd", targetDepth))
+                if (context.TestExpression("fixedAfd", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FixedAfd = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("height", targetDepth))
+                if (context.TestExpression("height", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("position", targetDepth))
+                if (context.TestExpression("position", targetDepth, ref reader))
                 {
                     var unmarshaller = RectangleUnmarshaller.Instance;
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("respondToAfd", targetDepth))
+                if (context.TestExpression("respondToAfd", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RespondToAfd = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalingBehavior", targetDepth))
+                if (context.TestExpression("scalingBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalingBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sharpness", targetDepth))
+                if (context.TestExpression("sharpness", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Sharpness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timecodeInsertion", targetDepth))
+                if (context.TestExpression("timecodeInsertion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimecodeInsertion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timecodeTrack", targetDepth))
+                if (context.TestExpression("timecodeTrack", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimecodeTrack = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoPreprocessors", targetDepth))
+                if (context.TestExpression("videoPreprocessors", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoPreprocessorUnmarshaller.Instance;
                     unmarshalledObject.VideoPreprocessors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("width", targetDepth))
+                if (context.TestExpression("width", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Width = unmarshaller.Unmarshall(context, ref reader);

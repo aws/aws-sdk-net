@@ -56,13 +56,13 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataModel", targetDepth))
+                if (context.TestExpression("DataModel", targetDepth, ref reader))
                 {
                     var unmarshaller = DataModelUnmarshaller.Instance;
                     unmarshalledObject.DataModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataModelS3Configuration", targetDepth))
+                if (context.TestExpression("DataModelS3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataModelS3ConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataModelS3Configuration = unmarshaller.Unmarshall(context, ref reader);

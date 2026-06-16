@@ -56,55 +56,55 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConformancePackArn", targetDepth))
+                if (context.TestExpression("ConformancePackArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConformancePackArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConformancePackId", targetDepth))
+                if (context.TestExpression("ConformancePackId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConformancePackId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConformancePackInputParameters", targetDepth))
+                if (context.TestExpression("ConformancePackInputParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConformancePackInputParameter, ConformancePackInputParameterUnmarshaller>(ConformancePackInputParameterUnmarshaller.Instance);
                     unmarshalledObject.ConformancePackInputParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConformancePackName", targetDepth))
+                if (context.TestExpression("ConformancePackName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConformancePackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedBy", targetDepth))
+                if (context.TestExpression("CreatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryS3Bucket", targetDepth))
+                if (context.TestExpression("DeliveryS3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryS3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryS3KeyPrefix", targetDepth))
+                if (context.TestExpression("DeliveryS3KeyPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryS3KeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateRequestedTime", targetDepth))
+                if (context.TestExpression("LastUpdateRequestedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateRequestedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateSSMDocumentDetails", targetDepth))
+                if (context.TestExpression("TemplateSSMDocumentDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateSSMDocumentDetailsUnmarshaller.Instance;
                     unmarshalledObject.TemplateSSMDocumentDetails = unmarshaller.Unmarshall(context, ref reader);

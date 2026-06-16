@@ -56,55 +56,55 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configVersion", targetDepth))
+                if (context.TestExpression("configVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdDate", targetDepth))
+                if (context.TestExpression("createdDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamFederationOptions", targetDepth))
+                if (context.TestExpression("iamFederationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = IamFederationConfigOptionsUnmarshaller.Instance;
                     unmarshalledObject.IamFederationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamIdentityCenterOptions", targetDepth))
+                if (context.TestExpression("iamIdentityCenterOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = IamIdentityCenterConfigOptionsUnmarshaller.Instance;
                     unmarshalledObject.IamIdentityCenterOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedDate", targetDepth))
+                if (context.TestExpression("lastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("samlOptions", targetDepth))
+                if (context.TestExpression("samlOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SamlConfigOptionsUnmarshaller.Instance;
                     unmarshalledObject.SamlOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

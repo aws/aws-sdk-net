@@ -56,25 +56,25 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ButtonText", targetDepth))
+                if (context.TestExpression("ButtonText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ButtonText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Criteria", targetDepth))
+                if (context.TestExpression("Criteria", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomActionAttachmentCriteria, CustomActionAttachmentCriteriaUnmarshaller>(CustomActionAttachmentCriteriaUnmarshaller.Instance);
                     unmarshalledObject.Criteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationType", targetDepth))
+                if (context.TestExpression("NotificationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotificationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Variables", targetDepth))
+                if (context.TestExpression("Variables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VpcIngressConnection", targetDepth))
+                if (context.TestExpression("VpcIngressConnection", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcIngressConnectionUnmarshaller.Instance;
                     response.VpcIngressConnection = unmarshaller.Unmarshall(context, ref reader);

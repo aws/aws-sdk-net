@@ -56,43 +56,43 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Category", targetDepth))
+                if (context.TestExpression("Category", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Link", targetDepth))
+                if (context.TestExpression("Link", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Link = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Reason", targetDepth))
+                if (context.TestExpression("Reason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedAnomalies", targetDepth))
+                if (context.TestExpression("RelatedAnomalies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationRelatedAnomaly, RecommendationRelatedAnomalyUnmarshaller>(RecommendationRelatedAnomalyUnmarshaller.Instance);
                     unmarshalledObject.RelatedAnomalies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedEvents", targetDepth))
+                if (context.TestExpression("RelatedEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationRelatedEvent, RecommendationRelatedEventUnmarshaller>(RecommendationRelatedEventUnmarshaller.Instance);
                     unmarshalledObject.RelatedEvents = unmarshaller.Unmarshall(context, ref reader);

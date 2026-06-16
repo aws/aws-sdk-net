@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataSourceArn", targetDepth))
+                if (context.TestExpression("DataSourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputColumns", targetDepth))
+                if (context.TestExpression("InputColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputColumn, InputColumnUnmarshaller>(InputColumnUnmarshaller.Instance);
                     unmarshalledObject.InputColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TablePath", targetDepth))
+                if (context.TestExpression("TablePath", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TablePathElement, TablePathElementUnmarshaller>(TablePathElementUnmarshaller.Instance);
                     unmarshalledObject.TablePath = unmarshaller.Unmarshall(context, ref reader);

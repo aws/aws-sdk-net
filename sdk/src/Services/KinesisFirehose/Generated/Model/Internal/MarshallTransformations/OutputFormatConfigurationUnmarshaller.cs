@@ -56,7 +56,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Serializer", targetDepth))
+                if (context.TestExpression("Serializer", targetDepth, ref reader))
                 {
                     var unmarshaller = SerializerUnmarshaller.Instance;
                     unmarshalledObject.Serializer = unmarshaller.Unmarshall(context, ref reader);

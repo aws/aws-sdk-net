@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// The vehicle license plate.
+    /// License plate information used in regions where road access or routing restrictions
+    /// are based on license plate numbers.
     /// </summary>
     public partial class IsolineVehicleLicensePlate
     {
@@ -39,7 +40,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property LastCharacter. 
         /// <para>
-        /// The last character of the License Plate.
+        /// The last character of the vehicle's license plate. Used to determine road access restrictions
+        /// in regions with license plate-based traffic management systems.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

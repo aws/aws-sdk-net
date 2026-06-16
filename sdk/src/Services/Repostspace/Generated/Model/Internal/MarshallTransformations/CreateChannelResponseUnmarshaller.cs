@@ -52,7 +52,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelId", targetDepth))
+                if (context.TestExpression("channelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChannelId = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PaginationToken", targetDepth))
+                if (context.TestExpression("PaginationToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PaginationToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SummaryList", targetDepth))
+                if (context.TestExpression("SummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Summary, SummaryUnmarshaller>(SummaryUnmarshaller.Instance);
                     response.SummaryList = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idMappingWorkflowsSupported", targetDepth))
+                if (context.TestExpression("idMappingWorkflowsSupported", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Amazon.Runtime.Documents.Document, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
                     unmarshalledObject.IdMappingWorkflowsSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idNamespaceType", targetDepth))
+                if (context.TestExpression("idNamespaceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdNamespaceType = unmarshaller.Unmarshall(context, ref reader);

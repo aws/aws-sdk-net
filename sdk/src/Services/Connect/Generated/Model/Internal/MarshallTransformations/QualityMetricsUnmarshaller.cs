@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Agent", targetDepth))
+                if (context.TestExpression("Agent", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentQualityMetricsUnmarshaller.Instance;
                     unmarshalledObject.Agent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Customer", targetDepth))
+                if (context.TestExpression("Customer", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerQualityMetricsUnmarshaller.Instance;
                     unmarshalledObject.Customer = unmarshaller.Unmarshall(context, ref reader);

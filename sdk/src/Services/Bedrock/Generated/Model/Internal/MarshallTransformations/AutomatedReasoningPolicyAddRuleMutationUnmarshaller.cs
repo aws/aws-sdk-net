@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rule", targetDepth))
+                if (context.TestExpression("rule", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDefinitionRuleUnmarshaller.Instance;
                     unmarshalledObject.Rule = unmarshaller.Unmarshall(context, ref reader);

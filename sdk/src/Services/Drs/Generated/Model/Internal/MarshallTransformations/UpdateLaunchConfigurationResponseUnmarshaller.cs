@@ -52,61 +52,61 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("copyPrivateIp", targetDepth))
+                if (context.TestExpression("copyPrivateIp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CopyPrivateIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("copyTags", targetDepth))
+                if (context.TestExpression("copyTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CopyTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2LaunchTemplateID", targetDepth))
+                if (context.TestExpression("ec2LaunchTemplateID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("launchDisposition", targetDepth))
+                if (context.TestExpression("launchDisposition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LaunchDisposition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("launchIntoInstanceProperties", targetDepth))
+                if (context.TestExpression("launchIntoInstanceProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = LaunchIntoInstancePropertiesUnmarshaller.Instance;
                     response.LaunchIntoInstanceProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("licensing", targetDepth))
+                if (context.TestExpression("licensing", targetDepth, ref reader))
                 {
                     var unmarshaller = LicensingUnmarshaller.Instance;
                     response.Licensing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("postLaunchEnabled", targetDepth))
+                if (context.TestExpression("postLaunchEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PostLaunchEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("sourceServerID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceServerID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth))
+                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetInstanceTypeRightSizingMethod = unmarshaller.Unmarshall(context, ref reader);

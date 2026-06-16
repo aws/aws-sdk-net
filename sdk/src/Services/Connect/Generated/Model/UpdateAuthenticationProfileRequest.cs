@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAuthenticationProfile operation.
-    /// This API is in preview release for Amazon Connect and is subject to change. To request
+    /// This API is in preview release for Connect Customer and is subject to change. To request
     /// access to this API, contact Amazon Web Services Support.
     /// 
     ///  
@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A list of IP address range strings that are allowed to access the instance. For more
         /// information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
-        /// session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -101,7 +101,7 @@ namespace Amazon.Connect.Model
         /// A list of IP address range strings that are blocked from accessing the instance. For
         /// more information on how to configure IP addresses, For more information on how to
         /// configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure
-        /// IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// IP-based access control</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -143,7 +143,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -182,11 +182,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PeriodicSessionDuration. 
         /// <para>
-        /// The short lived session duration configuration for users logged in to Amazon Connect,
+        /// The short lived session duration configuration for users logged in to Connect Customer,
         /// in minutes. This value determines the maximum possible time before an agent is authenticated.
         /// For more information, For more information on how to configure IP addresses, see <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
-        /// session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// session timeouts</a> in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         [Obsolete("PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.")]

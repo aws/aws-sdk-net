@@ -56,13 +56,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idleTimeoutSeconds", targetDepth))
+                if (context.TestExpression("idleTimeoutSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("perRequestTimeoutSeconds", targetDepth))
+                if (context.TestExpression("perRequestTimeoutSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PerRequestTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executionID", targetDepth))
+                if (context.TestExpression("executionID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionStatus", targetDepth))
+                if (context.TestExpression("executionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureReason", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmDocument", targetDepth))
+                if (context.TestExpression("ssmDocument", targetDepth, ref reader))
                 {
                     var unmarshaller = SsmDocumentUnmarshaller.Instance;
                     unmarshalledObject.SsmDocument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmDocumentType", targetDepth))
+                if (context.TestExpression("ssmDocumentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SsmDocumentType = unmarshaller.Unmarshall(context, ref reader);

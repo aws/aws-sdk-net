@@ -142,6 +142,22 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "EvaluationCriteria":
+                        {
+                            context.AddPathSegment("EvaluationCriteria");
+                            var unmarshaller = EvaluationCriteriaUnmarshaller.Instance;
+                            unmarshalledObject.EvaluationCriteria = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EvaluationInterval":
+                        {
+                            context.AddPathSegment("EvaluationInterval");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.EvaluationInterval = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "EvaluationPeriods":
                         {
                             context.AddPathSegment("EvaluationPeriods");

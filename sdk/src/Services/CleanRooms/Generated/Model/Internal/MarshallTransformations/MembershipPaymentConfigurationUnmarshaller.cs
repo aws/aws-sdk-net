@@ -56,19 +56,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobCompute", targetDepth))
+                if (context.TestExpression("jobCompute", targetDepth, ref reader))
                 {
                     var unmarshaller = MembershipJobComputePaymentConfigUnmarshaller.Instance;
                     unmarshalledObject.JobCompute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("machineLearning", targetDepth))
+                if (context.TestExpression("machineLearning", targetDepth, ref reader))
                 {
                     var unmarshaller = MembershipMLPaymentConfigUnmarshaller.Instance;
                     unmarshalledObject.MachineLearning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryCompute", targetDepth))
+                if (context.TestExpression("queryCompute", targetDepth, ref reader))
                 {
                     var unmarshaller = MembershipQueryComputePaymentConfigUnmarshaller.Instance;
                     unmarshalledObject.QueryCompute = unmarshaller.Unmarshall(context, ref reader);

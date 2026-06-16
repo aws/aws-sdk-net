@@ -56,13 +56,13 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("headerTag", targetDepth))
+                if (context.TestExpression("headerTag", targetDepth, ref reader))
                 {
                     var unmarshaller = HeaderTagActionUnmarshaller.Instance;
                     unmarshalledObject.HeaderTag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noBid", targetDepth))
+                if (context.TestExpression("noBid", targetDepth, ref reader))
                 {
                     var unmarshaller = NoBidActionUnmarshaller.Instance;
                     unmarshalledObject.NoBid = unmarshaller.Unmarshall(context, ref reader);

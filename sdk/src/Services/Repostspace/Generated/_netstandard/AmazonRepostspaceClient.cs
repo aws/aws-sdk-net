@@ -39,6 +39,11 @@ namespace Amazon.Repostspace
 {
     /// <summary>
     /// <para>Implementation for accessing Repostspace</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS re:Post Private is a private version of AWS re:Post for enterprises with Enterprise
     /// Support or Enterprise On-Ramp Support plans. It provides access to knowledge and experts

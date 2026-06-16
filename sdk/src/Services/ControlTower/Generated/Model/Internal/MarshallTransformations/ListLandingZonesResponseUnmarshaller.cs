@@ -52,13 +52,13 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("landingZones", targetDepth))
+                if (context.TestExpression("landingZones", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LandingZoneSummary, LandingZoneSummaryUnmarshaller>(LandingZoneSummaryUnmarshaller.Instance);
                     response.LandingZones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

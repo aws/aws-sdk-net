@@ -52,7 +52,7 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appAuthorization", targetDepth))
+                if (context.TestExpression("appAuthorization", targetDepth, ref reader))
                 {
                     var unmarshaller = AppAuthorizationUnmarshaller.Instance;
                     response.AppAuthorization = unmarshaller.Unmarshall(context, ref reader);

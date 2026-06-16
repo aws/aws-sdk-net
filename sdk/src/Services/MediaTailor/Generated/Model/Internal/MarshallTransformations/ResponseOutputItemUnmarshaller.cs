@@ -56,31 +56,31 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DashPlaylistSettings", targetDepth))
+                if (context.TestExpression("DashPlaylistSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DashPlaylistSettingsUnmarshaller.Instance;
                     unmarshalledObject.DashPlaylistSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HlsPlaylistSettings", targetDepth))
+                if (context.TestExpression("HlsPlaylistSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsPlaylistSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsPlaylistSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestName", targetDepth))
+                if (context.TestExpression("ManifestName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlaybackUrl", targetDepth))
+                if (context.TestExpression("PlaybackUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceGroup", targetDepth))
+                if (context.TestExpression("SourceGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceGroup = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("caseStatus", targetDepth))
+                if (context.TestExpression("caseStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CaseStatus = unmarshaller.Unmarshall(context, ref reader);

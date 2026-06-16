@@ -39,6 +39,11 @@ namespace Amazon.KendraRanking
 {
     /// <summary>
     /// <para>Implementation for accessing KendraRanking</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities
     /// to intelligently re-rank a search service's results.

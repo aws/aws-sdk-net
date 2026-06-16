@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackgroundColor", targetDepth))
+                if (context.TestExpression("BackgroundColor", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionalFormattingColorUnmarshaller.Instance;
                     unmarshalledObject.BackgroundColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Icon", targetDepth))
+                if (context.TestExpression("Icon", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionalFormattingIconUnmarshaller.Instance;
                     unmarshalledObject.Icon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextColor", targetDepth))
+                if (context.TestExpression("TextColor", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionalFormattingColorUnmarshaller.Instance;
                     unmarshalledObject.TextColor = unmarshaller.Unmarshall(context, ref reader);

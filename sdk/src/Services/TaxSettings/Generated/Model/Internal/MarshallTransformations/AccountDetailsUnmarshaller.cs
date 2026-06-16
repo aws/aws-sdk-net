@@ -56,25 +56,25 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("accountMetaData", targetDepth))
+                if (context.TestExpression("accountMetaData", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountMetaDataUnmarshaller.Instance;
                     unmarshalledObject.AccountMetaData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taxInheritanceDetails", targetDepth))
+                if (context.TestExpression("taxInheritanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaxInheritanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaxInheritanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taxRegistration", targetDepth))
+                if (context.TestExpression("taxRegistration", targetDepth, ref reader))
                 {
                     var unmarshaller = TaxRegistrationWithJurisdictionUnmarshaller.Instance;
                     unmarshalledObject.TaxRegistration = unmarshaller.Unmarshall(context, ref reader);

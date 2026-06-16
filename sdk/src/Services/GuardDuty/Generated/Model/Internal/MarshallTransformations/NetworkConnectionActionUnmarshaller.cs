@@ -56,49 +56,49 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blocked", targetDepth))
+                if (context.TestExpression("blocked", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Blocked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectionDirection", targetDepth))
+                if (context.TestExpression("connectionDirection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectionDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localIpDetails", targetDepth))
+                if (context.TestExpression("localIpDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalIpDetailsUnmarshaller.Instance;
                     unmarshalledObject.LocalIpDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localNetworkInterface", targetDepth))
+                if (context.TestExpression("localNetworkInterface", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocalNetworkInterface = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localPortDetails", targetDepth))
+                if (context.TestExpression("localPortDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalPortDetailsUnmarshaller.Instance;
                     unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocol", targetDepth))
+                if (context.TestExpression("protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remoteIpDetails", targetDepth))
+                if (context.TestExpression("remoteIpDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RemoteIpDetailsUnmarshaller.Instance;
                     unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remotePortDetails", targetDepth))
+                if (context.TestExpression("remotePortDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RemotePortDetailsUnmarshaller.Instance;
                     unmarshalledObject.RemotePortDetails = unmarshaller.Unmarshall(context, ref reader);

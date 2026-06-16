@@ -56,49 +56,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmazonQSettings", targetDepth))
+                if (context.TestExpression("AmazonQSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonQSettingsUnmarshaller.Instance;
                     unmarshalledObject.AmazonQSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DockerSettings", targetDepth))
+                if (context.TestExpression("DockerSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DockerSettingsUnmarshaller.Instance;
                     unmarshalledObject.DockerSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRoleIdentityConfig", targetDepth))
+                if (context.TestExpression("ExecutionRoleIdentityConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRoleIdentityConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpAddressType", targetDepth))
+                if (context.TestExpression("IpAddressType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RStudioServerProDomainSettings", targetDepth))
+                if (context.TestExpression("RStudioServerProDomainSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RStudioServerProDomainSettingsUnmarshaller.Instance;
                     unmarshalledObject.RStudioServerProDomainSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                if (context.TestExpression("SecurityGroupIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrustedIdentityPropagationSettings", targetDepth))
+                if (context.TestExpression("TrustedIdentityPropagationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TrustedIdentityPropagationSettingsUnmarshaller.Instance;
                     unmarshalledObject.TrustedIdentityPropagationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnifiedStudioSettings", targetDepth))
+                if (context.TestExpression("UnifiedStudioSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = UnifiedStudioSettingsUnmarshaller.Instance;
                     unmarshalledObject.UnifiedStudioSettings = unmarshaller.Unmarshall(context, ref reader);

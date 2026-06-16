@@ -39,6 +39,11 @@ namespace Amazon.WorkSpaces
 {
     /// <summary>
     /// <para>Implementation for accessing WorkSpaces</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon WorkSpaces Service 
     /// <para>
@@ -708,12 +713,12 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Creates a client-add-in for Amazon Connect within a directory. You can create only
-        /// one Amazon Connect client add-in within a directory.
+        /// Creates a client-add-in for Connect Customer within a directory. You can create only
+        /// one Connect Customer client add-in within a directory.
         /// 
         ///  
         /// <para>
-        /// This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.
+        /// This client add-in allows WorkSpaces users to seamlessly connect to Connect Customer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectClientAddIn service method.</param>
@@ -1372,7 +1377,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Deletes a client-add-in for Amazon Connect that is configured within a directory.
+        /// Deletes a client-add-in for Connect Customer that is configured within a directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnectClientAddIn service method.</param>
         /// <param name="cancellationToken">
@@ -2084,7 +2089,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves a list of Amazon Connect client add-ins that have been created.
+        /// Retrieves a list of Connect Customer client add-ins that have been created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectClientAddIns service method.</param>
         /// <param name="cancellationToken">
@@ -4626,8 +4631,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Updates a Amazon Connect client add-in. Use this action to update the name and endpoint
-        /// URL of a Amazon Connect client add-in.
+        /// Updates a Connect Customer client add-in. Use this action to update the name and endpoint
+        /// URL of a Connect Customer client add-in.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnectClientAddIn service method.</param>
         /// <param name="cancellationToken">

@@ -42,6 +42,73 @@ namespace Amazon.IdentityManagement
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Identity and Access Management
     /// User Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Programmatic access to IAM</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// We recommend that you use the Amazon Web Services SDKs to make programmatic API calls
+    /// to IAM. The Amazon Web Services SDKs consist of libraries and sample code for various
+    /// programming languages and platforms (for example, Java, Ruby, .NET, iOS, and Android).
+    /// The SDKs provide a convenient way to create programmatic access to IAM and Amazon
+    /// Web Services. For example, the SDKs take care of tasks such as cryptographically signing
+    /// requests, managing errors, and retrying requests automatically. For more information,
+    /// see <a href="http://aws.amazon.com/tools/">Tools to build on Amazon Web Services</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternatively, you can also use the IAM Query API to make direct calls to the IAM
+    /// service. For more information about calling the IAM Query API, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// query requests</a> in the <i>Identity and Access Management User Guide</i>. IAM supports
+    /// GET and POST requests for all actions. That is, the API does not require you to use
+    /// GET for some actions and POST for others. However, GET requests are subject to the
+    /// limitation size of a URL. Therefore, for operations that require larger sizes, use
+    /// a POST request.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Signing requests</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Requests must be signed using an access key ID and a secret access key. We strongly
+    /// recommend that you do not use your Amazon Web Services account access key ID and secret
+    /// access key for everyday work with IAM. You can use the access key ID and secret access
+    /// key for an IAM user or you can use the Security Token Service to generate temporary
+    /// security credentials and use those to sign requests.
+    /// </para>
+    ///  
+    /// <para>
+    /// To sign requests, we recommend that you use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>. If you have an existing application that uses Signature Version 2,
+    /// you do not have to update it to use Signature Version 4. However, some operations
+    /// now require Signature Version 4. The documentation for operations that require version
+    /// 4 indicate this requirement.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Additional resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">Amazon
+    /// Web Services security credentials</a>. This topic provides general information about
+    /// the types of credentials used for accessing Amazon Web Services.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
+    /// best practices</a>. This topic presents a list of suggestions for using the IAM service
+    /// to help secure your Amazon Web Services resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// Amazon Web Services API requests</a>. This set of topics walk you through the process
+    /// of signing a request using an access key ID and secret access key.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonIdentityManagementService : IAmazonService, IDisposable
     {
@@ -2190,18 +2257,31 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can create service-specific credentials for Amazon Bedrock, Amazon CloudWatch
-        /// Logs, CodeCommit and Amazon Keyspaces (for Apache Cassandra).
-        /// </para>
-        ///  
-        /// <para>
         /// You can reset the password to a new service-generated value by calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html">ResetServiceSpecificCredential</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bedrock.html">Service-specific
-        /// credentials for IAM users</a> in the <i>IAM User Guide</i>.
+        /// For more information about using service-specific credentials to authenticate to an
+        /// Amazon Web Services service, refer to the following docs:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For service-specific credentials with CodeCommit, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">IAM
+        /// credentials for CodeCommit: Git credentials, SSH keys, and Amazon Web Services access
+        /// keys</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-specific credentials with Amazon Keyspaces (for Apache Cassandra), refer
+        /// to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_keyspaces.html">Use
+        /// IAM with Amazon Keyspaces (for Apache Cassandra)</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For services that support long-term API keys, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_api_keys_for_aws_services.html">API
+        /// keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential service method.</param>
         /// 
@@ -2234,18 +2314,31 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can create service-specific credentials for Amazon Bedrock, Amazon CloudWatch
-        /// Logs, CodeCommit and Amazon Keyspaces (for Apache Cassandra).
-        /// </para>
-        ///  
-        /// <para>
         /// You can reset the password to a new service-generated value by calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html">ResetServiceSpecificCredential</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about service-specific credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bedrock.html">Service-specific
-        /// credentials for IAM users</a> in the <i>IAM User Guide</i>.
+        /// For more information about using service-specific credentials to authenticate to an
+        /// Amazon Web Services service, refer to the following docs:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For service-specific credentials with CodeCommit, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">IAM
+        /// credentials for CodeCommit: Git credentials, SSH keys, and Amazon Web Services access
+        /// keys</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-specific credentials with Amazon Keyspaces (for Apache Cassandra), refer
+        /// to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_keyspaces.html">Use
+        /// IAM with Amazon Keyspaces (for Apache Cassandra)</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For services that support long-term API keys, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_api_keys_for_aws_services.html">API
+        /// keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential service method.</param>
         /// <param name="cancellationToken">
@@ -10843,8 +10936,26 @@ namespace Amazon.IdentityManagement
         /// IAM user. If none exists, the operation returns an empty list. The service-specific
         /// credentials returned by this operation are used only for authenticating the IAM user
         /// to a specific service. For more information about using service-specific credentials
-        /// to authenticate to an Amazon Web Services service, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
-        /// up service-specific credentials</a> in the CodeCommit User Guide.
+        /// to authenticate to an Amazon Web Services service, refer to the following docs:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For service-specific credentials with CodeCommit, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">IAM
+        /// credentials for CodeCommit: Git credentials, SSH keys, and Amazon Web Services access
+        /// keys</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-specific credentials with Amazon Keyspaces (for Apache Cassandra), refer
+        /// to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_keyspaces.html">Use
+        /// IAM with Amazon Keyspaces (for Apache Cassandra)</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For services that support long-term API keys, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_api_keys_for_aws_services.html">API
+        /// keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials service method.</param>
         /// 
@@ -10866,8 +10977,26 @@ namespace Amazon.IdentityManagement
         /// IAM user. If none exists, the operation returns an empty list. The service-specific
         /// credentials returned by this operation are used only for authenticating the IAM user
         /// to a specific service. For more information about using service-specific credentials
-        /// to authenticate to an Amazon Web Services service, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
-        /// up service-specific credentials</a> in the CodeCommit User Guide.
+        /// to authenticate to an Amazon Web Services service, refer to the following docs:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For service-specific credentials with CodeCommit, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">IAM
+        /// credentials for CodeCommit: Git credentials, SSH keys, and Amazon Web Services access
+        /// keys</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-specific credentials with Amazon Keyspaces (for Apache Cassandra), refer
+        /// to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_keyspaces.html">Use
+        /// IAM with Amazon Keyspaces (for Apache Cassandra)</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For services that support long-term API keys, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_api_keys_for_aws_services.html">API
+        /// keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials service method.</param>
         /// <param name="cancellationToken">

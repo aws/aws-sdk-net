@@ -56,13 +56,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capabilityNamespace", targetDepth))
+                if (context.TestExpression("capabilityNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapabilityNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("capabilitySyncStatus", targetDepth))
+                if (context.TestExpression("capabilitySyncStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapabilitySyncStatus = unmarshaller.Unmarshall(context, ref reader);

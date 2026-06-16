@@ -56,7 +56,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutomatedSnapshotStartHour", targetDepth))
+                if (context.TestExpression("AutomatedSnapshotStartHour", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutomatedSnapshotStartHour = unmarshaller.Unmarshall(context, ref reader);

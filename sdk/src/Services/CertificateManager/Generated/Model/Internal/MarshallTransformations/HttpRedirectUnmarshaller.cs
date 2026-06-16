@@ -56,13 +56,13 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RedirectFrom", targetDepth))
+                if (context.TestExpression("RedirectFrom", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RedirectFrom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedirectTo", targetDepth))
+                if (context.TestExpression("RedirectTo", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RedirectTo = unmarshaller.Unmarshall(context, ref reader);

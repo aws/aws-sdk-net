@@ -56,7 +56,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FlywheelStatsS3Prefix", targetDepth))
+                if (context.TestExpression("FlywheelStatsS3Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FlywheelStatsS3Prefix = unmarshaller.Unmarshall(context, ref reader);

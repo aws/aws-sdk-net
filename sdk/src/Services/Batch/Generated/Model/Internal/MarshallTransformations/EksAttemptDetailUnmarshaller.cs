@@ -56,55 +56,55 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("containers", targetDepth))
+                if (context.TestExpression("containers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EksAttemptContainerDetail, EksAttemptContainerDetailUnmarshaller>(EksAttemptContainerDetailUnmarshaller.Instance);
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksClusterArn", targetDepth))
+                if (context.TestExpression("eksClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EksClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initContainers", targetDepth))
+                if (context.TestExpression("initContainers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EksAttemptContainerDetail, EksAttemptContainerDetailUnmarshaller>(EksAttemptContainerDetailUnmarshaller.Instance);
                     unmarshalledObject.InitContainers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeName", targetDepth))
+                if (context.TestExpression("nodeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("podName", targetDepth))
+                if (context.TestExpression("podName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PodName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("podNamespace", targetDepth))
+                if (context.TestExpression("podNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PodNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedAt", targetDepth))
+                if (context.TestExpression("startedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stoppedAt", targetDepth))
+                if (context.TestExpression("stoppedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationDate", targetDepth))
+                if (context.TestExpression("CreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DryRunId", targetDepth))
+                if (context.TestExpression("DryRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DryRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DryRunStatus", targetDepth))
+                if (context.TestExpression("DryRunStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DryRunStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateDate", targetDepth))
+                if (context.TestExpression("UpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationFailures", targetDepth))
+                if (context.TestExpression("ValidationFailures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ValidationFailure, ValidationFailureUnmarshaller>(ValidationFailureUnmarshaller.Instance);
                     unmarshalledObject.ValidationFailures = unmarshaller.Unmarshall(context, ref reader);

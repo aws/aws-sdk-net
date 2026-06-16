@@ -131,7 +131,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property WebAuthnConfiguration. 
         /// <para>
         /// The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators
-        /// like biometric and security-key devices. Includes relying-party configuration and
+        /// such as biometric and security-key devices. Includes relying-party configuration and
         /// settings for user-verification requirements.
         /// </para>
         /// </summary>

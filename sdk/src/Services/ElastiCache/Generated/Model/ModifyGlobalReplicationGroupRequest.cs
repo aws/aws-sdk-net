@@ -125,7 +125,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// Modifies the engine listed in a global replication group message. The options are
-        /// redis, memcached or valkey.
+        /// valkey, memcached or redis.
         /// </para>
         /// </summary>
         public string Engine

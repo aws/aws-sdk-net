@@ -59,9 +59,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// For S3 backups, set to <c>"S3BackupACLs":"disabled"</c> to exclude ACLs from the backup,
-        /// or <c>"S3BackupObjectTags":"disabled"</c> to exclude object tags from the backup.
-        /// By default, both ACLs and object tags are included in S3 backups.
+        /// For S3 backups, set to <c>"BackupACLs":"disabled"</c> to exclude ACLs from the backup,
+        /// or <c>"BackupObjectTags":"disabled"</c> to exclude object tags from the backup. By
+        /// default, both ACLs and object tags are included in S3 backups.
         /// </para>
         ///  
         /// <para>

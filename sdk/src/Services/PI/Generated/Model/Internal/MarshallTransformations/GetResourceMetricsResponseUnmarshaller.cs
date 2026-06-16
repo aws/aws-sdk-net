@@ -52,31 +52,31 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlignedEndTime", targetDepth))
+                if (context.TestExpression("AlignedEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AlignedEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AlignedStartTime", targetDepth))
+                if (context.TestExpression("AlignedStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AlignedStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Identifier", targetDepth))
+                if (context.TestExpression("Identifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Identifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricList", targetDepth))
+                if (context.TestExpression("MetricList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricKeyDataPoints, MetricKeyDataPointsUnmarshaller>(MetricKeyDataPointsUnmarshaller.Instance);
                     response.MetricList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

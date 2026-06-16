@@ -56,13 +56,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("intentDiscrepancies", targetDepth))
+                if (context.TestExpression("intentDiscrepancies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TestSetIntentDiscrepancyItem, TestSetIntentDiscrepancyItemUnmarshaller>(TestSetIntentDiscrepancyItemUnmarshaller.Instance);
                     unmarshalledObject.IntentDiscrepancies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotDiscrepancies", targetDepth))
+                if (context.TestExpression("slotDiscrepancies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TestSetSlotDiscrepancyItem, TestSetSlotDiscrepancyItemUnmarshaller>(TestSetSlotDiscrepancyItemUnmarshaller.Instance);
                     unmarshalledObject.SlotDiscrepancies = unmarshaller.Unmarshall(context, ref reader);

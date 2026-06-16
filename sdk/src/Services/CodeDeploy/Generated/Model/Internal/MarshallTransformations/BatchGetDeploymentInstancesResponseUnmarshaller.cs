@@ -52,13 +52,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errorMessage", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instancesSummary", targetDepth))
+                if (context.TestExpression("instancesSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceSummary, InstanceSummaryUnmarshaller>(InstanceSummaryUnmarshaller.Instance);
                     response.InstancesSummary = unmarshaller.Unmarshall(context, ref reader);

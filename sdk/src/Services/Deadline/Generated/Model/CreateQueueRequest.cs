@@ -46,6 +46,7 @@ namespace Amazon.Deadline.Model
         private JobRunAsUser _jobRunAsUser;
         private List<string> _requiredFileSystemLocationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
+        private SchedulingConfiguration _schedulingConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -255,6 +256,29 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfiguration. 
+        /// <para>
+        /// The scheduling configuration for the queue. This configuration determines how workers
+        /// are assigned to jobs in the queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, the queue defaults to the <c>priorityFifo</c> scheduling configuration.
+        /// </para>
+        /// </summary>
+        public SchedulingConfiguration SchedulingConfiguration
+        {
+            get { return this._schedulingConfiguration; }
+            set { this._schedulingConfiguration = value; }
+        }
+
+        // Check to see if SchedulingConfiguration property is set
+        internal bool IsSetSchedulingConfiguration()
+        {
+            return this._schedulingConfiguration != null;
         }
 
         /// <summary>

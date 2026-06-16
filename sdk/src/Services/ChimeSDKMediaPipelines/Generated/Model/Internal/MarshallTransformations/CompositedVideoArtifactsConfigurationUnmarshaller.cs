@@ -56,19 +56,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GridViewConfiguration", targetDepth))
+                if (context.TestExpression("GridViewConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GridViewConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GridViewConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Layout", targetDepth))
+                if (context.TestExpression("Layout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Layout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Resolution", targetDepth))
+                if (context.TestExpression("Resolution", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Resolution = unmarshaller.Unmarshall(context, ref reader);

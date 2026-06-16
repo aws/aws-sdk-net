@@ -56,49 +56,49 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConfigurationSetArn", targetDepth))
+                if (context.TestExpression("ConfigurationSetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationSetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationSetName", targetDepth))
+                if (context.TestExpression("ConfigurationSetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationSetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
+                if (context.TestExpression("CreatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultMessageFeedbackEnabled", targetDepth))
+                if (context.TestExpression("DefaultMessageFeedbackEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultMessageFeedbackEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultMessageType", targetDepth))
+                if (context.TestExpression("DefaultMessageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultMessageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultSenderId", targetDepth))
+                if (context.TestExpression("DefaultSenderId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultSenderId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventDestinations", targetDepth))
+                if (context.TestExpression("EventDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventDestination, EventDestinationUnmarshaller>(EventDestinationUnmarshaller.Instance);
                     unmarshalledObject.EventDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProtectConfigurationId", targetDepth))
+                if (context.TestExpression("ProtectConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProtectConfigurationId = unmarshaller.Unmarshall(context, ref reader);

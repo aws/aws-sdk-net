@@ -42,6 +42,9 @@ namespace Amazon.GeoRoutes.Model
         private RouteLegGeometry _geometry;
         private string _language;
         private RoutePedestrianLegDetails _pedestrianLegDetails;
+        private RouteRentalLegDetails _rentalLegDetails;
+        private RouteTaxiLegDetails _taxiLegDetails;
+        private RouteTransitLegDetails _transitLegDetails;
         private RouteLegTravelMode _travelMode;
         private RouteLegType _type;
         private RouteVehicleLegDetails _vehicleLegDetails;
@@ -49,8 +52,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property FerryLegDetails. 
         /// <para>
-        /// FerryLegDetails is populated when the Leg type is Ferry, and provides additional information
-        /// that is specific
+        ///  FerryLegDetails is populated when the Leg type is Ferry, and provides additional
+        /// information that is specific to ferry travel. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteFerryLegDetails FerryLegDetails
@@ -87,7 +92,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// List of languages for instructions within steps in the response.
+        ///  List of languages for instructions within steps in the response. Not supported in
+        /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]
@@ -122,6 +129,72 @@ namespace Amazon.GeoRoutes.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RentalLegDetails. 
+        /// <para>
+        /// Details related to the rental leg.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RouteRentalLegDetails RentalLegDetails
+        {
+            get { return this._rentalLegDetails; }
+            set { this._rentalLegDetails = value; }
+        }
+
+        // Check to see if RentalLegDetails property is set
+        internal bool IsSetRentalLegDetails()
+        {
+            return this._rentalLegDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaxiLegDetails. 
+        /// <para>
+        /// Details related to the taxi leg.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RouteTaxiLegDetails TaxiLegDetails
+        {
+            get { return this._taxiLegDetails; }
+            set { this._taxiLegDetails = value; }
+        }
+
+        // Check to see if TaxiLegDetails property is set
+        internal bool IsSetTaxiLegDetails()
+        {
+            return this._taxiLegDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitLegDetails. 
+        /// <para>
+        /// Details related to the transit leg.
+        /// </para>
+        /// </summary>
+        public RouteTransitLegDetails TransitLegDetails
+        {
+            get { return this._transitLegDetails; }
+            set { this._transitLegDetails = value; }
+        }
+
+        // Check to see if TransitLegDetails property is set
+        internal bool IsSetTransitLegDetails()
+        {
+            return this._transitLegDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TravelMode. 
         /// <para>
         /// Specifies the mode of transport when calculating a route. Used in estimating the speed
@@ -129,7 +202,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>Car</c> 
+        /// Default value: <c>Car</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

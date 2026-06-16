@@ -52,13 +52,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EntitledApplications", targetDepth))
+                if (context.TestExpression("EntitledApplications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntitledApplication, EntitledApplicationUnmarshaller>(EntitledApplicationUnmarshaller.Instance);
                     response.EntitledApplications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

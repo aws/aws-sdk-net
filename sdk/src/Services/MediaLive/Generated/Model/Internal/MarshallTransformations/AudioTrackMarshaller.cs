@@ -46,6 +46,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetPremixSettings())
+            {
+                context.Writer.WritePropertyName("premixSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioPreMixerSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PremixSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTrack())
             {
                 context.Writer.WritePropertyName("track");

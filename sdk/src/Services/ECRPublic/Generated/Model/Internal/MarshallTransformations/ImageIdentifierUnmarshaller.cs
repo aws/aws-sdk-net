@@ -56,13 +56,13 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageDigest", targetDepth))
+                if (context.TestExpression("imageDigest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageDigest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageTag", targetDepth))
+                if (context.TestExpression("imageTag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageTag = unmarshaller.Unmarshall(context, ref reader);

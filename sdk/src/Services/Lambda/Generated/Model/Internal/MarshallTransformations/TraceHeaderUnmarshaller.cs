@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("XAmznTraceId", targetDepth))
+                if (context.TestExpression("XAmznTraceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.XAmznTraceId = unmarshaller.Unmarshall(context, ref reader);

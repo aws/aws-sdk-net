@@ -39,6 +39,11 @@ namespace Amazon.ResourceExplorer2
 {
     /// <summary>
     /// <para>Implementation for accessing ResourceExplorer2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Resource Explorer is a resource search and discovery service.
     /// By using Resource Explorer, you can explore your resources using an internet search

@@ -69,6 +69,14 @@ namespace Amazon.PI.Model
         }
 
         /// <summary>
+        /// Paginator for ListPerformanceAnalysisReportRecommendations operation
+        ///</summary>
+        public IListPerformanceAnalysisReportRecommendationsPaginator ListPerformanceAnalysisReportRecommendations(ListPerformanceAnalysisReportRecommendationsRequest request) 
+        {
+            return new ListPerformanceAnalysisReportRecommendationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPerformanceAnalysisReports operation
         ///</summary>
         public IListPerformanceAnalysisReportsPaginator ListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request) 

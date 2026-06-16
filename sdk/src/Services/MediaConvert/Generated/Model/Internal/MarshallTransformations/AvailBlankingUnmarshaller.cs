@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("availBlankingImage", targetDepth))
+                if (context.TestExpression("availBlankingImage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AvailBlankingImage = unmarshaller.Unmarshall(context, ref reader);

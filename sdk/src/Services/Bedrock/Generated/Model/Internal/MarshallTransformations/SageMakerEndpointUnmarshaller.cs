@@ -56,31 +56,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executionRole", targetDepth))
+                if (context.TestExpression("executionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initialInstanceCount", targetDepth))
+                if (context.TestExpression("initialInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InitialInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceType", targetDepth))
+                if (context.TestExpression("instanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsEncryptionKey", targetDepth))
+                if (context.TestExpression("kmsEncryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsEncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpc", targetDepth))
+                if (context.TestExpression("vpc", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigUnmarshaller.Instance;
                     unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);

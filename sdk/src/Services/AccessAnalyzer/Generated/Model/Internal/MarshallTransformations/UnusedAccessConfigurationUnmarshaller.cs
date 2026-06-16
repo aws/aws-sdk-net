@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("analysisRule", targetDepth))
+                if (context.TestExpression("analysisRule", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalysisRuleUnmarshaller.Instance;
                     unmarshalledObject.AnalysisRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedAccessAge", targetDepth))
+                if (context.TestExpression("unusedAccessAge", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnusedAccessAge = unmarshaller.Unmarshall(context, ref reader);

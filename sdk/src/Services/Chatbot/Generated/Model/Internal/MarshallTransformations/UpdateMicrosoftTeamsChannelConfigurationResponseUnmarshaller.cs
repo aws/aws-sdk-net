@@ -52,7 +52,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChannelConfiguration", targetDepth))
+                if (context.TestExpression("ChannelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TeamsChannelConfigurationUnmarshaller.Instance;
                     response.ChannelConfiguration = unmarshaller.Unmarshall(context, ref reader);

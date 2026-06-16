@@ -71,6 +71,7 @@ namespace Amazon.ConnectHealth.Model
         /// interface. The known implementatons in the SDK for this interface are:
         /// <list type="bullet">
         ///   <item><term><see cref="MedicalScribeAudioEvent"/></term></item>
+        ///   <item><term><see cref="MedicalScribeBinaryAudioEvent"/></term></item>
         ///   <item><term><see cref="MedicalScribeConfigurationEvent"/></term></item>
         ///   <item><term><see cref="MedicalScribeSessionControlEvent"/></term></item>
         /// </list>

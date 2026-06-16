@@ -39,6 +39,11 @@ namespace Amazon.KeyManagementService
 {
     /// <summary>
     /// <para>Implementation for accessing KeyManagementService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Key Management Service 
     /// <para>
@@ -984,8 +989,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1239,8 +1245,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2462,6 +2469,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// You can create a grant for an Amazon Web Services principal (IAM user, IAM role, or
+        /// Amazon Web Services account) by specifying the <c>GranteePrincipal</c> parameter.
+        /// You can also create a grant for an Amazon Web Services service principal by specifying
+        /// the <c>GranteeServicePrincipal</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
         /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
         /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of creating grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use
@@ -2615,6 +2629,13 @@ namespace Amazon.KeyManagementService
         /// key, grants are considered along with key policies and IAM policies. Grants are often
         /// used for temporary permissions because you can create one, use its permissions, and
         /// delete it without changing your key policies or IAM policies. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create a grant for an Amazon Web Services principal (IAM user, IAM role, or
+        /// Amazon Web Services account) by specifying the <c>GranteePrincipal</c> parameter.
+        /// You can also create a grant for an Amazon Web Services service principal by specifying
+        /// the <c>GranteeServicePrincipal</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -3095,8 +3116,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3507,8 +3529,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3677,9 +3700,12 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: Yes. If you use the <c>KeyId</c> parameter to identify
-        /// a KMS key in a different Amazon Web Services account, specify the key ARN or the alias
-        /// ARN of the KMS key.
+        ///  <b>Cross-account use</b>: Yes. To specify a KMS key in a different Amazon Web Services
+        /// account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+        /// ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+        /// ID</a> is also acceptable when decrypting symmetric ciphertexts, though using a full
+        /// key ARN is recommended to be more explicit about the intended KMS key.
         /// </para>
         ///  
         /// <para>
@@ -3904,9 +3930,12 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: Yes. If you use the <c>KeyId</c> parameter to identify
-        /// a KMS key in a different Amazon Web Services account, specify the key ARN or the alias
-        /// ARN of the KMS key.
+        ///  <b>Cross-account use</b>: Yes. To specify a KMS key in a different Amazon Web Services
+        /// account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+        /// ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+        /// ID</a> is also acceptable when decrypting symmetric ciphertexts, though using a full
+        /// key ARN is recommended to be more explicit about the intended KMS key.
         /// </para>
         ///  
         /// <para>
@@ -4661,8 +4690,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4820,8 +4850,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7308,8 +7339,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7452,8 +7484,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11067,8 +11100,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11187,8 +11221,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11312,8 +11347,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11435,8 +11471,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11469,6 +11506,235 @@ namespace Amazon.KeyManagementService
             options.ResponseUnmarshaller = GenerateRandomResponseUnmarshaller.Instance;
             
             return InvokeAsync<GenerateRandomResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetKeyLastUsage
+
+
+        /// <summary>
+        /// Returns usage information about the last successful cryptographic operation performed
+        /// with a specified KMS key, including the operation type, timestamp, and associated
+        /// CloudTrail event ID.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>TrackingStartDate</c> in the <c>GetKeyLastUsage</c> response indicates the
+        /// date from which KMS began recording cryptographic activity for a given key. Use this
+        /// value together with <c>KeyCreationDate</c> to understand the key's usage history:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>present</i>, the key has been used
+        /// for a successful cryptographic operation since the <c>TrackingStartDate</c>. The response
+        /// includes the operation type, timestamp, and associated CloudTrail event ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>empty</i> and <c>KeyCreationDate</c>
+        /// is on or after <c>TrackingStartDate</c>, the key has not been used for a successful
+        /// cryptographic operation since it was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>empty</i> and <c>KeyCreationDate</c>
+        /// is before <c>TrackingStartDate</c>, there is no record of the key being used for a
+        /// successful cryptographic operation since the <c>TrackingStartDate</c>. However, the
+        /// key may have been used before tracking began. To determine whether the key was used
+        /// before the <c>TrackingStartDate</c>, examine your past CloudTrail logs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For multi-Region KMS keys, primary and replica keys track last usage independently.
+        /// Each key in a multi-Region key set maintains its own usage information.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ReEncrypt</c> operation uses two keys: a source key for decryption and a destination
+        /// key for encryption. Usage information is recorded for both keys independently, each
+        /// with the CloudTrail event ID from the respective key owner's account.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not use <c>GetKeyLastUsage</c> as the sole indicator when scheduling a key for
+        /// deletion. Instead, first <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">disable
+        /// the key</a> and monitor CloudTrail for <c>DisabledException</c> entries, as there
+        /// could be infrequent workflows that are dependent on the key. By looking for this exception,
+        /// you can identify potential dependencies and workload failures before they occur.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+        /// different Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyLastUsage</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DisableKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ScheduleKeyDeletion</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyLastUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetKeyLastUsage service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyLastUsage">REST API Reference for GetKeyLastUsage Operation</seealso>
+        public virtual GetKeyLastUsageResponse GetKeyLastUsage(GetKeyLastUsageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetKeyLastUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyLastUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetKeyLastUsageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns usage information about the last successful cryptographic operation performed
+        /// with a specified KMS key, including the operation type, timestamp, and associated
+        /// CloudTrail event ID.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>TrackingStartDate</c> in the <c>GetKeyLastUsage</c> response indicates the
+        /// date from which KMS began recording cryptographic activity for a given key. Use this
+        /// value together with <c>KeyCreationDate</c> to understand the key's usage history:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>present</i>, the key has been used
+        /// for a successful cryptographic operation since the <c>TrackingStartDate</c>. The response
+        /// includes the operation type, timestamp, and associated CloudTrail event ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>empty</i> and <c>KeyCreationDate</c>
+        /// is on or after <c>TrackingStartDate</c>, the key has not been used for a successful
+        /// cryptographic operation since it was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>empty</i> and <c>KeyCreationDate</c>
+        /// is before <c>TrackingStartDate</c>, there is no record of the key being used for a
+        /// successful cryptographic operation since the <c>TrackingStartDate</c>. However, the
+        /// key may have been used before tracking began. To determine whether the key was used
+        /// before the <c>TrackingStartDate</c>, examine your past CloudTrail logs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For multi-Region KMS keys, primary and replica keys track last usage independently.
+        /// Each key in a multi-Region key set maintains its own usage information.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ReEncrypt</c> operation uses two keys: a source key for decryption and a destination
+        /// key for encryption. Usage information is recorded for both keys independently, each
+        /// with the CloudTrail event ID from the respective key owner's account.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not use <c>GetKeyLastUsage</c> as the sole indicator when scheduling a key for
+        /// deletion. Instead, first <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">disable
+        /// the key</a> and monitor CloudTrail for <c>DisabledException</c> entries, as there
+        /// could be infrequent workflows that are dependent on the key. By looking for this exception,
+        /// you can identify potential dependencies and workload failures before they occur.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+        /// different Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyLastUsage</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DisableKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ScheduleKeyDeletion</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyLastUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetKeyLastUsage service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyLastUsage">REST API Reference for GetKeyLastUsage Operation</seealso>
+        public virtual Task<GetKeyLastUsageResponse> GetKeyLastUsageAsync(GetKeyLastUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetKeyLastUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyLastUsageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetKeyLastUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13880,7 +14146,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You must specify the KMS key in all requests. You can filter the grant list by grant
-        /// ID or grantee principal.
+        /// ID, grantee principal, or grantee service principal.
         /// </para>
         ///  
         /// <para>
@@ -13891,11 +14157,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>GranteePrincipal</c> field in the <c>ListGrants</c> response usually contains
-        /// the user or role designated as the grantee principal in the grant. However, when the
-        /// grantee principal in the grant is an Amazon Web Services service, the <c>GranteePrincipal</c>
-        /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-        /// principal</a>, which might represent several different grantee principals.
+        /// When a grant is created with the <c>GranteePrincipal</c> field, the <c>ListGrants</c>
+        /// response usually contains the user or role designated as the grantee principal in
+        /// the grant. However, if the grantee principal is an Amazon Web Services service, the
+        /// <c>GranteePrincipal</c> field contains an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>, which might correspond to several different grantee principals, such
+        /// as an IAM user, IAM role, or Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a grant is created with the <c>GranteeServicePrincipal</c> field, the <c>ListGrants</c>
+        /// response always includes a <c>GranteeServicePrincipal</c> that indicates the grantee
+        /// is actually an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14002,7 +14276,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You must specify the KMS key in all requests. You can filter the grant list by grant
-        /// ID or grantee principal.
+        /// ID, grantee principal, or grantee service principal.
         /// </para>
         ///  
         /// <para>
@@ -14013,11 +14287,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>GranteePrincipal</c> field in the <c>ListGrants</c> response usually contains
-        /// the user or role designated as the grantee principal in the grant. However, when the
-        /// grantee principal in the grant is an Amazon Web Services service, the <c>GranteePrincipal</c>
-        /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-        /// principal</a>, which might represent several different grantee principals.
+        /// When a grant is created with the <c>GranteePrincipal</c> field, the <c>ListGrants</c>
+        /// response usually contains the user or role designated as the grantee principal in
+        /// the grant. However, if the grantee principal is an Amazon Web Services service, the
+        /// <c>GranteePrincipal</c> field contains an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>, which might correspond to several different grantee principals, such
+        /// as an IAM user, IAM role, or Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a grant is created with the <c>GranteeServicePrincipal</c> field, the <c>ListGrants</c>
+        /// response always includes a <c>GranteeServicePrincipal</c> that indicates the grantee
+        /// is actually an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14853,7 +15135,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -14885,11 +15167,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14918,7 +15206,7 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>. You must specify either <c>RetiringPrincipal</c> or <c>RetiringServicePrincipal</c>, but not both.</param>
         /// 
         /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -14950,7 +15238,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -14982,11 +15270,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15045,7 +15339,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -15077,11 +15371,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15144,7 +15444,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -15176,11 +15476,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15209,7 +15515,7 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>. You must specify either <c>RetiringPrincipal</c> or <c>RetiringServicePrincipal</c>, but not both.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -15244,7 +15550,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -15276,11 +15582,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15342,7 +15654,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -15374,11 +15686,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15938,12 +16256,22 @@ namespace Amazon.KeyManagementService
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
         /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When using grants with <c>SourceArn</c> constraints for <c>ReEncrypt</c> operations,
+        /// the grants on both the source KMS key (for <c>ReEncryptFrom</c>) and the destination
+        /// KMS key (for <c>ReEncryptTo</c>) must specify the same <c>SourceArn</c> value. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key can be
         /// in different Amazon Web Services accounts. Either or both KMS keys can be in a different
-        /// account than the caller. To specify a KMS key in a different account, you must use
-        /// its key ARN or alias ARN.
+        /// account than the caller. To specify a KMS key in a different account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+        /// ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+        /// ID</a> is also acceptable for the source key when decrypting symmetric ciphertexts,
+        /// though using a full key ARN is recommended to be more explicit about the intended
+        /// KMS key.
         /// </para>
         ///  
         /// <para>
@@ -16171,12 +16499,22 @@ namespace Amazon.KeyManagementService
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
         /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When using grants with <c>SourceArn</c> constraints for <c>ReEncrypt</c> operations,
+        /// the grants on both the source KMS key (for <c>ReEncryptFrom</c>) and the destination
+        /// KMS key (for <c>ReEncryptTo</c>) must specify the same <c>SourceArn</c> value. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key can be
         /// in different Amazon Web Services accounts. Either or both KMS keys can be in a different
-        /// account than the caller. To specify a KMS key in a different account, you must use
-        /// its key ARN or alias ARN.
+        /// account than the caller. To specify a KMS key in a different account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+        /// ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+        /// ID</a> is also acceptable for the source key when decrypting symmetric ciphertexts,
+        /// though using a full key ARN is recommended to be more explicit about the intended
+        /// KMS key.
         /// </para>
         ///  
         /// <para>
@@ -20394,8 +20732,10 @@ namespace Amazon.KeyManagementService
         /// friendly name (<c>NewCustomKeyStoreName</c>), to tell KMS about a change to the <c>kmsuser</c>
         /// crypto user password (<c>KeyStorePassword</c>), or to associate the custom key store
         /// with a different, but related, CloudHSM cluster (<c>CloudHsmClusterId</c>). To update
-        /// any property of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
-        /// key store must be <c>DISCONNECTED</c>. 
+        /// most properties of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
+        /// key store must be <c>DISCONNECTED</c>. However, you can update the <c>CustomKeyStoreName</c>
+        /// of an AWS CloudHSM key store when it is in the <c>CONNECTED</c> or <c>DISCONNECTED</c>
+        /// state.
         /// </para>
         ///  
         /// <para>
@@ -20582,8 +20922,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20720,8 +21061,10 @@ namespace Amazon.KeyManagementService
         /// friendly name (<c>NewCustomKeyStoreName</c>), to tell KMS about a change to the <c>kmsuser</c>
         /// crypto user password (<c>KeyStorePassword</c>), or to associate the custom key store
         /// with a different, but related, CloudHSM cluster (<c>CloudHsmClusterId</c>). To update
-        /// any property of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
-        /// key store must be <c>DISCONNECTED</c>. 
+        /// most properties of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
+        /// key store must be <c>DISCONNECTED</c>. However, you can update the <c>CustomKeyStoreName</c>
+        /// of an AWS CloudHSM key store when it is in the <c>CONNECTED</c> or <c>DISCONNECTED</c>
+        /// state.
         /// </para>
         ///  
         /// <para>
@@ -20911,8 +21254,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

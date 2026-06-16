@@ -56,13 +56,13 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessLocation", targetDepth))
+                if (context.TestExpression("AccessLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = GeneralNameUnmarshaller.Instance;
                     unmarshalledObject.AccessLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AccessMethod", targetDepth))
+                if (context.TestExpression("AccessMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessMethodUnmarshaller.Instance;
                     unmarshalledObject.AccessMethod = unmarshaller.Unmarshall(context, ref reader);

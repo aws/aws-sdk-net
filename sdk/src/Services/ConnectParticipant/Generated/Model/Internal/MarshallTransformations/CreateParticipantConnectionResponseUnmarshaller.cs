@@ -52,19 +52,19 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionCredentials", targetDepth))
+                if (context.TestExpression("ConnectionCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionCredentialsUnmarshaller.Instance;
                     response.ConnectionCredentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebRTCConnection", targetDepth))
+                if (context.TestExpression("WebRTCConnection", targetDepth, ref reader))
                 {
                     var unmarshaller = WebRTCConnectionUnmarshaller.Instance;
                     response.WebRTCConnection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Websocket", targetDepth))
+                if (context.TestExpression("Websocket", targetDepth, ref reader))
                 {
                     var unmarshaller = WebsocketUnmarshaller.Instance;
                     response.Websocket = unmarshaller.Unmarshall(context, ref reader);

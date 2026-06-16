@@ -56,13 +56,13 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Code", targetDepth))
+                if (context.TestExpression("Code", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

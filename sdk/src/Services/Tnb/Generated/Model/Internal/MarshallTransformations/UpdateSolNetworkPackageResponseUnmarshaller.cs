@@ -52,7 +52,7 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nsdOperationalState", targetDepth))
+                if (context.TestExpression("nsdOperationalState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NsdOperationalState = unmarshaller.Unmarshall(context, ref reader);

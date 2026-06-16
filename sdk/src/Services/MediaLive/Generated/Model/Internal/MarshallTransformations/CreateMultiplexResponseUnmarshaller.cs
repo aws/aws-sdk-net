@@ -52,7 +52,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("multiplex", targetDepth))
+                if (context.TestExpression("multiplex", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexUnmarshaller.Instance;
                     response.Multiplex = unmarshaller.Unmarshall(context, ref reader);

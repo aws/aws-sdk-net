@@ -52,31 +52,31 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("loggingDestination", targetDepth))
+                if (context.TestExpression("loggingDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = ScraperLoggingDestinationUnmarshaller.Instance;
                     response.LoggingDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modifiedAt", targetDepth))
+                if (context.TestExpression("modifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scraperComponents", targetDepth))
+                if (context.TestExpression("scraperComponents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScraperComponent, ScraperComponentUnmarshaller>(ScraperComponentUnmarshaller.Instance);
                     response.ScraperComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scraperId", targetDepth))
+                if (context.TestExpression("scraperId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ScraperId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = ScraperLoggingConfigurationStatusUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

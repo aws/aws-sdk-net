@@ -36,6 +36,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _clientId;
         private string _clientSecret;
+        private SecretReference _clientSecretConfig;
+        private SecretSourceType _clientSecretSource;
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -62,7 +64,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The client secret for the GitHub OAuth2 provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
@@ -73,6 +75,46 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetClientSecret()
         {
             return this._clientSecret != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretConfig. 
+        /// <para>
+        /// A reference to the AWS Secrets Manager secret that stores the client secret. This
+        /// includes the secret ID and the JSON key used to extract the client secret value from
+        /// the secret. Required when <c>clientSecretSource</c> is set to <c>EXTERNAL</c>.
+        /// </para>
+        /// </summary>
+        public SecretReference ClientSecretConfig
+        {
+            get { return this._clientSecretConfig; }
+            set { this._clientSecretConfig = value; }
+        }
+
+        // Check to see if ClientSecretConfig property is set
+        internal bool IsSetClientSecretConfig()
+        {
+            return this._clientSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretSource. 
+        /// <para>
+        /// The source type of the client secret. Use <c>MANAGED</c> if the secret is managed
+        /// by the service, or <c>EXTERNAL</c> if you manage the secret yourself in AWS Secrets
+        /// Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType ClientSecretSource
+        {
+            get { return this._clientSecretSource; }
+            set { this._clientSecretSource = value; }
+        }
+
+        // Check to see if ClientSecretSource property is set
+        internal bool IsSetClientSecretSource()
+        {
+            return this._clientSecretSource != null;
         }
 
     }

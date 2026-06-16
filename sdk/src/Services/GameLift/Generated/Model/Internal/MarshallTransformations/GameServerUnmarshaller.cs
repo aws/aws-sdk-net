@@ -29,100 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GameServer Object
     /// </summary>  
-    public class GameServerUnmarshaller : IJsonUnmarshaller<GameServer, JsonUnmarshallerContext>
+    public class GameServerUnmarshaller : ICborUnmarshaller<GameServer, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GameServer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GameServer Unmarshall(CborUnmarshallerContext context)
         {
             GameServer unmarshalledObject = new GameServer();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ClaimStatus", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClaimStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ConnectionInfo", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameServerData", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameServerData = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameServerGroupArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameServerGroupArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameServerGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameServerGroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameServerId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameServerId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LastClaimTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastClaimTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LastHealthCheckTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastHealthCheckTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RegistrationTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RegistrationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UtilizationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UtilizationStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ClaimStatus":
+                        {
+                            context.AddPathSegment("ClaimStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ClaimStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ConnectionInfo":
+                        {
+                            context.AddPathSegment("ConnectionInfo");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ConnectionInfo = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameServerData":
+                        {
+                            context.AddPathSegment("GameServerData");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameServerData = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameServerGroupArn":
+                        {
+                            context.AddPathSegment("GameServerGroupArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameServerGroupArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameServerGroupName":
+                        {
+                            context.AddPathSegment("GameServerGroupName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameServerGroupName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameServerId":
+                        {
+                            context.AddPathSegment("GameServerId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameServerId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InstanceId":
+                        {
+                            context.AddPathSegment("InstanceId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LastClaimTime":
+                        {
+                            context.AddPathSegment("LastClaimTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastClaimTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LastHealthCheckTime":
+                        {
+                            context.AddPathSegment("LastHealthCheckTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastHealthCheckTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RegistrationTime":
+                        {
+                            context.AddPathSegment("RegistrationTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.RegistrationTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UtilizationStatus":
+                        {
+                            context.AddPathSegment("UtilizationStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UtilizationStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

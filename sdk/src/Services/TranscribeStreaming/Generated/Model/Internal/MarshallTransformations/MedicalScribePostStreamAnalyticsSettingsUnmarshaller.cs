@@ -56,7 +56,7 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClinicalNoteGenerationSettings", targetDepth))
+                if (context.TestExpression("ClinicalNoteGenerationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ClinicalNoteGenerationSettingsUnmarshaller.Instance;
                     unmarshalledObject.ClinicalNoteGenerationSettings = unmarshaller.Unmarshall(context, ref reader);

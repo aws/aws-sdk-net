@@ -56,55 +56,55 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CalculatedFieldReferences", targetDepth))
+                if (context.TestExpression("CalculatedFieldReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Identifier, IdentifierUnmarshaller>(IdentifierUnmarshaller.Instance);
                     unmarshalledObject.CalculatedFieldReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComparisonMethod", targetDepth))
+                if (context.TestExpression("ComparisonMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicIRComparisonMethodUnmarshaller.Instance;
                     unmarshalledObject.ComparisonMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisplayFormat", targetDepth))
+                if (context.TestExpression("DisplayFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisplayFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisplayFormatOptions", targetDepth))
+                if (context.TestExpression("DisplayFormatOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DisplayFormatOptionsUnmarshaller.Instance;
                     unmarshalledObject.DisplayFormatOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Expression", targetDepth))
+                if (context.TestExpression("Expression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Function", targetDepth))
+                if (context.TestExpression("Function", targetDepth, ref reader))
                 {
                     var unmarshaller = AggFunctionUnmarshaller.Instance;
                     unmarshalledObject.Function = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricId", targetDepth))
+                if (context.TestExpression("MetricId", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentifierUnmarshaller.Instance;
                     unmarshalledObject.MetricId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NamedEntity", targetDepth))
+                if (context.TestExpression("NamedEntity", targetDepth, ref reader))
                 {
                     var unmarshaller = NamedEntityRefUnmarshaller.Instance;
                     unmarshalledObject.NamedEntity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Operands", targetDepth))
+                if (context.TestExpression("Operands", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Identifier, IdentifierUnmarshaller>(IdentifierUnmarshaller.Instance);
                     unmarshalledObject.Operands = unmarshaller.Unmarshall(context, ref reader);

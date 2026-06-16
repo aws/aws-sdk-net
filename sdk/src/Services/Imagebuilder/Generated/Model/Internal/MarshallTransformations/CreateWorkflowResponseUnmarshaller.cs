@@ -52,19 +52,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientToken", targetDepth))
+                if (context.TestExpression("clientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestVersionReferences", targetDepth))
+                if (context.TestExpression("latestVersionReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = LatestVersionReferencesUnmarshaller.Instance;
                     response.LatestVersionReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowBuildVersionArn", targetDepth))
+                if (context.TestExpression("workflowBuildVersionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkflowBuildVersionArn = unmarshaller.Unmarshall(context, ref reader);

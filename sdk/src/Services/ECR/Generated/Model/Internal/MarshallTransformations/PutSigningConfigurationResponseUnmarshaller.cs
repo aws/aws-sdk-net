@@ -52,7 +52,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("signingConfiguration", targetDepth))
+                if (context.TestExpression("signingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SigningConfigurationUnmarshaller.Instance;
                     response.SigningConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CatalogItem", targetDepth))
+                if (context.TestExpression("CatalogItem", targetDepth, ref reader))
                 {
                     var unmarshaller = CatalogItemUnmarshaller.Instance;
                     response.CatalogItem = unmarshaller.Unmarshall(context, ref reader);

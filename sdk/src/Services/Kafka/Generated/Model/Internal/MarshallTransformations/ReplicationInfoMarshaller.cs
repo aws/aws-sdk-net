@@ -63,6 +63,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SourceKafkaClusterArn);
             }
 
+            if(requestObject.IsSetSourceKafkaClusterId())
+            {
+                context.Writer.WritePropertyName("sourceKafkaClusterId");
+                context.Writer.WriteStringValue(requestObject.SourceKafkaClusterId);
+            }
+
             if(requestObject.IsSetTargetCompressionType())
             {
                 context.Writer.WritePropertyName("targetCompressionType");
@@ -73,6 +79,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("targetKafkaClusterArn");
                 context.Writer.WriteStringValue(requestObject.TargetKafkaClusterArn);
+            }
+
+            if(requestObject.IsSetTargetKafkaClusterId())
+            {
+                context.Writer.WritePropertyName("targetKafkaClusterId");
+                context.Writer.WriteStringValue(requestObject.TargetKafkaClusterId);
             }
 
             if(requestObject.IsSetTopicReplication())

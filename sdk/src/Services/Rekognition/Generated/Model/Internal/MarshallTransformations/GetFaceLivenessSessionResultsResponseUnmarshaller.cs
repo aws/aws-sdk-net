@@ -52,37 +52,37 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditImages", targetDepth))
+                if (context.TestExpression("AuditImages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuditImage, AuditImageUnmarshaller>(AuditImageUnmarshaller.Instance);
                     response.AuditImages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Challenge", targetDepth))
+                if (context.TestExpression("Challenge", targetDepth, ref reader))
                 {
                     var unmarshaller = ChallengeUnmarshaller.Instance;
                     response.Challenge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferenceImage", targetDepth))
+                if (context.TestExpression("ReferenceImage", targetDepth, ref reader))
                 {
                     var unmarshaller = AuditImageUnmarshaller.Instance;
                     response.ReferenceImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionId", targetDepth))
+                if (context.TestExpression("SessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

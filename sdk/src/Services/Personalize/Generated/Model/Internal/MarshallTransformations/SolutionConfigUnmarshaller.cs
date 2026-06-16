@@ -56,55 +56,55 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("algorithmHyperParameters", targetDepth))
+                if (context.TestExpression("algorithmHyperParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AlgorithmHyperParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("autoMLConfig", targetDepth))
+                if (context.TestExpression("autoMLConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLConfigUnmarshaller.Instance;
                     unmarshalledObject.AutoMLConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("autoTrainingConfig", targetDepth))
+                if (context.TestExpression("autoTrainingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoTrainingConfigUnmarshaller.Instance;
                     unmarshalledObject.AutoTrainingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventsConfig", targetDepth))
+                if (context.TestExpression("eventsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventsConfigUnmarshaller.Instance;
                     unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventValueThreshold", targetDepth))
+                if (context.TestExpression("eventValueThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventValueThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("featureTransformationParameters", targetDepth))
+                if (context.TestExpression("featureTransformationParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.FeatureTransformationParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hpoConfig", targetDepth))
+                if (context.TestExpression("hpoConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HPOConfigUnmarshaller.Instance;
                     unmarshalledObject.HpoConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("optimizationObjective", targetDepth))
+                if (context.TestExpression("optimizationObjective", targetDepth, ref reader))
                 {
                     var unmarshaller = OptimizationObjectiveUnmarshaller.Instance;
                     unmarshalledObject.OptimizationObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingDataConfig", targetDepth))
+                if (context.TestExpression("trainingDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingDataConfigUnmarshaller.Instance;
                     unmarshalledObject.TrainingDataConfig = unmarshaller.Unmarshall(context, ref reader);

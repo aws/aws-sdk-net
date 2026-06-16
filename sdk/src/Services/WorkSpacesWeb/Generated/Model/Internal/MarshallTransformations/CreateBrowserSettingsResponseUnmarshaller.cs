@@ -52,7 +52,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("browserSettingsArn", targetDepth))
+                if (context.TestExpression("browserSettingsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BrowserSettingsArn = unmarshaller.Unmarshall(context, ref reader);

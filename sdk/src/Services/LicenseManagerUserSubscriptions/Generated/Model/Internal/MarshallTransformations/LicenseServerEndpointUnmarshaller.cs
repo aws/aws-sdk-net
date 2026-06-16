@@ -56,55 +56,55 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityProviderArn", targetDepth))
+                if (context.TestExpression("IdentityProviderArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentityProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseServerEndpointArn", targetDepth))
+                if (context.TestExpression("LicenseServerEndpointArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LicenseServerEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseServerEndpointId", targetDepth))
+                if (context.TestExpression("LicenseServerEndpointId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LicenseServerEndpointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseServerEndpointProvisioningStatus", targetDepth))
+                if (context.TestExpression("LicenseServerEndpointProvisioningStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LicenseServerEndpointProvisioningStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseServers", targetDepth))
+                if (context.TestExpression("LicenseServers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LicenseServer, LicenseServerUnmarshaller>(LicenseServerUnmarshaller.Instance);
                     unmarshalledObject.LicenseServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerEndpoint", targetDepth))
+                if (context.TestExpression("ServerEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerEndpointUnmarshaller.Instance;
                     unmarshalledObject.ServerEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerType", targetDepth))
+                if (context.TestExpression("ServerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);

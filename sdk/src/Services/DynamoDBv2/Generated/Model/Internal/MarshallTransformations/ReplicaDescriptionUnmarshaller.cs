@@ -56,73 +56,79 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicaGlobalSecondaryIndexDescription, ReplicaGlobalSecondaryIndexDescriptionUnmarshaller>(ReplicaGlobalSecondaryIndexDescriptionUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlobalTableSettingsReplicationMode", targetDepth))
+                if (context.TestExpression("GlobalTableSettingsReplicationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GlobalTableSettingsReplicationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KMSMasterKeyId", targetDepth))
+                if (context.TestExpression("KMSMasterKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KMSMasterKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandThroughputOverride", targetDepth))
+                if (context.TestExpression("OnDemandThroughputOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = OnDemandThroughputOverrideUnmarshaller.Instance;
                     unmarshalledObject.OnDemandThroughputOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
+                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegionName", targetDepth))
+                if (context.TestExpression("RegionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaInaccessibleDateTime", targetDepth))
+                if (context.TestExpression("ReplicaArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ReplicaInaccessibleDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReplicaInaccessibleDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaStatus", targetDepth))
+                if (context.TestExpression("ReplicaStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaStatusDescription", targetDepth))
+                if (context.TestExpression("ReplicaStatusDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatusDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaStatusPercentProgress", targetDepth))
+                if (context.TestExpression("ReplicaStatusPercentProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatusPercentProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaTableClassSummary", targetDepth))
+                if (context.TestExpression("ReplicaTableClassSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = TableClassSummaryUnmarshaller.Instance;
                     unmarshalledObject.ReplicaTableClassSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmThroughput", targetDepth))
+                if (context.TestExpression("WarmThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = TableWarmThroughputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context, ref reader);

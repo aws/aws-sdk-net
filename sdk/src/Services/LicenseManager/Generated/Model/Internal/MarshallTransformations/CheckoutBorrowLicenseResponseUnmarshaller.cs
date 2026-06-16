@@ -52,49 +52,49 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CheckoutMetadata", targetDepth))
+                if (context.TestExpression("CheckoutMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Metadata, MetadataUnmarshaller>(MetadataUnmarshaller.Instance);
                     response.CheckoutMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntitlementsAllowed", targetDepth))
+                if (context.TestExpression("EntitlementsAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntitlementData, EntitlementDataUnmarshaller>(EntitlementDataUnmarshaller.Instance);
                     response.EntitlementsAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Expiration", targetDepth))
+                if (context.TestExpression("Expiration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Expiration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IssuedAt", targetDepth))
+                if (context.TestExpression("IssuedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IssuedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseArn", targetDepth))
+                if (context.TestExpression("LicenseArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LicenseArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseConsumptionToken", targetDepth))
+                if (context.TestExpression("LicenseConsumptionToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LicenseConsumptionToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeId", targetDepth))
+                if (context.TestExpression("NodeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NodeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SignedToken", targetDepth))
+                if (context.TestExpression("SignedToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SignedToken = unmarshaller.Unmarshall(context, ref reader);

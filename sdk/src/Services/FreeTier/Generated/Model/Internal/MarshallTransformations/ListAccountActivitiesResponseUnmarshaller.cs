@@ -52,13 +52,13 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activities", targetDepth))
+                if (context.TestExpression("activities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActivitySummary, ActivitySummaryUnmarshaller>(ActivitySummaryUnmarshaller.Instance);
                     response.Activities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Category", targetDepth))
+                if (context.TestExpression("Category", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
                     unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Label", targetDepth))
+                if (context.TestExpression("Label", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
                     unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Size", targetDepth))
+                if (context.TestExpression("Size", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MeasureField, MeasureFieldUnmarshaller>(MeasureFieldUnmarshaller.Instance);
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XAxis", targetDepth))
+                if (context.TestExpression("XAxis", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
                     unmarshalledObject.XAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("YAxis", targetDepth))
+                if (context.TestExpression("YAxis", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
                     unmarshalledObject.YAxis = unmarshaller.Unmarshall(context, ref reader);

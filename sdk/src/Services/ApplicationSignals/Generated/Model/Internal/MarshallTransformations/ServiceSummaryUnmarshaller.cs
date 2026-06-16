@@ -56,25 +56,25 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeMaps", targetDepth))
+                if (context.TestExpression("AttributeMaps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Dictionary<string, string>, JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                     unmarshalledObject.AttributeMaps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyAttributes", targetDepth))
+                if (context.TestExpression("KeyAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricReferences", targetDepth))
+                if (context.TestExpression("MetricReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricReference, MetricReferenceUnmarshaller>(MetricReferenceUnmarshaller.Instance);
                     unmarshalledObject.MetricReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceGroups", targetDepth))
+                if (context.TestExpression("ServiceGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceGroup, ServiceGroupUnmarshaller>(ServiceGroupUnmarshaller.Instance);
                     unmarshalledObject.ServiceGroups = unmarshaller.Unmarshall(context, ref reader);

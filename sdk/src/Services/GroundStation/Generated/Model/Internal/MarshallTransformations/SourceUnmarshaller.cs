@@ -56,25 +56,25 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configDetails", targetDepth))
+                if (context.TestExpression("configDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.ConfigDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configId", targetDepth))
+                if (context.TestExpression("configId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configType", targetDepth))
+                if (context.TestExpression("configType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataflowSourceRegion", targetDepth))
+                if (context.TestExpression("dataflowSourceRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataflowSourceRegion = unmarshaller.Unmarshall(context, ref reader);

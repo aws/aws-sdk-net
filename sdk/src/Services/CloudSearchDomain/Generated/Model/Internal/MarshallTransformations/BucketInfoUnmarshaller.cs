@@ -56,7 +56,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("buckets", targetDepth))
+                if (context.TestExpression("buckets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Bucket, BucketUnmarshaller>(BucketUnmarshaller.Instance);
                     unmarshalledObject.Buckets = unmarshaller.Unmarshall(context, ref reader);

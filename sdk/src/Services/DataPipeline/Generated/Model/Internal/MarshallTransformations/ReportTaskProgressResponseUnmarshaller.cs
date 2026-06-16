@@ -52,7 +52,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("canceled", targetDepth))
+                if (context.TestExpression("canceled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Canceled = unmarshaller.Unmarshall(context, ref reader);

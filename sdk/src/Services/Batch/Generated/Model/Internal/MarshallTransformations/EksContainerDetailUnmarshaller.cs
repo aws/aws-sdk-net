@@ -56,67 +56,67 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("args", targetDepth))
+                if (context.TestExpression("args", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Args = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("command", targetDepth))
+                if (context.TestExpression("command", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("env", targetDepth))
+                if (context.TestExpression("env", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EksContainerEnvironmentVariable, EksContainerEnvironmentVariableUnmarshaller>(EksContainerEnvironmentVariableUnmarshaller.Instance);
                     unmarshalledObject.Env = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exitCode", targetDepth))
+                if (context.TestExpression("exitCode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imagePullPolicy", targetDepth))
+                if (context.TestExpression("imagePullPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImagePullPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("reason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resources", targetDepth))
+                if (context.TestExpression("resources", targetDepth, ref reader))
                 {
                     var unmarshaller = EksContainerResourceRequirementsUnmarshaller.Instance;
                     unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityContext", targetDepth))
+                if (context.TestExpression("securityContext", targetDepth, ref reader))
                 {
                     var unmarshaller = EksContainerSecurityContextUnmarshaller.Instance;
                     unmarshalledObject.SecurityContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("volumeMounts", targetDepth))
+                if (context.TestExpression("volumeMounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EksContainerVolumeMount, EksContainerVolumeMountUnmarshaller>(EksContainerVolumeMountUnmarshaller.Instance);
                     unmarshalledObject.VolumeMounts = unmarshaller.Unmarshall(context, ref reader);

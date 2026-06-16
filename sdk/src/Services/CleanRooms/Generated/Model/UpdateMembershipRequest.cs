@@ -39,6 +39,7 @@ namespace Amazon.CleanRooms.Model
         private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
         private MembershipJobLogStatus _jobLogStatus;
         private string _membershipIdentifier;
+        private UpdateMembershipPaymentConfiguration _membershipPaymentConfiguration;
         private MembershipQueryLogStatus _queryLogStatus;
 
         /// <summary>
@@ -119,6 +120,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetMembershipIdentifier()
         {
             return this._membershipIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MembershipPaymentConfiguration. 
+        /// <para>
+        /// The payment configuration to update for the membership.
+        /// </para>
+        /// </summary>
+        public UpdateMembershipPaymentConfiguration MembershipPaymentConfiguration
+        {
+            get { return this._membershipPaymentConfiguration; }
+            set { this._membershipPaymentConfiguration = value; }
+        }
+
+        // Check to see if MembershipPaymentConfiguration property is set
+        internal bool IsSetMembershipPaymentConfiguration()
+        {
+            return this._membershipPaymentConfiguration != null;
         }
 
         /// <summary>

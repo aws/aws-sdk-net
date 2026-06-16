@@ -52,19 +52,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("flowArn", targetDepth))
+                if (context.TestExpression("flowArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FlowArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nonDeletedNetworkInterfaceIds", targetDepth))
+                if (context.TestExpression("nonDeletedNetworkInterfaceIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.NonDeletedNetworkInterfaceIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcInterfaceName", targetDepth))
+                if (context.TestExpression("vpcInterfaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VpcInterfaceName = unmarshaller.Unmarshall(context, ref reader);

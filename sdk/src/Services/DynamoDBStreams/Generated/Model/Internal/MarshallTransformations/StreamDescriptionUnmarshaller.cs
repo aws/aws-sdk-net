@@ -56,55 +56,55 @@ namespace Amazon.DynamoDBStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationRequestDateTime", targetDepth))
+                if (context.TestExpression("CreationRequestDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationRequestDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeySchema", targetDepth))
+                if (context.TestExpression("KeySchema", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
                     unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastEvaluatedShardId", targetDepth))
+                if (context.TestExpression("LastEvaluatedShardId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastEvaluatedShardId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Shards", targetDepth))
+                if (context.TestExpression("Shards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Shard, ShardUnmarshaller>(ShardUnmarshaller.Instance);
                     unmarshalledObject.Shards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamArn", targetDepth))
+                if (context.TestExpression("StreamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamLabel", targetDepth))
+                if (context.TestExpression("StreamLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamStatus", targetDepth))
+                if (context.TestExpression("StreamStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamViewType", targetDepth))
+                if (context.TestExpression("StreamViewType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamViewType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);

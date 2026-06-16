@@ -56,25 +56,25 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("publicAclAccess", targetDepth))
+                if (context.TestExpression("publicAclAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicAclAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicAclIgnoreBehavior", targetDepth))
+                if (context.TestExpression("publicAclIgnoreBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicAclIgnoreBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicBucketRestrictBehavior", targetDepth))
+                if (context.TestExpression("publicBucketRestrictBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicBucketRestrictBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicPolicyAccess", targetDepth))
+                if (context.TestExpression("publicPolicyAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicPolicyAccess = unmarshaller.Unmarshall(context, ref reader);

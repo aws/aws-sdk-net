@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DetectModerationLabels", targetDepth))
+                if (context.TestExpression("DetectModerationLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaAnalysisDetectModerationLabelsConfigUnmarshaller.Instance;
                     unmarshalledObject.DetectModerationLabels = unmarshaller.Unmarshall(context, ref reader);

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputDataConfig Marshaller
     /// </summary>
-    public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, JsonMarshallerContext> 
+    public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(OutputDataConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetS3Bucket())
-            {
-                context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.WriteStringValue(requestObject.S3Bucket);
-            }
 
-            if(requestObject.IsSetS3Key())
+            if (requestObject.IsSetS3Bucket())
             {
-                context.Writer.WritePropertyName("S3Key");
-                context.Writer.WriteStringValue(requestObject.S3Key);
+                context.Writer.WriteTextString("S3Bucket");
+                context.Writer.WriteTextString(requestObject.S3Bucket);
             }
-
+            if (requestObject.IsSetS3Key())
+            {
+                context.Writer.WriteTextString("S3Key");
+                context.Writer.WriteTextString(requestObject.S3Key);
+            }
         }
 
         /// <summary>

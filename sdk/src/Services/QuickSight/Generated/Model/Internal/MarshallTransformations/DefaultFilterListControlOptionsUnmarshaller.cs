@@ -56,19 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisplayOptions", targetDepth))
+                if (context.TestExpression("ControlSortConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ControlSortConfiguration, ControlSortConfigurationUnmarshaller>(ControlSortConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ControlSortConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("DisplayOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ListControlDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.DisplayOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectableValues", targetDepth))
+                if (context.TestExpression("SelectableValues", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterSelectableValuesUnmarshaller.Instance;
                     unmarshalledObject.SelectableValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

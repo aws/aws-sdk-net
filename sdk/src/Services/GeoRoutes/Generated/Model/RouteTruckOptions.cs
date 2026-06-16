@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Travel mode options when the provided travel mode is "Truck"
+    /// Travel mode options when the provided travel mode is <c>Truck</c>. Not supported
+    /// in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+    /// customers.
     /// </summary>
     public partial class RouteTruckOptions
     {
@@ -99,7 +101,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -256,7 +258,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=252)]
@@ -279,7 +281,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>1</c> 
+        /// Default value: <c>1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]
@@ -358,7 +360,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TruckType. 
         /// <para>
-        /// Type of the truck.
+        /// The type of truck: <c>LightTruck</c> for smaller delivery vehicles, <c> StraightTruck</c>
+        /// for rigid body trucks, or <c>Tractor</c> for tractor-trailer combinations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -456,7 +459,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -480,7 +483,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         public WeightPerAxleGroup WeightPerAxleGroup

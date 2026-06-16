@@ -56,25 +56,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maximumRGBTolerance", targetDepth))
+                if (context.TestExpression("maximumRGBTolerance", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumRGBTolerance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maximumYUV", targetDepth))
+                if (context.TestExpression("maximumYUV", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumYUV = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumRGBTolerance", targetDepth))
+                if (context.TestExpression("minimumRGBTolerance", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumRGBTolerance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumYUV", targetDepth))
+                if (context.TestExpression("minimumYUV", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumYUV = unmarshaller.Unmarshall(context, ref reader);

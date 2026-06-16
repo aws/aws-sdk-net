@@ -56,13 +56,13 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pendingMaintenanceActionDetails", targetDepth))
+                if (context.TestExpression("pendingMaintenanceActionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PendingMaintenanceActionDetails, PendingMaintenanceActionDetailsUnmarshaller>(PendingMaintenanceActionDetailsUnmarshaller.Instance);
                     unmarshalledObject.PendingMaintenanceActionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceArn", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);

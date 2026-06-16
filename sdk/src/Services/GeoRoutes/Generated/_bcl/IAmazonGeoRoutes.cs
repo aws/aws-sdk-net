@@ -32,34 +32,30 @@ namespace Amazon.GeoRoutes
     /// <summary>
     /// <para>Interface for accessing GeoRoutes</para>
     ///
-    /// With the Amazon Location Routes API you can calculate routes and estimate travel time
-    /// based on up-to-date road network and live traffic information.
+    /// With the Routes API you can calculate routes and estimate travel time based on up-to-date
+    /// road network and live traffic information. Key features include:
     /// 
-    ///  
-    /// <para>
-    /// Calculate optimal travel routes and estimate travel times using up-to-date road network
-    /// and traffic data. Key features include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Point-to-point routing with estimated travel time, distance, and turn-by-turn directions
+    /// Point-to-point routing with estimated travel time, distance, and turn-by-turn directions.
+    /// See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRoutes.html">CalculateRoutes</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Multi-point route optimization to minimize travel time or distance
+    /// Multi-point route optimization to minimize travel time or distance. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_OptimizeWaypoints.html">OptimizeWaypoints</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Route matrices for efficient multi-destination planning
+    /// Route matrices for efficient multi-destination planning. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRouteMatrix.html">CalculateRouteMatrix</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Isoline calculations to determine reachable areas within specified time or distance
-    /// thresholds
+    /// thresholds. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateIsolines.html">CalculateIsolines</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Map-matching to align GPS traces with the road network
+    /// Map-matching to align GPS traces with the road network. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_SnapToRoads.html">SnapToRoads</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -72,8 +68,41 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Use the <c>CalculateIsolines</c> action to find service areas that can be reached
-        /// in a given threshold of time, distance.
+        /// Calculates areas that can be reached within specified time or distance thresholds
+        /// from a given point. For example, you can use this operation to determine the area
+        /// within a 30-minute drive of a store location, find neighborhoods within walking distance
+        /// of a school, or identify delivery zones based on drive time.
+        /// 
+        ///  
+        /// <para>
+        /// Isolines (also known as isochrones for time-based calculations) are useful for various
+        /// applications including:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Service area visualization - Show customers the area you can serve within promised
+        /// delivery times
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Site selection - Analyze potential business locations based on population within travel
+        /// distance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Site selection - Determine areas that can be reached within specified response times
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Route preferences such as avoiding toll roads or ferries are treated as preferences
+        /// rather than absolute restrictions. If a viable route cannot be calculated while honoring
+        /// all preferences, some may be ignored.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-isolines.html">Calculate
+        /// isolines</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateIsolines service method.</param>
         /// 
@@ -96,8 +125,41 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Use the <c>CalculateIsolines</c> action to find service areas that can be reached
-        /// in a given threshold of time, distance.
+        /// Calculates areas that can be reached within specified time or distance thresholds
+        /// from a given point. For example, you can use this operation to determine the area
+        /// within a 30-minute drive of a store location, find neighborhoods within walking distance
+        /// of a school, or identify delivery zones based on drive time.
+        /// 
+        ///  
+        /// <para>
+        /// Isolines (also known as isochrones for time-based calculations) are useful for various
+        /// applications including:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Service area visualization - Show customers the area you can serve within promised
+        /// delivery times
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Site selection - Analyze potential business locations based on population within travel
+        /// distance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Site selection - Determine areas that can be reached within specified response times
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Route preferences such as avoiding toll roads or ferries are treated as preferences
+        /// rather than absolute restrictions. If a viable route cannot be calculated while honoring
+        /// all preferences, some may be ignored.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-isolines.html">Calculate
+        /// isolines</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateIsolines service method.</param>
         /// <param name="cancellationToken">
@@ -129,6 +191,12 @@ namespace Amazon.GeoRoutes
         /// Use <c>CalculateRouteMatrix</c> to compute results for all pairs of Origins to Destinations.
         /// Each row corresponds to one entry in Origins. Each entry in the row corresponds to
         /// the route from that entry in Origins to an entry in Destinations positions.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">Calculate
+        /// route matrix</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRouteMatrix service method.</param>
         /// 
@@ -154,6 +222,12 @@ namespace Amazon.GeoRoutes
         /// Use <c>CalculateRouteMatrix</c> to compute results for all pairs of Origins to Destinations.
         /// Each row corresponds to one entry in Origins. Each entry in the row corresponds to
         /// the route from that entry in Origins to an entry in Destinations positions.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">Calculate
+        /// route matrix</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRouteMatrix service method.</param>
         /// <param name="cancellationToken">
@@ -184,6 +258,12 @@ namespace Amazon.GeoRoutes
         /// <summary>
         /// <c>CalculateRoutes</c> computes routes given the following required parameters: <c>Origin</c>
         /// and <c>Destination</c>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-routes.html">Calculate
+        /// routes</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoutes service method.</param>
         /// 
@@ -208,6 +288,12 @@ namespace Amazon.GeoRoutes
         /// <summary>
         /// <c>CalculateRoutes</c> computes routes given the following required parameters: <c>Origin</c>
         /// and <c>Destination</c>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-routes.html">Calculate
+        /// routes</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoutes service method.</param>
         /// <param name="cancellationToken">
@@ -239,6 +325,12 @@ namespace Amazon.GeoRoutes
         /// <c>OptimizeWaypoints</c> calculates the optimal order to travel between a set of
         /// waypoints to minimize either the travel time or the distance travelled during the
         /// journey, based on road network restrictions and the traffic pattern data.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/actions-optimize-waypoints.html">Optimize
+        /// waypoints</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OptimizeWaypoints service method.</param>
         /// 
@@ -264,6 +356,12 @@ namespace Amazon.GeoRoutes
         /// <c>OptimizeWaypoints</c> calculates the optimal order to travel between a set of
         /// waypoints to minimize either the travel time or the distance travelled during the
         /// journey, based on road network restrictions and the traffic pattern data.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/actions-optimize-waypoints.html">Optimize
+        /// waypoints</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OptimizeWaypoints service method.</param>
         /// <param name="cancellationToken">
@@ -293,6 +391,12 @@ namespace Amazon.GeoRoutes
 
         /// <summary>
         /// <c>SnapToRoads</c> matches GPS trace to roads most likely traveled on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-roads.html">Snap
+        /// to Roads</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SnapToRoads service method.</param>
         /// 
@@ -316,6 +420,12 @@ namespace Amazon.GeoRoutes
 
         /// <summary>
         /// <c>SnapToRoads</c> matches GPS trace to roads most likely traveled on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-roads.html">Snap
+        /// to Roads</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SnapToRoads service method.</param>
         /// <param name="cancellationToken">

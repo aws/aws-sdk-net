@@ -56,25 +56,25 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountScope", targetDepth))
+                if (context.TestExpression("AccountScope", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountScopeUnmarshaller.Instance;
                     unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationalUnitScope", targetDepth))
+                if (context.TestExpression("OrganizationalUnitScope", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationalUnitScopeUnmarshaller.Instance;
                     unmarshalledObject.OrganizationalUnitScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyTypeScope", targetDepth))
+                if (context.TestExpression("PolicyTypeScope", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicyTypeScopeUnmarshaller.Instance;
                     unmarshalledObject.PolicyTypeScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegionScope", targetDepth))
+                if (context.TestExpression("RegionScope", targetDepth, ref reader))
                 {
                     var unmarshaller = RegionScopeUnmarshaller.Instance;
                     unmarshalledObject.RegionScope = unmarshaller.Unmarshall(context, ref reader);

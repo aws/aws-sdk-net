@@ -52,121 +52,121 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogGroupArn", targetDepth))
+                if (context.TestExpression("CloudWatchLogGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CloudWatchLogGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentTaskExecutionArn", targetDepth))
+                if (context.TestExpression("CurrentTaskExecutionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CurrentTaskExecutionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationLocationArn", targetDepth))
+                if (context.TestExpression("DestinationLocationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DestinationLocationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationNetworkInterfaceArns", targetDepth))
+                if (context.TestExpression("DestinationNetworkInterfaceArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.DestinationNetworkInterfaceArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorCode", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorDetail", targetDepth))
+                if (context.TestExpression("ErrorDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Excludes", targetDepth))
+                if (context.TestExpression("Excludes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
                     response.Excludes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Includes", targetDepth))
+                if (context.TestExpression("Includes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
                     response.Includes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestConfig", targetDepth))
+                if (context.TestExpression("ManifestConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ManifestConfigUnmarshaller.Instance;
                     response.ManifestConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Options", targetDepth))
+                if (context.TestExpression("Options", targetDepth, ref reader))
                 {
                     var unmarshaller = OptionsUnmarshaller.Instance;
                     response.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schedule", targetDepth))
+                if (context.TestExpression("Schedule", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskScheduleUnmarshaller.Instance;
                     response.Schedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduleDetails", targetDepth))
+                if (context.TestExpression("ScheduleDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskScheduleDetailsUnmarshaller.Instance;
                     response.ScheduleDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceLocationArn", targetDepth))
+                if (context.TestExpression("SourceLocationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceLocationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceNetworkInterfaceArns", targetDepth))
+                if (context.TestExpression("SourceNetworkInterfaceArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SourceNetworkInterfaceArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskArn", targetDepth))
+                if (context.TestExpression("TaskArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskMode", targetDepth))
+                if (context.TestExpression("TaskMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskReportConfig", targetDepth))
+                if (context.TestExpression("TaskReportConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskReportConfigUnmarshaller.Instance;
                     response.TaskReportConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlgorithmName", targetDepth))
+                if (context.TestExpression("AlgorithmName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AlgorithmName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerArguments", targetDepth))
+                if (context.TestExpression("ContainerArguments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ContainerArguments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerEntrypoint", targetDepth))
+                if (context.TestExpression("ContainerEntrypoint", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ContainerEntrypoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableSageMakerMetricsTimeSeries", targetDepth))
+                if (context.TestExpression("EnableSageMakerMetricsTimeSeries", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableSageMakerMetricsTimeSeries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricDefinitions", targetDepth))
+                if (context.TestExpression("MetricDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDefinition, MetricDefinitionUnmarshaller>(MetricDefinitionUnmarshaller.Instance);
                     unmarshalledObject.MetricDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingImage", targetDepth))
+                if (context.TestExpression("TrainingImage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrainingImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingImageConfig", targetDepth))
+                if (context.TestExpression("TrainingImageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingImageConfigUnmarshaller.Instance;
                     unmarshalledObject.TrainingImageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingInputMode", targetDepth))
+                if (context.TestExpression("TrainingInputMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrainingInputMode = unmarshaller.Unmarshall(context, ref reader);

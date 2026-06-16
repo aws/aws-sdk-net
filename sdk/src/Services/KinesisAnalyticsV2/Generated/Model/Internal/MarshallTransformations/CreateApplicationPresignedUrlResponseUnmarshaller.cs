@@ -52,7 +52,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizedUrl", targetDepth))
+                if (context.TestExpression("AuthorizedUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizedUrl = unmarshaller.Unmarshall(context, ref reader);

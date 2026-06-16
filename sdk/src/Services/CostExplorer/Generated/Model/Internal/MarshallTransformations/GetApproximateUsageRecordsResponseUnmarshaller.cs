@@ -52,19 +52,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LookbackPeriod", targetDepth))
+                if (context.TestExpression("LookbackPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = DateIntervalUnmarshaller.Instance;
                     response.LookbackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Services", targetDepth))
+                if (context.TestExpression("Services", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
                     response.Services = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRecords", targetDepth))
+                if (context.TestExpression("TotalRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalRecords = unmarshaller.Unmarshall(context, ref reader);

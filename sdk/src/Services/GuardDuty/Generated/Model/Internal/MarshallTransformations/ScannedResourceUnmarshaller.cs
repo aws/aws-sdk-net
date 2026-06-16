@@ -56,31 +56,31 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resourceDetails", targetDepth))
+                if (context.TestExpression("resourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ScannedResourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.ResourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scannedResourceArn", targetDepth))
+                if (context.TestExpression("scannedResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScannedResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scannedResourceStatus", targetDepth))
+                if (context.TestExpression("scannedResourceStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScannedResourceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scannedResourceType", targetDepth))
+                if (context.TestExpression("scannedResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScannedResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanStatusReason", targetDepth))
+                if (context.TestExpression("scanStatusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScanStatusReason = unmarshaller.Unmarshall(context, ref reader);

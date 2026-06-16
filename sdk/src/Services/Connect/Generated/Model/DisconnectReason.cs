@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains details about why a contact was disconnected. Only Amazon Connect outbound
+    /// Contains details about why a contact was disconnected. Only Connect Customer outbound
     /// campaigns can provide this field.
     /// </summary>
     public partial class DisconnectReason

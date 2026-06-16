@@ -72,12 +72,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2hostlabel")]
         [Description("a space is never a valid hostlabel")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid hostlabel")]
         public void A_space_is_never_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
             parameters["Region"] = "part1 part2";
-            var endpoint = new AmazonEp2hostlabelEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2hostlabelEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid hostlabel", exception.Message);
         }
 
         [TestMethod]
@@ -85,12 +87,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2hostlabel")]
         [Description("an empty string is not a valid hostlabel")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid hostlabel")]
         public void An_empty_string_is_not_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
             parameters["Region"] = "";
-            var endpoint = new AmazonEp2hostlabelEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2hostlabelEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid hostlabel", exception.Message);
         }
 
     }

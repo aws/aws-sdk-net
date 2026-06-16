@@ -60,9 +60,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/trust-store";
 
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+#else
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {   
+            {
+#endif
                 xmlWriter.WriteStartElement("CreateTrustStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if (publicRequest.IsSetCaCertificatesBundleSource())
                 {
@@ -108,16 +115,21 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     xmlWriter.WriteEndElement();
                 }
+                if(publicRequest.IsSetUseClientCertificateOCSPEndpoint())
+                    xmlWriter.WriteElementString("UseClientCertificateOCSPEndpoint", StringUtils.FromBool(publicRequest.UseClientCertificateOCSPEndpoint.Value));
+
 
                 xmlWriter.WriteEndElement();
             }
             PostMarshallCustomization(request, publicRequest);
             try 
             {
+#if NETFRAMEWORK // For non .NET Framework targets the request payload is stored in the ContentStream via the PooledContentStream.
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+#endif
                 request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-05-31";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-05-31";
             } 
             catch (EncoderFallbackException e) 
             {

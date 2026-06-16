@@ -69,6 +69,12 @@ namespace Amazon.Batch.Model
         /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
         /// specify it.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// This parameter is required for Amazon EKS compute environments. For Amazon ECS compute
+        /// environments, if this parameter isn't specified, the <c>BEST_FIT</c> allocation strategy
+        /// is used by default.
+        /// </para>
         ///  </note> <dl> <dt>BEST_FIT (default)</dt> <dd> 
         /// <para>
         /// Batch selects an instance type that best fits the needs of the jobs with a preference
@@ -184,7 +190,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Provides information that's used to select Amazon Machine Images (AMIs) for Amazon
         /// EC2 instances in the compute environment. If <c>Ec2Configuration</c> isn't specified,
-        /// the default is <c>ECS_AL2</c>.
+        /// the default is <c>ECS_AL2023</c> for EC2 (ECS) compute environments and <c>EKS_AL2023</c>
+        /// for EKS compute environments.
         /// </para>
         ///  
         /// <para>
@@ -257,9 +264,9 @@ namespace Amazon.Batch.Model
         /// instance types that you intend to use for that compute environment. For example, if
         /// your compute environment uses A1 instance types, the compute resource AMI that you
         /// choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the
-        /// Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
-        /// ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// Amazon ECS-optimized Amazon Linux 2023 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
+        /// ECS-optimized Amazon Linux 2023 AMI</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -310,19 +317,13 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The instances types that can be launched. You can specify instance families to launch
         /// any instance type within those families (for example, <c>c5</c> or <c>p3</c>), or
-        /// you can specify specific sizes within a family (such as <c>c5.8xlarge</c>). 
+        /// you can specify specific sizes within a family (such as <c>c5.8xlarge</c>).
         /// </para>
         ///  
         /// <para>
         /// Batch can select the instance type for you if you choose one of the following:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <c>optimal</c> to select instance types (from the <c>c4</c>, <c>m4</c>, <c>r4</c>,
-        /// <c>c5</c>, <c>m5</c>, and <c>r5</c> instance families) that match the demand of your
-        /// job queues. 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <c>default_x86_64</c> to choose x86 based instance types (from the <c>m6i</c>, <c>c6i</c>,
         /// <c>r6i</c>, and <c>c7i</c> instance families) that matches the resource demands of
@@ -334,15 +335,12 @@ namespace Amazon.Batch.Model
         /// <c>r6g</c>, and <c>c7g</c> instance families) that matches the resource demands of
         /// the job queue.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// Starting on 11/01/2025 the behavior of <c>optimal</c> is going to be changed to match
-        /// <c>default_x86_64</c>. During the change your instance families could be updated to
-        /// a newer generation. You do not need to perform any actions for the upgrade to happen.
-        /// For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal
-        /// instance type configuration to receive automatic instance family updates</a>.
+        ///  <c>optimal</c> Semantically equivalent to <c>default_x86_64</c>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal
+        /// instance type configuration to receive automatic instance family updates</a> for details.
         /// </para>
-        ///  </note> <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// Instance family availability varies by Amazon Web Services Region. For example, some
         /// Amazon Web Services Regions may not have any fourth generation instance families but

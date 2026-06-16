@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void GetRangeKeyConditionExpression_ThrowsOnUnsupported()
         {
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.ThrowsExactly<NotSupportedException>(() =>
                 ContextExpressionsUtils.GetRangeKeyConditionExpression("myKey", (QueryOperator)999,0));
         }
 
@@ -75,7 +75,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void GetConstant_ReturnsNullForUnsupported()
         {
             var paramExpr = Expression.Parameter(typeof(int), "x");
-            Assert.ThrowsException<NotSupportedException>(() => ContextExpressionsUtils.GetConstant(paramExpr));
+            Assert.ThrowsExactly<NotSupportedException>(() => ContextExpressionsUtils.GetConstant(paramExpr));
         }
 
         [TestMethod]
@@ -341,11 +341,13 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
         public void ExtractPathNodes_UnsupportedMethodCall_Throws()
         {
-            Expression<Func<List<int>, int>> expr = l => l.Sum();
-            ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+            Assert.ThrowsExactly<NotSupportedException>(() =>
+            {
+                Expression<Func<List<int>, int>> expr = l => l.Sum();
+                ContextExpressionsUtils.ExtractPathNodes(expr.Body);
+            });
         }
 
         [TestMethod]

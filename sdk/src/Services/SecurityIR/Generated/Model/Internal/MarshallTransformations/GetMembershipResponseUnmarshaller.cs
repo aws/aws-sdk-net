@@ -52,79 +52,79 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customerType", targetDepth))
+                if (context.TestExpression("customerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("incidentResponseTeam", targetDepth))
+                if (context.TestExpression("incidentResponseTeam", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IncidentResponder, IncidentResponderUnmarshaller>(IncidentResponderUnmarshaller.Instance);
                     response.IncidentResponseTeam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipAccountsConfigurations", targetDepth))
+                if (context.TestExpression("membershipAccountsConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = MembershipAccountsConfigurationsUnmarshaller.Instance;
                     response.MembershipAccountsConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipActivationTimestamp", targetDepth))
+                if (context.TestExpression("membershipActivationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.MembershipActivationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipArn", targetDepth))
+                if (context.TestExpression("membershipArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MembershipArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipDeactivationTimestamp", targetDepth))
+                if (context.TestExpression("membershipDeactivationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.MembershipDeactivationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipId", targetDepth))
+                if (context.TestExpression("membershipId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MembershipId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipName", targetDepth))
+                if (context.TestExpression("membershipName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MembershipName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("membershipStatus", targetDepth))
+                if (context.TestExpression("membershipStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MembershipStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfAccountsCovered", targetDepth))
+                if (context.TestExpression("numberOfAccountsCovered", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfAccountsCovered = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("optInFeatures", targetDepth))
+                if (context.TestExpression("optInFeatures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OptInFeature, OptInFeatureUnmarshaller>(OptInFeatureUnmarshaller.Instance);
                     response.OptInFeatures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Region = unmarshaller.Unmarshall(context, ref reader);

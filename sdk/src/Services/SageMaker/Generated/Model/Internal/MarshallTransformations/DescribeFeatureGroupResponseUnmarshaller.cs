@@ -52,109 +52,109 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventTimeFeatureName", targetDepth))
+                if (context.TestExpression("EventTimeFeatureName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventTimeFeatureName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureDefinitions", targetDepth))
+                if (context.TestExpression("FeatureDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FeatureDefinition, FeatureDefinitionUnmarshaller>(FeatureDefinitionUnmarshaller.Instance);
                     response.FeatureDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureGroupArn", targetDepth))
+                if (context.TestExpression("FeatureGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FeatureGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureGroupName", targetDepth))
+                if (context.TestExpression("FeatureGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FeatureGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureGroupStatus", targetDepth))
+                if (context.TestExpression("FeatureGroupStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FeatureGroupStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateStatus", targetDepth))
+                if (context.TestExpression("LastUpdateStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = LastUpdateStatusUnmarshaller.Instance;
                     response.LastUpdateStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OfflineStoreConfig", targetDepth))
+                if (context.TestExpression("OfflineStoreConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OfflineStoreConfigUnmarshaller.Instance;
                     response.OfflineStoreConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OfflineStoreStatus", targetDepth))
+                if (context.TestExpression("OfflineStoreStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = OfflineStoreStatusUnmarshaller.Instance;
                     response.OfflineStoreStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnlineStoreConfig", targetDepth))
+                if (context.TestExpression("OnlineStoreConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OnlineStoreConfigUnmarshaller.Instance;
                     response.OnlineStoreConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnlineStoreTotalSizeBytes", targetDepth))
+                if (context.TestExpression("OnlineStoreTotalSizeBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.OnlineStoreTotalSizeBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecordIdentifierFeatureName", targetDepth))
+                if (context.TestExpression("RecordIdentifierFeatureName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecordIdentifierFeatureName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThroughputConfig", targetDepth))
+                if (context.TestExpression("ThroughputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ThroughputConfigDescriptionUnmarshaller.Instance;
                     response.ThroughputConfig = unmarshaller.Unmarshall(context, ref reader);

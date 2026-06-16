@@ -56,37 +56,37 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataQuery", targetDepth))
+                if (context.TestExpression("DataQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = DataQueryUnmarshaller.Instance;
                     unmarshalledObject.DataQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationConfigurations", targetDepth))
+                if (context.TestExpression("DestinationConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationConfigurationsUnmarshaller.Instance;
                     unmarshalledObject.DestinationConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportArn", targetDepth))
+                if (context.TestExpression("ExportArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RefreshCadence", targetDepth))
+                if (context.TestExpression("RefreshCadence", targetDepth, ref reader))
                 {
                     var unmarshaller = RefreshCadenceUnmarshaller.Instance;
                     unmarshalledObject.RefreshCadence = unmarshaller.Unmarshall(context, ref reader);

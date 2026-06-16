@@ -72,7 +72,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("PropertyList", targetDepth))
+                    if (context.TestExpression("PropertyList", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<PropertyValidationExceptionProperty, PropertyValidationExceptionPropertyUnmarshaller>(PropertyValidationExceptionPropertyUnmarshaller.Instance);
                         unmarshalledObject.PropertyList = unmarshaller.Unmarshall(context, ref reader);

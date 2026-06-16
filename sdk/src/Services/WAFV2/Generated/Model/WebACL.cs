@@ -56,6 +56,7 @@ namespace Amazon.WAFV2.Model
         private string _id;
         private string _labelNamespace;
         private bool? _managedByFirewallManager;
+        private MonetizationConfig _monetizationConfig;
         private string _name;
         private OnSourceDDoSProtectionConfig _onSourceDDoSProtectionConfig;
         private List<FirewallManagerRuleGroup> _postProcessFirewallManagerRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallManagerRuleGroup>() : null;
@@ -393,6 +394,26 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetManagedByFirewallManager()
         {
             return this._managedByFirewallManager.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonetizationConfig. 
+        /// <para>
+        /// The monetization configuration for the web ACL. Required when any rule in the web
+        /// ACL uses the <c>Monetize</c> action. Specifies the cryptocurrency payment networks
+        /// and currency mode for AI bot monetization.
+        /// </para>
+        /// </summary>
+        public MonetizationConfig MonetizationConfig
+        {
+            get { return this._monetizationConfig; }
+            set { this._monetizationConfig = value; }
+        }
+
+        // Check to see if MonetizationConfig property is set
+        internal bool IsSetMonetizationConfig()
+        {
+            return this._monetizationConfig != null;
         }
 
         /// <summary>

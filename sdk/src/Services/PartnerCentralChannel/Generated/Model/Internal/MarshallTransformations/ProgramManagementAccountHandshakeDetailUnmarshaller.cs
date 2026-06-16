@@ -56,7 +56,7 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("program", targetDepth))
+                if (context.TestExpression("program", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Program = unmarshaller.Unmarshall(context, ref reader);

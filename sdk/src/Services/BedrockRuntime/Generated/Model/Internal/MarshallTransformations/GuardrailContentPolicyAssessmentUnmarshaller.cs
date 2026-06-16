@@ -56,7 +56,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filters", targetDepth))
+                if (context.TestExpression("filters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailContentFilter, GuardrailContentFilterUnmarshaller>(GuardrailContentFilterUnmarshaller.Instance);
                     unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);

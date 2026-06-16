@@ -39,6 +39,11 @@ namespace Amazon.Wickr
 {
     /// <summary>
     /// <para>Implementation for accessing Wickr</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the <i>Amazon Web Services Wickr API Reference</i>.
     /// 
@@ -119,6 +124,24 @@ namespace Amazon.Wickr
     /// includes a brief discussion about HTTP status codes. We recommend looking there as
     /// part of your investigation when you get an error.
     /// </para>
+    ///  
+    /// <para>
+    ///  <i>Regional availability</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Web Services Wickr API is available in several Amazon Web Services Regions
+    /// and it provides an endpoint for each of these Regions. For a list of all the Regions
+    /// and endpoints where the API is currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/wickr.html">Amazon
+    /// Web Services Wickr endpoints and quotas</a> in the <i>Amazon Web Services General
+    /// Reference Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Wickr API endpoints are region-specific and include a region code in the format: <c>https://admin.wickr.[regioncode].amazonaws.com</c>.
+    /// For example, for the US East (N.Virginia) <c>us-east-1</c>, the API endpoint is <c>https://admin.wickr.us-east-1.amazonaws.com</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AmazonWickrClient : AmazonServiceClient, IAmazonWickr
     {

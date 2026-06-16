@@ -81,6 +81,21 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("DashboardName");
                     context.Writer.WriteTextString(publicRequest.DashboardName);
                 }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 writer.WriteEndMap();
                 request.Content = writer.Encode();
             }

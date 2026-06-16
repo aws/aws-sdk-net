@@ -52,31 +52,31 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("excludes", targetDepth))
+                if (context.TestExpression("excludes", targetDepth, ref reader))
                 {
                     var unmarshaller = SensitivityInspectionTemplateExcludesUnmarshaller.Instance;
                     response.Excludes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includes", targetDepth))
+                if (context.TestExpression("includes", targetDepth, ref reader))
                 {
                     var unmarshaller = SensitivityInspectionTemplateIncludesUnmarshaller.Instance;
                     response.Includes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitivityInspectionTemplateId", targetDepth))
+                if (context.TestExpression("sensitivityInspectionTemplateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SensitivityInspectionTemplateId = unmarshaller.Unmarshall(context, ref reader);

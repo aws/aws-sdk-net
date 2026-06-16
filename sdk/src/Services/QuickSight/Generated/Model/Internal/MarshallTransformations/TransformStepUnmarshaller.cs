@@ -56,67 +56,67 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregateStep", targetDepth))
+                if (context.TestExpression("AggregateStep", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregateOperationUnmarshaller.Instance;
                     unmarshalledObject.AggregateStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AppendStep", targetDepth))
+                if (context.TestExpression("AppendStep", targetDepth, ref reader))
                 {
                     var unmarshaller = AppendOperationUnmarshaller.Instance;
                     unmarshalledObject.AppendStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CastColumnTypesStep", targetDepth))
+                if (context.TestExpression("CastColumnTypesStep", targetDepth, ref reader))
                 {
                     var unmarshaller = CastColumnTypesOperationUnmarshaller.Instance;
                     unmarshalledObject.CastColumnTypesStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateColumnsStep", targetDepth))
+                if (context.TestExpression("CreateColumnsStep", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateColumnsOperationUnmarshaller.Instance;
                     unmarshalledObject.CreateColumnsStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FiltersStep", targetDepth))
+                if (context.TestExpression("FiltersStep", targetDepth, ref reader))
                 {
                     var unmarshaller = FiltersOperationUnmarshaller.Instance;
                     unmarshalledObject.FiltersStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportTableStep", targetDepth))
+                if (context.TestExpression("ImportTableStep", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportTableOperationUnmarshaller.Instance;
                     unmarshalledObject.ImportTableStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JoinStep", targetDepth))
+                if (context.TestExpression("JoinStep", targetDepth, ref reader))
                 {
                     var unmarshaller = JoinOperationUnmarshaller.Instance;
                     unmarshalledObject.JoinStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PivotStep", targetDepth))
+                if (context.TestExpression("PivotStep", targetDepth, ref reader))
                 {
                     var unmarshaller = PivotOperationUnmarshaller.Instance;
                     unmarshalledObject.PivotStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProjectStep", targetDepth))
+                if (context.TestExpression("ProjectStep", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectOperationUnmarshaller.Instance;
                     unmarshalledObject.ProjectStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RenameColumnsStep", targetDepth))
+                if (context.TestExpression("RenameColumnsStep", targetDepth, ref reader))
                 {
                     var unmarshaller = RenameColumnsOperationUnmarshaller.Instance;
                     unmarshalledObject.RenameColumnsStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnpivotStep", targetDepth))
+                if (context.TestExpression("UnpivotStep", targetDepth, ref reader))
                 {
                     var unmarshaller = UnpivotOperationUnmarshaller.Instance;
                     unmarshalledObject.UnpivotStep = unmarshaller.Unmarshall(context, ref reader);

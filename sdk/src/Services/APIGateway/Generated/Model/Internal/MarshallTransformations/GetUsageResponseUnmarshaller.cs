@@ -52,31 +52,31 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("endDate", targetDepth))
+                if (context.TestExpression("endDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("values", targetDepth))
+                if (context.TestExpression("values", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<List<long>>, StringUnmarshaller, JsonListUnmarshaller<List<long>,JsonListUnmarshaller<long,LongUnmarshaller>>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<List<long>, JsonListUnmarshaller<long,LongUnmarshaller>>(new JsonListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance)));
                     response.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("position", targetDepth))
+                if (context.TestExpression("position", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startDate", targetDepth))
+                if (context.TestExpression("startDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usagePlanId", targetDepth))
+                if (context.TestExpression("usagePlanId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UsagePlanId = unmarshaller.Unmarshall(context, ref reader);

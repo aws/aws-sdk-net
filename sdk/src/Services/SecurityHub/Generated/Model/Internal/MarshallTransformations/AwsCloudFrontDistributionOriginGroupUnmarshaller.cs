@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailoverCriteria", targetDepth))
+                if (context.TestExpression("FailoverCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionOriginGroupFailoverUnmarshaller.Instance;
                     unmarshalledObject.FailoverCriteria = unmarshaller.Unmarshall(context, ref reader);

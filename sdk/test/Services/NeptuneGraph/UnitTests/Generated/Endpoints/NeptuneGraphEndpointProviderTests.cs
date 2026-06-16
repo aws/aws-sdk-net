@@ -108,7 +108,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: us-east-1, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_useast1_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -116,7 +115,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -140,7 +142,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: us-east-1, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_useast1_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -148,7 +149,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -236,7 +240,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: us-east-2, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_useast2_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -244,7 +247,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -268,7 +274,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: us-east-2, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_useast2_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -276,7 +281,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -364,7 +372,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: us-west-2, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_uswest2_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -372,7 +379,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -396,7 +406,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: us-west-2, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_uswest2_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -404,7 +413,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -492,7 +504,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: eu-west-1, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_euwest1_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -500,7 +511,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -524,7 +538,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: eu-west-1, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_euwest1_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -532,7 +545,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -620,7 +636,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: eu-west-2, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_euwest2_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -628,7 +643,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-west-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -652,7 +670,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: eu-west-2, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_euwest2_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -660,7 +677,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-west-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -748,7 +768,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: eu-central-1, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_eucentral1_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -756,7 +775,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-central-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -780,7 +802,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: eu-central-1, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_eucentral1_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -788,7 +809,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-central-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -876,7 +900,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: ap-southeast-1, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_apsoutheast1_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -884,7 +907,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-southeast-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -908,7 +934,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: ap-southeast-1, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_apsoutheast1_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -916,7 +941,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-southeast-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -1004,7 +1032,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: ap-northeast-1, useFipsEndpoint: true, useDualStackEndpoint: true")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_apnortheast1_useFipsEndpoint_true_useDualStackEndpoint_true_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -1012,7 +1039,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -1036,7 +1066,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate DP endpoint in region: ap-northeast-1, useFipsEndpoint: true, useDualStackEndpoint: false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: fips endpoint is not supported for this API")]
         public void Validate_DP_endpoint_in_region_apnortheast1_useFipsEndpoint_true_useDualStackEndpoint_false_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -1044,7 +1073,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: fips endpoint is not supported for this API", exception.Message);
         }
 
         [TestMethod]
@@ -1116,12 +1148,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate When no region is provided")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Validate_When_no_region_is_provided_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
             parameters["ApiType"] = "DataPlane";
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
         [TestMethod]
@@ -1129,13 +1163,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Validate When invalid/unknown ApiType provided")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Unknown ApiType")]
         public void Validate_When_invalidunknown_ApiType_provided_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["ApiType"] = "someUnknownValue";
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Unknown ApiType", exception.Message);
         }
 
         [TestMethod]
@@ -1143,7 +1179,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Both Fips and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void Both_Fips_and_dualstack_enabled_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -1152,7 +1187,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1160,7 +1198,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void Fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -1169,7 +1206,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1177,7 +1217,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NeptuneGraph")]
         [Description("Fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void Fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new NeptuneGraphEndpointParameters();
@@ -1186,7 +1225,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonNeptuneGraphEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
     }

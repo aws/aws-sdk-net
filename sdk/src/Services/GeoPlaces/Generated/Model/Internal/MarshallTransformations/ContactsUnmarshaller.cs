@@ -56,25 +56,25 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Emails", targetDepth))
+                if (context.TestExpression("Emails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContactDetails, ContactDetailsUnmarshaller>(ContactDetailsUnmarshaller.Instance);
                     unmarshalledObject.Emails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Faxes", targetDepth))
+                if (context.TestExpression("Faxes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContactDetails, ContactDetailsUnmarshaller>(ContactDetailsUnmarshaller.Instance);
                     unmarshalledObject.Faxes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Phones", targetDepth))
+                if (context.TestExpression("Phones", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContactDetails, ContactDetailsUnmarshaller>(ContactDetailsUnmarshaller.Instance);
                     unmarshalledObject.Phones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Websites", targetDepth))
+                if (context.TestExpression("Websites", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContactDetails, ContactDetailsUnmarshaller>(ContactDetailsUnmarshaller.Instance);
                     unmarshalledObject.Websites = unmarshaller.Unmarshall(context, ref reader);

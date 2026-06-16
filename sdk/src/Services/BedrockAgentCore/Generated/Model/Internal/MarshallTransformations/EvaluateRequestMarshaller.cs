@@ -68,8 +68,8 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             request.AddPathResource("{evaluatorId}", StringUtils.FromString(publicRequest.EvaluatorId));
             request.ResourcePath = "/evaluations/evaluate/{evaluatorId}";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -87,6 +87,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetEvaluationReferenceInputs())
+            {
+                context.Writer.WritePropertyName("evaluationReferenceInputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEvaluationReferenceInputsListValue in publicRequest.EvaluationReferenceInputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EvaluationReferenceInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEvaluationReferenceInputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetEvaluationTarget())
             {
                 context.Writer.WritePropertyName("evaluationTarget");
@@ -100,10 +116,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

@@ -52,61 +52,61 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeSuggestionsConfig", targetDepth))
+                if (context.TestExpression("AttributeSuggestionsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeSuggestionsDescribeConfigUnmarshaller.Instance;
                     response.AttributeSuggestionsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeQueriesWithoutUserInformation", targetDepth))
+                if (context.TestExpression("IncludeQueriesWithoutUserInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeQueriesWithoutUserInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastClearTime", targetDepth))
+                if (context.TestExpression("LastClearTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastClearTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastSuggestionsBuildTime", targetDepth))
+                if (context.TestExpression("LastSuggestionsBuildTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastSuggestionsBuildTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumNumberOfQueryingUsers", targetDepth))
+                if (context.TestExpression("MinimumNumberOfQueryingUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinimumNumberOfQueryingUsers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumQueryCount", targetDepth))
+                if (context.TestExpression("MinimumQueryCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinimumQueryCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mode", targetDepth))
+                if (context.TestExpression("Mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryLogLookBackWindowInDays", targetDepth))
+                if (context.TestExpression("QueryLogLookBackWindowInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.QueryLogLookBackWindowInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalSuggestionsCount", targetDepth))
+                if (context.TestExpression("TotalSuggestionsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalSuggestionsCount = unmarshaller.Unmarshall(context, ref reader);

@@ -35,14 +35,16 @@ namespace Amazon.GeoRoutes.Model
     public partial class RouteTravelModeOptions
     {
         private RouteCarOptions _car;
+        private RouteIntermodalOptions _intermodal;
         private RoutePedestrianOptions _pedestrian;
         private RouteScooterOptions _scooter;
+        private RouteTransitOptions _transit;
         private RouteTruckOptions _truck;
 
         /// <summary>
         /// Gets and sets the property Car. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Car"
+        /// Travel mode options when the provided travel mode is <c>Car</c>.
         /// </para>
         /// </summary>
         public RouteCarOptions Car
@@ -58,9 +60,33 @@ namespace Amazon.GeoRoutes.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Intermodal. 
+        /// <para>
+        /// Travel mode options when the provided travel mode is <c>Intermodal</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RouteIntermodalOptions Intermodal
+        {
+            get { return this._intermodal; }
+            set { this._intermodal = value; }
+        }
+
+        // Check to see if Intermodal property is set
+        internal bool IsSetIntermodal()
+        {
+            return this._intermodal != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Pedestrian. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Pedestrian"
+        /// Travel mode options when the provided travel mode is <c>Pedestrian</c>.
         /// </para>
         /// </summary>
         public RoutePedestrianOptions Pedestrian
@@ -78,7 +104,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Scooter. 
         /// <para>
-        /// Travel mode options when the provided travel mode is <c>Scooter</c> 
+        /// Travel mode options when the provided travel mode is <c>Scooter</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -100,9 +126,33 @@ namespace Amazon.GeoRoutes.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Transit. 
+        /// <para>
+        /// Travel mode options when the provided travel mode is <c>Transit</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RouteTransitOptions Transit
+        {
+            get { return this._transit; }
+            set { this._transit = value; }
+        }
+
+        // Check to see if Transit property is set
+        internal bool IsSetTransit()
+        {
+            return this._transit != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Truck. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Truck"
+        /// Travel mode options when the provided travel mode is <c>Truck</c>.
         /// </para>
         /// </summary>
         public RouteTruckOptions Truck

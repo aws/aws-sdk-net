@@ -52,13 +52,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceCollection", targetDepth))
+                if (context.TestExpression("ResourceCollection", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceCollectionFilterUnmarshaller.Instance;
                     response.ResourceCollection = unmarshaller.Unmarshall(context, ref reader);

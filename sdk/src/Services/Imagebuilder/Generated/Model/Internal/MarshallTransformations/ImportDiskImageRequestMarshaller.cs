@@ -65,8 +65,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/ImportDiskImage";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -131,6 +131,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Platform);
             }
 
+            if(publicRequest.IsSetRegisterImageOptions())
+            {
+                context.Writer.WritePropertyName("registerImageOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RegisterImageOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RegisterImageOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSemanticVersion())
             {
                 context.Writer.WritePropertyName("semanticVersion");
@@ -157,12 +168,20 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Uri);
             }
 
+            if(publicRequest.IsSetWindowsConfiguration())
+            {
+                context.Writer.WritePropertyName("windowsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WindowsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WindowsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

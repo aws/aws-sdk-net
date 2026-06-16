@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBParameterGroupRequest with the parameterized properties
         /// </summary>
         /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must be 1 to 255 letters, numbers, or hyphens. </li> <li> First character must be a letter </li> <li> Can't end with a hyphen or contain two consecutive hyphens </li> </ul> <note> This value is stored as a lowercase string. </note></param>
-        /// <param name="dbParameterGroupFamily">The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family. To list all of the available parameter group families for a DB engine, use the following command:  <c>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine &lt;engine&gt;</c>  For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:  <c>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</c>  <note> The output contains duplicates. </note> The following are the valid DB engine values: <ul> <li>  <c>aurora-mysql</c>  </li> <li>  <c>aurora-postgresql</c>  </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
+        /// <param name="dbParameterGroupFamily">The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family. To list all of the available parameter group families for a DB engine, use the following command:  <c>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine &lt;engine&gt;</c>  For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:  <c>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</c>  <note> The output contains duplicates. </note> The following are the valid DB engine values: <ul> <li>  <c>aurora-mysql</c>  </li> <li>  <c>aurora-postgresql</c>  </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-ce</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
         /// <param name="description">The description for the DB parameter group.</param>
         public CreateDBParameterGroupRequest(string dbParameterGroupName, string dbParameterGroupFamily, string description)
         {
@@ -119,6 +119,10 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>db2-ae</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db2-ce</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

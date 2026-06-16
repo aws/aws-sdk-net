@@ -52,43 +52,43 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionsDefinition", targetDepth))
+                if (context.TestExpression("actionsDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MitigationAction, MitigationActionUnmarshaller>(MitigationActionUnmarshaller.Instance);
                     response.ActionsDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("auditCheckToActionsMapping", targetDepth))
+                if (context.TestExpression("auditCheckToActionsMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     response.AuditCheckToActionsMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endTime", targetDepth))
+                if (context.TestExpression("endTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
+                if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("target", targetDepth, ref reader))
                 {
                     var unmarshaller = AuditMitigationActionsTaskTargetUnmarshaller.Instance;
                     response.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStatistics", targetDepth))
+                if (context.TestExpression("taskStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, TaskStatisticsForAuditCheck, StringUnmarshaller, TaskStatisticsForAuditCheckUnmarshaller>(StringUnmarshaller.Instance, TaskStatisticsForAuditCheckUnmarshaller.Instance);
                     response.TaskStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStatus", targetDepth))
+                if (context.TestExpression("taskStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskStatus = unmarshaller.Unmarshall(context, ref reader);

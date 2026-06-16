@@ -408,6 +408,16 @@ namespace Amazon.RDS.Model
         IDescribeReservedDBInstancesOfferingsPaginator DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeServerlessV2PlatformVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "Marker" }
+        )]
+        IDescribeServerlessV2PlatformVersionsPaginator DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSourceRegions operation
         ///</summary>
         [AWSPaginator(

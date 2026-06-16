@@ -56,13 +56,13 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthMaterialName", targetDepth))
+                if (context.TestExpression("AuthMaterialName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthMaterialName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretsManager", targetDepth))
+                if (context.TestExpression("SecretsManager", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerUnmarshaller.Instance;
                     unmarshalledObject.SecretsManager = unmarshaller.Unmarshall(context, ref reader);

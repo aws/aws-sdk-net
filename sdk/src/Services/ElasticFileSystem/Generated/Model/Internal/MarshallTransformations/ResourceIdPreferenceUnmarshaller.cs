@@ -56,13 +56,13 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceIdType", targetDepth))
+                if (context.TestExpression("ResourceIdType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceIdType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Resources", targetDepth))
+                if (context.TestExpression("Resources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);

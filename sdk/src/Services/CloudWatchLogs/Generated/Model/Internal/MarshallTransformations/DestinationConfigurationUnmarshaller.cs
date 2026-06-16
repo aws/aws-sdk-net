@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3Configuration", targetDepth))
+                if (context.TestExpression("s3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);

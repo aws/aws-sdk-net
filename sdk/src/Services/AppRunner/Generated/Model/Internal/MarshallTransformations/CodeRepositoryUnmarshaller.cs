@@ -56,25 +56,25 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeConfiguration", targetDepth))
+                if (context.TestExpression("CodeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CodeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RepositoryUrl", targetDepth))
+                if (context.TestExpression("RepositoryUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceCodeVersion", targetDepth))
+                if (context.TestExpression("SourceCodeVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceCodeVersionUnmarshaller.Instance;
                     unmarshalledObject.SourceCodeVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDirectory", targetDepth))
+                if (context.TestExpression("SourceDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceDirectory = unmarshaller.Unmarshall(context, ref reader);

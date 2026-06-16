@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HostedZone", targetDepth))
+                if (context.TestExpression("HostedZone", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsRoute53HostedZoneObjectDetailsUnmarshaller.Instance;
                     unmarshalledObject.HostedZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NameServers", targetDepth))
+                if (context.TestExpression("NameServers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NameServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryLoggingConfig", targetDepth))
+                if (context.TestExpression("QueryLoggingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsRoute53QueryLoggingConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.QueryLoggingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Vpcs", targetDepth))
+                if (context.TestExpression("Vpcs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsRoute53HostedZoneVpcDetails, AwsRoute53HostedZoneVpcDetailsUnmarshaller>(AwsRoute53HostedZoneVpcDetailsUnmarshaller.Instance);
                     unmarshalledObject.Vpcs = unmarshaller.Unmarshall(context, ref reader);

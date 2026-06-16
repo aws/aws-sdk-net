@@ -56,13 +56,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("speechModelConfig", targetDepth))
+                if (context.TestExpression("speechModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SpeechModelConfigUnmarshaller.Instance;
                     unmarshalledObject.SpeechModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speechModelPreference", targetDepth))
+                if (context.TestExpression("speechModelPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpeechModelPreference = unmarshaller.Unmarshall(context, ref reader);

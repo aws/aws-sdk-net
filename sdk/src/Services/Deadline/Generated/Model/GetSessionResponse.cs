@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the GetSession operation.
+    /// Session lifecycle/status fields, ordered after IDs in session shapes.
     /// </summary>
     public partial class GetSessionResponse : AmazonWebServiceResponse
     {

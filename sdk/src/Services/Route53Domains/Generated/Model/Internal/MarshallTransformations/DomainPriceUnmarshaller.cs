@@ -56,37 +56,37 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChangeOwnershipPrice", targetDepth))
+                if (context.TestExpression("ChangeOwnershipPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
                     unmarshalledObject.ChangeOwnershipPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationPrice", targetDepth))
+                if (context.TestExpression("RegistrationPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
                     unmarshalledObject.RegistrationPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RenewalPrice", targetDepth))
+                if (context.TestExpression("RenewalPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
                     unmarshalledObject.RenewalPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestorationPrice", targetDepth))
+                if (context.TestExpression("RestorationPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
                     unmarshalledObject.RestorationPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransferPrice", targetDepth))
+                if (context.TestExpression("TransferPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
                     unmarshalledObject.TransferPrice = unmarshaller.Unmarshall(context, ref reader);

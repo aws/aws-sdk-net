@@ -52,19 +52,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("auditCheckConfigurations", targetDepth))
+                if (context.TestExpression("auditCheckConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AuditCheckConfiguration, StringUnmarshaller, AuditCheckConfigurationUnmarshaller>(StringUnmarshaller.Instance, AuditCheckConfigurationUnmarshaller.Instance);
                     response.AuditCheckConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("auditNotificationTargetConfigurations", targetDepth))
+                if (context.TestExpression("auditNotificationTargetConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AuditNotificationTarget, StringUnmarshaller, AuditNotificationTargetUnmarshaller>(StringUnmarshaller.Instance, AuditNotificationTargetUnmarshaller.Instance);
                     response.AuditNotificationTargetConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("generatedPolicies", targetDepth))
+                if (context.TestExpression("generatedPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GeneratedPolicy, GeneratedPolicyUnmarshaller>(GeneratedPolicyUnmarshaller.Instance);
                     unmarshalledObject.GeneratedPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("properties", targetDepth))
+                if (context.TestExpression("properties", targetDepth, ref reader))
                 {
                     var unmarshaller = GeneratedPolicyPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);

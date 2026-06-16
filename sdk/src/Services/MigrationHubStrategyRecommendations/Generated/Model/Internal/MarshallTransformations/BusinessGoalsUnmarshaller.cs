@@ -56,25 +56,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("licenseCostReduction", targetDepth))
+                if (context.TestExpression("licenseCostReduction", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LicenseCostReduction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modernizeInfrastructureWithCloudNativeTechnologies", targetDepth))
+                if (context.TestExpression("modernizeInfrastructureWithCloudNativeTechnologies", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ModernizeInfrastructureWithCloudNativeTechnologies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reduceOperationalOverheadWithManagedServices", targetDepth))
+                if (context.TestExpression("reduceOperationalOverheadWithManagedServices", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReduceOperationalOverheadWithManagedServices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speedOfMigration", targetDepth))
+                if (context.TestExpression("speedOfMigration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SpeedOfMigration = unmarshaller.Unmarshall(context, ref reader);

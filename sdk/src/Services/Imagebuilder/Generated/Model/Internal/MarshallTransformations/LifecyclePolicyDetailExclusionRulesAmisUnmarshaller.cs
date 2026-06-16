@@ -56,31 +56,31 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("isPublic", targetDepth))
+                if (context.TestExpression("isPublic", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPublic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastLaunched", targetDepth))
+                if (context.TestExpression("lastLaunched", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecyclePolicyDetailExclusionRulesAmisLastLaunchedUnmarshaller.Instance;
                     unmarshalledObject.LastLaunched = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regions", targetDepth))
+                if (context.TestExpression("regions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Regions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sharedAccounts", targetDepth))
+                if (context.TestExpression("sharedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SharedAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagMap", targetDepth))
+                if (context.TestExpression("tagMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.TagMap = unmarshaller.Unmarshall(context, ref reader);

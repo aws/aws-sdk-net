@@ -56,7 +56,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstanceCountLimits", targetDepth))
+                if (context.TestExpression("InstanceCountLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceCountLimitsUnmarshaller.Instance;
                     unmarshalledObject.InstanceCountLimits = unmarshaller.Unmarshall(context, ref reader);

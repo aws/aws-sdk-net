@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CaseSensitive", targetDepth))
+                if (context.TestExpression("CaseSensitive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CaseSensitive = unmarshaller.Unmarshall(context, ref reader);

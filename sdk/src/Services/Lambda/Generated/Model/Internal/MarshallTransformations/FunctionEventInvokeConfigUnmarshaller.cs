@@ -56,31 +56,31 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationConfig", targetDepth))
+                if (context.TestExpression("DestinationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationConfigUnmarshaller.Instance;
                     unmarshalledObject.DestinationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionArn", targetDepth))
+                if (context.TestExpression("FunctionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModified", targetDepth))
+                if (context.TestExpression("LastModified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumEventAgeInSeconds", targetDepth))
+                if (context.TestExpression("MaximumEventAgeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumEventAgeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumRetryAttempts", targetDepth))
+                if (context.TestExpression("MaximumRetryAttempts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumRetryAttempts = unmarshaller.Unmarshall(context, ref reader);

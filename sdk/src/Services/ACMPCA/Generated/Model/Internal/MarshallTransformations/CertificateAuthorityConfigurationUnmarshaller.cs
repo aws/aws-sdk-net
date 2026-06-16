@@ -56,25 +56,25 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CsrExtensions", targetDepth))
+                if (context.TestExpression("CsrExtensions", targetDepth, ref reader))
                 {
                     var unmarshaller = CsrExtensionsUnmarshaller.Instance;
                     unmarshalledObject.CsrExtensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyAlgorithm", targetDepth))
+                if (context.TestExpression("KeyAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SigningAlgorithm", targetDepth))
+                if (context.TestExpression("SigningAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SigningAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subject", targetDepth))
+                if (context.TestExpression("Subject", targetDepth, ref reader))
                 {
                     var unmarshaller = ASN1SubjectUnmarshaller.Instance;
                     unmarshalledObject.Subject = unmarshaller.Unmarshall(context, ref reader);

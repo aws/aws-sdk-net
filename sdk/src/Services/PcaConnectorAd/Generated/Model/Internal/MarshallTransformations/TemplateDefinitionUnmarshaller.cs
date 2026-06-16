@@ -56,19 +56,19 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TemplateV2", targetDepth))
+                if (context.TestExpression("TemplateV2", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateV2Unmarshaller.Instance;
                     unmarshalledObject.TemplateV2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateV3", targetDepth))
+                if (context.TestExpression("TemplateV3", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateV3Unmarshaller.Instance;
                     unmarshalledObject.TemplateV3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateV4", targetDepth))
+                if (context.TestExpression("TemplateV4", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateV4Unmarshaller.Instance;
                     unmarshalledObject.TemplateV4 = unmarshaller.Unmarshall(context, ref reader);

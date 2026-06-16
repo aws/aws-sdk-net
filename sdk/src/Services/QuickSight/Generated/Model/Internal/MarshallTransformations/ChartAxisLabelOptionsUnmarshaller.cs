@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AxisLabelOptions", targetDepth))
+                if (context.TestExpression("AxisLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AxisLabelOptions, AxisLabelOptionsUnmarshaller>(AxisLabelOptionsUnmarshaller.Instance);
                     unmarshalledObject.AxisLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SortIconVisibility", targetDepth))
+                if (context.TestExpression("SortIconVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SortIconVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visibility", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Visibility = unmarshaller.Unmarshall(context, ref reader);

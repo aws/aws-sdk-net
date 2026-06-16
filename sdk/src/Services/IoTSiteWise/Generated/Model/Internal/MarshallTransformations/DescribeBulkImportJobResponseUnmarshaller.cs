@@ -52,67 +52,67 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adaptiveIngestion", targetDepth))
+                if (context.TestExpression("adaptiveIngestion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AdaptiveIngestion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deleteFilesAfterImport", targetDepth))
+                if (context.TestExpression("deleteFilesAfterImport", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DeleteFilesAfterImport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorReportLocation", targetDepth))
+                if (context.TestExpression("errorReportLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorReportLocationUnmarshaller.Instance;
                     response.ErrorReportLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("files", targetDepth))
+                if (context.TestExpression("files", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<File, FileUnmarshaller>(FileUnmarshaller.Instance);
                     response.Files = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobConfiguration", targetDepth))
+                if (context.TestExpression("jobConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = JobConfigurationUnmarshaller.Instance;
                     response.JobConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobCreationDate", targetDepth))
+                if (context.TestExpression("jobCreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.JobCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobId", targetDepth))
+                if (context.TestExpression("jobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobLastUpdateDate", targetDepth))
+                if (context.TestExpression("jobLastUpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.JobLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobName", targetDepth))
+                if (context.TestExpression("jobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobRoleArn", targetDepth))
+                if (context.TestExpression("jobRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobStatus", targetDepth))
+                if (context.TestExpression("jobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);

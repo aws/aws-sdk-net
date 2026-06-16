@@ -52,25 +52,25 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImageProperties", targetDepth))
+                if (context.TestExpression("ImageProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectLabelsImagePropertiesUnmarshaller.Instance;
                     response.ImageProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelModelVersion", targetDepth))
+                if (context.TestExpression("LabelModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LabelModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Labels", targetDepth))
+                if (context.TestExpression("Labels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Label, LabelUnmarshaller>(LabelUnmarshaller.Instance);
                     response.Labels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrientationCorrection", targetDepth))
+                if (context.TestExpression("OrientationCorrection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrientationCorrection = unmarshaller.Unmarshall(context, ref reader);

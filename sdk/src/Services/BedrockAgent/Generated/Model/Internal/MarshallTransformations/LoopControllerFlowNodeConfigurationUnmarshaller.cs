@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("continueCondition", targetDepth))
+                if (context.TestExpression("continueCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowConditionUnmarshaller.Instance;
                     unmarshalledObject.ContinueCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxIterations", targetDepth))
+                if (context.TestExpression("maxIterations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxIterations = unmarshaller.Unmarshall(context, ref reader);

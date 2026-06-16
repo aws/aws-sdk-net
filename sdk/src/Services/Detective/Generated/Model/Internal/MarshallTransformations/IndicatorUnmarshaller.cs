@@ -56,13 +56,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndicatorDetail", targetDepth))
+                if (context.TestExpression("IndicatorDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = IndicatorDetailUnmarshaller.Instance;
                     unmarshalledObject.IndicatorDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndicatorType", targetDepth))
+                if (context.TestExpression("IndicatorType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndicatorType = unmarshaller.Unmarshall(context, ref reader);

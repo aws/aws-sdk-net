@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("globalColorCorrections", targetDepth))
+                if (context.TestExpression("globalColorCorrections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColorCorrection, ColorCorrectionUnmarshaller>(ColorCorrectionUnmarshaller.Instance);
                     unmarshalledObject.GlobalColorCorrections = unmarshaller.Unmarshall(context, ref reader);

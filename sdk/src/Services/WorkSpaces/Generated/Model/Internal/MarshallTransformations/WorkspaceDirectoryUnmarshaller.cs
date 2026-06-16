@@ -56,175 +56,175 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveDirectoryConfig", targetDepth))
+                if (context.TestExpression("ActiveDirectoryConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ActiveDirectoryConfigUnmarshaller.Instance;
                     unmarshalledObject.ActiveDirectoryConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Alias", targetDepth))
+                if (context.TestExpression("Alias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CertificateBasedAuthProperties", targetDepth))
+                if (context.TestExpression("CertificateBasedAuthProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = CertificateBasedAuthPropertiesUnmarshaller.Instance;
                     unmarshalledObject.CertificateBasedAuthProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerUserName", targetDepth))
+                if (context.TestExpression("CustomerUserName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerUserName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DirectoryId", targetDepth))
+                if (context.TestExpression("DirectoryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DirectoryName", targetDepth))
+                if (context.TestExpression("DirectoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DirectoryType", targetDepth))
+                if (context.TestExpression("DirectoryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectoryType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnsIpAddresses", targetDepth))
+                if (context.TestExpression("DnsIpAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DnsIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnsIpv6Addresses", targetDepth))
+                if (context.TestExpression("DnsIpv6Addresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DnsIpv6Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointEncryptionMode", targetDepth))
+                if (context.TestExpression("EndpointEncryptionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointEncryptionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorMessage", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IamRoleId", targetDepth))
+                if (context.TestExpression("IamRoleId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IamRoleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IDCConfig", targetDepth))
+                if (context.TestExpression("IDCConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IDCConfigUnmarshaller.Instance;
                     unmarshalledObject.IDCConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipGroupIds", targetDepth))
+                if (context.TestExpression("ipGroupIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IpGroupIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MicrosoftEntraConfig", targetDepth))
+                if (context.TestExpression("MicrosoftEntraConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MicrosoftEntraConfigUnmarshaller.Instance;
                     unmarshalledObject.MicrosoftEntraConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationCode", targetDepth))
+                if (context.TestExpression("RegistrationCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistrationCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SamlProperties", targetDepth))
+                if (context.TestExpression("SamlProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SamlPropertiesUnmarshaller.Instance;
                     unmarshalledObject.SamlProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfservicePermissions", targetDepth))
+                if (context.TestExpression("SelfservicePermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = SelfservicePermissionsUnmarshaller.Instance;
                     unmarshalledObject.SelfservicePermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamingProperties", targetDepth))
+                if (context.TestExpression("StreamingProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamingPropertiesUnmarshaller.Instance;
                     unmarshalledObject.StreamingProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetIds", targetDepth))
+                if (context.TestExpression("SubnetIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tenancy", targetDepth))
+                if (context.TestExpression("Tenancy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserIdentityType", targetDepth))
+                if (context.TestExpression("UserIdentityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserIdentityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceAccessProperties", targetDepth))
+                if (context.TestExpression("WorkspaceAccessProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceAccessPropertiesUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceAccessProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceCreationProperties", targetDepth))
+                if (context.TestExpression("WorkspaceCreationProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultWorkspaceCreationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceCreationProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceDirectoryDescription", targetDepth))
+                if (context.TestExpression("WorkspaceDirectoryDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceDirectoryDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceDirectoryName", targetDepth))
+                if (context.TestExpression("WorkspaceDirectoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceDirectoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceSecurityGroupId", targetDepth))
+                if (context.TestExpression("WorkspaceSecurityGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceSecurityGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceType", targetDepth))
+                if (context.TestExpression("WorkspaceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceType = unmarshaller.Unmarshall(context, ref reader);

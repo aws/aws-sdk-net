@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SectionBased", targetDepth))
+                if (context.TestExpression("SectionBased", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultSectionBasedLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SectionBased = unmarshaller.Unmarshall(context, ref reader);

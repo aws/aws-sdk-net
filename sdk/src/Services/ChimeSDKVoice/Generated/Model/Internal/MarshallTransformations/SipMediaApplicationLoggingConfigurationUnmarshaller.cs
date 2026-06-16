@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableSipMediaApplicationMessageLogs", targetDepth))
+                if (context.TestExpression("EnableSipMediaApplicationMessageLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableSipMediaApplicationMessageLogs = unmarshaller.Unmarshall(context, ref reader);

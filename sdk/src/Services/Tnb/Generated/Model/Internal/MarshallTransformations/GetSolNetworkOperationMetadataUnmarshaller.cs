@@ -56,31 +56,31 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instantiateMetadata", targetDepth))
+                if (context.TestExpression("instantiateMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = InstantiateMetadataUnmarshaller.Instance;
                     unmarshalledObject.InstantiateMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModified", targetDepth))
+                if (context.TestExpression("lastModified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modifyVnfInfoMetadata", targetDepth))
+                if (context.TestExpression("modifyVnfInfoMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ModifyVnfInfoMetadataUnmarshaller.Instance;
                     unmarshalledObject.ModifyVnfInfoMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateNsMetadata", targetDepth))
+                if (context.TestExpression("updateNsMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = UpdateNsMetadataUnmarshaller.Instance;
                     unmarshalledObject.UpdateNsMetadata = unmarshaller.Unmarshall(context, ref reader);

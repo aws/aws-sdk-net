@@ -52,13 +52,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("intents", targetDepth))
+                if (context.TestExpression("intents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntentMetadata, IntentMetadataUnmarshaller>(IntentMetadataUnmarshaller.Instance);
                     response.Intents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

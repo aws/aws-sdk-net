@@ -52,19 +52,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("builtInIntentSummaries", targetDepth))
+                if (context.TestExpression("builtInIntentSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BuiltInIntentSummary, BuiltInIntentSummaryUnmarshaller>(BuiltInIntentSummaryUnmarshaller.Instance);
                     response.BuiltInIntentSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localeId", targetDepth))
+                if (context.TestExpression("localeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocaleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

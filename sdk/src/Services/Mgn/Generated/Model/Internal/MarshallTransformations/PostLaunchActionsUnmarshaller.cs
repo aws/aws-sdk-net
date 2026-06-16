@@ -56,31 +56,31 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLogGroupName", targetDepth))
+                if (context.TestExpression("cloudWatchLogGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deployment", targetDepth))
+                if (context.TestExpression("deployment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Deployment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3LogBucket", targetDepth))
+                if (context.TestExpression("s3LogBucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3LogBucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3OutputKeyPrefix", targetDepth))
+                if (context.TestExpression("s3OutputKeyPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3OutputKeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmDocuments", targetDepth))
+                if (context.TestExpression("ssmDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SsmDocument, SsmDocumentUnmarshaller>(SsmDocumentUnmarshaller.Instance);
                     unmarshalledObject.SsmDocuments = unmarshaller.Unmarshall(context, ref reader);

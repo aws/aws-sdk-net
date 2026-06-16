@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("glueSelfGrantStatus", targetDepth))
+                if (context.TestExpression("glueSelfGrantStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = GlueSelfGrantStatusOutputUnmarshaller.Instance;
                     unmarshalledObject.GlueSelfGrantStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftSelfGrantStatus", targetDepth))
+                if (context.TestExpression("redshiftSelfGrantStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftSelfGrantStatusOutputUnmarshaller.Instance;
                     unmarshalledObject.RedshiftSelfGrantStatus = unmarshaller.Unmarshall(context, ref reader);

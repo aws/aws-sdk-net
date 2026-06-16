@@ -52,25 +52,25 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errorEntries", targetDepth))
+                if (context.TestExpression("errorEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetAssetPropertyAggregatesErrorEntry, BatchGetAssetPropertyAggregatesErrorEntryUnmarshaller>(BatchGetAssetPropertyAggregatesErrorEntryUnmarshaller.Instance);
                     response.ErrorEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("skippedEntries", targetDepth))
+                if (context.TestExpression("skippedEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetAssetPropertyAggregatesSkippedEntry, BatchGetAssetPropertyAggregatesSkippedEntryUnmarshaller>(BatchGetAssetPropertyAggregatesSkippedEntryUnmarshaller.Instance);
                     response.SkippedEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successEntries", targetDepth))
+                if (context.TestExpression("successEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetAssetPropertyAggregatesSuccessEntry, BatchGetAssetPropertyAggregatesSuccessEntryUnmarshaller>(BatchGetAssetPropertyAggregatesSuccessEntryUnmarshaller.Instance);
                     response.SuccessEntries = unmarshaller.Unmarshall(context, ref reader);

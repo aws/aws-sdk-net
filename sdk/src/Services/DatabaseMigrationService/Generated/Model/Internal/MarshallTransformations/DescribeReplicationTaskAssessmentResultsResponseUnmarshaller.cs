@@ -52,19 +52,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BucketName", targetDepth))
+                if (context.TestExpression("BucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Marker", targetDepth))
+                if (context.TestExpression("Marker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Marker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationTaskAssessmentResults", targetDepth))
+                if (context.TestExpression("ReplicationTaskAssessmentResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationTaskAssessmentResult, ReplicationTaskAssessmentResultUnmarshaller>(ReplicationTaskAssessmentResultUnmarshaller.Instance);
                     response.ReplicationTaskAssessmentResults = unmarshaller.Unmarshall(context, ref reader);

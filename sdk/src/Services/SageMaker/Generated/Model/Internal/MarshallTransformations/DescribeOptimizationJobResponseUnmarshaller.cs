@@ -52,109 +52,109 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentInstanceType", targetDepth))
+                if (context.TestExpression("DeploymentInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeploymentInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxInstanceCount", targetDepth))
+                if (context.TestExpression("MaxInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelSource", targetDepth))
+                if (context.TestExpression("ModelSource", targetDepth, ref reader))
                 {
                     var unmarshaller = OptimizationJobModelSourceUnmarshaller.Instance;
                     response.ModelSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationConfigs", targetDepth))
+                if (context.TestExpression("OptimizationConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OptimizationConfig, OptimizationConfigUnmarshaller>(OptimizationConfigUnmarshaller.Instance);
                     response.OptimizationConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationEndTime", targetDepth))
+                if (context.TestExpression("OptimizationEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.OptimizationEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationEnvironment", targetDepth))
+                if (context.TestExpression("OptimizationEnvironment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.OptimizationEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationJobArn", targetDepth))
+                if (context.TestExpression("OptimizationJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OptimizationJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationJobName", targetDepth))
+                if (context.TestExpression("OptimizationJobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OptimizationJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationJobStatus", targetDepth))
+                if (context.TestExpression("OptimizationJobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OptimizationJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationOutput", targetDepth))
+                if (context.TestExpression("OptimizationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = OptimizationOutputUnmarshaller.Instance;
                     response.OptimizationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationStartTime", targetDepth))
+                if (context.TestExpression("OptimizationStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.OptimizationStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputConfig", targetDepth))
+                if (context.TestExpression("OutputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OptimizationJobOutputConfigUnmarshaller.Instance;
                     response.OutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StoppingCondition", targetDepth))
+                if (context.TestExpression("StoppingCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = StoppingConditionUnmarshaller.Instance;
                     response.StoppingCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OptimizationVpcConfigUnmarshaller.Instance;
                     response.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ContactSearchSummary
     {
         private ContactSearchSummaryAgentInfo _agentInfo;
+        private List<ContactSearchSummaryAiAgentInfo> _aiAgentInfo = AWSConfigs.InitializeCollections ? new List<ContactSearchSummaryAiAgentInfo>() : null;
         private string _arn;
         private Channel _channel;
         private DateTime? _disconnectTimestamp;
@@ -67,6 +68,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetAgentInfo()
         {
             return this._agentInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AiAgentInfo. 
+        /// <para>
+        /// Information about the AI agents involved in the contact.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ContactSearchSummaryAiAgentInfo> AiAgentInfo
+        {
+            get { return this._aiAgentInfo; }
+            set { this._aiAgentInfo = value; }
+        }
+
+        // Check to see if AiAgentInfo property is set
+        internal bool IsSetAiAgentInfo()
+        {
+            return this._aiAgentInfo != null && (this._aiAgentInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +132,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DisconnectTimestamp. 
         /// <para>
-        /// The timestamp when the customer endpoint disconnected from Amazon Connect.
+        /// The timestamp when the customer endpoint disconnected from Connect Customer.
         /// </para>
         /// </summary>
         public DateTime? DisconnectTimestamp

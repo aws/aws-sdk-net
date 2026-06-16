@@ -1114,6 +1114,24 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Wickr.Model.ConsentPopupConfig.CloseButtonLabel</property>
+    <min>0</min>
+    <max>20</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.ConsentPopupConfig.Content</property>
+    <min>0</min>
+    <max>5000</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.ConsentPopupConfig.Header</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Wickr.Model.ErrorDetail.Field</property>
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
@@ -1265,6 +1283,11 @@
   <property-value-rule>
     <property>Amazon.Wickr.Model.SecurityGroup.Name</property>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.SecurityGroupSettings.MaxNonSsoSessionMinutes</property>
+    <min>0</min>
+    <max>525600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Wickr.Model.Setting.OptionName</property>

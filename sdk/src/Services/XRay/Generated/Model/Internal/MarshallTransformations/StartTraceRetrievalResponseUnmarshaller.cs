@@ -52,7 +52,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RetrievalToken", targetDepth))
+                if (context.TestExpression("RetrievalToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RetrievalToken = unmarshaller.Unmarshall(context, ref reader);

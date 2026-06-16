@@ -52,37 +52,37 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeviceTypeAndroid", targetDepth))
+                if (context.TestExpression("DeviceTypeAndroid", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultClientBrandingAttributesUnmarshaller.Instance;
                     response.DeviceTypeAndroid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeIos", targetDepth))
+                if (context.TestExpression("DeviceTypeIos", targetDepth, ref reader))
                 {
                     var unmarshaller = IosClientBrandingAttributesUnmarshaller.Instance;
                     response.DeviceTypeIos = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeLinux", targetDepth))
+                if (context.TestExpression("DeviceTypeLinux", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultClientBrandingAttributesUnmarshaller.Instance;
                     response.DeviceTypeLinux = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeOsx", targetDepth))
+                if (context.TestExpression("DeviceTypeOsx", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultClientBrandingAttributesUnmarshaller.Instance;
                     response.DeviceTypeOsx = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeWeb", targetDepth))
+                if (context.TestExpression("DeviceTypeWeb", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultClientBrandingAttributesUnmarshaller.Instance;
                     response.DeviceTypeWeb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeWindows", targetDepth))
+                if (context.TestExpression("DeviceTypeWindows", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultClientBrandingAttributesUnmarshaller.Instance;
                     response.DeviceTypeWindows = unmarshaller.Unmarshall(context, ref reader);

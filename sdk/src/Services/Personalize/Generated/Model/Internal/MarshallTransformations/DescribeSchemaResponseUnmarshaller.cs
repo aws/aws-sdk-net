@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("schema", targetDepth))
+                if (context.TestExpression("schema", targetDepth, ref reader))
                 {
                     var unmarshaller = DatasetSchemaUnmarshaller.Instance;
                     response.Schema = unmarshaller.Unmarshall(context, ref reader);

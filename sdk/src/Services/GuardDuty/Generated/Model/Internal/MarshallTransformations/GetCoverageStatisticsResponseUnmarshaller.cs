@@ -52,7 +52,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("coverageStatistics", targetDepth))
+                if (context.TestExpression("coverageStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageStatisticsUnmarshaller.Instance;
                     response.CoverageStatistics = unmarshaller.Unmarshall(context, ref reader);

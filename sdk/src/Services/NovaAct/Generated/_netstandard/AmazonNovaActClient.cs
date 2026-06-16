@@ -39,6 +39,11 @@ namespace Amazon.NovaAct
 {
     /// <summary>
     /// <para>Implementation for accessing NovaAct</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Nova Act service provides a REST API for managing AI-powered workflow automation.
     /// It enables users to create workflow definitions, execute workflow runs, manage sessions,

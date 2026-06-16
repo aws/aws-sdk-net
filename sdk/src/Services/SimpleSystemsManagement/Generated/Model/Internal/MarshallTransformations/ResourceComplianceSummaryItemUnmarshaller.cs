@@ -56,49 +56,49 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComplianceType", targetDepth))
+                if (context.TestExpression("ComplianceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompliantSummary", targetDepth))
+                if (context.TestExpression("CompliantSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CompliantSummaryUnmarshaller.Instance;
                     unmarshalledObject.CompliantSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionSummary", targetDepth))
+                if (context.TestExpression("ExecutionSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ComplianceExecutionSummaryUnmarshaller.Instance;
                     unmarshalledObject.ExecutionSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NonCompliantSummary", targetDepth))
+                if (context.TestExpression("NonCompliantSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = NonCompliantSummaryUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverallSeverity", targetDepth))
+                if (context.TestExpression("OverallSeverity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverallSeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceId", targetDepth))
+                if (context.TestExpression("ResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceType", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

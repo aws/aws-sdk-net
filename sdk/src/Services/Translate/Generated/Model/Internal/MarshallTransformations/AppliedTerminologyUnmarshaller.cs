@@ -56,13 +56,13 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Terms", targetDepth))
+                if (context.TestExpression("Terms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Term, TermUnmarshaller>(TermUnmarshaller.Instance);
                     unmarshalledObject.Terms = unmarshaller.Unmarshall(context, ref reader);

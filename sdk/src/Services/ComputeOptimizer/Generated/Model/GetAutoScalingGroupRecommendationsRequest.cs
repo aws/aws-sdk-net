@@ -31,7 +31,7 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAutoScalingGroupRecommendations operation.
-    /// Returns Amazon EC2 Auto Scaling group recommendations.
+    /// Returns Auto Scaling group recommendations.
     /// 
     ///  
     /// <para>
@@ -52,14 +52,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The ID of the Amazon Web Services account for which to return Amazon EC2 Auto Scaling
-        /// group recommendations.
+        /// The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.
         /// </para>
         ///  
         /// <para>
         /// If your account is the management account of an organization, use this parameter to
-        /// specify the member account for which you want to return Amazon EC2 Auto Scaling group
-        /// recommendations.
+        /// specify the member account for which you want to return Auto Scaling group recommendations.
         /// </para>
         ///  
         /// <para>
@@ -86,8 +84,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupArns. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling groups for which to
-        /// return recommendations.
+        /// The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -110,8 +107,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of objects to specify a filter that returns a more specific list of Amazon
-        /// EC2 Auto Scaling group recommendations.
+        /// An array of objects to specify a filter that returns a more specific list of Auto
+        /// Scaling group recommendations.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -134,8 +131,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of Amazon EC2 Auto Scaling group recommendations to return with
-        /// a single request.
+        /// The maximum number of Auto Scaling group recommendations to return with a single request.
         /// </para>
         ///  
         /// <para>
@@ -159,7 +155,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to advance to the next page of Amazon EC2 Auto Scaling group recommendations.
+        /// The token to advance to the next page of Auto Scaling group recommendations.
         /// </para>
         /// </summary>
         public string NextToken
@@ -177,8 +173,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RecommendationPreferences. 
         /// <para>
-        /// An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations
-        /// to return in the response.
+        /// An object to specify the preferences for the Auto Scaling group recommendations to
+        /// return in the response.
         /// </para>
         /// </summary>
         public RecommendationPreferences RecommendationPreferences

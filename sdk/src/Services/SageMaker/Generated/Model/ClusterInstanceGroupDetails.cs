@@ -41,12 +41,16 @@ namespace Amazon.SageMaker.Model
         private string _currentImageId;
         private string _desiredImageId;
         private string _executionRole;
+        private ClusterImageVersionStatus _imageVersionStatus;
         private string _instanceGroupName;
+        private ClusterInstanceRequirementDetails _instanceRequirements;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
+        private List<ClusterInstanceTypeDetail> _instanceTypeDetails = AWSConfigs.InitializeCollections ? new List<ClusterInstanceTypeDetail>() : null;
         private ClusterKubernetesConfigDetails _kubernetesConfig;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private int? _minCount;
+        private ClusterNetworkInterfaceDetails _networkInterface;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
@@ -195,6 +199,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageVersionStatus. 
+        /// <para>
+        /// The status of the image version for the instance group. Indicates whether the instance
+        /// group is running the latest image version or if an update is available.
+        /// </para>
+        /// </summary>
+        public ClusterImageVersionStatus ImageVersionStatus
+        {
+            get { return this._imageVersionStatus; }
+            set { this._imageVersionStatus = value; }
+        }
+
+        // Check to see if ImageVersionStatus property is set
+        internal bool IsSetImageVersionStatus()
+        {
+            return this._imageVersionStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceGroupName. 
         /// <para>
         /// The name of the instance group of a SageMaker HyperPod cluster.
@@ -211,6 +234,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroupName()
         {
             return this._instanceGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceRequirements. 
+        /// <para>
+        /// The instance requirements for the instance group, including the current and desired
+        /// instance types. This field is present for flexible instance groups that support multiple
+        /// instance types.
+        /// </para>
+        /// </summary>
+        public ClusterInstanceRequirementDetails InstanceRequirements
+        {
+            get { return this._instanceRequirements; }
+            set { this._instanceRequirements = value; }
+        }
+
+        // Check to see if InstanceRequirements property is set
+        internal bool IsSetInstanceRequirements()
+        {
+            return this._instanceRequirements != null;
         }
 
         /// <summary>
@@ -254,6 +297,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypeDetails. 
+        /// <para>
+        /// Details about the instance types in the instance group, including the count and configuration
+        /// of each instance type. This field is present for flexible instance groups that support
+        /// multiple instance types.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<ClusterInstanceTypeDetail> InstanceTypeDetails
+        {
+            get { return this._instanceTypeDetails; }
+            set { this._instanceTypeDetails = value; }
+        }
+
+        // Check to see if InstanceTypeDetails property is set
+        internal bool IsSetInstanceTypeDetails()
+        {
+            return this._instanceTypeDetails != null && (this._instanceTypeDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -311,6 +380,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMinCount()
         {
             return this._minCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// The network interface configuration for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterNetworkInterfaceDetails NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
         }
 
         /// <summary>

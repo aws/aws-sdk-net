@@ -56,13 +56,13 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionType", targetDepth))
+                if (context.TestExpression("ConnectionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StaticIpConnectionInfo", targetDepth))
+                if (context.TestExpression("StaticIpConnectionInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticIpConnectionInfoUnmarshaller.Instance;
                     unmarshalledObject.StaticIpConnectionInfo = unmarshaller.Unmarshall(context, ref reader);

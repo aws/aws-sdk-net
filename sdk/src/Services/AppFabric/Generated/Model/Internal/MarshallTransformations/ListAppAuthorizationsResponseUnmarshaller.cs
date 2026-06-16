@@ -52,13 +52,13 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appAuthorizationSummaryList", targetDepth))
+                if (context.TestExpression("appAuthorizationSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AppAuthorizationSummary, AppAuthorizationSummaryUnmarshaller>(AppAuthorizationSummaryUnmarshaller.Instance);
                     response.AppAuthorizationSummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

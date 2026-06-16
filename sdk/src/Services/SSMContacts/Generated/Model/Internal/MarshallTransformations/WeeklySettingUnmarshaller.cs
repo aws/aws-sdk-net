@@ -56,13 +56,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DayOfWeek", targetDepth))
+                if (context.TestExpression("DayOfWeek", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DayOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HandOffTime", targetDepth))
+                if (context.TestExpression("HandOffTime", targetDepth, ref reader))
                 {
                     var unmarshaller = HandOffTimeUnmarshaller.Instance;
                     unmarshalledObject.HandOffTime = unmarshaller.Unmarshall(context, ref reader);

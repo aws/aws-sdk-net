@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3BucketTranscriptSource", targetDepth))
+                if (context.TestExpression("s3BucketTranscriptSource", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BucketTranscriptSourceUnmarshaller.Instance;
                     unmarshalledObject.S3BucketTranscriptSource = unmarshaller.Unmarshall(context, ref reader);

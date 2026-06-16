@@ -56,13 +56,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableMachineLearning", targetDepth))
+                if (context.TestExpression("EnableMachineLearning", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMachineLearning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InspectionLevel", targetDepth))
+                if (context.TestExpression("InspectionLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InspectionLevel = unmarshaller.Unmarshall(context, ref reader);

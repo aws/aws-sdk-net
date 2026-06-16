@@ -56,13 +56,13 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("expiringImageTotalCount", targetDepth))
+                if (context.TestExpression("expiringImageTotalCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpiringImageTotalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transitioningImageTotalCounts", targetDepth))
+                if (context.TestExpression("transitioningImageTotalCounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TransitioningImageTotalCount, TransitioningImageTotalCountUnmarshaller>(TransitioningImageTotalCountUnmarshaller.Instance);
                     unmarshalledObject.TransitioningImageTotalCounts = unmarshaller.Unmarshall(context, ref reader);

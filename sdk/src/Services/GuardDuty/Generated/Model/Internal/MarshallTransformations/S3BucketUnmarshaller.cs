@@ -56,61 +56,61 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountPublicAccess", targetDepth))
+                if (context.TestExpression("accountPublicAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = PublicAccessConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AccountPublicAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketPublicAccess", targetDepth))
+                if (context.TestExpression("bucketPublicAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = PublicAccessConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BucketPublicAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("effectivePermission", targetDepth))
+                if (context.TestExpression("effectivePermission", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EffectivePermission = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionKeyArn", targetDepth))
+                if (context.TestExpression("encryptionKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionType", targetDepth))
+                if (context.TestExpression("encryptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ownerId", targetDepth))
+                if (context.TestExpression("ownerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicReadAccess", targetDepth))
+                if (context.TestExpression("publicReadAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicReadAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicWriteAccess", targetDepth))
+                if (context.TestExpression("publicWriteAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicWriteAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3ObjectUids", targetDepth))
+                if (context.TestExpression("s3ObjectUids", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.S3ObjectUids = unmarshaller.Unmarshall(context, ref reader);

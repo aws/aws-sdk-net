@@ -56,19 +56,19 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BorrowConfiguration", targetDepth))
+                if (context.TestExpression("BorrowConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BorrowConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BorrowConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionalConfiguration", targetDepth))
+                if (context.TestExpression("ProvisionalConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionalConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProvisionalConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RenewType", targetDepth))
+                if (context.TestExpression("RenewType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RenewType = unmarshaller.Unmarshall(context, ref reader);

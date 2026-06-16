@@ -52,7 +52,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LensJSON", targetDepth))
+                if (context.TestExpression("LensJSON", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LensJSON = unmarshaller.Unmarshall(context, ref reader);

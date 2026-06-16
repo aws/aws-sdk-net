@@ -52,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RecordDetail", targetDepth))
+                if (context.TestExpression("RecordDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = RecordDetailUnmarshaller.Instance;
                     response.RecordDetail = unmarshaller.Unmarshall(context, ref reader);

@@ -112,6 +112,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetOverwriteChildResourcePermissionsWithDefault())
+            {
+                context.Writer.WritePropertyName("OverwriteChildResourcePermissionsWithDefault");
+                context.Writer.WriteStringValue(requestObject.OverwriteChildResourcePermissionsWithDefault);
+            }
+
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");

@@ -52,19 +52,19 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CognitoStreams", targetDepth))
+                if (context.TestExpression("CognitoStreams", targetDepth, ref reader))
                 {
                     var unmarshaller = CognitoStreamsUnmarshaller.Instance;
                     response.CognitoStreams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityPoolId", targetDepth))
+                if (context.TestExpression("IdentityPoolId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IdentityPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PushSync", targetDepth))
+                if (context.TestExpression("PushSync", targetDepth, ref reader))
                 {
                     var unmarshaller = PushSyncUnmarshaller.Instance;
                     response.PushSync = unmarshaller.Unmarshall(context, ref reader);

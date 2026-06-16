@@ -56,13 +56,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("explicitDeny", targetDepth))
+                if (context.TestExpression("explicitDeny", targetDepth, ref reader))
                 {
                     var unmarshaller = ExplicitDenyUnmarshaller.Instance;
                     unmarshalledObject.ExplicitDeny = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("implicitDeny", targetDepth))
+                if (context.TestExpression("implicitDeny", targetDepth, ref reader))
                 {
                     var unmarshaller = ImplicitDenyUnmarshaller.Instance;
                     unmarshalledObject.ImplicitDeny = unmarshaller.Unmarshall(context, ref reader);

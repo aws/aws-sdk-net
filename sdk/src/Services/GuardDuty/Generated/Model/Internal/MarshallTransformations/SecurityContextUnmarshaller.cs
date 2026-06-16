@@ -56,13 +56,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowPrivilegeEscalation", targetDepth))
+                if (context.TestExpression("allowPrivilegeEscalation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowPrivilegeEscalation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privileged", targetDepth))
+                if (context.TestExpression("privileged", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Privileged = unmarshaller.Unmarshall(context, ref reader);

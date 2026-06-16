@@ -304,7 +304,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SavingsPlans")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
@@ -312,7 +311,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -320,11 +322,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SavingsPlans")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
-            var endpoint = new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSavingsPlansEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
         [TestMethod]

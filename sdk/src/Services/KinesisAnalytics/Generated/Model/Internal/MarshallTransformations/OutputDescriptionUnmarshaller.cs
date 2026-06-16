@@ -56,37 +56,37 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationSchema", targetDepth))
+                if (context.TestExpression("DestinationSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationSchemaUnmarshaller.Instance;
                     unmarshalledObject.DestinationSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisFirehoseOutputDescription", targetDepth))
+                if (context.TestExpression("KinesisFirehoseOutputDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisFirehoseOutputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.KinesisFirehoseOutputDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisStreamsOutputDescription", targetDepth))
+                if (context.TestExpression("KinesisStreamsOutputDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisStreamsOutputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.KinesisStreamsOutputDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LambdaOutputDescription", targetDepth))
+                if (context.TestExpression("LambdaOutputDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaOutputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.LambdaOutputDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputId", targetDepth))
+                if (context.TestExpression("OutputId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputId = unmarshaller.Unmarshall(context, ref reader);

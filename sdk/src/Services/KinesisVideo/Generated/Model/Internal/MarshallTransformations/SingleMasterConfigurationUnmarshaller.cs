@@ -56,7 +56,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MessageTtlSeconds", targetDepth))
+                if (context.TestExpression("MessageTtlSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessageTtlSeconds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReplicationSubnetGroupIdentifier", targetDepth))
+                if (context.TestExpression("ReplicationSubnetGroupIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicationSubnetGroupIdentifier = unmarshaller.Unmarshall(context, ref reader);

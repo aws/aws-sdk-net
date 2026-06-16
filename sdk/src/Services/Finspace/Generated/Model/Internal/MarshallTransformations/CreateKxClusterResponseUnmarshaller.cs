@@ -52,145 +52,145 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingConfiguration", targetDepth))
+                if (context.TestExpression("autoScalingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingConfigurationUnmarshaller.Instance;
                     response.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availabilityZoneId", targetDepth))
+                if (context.TestExpression("availabilityZoneId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("azMode", targetDepth))
+                if (context.TestExpression("azMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AzMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cacheStorageConfigurations", targetDepth))
+                if (context.TestExpression("cacheStorageConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KxCacheStorageConfiguration, KxCacheStorageConfigurationUnmarshaller>(KxCacheStorageConfigurationUnmarshaller.Instance);
                     response.CacheStorageConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("capacityConfiguration", targetDepth))
+                if (context.TestExpression("capacityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityConfigurationUnmarshaller.Instance;
                     response.CapacityConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterDescription", targetDepth))
+                if (context.TestExpression("clusterDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterName", targetDepth))
+                if (context.TestExpression("clusterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterType", targetDepth))
+                if (context.TestExpression("clusterType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("code", targetDepth))
+                if (context.TestExpression("code", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeConfigurationUnmarshaller.Instance;
                     response.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("commandLineArguments", targetDepth))
+                if (context.TestExpression("commandLineArguments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KxCommandLineArgument, KxCommandLineArgumentUnmarshaller>(KxCommandLineArgumentUnmarshaller.Instance);
                     response.CommandLineArguments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdTimestamp", targetDepth))
+                if (context.TestExpression("createdTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("databases", targetDepth))
+                if (context.TestExpression("databases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KxDatabaseConfiguration, KxDatabaseConfigurationUnmarshaller>(KxDatabaseConfigurationUnmarshaller.Instance);
                     response.Databases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentId", targetDepth))
+                if (context.TestExpression("environmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EnvironmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionRole", targetDepth))
+                if (context.TestExpression("executionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initializationScript", targetDepth))
+                if (context.TestExpression("initializationScript", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InitializationScript = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedTimestamp", targetDepth))
+                if (context.TestExpression("lastModifiedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("releaseLabel", targetDepth))
+                if (context.TestExpression("releaseLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReleaseLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("savedownStorageConfiguration", targetDepth))
+                if (context.TestExpression("savedownStorageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KxSavedownStorageConfigurationUnmarshaller.Instance;
                     response.SavedownStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalingGroupConfiguration", targetDepth))
+                if (context.TestExpression("scalingGroupConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KxScalingGroupConfigurationUnmarshaller.Instance;
                     response.ScalingGroupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tickerplantLogConfiguration", targetDepth))
+                if (context.TestExpression("tickerplantLogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TickerplantLogConfigurationUnmarshaller.Instance;
                     response.TickerplantLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("volumes", targetDepth))
+                if (context.TestExpression("volumes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
                     response.Volumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("vpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigurationUnmarshaller.Instance;
                     response.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

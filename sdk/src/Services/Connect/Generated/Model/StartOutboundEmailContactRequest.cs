@@ -87,7 +87,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The identifier of the contact in this instance of Connect Customer. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -144,7 +144,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property FromEmailAddress. 
         /// <para>
-        /// The email address associated with the Amazon Connect instance.
+        /// The email address associated with the Connect Customer instance.
         /// </para>
         /// </summary>
         public EmailAddressInfo FromEmailAddress
@@ -162,7 +162,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

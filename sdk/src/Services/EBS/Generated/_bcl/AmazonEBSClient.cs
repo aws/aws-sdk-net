@@ -39,6 +39,11 @@ namespace Amazon.EBS
 {
     /// <summary>
     /// <para>Implementation for accessing EBS</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create Amazon
     /// EBS snapshots, write data directly to your snapshots, read data on your snapshots,

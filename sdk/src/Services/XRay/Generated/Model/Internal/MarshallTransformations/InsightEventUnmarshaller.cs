@@ -56,31 +56,31 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientRequestImpactStatistics", targetDepth))
+                if (context.TestExpression("ClientRequestImpactStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestImpactStatisticsUnmarshaller.Instance;
                     unmarshalledObject.ClientRequestImpactStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventTime", targetDepth))
+                if (context.TestExpression("EventTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RootCauseServiceRequestImpactStatistics", targetDepth))
+                if (context.TestExpression("RootCauseServiceRequestImpactStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestImpactStatisticsUnmarshaller.Instance;
                     unmarshalledObject.RootCauseServiceRequestImpactStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Summary", targetDepth))
+                if (context.TestExpression("Summary", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopAnomalousServices", targetDepth))
+                if (context.TestExpression("TopAnomalousServices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnomalousService, AnomalousServiceUnmarshaller>(AnomalousServiceUnmarshaller.Instance);
                     unmarshalledObject.TopAnomalousServices = unmarshaller.Unmarshall(context, ref reader);

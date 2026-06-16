@@ -56,13 +56,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StorageRule", targetDepth))
+                if (context.TestExpression("StorageRule", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageRuleTypeUnmarshaller.Instance;
                     unmarshalledObject.StorageRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageUtilizedInBytes", targetDepth))
+                if (context.TestExpression("StorageUtilizedInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageUtilizedInBytes = unmarshaller.Unmarshall(context, ref reader);

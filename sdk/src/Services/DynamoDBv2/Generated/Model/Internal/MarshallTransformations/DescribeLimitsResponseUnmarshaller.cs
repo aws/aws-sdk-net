@@ -52,25 +52,25 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountMaxReadCapacityUnits", targetDepth))
+                if (context.TestExpression("AccountMaxReadCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AccountMaxReadCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AccountMaxWriteCapacityUnits", targetDepth))
+                if (context.TestExpression("AccountMaxWriteCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AccountMaxWriteCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableMaxReadCapacityUnits", targetDepth))
+                if (context.TestExpression("TableMaxReadCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TableMaxReadCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableMaxWriteCapacityUnits", targetDepth))
+                if (context.TestExpression("TableMaxWriteCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TableMaxWriteCapacityUnits = unmarshaller.Unmarshall(context, ref reader);

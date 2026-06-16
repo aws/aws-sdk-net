@@ -56,109 +56,109 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlfrescoConfiguration", targetDepth))
+                if (context.TestExpression("AlfrescoConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AlfrescoConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AlfrescoConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BoxConfiguration", targetDepth))
+                if (context.TestExpression("BoxConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BoxConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BoxConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfluenceConfiguration", targetDepth))
+                if (context.TestExpression("ConfluenceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfluenceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ConfluenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseConfiguration", targetDepth))
+                if (context.TestExpression("DatabaseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DatabaseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FsxConfiguration", targetDepth))
+                if (context.TestExpression("FsxConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FsxConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FsxConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GitHubConfiguration", targetDepth))
+                if (context.TestExpression("GitHubConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GitHubConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GitHubConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GoogleDriveConfiguration", targetDepth))
+                if (context.TestExpression("GoogleDriveConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GoogleDriveConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GoogleDriveConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JiraConfiguration", targetDepth))
+                if (context.TestExpression("JiraConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = JiraConfigurationUnmarshaller.Instance;
                     unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OneDriveConfiguration", targetDepth))
+                if (context.TestExpression("OneDriveConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OneDriveConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OneDriveConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuipConfiguration", targetDepth))
+                if (context.TestExpression("QuipConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QuipConfigurationUnmarshaller.Instance;
                     unmarshalledObject.QuipConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Configuration", targetDepth))
+                if (context.TestExpression("S3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SalesforceConfiguration", targetDepth))
+                if (context.TestExpression("SalesforceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SalesforceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceNowConfiguration", targetDepth))
+                if (context.TestExpression("ServiceNowConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNowConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ServiceNowConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SharePointConfiguration", targetDepth))
+                if (context.TestExpression("SharePointConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SharePointConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SharePointConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SlackConfiguration", targetDepth))
+                if (context.TestExpression("SlackConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SlackConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SlackConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateConfiguration", targetDepth))
+                if (context.TestExpression("TemplateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebCrawlerConfiguration", targetDepth))
+                if (context.TestExpression("WebCrawlerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WebCrawlerConfigurationUnmarshaller.Instance;
                     unmarshalledObject.WebCrawlerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkDocsConfiguration", targetDepth))
+                if (context.TestExpression("WorkDocsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkDocsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.WorkDocsConfiguration = unmarshaller.Unmarshall(context, ref reader);

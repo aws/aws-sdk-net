@@ -56,7 +56,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("spark", targetDepth))
+                if (context.TestExpression("spark", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Spark = unmarshaller.Unmarshall(context, ref reader);

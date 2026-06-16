@@ -52,7 +52,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("validations", targetDepth))
+                if (context.TestExpression("validations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FlowValidation, FlowValidationUnmarshaller>(FlowValidationUnmarshaller.Instance);
                     response.Validations = unmarshaller.Unmarshall(context, ref reader);

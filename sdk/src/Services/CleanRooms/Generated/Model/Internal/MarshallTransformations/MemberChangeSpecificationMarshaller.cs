@@ -69,6 +69,28 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetMlMemberAbilities())
+            {
+                context.Writer.WritePropertyName("mlMemberAbilities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MLMemberAbilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.MlMemberAbilities, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPaymentConfiguration())
+            {
+                context.Writer.WritePropertyName("paymentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PaymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PaymentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -56,13 +56,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VolumeUsageInBytes", targetDepth))
+                if (context.TestExpression("VolumeUsageInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeUsageUpdateTime", targetDepth))
+                if (context.TestExpression("VolumeUsageUpdateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.VolumeUsageUpdateTime = unmarshaller.Unmarshall(context, ref reader);

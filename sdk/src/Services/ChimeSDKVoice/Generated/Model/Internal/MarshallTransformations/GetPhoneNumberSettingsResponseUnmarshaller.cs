@@ -52,13 +52,13 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CallingName", targetDepth))
+                if (context.TestExpression("CallingName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CallingName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CallingNameUpdatedTimestamp", targetDepth))
+                if (context.TestExpression("CallingNameUpdatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CallingNameUpdatedTimestamp = unmarshaller.Unmarshall(context, ref reader);

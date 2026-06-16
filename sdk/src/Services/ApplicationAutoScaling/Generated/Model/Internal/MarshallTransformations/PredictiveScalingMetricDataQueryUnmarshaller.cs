@@ -56,31 +56,31 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Expression", targetDepth))
+                if (context.TestExpression("Expression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Label", targetDepth))
+                if (context.TestExpression("Label", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricStat", targetDepth))
+                if (context.TestExpression("MetricStat", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingMetricStatUnmarshaller.Instance;
                     unmarshalledObject.MetricStat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReturnData", targetDepth))
+                if (context.TestExpression("ReturnData", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReturnData = unmarshaller.Unmarshall(context, ref reader);

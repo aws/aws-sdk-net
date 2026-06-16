@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Shape", targetDepth))
+                if (context.TestExpression("Shape", targetDepth, ref reader))
                 {
                     var unmarshaller = FilledMapShapeConditionalFormattingUnmarshaller.Instance;
                     unmarshalledObject.Shape = unmarshaller.Unmarshall(context, ref reader);

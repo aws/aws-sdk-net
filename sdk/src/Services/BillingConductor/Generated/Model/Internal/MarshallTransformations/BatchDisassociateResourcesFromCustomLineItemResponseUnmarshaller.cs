@@ -52,13 +52,13 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedDisassociatedResources", targetDepth))
+                if (context.TestExpression("FailedDisassociatedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DisassociateResourceResponseElement, DisassociateResourceResponseElementUnmarshaller>(DisassociateResourceResponseElementUnmarshaller.Instance);
                     response.FailedDisassociatedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessfullyDisassociatedResources", targetDepth))
+                if (context.TestExpression("SuccessfullyDisassociatedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DisassociateResourceResponseElement, DisassociateResourceResponseElementUnmarshaller>(DisassociateResourceResponseElementUnmarshaller.Instance);
                     response.SuccessfullyDisassociatedResources = unmarshaller.Unmarshall(context, ref reader);

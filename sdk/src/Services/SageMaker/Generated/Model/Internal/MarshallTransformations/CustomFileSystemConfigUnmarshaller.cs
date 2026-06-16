@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EFSFileSystemConfig", targetDepth))
+                if (context.TestExpression("EFSFileSystemConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EFSFileSystemConfigUnmarshaller.Instance;
                     unmarshalledObject.EFSFileSystemConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FSxLustreFileSystemConfig", targetDepth))
+                if (context.TestExpression("FSxLustreFileSystemConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FSxLustreFileSystemConfigUnmarshaller.Instance;
                     unmarshalledObject.FSxLustreFileSystemConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3FileSystemConfig", targetDepth))
+                if (context.TestExpression("S3FileSystemConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = S3FileSystemConfigUnmarshaller.Instance;
                     unmarshalledObject.S3FileSystemConfig = unmarshaller.Unmarshall(context, ref reader);

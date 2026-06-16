@@ -56,7 +56,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dashboardIdentifier", targetDepth))
+                if (context.TestExpression("dashboardIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DashboardIdentifier = unmarshaller.Unmarshall(context, ref reader);

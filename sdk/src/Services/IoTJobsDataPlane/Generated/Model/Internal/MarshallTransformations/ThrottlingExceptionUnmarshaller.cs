@@ -72,7 +72,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("payload", targetDepth))
+                    if (context.TestExpression("payload", targetDepth, ref reader))
                     {
                         var unmarshaller = MemoryStreamUnmarshaller.Instance;
                         unmarshalledObject.Payload = unmarshaller.Unmarshall(context, ref reader);

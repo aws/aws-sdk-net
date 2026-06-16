@@ -56,61 +56,67 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("archiveGroupSettings", targetDepth))
+                if (context.TestExpression("archiveGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.ArchiveGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cmafIngestGroupSettings", targetDepth))
+                if (context.TestExpression("cmafIngestGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = CmafIngestGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.CmafIngestGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frameCaptureGroupSettings", targetDepth))
+                if (context.TestExpression("frameCaptureGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameCaptureGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.FrameCaptureGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsGroupSettings", targetDepth))
+                if (context.TestExpression("hlsGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaPackageGroupSettings", targetDepth))
+                if (context.TestExpression("mediaConnectRouterGroupSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = MediaConnectRouterGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MediaConnectRouterGroupSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("mediaPackageGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaPackageGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.MediaPackageGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("msSmoothGroupSettings", targetDepth))
+                if (context.TestExpression("msSmoothGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MsSmoothGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.MsSmoothGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiplexGroupSettings", targetDepth))
+                if (context.TestExpression("multiplexGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.MultiplexGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rtmpGroupSettings", targetDepth))
+                if (context.TestExpression("rtmpGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RtmpGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.RtmpGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("srtGroupSettings", targetDepth))
+                if (context.TestExpression("srtGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SrtGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.SrtGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("udpGroupSettings", targetDepth))
+                if (context.TestExpression("udpGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = UdpGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.UdpGroupSettings = unmarshaller.Unmarshall(context, ref reader);

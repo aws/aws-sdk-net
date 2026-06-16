@@ -56,31 +56,31 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConfigurationDefinitionSummaries", targetDepth))
+                if (context.TestExpression("ConfigurationDefinitionSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConfigurationDefinitionSummary, ConfigurationDefinitionSummaryUnmarshaller>(ConfigurationDefinitionSummaryUnmarshaller.Instance);
                     unmarshalledObject.ConfigurationDefinitionSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagerArn", targetDepth))
+                if (context.TestExpression("ManagerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManagerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusSummaries", targetDepth))
+                if (context.TestExpression("StatusSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StatusSummary, StatusSummaryUnmarshaller>(StatusSummaryUnmarshaller.Instance);
                     unmarshalledObject.StatusSummaries = unmarshaller.Unmarshall(context, ref reader);

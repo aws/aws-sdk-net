@@ -56,19 +56,19 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Behavior", targetDepth))
+                if (context.TestExpression("Behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Conditions", targetDepth))
+                if (context.TestExpression("Conditions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
                     unmarshalledObject.Conditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Requirement", targetDepth))
+                if (context.TestExpression("Requirement", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Requirement = unmarshaller.Unmarshall(context, ref reader);

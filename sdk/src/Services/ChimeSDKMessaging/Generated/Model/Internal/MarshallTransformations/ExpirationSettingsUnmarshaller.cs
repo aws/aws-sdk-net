@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExpirationCriterion", targetDepth))
+                if (context.TestExpression("ExpirationCriterion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExpirationCriterion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpirationDays", targetDepth))
+                if (context.TestExpression("ExpirationDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpirationDays = unmarshaller.Unmarshall(context, ref reader);

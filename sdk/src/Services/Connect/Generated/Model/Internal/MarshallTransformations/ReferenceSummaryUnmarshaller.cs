@@ -56,49 +56,61 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attachment", targetDepth))
+                if (context.TestExpression("Attachment", targetDepth, ref reader))
                 {
                     var unmarshaller = AttachmentReferenceUnmarshaller.Instance;
                     unmarshalledObject.Attachment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Date", targetDepth))
+                if (context.TestExpression("Date", targetDepth, ref reader))
                 {
                     var unmarshaller = DateReferenceUnmarshaller.Instance;
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Email", targetDepth))
+                if (context.TestExpression("Email", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailReferenceUnmarshaller.Instance;
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmailMessage", targetDepth))
+                if (context.TestExpression("EmailMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailMessageReferenceUnmarshaller.Instance;
                     unmarshalledObject.EmailMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmailMessagePlainText", targetDepth))
+                if (context.TestExpression("EmailMessagePlainText", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailMessageReferenceUnmarshaller.Instance;
                     unmarshalledObject.EmailMessagePlainText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Number", targetDepth))
+                if (context.TestExpression("EmailMessagePlainTextRedacted", targetDepth, ref reader))
+                {
+                    var unmarshaller = EmailMessageReferenceUnmarshaller.Instance;
+                    unmarshalledObject.EmailMessagePlainTextRedacted = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EmailMessageRedacted", targetDepth, ref reader))
+                {
+                    var unmarshaller = EmailMessageReferenceUnmarshaller.Instance;
+                    unmarshalledObject.EmailMessageRedacted = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Number", targetDepth, ref reader))
                 {
                     var unmarshaller = NumberReferenceUnmarshaller.Instance;
                     unmarshalledObject.Number = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("String", targetDepth))
+                if (context.TestExpression("String", targetDepth, ref reader))
                 {
                     var unmarshaller = StringReferenceUnmarshaller.Instance;
                     unmarshalledObject.String = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Url", targetDepth))
+                if (context.TestExpression("Url", targetDepth, ref reader))
                 {
                     var unmarshaller = UrlReferenceUnmarshaller.Instance;
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);

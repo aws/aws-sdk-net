@@ -56,31 +56,31 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assignedVariables", targetDepth))
+                if (context.TestExpression("assignedVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AssignedVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assignedVariablesDetails", targetDepth))
+                if (context.TestExpression("assignedVariablesDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AssignedVariablesDetailsUnmarshaller.Instance;
                     unmarshalledObject.AssignedVariablesDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("output", targetDepth))
+                if (context.TestExpression("output", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Output = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputDetails", targetDepth))
+                if (context.TestExpression("outputDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = HistoryEventExecutionDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.OutputDetails = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("moreInfo", targetDepth))
+                if (context.TestExpression("moreInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = LayoutSectionsUnmarshaller.Instance;
                     unmarshalledObject.MoreInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topPanel", targetDepth))
+                if (context.TestExpression("topPanel", targetDepth, ref reader))
                 {
                     var unmarshaller = LayoutSectionsUnmarshaller.Instance;
                     unmarshalledObject.TopPanel = unmarshaller.Unmarshall(context, ref reader);

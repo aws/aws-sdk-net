@@ -52,7 +52,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataLakeSettings", targetDepth))
+                if (context.TestExpression("DataLakeSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakeSettingsUnmarshaller.Instance;
                     response.DataLakeSettings = unmarshaller.Unmarshall(context, ref reader);

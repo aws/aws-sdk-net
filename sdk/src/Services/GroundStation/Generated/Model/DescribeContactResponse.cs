@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Output for the <c>DescribeContact</c> operation.
     /// </summary>
     public partial class DescribeContactResponse : AmazonWebServiceResponse
     {
@@ -50,6 +50,7 @@ namespace Amazon.GroundStation.Model
         private DateTime? _startTime;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TrackingOverrides _trackingOverrides;
+        private ContactVersion _version;
         private DateTime? _visibilityEndTime;
         private DateTime? _visibilityStartTime;
 
@@ -225,8 +226,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property PostPassEndTime. 
         /// <para>
-        /// Amount of time after a contact ends that you’d like to receive a CloudWatch event
-        /// indicating the pass has finished.
+        /// End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating
+        /// the pass has finished.
         /// </para>
         /// </summary>
         public DateTime? PostPassEndTime
@@ -244,8 +245,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property PrePassStartTime. 
         /// <para>
-        /// Amount of time prior to contact start you’d like to receive a CloudWatch event indicating
-        /// an upcoming pass.
+        /// Start time in UTC of the pre-pass period, at which you receive a CloudWatch event
+        /// indicating an upcoming pass.
         /// </para>
         /// </summary>
         public DateTime? PrePassStartTime
@@ -263,7 +264,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// Region of a contact.
+        /// Region where the <c>ReserveContact</c> API was called to schedule this contact.
         /// </para>
         /// </summary>
         public string Region
@@ -357,12 +358,30 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// Version information for a contact.
+        /// </para>
+        /// </summary>
+        public ContactVersion Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VisibilityEndTime. 
         /// <para>
         ///  Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
         /// mask</a>. This time is based on the satellite's current active ephemeris for future
         /// contacts and the ephemeris that was active during contact execution for completed
-        /// contacts. 
+        /// contacts.
         /// </para>
         /// </summary>
         public DateTime? VisibilityEndTime
@@ -383,7 +402,7 @@ namespace Amazon.GroundStation.Model
         ///  Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
         /// mask</a>. This time is based on the satellite's current active ephemeris for future
         /// contacts and the ephemeris that was active during contact execution for completed
-        /// contacts. 
+        /// contacts.
         /// </para>
         /// </summary>
         public DateTime? VisibilityStartTime

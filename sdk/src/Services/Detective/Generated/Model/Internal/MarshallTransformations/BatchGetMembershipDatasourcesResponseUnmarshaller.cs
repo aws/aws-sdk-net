@@ -52,13 +52,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MembershipDatasources", targetDepth))
+                if (context.TestExpression("MembershipDatasources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MembershipDatasources, MembershipDatasourcesUnmarshaller>(MembershipDatasourcesUnmarshaller.Instance);
                     response.MembershipDatasources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedGraphs", targetDepth))
+                if (context.TestExpression("UnprocessedGraphs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedGraph, UnprocessedGraphUnmarshaller>(UnprocessedGraphUnmarshaller.Instance);
                     response.UnprocessedGraphs = unmarshaller.Unmarshall(context, ref reader);

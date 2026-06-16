@@ -52,25 +52,25 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Budgets", targetDepth))
+                if (context.TestExpression("Budgets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BudgetDetail, BudgetDetailUnmarshaller>(BudgetDetailUnmarshaller.Instance);
                     response.Budgets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchPaths", targetDepth))
+                if (context.TestExpression("LaunchPaths", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LaunchPath, LaunchPathUnmarshaller>(LaunchPathUnmarshaller.Instance);
                     response.LaunchPaths = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductViewSummary", targetDepth))
+                if (context.TestExpression("ProductViewSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductViewSummaryUnmarshaller.Instance;
                     response.ProductViewSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifacts", targetDepth))
+                if (context.TestExpression("ProvisioningArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisioningArtifact, ProvisioningArtifactUnmarshaller>(ProvisioningArtifactUnmarshaller.Instance);
                     response.ProvisioningArtifacts = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComplianceSummaryTimestamp", targetDepth))
+                if (context.TestExpression("ComplianceSummaryTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ComplianceSummaryTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompliantResourceCount", targetDepth))
+                if (context.TestExpression("CompliantResourceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = ComplianceContributorCountUnmarshaller.Instance;
                     unmarshalledObject.CompliantResourceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NonCompliantResourceCount", targetDepth))
+                if (context.TestExpression("NonCompliantResourceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = ComplianceContributorCountUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantResourceCount = unmarshaller.Unmarshall(context, ref reader);

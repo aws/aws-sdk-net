@@ -56,7 +56,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceParameters", targetDepth))
+                if (context.TestExpression("ResourceParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribeConnectionResourceParametersUnmarshaller.Instance;
                     unmarshalledObject.ResourceParameters = unmarshaller.Unmarshall(context, ref reader);

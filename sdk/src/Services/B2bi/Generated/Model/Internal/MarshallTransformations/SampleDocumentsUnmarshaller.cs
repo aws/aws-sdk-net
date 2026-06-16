@@ -56,13 +56,13 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bucketName", targetDepth))
+                if (context.TestExpression("bucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("keys", targetDepth))
+                if (context.TestExpression("keys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SampleDocumentKeys, SampleDocumentKeysUnmarshaller>(SampleDocumentKeysUnmarshaller.Instance);
                     unmarshalledObject.Keys = unmarshaller.Unmarshall(context, ref reader);

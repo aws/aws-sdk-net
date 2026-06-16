@@ -56,67 +56,85 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("AnalyticsConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = AnalyticsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AnalyticsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreArn", targetDepth))
+                if (context.TestExpression("DatastoreArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatastoreArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreEndpoint", targetDepth))
+                if (context.TestExpression("DatastoreEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatastoreEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreId", targetDepth))
+                if (context.TestExpression("DatastoreId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatastoreId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreName", targetDepth))
+                if (context.TestExpression("DatastoreName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatastoreName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreStatus", targetDepth))
+                if (context.TestExpression("DatastoreStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatastoreStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatastoreTypeVersion", targetDepth))
+                if (context.TestExpression("DatastoreTypeVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatastoreTypeVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorCause", targetDepth))
+                if (context.TestExpression("ErrorCause", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorCauseUnmarshaller.Instance;
                     unmarshalledObject.ErrorCause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityProviderConfiguration", targetDepth))
+                if (context.TestExpression("IdentityProviderConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityProviderConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IdentityProviderConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreloadDataConfig", targetDepth))
+                if (context.TestExpression("NlpConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = NlpConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NlpConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PreloadDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PreloadDataConfigUnmarshaller.Instance;
                     unmarshalledObject.PreloadDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SseConfiguration", targetDepth))
+                if (context.TestExpression("ProfileConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProfileConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ProfileConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SseConfiguration = unmarshaller.Unmarshall(context, ref reader);

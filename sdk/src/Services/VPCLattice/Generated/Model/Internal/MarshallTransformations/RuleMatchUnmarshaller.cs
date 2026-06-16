@@ -56,7 +56,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("httpMatch", targetDepth))
+                if (context.TestExpression("httpMatch", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpMatchUnmarshaller.Instance;
                     unmarshalledObject.HttpMatch = unmarshaller.Unmarshall(context, ref reader);

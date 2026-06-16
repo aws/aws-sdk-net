@@ -56,103 +56,103 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgeRange", targetDepth))
+                if (context.TestExpression("AgeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = AgeRangeUnmarshaller.Instance;
                     unmarshalledObject.AgeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Beard", targetDepth))
+                if (context.TestExpression("Beard", targetDepth, ref reader))
                 {
                     var unmarshaller = BeardUnmarshaller.Instance;
                     unmarshalledObject.Beard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("BoundingBox", targetDepth, ref reader))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;
                     unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Emotions", targetDepth))
+                if (context.TestExpression("Emotions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Emotion, EmotionUnmarshaller>(EmotionUnmarshaller.Instance);
                     unmarshalledObject.Emotions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EyeDirection", targetDepth))
+                if (context.TestExpression("EyeDirection", targetDepth, ref reader))
                 {
                     var unmarshaller = EyeDirectionUnmarshaller.Instance;
                     unmarshalledObject.EyeDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Eyeglasses", targetDepth))
+                if (context.TestExpression("Eyeglasses", targetDepth, ref reader))
                 {
                     var unmarshaller = EyeglassesUnmarshaller.Instance;
                     unmarshalledObject.Eyeglasses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EyesOpen", targetDepth))
+                if (context.TestExpression("EyesOpen", targetDepth, ref reader))
                 {
                     var unmarshaller = EyeOpenUnmarshaller.Instance;
                     unmarshalledObject.EyesOpen = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FaceOccluded", targetDepth))
+                if (context.TestExpression("FaceOccluded", targetDepth, ref reader))
                 {
                     var unmarshaller = FaceOccludedUnmarshaller.Instance;
                     unmarshalledObject.FaceOccluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Gender", targetDepth))
+                if (context.TestExpression("Gender", targetDepth, ref reader))
                 {
                     var unmarshaller = GenderUnmarshaller.Instance;
                     unmarshalledObject.Gender = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Landmarks", targetDepth))
+                if (context.TestExpression("Landmarks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Landmark, LandmarkUnmarshaller>(LandmarkUnmarshaller.Instance);
                     unmarshalledObject.Landmarks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MouthOpen", targetDepth))
+                if (context.TestExpression("MouthOpen", targetDepth, ref reader))
                 {
                     var unmarshaller = MouthOpenUnmarshaller.Instance;
                     unmarshalledObject.MouthOpen = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mustache", targetDepth))
+                if (context.TestExpression("Mustache", targetDepth, ref reader))
                 {
                     var unmarshaller = MustacheUnmarshaller.Instance;
                     unmarshalledObject.Mustache = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Pose", targetDepth))
+                if (context.TestExpression("Pose", targetDepth, ref reader))
                 {
                     var unmarshaller = PoseUnmarshaller.Instance;
                     unmarshalledObject.Pose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Quality", targetDepth))
+                if (context.TestExpression("Quality", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageQualityUnmarshaller.Instance;
                     unmarshalledObject.Quality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Smile", targetDepth))
+                if (context.TestExpression("Smile", targetDepth, ref reader))
                 {
                     var unmarshaller = SmileUnmarshaller.Instance;
                     unmarshalledObject.Smile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sunglasses", targetDepth))
+                if (context.TestExpression("Sunglasses", targetDepth, ref reader))
                 {
                     var unmarshaller = SunglassesUnmarshaller.Instance;
                     unmarshalledObject.Sunglasses = unmarshaller.Unmarshall(context, ref reader);

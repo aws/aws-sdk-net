@@ -56,13 +56,13 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("guardrail", targetDepth))
+                if (context.TestExpression("guardrail", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailTraceAssessmentUnmarshaller.Instance;
                     unmarshalledObject.Guardrail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptRouter", targetDepth))
+                if (context.TestExpression("promptRouter", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptRouterTraceUnmarshaller.Instance;
                     unmarshalledObject.PromptRouter = unmarshaller.Unmarshall(context, ref reader);

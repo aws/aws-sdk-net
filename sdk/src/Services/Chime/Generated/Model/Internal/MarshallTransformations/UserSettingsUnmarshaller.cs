@@ -56,7 +56,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Telephony", targetDepth))
+                if (context.TestExpression("Telephony", targetDepth, ref reader))
                 {
                     var unmarshaller = TelephonySettingsUnmarshaller.Instance;
                     unmarshalledObject.Telephony = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnStatisticsConfigurations", targetDepth))
+                if (context.TestExpression("ColumnStatisticsConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnStatisticsConfiguration, ColumnStatisticsConfigurationUnmarshaller>(ColumnStatisticsConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ColumnStatisticsConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetStatisticsConfiguration", targetDepth))
+                if (context.TestExpression("DatasetStatisticsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StatisticsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DatasetStatisticsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityDetectorConfiguration", targetDepth))
+                if (context.TestExpression("EntityDetectorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityDetectorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EntityDetectorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProfileColumns", targetDepth))
+                if (context.TestExpression("ProfileColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnSelector, ColumnSelectorUnmarshaller>(ColumnSelectorUnmarshaller.Instance);
                     unmarshalledObject.ProfileColumns = unmarshaller.Unmarshall(context, ref reader);

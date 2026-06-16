@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PatchRules", targetDepth))
+                if (context.TestExpression("PatchRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PatchRule, PatchRuleUnmarshaller>(PatchRuleUnmarshaller.Instance);
                     unmarshalledObject.PatchRules = unmarshaller.Unmarshall(context, ref reader);

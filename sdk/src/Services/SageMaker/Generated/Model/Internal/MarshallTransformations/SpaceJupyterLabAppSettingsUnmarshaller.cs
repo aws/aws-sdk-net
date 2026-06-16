@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppLifecycleManagement", targetDepth))
+                if (context.TestExpression("AppLifecycleManagement", targetDepth, ref reader))
                 {
                     var unmarshaller = SpaceAppLifecycleManagementUnmarshaller.Instance;
                     unmarshalledObject.AppLifecycleManagement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeRepositories", targetDepth))
+                if (context.TestExpression("CodeRepositories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CodeRepository, CodeRepositoryUnmarshaller>(CodeRepositoryUnmarshaller.Instance);
                     unmarshalledObject.CodeRepositories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultResourceSpec", targetDepth))
+                if (context.TestExpression("DefaultResourceSpec", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSpecUnmarshaller.Instance;
                     unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context, ref reader);

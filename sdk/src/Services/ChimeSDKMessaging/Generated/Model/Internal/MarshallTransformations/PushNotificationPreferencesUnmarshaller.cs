@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowNotifications", targetDepth))
+                if (context.TestExpression("AllowNotifications", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllowNotifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterRule", targetDepth))
+                if (context.TestExpression("FilterRule", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterRule = unmarshaller.Unmarshall(context, ref reader);

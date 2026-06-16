@@ -52,37 +52,37 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("actionReason", targetDepth))
+                if (context.TestExpression("actionReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ActionReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assessments", targetDepth))
+                if (context.TestExpression("assessments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailAssessment, GuardrailAssessmentUnmarshaller>(GuardrailAssessmentUnmarshaller.Instance);
                     response.Assessments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("guardrailCoverage", targetDepth))
+                if (context.TestExpression("guardrailCoverage", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailCoverageUnmarshaller.Instance;
                     response.GuardrailCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputs", targetDepth))
+                if (context.TestExpression("outputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailOutputContent, GuardrailOutputContentUnmarshaller>(GuardrailOutputContentUnmarshaller.Instance);
                     response.Outputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usage", targetDepth))
+                if (context.TestExpression("usage", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailUsageUnmarshaller.Instance;
                     response.Usage = unmarshaller.Unmarshall(context, ref reader);

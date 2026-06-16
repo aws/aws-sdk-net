@@ -38,10 +38,12 @@ namespace Amazon.DataZone.Model
         private AthenaPropertiesPatch _athenaProperties;
         private GluePropertiesPatch _glueProperties;
         private IamPropertiesPatch _iamProperties;
+        private LakehousePropertiesPatch _lakehouseProperties;
         private MlflowPropertiesPatch _mlflowProperties;
         private RedshiftPropertiesPatch _redshiftProperties;
         private S3PropertiesPatch _s3Properties;
         private SparkEmrPropertiesPatch _sparkEmrProperties;
+        private VpcPropertiesPatch _vpcProperties;
 
         /// <summary>
         /// Gets and sets the property AmazonQProperties. 
@@ -116,6 +118,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LakehouseProperties. 
+        /// <para>
+        /// The lakehouse properties of a connection properties patch.
+        /// </para>
+        /// </summary>
+        public LakehousePropertiesPatch LakehouseProperties
+        {
+            get { return this._lakehouseProperties; }
+            set { this._lakehouseProperties = value; }
+        }
+
+        // Check to see if LakehouseProperties property is set
+        internal bool IsSetLakehouseProperties()
+        {
+            return this._lakehouseProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MlflowProperties. 
         /// <para>
         /// The MLflow properties of a connection.
@@ -185,6 +205,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetSparkEmrProperties()
         {
             return this._sparkEmrProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcProperties. 
+        /// <para>
+        /// The VPC properties of a connection properties patch.
+        /// </para>
+        /// </summary>
+        public VpcPropertiesPatch VpcProperties
+        {
+            get { return this._vpcProperties; }
+            set { this._vpcProperties = value; }
+        }
+
+        // Check to see if VpcProperties property is set
+        internal bool IsSetVpcProperties()
+        {
+            return this._vpcProperties != null;
         }
 
     }

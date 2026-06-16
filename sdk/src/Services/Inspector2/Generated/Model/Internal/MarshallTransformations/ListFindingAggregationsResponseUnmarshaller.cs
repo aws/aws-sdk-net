@@ -52,19 +52,19 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("responses", targetDepth))
+                if (context.TestExpression("responses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AggregationResponse, AggregationResponseUnmarshaller>(AggregationResponseUnmarshaller.Instance);
                     response.Aggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aggregationType", targetDepth))
+                if (context.TestExpression("aggregationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AggregationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

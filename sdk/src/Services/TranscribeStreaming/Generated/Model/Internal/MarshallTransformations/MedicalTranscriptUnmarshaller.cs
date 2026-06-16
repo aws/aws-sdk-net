@@ -56,7 +56,7 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("Results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MedicalResult, MedicalResultUnmarshaller>(MedicalResultUnmarshaller.Instance);
                     unmarshalledObject.Results = unmarshaller.Unmarshall(context, ref reader);

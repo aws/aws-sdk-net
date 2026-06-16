@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Permissions", targetDepth))
+                if (context.TestExpression("Permissions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourcePermission, ResourcePermissionUnmarshaller>(ResourcePermissionUnmarshaller.Instance);
                     unmarshalledObject.Permissions = unmarshaller.Unmarshall(context, ref reader);

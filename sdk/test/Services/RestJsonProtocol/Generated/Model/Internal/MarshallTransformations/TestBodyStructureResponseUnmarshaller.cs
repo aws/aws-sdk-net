@@ -52,7 +52,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("testConfig", targetDepth))
+                if (context.TestExpression("testConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TestConfigUnmarshaller.Instance;
                     response.TestConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("loggingOptions", targetDepth))
+                if (context.TestExpression("loggingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingOptionsUnmarshaller.Instance;
                     response.LoggingOptions = unmarshaller.Unmarshall(context, ref reader);

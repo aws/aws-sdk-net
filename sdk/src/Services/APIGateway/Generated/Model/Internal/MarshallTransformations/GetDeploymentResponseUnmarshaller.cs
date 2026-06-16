@@ -52,25 +52,25 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiSummary", targetDepth))
+                if (context.TestExpression("apiSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, MethodSnapshot>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, MethodSnapshot, StringUnmarshaller, MethodSnapshotUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, MethodSnapshot, StringUnmarshaller, MethodSnapshotUnmarshaller>(StringUnmarshaller.Instance, MethodSnapshotUnmarshaller.Instance));
                     response.ApiSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdDate", targetDepth))
+                if (context.TestExpression("createdDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context, ref reader);

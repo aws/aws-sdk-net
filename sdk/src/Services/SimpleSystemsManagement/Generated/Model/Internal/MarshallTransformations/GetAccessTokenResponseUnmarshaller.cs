@@ -52,13 +52,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessRequestStatus", targetDepth))
+                if (context.TestExpression("AccessRequestStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccessRequestStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Credentials", targetDepth))
+                if (context.TestExpression("Credentials", targetDepth, ref reader))
                 {
                     var unmarshaller = CredentialsUnmarshaller.Instance;
                     response.Credentials = unmarshaller.Unmarshall(context, ref reader);

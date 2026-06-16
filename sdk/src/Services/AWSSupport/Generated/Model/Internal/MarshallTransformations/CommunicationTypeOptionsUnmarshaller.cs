@@ -56,19 +56,19 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datesWithoutSupport", targetDepth))
+                if (context.TestExpression("datesWithoutSupport", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateInterval, DateIntervalUnmarshaller>(DateIntervalUnmarshaller.Instance);
                     unmarshalledObject.DatesWithoutSupport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportedHours", targetDepth))
+                if (context.TestExpression("supportedHours", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SupportedHour, SupportedHourUnmarshaller>(SupportedHourUnmarshaller.Instance);
                     unmarshalledObject.SupportedHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

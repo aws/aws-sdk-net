@@ -56,37 +56,37 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectionPool", targetDepth))
+                if (context.TestExpression("connectionPool", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualNodeConnectionPoolUnmarshaller.Instance;
                     unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthCheck", targetDepth))
+                if (context.TestExpression("healthCheck", targetDepth, ref reader))
                 {
                     var unmarshaller = HealthCheckPolicyUnmarshaller.Instance;
                     unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outlierDetection", targetDepth))
+                if (context.TestExpression("outlierDetection", targetDepth, ref reader))
                 {
                     var unmarshaller = OutlierDetectionUnmarshaller.Instance;
                     unmarshalledObject.OutlierDetection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portMapping", targetDepth))
+                if (context.TestExpression("portMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = PortMappingUnmarshaller.Instance;
                     unmarshalledObject.PortMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeout", targetDepth))
+                if (context.TestExpression("timeout", targetDepth, ref reader))
                 {
                     var unmarshaller = ListenerTimeoutUnmarshaller.Instance;
                     unmarshalledObject.Timeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tls", targetDepth))
+                if (context.TestExpression("tls", targetDepth, ref reader))
                 {
                     var unmarshaller = ListenerTlsUnmarshaller.Instance;
                     unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);

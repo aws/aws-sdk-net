@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceConfiguration Marshaller
     /// </summary>
-    public class DeviceConfigurationMarshaller : IRequestMarshaller<DeviceConfiguration, JsonMarshallerContext> 
+    public class DeviceConfigurationMarshaller : IRequestMarshaller<DeviceConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeviceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DeviceConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSnowconeDeviceConfiguration())
+
+            if (requestObject.IsSetSnowconeDeviceConfiguration())
             {
-                context.Writer.WritePropertyName("SnowconeDeviceConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("SnowconeDeviceConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SnowconeDeviceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SnowconeDeviceConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

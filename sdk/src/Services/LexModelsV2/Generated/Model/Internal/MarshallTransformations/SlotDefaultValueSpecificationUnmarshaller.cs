@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("defaultValueList", targetDepth))
+                if (context.TestExpression("defaultValueList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SlotDefaultValue, SlotDefaultValueUnmarshaller>(SlotDefaultValueUnmarshaller.Instance);
                     unmarshalledObject.DefaultValueList = unmarshaller.Unmarshall(context, ref reader);

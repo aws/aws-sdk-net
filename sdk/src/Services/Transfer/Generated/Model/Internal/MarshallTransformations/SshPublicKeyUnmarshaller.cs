@@ -56,19 +56,19 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateImported", targetDepth))
+                if (context.TestExpression("DateImported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateImported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SshPublicKeyBody", targetDepth))
+                if (context.TestExpression("SshPublicKeyBody", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SshPublicKeyBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SshPublicKeyId", targetDepth))
+                if (context.TestExpression("SshPublicKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SshPublicKeyId = unmarshaller.Unmarshall(context, ref reader);

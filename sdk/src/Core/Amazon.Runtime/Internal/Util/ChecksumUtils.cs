@@ -39,14 +39,35 @@ namespace Amazon.Runtime.Internal.Util
             //    CoreChecksumAlgorithm.CRC32C,
             //    CoreChecksumAlgorithm.CRC32,
             //    CoreChecksumAlgorithm.SHA1,
-            //    CoreChecksumAlgorithm.SHA256
+            //    CoreChecksumAlgorithm.SHA256,
             //} :
             new List<CoreChecksumAlgorithm>
             {
                 CoreChecksumAlgorithm.CRC32,
                 CoreChecksumAlgorithm.SHA1,
-                CoreChecksumAlgorithm.SHA256
+                CoreChecksumAlgorithm.SHA256,
+                CoreChecksumAlgorithm.SHA512
             };
+        private static HashSet<CoreChecksumAlgorithm> _unsupportedChecksumAlgorithms;
+        public static HashSet<CoreChecksumAlgorithm> UnsupportedChecksumAlgorithms
+        {
+            get
+            {
+                if (_unsupportedChecksumAlgorithms == null)
+                {
+                    _unsupportedChecksumAlgorithms = new HashSet<CoreChecksumAlgorithm>()
+                    {
+                        CoreChecksumAlgorithm.MD5,
+                        CoreChecksumAlgorithm.XXHASH64,
+                        CoreChecksumAlgorithm.XXHASH3,
+                        CoreChecksumAlgorithm.XXHASH128
+                    };
+                }   
+                return _unsupportedChecksumAlgorithms;
+            }
+        }
+
+        private static Logger _logger => Logger.GetLogger(typeof(ChecksumUtils));
 
         /// <summary>
         /// Returns the current default checksum algorithm used by the SDK.
@@ -98,6 +119,16 @@ namespace Amazon.Runtime.Internal.Util
 
                 // If no algorithm was specified for the request, use the best available option.
                 coreChecksumAlgoritm = DefaultAlgorithm;
+            }
+
+            else if (coreChecksumAlgoritm == CoreChecksumAlgorithm.MD5)
+            {
+                throw new AmazonClientException("MD5 is an unsupported checksum algorithm. To use MD5, provide a precalculated MD5");
+            }
+
+            else if (UnsupportedChecksumAlgorithms.Contains(coreChecksumAlgoritm))
+            {
+                throw new AmazonClientException($"The selected algorithm {coreChecksumAlgoritm} is not supported by the SDK. To use the selected checksum algorithm, you must provide the checksum value yourself.");
             }
 
             // If client config is null, this method was called from older service packages.
@@ -176,6 +207,23 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>Calculated checksum for the given request</returns>
         private static string CalculateChecksumForRequest(HashAlgorithm algorithm, IRequest request)
         {
+#if !NETFRAMEWORK
+            if (request.ContentStream is PooledContentStream pooledStream)
+            {
+                var memory = pooledStream.Content;
+                if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(memory, out var segment))
+                {
+                    var checksumBytes = algorithm.ComputeHash(segment.Array, segment.Offset, segment.Count);
+                    return Convert.ToBase64String(checksumBytes);
+                }
+                else
+                {
+                    var checksumBytes = algorithm.ComputeHash(memory.ToArray());
+                    return Convert.ToBase64String(checksumBytes);
+                }
+            }
+            else
+#endif
             if (request.ContentStream != null)
             {
                 var seekableStream = WrapperStream.SearchWrappedStream(request.ContentStream, s => s.CanSeek);
@@ -225,6 +273,25 @@ namespace Amazon.Runtime.Internal.Util
                         return algorithm;
                     }
                 }
+            }
+
+            // Check if response contains any checksum headers with unsupported algorithms
+            // Headers are in the form: x-amz-checksum-{algorithm} (e.g., x-amz-checksum-xxhash128)
+            var unsupportedAlgorithm = responseData.GetHeaderNames()
+                .Where(header => header.StartsWith(_checksumHeaderPrefix, StringComparison.OrdinalIgnoreCase))
+                .Select(header => header.Substring(_checksumHeaderPrefix.Length))
+                .Select(algorithmName =>
+                {
+                    CoreChecksumAlgorithm result;
+                    return Enum.TryParse(algorithmName, ignoreCase: true, out result) ? (CoreChecksumAlgorithm?)result : null;
+                })
+                .Where(algorithm => algorithm.HasValue)
+                .Select(algorithm => algorithm.Value)
+                .FirstOrDefault(algorithm => UnsupportedChecksumAlgorithms.Contains(algorithm));
+
+            if (unsupportedAlgorithm != CoreChecksumAlgorithm.NONE)
+            {
+                _logger.DebugFormat("The service returned a response with checksum algorithm {0} which is not supported by the .NET SDK. Checksum validation will be skipped.", unsupportedAlgorithm);
             }
 
             return CoreChecksumAlgorithm.NONE;

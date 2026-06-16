@@ -56,25 +56,25 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataResources", targetDepth))
+                if (context.TestExpression("DataResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataResource, DataResourceUnmarshaller>(DataResourceUnmarshaller.Instance);
                     unmarshalledObject.DataResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludeManagementEventSources", targetDepth))
+                if (context.TestExpression("ExcludeManagementEventSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludeManagementEventSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeManagementEvents", targetDepth))
+                if (context.TestExpression("IncludeManagementEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeManagementEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReadWriteType", targetDepth))
+                if (context.TestExpression("ReadWriteType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReadWriteType = unmarshaller.Unmarshall(context, ref reader);

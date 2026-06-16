@@ -56,19 +56,19 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HighAction", targetDepth))
+                if (context.TestExpression("HighAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountTakeoverActionTypeUnmarshaller.Instance;
                     unmarshalledObject.HighAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LowAction", targetDepth))
+                if (context.TestExpression("LowAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountTakeoverActionTypeUnmarshaller.Instance;
                     unmarshalledObject.LowAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediumAction", targetDepth))
+                if (context.TestExpression("MediumAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountTakeoverActionTypeUnmarshaller.Instance;
                     unmarshalledObject.MediumAction = unmarshaller.Unmarshall(context, ref reader);

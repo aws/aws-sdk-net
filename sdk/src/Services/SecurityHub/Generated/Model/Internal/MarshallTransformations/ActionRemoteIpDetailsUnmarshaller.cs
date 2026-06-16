@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("City", targetDepth))
+                if (context.TestExpression("City", targetDepth, ref reader))
                 {
                     var unmarshaller = CityUnmarshaller.Instance;
                     unmarshalledObject.City = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Country", targetDepth))
+                if (context.TestExpression("Country", targetDepth, ref reader))
                 {
                     var unmarshaller = CountryUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeoLocation", targetDepth))
+                if (context.TestExpression("GeoLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = GeoLocationUnmarshaller.Instance;
                     unmarshalledObject.GeoLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpAddressV4", targetDepth))
+                if (context.TestExpression("IpAddressV4", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddressV4 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Organization", targetDepth))
+                if (context.TestExpression("Organization", targetDepth, ref reader))
                 {
                     var unmarshaller = IpOrganizationDetailsUnmarshaller.Instance;
                     unmarshalledObject.Organization = unmarshaller.Unmarshall(context, ref reader);

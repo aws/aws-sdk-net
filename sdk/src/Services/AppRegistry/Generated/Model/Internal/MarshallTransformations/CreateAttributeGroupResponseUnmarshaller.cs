@@ -52,7 +52,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attributeGroup", targetDepth))
+                if (context.TestExpression("attributeGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeGroupUnmarshaller.Instance;
                     response.AttributeGroup = unmarshaller.Unmarshall(context, ref reader);

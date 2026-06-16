@@ -56,49 +56,49 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CatalogTargets", targetDepth))
+                if (context.TestExpression("CatalogTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CatalogTarget, CatalogTargetUnmarshaller>(CatalogTargetUnmarshaller.Instance);
                     unmarshalledObject.CatalogTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeltaTargets", targetDepth))
+                if (context.TestExpression("DeltaTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeltaTarget, DeltaTargetUnmarshaller>(DeltaTargetUnmarshaller.Instance);
                     unmarshalledObject.DeltaTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamoDBTargets", targetDepth))
+                if (context.TestExpression("DynamoDBTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DynamoDBTarget, DynamoDBTargetUnmarshaller>(DynamoDBTargetUnmarshaller.Instance);
                     unmarshalledObject.DynamoDBTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HudiTargets", targetDepth))
+                if (context.TestExpression("HudiTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HudiTarget, HudiTargetUnmarshaller>(HudiTargetUnmarshaller.Instance);
                     unmarshalledObject.HudiTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IcebergTargets", targetDepth))
+                if (context.TestExpression("IcebergTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IcebergTarget, IcebergTargetUnmarshaller>(IcebergTargetUnmarshaller.Instance);
                     unmarshalledObject.IcebergTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JdbcTargets", targetDepth))
+                if (context.TestExpression("JdbcTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JdbcTarget, JdbcTargetUnmarshaller>(JdbcTargetUnmarshaller.Instance);
                     unmarshalledObject.JdbcTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MongoDBTargets", targetDepth))
+                if (context.TestExpression("MongoDBTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MongoDBTarget, MongoDBTargetUnmarshaller>(MongoDBTargetUnmarshaller.Instance);
                     unmarshalledObject.MongoDBTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Targets", targetDepth))
+                if (context.TestExpression("S3Targets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3Target, S3TargetUnmarshaller>(S3TargetUnmarshaller.Instance);
                     unmarshalledObject.S3Targets = unmarshaller.Unmarshall(context, ref reader);

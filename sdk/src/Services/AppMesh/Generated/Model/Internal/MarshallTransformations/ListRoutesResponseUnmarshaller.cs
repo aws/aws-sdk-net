@@ -52,13 +52,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("routes", targetDepth))
+                if (context.TestExpression("routes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteRef, RouteRefUnmarshaller>(RouteRefUnmarshaller.Instance);
                     response.Routes = unmarshaller.Unmarshall(context, ref reader);

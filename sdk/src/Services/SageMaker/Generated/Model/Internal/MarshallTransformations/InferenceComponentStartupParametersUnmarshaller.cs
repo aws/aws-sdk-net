@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContainerStartupHealthCheckTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("ContainerStartupHealthCheckTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContainerStartupHealthCheckTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataDownloadTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("ModelDataDownloadTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ModelDataDownloadTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxCapacityBreachBehavior", targetDepth))
+                if (context.TestExpression("MaxCapacityBreachBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaxCapacityBreachBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxCapacityBuffer", targetDepth))
+                if (context.TestExpression("MaxCapacityBuffer", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCapacityBuffer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricSpecifications", targetDepth))
+                if (context.TestExpression("MetricSpecifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PredictiveScalingMetricSpecification, PredictiveScalingMetricSpecificationUnmarshaller>(PredictiveScalingMetricSpecificationUnmarshaller.Instance);
                     unmarshalledObject.MetricSpecifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mode", targetDepth))
+                if (context.TestExpression("Mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchedulingBufferTime", targetDepth))
+                if (context.TestExpression("SchedulingBufferTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SchedulingBufferTime = unmarshaller.Unmarshall(context, ref reader);

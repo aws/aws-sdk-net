@@ -56,19 +56,19 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupLifecycleEventsDesiredStatus", targetDepth))
+                if (context.TestExpression("GroupLifecycleEventsDesiredStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupLifecycleEventsDesiredStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupLifecycleEventsStatus", targetDepth))
+                if (context.TestExpression("GroupLifecycleEventsStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupLifecycleEventsStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupLifecycleEventsStatusMessage", targetDepth))
+                if (context.TestExpression("GroupLifecycleEventsStatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupLifecycleEventsStatusMessage = unmarshaller.Unmarshall(context, ref reader);

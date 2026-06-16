@@ -56,49 +56,49 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actorId", targetDepth))
+                if (context.TestExpression("actorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("branch", targetDepth))
+                if (context.TestExpression("branch", targetDepth, ref reader))
                 {
                     var unmarshaller = BranchUnmarshaller.Instance;
                     unmarshalledObject.Branch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventId", targetDepth))
+                if (context.TestExpression("eventId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventTimestamp", targetDepth))
+                if (context.TestExpression("eventTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryId", targetDepth))
+                if (context.TestExpression("memoryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MemoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, MetadataValue, StringUnmarshaller, MetadataValueUnmarshaller>(StringUnmarshaller.Instance, MetadataValueUnmarshaller.Instance);
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("payload", targetDepth))
+                if (context.TestExpression("payload", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PayloadType, PayloadTypeUnmarshaller>(PayloadTypeUnmarshaller.Instance);
                     unmarshalledObject.Payload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SessionId = unmarshaller.Unmarshall(context, ref reader);

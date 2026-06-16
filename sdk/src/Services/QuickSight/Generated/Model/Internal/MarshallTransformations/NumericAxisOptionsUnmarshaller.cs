@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Range", targetDepth))
+                if (context.TestExpression("Range", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisDisplayRangeUnmarshaller.Instance;
                     unmarshalledObject.Range = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scale", targetDepth))
+                if (context.TestExpression("Scale", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisScaleUnmarshaller.Instance;
                     unmarshalledObject.Scale = unmarshaller.Unmarshall(context, ref reader);

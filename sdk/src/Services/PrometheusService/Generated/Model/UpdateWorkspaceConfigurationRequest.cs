@@ -44,7 +44,9 @@ namespace Amazon.PrometheusService.Model
     {
         private string _clientToken;
         private List<LimitsPerLabelSet> _limitsPerLabelSet = AWSConfigs.InitializeCollections ? new List<LimitsPerLabelSet>() : null;
+        private int? _outOfOrderTimeWindowInSeconds;
         private int? _retentionPeriodInDays;
+        private int? _ruleQueryOffsetInSeconds;
         private string _workspaceId;
 
         /// <summary>
@@ -92,6 +94,26 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutOfOrderTimeWindowInSeconds. 
+        /// <para>
+        /// Specifies the time window in seconds for accepting out of order samples. Out of order
+        /// samples older than this window are rejected.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? OutOfOrderTimeWindowInSeconds
+        {
+            get { return this._outOfOrderTimeWindowInSeconds; }
+            set { this._outOfOrderTimeWindowInSeconds = value; }
+        }
+
+        // Check to see if OutOfOrderTimeWindowInSeconds property is set
+        internal bool IsSetOutOfOrderTimeWindowInSeconds()
+        {
+            return this._outOfOrderTimeWindowInSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RetentionPeriodInDays. 
         /// <para>
         /// Specifies how many days that metrics will be retained in the workspace.
@@ -108,6 +130,26 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetRetentionPeriodInDays()
         {
             return this._retentionPeriodInDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleQueryOffsetInSeconds. 
+        /// <para>
+        /// Specifies the duration in seconds to offset rule evaluation queries into the past.
+        /// This allows ingested samples to be available before rule evaluation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? RuleQueryOffsetInSeconds
+        {
+            get { return this._ruleQueryOffsetInSeconds; }
+            set { this._ruleQueryOffsetInSeconds = value; }
+        }
+
+        // Check to see if RuleQueryOffsetInSeconds property is set
+        internal bool IsSetRuleQueryOffsetInSeconds()
+        {
+            return this._ruleQueryOffsetInSeconds.HasValue; 
         }
 
         /// <summary>

@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompositeFilters", targetDepth))
+                if (context.TestExpression("CompositeFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompositeFilter, CompositeFilterUnmarshaller>(CompositeFilterUnmarshaller.Instance);
                     unmarshalledObject.CompositeFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompositeOperator", targetDepth))
+                if (context.TestExpression("CompositeOperator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompositeOperator = unmarshaller.Unmarshall(context, ref reader);

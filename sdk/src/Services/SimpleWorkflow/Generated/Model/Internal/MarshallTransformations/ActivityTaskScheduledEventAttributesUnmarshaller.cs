@@ -56,67 +56,67 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activityId", targetDepth))
+                if (context.TestExpression("activityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActivityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activityType", targetDepth))
+                if (context.TestExpression("activityType", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityTypeUnmarshaller.Instance;
                     unmarshalledObject.ActivityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("control", targetDepth))
+                if (context.TestExpression("control", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Control = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
+                if (context.TestExpression("decisionTaskCompletedEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("heartbeatTimeout", targetDepth))
+                if (context.TestExpression("heartbeatTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HeartbeatTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("input", targetDepth))
+                if (context.TestExpression("input", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduleToCloseTimeout", targetDepth))
+                if (context.TestExpression("scheduleToCloseTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScheduleToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduleToStartTimeout", targetDepth))
+                if (context.TestExpression("scheduleToStartTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScheduleToStartTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startToCloseTimeout", targetDepth))
+                if (context.TestExpression("startToCloseTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskList", targetDepth))
+                if (context.TestExpression("taskList", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskListUnmarshaller.Instance;
                     unmarshalledObject.TaskList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskPriority", targetDepth))
+                if (context.TestExpression("taskPriority", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskPriority = unmarshaller.Unmarshall(context, ref reader);

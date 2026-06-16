@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lambdaCodeHook", targetDepth))
+                if (context.TestExpression("lambdaCodeHook", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaCodeHookUnmarshaller.Instance;
                     unmarshalledObject.LambdaCodeHook = unmarshaller.Unmarshall(context, ref reader);

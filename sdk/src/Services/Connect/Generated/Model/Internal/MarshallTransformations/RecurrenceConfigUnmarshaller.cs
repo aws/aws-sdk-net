@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RecurrencePattern", targetDepth))
+                if (context.TestExpression("RecurrencePattern", targetDepth, ref reader))
                 {
                     var unmarshaller = RecurrencePatternUnmarshaller.Instance;
                     unmarshalledObject.RecurrencePattern = unmarshaller.Unmarshall(context, ref reader);

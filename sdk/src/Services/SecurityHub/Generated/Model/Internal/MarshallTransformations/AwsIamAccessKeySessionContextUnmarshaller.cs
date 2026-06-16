@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsIamAccessKeySessionContextAttributesUnmarshaller.Instance;
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionIssuer", targetDepth))
+                if (context.TestExpression("SessionIssuer", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsIamAccessKeySessionContextSessionIssuerUnmarshaller.Instance;
                     unmarshalledObject.SessionIssuer = unmarshaller.Unmarshall(context, ref reader);

@@ -56,55 +56,55 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("atlassianOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("atlassianOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AtlassianOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.AtlassianOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("customOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.CustomOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("githubOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("githubOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GithubOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.GithubOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("googleOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("googleOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GoogleOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.GoogleOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includedOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("includedOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IncludedOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.IncludedOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linkedinOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("linkedinOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkedinOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.LinkedinOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("microsoftOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("microsoftOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MicrosoftOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.MicrosoftOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("salesforceOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("salesforceOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.SalesforceOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slackOauth2ProviderConfig", targetDepth))
+                if (context.TestExpression("slackOauth2ProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SlackOauth2ProviderConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.SlackOauth2ProviderConfig = unmarshaller.Unmarshall(context, ref reader);

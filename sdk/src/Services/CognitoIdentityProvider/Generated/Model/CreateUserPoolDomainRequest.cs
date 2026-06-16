@@ -76,6 +76,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private CustomDomainConfigType _customDomainConfig;
         private string _domain;
         private int? _managedLoginVersion;
+        private RoutingType _routing;
         private string _userPoolId;
 
         /// <summary>
@@ -156,6 +157,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetManagedLoginVersion()
         {
             return this._managedLoginVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Routing. 
+        /// <para>
+        /// The configuration of routing for requests to the domain for replicas of a replicated
+        /// user pool. The routing configuration is currently only supported for custom domains.
+        /// </para>
+        /// </summary>
+        public RoutingType Routing
+        {
+            get { return this._routing; }
+            set { this._routing = value; }
+        }
+
+        // Check to see if Routing property is set
+        internal bool IsSetRouting()
+        {
+            return this._routing != null;
         }
 
         /// <summary>

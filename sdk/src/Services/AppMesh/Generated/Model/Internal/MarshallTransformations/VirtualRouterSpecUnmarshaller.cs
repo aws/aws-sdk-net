@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("listeners", targetDepth))
+                if (context.TestExpression("listeners", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VirtualRouterListener, VirtualRouterListenerUnmarshaller>(VirtualRouterListenerUnmarshaller.Instance);
                     unmarshalledObject.Listeners = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SecurityControlDefinition", targetDepth))
+                if (context.TestExpression("SecurityControlDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityControlDefinitionUnmarshaller.Instance;
                     response.SecurityControlDefinition = unmarshaller.Unmarshall(context, ref reader);

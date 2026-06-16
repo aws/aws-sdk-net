@@ -56,88 +56,94 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("brokerCountUpdateInfo", targetDepth))
+                if (context.TestExpression("brokerCountUpdateInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = BrokerCountUpdateInfoUnmarshaller.Instance;
                     unmarshalledObject.BrokerCountUpdateInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("brokerEBSVolumeInfo", targetDepth))
+                if (context.TestExpression("brokerEBSVolumeInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BrokerEBSVolumeInfo, BrokerEBSVolumeInfoUnmarshaller>(BrokerEBSVolumeInfoUnmarshaller.Instance);
                     unmarshalledObject.BrokerEBSVolumeInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clientAuthentication", targetDepth))
+                if (context.TestExpression("clientAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = ClientAuthenticationUnmarshaller.Instance;
                     unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configurationInfo", targetDepth))
+                if (context.TestExpression("configurationInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurationInfoUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectivityInfo", targetDepth))
+                if (context.TestExpression("connectivityInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectivityInfoUnmarshaller.Instance;
                     unmarshalledObject.ConnectivityInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionInfo", targetDepth))
+                if (context.TestExpression("encryptionInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionInfoUnmarshaller.Instance;
                     unmarshalledObject.EncryptionInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enhancedMonitoring", targetDepth))
+                if (context.TestExpression("enhancedMonitoring", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceType", targetDepth))
+                if (context.TestExpression("instanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kafkaVersion", targetDepth))
+                if (context.TestExpression("kafkaVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KafkaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loggingInfo", targetDepth))
+                if (context.TestExpression("loggingInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingInfoUnmarshaller.Instance;
                     unmarshalledObject.LoggingInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfBrokerNodes", targetDepth))
+                if (context.TestExpression("numberOfBrokerNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfBrokerNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openMonitoring", targetDepth))
+                if (context.TestExpression("openMonitoring", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenMonitoringUnmarshaller.Instance;
                     unmarshalledObject.OpenMonitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rebalancing", targetDepth))
+                if (context.TestExpression("rebalancing", targetDepth, ref reader))
                 {
                     var unmarshaller = RebalancingUnmarshaller.Instance;
                     unmarshalledObject.Rebalancing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageMode", targetDepth))
+                if (context.TestExpression("storageMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("zookeeperAccess", targetDepth, ref reader))
+                {
+                    var unmarshaller = ZookeeperAccessUnmarshaller.Instance;
+                    unmarshalledObject.ZookeeperAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

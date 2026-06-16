@@ -117,6 +117,7 @@ namespace Amazon.WAFV2.Model
         private string _description;
         private string _id;
         private string _lockToken;
+        private MonetizationConfig _monetizationConfig;
         private string _name;
         private OnSourceDDoSProtectionConfig _onSourceDDoSProtectionConfig;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
@@ -381,6 +382,25 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetLockToken()
         {
             return this._lockToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonetizationConfig. 
+        /// <para>
+        /// The monetization configuration for the web ACL. Provide this when any rule in the
+        /// web ACL uses the <c>Monetize</c> action.
+        /// </para>
+        /// </summary>
+        public MonetizationConfig MonetizationConfig
+        {
+            get { return this._monetizationConfig; }
+            set { this._monetizationConfig = value; }
+        }
+
+        // Check to see if MonetizationConfig property is set
+        internal bool IsSetMonetizationConfig()
+        {
+            return this._monetizationConfig != null;
         }
 
         /// <summary>

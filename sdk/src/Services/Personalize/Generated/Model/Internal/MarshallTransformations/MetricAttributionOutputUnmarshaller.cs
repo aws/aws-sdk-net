@@ -56,13 +56,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3DataDestination", targetDepth))
+                if (context.TestExpression("s3DataDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DataConfigUnmarshaller.Instance;
                     unmarshalledObject.S3DataDestination = unmarshaller.Unmarshall(context, ref reader);

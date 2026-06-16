@@ -52,13 +52,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reports", targetDepth))
+                if (context.TestExpression("reports", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Report, ReportUnmarshaller>(ReportUnmarshaller.Instance);
                     response.Reports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reportsNotFound", targetDepth))
+                if (context.TestExpression("reportsNotFound", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ReportsNotFound = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Amount", targetDepth))
+                if (context.TestExpression("Amount", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDecimalUnmarshaller.Instance;
                     unmarshalledObject.Amount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Unit", targetDepth))
+                if (context.TestExpression("Unit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Unit = unmarshaller.Unmarshall(context, ref reader);

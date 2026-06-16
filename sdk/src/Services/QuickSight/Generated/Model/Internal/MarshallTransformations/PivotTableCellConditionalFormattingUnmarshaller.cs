@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldId", targetDepth))
+                if (context.TestExpression("FieldId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scope", targetDepth))
+                if (context.TestExpression("Scope", targetDepth, ref reader))
                 {
                     var unmarshaller = PivotTableConditionalFormattingScopeUnmarshaller.Instance;
                     unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scopes", targetDepth))
+                if (context.TestExpression("Scopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PivotTableConditionalFormattingScope, PivotTableConditionalFormattingScopeUnmarshaller>(PivotTableConditionalFormattingScopeUnmarshaller.Instance);
                     unmarshalledObject.Scopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextFormat", targetDepth))
+                if (context.TestExpression("TextFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = TextConditionalFormatUnmarshaller.Instance;
                     unmarshalledObject.TextFormat = unmarshaller.Unmarshall(context, ref reader);

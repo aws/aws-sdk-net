@@ -56,10 +56,22 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("azEl", targetDepth))
+                if (context.TestExpression("azEl", targetDepth, ref reader))
                 {
                     var unmarshaller = AzElProgramTrackSettingsUnmarshaller.Instance;
                     unmarshalledObject.AzEl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("oem", targetDepth, ref reader))
+                {
+                    var unmarshaller = OemProgramTrackSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Oem = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tle", targetDepth, ref reader))
+                {
+                    var unmarshaller = TleProgramTrackSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Tle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

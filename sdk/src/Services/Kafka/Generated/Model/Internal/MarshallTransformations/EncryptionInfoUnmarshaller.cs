@@ -56,13 +56,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionAtRest", targetDepth))
+                if (context.TestExpression("encryptionAtRest", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionAtRestUnmarshaller.Instance;
                     unmarshalledObject.EncryptionAtRest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionInTransit", targetDepth))
+                if (context.TestExpression("encryptionInTransit", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionInTransitUnmarshaller.Instance;
                     unmarshalledObject.EncryptionInTransit = unmarshaller.Unmarshall(context, ref reader);

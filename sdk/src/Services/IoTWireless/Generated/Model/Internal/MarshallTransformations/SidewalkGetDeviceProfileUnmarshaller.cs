@@ -56,19 +56,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationServerPublicKey", targetDepth))
+                if (context.TestExpression("ApplicationServerPublicKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationServerPublicKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DakCertificateMetadata", targetDepth))
+                if (context.TestExpression("DakCertificateMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DakCertificateMetadata, DakCertificateMetadataUnmarshaller>(DakCertificateMetadataUnmarshaller.Instance);
                     unmarshalledObject.DakCertificateMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QualificationStatus", targetDepth))
+                if (context.TestExpression("QualificationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.QualificationStatus = unmarshaller.Unmarshall(context, ref reader);

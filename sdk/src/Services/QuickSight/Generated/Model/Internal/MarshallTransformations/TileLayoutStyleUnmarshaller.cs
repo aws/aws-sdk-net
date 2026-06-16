@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Gutter", targetDepth))
+                if (context.TestExpression("Gutter", targetDepth, ref reader))
                 {
                     var unmarshaller = GutterStyleUnmarshaller.Instance;
                     unmarshalledObject.Gutter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Margin", targetDepth))
+                if (context.TestExpression("Margin", targetDepth, ref reader))
                 {
                     var unmarshaller = MarginStyleUnmarshaller.Instance;
                     unmarshalledObject.Margin = unmarshaller.Unmarshall(context, ref reader);

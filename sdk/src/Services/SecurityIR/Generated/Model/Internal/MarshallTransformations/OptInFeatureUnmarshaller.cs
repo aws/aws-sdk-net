@@ -56,13 +56,13 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("featureName", targetDepth))
+                if (context.TestExpression("featureName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isEnabled", targetDepth))
+                if (context.TestExpression("isEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context, ref reader);

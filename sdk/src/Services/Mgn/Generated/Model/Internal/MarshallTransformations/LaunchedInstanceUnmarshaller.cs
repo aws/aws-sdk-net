@@ -56,22 +56,34 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ec2InstanceID", targetDepth))
+                if (context.TestExpression("ec2InstanceID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ec2InstanceID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstBoot", targetDepth))
+                if (context.TestExpression("firstBoot", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirstBoot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobID", targetDepth))
+                if (context.TestExpression("jobID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobID = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("lastKnownChecks", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<LastKnownCheck, LastKnownCheckUnmarshaller>(LastKnownCheckUnmarshaller.Instance);
+                    unmarshalledObject.LastKnownChecks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("lastKnownFsxChecksStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastKnownFsxChecksStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

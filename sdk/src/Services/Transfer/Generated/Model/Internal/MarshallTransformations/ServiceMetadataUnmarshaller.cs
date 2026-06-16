@@ -56,7 +56,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UserDetails", targetDepth))
+                if (context.TestExpression("UserDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = UserDetailsUnmarshaller.Instance;
                     unmarshalledObject.UserDetails = unmarshaller.Unmarshall(context, ref reader);

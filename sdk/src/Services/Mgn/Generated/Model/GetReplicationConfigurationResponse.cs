@@ -49,6 +49,7 @@ namespace Amazon.Mgn.Model
         private string _sourceServerID;
         private string _stagingAreaSubnetId;
         private Dictionary<string, string> _stagingAreaTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private StorageConfiguration _storageConfiguration;
         private bool? _storeSnapshotOnLocalZone;
         private bool? _useDedicatedReplicationServer;
         private bool? _useFipsEndpoint;
@@ -346,6 +347,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetStagingAreaTags()
         {
             return this._stagingAreaTags != null && (this._stagingAreaTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConfiguration. 
+        /// <para>
+        /// Replication Configuration storage configuration.
+        /// </para>
+        /// </summary>
+        public StorageConfiguration StorageConfiguration
+        {
+            get { return this._storageConfiguration; }
+            set { this._storageConfiguration = value; }
+        }
+
+        // Check to see if StorageConfiguration property is set
+        internal bool IsSetStorageConfiguration()
+        {
+            return this._storageConfiguration != null;
         }
 
         /// <summary>

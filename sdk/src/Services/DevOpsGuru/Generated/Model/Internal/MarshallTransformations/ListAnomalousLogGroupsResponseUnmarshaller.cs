@@ -52,19 +52,19 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnomalousLogGroups", targetDepth))
+                if (context.TestExpression("AnomalousLogGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnomalousLogGroup, AnomalousLogGroupUnmarshaller>(AnomalousLogGroupUnmarshaller.Instance);
                     response.AnomalousLogGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsightId", targetDepth))
+                if (context.TestExpression("InsightId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InsightId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

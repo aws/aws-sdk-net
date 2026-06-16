@@ -52,7 +52,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TransitGatewayConnectPeerAssociation", targetDepth))
+                if (context.TestExpression("TransitGatewayConnectPeerAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = TransitGatewayConnectPeerAssociationUnmarshaller.Instance;
                     response.TransitGatewayConnectPeerAssociation = unmarshaller.Unmarshall(context, ref reader);

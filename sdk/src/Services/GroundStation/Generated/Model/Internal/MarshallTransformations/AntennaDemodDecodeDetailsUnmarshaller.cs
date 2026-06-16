@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("outputNode", targetDepth))
+                if (context.TestExpression("outputNode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputNode = unmarshaller.Unmarshall(context, ref reader);

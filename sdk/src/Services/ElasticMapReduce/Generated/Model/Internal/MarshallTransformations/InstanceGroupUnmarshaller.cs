@@ -56,109 +56,109 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoScalingPolicy", targetDepth))
+                if (context.TestExpression("AutoScalingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingPolicyDescriptionUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BidPrice", targetDepth))
+                if (context.TestExpression("BidPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BidPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Configurations", targetDepth))
+                if (context.TestExpression("Configurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
                     unmarshalledObject.Configurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationsVersion", targetDepth))
+                if (context.TestExpression("ConfigurationsVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationsVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomAmiId", targetDepth))
+                if (context.TestExpression("CustomAmiId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomAmiId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EbsBlockDevices", targetDepth))
+                if (context.TestExpression("EbsBlockDevices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EbsBlockDevice, EbsBlockDeviceUnmarshaller>(EbsBlockDeviceUnmarshaller.Instance);
                     unmarshalledObject.EbsBlockDevices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EbsOptimized", targetDepth))
+                if (context.TestExpression("EbsOptimized", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroupType", targetDepth))
+                if (context.TestExpression("InstanceGroupType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceGroupType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastSuccessfullyAppliedConfigurations", targetDepth))
+                if (context.TestExpression("LastSuccessfullyAppliedConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
                     unmarshalledObject.LastSuccessfullyAppliedConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastSuccessfullyAppliedConfigurationsVersion", targetDepth))
+                if (context.TestExpression("LastSuccessfullyAppliedConfigurationsVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessfullyAppliedConfigurationsVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Market", targetDepth))
+                if (context.TestExpression("Market", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Market = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestedInstanceCount", targetDepth))
+                if (context.TestExpression("RequestedInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RequestedInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunningInstanceCount", targetDepth))
+                if (context.TestExpression("RunningInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RunningInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShrinkPolicy", targetDepth))
+                if (context.TestExpression("ShrinkPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ShrinkPolicyUnmarshaller.Instance;
                     unmarshalledObject.ShrinkPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceGroupStatusUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

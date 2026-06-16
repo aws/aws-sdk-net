@@ -56,19 +56,19 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationCommit", targetDepth))
+                if (context.TestExpression("DestinationCommit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationCommit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MergeBaseCommit", targetDepth))
+                if (context.TestExpression("MergeBaseCommit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MergeBaseCommit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceCommit", targetDepth))
+                if (context.TestExpression("SourceCommit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceCommit = unmarshaller.Unmarshall(context, ref reader);

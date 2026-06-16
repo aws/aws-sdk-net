@@ -56,31 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blackoutSlateImage", targetDepth))
+                if (context.TestExpression("blackoutSlateImage", targetDepth, ref reader))
                 {
                     var unmarshaller = InputLocationUnmarshaller.Instance;
                     unmarshalledObject.BlackoutSlateImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkEndBlackout", targetDepth))
+                if (context.TestExpression("networkEndBlackout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkEndBlackout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkEndBlackoutImage", targetDepth))
+                if (context.TestExpression("networkEndBlackoutImage", targetDepth, ref reader))
                 {
                     var unmarshaller = InputLocationUnmarshaller.Instance;
                     unmarshalledObject.NetworkEndBlackoutImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkId", targetDepth))
+                if (context.TestExpression("networkId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IpSets", targetDepth))
+                if (context.TestExpression("IpSets", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleGroupVariablesIpSetsDetailsUnmarshaller.Instance;
                     unmarshalledObject.IpSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PortSets", targetDepth))
+                if (context.TestExpression("PortSets", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleGroupVariablesPortSetsDetailsUnmarshaller.Instance;
                     unmarshalledObject.PortSets = unmarshaller.Unmarshall(context, ref reader);

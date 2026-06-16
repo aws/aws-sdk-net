@@ -52,13 +52,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FlywheelArn", targetDepth))
+                if (context.TestExpression("FlywheelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FlywheelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FlywheelIterationId", targetDepth))
+                if (context.TestExpression("FlywheelIterationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FlywheelIterationId = unmarshaller.Unmarshall(context, ref reader);

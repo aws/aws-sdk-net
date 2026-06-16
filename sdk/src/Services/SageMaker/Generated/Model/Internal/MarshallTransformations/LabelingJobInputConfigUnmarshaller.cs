@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataAttributes", targetDepth))
+                if (context.TestExpression("DataAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobDataAttributesUnmarshaller.Instance;
                     unmarshalledObject.DataAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSource", targetDepth))
+                if (context.TestExpression("DataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingJobDataSourceUnmarshaller.Instance;
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);

@@ -1,6 +1,25 @@
 {
   "version" : 2,
   "testCases" : [ {
+    "id" : "SnapToRoadsSuccess",
+    "operationName" : "SnapToRoads",
+    "input" : {
+      "TracePoints" : [ {
+        "Position" : [ 8.53404, 50.16364 ]
+      }, {
+        "Position" : [ 8.53379056, 50.16352417 ]
+      } ]
+    },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
     "id" : "CalculateRouteMatrixSuccess",
     "operationName" : "CalculateRouteMatrix",
     "input" : {
@@ -24,30 +43,13 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "SnapToRoadsSuccess",
-    "operationName" : "SnapToRoads",
+    "id" : "CalculateIsolinesSuccess",
+    "operationName" : "CalculateIsolines",
     "input" : {
-      "TracePoints" : [ {
-        "Position" : [ 8.53404, 50.16364 ]
-      }, {
-        "Position" : [ 8.53379056, 50.16352417 ]
-      } ]
-    },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-west-2",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "CalculateRoutesSuccess",
-    "operationName" : "CalculateRoutes",
-    "input" : {
-      "Origin" : [ -123.253374, 49.351673 ],
-      "Destination" : [ -123.930756, 49.1314 ]
+      "Thresholds" : {
+        "Time" : [ 60 ]
+      },
+      "Origin" : [ -123.116796, 49.281476 ]
     },
     "expectation" : {
       "success" : { }
@@ -75,13 +77,11 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "CalculateIsolinesSuccess",
-    "operationName" : "CalculateIsolines",
+    "id" : "CalculateRoutesSuccess",
+    "operationName" : "CalculateRoutes",
     "input" : {
-      "Thresholds" : {
-        "Time" : [ 60 ]
-      },
-      "Origin" : [ -123.116796, 49.281476 ]
+      "Origin" : [ -123.253374, 49.351673 ],
+      "Destination" : [ -123.930756, 49.1314 ]
     },
     "expectation" : {
       "success" : { }

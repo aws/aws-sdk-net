@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kendraKnowledgeBaseConfiguration", targetDepth))
+                if (context.TestExpression("kendraKnowledgeBaseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KendraKnowledgeBaseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KendraKnowledgeBaseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sqlKnowledgeBaseConfiguration", targetDepth))
+                if (context.TestExpression("sqlKnowledgeBaseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SqlKnowledgeBaseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SqlKnowledgeBaseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vectorKnowledgeBaseConfiguration", targetDepth))
+                if (context.TestExpression("vectorKnowledgeBaseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VectorKnowledgeBaseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VectorKnowledgeBaseConfiguration = unmarshaller.Unmarshall(context, ref reader);

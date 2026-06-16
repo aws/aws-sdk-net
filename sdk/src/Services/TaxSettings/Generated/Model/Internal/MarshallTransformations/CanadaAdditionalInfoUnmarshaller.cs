@@ -56,25 +56,25 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("canadaQuebecSalesTaxNumber", targetDepth))
+                if (context.TestExpression("canadaQuebecSalesTaxNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanadaQuebecSalesTaxNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("canadaRetailSalesTaxNumber", targetDepth))
+                if (context.TestExpression("canadaRetailSalesTaxNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanadaRetailSalesTaxNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isResellerAccount", targetDepth))
+                if (context.TestExpression("isResellerAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsResellerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provincialSalesTaxId", targetDepth))
+                if (context.TestExpression("provincialSalesTaxId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvincialSalesTaxId = unmarshaller.Unmarshall(context, ref reader);

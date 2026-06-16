@@ -45,7 +45,9 @@ namespace Amazon.BedrockAgentCore.Model
         private int? _maxResults;
         private string _memoryId;
         private string _memoryStrategyId;
+        private List<MemoryMetadataFilterExpression> _metadataFilters = AWSConfigs.InitializeCollections ? new List<MemoryMetadataFilterExpression>() : null;
         private string _awsNamespace;
+        private string _namespacePath;
         private string _nextToken;
 
         /// <summary>
@@ -107,13 +109,38 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetadataFilters. 
+        /// <para>
+        /// A list of metadata filter expressions to scope the returned memory records.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<MemoryMetadataFilterExpression> MetadataFilters
+        {
+            get { return this._metadataFilters; }
+            set { this._metadataFilters = value; }
+        }
+
+        // Check to see if MetadataFilters property is set
+        internal bool IsSetMetadataFilters()
+        {
+            return this._metadataFilters != null && (this._metadataFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The namespace prefix to filter memory records by. Returns all memory records in namespaces
-        /// that start with the provided prefix.
+        /// that start with the provided prefix. Either <c>namespace</c> or <c>namespacePath</c>
+        /// is required.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -124,6 +151,27 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespacePath. 
+        /// <para>
+        /// Use namespacePath for hierarchical retrievals. Return all memory records where namespace
+        /// falls under the same parent hierarchy. Either <c>namespace</c> or <c>namespacePath</c>
+        /// is required.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string NamespacePath
+        {
+            get { return this._namespacePath; }
+            set { this._namespacePath = value; }
+        }
+
+        // Check to see if NamespacePath property is set
+        internal bool IsSetNamespacePath()
+        {
+            return this._namespacePath != null;
         }
 
         /// <summary>

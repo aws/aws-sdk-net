@@ -52,13 +52,13 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcurementPortalPreferences", targetDepth))
+                if (context.TestExpression("ProcurementPortalPreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProcurementPortalPreferenceSummary, ProcurementPortalPreferenceSummaryUnmarshaller>(ProcurementPortalPreferenceSummaryUnmarshaller.Instance);
                     response.ProcurementPortalPreferences = unmarshaller.Unmarshall(context, ref reader);

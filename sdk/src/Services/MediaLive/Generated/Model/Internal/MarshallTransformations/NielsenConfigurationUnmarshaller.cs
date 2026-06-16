@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("distributorId", targetDepth))
+                if (context.TestExpression("distributorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DistributorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenPcmToId3Tagging", targetDepth))
+                if (context.TestExpression("nielsenPcmToId3Tagging", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NielsenPcmToId3Tagging = unmarshaller.Unmarshall(context, ref reader);

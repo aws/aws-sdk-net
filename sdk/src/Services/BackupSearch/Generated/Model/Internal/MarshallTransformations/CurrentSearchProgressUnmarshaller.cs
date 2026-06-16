@@ -56,19 +56,19 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ItemsMatchedCount", targetDepth))
+                if (context.TestExpression("ItemsMatchedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ItemsMatchedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ItemsScannedCount", targetDepth))
+                if (context.TestExpression("ItemsScannedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ItemsScannedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecoveryPointsScannedCount", targetDepth))
+                if (context.TestExpression("RecoveryPointsScannedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecoveryPointsScannedCount = unmarshaller.Unmarshall(context, ref reader);

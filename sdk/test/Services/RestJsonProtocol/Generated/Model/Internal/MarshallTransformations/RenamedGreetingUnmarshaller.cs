@@ -56,7 +56,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("salutation", targetDepth))
+                if (context.TestExpression("salutation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Salutation = unmarshaller.Unmarshall(context, ref reader);

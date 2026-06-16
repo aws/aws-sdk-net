@@ -56,13 +56,13 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MFAMode", targetDepth))
+                if (context.TestExpression("MFAMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MFAMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("settings", targetDepth))
+                if (context.TestExpression("settings", targetDepth, ref reader))
                 {
                     var unmarshaller = SettingsUnmarshaller.Instance;
                     unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);

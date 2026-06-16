@@ -56,13 +56,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LoRaWAN", targetDepth))
+                if (context.TestExpression("LoRaWAN", targetDepth, ref reader))
                 {
                     var unmarshaller = LoRaWANJoinEventNotificationConfigurationsUnmarshaller.Instance;
                     unmarshalledObject.LoRaWAN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WirelessDeviceIdEventTopic", targetDepth))
+                if (context.TestExpression("WirelessDeviceIdEventTopic", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WirelessDeviceIdEventTopic = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datetime", targetDepth))
+                if (context.TestExpression("datetime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Datetime = unmarshaller.Unmarshall(context, ref reader);

@@ -36,9 +36,10 @@ namespace Amazon.BedrockAgentCore.Model
     /// 
     ///  
     /// <para>
-    /// To invoke an agent you must specify the AgentCore Runtime ARN and provide a payload
-    /// containing your request. You can optionally specify a qualifier to target a specific
-    /// version or endpoint of the agent.
+    /// To invoke an agent, you can specify either the AgentCore Runtime ARN or the agent
+    /// ID with an account ID, and provide a payload containing your request. When you use
+    /// the agent ID instead of the full ARN, you don't need to URL-encode the identifier.
+    /// You can optionally specify a qualifier to target a specific endpoint of the agent.
     /// </para>
     ///  
     /// <para>
@@ -109,6 +110,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The identifier of the Amazon Web Services account for the agent runtime resource.
+        /// This parameter is required when you specify an agent ID instead of the full ARN for
+        /// <c>agentRuntimeArn</c>.
         /// </para>
         /// </summary>
         public string AccountId
@@ -126,8 +129,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
-        /// The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN
-        /// uniquely identifies the agent runtime resource in Amazon Bedrock AgentCore.
+        /// The identifier of the agent runtime to invoke. You can specify either the full Amazon
+        /// Web Services Resource Name (ARN) or the agent ID. If you use the agent ID, you must
+        /// also provide the <c>accountId</c> query parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -244,9 +248,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// The qualifier to use for the agent runtime. This can be a version number or an endpoint
-        /// name that points to a specific version. If not specified, Amazon Bedrock AgentCore
-        /// uses the default version of the agent runtime.
+        /// The qualifier to use for the agent runtime. This is an endpoint name that points to
+        /// a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint
+        /// of the agent runtime.
         /// </para>
         /// </summary>
         public string Qualifier

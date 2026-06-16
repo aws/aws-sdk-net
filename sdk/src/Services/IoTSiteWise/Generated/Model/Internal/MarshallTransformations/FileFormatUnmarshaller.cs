@@ -56,13 +56,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("csv", targetDepth))
+                if (context.TestExpression("csv", targetDepth, ref reader))
                 {
                     var unmarshaller = CsvUnmarshaller.Instance;
                     unmarshalledObject.Csv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parquet", targetDepth))
+                if (context.TestExpression("parquet", targetDepth, ref reader))
                 {
                     var unmarshaller = ParquetUnmarshaller.Instance;
                     unmarshalledObject.Parquet = unmarshaller.Unmarshall(context, ref reader);

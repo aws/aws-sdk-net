@@ -12,7 +12,10 @@
     <Copyright>Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
+
+    <!-- NuGet audit vulnerabilities are handled by a separate CI pipeline, not the build -->
     <NuGetAuditMode>direct</NuGetAuditMode>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="output-files\favicon.ico">
@@ -107,6 +110,7 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
     <PackageReference Include="System.Text.Json" Version="10.0.1" />
   </ItemGroup>
 </Project>

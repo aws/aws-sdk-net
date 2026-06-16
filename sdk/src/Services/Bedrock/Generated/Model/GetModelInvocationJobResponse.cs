@@ -36,6 +36,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _clientRequestToken;
         private DateTime? _endTime;
+        private long? _errorRecordCount;
         private ModelInvocationJobInputDataConfig _inputDataConfig;
         private string _jobArn;
         private DateTime? _jobExpirationTime;
@@ -45,10 +46,13 @@ namespace Amazon.Bedrock.Model
         private string _modelId;
         private ModelInvocationType _modelInvocationType;
         private ModelInvocationJobOutputDataConfig _outputDataConfig;
+        private long? _processedRecordCount;
         private string _roleArn;
         private ModelInvocationJobStatus _status;
         private DateTime? _submitTime;
+        private long? _successRecordCount;
         private int? _timeoutDurationInHours;
+        private long? _totalRecordCount;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -89,6 +93,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorRecordCount. 
+        /// <para>
+        /// The number of records that failed to process in the batch inference job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long? ErrorRecordCount
+        {
+            get { return this._errorRecordCount; }
+            set { this._errorRecordCount = value; }
+        }
+
+        // Check to see if ErrorRecordCount property is set
+        internal bool IsSetErrorRecordCount()
+        {
+            return this._errorRecordCount.HasValue; 
         }
 
         /// <summary>
@@ -261,6 +284,25 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProcessedRecordCount. 
+        /// <para>
+        /// The number of records that have been processed in the batch inference job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long? ProcessedRecordCount
+        {
+            get { return this._processedRecordCount; }
+            set { this._processedRecordCount = value; }
+        }
+
+        // Check to see if ProcessedRecordCount property is set
+        internal bool IsSetProcessedRecordCount()
+        {
+            return this._processedRecordCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service role with permissions to carry out and
@@ -389,6 +431,25 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SuccessRecordCount. 
+        /// <para>
+        /// The number of records that were successfully processed in the batch inference job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long? SuccessRecordCount
+        {
+            get { return this._successRecordCount; }
+            set { this._successRecordCount = value; }
+        }
+
+        // Check to see if SuccessRecordCount property is set
+        internal bool IsSetSuccessRecordCount()
+        {
+            return this._successRecordCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TimeoutDurationInHours. 
         /// <para>
         /// The number of hours after which batch inference job was set to time out.
@@ -405,6 +466,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetTimeoutDurationInHours()
         {
             return this._timeoutDurationInHours.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalRecordCount. 
+        /// <para>
+        /// The total number of records in the batch inference job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long? TotalRecordCount
+        {
+            get { return this._totalRecordCount; }
+            set { this._totalRecordCount = value; }
+        }
+
+        // Check to see if TotalRecordCount property is set
+        internal bool IsSetTotalRecordCount()
+        {
+            return this._totalRecordCount.HasValue; 
         }
 
         /// <summary>

@@ -56,58 +56,64 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalysisDefaults", targetDepth))
+                if (context.TestExpression("AnalysisDefaults", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalysisDefaultsUnmarshaller.Instance;
                     unmarshalledObject.AnalysisDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CalculatedFields", targetDepth))
+                if (context.TestExpression("CalculatedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CalculatedField, CalculatedFieldUnmarshaller>(CalculatedFieldUnmarshaller.Instance);
                     unmarshalledObject.CalculatedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnConfigurations", targetDepth))
+                if (context.TestExpression("ColumnConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnConfiguration, ColumnConfigurationUnmarshaller>(ColumnConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ColumnConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSetIdentifierDeclarations", targetDepth))
+                if (context.TestExpression("DataSetIdentifierDeclarations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSetIdentifierDeclaration, DataSetIdentifierDeclarationUnmarshaller>(DataSetIdentifierDeclarationUnmarshaller.Instance);
                     unmarshalledObject.DataSetIdentifierDeclarations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterGroups", targetDepth))
+                if (context.TestExpression("FilterGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterGroup, FilterGroupUnmarshaller>(FilterGroupUnmarshaller.Instance);
                     unmarshalledObject.FilterGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Options", targetDepth))
+                if (context.TestExpression("Options", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetOptionsUnmarshaller.Instance;
                     unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterDeclarations", targetDepth))
+                if (context.TestExpression("ParameterDeclarations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParameterDeclaration, ParameterDeclarationUnmarshaller>(ParameterDeclarationUnmarshaller.Instance);
                     unmarshalledObject.ParameterDeclarations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sheets", targetDepth))
+                if (context.TestExpression("Sheets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SheetDefinition, SheetDefinitionUnmarshaller>(SheetDefinitionUnmarshaller.Instance);
                     unmarshalledObject.Sheets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StaticFiles", targetDepth))
+                if (context.TestExpression("StaticFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StaticFile, StaticFileUnmarshaller>(StaticFileUnmarshaller.Instance);
                     unmarshalledObject.StaticFiles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TooltipSheets", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TooltipSheetDefinition, TooltipSheetDefinitionUnmarshaller>(TooltipSheetDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.TooltipSheets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

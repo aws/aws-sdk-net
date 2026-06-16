@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomRequestHandling", targetDepth))
+                if (context.TestExpression("CustomRequestHandling", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomRequestHandlingUnmarshaller.Instance;
                     unmarshalledObject.CustomRequestHandling = unmarshaller.Unmarshall(context, ref reader);

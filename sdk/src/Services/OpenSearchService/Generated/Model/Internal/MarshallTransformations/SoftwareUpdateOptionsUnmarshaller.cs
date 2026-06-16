@@ -56,10 +56,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoSoftwareUpdateEnabled", targetDepth))
+                if (context.TestExpression("AutoSoftwareUpdateEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoSoftwareUpdateEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UseLatestServiceSoftwareForBlueGreen", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.UseLatestServiceSoftwareForBlueGreen = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

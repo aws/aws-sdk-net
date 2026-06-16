@@ -72,25 +72,25 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ErrorArguments", targetDepth))
+                    if (context.TestExpression("ErrorArguments", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ConflictExceptionErrorArgument, ConflictExceptionErrorArgumentUnmarshaller>(ConflictExceptionErrorArgumentUnmarshaller.Instance);
                         unmarshalledObject.ErrorArguments = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ErrorId", targetDepth))
+                    if (context.TestExpression("ErrorId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ResourceId", targetDepth))
+                    if (context.TestExpression("ResourceId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ResourceType", targetDepth))
+                    if (context.TestExpression("ResourceType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);

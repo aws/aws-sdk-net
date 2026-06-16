@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Connection", targetDepth))
+                if (context.TestExpression("Connection", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionUnmarshaller.Instance;
                     response.Connection = unmarshaller.Unmarshall(context, ref reader);
@@ -98,6 +98,10 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {

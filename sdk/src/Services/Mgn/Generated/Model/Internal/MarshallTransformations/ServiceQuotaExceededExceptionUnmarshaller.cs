@@ -72,37 +72,37 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("code", targetDepth))
+                    if (context.TestExpression("code", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("quotaCode", targetDepth))
+                    if (context.TestExpression("quotaCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("quotaValue", targetDepth))
+                    if (context.TestExpression("quotaValue", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.QuotaValue = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("resourceId", targetDepth))
+                    if (context.TestExpression("resourceId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("resourceType", targetDepth))
+                    if (context.TestExpression("resourceType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("serviceCode", targetDepth))
+                    if (context.TestExpression("serviceCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context, ref reader);

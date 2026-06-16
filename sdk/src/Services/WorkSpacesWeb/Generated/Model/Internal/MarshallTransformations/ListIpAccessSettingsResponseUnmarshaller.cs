@@ -52,13 +52,13 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ipAccessSettings", targetDepth))
+                if (context.TestExpression("ipAccessSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IpAccessSettingsSummary, IpAccessSettingsSummaryUnmarshaller>(IpAccessSettingsSummaryUnmarshaller.Instance);
                     response.IpAccessSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

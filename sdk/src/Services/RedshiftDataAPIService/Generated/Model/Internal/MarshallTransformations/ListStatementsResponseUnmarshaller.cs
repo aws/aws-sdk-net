@@ -52,13 +52,13 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Statements", targetDepth))
+                if (context.TestExpression("Statements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StatementData, StatementDataUnmarshaller>(StatementDataUnmarshaller.Instance);
                     response.Statements = unmarshaller.Unmarshall(context, ref reader);

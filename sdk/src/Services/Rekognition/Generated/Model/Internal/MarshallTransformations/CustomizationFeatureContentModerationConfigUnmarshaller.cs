@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConfidenceThreshold", targetDepth))
+                if (context.TestExpression("ConfidenceThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ConfidenceThreshold = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instructionCollection", targetDepth))
+                if (context.TestExpression("instructionCollection", targetDepth, ref reader))
                 {
                     var unmarshaller = InstructionCollectionUnmarshaller.Instance;
                     unmarshalledObject.InstructionCollection = unmarshaller.Unmarshall(context, ref reader);

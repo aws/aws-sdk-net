@@ -56,37 +56,37 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentType", targetDepth))
+                if (context.TestExpression("contentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("correlationData", targetDepth))
+                if (context.TestExpression("correlationData", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CorrelationData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageExpiry", targetDepth))
+                if (context.TestExpression("messageExpiry", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MessageExpiry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("payloadFormatIndicator", targetDepth))
+                if (context.TestExpression("payloadFormatIndicator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PayloadFormatIndicator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("responseTopic", targetDepth))
+                if (context.TestExpression("responseTopic", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResponseTopic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userProperties", targetDepth))
+                if (context.TestExpression("userProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserProperty, UserPropertyUnmarshaller>(UserPropertyUnmarshaller.Instance);
                     unmarshalledObject.UserProperties = unmarshaller.Unmarshall(context, ref reader);

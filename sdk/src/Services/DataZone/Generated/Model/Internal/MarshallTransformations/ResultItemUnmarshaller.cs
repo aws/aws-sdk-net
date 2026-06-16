@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lineageNode", targetDepth))
+                if (context.TestExpression("lineageNode", targetDepth, ref reader))
                 {
                     var unmarshaller = LineageNodeItemUnmarshaller.Instance;
                     unmarshalledObject.LineageNode = unmarshaller.Unmarshall(context, ref reader);

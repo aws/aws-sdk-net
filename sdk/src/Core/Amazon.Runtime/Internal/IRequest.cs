@@ -31,7 +31,8 @@ namespace Amazon.Runtime.Internal
     /// Callers shouldn't ever interact directly with objects of this class.
     /// </para>
     /// </summary>
-    public interface IRequest
+    [AWSIsBackwardsCompatible]
+    public interface IRequest : IDisposable
     {
         /// <summary>
         /// A publisher provided by consumers of the SDK to provide events that the SDK will pull from to stream to the service.
@@ -58,6 +59,14 @@ namespace Amazon.Runtime.Internal
         /// Returns a dictionary of the headers included in this request.
         /// </summary>
         IDictionary<string, string> Headers
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Returns a list of the event headers included in this request for event streaming operations
+        /// </summary>
+        IList<EventStreamHeader> EventHeaders
         {
             get;
         }

@@ -56,13 +56,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Patch", targetDepth))
+                if (context.TestExpression("Patch", targetDepth, ref reader))
                 {
                     var unmarshaller = PatchUnmarshaller.Instance;
                     unmarshalledObject.Patch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PatchStatus", targetDepth))
+                if (context.TestExpression("PatchStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = PatchStatusUnmarshaller.Instance;
                     unmarshalledObject.PatchStatus = unmarshaller.Unmarshall(context, ref reader);

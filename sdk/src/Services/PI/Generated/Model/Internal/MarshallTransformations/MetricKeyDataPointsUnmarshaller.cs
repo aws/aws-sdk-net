@@ -56,13 +56,13 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataPoints", targetDepth))
+                if (context.TestExpression("DataPoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataPoint, DataPointUnmarshaller>(DataPointUnmarshaller.Instance);
                     unmarshalledObject.DataPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Key", targetDepth))
+                if (context.TestExpression("Key", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseResourceMetricKeyUnmarshaller.Instance;
                     unmarshalledObject.Key = unmarshaller.Unmarshall(context, ref reader);

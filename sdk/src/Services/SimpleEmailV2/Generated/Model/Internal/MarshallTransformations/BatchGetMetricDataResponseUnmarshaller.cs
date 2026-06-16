@@ -52,13 +52,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataError, MetricDataErrorUnmarshaller>(MetricDataErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("Results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataResult, MetricDataResultUnmarshaller>(MetricDataResultUnmarshaller.Instance);
                     response.Results = unmarshaller.Unmarshall(context, ref reader);

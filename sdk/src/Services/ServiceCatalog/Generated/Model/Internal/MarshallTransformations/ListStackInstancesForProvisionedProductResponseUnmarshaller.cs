@@ -52,13 +52,13 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackInstances", targetDepth))
+                if (context.TestExpression("StackInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StackInstance, StackInstanceUnmarshaller>(StackInstanceUnmarshaller.Instance);
                     response.StackInstances = unmarshaller.Unmarshall(context, ref reader);

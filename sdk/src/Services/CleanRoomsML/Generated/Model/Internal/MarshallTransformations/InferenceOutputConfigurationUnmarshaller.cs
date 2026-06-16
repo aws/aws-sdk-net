@@ -56,13 +56,13 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accept", targetDepth))
+                if (context.TestExpression("accept", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Accept = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("members", targetDepth))
+                if (context.TestExpression("members", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InferenceReceiverMember, InferenceReceiverMemberUnmarshaller>(InferenceReceiverMemberUnmarshaller.Instance);
                     unmarshalledObject.Members = unmarshaller.Unmarshall(context, ref reader);

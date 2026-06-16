@@ -52,13 +52,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedRepositoryUpdates", targetDepth))
+                if (context.TestExpression("allowedRepositoryUpdates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, List<string>>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance)));
                     response.AllowedRepositoryUpdates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packageGroup", targetDepth))
+                if (context.TestExpression("packageGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageGroupDescriptionUnmarshaller.Instance;
                     response.PackageGroup = unmarshaller.Unmarshall(context, ref reader);

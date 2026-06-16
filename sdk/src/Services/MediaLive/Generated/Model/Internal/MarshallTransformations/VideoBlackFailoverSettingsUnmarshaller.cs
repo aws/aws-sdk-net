@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blackDetectThreshold", targetDepth))
+                if (context.TestExpression("blackDetectThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BlackDetectThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoBlackThresholdMsec", targetDepth))
+                if (context.TestExpression("videoBlackThresholdMsec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VideoBlackThresholdMsec = unmarshaller.Unmarshall(context, ref reader);

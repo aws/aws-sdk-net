@@ -56,67 +56,67 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CaptchaResponse", targetDepth))
+                if (context.TestExpression("CaptchaResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = CaptchaResponseUnmarshaller.Instance;
                     unmarshalledObject.CaptchaResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChallengeResponse", targetDepth))
+                if (context.TestExpression("ChallengeResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = ChallengeResponseUnmarshaller.Instance;
                     unmarshalledObject.ChallengeResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Labels", targetDepth))
+                if (context.TestExpression("Labels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Label, LabelUnmarshaller>(LabelUnmarshaller.Instance);
                     unmarshalledObject.Labels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverriddenAction", targetDepth))
+                if (context.TestExpression("OverriddenAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverriddenAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Request", targetDepth))
+                if (context.TestExpression("Request", targetDepth, ref reader))
                 {
                     var unmarshaller = HTTPRequestUnmarshaller.Instance;
                     unmarshalledObject.Request = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestHeadersInserted", targetDepth))
+                if (context.TestExpression("RequestHeadersInserted", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HTTPHeader, HTTPHeaderUnmarshaller>(HTTPHeaderUnmarshaller.Instance);
                     unmarshalledObject.RequestHeadersInserted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseCodeSent", targetDepth))
+                if (context.TestExpression("ResponseCodeSent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResponseCodeSent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleNameWithinRuleGroup", targetDepth))
+                if (context.TestExpression("RuleNameWithinRuleGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleNameWithinRuleGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Weight", targetDepth))
+                if (context.TestExpression("Weight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Weight = unmarshaller.Unmarshall(context, ref reader);

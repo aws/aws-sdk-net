@@ -56,13 +56,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("interactiveEndpoint", targetDepth))
+                if (context.TestExpression("interactiveEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InteractiveEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remoteDriverEndpoint", targetDepth))
+                if (context.TestExpression("remoteDriverEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteDriverEndpoint = unmarshaller.Unmarshall(context, ref reader);

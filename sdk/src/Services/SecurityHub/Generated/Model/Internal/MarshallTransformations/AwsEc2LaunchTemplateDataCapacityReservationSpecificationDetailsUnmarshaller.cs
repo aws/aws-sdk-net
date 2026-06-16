@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityReservationPreference", targetDepth))
+                if (context.TestExpression("CapacityReservationPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservationPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityReservationTarget", targetDepth))
+                if (context.TestExpression("CapacityReservationTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservationTarget = unmarshaller.Unmarshall(context, ref reader);

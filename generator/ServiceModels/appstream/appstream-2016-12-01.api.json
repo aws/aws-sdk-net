@@ -327,7 +327,8 @@
         {"shape":"ResourceAlreadyExistsException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"IncompatibleImageException"},
-        {"shape":"DryRunOperationException"}
+        {"shape":"DryRunOperationException"},
+        {"shape":"InvalidParameterCombinationException"}
       ]
     },
     "CreateStack":{
@@ -942,6 +943,20 @@
         {"shape":"ConcurrentModificationException"}
       ]
     },
+    "DrainSessionInstance":{
+      "name":"DrainSessionInstance",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DrainSessionInstanceRequest"},
+      "output":{"shape":"DrainSessionInstanceResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"OperationNotPermittedException"}
+      ]
+    },
     "EnableUser":{
       "name":"EnableUser",
       "http":{
@@ -1376,6 +1391,54 @@
         "UserId":{"shape":"String"}
       }
     },
+    "AgentAccessConfig":{
+      "type":"structure",
+      "required":[
+        "Settings",
+        "ScreenResolution",
+        "ScreenImageFormat"
+      ],
+      "members":{
+        "Settings":{"shape":"AgentAccessSettingList"},
+        "S3BucketArn":{"shape":"S3BucketArn"},
+        "ScreenshotsUploadEnabled":{"shape":"BooleanObject"},
+        "ScreenResolution":{"shape":"ScreenResolution"},
+        "ScreenImageFormat":{"shape":"ScreenImageFormat"}
+      }
+    },
+    "AgentAccessConfigForUpdate":{
+      "type":"structure",
+      "members":{
+        "Settings":{"shape":"AgentAccessSettingList"},
+        "S3BucketArn":{"shape":"S3BucketArn"},
+        "ScreenshotsUploadEnabled":{"shape":"BooleanObject"},
+        "ScreenResolution":{"shape":"ScreenResolution"},
+        "ScreenImageFormat":{"shape":"ScreenImageFormat"}
+      }
+    },
+    "AgentAccessSetting":{
+      "type":"structure",
+      "required":[
+        "AgentAction",
+        "Permission"
+      ],
+      "members":{
+        "AgentAction":{"shape":"AgentAction"},
+        "Permission":{"shape":"Permission"}
+      }
+    },
+    "AgentAccessSettingList":{
+      "type":"list",
+      "member":{"shape":"AgentAccessSetting"},
+      "min":1
+    },
+    "AgentAction":{
+      "type":"string",
+      "enum":[
+        "COMPUTER_VISION",
+        "COMPUTER_INPUT"
+      ]
+    },
     "AgentSoftwareVersion":{
       "type":"string",
       "enum":[
@@ -1785,7 +1848,10 @@
         "DesiredUserSessions":{"shape":"Integer"},
         "AvailableUserSessions":{"shape":"Integer"},
         "ActiveUserSessions":{"shape":"Integer"},
-        "ActualUserSessions":{"shape":"Integer"}
+        "ActualUserSessions":{"shape":"Integer"},
+        "Draining":{"shape":"Integer"},
+        "DrainModeActiveUserSessions":{"shape":"Integer"},
+        "DrainModeUnusedUserSessions":{"shape":"Integer"}
       }
     },
     "ConcurrentModificationException":{
@@ -1794,6 +1860,12 @@
         "Message":{"shape":"ErrorMessage"}
       },
       "exception":true
+    },
+    "ContentRedirection":{
+      "type":"structure",
+      "members":{
+        "HostToClient":{"shape":"UrlRedirectionConfig"}
+      }
     },
     "CopyImageRequest":{
       "type":"structure",
@@ -2061,14 +2133,11 @@
     },
     "CreateImportedImageRequest":{
       "type":"structure",
-      "required":[
-        "Name",
-        "SourceAmiId",
-        "IamRoleArn"
-      ],
+      "required":["Name"],
       "members":{
         "Name":{"shape":"Name"},
         "SourceAmiId":{"shape":"PhotonAmiId"},
+        "WorkspaceImageId":{"shape":"WorkspaceImageId"},
         "IamRoleArn":{"shape":"Arn"},
         "Description":{"shape":"ImageImportDescription"},
         "DisplayName":{"shape":"ImageImportDisplayName"},
@@ -2100,7 +2169,9 @@
         "Tags":{"shape":"Tags"},
         "AccessEndpoints":{"shape":"AccessEndpointList"},
         "EmbedHostDomains":{"shape":"EmbedHostDomains"},
-        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"}
+        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"},
+        "ContentRedirection":{"shape":"ContentRedirection"},
+        "AgentAccessConfig":{"shape":"AgentAccessConfig"}
       }
     },
     "CreateStackResult":{
@@ -2809,6 +2880,17 @@
       "member":{"shape":"Domain"},
       "max":50
     },
+    "DrainSessionInstanceRequest":{
+      "type":"structure",
+      "required":["SessionId"],
+      "members":{
+        "SessionId":{"shape":"String"}
+      }
+    },
+    "DrainSessionInstanceResult":{
+      "type":"structure",
+      "members":{}
+    },
     "DryRunOperationException":{
       "type":"structure",
       "members":{
@@ -2960,7 +3042,8 @@
       "enum":[
         "EXPORTING",
         "COMPLETED",
-        "FAILED"
+        "FAILED",
+        "TIMED_OUT"
       ]
     },
     "ExportImageTasks":{
@@ -3294,7 +3377,8 @@
       "type":"string",
       "enum":[
         "CUSTOM",
-        "NATIVE"
+        "NATIVE",
+        "BYOL"
       ]
     },
     "IncompatibleImageException":{
@@ -3303,6 +3387,14 @@
         "Message":{"shape":"ErrorMessage"}
       },
       "exception":true
+    },
+    "InstanceDrainStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "DRAINING",
+        "NOT_APPLICABLE"
+      ]
     },
     "InstanceType":{
       "type":"string",
@@ -3602,6 +3694,10 @@
       "min":3,
       "pattern":"^[0-9a-z\\.\\-]*(?<!\\.)$"
     },
+    "S3BucketArn":{
+      "type":"string",
+      "pattern":"^arn:aws(?:\\-cn|\\-iso\\-b|\\-iso|\\-us\\-gov)?:s3:::[a-z0-9][a-z0-9.\\-]{1,61}[a-z0-9]$"
+    },
     "S3Key":{
       "type":"string",
       "max":1024,
@@ -3614,6 +3710,17 @@
         "S3Bucket":{"shape":"S3Bucket"},
         "S3Key":{"shape":"S3Key"}
       }
+    },
+    "ScreenImageFormat":{
+      "type":"string",
+      "enum":[
+        "PNG",
+        "JPEG"
+      ]
+    },
+    "ScreenResolution":{
+      "type":"string",
+      "enum":["W_1280xH_720"]
     },
     "ScriptDetails":{
       "type":"structure",
@@ -3665,7 +3772,8 @@
         "MaxExpirationTime":{"shape":"Timestamp"},
         "AuthenticationType":{"shape":"AuthenticationType"},
         "NetworkAccessConfiguration":{"shape":"NetworkAccessConfiguration"},
-        "InstanceId":{"shape":"String"}
+        "InstanceId":{"shape":"String"},
+        "InstanceDrainStatus":{"shape":"InstanceDrainStatus"}
       }
     },
     "SessionConnectionState":{
@@ -3747,7 +3855,9 @@
         "ApplicationSettings":{"shape":"ApplicationSettingsResponse"},
         "AccessEndpoints":{"shape":"AccessEndpointList"},
         "EmbedHostDomains":{"shape":"EmbedHostDomains"},
-        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"}
+        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"},
+        "ContentRedirection":{"shape":"ContentRedirection"},
+        "AgentAccessConfig":{"shape":"AgentAccessConfig"}
       }
     },
     "StackAttribute":{
@@ -3764,7 +3874,9 @@
         "EMBED_HOST_DOMAINS",
         "IAM_ROLE_ARN",
         "ACCESS_ENDPOINTS",
-        "STREAMING_EXPERIENCE_SETTINGS"
+        "STREAMING_EXPERIENCE_SETTINGS",
+        "CONTENT_REDIRECTION",
+        "AGENT_ACCESS_CONFIG"
       ]
     },
     "StackAttributes":{
@@ -4212,7 +4324,9 @@
         "ApplicationSettings":{"shape":"ApplicationSettings"},
         "AccessEndpoints":{"shape":"AccessEndpointList"},
         "EmbedHostDomains":{"shape":"EmbedHostDomains"},
-        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"}
+        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"},
+        "ContentRedirection":{"shape":"ContentRedirection"},
+        "AgentAccessConfig":{"shape":"AgentAccessConfigForUpdate"}
       }
     },
     "UpdateStackResult":{
@@ -4239,6 +4353,27 @@
       "type":"structure",
       "members":{
         "Theme":{"shape":"Theme"}
+      }
+    },
+    "UrlPattern":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^(\\*|https?://[^\\s,;]+)$"
+    },
+    "UrlPatternList":{
+      "type":"list",
+      "member":{"shape":"UrlPattern"},
+      "max":100,
+      "min":0
+    },
+    "UrlRedirectionConfig":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"BooleanObject"},
+        "AllowedUrls":{"shape":"UrlPatternList"},
+        "DeniedUrls":{"shape":"UrlPatternList"}
       }
     },
     "UsageReportExecutionErrorCode":{
@@ -4390,6 +4525,12 @@
         "SubnetIds":{"shape":"SubnetIdList"},
         "SecurityGroupIds":{"shape":"SecurityGroupIdList"}
       }
+    },
+    "WorkspaceImageId":{
+      "type":"string",
+      "max":67,
+      "min":12,
+      "pattern":"^wsi-[0-9a-z]{8,63}$"
     }
   }
 }

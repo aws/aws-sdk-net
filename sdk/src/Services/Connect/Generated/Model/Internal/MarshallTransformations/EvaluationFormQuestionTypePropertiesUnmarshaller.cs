@@ -56,25 +56,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MultiSelect", targetDepth))
+                if (context.TestExpression("MultiSelect", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormMultiSelectQuestionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.MultiSelect = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Numeric", targetDepth))
+                if (context.TestExpression("Numeric", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormNumericQuestionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Numeric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SingleSelect", targetDepth))
+                if (context.TestExpression("SingleSelect", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormSingleSelectQuestionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.SingleSelect = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Text", targetDepth))
+                if (context.TestExpression("Text", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormTextQuestionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);

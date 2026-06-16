@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StorageVirtualMachine", targetDepth))
+                if (context.TestExpression("StorageVirtualMachine", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageVirtualMachineUnmarshaller.Instance;
                     response.StorageVirtualMachine = unmarshaller.Unmarshall(context, ref reader);

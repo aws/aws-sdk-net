@@ -347,6 +347,10 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.KMSKeyNotAccessibleException">
         /// Error accessing KMS key.
         /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.NetworkTypeNotSupportedException">
+        /// The specified <i>NetworkType</i> is not supported for the DB cluster, DB subnet group,
+        /// or orderable DB instance option.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
@@ -1669,6 +1673,10 @@ namespace Amazon.Neptune
         /// DB subnet group does not cover all Availability Zones after it is created because
         /// users' change.
         /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.NetworkTypeNotSupportedException">
+        /// The specified <i>NetworkType</i> is not supported for the DB cluster, DB subnet group,
+        /// or orderable DB instance option.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
@@ -2118,7 +2126,7 @@ namespace Amazon.Neptune
         /// <summary>
         /// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster
         /// becomes a normal standalone cluster with read-write capability instead of being read-only,
-        /// and no longer receives data from a the primary cluster.
+        /// and no longer receives data from the primary cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveFromGlobalCluster service method.</param>
         /// <param name="cancellationToken">
@@ -2361,6 +2369,10 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.KMSKeyNotAccessibleException">
         /// Error accessing KMS key.
         /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.NetworkTypeNotSupportedException">
+        /// The specified <i>NetworkType</i> is not supported for the DB cluster, DB subnet group,
+        /// or orderable DB instance option.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
         /// The designated option group could not be found.
         /// </exception>
@@ -2450,6 +2462,10 @@ namespace Amazon.Neptune
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.KMSKeyNotAccessibleException">
         /// Error accessing KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.NetworkTypeNotSupportedException">
+        /// The specified <i>NetworkType</i> is not supported for the DB cluster, DB subnet group,
+        /// or orderable DB instance option.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
         /// The designated option group could not be found.

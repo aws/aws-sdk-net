@@ -52,19 +52,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EffectiveHoursOfOperationList", targetDepth))
+                if (context.TestExpression("EffectiveHoursOfOperationList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EffectiveHoursOfOperations, EffectiveHoursOfOperationsUnmarshaller>(EffectiveHoursOfOperationsUnmarshaller.Instance);
                     response.EffectiveHoursOfOperationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EffectiveOverrideHoursList", targetDepth))
+                if (context.TestExpression("EffectiveOverrideHoursList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EffectiveOverrideHours, EffectiveOverrideHoursUnmarshaller>(EffectiveOverrideHoursUnmarshaller.Instance);
                     response.EffectiveOverrideHoursList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeZone", targetDepth))
+                if (context.TestExpression("TimeZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TimeZone = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockEvaluatorModels", targetDepth))
+                if (context.TestExpression("bedrockEvaluatorModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BedrockEvaluatorModel, BedrockEvaluatorModelUnmarshaller>(BedrockEvaluatorModelUnmarshaller.Instance);
                     unmarshalledObject.BedrockEvaluatorModels = unmarshaller.Unmarshall(context, ref reader);

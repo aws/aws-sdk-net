@@ -72,19 +72,19 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("resourceIdentifier", targetDepth))
+                    if (context.TestExpression("resourceIdentifier", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceIdentifier = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("resourceType", targetDepth))
+                    if (context.TestExpression("resourceType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("retryAfter", targetDepth))
+                    if (context.TestExpression("retryAfter", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.RetryAfter = unmarshaller.Unmarshall(context, ref reader);

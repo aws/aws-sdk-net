@@ -56,25 +56,25 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FMSCanRemediate", targetDepth))
+                if (context.TestExpression("FMSCanRemediate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FMSCanRemediate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkAclEntriesToBeCreated", targetDepth))
+                if (context.TestExpression("NetworkAclEntriesToBeCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntryDescription, EntryDescriptionUnmarshaller>(EntryDescriptionUnmarshaller.Instance);
                     unmarshalledObject.NetworkAclEntriesToBeCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkAclId", targetDepth))
+                if (context.TestExpression("NetworkAclId", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTargetUnmarshaller.Instance;
                     unmarshalledObject.NetworkAclId = unmarshaller.Unmarshall(context, ref reader);

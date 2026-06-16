@@ -39,6 +39,11 @@ namespace Amazon.SecurityLake
 {
     /// <summary>
     /// <para>Implementation for accessing SecurityLake</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Security Lake is a fully managed security data lake service. You can use Security
     /// Lake to automatically centralize security data from cloud, on-premises, and custom

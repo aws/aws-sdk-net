@@ -52,6 +52,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Pid.Value);
             }
 
+            if(requestObject.IsSetPids())
+            {
+                context.Writer.WritePropertyName("pids");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPidsListValue in requestObject.Pids)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AudioPidMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPidsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

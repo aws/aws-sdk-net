@@ -56,25 +56,25 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Events", targetDepth))
+                if (context.TestExpression("Events", targetDepth, ref reader))
                 {
                     var unmarshaller = EventNotificationItemConfigurationsUnmarshaller.Instance;
                     unmarshalledObject.Events = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Identifier", targetDepth))
+                if (context.TestExpression("Identifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Identifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentifierType", targetDepth))
+                if (context.TestExpression("IdentifierType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentifierType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartnerType", targetDepth))
+                if (context.TestExpression("PartnerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PartnerType = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DedicatedIpPool", targetDepth))
+                if (context.TestExpression("DedicatedIpPool", targetDepth, ref reader))
                 {
                     var unmarshaller = DedicatedIpPoolUnmarshaller.Instance;
                     response.DedicatedIpPool = unmarshaller.Unmarshall(context, ref reader);

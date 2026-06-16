@@ -56,31 +56,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioSelectors", targetDepth))
+                if (context.TestExpression("audioSelectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AudioSelector, StringUnmarshaller, AudioSelectorUnmarshaller>(StringUnmarshaller.Instance, AudioSelectorUnmarshaller.Instance);
                     unmarshalledObject.AudioSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileInput", targetDepth))
+                if (context.TestExpression("fileInput", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputClippings", targetDepth))
+                if (context.TestExpression("inputClippings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VideoOverlayInputClipping, VideoOverlayInputClippingUnmarshaller>(VideoOverlayInputClippingUnmarshaller.Instance);
                     unmarshalledObject.InputClippings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timecodeSource", targetDepth))
+                if (context.TestExpression("timecodeSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimecodeSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timecodeStart", targetDepth))
+                if (context.TestExpression("timecodeStart", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimecodeStart = unmarshaller.Unmarshall(context, ref reader);

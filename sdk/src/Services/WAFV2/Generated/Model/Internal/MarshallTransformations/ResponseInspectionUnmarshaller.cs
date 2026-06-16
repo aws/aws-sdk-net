@@ -56,25 +56,25 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BodyContains", targetDepth))
+                if (context.TestExpression("BodyContains", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseInspectionBodyContainsUnmarshaller.Instance;
                     unmarshalledObject.BodyContains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Header", targetDepth))
+                if (context.TestExpression("Header", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseInspectionHeaderUnmarshaller.Instance;
                     unmarshalledObject.Header = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Json", targetDepth))
+                if (context.TestExpression("Json", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseInspectionJsonUnmarshaller.Instance;
                     unmarshalledObject.Json = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusCode", targetDepth))
+                if (context.TestExpression("StatusCode", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseInspectionStatusCodeUnmarshaller.Instance;
                     unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context, ref reader);

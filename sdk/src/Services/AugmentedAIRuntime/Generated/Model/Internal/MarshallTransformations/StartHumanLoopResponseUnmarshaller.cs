@@ -52,7 +52,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HumanLoopArn", targetDepth))
+                if (context.TestExpression("HumanLoopArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HumanLoopArn = unmarshaller.Unmarshall(context, ref reader);

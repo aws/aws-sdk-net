@@ -52,115 +52,121 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentRuntimeArn", targetDepth))
+                if (context.TestExpression("agentRuntimeArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentRuntimeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeArtifact", targetDepth))
+                if (context.TestExpression("agentRuntimeArtifact", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentRuntimeArtifactUnmarshaller.Instance;
                     response.AgentRuntimeArtifact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeId", targetDepth))
+                if (context.TestExpression("agentRuntimeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentRuntimeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeName", targetDepth))
+                if (context.TestExpression("agentRuntimeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentRuntimeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeVersion", targetDepth))
+                if (context.TestExpression("agentRuntimeVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentRuntimeVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerConfiguration", targetDepth))
+                if (context.TestExpression("authorizerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizerConfigurationUnmarshaller.Instance;
                     response.AuthorizerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentVariables", targetDepth))
+                if (context.TestExpression("environmentVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.EnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureReason", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                if (context.TestExpression("filesystemConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<FilesystemConfiguration, FilesystemConfigurationUnmarshaller>(FilesystemConfigurationUnmarshaller.Instance);
+                    response.FilesystemConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleConfiguration", targetDepth))
+                if (context.TestExpression("lifecycleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecycleConfigurationUnmarshaller.Instance;
                     response.LifecycleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadataConfiguration", targetDepth))
+                if (context.TestExpression("metadataConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RuntimeMetadataConfigurationUnmarshaller.Instance;
                     response.MetadataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkConfiguration", targetDepth))
+                if (context.TestExpression("networkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
                     response.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocolConfiguration", targetDepth))
+                if (context.TestExpression("protocolConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtocolConfigurationUnmarshaller.Instance;
                     response.ProtocolConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestHeaderConfiguration", targetDepth))
+                if (context.TestExpression("requestHeaderConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestHeaderConfigurationUnmarshaller.Instance;
                     response.RequestHeaderConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workloadIdentityDetails", targetDepth))
+                if (context.TestExpression("workloadIdentityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkloadIdentityDetailsUnmarshaller.Instance;
                     response.WorkloadIdentityDetails = unmarshaller.Unmarshall(context, ref reader);

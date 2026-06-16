@@ -52,13 +52,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeInfoList", targetDepth))
+                if (context.TestExpression("nodeInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NodeInfo, NodeInfoUnmarshaller>(NodeInfoUnmarshaller.Instance);
                     response.NodeInfoList = unmarshaller.Unmarshall(context, ref reader);

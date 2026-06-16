@@ -56,25 +56,25 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PartialMatches", targetDepth))
+                if (context.TestExpression("PartialMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PartialMatch, PartialMatchUnmarshaller>(PartialMatchUnmarshaller.Instance);
                     unmarshalledObject.PartialMatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PossibleSecurityGroupRemediationActions", targetDepth))
+                if (context.TestExpression("PossibleSecurityGroupRemediationActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecurityGroupRemediationAction, SecurityGroupRemediationActionUnmarshaller>(SecurityGroupRemediationActionUnmarshaller.Instance);
                     unmarshalledObject.PossibleSecurityGroupRemediationActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ViolationTarget", targetDepth))
+                if (context.TestExpression("ViolationTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ViolationTargetDescription", targetDepth))
+                if (context.TestExpression("ViolationTargetDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ViolationTargetDescription = unmarshaller.Unmarshall(context, ref reader);

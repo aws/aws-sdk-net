@@ -56,37 +56,37 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientVersion", targetDepth))
+                if (context.TestExpression("ClientVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportableKey", targetDepth))
+                if (context.TestExpression("ExportableKey", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExportableKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequireAlternateSignatureAlgorithm", targetDepth))
+                if (context.TestExpression("RequireAlternateSignatureAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireAlternateSignatureAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequireSameKeyRenewal", targetDepth))
+                if (context.TestExpression("RequireSameKeyRenewal", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireSameKeyRenewal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StrongKeyProtectionRequired", targetDepth))
+                if (context.TestExpression("StrongKeyProtectionRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StrongKeyProtectionRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseLegacyProvider", targetDepth))
+                if (context.TestExpression("UseLegacyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseLegacyProvider = unmarshaller.Unmarshall(context, ref reader);

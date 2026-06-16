@@ -52,13 +52,13 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("directConnectGatewayAssociationProposals", targetDepth))
+                if (context.TestExpression("directConnectGatewayAssociationProposals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DirectConnectGatewayAssociationProposal, DirectConnectGatewayAssociationProposalUnmarshaller>(DirectConnectGatewayAssociationProposalUnmarshaller.Instance);
                     response.DirectConnectGatewayAssociationProposals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

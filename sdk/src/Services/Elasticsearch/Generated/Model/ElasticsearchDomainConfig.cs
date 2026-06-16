@@ -37,6 +37,7 @@ namespace Amazon.Elasticsearch.Model
         private AccessPoliciesStatus _accessPolicies;
         private AdvancedOptionsStatus _advancedOptions;
         private AdvancedSecurityOptionsStatus _advancedSecurityOptions;
+        private AutomatedSnapshotPauseOptionsStatus _automatedSnapshotPauseOptions;
         private AutoTuneOptionsStatus _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
         private CognitoOptionsStatus _cognitoOptions;
@@ -105,6 +106,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetAdvancedSecurityOptions()
         {
             return this._advancedSecurityOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomatedSnapshotPauseOptions. 
+        /// <para>
+        /// Specifies <c>AutomatedSnapshotPauseOptions</c> for the domain. 
+        /// </para>
+        /// </summary>
+        public AutomatedSnapshotPauseOptionsStatus AutomatedSnapshotPauseOptions
+        {
+            get { return this._automatedSnapshotPauseOptions; }
+            set { this._automatedSnapshotPauseOptions = value; }
+        }
+
+        // Check to see if AutomatedSnapshotPauseOptions property is set
+        internal bool IsSetAutomatedSnapshotPauseOptions()
+        {
+            return this._automatedSnapshotPauseOptions != null;
         }
 
         /// <summary>

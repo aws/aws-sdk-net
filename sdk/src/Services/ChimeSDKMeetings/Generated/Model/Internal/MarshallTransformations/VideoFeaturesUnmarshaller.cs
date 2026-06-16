@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxResolution", targetDepth))
+                if (context.TestExpression("MaxResolution", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaxResolution = unmarshaller.Unmarshall(context, ref reader);

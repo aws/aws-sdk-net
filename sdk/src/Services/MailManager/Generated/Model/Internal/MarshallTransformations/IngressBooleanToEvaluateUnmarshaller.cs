@@ -56,13 +56,13 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Analysis", targetDepth))
+                if (context.TestExpression("Analysis", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressAnalysisUnmarshaller.Instance;
                     unmarshalledObject.Analysis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsInAddressList", targetDepth))
+                if (context.TestExpression("IsInAddressList", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressIsInAddressListUnmarshaller.Instance;
                     unmarshalledObject.IsInAddressList = unmarshaller.Unmarshall(context, ref reader);

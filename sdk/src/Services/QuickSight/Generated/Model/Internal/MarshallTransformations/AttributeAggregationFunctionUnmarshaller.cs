@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SimpleAttributeAggregation", targetDepth))
+                if (context.TestExpression("SimpleAttributeAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SimpleAttributeAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueForMultipleValues", targetDepth))
+                if (context.TestExpression("ValueForMultipleValues", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValueForMultipleValues = unmarshaller.Unmarshall(context, ref reader);

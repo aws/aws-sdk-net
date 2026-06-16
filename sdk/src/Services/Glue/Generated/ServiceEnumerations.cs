@@ -3767,6 +3767,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type GlueResourceType.
+    /// </summary>
+    public class GlueResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JOB for GlueResourceType
+        /// </summary>
+        public static readonly GlueResourceType JOB = new GlueResourceType("JOB");
+        /// <summary>
+        /// Constant SESSION for GlueResourceType
+        /// </summary>
+        public static readonly GlueResourceType SESSION = new GlueResourceType("SESSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlueResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlueResourceType FindValue(string value)
+        {
+            return FindValue<GlueResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlueResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HTTPMethod.
     /// </summary>
     public class HTTPMethod : ConstantClass
@@ -5505,6 +5555,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type OverwriteChildResourcePermissionsWithDefaultEnum.
+    /// </summary>
+    public class OverwriteChildResourcePermissionsWithDefaultEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accept for OverwriteChildResourcePermissionsWithDefaultEnum
+        /// </summary>
+        public static readonly OverwriteChildResourcePermissionsWithDefaultEnum Accept = new OverwriteChildResourcePermissionsWithDefaultEnum("Accept");
+        /// <summary>
+        /// Constant Deny for OverwriteChildResourcePermissionsWithDefaultEnum
+        /// </summary>
+        public static readonly OverwriteChildResourcePermissionsWithDefaultEnum Deny = new OverwriteChildResourcePermissionsWithDefaultEnum("Deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverwriteChildResourcePermissionsWithDefaultEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverwriteChildResourcePermissionsWithDefaultEnum FindValue(string value)
+        {
+            return FindValue<OverwriteChildResourcePermissionsWithDefaultEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverwriteChildResourcePermissionsWithDefaultEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParamType.
     /// </summary>
     public class ParamType : ConstantClass
@@ -6909,6 +7009,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type SessionType.
+    /// </summary>
+    public class SessionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LIVY for SessionType
+        /// </summary>
+        public static readonly SessionType LIVY = new SessionType("LIVY");
+        /// <summary>
+        /// Constant SPARK_CONNECT for SessionType
+        /// </summary>
+        public static readonly SessionType SPARK_CONNECT = new SessionType("SPARK_CONNECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionType FindValue(string value)
+        {
+            return FindValue<SessionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SettingSource.
     /// </summary>
     public class SettingSource : ConstantClass
@@ -7350,6 +7500,14 @@ namespace Amazon.Glue
     public class TableAttributes : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DEFAULT for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes DEFAULT = new TableAttributes("DEFAULT");
+        /// <summary>
+        /// Constant LATEST_ICEBERG_METADATA for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes LATEST_ICEBERG_METADATA = new TableAttributes("LATEST_ICEBERG_METADATA");
         /// <summary>
         /// Constant NAME for TableAttributes
         /// </summary>

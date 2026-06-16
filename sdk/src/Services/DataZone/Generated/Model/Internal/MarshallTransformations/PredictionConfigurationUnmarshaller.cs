@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("businessNameGeneration", targetDepth))
+                if (context.TestExpression("businessNameGeneration", targetDepth, ref reader))
                 {
                     var unmarshaller = BusinessNameGenerationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BusinessNameGeneration = unmarshaller.Unmarshall(context, ref reader);

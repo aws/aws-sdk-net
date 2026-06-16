@@ -56,13 +56,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rdsHttpEndpointConfig", targetDepth))
+                if (context.TestExpression("rdsHttpEndpointConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsHttpEndpointConfigUnmarshaller.Instance;
                     unmarshalledObject.RdsHttpEndpointConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relationalDatabaseSourceType", targetDepth))
+                if (context.TestExpression("relationalDatabaseSourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RelationalDatabaseSourceType = unmarshaller.Unmarshall(context, ref reader);

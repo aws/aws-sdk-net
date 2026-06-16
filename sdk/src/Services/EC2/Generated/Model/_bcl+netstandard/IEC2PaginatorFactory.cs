@@ -518,6 +518,16 @@ namespace Amazon.EC2.Model
         IDescribeInternetGatewaysPaginator DescribeInternetGateways(DescribeInternetGatewaysRequest request);
 
         /// <summary>
+        /// Paginator for DescribeIpamPoolAllocations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeIpamPoolAllocationsPaginator DescribeIpamPoolAllocations(DescribeIpamPoolAllocationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeIpamPools operation
         ///</summary>
         [AWSPaginator(
@@ -1416,6 +1426,16 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetCapacityManagerMetricDimensionsPaginator GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request);
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMonitoredTagKeys operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetCapacityManagerMonitoredTagKeysPaginator GetCapacityManagerMonitoredTagKeys(GetCapacityManagerMonitoredTagKeysRequest request);
 
         /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation

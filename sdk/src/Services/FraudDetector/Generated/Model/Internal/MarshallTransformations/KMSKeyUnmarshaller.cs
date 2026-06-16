@@ -56,7 +56,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kmsEncryptionKeyArn", targetDepth))
+                if (context.TestExpression("kmsEncryptionKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsEncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);

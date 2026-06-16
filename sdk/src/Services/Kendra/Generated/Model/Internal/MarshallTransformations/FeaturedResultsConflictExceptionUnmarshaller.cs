@@ -72,7 +72,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ConflictingItems", targetDepth))
+                    if (context.TestExpression("ConflictingItems", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ConflictingItem, ConflictingItemUnmarshaller>(ConflictingItemUnmarshaller.Instance);
                         unmarshalledObject.ConflictingItems = unmarshaller.Unmarshall(context, ref reader);

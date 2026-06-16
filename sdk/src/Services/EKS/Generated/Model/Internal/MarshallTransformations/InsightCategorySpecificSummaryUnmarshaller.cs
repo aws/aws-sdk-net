@@ -56,13 +56,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addonCompatibilityDetails", targetDepth))
+                if (context.TestExpression("addonCompatibilityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AddonCompatibilityDetail, AddonCompatibilityDetailUnmarshaller>(AddonCompatibilityDetailUnmarshaller.Instance);
                     unmarshalledObject.AddonCompatibilityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deprecationDetails", targetDepth))
+                if (context.TestExpression("deprecationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeprecationDetail, DeprecationDetailUnmarshaller>(DeprecationDetailUnmarshaller.Instance);
                     unmarshalledObject.DeprecationDetails = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("schema", targetDepth))
+                if (context.TestExpression("schema", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaUnmarshaller.Instance;
                     response.Schema = unmarshaller.Unmarshall(context, ref reader);

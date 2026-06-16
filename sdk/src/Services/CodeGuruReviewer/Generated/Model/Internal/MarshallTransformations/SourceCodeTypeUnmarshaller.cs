@@ -56,31 +56,31 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BranchDiff", targetDepth))
+                if (context.TestExpression("BranchDiff", targetDepth, ref reader))
                 {
                     var unmarshaller = BranchDiffSourceCodeTypeUnmarshaller.Instance;
                     unmarshalledObject.BranchDiff = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CommitDiff", targetDepth))
+                if (context.TestExpression("CommitDiff", targetDepth, ref reader))
                 {
                     var unmarshaller = CommitDiffSourceCodeTypeUnmarshaller.Instance;
                     unmarshalledObject.CommitDiff = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RepositoryHead", targetDepth))
+                if (context.TestExpression("RepositoryHead", targetDepth, ref reader))
                 {
                     var unmarshaller = RepositoryHeadSourceCodeTypeUnmarshaller.Instance;
                     unmarshalledObject.RepositoryHead = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestMetadata", targetDepth))
+                if (context.TestExpression("RequestMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestMetadataUnmarshaller.Instance;
                     unmarshalledObject.RequestMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BucketRepository", targetDepth))
+                if (context.TestExpression("S3BucketRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BucketRepositoryUnmarshaller.Instance;
                     unmarshalledObject.S3BucketRepository = unmarshaller.Unmarshall(context, ref reader);

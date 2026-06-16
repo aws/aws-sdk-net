@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClusterInfo", targetDepth))
+                if (context.TestExpression("ClusterInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoDetailsUnmarshaller.Instance;
                     unmarshalledObject.ClusterInfo = unmarshaller.Unmarshall(context, ref reader);

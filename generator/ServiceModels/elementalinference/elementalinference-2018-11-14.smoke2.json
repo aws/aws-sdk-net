@@ -3,7 +3,9 @@
   "testCases" : [ {
     "id" : "ListFeedsSuccess",
     "operationName" : "ListFeeds",
-    "input" : { },
+    "input" : {
+      "maxResults" : 10
+    },
     "expectation" : {
       "success" : { }
     },

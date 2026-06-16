@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         private string _awsAccessKeyId;
         private string _bucket;
         private string _prefix;
-        private string _uploadPolicy;
+        private MemoryStream _uploadPolicy;
         private string _uploadPolicySignature;
 
         /// <summary>
@@ -107,7 +107,8 @@ namespace Amazon.EC2.Model
         /// S3 on your behalf.
         /// </para>
         /// </summary>
-        public string UploadPolicy
+        [AWSProperty(Sensitive=true)]
+        public MemoryStream UploadPolicy
         {
             get { return this._uploadPolicy; }
             set { this._uploadPolicy = value; }

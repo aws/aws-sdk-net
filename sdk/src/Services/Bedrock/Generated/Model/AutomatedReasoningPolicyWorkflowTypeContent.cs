@@ -36,6 +36,7 @@ namespace Amazon.Bedrock.Model
     {
         private List<AutomatedReasoningPolicyBuildWorkflowDocument> _documents = AWSConfigs.InitializeCollections ? new List<AutomatedReasoningPolicyBuildWorkflowDocument>() : null;
         private AutomatedReasoningPolicyGenerateFidelityReportContent _generateFidelityReportContent;
+        private AutomatedReasoningPolicyIterativeRefinementContent _iterativeRefinementContent;
         private AutomatedReasoningPolicyBuildWorkflowRepairContent _policyRepairAssets;
 
         /// <summary>
@@ -80,6 +81,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetGenerateFidelityReportContent()
         {
             return this._generateFidelityReportContent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IterativeRefinementContent. 
+        /// <para>
+        /// Content configuration to start an iterative policy refinement workflow that uses generative
+        /// AI to automatically make changes to the policy based on test results and the optional
+        /// feedback provided.
+        /// </para>
+        /// </summary>
+        public AutomatedReasoningPolicyIterativeRefinementContent IterativeRefinementContent
+        {
+            get { return this._iterativeRefinementContent; }
+            set { this._iterativeRefinementContent = value; }
+        }
+
+        // Check to see if IterativeRefinementContent property is set
+        internal bool IsSetIterativeRefinementContent()
+        {
+            return this._iterativeRefinementContent != null;
         }
 
         /// <summary>

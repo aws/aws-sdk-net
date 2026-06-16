@@ -56,7 +56,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableIntegration", targetDepth))
+                if (context.TestExpression("EnableIntegration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableIntegration = unmarshaller.Unmarshall(context, ref reader);

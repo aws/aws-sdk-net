@@ -52,13 +52,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("analysisTemplateSummaries", targetDepth))
+                if (context.TestExpression("analysisTemplateSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalysisTemplateSummary, AnalysisTemplateSummaryUnmarshaller>(AnalysisTemplateSummaryUnmarshaller.Instance);
                     response.AnalysisTemplateSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

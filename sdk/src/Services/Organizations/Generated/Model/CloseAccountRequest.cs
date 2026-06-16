@@ -67,10 +67,10 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can close only 10% of member accounts, between 10 and 1000, within a rolling 30
-    /// day period. This quota is not bound by a calendar month, but starts when you close
-    /// an account. After you reach this limit, you can't close additional accounts. For more
-    /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+    /// Within a rolling 30 day period you can close the higher of either 250 or 20% of the
+    /// member accounts in your organization, up to a maximum of 1,000. This quota is not
+    /// bound by a calendar month, but starts when you close an account. After you reach this
+    /// limit, you can't close additional accounts. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
     /// a member account in your organization</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
     /// for Organizations</a> in the <i>Organizations User Guide</i>. 
     /// </para>
@@ -87,7 +87,13 @@ namespace Amazon.Organizations.Model
     /// Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services
     /// GovCloud User Guide</i>.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> 
+    /// <para>
+    /// After the permanent termination of the account after the 90-day waiting period, Organizations
+    /// logs a membership event in CloudTrail. The event is an <c>AccountDepartedOrganization</c>
+    /// event with <c>departedMethod:Cleaned</c> and <c>departedTime</c>. This event is available
+    /// only in the management account's event history.
+    /// </para>
     /// </summary>
     public partial class CloseAccountRequest : AmazonOrganizationsRequest
     {

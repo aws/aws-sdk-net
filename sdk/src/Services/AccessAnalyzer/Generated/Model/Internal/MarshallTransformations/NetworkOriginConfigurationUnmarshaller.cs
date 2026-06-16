@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("internetConfiguration", targetDepth))
+                if (context.TestExpression("internetConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InternetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InternetConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("vpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

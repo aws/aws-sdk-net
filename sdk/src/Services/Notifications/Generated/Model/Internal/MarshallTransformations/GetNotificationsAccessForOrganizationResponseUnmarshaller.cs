@@ -52,7 +52,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("notificationsAccessForOrganization", targetDepth))
+                if (context.TestExpression("notificationsAccessForOrganization", targetDepth, ref reader))
                 {
                     var unmarshaller = NotificationsAccessForOrganizationUnmarshaller.Instance;
                     response.NotificationsAccessForOrganization = unmarshaller.Unmarshall(context, ref reader);

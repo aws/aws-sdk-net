@@ -56,91 +56,91 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreateAuthChallenge", targetDepth))
+                if (context.TestExpression("CreateAuthChallenge", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateAuthChallenge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomEmailSender", targetDepth))
+                if (context.TestExpression("CustomEmailSender", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomEmailLambdaVersionConfigTypeUnmarshaller.Instance;
                     unmarshalledObject.CustomEmailSender = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomMessage", targetDepth))
+                if (context.TestExpression("CustomMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomSMSSender", targetDepth))
+                if (context.TestExpression("CustomSMSSender", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomSMSLambdaVersionConfigTypeUnmarshaller.Instance;
                     unmarshalledObject.CustomSMSSender = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefineAuthChallenge", targetDepth))
+                if (context.TestExpression("DefineAuthChallenge", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefineAuthChallenge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InboundFederation", targetDepth))
+                if (context.TestExpression("InboundFederation", targetDepth, ref reader))
                 {
                     var unmarshaller = InboundFederationLambdaTypeUnmarshaller.Instance;
                     unmarshalledObject.InboundFederation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KMSKeyID", targetDepth))
+                if (context.TestExpression("KMSKeyID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KMSKeyID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostAuthentication", targetDepth))
+                if (context.TestExpression("PostAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PostAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostConfirmation", targetDepth))
+                if (context.TestExpression("PostConfirmation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PostConfirmation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreAuthentication", targetDepth))
+                if (context.TestExpression("PreAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreSignUp", targetDepth))
+                if (context.TestExpression("PreSignUp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreSignUp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreTokenGeneration", targetDepth))
+                if (context.TestExpression("PreTokenGeneration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreTokenGeneration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreTokenGenerationConfig", targetDepth))
+                if (context.TestExpression("PreTokenGenerationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PreTokenGenerationVersionConfigTypeUnmarshaller.Instance;
                     unmarshalledObject.PreTokenGenerationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserMigration", targetDepth))
+                if (context.TestExpression("UserMigration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserMigration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerifyAuthChallengeResponse", targetDepth))
+                if (context.TestExpression("VerifyAuthChallengeResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerifyAuthChallengeResponse = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceKafkaClusterAlias", targetDepth))
+                if (context.TestExpression("sourceKafkaClusterAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceKafkaClusterAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetKafkaClusterAlias", targetDepth))
+                if (context.TestExpression("targetKafkaClusterAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetKafkaClusterAlias = unmarshaller.Unmarshall(context, ref reader);

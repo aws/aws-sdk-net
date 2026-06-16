@@ -13,8 +13,8 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Buffers;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Text;
 using Amazon.Runtime.Internal.Util;
@@ -45,9 +45,10 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
-        private const string DELIMITER = "/";
         #region Private members
 
+        private Stream baseStream;
+        // Created lazily on first Peek() call.
         private StreamReader streamReader = null;
         private JsonPathStack stack = new JsonPathStack();
         private JsonTokenType? currentToken = null;
@@ -130,11 +131,11 @@ namespace Amazon.Runtime.Internal.Transform
             }
             
             if (this.FlexibleChecksumStream != null) // either just flexible checksum, or flexible checksum wrapping the older CRC stream
-                streamReader = new StreamReader(this.FlexibleChecksumStream);
+                baseStream = this.FlexibleChecksumStream;
             else if (this.CrcStream != null)
-                streamReader = new StreamReader(this.CrcStream);
+                baseStream = this.CrcStream;
             else
-                streamReader = new StreamReader(responseStream);
+                baseStream = responseStream;
         }
 
         #endregion
@@ -150,6 +151,21 @@ namespace Amazon.Runtime.Internal.Transform
         {
             return Read(ref reader) && this.CurrentDepth >= targetDepth;
         }
+
+        /// <summary>
+        ///     Tests whether the current token is a property name matching <paramref name="expression"/>
+        ///     at the given depth, comparing directly against the reader without allocating a path string.
+        ///     The match is restricted to property-name tokens so a scalar value at the same depth is never
+        ///     mistaken for a key. The comparison is ordinal (case-sensitive).
+        /// </summary>
+        /// <param name="expression">The property name to match.</param>
+        /// <param name="targetDepth">The depth at which the property must appear.</param>
+        /// <param name="reader">The reader positioned on the current token.</param>
+        /// <returns>True if the current property name matches at the target depth.</returns>
+        public bool TestExpression(string expression, int targetDepth, ref StreamingUtf8JsonReader reader)
+        {
+            return CurrentTokenType == JsonTokenType.PropertyName && CurrentDepth == targetDepth && reader.ValueTextEquals(expression);
+        }
         #endregion
 
         #region Overrides
@@ -161,6 +177,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get
             {
+                EnsureStreamReader();
                 return (CurrentTokenType == JsonTokenType.None) && (!streamReader.EndOfStream);
             }
         }
@@ -196,11 +213,16 @@ namespace Amazon.Runtime.Internal.Transform
         /// <summary>
         /// The current Json path that is being unmarshalled.
         /// </summary>
+        /// <remarks>
+        /// The path stack tracks both depth delimiters and property names. The string is only
+        /// materialized when this property is read — typically on exception for diagnostics,
+        /// or by the legacy path-based TestExpression overload.
+        /// </remarks>
         public override string CurrentPath
         {
-            get 
+            get
             {
-                return this.stack.CurrentPath; 
+                return this.stack.CurrentPath;
             }
         }
 
@@ -308,7 +330,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public Stream Stream
         {
-            get { return streamReader.BaseStream; }
+            get { return baseStream; }
         }
 
         /// <summary>
@@ -317,6 +339,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>The next (non-whitespace) character in the jsonStream, or -1 if at the end.</returns>
         public int Peek()
         {
+            EnsureStreamReader();
             // Per MSDN documentation on StreamReader.Peek(), it's perfectly acceptable to cast
             // int returned by Peek() to char.
             unchecked
@@ -328,6 +351,12 @@ namespace Amazon.Runtime.Internal.Transform
             }
             return StreamPeek();
 
+        }
+
+        private void EnsureStreamReader()
+        {
+            if (streamReader == null)
+                streamReader = new StreamReader(baseStream);
         }
 
         #endregion
@@ -358,11 +387,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (currentToken.Value == JsonTokenType.StartObject || currentToken.Value == JsonTokenType.StartArray)
             {
                 // Push '/' for object start and array start.
-                stack.Push(new PathSegment
-                {
-                    SegmentType = PathSegmentType.Delimiter,
-                    Value = DELIMITER
-                });
+                stack.PushDelimiter();
             }
             else if (currentToken.Value == JsonTokenType.EndObject || currentToken.Value == JsonTokenType.EndArray)
             {
@@ -372,34 +397,35 @@ namespace Amazon.Runtime.Internal.Transform
                     stack.Pop();
                     if (stack.Count > 0 && stack.Peek().SegmentType != PathSegmentType.Delimiter)
                     {
-                        // Pop the property name associated with the
-                        // object or array if present.
-                        // e.g. {"a":["1","2","3"]}
+                        // Pop the property name segment sitting beneath the closed scope.
                         stack.Pop();
                     }
                 }
             }
-            // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
-            // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
-            // so we should just push the value so that it can be retrieved later.
-            else if (currentToken.Value == JsonTokenType.PropertyName || (stack.Count == 0 && currentToken == JsonTokenType.String))
+            else if (currentToken.Value == JsonTokenType.PropertyName)
             {
-                string t = ReadText(ref reader);
-
-                // Push property name, it's appended to the stack's CurrentPath,
-                // it this does not affect the depth.
-                stack.Push(new PathSegment
+                ReadOnlySpan<byte> name = reader.Reader.ValueSpan;
+                if (name.IndexOf((byte)'\\') >= 0)
                 {
-                    SegmentType = PathSegmentType.Value,
-                    Value = t
-                });
+                    // The name contains JSON escape sequences; decode it so the path shows the unescaped name.
+                    stack.PushPropertyName(reader.Reader.GetString());
+                }
+                else
+                {
+                    stack.PushPropertyName(name);
+                }
+            }
+            else if (stack.Count == 0 && currentToken == JsonTokenType.String)
+            {
+                // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
+                // closing delimiter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
+                // so we should just push the value so that it can be retrieved later.
+                string t = ReadText(ref reader);
+                stack.PushPropertyName(t);
             }
             else if (currentToken.Value != JsonTokenType.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
             {
-                // Pop if you encounter a simple data type or null
-                // This will pop the property name associated with it in cases like  {"a":"b"}.
-                // Exclude the case where it's a value in an array so we dont end poping the start of array and
-                // property name e.g. {"a":["1","2","3"]}
+                // Pop the property name segment when its value (scalar/null) follows it.
                 stack.Pop();
             }
 
@@ -416,7 +442,15 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         streamReader.Dispose();
                         streamReader = null;
+                        baseStream = null;
                     }
+                    else if (baseStream != null)
+                    {
+                        baseStream.Dispose();
+                        baseStream = null;
+                    }
+
+                    stack.Dispose();
                 }
                 disposed = true;
             }
@@ -433,14 +467,20 @@ namespace Amazon.Runtime.Internal.Transform
         private struct PathSegment
         {
             internal PathSegmentType SegmentType { get; set; }
-            internal string Value { get; set; }
+            internal int Length { get; set; }
         }
 
-        private class JsonPathStack
+        private class JsonPathStack : IDisposable
         {
-            private Stack<PathSegment> stack = new Stack<PathSegment>();
+            private readonly Stack<PathSegment> stack = new Stack<PathSegment>();
             int currentDepth = 0;
-            private StringBuilder stackStringBuilder = new StringBuilder(128);
+            // The current path as UTF-8 bytes. Delimiters and property names are appended as they
+            // are read and trimmed back off (by adjusting pathLength) as their scopes close. The
+            // path string is only materialized when CurrentPath is read — typically on exception
+            // for diagnostics, or by the legacy path-based TestExpression(string, int) overload
+            // used by service packages generated before reader-based matching existed.
+            private byte[] pathBytes = ArrayPool<byte>.Shared.Rent(256);
+            private int pathLength = 0;
             private string stackString;
 
             public int CurrentDepth
@@ -452,25 +492,40 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 get
                 {
-                    if (this.stackString == null)                    
-                        this.stackString = this.stackStringBuilder.ToString();
-                    
+                    this.stackString ??= Encoding.UTF8.GetString(pathBytes, 0, pathLength);
+
                     return this.stackString;
                 }
-            }                        
-
-            internal void Push(PathSegment segment)
-            {
-                if (segment.SegmentType == PathSegmentType.Delimiter)
-                {
-                    currentDepth++;
-                }
-
-                stackStringBuilder.Append(segment.Value);
-                stackString = null;
-                stack.Push(segment);
             }
-                        
+
+            internal void PushDelimiter()
+            {
+                currentDepth++;
+                EnsureCapacity(1);
+                pathBytes[pathLength++] = (byte)'/';
+                stackString = null;
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Delimiter, Length = 1 });
+            }
+
+            internal void PushPropertyName(ReadOnlySpan<byte> utf8Name)
+            {
+                EnsureCapacity(utf8Name.Length);
+                utf8Name.CopyTo(pathBytes.AsSpan(pathLength));
+                pathLength += utf8Name.Length;
+                stackString = null;
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = utf8Name.Length });
+            }
+
+            internal void PushPropertyName(string name)
+            {
+                var byteCount = Encoding.UTF8.GetByteCount(name);
+                EnsureCapacity(byteCount);
+                Encoding.UTF8.GetBytes(name, 0, name.Length, pathBytes, pathLength);
+                pathLength += byteCount;
+                stackString = null;
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = byteCount });
+            }
+
             internal PathSegment Pop()
             {
                 var segment = this.stack.Pop();
@@ -479,11 +534,39 @@ namespace Amazon.Runtime.Internal.Transform
                     currentDepth--;
                 }
 
-                stackStringBuilder.Remove(stackStringBuilder.Length - segment.Value.Length, segment.Value.Length);
+                pathLength -= segment.Length;
                 stackString = null;
                 return segment;
             }
-            
+
+            /// <summary>
+            /// Grows <see cref="pathBytes"/> if needed to fit <paramref name="additionalBytes"/> more bytes.
+            /// The old buffer is returned to the pool and a new one rented. Pop only moves
+            /// <see cref="pathLength"/> back, so the buffer is reused for the remainder of the document.
+            /// </summary>
+            private void EnsureCapacity(int additionalBytes)
+            {
+                if (pathLength + additionalBytes <= pathBytes.Length)
+                {
+                    return;
+                }
+
+                var newSize = Math.Max(pathBytes.Length * 2, pathLength + additionalBytes);
+                var newBuffer = ArrayPool<byte>.Shared.Rent(newSize);
+                Buffer.BlockCopy(pathBytes, 0, newBuffer, 0, pathLength);
+                ArrayPool<byte>.Shared.Return(pathBytes);
+                pathBytes = newBuffer;
+            }
+
+            public void Dispose()
+            {
+                if (pathBytes != null)
+                {
+                    ArrayPool<byte>.Shared.Return(pathBytes);
+                    pathBytes = null;
+                }
+            }
+
             internal PathSegment Peek()
             {
                 return this.stack.Peek();

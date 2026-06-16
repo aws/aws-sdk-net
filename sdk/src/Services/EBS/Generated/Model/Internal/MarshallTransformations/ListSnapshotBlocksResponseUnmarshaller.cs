@@ -52,31 +52,31 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Blocks", targetDepth))
+                if (context.TestExpression("Blocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
                     response.Blocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BlockSize", targetDepth))
+                if (context.TestExpression("BlockSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.BlockSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpiryTime", targetDepth))
+                if (context.TestExpression("ExpiryTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpiryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeSize", targetDepth))
+                if (context.TestExpression("VolumeSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.VolumeSize = unmarshaller.Unmarshall(context, ref reader);

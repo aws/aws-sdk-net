@@ -43,6 +43,7 @@ namespace Amazon.GameLiftStreams.Model
         private int? _maximumCapacity;
         private int? _onDemandCapacity;
         private int? _targetIdleCapacity;
+        private VpcTransitConfiguration _vpcTransitConfiguration;
 
         /// <summary>
         /// Gets and sets the property AlwaysOnCapacity. 
@@ -156,6 +157,28 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetTargetIdleCapacity()
         {
             return this._targetIdleCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcTransitConfiguration. 
+        /// <para>
+        /// Configuration for connecting the stream group to resources in your Amazon VPC using
+        /// AWS Transit Gateway. This setting is optional. If specified, Amazon GameLift Streams
+        /// creates a Transit Gateway to enable private network connectivity between the service
+        /// VPC and your VPC. The VPC ID cannot be changed after the stream group is created,
+        /// but you can update the CIDR blocks by calling <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
+        /// </para>
+        /// </summary>
+        public VpcTransitConfiguration VpcTransitConfiguration
+        {
+            get { return this._vpcTransitConfiguration; }
+            set { this._vpcTransitConfiguration = value; }
+        }
+
+        // Check to see if VpcTransitConfiguration property is set
+        internal bool IsSetVpcTransitConfiguration()
+        {
+            return this._vpcTransitConfiguration != null;
         }
 
     }

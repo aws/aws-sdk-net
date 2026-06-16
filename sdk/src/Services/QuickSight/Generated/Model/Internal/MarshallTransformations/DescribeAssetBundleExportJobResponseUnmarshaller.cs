@@ -52,109 +52,109 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssetBundleExportJobId", targetDepth))
+                if (context.TestExpression("AssetBundleExportJobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetBundleExportJobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsAccountId", targetDepth))
+                if (context.TestExpression("AwsAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AwsAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudFormationOverridePropertyConfiguration", targetDepth))
+                if (context.TestExpression("CloudFormationOverridePropertyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleCloudFormationOverridePropertyConfigurationUnmarshaller.Instance;
                     response.CloudFormationOverridePropertyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DownloadUrl", targetDepth))
+                if (context.TestExpression("DownloadUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DownloadUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleExportJobError, AssetBundleExportJobErrorUnmarshaller>(AssetBundleExportJobErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportFormat", targetDepth))
+                if (context.TestExpression("ExportFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExportFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeAllDependencies", targetDepth))
+                if (context.TestExpression("IncludeAllDependencies", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeAllDependencies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeFolderMembers", targetDepth))
+                if (context.TestExpression("IncludeFolderMembers", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IncludeFolderMembers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeFolderMemberships", targetDepth))
+                if (context.TestExpression("IncludeFolderMemberships", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeFolderMemberships = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludePermissions", targetDepth))
+                if (context.TestExpression("IncludePermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludePermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeTags", targetDepth))
+                if (context.TestExpression("IncludeTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("JobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceArns", targetDepth))
+                if (context.TestExpression("ResourceArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ResourceArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationStrategy", targetDepth))
+                if (context.TestExpression("ValidationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleExportJobValidationStrategyUnmarshaller.Instance;
                     response.ValidationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Warnings", targetDepth))
+                if (context.TestExpression("Warnings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleExportJobWarning, AssetBundleExportJobWarningUnmarshaller>(AssetBundleExportJobWarningUnmarshaller.Instance);
                     response.Warnings = unmarshaller.Unmarshall(context, ref reader);

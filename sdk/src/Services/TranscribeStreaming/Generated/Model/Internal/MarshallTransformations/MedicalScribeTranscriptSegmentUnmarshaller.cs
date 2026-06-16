@@ -56,43 +56,43 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BeginAudioTime", targetDepth))
+                if (context.TestExpression("BeginAudioTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BeginAudioTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelId", targetDepth))
+                if (context.TestExpression("ChannelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("Content", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndAudioTime", targetDepth))
+                if (context.TestExpression("EndAudioTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EndAudioTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsPartial", targetDepth))
+                if (context.TestExpression("IsPartial", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPartial = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Items", targetDepth))
+                if (context.TestExpression("Items", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MedicalScribeTranscriptItem, MedicalScribeTranscriptItemUnmarshaller>(MedicalScribeTranscriptItemUnmarshaller.Instance);
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SegmentId", targetDepth))
+                if (context.TestExpression("SegmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentId = unmarshaller.Unmarshall(context, ref reader);

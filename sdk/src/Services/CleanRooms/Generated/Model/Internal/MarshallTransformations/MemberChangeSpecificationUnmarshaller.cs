@@ -56,22 +56,34 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("displayName", targetDepth))
+                if (context.TestExpression("displayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memberAbilities", targetDepth))
+                if (context.TestExpression("memberAbilities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.MemberAbilities = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("mlMemberAbilities", targetDepth, ref reader))
+                {
+                    var unmarshaller = MLMemberAbilitiesUnmarshaller.Instance;
+                    unmarshalledObject.MlMemberAbilities = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("paymentConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = PaymentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PaymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

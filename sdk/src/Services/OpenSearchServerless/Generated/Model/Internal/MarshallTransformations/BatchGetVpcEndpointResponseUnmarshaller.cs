@@ -52,13 +52,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("vpcEndpointDetails", targetDepth))
+                if (context.TestExpression("vpcEndpointDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcEndpointDetail, VpcEndpointDetailUnmarshaller>(VpcEndpointDetailUnmarshaller.Instance);
                     response.VpcEndpointDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcEndpointErrorDetails", targetDepth))
+                if (context.TestExpression("vpcEndpointErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcEndpointErrorDetail, VpcEndpointErrorDetailUnmarshaller>(VpcEndpointErrorDetailUnmarshaller.Instance);
                     response.VpcEndpointErrorDetails = unmarshaller.Unmarshall(context, ref reader);

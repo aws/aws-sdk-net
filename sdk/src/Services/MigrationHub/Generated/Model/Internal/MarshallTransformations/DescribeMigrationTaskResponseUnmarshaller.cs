@@ -52,7 +52,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MigrationTask", targetDepth))
+                if (context.TestExpression("MigrationTask", targetDepth, ref reader))
                 {
                     var unmarshaller = MigrationTaskUnmarshaller.Instance;
                     response.MigrationTask = unmarshaller.Unmarshall(context, ref reader);

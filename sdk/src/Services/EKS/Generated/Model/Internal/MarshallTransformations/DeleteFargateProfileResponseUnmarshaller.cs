@@ -52,7 +52,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fargateProfile", targetDepth))
+                if (context.TestExpression("fargateProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = FargateProfileUnmarshaller.Instance;
                     response.FargateProfile = unmarshaller.Unmarshall(context, ref reader);

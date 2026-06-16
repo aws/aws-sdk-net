@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImmunityTime", targetDepth))
+                if (context.TestExpression("ImmunityTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ImmunityTime = unmarshaller.Unmarshall(context, ref reader);

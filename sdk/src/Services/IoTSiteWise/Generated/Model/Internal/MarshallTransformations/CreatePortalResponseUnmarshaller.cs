@@ -52,31 +52,31 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("portalArn", targetDepth))
+                if (context.TestExpression("portalArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PortalArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portalId", targetDepth))
+                if (context.TestExpression("portalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PortalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portalStartUrl", targetDepth))
+                if (context.TestExpression("portalStartUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PortalStartUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portalStatus", targetDepth))
+                if (context.TestExpression("portalStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = PortalStatusUnmarshaller.Instance;
                     response.PortalStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssoApplicationId", targetDepth))
+                if (context.TestExpression("ssoApplicationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SsoApplicationId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BucketAccessRoleArn", targetDepth))
+                if (context.TestExpression("BucketAccessRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);

@@ -3,108 +3,90 @@ using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class AccelerateTests : TestBase<AmazonS3Client>
+    public class AccelerateTestsFixture : S3BucketFixture
     {
-        private static readonly RegionEndpoint TestRegionEndpoint = RegionEndpoint.USEast1;
-        private static readonly string AuthRegion = "us-east-1";
-        private static string bucketName;
-        private static readonly string testContent = "This is the content body!";
-        private static IAmazonS3 s3Client = null;
-        private static readonly List<string> leftoverBuckets = new List<string>();
-        private string _testId;
+        public static readonly RegionEndpoint TestRegionEndpoint = RegionEndpoint.USEast1;
 
-        [TestInitialize]
-        public void SetTestId()
+        public override async ValueTask InitializeAsync()
         {
-            _testId = Guid.NewGuid().ToString("N");
-        }
+            Client = new AmazonS3Client(TestRegionEndpoint);
+            BucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, setPublicACLs: true);
 
-        [ClassInitialize]
-        public static async Task Initialize(TestContext a)
-        {
-            s3Client = new AmazonS3Client(TestRegionEndpoint);
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(s3Client, true);
-            BucketAccelerateStatus bucketStatus = null;
-
-            await s3Client.PutBucketAccelerateConfigurationAsync(new PutBucketAccelerateConfigurationRequest
+            await Client.PutBucketAccelerateConfigurationAsync(new PutBucketAccelerateConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = BucketName,
                 AccelerateConfiguration = new AccelerateConfiguration
                 {
                     Status = BucketAccelerateStatus.Enabled
                 }
             });
 
-            var response = await S3TestUtils.WaitForConsistencyAsync(async () =>
+            await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await s3Client.GetBucketAccelerateConfigurationAsync(bucketName);
+                var res = await Client.GetBucketAccelerateConfigurationAsync(BucketName);
                 return res.Status == BucketAccelerateStatus.Enabled ? res : null;
             });
-
-            bucketStatus = response.Status;
-            Assert.AreEqual(BucketAccelerateStatus.Enabled, bucketStatus);
         }
+    }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
+    [Trait("Category", "S3")]
+    public class AccelerateTests : IClassFixture<AccelerateTestsFixture>
+    {
+        private static readonly string AuthRegion = "us-east-1";
+        private static readonly string testContent = "This is the content body!";
+        
+        private readonly string _bucketName;
+        private readonly string _testId;
+
+        public AccelerateTests(AccelerateTestsFixture fixture)
         {
-            if (leftoverBuckets.Any())
-            {
-                foreach (var bucket in leftoverBuckets)
-                {
-                    await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucket);
-                }
-            }
-
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
-            s3Client.Dispose();
-            BaseClean();
+            _bucketName = fixture.BucketName;
+            _testId = Guid.NewGuid().ToString("N");
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestAccelerateEnabledClient()
         {
             using (var client = new AmazonS3Client(
                 new AmazonS3Config
                 {
                     UseAccelerateEndpoint = true,
-                    RegionEndpoint = TestRegionEndpoint
+                    RegionEndpoint = AccelerateTestsFixture.TestRegionEndpoint
                 }))
             {
                 await TestAccelerateUnsupportedOperations(client);
                 await TestControlPlaneOperations(client);
                 await TestDataPlaneOperations(client);
 
-                await Assert.ThrowsExceptionAsync<AmazonClientException>(() =>
+                await Assert.ThrowsAsync<AmazonClientException>(() =>
                     client.ListObjectsAsync("accelerate.incompatible.bucket")
                 );
             }
 
-            Assert.ThrowsException<AmazonClientException>(() =>
+            Assert.Throws<AmazonClientException>(() =>
                 new AmazonS3Client(new AmazonS3Config
                 {
                     ForcePathStyle = true,
                     UseAccelerateEndpoint = true,
-                    RegionEndpoint = TestRegionEndpoint
+                    RegionEndpoint = AccelerateTestsFixture.TestRegionEndpoint
                 })
             );
 
             using (var sigV4Client = new AmazonS3Client(new AmazonS3Config
             {
                 UseAccelerateEndpoint = true,
-                RegionEndpoint = TestRegionEndpoint
+                RegionEndpoint = AccelerateTestsFixture.TestRegionEndpoint
             }))
             {
                 await TestAccelerateUnsupportedOperations(sigV4Client);
@@ -113,12 +95,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestClientWithExplicitRegionEndpointAndAccelerateEnabled()
         {
             using (var explicitAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
             {
-                RegionEndpoint = TestRegionEndpoint,
+                RegionEndpoint = AccelerateTestsFixture.TestRegionEndpoint,
                 UseAccelerateEndpoint = true
             }))
             {
@@ -129,7 +111,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var dualstackAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
             {
-                RegionEndpoint = TestRegionEndpoint,
+                RegionEndpoint = AccelerateTestsFixture.TestRegionEndpoint,
                 UseAccelerateEndpoint = true,
                 UseDualstackEndpoint = true
             }))
@@ -140,17 +122,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestClientWithExplicitAccelerateEndpoint()
         {
-            Assert.ThrowsException<AmazonClientException>(() =>
+            Assert.Throws<AmazonClientException>(() =>
                 new AmazonS3Client(new AmazonS3Config
                 {
                     ServiceURL = "https://s3-accelerate.amazonaws.com"
                 })
             );
 
-            Assert.ThrowsException<AmazonClientException>(() =>
+            Assert.Throws<AmazonClientException>(() =>
                 new AmazonS3Client(new AmazonS3Config
                 {
                     ServiceURL = "https://s3-accelerate.dualstack.amazonaws.com"
@@ -182,7 +164,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var explicitAccelerateEndpointAndRegionEndpoint = new AmazonS3Client(new AmazonS3Config
                 {
                     ServiceURL = "https://s3-accelerate.amazonaws.com",
-                    RegionEndpoint = TestRegionEndpoint
+                    RegionEndpoint = AccelerateTestsFixture.TestRegionEndpoint
                 }))
             {
                 await TestAccelerateUnsupportedOperations(explicitAccelerateEndpointAndRegionEndpoint);
@@ -196,7 +178,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var key = _testId + "-contentBodyPut";
             await client.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 ContentBody = testContent,
                 CannedACL = S3CannedACL.AuthenticatedRead
@@ -204,33 +186,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var getRequest = new GetObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key
             };
             using (var response = await client.GetObjectAsync(getRequest))
             using (StreamReader reader = new StreamReader(response.ResponseStream))
             {
                 var responseData = await reader.ReadToEndAsync();
-                Assert.AreEqual(testContent, responseData);
+                Assert.Equal(testContent, responseData);
             }
         }
 
         async Task TestControlPlaneOperations(IAmazonS3 client)
         {
             // All other operations should hit accelerate endpoint
-            var objects = (await client.ListObjectsAsync(bucketName)).S3Objects;
+            var objects = (await client.ListObjectsAsync(_bucketName)).S3Objects;
 
             if (objects == null)
-                Assert.IsFalse(AWSConfigs.InitializeCollections);
+                Assert.False(AWSConfigs.InitializeCollections);
             else
-                Assert.IsNotNull(objects);
+                Assert.NotNull(objects);
         }
 
         async Task TestAccelerateUnsupportedOperations(IAmazonS3 client)
         {
             // List, Put and Delete bucket should hit regional endpoint
             var buckets = (await client.ListBucketsAsync()).Buckets;
-            Assert.IsNotNull(buckets);
+            Assert.NotNull(buckets);
 
             var newBucket = UtilityMethods.GenerateName();
             await client.PutBucketAsync(newBucket);
@@ -248,9 +230,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             catch (Exception ex)
             {
+                // Bucket will be deleted by the build system's cleanup process.
                 Console.WriteLine($"Failed to clean up new bucket {newBucket}: {ex.Message}.");
-                leftoverBuckets.Add(newBucket);
             }
-        }        
+        }
     }
 }

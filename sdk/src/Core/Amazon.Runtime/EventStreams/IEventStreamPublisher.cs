@@ -79,7 +79,6 @@ namespace Amazon.Runtime.EventStreams
             {
                 eventHeaders.AddRange(marshalledEventHeaders);
             }
-
             var eventMessage = new EventStreamMessage(eventHeaders, eventPayload);
             return eventMessage;
         }

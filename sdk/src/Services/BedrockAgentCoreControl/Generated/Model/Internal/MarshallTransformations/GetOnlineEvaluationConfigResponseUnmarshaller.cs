@@ -52,85 +52,97 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("clusteringConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ClusteringConfigUnmarshaller.Instance;
+                    response.ClusteringConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataSourceConfig", targetDepth))
+                if (context.TestExpression("dataSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceConfigUnmarshaller.Instance;
                     response.DataSourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluationExecutionRoleArn", targetDepth))
+                if (context.TestExpression("evaluationExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EvaluationExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluators", targetDepth))
+                if (context.TestExpression("evaluators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluatorReference, EvaluatorReferenceUnmarshaller>(EvaluatorReferenceUnmarshaller.Instance);
                     response.Evaluators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionStatus", targetDepth))
+                if (context.TestExpression("executionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureReason", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onlineEvaluationConfigArn", targetDepth))
+                if (context.TestExpression("insights", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Insight, InsightUnmarshaller>(InsightUnmarshaller.Instance);
+                    response.Insights = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("onlineEvaluationConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OnlineEvaluationConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onlineEvaluationConfigId", targetDepth))
+                if (context.TestExpression("onlineEvaluationConfigId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OnlineEvaluationConfigId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onlineEvaluationConfigName", targetDepth))
+                if (context.TestExpression("onlineEvaluationConfigName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OnlineEvaluationConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputConfig", targetDepth))
+                if (context.TestExpression("outputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputConfigUnmarshaller.Instance;
                     response.OutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rule", targetDepth))
+                if (context.TestExpression("rule", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleUnmarshaller.Instance;
                     response.Rule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

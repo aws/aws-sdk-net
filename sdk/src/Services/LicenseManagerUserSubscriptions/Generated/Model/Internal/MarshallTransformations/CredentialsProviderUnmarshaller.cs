@@ -56,7 +56,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SecretsManagerCredentialsProvider", targetDepth))
+                if (context.TestExpression("SecretsManagerCredentialsProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerCredentialsProviderUnmarshaller.Instance;
                     unmarshalledObject.SecretsManagerCredentialsProvider = unmarshaller.Unmarshall(context, ref reader);

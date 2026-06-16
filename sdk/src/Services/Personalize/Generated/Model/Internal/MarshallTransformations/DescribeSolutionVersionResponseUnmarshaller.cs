@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("solutionVersion", targetDepth))
+                if (context.TestExpression("solutionVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = SolutionVersionUnmarshaller.Instance;
                     response.SolutionVersion = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MigrationTaskState", targetDepth))
+                if (context.TestExpression("MigrationTaskState", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskUnmarshaller.Instance;
                     unmarshalledObject.MigrationTaskState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateDateTime", targetDepth))
+                if (context.TestExpression("UpdateDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateType", targetDepth))
+                if (context.TestExpression("UpdateType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpdateType = unmarshaller.Unmarshall(context, ref reader);

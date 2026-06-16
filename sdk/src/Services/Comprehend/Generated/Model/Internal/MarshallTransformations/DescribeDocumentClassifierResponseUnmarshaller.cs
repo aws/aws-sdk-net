@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocumentClassifierProperties", targetDepth))
+                if (context.TestExpression("DocumentClassifierProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentClassifierPropertiesUnmarshaller.Instance;
                     response.DocumentClassifierProperties = unmarshaller.Unmarshall(context, ref reader);

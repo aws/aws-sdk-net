@@ -56,13 +56,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmiAssociationScope", targetDepth))
+                if (context.TestExpression("AmiAssociationScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmiAssociationScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseConfigurationArn", targetDepth))
+                if (context.TestExpression("LicenseConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LicenseConfigurationArn = unmarshaller.Unmarshall(context, ref reader);

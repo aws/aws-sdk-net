@@ -56,25 +56,25 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CheckpointConfigurationDescription", targetDepth))
+                if (context.TestExpression("CheckpointConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = CheckpointConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.CheckpointConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobPlanDescription", targetDepth))
+                if (context.TestExpression("JobPlanDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobPlanDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringConfigurationDescription", targetDepth))
+                if (context.TestExpression("MonitoringConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.MonitoringConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParallelismConfigurationDescription", targetDepth))
+                if (context.TestExpression("ParallelismConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ParallelismConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ParallelismConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);

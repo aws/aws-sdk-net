@@ -43,6 +43,7 @@ namespace Amazon.Drs.Model
         private ReplicationConfigurationDefaultLargeStagingDiskType _defaultLargeStagingDiskType;
         private ReplicationConfigurationEbsEncryption _ebsEncryption;
         private string _ebsEncryptionKeyArn;
+        private InternetProtocol _internetProtocol;
         private List<PITPolicyRule> _pitPolicy = AWSConfigs.InitializeCollections ? new List<PITPolicyRule>() : null;
         private string _replicationServerInstanceType;
         private List<string> _replicationServersSecurityGroupsIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -58,7 +59,6 @@ namespace Amazon.Drs.Model
         /// Replication Configuration Template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public bool? AssociateDefaultSecurityGroup
         {
             get { return this._associateDefaultSecurityGroup; }
@@ -116,7 +116,6 @@ namespace Amazon.Drs.Model
         /// Whether to create a Public IP for the Recovery Instance by default.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public bool? CreatePublicIP
         {
             get { return this._createPublicIP; }
@@ -135,7 +134,6 @@ namespace Amazon.Drs.Model
         /// The data plane routing mechanism that will be used for replication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ReplicationConfigurationDataPlaneRouting DataPlaneRouting
         {
             get { return this._dataPlaneRouting; }
@@ -154,7 +152,6 @@ namespace Amazon.Drs.Model
         /// The Staging Disk EBS volume type to be used during replication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ReplicationConfigurationDefaultLargeStagingDiskType DefaultLargeStagingDiskType
         {
             get { return this._defaultLargeStagingDiskType; }
@@ -206,6 +203,24 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InternetProtocol. 
+        /// <para>
+        /// Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
+        /// </para>
+        /// </summary>
+        public InternetProtocol InternetProtocol
+        {
+            get { return this._internetProtocol; }
+            set { this._internetProtocol = value; }
+        }
+
+        // Check to see if InternetProtocol property is set
+        internal bool IsSetInternetProtocol()
+        {
+            return this._internetProtocol != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PitPolicy. 
         /// <para>
         /// The Point in time (PIT) policy to manage snapshots taken during replication.
@@ -235,7 +250,7 @@ namespace Amazon.Drs.Model
         /// The instance type to be used for the replication server.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string ReplicationServerInstanceType
         {
             get { return this._replicationServerInstanceType; }
@@ -346,7 +361,6 @@ namespace Amazon.Drs.Model
         /// Whether to use a dedicated Replication Server in the replication staging area.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public bool? UseDedicatedReplicationServer
         {
             get { return this._useDedicatedReplicationServer; }

@@ -56,211 +56,217 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alwaysReauthenticate", targetDepth))
+                if (context.TestExpression("alwaysReauthenticate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AlwaysReauthenticate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("atakPackageValues", targetDepth))
+                if (context.TestExpression("atakPackageValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AtakPackageValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("calling", targetDepth))
+                if (context.TestExpression("calling", targetDepth, ref reader))
                 {
                     var unmarshaller = CallingSettingsUnmarshaller.Instance;
                     unmarshalledObject.Calling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("checkForUpdates", targetDepth))
+                if (context.TestExpression("checkForUpdates", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CheckForUpdates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableAtak", targetDepth))
+                if (context.TestExpression("enableAtak", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAtak = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableCrashReports", targetDepth))
+                if (context.TestExpression("enableCrashReports", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableCrashReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableFileDownload", targetDepth))
+                if (context.TestExpression("enableFileDownload", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableFileDownload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableGuestFederation", targetDepth))
+                if (context.TestExpression("enableGuestFederation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableGuestFederation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableNotificationPreview", targetDepth))
+                if (context.TestExpression("enableNotificationPreview", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableNotificationPreview = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableOpenAccessOption", targetDepth))
+                if (context.TestExpression("enableOpenAccessOption", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableOpenAccessOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableRestrictedGlobalFederation", targetDepth))
+                if (context.TestExpression("enableRestrictedGlobalFederation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableRestrictedGlobalFederation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("federationMode", targetDepth))
+                if (context.TestExpression("federationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FederationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filesEnabled", targetDepth))
+                if (context.TestExpression("filesEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FilesEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forceDeviceLockout", targetDepth))
+                if (context.TestExpression("forceDeviceLockout", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ForceDeviceLockout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forceOpenAccess", targetDepth))
+                if (context.TestExpression("forceOpenAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceOpenAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forceReadReceipts", targetDepth))
+                if (context.TestExpression("forceReadReceipts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceReadReceipts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("globalFederation", targetDepth))
+                if (context.TestExpression("globalFederation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GlobalFederation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isAtoEnabled", targetDepth))
+                if (context.TestExpression("isAtoEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAtoEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isLinkPreviewEnabled", targetDepth))
+                if (context.TestExpression("isLinkPreviewEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLinkPreviewEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("locationAllowMaps", targetDepth))
+                if (context.TestExpression("locationAllowMaps", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LocationAllowMaps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("locationEnabled", targetDepth))
+                if (context.TestExpression("locationEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LocationEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lockoutThreshold", targetDepth))
+                if (context.TestExpression("lockoutThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LockoutThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxAutoDownloadSize", targetDepth))
+                if (context.TestExpression("maxAutoDownloadSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxAutoDownloadSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxBor", targetDepth))
+                if (context.TestExpression("maxBor", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxBor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxTtl", targetDepth))
+                if (context.TestExpression("maxNonSsoSessionMinutes", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxNonSsoSessionMinutes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maxTtl", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxTtl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageForwardingEnabled", targetDepth))
+                if (context.TestExpression("messageForwardingEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MessageForwardingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("passwordRequirements", targetDepth))
+                if (context.TestExpression("passwordRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = PasswordRequirementsUnmarshaller.Instance;
                     unmarshalledObject.PasswordRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permittedNetworks", targetDepth))
+                if (context.TestExpression("permittedNetworks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PermittedNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permittedWickrAwsNetworks", targetDepth))
+                if (context.TestExpression("permittedWickrAwsNetworks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WickrAwsNetworks, WickrAwsNetworksUnmarshaller>(WickrAwsNetworksUnmarshaller.Instance);
                     unmarshalledObject.PermittedWickrAwsNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permittedWickrEnterpriseNetworks", targetDepth))
+                if (context.TestExpression("permittedWickrEnterpriseNetworks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PermittedWickrEnterpriseNetwork, PermittedWickrEnterpriseNetworkUnmarshaller>(PermittedWickrEnterpriseNetworkUnmarshaller.Instance);
                     unmarshalledObject.PermittedWickrEnterpriseNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("presenceEnabled", targetDepth))
+                if (context.TestExpression("presenceEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PresenceEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("quickResponses", targetDepth))
+                if (context.TestExpression("quickResponses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.QuickResponses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("showMasterRecoveryKey", targetDepth))
+                if (context.TestExpression("showMasterRecoveryKey", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ShowMasterRecoveryKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shredder", targetDepth))
+                if (context.TestExpression("shredder", targetDepth, ref reader))
                 {
                     var unmarshaller = ShredderSettingsUnmarshaller.Instance;
                     unmarshalledObject.Shredder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssoMaxIdleMinutes", targetDepth))
+                if (context.TestExpression("ssoMaxIdleMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SsoMaxIdleMinutes = unmarshaller.Unmarshall(context, ref reader);

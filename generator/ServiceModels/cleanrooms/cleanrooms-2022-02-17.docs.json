@@ -169,15 +169,21 @@
         "MemberSummary$accountId": "<p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>",
         "Membership$collaborationCreatorAccountId": "<p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>",
         "MembershipSummary$collaborationCreatorAccountId": "<p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>",
+        "ProtectedJob$jobComputePayerAccountId": "<p>The account ID of the member that pays for the job compute costs.</p>",
         "ProtectedJobMemberOutputConfigurationInput$accountId": "<p> The account ID.</p>",
         "ProtectedJobMemberOutputConfigurationOutput$accountId": "<p> The account ID.</p>",
         "ProtectedJobReceiverAccountIds$member": null,
         "ProtectedJobSingleMemberOutput$accountId": "<p>The Amazon Web Services account ID of the member in the collaboration who can receive results from analyses.</p>",
+        "ProtectedJobSummary$jobComputePayerAccountId": "<p>The account ID of the member that pays for the job compute costs.</p>",
+        "ProtectedQuery$queryComputePayerAccountId": "<p>The account ID of the member that pays for the query compute costs.</p>",
         "ProtectedQueryMemberOutputConfiguration$accountId": "<p>The unique identifier for the account.</p>",
         "ProtectedQuerySingleMemberOutput$accountId": "<p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>",
+        "ProtectedQuerySummary$queryComputePayerAccountId": "<p>The account ID of the member that pays for the query compute costs.</p>",
         "ReceiverAccountIds$member": null,
         "Schema$creatorAccountId": "<p>The unique account ID for the Amazon Web Services account that owns the schema.</p>",
-        "SchemaSummary$creatorAccountId": "<p>The unique account ID for the Amazon Web Services account that owns the schema.</p>"
+        "SchemaSummary$creatorAccountId": "<p>The unique account ID for the Amazon Web Services account that owns the schema.</p>",
+        "StartProtectedJobInput$jobComputePayerAccountId": "<p>The account ID of the member that pays for the job compute costs.</p>",
+        "StartProtectedQueryInput$queryComputePayerAccountId": "<p>The account ID of the member that pays for the query compute costs.</p>"
       }
     },
     "AdditionalAnalyses": {
@@ -2525,6 +2531,7 @@
       "base": "<p>The ML member abilities for a collaboration member.</p>",
       "refs": {
         "CreateCollaborationInput$creatorMLMemberAbilities": "<p>The ML abilities granted to the collaboration creator.</p>",
+        "MemberChangeSpecification$mlMemberAbilities": null,
         "MemberSpecification$mlMemberAbilities": "<p>The ML abilities granted to the collaboration member.</p>",
         "MemberSummary$mlAbilities": "<p>Provides a summary of the ML abilities for the collaboration member.</p>",
         "Membership$mlMemberAbilities": "<p>Specifies the ML member abilities that are granted to a collaboration member.</p>",
@@ -2584,7 +2591,7 @@
       "base": null,
       "refs": {
         "CreateCollaborationInput$creatorMemberAbilities": "<p>The abilities granted to the collaboration creator.</p>",
-        "MemberChangeSpecification$memberAbilities": "<p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p> <note> <p>The following values are currently not supported: <code>CAN_QUERY</code>, <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>. </p> <p>Set the value of <code>memberAbilities</code> to <code>[]</code> to allow a member to contribute data.</p> </note>",
+        "MemberChangeSpecification$memberAbilities": "<p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p> <note> <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>. </p> <p>Set the value of <code>memberAbilities</code> to <code>[]</code> to allow a member to contribute data.</p> <p>Set the value of <code>memberAbilities</code> to <code>[CAN_RECEIVE_RESULTS]</code> to allow a member to contribute data and receive results.</p> </note>",
         "MemberSpecification$memberAbilities": "<p>The abilities granted to the collaboration member.</p>",
         "MemberSummary$abilities": "<p>The abilities granted to the collaboration member.</p>",
         "Membership$memberAbilities": "<p>The abilities granted to the collaboration member.</p>",
@@ -2734,7 +2741,8 @@
     "MembershipJobComputePaymentConfig": {
       "base": "<p>An object representing the payment responsibilities accepted by the collaboration member for query and job compute costs.</p>",
       "refs": {
-        "MembershipPaymentConfiguration$jobCompute": "<p>The payment responsibilities accepted by the collaboration member for job compute costs.</p>"
+        "MembershipPaymentConfiguration$jobCompute": "<p>The payment responsibilities accepted by the collaboration member for job compute costs.</p>",
+        "UpdateMembershipPaymentConfiguration$jobCompute": null
       }
     },
     "MembershipJobLogStatus": {
@@ -2748,7 +2756,8 @@
     "MembershipMLPaymentConfig": {
       "base": "<p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>",
       "refs": {
-        "MembershipPaymentConfiguration$machineLearning": "<p>The payment responsibilities accepted by the collaboration member for machine learning costs.</p>"
+        "MembershipPaymentConfiguration$machineLearning": "<p>The payment responsibilities accepted by the collaboration member for machine learning costs.</p>",
+        "UpdateMembershipPaymentConfiguration$machineLearning": null
       }
     },
     "MembershipModelInferencePaymentConfig": {
@@ -2802,7 +2811,8 @@
     "MembershipQueryComputePaymentConfig": {
       "base": "<p>An object representing the payment responsibilities accepted by the collaboration member for query compute costs.</p>",
       "refs": {
-        "MembershipPaymentConfiguration$queryCompute": "<p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>"
+        "MembershipPaymentConfiguration$queryCompute": "<p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>",
+        "UpdateMembershipPaymentConfiguration$queryCompute": null
       }
     },
     "MembershipQueryLogStatus": {
@@ -2926,6 +2936,7 @@
       "base": "<p>An object representing the collaboration member's payment responsibilities set by the collaboration creator.</p>",
       "refs": {
         "CreateCollaborationInput$creatorPaymentConfiguration": "<p>The collaboration creator's payment responsibilities set by the collaboration creator. </p> <p>If the collaboration creator hasn't specified anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>",
+        "MemberChangeSpecification$paymentConfiguration": null,
         "MemberSpecification$paymentConfiguration": "<p>The collaboration member's payment responsibilities set by the collaboration creator. </p> <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>",
         "MemberSummary$paymentConfiguration": "<p>The collaboration member's payment responsibilities set by the collaboration creator. </p>"
       }
@@ -3776,7 +3787,7 @@
     "SparkProperties": {
       "base": null,
       "refs": {
-        "WorkerComputeConfigurationProperties$spark": "<p>The Spark configuration properties for SQL workloads. This map contains key-value pairs that configure Apache Spark settings to optimize performance for your data processing jobs. You can specify up to 50 Spark properties, with each key being 1-200 characters and each value being 0-500 characters. These properties allow you to adjust compute capacity for large datasets and complex workloads.</p>"
+        "WorkerComputeConfigurationProperties$spark": "<p>The Spark configuration properties for SQL and PySpark workloads. This map contains key-value pairs that configure Apache Spark settings to optimize performance for your data processing jobs. You can specify up to 50 Spark properties, with each key being 1-200 characters and each value being 0-500 characters. These properties allow you to adjust compute capacity for large datasets and complex workloads.</p>"
       }
     },
     "SparkPropertyKey": {
@@ -4230,6 +4241,12 @@
       "base": null,
       "refs": {}
     },
+    "UpdateMembershipPaymentConfiguration": {
+      "base": "<p>An object representing the payment responsibilities to update for the membership.</p>",
+      "refs": {
+        "UpdateMembershipInput$membershipPaymentConfiguration": "<p>The payment configuration to update for the membership.</p>"
+      }
+    },
     "UpdatePrivacyBudgetTemplateInput": {
       "base": null,
       "refs": {}
@@ -4300,6 +4317,7 @@
     "WorkerComputeConfigurationProperties": {
       "base": "<p>The configuration properties that define the compute environment settings for workers in Clean Rooms. These properties enable customization of the underlying compute environment to optimize performance for your specific workloads.</p>",
       "refs": {
+        "ProtectedJobWorkerComputeConfiguration$properties": "<p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>",
         "WorkerComputeConfiguration$properties": "<p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>"
       }
     },

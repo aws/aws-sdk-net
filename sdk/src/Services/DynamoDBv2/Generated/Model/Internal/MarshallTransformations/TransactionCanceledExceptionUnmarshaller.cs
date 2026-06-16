@@ -72,7 +72,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("CancellationReasons", targetDepth))
+                    if (context.TestExpression("CancellationReasons", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<CancellationReason, CancellationReasonUnmarshaller>(CancellationReasonUnmarshaller.Instance);
                         unmarshalledObject.CancellationReasons = unmarshaller.Unmarshall(context, ref reader);

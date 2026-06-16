@@ -446,6 +446,12 @@
         "ListCachePoliciesRequest$Type": "<p>A filter to return only the specified kinds of cache policies. Valid values are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> </ul>"
       }
     },
+    "CacheTagConfig": {
+      "base": "<p>A complex type that specifies the HTTP header name from which CloudFront extracts cache tags from origin responses. When you add <code>CacheTagConfig</code> to a distribution, CloudFront reads the specified header from origin responses, parses the comma-separated tag values, and stores them with the cached object. You can then invalidate cached objects by tag using the <code>CreateInvalidation</code> API.</p>",
+      "refs": {
+        "DistributionConfig$CacheTagConfig": "<p>Configuration for cache tag extraction from origin responses. When specified, CloudFront reads the header named in <code>HeaderName</code> from origin responses and stores the comma-separated values as cache tags on the object.</p> <p>Distributions without <code>CacheTagConfig</code> do not extract tags. When <code>CacheTagConfig</code> is removed from a distribution via <code>UpdateDistribution</code>, CloudFront stops extracting tags from origin responses.</p> <note> <p>Changing the <code>HeaderName</code> on an existing distribution does not retroactively affect previously cached objects. Tag-based invalidations will not apply to objects already cached using a previous header. To ensure tag invalidations function after updating the header name, use path-based invalidations to recache all objects that use cache tags.</p> </note>"
+      }
+    },
     "CachedMethods": {
       "base": "<p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p> <ul> <li> <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> </ul> <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.</p>",
       "refs": {
@@ -2216,7 +2222,8 @@
       "base": null,
       "refs": {
         "CreateAnycastIpListRequest$IpamCidrConfigs": "<p> A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list. </p>",
-        "IpamConfig$IpamCidrConfigs": "<p>A list of IPAM CIDR configurations that define the IP address ranges, IPAM pools, and associated Anycast IP addresses.</p>"
+        "IpamConfig$IpamCidrConfigs": "<p>A list of IPAM CIDR configurations that define the IP address ranges, IPAM pools, and associated Anycast IP addresses.</p>",
+        "UpdateAnycastIpListRequest$IpamCidrConfigs": "<p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>"
       }
     },
     "IpamCidrStatus": {
@@ -3583,7 +3590,7 @@
     "SSLSupportMethod": {
       "base": null,
       "refs": {
-        "ViewerCertificate$SSLSupportMethod": "<p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href=\"https://en.wikipedia.org/wiki/Server_Name_Indication\">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p> </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href=\"https://console.aws.amazon.com/support/home\">Amazon Web ServicesSupport Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>"
+        "ViewerCertificate$SSLSupportMethod": "<p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href=\"https://en.wikipedia.org/wiki/Server_Name_Indication\">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p> </li> <li> <p> <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href=\"https://console.aws.amazon.com/support/home\">Amazon Web Services Support Center</a>.</p> </li> </ul> <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>"
       }
     },
     "SamplingRate": {
@@ -3768,6 +3775,8 @@
         "CreateConnectionFunctionRequest$Tags": null,
         "CreateConnectionGroupRequest$Tags": null,
         "CreateDistributionTenantRequest$Tags": null,
+        "CreateFunctionRequest$Tags": null,
+        "CreateKeyValueStoreRequest$Tags": null,
         "CreateTrustStoreRequest$Tags": null,
         "CreateVpcOriginRequest$Tags": null,
         "DistributionConfigWithTags$Tags": "<p>A complex type that contains zero or more <code>Tag</code> elements.</p>",
@@ -4406,6 +4415,7 @@
         "CreateConnectionGroupRequest$Ipv6Enabled": "<p>Enable IPv6 for the connection group. The default is <code>true</code>. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6\">Enable IPv6</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
         "CreateConnectionGroupRequest$Enabled": "<p>Enable the connection group.</p>",
         "CreateDistributionTenantRequest$Enabled": "<p>Indicates whether the distribution tenant should be enabled when created. If the distribution tenant is disabled, the distribution tenant won't serve traffic.</p>",
+        "CreateTrustStoreRequest$UseClientCertificateOCSPEndpoint": "<p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>",
         "DefaultCacheBehavior$SmoothStreaming": "<p><note> <p>This field only supports standard distributions. You can't specify this field for multi-tenant distributions. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas\">Unsupported features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </note> <p>Indicates whether you want to distribute media files in the Microsoft Smooth Streaming format using the origin that is associated with this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code> for <code>SmoothStreaming</code>, you can still distribute other content using this cache behavior if the content matches the value of <code>PathPattern</code>.</p></p>",
         "DefaultCacheBehavior$Compress": "<p>Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html\">Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
         "DistributionConfig$Enabled": "<p>From this field, you can enable or disable the selected distribution.</p>",
@@ -4450,6 +4460,7 @@
         "StreamingDistributionSummary$Enabled": "<p>Whether the distribution is enabled to accept end user requests for content.</p>",
         "StreamingLoggingConfig$Enabled": "<p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>",
         "StringSchemaConfig$Required": "<p>Whether the defined parameter is required.</p>",
+        "TrustStore$UseClientCertificateOCSPEndpoint": "<p>A Boolean that determines whether the trust store uses the CA certificate's OCSP endpoint to check certificate revocation status.</p>",
         "TrustStoreConfig$AdvertiseTrustStoreCaNames": "<p>The configuration to use to advertise trust store CA names.</p>",
         "TrustStoreConfig$IgnoreCertificateExpiry": "<p>The configuration to use to ignore certificate expiration.</p>",
         "TrustedKeyGroups$Enabled": "<p>This field is <code>true</code> if any of the key groups in the list have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>",
@@ -4457,6 +4468,7 @@
         "UpdateConnectionGroupRequest$Ipv6Enabled": "<p>Enable IPv6 for the connection group. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6\">Enable IPv6</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
         "UpdateConnectionGroupRequest$Enabled": "<p>Whether the connection group is enabled.</p>",
         "UpdateDistributionTenantRequest$Enabled": "<p>Indicates whether the distribution tenant should be updated to an enabled state. If you update the distribution tenant and it's not enabled, the distribution tenant won't serve traffic.</p>",
+        "UpdateTrustStoreRequest$UseClientCertificateOCSPEndpoint": "<p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>",
         "ViewerCertificate$CloudFrontDefaultCertificate": "<p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p> <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p> <ul> <li> <p> <code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p> </li> <li> <p> <code>MinimumProtocolVersion</code> </p> </li> <li> <p> <code>SSLSupportMethod</code> </p> </li> </ul>",
         "VpcOriginList$IsTruncated": "<p>A flag that indicates whether more VPC origins remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more VPC origins in the list.</p>"
       }
@@ -4678,6 +4690,7 @@
         "CachePolicyConfig$Name": "<p>A unique name to identify the cache policy.</p>",
         "CachePolicyInUse$Message": null,
         "CachePolicyList$NextMarker": "<p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing cache policies where you left off.</p>",
+        "CacheTagConfig$HeaderName": "<p>The name of the HTTP header that your origin includes in responses. CloudFront uses this header to extract cache tags. The header value must contain comma-separated tag values (for example, <code>product:electronics, category:tv, brand:example</code>).</p>",
         "CannotChangeImmutablePublicKeyFields$Message": null,
         "CannotDeleteEntityWhileInUse$Message": null,
         "CannotUpdateEntityWhileInUse$Message": null,

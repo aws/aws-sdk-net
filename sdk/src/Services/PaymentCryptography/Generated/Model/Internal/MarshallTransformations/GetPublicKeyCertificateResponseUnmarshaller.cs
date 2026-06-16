@@ -52,13 +52,13 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyCertificate", targetDepth))
+                if (context.TestExpression("KeyCertificate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyCertificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyCertificateChain", targetDepth))
+                if (context.TestExpression("KeyCertificateChain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyCertificateChain = unmarshaller.Unmarshall(context, ref reader);

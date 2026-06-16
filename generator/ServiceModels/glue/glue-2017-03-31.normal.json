@@ -811,7 +811,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"ValidationException"},
         {"shape":"AlreadyExistsException"},
-        {"shape":"ResourceNumberLimitExceededException"}
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"OperationNotSupportedException"}
       ],
       "documentation":"<p>Creates a new session.</p>"
     },
@@ -1876,6 +1877,24 @@
       ],
       "documentation":"<p>Retrieves the details of a custom pattern by specifying its name.</p>"
     },
+    "GetDashboardUrl":{
+      "name":"GetDashboardUrl",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetDashboardUrlRequest"},
+      "output":{"shape":"GetDashboardUrlResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"OperationNotSupportedException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Retrieves the URL for the Spark monitoring dashboard for a Glue resource.</p>",
+      "readonly":true
+    },
     "GetDataCatalogEncryptionSettings":{
       "name":"GetDataCatalogEncryptionSettings",
       "http":{
@@ -2556,6 +2575,26 @@
         {"shape":"InvalidInputException"}
       ],
       "documentation":"<p>Retrieves the session.</p>"
+    },
+    "GetSessionEndpoint":{
+      "name":"GetSessionEndpoint",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSessionEndpointRequest"},
+      "output":{"shape":"GetSessionEndpointResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"OperationNotSupportedException"},
+        {"shape":"IllegalSessionStateException"}
+      ],
+      "documentation":"<p>Returns the Spark Connect endpoint URL and authentication token for an interactive session.</p>",
+      "readonly":true
     },
     "GetStatement":{
       "name":"GetStatement",
@@ -3546,6 +3585,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"OperationNotSupportedException"},
+        {"shape":"SessionBusyException"},
         {"shape":"IllegalSessionStateException"}
       ],
       "documentation":"<p>Executes the statement.</p>"
@@ -4554,7 +4595,7 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This overrides the timeout value set in the parent job.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
+          "documentation":"<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This overrides the timeout value set in the parent job.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
         },
         "SecurityConfiguration":{
           "shape":"NameString",
@@ -5600,7 +5641,9 @@
         "PartitionsToGet":{
           "shape":"BatchGetPartitionValueList",
           "documentation":"<p>A list of partition values identifying the partitions to retrieve.</p>"
-        }
+        },
+        "AuditContext":{"shape":"AuditContext"},
+        "QuerySessionContext":{"shape":"QuerySessionContext"}
       }
     },
     "BatchGetPartitionResponse":{
@@ -6559,6 +6602,10 @@
         "AllowFullTableExternalDataAccess":{
           "shape":"AllowFullTableExternalDataAccessEnum",
           "documentation":"<p> Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation. </p>"
+        },
+        "OverwriteChildResourcePermissionsWithDefault":{
+          "shape":"OverwriteChildResourcePermissionsWithDefaultEnum",
+          "documentation":"<p> Overwrites existing Amazon Web Services Lake Formation permissions with <code>CatalogInput$CreateTableDefaultPermissions</code> and <code>CatalogInput$CreateDatabaseDefaultPermissions</code> for all child resources. </p>"
         }
       },
       "documentation":"<p>A structure that describes catalog properties.</p>"
@@ -9915,7 +9962,7 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
+          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
@@ -9935,7 +9982,7 @@
         },
         "GlueVersion":{
           "shape":"GlueVersionString",
-          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>"
+          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 5.1.</p>"
         },
         "NumberOfWorkers":{
           "shape":"NullableInteger",
@@ -10386,6 +10433,10 @@
         "RequestOrigin":{
           "shape":"OrchestrationNameString",
           "documentation":"<p>The origin of the request. </p>"
+        },
+        "SessionType":{
+          "shape":"SessionType",
+          "documentation":"<p>The type of session to create.</p>"
         }
       },
       "documentation":"<p>Request to create a new session.</p>"
@@ -11189,6 +11240,10 @@
         "CompositeRuleEvaluationMethod":{
           "shape":"DQCompositeRuleEvaluationMethod",
           "documentation":"<p>Set the evaluation method for composite rules in the ruleset to ROW/COLUMN</p>"
+        },
+        "CustomLogGroupPrefix":{
+          "shape":"GenericString",
+          "documentation":"<p>A custom prefix for the CloudWatch log group names. When specified, evaluation run logs are written to <code>&lt;CustomLogGroupPrefix&gt;/error</code> and <code>&lt;CustomLogGroupPrefix&gt;/output</code> instead of the default <code>/aws-glue/data-quality/error</code> and <code>/aws-glue/data-quality/output</code> log groups.</p>"
         }
       },
       "documentation":"<p>Additional run options you can specify for an evaluation run.</p>"
@@ -11563,6 +11618,10 @@
         "StartedAfter":{
           "shape":"Timestamp",
           "documentation":"<p>Filter results by runs that started after this time.</p>"
+        },
+        "RulesetName":{
+          "shape":"NameString",
+          "documentation":"<p>Filter results by the name of the ruleset.</p>"
         }
       },
       "documentation":"<p>The filter criteria.</p>"
@@ -14498,6 +14557,10 @@
         "IncludeRoot":{
           "shape":"NullableBoolean",
           "documentation":"<p>Whether to list the default catalog in the account and region in the response. Defaults to <code>false</code>. When <code>true</code> and <code>ParentCatalogId = NULL | Amazon Web Services Account ID</code>, all catalogs and the default catalog are enumerated in the response.</p> <p>When the <code>ParentCatalogId</code> is not equal to null, and this attribute is passed as <code>false</code> or <code>true</code>, an <code>InvalidInputException</code> is thrown.</p>"
+        },
+        "HasDatabases":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>"
         }
       }
     },
@@ -14918,6 +14981,37 @@
         "ContextWords":{
           "shape":"ContextWords",
           "documentation":"<p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>"
+        }
+      }
+    },
+    "GetDashboardUrlRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceId",
+        "ResourceType"
+      ],
+      "members":{
+        "ResourceId":{
+          "shape":"NameString",
+          "documentation":"<p>The unique identifier of the resource for which to retrieve the dashboard URL.</p>"
+        },
+        "ResourceType":{
+          "shape":"GlueResourceType",
+          "documentation":"<p>The type of the resource. Valid values are <code>SESSION</code> and <code>JOB</code>.</p>"
+        },
+        "RequestOrigin":{
+          "shape":"OrchestrationNameString",
+          "documentation":"<p>The origin of the request. </p>"
+        }
+      }
+    },
+    "GetDashboardUrlResponse":{
+      "type":"structure",
+      "required":["Url"],
+      "members":{
+        "Url":{
+          "shape":"SensitiveUrl",
+          "documentation":"<p>The URL for the Spark monitoring dashboard.</p>"
         }
       }
     },
@@ -16033,7 +16127,8 @@
         "PartitionValues":{
           "shape":"ValueStringList",
           "documentation":"<p>The values that define the partition.</p>"
-        }
+        },
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetPartitionResponse":{
@@ -16091,7 +16186,8 @@
         "QueryAsOfTime":{
           "shape":"Timestamp",
           "documentation":"<p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>"
-        }
+        },
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetPartitionsResponse":{
@@ -16492,6 +16588,26 @@
         }
       }
     },
+    "GetSessionEndpointRequest":{
+      "type":"structure",
+      "required":["SessionId"],
+      "members":{
+        "SessionId":{
+          "shape":"NameString",
+          "documentation":"<p>The unique identifier of the interactive session.</p>"
+        }
+      }
+    },
+    "GetSessionEndpointResponse":{
+      "type":"structure",
+      "required":["SparkConnect"],
+      "members":{
+        "SparkConnect":{
+          "shape":"SessionEndpoint",
+          "documentation":"<p>The Spark Connect endpoint details for the session.</p>"
+        }
+      }
+    },
     "GetSessionRequest":{
       "type":"structure",
       "required":["Id"],
@@ -16627,6 +16743,10 @@
         "IncludeStatusDetails":{
           "shape":"BooleanNullable",
           "documentation":"<p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>"
+        },
+        "AttributesToGet":{
+          "shape":"TableAttributesList",
+          "documentation":"<p>Specifies the table fields returned by the <code>GetTable</code> call. This parameter doesn't accept an empty list.</p> <p>The following are the valid combinations of values:</p> <ul> <li> <p> <code>DEFAULT</code> - Returns the Hive-style table definition only.</p> </li> <li> <p> <code>LATEST_ICEBERG_METADATA</code> - Returns only the latest Apache Iceberg table metadata.</p> </li> <li> <p> <code>DEFAULT</code>, <code>LATEST_ICEBERG_METADATA</code> - Returns both the Hive-style table definition and the latest Apache Iceberg table metadata.</p> </li> </ul>"
         }
       }
     },
@@ -16661,7 +16781,8 @@
         "VersionId":{
           "shape":"VersionString",
           "documentation":"<p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>"
-        }
+        },
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetTableVersionResponse":{
@@ -16703,7 +16824,8 @@
         "MaxResults":{
           "shape":"CatalogGetterPageSize",
           "documentation":"<p>The maximum number of table versions to return in one response.</p>"
-        }
+        },
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetTableVersionsResponse":{
@@ -17355,6 +17477,13 @@
       "min":1,
       "pattern":"arn:aws(-(cn|us-gov|iso(-[bef])?))?:glue:.*"
     },
+    "GlueResourceType":{
+      "type":"string",
+      "enum":[
+        "JOB",
+        "SESSION"
+      ]
+    },
     "GlueSchema":{
       "type":"structure",
       "members":{
@@ -17881,6 +18010,10 @@
       "type":"list",
       "member":{"shape":"IcebergPartitionField"}
     },
+    "IcebergPartitionSpecList":{
+      "type":"list",
+      "member":{"shape":"IcebergPartitionSpec"}
+    },
     "IcebergRetentionConfiguration":{
       "type":"structure",
       "members":{
@@ -17956,6 +18089,10 @@
       },
       "documentation":"<p>Defines the schema structure for an Iceberg table, including field definitions, data types, and schema metadata.</p>"
     },
+    "IcebergSchemaList":{
+      "type":"list",
+      "member":{"shape":"IcebergSchema"}
+    },
     "IcebergSortDirection":{
       "type":"string",
       "enum":[
@@ -18013,6 +18150,10 @@
       "type":"list",
       "member":{"shape":"IcebergSortField"}
     },
+    "IcebergSortOrderList":{
+      "type":"list",
+      "member":{"shape":"IcebergSortOrder"}
+    },
     "IcebergStructField":{
       "type":"structure",
       "required":[
@@ -18060,6 +18201,60 @@
     "IcebergStructTypeEnum":{
       "type":"string",
       "enum":["struct"]
+    },
+    "IcebergTableMetadata":{
+      "type":"structure",
+      "members":{
+        "FormatVersion":{
+          "shape":"VersionString",
+          "documentation":"<p>The Apache Iceberg table format version, such as <code>1</code> or <code>2</code>. Determines the set of features and on-disk layout supported by the table.</p>"
+        },
+        "TableUuid":{
+          "shape":"TableIdString",
+          "documentation":"<p>The unique identifier (UUID) for the Iceberg table, assigned when the table is created and used to track the table across metadata updates.</p>"
+        },
+        "Location":{
+          "shape":"LocationString",
+          "documentation":"<p>The base S3 location where the Iceberg table's data and metadata files are stored.</p>"
+        },
+        "Properties":{
+          "shape":"StringToStringMap",
+          "documentation":"<p>A map of key-value pairs that define table-level properties and configuration settings for the Iceberg table.</p>"
+        },
+        "Schemas":{
+          "shape":"IcebergSchemaList",
+          "documentation":"<p>The list of schemas that have been associated with the Iceberg table over its history, supporting schema evolution.</p>"
+        },
+        "CurrentSchemaId":{
+          "shape":"Integer",
+          "documentation":"<p>The identifier of the schema that is currently active for the Iceberg table. Matches an entry in <code>Schemas</code>.</p>"
+        },
+        "LastColumnId":{
+          "shape":"Integer",
+          "documentation":"<p>The highest column identifier that has been assigned in the Iceberg table's schema, used to ensure unique IDs as new columns are added.</p>"
+        },
+        "PartitionSpecs":{
+          "shape":"IcebergPartitionSpecList",
+          "documentation":"<p>The list of partition specifications that have been associated with the Iceberg table over its history, supporting partition evolution.</p>"
+        },
+        "DefaultSpecId":{
+          "shape":"Integer",
+          "documentation":"<p>The identifier of the partition specification that is currently used by default when writing new data to the Iceberg table.</p>"
+        },
+        "LastPartitionId":{
+          "shape":"Integer",
+          "documentation":"<p>The highest partition field identifier that has been assigned across the table's partition specifications.</p>"
+        },
+        "SortOrders":{
+          "shape":"IcebergSortOrderList",
+          "documentation":"<p>The list of sort order specifications that have been associated with the Iceberg table over its history.</p>"
+        },
+        "DefaultSortOrderId":{
+          "shape":"Integer",
+          "documentation":"<p>The identifier of the sort order that is currently used by default when writing new data to the Iceberg table.</p>"
+        }
+      },
+      "documentation":"<p>The Apache Iceberg table metadata, including format version, table identifier, schemas, partition specifications, sort orders, and table properties. This structure captures the current state of an Iceberg table's metadata as managed by the Glue Data Catalog.</p>"
     },
     "IcebergTableUpdate":{
       "type":"structure",
@@ -18975,7 +19170,7 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
+          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
@@ -18999,7 +19194,7 @@
         },
         "GlueVersion":{
           "shape":"GlueVersionString",
-          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>"
+          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 5.1.</p>"
         },
         "CodeGenConfigurationNodes":{
           "shape":"CodeGenConfigurationNodes",
@@ -19199,7 +19394,7 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
+          "documentation":"<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
@@ -19227,7 +19422,7 @@
         },
         "GlueVersion":{
           "shape":"GlueVersionString",
-          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>"
+          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 5.1.</p>"
         },
         "DPUSeconds":{
           "shape":"NullableDouble",
@@ -19330,7 +19525,7 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
+          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status.</p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
@@ -19354,7 +19549,7 @@
         },
         "GlueVersion":{
           "shape":"GlueVersionString",
-          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>"
+          "documentation":"<p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p> <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\">Glue version</a> in the developer guide.</p> <p>If not provided in the update request, the Glue version retains the value from the existing job definition.</p>"
         },
         "CodeGenConfigurationNodes":{
           "shape":"CodeGenConfigurationNodes",
@@ -22034,6 +22229,13 @@
       },
       "documentation":"<p>A structure containing other metadata for a schema version belonging to the same metadata key.</p>"
     },
+    "OverwriteChildResourcePermissionsWithDefaultEnum":{
+      "type":"string",
+      "enum":[
+        "Accept",
+        "Deny"
+      ]
+    },
     "PIIDetection":{
       "type":"structure",
       "required":[
@@ -22287,8 +22489,7 @@
     },
     "PartitionIndexList":{
       "type":"list",
-      "member":{"shape":"PartitionIndex"},
-      "max":3
+      "member":{"shape":"PartitionIndex"}
     },
     "PartitionIndexStatus":{
       "type":"string",
@@ -25243,6 +25444,16 @@
       "max":1000,
       "min":1
     },
+    "SensitiveString":{
+      "type":"string",
+      "max":16384,
+      "sensitive":true
+    },
+    "SensitiveUrl":{
+      "type":"string",
+      "max":40000,
+      "sensitive":true
+    },
     "Separator":{
       "type":"string",
       "enum":[
@@ -25353,9 +25564,24 @@
         "ProfileName":{
           "shape":"NameString",
           "documentation":"<p>The name of an Glue usage profile associated with the session.</p>"
+        },
+        "SessionType":{
+          "shape":"SessionType",
+          "documentation":"<p>The type of the session.</p>"
         }
       },
       "documentation":"<p>The period in which a remote Spark runtime environment is running.</p>"
+    },
+    "SessionBusyException":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"OrchestrationMessageString",
+          "documentation":"<p>A message describing the problem.</p>"
+        }
+      },
+      "documentation":"<p>The session is currently busy processing another request and cannot accept new operations.</p>",
+      "exception":true
     },
     "SessionCommand":{
       "type":"structure",
@@ -25370,6 +25596,29 @@
         }
       },
       "documentation":"<p>The <code>SessionCommand</code> that runs the job.</p>"
+    },
+    "SessionEndpoint":{
+      "type":"structure",
+      "required":[
+        "Url",
+        "AuthToken",
+        "AuthTokenExpirationTime"
+      ],
+      "members":{
+        "Url":{
+          "shape":"SparkConnectEndpointUrl",
+          "documentation":"<p>The Spark Connect endpoint URL for the session.</p>"
+        },
+        "AuthToken":{
+          "shape":"SensitiveString",
+          "documentation":"<p>The authentication token to include in requests to the Spark Connect endpoint.</p>"
+        },
+        "AuthTokenExpirationTime":{
+          "shape":"TimestampValue",
+          "documentation":"<p>The time at which the authentication token expires.</p>"
+        }
+      },
+      "documentation":"<p>Contains the Spark Connect endpoint details for an interactive session, including the URL and authentication credentials.</p>"
     },
     "SessionIdList":{
       "type":"list",
@@ -25388,6 +25637,13 @@
         "TIMEOUT",
         "STOPPING",
         "STOPPED"
+      ]
+    },
+    "SessionType":{
+      "type":"string",
+      "enum":[
+        "LIVY",
+        "SPARK_CONNECT"
       ]
     },
     "SettingSource":{
@@ -25698,6 +25954,11 @@
     "SourceTableFieldsList":{
       "type":"list",
       "member":{"shape":"String128"}
+    },
+    "SparkConnectEndpointUrl":{
+      "type":"string",
+      "max":2048,
+      "pattern":"^sc://.*$"
     },
     "SparkConnectorSource":{
       "type":"structure",
@@ -26196,7 +26457,7 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job. </p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2880 minutes.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
+          "documentation":"<p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job. </p> <p>Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.</p> <p>When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.</p> <p>Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.</p> <p>For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.</p>"
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
@@ -27023,6 +27284,10 @@
           "shape":"NullableBoolean",
           "documentation":"<p>Indicates a table is a <code>MaterializedView</code>.</p>"
         },
+        "IcebergTableMetadata":{
+          "shape":"IcebergTableMetadata",
+          "documentation":"<p>The latest Apache Iceberg table metadata for the table, including format version, schemas, partition specifications, and sort orders. This field is populated for Iceberg tables and reflects the current state of the table's Iceberg metadata.</p>"
+        },
         "Status":{
           "shape":"TableStatus",
           "documentation":"<p>Indicates the the state of an asynchronous change to a table.</p>"
@@ -27034,7 +27299,9 @@
       "type":"string",
       "enum":[
         "NAME",
-        "TABLE_TYPE"
+        "TABLE_TYPE",
+        "DEFAULT",
+        "LATEST_ICEBERG_METADATA"
       ]
     },
     "TableAttributesList":{
@@ -27058,6 +27325,11 @@
     "TableErrors":{
       "type":"list",
       "member":{"shape":"TableError"}
+    },
+    "TableIdString":{
+      "type":"string",
+      "max":100,
+      "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
     },
     "TableIdentifier":{
       "type":"structure",

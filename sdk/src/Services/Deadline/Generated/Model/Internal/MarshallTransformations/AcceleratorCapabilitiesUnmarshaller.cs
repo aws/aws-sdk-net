@@ -56,13 +56,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("count", targetDepth))
+                if (context.TestExpression("count", targetDepth, ref reader))
                 {
                     var unmarshaller = AcceleratorCountRangeUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selections", targetDepth))
+                if (context.TestExpression("selections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AcceleratorSelection, AcceleratorSelectionUnmarshaller>(AcceleratorSelectionUnmarshaller.Instance);
                     unmarshalledObject.Selections = unmarshaller.Unmarshall(context, ref reader);

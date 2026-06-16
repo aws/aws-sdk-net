@@ -56,49 +56,49 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2InstanceTags", targetDepth))
+                if (context.TestExpression("ec2InstanceTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceMapFilter, ResourceMapFilterUnmarshaller>(ResourceMapFilterUnmarshaller.Instance);
                     unmarshalledObject.Ec2InstanceTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImageTags", targetDepth))
+                if (context.TestExpression("ecrImageTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrImageTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrRepositoryName", targetDepth))
+                if (context.TestExpression("ecrRepositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
                     unmarshalledObject.EcrRepositoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionName", targetDepth))
+                if (context.TestExpression("lambdaFunctionName", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
                     unmarshalledObject.LambdaFunctionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionTags", targetDepth))
+                if (context.TestExpression("lambdaFunctionTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceMapFilter, ResourceMapFilterUnmarshaller>(ResourceMapFilterUnmarshaller.Instance);
                     unmarshalledObject.LambdaFunctionTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("resourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
                     unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);

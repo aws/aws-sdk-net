@@ -52,13 +52,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedVersions", targetDepth))
+                if (context.TestExpression("failedVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, PackageVersionError, StringUnmarshaller, PackageVersionErrorUnmarshaller>(StringUnmarshaller.Instance, PackageVersionErrorUnmarshaller.Instance);
                     response.FailedVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successfulVersions", targetDepth))
+                if (context.TestExpression("successfulVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, SuccessfulPackageVersionInfo, StringUnmarshaller, SuccessfulPackageVersionInfoUnmarshaller>(StringUnmarshaller.Instance, SuccessfulPackageVersionInfoUnmarshaller.Instance);
                     response.SuccessfulVersions = unmarshaller.Unmarshall(context, ref reader);

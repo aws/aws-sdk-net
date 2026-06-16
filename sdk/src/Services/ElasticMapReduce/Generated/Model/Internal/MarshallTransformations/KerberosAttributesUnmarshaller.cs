@@ -56,31 +56,31 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ADDomainJoinPassword", targetDepth))
+                if (context.TestExpression("ADDomainJoinPassword", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ADDomainJoinPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ADDomainJoinUser", targetDepth))
+                if (context.TestExpression("ADDomainJoinUser", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ADDomainJoinUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossRealmTrustPrincipalPassword", targetDepth))
+                if (context.TestExpression("CrossRealmTrustPrincipalPassword", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CrossRealmTrustPrincipalPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KdcAdminPassword", targetDepth))
+                if (context.TestExpression("KdcAdminPassword", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KdcAdminPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Realm", targetDepth))
+                if (context.TestExpression("Realm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Realm = unmarshaller.Unmarshall(context, ref reader);

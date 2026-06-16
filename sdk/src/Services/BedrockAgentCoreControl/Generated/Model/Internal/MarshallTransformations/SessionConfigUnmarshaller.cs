@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sessionTimeoutMinutes", targetDepth))
+                if (context.TestExpression("sessionTimeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SessionTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);

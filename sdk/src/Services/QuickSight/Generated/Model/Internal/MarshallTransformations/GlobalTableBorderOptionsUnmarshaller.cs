@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SideSpecificBorder", targetDepth))
+                if (context.TestExpression("SideSpecificBorder", targetDepth, ref reader))
                 {
                     var unmarshaller = TableSideBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.SideSpecificBorder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UniformBorder", targetDepth))
+                if (context.TestExpression("UniformBorder", targetDepth, ref reader))
                 {
                     var unmarshaller = TableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.UniformBorder = unmarshaller.Unmarshall(context, ref reader);

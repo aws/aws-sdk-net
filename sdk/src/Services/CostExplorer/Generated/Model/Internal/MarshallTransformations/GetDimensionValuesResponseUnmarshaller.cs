@@ -52,25 +52,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DimensionValues", targetDepth))
+                if (context.TestExpression("DimensionValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionValuesWithAttributes, DimensionValuesWithAttributesUnmarshaller>(DimensionValuesWithAttributesUnmarshaller.Instance);
                     response.DimensionValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReturnSize", targetDepth))
+                if (context.TestExpression("ReturnSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ReturnSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalSize", targetDepth))
+                if (context.TestExpression("TotalSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalSize = unmarshaller.Unmarshall(context, ref reader);

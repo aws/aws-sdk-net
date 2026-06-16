@@ -56,7 +56,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BasicAuthentication", targetDepth))
+                if (context.TestExpression("BasicAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BasicAuthenticationConfiguration, BasicAuthenticationConfigurationUnmarshaller>(BasicAuthenticationConfigurationUnmarshaller.Instance);
                     unmarshalledObject.BasicAuthentication = unmarshaller.Unmarshall(context, ref reader);

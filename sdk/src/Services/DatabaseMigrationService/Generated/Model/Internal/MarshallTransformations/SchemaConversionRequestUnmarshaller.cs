@@ -56,37 +56,37 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Error", targetDepth))
+                if (context.TestExpression("Error", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorDetailsUnmarshaller.Instance;
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportSqlDetails", targetDepth))
+                if (context.TestExpression("ExportSqlDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportSqlDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExportSqlDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MigrationProjectArn", targetDepth))
+                if (context.TestExpression("MigrationProjectArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Progress", targetDepth))
+                if (context.TestExpression("Progress", targetDepth, ref reader))
                 {
                     var unmarshaller = ProgressUnmarshaller.Instance;
                     unmarshalledObject.Progress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestIdentifier", targetDepth))
+                if (context.TestExpression("RequestIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RequestIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

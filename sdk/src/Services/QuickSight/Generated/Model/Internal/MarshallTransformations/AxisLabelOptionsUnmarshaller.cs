@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplyTo", targetDepth))
+                if (context.TestExpression("ApplyTo", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisLabelReferenceOptionsUnmarshaller.Instance;
                     unmarshalledObject.ApplyTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomLabel", targetDepth))
+                if (context.TestExpression("CustomLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontConfiguration", targetDepth))
+                if (context.TestExpression("FontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FontConfiguration = unmarshaller.Unmarshall(context, ref reader);

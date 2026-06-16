@@ -52,13 +52,13 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountRecommendationLifecycleSummaries", targetDepth))
+                if (context.TestExpression("accountRecommendationLifecycleSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountRecommendationLifecycleSummary, AccountRecommendationLifecycleSummaryUnmarshaller>(AccountRecommendationLifecycleSummaryUnmarshaller.Instance);
                     response.AccountRecommendationLifecycleSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

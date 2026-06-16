@@ -52,19 +52,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeName", targetDepth))
+                if (context.TestExpression("AttributeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Items", targetDepth))
+                if (context.TestExpression("Items", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttributeValueItem, AttributeValueItemUnmarshaller>(AttributeValueItemUnmarshaller.Instance);
                     response.Items = unmarshaller.Unmarshall(context, ref reader);

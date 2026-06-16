@@ -541,6 +541,118 @@ namespace Amazon.ElastiCache
 
 
     /// <summary>
+    /// Constants used for properties of type Durability.
+    /// </summary>
+    public class Durability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Async for Durability
+        /// </summary>
+        public static readonly Durability Async = new Durability("async");
+        /// <summary>
+        /// Constant Default for Durability
+        /// </summary>
+        public static readonly Durability Default = new Durability("default");
+        /// <summary>
+        /// Constant Disabled for Durability
+        /// </summary>
+        public static readonly Durability Disabled = new Durability("disabled");
+        /// <summary>
+        /// Constant Sync for Durability
+        /// </summary>
+        public static readonly Durability Sync = new Durability("sync");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Durability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Durability FindValue(string value)
+        {
+            return FindValue<Durability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Durability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EffectiveDurability.
+    /// </summary>
+    public class EffectiveDurability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Async for EffectiveDurability
+        /// </summary>
+        public static readonly EffectiveDurability Async = new EffectiveDurability("async");
+        /// <summary>
+        /// Constant Disabled for EffectiveDurability
+        /// </summary>
+        public static readonly EffectiveDurability Disabled = new EffectiveDurability("disabled");
+        /// <summary>
+        /// Constant Sync for EffectiveDurability
+        /// </summary>
+        public static readonly EffectiveDurability Sync = new EffectiveDurability("sync");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EffectiveDurability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EffectiveDurability FindValue(string value)
+        {
+            return FindValue<EffectiveDurability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EffectiveDurability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputAuthenticationType.
     /// </summary>
     public class InputAuthenticationType : ConstantClass
@@ -1410,6 +1522,60 @@ namespace Amazon.ElastiCache
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageEncryptionType.
+    /// </summary>
+    public class StorageEncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for StorageEncryptionType
+        /// </summary>
+        public static readonly StorageEncryptionType None = new StorageEncryptionType("none");
+        /// <summary>
+        /// Constant SseElasticache for StorageEncryptionType
+        /// </summary>
+        public static readonly StorageEncryptionType SseElasticache = new StorageEncryptionType("sse-elasticache");
+        /// <summary>
+        /// Constant SseKms for StorageEncryptionType
+        /// </summary>
+        public static readonly StorageEncryptionType SseKms = new StorageEncryptionType("sse-kms");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageEncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageEncryptionType FindValue(string value)
+        {
+            return FindValue<StorageEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageEncryptionType(string value)
         {
             return FindValue(value);
         }

@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("followerChannelSettings", targetDepth))
+                if (context.TestExpression("followerChannelSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribeFollowerChannelSettingsUnmarshaller.Instance;
                     unmarshalledObject.FollowerChannelSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primaryChannelSettings", targetDepth))
+                if (context.TestExpression("primaryChannelSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribePrimaryChannelSettingsUnmarshaller.Instance;
                     unmarshalledObject.PrimaryChannelSettings = unmarshaller.Unmarshall(context, ref reader);

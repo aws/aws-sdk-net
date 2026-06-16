@@ -56,13 +56,13 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fallbackResult", targetDepth))
+                if (context.TestExpression("fallbackResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FallbackResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uri", targetDepth))
+                if (context.TestExpression("uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Uri = unmarshaller.Unmarshall(context, ref reader);

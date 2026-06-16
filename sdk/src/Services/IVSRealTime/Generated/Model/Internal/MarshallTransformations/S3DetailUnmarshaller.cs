@@ -56,7 +56,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("recordingPrefix", targetDepth))
+                if (context.TestExpression("recordingPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecordingPrefix = unmarshaller.Unmarshall(context, ref reader);

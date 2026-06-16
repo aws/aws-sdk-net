@@ -114,7 +114,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ccustom-sqlserver-web</c> 
+        ///  <c>custom-sqlserver-web</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -122,8 +122,21 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// RDS for SQL Server supports only <c>sqlserver-dev-ee</c>.
+        /// RDS for SQL Server supports the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>sqlserver-ee</c> (Bring Your Own Media)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sqlserver-se</c> (Bring Your Own Media)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sqlserver-dev-ee</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]
         public string Engine

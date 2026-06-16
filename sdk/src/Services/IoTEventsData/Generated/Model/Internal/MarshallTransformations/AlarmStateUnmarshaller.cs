@@ -56,25 +56,25 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customerAction", targetDepth))
+                if (context.TestExpression("customerAction", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerActionUnmarshaller.Instance;
                     unmarshalledObject.CustomerAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleEvaluation", targetDepth))
+                if (context.TestExpression("ruleEvaluation", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleEvaluationUnmarshaller.Instance;
                     unmarshalledObject.RuleEvaluation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateName", targetDepth))
+                if (context.TestExpression("stateName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StateName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemEvent", targetDepth))
+                if (context.TestExpression("systemEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemEventUnmarshaller.Instance;
                     unmarshalledObject.SystemEvent = unmarshaller.Unmarshall(context, ref reader);

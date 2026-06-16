@@ -709,6 +709,64 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type AttachmentScope.
+    /// </summary>
+    public class AttachmentScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CASE for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope CASE = new AttachmentScope("CASE");
+        /// <summary>
+        /// Constant CHAT for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope CHAT = new AttachmentScope("CHAT");
+        /// <summary>
+        /// Constant EMAIL for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope EMAIL = new AttachmentScope("EMAIL");
+        /// <summary>
+        /// Constant TASK for AttachmentScope
+        /// </summary>
+        public static readonly AttachmentScope TASK = new AttachmentScope("TASK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentScope FindValue(string value)
+        {
+            return FindValue<AttachmentScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoEvaluationStatus.
     /// </summary>
     public class AutoEvaluationStatus : ConstantClass
@@ -1456,6 +1514,10 @@ namespace Amazon.Connect
         /// Constant AUTOMATED for ContactInteractionType
         /// </summary>
         public static readonly ContactInteractionType AUTOMATED = new ContactInteractionType("AUTOMATED");
+        /// <summary>
+        /// Constant CUSTOMER for ContactInteractionType
+        /// </summary>
+        public static readonly ContactInteractionType CUSTOMER = new ContactInteractionType("CUSTOMER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1606,6 +1668,10 @@ namespace Amazon.Connect
         /// Constant CUSTOM_BOT for ContactParticipantRole
         /// </summary>
         public static readonly ContactParticipantRole CUSTOM_BOT = new ContactParticipantRole("CUSTOM_BOT");
+        /// <summary>
+        /// Constant CUSTOMER for ContactParticipantRole
+        /// </summary>
+        public static readonly ContactParticipantRole CUSTOMER = new ContactParticipantRole("CUSTOMER");
         /// <summary>
         /// Constant SYSTEM for ContactParticipantRole
         /// </summary>
@@ -2895,9 +2961,21 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EvaluationFormLanguageCode ItIT = new EvaluationFormLanguageCode("it-IT");
         /// <summary>
+        /// Constant JaJP for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode JaJP = new EvaluationFormLanguageCode("ja-JP");
+        /// <summary>
+        /// Constant KoKR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
+        /// <summary>
         /// Constant PtBR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
+        /// <summary>
+        /// Constant ZhCN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZhCN = new EvaluationFormLanguageCode("zh-CN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3611,6 +3689,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant OnAlertUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAlertUpdate = new EventSourceName("OnAlertUpdate");
+        /// <summary>
         /// Constant OnCaseCreate for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnCaseCreate = new EventSourceName("OnCaseCreate");
@@ -3622,6 +3704,10 @@ namespace Amazon.Connect
         /// Constant OnContactEvaluationSubmit for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnContactEvaluationSubmit = new EventSourceName("OnContactEvaluationSubmit");
+        /// <summary>
+        /// Constant OnEmailAnalysisAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnEmailAnalysisAvailable = new EventSourceName("OnEmailAnalysisAvailable");
         /// <summary>
         /// Constant OnMetricDataUpdate for EventSourceName
         /// </summary>
@@ -3646,6 +3732,18 @@ namespace Amazon.Connect
         /// Constant OnSalesforceCaseCreate for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnSalesforceCaseCreate = new EventSourceName("OnSalesforceCaseCreate");
+        /// <summary>
+        /// Constant OnSchedulePublish for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnSchedulePublish = new EventSourceName("OnSchedulePublish");
+        /// <summary>
+        /// Constant OnScheduleTimeOffRequestActivity for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnScheduleTimeOffRequestActivity = new EventSourceName("OnScheduleTimeOffRequestActivity");
+        /// <summary>
+        /// Constant OnScheduleUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnScheduleUpdate = new EventSourceName("OnScheduleUpdate");
         /// <summary>
         /// Constant OnSlaBreach for EventSourceName
         /// </summary>
@@ -3907,9 +4005,25 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly FileUseCaseType ATTACHMENT = new FileUseCaseType("ATTACHMENT");
         /// <summary>
+        /// Constant CONTACT_ANALYSIS for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType CONTACT_ANALYSIS = new FileUseCaseType("CONTACT_ANALYSIS");
+        /// <summary>
         /// Constant EMAIL_MESSAGE for FileUseCaseType
         /// </summary>
         public static readonly FileUseCaseType EMAIL_MESSAGE = new FileUseCaseType("EMAIL_MESSAGE");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_REDACTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -8542,6 +8656,14 @@ namespace Amazon.Connect
         /// Constant EMAIL_MESSAGE_PLAIN_TEXT for ReferenceType
         /// </summary>
         public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_REDACTED = new ReferenceType("EMAIL_MESSAGE_REDACTED");
         /// <summary>
         /// Constant NUMBER for ReferenceType
         /// </summary>

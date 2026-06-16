@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Geometry of the connection between different isoline components.
+    /// Represents the geometry of connections between non-contiguous parts of an isoline.
+    /// These connections can be provided in either coordinate pairs (LineString) or encoded
+    /// (Polyline) format, matching the format specified in the request.
     /// </summary>
     public partial class IsolineConnectionGeometry
     {
@@ -40,7 +42,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property LineString. 
         /// <para>
-        /// An ordered list of positions used to plot a route on a map.
+        /// A series of <c>[longitude, latitude]</c> coordinate pairs defining the connection
+        /// path when <c>Simple</c> geometry format is requested. These coordinates can be directly
+        /// used as the coordinates array in a GeoJSON LineString without transformation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -69,8 +73,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Polyline. 
         /// <para>
-        /// An ordered list of positions used to plot a route on a map in a lossy compression
-        /// format.
+        /// An encoded representation of the connection path when <c>FlexiblePolyline</c> geometry
+        /// format is requested. This provides a more compact representation suitable for transmission
+        /// and storage. To convert to GeoJSON, first decode to obtain coordinate pairs, then
+        /// use those coordinates as the coordinates array in a GeoJSON LineString.
         /// </para>
         ///  <note> 
         /// <para>

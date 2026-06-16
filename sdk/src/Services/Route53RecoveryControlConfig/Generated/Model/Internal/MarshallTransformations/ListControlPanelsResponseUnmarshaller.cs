@@ -52,13 +52,13 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ControlPanels", targetDepth))
+                if (context.TestExpression("ControlPanels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ControlPanel, ControlPanelUnmarshaller>(ControlPanelUnmarshaller.Instance);
                     response.ControlPanels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

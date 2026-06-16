@@ -56,19 +56,19 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataReplication", targetDepth))
+                if (context.TestExpression("DataReplication", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataReplication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecoverySnapshotTime", targetDepth))
+                if (context.TestExpression("RecoverySnapshotTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RecoverySnapshotTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandbyWorkspaceId", targetDepth))
+                if (context.TestExpression("StandbyWorkspaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StandbyWorkspaceId = unmarshaller.Unmarshall(context, ref reader);

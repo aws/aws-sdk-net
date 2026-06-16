@@ -56,13 +56,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxLocalMediaSizeInMB", targetDepth))
+                if (context.TestExpression("MaxLocalMediaSizeInMB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLocalMediaSizeInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StrategyOnFullSize", targetDepth))
+                if (context.TestExpression("StrategyOnFullSize", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StrategyOnFullSize = unmarshaller.Unmarshall(context, ref reader);

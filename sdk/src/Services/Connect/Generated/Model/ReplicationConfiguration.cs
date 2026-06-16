@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Details about the status of the replication of a source Amazon Connect instance across
-    /// Amazon Web Services Regions. Use these details to understand the general status of
-    /// a given replication. For information about why a replication process may fail, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html#why-replicateinstance-fails">Why
-    /// a ReplicateInstance call fails</a> in the <i>Create a replica of your existing Amazon
-    /// Connect instance</i> topic in the <i>Amazon Connect Administrator Guide</i>.
+    /// Details about the status of the replication of a source Connect Customer instance
+    /// across Amazon Web Services Regions. Use these details to understand the general status
+    /// of a given replication. For information about why a replication process may fail,
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html#why-replicateinstance-fails">Why
+    /// a ReplicateInstance call fails</a> in the <i>Create a replica of your existing Connect
+    /// Customer instance</i> topic in the <i>Connect Customer Administrator Guide</i>.
     /// </summary>
     public partial class ReplicationConfiguration
     {
@@ -46,11 +46,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property GlobalSignInEndpoint. 
         /// <para>
-        /// The URL that is used to sign-in to your Amazon Connect instance according to your
+        /// The URL that is used to sign-in to your Connect Customer instance according to your
         /// traffic distribution group configuration. For more information about sign-in and traffic
         /// distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Important
-        /// things to know</a> in the <i>Create traffic distribution groups</i> topic in the <i>Amazon
-        /// Connect Administrator Guide</i>. 
+        /// things to know</a> in the <i>Create traffic distribution groups</i> topic in the <i>Connect
+        /// Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -70,7 +70,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ReplicationStatusSummaryList. 
         /// <para>
         /// A list of replication status summaries. The summaries contain details about the replication
-        /// of configuration information for Amazon Connect resources, for each Amazon Web Services
+        /// of configuration information for Connect Customer resources, for each Amazon Web Services
         /// Region.
         /// </para>
         /// <para />
@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The Amazon Web Services Region where the source Amazon Connect instance was created.
+        /// The Amazon Web Services Region where the source Connect Customer instance was created.
         /// This is the Region where the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a>
         /// API was called to start the replication process.
         /// </para>

@@ -56,31 +56,31 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("backendDefaults", targetDepth))
+                if (context.TestExpression("backendDefaults", targetDepth, ref reader))
                 {
                     var unmarshaller = BackendDefaultsUnmarshaller.Instance;
                     unmarshalledObject.BackendDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("backends", targetDepth))
+                if (context.TestExpression("backends", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Backend, BackendUnmarshaller>(BackendUnmarshaller.Instance);
                     unmarshalledObject.Backends = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listeners", targetDepth))
+                if (context.TestExpression("listeners", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Listener, ListenerUnmarshaller>(ListenerUnmarshaller.Instance);
                     unmarshalledObject.Listeners = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logging", targetDepth))
+                if (context.TestExpression("logging", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingUnmarshaller.Instance;
                     unmarshalledObject.Logging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceDiscovery", targetDepth))
+                if (context.TestExpression("serviceDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceDiscoveryUnmarshaller.Instance;
                     unmarshalledObject.ServiceDiscovery = unmarshaller.Unmarshall(context, ref reader);

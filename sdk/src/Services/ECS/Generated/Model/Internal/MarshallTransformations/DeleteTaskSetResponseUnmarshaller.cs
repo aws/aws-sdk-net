@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("taskSet", targetDepth))
+                if (context.TestExpression("taskSet", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskSetUnmarshaller.Instance;
                     response.TaskSet = unmarshaller.Unmarshall(context, ref reader);
@@ -98,6 +98,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
                 {

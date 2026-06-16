@@ -49,9 +49,12 @@ namespace Amazon.TaxSettings.Model
     /// </summary>
     public partial class AdditionalInfoRequest
     {
+        private BelgiumAdditionalInfo _belgiumAdditionalInfo;
         private CanadaAdditionalInfo _canadaAdditionalInfo;
+        private ChileAdditionalInfo _chileAdditionalInfo;
         private EgyptAdditionalInfo _egyptAdditionalInfo;
         private EstoniaAdditionalInfo _estoniaAdditionalInfo;
+        private FranceAdditionalInfo _franceAdditionalInfo;
         private GeorgiaAdditionalInfo _georgiaAdditionalInfo;
         private GreeceAdditionalInfo _greeceAdditionalInfo;
         private IndonesiaAdditionalInfo _indonesiaAdditionalInfo;
@@ -59,6 +62,7 @@ namespace Amazon.TaxSettings.Model
         private ItalyAdditionalInfo _italyAdditionalInfo;
         private KenyaAdditionalInfo _kenyaAdditionalInfo;
         private MalaysiaAdditionalInfo _malaysiaAdditionalInfo;
+        private PhilippinesAdditionalInfo _philippinesAdditionalInfo;
         private PolandAdditionalInfo _polandAdditionalInfo;
         private RomaniaAdditionalInfo _romaniaAdditionalInfo;
         private SaudiArabiaAdditionalInfo _saudiArabiaAdditionalInfo;
@@ -68,6 +72,24 @@ namespace Amazon.TaxSettings.Model
         private UkraineAdditionalInfo _ukraineAdditionalInfo;
         private UzbekistanAdditionalInfo _uzbekistanAdditionalInfo;
         private VietnamAdditionalInfo _vietnamAdditionalInfo;
+
+        /// <summary>
+        /// Gets and sets the property BelgiumAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a TRN in Belgium.
+        /// </para>
+        /// </summary>
+        public BelgiumAdditionalInfo BelgiumAdditionalInfo
+        {
+            get { return this._belgiumAdditionalInfo; }
+            set { this._belgiumAdditionalInfo = value; }
+        }
+
+        // Check to see if BelgiumAdditionalInfo property is set
+        internal bool IsSetBelgiumAdditionalInfo()
+        {
+            return this._belgiumAdditionalInfo != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CanadaAdditionalInfo. 
@@ -85,6 +107,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetCanadaAdditionalInfo()
         {
             return this._canadaAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChileAdditionalInfo. 
+        /// <para>
+        ///  Additional tax information to specify for a TRN in Chile.
+        /// </para>
+        /// </summary>
+        public ChileAdditionalInfo ChileAdditionalInfo
+        {
+            get { return this._chileAdditionalInfo; }
+            set { this._chileAdditionalInfo = value; }
+        }
+
+        // Check to see if ChileAdditionalInfo property is set
+        internal bool IsSetChileAdditionalInfo()
+        {
+            return this._chileAdditionalInfo != null;
         }
 
         /// <summary>
@@ -121,6 +161,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetEstoniaAdditionalInfo()
         {
             return this._estoniaAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FranceAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a TRN in France.
+        /// </para>
+        /// </summary>
+        public FranceAdditionalInfo FranceAdditionalInfo
+        {
+            get { return this._franceAdditionalInfo; }
+            set { this._franceAdditionalInfo = value; }
+        }
+
+        // Check to see if FranceAdditionalInfo property is set
+        internal bool IsSetFranceAdditionalInfo()
+        {
+            return this._franceAdditionalInfo != null;
         }
 
         /// <summary>
@@ -247,6 +305,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetMalaysiaAdditionalInfo()
         {
             return this._malaysiaAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhilippinesAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a TRN in the Philippines.
+        /// </para>
+        /// </summary>
+        public PhilippinesAdditionalInfo PhilippinesAdditionalInfo
+        {
+            get { return this._philippinesAdditionalInfo; }
+            set { this._philippinesAdditionalInfo = value; }
+        }
+
+        // Check to see if PhilippinesAdditionalInfo property is set
+        internal bool IsSetPhilippinesAdditionalInfo()
+        {
+            return this._philippinesAdditionalInfo != null;
         }
 
         /// <summary>

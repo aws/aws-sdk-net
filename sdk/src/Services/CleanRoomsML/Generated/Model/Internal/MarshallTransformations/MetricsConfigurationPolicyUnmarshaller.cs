@@ -56,7 +56,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("noiseLevel", targetDepth))
+                if (context.TestExpression("noiseLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NoiseLevel = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientConfigurations", targetDepth))
+                if (context.TestExpression("ClientConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OpenZFSClientConfiguration, OpenZFSClientConfigurationUnmarshaller>(OpenZFSClientConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ClientConfigurations = unmarshaller.Unmarshall(context, ref reader);

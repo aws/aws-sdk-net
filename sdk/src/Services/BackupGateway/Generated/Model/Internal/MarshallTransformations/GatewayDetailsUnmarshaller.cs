@@ -56,61 +56,61 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeprecationDate", targetDepth))
+                if (context.TestExpression("DeprecationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeprecationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayArn", targetDepth))
+                if (context.TestExpression("GatewayArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GatewayArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayDisplayName", targetDepth))
+                if (context.TestExpression("GatewayDisplayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GatewayDisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayType", targetDepth))
+                if (context.TestExpression("GatewayType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HypervisorId", targetDepth))
+                if (context.TestExpression("HypervisorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastSeenTime", targetDepth))
+                if (context.TestExpression("LastSeenTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSeenTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaintenanceStartTime", targetDepth))
+                if (context.TestExpression("MaintenanceStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceStartTimeUnmarshaller.Instance;
                     unmarshalledObject.MaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextUpdateAvailabilityTime", targetDepth))
+                if (context.TestExpression("NextUpdateAvailabilityTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NextUpdateAvailabilityTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SoftwareVersion", targetDepth))
+                if (context.TestExpression("SoftwareVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SoftwareVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcEndpoint", targetDepth))
+                if (context.TestExpression("VpcEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context, ref reader);

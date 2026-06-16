@@ -1,10 +1,11 @@
 {
   "version" : 2,
   "testCases" : [ {
-    "id" : "ListStreamSessions",
-    "operationName" : "ListStreamSessions",
+    "id" : "GetStreamSession",
+    "operationName" : "GetStreamSession",
     "input" : {
-      "Identifier" : "abcdefghi"
+      "Identifier" : "abcdefghi",
+      "StreamSessionIdentifier" : "jklmnopqr"
     },
     "expectation" : {
       "failure" : {
@@ -18,10 +19,10 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetApplication",
-    "operationName" : "GetApplication",
+    "id" : "ListStreamSessions",
+    "operationName" : "ListStreamSessions",
     "input" : {
-      "Identifier" : "aBcDeFgHi"
+      "Identifier" : "abcdefghi"
     },
     "expectation" : {
       "failure" : {
@@ -48,11 +49,15 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListApplications",
-    "operationName" : "ListApplications",
-    "input" : { },
+    "id" : "GetApplication",
+    "operationName" : "GetApplication",
+    "input" : {
+      "Identifier" : "aBcDeFgHi"
+    },
     "expectation" : {
-      "success" : { }
+      "failure" : {
+        "errorId" : "ResourceNotFoundException"
+      }
     },
     "config" : {
       "region" : "us-west-2",
@@ -74,15 +79,11 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListTagsForResource",
-    "operationName" : "ListTagsForResource",
-    "input" : {
-      "ResourceArn" : "arn:aws:gameliftstreams:us-west-2:012345678901:abcdefghi"
-    },
+    "id" : "ListApplications",
+    "operationName" : "ListApplications",
+    "input" : { },
     "expectation" : {
-      "failure" : {
-        "errorId" : "ValidationException"
-      }
+      "success" : { }
     },
     "config" : {
       "region" : "us-west-2",
@@ -108,15 +109,14 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetStreamSession",
-    "operationName" : "GetStreamSession",
+    "id" : "ListTagsForResource",
+    "operationName" : "ListTagsForResource",
     "input" : {
-      "Identifier" : "abcdefghi",
-      "StreamSessionIdentifier" : "jklmnopqr"
+      "ResourceArn" : "arn:aws:gameliftstreams:us-west-2:012345678901:abcdefghi"
     },
     "expectation" : {
       "failure" : {
-        "errorId" : "ResourceNotFoundException"
+        "errorId" : "ValidationException"
       }
     },
     "config" : {

@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchAlarmDefinition", targetDepth))
+                if (context.TestExpression("CloudWatchAlarmDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchAlarmDefinitionUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchAlarmDefinition = unmarshaller.Unmarshall(context, ref reader);

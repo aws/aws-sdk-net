@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enabledMemoryTypes", targetDepth))
+                if (context.TestExpression("enabledMemoryTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EnabledMemoryTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionSummaryConfiguration", targetDepth))
+                if (context.TestExpression("sessionSummaryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionSummaryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SessionSummaryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageDays", targetDepth))
+                if (context.TestExpression("storageDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageDays = unmarshaller.Unmarshall(context, ref reader);

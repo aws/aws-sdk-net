@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NotifyDelayAfter", targetDepth))
+                if (context.TestExpression("NotifyDelayAfter", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NotifyDelayAfter = unmarshaller.Unmarshall(context, ref reader);

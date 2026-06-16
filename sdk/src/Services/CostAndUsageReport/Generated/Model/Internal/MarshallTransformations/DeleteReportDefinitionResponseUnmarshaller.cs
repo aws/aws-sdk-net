@@ -52,7 +52,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResponseMessage", targetDepth))
+                if (context.TestExpression("ResponseMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResponseMessage = unmarshaller.Unmarshall(context, ref reader);

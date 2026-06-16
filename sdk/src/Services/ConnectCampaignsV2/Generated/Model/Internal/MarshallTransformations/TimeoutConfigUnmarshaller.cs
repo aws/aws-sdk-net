@@ -56,7 +56,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("durationInSeconds", targetDepth))
+                if (context.TestExpression("durationInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DurationInSeconds = unmarshaller.Unmarshall(context, ref reader);

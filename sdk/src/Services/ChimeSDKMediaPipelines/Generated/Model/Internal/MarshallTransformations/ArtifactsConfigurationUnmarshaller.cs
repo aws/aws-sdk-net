@@ -56,25 +56,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Audio", targetDepth))
+                if (context.TestExpression("Audio", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioArtifactsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompositedVideo", targetDepth))
+                if (context.TestExpression("CompositedVideo", targetDepth, ref reader))
                 {
                     var unmarshaller = CompositedVideoArtifactsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CompositedVideo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("Content", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentArtifactsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Video", targetDepth))
+                if (context.TestExpression("Video", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoArtifactsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);

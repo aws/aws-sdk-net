@@ -25,6 +25,7 @@ namespace Amazon.ConnectHealth.Model
     /// The types that implement this interface are:
     /// <list type="bullet">
     ///   <item><term><see cref="MedicalScribeAudioEvent"/></term></item>
+    ///   <item><term><see cref="MedicalScribeBinaryAudioEvent"/></term></item>
     ///   <item><term><see cref="MedicalScribeConfigurationEvent"/></term></item>
     ///   <item><term><see cref="MedicalScribeSessionControlEvent"/></term></item>
     /// </list>

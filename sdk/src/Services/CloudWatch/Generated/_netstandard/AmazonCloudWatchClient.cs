@@ -39,6 +39,11 @@ namespace Amazon.CloudWatch
 {
     /// <summary>
     /// <para>Implementation for accessing CloudWatch</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources
     /// and the applications you run on Amazon Web Services in real time. You can use CloudWatch
@@ -281,6 +286,140 @@ namespace Amazon.CloudWatch
         #endregion
 
 
+        #region  AssociateDatasetKmsKey
+
+        internal virtual AssociateDatasetKmsKeyResponse AssociateDatasetKmsKey(AssociateDatasetKmsKeyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateDatasetKmsKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDatasetKmsKeyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDatasetKmsKeyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an Amazon Web Services Key Management Service (Amazon Web Services KMS)
+        /// customer managed key with the specified dataset. After this operation completes, all
+        /// data published to the dataset is encrypted at rest using the specified KMS key. Callers
+        /// must have <c>kms:Decrypt</c> permission on the key to read the encrypted data.
+        /// 
+        ///  
+        /// <para>
+        /// Only the <c>default</c> dataset is supported. The <c>default</c> dataset is implicit
+        /// for every account in every Region — you do not need to create it before calling this
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can call <c>AssociateDatasetKmsKey</c> on a dataset that is already associated
+        /// with a KMS key to replace the existing key with a different one. To replace a key,
+        /// the caller must have <c>kms:Decrypt</c> permission on both the current key and the
+        /// new key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key that you specify must meet all of the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It must be a symmetric encryption KMS key (key spec <c>SYMMETRIC_DEFAULT</c>, key
+        /// usage <c>ENCRYPT_DECRYPT</c>). Asymmetric keys, HMAC keys, and key material types
+        /// other than <c>SYMMETRIC_DEFAULT</c> are not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must be enabled and not pending deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Its key policy must grant the CloudWatch service principal (<c>cloudwatch.amazonaws.com</c>)
+        /// these permissions: <c>kms:DescribeKey</c>, <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>,
+        /// <c>kms:Decrypt</c>, and <c>kms:ReEncrypt*</c>. Amazon CloudWatch requires these permissions
+        /// to manage the data on your behalf.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The calling principal must have <c>kms:Decrypt</c> permission on the key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must be specified as a fully qualified key ARN. Key IDs, aliases, and alias ARNs
+        /// are not accepted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must be in the same Amazon Web Services Region as the dataset.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Before completing the association, Amazon CloudWatch validates the key by performing
+        /// a series of dry-run KMS operations. Service-principal checks run first to verify that
+        /// the key policy grants the required access to Amazon CloudWatch. These checks include
+        /// <c>kms:DescribeKey</c>, <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>, <c>kms:Decrypt</c>,
+        /// and <c>kms:ReEncrypt*</c>. After those succeed, a <c>kms:Decrypt</c> dry-run is run
+        /// with the caller's credentials to verify that the calling principal can use the key.
+        /// When you are replacing an existing key, the caller's <c>kms:Decrypt</c> dry-run is
+        /// run on the current key first, and only then on the new key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If any of these checks fails, the operation fails and the existing key association
+        /// (if any) remains unchanged. Common failure causes include the key being disabled,
+        /// the key policy not granting the required permissions to Amazon CloudWatch, or the
+        /// caller lacking <c>kms:Decrypt</c> permission on the key.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using customer managed keys with Amazon CloudWatch, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cmk-encryption.html">Encryption
+        /// at rest with customer managed keys</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDatasetKmsKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateDatasetKmsKey service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.KmsAccessDeniedException">
+        /// The operation was denied because either the calling principal lacks the required Amazon
+        /// Web Services Key Management Service (Amazon Web Services KMS) permission on the key,
+        /// or the key policy does not grant Amazon CloudWatch the permissions it needs to use
+        /// the key. Verify that the caller has <c>kms:Decrypt</c> permission on the key, and
+        /// that the key policy grants the CloudWatch service principal the <c>kms:DescribeKey</c>,
+        /// <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>, <c>kms:Decrypt</c>, and <c>kms:ReEncrypt*</c>
+        /// permissions described in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_AssociateDatasetKmsKey.html">AssociateDatasetKmsKey</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.KmsKeyDisabledException">
+        /// The specified Amazon Web Services Key Management Service (Amazon Web Services KMS)
+        /// key is disabled or pending deletion. Re-enable the key (or restore it, if it is pending
+        /// deletion) and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.KmsKeyNotFoundException">
+        /// The specified Amazon Web Services Key Management Service (Amazon Web Services KMS)
+        /// key could not be found. Verify that the key Amazon Resource Name (ARN) is correct,
+        /// that the key exists, and that it is in the same Amazon Web Services Region as the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AssociateDatasetKmsKey">REST API Reference for AssociateDatasetKmsKey Operation</seealso>
+        public virtual Task<AssociateDatasetKmsKeyResponse> AssociateDatasetKmsKeyAsync(AssociateDatasetKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateDatasetKmsKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDatasetKmsKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateDatasetKmsKeyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteAlarmMuteRule
 
         internal virtual DeleteAlarmMuteRuleResponse DeleteAlarmMuteRule(DeleteAlarmMuteRuleRequest request)
@@ -468,7 +607,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete.
-        /// If there is an error during this call, no dashboards are deleted.
+        /// If there is an error during this call, the operation attempts to delete as many dashboards
+        /// as possible.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
         /// <param name="cancellationToken">
@@ -478,9 +618,6 @@ namespace Amazon.CloudWatch
         /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
         /// This operation attempted to create a resource that already exists.
-        /// </exception>
-        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
-        /// The specified dashboard does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
@@ -996,6 +1133,78 @@ namespace Amazon.CloudWatch
         }
         #endregion
         
+        #region  DisassociateDatasetKmsKey
+
+        internal virtual DisassociateDatasetKmsKeyResponse DisassociateDatasetKmsKey(DisassociateDatasetKmsKeyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateDatasetKmsKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDatasetKmsKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDatasetKmsKeyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the customer managed Amazon Web Services Key Management Service (Amazon Web
+        /// Services KMS) key association from the specified dataset. After this operation completes,
+        /// data that you publish to the dataset is encrypted at rest using an Amazon Web Services
+        /// owned key managed by Amazon CloudWatch.
+        /// 
+        ///  
+        /// <para>
+        /// Only the <c>default</c> dataset is supported. To call this operation, the dataset
+        /// must currently have a customer managed KMS key associated with it. If the dataset
+        /// has no associated KMS key, the operation fails with <c>ResourceNotFoundException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon CloudWatch performs a dry-run <c>kms:Decrypt</c> call on the key as part of
+        /// this operation. This verifies that the caller is authorized to use the currently associated
+        /// key. The caller must have <c>kms:Decrypt</c> permission on the currently associated
+        /// key, and the key must be enabled and accessible. If the key has been disabled or scheduled
+        /// for deletion, you must first re-enable or restore it before you can disassociate it
+        /// from the dataset.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Disassociating a KMS key from a dataset does not immediately remove the <c>kms:Decrypt</c>
+        /// requirement on data plane operations. For up to three hours after disassociation,
+        /// callers must continue to have <c>kms:Decrypt</c> permission on the previously associated
+        /// key. Some data may still be encrypted with that key during this window. After this
+        /// enforcement window elapses, the <c>kms:Decrypt</c> requirement is lifted.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information about using customer managed keys with Amazon CloudWatch, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cmk-encryption.html">Encryption
+        /// at rest with customer managed keys</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDatasetKmsKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateDatasetKmsKey service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisassociateDatasetKmsKey">REST API Reference for DisassociateDatasetKmsKey Operation</seealso>
+        public virtual Task<DisassociateDatasetKmsKeyResponse> DisassociateDatasetKmsKeyAsync(DisassociateDatasetKmsKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateDatasetKmsKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDatasetKmsKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateDatasetKmsKeyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  EnableAlarmActions
 
         internal virtual EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest request)
@@ -1186,6 +1395,58 @@ namespace Amazon.CloudWatch
             options.ResponseUnmarshaller = GetDashboardResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDashboardResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetDataset
+
+        internal virtual GetDatasetResponse GetDataset(GetDatasetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the specified dataset. This includes its identifier, Amazon
+        /// Resource Name (ARN), and any customer managed Amazon Web Services Key Management Service
+        /// (Amazon Web Services KMS) key that is currently associated with it.
+        /// 
+        ///  
+        /// <para>
+        /// Only the <c>default</c> dataset is supported. The <c>default</c> dataset is implicit
+        /// for every account in every Region — you can call <c>GetDataset</c> for it without
+        /// first creating it. If no customer managed KMS key has been associated with the dataset,
+        /// the response omits the <c>KmsKeyArn</c> field, indicating that data is encrypted at
+        /// rest using an Amazon Web Services owned key managed by Amazon CloudWatch.
+        /// </para>
+        ///  
+        /// <para>
+        /// To associate a customer managed KMS key with a dataset, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_AssociateDatasetKmsKey.html">AssociateDatasetKmsKey</a>.
+        /// To remove the association, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisassociateDatasetKmsKey.html">DisassociateDatasetKmsKey</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataset service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        public virtual Task<GetDatasetResponse> GetDatasetAsync(GetDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDatasetResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1626,6 +1887,42 @@ namespace Amazon.CloudWatch
         }
         #endregion
         
+        #region  GetOTelEnrichment
+
+        internal virtual GetOTelEnrichmentResponse GetOTelEnrichment(GetOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetOTelEnrichmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the current status of vended metric enrichment for the account, including
+        /// whether CloudWatch vended metrics are enriched with resource ARN and resource tag
+        /// labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported
+        /// Amazon Web Services infrastructure metrics</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetOTelEnrichment">REST API Reference for GetOTelEnrichment Operation</seealso>
+        public virtual Task<GetOTelEnrichmentResponse> GetOTelEnrichmentAsync(GetOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListAlarmMuteRules
 
         internal virtual ListAlarmMuteRulesResponse ListAlarmMuteRules(ListAlarmMuteRulesRequest request)
@@ -1952,8 +2249,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
-        /// Insights rules support tagging.
+        /// Displays the tags associated with a CloudWatch resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2030,7 +2327,7 @@ namespace Amazon.CloudWatch
         /// For example, If you want to allow a user to create mute rules that target only specific
         /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
         /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
-        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</c>),
+        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute-rule:*</c>),
         /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
         /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
         /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
@@ -2418,8 +2715,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified metric, metric math
-        /// expression, anomaly detection model, or Metrics Insights query. For more information
-        /// about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// expression, anomaly detection model, Metrics Insights query, or PromQL query. For
+        /// more information about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
         /// alarms on Metrics Insights queries</a>.
         /// 
         ///  
@@ -2429,8 +2726,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
-        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
-        /// with the new state are then executed.
+        /// For PromQL alarms, the alarm state is instead immediately set to <c>OK</c>. The alarm
+        /// is then evaluated and its state is set appropriately. Any actions associated with
+        /// the new state are then executed.
         /// </para>
         ///  
         /// <para>
@@ -2836,6 +3134,50 @@ namespace Amazon.CloudWatch
         }
         #endregion
         
+        #region  StartOTelEnrichment
+
+        internal virtual StartOTelEnrichmentResponse StartOTelEnrichment(StartOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartOTelEnrichmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
+        /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
+        /// dimension) are enriched with resource ARN and resource tag labels and become queryable
+        /// using PromQL.
+        /// 
+        ///  
+        /// <para>
+        /// Before calling this operation, you must enable resource tags on telemetry for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
+        /// resource tags on telemetry</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">REST API Reference for StartOTelEnrichment Operation</seealso>
+        public virtual Task<StartOTelEnrichmentResponse> StartOTelEnrichmentAsync(StartOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopMetricStreams
 
         internal virtual StopMetricStreamsResponse StopMetricStreams(StopMetricStreamsRequest request)
@@ -2878,6 +3220,42 @@ namespace Amazon.CloudWatch
         }
         #endregion
         
+        #region  StopOTelEnrichment
+
+        internal virtual StopOTelEnrichmentResponse StopOTelEnrichment(StopOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StopOTelEnrichmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// Amazon Web Services resources</a> in the account. After disabling, these metrics are
+        /// no longer enriched with resource ARN and resource tag labels, and cannot be queried
+        /// using PromQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopOTelEnrichment">REST API Reference for StopOTelEnrichment Operation</seealso>
+        public virtual Task<StopOTelEnrichmentResponse> StopOTelEnrichmentAsync(StopOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2893,8 +3271,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-        /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
-        /// rules.
+        /// the only CloudWatch resources that can be tagged are alarms, dashboards, metric streams
+        /// and Contributor Insights rules.
         /// 
         ///  
         /// <para>
@@ -2966,7 +3344,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Removes one or more tags from the specified resource.
+        /// Removes one or more tags from the specified resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

@@ -56,79 +56,85 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalComments", targetDepth))
+                if (context.TestExpression("AdditionalComments", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdditionalComments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApnPrograms", targetDepth))
+                if (context.TestExpression("ApnPrograms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ApnPrograms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsPartition", targetDepth))
+                if (context.TestExpression("AwsPartition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsPartition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompetitorName", targetDepth))
+                if (context.TestExpression("CompetitorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompetitorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerBusinessProblem", targetDepth))
+                if (context.TestExpression("CustomerBusinessProblem", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerBusinessProblem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerUseCase", targetDepth))
+                if (context.TestExpression("CustomerUseCase", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerUseCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryModels", targetDepth))
+                if (context.TestExpression("DeliveryModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DeliveryModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedCustomerSpend", targetDepth))
+                if (context.TestExpression("ExpectedContractDuration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExpectedContractDurationUnmarshaller.Instance;
+                    unmarshalledObject.ExpectedContractDuration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ExpectedCustomerSpend", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpectedCustomerSpend, ExpectedCustomerSpendUnmarshaller>(ExpectedCustomerSpendUnmarshaller.Instance);
                     unmarshalledObject.ExpectedCustomerSpend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OtherCompetitorNames", targetDepth))
+                if (context.TestExpression("OtherCompetitorNames", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OtherCompetitorNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OtherSolutionDescription", targetDepth))
+                if (context.TestExpression("OtherSolutionDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OtherSolutionDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedOpportunityIdentifier", targetDepth))
+                if (context.TestExpression("RelatedOpportunityIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RelatedOpportunityIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SalesActivities", targetDepth))
+                if (context.TestExpression("SalesActivities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SalesActivities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);

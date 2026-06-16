@@ -56,13 +56,13 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("providerSchemaAttributes", targetDepth))
+                if (context.TestExpression("providerSchemaAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProviderSchemaAttribute, ProviderSchemaAttributeUnmarshaller>(ProviderSchemaAttributeUnmarshaller.Instance);
                     unmarshalledObject.ProviderSchemaAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schemas", targetDepth))
+                if (context.TestExpression("schemas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.Schemas = unmarshaller.Unmarshall(context, ref reader);

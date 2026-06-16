@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blockStorage", targetDepth))
+                if (context.TestExpression("blockStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockStorageUnmarshaller.Instance;
                     unmarshalledObject.BlockStorage = unmarshaller.Unmarshall(context, ref reader);

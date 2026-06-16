@@ -429,6 +429,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeIpamPoolAllocations operation
+        ///</summary>
+        public IDescribeIpamPoolAllocationsPaginator DescribeIpamPoolAllocations(DescribeIpamPoolAllocationsRequest request) 
+        {
+            return new DescribeIpamPoolAllocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeIpamPools operation
         ///</summary>
         public IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request) 
@@ -1146,6 +1154,14 @@ namespace Amazon.EC2.Model
         public IGetCapacityManagerMetricDimensionsPaginator GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request) 
         {
             return new GetCapacityManagerMetricDimensionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMonitoredTagKeys operation
+        ///</summary>
+        public IGetCapacityManagerMonitoredTagKeysPaginator GetCapacityManagerMonitoredTagKeys(GetCapacityManagerMonitoredTagKeysRequest request) 
+        {
+            return new GetCapacityManagerMonitoredTagKeysPaginator(this.client, request);
         }
 
         /// <summary>

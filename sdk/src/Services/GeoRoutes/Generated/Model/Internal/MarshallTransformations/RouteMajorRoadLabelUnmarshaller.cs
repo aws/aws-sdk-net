@@ -56,13 +56,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RoadName", targetDepth))
+                if (context.TestExpression("RoadName", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalizedStringUnmarshaller.Instance;
                     unmarshalledObject.RoadName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteNumber", targetDepth))
+                if (context.TestExpression("RouteNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteNumberUnmarshaller.Instance;
                     unmarshalledObject.RouteNumber = unmarshaller.Unmarshall(context, ref reader);

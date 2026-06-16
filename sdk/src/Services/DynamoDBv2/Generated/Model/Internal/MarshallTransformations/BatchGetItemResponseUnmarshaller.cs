@@ -52,19 +52,19 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConsumedCapacity", targetDepth))
+                if (context.TestExpression("ConsumedCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConsumedCapacity, ConsumedCapacityUnmarshaller>(ConsumedCapacityUnmarshaller.Instance);
                     response.ConsumedCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Responses", targetDepth))
+                if (context.TestExpression("Responses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<Dictionary<string, AttributeValue>>, StringUnmarshaller, JsonListUnmarshaller<Dictionary<string, AttributeValue>,JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<Dictionary<string, AttributeValue>, JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>>(new JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance)));
                     response.Responses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedKeys", targetDepth))
+                if (context.TestExpression("UnprocessedKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, KeysAndAttributes, StringUnmarshaller, KeysAndAttributesUnmarshaller>(StringUnmarshaller.Instance, KeysAndAttributesUnmarshaller.Instance);
                     response.UnprocessedKeys = unmarshaller.Unmarshall(context, ref reader);

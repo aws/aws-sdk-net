@@ -56,16 +56,40 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientId", targetDepth))
+                if (context.TestExpression("clientAuthenticationMethod", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClientAuthenticationMethod = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("clientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oauthDiscovery", targetDepth))
+                if (context.TestExpression("oauthDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = Oauth2DiscoveryUnmarshaller.Instance;
                     unmarshalledObject.OauthDiscovery = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("onBehalfOfTokenExchangeConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = OnBehalfOfTokenExchangeConfigTypeUnmarshaller.Instance;
+                    unmarshalledObject.OnBehalfOfTokenExchangeConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("privateEndpoint", targetDepth, ref reader))
+                {
+                    var unmarshaller = PrivateEndpointUnmarshaller.Instance;
+                    unmarshalledObject.PrivateEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("privateEndpointOverrides", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PrivateEndpointOverride, PrivateEndpointOverrideUnmarshaller>(PrivateEndpointOverrideUnmarshaller.Instance);
+                    unmarshalledObject.PrivateEndpointOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -56,13 +56,13 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EfsFileLocation", targetDepth))
+                if (context.TestExpression("EfsFileLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = EfsFileLocationUnmarshaller.Instance;
                     unmarshalledObject.EfsFileLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3FileLocation", targetDepth))
+                if (context.TestExpression("S3FileLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = S3InputFileLocationUnmarshaller.Instance;
                     unmarshalledObject.S3FileLocation = unmarshaller.Unmarshall(context, ref reader);

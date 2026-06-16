@@ -56,7 +56,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxMembers", targetDepth))
+                if (context.TestExpression("MaxMembers", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxMembers = unmarshaller.Unmarshall(context, ref reader);

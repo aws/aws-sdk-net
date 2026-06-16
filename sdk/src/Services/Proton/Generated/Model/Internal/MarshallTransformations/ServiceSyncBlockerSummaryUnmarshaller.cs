@@ -56,19 +56,19 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("latestBlockers", targetDepth))
+                if (context.TestExpression("latestBlockers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SyncBlocker, SyncBlockerUnmarshaller>(SyncBlockerUnmarshaller.Instance);
                     unmarshalledObject.LatestBlockers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceInstanceName", targetDepth))
+                if (context.TestExpression("serviceInstanceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceInstanceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceName", targetDepth))
+                if (context.TestExpression("serviceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context, ref reader);

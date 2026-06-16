@@ -56,13 +56,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OrcSerDe", targetDepth))
+                if (context.TestExpression("OrcSerDe", targetDepth, ref reader))
                 {
                     var unmarshaller = OrcSerDeUnmarshaller.Instance;
                     unmarshalledObject.OrcSerDe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParquetSerDe", targetDepth))
+                if (context.TestExpression("ParquetSerDe", targetDepth, ref reader))
                 {
                     var unmarshaller = ParquetSerDeUnmarshaller.Instance;
                     unmarshalledObject.ParquetSerDe = unmarshaller.Unmarshall(context, ref reader);

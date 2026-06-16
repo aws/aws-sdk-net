@@ -56,49 +56,49 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelId", targetDepth))
+                if (context.TestExpression("channelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelName", targetDepth))
+                if (context.TestExpression("channelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelRoleArn", targetDepth))
+                if (context.TestExpression("channelRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notifyOnAddCorrespondenceToCase", targetDepth))
+                if (context.TestExpression("notifyOnAddCorrespondenceToCase", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotifyOnAddCorrespondenceToCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notifyOnCaseSeverity", targetDepth))
+                if (context.TestExpression("notifyOnCaseSeverity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotifyOnCaseSeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notifyOnCreateOrReopenCase", targetDepth))
+                if (context.TestExpression("notifyOnCreateOrReopenCase", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotifyOnCreateOrReopenCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notifyOnResolveCase", targetDepth))
+                if (context.TestExpression("notifyOnResolveCase", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotifyOnResolveCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("teamId", targetDepth))
+                if (context.TestExpression("teamId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TeamId = unmarshaller.Unmarshall(context, ref reader);

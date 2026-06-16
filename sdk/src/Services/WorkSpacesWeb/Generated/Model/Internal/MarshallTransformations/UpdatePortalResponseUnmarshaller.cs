@@ -52,7 +52,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("portal", targetDepth))
+                if (context.TestExpression("portal", targetDepth, ref reader))
                 {
                     var unmarshaller = PortalUnmarshaller.Instance;
                     response.Portal = unmarshaller.Unmarshall(context, ref reader);

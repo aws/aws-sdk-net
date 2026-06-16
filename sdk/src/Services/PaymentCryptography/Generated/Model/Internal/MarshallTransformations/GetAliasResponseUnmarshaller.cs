@@ -52,7 +52,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Alias", targetDepth))
+                if (context.TestExpression("Alias", targetDepth, ref reader))
                 {
                     var unmarshaller = AliasUnmarshaller.Instance;
                     response.Alias = unmarshaller.Unmarshall(context, ref reader);

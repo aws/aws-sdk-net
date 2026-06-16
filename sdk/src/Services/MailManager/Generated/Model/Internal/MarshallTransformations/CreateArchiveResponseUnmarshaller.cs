@@ -52,7 +52,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArchiveId", targetDepth))
+                if (context.TestExpression("ArchiveId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ArchiveId = unmarshaller.Unmarshall(context, ref reader);

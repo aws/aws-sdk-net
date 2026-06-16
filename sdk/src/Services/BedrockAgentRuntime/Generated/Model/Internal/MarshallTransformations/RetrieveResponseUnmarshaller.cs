@@ -52,19 +52,19 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("guardrailAction", targetDepth))
+                if (context.TestExpression("guardrailAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GuardrailAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retrievalResults", targetDepth))
+                if (context.TestExpression("retrievalResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KnowledgeBaseRetrievalResult, KnowledgeBaseRetrievalResultUnmarshaller>(KnowledgeBaseRetrievalResultUnmarshaller.Instance);
                     response.RetrievalResults = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScaling", targetDepth))
+                if (context.TestExpression("autoScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedAutoScalingUnmarshaller.Instance;
                     unmarshalledObject.AutoScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ingressPaths", targetDepth))
+                if (context.TestExpression("ingressPaths", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedIngressPath, ManagedIngressPathUnmarshaller>(ManagedIngressPathUnmarshaller.Instance);
                     unmarshalledObject.IngressPaths = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logGroups", targetDepth))
+                if (context.TestExpression("logGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedLogGroup, ManagedLogGroupUnmarshaller>(ManagedLogGroupUnmarshaller.Instance);
                     unmarshalledObject.LogGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricAlarms", targetDepth))
+                if (context.TestExpression("metricAlarms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedMetricAlarm, ManagedMetricAlarmUnmarshaller>(ManagedMetricAlarmUnmarshaller.Instance);
                     unmarshalledObject.MetricAlarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceSecurityGroups", targetDepth))
+                if (context.TestExpression("serviceSecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedSecurityGroup, ManagedSecurityGroupUnmarshaller>(ManagedSecurityGroupUnmarshaller.Instance);
                     unmarshalledObject.ServiceSecurityGroups = unmarshaller.Unmarshall(context, ref reader);

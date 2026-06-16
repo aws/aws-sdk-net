@@ -56,31 +56,31 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("excluded", targetDepth))
+                if (context.TestExpression("excluded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Excluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputType", targetDepth))
+                if (context.TestExpression("inputType", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldInputConfigUnmarshaller.Instance;
                     unmarshalledObject.InputType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("label", targetDepth))
+                if (context.TestExpression("label", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("position", targetDepth))
+                if (context.TestExpression("position", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldPositionUnmarshaller.Instance;
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validations", targetDepth))
+                if (context.TestExpression("validations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldValidationConfiguration, FieldValidationConfigurationUnmarshaller>(FieldValidationConfigurationUnmarshaller.Instance);
                     unmarshalledObject.Validations = unmarshaller.Unmarshall(context, ref reader);

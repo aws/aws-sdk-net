@@ -39,6 +39,11 @@ namespace Amazon.AppIntegrationsService
 {
     /// <summary>
     /// <para>Implementation for accessing AppIntegrationsService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// <ul> <li> 
     /// <para>
@@ -57,8 +62,8 @@ namespace Amazon.AppIntegrationsService
     /// </para>
     ///  
     /// <para>
-    /// For information about how you can use external applications with Amazon Connect, see
-    /// the following topics in the <i>Amazon Connect Administrator Guide</i>:
+    /// For information about how you can use external applications with Connect Customer,
+    /// see the following topics in the <i>Connect Customer Administrator Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

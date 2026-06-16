@@ -56,85 +56,85 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificateData", targetDepth))
+                if (context.TestExpression("certificateData", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CertificateData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computeArn", targetDepth))
+                if (context.TestExpression("computeArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("credentials", targetDepth))
+                if (context.TestExpression("credentials", targetDepth, ref reader))
                 {
                     var unmarshaller = UsernamePasswordUnmarshaller.Instance;
                     unmarshalledObject.Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("credentialsExpiration", targetDepth))
+                if (context.TestExpression("credentialsExpiration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CredentialsExpiration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("governanceType", targetDepth))
+                if (context.TestExpression("governanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GovernanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceProfileArn", targetDepth))
+                if (context.TestExpression("instanceProfileArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceProfileArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("javaVirtualEnv", targetDepth))
+                if (context.TestExpression("javaVirtualEnv", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JavaVirtualEnv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("livyEndpoint", targetDepth))
+                if (context.TestExpression("livyEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LivyEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logUri", targetDepth))
+                if (context.TestExpression("logUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedEndpointArn", targetDepth))
+                if (context.TestExpression("managedEndpointArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManagedEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedEndpointCredentials", targetDepth))
+                if (context.TestExpression("managedEndpointCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedEndpointCredentialsUnmarshaller.Instance;
                     unmarshalledObject.ManagedEndpointCredentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pythonVirtualEnv", targetDepth))
+                if (context.TestExpression("pythonVirtualEnv", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PythonVirtualEnv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runtimeRole", targetDepth))
+                if (context.TestExpression("runtimeRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuntimeRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trustedCertificatesS3Uri", targetDepth))
+                if (context.TestExpression("trustedCertificatesS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrustedCertificatesS3Uri = unmarshaller.Unmarshall(context, ref reader);

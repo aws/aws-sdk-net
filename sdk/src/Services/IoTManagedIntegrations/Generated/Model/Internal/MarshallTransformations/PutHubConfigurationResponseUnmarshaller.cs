@@ -52,7 +52,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HubTokenTimerExpirySettingInSeconds", targetDepth))
+                if (context.TestExpression("HubTokenTimerExpirySettingInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.HubTokenTimerExpirySettingInSeconds = unmarshaller.Unmarshall(context, ref reader);

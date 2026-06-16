@@ -52,103 +52,109 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associateDefaultSecurityGroup", targetDepth))
+                if (context.TestExpression("associateDefaultSecurityGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AssociateDefaultSecurityGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("autoReplicateNewDisks", targetDepth))
+                if (context.TestExpression("autoReplicateNewDisks", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoReplicateNewDisks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bandwidthThrottling", targetDepth))
+                if (context.TestExpression("bandwidthThrottling", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BandwidthThrottling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createPublicIP", targetDepth))
+                if (context.TestExpression("createPublicIP", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CreatePublicIP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataPlaneRouting", targetDepth))
+                if (context.TestExpression("dataPlaneRouting", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataPlaneRouting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultLargeStagingDiskType", targetDepth))
+                if (context.TestExpression("defaultLargeStagingDiskType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DefaultLargeStagingDiskType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebsEncryption", targetDepth))
+                if (context.TestExpression("ebsEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EbsEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebsEncryptionKeyArn", targetDepth))
+                if (context.TestExpression("ebsEncryptionKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EbsEncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("internetProtocol", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InternetProtocol = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pitPolicy", targetDepth))
+                if (context.TestExpression("pitPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PITPolicyRule, PITPolicyRuleUnmarshaller>(PITPolicyRuleUnmarshaller.Instance);
                     response.PitPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatedDisks", targetDepth))
+                if (context.TestExpression("replicatedDisks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationConfigurationReplicatedDisk, ReplicationConfigurationReplicatedDiskUnmarshaller>(ReplicationConfigurationReplicatedDiskUnmarshaller.Instance);
                     response.ReplicatedDisks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationServerInstanceType", targetDepth))
+                if (context.TestExpression("replicationServerInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicationServerInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationServersSecurityGroupsIDs", targetDepth))
+                if (context.TestExpression("replicationServersSecurityGroupsIDs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ReplicationServersSecurityGroupsIDs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("sourceServerID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceServerID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stagingAreaSubnetId", targetDepth))
+                if (context.TestExpression("stagingAreaSubnetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StagingAreaSubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stagingAreaTags", targetDepth))
+                if (context.TestExpression("stagingAreaTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.StagingAreaTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("useDedicatedReplicationServer", targetDepth))
+                if (context.TestExpression("useDedicatedReplicationServer", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.UseDedicatedReplicationServer = unmarshaller.Unmarshall(context, ref reader);

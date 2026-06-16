@@ -39,6 +39,11 @@ namespace Amazon.Lambda
 {
     /// <summary>
     /// <para>Implementation for accessing Lambda</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Lambda 
     /// <para>
@@ -3004,6 +3009,18 @@ namespace Amazon.Lambda
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.S3FilesMountConnectivityException">
+        /// The Lambda function couldn't make a network connection to the configured S3 Files
+        /// access point.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.S3FilesMountFailureException">
+        /// The Lambda function couldn't mount the configured S3 Files access point due to a permission
+        /// or configuration issue.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.S3FilesMountTimeoutException">
+        /// The Lambda function made a network connection to the configured S3 Files access point,
+        /// but the mount operation timed out.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
         /// The request payload exceeded the maximum allowed size for serialized request entities.
         /// </exception>
@@ -3162,6 +3179,18 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.S3FilesMountConnectivityException">
+        /// The Lambda function couldn't make a network connection to the configured S3 Files
+        /// access point.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.S3FilesMountFailureException">
+        /// The Lambda function couldn't mount the configured S3 Files access point due to a permission
+        /// or configuration issue.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.S3FilesMountTimeoutException">
+        /// The Lambda function made a network connection to the configured S3 Files access point,
+        /// but the mount operation timed out.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
         /// The request payload exceeded the maximum allowed size for serialized request entities.

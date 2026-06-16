@@ -60,6 +60,11 @@ namespace Amazon.Neptune.Model
         /// Must specify a valid DB parameter group identifier, for example <c>my-db-param-group</c>,
         /// or a valid ARN.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The source DB parameter group must be in the same Amazon Region as the copy. Neptune
+        /// does not support cross-Region copying of parameter groups.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

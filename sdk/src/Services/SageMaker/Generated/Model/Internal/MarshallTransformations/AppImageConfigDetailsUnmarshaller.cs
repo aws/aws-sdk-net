@@ -56,43 +56,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppImageConfigArn", targetDepth))
+                if (context.TestExpression("AppImageConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppImageConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AppImageConfigName", targetDepth))
+                if (context.TestExpression("AppImageConfigName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppImageConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeEditorAppImageConfig", targetDepth))
+                if (context.TestExpression("CodeEditorAppImageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeEditorAppImageConfigUnmarshaller.Instance;
                     unmarshalledObject.CodeEditorAppImageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JupyterLabAppImageConfig", targetDepth))
+                if (context.TestExpression("JupyterLabAppImageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = JupyterLabAppImageConfigUnmarshaller.Instance;
                     unmarshalledObject.JupyterLabAppImageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KernelGatewayImageConfig", targetDepth))
+                if (context.TestExpression("KernelGatewayImageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KernelGatewayImageConfigUnmarshaller.Instance;
                     unmarshalledObject.KernelGatewayImageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);

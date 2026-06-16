@@ -52,7 +52,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssociatedAt", targetDepth))
+                if (context.TestExpression("AssociatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssociatedAt = unmarshaller.Unmarshall(context, ref reader);

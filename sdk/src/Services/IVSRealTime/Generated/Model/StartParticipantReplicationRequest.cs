@@ -120,7 +120,7 @@ namespace Amazon.IVSRealTime.Model
         /// replication will continue to be <c>ACTIVE</c>. Default: 0.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=60)]
+        [AWSProperty(Min=0, Max=300)]
         public int? ReconnectWindowSeconds
         {
             get { return this._reconnectWindowSeconds; }

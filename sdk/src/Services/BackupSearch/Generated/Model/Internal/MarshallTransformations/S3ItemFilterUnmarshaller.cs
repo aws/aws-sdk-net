@@ -56,31 +56,31 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTimes", targetDepth))
+                if (context.TestExpression("CreationTimes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimeCondition, TimeConditionUnmarshaller>(TimeConditionUnmarshaller.Instance);
                     unmarshalledObject.CreationTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ETags", targetDepth))
+                if (context.TestExpression("ETags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringCondition, StringConditionUnmarshaller>(StringConditionUnmarshaller.Instance);
                     unmarshalledObject.ETags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObjectKeys", targetDepth))
+                if (context.TestExpression("ObjectKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringCondition, StringConditionUnmarshaller>(StringConditionUnmarshaller.Instance);
                     unmarshalledObject.ObjectKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sizes", targetDepth))
+                if (context.TestExpression("Sizes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LongCondition, LongConditionUnmarshaller>(LongConditionUnmarshaller.Instance);
                     unmarshalledObject.Sizes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionIds", targetDepth))
+                if (context.TestExpression("VersionIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringCondition, StringConditionUnmarshaller>(StringConditionUnmarshaller.Instance);
                     unmarshalledObject.VersionIds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("initialAudioGain", targetDepth))
+                if (context.TestExpression("initialAudioGain", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InitialAudioGain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputEndAction", targetDepth))
+                if (context.TestExpression("inputEndAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputEndAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputLossBehavior", targetDepth))
+                if (context.TestExpression("inputLossBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = InputLossBehaviorUnmarshaller.Instance;
                     unmarshalledObject.InputLossBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputLockingMode", targetDepth))
+                if (context.TestExpression("outputLockingMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputLockingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputLockingSettings", targetDepth))
+                if (context.TestExpression("outputLockingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputLockingSettingsUnmarshaller.Instance;
                     unmarshalledObject.OutputLockingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputTimingSource", targetDepth))
+                if (context.TestExpression("outputTimingSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputTimingSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportLowFramerateInputs", targetDepth))
+                if (context.TestExpression("supportLowFramerateInputs", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SupportLowFramerateInputs = unmarshaller.Unmarshall(context, ref reader);

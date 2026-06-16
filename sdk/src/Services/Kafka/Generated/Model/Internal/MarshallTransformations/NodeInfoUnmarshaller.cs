@@ -56,43 +56,43 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addedToClusterTime", targetDepth))
+                if (context.TestExpression("addedToClusterTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddedToClusterTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("brokerNodeInfo", targetDepth))
+                if (context.TestExpression("brokerNodeInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = BrokerNodeInfoUnmarshaller.Instance;
                     unmarshalledObject.BrokerNodeInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("controllerNodeInfo", targetDepth))
+                if (context.TestExpression("controllerNodeInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ControllerNodeInfoUnmarshaller.Instance;
                     unmarshalledObject.ControllerNodeInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceType", targetDepth))
+                if (context.TestExpression("instanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeARN", targetDepth))
+                if (context.TestExpression("nodeARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeType", targetDepth))
+                if (context.TestExpression("nodeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("zookeeperNodeInfo", targetDepth))
+                if (context.TestExpression("zookeeperNodeInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ZookeeperNodeInfoUnmarshaller.Instance;
                     unmarshalledObject.ZookeeperNodeInfo = unmarshaller.Unmarshall(context, ref reader);

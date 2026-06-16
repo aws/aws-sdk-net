@@ -38,8 +38,12 @@ namespace Amazon.RTBFabric.Model
         private DateTime? _createdAt;
         private string _description;
         private string _domainName;
+        private string _externalInboundEndpoint;
         private string _gatewayId;
+        private GatewayType _gatewayType;
         private int? _inboundLinksCount;
+        private int? _linksRequestedCount;
+        private ListenerConfig _listenerConfig;
         private ManagedEndpointConfiguration _managedEndpointConfiguration;
         private int? _port;
         private Protocol _protocol;
@@ -126,12 +130,31 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalInboundEndpoint. 
+        /// <para>
+        /// The external inbound endpoint for the responder gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ExternalInboundEndpoint
+        {
+            get { return this._externalInboundEndpoint; }
+            set { this._externalInboundEndpoint = value; }
+        }
+
+        // Check to see if ExternalInboundEndpoint property is set
+        internal bool IsSetExternalInboundEndpoint()
+        {
+            return this._externalInboundEndpoint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
         /// The unique identifier of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -145,11 +168,30 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InboundLinksCount. 
+        /// Gets and sets the property GatewayType. 
         /// <para>
-        /// The count of inbound links for the responder gateway.
+        /// The type of gateway. Valid values are <c>EXTERNAL</c> or <c>INTERNAL</c>.
         /// </para>
         /// </summary>
+        public GatewayType GatewayType
+        {
+            get { return this._gatewayType; }
+            set { this._gatewayType = value; }
+        }
+
+        // Check to see if GatewayType property is set
+        internal bool IsSetGatewayType()
+        {
+            return this._gatewayType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InboundLinksCount. 
+        /// <para>
+        /// Deprecated. Use 'linksRequestedCount' instead.
+        /// </para>
+        /// </summary>
+        [Obsolete("Use linksRequestedCount instead")]
         public int? InboundLinksCount
         {
             get { return this._inboundLinksCount; }
@@ -160,6 +202,42 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetInboundLinksCount()
         {
             return this._inboundLinksCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinksRequestedCount. 
+        /// <para>
+        /// The count of requested links waiting for the responder gateway to accept or reject.
+        /// </para>
+        /// </summary>
+        public int? LinksRequestedCount
+        {
+            get { return this._linksRequestedCount; }
+            set { this._linksRequestedCount = value; }
+        }
+
+        // Check to see if LinksRequestedCount property is set
+        internal bool IsSetLinksRequestedCount()
+        {
+            return this._linksRequestedCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListenerConfig. 
+        /// <para>
+        /// The listener configuration for the responder gateway.
+        /// </para>
+        /// </summary>
+        public ListenerConfig ListenerConfig
+        {
+            get { return this._listenerConfig; }
+            set { this._listenerConfig = value; }
+        }
+
+        // Check to see if ListenerConfig property is set
+        internal bool IsSetListenerConfig()
+        {
+            return this._listenerConfig != null;
         }
 
         /// <summary>
@@ -368,7 +446,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the Virtual Private Cloud (VPC).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=21)]
         public string VpcId
         {
             get { return this._vpcId; }

@@ -56,19 +56,19 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FraudDetectionAction", targetDepth))
+                if (context.TestExpression("FraudDetectionAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FraudDetectionAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RiskThreshold", targetDepth))
+                if (context.TestExpression("RiskThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RiskThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WatchlistIds", targetDepth))
+                if (context.TestExpression("WatchlistIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.WatchlistIds = unmarshaller.Unmarshall(context, ref reader);

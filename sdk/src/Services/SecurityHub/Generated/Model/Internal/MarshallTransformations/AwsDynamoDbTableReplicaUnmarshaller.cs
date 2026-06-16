@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableReplicaGlobalSecondaryIndex, AwsDynamoDbTableReplicaGlobalSecondaryIndexUnmarshaller>(AwsDynamoDbTableReplicaGlobalSecondaryIndexUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsMasterKeyId", targetDepth))
+                if (context.TestExpression("KmsMasterKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsMasterKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
+                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsDynamoDbTableProvisionedThroughputOverrideUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegionName", targetDepth))
+                if (context.TestExpression("RegionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaStatus", targetDepth))
+                if (context.TestExpression("ReplicaStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaStatusDescription", targetDepth))
+                if (context.TestExpression("ReplicaStatusDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatusDescription = unmarshaller.Unmarshall(context, ref reader);

@@ -274,7 +274,7 @@
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RoadSnapTrailerOptions.TrailerCount</property>
     <min>0</min>
-    <max>255</max>
+    <max>4</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RoadSnapTruckOptions.GrossWeight</property>
@@ -308,6 +308,18 @@
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteCarOptions.Occupancy</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteChargeStepDetails.ArrivalCharge</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteChargeStepDetails.ConsumablePower</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteChargeStepDetails.DesiredCharge</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteContinueHighwayStepDetails.TurnAngle</property>
@@ -428,6 +440,16 @@
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteFerryTravelStep.GeometryOffset</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteIntermodalOptions.MaxTransfers</property>
+    <min>0</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteIntermodalPedestrianOptions.MaxDistance</property>
+    <min>0</min>
+    <max>6000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteKeepStepDetails.TurnAngle</property>
@@ -620,6 +642,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RoutePedestrianAfterTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RoutePedestrianArrival.Time</property>
     <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
   </property-value-rule>
@@ -706,6 +733,61 @@
     <max>180</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalAfterTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalArrival.Time</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalBeforeTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalDeparture.Time</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalOverviewSummary.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalOverviewSummary.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalPlace.WaypointIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalTransportModeDetails.AvailableSeats</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalTravelOnlySummary.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalTravelStep.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteRentalTravelStep.GeometryOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteRoundaboutEnterStepDetails.TurnAngle</property>
     <min>-180</min>
     <max>180</max>
@@ -759,6 +841,61 @@
     <property>Amazon.GeoRoutes.Model.RouteSummary.Duration</property>
     <min>0</min>
     <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiAfterTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiArrival.Time</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiBeforeTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiDeparture.Time</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiOverviewSummary.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiOverviewSummary.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiPlace.WaypointIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiTransportModeDetails.AvailableSeats</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiTravelOnlySummary.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiTravelStep.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTaxiTravelStep.GeometryOffset</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteToll.Country</property>
@@ -832,6 +969,135 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitAfterTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitArrival.Delay</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitArrival.Time</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitBeforeTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitDeparture.Delay</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitDeparture.Time</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitIncident.EndTime</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitIncident.StartTime</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitIntermediateStop.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitIntermediateStop.GeometryOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitNextDeparture.Delay</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitNextDeparture.Time</property>
+    <pattern>([1-2][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\.[0-9]{0,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitOptions.MaxTransfers</property>
+    <min>0</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitOverviewSummary.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitOverviewSummary.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitPedestrianOptions.MaxDistance</property>
+    <max>6000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitPlace.WaypointIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitSpan.Country</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>[A-Z]{3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitSpan.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitSpan.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitSpan.GeometryOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitSpan.Region</property>
+    <min>0</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitTransportModeDetails.Color</property>
+    <pattern>.*#[0-9A-Fa-f]{6}.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitTransportModeDetails.TextColor</property>
+    <pattern>.*#[0-9A-Fa-f]{6}.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitTravelOnlySummary.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitTravelStep.Distance</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteTransitTravelStep.GeometryOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteTruckOptions.AxleCount</property>
     <min>2</min>
     <max>255</max>
@@ -903,6 +1169,11 @@
     <property>Amazon.GeoRoutes.Model.RouteUTurnStepDetails.TurnAngle</property>
     <min>-180</min>
     <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoRoutes.Model.RouteVehicleAfterTravelStep.Duration</property>
+    <min>0</min>
+    <max>4294967295</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteVehicleArrival.Time</property>
@@ -1064,8 +1335,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteWaypoint.StopDuration</property>
-    <min>0</min>
-    <max>4294967295</max>
+    <max>49999</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteWeightConstraint.Value</property>
@@ -1085,6 +1355,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.From</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.RestDuration</property>
@@ -1095,6 +1366,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.To</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.TravelDuration</property>
@@ -1119,6 +1391,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationDestinationOptions.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationDestinationOptions.ServiceDuration</property>
@@ -1127,13 +1400,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationDrivingDistanceOptions.DrivingDistance</property>
-    <min>0</min>
-    <max>4294967295</max>
+    <min>5</min>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationImpedingWaypoint.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationOptimizedWaypoint.ArrivalTime</property>
@@ -1151,11 +1425,13 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationOptimizedWaypoint.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationOriginOptions.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationRestCycleDurations.RestDuration</property>
@@ -1240,6 +1516,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationWaypoint.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationWaypoint.ServiceDuration</property>

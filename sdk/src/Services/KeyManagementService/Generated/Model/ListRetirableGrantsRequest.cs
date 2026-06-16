@@ -32,7 +32,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the ListRetirableGrants operation.
     /// Returns information about all grants in the Amazon Web Services account and Region
-    /// that have the specified retiring principal. 
+    /// that have the specified retiring principal or retiring service principal. 
     /// 
     ///  
     /// <para>
@@ -64,11 +64,17 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-    /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-    /// calls is the retiring principal specified in the request. KMS does not evaluate the
-    /// caller's permissions to verify their access to any KMS keys or grants that might be
-    /// returned by the <c>ListRetirableGrants</c> call.
+    /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+    /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+    /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+    /// specified in the request. KMS does not evaluate the caller's permissions to verify
+    /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+    /// call.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+    /// principal.
     /// </para>
     ///  </note> 
     /// <para>
@@ -102,6 +108,7 @@ namespace Amazon.KeyManagementService.Model
         private int? _limit;
         private string _marker;
         private string _retiringPrincipal;
+        private string _retiringServicePrincipal;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -164,8 +171,13 @@ namespace Amazon.KeyManagementService.Model
         /// users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
         /// ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>RetiringPrincipal</c> or <c>RetiringServicePrincipal</c>,
+        /// but not both.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string RetiringPrincipal
         {
             get { return this._retiringPrincipal; }
@@ -176,6 +188,31 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetRetiringPrincipal()
         {
             return this._retiringPrincipal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetiringServicePrincipal. 
+        /// <para>
+        /// The retiring service principal for which to list grants. This filter is only usable
+        /// by callers in a service principal.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>RetiringPrincipal</c> or <c>RetiringServicePrincipal</c>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string RetiringServicePrincipal
+        {
+            get { return this._retiringServicePrincipal; }
+            set { this._retiringServicePrincipal = value; }
+        }
+
+        // Check to see if RetiringServicePrincipal property is set
+        internal bool IsSetRetiringServicePrincipal()
+        {
+            return this._retiringServicePrincipal != null;
         }
 
     }

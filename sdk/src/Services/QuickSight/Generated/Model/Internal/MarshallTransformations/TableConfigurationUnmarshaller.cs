@@ -56,55 +56,61 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DashboardCustomizationVisualOptions", targetDepth))
+                if (context.TestExpression("DashboardCustomizationVisualOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DashboardCustomizationVisualOptionsUnmarshaller.Instance;
                     unmarshalledObject.DashboardCustomizationVisualOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldOptions", targetDepth))
+                if (context.TestExpression("FieldOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TableFieldOptionsUnmarshaller.Instance;
                     unmarshalledObject.FieldOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("FieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = TableFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Interactions", targetDepth))
+                if (context.TestExpression("Interactions", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
                     unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaginatedReportOptions", targetDepth))
+                if (context.TestExpression("PaginatedReportOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TablePaginatedReportOptionsUnmarshaller.Instance;
                     unmarshalledObject.PaginatedReportOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SortConfiguration", targetDepth))
+                if (context.TestExpression("SortConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TableSortConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableInlineVisualizations", targetDepth))
+                if (context.TestExpression("TableInlineVisualizations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TableInlineVisualization, TableInlineVisualizationUnmarshaller>(TableInlineVisualizationUnmarshaller.Instance);
                     unmarshalledObject.TableInlineVisualizations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableOptions", targetDepth))
+                if (context.TestExpression("TableOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TableOptionsUnmarshaller.Instance;
                     unmarshalledObject.TableOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalOptions", targetDepth))
+                if (context.TestExpression("Tooltip", targetDepth, ref reader))
+                {
+                    var unmarshaller = TooltipOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Tooltip = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TotalOptionsUnmarshaller.Instance;
                     unmarshalledObject.TotalOptions = unmarshaller.Unmarshall(context, ref reader);

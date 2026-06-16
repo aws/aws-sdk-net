@@ -56,31 +56,31 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audio", targetDepth))
+                if (context.TestExpression("audio", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioOverrideConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("document", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentOverrideConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageOverrideConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modalityRouting", targetDepth))
+                if (context.TestExpression("modalityRouting", targetDepth, ref reader))
                 {
                     var unmarshaller = ModalityRoutingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ModalityRouting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("video", targetDepth))
+                if (context.TestExpression("video", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoOverrideConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);

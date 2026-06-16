@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FileSystemAssociationInfoList", targetDepth))
+                if (context.TestExpression("FileSystemAssociationInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FileSystemAssociationInfo, FileSystemAssociationInfoUnmarshaller>(FileSystemAssociationInfoUnmarshaller.Instance);
                     response.FileSystemAssociationInfoList = unmarshaller.Unmarshall(context, ref reader);

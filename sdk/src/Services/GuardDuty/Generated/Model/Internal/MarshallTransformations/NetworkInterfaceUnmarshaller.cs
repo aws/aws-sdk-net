@@ -56,61 +56,61 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ipv6Addresses", targetDepth))
+                if (context.TestExpression("ipv6Addresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Ipv6Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkInterfaceId", targetDepth))
+                if (context.TestExpression("networkInterfaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privateDnsName", targetDepth))
+                if (context.TestExpression("privateDnsName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrivateDnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privateIpAddress", targetDepth))
+                if (context.TestExpression("privateIpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrivateIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privateIpAddresses", targetDepth))
+                if (context.TestExpression("privateIpAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PrivateIpAddressDetails, PrivateIpAddressDetailsUnmarshaller>(PrivateIpAddressDetailsUnmarshaller.Instance);
                     unmarshalledObject.PrivateIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicDnsName", targetDepth))
+                if (context.TestExpression("publicDnsName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicIp", targetDepth))
+                if (context.TestExpression("publicIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityGroups", targetDepth))
+                if (context.TestExpression("securityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecurityGroup, SecurityGroupUnmarshaller>(SecurityGroupUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subnetId", targetDepth))
+                if (context.TestExpression("subnetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcId", targetDepth))
+                if (context.TestExpression("vpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);

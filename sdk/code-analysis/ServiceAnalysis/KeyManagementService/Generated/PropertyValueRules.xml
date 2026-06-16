@@ -83,6 +83,12 @@
     <pattern>^[\w+=,.@:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateGrantRequest.GranteeServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateGrantRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -98,6 +104,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[\w+=,.@:/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.CreateGrantRequest.RetiringServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateGrantResponse.GrantId</property>
@@ -467,6 +479,16 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetKeyLastUsageRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetKeyLastUsageResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyPolicyRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -606,6 +628,12 @@
     <pattern>^[\w+=,.@:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ListGrantsRequest.GranteeServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsRequest.GrantId</property>
     <min>1</min>
     <max>128</max>
@@ -731,6 +759,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[\w+=,.@:/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ListRetirableGrantsRequest.RetiringServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsResponse.NextMarker</property>
@@ -1065,10 +1099,22 @@
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GrantConstraints.SourceArn</property>
+    <min>20</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z0-9-]*:[a-z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GrantListEntry.GranteePrincipal</property>
     <min>1</min>
     <max>256</max>
     <pattern>^[\w+=,.@:/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GrantListEntry.GranteeServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GrantListEntry.GrantId</property>
@@ -1097,6 +1143,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[\w+=,.@:/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GrantListEntry.RetiringServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([A-Za-z0-9\-]+)\.([A-Za-z0-9\-]+)(\.[A-Za-z0-9\-]+)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyListEntry.KeyArn</property>

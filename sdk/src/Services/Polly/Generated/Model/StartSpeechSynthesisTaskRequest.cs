@@ -133,7 +133,8 @@ namespace Amazon.Polly.Model
         /// Gets and sets the property OutputFormat. 
         /// <para>
         /// The format in which the returned output will be encoded. For audio stream, this will
-        /// be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. 
+        /// be mp3, ogg_vorbis, ogg_opus, mu-law, a-law, or pcm. For speech marks, this will be
+        /// json. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,6 +202,14 @@ namespace Amazon.Polly.Model
         ///  
         /// <para>
         /// Valid values for pcm are "8000" and "16000" The default value is "16000". 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid value for ogg_opus is "48000". 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid value for mu-law and a-law is "8000". 
         /// </para>
         /// </summary>
         public string SampleRate

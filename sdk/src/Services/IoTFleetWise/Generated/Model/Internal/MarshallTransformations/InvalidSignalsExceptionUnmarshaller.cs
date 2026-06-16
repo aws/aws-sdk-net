@@ -72,7 +72,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("invalidSignals", targetDepth))
+                    if (context.TestExpression("invalidSignals", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<InvalidSignal, InvalidSignalUnmarshaller>(InvalidSignalUnmarshaller.Instance);
                         unmarshalledObject.InvalidSignals = unmarshaller.Unmarshall(context, ref reader);

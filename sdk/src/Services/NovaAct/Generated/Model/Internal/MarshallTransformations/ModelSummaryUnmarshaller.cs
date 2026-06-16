@@ -56,19 +56,19 @@ namespace Amazon.NovaAct.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("minimumCompatibilityVersion", targetDepth))
+                if (context.TestExpression("minimumCompatibilityVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumCompatibilityVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelId", targetDepth))
+                if (context.TestExpression("modelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelLifecycle", targetDepth))
+                if (context.TestExpression("modelLifecycle", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelLifecycleUnmarshaller.Instance;
                     unmarshalledObject.ModelLifecycle = unmarshaller.Unmarshall(context, ref reader);

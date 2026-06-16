@@ -56,37 +56,37 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alternateKeys", targetDepth))
+                if (context.TestExpression("alternateKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AlternateKey, AlternateKeyUnmarshaller>(AlternateKeyUnmarshaller.Instance);
                     unmarshalledObject.AlternateKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cacheAtStartup", targetDepth))
+                if (context.TestExpression("cacheAtStartup", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CacheAtStartup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("compressed", targetDepth))
+                if (context.TestExpression("compressed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Compressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encoding", targetDepth))
+                if (context.TestExpression("encoding", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Encoding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primaryKey", targetDepth))
+                if (context.TestExpression("primaryKey", targetDepth, ref reader))
                 {
                     var unmarshaller = PrimaryKeyUnmarshaller.Instance;
                     unmarshalledObject.PrimaryKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordFormat", targetDepth))
+                if (context.TestExpression("recordFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecordFormat = unmarshaller.Unmarshall(context, ref reader);

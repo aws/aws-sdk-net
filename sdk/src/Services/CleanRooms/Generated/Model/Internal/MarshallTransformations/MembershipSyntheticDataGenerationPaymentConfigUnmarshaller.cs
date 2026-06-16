@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("isResponsible", targetDepth))
+                if (context.TestExpression("isResponsible", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsResponsible = unmarshaller.Unmarshall(context, ref reader);

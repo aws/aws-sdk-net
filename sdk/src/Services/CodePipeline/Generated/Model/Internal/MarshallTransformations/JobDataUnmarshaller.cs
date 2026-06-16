@@ -56,49 +56,49 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionConfiguration", targetDepth))
+                if (context.TestExpression("actionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ActionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("actionTypeId", targetDepth))
+                if (context.TestExpression("actionTypeId", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTypeIdUnmarshaller.Instance;
                     unmarshalledObject.ActionTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("artifactCredentials", targetDepth))
+                if (context.TestExpression("artifactCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSSessionCredentialsUnmarshaller.Instance;
                     unmarshalledObject.ArtifactCredentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("continuationToken", targetDepth))
+                if (context.TestExpression("continuationToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContinuationToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionKey", targetDepth))
+                if (context.TestExpression("encryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionKeyUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputArtifacts", targetDepth))
+                if (context.TestExpression("inputArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Artifact, ArtifactUnmarshaller>(ArtifactUnmarshaller.Instance);
                     unmarshalledObject.InputArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputArtifacts", targetDepth))
+                if (context.TestExpression("outputArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Artifact, ArtifactUnmarshaller>(ArtifactUnmarshaller.Instance);
                     unmarshalledObject.OutputArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineContext", targetDepth))
+                if (context.TestExpression("pipelineContext", targetDepth, ref reader))
                 {
                     var unmarshaller = PipelineContextUnmarshaller.Instance;
                     unmarshalledObject.PipelineContext = unmarshaller.Unmarshall(context, ref reader);

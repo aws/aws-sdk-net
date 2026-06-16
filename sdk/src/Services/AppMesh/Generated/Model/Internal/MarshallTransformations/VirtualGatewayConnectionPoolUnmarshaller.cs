@@ -56,19 +56,19 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("grpc", targetDepth))
+                if (context.TestExpression("grpc", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayGrpcConnectionPoolUnmarshaller.Instance;
                     unmarshalledObject.Grpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("http", targetDepth))
+                if (context.TestExpression("http", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayHttpConnectionPoolUnmarshaller.Instance;
                     unmarshalledObject.Http = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("http2", targetDepth))
+                if (context.TestExpression("http2", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayHttp2ConnectionPoolUnmarshaller.Instance;
                     unmarshalledObject.Http2 = unmarshaller.Unmarshall(context, ref reader);

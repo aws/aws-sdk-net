@@ -56,37 +56,37 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionTestingMethod", targetDepth))
+                if (context.TestExpression("ConnectionTestingMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectionTestingMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EinvoiceDeliveryActivationDate", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryActivationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EinvoiceDeliveryActivationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EinvoiceDeliveryAttachmentTypes", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryAttachmentTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EinvoiceDeliveryAttachmentTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EinvoiceDeliveryDocumentTypes", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryDocumentTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EinvoiceDeliveryDocumentTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocol", targetDepth))
+                if (context.TestExpression("Protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PurchaseOrderDataSources", targetDepth))
+                if (context.TestExpression("PurchaseOrderDataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PurchaseOrderDataSource, PurchaseOrderDataSourceUnmarshaller>(PurchaseOrderDataSourceUnmarshaller.Instance);
                     unmarshalledObject.PurchaseOrderDataSources = unmarshaller.Unmarshall(context, ref reader);

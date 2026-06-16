@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BulkEmailEntryResults", targetDepth))
+                if (context.TestExpression("BulkEmailEntryResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BulkEmailEntryResult, BulkEmailEntryResultUnmarshaller>(BulkEmailEntryResultUnmarshaller.Instance);
                     response.BulkEmailEntryResults = unmarshaller.Unmarshall(context, ref reader);

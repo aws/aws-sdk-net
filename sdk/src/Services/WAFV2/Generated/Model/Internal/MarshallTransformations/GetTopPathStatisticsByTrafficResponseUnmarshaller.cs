@@ -52,25 +52,25 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PathStatistics", targetDepth))
+                if (context.TestExpression("PathStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PathStatistics, PathStatisticsUnmarshaller>(PathStatisticsUnmarshaller.Instance);
                     response.PathStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopCategories", targetDepth))
+                if (context.TestExpression("TopCategories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PathStatistics, PathStatisticsUnmarshaller>(PathStatisticsUnmarshaller.Instance);
                     response.TopCategories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRequestCount", targetDepth))
+                if (context.TestExpression("TotalRequestCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalRequestCount = unmarshaller.Unmarshall(context, ref reader);

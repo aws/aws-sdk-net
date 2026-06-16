@@ -56,13 +56,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BudgetAdjustmentPeriod", targetDepth))
+                if (context.TestExpression("BudgetAdjustmentPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BudgetAdjustmentPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LookBackAvailablePeriods", targetDepth))
+                if (context.TestExpression("LookBackAvailablePeriods", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LookBackAvailablePeriods = unmarshaller.Unmarshall(context, ref reader);

@@ -56,73 +56,73 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("caseSummarizationChunkData", targetDepth))
+                if (context.TestExpression("caseSummarizationChunkData", targetDepth, ref reader))
                 {
                     var unmarshaller = CaseSummarizationChunkDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.CaseSummarizationChunkData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentData", targetDepth))
+                if (context.TestExpression("contentData", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.ContentData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emailGenerativeAnswerChunkData", targetDepth))
+                if (context.TestExpression("emailGenerativeAnswerChunkData", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailGenerativeAnswerChunkDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.EmailGenerativeAnswerChunkData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emailOverviewChunkData", targetDepth))
+                if (context.TestExpression("emailOverviewChunkData", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailOverviewChunkDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.EmailOverviewChunkData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emailResponseChunkData", targetDepth))
+                if (context.TestExpression("emailResponseChunkData", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailResponseChunkDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.EmailResponseChunkData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generativeChunkData", targetDepth))
+                if (context.TestExpression("generativeChunkData", targetDepth, ref reader))
                 {
                     var unmarshaller = GenerativeChunkDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.GenerativeChunkData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generativeData", targetDepth))
+                if (context.TestExpression("generativeData", targetDepth, ref reader))
                 {
                     var unmarshaller = GenerativeDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.GenerativeData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intentDetectedData", targetDepth))
+                if (context.TestExpression("intentDetectedData", targetDepth, ref reader))
                 {
                     var unmarshaller = IntentDetectedDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.IntentDetectedData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notesChunkData", targetDepth))
+                if (context.TestExpression("notesChunkData", targetDepth, ref reader))
                 {
                     var unmarshaller = NotesChunkDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.NotesChunkData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notesData", targetDepth))
+                if (context.TestExpression("notesData", targetDepth, ref reader))
                 {
                     var unmarshaller = NotesDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.NotesData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceContentData", targetDepth))
+                if (context.TestExpression("sourceContentData", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceContentDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceContentData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suggestedMessageData", targetDepth))
+                if (context.TestExpression("suggestedMessageData", targetDepth, ref reader))
                 {
                     var unmarshaller = SuggestedMessageDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.SuggestedMessageData = unmarshaller.Unmarshall(context, ref reader);

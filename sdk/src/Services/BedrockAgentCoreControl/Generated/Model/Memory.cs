@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private int? _eventExpiryDuration;
         private string _failureReason;
         private string _id;
+        private List<IndexedKey> _indexedKeys = AWSConfigs.InitializeCollections ? new List<IndexedKey>() : null;
         private string _memoryExecutionRoleArn;
         private string _name;
         private MemoryStatus _status;
@@ -177,6 +178,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexedKeys. 
+        /// <para>
+        /// The indexed metadata keys for this memory. Only indexed keys can be used in metadata
+        /// filters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<IndexedKey> IndexedKeys
+        {
+            get { return this._indexedKeys; }
+            set { this._indexedKeys = value; }
+        }
+
+        // Check to see if IndexedKeys property is set
+        internal bool IsSetIndexedKeys()
+        {
+            return this._indexedKeys != null && (this._indexedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

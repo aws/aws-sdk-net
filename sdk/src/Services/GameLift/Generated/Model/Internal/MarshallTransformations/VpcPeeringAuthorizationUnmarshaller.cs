@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VpcPeeringAuthorization Object
     /// </summary>  
-    public class VpcPeeringAuthorizationUnmarshaller : IJsonUnmarshaller<VpcPeeringAuthorization, JsonUnmarshallerContext>
+    public class VpcPeeringAuthorizationUnmarshaller : ICborUnmarshaller<VpcPeeringAuthorization, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VpcPeeringAuthorization Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VpcPeeringAuthorization Unmarshall(CborUnmarshallerContext context)
         {
             VpcPeeringAuthorization unmarshalledObject = new VpcPeeringAuthorization();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ExpirationTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameLiftAwsAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameLiftAwsAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PeerVpcAwsAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PeerVpcAwsAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PeerVpcId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PeerVpcId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CreationTime":
+                        {
+                            context.AddPathSegment("CreationTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExpirationTime":
+                        {
+                            context.AddPathSegment("ExpirationTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameLiftAwsAccountId":
+                        {
+                            context.AddPathSegment("GameLiftAwsAccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameLiftAwsAccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PeerVpcAwsAccountId":
+                        {
+                            context.AddPathSegment("PeerVpcAwsAccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PeerVpcAwsAccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PeerVpcId":
+                        {
+                            context.AddPathSegment("PeerVpcId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PeerVpcId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

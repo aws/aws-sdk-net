@@ -40,7 +40,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Abbreviated code for the county or sub-region.
+        ///  Abbreviated code for the county or sub-region. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=3)]

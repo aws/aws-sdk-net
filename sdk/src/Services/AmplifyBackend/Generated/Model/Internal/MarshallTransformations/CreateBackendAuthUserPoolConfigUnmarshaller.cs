@@ -56,49 +56,49 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("forgotPassword", targetDepth))
+                if (context.TestExpression("forgotPassword", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateBackendAuthForgotPasswordConfigUnmarshaller.Instance;
                     unmarshalledObject.ForgotPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mfa", targetDepth))
+                if (context.TestExpression("mfa", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateBackendAuthMFAConfigUnmarshaller.Instance;
                     unmarshalledObject.Mfa = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuth", targetDepth))
+                if (context.TestExpression("oAuth", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateBackendAuthOAuthConfigUnmarshaller.Instance;
                     unmarshalledObject.OAuth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("passwordPolicy", targetDepth))
+                if (context.TestExpression("passwordPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateBackendAuthPasswordPolicyConfigUnmarshaller.Instance;
                     unmarshalledObject.PasswordPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requiredSignUpAttributes", targetDepth))
+                if (context.TestExpression("requiredSignUpAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RequiredSignUpAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signInMethod", targetDepth))
+                if (context.TestExpression("signInMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SignInMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userPoolName", targetDepth))
+                if (context.TestExpression("userPoolName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserPoolName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verificationMessage", targetDepth))
+                if (context.TestExpression("verificationMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateBackendAuthVerificationMessageConfigUnmarshaller.Instance;
                     unmarshalledObject.VerificationMessage = unmarshaller.Unmarshall(context, ref reader);

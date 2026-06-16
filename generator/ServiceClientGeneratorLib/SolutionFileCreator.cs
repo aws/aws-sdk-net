@@ -38,8 +38,8 @@ namespace ServiceClientGenerator
         private const string CommonTestProjectGuid = "{66F78F86-68D7-4538-8EA5-A669A08E1C19}";
         private const string CommonTestProjectName = "AWSSDK.CommonTest";
 
-        private const string UnitTestsNetStandardCoreOnlyProjectGuid = "{B969DE99-0634-4989-A318-086AE1699974}";
-        private const string UnitTestsNetStandardCoreOnlyProjectName = "UnitTests.NetStandard.CoreOnly";
+        private const string UnitTestsCoreProjectGuid = "{B969DE99-0634-4989-A318-086AE1699974}";
+        private const string UnitTestsCoreProjectName = "AWSSDK.UnitTests.Core";
 
         private const string UnitTestUtilityProjectFileName = "AWSSDK.UnitTestUtilities";
         private const string UtilityProjectFileGuid = "{002B183F-E568-49CD-9D06-CBCFF2C2921F}";
@@ -120,19 +120,19 @@ namespace ServiceClientGenerator
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "IntegrationTests", $"{IntegrationTestUtilityName}.csproj")
         };
 
-        private static readonly Project UnitTestsNetStandardCoreOnlyProject = new Project
+        private static readonly Project UnitTestsCoreProject = new Project
         {
-            Name = UnitTestsNetStandardCoreOnlyProjectName,
-            ProjectGuid = UnitTestsNetStandardCoreOnlyProjectGuid,
-            ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "NetStandard", "UnitTests", $"{UnitTestsNetStandardCoreOnlyProjectName}.csproj")
+            Name = UnitTestsCoreProjectName,
+            ProjectGuid = UnitTestsCoreProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "UnitTests", $"{UnitTestsCoreProjectName}.csproj")
         };
 
-        private static readonly Project ServiceSlnUnitTestsNetStandardCoreOnlyProject = new Project
+        private static readonly Project ServiceSlnUnitTestsCoreProject = new Project
         {
-            Name = UnitTestsNetStandardCoreOnlyProjectName,
-            ProjectGuid = UnitTestsNetStandardCoreOnlyProjectGuid,
-            ProjectPath = Utils.PathCombineAlt("..", "..", "..", UnitTestsNetStandardCoreOnlyProject.ProjectPath),
-            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "NetStandard", "UnitTests", $"{UnitTestsNetStandardCoreOnlyProjectName}.csproj")
+            Name = UnitTestsCoreProjectName,
+            ProjectGuid = UnitTestsCoreProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "..", "..", UnitTestsCoreProject.ProjectPath),
+            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "UnitTests", $"{UnitTestsCoreProjectName}.csproj")
         };
 
         private static readonly List<Project> CoreProjects = new List<Project>
@@ -188,14 +188,14 @@ namespace ServiceClientGenerator
 
         private void AddSpecificTestProjects()
         {
-            // Add UnitTests.NetStandard.CoreOnly
+            // Add AWSSDK.UnitTests.Core
             var projectConfig = new ProjectFileCreator.ProjectConfigurationData
             {
-                ProjectGuid = Utils.GetProjectGuid(UnitTestsNetStandardCoreOnlyProjectGuid),
+                ProjectGuid = Utils.GetProjectGuid(UnitTestsCoreProjectGuid),
                 ConfigurationPlatforms = StandardPlatformConfigurations
             };
 
-            _allProjects.Add(UnitTestsNetStandardCoreOnlyProjectName, projectConfig);
+            _allProjects.Add(UnitTestsCoreProjectName, projectConfig);
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace ServiceClientGenerator
                         string itemSource = match.Groups[3].ToString();
                         string itemGuid = match.Groups[4].ToString();
 
-                        itemGuidDictionary.Add(itemName, itemGuid);
+                        itemGuidDictionary[itemName] = itemGuid;
                     }
                 }
             }
@@ -392,9 +392,11 @@ namespace ServiceClientGenerator
                 {
                     string projectFilePattern = string.Format("*.{0}.csproj", configuration.Name);
                     foreach (var projectFile in Directory.GetFiles(testProjectsRoot, projectFilePattern, SearchOption.AllDirectories)                        
-                        .Where(projectFile => (Path.GetFileNameWithoutExtension(projectFile).Contains("UnitTestUtilities") || !Path.GetFileNameWithoutExtension(projectFile).Contains("Utilities")) &&
-                        !Path.GetFullPath(projectFile).Contains("Services") &&
-                        !Path.GetFullPath(projectFile).Contains("CSM"))
+                        .Where(projectFile => (
+                            Path.GetFileNameWithoutExtension(projectFile).Contains("UnitTestUtilities") || !Path.GetFileNameWithoutExtension(projectFile).Contains("Utilities")) &&
+                            !Path.GetFullPath(projectFile).Contains("Services") &&
+                            !Path.GetFullPath(projectFile).Contains("CSM")
+                        )
                         .OrderBy(f => f))
                     {
                         var profileFileAlt = Utils.ConvertPathAlt(projectFile);
@@ -488,13 +490,23 @@ namespace ServiceClientGenerator
                 // Include service's Unit and Integ csproj files and its dependencies.
                 AddTestProjectsAndDependencies(projectFileConfigurations, buildConfigurations, serviceDirectory, projectGuidDictionary, testProjects, dependentProjects);
 
-                // Add AWSSDK.CommonTest.csproj
+                // Add AWSSDK.CommonTest.csproj and AWSSDK.UnitTests.Core.csproj
                 testProjects.Add(ServiceSlnCommonTestProject);
-                testProjects.Add(ServiceSlnUnitTestsNetStandardCoreOnlyProject);
+                testProjects.Add(ServiceSlnUnitTestsCoreProject);
                 SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
-                SelectBuildConfigurationsForProject(UnitTestsNetStandardCoreOnlyProjectName, buildConfigurations);
+                SelectBuildConfigurationsForProject(UnitTestsCoreProjectName, buildConfigurations);
 
-                foreach (var serviceProjectDependency in serviceProjectDependencies)
+                // The Core test project references additional services (DynamoDBv2, SQS, etc.)
+                // and extensions (CrtIntegration) that need to be available in the service
+                // solutions. These are test-only dependencies, so they go into the
+                // TestDependencies folder rather than the core or service folders.
+                dependentProjects.AddRange(AddProjectDependencies(
+                    ServiceSlnUnitTestsCoreProject.ProjectPath,
+                    serviceDirectory.Name,
+                    new List<string>()
+                ));
+
+                foreach (var serviceProjectDependency in serviceProjectDependencies.Distinct())
                 {
                     string projectName = Path.GetFileNameWithoutExtension(serviceProjectDependency);
                     var filePath = serviceProjectDependency;
@@ -653,8 +665,14 @@ namespace ServiceClientGenerator
                 }
 
                 var matches = ProjectReferenceRegex.Match(line);
+                if (!matches.Success)
+                {
+                    // Line mentions "ProjectReference" but isn't an actual <ProjectReference Include="..."/> element
+                    // (e.g. an XML comment or attribute prose). Skip to avoid empty-fileName Split crashes below.
+                    continue;
+                }
                 var fileName = matches.ToString().Replace("\"", "");
-                
+
                 // Some references such as Core and the service project itself are added prior to this method being called.
                 var alreadyAdded = fileName.Contains("/Core/") || fileName.Contains($".{serviceName}.") || fileName.Contains("Test") || depsProjects.Contains(fileName);
                 if (alreadyAdded)
@@ -672,8 +690,8 @@ namespace ServiceClientGenerator
                     var deps = Utils.PathCombineAlt("..", "..", "..", "..", split[split.Length - 4], split[split.Length - 3], split[split.Length - 2], split[split.Length - 1]);
                     depsProjects.Add(deps);
                 }
-                // The test utilities project references the generator as well, but that's already added to the service solutions.
-                else if (projectFile.Contains(UnitTestUtilityProjectFileName) && fileName.Contains(GeneratorLibProjectName))
+                // The test utilities and Core test projects reference the generator as well, but that's already added to the service solutions.
+                else if (fileName.Contains(GeneratorLibProjectName))
                 {
                     continue;
                 }

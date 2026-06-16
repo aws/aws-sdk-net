@@ -68,8 +68,8 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             request.AddPathResource("{memoryId}", StringUtils.FromString(publicRequest.MemoryId));
             request.ResourcePath = "/memories/{memoryId}/memoryRecords";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -88,10 +88,32 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.MemoryStrategyId);
             }
 
+            if(publicRequest.IsSetMetadataFilters())
+            {
+                context.Writer.WritePropertyName("metadataFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMetadataFiltersListValue in publicRequest.MetadataFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MemoryMetadataFilterExpressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetadataFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("namespace");
                 context.Writer.WriteStringValue(publicRequest.Namespace);
+            }
+
+            if(publicRequest.IsSetNamespacePath())
+            {
+                context.Writer.WritePropertyName("namespacePath");
+                context.Writer.WriteStringValue(publicRequest.NamespacePath);
             }
 
             if(publicRequest.IsSetNextToken())
@@ -102,10 +124,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

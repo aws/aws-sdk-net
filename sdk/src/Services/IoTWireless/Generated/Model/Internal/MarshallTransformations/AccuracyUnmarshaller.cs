@@ -56,13 +56,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HorizontalAccuracy", targetDepth))
+                if (context.TestExpression("HorizontalAccuracy", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.HorizontalAccuracy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerticalAccuracy", targetDepth))
+                if (context.TestExpression("VerticalAccuracy", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.VerticalAccuracy = unmarshaller.Unmarshall(context, ref reader);

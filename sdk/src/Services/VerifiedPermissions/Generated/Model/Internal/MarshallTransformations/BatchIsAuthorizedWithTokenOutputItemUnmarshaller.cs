@@ -56,25 +56,25 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("decision", targetDepth))
+                if (context.TestExpression("decision", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Decision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("determiningPolicies", targetDepth))
+                if (context.TestExpression("determiningPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeterminingPolicyItem, DeterminingPolicyItemUnmarshaller>(DeterminingPolicyItemUnmarshaller.Instance);
                     unmarshalledObject.DeterminingPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationErrorItem, EvaluationErrorItemUnmarshaller>(EvaluationErrorItemUnmarshaller.Instance);
                     unmarshalledObject.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("request", targetDepth))
+                if (context.TestExpression("request", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchIsAuthorizedWithTokenInputItemUnmarshaller.Instance;
                     unmarshalledObject.Request = unmarshaller.Unmarshall(context, ref reader);

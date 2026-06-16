@@ -56,13 +56,13 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TrustedAdvisorIntegrationStatus", targetDepth))
+                if (context.TestExpression("TrustedAdvisorIntegrationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrustedAdvisorIntegrationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkloadResourceDefinition", targetDepth))
+                if (context.TestExpression("WorkloadResourceDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.WorkloadResourceDefinition = unmarshaller.Unmarshall(context, ref reader);

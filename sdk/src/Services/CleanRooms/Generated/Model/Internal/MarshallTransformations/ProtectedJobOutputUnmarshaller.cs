@@ -56,13 +56,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("memberList", targetDepth))
+                if (context.TestExpression("memberList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProtectedJobSingleMemberOutput, ProtectedJobSingleMemberOutputUnmarshaller>(ProtectedJobSingleMemberOutputUnmarshaller.Instance);
                     unmarshalledObject.MemberList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3", targetDepth))
+                if (context.TestExpression("s3", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedJobS3OutputUnmarshaller.Instance;
                     unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);

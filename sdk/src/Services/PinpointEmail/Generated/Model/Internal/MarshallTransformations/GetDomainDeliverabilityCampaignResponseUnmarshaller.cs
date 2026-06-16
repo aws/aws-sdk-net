@@ -52,7 +52,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainDeliverabilityCampaign", targetDepth))
+                if (context.TestExpression("DomainDeliverabilityCampaign", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainDeliverabilityCampaignUnmarshaller.Instance;
                     response.DomainDeliverabilityCampaign = unmarshaller.Unmarshall(context, ref reader);

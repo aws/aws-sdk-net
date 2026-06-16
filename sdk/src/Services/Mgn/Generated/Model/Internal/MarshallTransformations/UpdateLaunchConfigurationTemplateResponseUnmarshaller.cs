@@ -52,115 +52,115 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associatePublicIpAddress", targetDepth))
+                if (context.TestExpression("associatePublicIpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AssociatePublicIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootMode", targetDepth))
+                if (context.TestExpression("bootMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("copyPrivateIp", targetDepth))
+                if (context.TestExpression("copyPrivateIp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CopyPrivateIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("copyTags", targetDepth))
+                if (context.TestExpression("copyTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CopyTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2LaunchTemplateID", targetDepth))
+                if (context.TestExpression("ec2LaunchTemplateID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableMapAutoTagging", targetDepth))
+                if (context.TestExpression("enableMapAutoTagging", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableMapAutoTagging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableParametersEncryption", targetDepth))
+                if (context.TestExpression("enableParametersEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableParametersEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("largeVolumeConf", targetDepth))
+                if (context.TestExpression("largeVolumeConf", targetDepth, ref reader))
                 {
                     var unmarshaller = LaunchTemplateDiskConfUnmarshaller.Instance;
                     response.LargeVolumeConf = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("launchConfigurationTemplateID", targetDepth))
+                if (context.TestExpression("launchConfigurationTemplateID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LaunchConfigurationTemplateID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("launchDisposition", targetDepth))
+                if (context.TestExpression("launchDisposition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LaunchDisposition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("licensing", targetDepth))
+                if (context.TestExpression("licensing", targetDepth, ref reader))
                 {
                     var unmarshaller = LicensingUnmarshaller.Instance;
                     response.Licensing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapAutoTaggingMpeID", targetDepth))
+                if (context.TestExpression("mapAutoTaggingMpeID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MapAutoTaggingMpeID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parametersEncryptionKey", targetDepth))
+                if (context.TestExpression("parametersEncryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ParametersEncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("postLaunchActions", targetDepth))
+                if (context.TestExpression("postLaunchActions", targetDepth, ref reader))
                 {
                     var unmarshaller = PostLaunchActionsUnmarshaller.Instance;
                     response.PostLaunchActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("smallVolumeConf", targetDepth))
+                if (context.TestExpression("smallVolumeConf", targetDepth, ref reader))
                 {
                     var unmarshaller = LaunchTemplateDiskConfUnmarshaller.Instance;
                     response.SmallVolumeConf = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("smallVolumeMaxSize", targetDepth))
+                if (context.TestExpression("smallVolumeMaxSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.SmallVolumeMaxSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth))
+                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetInstanceTypeRightSizingMethod = unmarshaller.Unmarshall(context, ref reader);

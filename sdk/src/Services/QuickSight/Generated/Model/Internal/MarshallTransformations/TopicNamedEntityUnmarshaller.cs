@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Definition", targetDepth))
+                if (context.TestExpression("Definition", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NamedEntityDefinition, NamedEntityDefinitionUnmarshaller>(NamedEntityDefinitionUnmarshaller.Instance);
                     unmarshalledObject.Definition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityDescription", targetDepth))
+                if (context.TestExpression("EntityDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityName", targetDepth))
+                if (context.TestExpression("EntityName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntitySynonyms", targetDepth))
+                if (context.TestExpression("EntitySynonyms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EntitySynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SemanticEntityType", targetDepth))
+                if (context.TestExpression("SemanticEntityType", targetDepth, ref reader))
                 {
                     var unmarshaller = SemanticEntityTypeUnmarshaller.Instance;
                     unmarshalledObject.SemanticEntityType = unmarshaller.Unmarshall(context, ref reader);

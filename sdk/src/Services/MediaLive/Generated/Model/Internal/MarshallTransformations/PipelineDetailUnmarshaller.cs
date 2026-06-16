@@ -56,37 +56,43 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeInputAttachmentName", targetDepth))
+                if (context.TestExpression("activeInputAttachmentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActiveInputAttachmentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activeInputSwitchActionName", targetDepth))
+                if (context.TestExpression("activeInputSwitchActionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActiveInputSwitchActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activeMotionGraphicsActionName", targetDepth))
+                if (context.TestExpression("activeMotionGraphicsActionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActiveMotionGraphicsActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activeMotionGraphicsUri", targetDepth))
+                if (context.TestExpression("activeMotionGraphicsUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActiveMotionGraphicsUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelEngineVersion", targetDepth))
+                if (context.TestExpression("channelEngineVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelEngineVersionResponseUnmarshaller.Instance;
                     unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineId", targetDepth))
+                if (context.TestExpression("mediaConnectRouterOutputConnectionMap", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MediaConnectRouterOutputConnection, StringUnmarshaller, MediaConnectRouterOutputConnectionUnmarshaller>(StringUnmarshaller.Instance, MediaConnectRouterOutputConnectionUnmarshaller.Instance);
+                    unmarshalledObject.MediaConnectRouterOutputConnectionMap = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("pipelineId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SelfManagedDnsIpAddrs", targetDepth))
+                if (context.TestExpression("SelfManagedDnsIpAddrs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SelfManagedDnsIpAddrs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfManagedInstanceIds", targetDepth))
+                if (context.TestExpression("SelfManagedInstanceIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SelfManagedInstanceIds = unmarshaller.Unmarshall(context, ref reader);

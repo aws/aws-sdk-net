@@ -56,37 +56,37 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalConfigs", targetDepth))
+                if (context.TestExpression("AdditionalConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Classifications", targetDepth))
+                if (context.TestExpression("Classifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Classification, ClassificationUnmarshaller>(ClassificationUnmarshaller.Instance);
                     unmarshalledObject.Classifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CoordinatorDpuSize", targetDepth))
+                if (context.TestExpression("CoordinatorDpuSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CoordinatorDpuSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultExecutorDpuSize", targetDepth))
+                if (context.TestExpression("DefaultExecutorDpuSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DefaultExecutorDpuSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxConcurrentDpus", targetDepth))
+                if (context.TestExpression("MaxConcurrentDpus", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentDpus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SparkProperties", targetDepth))
+                if (context.TestExpression("SparkProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.SparkProperties = unmarshaller.Unmarshall(context, ref reader);

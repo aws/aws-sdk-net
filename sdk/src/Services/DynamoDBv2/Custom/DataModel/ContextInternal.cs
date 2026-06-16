@@ -15,6 +15,7 @@
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
 using System.Collections;
@@ -24,7 +25,6 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Amazon.Util;
 using ThirdParty.RuntimeBackports;
 using Expression = System.Linq.Expressions.Expression;
 
@@ -38,26 +38,18 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (!storage.Config.HasVersion) return;
 
-            DynamoDBEntry versionEntry;
-            Primitive version;
             string versionAttributeName = storage.Config.VersionPropertyStorage.AttributeName;
 
-            if (storage.Document.TryGetValue(versionAttributeName, out versionEntry))
-                version = versionEntry as Primitive;
-            else
-                version = null;
-
-            if (version != null && version.Value != null)
+            if (storage.Document.TryGetValue(versionAttributeName, out DynamoDBEntry versionEntry) && versionEntry is Primitive version && version.Value != null)
             {
                 if (version.Type != DynamoDBEntryType.Numeric) throw new InvalidOperationException("Version property must be numeric");
-                PropertyStorage propertyStorage = storage.Config.VersionPropertyStorage;
-                IncrementVersion(propertyStorage.MemberType, ref version);
+                IncrementVersion(storage.Config.VersionPropertyStorage.MemberType, ref version);
+                storage.Document[versionAttributeName] = version;
             }
             else
             {
-                version = new Primitive("0", true);
+                storage.Document[versionAttributeName] = new Primitive("0", true);
             }
-            storage.Document[versionAttributeName] = version;
         }
 
         private static void IncrementVersion(Type memberType, ref Primitive version)
@@ -121,17 +113,17 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Atomic counters
 
-        internal static DocumentModel.Expression BuildCounterConditionExpression(ItemStorage storage)
+        internal static DocumentModel.UpdateExpression BuildCounterUpdateExpression(ItemStorage storage)
         {
             var atomicCounters = GetCounterProperties(storage);
-            DocumentModel.Expression counterConditionExpression = null;
+            DocumentModel.UpdateExpression counterExpression = null;
 
             if (atomicCounters.Length != 0)
             {
-                counterConditionExpression = CreateUpdateExpressionForCounterProperties(atomicCounters);
+                counterExpression = CreateUpdateExpressionForCounterProperties(atomicCounters);
             }
 
-            return counterConditionExpression;
+            return counterExpression;
         }
 
         private static PropertyStorage[] GetCounterProperties(ItemStorage storage)
@@ -150,28 +142,30 @@ namespace Amazon.DynamoDBv2.DataModel
             return counterProperties;
         }
 
-        private static DocumentModel.Expression CreateUpdateExpressionForCounterProperties(PropertyStorage[] counterPropertyStorages)
+        private static UpdateExpression CreateUpdateExpressionForCounterProperties(PropertyStorage[] counterPropertyStorages)
         {
             if (counterPropertyStorages.Length == 0) return null;
 
-            DocumentModel.Expression updateExpression = new DocumentModel.Expression();
-            var asserts = string.Empty;
+            var updateExpression = new UpdateExpression();
 
             foreach (var propertyStorage in counterPropertyStorages)
             {
-                string startValueName = $":{propertyStorage.AttributeName}Start";
-                string deltaValueName = $":{propertyStorage.AttributeName}Delta";
+                string startValueName = Common.GetAttributeValueReference($"{propertyStorage.AttributeName}Start");
+                string deltaValueName = Common.GetAttributeValueReference($"{propertyStorage.AttributeName}Delta");
                 string counterAttributeName = Common.GetAttributeReference(propertyStorage.AttributeName);
-                asserts += $"{counterAttributeName} = " +
-                           $"if_not_exists({counterAttributeName},{startValueName}) + {deltaValueName} ,";
+
+                updateExpression.AddStatement(
+                    UpdateExpression.OperationSet,
+                    $"{counterAttributeName} = if_not_exists({counterAttributeName},{startValueName}) + {deltaValueName}");
+
                 updateExpression.ExpressionAttributeNames[counterAttributeName] = propertyStorage.AttributeName;
                 updateExpression.ExpressionAttributeValues[deltaValueName] = propertyStorage.CounterDelta;
 
-                //CounterDelta is being subtracted from CounterStartValue to compensate it being added back to the starting value
+                // CounterDelta is being subtracted from CounterStartValue to compensate it being added back to the starting value
                 updateExpression.ExpressionAttributeValues[startValueName] =
                     propertyStorage.CounterStartValue - propertyStorage.CounterDelta;
             }
-            updateExpression.ExpressionStatement = $"SET {asserts.Substring(0, asserts.Length - 2)}";
+
             return updateExpression;
         }
 
@@ -179,17 +173,25 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal static HashSet<string> GetUpdateIfNotExistsAttributeNames(ItemStorage storage)
         {
-            var ifNotExistsProperties = storage.Config.BaseTypeStorageConfig.Properties.
-                Where(propertyStorage => propertyStorage.UpdateBehaviorMode == UpdateBehavior.IfNotExists).ToArray();
-            var flatten = storage.Config.BaseTypeStorageConfig.Properties.
-                Where(propertyStorage => propertyStorage.FlattenProperties.Any()).ToArray();
-            while (flatten.Any())
+            var baseProperties = storage.Config.BaseTypeStorageConfig.Properties;
+            var ifNotExistsProperties = new List<PropertyStorage>();
+            var stack = new Stack<PropertyStorage>(baseProperties.Where(p => p.FlattenProperties.Any()));
+
+            ifNotExistsProperties.AddRange(baseProperties.Where(p => p.UpdateBehaviorMode == UpdateBehavior.IfNotExists));
+
+            while (stack.Count > 0)
             {
-                var flattenIfNotExists = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.UpdateBehaviorMode == UpdateBehavior.IfNotExists)).ToArray();
-                ifNotExistsProperties = ifNotExistsProperties.Concat(flattenIfNotExists).ToArray();
-                flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.FlattenProperties.Any())).ToArray();
+                var current = stack.Pop();
+                foreach (var fp in current.FlattenProperties)
+                {
+                    if (fp.UpdateBehaviorMode == UpdateBehavior.IfNotExists)
+                        ifNotExistsProperties.Add(fp);
+                    if (fp.FlattenProperties.Any())
+                        stack.Push(fp);
+                }
             }
-            return new HashSet<string>(ifNotExistsProperties.Select(p => p.AttributeName).ToList());
+
+            return new HashSet<string>(ifNotExistsProperties.Select(p => p.AttributeName));
         }
 
 
@@ -1853,7 +1855,7 @@ namespace Amazon.DynamoDBv2.DataModel
                                 "Only the right-most range key condition may use a non-equality operator. " +
                                 $"Operator '{rangeKeyCondition.Operator}' found on range key attribute '{rangeKeyAttributeName}' at position {i}.");
                         }
-                        MapRangeKeyConditionExpression(rangeKeyCondition, i, rangeKeyPropertyName, rangeKeyProperty);
+                        MapRangeKeyConditionExpression(rangeKeyCondition, i, rangeKeyProperty);
 
                     }
 
@@ -1918,14 +1920,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 return keyExpression1;
             }
 
-            void MapRangeKeyConditionExpression( RangeKeyCondition rangeKeyCondition, int index,
-                string rangeKeyPropertyName,  PropertyStorage rangeKeyProperty)
+            void MapRangeKeyConditionExpression(RangeKeyCondition rangeKeyCondition, int index,PropertyStorage rangeKeyProperty)
             {
                 keyExpression.ExpressionStatement +=
                     ContextExpressionsUtils.GetRangeKeyConditionExpression(RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME,
                         rangeKeyCondition.Operator, index);
                 keyExpression.ExpressionAttributeNames.Add($"{RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME}{index}",
-                    rangeKeyPropertyName);
+                    rangeKeyProperty.AttributeName);
                 var valuesList = rangeKeyCondition.Values?.ToList();
 
                 if (rangeKeyCondition.Operator == QueryOperator.Between)

@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executionTimeoutSeconds", targetDepth))
+                if (context.TestExpression("executionTimeoutSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generationContext", targetDepth))
+                if (context.TestExpression("generationContext", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryGenerationContextUnmarshaller.Instance;
                     unmarshalledObject.GenerationContext = unmarshaller.Unmarshall(context, ref reader);

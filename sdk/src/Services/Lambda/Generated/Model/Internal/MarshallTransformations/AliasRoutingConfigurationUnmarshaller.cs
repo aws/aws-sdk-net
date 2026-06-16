@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalVersionWeights", targetDepth))
+                if (context.TestExpression("AdditionalVersionWeights", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
                     unmarshalledObject.AdditionalVersionWeights = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WhatIfForecastArn", targetDepth))
+                if (context.TestExpression("WhatIfForecastArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WhatIfForecastArn = unmarshaller.Unmarshall(context, ref reader);

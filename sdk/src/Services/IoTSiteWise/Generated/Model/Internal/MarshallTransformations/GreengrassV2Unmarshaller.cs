@@ -56,13 +56,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("coreDeviceOperatingSystem", targetDepth))
+                if (context.TestExpression("coreDeviceOperatingSystem", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CoreDeviceOperatingSystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("coreDeviceThingName", targetDepth))
+                if (context.TestExpression("coreDeviceThingName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CoreDeviceThingName = unmarshaller.Unmarshall(context, ref reader);

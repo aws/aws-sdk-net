@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Cells", targetDepth))
+                if (context.TestExpression("Cells", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Cell, CellUnmarshaller>(CellUnmarshaller.Instance);
                     unmarshalledObject.Cells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineRanges", targetDepth))
+                if (context.TestExpression("LineRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Range, RangeUnmarshaller>(RangeUnmarshaller.Instance);
                     unmarshalledObject.LineRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OffsetRanges", targetDepth))
+                if (context.TestExpression("OffsetRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Range, RangeUnmarshaller>(RangeUnmarshaller.Instance);
                     unmarshalledObject.OffsetRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Pages", targetDepth))
+                if (context.TestExpression("Pages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Page, PageUnmarshaller>(PageUnmarshaller.Instance);
                     unmarshalledObject.Pages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Records", targetDepth))
+                if (context.TestExpression("Records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Record, RecordUnmarshaller>(RecordUnmarshaller.Instance);
                     unmarshalledObject.Records = unmarshaller.Unmarshall(context, ref reader);

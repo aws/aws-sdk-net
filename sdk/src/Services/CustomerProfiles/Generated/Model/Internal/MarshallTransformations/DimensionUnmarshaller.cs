@@ -56,13 +56,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CalculatedAttributes", targetDepth))
+                if (context.TestExpression("CalculatedAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, CalculatedAttributeDimension, StringUnmarshaller, CalculatedAttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, CalculatedAttributeDimensionUnmarshaller.Instance);
                     unmarshalledObject.CalculatedAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProfileAttributes", targetDepth))
+                if (context.TestExpression("ProfileAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = ProfileAttributesUnmarshaller.Instance;
                     unmarshalledObject.ProfileAttributes = unmarshaller.Unmarshall(context, ref reader);

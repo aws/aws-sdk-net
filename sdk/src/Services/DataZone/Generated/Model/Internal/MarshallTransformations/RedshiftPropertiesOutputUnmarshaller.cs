@@ -56,55 +56,55 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("credentials", targetDepth))
+                if (context.TestExpression("credentials", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftCredentialsUnmarshaller.Instance;
                     unmarshalledObject.Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("databaseName", targetDepth))
+                if (context.TestExpression("databaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isProvisionedSecret", targetDepth))
+                if (context.TestExpression("isProvisionedSecret", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsProvisionedSecret = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jdbcIamUrl", targetDepth))
+                if (context.TestExpression("jdbcIamUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JdbcIamUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jdbcUrl", targetDepth))
+                if (context.TestExpression("jdbcUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JdbcUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lineageSync", targetDepth))
+                if (context.TestExpression("lineageSync", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftLineageSyncConfigurationOutputUnmarshaller.Instance;
                     unmarshalledObject.LineageSync = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftTempDir", targetDepth))
+                if (context.TestExpression("redshiftTempDir", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RedshiftTempDir = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storage", targetDepth))
+                if (context.TestExpression("storage", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftStoragePropertiesUnmarshaller.Instance;
                     unmarshalledObject.Storage = unmarshaller.Unmarshall(context, ref reader);

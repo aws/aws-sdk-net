@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeName", targetDepth))
+                if (context.TestExpression("AttributeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LockVersion", targetDepth))
+                if (context.TestExpression("LockVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = DataTableLockVersionUnmarshaller.Instance;
                     unmarshalledObject.LockVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryValues", targetDepth))
+                if (context.TestExpression("PrimaryValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PrimaryValue, PrimaryValueUnmarshaller>(PrimaryValueUnmarshaller.Instance);
                     unmarshalledObject.PrimaryValues = unmarshaller.Unmarshall(context, ref reader);

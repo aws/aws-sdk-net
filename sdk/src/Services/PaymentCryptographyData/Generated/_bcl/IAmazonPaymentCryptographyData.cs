@@ -103,8 +103,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -197,8 +198,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -309,8 +311,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -419,8 +422,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -476,8 +480,9 @@ namespace Amazon.PaymentCryptographyData
 
 
         /// <summary>
-        /// Establishes node-to-node initialization between payment processing nodes such as an
-        /// acquirer, issuer or payment network using Australian Standard 2805 (AS2805).
+        /// Generates a <c>KekValidationRequest</c> or a <c>KekValidationResponse</c> for node-to-node
+        /// initialization between payment processing nodes using <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.html">Australian
+        /// Standard 2805 (AS2805)</a>.
         /// 
         ///  
         /// <para>
@@ -492,11 +497,21 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        /// The node initiating communication can use <c>GenerateAS2805KekValidation</c> to generate
-        /// a combined KEK validation request and KEK validation response to send to the partnering
-        /// node for validation. When invoked, the API internally generates a random sending key
-        /// encrypted under KEKs and provides a receiving key encrypted under KEKr as response.
-        /// The initiating node sends the response returned by this API to its partner for validation.
+        /// To use <c>GenerateAs2805KekValidation</c> to generate a KEK validation request, set
+        /// <c>KekValidationType</c> to <c>KekValidationRequest</c>. This operation returns both
+        /// <c>RandomKeySend</c> (KRs) and <c>RandomKeyReceive</c> (KRr) as response values. The
+        /// partnering node receives the KRs, uses its KEKr to decrypt it, and generates a KRr
+        /// which is an inverted value of KRs. The node receiving the KRr validates it against
+        /// its own KRr generated during KEK validation request outside of Amazon Web Services
+        /// Payment Cryptography.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use this operation to generate a KEK validation response, by setting
+        /// <c>KekValidationType</c> to <c>KekValidationResponse</c> and providing the incoming
+        /// KRs. This operation then calculates a KRr. To learn more about more about node-to-node
+        /// initialization, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.kekvalidation.html">Validation
+        /// of KEK</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -507,8 +522,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateAs2805KekValidation service method.</param>
@@ -535,8 +551,9 @@ namespace Amazon.PaymentCryptographyData
 
 
         /// <summary>
-        /// Establishes node-to-node initialization between payment processing nodes such as an
-        /// acquirer, issuer or payment network using Australian Standard 2805 (AS2805).
+        /// Generates a <c>KekValidationRequest</c> or a <c>KekValidationResponse</c> for node-to-node
+        /// initialization between payment processing nodes using <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.html">Australian
+        /// Standard 2805 (AS2805)</a>.
         /// 
         ///  
         /// <para>
@@ -551,11 +568,21 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        /// The node initiating communication can use <c>GenerateAS2805KekValidation</c> to generate
-        /// a combined KEK validation request and KEK validation response to send to the partnering
-        /// node for validation. When invoked, the API internally generates a random sending key
-        /// encrypted under KEKs and provides a receiving key encrypted under KEKr as response.
-        /// The initiating node sends the response returned by this API to its partner for validation.
+        /// To use <c>GenerateAs2805KekValidation</c> to generate a KEK validation request, set
+        /// <c>KekValidationType</c> to <c>KekValidationRequest</c>. This operation returns both
+        /// <c>RandomKeySend</c> (KRs) and <c>RandomKeyReceive</c> (KRr) as response values. The
+        /// partnering node receives the KRs, uses its KEKr to decrypt it, and generates a KRr
+        /// which is an inverted value of KRs. The node receiving the KRr validates it against
+        /// its own KRr generated during KEK validation request outside of Amazon Web Services
+        /// Payment Cryptography.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use this operation to generate a KEK validation response, by setting
+        /// <c>KekValidationType</c> to <c>KekValidationResponse</c> and providing the incoming
+        /// KRs. This operation then calculates a KRr. To learn more about more about node-to-node
+        /// initialization, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.kekvalidation.html">Validation
+        /// of KEK</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -566,8 +593,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateAs2805KekValidation service method.</param>
@@ -593,6 +621,148 @@ namespace Amazon.PaymentCryptographyData
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateAs2805KekValidation">REST API Reference for GenerateAs2805KekValidation Operation</seealso>
         Task<GenerateAs2805KekValidationResponse> GenerateAs2805KekValidationAsync(GenerateAs2805KekValidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GenerateAuthRequestCryptogram
+
+
+        /// <summary>
+        /// Generates an Authorization Request Cryptogram (ARQC) for an EMV chip payment card
+        /// authorization. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.generateauthrequestcryptogram.html">Generate
+        /// auth request cryptogram</a> in the <i>Amazon Web Services Payment Cryptography User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// ARQC generation uses an Issuer Master Key (IMK) for application cryptograms (TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS)
+        /// to derive a session key, which is then used to generate the cryptogram from the provided
+        /// transaction data (when applicable). To use this operation, you must first create or
+        /// import an IMK-AC key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// or <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
+        /// The <c>KeyModesOfUse</c> should be set to <c>DeriveKey</c> for the IMK-AC encryption
+        /// key.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation is intended for development and testing scenarios only. It is not recommended
+        /// to use this operation as a substitute for card-based cryptogram generation in production
+        /// payment flows.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+        /// key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
+        /// types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography
+        /// User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>VerifyAuthRequestCryptogram</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateAuthRequestCryptogram service method.</param>
+        /// 
+        /// <returns>The response from the GenerateAuthRequestCryptogram service method, as returned by PaymentCryptographyData.</returns>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ResourceNotFoundException">
+        /// The request was denied due to an invalid resource error.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateAuthRequestCryptogram">REST API Reference for GenerateAuthRequestCryptogram Operation</seealso>
+        GenerateAuthRequestCryptogramResponse GenerateAuthRequestCryptogram(GenerateAuthRequestCryptogramRequest request);
+
+
+
+        /// <summary>
+        /// Generates an Authorization Request Cryptogram (ARQC) for an EMV chip payment card
+        /// authorization. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.generateauthrequestcryptogram.html">Generate
+        /// auth request cryptogram</a> in the <i>Amazon Web Services Payment Cryptography User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// ARQC generation uses an Issuer Master Key (IMK) for application cryptograms (TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS)
+        /// to derive a session key, which is then used to generate the cryptogram from the provided
+        /// transaction data (when applicable). To use this operation, you must first create or
+        /// import an IMK-AC key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// or <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
+        /// The <c>KeyModesOfUse</c> should be set to <c>DeriveKey</c> for the IMK-AC encryption
+        /// key.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation is intended for development and testing scenarios only. It is not recommended
+        /// to use this operation as a substitute for card-based cryptogram generation in production
+        /// payment flows.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+        /// key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
+        /// types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography
+        /// User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>VerifyAuthRequestCryptogram</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateAuthRequestCryptogram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateAuthRequestCryptogram service method, as returned by PaymentCryptographyData.</returns>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ResourceNotFoundException">
+        /// The request was denied due to an invalid resource error.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateAuthRequestCryptogram">REST API Reference for GenerateAuthRequestCryptogram Operation</seealso>
+        Task<GenerateAuthRequestCryptogramResponse> GenerateAuthRequestCryptogramAsync(GenerateAuthRequestCryptogramRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -625,8 +795,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -692,8 +863,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -768,8 +940,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -833,8 +1006,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -916,8 +1090,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -997,8 +1172,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1074,8 +1250,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1149,8 +1326,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1237,8 +1415,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1325,8 +1504,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1414,8 +1594,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1494,8 +1675,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1609,8 +1791,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1711,8 +1894,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1786,8 +1970,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1858,8 +2043,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1932,8 +2118,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -2004,8 +2191,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -2077,8 +2265,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -2136,8 +2325,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -2203,8 +2393,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -2268,8 +2459,9 @@ namespace Amazon.PaymentCryptographyData
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use</b>: This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>

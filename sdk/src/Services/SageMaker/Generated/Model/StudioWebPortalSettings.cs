@@ -35,10 +35,34 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class StudioWebPortalSettings
     {
+        private ExecutionRoleSessionNameMode _executionRoleSessionNameMode;
         private List<string> _hiddenAppTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _hiddenInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _hiddenMlTools = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<HiddenSageMakerImage> _hiddenSageMakerImageVersionAliases = AWSConfigs.InitializeCollections ? new List<HiddenSageMakerImage>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleSessionNameMode. 
+        /// <para>
+        /// The execution role session name mode. If this value is set to <c>USER_IDENTITY</c>,
+        /// the session name of the execution role corresponds to the user's identity. For IAM
+        /// domains, the session name is the IAM session name used to generate the presigned URL.
+        /// For IAM Identity Center domains, the session name is the username of the associated
+        /// IAM Identity Center user. If this value is set to <c>STATIC</c> or is not set, the
+        /// session name defaults to <c>SageMaker</c>.
+        /// </para>
+        /// </summary>
+        public ExecutionRoleSessionNameMode ExecutionRoleSessionNameMode
+        {
+            get { return this._executionRoleSessionNameMode; }
+            set { this._executionRoleSessionNameMode = value; }
+        }
+
+        // Check to see if ExecutionRoleSessionNameMode property is set
+        internal bool IsSetExecutionRoleSessionNameMode()
+        {
+            return this._executionRoleSessionNameMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HiddenAppTypes. 

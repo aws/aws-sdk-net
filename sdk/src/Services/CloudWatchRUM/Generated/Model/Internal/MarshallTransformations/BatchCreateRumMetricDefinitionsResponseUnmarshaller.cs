@@ -52,13 +52,13 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchCreateRumMetricDefinitionsError, BatchCreateRumMetricDefinitionsErrorUnmarshaller>(BatchCreateRumMetricDefinitionsErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricDefinitions", targetDepth))
+                if (context.TestExpression("MetricDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDefinition, MetricDefinitionUnmarshaller>(MetricDefinitionUnmarshaller.Instance);
                     response.MetricDefinitions = unmarshaller.Unmarshall(context, ref reader);

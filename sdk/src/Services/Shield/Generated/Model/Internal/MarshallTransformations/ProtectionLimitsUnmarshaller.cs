@@ -56,7 +56,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProtectedResourceTypeLimits", targetDepth))
+                if (context.TestExpression("ProtectedResourceTypeLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
                     unmarshalledObject.ProtectedResourceTypeLimits = unmarshaller.Unmarshall(context, ref reader);

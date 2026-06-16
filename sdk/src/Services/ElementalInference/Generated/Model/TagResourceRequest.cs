@@ -44,7 +44,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource where you want to add tags. 
+        /// The ARN of the resource where you want to add tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

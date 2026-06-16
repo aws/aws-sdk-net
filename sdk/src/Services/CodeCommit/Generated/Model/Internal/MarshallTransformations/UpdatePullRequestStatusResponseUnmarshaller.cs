@@ -52,7 +52,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pullRequest", targetDepth))
+                if (context.TestExpression("pullRequest", targetDepth, ref reader))
                 {
                     var unmarshaller = PullRequestUnmarshaller.Instance;
                     response.PullRequest = unmarshaller.Unmarshall(context, ref reader);

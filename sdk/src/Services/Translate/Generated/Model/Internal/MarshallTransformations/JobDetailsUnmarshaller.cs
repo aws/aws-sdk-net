@@ -56,19 +56,19 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocumentsWithErrorsCount", targetDepth))
+                if (context.TestExpression("DocumentsWithErrorsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DocumentsWithErrorsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputDocumentsCount", targetDepth))
+                if (context.TestExpression("InputDocumentsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InputDocumentsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TranslatedDocumentsCount", targetDepth))
+                if (context.TestExpression("TranslatedDocumentsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TranslatedDocumentsCount = unmarshaller.Unmarshall(context, ref reader);

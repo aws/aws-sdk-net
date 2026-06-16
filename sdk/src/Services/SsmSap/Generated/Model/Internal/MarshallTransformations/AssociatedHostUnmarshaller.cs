@@ -56,25 +56,25 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Ec2InstanceId", targetDepth))
+                if (context.TestExpression("Ec2InstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ec2InstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Hostname", targetDepth))
+                if (context.TestExpression("Hostname", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpAddresses", targetDepth))
+                if (context.TestExpression("IpAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IpAddressMember, IpAddressMemberUnmarshaller>(IpAddressMemberUnmarshaller.Instance);
                     unmarshalledObject.IpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OsVersion", targetDepth))
+                if (context.TestExpression("OsVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OsVersion = unmarshaller.Unmarshall(context, ref reader);

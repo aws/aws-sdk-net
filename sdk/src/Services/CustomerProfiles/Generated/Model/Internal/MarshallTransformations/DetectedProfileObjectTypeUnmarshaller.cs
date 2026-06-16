@@ -56,19 +56,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Fields", targetDepth))
+                if (context.TestExpression("Fields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ObjectTypeField, StringUnmarshaller, ObjectTypeFieldUnmarshaller>(StringUnmarshaller.Instance, ObjectTypeFieldUnmarshaller.Instance);
                     unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Keys", targetDepth))
+                if (context.TestExpression("Keys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<ObjectTypeKey>, StringUnmarshaller, JsonListUnmarshaller<ObjectTypeKey,ObjectTypeKeyUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<ObjectTypeKey, ObjectTypeKeyUnmarshaller>(ObjectTypeKeyUnmarshaller.Instance));
                     unmarshalledObject.Keys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceLastUpdatedTimestampFormat", targetDepth))
+                if (context.TestExpression("SourceLastUpdatedTimestampFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceLastUpdatedTimestampFormat = unmarshaller.Unmarshall(context, ref reader);

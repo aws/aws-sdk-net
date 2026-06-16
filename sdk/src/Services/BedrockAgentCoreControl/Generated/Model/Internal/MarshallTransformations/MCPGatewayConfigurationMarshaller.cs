@@ -58,6 +58,28 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SearchType);
             }
 
+            if(requestObject.IsSetSessionConfiguration())
+            {
+                context.Writer.WritePropertyName("sessionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SessionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SessionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetStreamingConfiguration())
+            {
+                context.Writer.WritePropertyName("streamingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.StreamingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSupportedVersions())
             {
                 context.Writer.WritePropertyName("supportedVersions");

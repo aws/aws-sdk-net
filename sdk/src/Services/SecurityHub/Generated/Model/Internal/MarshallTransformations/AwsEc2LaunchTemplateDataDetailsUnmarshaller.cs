@@ -56,181 +56,181 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlockDeviceMappingSet", targetDepth))
+                if (context.TestExpression("BlockDeviceMappingSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails, AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsUnmarshaller>(AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.BlockDeviceMappingSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityReservationSpecification", targetDepth))
+                if (context.TestExpression("CapacityReservationSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetailsUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservationSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CpuOptions", targetDepth))
+                if (context.TestExpression("CpuOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataCpuOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.CpuOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreditSpecification", targetDepth))
+                if (context.TestExpression("CreditSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataCreditSpecificationDetailsUnmarshaller.Instance;
                     unmarshalledObject.CreditSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisableApiStop", targetDepth))
+                if (context.TestExpression("DisableApiStop", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableApiStop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisableApiTermination", targetDepth))
+                if (context.TestExpression("DisableApiTermination", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableApiTermination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EbsOptimized", targetDepth))
+                if (context.TestExpression("EbsOptimized", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElasticGpuSpecificationSet", targetDepth))
+                if (context.TestExpression("ElasticGpuSpecificationSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails, AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsUnmarshaller>(AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.ElasticGpuSpecificationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElasticInferenceAcceleratorSet", targetDepth))
+                if (context.TestExpression("ElasticInferenceAcceleratorSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails, AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsUnmarshaller>(AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.ElasticInferenceAcceleratorSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnclaveOptions", targetDepth))
+                if (context.TestExpression("EnclaveOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataEnclaveOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.EnclaveOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HibernationOptions", targetDepth))
+                if (context.TestExpression("HibernationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataHibernationOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.HibernationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IamInstanceProfile", targetDepth))
+                if (context.TestExpression("IamInstanceProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataIamInstanceProfileDetailsUnmarshaller.Instance;
                     unmarshalledObject.IamInstanceProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageId", targetDepth))
+                if (context.TestExpression("ImageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceInitiatedShutdownBehavior", targetDepth))
+                if (context.TestExpression("InstanceInitiatedShutdownBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceInitiatedShutdownBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceMarketOptions", targetDepth))
+                if (context.TestExpression("InstanceMarketOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.InstanceMarketOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceRequirements", targetDepth))
+                if (context.TestExpression("InstanceRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataInstanceRequirementsDetailsUnmarshaller.Instance;
                     unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KernelId", targetDepth))
+                if (context.TestExpression("KernelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KernelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyName", targetDepth))
+                if (context.TestExpression("KeyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseSet", targetDepth))
+                if (context.TestExpression("LicenseSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2LaunchTemplateDataLicenseSetDetails, AwsEc2LaunchTemplateDataLicenseSetDetailsUnmarshaller>(AwsEc2LaunchTemplateDataLicenseSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.LicenseSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaintenanceOptions", targetDepth))
+                if (context.TestExpression("MaintenanceOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.MaintenanceOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataOptions", targetDepth))
+                if (context.TestExpression("MetadataOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataMetadataOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.MetadataOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Monitoring", targetDepth))
+                if (context.TestExpression("Monitoring", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataMonitoringDetailsUnmarshaller.Instance;
                     unmarshalledObject.Monitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkInterfaceSet", targetDepth))
+                if (context.TestExpression("NetworkInterfaceSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails, AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsUnmarshaller>(AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.NetworkInterfaceSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Placement", targetDepth))
+                if (context.TestExpression("Placement", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataPlacementDetailsUnmarshaller.Instance;
                     unmarshalledObject.Placement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrivateDnsNameOptions", targetDepth))
+                if (context.TestExpression("PrivateDnsNameOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.PrivateDnsNameOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RamDiskId", targetDepth))
+                if (context.TestExpression("RamDiskId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RamDiskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupIdSet", targetDepth))
+                if (context.TestExpression("SecurityGroupIdSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroupIdSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroupSet", targetDepth))
+                if (context.TestExpression("SecurityGroupSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroupSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserData", targetDepth))
+                if (context.TestExpression("UserData", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserData = unmarshaller.Unmarshall(context, ref reader);

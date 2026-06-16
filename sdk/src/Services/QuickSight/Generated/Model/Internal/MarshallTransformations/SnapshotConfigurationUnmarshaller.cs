@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationConfiguration", targetDepth))
+                if (context.TestExpression("DestinationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SnapshotDestinationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DestinationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileGroups", targetDepth))
+                if (context.TestExpression("FileGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SnapshotFileGroup, SnapshotFileGroupUnmarshaller>(SnapshotFileGroupUnmarshaller.Instance);
                     unmarshalledObject.FileGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Parameters", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ParametersUnmarshaller.Instance;
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);

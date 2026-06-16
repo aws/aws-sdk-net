@@ -56,31 +56,31 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DuplicateTimestamps", targetDepth))
+                if (context.TestExpression("DuplicateTimestamps", targetDepth, ref reader))
                 {
                     var unmarshaller = DuplicateTimestampsUnmarshaller.Instance;
                     unmarshalledObject.DuplicateTimestamps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsufficientSensorData", targetDepth))
+                if (context.TestExpression("InsufficientSensorData", targetDepth, ref reader))
                 {
                     var unmarshaller = InsufficientSensorDataUnmarshaller.Instance;
                     unmarshalledObject.InsufficientSensorData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvalidSensorData", targetDepth))
+                if (context.TestExpression("InvalidSensorData", targetDepth, ref reader))
                 {
                     var unmarshaller = InvalidSensorDataUnmarshaller.Instance;
                     unmarshalledObject.InvalidSensorData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MissingSensorData", targetDepth))
+                if (context.TestExpression("MissingSensorData", targetDepth, ref reader))
                 {
                     var unmarshaller = MissingSensorDataUnmarshaller.Instance;
                     unmarshalledObject.MissingSensorData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnsupportedTimestamps", targetDepth))
+                if (context.TestExpression("UnsupportedTimestamps", targetDepth, ref reader))
                 {
                     var unmarshaller = UnsupportedTimestampsUnmarshaller.Instance;
                     unmarshalledObject.UnsupportedTimestamps = unmarshaller.Unmarshall(context, ref reader);

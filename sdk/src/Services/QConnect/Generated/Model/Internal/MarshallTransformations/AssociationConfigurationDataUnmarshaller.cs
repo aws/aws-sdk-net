@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("knowledgeBaseAssociationConfigurationData", targetDepth))
+                if (context.TestExpression("knowledgeBaseAssociationConfigurationData", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseAssociationConfigurationDataUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseAssociationConfigurationData = unmarshaller.Unmarshall(context, ref reader);

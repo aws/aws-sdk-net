@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MatchedRuleCategories", targetDepth))
+                if (context.TestExpression("MatchedRuleCategories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationAutomationRuleCategory, EvaluationAutomationRuleCategoryUnmarshaller>(EvaluationAutomationRuleCategoryUnmarshaller.Instance);
                     unmarshalledObject.MatchedRuleCategories = unmarshaller.Unmarshall(context, ref reader);

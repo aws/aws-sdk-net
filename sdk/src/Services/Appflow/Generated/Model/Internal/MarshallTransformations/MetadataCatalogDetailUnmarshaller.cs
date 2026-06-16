@@ -56,25 +56,25 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("catalogType", targetDepth))
+                if (context.TestExpression("catalogType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CatalogType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("partitionRegistrationOutput", targetDepth))
+                if (context.TestExpression("partitionRegistrationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = RegistrationOutputUnmarshaller.Instance;
                     unmarshalledObject.PartitionRegistrationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tableName", targetDepth))
+                if (context.TestExpression("tableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tableRegistrationOutput", targetDepth))
+                if (context.TestExpression("tableRegistrationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = RegistrationOutputUnmarshaller.Instance;
                     unmarshalledObject.TableRegistrationOutput = unmarshaller.Unmarshall(context, ref reader);

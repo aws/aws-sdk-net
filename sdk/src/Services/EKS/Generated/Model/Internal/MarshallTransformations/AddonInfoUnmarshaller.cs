@@ -56,43 +56,43 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addonName", targetDepth))
+                if (context.TestExpression("addonName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddonName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addonVersions", targetDepth))
+                if (context.TestExpression("addonVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AddonVersionInfo, AddonVersionInfoUnmarshaller>(AddonVersionInfoUnmarshaller.Instance);
                     unmarshalledObject.AddonVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultNamespace", targetDepth))
+                if (context.TestExpression("defaultNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("marketplaceInformation", targetDepth))
+                if (context.TestExpression("marketplaceInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = MarketplaceInformationUnmarshaller.Instance;
                     unmarshalledObject.MarketplaceInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("owner", targetDepth))
+                if (context.TestExpression("owner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publisher", targetDepth))
+                if (context.TestExpression("publisher", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Publisher = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

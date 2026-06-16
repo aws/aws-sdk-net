@@ -71,6 +71,60 @@ namespace Amazon.OpenSearchServerless
 
 
     /// <summary>
+    /// Constants used for properties of type AutoscalingStatus.
+    /// </summary>
+    public class AutoscalingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTION_SCALING_DOWN for AutoscalingStatus
+        /// </summary>
+        public static readonly AutoscalingStatus ACTION_SCALING_DOWN = new AutoscalingStatus("ACTION_SCALING_DOWN");
+        /// <summary>
+        /// Constant ACTION_SCALING_UP for AutoscalingStatus
+        /// </summary>
+        public static readonly AutoscalingStatus ACTION_SCALING_UP = new AutoscalingStatus("ACTION_SCALING_UP");
+        /// <summary>
+        /// Constant NO_ACTION for AutoscalingStatus
+        /// </summary>
+        public static readonly AutoscalingStatus NO_ACTION = new AutoscalingStatus("NO_ACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoscalingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoscalingStatus FindValue(string value)
+        {
+            return FindValue<AutoscalingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoscalingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CollectionStatus.
     /// </summary>
     public class CollectionStatus : ConstantClass
@@ -92,6 +146,14 @@ namespace Amazon.OpenSearchServerless
         /// Constant FAILED for CollectionStatus
         /// </summary>
         public static readonly CollectionStatus FAILED = new CollectionStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for CollectionStatus
+        /// </summary>
+        public static readonly CollectionStatus UPDATE_FAILED = new CollectionStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for CollectionStatus
+        /// </summary>
+        public static readonly CollectionStatus UPDATING = new CollectionStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -176,6 +238,56 @@ namespace Amazon.OpenSearchServerless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CollectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeletionProtection.
+    /// </summary>
+    public class DeletionProtection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DeletionProtection
+        /// </summary>
+        public static readonly DeletionProtection DISABLED = new DeletionProtection("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DeletionProtection
+        /// </summary>
+        public static readonly DeletionProtection ENABLED = new DeletionProtection("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeletionProtection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletionProtection FindValue(string value)
+        {
+            return FindValue<DeletionProtection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletionProtection(string value)
         {
             return FindValue(value);
         }
@@ -476,6 +588,56 @@ namespace Amazon.OpenSearchServerless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServerlessGeneration.
+    /// </summary>
+    public class ServerlessGeneration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIC for ServerlessGeneration
+        /// </summary>
+        public static readonly ServerlessGeneration CLASSIC = new ServerlessGeneration("CLASSIC");
+        /// <summary>
+        /// Constant NEXTGEN for ServerlessGeneration
+        /// </summary>
+        public static readonly ServerlessGeneration NEXTGEN = new ServerlessGeneration("NEXTGEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServerlessGeneration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServerlessGeneration FindValue(string value)
+        {
+            return FindValue<ServerlessGeneration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServerlessGeneration(string value)
         {
             return FindValue(value);
         }

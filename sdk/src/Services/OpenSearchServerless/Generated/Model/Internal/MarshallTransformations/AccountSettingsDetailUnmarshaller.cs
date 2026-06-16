@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacityLimits", targetDepth))
+                if (context.TestExpression("capacityLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityLimitsUnmarshaller.Instance;
                     unmarshalledObject.CapacityLimits = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataflowEndpointName", targetDepth))
+                if (context.TestExpression("dataflowEndpointName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataflowEndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataflowEndpointRegion", targetDepth))
+                if (context.TestExpression("dataflowEndpointRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataflowEndpointRegion = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisableUseAsDirectQuerySource", targetDepth))
+                if (context.TestExpression("DisableUseAsDirectQuerySource", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableUseAsDirectQuerySource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisableUseAsImportedSource", targetDepth))
+                if (context.TestExpression("DisableUseAsImportedSource", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableUseAsImportedSource = unmarshaller.Unmarshall(context, ref reader);

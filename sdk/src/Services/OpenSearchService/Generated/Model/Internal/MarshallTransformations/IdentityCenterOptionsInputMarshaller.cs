@@ -58,6 +58,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.IdentityCenterInstanceARN);
             }
 
+            if(requestObject.IsSetIdentityCenterInstanceRegion())
+            {
+                context.Writer.WritePropertyName("IdentityCenterInstanceRegion");
+                context.Writer.WriteStringValue(requestObject.IdentityCenterInstanceRegion);
+            }
+
             if(requestObject.IsSetRolesKey())
             {
                 context.Writer.WritePropertyName("RolesKey");

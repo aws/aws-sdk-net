@@ -56,25 +56,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateAuthorityArn", targetDepth))
+                if (context.TestExpression("CertificateAuthorityArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CertificateAuthorityArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CheckCertificateRevocationStatus", targetDepth))
+                if (context.TestExpression("CheckCertificateRevocationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = CheckCertificateRevocationStatusActionsUnmarshaller.Instance;
                     unmarshalledObject.CheckCertificateRevocationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scopes", targetDepth))
+                if (context.TestExpression("Scopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServerCertificateScope, ServerCertificateScopeUnmarshaller>(ServerCertificateScopeUnmarshaller.Instance);
                     unmarshalledObject.Scopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerCertificates", targetDepth))
+                if (context.TestExpression("ServerCertificates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServerCertificate, ServerCertificateUnmarshaller>(ServerCertificateUnmarshaller.Instance);
                     unmarshalledObject.ServerCertificates = unmarshaller.Unmarshall(context, ref reader);

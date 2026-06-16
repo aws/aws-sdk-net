@@ -56,19 +56,19 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NodeIdsToReboot", targetDepth))
+                if (context.TestExpression("NodeIdsToReboot", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NodeIdsToReboot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterApplyStatus", targetDepth))
+                if (context.TestExpression("ParameterApplyStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParameterApplyStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterGroupName", targetDepth))
+                if (context.TestExpression("ParameterGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParameterGroupName = unmarshaller.Unmarshall(context, ref reader);

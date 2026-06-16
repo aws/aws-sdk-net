@@ -52,19 +52,19 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Aliases", targetDepth))
+                if (context.TestExpression("Aliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AliasListEntry, AliasListEntryUnmarshaller>(AliasListEntryUnmarshaller.Instance);
                     response.Aliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Truncated", targetDepth))
+                if (context.TestExpression("Truncated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Truncated = unmarshaller.Unmarshall(context, ref reader);

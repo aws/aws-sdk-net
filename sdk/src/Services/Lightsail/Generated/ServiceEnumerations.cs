@@ -4149,6 +4149,60 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type OriginIpAddressTypeEnum.
+    /// </summary>
+    public class OriginIpAddressTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for OriginIpAddressTypeEnum
+        /// </summary>
+        public static readonly OriginIpAddressTypeEnum Dualstack = new OriginIpAddressTypeEnum("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for OriginIpAddressTypeEnum
+        /// </summary>
+        public static readonly OriginIpAddressTypeEnum Ipv4 = new OriginIpAddressTypeEnum("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for OriginIpAddressTypeEnum
+        /// </summary>
+        public static readonly OriginIpAddressTypeEnum Ipv6 = new OriginIpAddressTypeEnum("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginIpAddressTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginIpAddressTypeEnum FindValue(string value)
+        {
+            return FindValue<OriginIpAddressTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginIpAddressTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OriginProtocolPolicyEnum.
     /// </summary>
     public class OriginProtocolPolicyEnum : ConstantClass
@@ -4537,6 +4591,10 @@ namespace Amazon.Lightsail
     {
 
         /// <summary>
+        /// Constant ApEast1 for RegionName
+        /// </summary>
+        public static readonly RegionName ApEast1 = new RegionName("ap-east-1");
+        /// <summary>
         /// Constant ApNortheast1 for RegionName
         /// </summary>
         public static readonly RegionName ApNortheast1 = new RegionName("ap-northeast-1");
@@ -4561,6 +4619,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly RegionName ApSoutheast3 = new RegionName("ap-southeast-3");
         /// <summary>
+        /// Constant ApSoutheast5 for RegionName
+        /// </summary>
+        public static readonly RegionName ApSoutheast5 = new RegionName("ap-southeast-5");
+        /// <summary>
         /// Constant CaCentral1 for RegionName
         /// </summary>
         public static readonly RegionName CaCentral1 = new RegionName("ca-central-1");
@@ -4573,6 +4635,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly RegionName EuNorth1 = new RegionName("eu-north-1");
         /// <summary>
+        /// Constant EuSouth2 for RegionName
+        /// </summary>
+        public static readonly RegionName EuSouth2 = new RegionName("eu-south-2");
+        /// <summary>
         /// Constant EuWest1 for RegionName
         /// </summary>
         public static readonly RegionName EuWest1 = new RegionName("eu-west-1");
@@ -4584,6 +4650,10 @@ namespace Amazon.Lightsail
         /// Constant EuWest3 for RegionName
         /// </summary>
         public static readonly RegionName EuWest3 = new RegionName("eu-west-3");
+        /// <summary>
+        /// Constant SaEast1 for RegionName
+        /// </summary>
+        public static readonly RegionName SaEast1 = new RegionName("sa-east-1");
         /// <summary>
         /// Constant UsEast1 for RegionName
         /// </summary>

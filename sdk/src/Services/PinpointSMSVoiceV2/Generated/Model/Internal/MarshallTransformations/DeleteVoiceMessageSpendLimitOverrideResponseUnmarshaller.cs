@@ -52,7 +52,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MonthlyLimit", targetDepth))
+                if (context.TestExpression("MonthlyLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.MonthlyLimit = unmarshaller.Unmarshall(context, ref reader);

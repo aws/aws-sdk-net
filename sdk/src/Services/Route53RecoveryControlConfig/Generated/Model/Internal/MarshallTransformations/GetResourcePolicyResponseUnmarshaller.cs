@@ -52,7 +52,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Policy", targetDepth))
+                if (context.TestExpression("Policy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Policy = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Sentiment", targetDepth))
+                if (context.TestExpression("Sentiment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Sentiment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SentimentScore", targetDepth))
+                if (context.TestExpression("SentimentScore", targetDepth, ref reader))
                 {
                     var unmarshaller = SentimentScoreUnmarshaller.Instance;
                     unmarshalledObject.SentimentScore = unmarshaller.Unmarshall(context, ref reader);

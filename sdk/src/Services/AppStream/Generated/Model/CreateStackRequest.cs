@@ -37,7 +37,9 @@ namespace Amazon.AppStream.Model
     public partial class CreateStackRequest : AmazonAppStreamRequest
     {
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
+        private AgentAccessConfig _agentAccessConfig;
         private ApplicationSettings _applicationSettings;
+        private ContentRedirection _contentRedirection;
         private string _description;
         private string _displayName;
         private List<string> _embedHostDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -75,6 +77,25 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AgentAccessConfig. 
+        /// <para>
+        /// The configuration for agent access on the stack. If specified, agent access is enabled
+        /// for the stack.
+        /// </para>
+        /// </summary>
+        public AgentAccessConfig AgentAccessConfig
+        {
+            get { return this._agentAccessConfig; }
+            set { this._agentAccessConfig = value; }
+        }
+
+        // Check to see if AgentAccessConfig property is set
+        internal bool IsSetAgentAccessConfig()
+        {
+            return this._agentAccessConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ApplicationSettings. 
         /// <para>
         /// The persistent application settings for users of a stack. When these settings are
@@ -92,6 +113,21 @@ namespace Amazon.AppStream.Model
         internal bool IsSetApplicationSettings()
         {
             return this._applicationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentRedirection.
+        /// </summary>
+        public ContentRedirection ContentRedirection
+        {
+            get { return this._contentRedirection; }
+            set { this._contentRedirection = value; }
+        }
+
+        // Check to see if ContentRedirection property is set
+        internal bool IsSetContentRedirection()
+        {
+            return this._contentRedirection != null;
         }
 
         /// <summary>

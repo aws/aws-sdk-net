@@ -56,55 +56,55 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetId", targetDepth))
+                if (context.TestExpression("assetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetRevision", targetDepth))
+                if (context.TestExpression("assetRevision", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssetRevision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetScope", targetDepth))
+                if (context.TestExpression("assetScope", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetScopeUnmarshaller.Instance;
                     unmarshalledObject.AssetScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureCause", targetDepth))
+                if (context.TestExpression("failureCause", targetDepth, ref reader))
                 {
                     var unmarshaller = FailureCauseUnmarshaller.Instance;
                     unmarshalledObject.FailureCause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureTimestamp", targetDepth))
+                if (context.TestExpression("failureTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FailureTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("grantedTimestamp", targetDepth))
+                if (context.TestExpression("grantedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.GrantedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permissions", targetDepth))
+                if (context.TestExpression("permissions", targetDepth, ref reader))
                 {
                     var unmarshaller = PermissionsUnmarshaller.Instance;
                     unmarshalledObject.Permissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetName", targetDepth))
+                if (context.TestExpression("targetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetName = unmarshaller.Unmarshall(context, ref reader);

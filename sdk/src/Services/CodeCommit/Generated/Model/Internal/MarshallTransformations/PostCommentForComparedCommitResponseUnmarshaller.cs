@@ -52,43 +52,43 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("afterBlobId", targetDepth))
+                if (context.TestExpression("afterBlobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AfterBlobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("afterCommitId", targetDepth))
+                if (context.TestExpression("afterCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AfterCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("beforeBlobId", targetDepth))
+                if (context.TestExpression("beforeBlobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BeforeBlobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("beforeCommitId", targetDepth))
+                if (context.TestExpression("beforeCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BeforeCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("comment", targetDepth, ref reader))
                 {
                     var unmarshaller = CommentUnmarshaller.Instance;
                     response.Comment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("location", targetDepth))
+                if (context.TestExpression("location", targetDepth, ref reader))
                 {
                     var unmarshaller = LocationUnmarshaller.Instance;
                     response.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryName", targetDepth))
+                if (context.TestExpression("repositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RepositoryName = unmarshaller.Unmarshall(context, ref reader);

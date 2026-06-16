@@ -52,13 +52,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suites", targetDepth))
+                if (context.TestExpression("suites", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Suite, SuiteUnmarshaller>(SuiteUnmarshaller.Instance);
                     response.Suites = unmarshaller.Unmarshall(context, ref reader);

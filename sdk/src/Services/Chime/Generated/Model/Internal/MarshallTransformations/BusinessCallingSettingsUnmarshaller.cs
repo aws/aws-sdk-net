@@ -56,7 +56,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CdrBucket", targetDepth))
+                if (context.TestExpression("CdrBucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CdrBucket = unmarshaller.Unmarshall(context, ref reader);

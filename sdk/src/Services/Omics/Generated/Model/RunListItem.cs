@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     public partial class RunListItem
     {
         private string _arn;
+        private string _batchId;
         private DateTime? _creationTime;
         private string _id;
         private string _name;
@@ -45,6 +46,7 @@ namespace Amazon.Omics.Model
         private int? _storageCapacity;
         private StorageType _storageType;
         private string _workflowId;
+        private string _workflowName;
         private string _workflowVersionName;
 
         /// <summary>
@@ -64,6 +66,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchId. 
+        /// <para>
+        /// The run's batch ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string BatchId
+        {
+            get { return this._batchId; }
+            set { this._batchId = value; }
+        }
+
+        // Check to see if BatchId property is set
+        internal bool IsSetBatchId()
+        {
+            return this._batchId != null;
         }
 
         /// <summary>
@@ -252,6 +273,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetWorkflowId()
         {
             return this._workflowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowName. 
+        /// <para>
+        /// The name of the workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string WorkflowName
+        {
+            get { return this._workflowName; }
+            set { this._workflowName = value; }
+        }
+
+        // Check to see if WorkflowName property is set
+        internal bool IsSetWorkflowName()
+        {
+            return this._workflowName != null;
         }
 
         /// <summary>

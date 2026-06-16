@@ -72,19 +72,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Field", targetDepth))
+                    if (context.TestExpression("Field", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Field = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Parameter", targetDepth))
+                    if (context.TestExpression("Parameter", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Parameter = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Reason", targetDepth))
+                    if (context.TestExpression("Reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

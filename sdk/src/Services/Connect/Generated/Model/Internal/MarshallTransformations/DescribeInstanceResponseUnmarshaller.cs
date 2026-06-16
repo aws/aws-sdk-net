@@ -52,13 +52,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Instance", targetDepth))
+                if (context.TestExpression("Instance", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceUnmarshaller.Instance;
                     response.Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationConfiguration", targetDepth))
+                if (context.TestExpression("ReplicationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationConfigurationUnmarshaller.Instance;
                     response.ReplicationConfiguration = unmarshaller.Unmarshall(context, ref reader);

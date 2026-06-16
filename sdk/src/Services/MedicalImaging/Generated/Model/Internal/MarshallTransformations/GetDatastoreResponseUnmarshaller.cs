@@ -52,7 +52,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datastoreProperties", targetDepth))
+                if (context.TestExpression("datastoreProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DatastorePropertiesUnmarshaller.Instance;
                     response.DatastoreProperties = unmarshaller.Unmarshall(context, ref reader);

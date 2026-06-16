@@ -56,19 +56,19 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("decodeConfig", targetDepth))
+                if (context.TestExpression("decodeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DecodeConfigUnmarshaller.Instance;
                     unmarshalledObject.DecodeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("demodulationConfig", targetDepth))
+                if (context.TestExpression("demodulationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DemodulationConfigUnmarshaller.Instance;
                     unmarshalledObject.DemodulationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spectrumConfig", targetDepth))
+                if (context.TestExpression("spectrumConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SpectrumConfigUnmarshaller.Instance;
                     unmarshalledObject.SpectrumConfig = unmarshaller.Unmarshall(context, ref reader);

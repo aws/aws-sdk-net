@@ -56,7 +56,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lambdaConflictHandlerArn", targetDepth))
+                if (context.TestExpression("lambdaConflictHandlerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LambdaConflictHandlerArn = unmarshaller.Unmarshall(context, ref reader);

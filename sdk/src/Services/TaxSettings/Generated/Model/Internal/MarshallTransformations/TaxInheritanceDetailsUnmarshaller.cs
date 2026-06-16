@@ -56,13 +56,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inheritanceObtainedReason", targetDepth))
+                if (context.TestExpression("inheritanceObtainedReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InheritanceObtainedReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentEntityId", targetDepth))
+                if (context.TestExpression("parentEntityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentEntityId = unmarshaller.Unmarshall(context, ref reader);

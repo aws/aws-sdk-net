@@ -56,43 +56,43 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsProducts", targetDepth))
+                if (context.TestExpression("AwsProducts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsProductDetails, AwsProductDetailsUnmarshaller>(AwsProductDetailsUnmarshaller.Instance);
                     unmarshalledObject.AwsProducts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrencyCode", targetDepth))
+                if (context.TestExpression("CurrencyCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Frequency", targetDepth))
+                if (context.TestExpression("Frequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAmount", targetDepth))
+                if (context.TestExpression("TotalAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAmountByCategory", targetDepth))
+                if (context.TestExpression("TotalAmountByCategory", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.TotalAmountByCategory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalOptimizedAmount", targetDepth))
+                if (context.TestExpression("TotalOptimizedAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalOptimizedAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalPotentialSavingsAmount", targetDepth))
+                if (context.TestExpression("TotalPotentialSavingsAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalPotentialSavingsAmount = unmarshaller.Unmarshall(context, ref reader);

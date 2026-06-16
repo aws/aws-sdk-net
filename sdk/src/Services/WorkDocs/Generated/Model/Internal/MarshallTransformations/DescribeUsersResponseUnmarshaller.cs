@@ -52,19 +52,19 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Marker", targetDepth))
+                if (context.TestExpression("Marker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Marker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfUsers", targetDepth))
+                if (context.TestExpression("TotalNumberOfUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalNumberOfUsers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Users", targetDepth))
+                if (context.TestExpression("Users", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<User, UserUnmarshaller>(UserUnmarshaller.Instance);
                     response.Users = unmarshaller.Unmarshall(context, ref reader);

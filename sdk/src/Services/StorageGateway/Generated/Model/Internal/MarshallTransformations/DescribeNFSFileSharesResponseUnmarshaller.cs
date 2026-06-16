@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NFSFileShareInfoList", targetDepth))
+                if (context.TestExpression("NFSFileShareInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NFSFileShareInfo, NFSFileShareInfoUnmarshaller>(NFSFileShareInfoUnmarshaller.Instance);
                     response.NFSFileShareInfoList = unmarshaller.Unmarshall(context, ref reader);

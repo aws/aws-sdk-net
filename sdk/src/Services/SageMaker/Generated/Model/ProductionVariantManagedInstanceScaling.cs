@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _maxInstanceCount;
         private int? _minInstanceCount;
+        private ProductionVariantManagedInstanceScalingScaleInPolicy _scaleInPolicy;
         private ManagedInstanceScalingStatus _status;
 
         /// <summary>
@@ -77,6 +78,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMinInstanceCount()
         {
             return this._minInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScaleInPolicy. 
+        /// <para>
+        /// Configures the scale-in behavior for managed instance scaling.
+        /// </para>
+        /// </summary>
+        public ProductionVariantManagedInstanceScalingScaleInPolicy ScaleInPolicy
+        {
+            get { return this._scaleInPolicy; }
+            set { this._scaleInPolicy = value; }
+        }
+
+        // Check to see if ScaleInPolicy property is set
+        internal bool IsSetScaleInPolicy()
+        {
+            return this._scaleInPolicy != null;
         }
 
         /// <summary>

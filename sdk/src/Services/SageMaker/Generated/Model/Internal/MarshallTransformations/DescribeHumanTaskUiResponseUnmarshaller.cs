@@ -52,31 +52,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanTaskUiArn", targetDepth))
+                if (context.TestExpression("HumanTaskUiArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HumanTaskUiArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanTaskUiName", targetDepth))
+                if (context.TestExpression("HumanTaskUiName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HumanTaskUiName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanTaskUiStatus", targetDepth))
+                if (context.TestExpression("HumanTaskUiStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HumanTaskUiStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UiTemplate", targetDepth))
+                if (context.TestExpression("UiTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = UiTemplateInfoUnmarshaller.Instance;
                     response.UiTemplate = unmarshaller.Unmarshall(context, ref reader);

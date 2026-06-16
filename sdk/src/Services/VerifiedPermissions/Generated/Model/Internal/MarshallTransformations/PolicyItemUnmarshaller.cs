@@ -56,61 +56,67 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actions", targetDepth))
+                if (context.TestExpression("actions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActionIdentifier, ActionIdentifierUnmarshaller>(ActionIdentifierUnmarshaller.Instance);
                     unmarshalledObject.Actions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdDate", targetDepth))
+                if (context.TestExpression("createdDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("definition", targetDepth))
+                if (context.TestExpression("definition", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicyDefinitionItemUnmarshaller.Instance;
                     unmarshalledObject.Definition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("effect", targetDepth))
+                if (context.TestExpression("effect", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Effect = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDate", targetDepth))
+                if (context.TestExpression("lastUpdatedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyId", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("policyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyStoreId", targetDepth))
+                if (context.TestExpression("policyStoreId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyStoreId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyType", targetDepth))
+                if (context.TestExpression("policyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("principal", targetDepth))
+                if (context.TestExpression("principal", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Principal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resource", targetDepth))
+                if (context.TestExpression("resource", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);

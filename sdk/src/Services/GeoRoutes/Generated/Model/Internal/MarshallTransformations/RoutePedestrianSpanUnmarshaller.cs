@@ -56,91 +56,91 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BestCaseDuration", targetDepth))
+                if (context.TestExpression("BestCaseDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BestCaseDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Country", targetDepth))
+                if (context.TestExpression("Country", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Distance", targetDepth))
+                if (context.TestExpression("Distance", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Distance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Duration", targetDepth))
+                if (context.TestExpression("Duration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamicSpeed", targetDepth))
+                if (context.TestExpression("DynamicSpeed", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteSpanDynamicSpeedDetailsUnmarshaller.Instance;
                     unmarshalledObject.DynamicSpeed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionalClassification", targetDepth))
+                if (context.TestExpression("FunctionalClassification", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FunctionalClassification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeometryOffset", targetDepth))
+                if (context.TestExpression("GeometryOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GeometryOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Incidents", targetDepth))
+                if (context.TestExpression("Incidents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.Incidents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Names", targetDepth))
+                if (context.TestExpression("Names", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LocalizedString, LocalizedStringUnmarshaller>(LocalizedStringUnmarshaller.Instance);
                     unmarshalledObject.Names = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PedestrianAccess", targetDepth))
+                if (context.TestExpression("PedestrianAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PedestrianAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Region", targetDepth))
+                if (context.TestExpression("Region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoadAttributes", targetDepth))
+                if (context.TestExpression("RoadAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RoadAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteNumbers", targetDepth))
+                if (context.TestExpression("RouteNumbers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteNumber, RouteNumberUnmarshaller>(RouteNumberUnmarshaller.Instance);
                     unmarshalledObject.RouteNumbers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpeedLimit", targetDepth))
+                if (context.TestExpression("SpeedLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteSpanSpeedLimitDetailsUnmarshaller.Instance;
                     unmarshalledObject.SpeedLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TypicalDuration", targetDepth))
+                if (context.TestExpression("TypicalDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TypicalDuration = unmarshaller.Unmarshall(context, ref reader);

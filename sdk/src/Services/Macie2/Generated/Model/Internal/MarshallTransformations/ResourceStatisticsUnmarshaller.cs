@@ -56,55 +56,55 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("totalBytesClassified", targetDepth))
+                if (context.TestExpression("totalBytesClassified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalBytesClassified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalDetections", targetDepth))
+                if (context.TestExpression("totalDetections", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalDetections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalDetectionsSuppressed", targetDepth))
+                if (context.TestExpression("totalDetectionsSuppressed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalDetectionsSuppressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalItemsClassified", targetDepth))
+                if (context.TestExpression("totalItemsClassified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsClassified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalItemsSensitive", targetDepth))
+                if (context.TestExpression("totalItemsSensitive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSensitive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalItemsSkipped", targetDepth))
+                if (context.TestExpression("totalItemsSkipped", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkipped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalItemsSkippedInvalidEncryption", targetDepth))
+                if (context.TestExpression("totalItemsSkippedInvalidEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkippedInvalidEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalItemsSkippedInvalidKms", targetDepth))
+                if (context.TestExpression("totalItemsSkippedInvalidKms", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkippedInvalidKms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalItemsSkippedPermissionDenied", targetDepth))
+                if (context.TestExpression("totalItemsSkippedPermissionDenied", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkippedPermissionDenied = unmarshaller.Unmarshall(context, ref reader);

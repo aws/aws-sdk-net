@@ -56,13 +56,13 @@ namespace Amazon.DynamoDBStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndingSequenceNumber", targetDepth))
+                if (context.TestExpression("EndingSequenceNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndingSequenceNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartingSequenceNumber", targetDepth))
+                if (context.TestExpression("StartingSequenceNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartingSequenceNumber = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("status", targetDepth))
+                    if (context.TestExpression("status", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

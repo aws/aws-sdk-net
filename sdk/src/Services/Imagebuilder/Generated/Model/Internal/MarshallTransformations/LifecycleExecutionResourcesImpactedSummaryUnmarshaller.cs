@@ -56,7 +56,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hasImpactedResources", targetDepth))
+                if (context.TestExpression("hasImpactedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasImpactedResources = unmarshaller.Unmarshall(context, ref reader);

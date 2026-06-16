@@ -56,13 +56,13 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("syntheticDataEvaluationScores", targetDepth))
+                if (context.TestExpression("syntheticDataEvaluationScores", targetDepth, ref reader))
                 {
                     var unmarshaller = SyntheticDataEvaluationScoresUnmarshaller.Instance;
                     unmarshalledObject.SyntheticDataEvaluationScores = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("syntheticDataParameters", targetDepth))
+                if (context.TestExpression("syntheticDataParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = MLSyntheticDataParametersUnmarshaller.Instance;
                     unmarshalledObject.SyntheticDataParameters = unmarshaller.Unmarshall(context, ref reader);

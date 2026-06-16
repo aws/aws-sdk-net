@@ -52,13 +52,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExtendedSupport", targetDepth))
+                if (context.TestExpression("ExtendedSupport", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ExtendedSupport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepConcurrencyLevel", targetDepth))
+                if (context.TestExpression("StepConcurrencyLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.StepConcurrencyLevel = unmarshaller.Unmarshall(context, ref reader);

@@ -63,6 +63,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Ec2InstanceProfileArn);
             }
 
+            if(requestObject.IsSetInstanceMetadataTagsPropagation())
+            {
+                context.Writer.WritePropertyName("instanceMetadataTagsPropagation");
+                context.Writer.WriteBooleanValue(requestObject.InstanceMetadataTagsPropagation.Value);
+            }
+
             if(requestObject.IsSetInstanceRequirements())
             {
                 context.Writer.WritePropertyName("instanceRequirements");
@@ -70,6 +76,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
                 var marshaller = InstanceRequirementsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.InstanceRequirements, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetLocalStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("localStorageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedInstancesLocalStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LocalStorageConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

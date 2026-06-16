@@ -52,7 +52,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Path", targetDepth))
+                if (context.TestExpression("Path", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourcePathUnmarshaller.Instance;
                     response.Path = unmarshaller.Unmarshall(context, ref reader);

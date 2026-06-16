@@ -56,37 +56,37 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationEncryptionConfigurationDescription", targetDepth))
+                if (context.TestExpression("ApplicationEncryptionConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationEncryptionConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ApplicationEncryptionConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationVersionId", targetDepth))
+                if (context.TestExpression("ApplicationVersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuntimeEnvironment", targetDepth))
+                if (context.TestExpression("RuntimeEnvironment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuntimeEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotCreationTimestamp", targetDepth))
+                if (context.TestExpression("SnapshotCreationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SnapshotCreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotName", targetDepth))
+                if (context.TestExpression("SnapshotName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotStatus", targetDepth))
+                if (context.TestExpression("SnapshotStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotStatus = unmarshaller.Unmarshall(context, ref reader);

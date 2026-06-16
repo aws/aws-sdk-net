@@ -56,37 +56,37 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Currency", targetDepth))
+                if (context.TestExpression("Currency", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpenseCurrencyUnmarshaller.Instance;
                     unmarshalledObject.Currency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupProperties", targetDepth))
+                if (context.TestExpression("GroupProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpenseGroupProperty, ExpenseGroupPropertyUnmarshaller>(ExpenseGroupPropertyUnmarshaller.Instance);
                     unmarshalledObject.GroupProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelDetection", targetDepth))
+                if (context.TestExpression("LabelDetection", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpenseDetectionUnmarshaller.Instance;
                     unmarshalledObject.LabelDetection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PageNumber", targetDepth))
+                if (context.TestExpression("PageNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpenseTypeUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueDetection", targetDepth))
+                if (context.TestExpression("ValueDetection", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpenseDetectionUnmarshaller.Instance;
                     unmarshalledObject.ValueDetection = unmarshaller.Unmarshall(context, ref reader);

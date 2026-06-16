@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedInputTypes", targetDepth))
+                if (context.TestExpression("allowedInputTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = AllowedInputTypesUnmarshaller.Instance;
                     unmarshalledObject.AllowedInputTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowInterrupt", targetDepth))
+                if (context.TestExpression("allowInterrupt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowInterrupt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audioAndDTMFInputSpecification", targetDepth))
+                if (context.TestExpression("audioAndDTMFInputSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioAndDTMFInputSpecificationUnmarshaller.Instance;
                     unmarshalledObject.AudioAndDTMFInputSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textInputSpecification", targetDepth))
+                if (context.TestExpression("textInputSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = TextInputSpecificationUnmarshaller.Instance;
                     unmarshalledObject.TextInputSpecification = unmarshaller.Unmarshall(context, ref reader);

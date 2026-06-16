@@ -72,7 +72,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("RequestId", targetDepth))
+                    if (context.TestExpression("RequestId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RequestId = unmarshaller.Unmarshall(context, ref reader);

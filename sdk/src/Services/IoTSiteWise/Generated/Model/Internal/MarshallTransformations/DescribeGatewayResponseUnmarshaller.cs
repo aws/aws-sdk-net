@@ -52,49 +52,49 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationDate", targetDepth))
+                if (context.TestExpression("creationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayArn", targetDepth))
+                if (context.TestExpression("gatewayArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayCapabilitySummaries", targetDepth))
+                if (context.TestExpression("gatewayCapabilitySummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GatewayCapabilitySummary, GatewayCapabilitySummaryUnmarshaller>(GatewayCapabilitySummaryUnmarshaller.Instance);
                     response.GatewayCapabilitySummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayId", targetDepth))
+                if (context.TestExpression("gatewayId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayName", targetDepth))
+                if (context.TestExpression("gatewayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayPlatform", targetDepth))
+                if (context.TestExpression("gatewayPlatform", targetDepth, ref reader))
                 {
                     var unmarshaller = GatewayPlatformUnmarshaller.Instance;
                     response.GatewayPlatform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayVersion", targetDepth))
+                if (context.TestExpression("gatewayVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdateDate", targetDepth))
+                if (context.TestExpression("lastUpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdateDate = unmarshaller.Unmarshall(context, ref reader);

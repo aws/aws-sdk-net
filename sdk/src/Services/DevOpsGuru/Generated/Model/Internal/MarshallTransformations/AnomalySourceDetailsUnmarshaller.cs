@@ -56,13 +56,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchMetrics", targetDepth))
+                if (context.TestExpression("CloudWatchMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CloudWatchMetricsDetail, CloudWatchMetricsDetailUnmarshaller>(CloudWatchMetricsDetailUnmarshaller.Instance);
                     unmarshalledObject.CloudWatchMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PerformanceInsightsMetrics", targetDepth))
+                if (context.TestExpression("PerformanceInsightsMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PerformanceInsightsMetricsDetail, PerformanceInsightsMetricsDetailUnmarshaller>(PerformanceInsightsMetricsDetailUnmarshaller.Instance);
                     unmarshalledObject.PerformanceInsightsMetrics = unmarshaller.Unmarshall(context, ref reader);

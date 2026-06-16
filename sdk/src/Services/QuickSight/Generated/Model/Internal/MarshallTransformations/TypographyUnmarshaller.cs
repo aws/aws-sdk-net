@@ -56,49 +56,55 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AxisLabelFontConfiguration", targetDepth))
+                if (context.TestExpression("AxisLabelFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AxisLabelFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AxisTitleFontConfiguration", targetDepth))
+                if (context.TestExpression("AxisTitleFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AxisTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLabelFontConfiguration", targetDepth))
+                if (context.TestExpression("ControlTitleFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ControlTitleFontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ControlTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("DataLabelFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataLabelFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontFamilies", targetDepth))
+                if (context.TestExpression("FontFamilies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Font, FontUnmarshaller>(FontUnmarshaller.Instance);
                     unmarshalledObject.FontFamilies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LegendTitleFontConfiguration", targetDepth))
+                if (context.TestExpression("LegendTitleFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LegendTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LegendValueFontConfiguration", targetDepth))
+                if (context.TestExpression("LegendValueFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LegendValueFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualSubtitleFontConfiguration", targetDepth))
+                if (context.TestExpression("VisualSubtitleFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualSubtitleFontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VisualSubtitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualTitleFontConfiguration", targetDepth))
+                if (context.TestExpression("VisualTitleFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualTitleFontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VisualTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);

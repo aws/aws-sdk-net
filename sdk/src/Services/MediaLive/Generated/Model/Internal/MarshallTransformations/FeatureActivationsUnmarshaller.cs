@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inputPrepareScheduleActions", targetDepth))
+                if (context.TestExpression("inputPrepareScheduleActions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputPrepareScheduleActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputStaticImageOverlayScheduleActions", targetDepth))
+                if (context.TestExpression("outputStaticImageOverlayScheduleActions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputStaticImageOverlayScheduleActions = unmarshaller.Unmarshall(context, ref reader);

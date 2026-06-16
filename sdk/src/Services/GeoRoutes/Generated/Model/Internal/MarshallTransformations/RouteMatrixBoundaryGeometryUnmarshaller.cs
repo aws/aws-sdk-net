@@ -56,25 +56,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoCircle", targetDepth))
+                if (context.TestExpression("AutoCircle", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteMatrixAutoCircleUnmarshaller.Instance;
                     unmarshalledObject.AutoCircle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("BoundingBox", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Circle", targetDepth))
+                if (context.TestExpression("Circle", targetDepth, ref reader))
                 {
                     var unmarshaller = CircleUnmarshaller.Instance;
                     unmarshalledObject.Circle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Polygon", targetDepth))
+                if (context.TestExpression("Polygon", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<List<double>>, JsonListUnmarshaller<List<double>,JsonListUnmarshaller<double,DoubleUnmarshaller>>>(new JsonListUnmarshaller<List<double>, JsonListUnmarshaller<double,DoubleUnmarshaller>>(new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance)));
                     unmarshalledObject.Polygon = unmarshaller.Unmarshall(context, ref reader);

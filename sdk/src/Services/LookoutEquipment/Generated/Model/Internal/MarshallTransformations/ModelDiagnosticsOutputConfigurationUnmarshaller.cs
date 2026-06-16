@@ -56,13 +56,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KmsKeyId", targetDepth))
+                if (context.TestExpression("KmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3OutputConfiguration", targetDepth))
+                if (context.TestExpression("S3OutputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelDiagnosticsS3OutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3OutputConfiguration = unmarshaller.Unmarshall(context, ref reader);

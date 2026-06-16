@@ -56,61 +56,61 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeadLetterConfig", targetDepth))
+                if (context.TestExpression("DeadLetterConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
                     unmarshalledObject.DeadLetterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EcsParameters", targetDepth))
+                if (context.TestExpression("EcsParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsParametersUnmarshaller.Instance;
                     unmarshalledObject.EcsParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventBridgeParameters", targetDepth))
+                if (context.TestExpression("EventBridgeParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = EventBridgeParametersUnmarshaller.Instance;
                     unmarshalledObject.EventBridgeParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Input", targetDepth))
+                if (context.TestExpression("Input", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisParameters", targetDepth))
+                if (context.TestExpression("KinesisParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisParametersUnmarshaller.Instance;
                     unmarshalledObject.KinesisParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetryPolicy", targetDepth))
+                if (context.TestExpression("RetryPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryPolicyUnmarshaller.Instance;
                     unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerPipelineParameters", targetDepth))
+                if (context.TestExpression("SageMakerPipelineParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerPipelineParametersUnmarshaller.Instance;
                     unmarshalledObject.SageMakerPipelineParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqsParameters", targetDepth))
+                if (context.TestExpression("SqsParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SqsParametersUnmarshaller.Instance;
                     unmarshalledObject.SqsParameters = unmarshaller.Unmarshall(context, ref reader);

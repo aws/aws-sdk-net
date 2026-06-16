@@ -39,6 +39,11 @@ namespace Amazon.Tnb
 {
     /// <summary>
     /// <para>Implementation for accessing Tnb</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Telco Network Builder (TNB) is a network automation service that
     /// helps you deploy and manage telecom networks. AWS TNB helps you with the lifecycle

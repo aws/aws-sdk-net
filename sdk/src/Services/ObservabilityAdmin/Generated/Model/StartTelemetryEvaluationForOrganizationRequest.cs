@@ -36,6 +36,59 @@ namespace Amazon.ObservabilityAdmin.Model
     /// </summary>
     public partial class StartTelemetryEvaluationForOrganizationRequest : AmazonObservabilityAdminRequest
     {
+        private bool? _allRegions;
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AllRegions. 
+        /// <para>
+        ///  If set to <c>true</c>, telemetry evaluation for the organization starts in all Amazon
+        /// Web Services Regions where Amazon CloudWatch Observability Admin is available in the
+        /// current partition. The current region becomes the home region for managing multi-region
+        /// evaluation for the organization. When new regions become available, evaluation automatically
+        /// expands to include them. Mutually exclusive with <c>Regions</c>. 
+        /// </para>
+        /// </summary>
+        public bool? AllRegions
+        {
+            get { return this._allRegions; }
+            set { this._allRegions = value; }
+        }
+
+        // Check to see if AllRegions property is set
+        internal bool IsSetAllRegions()
+        {
+            return this._allRegions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        ///  An optional list of Amazon Web Services Regions to include in multi-region telemetry
+        /// evaluation for the organization. The current region is always implicitly included
+        /// and must not be specified in this list. When provided, telemetry evaluation starts
+        /// in the current region and propagates to all specified regions for the organization.
+        /// Mutually exclusive with <c>AllRegions</c>. If neither <c>Regions</c> nor <c>AllRegions</c>
+        /// is provided, the operation applies only to the current region. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

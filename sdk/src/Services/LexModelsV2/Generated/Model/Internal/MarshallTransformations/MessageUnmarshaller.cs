@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customPayload", targetDepth))
+                if (context.TestExpression("customPayload", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomPayloadUnmarshaller.Instance;
                     unmarshalledObject.CustomPayload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageResponseCard", targetDepth))
+                if (context.TestExpression("imageResponseCard", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageResponseCardUnmarshaller.Instance;
                     unmarshalledObject.ImageResponseCard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("plainTextMessage", targetDepth))
+                if (context.TestExpression("plainTextMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = PlainTextMessageUnmarshaller.Instance;
                     unmarshalledObject.PlainTextMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmlMessage", targetDepth))
+                if (context.TestExpression("ssmlMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = SSMLMessageUnmarshaller.Instance;
                     unmarshalledObject.SsmlMessage = unmarshaller.Unmarshall(context, ref reader);

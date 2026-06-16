@@ -52,7 +52,7 @@ namespace Amazon.UseServiceIdTestserviceId.Model.Internal.MarshallTransformation
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("testId", targetDepth))
+                if (context.TestExpression("testId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TestId = unmarshaller.Unmarshall(context, ref reader);

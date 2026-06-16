@@ -72,7 +72,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("error", targetDepth))
+                    if (context.TestExpression("error", targetDepth, ref reader))
                     {
                         var unmarshaller = StorageGatewayErrorUnmarshaller.Instance;
                         unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);

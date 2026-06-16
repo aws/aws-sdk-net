@@ -52,7 +52,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sdiSource", targetDepth))
+                if (context.TestExpression("sdiSource", targetDepth, ref reader))
                 {
                     var unmarshaller = SdiSourceUnmarshaller.Instance;
                     response.SdiSource = unmarshaller.Unmarshall(context, ref reader);

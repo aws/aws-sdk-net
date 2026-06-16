@@ -39,6 +39,11 @@ namespace Amazon.RedshiftDataAPIService
 {
     /// <summary>
     /// <para>Implementation for accessing RedshiftDataAPIService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables.
     /// You can run SQL statements, which are committed if the statement succeeds. 

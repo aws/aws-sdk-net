@@ -52,199 +52,199 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmazonManagedKafkaEventSourceConfig", targetDepth))
+                if (context.TestExpression("AmazonManagedKafkaEventSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonManagedKafkaEventSourceConfigUnmarshaller.Instance;
                     response.AmazonManagedKafkaEventSourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BatchSize", targetDepth))
+                if (context.TestExpression("BatchSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.BatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BisectBatchOnFunctionError", targetDepth))
+                if (context.TestExpression("BisectBatchOnFunctionError", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.BisectBatchOnFunctionError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationConfig", targetDepth))
+                if (context.TestExpression("DestinationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationConfigUnmarshaller.Instance;
                     response.DestinationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentDBEventSourceConfig", targetDepth))
+                if (context.TestExpression("DocumentDBEventSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentDBEventSourceConfigUnmarshaller.Instance;
                     response.DocumentDBEventSourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventSourceArn", targetDepth))
+                if (context.TestExpression("EventSourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventSourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventSourceMappingArn", targetDepth))
+                if (context.TestExpression("EventSourceMappingArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventSourceMappingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterCriteria", targetDepth))
+                if (context.TestExpression("FilterCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterCriteriaUnmarshaller.Instance;
                     response.FilterCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterCriteriaError", targetDepth))
+                if (context.TestExpression("FilterCriteriaError", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterCriteriaErrorUnmarshaller.Instance;
                     response.FilterCriteriaError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionArn", targetDepth))
+                if (context.TestExpression("FunctionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FunctionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionResponseTypes", targetDepth))
+                if (context.TestExpression("FunctionResponseTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.FunctionResponseTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KMSKeyArn", targetDepth))
+                if (context.TestExpression("KMSKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KMSKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModified", targetDepth))
+                if (context.TestExpression("LastModified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastProcessingResult", targetDepth))
+                if (context.TestExpression("LastProcessingResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastProcessingResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoggingConfig", targetDepth))
+                if (context.TestExpression("LoggingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventSourceMappingLoggingConfigUnmarshaller.Instance;
                     response.LoggingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth))
+                if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumRecordAgeInSeconds", targetDepth))
+                if (context.TestExpression("MaximumRecordAgeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaximumRecordAgeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumRetryAttempts", targetDepth))
+                if (context.TestExpression("MaximumRetryAttempts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaximumRetryAttempts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricsConfig", targetDepth))
+                if (context.TestExpression("MetricsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventSourceMappingMetricsConfigUnmarshaller.Instance;
                     response.MetricsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParallelizationFactor", targetDepth))
+                if (context.TestExpression("ParallelizationFactor", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ParallelizationFactor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedPollerConfig", targetDepth))
+                if (context.TestExpression("ProvisionedPollerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedPollerConfigUnmarshaller.Instance;
                     response.ProvisionedPollerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Queues", targetDepth))
+                if (context.TestExpression("Queues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Queues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingConfig", targetDepth))
+                if (context.TestExpression("ScalingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ScalingConfigUnmarshaller.Instance;
                     response.ScalingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfManagedEventSource", targetDepth))
+                if (context.TestExpression("SelfManagedEventSource", targetDepth, ref reader))
                 {
                     var unmarshaller = SelfManagedEventSourceUnmarshaller.Instance;
                     response.SelfManagedEventSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfManagedKafkaEventSourceConfig", targetDepth))
+                if (context.TestExpression("SelfManagedKafkaEventSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SelfManagedKafkaEventSourceConfigUnmarshaller.Instance;
                     response.SelfManagedKafkaEventSourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceAccessConfigurations", targetDepth))
+                if (context.TestExpression("SourceAccessConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceAccessConfiguration, SourceAccessConfigurationUnmarshaller>(SourceAccessConfigurationUnmarshaller.Instance);
                     response.SourceAccessConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartingPosition", targetDepth))
+                if (context.TestExpression("StartingPosition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StartingPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartingPositionTimestamp", targetDepth))
+                if (context.TestExpression("StartingPositionTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartingPositionTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StateTransitionReason", targetDepth))
+                if (context.TestExpression("StateTransitionReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StateTransitionReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Topics", targetDepth))
+                if (context.TestExpression("Topics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Topics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TumblingWindowInSeconds", targetDepth))
+                if (context.TestExpression("TumblingWindowInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TumblingWindowInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UUID", targetDepth))
+                if (context.TestExpression("UUID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UUID = unmarshaller.Unmarshall(context, ref reader);

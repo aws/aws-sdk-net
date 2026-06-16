@@ -52,25 +52,25 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LastRuleModification", targetDepth))
+                if (context.TestExpression("LastRuleModification", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastRuleModification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SamplingTargetDocuments", targetDepth))
+                if (context.TestExpression("SamplingTargetDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SamplingTargetDocument, SamplingTargetDocumentUnmarshaller>(SamplingTargetDocumentUnmarshaller.Instance);
                     response.SamplingTargetDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedBoostStatistics", targetDepth))
+                if (context.TestExpression("UnprocessedBoostStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedStatistics, UnprocessedStatisticsUnmarshaller>(UnprocessedStatisticsUnmarshaller.Instance);
                     response.UnprocessedBoostStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedStatistics", targetDepth))
+                if (context.TestExpression("UnprocessedStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedStatistics, UnprocessedStatisticsUnmarshaller>(UnprocessedStatisticsUnmarshaller.Instance);
                     response.UnprocessedStatistics = unmarshaller.Unmarshall(context, ref reader);

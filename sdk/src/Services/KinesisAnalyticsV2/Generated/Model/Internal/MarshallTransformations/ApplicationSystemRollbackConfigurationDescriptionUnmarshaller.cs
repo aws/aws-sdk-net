@@ -56,7 +56,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RollbackEnabled", targetDepth))
+                if (context.TestExpression("RollbackEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RollbackEnabled = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComputeQuotaResources", targetDepth))
+                if (context.TestExpression("ComputeQuotaResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComputeQuotaResourceConfig, ComputeQuotaResourceConfigUnmarshaller>(ComputeQuotaResourceConfigUnmarshaller.Instance);
                     unmarshalledObject.ComputeQuotaResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreemptTeamTasks", targetDepth))
+                if (context.TestExpression("PreemptTeamTasks", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreemptTeamTasks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceSharingConfig", targetDepth))
+                if (context.TestExpression("ResourceSharingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSharingConfigUnmarshaller.Instance;
                     unmarshalledObject.ResourceSharingConfig = unmarshaller.Unmarshall(context, ref reader);

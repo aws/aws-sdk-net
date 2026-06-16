@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("overrideLambda", targetDepth))
+                if (context.TestExpression("overrideLambda", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverrideLambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptConfigurations", targetDepth))
+                if (context.TestExpression("promptConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PromptConfiguration, PromptConfigurationUnmarshaller>(PromptConfigurationUnmarshaller.Instance);
                     unmarshalledObject.PromptConfigurations = unmarshaller.Unmarshall(context, ref reader);

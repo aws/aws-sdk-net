@@ -56,19 +56,19 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("and", targetDepth))
+                if (context.TestExpression("and", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RowFilter, RowFilterUnmarshaller>(RowFilterUnmarshaller.Instance);
                     unmarshalledObject.And = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("expression", targetDepth))
+                if (context.TestExpression("expression", targetDepth, ref reader))
                 {
                     var unmarshaller = RowFilterExpressionUnmarshaller.Instance;
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("or", targetDepth))
+                if (context.TestExpression("or", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RowFilter, RowFilterUnmarshaller>(RowFilterUnmarshaller.Instance);
                     unmarshalledObject.Or = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PrivateNetworkConfiguration", targetDepth))
+                if (context.TestExpression("PrivateNetworkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PrivateNetworkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PrivateNetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicNetworkConfiguration", targetDepth))
+                if (context.TestExpression("PublicNetworkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PublicNetworkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PublicNetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);

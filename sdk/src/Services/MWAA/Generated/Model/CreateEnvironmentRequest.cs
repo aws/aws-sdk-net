@@ -65,7 +65,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property AirflowConfigurationOptions. 
         /// <para>
         /// A list of key-value pairs containing the Apache Airflow configuration options you
-        /// want to attach to your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
+        /// want to attach to your environment. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
         /// Airflow configuration options</a>.
         /// </para>
         /// <para />
@@ -91,13 +91,13 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property AirflowVersion. 
         /// <para>
         /// The Apache Airflow version for your environment. If no value is specified, it defaults
-        /// to the latest version. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
+        /// to the latest version. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
         /// Airflow versions on Amazon Managed Workflows for Apache Airflow (Amazon MWAA)</a>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>1.10.12</c>, <c>2.0.2</c>, <c>2.2.2</c>, <c>2.4.3</c>, <c>2.5.1</c>,
-        /// <c>2.6.3</c>, <c>2.7.2</c>, <c>2.8.1</c>, <c>2.9.2</c>, <c>2.10.1</c>, and <c>2.10.3</c>.
+        /// Valid values: <c>2.7.2</c>, <c>2.8.1</c>, <c>2.9.2</c>, <c>2.10.1</c>, <c>2.10.3</c>,
+        /// <c>2.11.0</c>, and <c>3.0.6</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -117,7 +117,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property DagS3Path. 
         /// <para>
         /// The relative path to the DAGs folder on your Amazon S3 bucket. For example, <c>dags</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+        /// For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
         /// or updating DAGs</a>.
         /// </para>
         /// </summary>
@@ -165,7 +165,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The environment class type. Valid values: <c>mw1.micro</c>, <c>mw1.small</c>, <c>mw1.medium</c>,
         /// <c>mw1.large</c>, <c>mw1.xlarge</c>, and <c>mw1.2xlarge</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+        /// refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
         /// MWAA environment class</a>.
         /// </para>
         /// </summary>
@@ -189,7 +189,7 @@ namespace Amazon.MWAA.Model
         /// role is an Amazon Web Services Identity and Access Management (IAM) role that grants
         /// MWAA permission to access Amazon Web Services services and resources used by your
         /// environment. For example, <c>arn:aws:iam::123456789:role/my-execution-role</c>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
+        /// more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
         /// MWAA Execution role</a>.
         /// </para>
         /// </summary>
@@ -211,7 +211,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your
         /// environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK
-        /// (advanced). For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create
+        /// (advanced). For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create
         /// an Amazon MWAA environment</a>.
         /// </para>
         /// </summary>
@@ -377,7 +377,8 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The VPC networking components used to secure and enable network traffic between the
-        /// Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+        /// Amazon Web Services resources for your environment. For more information, refer to
+        /// <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
         /// networking on Amazon MWAA</a>.
         /// </para>
         /// </summary>
@@ -398,7 +399,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property PluginsS3ObjectVersion. 
         /// <para>
         /// The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version
-        /// each time a plugins.zip file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
+        /// each time a plugins.zip file is updated. For more information, refer to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
         /// S3 Versioning works</a>.
         /// </para>
         /// </summary>
@@ -420,7 +421,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The relative path to the <c>plugins.zip</c> file on your Amazon S3 bucket. For example,
         /// <c>plugins.zip</c>. If specified, then the <c>plugins.zip</c> version is required.
-        /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
+        /// For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
         /// custom plugins</a>.
         /// </para>
         /// </summary>
@@ -442,7 +443,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The version of the <c>requirements.txt</c> file on your Amazon S3 bucket. You must
         /// specify a version each time a requirements.txt file is updated. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
+        /// refer to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
         /// S3 Versioning works</a>.
         /// </para>
         /// </summary>
@@ -464,7 +465,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The relative path to the <c>requirements.txt</c> file on your Amazon S3 bucket. For
         /// example, <c>requirements.txt</c>. If specified, then a version is required. For more
-        /// information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
+        /// information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
         /// Python dependencies</a>.
         /// </para>
         /// </summary>
@@ -516,7 +517,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting
         /// files are stored. For example, <c>arn:aws:s3:::my-airflow-bucket-unique-name</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
+        /// For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
         /// an Amazon S3 bucket for Amazon MWAA</a>.
         /// </para>
         /// </summary>
@@ -551,7 +552,7 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+        ///  For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
         /// a startup script</a>. 
         /// </para>
         /// </summary>
@@ -578,8 +579,8 @@ namespace Amazon.MWAA.Model
         /// <para>
         ///  Amazon MWAA runs the script as your environment starts, and before running the Apache
         /// Airflow process. You can use this script to install dependencies, modify Apache Airflow
-        /// configuration options, and set environment variables. For more information, see <a
-        /// href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+        /// configuration options, and set environment variables. For more information, refer
+        /// to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
         /// a startup script</a>. 
         /// </para>
         /// </summary>
@@ -600,7 +601,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value tag pairs you want to associate to your environment. For example, <c>"Environment":
-        /// "Staging"</c>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// "Staging"</c>. For more information, refer to <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services resources</a>.
         /// </para>
         /// <para />
@@ -626,8 +627,14 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property WebserverAccessMode. 
         /// <para>
         /// Defines the access mode for the Apache Airflow <i>web server</i>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
+        /// refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
         /// Airflow access modes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If set to <c>PUBLIC_AND_PRIVATE</c>, creates both a public network load balancer (NLB)
+        /// for browser access and a private VPC endpoint (VPCE) for worker-to-webserver communication.
+        /// This mode is only available for Apache Airflow version 3.2 and later.
         /// </para>
         /// </summary>
         public WebserverAccessMode WebserverAccessMode

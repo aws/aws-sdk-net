@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoricalParameterRangeSpecification", targetDepth))
+                if (context.TestExpression("CategoricalParameterRangeSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CategoricalParameterRangeSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CategoricalParameterRangeSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContinuousParameterRangeSpecification", targetDepth))
+                if (context.TestExpression("ContinuousParameterRangeSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = ContinuousParameterRangeSpecificationUnmarshaller.Instance;
                     unmarshalledObject.ContinuousParameterRangeSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntegerParameterRangeSpecification", targetDepth))
+                if (context.TestExpression("IntegerParameterRangeSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = IntegerParameterRangeSpecificationUnmarshaller.Instance;
                     unmarshalledObject.IntegerParameterRangeSpecification = unmarshaller.Unmarshall(context, ref reader);

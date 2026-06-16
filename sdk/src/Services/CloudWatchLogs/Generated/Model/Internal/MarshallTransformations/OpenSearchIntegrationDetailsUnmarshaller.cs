@@ -56,49 +56,49 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessPolicy", targetDepth))
+                if (context.TestExpression("accessPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchDataAccessPolicyUnmarshaller.Instance;
                     unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("application", targetDepth))
+                if (context.TestExpression("application", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchApplicationUnmarshaller.Instance;
                     unmarshalledObject.Application = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("collection", targetDepth))
+                if (context.TestExpression("collection", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchCollectionUnmarshaller.Instance;
                     unmarshalledObject.Collection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataSource", targetDepth))
+                if (context.TestExpression("dataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchDataSourceUnmarshaller.Instance;
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionPolicy", targetDepth))
+                if (context.TestExpression("encryptionPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchEncryptionPolicyUnmarshaller.Instance;
                     unmarshalledObject.EncryptionPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecyclePolicy", targetDepth))
+                if (context.TestExpression("lifecyclePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchLifecyclePolicyUnmarshaller.Instance;
                     unmarshalledObject.LifecyclePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkPolicy", targetDepth))
+                if (context.TestExpression("networkPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchNetworkPolicyUnmarshaller.Instance;
                     unmarshalledObject.NetworkPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workspace", targetDepth))
+                if (context.TestExpression("workspace", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchWorkspaceUnmarshaller.Instance;
                     unmarshalledObject.Workspace = unmarshaller.Unmarshall(context, ref reader);

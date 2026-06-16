@@ -56,7 +56,7 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("transcriptSegment", targetDepth))
+                if (context.TestExpression("transcriptSegment", targetDepth, ref reader))
                 {
                     var unmarshaller = MedicalScribeTranscriptSegmentUnmarshaller.Instance;
                     unmarshalledObject.TranscriptSegment = unmarshaller.Unmarshall(context, ref reader);

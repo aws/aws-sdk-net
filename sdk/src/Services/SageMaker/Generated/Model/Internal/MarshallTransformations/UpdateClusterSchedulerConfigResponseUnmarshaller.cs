@@ -52,13 +52,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClusterSchedulerConfigArn", targetDepth))
+                if (context.TestExpression("ClusterSchedulerConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterSchedulerConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterSchedulerConfigVersion", targetDepth))
+                if (context.TestExpression("ClusterSchedulerConfigVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ClusterSchedulerConfigVersion = unmarshaller.Unmarshall(context, ref reader);

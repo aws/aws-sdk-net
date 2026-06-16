@@ -52,25 +52,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LastModifiedRegion", targetDepth))
+                if (context.TestExpression("LastModifiedRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastModifiedRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserProficiencyList", targetDepth))
+                if (context.TestExpression("UserProficiencyList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserProficiency, UserProficiencyUnmarshaller>(UserProficiencyUnmarshaller.Instance);
                     response.UserProficiencyList = unmarshaller.Unmarshall(context, ref reader);

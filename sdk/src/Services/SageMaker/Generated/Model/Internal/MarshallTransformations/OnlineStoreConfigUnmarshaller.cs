@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableOnlineStore", targetDepth))
+                if (context.TestExpression("EnableOnlineStore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableOnlineStore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityConfig", targetDepth))
+                if (context.TestExpression("SecurityConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OnlineStoreSecurityConfigUnmarshaller.Instance;
                     unmarshalledObject.SecurityConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageType", targetDepth))
+                if (context.TestExpression("StorageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TtlDuration", targetDepth))
+                if (context.TestExpression("TtlDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = TtlDurationUnmarshaller.Instance;
                     unmarshalledObject.TtlDuration = unmarshaller.Unmarshall(context, ref reader);

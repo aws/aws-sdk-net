@@ -34,12 +34,42 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CmafEncryptionSettings
     {
+        private int? _clearLeadSegments;
         private string _constantInitializationVector;
         private CmafEncryptionType _encryptionMethod;
         private CmafInitializationVectorInManifest _initializationVectorInManifest;
         private SpekeKeyProviderCmaf _spekeKeyProvider;
         private StaticKeyProvider _staticKeyProvider;
         private CmafKeyProviderType _type;
+
+        /// <summary>
+        /// Gets and sets the property ClearLeadSegments. Reduce video startup latency by leaving
+        /// initial segments unencrypted while DRM license retrieval occurs in parallel. This
+        /// optimization allows immediate playback startup while maintaining content protection
+        /// for the remainder of the stream. Specify the number of initial segments to leave unencrypted.
+        /// Omit this field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags
+        /// during clear segments and insert the first #EXT-X-KEY immediately before the first
+        /// encrypted segment. Because encryption is applied at the fragment level, the actual
+        /// duration of unencrypted content may be slightly longer than expected if the segment
+        /// length is not evenly divisible by the fragment length. In such cases, encryption begins
+        /// at the next fragment boundary after the specified clear lead segments, rather than
+        /// at the exact segment boundary. This feature is supported exclusively for CMAF HLS
+        /// (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE
+        /// v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1
+        /// video codecs, and AAC audio codec.
+        /// </summary>
+        [AWSProperty(Min=1, Max=9999)]
+        public int? ClearLeadSegments
+        {
+            get { return this._clearLeadSegments; }
+            set { this._clearLeadSegments = value; }
+        }
+
+        // Check to see if ClearLeadSegments property is set
+        internal bool IsSetClearLeadSegments()
+        {
+            return this._clearLeadSegments.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConstantInitializationVector. This is a 128-bit, 16-byte

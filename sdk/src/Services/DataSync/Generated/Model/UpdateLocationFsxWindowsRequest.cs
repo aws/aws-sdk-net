@@ -42,11 +42,54 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class UpdateLocationFsxWindowsRequest : AmazonDataSyncRequest
     {
+        private CmkSecretConfig _cmkSecretConfig;
+        private CustomSecretConfig _customSecretConfig;
         private string _domain;
         private string _locationArn;
         private string _password;
         private string _subdirectory;
         private string _user;
+
+        /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a DataSync-managed secret, such as a <c>Password</c>
+        /// or set of credentials that DataSync uses to access a specific transfer location, and
+        /// a customer-managed KMS key.
+        /// </para>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a customer-managed secret, such as a <c>Password</c>
+        /// or set of credentials that DataSync uses to access a specific transfer location, and
+        /// a customer-managed Identity and Access Management (IAM) role that provides access
+        /// to the secret.
+        /// </para>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Domain. 

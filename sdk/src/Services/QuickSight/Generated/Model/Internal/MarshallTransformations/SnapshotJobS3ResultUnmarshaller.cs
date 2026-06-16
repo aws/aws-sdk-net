@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorInfo", targetDepth))
+                if (context.TestExpression("ErrorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SnapshotJobResultErrorInfo, SnapshotJobResultErrorInfoUnmarshaller>(SnapshotJobResultErrorInfoUnmarshaller.Instance);
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3DestinationConfiguration", targetDepth))
+                if (context.TestExpression("S3DestinationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SnapshotS3DestinationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3DestinationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Uri", targetDepth))
+                if (context.TestExpression("S3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);

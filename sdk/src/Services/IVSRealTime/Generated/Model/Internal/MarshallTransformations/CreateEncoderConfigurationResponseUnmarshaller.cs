@@ -52,7 +52,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encoderConfiguration", targetDepth))
+                if (context.TestExpression("encoderConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncoderConfigurationUnmarshaller.Instance;
                     response.EncoderConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceInfo", targetDepth))
+                if (context.TestExpression("ResourceInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceInfoUnmarshaller.Instance;
                     response.ResourceInfo = unmarshaller.Unmarshall(context, ref reader);

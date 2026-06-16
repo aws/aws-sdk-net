@@ -130,7 +130,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// Provides an array of names of the ferry span in available languages.
+        /// Names of the ferry span in available languages.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -52,7 +52,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupQuery", targetDepth))
+                if (context.TestExpression("GroupQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = GroupQueryUnmarshaller.Instance;
                     response.GroupQuery = unmarshaller.Unmarshall(context, ref reader);

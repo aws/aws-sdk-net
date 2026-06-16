@@ -56,43 +56,43 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Capabilities", targetDepth))
+                if (context.TestExpression("Capabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsUnmarshaller.Instance;
                     unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Devices", targetDepth))
+                if (context.TestExpression("Devices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails, AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsUnmarshaller.Instance);
                     unmarshalledObject.Devices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitProcessEnabled", targetDepth))
+                if (context.TestExpression("InitProcessEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxSwap", targetDepth))
+                if (context.TestExpression("MaxSwap", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSwap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SharedMemorySize", targetDepth))
+                if (context.TestExpression("SharedMemorySize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SharedMemorySize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Swappiness", targetDepth))
+                if (context.TestExpression("Swappiness", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Swappiness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tmpfs", targetDepth))
+                if (context.TestExpression("Tmpfs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails, AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsUnmarshaller.Instance);
                     unmarshalledObject.Tmpfs = unmarshaller.Unmarshall(context, ref reader);

@@ -56,85 +56,85 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConsumerCount", targetDepth))
+                if (context.TestExpression("ConsumerCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConsumerCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionType", targetDepth))
+                if (context.TestExpression("EncryptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnhancedMonitoring", targetDepth))
+                if (context.TestExpression("EnhancedMonitoring", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnhancedMetrics, EnhancedMetricsUnmarshaller>(EnhancedMetricsUnmarshaller.Instance);
                     unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyId", targetDepth))
+                if (context.TestExpression("KeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxRecordSizeInKiB", targetDepth))
+                if (context.TestExpression("MaxRecordSizeInKiB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRecordSizeInKiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenShardCount", targetDepth))
+                if (context.TestExpression("OpenShardCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenShardCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetentionPeriodHours", targetDepth))
+                if (context.TestExpression("RetentionPeriodHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamARN", targetDepth))
+                if (context.TestExpression("StreamARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamCreationTimestamp", targetDepth))
+                if (context.TestExpression("StreamCreationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StreamCreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamId", targetDepth))
+                if (context.TestExpression("StreamId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamModeDetails", targetDepth))
+                if (context.TestExpression("StreamModeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamModeDetailsUnmarshaller.Instance;
                     unmarshalledObject.StreamModeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamName", targetDepth))
+                if (context.TestExpression("StreamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamStatus", targetDepth))
+                if (context.TestExpression("StreamStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmThroughput", targetDepth))
+                if (context.TestExpression("WarmThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = WarmThroughputObjectUnmarshaller.Instance;
                     unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context, ref reader);

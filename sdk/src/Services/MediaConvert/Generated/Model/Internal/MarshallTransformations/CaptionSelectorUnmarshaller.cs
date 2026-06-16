@@ -56,19 +56,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customLanguageCode", targetDepth))
+                if (context.TestExpression("customLanguageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomLanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("languageCode", targetDepth))
+                if (context.TestExpression("languageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceSettings", targetDepth))
+                if (context.TestExpression("sourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = CaptionSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.SourceSettings = unmarshaller.Unmarshall(context, ref reader);

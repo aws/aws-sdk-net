@@ -75,6 +75,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetTargetType())
+            {
+                context.Writer.WritePropertyName("targetType");
+                context.Writer.WriteStringValue(requestObject.TargetType);
+            }
+
+            if(requestObject.IsSetTimeoutConfiguration())
+            {
+                context.Writer.WritePropertyName("timeoutConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentLifecycleHookTimeoutConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeoutConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -52,7 +52,7 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reportDetails", targetDepth))
+                if (context.TestExpression("reportDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportDetailUnmarshaller.Instance;
                     response.ReportDetails = unmarshaller.Unmarshall(context, ref reader);

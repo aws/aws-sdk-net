@@ -52,13 +52,13 @@ namespace Amazon.AIOps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("investigationGroupArn", targetDepth))
+                if (context.TestExpression("investigationGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InvestigationGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policy", targetDepth))
+                if (context.TestExpression("policy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Policy = unmarshaller.Unmarshall(context, ref reader);

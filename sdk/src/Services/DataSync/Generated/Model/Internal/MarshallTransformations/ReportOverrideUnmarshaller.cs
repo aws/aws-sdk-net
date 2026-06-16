@@ -56,7 +56,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReportLevel", targetDepth))
+                if (context.TestExpression("ReportLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReportLevel = unmarshaller.Unmarshall(context, ref reader);

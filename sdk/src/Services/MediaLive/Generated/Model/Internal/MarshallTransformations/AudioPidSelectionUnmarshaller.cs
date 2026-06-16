@@ -56,10 +56,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pid", targetDepth))
+                if (context.TestExpression("pid", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Pid = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("pids", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AudioPid, AudioPidUnmarshaller>(AudioPidUnmarshaller.Instance);
+                    unmarshalledObject.Pids = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

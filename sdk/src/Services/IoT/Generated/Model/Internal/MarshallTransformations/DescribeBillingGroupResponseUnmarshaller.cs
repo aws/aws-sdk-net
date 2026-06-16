@@ -52,37 +52,37 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("billingGroupArn", targetDepth))
+                if (context.TestExpression("billingGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BillingGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("billingGroupId", targetDepth))
+                if (context.TestExpression("billingGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BillingGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("billingGroupMetadata", targetDepth))
+                if (context.TestExpression("billingGroupMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = BillingGroupMetadataUnmarshaller.Instance;
                     response.BillingGroupMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("billingGroupName", targetDepth))
+                if (context.TestExpression("billingGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BillingGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("billingGroupProperties", targetDepth))
+                if (context.TestExpression("billingGroupProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = BillingGroupPropertiesUnmarshaller.Instance;
                     response.BillingGroupProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Version = unmarshaller.Unmarshall(context, ref reader);

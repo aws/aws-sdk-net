@@ -56,13 +56,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComponentTimestampDelimiter", targetDepth))
+                if (context.TestExpression("ComponentTimestampDelimiter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComponentTimestampDelimiter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimestampFormat", targetDepth))
+                if (context.TestExpression("TimestampFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimestampFormat = unmarshaller.Unmarshall(context, ref reader);

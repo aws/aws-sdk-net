@@ -56,19 +56,19 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoricalParameterRanges", targetDepth))
+                if (context.TestExpression("CategoricalParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CategoricalParameterRange, CategoricalParameterRangeUnmarshaller>(CategoricalParameterRangeUnmarshaller.Instance);
                     unmarshalledObject.CategoricalParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContinuousParameterRanges", targetDepth))
+                if (context.TestExpression("ContinuousParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContinuousParameterRange, ContinuousParameterRangeUnmarshaller>(ContinuousParameterRangeUnmarshaller.Instance);
                     unmarshalledObject.ContinuousParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntegerParameterRanges", targetDepth))
+                if (context.TestExpression("IntegerParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntegerParameterRange, IntegerParameterRangeUnmarshaller>(IntegerParameterRangeUnmarshaller.Instance);
                     unmarshalledObject.IntegerParameterRanges = unmarshaller.Unmarshall(context, ref reader);

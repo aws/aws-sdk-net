@@ -52,13 +52,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, TableBucketMaintenanceConfigurationValue, StringUnmarshaller, TableBucketMaintenanceConfigurationValueUnmarshaller>(StringUnmarshaller.Instance, TableBucketMaintenanceConfigurationValueUnmarshaller.Instance);
                     response.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tableBucketARN", targetDepth))
+                if (context.TestExpression("tableBucketARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TableBucketARN = unmarshaller.Unmarshall(context, ref reader);

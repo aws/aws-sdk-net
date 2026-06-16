@@ -56,19 +56,19 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EntryDetail", targetDepth))
+                if (context.TestExpression("EntryDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkAclEntryUnmarshaller.Instance;
                     unmarshalledObject.EntryDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntryRuleNumber", targetDepth))
+                if (context.TestExpression("EntryRuleNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EntryRuleNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntryType", targetDepth))
+                if (context.TestExpression("EntryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntryType = unmarshaller.Unmarshall(context, ref reader);

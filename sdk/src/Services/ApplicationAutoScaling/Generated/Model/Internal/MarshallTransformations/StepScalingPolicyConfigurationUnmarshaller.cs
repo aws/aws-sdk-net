@@ -56,31 +56,31 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdjustmentType", targetDepth))
+                if (context.TestExpression("AdjustmentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdjustmentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Cooldown", targetDepth))
+                if (context.TestExpression("Cooldown", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Cooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricAggregationType", targetDepth))
+                if (context.TestExpression("MetricAggregationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricAggregationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinAdjustmentMagnitude", targetDepth))
+                if (context.TestExpression("MinAdjustmentMagnitude", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinAdjustmentMagnitude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepAdjustments", targetDepth))
+                if (context.TestExpression("StepAdjustments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StepAdjustment, StepAdjustmentUnmarshaller>(StepAdjustmentUnmarshaller.Instance);
                     unmarshalledObject.StepAdjustments = unmarshaller.Unmarshall(context, ref reader);

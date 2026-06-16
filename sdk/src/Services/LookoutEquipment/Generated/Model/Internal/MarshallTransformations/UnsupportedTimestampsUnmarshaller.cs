@@ -56,7 +56,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TotalNumberOfUnsupportedTimestamps", targetDepth))
+                if (context.TestExpression("TotalNumberOfUnsupportedTimestamps", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfUnsupportedTimestamps = unmarshaller.Unmarshall(context, ref reader);

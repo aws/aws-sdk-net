@@ -56,49 +56,61 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacityOptionType", targetDepth))
+                if (context.TestExpression("capacityOptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityOptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("capacityReservations", targetDepth))
+                if (context.TestExpression("capacityReservations", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityReservationRequestUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2InstanceProfileArn", targetDepth))
+                if (context.TestExpression("ec2InstanceProfileArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ec2InstanceProfileArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fipsEnabled", targetDepth))
+                if (context.TestExpression("fipsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FipsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceRequirements", targetDepth))
+                if (context.TestExpression("instanceMetadataTagsPropagation", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.InstanceMetadataTagsPropagation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("instanceRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceRequirementsRequestUnmarshaller.Instance;
                     unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monitoring", targetDepth))
+                if (context.TestExpression("localStorageConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ManagedInstancesLocalStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LocalStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("monitoring", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Monitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkConfiguration", targetDepth))
+                if (context.TestExpression("networkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedInstancesNetworkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageConfiguration", targetDepth))
+                if (context.TestExpression("storageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedInstancesStorageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StorageConfiguration = unmarshaller.Unmarshall(context, ref reader);

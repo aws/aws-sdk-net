@@ -52,115 +52,115 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataConfig", targetDepth))
+                if (context.TestExpression("DataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataConfigUnmarshaller.Instance;
                     response.DataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetImportJobArns", targetDepth))
+                if (context.TestExpression("DatasetImportJobArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.DatasetImportJobArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionConfig", targetDepth))
+                if (context.TestExpression("EncryptionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigUnmarshaller.Instance;
                     response.EncryptionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedTimeRemainingInMinutes", targetDepth))
+                if (context.TestExpression("EstimatedTimeRemainingInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedTimeRemainingInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExplainabilityInfo", targetDepth))
+                if (context.TestExpression("ExplainabilityInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ExplainabilityInfoUnmarshaller.Instance;
                     response.ExplainabilityInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastDimensions", targetDepth))
+                if (context.TestExpression("ForecastDimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ForecastDimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastFrequency", targetDepth))
+                if (context.TestExpression("ForecastFrequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ForecastFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastHorizon", targetDepth))
+                if (context.TestExpression("ForecastHorizon", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ForecastHorizon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastTypes", targetDepth))
+                if (context.TestExpression("ForecastTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ForecastTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModificationTime", targetDepth))
+                if (context.TestExpression("LastModificationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModificationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Message", targetDepth))
+                if (context.TestExpression("Message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitorInfo", targetDepth))
+                if (context.TestExpression("MonitorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitorInfoUnmarshaller.Instance;
                     response.MonitorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationMetric", targetDepth))
+                if (context.TestExpression("OptimizationMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OptimizationMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredictorArn", targetDepth))
+                if (context.TestExpression("PredictorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PredictorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredictorName", targetDepth))
+                if (context.TestExpression("PredictorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PredictorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferencePredictorSummary", targetDepth))
+                if (context.TestExpression("ReferencePredictorSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferencePredictorSummaryUnmarshaller.Instance;
                     response.ReferencePredictorSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeAlignmentBoundary", targetDepth))
+                if (context.TestExpression("TimeAlignmentBoundary", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeAlignmentBoundaryUnmarshaller.Instance;
                     response.TimeAlignmentBoundary = unmarshaller.Unmarshall(context, ref reader);

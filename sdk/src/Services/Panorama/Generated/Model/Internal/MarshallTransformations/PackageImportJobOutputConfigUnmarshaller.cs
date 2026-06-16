@@ -56,7 +56,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PackageVersionOutputConfig", targetDepth))
+                if (context.TestExpression("PackageVersionOutputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageVersionOutputConfigUnmarshaller.Instance;
                     unmarshalledObject.PackageVersionOutputConfig = unmarshaller.Unmarshall(context, ref reader);

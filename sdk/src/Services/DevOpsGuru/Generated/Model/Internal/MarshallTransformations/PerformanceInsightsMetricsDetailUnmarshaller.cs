@@ -56,37 +56,37 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MetricDisplayName", targetDepth))
+                if (context.TestExpression("MetricDisplayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricDisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricQuery", targetDepth))
+                if (context.TestExpression("MetricQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceInsightsMetricQueryUnmarshaller.Instance;
                     unmarshalledObject.MetricQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferenceData", targetDepth))
+                if (context.TestExpression("ReferenceData", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PerformanceInsightsReferenceData, PerformanceInsightsReferenceDataUnmarshaller>(PerformanceInsightsReferenceDataUnmarshaller.Instance);
                     unmarshalledObject.ReferenceData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatsAtAnomaly", targetDepth))
+                if (context.TestExpression("StatsAtAnomaly", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PerformanceInsightsStat, PerformanceInsightsStatUnmarshaller>(PerformanceInsightsStatUnmarshaller.Instance);
                     unmarshalledObject.StatsAtAnomaly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatsAtBaseline", targetDepth))
+                if (context.TestExpression("StatsAtBaseline", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PerformanceInsightsStat, PerformanceInsightsStatUnmarshaller>(PerformanceInsightsStatUnmarshaller.Instance);
                     unmarshalledObject.StatsAtBaseline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Unit", targetDepth))
+                if (context.TestExpression("Unit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Unit = unmarshaller.Unmarshall(context, ref reader);

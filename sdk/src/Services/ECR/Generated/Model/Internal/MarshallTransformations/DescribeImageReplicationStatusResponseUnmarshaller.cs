@@ -52,19 +52,19 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageId", targetDepth))
+                if (context.TestExpression("imageId", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageIdentifierUnmarshaller.Instance;
                     response.ImageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationStatuses", targetDepth))
+                if (context.TestExpression("replicationStatuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImageReplicationStatus, ImageReplicationStatusUnmarshaller>(ImageReplicationStatusUnmarshaller.Instance);
                     response.ReplicationStatuses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryName", targetDepth))
+                if (context.TestExpression("repositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RepositoryName = unmarshaller.Unmarshall(context, ref reader);

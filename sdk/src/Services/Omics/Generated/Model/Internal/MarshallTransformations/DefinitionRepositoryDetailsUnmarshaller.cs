@@ -56,31 +56,31 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectionArn", targetDepth))
+                if (context.TestExpression("connectionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fullRepositoryId", targetDepth))
+                if (context.TestExpression("fullRepositoryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FullRepositoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerEndpoint", targetDepth))
+                if (context.TestExpression("providerEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProviderEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerType", targetDepth))
+                if (context.TestExpression("providerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceReference", targetDepth))
+                if (context.TestExpression("sourceReference", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceReferenceUnmarshaller.Instance;
                     unmarshalledObject.SourceReference = unmarshaller.Unmarshall(context, ref reader);

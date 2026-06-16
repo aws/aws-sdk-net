@@ -56,37 +56,37 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("content", targetDepth))
+                if (context.TestExpression("content", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryContentUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryRecordId", targetDepth))
+                if (context.TestExpression("memoryRecordId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MemoryRecordId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryStrategyId", targetDepth))
+                if (context.TestExpression("memoryStrategyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MemoryStrategyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("metadata", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MetadataValue, StringUnmarshaller, MetadataValueUnmarshaller>(StringUnmarshaller.Instance, MetadataValueUnmarshaller.Instance);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MemoryRecordMetadataValue, StringUnmarshaller, MemoryRecordMetadataValueUnmarshaller>(StringUnmarshaller.Instance, MemoryRecordMetadataValueUnmarshaller.Instance);
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("namespaces", targetDepth))
+                if (context.TestExpression("namespaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Namespaces = unmarshaller.Unmarshall(context, ref reader);

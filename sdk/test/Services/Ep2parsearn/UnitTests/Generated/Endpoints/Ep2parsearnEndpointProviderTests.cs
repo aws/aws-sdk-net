@@ -47,13 +47,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("arn, unset outpost id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: outpostId was not set")]
         public void Arn_unset_outpost_id_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["Bucket"] = "arn:aws:s3:us-east-2:012345678:outpost";
             parameters["Region"] = "us-east-2";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: outpostId was not set", exception.Message);
         }
 
         [TestMethod]
@@ -61,13 +63,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("arn, empty outpost id (tests that empty strings are handled properly during matching)")]
-        [ExpectedException(typeof(AmazonClientException), @"OutpostId was empty")]
         public void Arn_empty_outpost_id_tests_that_empty_strings_are_handled_properly_during_matching_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["Bucket"] = "arn:aws:s3:us-east-2:012345678:outpost::";
             parameters["Region"] = "us-east-2";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"OutpostId was empty", exception.Message);
         }
 
         [TestMethod]
@@ -75,13 +79,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("arn, empty outpost id (tests that ARN parsing considers a trailing colon)")]
-        [ExpectedException(typeof(AmazonClientException), @"OutpostId was empty")]
         public void Arn_empty_outpost_id_tests_that_ARN_parsing_considers_a_trailing_colon_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["Bucket"] = "arn:aws:s3:us-east-2:012345678:outpost:";
             parameters["Region"] = "us-east-2";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"OutpostId was empty", exception.Message);
         }
 
         [TestMethod]
@@ -130,13 +136,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("a string that is not a 6-part ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Test case passed: `asdf` is not a valid ARN.")]
         public void A_string_that_is_not_a_6part_ARN_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["TestCaseId"] = "invalid-arn";
             parameters["Bucket"] = "asdf";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Test case passed: `asdf` is not a valid ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -144,13 +152,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("resource id MUST not be null")]
-        [ExpectedException(typeof(AmazonClientException), @"Test case passed: `arn:aws:s3:us-west-2:123456789012:` is not a valid ARN.")]
         public void Resource_id_MUST_not_be_null_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["TestCaseId"] = "invalid-arn";
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Test case passed: `arn:aws:s3:us-west-2:123456789012:` is not a valid ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -158,13 +168,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("service MUST not be null")]
-        [ExpectedException(typeof(AmazonClientException), @"Test case passed: `arn:aws::us-west-2:123456789012:resource-id` is not a valid ARN.")]
         public void Service_MUST_not_be_null_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["TestCaseId"] = "invalid-arn";
             parameters["Bucket"] = "arn:aws::us-west-2:123456789012:resource-id";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Test case passed: `arn:aws::us-west-2:123456789012:resource-id` is not a valid ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -172,13 +184,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("partition MUST not be null")]
-        [ExpectedException(typeof(AmazonClientException), @"Test case passed: `arn::s3:us-west-2:123456789012:resource-id` is not a valid ARN.")]
         public void Partition_MUST_not_be_null_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["TestCaseId"] = "invalid-arn";
             parameters["Bucket"] = "arn::s3:us-west-2:123456789012:resource-id";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Test case passed: `arn::s3:us-west-2:123456789012:resource-id` is not a valid ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -186,13 +200,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("region MAY be null")]
-        [ExpectedException(typeof(AmazonClientException), @"Test case passed: A valid ARN was parsed: service: `s3`, partition: `aws, region: ``, accountId: `123456789012`, resource: `resource-id`")]
         public void Region_MAY_be_null_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["TestCaseId"] = "valid-arn";
             parameters["Bucket"] = "arn:aws:s3::123456789012:resource-id";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Test case passed: A valid ARN was parsed: service: `s3`, partition: `aws, region: ``, accountId: `123456789012`, resource: `resource-id`", exception.Message);
         }
 
         [TestMethod]
@@ -200,13 +216,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("accountId MAY be null")]
-        [ExpectedException(typeof(AmazonClientException), @"Test case passed: A valid ARN was parsed: service: `s3`, partition: `aws, region: `us-east-1`, accountId: ``, resource: `resource-id`")]
         public void AccountId_MAY_be_null_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["TestCaseId"] = "valid-arn";
             parameters["Bucket"] = "arn:aws:s3:us-east-1::resource-id";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Test case passed: A valid ARN was parsed: service: `s3`, partition: `aws, region: `us-east-1`, accountId: ``, resource: `resource-id`", exception.Message);
         }
 
         [TestMethod]
@@ -214,13 +232,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2parsearn")]
         [Description("accountId MAY be non-numeric")]
-        [ExpectedException(typeof(AmazonClientException), @"Test case passed: A valid ARN was parsed: service: `s3`, partition: `aws, region: `us-east-1`, accountId: `abcd`, resource: `resource-id`")]
         public void AccountId_MAY_be_nonnumeric_Test()
         {
             var parameters = new Ep2parsearnEndpointParameters();
             parameters["TestCaseId"] = "valid-arn";
             parameters["Bucket"] = "arn:aws:s3:us-east-1:abcd:resource-id";
-            var endpoint = new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2parsearnEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Test case passed: A valid ARN was parsed: service: `s3`, partition: `aws, region: `us-east-1`, accountId: `abcd`, resource: `resource-id`", exception.Message);
         }
 
     }

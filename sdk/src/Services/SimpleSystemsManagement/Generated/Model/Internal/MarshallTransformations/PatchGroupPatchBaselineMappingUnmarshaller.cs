@@ -56,13 +56,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaselineIdentity", targetDepth))
+                if (context.TestExpression("BaselineIdentity", targetDepth, ref reader))
                 {
                     var unmarshaller = PatchBaselineIdentityUnmarshaller.Instance;
                     unmarshalledObject.BaselineIdentity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PatchGroup", targetDepth))
+                if (context.TestExpression("PatchGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PatchGroup = unmarshaller.Unmarshall(context, ref reader);

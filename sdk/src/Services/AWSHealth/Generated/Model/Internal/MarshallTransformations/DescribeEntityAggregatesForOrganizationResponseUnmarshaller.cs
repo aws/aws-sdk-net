@@ -52,7 +52,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("organizationEntityAggregates", targetDepth))
+                if (context.TestExpression("organizationEntityAggregates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OrganizationEntityAggregate, OrganizationEntityAggregateUnmarshaller>(OrganizationEntityAggregateUnmarshaller.Instance);
                     response.OrganizationEntityAggregates = unmarshaller.Unmarshall(context, ref reader);

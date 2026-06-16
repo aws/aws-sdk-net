@@ -65,7 +65,11 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetEmailAddress())
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EmailAddress set");
             request.AddPathResource("{EmailAddress}", StringUtils.FromString(publicRequest.EmailAddress));
+            
+            if (publicRequest.IsSetTenantName())
+                request.Parameters.Add("TenantName", StringUtils.FromString(publicRequest.TenantName));
             request.ResourcePath = "/v2/email/suppression/addresses/{EmailAddress}";
+            request.UseQueryString = true;
 
             return request;
         }

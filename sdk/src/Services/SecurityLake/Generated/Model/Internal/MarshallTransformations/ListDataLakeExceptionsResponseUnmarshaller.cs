@@ -52,13 +52,13 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("exceptions", targetDepth))
+                if (context.TestExpression("exceptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakeException, DataLakeExceptionUnmarshaller>(DataLakeExceptionUnmarshaller.Instance);
                     response.Exceptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataSources", targetDepth))
+                if (context.TestExpression("dataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSource, DataSourceUnmarshaller>(DataSourceUnmarshaller.Instance);
                     response.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

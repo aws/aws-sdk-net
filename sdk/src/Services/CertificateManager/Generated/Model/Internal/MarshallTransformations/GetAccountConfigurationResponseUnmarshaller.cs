@@ -52,7 +52,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExpiryEvents", targetDepth))
+                if (context.TestExpression("ExpiryEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpiryEventsConfigurationUnmarshaller.Instance;
                     response.ExpiryEvents = unmarshaller.Unmarshall(context, ref reader);

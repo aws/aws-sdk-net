@@ -404,6 +404,33 @@ namespace Amazon.GroundStation
 
         #endregion
                 
+        #region  DescribeContactVersion
+
+
+
+        /// <summary>
+        /// Describes a specific version of a contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContactVersion service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContactVersion">REST API Reference for DescribeContactVersion Operation</seealso>
+        Task<DescribeContactVersionResponse> DescribeContactVersionAsync(DescribeContactVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeEphemeris
 
 
@@ -643,6 +670,30 @@ namespace Amazon.GroundStation
 
         #endregion
                 
+        #region  ListAntennas
+
+
+
+        /// <summary>
+        /// Returns a list of antennas at a specified ground station.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAntennas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAntennas service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListAntennas">REST API Reference for ListAntennas Operation</seealso>
+        Task<ListAntennasResponse> ListAntennasAsync(ListAntennasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListConfigs
 
 
@@ -703,6 +754,33 @@ namespace Amazon.GroundStation
 
         #endregion
                 
+        #region  ListContactVersions
+
+
+
+        /// <summary>
+        /// Returns a list of versions for a specified contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactVersions service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContactVersions">REST API Reference for ListContactVersions Operation</seealso>
+        Task<ListContactVersionsResponse> ListContactVersionsAsync(ListContactVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDataflowEndpointGroups
 
 
@@ -754,6 +832,30 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
         Task<ListEphemeridesResponse> ListEphemeridesAsync(ListEphemeridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListGroundStationReservations
+
+
+
+        /// <summary>
+        /// Returns a list of reservations for a specified ground station.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroundStationReservations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroundStationReservations service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListGroundStationReservations">REST API Reference for ListGroundStationReservations Operation</seealso>
+        Task<ListGroundStationReservationsResponse> ListGroundStationReservationsAsync(ListGroundStationReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1051,6 +1153,36 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateConfig">REST API Reference for UpdateConfig Operation</seealso>
         Task<UpdateConfigResponse> UpdateConfigAsync(UpdateConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateContact
+
+
+
+        /// <summary>
+        /// Updates a specific contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceLimitExceededException">
+        /// Account limits for this resource have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

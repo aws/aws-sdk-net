@@ -56,19 +56,19 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lineRange", targetDepth))
+                if (context.TestExpression("lineRange", targetDepth, ref reader))
                 {
                     var unmarshaller = RangeUnmarshaller.Instance;
                     unmarshalledObject.LineRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offsetRange", targetDepth))
+                if (context.TestExpression("offsetRange", targetDepth, ref reader))
                 {
                     var unmarshaller = RangeUnmarshaller.Instance;
                     unmarshalledObject.OffsetRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pageNumber", targetDepth))
+                if (context.TestExpression("pageNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context, ref reader);

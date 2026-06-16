@@ -52,25 +52,25 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChangeProgressDetails", targetDepth))
+                if (context.TestExpression("ChangeProgressDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;
                     response.ChangeProgressDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PerformCheckOnly", targetDepth))
+                if (context.TestExpression("PerformCheckOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PerformCheckOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetVersion", targetDepth))
+                if (context.TestExpression("TargetVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetVersion = unmarshaller.Unmarshall(context, ref reader);

@@ -36,6 +36,7 @@ namespace Amazon.BCMDataExports.Model
     public partial class S3Destination
     {
         private string _s3Bucket;
+        private string _s3BucketOwner;
         private S3OutputConfigurations _s3OutputConfigurations;
         private string _s3Prefix;
         private string _s3Region;
@@ -57,6 +58,25 @@ namespace Amazon.BCMDataExports.Model
         internal bool IsSetS3Bucket()
         {
             return this._s3Bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwner. 
+        /// <para>
+        /// The AWS Account ID that owns the S3 bucket used as the destination for the data export.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string S3BucketOwner
+        {
+            get { return this._s3BucketOwner; }
+            set { this._s3BucketOwner = value; }
+        }
+
+        // Check to see if S3BucketOwner property is set
+        internal bool IsSetS3BucketOwner()
+        {
+            return this._s3BucketOwner != null;
         }
 
         /// <summary>

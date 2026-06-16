@@ -295,6 +295,56 @@ namespace Amazon.CertificateManager
 
 
     /// <summary>
+    /// Constants used for properties of type ComparisonOperator.
+    /// </summary>
+    public class ComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator CONTAINS = new ComparisonOperator("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator EQUALS = new ComparisonOperator("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperator FindValue(string value)
+        {
+            return FindValue<ComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DomainStatus.
     /// </summary>
     public class DomainStatus : ConstantClass
@@ -938,6 +988,170 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RevocationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchCertificatesSortBy.
+    /// </summary>
+    public class SearchCertificatesSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CERTIFICATE_ARN for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy CERTIFICATE_ARN = new SearchCertificatesSortBy("CERTIFICATE_ARN");
+        /// <summary>
+        /// Constant COMMON_NAME for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy COMMON_NAME = new SearchCertificatesSortBy("COMMON_NAME");
+        /// <summary>
+        /// Constant CREATED_AT for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy CREATED_AT = new SearchCertificatesSortBy("CREATED_AT");
+        /// <summary>
+        /// Constant EXPORT_OPTION for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy EXPORT_OPTION = new SearchCertificatesSortBy("EXPORT_OPTION");
+        /// <summary>
+        /// Constant EXPORTED for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy EXPORTED = new SearchCertificatesSortBy("EXPORTED");
+        /// <summary>
+        /// Constant IMPORTED_AT for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy IMPORTED_AT = new SearchCertificatesSortBy("IMPORTED_AT");
+        /// <summary>
+        /// Constant IN_USE for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy IN_USE = new SearchCertificatesSortBy("IN_USE");
+        /// <summary>
+        /// Constant ISSUED_AT for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy ISSUED_AT = new SearchCertificatesSortBy("ISSUED_AT");
+        /// <summary>
+        /// Constant KEY_ALGORITHM for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy KEY_ALGORITHM = new SearchCertificatesSortBy("KEY_ALGORITHM");
+        /// <summary>
+        /// Constant MANAGED_BY for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy MANAGED_BY = new SearchCertificatesSortBy("MANAGED_BY");
+        /// <summary>
+        /// Constant NOT_AFTER for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy NOT_AFTER = new SearchCertificatesSortBy("NOT_AFTER");
+        /// <summary>
+        /// Constant NOT_BEFORE for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy NOT_BEFORE = new SearchCertificatesSortBy("NOT_BEFORE");
+        /// <summary>
+        /// Constant RENEWAL_ELIGIBILITY for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy RENEWAL_ELIGIBILITY = new SearchCertificatesSortBy("RENEWAL_ELIGIBILITY");
+        /// <summary>
+        /// Constant RENEWAL_STATUS for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy RENEWAL_STATUS = new SearchCertificatesSortBy("RENEWAL_STATUS");
+        /// <summary>
+        /// Constant REVOKED_AT for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy REVOKED_AT = new SearchCertificatesSortBy("REVOKED_AT");
+        /// <summary>
+        /// Constant STATUS for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy STATUS = new SearchCertificatesSortBy("STATUS");
+        /// <summary>
+        /// Constant TYPE for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy TYPE = new SearchCertificatesSortBy("TYPE");
+        /// <summary>
+        /// Constant VALIDATION_METHOD for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy VALIDATION_METHOD = new SearchCertificatesSortBy("VALIDATION_METHOD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchCertificatesSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchCertificatesSortBy FindValue(string value)
+        {
+            return FindValue<SearchCertificatesSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchCertificatesSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchCertificatesSortOrder.
+    /// </summary>
+    public class SearchCertificatesSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SearchCertificatesSortOrder
+        /// </summary>
+        public static readonly SearchCertificatesSortOrder ASCENDING = new SearchCertificatesSortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SearchCertificatesSortOrder
+        /// </summary>
+        public static readonly SearchCertificatesSortOrder DESCENDING = new SearchCertificatesSortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchCertificatesSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchCertificatesSortOrder FindValue(string value)
+        {
+            return FindValue<SearchCertificatesSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchCertificatesSortOrder(string value)
         {
             return FindValue(value);
         }

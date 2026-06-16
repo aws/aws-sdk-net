@@ -56,13 +56,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableIdentityCenter", targetDepth))
+                if (context.TestExpression("EnableIdentityCenter", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableIdentityCenter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityCenterInstanceArn", targetDepth))
+                if (context.TestExpression("IdentityCenterInstanceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentityCenterInstanceArn = unmarshaller.Unmarshall(context, ref reader);

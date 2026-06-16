@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("modelConfigSummary", targetDepth))
+                if (context.TestExpression("modelConfigSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationModelConfigSummaryUnmarshaller.Instance;
                     unmarshalledObject.ModelConfigSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ragConfigSummary", targetDepth))
+                if (context.TestExpression("ragConfigSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationRagConfigSummaryUnmarshaller.Instance;
                     unmarshalledObject.RagConfigSummary = unmarshaller.Unmarshall(context, ref reader);

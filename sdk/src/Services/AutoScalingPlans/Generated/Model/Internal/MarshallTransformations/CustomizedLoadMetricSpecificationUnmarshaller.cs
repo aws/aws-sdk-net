@@ -56,31 +56,31 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Dimensions", targetDepth))
+                if (context.TestExpression("Dimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDimension, MetricDimensionUnmarshaller>(MetricDimensionUnmarshaller.Instance);
                     unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricName", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Namespace", targetDepth))
+                if (context.TestExpression("Namespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Statistic", targetDepth))
+                if (context.TestExpression("Statistic", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Statistic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Unit", targetDepth))
+                if (context.TestExpression("Unit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Unit = unmarshaller.Unmarshall(context, ref reader);

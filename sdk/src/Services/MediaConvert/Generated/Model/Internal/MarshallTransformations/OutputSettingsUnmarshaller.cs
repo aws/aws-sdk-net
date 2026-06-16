@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hlsSettings", targetDepth))
+                if (context.TestExpression("hlsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsSettings = unmarshaller.Unmarshall(context, ref reader);

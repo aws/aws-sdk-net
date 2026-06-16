@@ -56,13 +56,13 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndpointType", targetDepth))
+                if (context.TestExpression("EndpointType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StageName", targetDepth))
+                if (context.TestExpression("StageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StageName = unmarshaller.Unmarshall(context, ref reader);

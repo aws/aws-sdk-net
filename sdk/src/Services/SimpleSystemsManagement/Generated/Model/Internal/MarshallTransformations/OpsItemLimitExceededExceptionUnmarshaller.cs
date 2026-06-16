@@ -72,19 +72,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Limit", targetDepth))
+                    if (context.TestExpression("Limit", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Limit = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("LimitType", targetDepth))
+                    if (context.TestExpression("LimitType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LimitType = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ResourceTypes", targetDepth))
+                    if (context.TestExpression("ResourceTypes", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.ResourceTypes = unmarshaller.Unmarshall(context, ref reader);

@@ -48,6 +48,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	{
 		foreach(var member in members)
 		{
+			bool isSparse = member.Shape.IsSparse;
 			if (member.ModelShape.IsEventStream)
 				continue;
 #>
@@ -63,7 +64,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 			if (member.IsStructure || member.IsList || member.IsMap)
 			{
-				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape);
+				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape, isSparse, isNested: false);
 			}
 			else if (member.IsMemoryStream)
 			{
@@ -79,7 +80,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 			else
 			{
-				DetermineNormalCborWriteMethod(member.Shape, memberProperty, level);
+				DetermineNormalCborWriteMethod(member.Shape, memberProperty, level, variableName, isSparse);
 			}
 #>
 <#=new string(' ', level * 4)#>            }
@@ -96,29 +97,54 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 		}
 	}
-protected void ProcessStructure(int level, string variableName, Shape structure)
+protected void ProcessStructure(int level, string variableName, Shape structure, bool isSparse, bool isNested)
 	{
 			string flatVariableName = variableName.Replace(".", "");
-
 			if (structure.IsList)
 			{
+				if (isSparse && isNested)
+				{
+#>
+<#=new string(' ', level * 4)#>			if (<#=flatVariableName#> == null)
+<#=new string(' ', level * 4)#>				context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>			else
+<#=new string(' ', level * 4)#>			{
+<#+
+					level += 1;
+				}
 #>
 <#=new string(' ', level * 4)#>            context.Writer.WriteStartArray(<#=variableName#>.Count);
 <#=new string(' ', level * 4)#>            foreach(var <#=flatVariableName#>ListValue in <#=variableName#>)
 <#=new string(' ', level * 4)#>            {
 <#+ 
-				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
+				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape, isSparse, isNested);
 #>
 <#=new string(' ', level * 4)#>            }
 <#=new string(' ', level * 4)#>            context.Writer.WriteEndArray();
 <#+
+				if (isSparse && isNested) // if we're inside a nested collection and sparse, close the else bracket
+				{
+#>
+<#=new string(' ', (level -1) * 4)#>			}
+<#+
+				}
 			}
 			else if (structure.IsMap)
 			{
-				ProcessMap(level, variableName, structure);
+				ProcessMap(level, variableName, structure, isSparse);
 			}
 			else if (structure.IsStructure)
 			{
+				if (isSparse && isNested)
+				{
+#>
+<#=new string(' ', level * 4)#>			if (<#=flatVariableName#> == null)
+<#=new string(' ', level * 4)#>				context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>			else
+<#=new string(' ', level * 4)#>			{
+<#+
+					level +=1;
+				}
 #>
 <#=new string(' ', level * 4)#>            context.Writer.WriteStartMap(null);
 
@@ -127,6 +153,12 @@ protected void ProcessStructure(int level, string variableName, Shape structure)
 
 <#=new string(' ', level * 4)#>            context.Writer.WriteEndMap();
 <#+
+				if (isSparse && isNested)
+				{
+#>
+<#=new string(' ', (level - 1) * 4)#>			}
+<#+
+				}
 			}
 			else if (structure.IsMemoryStream)
 			{
@@ -136,14 +168,15 @@ protected void ProcessStructure(int level, string variableName, Shape structure)
 			}
 			else
 			{
-				DetermineNormalCborWriteMethod(structure, variableName, level);
+				DetermineNormalCborWriteMethod(structure, variableName, level, variableName, isSparse);
 			}
 	}
 
-	protected void ProcessMap(int level, string variableName, Shape structure)
+	protected void ProcessMap(int level, string variableName, Shape structure, bool isSparse)
 	{
 		string flatVariableName = variableName.Replace(".", "");
 		string flatVariableValue = flatVariableName + "Value";
+		bool isNested = structure.ValueShape.IsStructure || structure.ValueShape.IsMap || structure.ValueShape.IsList;
 #>
 <#=new string(' ', level * 4)#>            context.Writer.WriteStartMap(null);
 <#=new string(' ', level * 4)#>            foreach (var <#=flatVariableName#>Kvp in <#=variableName#>)
@@ -151,78 +184,13 @@ protected void ProcessStructure(int level, string variableName, Shape structure)
 <#=new string(' ', level * 4)#>                context.Writer.WriteTextString(<#=flatVariableName#>Kvp.Key);
 <#=new string(' ', level * 4)#>                var <#=flatVariableName#>Value = <#=flatVariableName#>Kvp.Value;
 
-<#+             // Check for null values - only null checks for sparse maps as defined in customizations
+<#+                  
+        if (isSparse)
+        {
+			flatVariableValue = flatVariableValue + ".Value";
+        }
 
-                bool isNullableMap = false;
-                if (this.Structure != null)
-                {
-                    var memberWithMap = this.Structure.Members.FirstOrDefault(m => m.PropertyName == variableName.Split('.').Last());
-                    isNullableMap = (memberWithMap != null && memberWithMap.UseNullable);
-                }
-                
-                if (isNullableMap)
-                {
-#>
-<#=new string(' ', level * 4)#>                if (<#=flatVariableName#>Value == null)
-<#=new string(' ', level * 4)#>                {
-<#=new string(' ', level * 4)#>                    context.Writer.WriteNull();
-<#=new string(' ', level * 4)#>                }
-<#=new string(' ', level * 4)#>                else
-<#=new string(' ', level * 4)#>                {
-<#+
-					flatVariableValue = flatVariableValue + ".Value";
-                }
-
-                if (structure.ValueShape.IsBoolean)
-                {
-#>
-<#=new string(' ', level * 4)#>                    context.Writer.WriteBoolean(<#=flatVariableValue#>);
-<#+
-                }
-                else if ( structure.ValueShape.IsFloat || structure.ValueShape.IsDouble)
-                {
-#>
-<#=new string(' ', level * 4)#>                    context.Writer.WriteOptimizedNumber(<#=flatVariableValue#>);
-<#+
-                }
-                else if (structure.ValueShape.IsInt)
-                {
-#>
-<#=new string(' ', level * 4)#>                    context.Writer.WriteInt32(<#=flatVariableValue#>);
-<#+
-                }
-                else if (structure.ValueShape.IsLong)
-                {
-#>
-<#=new string(' ', level * 4)#>                    context.Writer.WriteInt64(<#=flatVariableValue#>);
-<#+
-                }
-
-                else if (structure.ValueShape.IsTimeStamp)
-                {
-#>
-<#=new string(' ', level * 4)#>                    context.Writer.WriteDateTime(<#=flatVariableValue#>);
-<#+
-                }
-                else
-                {
-                    if (isNullableMap)
-                    {
-                            ProcessStructure(level + 2, flatVariableName + "Value", structure.ValueShape);
-                    }
-                    else
-                    {
-                            ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
-                    }
-                }
-
-                // Close the else block for nullable maps
-                if (isNullableMap)
-                {
-#>
-<#=new string(' ', level * 4)#>                }
-<#+
-                }
+		ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape, isSparse, isNested);
 #>
 <#=new string(' ', level * 4)#>            }
 <#=new string(' ', level * 4)#>            context.Writer.WriteEndMap();
@@ -230,43 +198,115 @@ protected void ProcessStructure(int level, string variableName, Shape structure)
 	}
 
 
-protected void DetermineNormalCborWriteMethod(Shape shape, string memberProperty, int level)
+protected void DetermineNormalCborWriteMethod(Shape shape, string memberProperty, int level, string variableName, bool isSparse)
 	{
 		if (shape.IsString || shape.IsEnum)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>					if (<#=variableName#> == null)
+<#=new string(' ', level * 4)#>						context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>						context.Writer.WriteTextString(<#=memberProperty#>);
+<#+
+			}
+			else
+			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteTextString(<#=memberProperty#>);
 <#+
+			}
 		}
 		else if (shape.IsTimeStamp)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>					if (<#=variableName#> == null)
+<#=new string(' ', level * 4)#>						context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>						context.Writer.WriteDateTime(<#=memberProperty#>.Value);
+<#+
+			}
+			else
+			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteDateTime(<#=memberProperty#>);
 <#+
+			}
 		}
 		else if (shape.IsFloat || shape.IsDouble)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>					if (<#=variableName#> == null)
+<#=new string(' ', level * 4)#>						context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>						context.Writer.WriteOptimizedNumber(<#=memberProperty#>.Value);
+<#+
+			}
+			else
+			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteOptimizedNumber(<#=memberProperty#>);
 <#+
+			}
 		}
 		else if (shape.IsLong)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>					if (<#=variableName#> == null)
+<#=new string(' ', level * 4)#>						context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>						context.Writer.WriteInt64(<#=memberProperty#>.Value);
+<#+
+			}
+			else
+			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteInt64(<#=memberProperty#>);
 <#+
+			}
 		}
 		else if (shape.IsInt)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>					if (<#=variableName#> == null)
+<#=new string(' ', level * 4)#>						context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>						context.Writer.WriteInt32(<#=memberProperty#>.Value);
+<#+
+			}
+			else
+			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteInt32(<#=memberProperty#>);
 <#+
+			}
 		}
 		else if (shape.IsBoolean)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>					if (<#=variableName#> == null)
+<#=new string(' ', level * 4)#>						context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>						context.Writer.WriteBoolean(<#=memberProperty#>.Value);
+<#+
+			}
+			else
+			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteBoolean(<#=memberProperty#>);
 <#+
+			}
 		}
 		else
 		{

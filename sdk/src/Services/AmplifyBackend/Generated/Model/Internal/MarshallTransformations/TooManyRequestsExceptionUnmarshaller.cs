@@ -72,7 +72,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("limitType", targetDepth))
+                    if (context.TestExpression("limitType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LimitType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EvaluationContextIdentifier", targetDepth))
+                if (context.TestExpression("EvaluationContextIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EvaluationContextIdentifier = unmarshaller.Unmarshall(context, ref reader);

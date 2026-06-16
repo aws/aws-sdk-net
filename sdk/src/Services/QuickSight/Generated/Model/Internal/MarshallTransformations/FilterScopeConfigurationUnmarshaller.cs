@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllSheets", targetDepth))
+                if (context.TestExpression("AllSheets", targetDepth, ref reader))
                 {
                     var unmarshaller = AllSheetsFilterScopeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AllSheets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectedSheets", targetDepth))
+                if (context.TestExpression("SelectedSheets", targetDepth, ref reader))
                 {
                     var unmarshaller = SelectedSheetsFilterScopeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SelectedSheets = unmarshaller.Unmarshall(context, ref reader);

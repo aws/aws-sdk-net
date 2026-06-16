@@ -56,31 +56,31 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IncludesReturnTrip", targetDepth))
+                if (context.TestExpression("IncludesReturnTrip", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludesReturnTrip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SeniorPass", targetDepth))
+                if (context.TestExpression("SeniorPass", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SeniorPass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransferCount", targetDepth))
+                if (context.TestExpression("TransferCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransferCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TripCount", targetDepth))
+                if (context.TestExpression("TripCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TripCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidityPeriod", targetDepth))
+                if (context.TestExpression("ValidityPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTollPassValidityPeriodUnmarshaller.Instance;
                     unmarshalledObject.ValidityPeriod = unmarshaller.Unmarshall(context, ref reader);

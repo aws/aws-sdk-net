@@ -96,8 +96,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
+        /// A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         ///  
         /// <para>
@@ -148,7 +148,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ContactFlowId. 
         /// <para>
         /// The identifier of the flow for initiating the emails. To see the ContactFlowId in
-        /// the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
+        /// the Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
         /// Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional
         /// flow information</b>. The ContactFlowId is the last part of the ARN, shown here in
         /// bold: 
@@ -194,7 +194,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DestinationEmailAddress. 
         /// <para>
-        /// The email address associated with the Amazon Connect instance.
+        /// The email address associated with the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
@@ -251,7 +251,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -340,7 +340,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
         /// A set of system defined key-value pairs stored on individual contact segments using
-        /// an attribute map. The attributes are standard Amazon Connect attributes. They can
+        /// an attribute map. The attributes are standard Connect Customer attributes. They can
         /// be accessed in flows.
         /// </para>
         ///  

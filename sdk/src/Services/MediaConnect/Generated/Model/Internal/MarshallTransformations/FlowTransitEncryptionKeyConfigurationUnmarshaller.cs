@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("automatic", targetDepth))
+                if (context.TestExpression("automatic", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomaticEncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Automatic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secretsManager", targetDepth))
+                if (context.TestExpression("secretsManager", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerEncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SecretsManager = unmarshaller.Unmarshall(context, ref reader);

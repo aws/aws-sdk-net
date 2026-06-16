@@ -56,49 +56,49 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalDetails", targetDepth))
+                if (context.TestExpression("AdditionalDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DetailsMapUnmarshaller.Instance;
                     unmarshalledObject.AdditionalDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Condition", targetDepth))
+                if (context.TestExpression("Condition", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionUnmarshaller.Instance;
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdated", targetDepth))
+                if (context.TestExpression("LastUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedBy", targetDepth))
+                if (context.TestExpression("LastUpdatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Permissions", targetDepth))
+                if (context.TestExpression("Permissions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Permissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PermissionsWithGrantOption", targetDepth))
+                if (context.TestExpression("PermissionsWithGrantOption", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PermissionsWithGrantOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Principal", targetDepth))
+                if (context.TestExpression("Principal", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakePrincipalUnmarshaller.Instance;
                     unmarshalledObject.Principal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Resource", targetDepth))
+                if (context.TestExpression("Resource", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceUnmarshaller.Instance;
                     unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);

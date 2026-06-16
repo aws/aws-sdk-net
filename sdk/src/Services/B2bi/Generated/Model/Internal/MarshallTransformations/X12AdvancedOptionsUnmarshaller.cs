@@ -56,13 +56,13 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("splitOptions", targetDepth))
+                if (context.TestExpression("splitOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = X12SplitOptionsUnmarshaller.Instance;
                     unmarshalledObject.SplitOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationOptions", targetDepth))
+                if (context.TestExpression("validationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = X12ValidationOptionsUnmarshaller.Instance;
                     unmarshalledObject.ValidationOptions = unmarshaller.Unmarshall(context, ref reader);

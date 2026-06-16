@@ -56,13 +56,13 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("expiration", targetDepth))
+                if (context.TestExpression("expiration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakeLifecycleExpirationUnmarshaller.Instance;
                     unmarshalledObject.Expiration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transitions", targetDepth))
+                if (context.TestExpression("transitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakeLifecycleTransition, DataLakeLifecycleTransitionUnmarshaller>(DataLakeLifecycleTransitionUnmarshaller.Instance);
                     unmarshalledObject.Transitions = unmarshaller.Unmarshall(context, ref reader);

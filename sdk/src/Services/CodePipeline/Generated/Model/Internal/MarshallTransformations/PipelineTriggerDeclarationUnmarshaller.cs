@@ -56,13 +56,13 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("gitConfiguration", targetDepth))
+                if (context.TestExpression("gitConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerType", targetDepth))
+                if (context.TestExpression("providerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context, ref reader);

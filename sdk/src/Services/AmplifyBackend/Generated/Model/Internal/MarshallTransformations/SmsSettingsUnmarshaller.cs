@@ -56,7 +56,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("smsMessage", targetDepth))
+                if (context.TestExpression("smsMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SmsMessage = unmarshaller.Unmarshall(context, ref reader);

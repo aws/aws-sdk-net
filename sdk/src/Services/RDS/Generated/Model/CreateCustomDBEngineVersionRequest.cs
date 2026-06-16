@@ -54,6 +54,12 @@ namespace Amazon.RDS.Model
         /// The database installation files (ISO and EXE) uploaded to Amazon S3 for your database
         /// engine version to import to Amazon RDS.
         /// </para>
+        ///  
+        /// <para>
+        /// For RDS for SQL Server Bring Your Own Media (<c>sqlserver-ee</c>, <c>sqlserver-se</c>),
+        /// provide the SQL Server RTM ISO file once per major version and edition combination.
+        /// Minor versions reuse the same file.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -171,7 +177,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ccustom-sqlserver-web</c> 
+        ///  <c>custom-sqlserver-web</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -179,8 +185,21 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// RDS for SQL Server supports only <c>sqlserver-dev-ee</c>.
+        /// RDS for SQL Server supports the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>sqlserver-ee</c> (Bring Your Own Media)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sqlserver-se</c> (Bring Your Own Media)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sqlserver-dev-ee</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]
         public string Engine
@@ -207,9 +226,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For RDS for SQL Server and RDS Custom for SQL Server, the name format is <c>major
-        /// engine_version*.*minor_engine_version*.*customized_string*</c>. For example, a valid
-        /// CEV name is <c>16.00.4215.2.my_cev1</c>.
+        /// For RDS Custom for SQL Server and RDS for SQL Server <c>sqlserver-dev-ee</c>, the
+        /// name format is <c>*major_engine_version*.*minor_engine_version*.*customized_string*</c>.
+        /// For example, a valid CEV name is <c>16.00.4215.2.my_cev1</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For RDS for SQL Server Bring Your Own Media (<c>sqlserver-ee</c>, <c>sqlserver-se</c>),
+        /// specify the RDS engine version that you want to use. For example, <c>16.00.4175.1.v1</c>.
         /// </para>
         ///  
         /// <para>

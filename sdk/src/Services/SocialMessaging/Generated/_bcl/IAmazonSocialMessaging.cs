@@ -156,6 +156,88 @@ namespace Amazon.SocialMessaging
 
         #endregion
         
+        #region  CreateWhatsAppFlow
+
+
+        /// <summary>
+        /// Creates a new WhatsApp Flow. Flows enable businesses to create rich, interactive forms
+        /// and experiences that users can complete without leaving WhatsApp. The Flow is created
+        /// in DRAFT status. If <c>publish</c> is set to <c>true</c> and a valid <c>flowJson</c>
+        /// is provided, the Flow is published immediately.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppFlow service method.</param>
+        /// 
+        /// <returns>The response from the CreateWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppFlow">REST API Reference for CreateWhatsAppFlow Operation</seealso>
+        CreateWhatsAppFlowResponse CreateWhatsAppFlow(CreateWhatsAppFlowRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new WhatsApp Flow. Flows enable businesses to create rich, interactive forms
+        /// and experiences that users can complete without leaving WhatsApp. The Flow is created
+        /// in DRAFT status. If <c>publish</c> is set to <c>true</c> and a valid <c>flowJson</c>
+        /// is provided, the Flow is published immediately.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppFlow">REST API Reference for CreateWhatsAppFlow Operation</seealso>
+        Task<CreateWhatsAppFlowResponse> CreateWhatsAppFlowAsync(CreateWhatsAppFlowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateWhatsAppMessageTemplate
 
 
@@ -172,6 +254,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppMessageTemplate service method.</param>
         /// 
         /// <returns>The response from the CreateWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -214,6 +299,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the CreateWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -249,6 +337,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppMessageTemplateFromLibrary service method.</param>
         /// 
         /// <returns>The response from the CreateWhatsAppMessageTemplateFromLibrary service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -284,6 +375,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the CreateWhatsAppMessageTemplateFromLibrary service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -319,6 +413,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppMessageTemplateMedia service method.</param>
         /// 
         /// <returns>The response from the CreateWhatsAppMessageTemplateMedia service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -354,6 +451,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the CreateWhatsAppMessageTemplateMedia service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -377,6 +477,84 @@ namespace Amazon.SocialMessaging
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplateMedia">REST API Reference for CreateWhatsAppMessageTemplateMedia Operation</seealso>
         Task<CreateWhatsAppMessageTemplateMediaResponse> CreateWhatsAppMessageTemplateMediaAsync(CreateWhatsAppMessageTemplateMediaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteWhatsAppFlow
+
+
+        /// <summary>
+        /// Deletes a WhatsApp Flow permanently. Only Flows in DRAFT status can be deleted. Published
+        /// or deprecated Flows cannot be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatsAppFlow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppFlow">REST API Reference for DeleteWhatsAppFlow Operation</seealso>
+        DeleteWhatsAppFlowResponse DeleteWhatsAppFlow(DeleteWhatsAppFlowRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a WhatsApp Flow permanently. Only Flows in DRAFT status can be deleted. Published
+        /// or deprecated Flows cannot be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWhatsAppFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppFlow">REST API Reference for DeleteWhatsAppFlow Operation</seealso>
+        Task<DeleteWhatsAppFlowResponse> DeleteWhatsAppFlowAsync(DeleteWhatsAppFlowRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -467,6 +645,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the DeleteWhatsAppMessageTemplate service method.</param>
         /// 
         /// <returns>The response from the DeleteWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -502,6 +683,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the DeleteWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -525,6 +709,84 @@ namespace Amazon.SocialMessaging
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppMessageTemplate">REST API Reference for DeleteWhatsAppMessageTemplate Operation</seealso>
         Task<DeleteWhatsAppMessageTemplateResponse> DeleteWhatsAppMessageTemplateAsync(DeleteWhatsAppMessageTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeprecateWhatsAppFlow
+
+
+        /// <summary>
+        /// Deprecates a published WhatsApp Flow, marking it as no longer recommended for use.
+        /// The Flow must be in PUBLISHED status. This is an irreversible operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateWhatsAppFlow service method.</param>
+        /// 
+        /// <returns>The response from the DeprecateWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeprecateWhatsAppFlow">REST API Reference for DeprecateWhatsAppFlow Operation</seealso>
+        DeprecateWhatsAppFlowResponse DeprecateWhatsAppFlow(DeprecateWhatsAppFlowRequest request);
+
+
+
+        /// <summary>
+        /// Deprecates a published WhatsApp Flow, marking it as no longer recommended for use.
+        /// The Flow must be in PUBLISHED status. This is an irreversible operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateWhatsAppFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeprecateWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeprecateWhatsAppFlow">REST API Reference for DeprecateWhatsAppFlow Operation</seealso>
+        Task<DeprecateWhatsAppFlowResponse> DeprecateWhatsAppFlowAsync(DeprecateWhatsAppFlowRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -734,6 +996,162 @@ namespace Amazon.SocialMessaging
 
         #endregion
         
+        #region  GetWhatsAppFlow
+
+
+        /// <summary>
+        /// Retrieves the metadata and status of a WhatsApp Flow, including validation errors,
+        /// preview information, and health status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWhatsAppFlow service method.</param>
+        /// 
+        /// <returns>The response from the GetWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlow">REST API Reference for GetWhatsAppFlow Operation</seealso>
+        GetWhatsAppFlowResponse GetWhatsAppFlow(GetWhatsAppFlowRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the metadata and status of a WhatsApp Flow, including validation errors,
+        /// preview information, and health status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWhatsAppFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlow">REST API Reference for GetWhatsAppFlow Operation</seealso>
+        Task<GetWhatsAppFlowResponse> GetWhatsAppFlowAsync(GetWhatsAppFlowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetWhatsAppFlowPreview
+
+
+        /// <summary>
+        /// Generates a web preview URL for testing a WhatsApp Flow before publishing. Preview
+        /// URLs expire in 30 days and can be shared with stakeholders for review.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWhatsAppFlowPreview service method.</param>
+        /// 
+        /// <returns>The response from the GetWhatsAppFlowPreview service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlowPreview">REST API Reference for GetWhatsAppFlowPreview Operation</seealso>
+        GetWhatsAppFlowPreviewResponse GetWhatsAppFlowPreview(GetWhatsAppFlowPreviewRequest request);
+
+
+
+        /// <summary>
+        /// Generates a web preview URL for testing a WhatsApp Flow before publishing. Preview
+        /// URLs expire in 30 days and can be shared with stakeholders for review.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWhatsAppFlowPreview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWhatsAppFlowPreview service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppFlowPreview">REST API Reference for GetWhatsAppFlowPreview Operation</seealso>
+        Task<GetWhatsAppFlowPreviewResponse> GetWhatsAppFlowPreviewAsync(GetWhatsAppFlowPreviewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetWhatsAppMessageMedia
 
 
@@ -825,6 +1243,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the GetWhatsAppMessageTemplate service method.</param>
         /// 
         /// <returns>The response from the GetWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -860,6 +1281,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the GetWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -1008,6 +1432,162 @@ namespace Amazon.SocialMessaging
 
         #endregion
         
+        #region  ListWhatsAppFlowAssets
+
+
+        /// <summary>
+        /// Lists the assets (Flow JSON definition) of a WhatsApp Flow with presigned download
+        /// URLs. Download URLs are generated by Meta and expire after a short period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatsAppFlowAssets service method.</param>
+        /// 
+        /// <returns>The response from the ListWhatsAppFlowAssets service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppFlowAssets">REST API Reference for ListWhatsAppFlowAssets Operation</seealso>
+        ListWhatsAppFlowAssetsResponse ListWhatsAppFlowAssets(ListWhatsAppFlowAssetsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the assets (Flow JSON definition) of a WhatsApp Flow with presigned download
+        /// URLs. Download URLs are generated by Meta and expire after a short period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatsAppFlowAssets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWhatsAppFlowAssets service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppFlowAssets">REST API Reference for ListWhatsAppFlowAssets Operation</seealso>
+        Task<ListWhatsAppFlowAssetsResponse> ListWhatsAppFlowAssetsAsync(ListWhatsAppFlowAssetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListWhatsAppFlows
+
+
+        /// <summary>
+        /// Lists all WhatsApp Flows for a WhatsApp Business Account. Returns summary information
+        /// including Flow ID, name, status, and categories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatsAppFlows service method.</param>
+        /// 
+        /// <returns>The response from the ListWhatsAppFlows service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppFlows">REST API Reference for ListWhatsAppFlows Operation</seealso>
+        ListWhatsAppFlowsResponse ListWhatsAppFlows(ListWhatsAppFlowsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all WhatsApp Flows for a WhatsApp Business Account. Returns summary information
+        /// including Flow ID, name, status, and categories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWhatsAppFlows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWhatsAppFlows service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppFlows">REST API Reference for ListWhatsAppFlows Operation</seealso>
+        Task<ListWhatsAppFlowsResponse> ListWhatsAppFlowsAsync(ListWhatsAppFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListWhatsAppMessageTemplates
 
 
@@ -1017,6 +1597,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the ListWhatsAppMessageTemplates service method.</param>
         /// 
         /// <returns>The response from the ListWhatsAppMessageTemplates service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -1052,6 +1635,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the ListWhatsAppMessageTemplates service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -1087,6 +1673,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the ListWhatsAppTemplateLibrary service method.</param>
         /// 
         /// <returns>The response from the ListWhatsAppTemplateLibrary service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -1122,6 +1711,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the ListWhatsAppTemplateLibrary service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -1227,6 +1819,86 @@ namespace Amazon.SocialMessaging
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PostWhatsAppMessageMedia">REST API Reference for PostWhatsAppMessageMedia Operation</seealso>
         Task<PostWhatsAppMessageMediaResponse> PostWhatsAppMessageMediaAsync(PostWhatsAppMessageMediaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PublishWhatsAppFlow
+
+
+        /// <summary>
+        /// Publishes a WhatsApp Flow, making it available for use in template messages. The Flow
+        /// must be in DRAFT status with valid Flow JSON that passes Meta's validation. This is
+        /// an irreversible operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishWhatsAppFlow service method.</param>
+        /// 
+        /// <returns>The response from the PublishWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PublishWhatsAppFlow">REST API Reference for PublishWhatsAppFlow Operation</seealso>
+        PublishWhatsAppFlowResponse PublishWhatsAppFlow(PublishWhatsAppFlowRequest request);
+
+
+
+        /// <summary>
+        /// Publishes a WhatsApp Flow, making it available for use in template messages. The Flow
+        /// must be in DRAFT status with valid Flow JSON that passes Meta's validation. This is
+        /// an irreversible operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishWhatsAppFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PublishWhatsAppFlow">REST API Reference for PublishWhatsAppFlow Operation</seealso>
+        Task<PublishWhatsAppFlowResponse> PublishWhatsAppFlowAsync(PublishWhatsAppFlowRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1486,6 +2158,164 @@ namespace Amazon.SocialMessaging
 
         #endregion
         
+        #region  UpdateWhatsAppFlow
+
+
+        /// <summary>
+        /// Updates the metadata of a WhatsApp Flow, such as its name or categories. This does
+        /// not update the Flow JSON definition. Use <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppFlowAssets.html">UpdateWhatsAppFlowAssets</a>
+        /// to update the Flow JSON.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWhatsAppFlow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppFlow">REST API Reference for UpdateWhatsAppFlow Operation</seealso>
+        UpdateWhatsAppFlowResponse UpdateWhatsAppFlow(UpdateWhatsAppFlowRequest request);
+
+
+
+        /// <summary>
+        /// Updates the metadata of a WhatsApp Flow, such as its name or categories. This does
+        /// not update the Flow JSON definition. Use <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppFlowAssets.html">UpdateWhatsAppFlowAssets</a>
+        /// to update the Flow JSON.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWhatsAppFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWhatsAppFlow service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppFlow">REST API Reference for UpdateWhatsAppFlow Operation</seealso>
+        Task<UpdateWhatsAppFlowResponse> UpdateWhatsAppFlowAsync(UpdateWhatsAppFlowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateWhatsAppFlowAssets
+
+
+        /// <summary>
+        /// Updates the Flow JSON definition (assets) of a WhatsApp Flow. Updating a published
+        /// Flow's assets reverts it to DRAFT status, requiring re-publishing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWhatsAppFlowAssets service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWhatsAppFlowAssets service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppFlowAssets">REST API Reference for UpdateWhatsAppFlowAssets Operation</seealso>
+        UpdateWhatsAppFlowAssetsResponse UpdateWhatsAppFlowAssets(UpdateWhatsAppFlowAssetsRequest request);
+
+
+
+        /// <summary>
+        /// Updates the Flow JSON definition (assets) of a WhatsApp Flow. Updating a published
+        /// Flow's assets reverts it to DRAFT status, requiring re-publishing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWhatsAppFlowAssets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWhatsAppFlowAssets service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppFlowAssets">REST API Reference for UpdateWhatsAppFlowAssets Operation</seealso>
+        Task<UpdateWhatsAppFlowAssetsResponse> UpdateWhatsAppFlowAssetsAsync(UpdateWhatsAppFlowAssetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateWhatsAppMessageTemplate
 
 
@@ -1495,6 +2325,9 @@ namespace Amazon.SocialMessaging
         /// <param name="request">Container for the necessary parameters to execute the UpdateWhatsAppMessageTemplate service method.</param>
         /// 
         /// <returns>The response from the UpdateWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
@@ -1530,6 +2363,9 @@ namespace Amazon.SocialMessaging
         /// </param>
         /// 
         /// <returns>The response from the UpdateWhatsAppMessageTemplate service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>

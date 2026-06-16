@@ -56,31 +56,31 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionName", targetDepth))
+                if (context.TestExpression("actionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("currentRevision", targetDepth))
+                if (context.TestExpression("currentRevision", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionRevisionUnmarshaller.Instance;
                     unmarshalledObject.CurrentRevision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityUrl", targetDepth))
+                if (context.TestExpression("entityUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestExecution", targetDepth))
+                if (context.TestExpression("latestExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionExecutionUnmarshaller.Instance;
                     unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("revisionUrl", targetDepth))
+                if (context.TestExpression("revisionUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RevisionUrl = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ControlInputParameters", targetDepth))
+                if (context.TestExpression("ControlInputParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ControlInputParameter, ControlInputParameterUnmarshaller>(ControlInputParameterUnmarshaller.Instance);
                     unmarshalledObject.ControlInputParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ControlName", targetDepth))
+                if (context.TestExpression("ControlName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ControlName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ControlScope", targetDepth))
+                if (context.TestExpression("ControlScope", targetDepth, ref reader))
                 {
                     var unmarshaller = ControlScopeUnmarshaller.Instance;
                     unmarshalledObject.ControlScope = unmarshaller.Unmarshall(context, ref reader);

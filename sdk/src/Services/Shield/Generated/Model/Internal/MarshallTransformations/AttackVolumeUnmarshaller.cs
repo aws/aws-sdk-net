@@ -56,19 +56,19 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BitsPerSecond", targetDepth))
+                if (context.TestExpression("BitsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = AttackVolumeStatisticsUnmarshaller.Instance;
                     unmarshalledObject.BitsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PacketsPerSecond", targetDepth))
+                if (context.TestExpression("PacketsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = AttackVolumeStatisticsUnmarshaller.Instance;
                     unmarshalledObject.PacketsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestsPerSecond", targetDepth))
+                if (context.TestExpression("RequestsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = AttackVolumeStatisticsUnmarshaller.Instance;
                     unmarshalledObject.RequestsPerSecond = unmarshaller.Unmarshall(context, ref reader);

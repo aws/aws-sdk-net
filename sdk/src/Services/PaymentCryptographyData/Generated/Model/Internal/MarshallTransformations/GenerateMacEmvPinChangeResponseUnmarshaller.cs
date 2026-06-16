@@ -52,55 +52,55 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EncryptedPinBlock", targetDepth))
+                if (context.TestExpression("EncryptedPinBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EncryptedPinBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mac", targetDepth))
+                if (context.TestExpression("Mac", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Mac = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewPinPekArn", targetDepth))
+                if (context.TestExpression("NewPinPekArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NewPinPekArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewPinPekKeyCheckValue", targetDepth))
+                if (context.TestExpression("NewPinPekKeyCheckValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NewPinPekKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecureMessagingConfidentialityKeyArn", targetDepth))
+                if (context.TestExpression("SecureMessagingConfidentialityKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecureMessagingConfidentialityKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecureMessagingConfidentialityKeyCheckValue", targetDepth))
+                if (context.TestExpression("SecureMessagingConfidentialityKeyCheckValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecureMessagingConfidentialityKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecureMessagingIntegrityKeyArn", targetDepth))
+                if (context.TestExpression("SecureMessagingIntegrityKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecureMessagingIntegrityKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecureMessagingIntegrityKeyCheckValue", targetDepth))
+                if (context.TestExpression("SecureMessagingIntegrityKeyCheckValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecureMessagingIntegrityKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisaAmexDerivationOutputs", targetDepth))
+                if (context.TestExpression("VisaAmexDerivationOutputs", targetDepth, ref reader))
                 {
                     var unmarshaller = VisaAmexDerivationOutputsUnmarshaller.Instance;
                     response.VisaAmexDerivationOutputs = unmarshaller.Unmarshall(context, ref reader);

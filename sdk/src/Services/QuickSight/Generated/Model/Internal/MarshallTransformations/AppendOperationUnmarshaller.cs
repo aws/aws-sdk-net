@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Alias", targetDepth))
+                if (context.TestExpression("Alias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AppendedColumns", targetDepth))
+                if (context.TestExpression("AppendedColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AppendedColumn, AppendedColumnUnmarshaller>(AppendedColumnUnmarshaller.Instance);
                     unmarshalledObject.AppendedColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirstSource", targetDepth))
+                if (context.TestExpression("FirstSource", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformOperationSourceUnmarshaller.Instance;
                     unmarshalledObject.FirstSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondSource", targetDepth))
+                if (context.TestExpression("SecondSource", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformOperationSourceUnmarshaller.Instance;
                     unmarshalledObject.SecondSource = unmarshaller.Unmarshall(context, ref reader);

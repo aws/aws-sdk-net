@@ -56,7 +56,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("regexConfiguration", targetDepth))
+                if (context.TestExpression("regexConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SlotTypeRegexConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RegexConfiguration = unmarshaller.Unmarshall(context, ref reader);

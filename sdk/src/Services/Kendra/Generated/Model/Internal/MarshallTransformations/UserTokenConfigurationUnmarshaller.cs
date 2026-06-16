@@ -56,13 +56,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("JsonTokenTypeConfiguration", targetDepth))
+                if (context.TestExpression("JsonTokenTypeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = JsonTokenTypeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.JsonTokenTypeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JwtTokenTypeConfiguration", targetDepth))
+                if (context.TestExpression("JwtTokenTypeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = JwtTokenTypeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.JwtTokenTypeConfiguration = unmarshaller.Unmarshall(context, ref reader);

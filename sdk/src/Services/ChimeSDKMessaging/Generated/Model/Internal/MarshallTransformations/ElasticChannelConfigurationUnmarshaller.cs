@@ -56,19 +56,19 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaximumSubChannels", targetDepth))
+                if (context.TestExpression("MaximumSubChannels", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumSubChannels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumMembershipPercentage", targetDepth))
+                if (context.TestExpression("MinimumMembershipPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumMembershipPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetMembershipsPerSubChannel", targetDepth))
+                if (context.TestExpression("TargetMembershipsPerSubChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetMembershipsPerSubChannel = unmarshaller.Unmarshall(context, ref reader);

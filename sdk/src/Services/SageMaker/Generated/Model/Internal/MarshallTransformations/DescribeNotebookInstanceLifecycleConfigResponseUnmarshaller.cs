@@ -52,37 +52,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookInstanceLifecycleConfigArn", targetDepth))
+                if (context.TestExpression("NotebookInstanceLifecycleConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NotebookInstanceLifecycleConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookInstanceLifecycleConfigName", targetDepth))
+                if (context.TestExpression("NotebookInstanceLifecycleConfigName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NotebookInstanceLifecycleConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnCreate", targetDepth))
+                if (context.TestExpression("OnCreate", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NotebookInstanceLifecycleHook, NotebookInstanceLifecycleHookUnmarshaller>(NotebookInstanceLifecycleHookUnmarshaller.Instance);
                     response.OnCreate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnStart", targetDepth))
+                if (context.TestExpression("OnStart", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NotebookInstanceLifecycleHook, NotebookInstanceLifecycleHookUnmarshaller>(NotebookInstanceLifecycleHookUnmarshaller.Instance);
                     response.OnStart = unmarshaller.Unmarshall(context, ref reader);

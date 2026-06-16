@@ -52,7 +52,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CoreNetwork", targetDepth))
+                if (context.TestExpression("CoreNetwork", targetDepth, ref reader))
                 {
                     var unmarshaller = CoreNetworkUnmarshaller.Instance;
                     response.CoreNetwork = unmarshaller.Unmarshall(context, ref reader);

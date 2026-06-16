@@ -56,49 +56,49 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
+                if (context.TestExpression("CreatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Elements", targetDepth))
+                if (context.TestExpression("Elements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MediaInsightsPipelineConfigurationElement, MediaInsightsPipelineConfigurationElementUnmarshaller>(MediaInsightsPipelineConfigurationElementUnmarshaller.Instance);
                     unmarshalledObject.Elements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipelineConfigurationArn", targetDepth))
+                if (context.TestExpression("MediaInsightsPipelineConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipelineConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipelineConfigurationId", targetDepth))
+                if (context.TestExpression("MediaInsightsPipelineConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipelineConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipelineConfigurationName", targetDepth))
+                if (context.TestExpression("MediaInsightsPipelineConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipelineConfigurationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RealTimeAlertConfiguration", targetDepth))
+                if (context.TestExpression("RealTimeAlertConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeAlertConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RealTimeAlertConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceAccessRoleArn", targetDepth))
+                if (context.TestExpression("ResourceAccessRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdatedTimestamp", targetDepth))
+                if (context.TestExpression("UpdatedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedTimestamp = unmarshaller.Unmarshall(context, ref reader);

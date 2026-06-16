@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PercentRange", targetDepth))
+                if (context.TestExpression("PercentRange", targetDepth, ref reader))
                 {
                     var unmarshaller = PercentVisibleRangeUnmarshaller.Instance;
                     unmarshalledObject.PercentRange = unmarshaller.Unmarshall(context, ref reader);

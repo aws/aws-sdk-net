@@ -52,19 +52,19 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sessionExpirationTime", targetDepth))
+                if (context.TestExpression("sessionExpirationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SessionExpirationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("token", targetDepth))
+                if (context.TestExpression("token", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Token = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenExpirationTime", targetDepth))
+                if (context.TestExpression("tokenExpirationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TokenExpirationTime = unmarshaller.Unmarshall(context, ref reader);

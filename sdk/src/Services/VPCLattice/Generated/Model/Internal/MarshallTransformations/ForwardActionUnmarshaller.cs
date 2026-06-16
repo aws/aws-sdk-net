@@ -56,7 +56,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("targetGroups", targetDepth))
+                if (context.TestExpression("targetGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WeightedTargetGroup, WeightedTargetGroupUnmarshaller>(WeightedTargetGroupUnmarshaller.Instance);
                     unmarshalledObject.TargetGroups = unmarshaller.Unmarshall(context, ref reader);

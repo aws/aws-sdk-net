@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReadClientCredentialsGrantDetails", targetDepth))
+                if (context.TestExpression("ReadClientCredentialsGrantDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadClientCredentialsGrantDetailsUnmarshaller.Instance;
                     unmarshalledObject.ReadClientCredentialsGrantDetails = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Aliases", targetDepth))
+                if (context.TestExpression("Aliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Alias, AliasUnmarshaller>(AliasUnmarshaller.Instance);
                     response.Aliases = unmarshaller.Unmarshall(context, ref reader);

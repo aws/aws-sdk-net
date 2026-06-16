@@ -56,19 +56,19 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("category", targetDepth))
+                if (context.TestExpression("category", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("detections", targetDepth))
+                if (context.TestExpression("detections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DefaultDetection, DefaultDetectionUnmarshaller>(DefaultDetectionUnmarshaller.Instance);
                     unmarshalledObject.Detections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalCount", targetDepth))
+                if (context.TestExpression("totalCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context, ref reader);

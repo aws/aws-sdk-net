@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the GetMonitor operation.
+    /// Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins
+    /// (flows into Get, Summary, and BatchGet) and Create outputs.
     /// </summary>
     public partial class GetMonitorResponse : AmazonWebServiceResponse
     {
@@ -39,6 +40,7 @@ namespace Amazon.Deadline.Model
         private string _displayName;
         private string _identityCenterApplicationArn;
         private string _identityCenterInstanceArn;
+        private string _identityCenterRegion;
         private string _monitorId;
         private string _roleArn;
         private string _subdomain;
@@ -147,6 +149,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterInstanceArn()
         {
             return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterRegion. 
+        /// <para>
+        /// The Region where IAM Identity Center is enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string IdentityCenterRegion
+        {
+            get { return this._identityCenterRegion; }
+            set { this._identityCenterRegion = value; }
+        }
+
+        // Check to see if IdentityCenterRegion property is set
+        internal bool IsSetIdentityCenterRegion()
+        {
+            return this._identityCenterRegion != null;
         }
 
         /// <summary>

@@ -52,25 +52,25 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LastUplinkReceivedAt", targetDepth))
+                if (context.TestExpression("LastUplinkReceivedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastUplinkReceivedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoRaWAN", targetDepth))
+                if (context.TestExpression("LoRaWAN", targetDepth, ref reader))
                 {
                     var unmarshaller = LoRaWANDeviceMetadataUnmarshaller.Instance;
                     response.LoRaWAN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sidewalk", targetDepth))
+                if (context.TestExpression("Sidewalk", targetDepth, ref reader))
                 {
                     var unmarshaller = SidewalkDeviceMetadataUnmarshaller.Instance;
                     response.Sidewalk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WirelessDeviceId", targetDepth))
+                if (context.TestExpression("WirelessDeviceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WirelessDeviceId = unmarshaller.Unmarshall(context, ref reader);

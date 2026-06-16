@@ -56,7 +56,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("react", targetDepth))
+                if (context.TestExpression("react", targetDepth, ref reader))
                 {
                     var unmarshaller = ReactStartCodegenJobDataUnmarshaller.Instance;
                     unmarshalledObject.React = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("groups", targetDepth))
+                if (context.TestExpression("groups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentAclGroup, DocumentAclGroupUnmarshaller>(DocumentAclGroupUnmarshaller.Instance);
                     unmarshalledObject.Groups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memberRelation", targetDepth))
+                if (context.TestExpression("memberRelation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MemberRelation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("users", targetDepth))
+                if (context.TestExpression("users", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentAclUser, DocumentAclUserUnmarshaller>(DocumentAclUserUnmarshaller.Instance);
                     unmarshalledObject.Users = unmarshaller.Unmarshall(context, ref reader);

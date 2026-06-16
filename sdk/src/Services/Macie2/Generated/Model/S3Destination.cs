@@ -31,11 +31,15 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies an S3 bucket to store data classification results in, and the encryption
-    /// settings to use when storing results in that bucket.
+    /// settings to use when storing results in that bucket. The bucket must be an existing
+    /// general purpose bucket. It can be a bucket in your own account or a bucket that another
+    /// account owns. If another account owns the bucket, you must specify both the unique
+    /// identifier for the account and the name of the bucket.
     /// </summary>
     public partial class S3Destination
     {
         private string _bucketName;
+        private string _expectedBucketOwner;
         private string _keyPrefix;
         private string _kmsKeyArn;
 
@@ -56,6 +60,25 @@ namespace Amazon.Macie2.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The unique identifier (ID) for the Amazon Web Services account that owns the bucket.
+        /// This must be the ID for the account that owns the specified bucket.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>

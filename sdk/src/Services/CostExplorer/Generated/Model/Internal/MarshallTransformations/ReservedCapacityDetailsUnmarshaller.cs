@@ -56,7 +56,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DynamoDBCapacityDetails", targetDepth))
+                if (context.TestExpression("DynamoDBCapacityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamoDBCapacityDetailsUnmarshaller.Instance;
                     unmarshalledObject.DynamoDBCapacityDetails = unmarshaller.Unmarshall(context, ref reader);

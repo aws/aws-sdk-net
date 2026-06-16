@@ -52,13 +52,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetSummaries", targetDepth))
+                if (context.TestExpression("assetSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetSummary, AssetSummaryUnmarshaller>(AssetSummaryUnmarshaller.Instance);
                     response.AssetSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

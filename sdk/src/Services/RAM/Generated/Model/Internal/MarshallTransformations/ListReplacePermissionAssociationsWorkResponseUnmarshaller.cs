@@ -52,13 +52,13 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replacePermissionAssociationsWorks", targetDepth))
+                if (context.TestExpression("replacePermissionAssociationsWorks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplacePermissionAssociationsWork, ReplacePermissionAssociationsWorkUnmarshaller>(ReplacePermissionAssociationsWorkUnmarshaller.Instance);
                     response.ReplacePermissionAssociationsWorks = unmarshaller.Unmarshall(context, ref reader);

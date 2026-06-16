@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.IO;
 
@@ -33,7 +34,11 @@ namespace Amazon.Runtime.EventStreams.Utils
         public static XmlUnmarshallerContext ConvertMessageToXmlContext(IEventStreamMessage message)
         {
             var stream = new MemoryStream(message.Payload);
-            return new XmlUnmarshallerContext(stream, false, null);
+#if NETFRAMEWORK
+            return new XmlUnmarshallerContext(stream, false, new HttpWebRequestResponseData(message.Headers));
+#else
+            return new XmlUnmarshallerContext(stream, false, new HttpClientResponseData(message.Headers));  
+#endif
         }
 
         /// <summary>
@@ -44,7 +49,13 @@ namespace Amazon.Runtime.EventStreams.Utils
         public static JsonUnmarshallerContext ConvertMessageToJsonContext(IEventStreamMessage message)
         {
             var stream = new MemoryStream(message.Payload);
-            return new JsonUnmarshallerContext(stream, false, null);
+            // here you have to create the context that is aware of the headers
+#if NETFRAMEWORK
+            return new JsonUnmarshallerContext(stream, false, new HttpWebRequestResponseData(message.Headers));
+#else
+            return new JsonUnmarshallerContext(stream, false, new HttpClientResponseData(message.Headers)); 
+#endif
+
         }
 
         /// <summary>

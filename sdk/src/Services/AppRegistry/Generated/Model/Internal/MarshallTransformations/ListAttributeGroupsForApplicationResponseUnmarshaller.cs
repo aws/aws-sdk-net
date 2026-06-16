@@ -52,13 +52,13 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attributeGroupsDetails", targetDepth))
+                if (context.TestExpression("attributeGroupsDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttributeGroupDetails, AttributeGroupDetailsUnmarshaller>(AttributeGroupDetailsUnmarshaller.Instance);
                     response.AttributeGroupsDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

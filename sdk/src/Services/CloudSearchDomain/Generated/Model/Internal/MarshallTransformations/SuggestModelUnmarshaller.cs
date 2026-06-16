@@ -56,19 +56,19 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("found", targetDepth))
+                if (context.TestExpression("found", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Found = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("query", targetDepth))
+                if (context.TestExpression("query", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Query = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suggestions", targetDepth))
+                if (context.TestExpression("suggestions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SuggestionMatch, SuggestionMatchUnmarshaller>(SuggestionMatchUnmarshaller.Instance);
                     unmarshalledObject.Suggestions = unmarshaller.Unmarshall(context, ref reader);

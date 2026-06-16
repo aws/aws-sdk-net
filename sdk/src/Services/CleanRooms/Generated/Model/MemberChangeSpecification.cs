@@ -38,6 +38,8 @@ namespace Amazon.CleanRooms.Model
         private string _accountId;
         private string _displayName;
         private List<string> _memberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private MLMemberAbilities _mlMemberAbilities;
+        private PaymentConfiguration _paymentConfiguration;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -87,13 +89,18 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The following values are currently not supported: <c>CAN_QUERY</c>, <c>CAN_RECEIVE_RESULTS,</c>
-        /// and <c>CAN_RUN_JOB</c>. 
+        /// The following values are currently not supported: <c>CAN_QUERY</c> and <c>CAN_RUN_JOB</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Set the value of <c>memberAbilities</c> to <c>[]</c> to allow a member to contribute
         /// data.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set the value of <c>memberAbilities</c> to <c>[CAN_RECEIVE_RESULTS]</c> to allow a
+        /// member to contribute data and receive results.
         /// </para>
         ///  </note>
         /// <para />
@@ -113,6 +120,36 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetMemberAbilities()
         {
             return this._memberAbilities != null && (this._memberAbilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlMemberAbilities.
+        /// </summary>
+        public MLMemberAbilities MlMemberAbilities
+        {
+            get { return this._mlMemberAbilities; }
+            set { this._mlMemberAbilities = value; }
+        }
+
+        // Check to see if MlMemberAbilities property is set
+        internal bool IsSetMlMemberAbilities()
+        {
+            return this._mlMemberAbilities != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PaymentConfiguration.
+        /// </summary>
+        public PaymentConfiguration PaymentConfiguration
+        {
+            get { return this._paymentConfiguration; }
+            set { this._paymentConfiguration = value; }
+        }
+
+        // Check to see if PaymentConfiguration property is set
+        internal bool IsSetPaymentConfiguration()
+        {
+            return this._paymentConfiguration != null;
         }
 
     }

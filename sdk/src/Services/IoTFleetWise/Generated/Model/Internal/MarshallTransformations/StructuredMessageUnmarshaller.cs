@@ -56,19 +56,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("primitiveMessageDefinition", targetDepth))
+                if (context.TestExpression("primitiveMessageDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = PrimitiveMessageDefinitionUnmarshaller.Instance;
                     unmarshalledObject.PrimitiveMessageDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("structuredMessageDefinition", targetDepth))
+                if (context.TestExpression("structuredMessageDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StructuredMessageFieldNameAndDataTypePair, StructuredMessageFieldNameAndDataTypePairUnmarshaller>(StructuredMessageFieldNameAndDataTypePairUnmarshaller.Instance);
                     unmarshalledObject.StructuredMessageDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("structuredMessageListDefinition", targetDepth))
+                if (context.TestExpression("structuredMessageListDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = StructuredMessageListDefinitionUnmarshaller.Instance;
                     unmarshalledObject.StructuredMessageListDefinition = unmarshaller.Unmarshall(context, ref reader);

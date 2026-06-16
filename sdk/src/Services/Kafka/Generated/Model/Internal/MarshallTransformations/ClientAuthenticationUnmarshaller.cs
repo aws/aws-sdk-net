@@ -56,19 +56,19 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sasl", targetDepth))
+                if (context.TestExpression("sasl", targetDepth, ref reader))
                 {
                     var unmarshaller = SaslUnmarshaller.Instance;
                     unmarshalledObject.Sasl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tls", targetDepth))
+                if (context.TestExpression("tls", targetDepth, ref reader))
                 {
                     var unmarshaller = TlsUnmarshaller.Instance;
                     unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unauthenticated", targetDepth))
+                if (context.TestExpression("unauthenticated", targetDepth, ref reader))
                 {
                     var unmarshaller = UnauthenticatedUnmarshaller.Instance;
                     unmarshalledObject.Unauthenticated = unmarshaller.Unmarshall(context, ref reader);

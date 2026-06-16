@@ -56,13 +56,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxFilesToKeep", targetDepth))
+                if (context.TestExpression("maxFilesToKeep", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFilesToKeep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rotationSize", targetDepth))
+                if (context.TestExpression("rotationSize", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RotationSize = unmarshaller.Unmarshall(context, ref reader);

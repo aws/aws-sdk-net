@@ -46,6 +46,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetScaleDownIdleTimeInSeconds())
+            {
+                context.Writer.WritePropertyName("scaleDownIdleTimeInSeconds");
+                context.Writer.WriteNumberValue(requestObject.ScaleDownIdleTimeInSeconds.Value);
+            }
+
             if(requestObject.IsSetSlurmCustomSettings())
             {
                 context.Writer.WritePropertyName("slurmCustomSettings");

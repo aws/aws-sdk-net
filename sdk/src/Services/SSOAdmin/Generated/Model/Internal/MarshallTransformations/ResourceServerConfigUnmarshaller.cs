@@ -56,7 +56,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Scopes", targetDepth))
+                if (context.TestExpression("Scopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ResourceServerScopeDetails, StringUnmarshaller, ResourceServerScopeDetailsUnmarshaller>(StringUnmarshaller.Instance, ResourceServerScopeDetailsUnmarshaller.Instance);
                     unmarshalledObject.Scopes = unmarshaller.Unmarshall(context, ref reader);

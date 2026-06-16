@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computationModelStatus", targetDepth))
+                if (context.TestExpression("computationModelStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputationModelStatusUnmarshaller.Instance;
                     response.ComputationModelStatus = unmarshaller.Unmarshall(context, ref reader);

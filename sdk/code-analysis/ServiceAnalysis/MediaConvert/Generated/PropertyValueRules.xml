@@ -11,6 +11,10 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CreateQueueRequest.MaximumConcurrentFeeds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -51,6 +55,10 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.UpdateQueueRequest.MaximumConcurrentFeeds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AacSettings.Bitrate</property>
     <min>6000</min>
     <max>1024000</max>
@@ -82,6 +90,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Ac3Settings.SampleRate</property>
+    <min>48000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Ac4Settings.Bitrate</property>
+    <min>48000</min>
+    <max>768000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Ac4Settings.SampleRate</property>
     <min>48000</min>
     <max>48000</max>
   </property-value-rule>
@@ -338,6 +356,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafEncryptionSettings.ClearLeadSegments</property>
+    <min>1</min>
+    <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafEncryptionSettings.ConstantInitializationVector</property>
     <min>32</min>
     <max>32</max>
@@ -384,6 +407,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.TileWidth</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>
@@ -496,6 +539,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.TileWidth</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>
@@ -1099,6 +1162,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.TileWidth</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>
@@ -1745,6 +1828,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MultiViewInput.FileInput</property>
+    <pattern>^s3://([^\/]+\/+)+((([^\/]*)))|^https?://[^\/].*[^&amp;]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.MxfXavcProfileSettings.MaxAncDataSize</property>
     <min>0</min>
     <max>2147483647</max>
@@ -1891,6 +1978,10 @@
     <property>Amazon.MediaConvert.Model.ProresSettings.ParNumerator</property>
     <min>1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Queue.MaximumConcurrentFeeds</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Rectangle.Height</property>

@@ -72,13 +72,13 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("AccessPointId", targetDepth))
+                    if (context.TestExpression("AccessPointId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AccessPointId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ErrorCode", targetDepth))
+                    if (context.TestExpression("ErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);

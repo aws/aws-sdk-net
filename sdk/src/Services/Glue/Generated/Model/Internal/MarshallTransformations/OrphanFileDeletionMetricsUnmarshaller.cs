@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IcebergMetrics", targetDepth))
+                if (context.TestExpression("IcebergMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = IcebergOrphanFileDeletionMetricsUnmarshaller.Instance;
                     unmarshalledObject.IcebergMetrics = unmarshaller.Unmarshall(context, ref reader);

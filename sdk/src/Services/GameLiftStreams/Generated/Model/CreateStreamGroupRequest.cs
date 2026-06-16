@@ -220,8 +220,8 @@ namespace Amazon.GameLiftStreams.Model
         ///  <b> <c>gen6n_pro_win2022</c> (NVIDIA, pro)</b> Supports applications with extremely
         /// high 3D scene complexity which require maximum resources. Runs applications on Microsoft
         /// Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions
-        /// up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA
-        /// L4 Tensor Core GPU.
+        /// up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Powered by
+        /// NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -242,8 +242,8 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen6n_pro</c> (NVIDIA, pro)</b> Supports applications with extremely high
-        /// 3D scene complexity which require maximum resources. Uses dedicated NVIDIA L4 Tensor
-        /// Core GPU.
+        /// 3D scene complexity which require maximum resources. Powered by NVIDIA L4 Tensor Core
+        /// GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -266,7 +266,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  <b> <c>gen6n_ultra_win2022</c> (NVIDIA, ultra)</b> Supports applications with high
         /// 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports
         /// DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications,
-        /// and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.
+        /// and anti-cheat technology. Powered by NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -287,7 +287,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen6n_ultra</c> (NVIDIA, ultra)</b> Supports applications with high 3D scene
-        /// complexity. Uses dedicated NVIDIA L4 Tensor Core GPU.
+        /// complexity. Powered by NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -308,7 +308,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen6n_high</c> (NVIDIA, high)</b> Supports applications with moderate to high
-        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// 3D scene complexity. Powered by NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -329,7 +329,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen6n_medium</c> (NVIDIA, medium)</b> Supports applications with moderate
-        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// 3D scene complexity. Powered by NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -350,7 +350,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen6n_small</c> (NVIDIA, small)</b> Supports applications with lightweight
-        /// 3D scene complexity and low CPU usage. Uses NVIDIA L4 Tensor Core GPU.
+        /// 3D scene complexity and low CPU usage. Powered by NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -371,7 +371,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen6n_medium_win2022</c> (NVIDIA, medium)</b> Supports applications with low
-        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// 3D scene complexity. Powered by NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -392,7 +392,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen6n_small_win2022</c> (NVIDIA, small)</b> Supports applications with low
-        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// 3D scene complexity. Powered by NVIDIA L4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -412,10 +412,57 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        ///  <b> <c>gen6e_pro_win2022</c> (NVIDIA, pro)</b> Supports applications with extremely
+        /// high 3D scene complexity which require maximum resources. Runs applications on Microsoft
+        /// Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions
+        /// up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Powered by
+        /// NVIDIA L40S Tensor Core GPUs.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 16 vCPUs, 128 GB RAM, 48 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6e_pro</c> (NVIDIA, pro)</b> Supports applications with extremely high
+        /// 3D scene complexity which require maximum resources. Powered by NVIDIA L40S Tensor
+        /// Core GPUs.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 16 vCPUs, 128 GB RAM, 48 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
         ///  <b> <c>gen5n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
         /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32
-        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor Core GPU.
+        /// and 64-bit applications, and anti-cheat technology. Powered by NVIDIA A10G Tensor
+        /// Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -436,7 +483,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen5n_high</c> (NVIDIA, high)</b> Supports applications with moderate to high
-        /// 3D scene complexity. Uses NVIDIA A10G Tensor Core GPU.
+        /// 3D scene complexity. Powered by NVIDIA A10G Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -457,7 +504,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen5n_ultra</c> (NVIDIA, ultra)</b> Supports applications with extremely high
-        /// 3D scene complexity. Uses dedicated NVIDIA A10G Tensor Core GPU.
+        /// 3D scene complexity. Powered by NVIDIA A10G Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -480,7 +527,8 @@ namespace Amazon.GameLiftStreams.Model
         ///  <b> <c>gen4n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
         /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32
-        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor Core GPU.
+        /// and 64-bit applications, and anti-cheat technology. Powered by NVIDIA T4 Tensor Core
+        /// GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -501,7 +549,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen4n_high</c> (NVIDIA, high)</b> Supports applications with moderate to high
-        /// 3D scene complexity. Uses NVIDIA T4 Tensor Core GPU.
+        /// 3D scene complexity. Powered by NVIDIA T4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -522,7 +570,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen4n_ultra</c> (NVIDIA, ultra)</b> Supports applications with high 3D scene
-        /// complexity. Uses dedicated NVIDIA T4 Tensor Core GPU.
+        /// complexity. Powered by NVIDIA T4 Tensor Core GPUs.
         /// </para>
         ///  <ul> <li> 
         /// <para>

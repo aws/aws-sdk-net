@@ -46,6 +46,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoScalingConfiguration())
+            {
+                context.Writer.WritePropertyName("autoScalingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceManagedEc2AutoScalingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoScalingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetInstanceCapabilities())
             {
                 context.Writer.WritePropertyName("instanceCapabilities");
@@ -64,6 +75,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
                 var marshaller = ServiceManagedEc2InstanceMarketOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InstanceMarketOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPersistentVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("persistentVolumeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PersistentVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PersistentVolumeConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

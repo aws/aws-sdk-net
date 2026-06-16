@@ -56,37 +56,37 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("beginOffset", targetDepth))
+                if (context.TestExpression("beginOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endOffset", targetDepth))
+                if (context.TestExpression("endOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaId", targetDepth))
+                if (context.TestExpression("mediaId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaMimeType", targetDepth))
+                if (context.TestExpression("mediaMimeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaMimeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snippetExcerpt", targetDepth))
+                if (context.TestExpression("snippetExcerpt", targetDepth, ref reader))
                 {
                     var unmarshaller = SnippetExcerptUnmarshaller.Instance;
                     unmarshalledObject.SnippetExcerpt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceDetails", targetDepth))
+                if (context.TestExpression("sourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context, ref reader);

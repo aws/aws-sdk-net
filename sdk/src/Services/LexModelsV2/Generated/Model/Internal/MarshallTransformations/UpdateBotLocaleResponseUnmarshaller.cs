@@ -52,97 +52,103 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botId", targetDepth))
+                if (context.TestExpression("audioFillerSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = AudioFillerSettingsUnmarshaller.Instance;
+                    response.AudioFillerSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("botId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botLocaleStatus", targetDepth))
+                if (context.TestExpression("botLocaleStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotLocaleStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botVersion", targetDepth))
+                if (context.TestExpression("botVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationDateTime", targetDepth))
+                if (context.TestExpression("creationDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureReasons", targetDepth))
+                if (context.TestExpression("failureReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.FailureReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generativeAISettings", targetDepth))
+                if (context.TestExpression("generativeAISettings", targetDepth, ref reader))
                 {
                     var unmarshaller = GenerativeAISettingsUnmarshaller.Instance;
                     response.GenerativeAISettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDateTime", targetDepth))
+                if (context.TestExpression("lastUpdatedDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localeId", targetDepth))
+                if (context.TestExpression("localeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocaleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localeName", targetDepth))
+                if (context.TestExpression("localeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocaleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nluIntentConfidenceThreshold", targetDepth))
+                if (context.TestExpression("nluIntentConfidenceThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.NluIntentConfidenceThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendedActions", targetDepth))
+                if (context.TestExpression("recommendedActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.RecommendedActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speechDetectionSensitivity", targetDepth))
+                if (context.TestExpression("speechDetectionSensitivity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SpeechDetectionSensitivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speechRecognitionSettings", targetDepth))
+                if (context.TestExpression("speechRecognitionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SpeechRecognitionSettingsUnmarshaller.Instance;
                     response.SpeechRecognitionSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unifiedSpeechSettings", targetDepth))
+                if (context.TestExpression("unifiedSpeechSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = UnifiedSpeechSettingsUnmarshaller.Instance;
                     response.UnifiedSpeechSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("voiceSettings", targetDepth))
+                if (context.TestExpression("voiceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = VoiceSettingsUnmarshaller.Instance;
                     response.VoiceSettings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,79 +56,79 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreateNetworkAclAction", targetDepth))
+                if (context.TestExpression("CreateNetworkAclAction", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateNetworkAclActionUnmarshaller.Instance;
                     unmarshalledObject.CreateNetworkAclAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateNetworkAclEntriesAction", targetDepth))
+                if (context.TestExpression("CreateNetworkAclEntriesAction", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateNetworkAclEntriesActionUnmarshaller.Instance;
                     unmarshalledObject.CreateNetworkAclEntriesAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeleteNetworkAclEntriesAction", targetDepth))
+                if (context.TestExpression("DeleteNetworkAclEntriesAction", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteNetworkAclEntriesActionUnmarshaller.Instance;
                     unmarshalledObject.DeleteNetworkAclEntriesAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2AssociateRouteTableAction", targetDepth))
+                if (context.TestExpression("EC2AssociateRouteTableAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2AssociateRouteTableActionUnmarshaller.Instance;
                     unmarshalledObject.EC2AssociateRouteTableAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2CopyRouteTableAction", targetDepth))
+                if (context.TestExpression("EC2CopyRouteTableAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2CopyRouteTableActionUnmarshaller.Instance;
                     unmarshalledObject.EC2CopyRouteTableAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2CreateRouteAction", targetDepth))
+                if (context.TestExpression("EC2CreateRouteAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2CreateRouteActionUnmarshaller.Instance;
                     unmarshalledObject.EC2CreateRouteAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2CreateRouteTableAction", targetDepth))
+                if (context.TestExpression("EC2CreateRouteTableAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2CreateRouteTableActionUnmarshaller.Instance;
                     unmarshalledObject.EC2CreateRouteTableAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2DeleteRouteAction", targetDepth))
+                if (context.TestExpression("EC2DeleteRouteAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2DeleteRouteActionUnmarshaller.Instance;
                     unmarshalledObject.EC2DeleteRouteAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2ReplaceRouteAction", targetDepth))
+                if (context.TestExpression("EC2ReplaceRouteAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2ReplaceRouteActionUnmarshaller.Instance;
                     unmarshalledObject.EC2ReplaceRouteAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EC2ReplaceRouteTableAssociationAction", targetDepth))
+                if (context.TestExpression("EC2ReplaceRouteTableAssociationAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2ReplaceRouteTableAssociationActionUnmarshaller.Instance;
                     unmarshalledObject.EC2ReplaceRouteTableAssociationAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FMSPolicyUpdateFirewallCreationConfigAction", targetDepth))
+                if (context.TestExpression("FMSPolicyUpdateFirewallCreationConfigAction", targetDepth, ref reader))
                 {
                     var unmarshaller = FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller.Instance;
                     unmarshalledObject.FMSPolicyUpdateFirewallCreationConfigAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplaceNetworkAclAssociationAction", targetDepth))
+                if (context.TestExpression("ReplaceNetworkAclAssociationAction", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplaceNetworkAclAssociationActionUnmarshaller.Instance;
                     unmarshalledObject.ReplaceNetworkAclAssociationAction = unmarshaller.Unmarshall(context, ref reader);

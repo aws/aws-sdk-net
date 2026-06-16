@@ -56,25 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HiddenAppTypes", targetDepth))
+                if (context.TestExpression("ExecutionRoleSessionNameMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRoleSessionNameMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("HiddenAppTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HiddenAppTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HiddenInstanceTypes", targetDepth))
+                if (context.TestExpression("HiddenInstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HiddenInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HiddenMlTools", targetDepth))
+                if (context.TestExpression("HiddenMlTools", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HiddenMlTools = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HiddenSageMakerImageVersionAliases", targetDepth))
+                if (context.TestExpression("HiddenSageMakerImageVersionAliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HiddenSageMakerImage, HiddenSageMakerImageUnmarshaller>(HiddenSageMakerImageUnmarshaller.Instance);
                     unmarshalledObject.HiddenSageMakerImageVersionAliases = unmarshaller.Unmarshall(context, ref reader);

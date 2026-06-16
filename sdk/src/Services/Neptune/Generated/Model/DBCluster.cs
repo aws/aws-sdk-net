@@ -71,6 +71,7 @@ namespace Amazon.Neptune.Model
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
         private bool? _multiAZ;
+        private string _networkType;
         private ClusterPendingModifiedValues _pendingModifiedValues;
         private string _percentProgress;
         private int? _port;
@@ -705,6 +706,37 @@ namespace Amazon.Neptune.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <c>IPV4</c> </b>   –   The DB cluster uses only IPv4 addresses for communication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>DUAL</c> </b>   –   The DB cluster uses both IPv4 and IPv6 addresses for communication.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

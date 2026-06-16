@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeviceName", targetDepth))
+                if (context.TestExpression("DeviceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ebs", targetDepth))
+                if (context.TestExpression("Ebs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsUnmarshaller.Instance;
                     unmarshalledObject.Ebs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NoDevice", targetDepth))
+                if (context.TestExpression("NoDevice", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NoDevice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VirtualName", targetDepth))
+                if (context.TestExpression("VirtualName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualName = unmarshaller.Unmarshall(context, ref reader);

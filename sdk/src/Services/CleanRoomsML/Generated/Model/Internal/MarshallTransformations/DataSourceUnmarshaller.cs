@@ -56,7 +56,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("glueDataSource", targetDepth))
+                if (context.TestExpression("glueDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = GlueDataSourceUnmarshaller.Instance;
                     unmarshalledObject.GlueDataSource = unmarshaller.Unmarshall(context, ref reader);

@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// log group will be created if it doesn't exist. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true)]
         public string LogGroupName
         {
             get { return this._logGroupName; }

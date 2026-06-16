@@ -56,7 +56,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datasetIdentifier", targetDepth))
+                if (context.TestExpression("datasetIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetIdentifier = unmarshaller.Unmarshall(context, ref reader);

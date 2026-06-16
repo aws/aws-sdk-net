@@ -56,55 +56,55 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Criticality", targetDepth))
+                if (context.TestExpression("Criticality", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Criticality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Note", targetDepth))
+                if (context.TestExpression("Note", targetDepth, ref reader))
                 {
                     var unmarshaller = NoteUpdateUnmarshaller.Instance;
                     unmarshalledObject.Note = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedFindings", targetDepth))
+                if (context.TestExpression("RelatedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RelatedFinding, RelatedFindingUnmarshaller>(RelatedFindingUnmarshaller.Instance);
                     unmarshalledObject.RelatedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Severity", targetDepth))
+                if (context.TestExpression("Severity", targetDepth, ref reader))
                 {
                     var unmarshaller = SeverityUpdateUnmarshaller.Instance;
                     unmarshalledObject.Severity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Types", targetDepth))
+                if (context.TestExpression("Types", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserDefinedFields", targetDepth))
+                if (context.TestExpression("UserDefinedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.UserDefinedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerificationState", targetDepth))
+                if (context.TestExpression("VerificationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerificationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Workflow", targetDepth))
+                if (context.TestExpression("Workflow", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowUpdateUnmarshaller.Instance;
                     unmarshalledObject.Workflow = unmarshaller.Unmarshall(context, ref reader);

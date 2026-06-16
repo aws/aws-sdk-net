@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LabelColumnName", targetDepth))
+                if (context.TestExpression("LabelColumnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelColumnName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PivotedLabels", targetDepth))
+                if (context.TestExpression("PivotedLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PivotedLabel, PivotedLabelUnmarshaller>(PivotedLabelUnmarshaller.Instance);
                     unmarshalledObject.PivotedLabels = unmarshaller.Unmarshall(context, ref reader);

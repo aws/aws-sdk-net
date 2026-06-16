@@ -56,13 +56,13 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("signingConfiguration", targetDepth))
+                if (context.TestExpression("signingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SigningConfigurationOverridesUnmarshaller.Instance;
                     unmarshalledObject.SigningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signingImageFormat", targetDepth))
+                if (context.TestExpression("signingImageFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SigningImageFormat = unmarshaller.Unmarshall(context, ref reader);

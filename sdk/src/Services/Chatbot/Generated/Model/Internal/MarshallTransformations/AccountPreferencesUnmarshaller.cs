@@ -56,13 +56,13 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TrainingDataCollectionEnabled", targetDepth))
+                if (context.TestExpression("TrainingDataCollectionEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TrainingDataCollectionEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserAuthorizationRequired", targetDepth))
+                if (context.TestExpression("UserAuthorizationRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UserAuthorizationRequired = unmarshaller.Unmarshall(context, ref reader);

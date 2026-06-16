@@ -56,13 +56,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationPolicies", targetDepth))
+                if (context.TestExpression("ApplicationPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationPoliciesUnmarshaller.Instance;
                     unmarshalledObject.ApplicationPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyUsage", targetDepth))
+                if (context.TestExpression("KeyUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyUsageUnmarshaller.Instance;
                     unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context, ref reader);

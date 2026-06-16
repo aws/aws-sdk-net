@@ -56,13 +56,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Error", targetDepth))
+                if (context.TestExpression("Error", targetDepth, ref reader))
                 {
                     var unmarshaller = EventErrorUnmarshaller.Instance;
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetryDetails", targetDepth))
+                if (context.TestExpression("RetryDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryDetailsUnmarshaller.Instance;
                     unmarshalledObject.RetryDetails = unmarshaller.Unmarshall(context, ref reader);

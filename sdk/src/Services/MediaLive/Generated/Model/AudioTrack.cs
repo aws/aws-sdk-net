@@ -30,11 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Audio Track
+    /// Represents a single audio track for selection with optional pre-mixer settings
     /// </summary>
     public partial class AudioTrack
     {
+        private AudioPreMixerSettings _premixSettings;
         private int? _track;
+
+        /// <summary>
+        /// Gets and sets the property PremixSettings. Optional audio pre-mixer settings for this
+        /// track.When specified, allows per-track audio processing including channel remixing,gain
+        /// adjustment, and loudness normalization before interleaving.
+        /// </summary>
+        public AudioPreMixerSettings PremixSettings
+        {
+            get { return this._premixSettings; }
+            set { this._premixSettings = value; }
+        }
+
+        // Check to see if PremixSettings property is set
+        internal bool IsSetPremixSettings()
+        {
+            return this._premixSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Track. 1-based integer value that maps to a specific audio

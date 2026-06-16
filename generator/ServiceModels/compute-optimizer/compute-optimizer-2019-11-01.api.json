@@ -4,8 +4,11 @@
     "apiVersion":"2019-11-01",
     "endpointPrefix":"compute-optimizer",
     "jsonVersion":"1.0",
-    "protocol":"json",
-    "protocols":["json"],
+    "protocol":"smithy-rpc-v2-cbor",
+    "protocols":[
+      "smithy-rpc-v2-cbor",
+      "json"
+    ],
     "serviceFullName":"AWS Compute Optimizer",
     "serviceId":"Compute Optimizer",
     "signatureVersion":"v4",
@@ -547,6 +550,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":403},
       "exception":true,
       "synthetic":true
     },
@@ -817,7 +821,8 @@
     "EBSEffectiveRecommendationPreferences":{
       "type":"structure",
       "members":{
-        "savingsEstimationMode":{"shape":"EBSSavingsEstimationMode"}
+        "savingsEstimationMode":{"shape":"EBSSavingsEstimationMode"},
+        "lookBackPeriod":{"shape":"LookBackPeriodPreference"}
       }
     },
     "EBSEstimatedMonthlySavings":{
@@ -894,7 +899,8 @@
     "ECSEffectiveRecommendationPreferences":{
       "type":"structure",
       "members":{
-        "savingsEstimationMode":{"shape":"ECSSavingsEstimationMode"}
+        "savingsEstimationMode":{"shape":"ECSSavingsEstimationMode"},
+        "lookBackPeriod":{"shape":"LookBackPeriodPreference"}
       }
     },
     "ECSEstimatedMonthlySavings":{
@@ -1403,7 +1409,8 @@
         "EffectiveRecommendationPreferencesSavingsEstimationMode",
         "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
         "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
-        "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+        "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
+        "EffectiveRecommendationPreferencesLookBackPeriod"
       ]
     },
     "ExportableECSServiceFields":{
@@ -1433,6 +1440,22 @@
         "UtilizationMetricsActiveConnectionCountMaximum",
         "UtilizationMetricsPacketsInFromSourceMaximum",
         "UtilizationMetricsPacketsInFromDestinationMaximum",
+        "UtilizationMetricsConsumedReadCapacityUnitsSum",
+        "UtilizationMetricsConsumedWriteCapacityUnitsSum",
+        "UtilizationMetricsNewConnectionsSum",
+        "UtilizationMetricsEngineCPUUtilizationMaximum",
+        "UtilizationMetricsCacheHitsSum",
+        "UtilizationMetricsCacheMissesSum",
+        "UtilizationMetricsKeyspaceHitsSum",
+        "UtilizationMetricsKeyspaceMissesSum",
+        "UtilizationMetricsIsIdleMinimum",
+        "UtilizationMetricsUserConnectedSum",
+        "UtilizationMetricsInvocationsSum",
+        "UtilizationMetricsGetTypeCmdsSum",
+        "UtilizationMetricsSetTypeCmdsSum",
+        "UtilizationMetricsElastiCacheProcessingUnitsSum",
+        "UtilizationMetricsCurrConnectionsSum",
+        "UtilizationMetricsDatabaseConnectionsSum",
         "Finding",
         "FindingDescription",
         "Tags"
@@ -1720,7 +1743,8 @@
         "EffectiveRecommendationPreferencesSavingsEstimationMode",
         "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
         "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
-        "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+        "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
+        "EffectiveRecommendationPreferencesLookBackPeriod"
       ]
     },
     "ExportableVolumeFields":{
@@ -2153,6 +2177,23 @@
         "False"
       ]
     },
+    "IdleDimension":{
+      "type":"structure",
+      "members":{
+        "key":{"shape":"IdleDimensionKey"},
+        "values":{"shape":"IdleDimensionValues"}
+      }
+    },
+    "IdleDimensionKey":{"type":"string"},
+    "IdleDimensionValue":{"type":"string"},
+    "IdleDimensionValues":{
+      "type":"list",
+      "member":{"shape":"IdleDimensionValue"}
+    },
+    "IdleDimensions":{
+      "type":"list",
+      "member":{"shape":"IdleDimension"}
+    },
     "IdleEstimatedMonthlySavings":{
       "type":"structure",
       "members":{
@@ -2189,7 +2230,23 @@
         "VolumeWriteOpsPerSecond",
         "ActiveConnectionCount",
         "PacketsInFromSource",
-        "PacketsInFromDestination"
+        "PacketsInFromDestination",
+        "ConsumedReadCapacityUnits",
+        "ConsumedWriteCapacityUnits",
+        "ConsumedChangeDataCaptureUnits",
+        "NewConnections",
+        "EngineCPUUtilization",
+        "CacheHits",
+        "CacheMisses",
+        "KeyspaceHits",
+        "KeyspaceMisses",
+        "IsIdle",
+        "UserConnected",
+        "Invocations",
+        "GetTypeCmds",
+        "SetTypeCmds",
+        "ElastiCacheProcessingUnits",
+        "CurrConnections"
       ]
     },
     "IdleRecommendation":{
@@ -2248,7 +2305,13 @@
         "EBSVolume",
         "ECSService",
         "RDSDBInstance",
-        "NatGateway"
+        "NatGateway",
+        "DynamoDBTable",
+        "ElastiCacheCluster",
+        "MemoryDBCluster",
+        "DocumentDBCluster",
+        "WorkSpaces",
+        "SageMakerEndpoint"
       ]
     },
     "IdleRecommendations":{
@@ -2285,7 +2348,8 @@
       "members":{
         "name":{"shape":"IdleMetricName"},
         "statistic":{"shape":"MetricStatistic"},
-        "value":{"shape":"MetricValue"}
+        "value":{"shape":"MetricValue"},
+        "dimensions":{"shape":"IdleDimensions"}
       }
     },
     "IdleUtilizationMetrics":{
@@ -2458,6 +2522,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":500},
       "exception":true,
       "fault":true
     },
@@ -2466,6 +2531,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":400},
       "exception":true,
       "synthetic":true
     },
@@ -2774,6 +2840,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":400},
       "exception":true,
       "synthetic":true
     },
@@ -2871,6 +2938,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":403},
       "exception":true,
       "synthetic":true
     },
@@ -2897,6 +2965,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":403},
       "exception":true,
       "synthetic":true
     },
@@ -3363,7 +3432,13 @@
         "RdsDBInstance",
         "RdsDBInstanceStorage",
         "AuroraDBClusterStorage",
-        "NatGateway"
+        "NatGateway",
+        "DynamoDBTable",
+        "ElastiCacheCluster",
+        "MemoryDBCluster",
+        "DocumentDBCluster",
+        "WorkSpaces",
+        "SageMakerEndpoint"
       ]
     },
     "RecommendationSources":{
@@ -3413,6 +3488,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":404},
       "exception":true,
       "synthetic":true
     },
@@ -3498,6 +3574,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":503},
       "exception":true,
       "fault":true
     },
@@ -3545,6 +3622,7 @@
       "members":{
         "message":{"shape":"ErrorMessage"}
       },
+      "error":{"httpStatusCode":429},
       "exception":true,
       "synthetic":true
     },

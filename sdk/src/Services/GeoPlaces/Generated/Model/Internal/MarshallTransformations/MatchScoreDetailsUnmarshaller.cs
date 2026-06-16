@@ -56,13 +56,13 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Components", targetDepth))
+                if (context.TestExpression("Components", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentMatchScoresUnmarshaller.Instance;
                     unmarshalledObject.Components = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Overall", targetDepth))
+                if (context.TestExpression("Overall", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Overall = unmarshaller.Unmarshall(context, ref reader);

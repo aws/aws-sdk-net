@@ -56,13 +56,13 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceRoleArn", targetDepth))
+                if (context.TestExpression("sourceRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetRoleArn", targetDepth))
+                if (context.TestExpression("targetRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetRoleArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,67 +56,67 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmazonOpenSearchServerlessDestinationDescription", targetDepth))
+                if (context.TestExpression("AmazonOpenSearchServerlessDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonOpenSearchServerlessDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.AmazonOpenSearchServerlessDestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmazonopensearchserviceDestinationDescription", targetDepth))
+                if (context.TestExpression("AmazonopensearchserviceDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonopensearchserviceDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.AmazonopensearchserviceDestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationId", targetDepth))
+                if (context.TestExpression("DestinationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElasticsearchDestinationDescription", targetDepth))
+                if (context.TestExpression("ElasticsearchDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ElasticsearchDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ElasticsearchDestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExtendedS3DestinationDescription", targetDepth))
+                if (context.TestExpression("ExtendedS3DestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtendedS3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ExtendedS3DestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpEndpointDestinationDescription", targetDepth))
+                if (context.TestExpression("HttpEndpointDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpEndpointDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.HttpEndpointDestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IcebergDestinationDescription", targetDepth))
+                if (context.TestExpression("IcebergDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = IcebergDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.IcebergDestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftDestinationDescription", targetDepth))
+                if (context.TestExpression("RedshiftDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3DestinationDescription", targetDepth))
+                if (context.TestExpression("S3DestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnowflakeDestinationDescription", targetDepth))
+                if (context.TestExpression("SnowflakeDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = SnowflakeDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.SnowflakeDestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SplunkDestinationDescription", targetDepth))
+                if (context.TestExpression("SplunkDestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = SplunkDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.SplunkDestinationDescription = unmarshaller.Unmarshall(context, ref reader);

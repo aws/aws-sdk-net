@@ -56,25 +56,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MediaPlacement", targetDepth))
+                if (context.TestExpression("MediaPlacement", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaPlacementUnmarshaller.Instance;
                     unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaRegion", targetDepth))
+                if (context.TestExpression("MediaRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeetingFeatures", targetDepth))
+                if (context.TestExpression("MeetingFeatures", targetDepth, ref reader))
                 {
                     var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MeetingFeatures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeetingId", targetDepth))
+                if (context.TestExpression("MeetingId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context, ref reader);

@@ -68,8 +68,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             request.AddPathResource("{datastoreId}", StringUtils.FromString(publicRequest.DatastoreId));
             request.ResourcePath = "/startDICOMImportJob/datastore/{datastoreId}";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -91,6 +91,17 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("dataAccessRoleArn");
                 context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
+            }
+
+            if(publicRequest.IsSetImportConfiguration())
+            {
+                context.Writer.WritePropertyName("importConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImportConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ImportConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetInputOwnerAccountId())
@@ -119,10 +130,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

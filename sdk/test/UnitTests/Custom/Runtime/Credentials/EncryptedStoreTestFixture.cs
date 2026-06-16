@@ -21,6 +21,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading;
 
 namespace AWSSDK.UnitTests
 {
@@ -56,16 +57,20 @@ namespace AWSSDK.UnitTests
             SetFileContents(fileContents);
         }
 
-        public void SetFileContents(string fileContents)
+        public void SetFileContents(string fileContents, int? delayMs = null)
         {
-            SetFileContents(MainFilename, fileContents);
+            SetFileContents(MainFilename, fileContents, delayMs);
         }
 
-        public void SetFileContents(string filename, string fileContents)
+        public void SetFileContents(string filename, string fileContents, int? delayMs = null)
         {
             if (fileContents != null)
             {
                 File.WriteAllText(Path.Combine(DirectoryPath, filename), fileContents);
+            }
+            if (delayMs.HasValue)
+            {
+                Thread.Sleep(delayMs.Value);
             }
         }
 

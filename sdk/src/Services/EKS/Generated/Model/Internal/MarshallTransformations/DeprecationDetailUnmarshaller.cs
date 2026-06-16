@@ -56,31 +56,31 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientStats", targetDepth))
+                if (context.TestExpression("clientStats", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClientStat, ClientStatUnmarshaller>(ClientStatUnmarshaller.Instance);
                     unmarshalledObject.ClientStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replacedWith", targetDepth))
+                if (context.TestExpression("replacedWith", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplacedWith = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startServingReplacementVersion", targetDepth))
+                if (context.TestExpression("startServingReplacementVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartServingReplacementVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stopServingVersion", targetDepth))
+                if (context.TestExpression("stopServingVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StopServingVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usage", targetDepth))
+                if (context.TestExpression("usage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Usage = unmarshaller.Unmarshall(context, ref reader);

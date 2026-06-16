@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SubscribedWorkteam", targetDepth))
+                if (context.TestExpression("SubscribedWorkteam", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscribedWorkteamUnmarshaller.Instance;
                     response.SubscribedWorkteam = unmarshaller.Unmarshall(context, ref reader);

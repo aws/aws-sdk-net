@@ -56,19 +56,19 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("categoricalHyperParameterRanges", targetDepth))
+                if (context.TestExpression("categoricalHyperParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CategoricalHyperParameterRange, CategoricalHyperParameterRangeUnmarshaller>(CategoricalHyperParameterRangeUnmarshaller.Instance);
                     unmarshalledObject.CategoricalHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("continuousHyperParameterRanges", targetDepth))
+                if (context.TestExpression("continuousHyperParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContinuousHyperParameterRange, ContinuousHyperParameterRangeUnmarshaller>(ContinuousHyperParameterRangeUnmarshaller.Instance);
                     unmarshalledObject.ContinuousHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integerHyperParameterRanges", targetDepth))
+                if (context.TestExpression("integerHyperParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntegerHyperParameterRange, IntegerHyperParameterRangeUnmarshaller>(IntegerHyperParameterRangeUnmarshaller.Instance);
                     unmarshalledObject.IntegerHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);

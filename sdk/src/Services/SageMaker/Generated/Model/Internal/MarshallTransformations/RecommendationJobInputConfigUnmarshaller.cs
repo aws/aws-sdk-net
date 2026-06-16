@@ -56,61 +56,61 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContainerConfig", targetDepth))
+                if (context.TestExpression("ContainerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RecommendationJobContainerConfigUnmarshaller.Instance;
                     unmarshalledObject.ContainerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointConfigurations", targetDepth))
+                if (context.TestExpression("EndpointConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EndpointInputConfiguration, EndpointInputConfigurationUnmarshaller>(EndpointInputConfigurationUnmarshaller.Instance);
                     unmarshalledObject.EndpointConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Endpoints", targetDepth))
+                if (context.TestExpression("Endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EndpointInfo, EndpointInfoUnmarshaller>(EndpointInfoUnmarshaller.Instance);
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobDurationInSeconds", targetDepth))
+                if (context.TestExpression("JobDurationInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.JobDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelName", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelPackageVersionArn", targetDepth))
+                if (context.TestExpression("ModelPackageVersionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelPackageVersionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceLimit", targetDepth))
+                if (context.TestExpression("ResourceLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = RecommendationJobResourceLimitUnmarshaller.Instance;
                     unmarshalledObject.ResourceLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrafficPattern", targetDepth))
+                if (context.TestExpression("TrafficPattern", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficPatternUnmarshaller.Instance;
                     unmarshalledObject.TrafficPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth))
+                if (context.TestExpression("VolumeKmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RecommendationJobVpcConfigUnmarshaller.Instance;
                     unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupByResults", targetDepth))
+                if (context.TestExpression("GroupByResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupByResult, GroupByResultUnmarshaller>(GroupByResultUnmarshaller.Instance);
                     response.GroupByResults = unmarshaller.Unmarshall(context, ref reader);
@@ -94,6 +94,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OrganizationalUnitNotFoundException"))
+                {
+                    return OrganizationalUnitNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OrganizationNotFoundException"))
+                {
+                    return OrganizationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

@@ -56,7 +56,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Probabilistic", targetDepth))
+                if (context.TestExpression("Probabilistic", targetDepth, ref reader))
                 {
                     var unmarshaller = ProbabilisticRuleValueUnmarshaller.Instance;
                     unmarshalledObject.Probabilistic = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DetectedProfileObjectTypes", targetDepth))
+                if (context.TestExpression("DetectedProfileObjectTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DetectedProfileObjectType, DetectedProfileObjectTypeUnmarshaller>(DetectedProfileObjectTypeUnmarshaller.Instance);
                     response.DetectedProfileObjectTypes = unmarshaller.Unmarshall(context, ref reader);

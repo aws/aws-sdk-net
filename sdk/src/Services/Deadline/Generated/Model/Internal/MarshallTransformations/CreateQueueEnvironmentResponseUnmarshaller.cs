@@ -52,7 +52,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("queueEnvironmentId", targetDepth))
+                if (context.TestExpression("queueEnvironmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueueEnvironmentId = unmarshaller.Unmarshall(context, ref reader);

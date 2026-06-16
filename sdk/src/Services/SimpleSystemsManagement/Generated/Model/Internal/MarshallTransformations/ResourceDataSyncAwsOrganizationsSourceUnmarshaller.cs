@@ -56,13 +56,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OrganizationalUnits", targetDepth))
+                if (context.TestExpression("OrganizationalUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceDataSyncOrganizationalUnit, ResourceDataSyncOrganizationalUnitUnmarshaller>(ResourceDataSyncOrganizationalUnitUnmarshaller.Instance);
                     unmarshalledObject.OrganizationalUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationSourceType", targetDepth))
+                if (context.TestExpression("OrganizationSourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationSourceType = unmarshaller.Unmarshall(context, ref reader);

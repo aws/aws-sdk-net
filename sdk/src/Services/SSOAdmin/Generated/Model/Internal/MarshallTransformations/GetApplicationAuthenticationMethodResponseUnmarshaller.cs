@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationMethod", targetDepth))
+                if (context.TestExpression("AuthenticationMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthenticationMethodUnmarshaller.Instance;
                     response.AuthenticationMethod = unmarshaller.Unmarshall(context, ref reader);

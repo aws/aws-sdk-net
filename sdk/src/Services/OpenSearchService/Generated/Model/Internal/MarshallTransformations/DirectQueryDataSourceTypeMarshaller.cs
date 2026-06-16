@@ -57,6 +57,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPrometheus())
+            {
+                context.Writer.WritePropertyName("Prometheus");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrometheusDirectQueryDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Prometheus, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSecurityLake())
             {
                 context.Writer.WritePropertyName("SecurityLake");

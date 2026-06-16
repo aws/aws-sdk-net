@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resourcesBudgetEstimate", targetDepth))
+                if (context.TestExpression("resourcesBudgetEstimate", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceBudgetEstimate, ResourceBudgetEstimateUnmarshaller>(ResourceBudgetEstimateUnmarshaller.Instance);
                     response.ResourcesBudgetEstimate = unmarshaller.Unmarshall(context, ref reader);

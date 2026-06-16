@@ -56,121 +56,121 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeDefinitions", targetDepth))
+                if (context.TestExpression("AttributeDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableAttributeDefinition, AwsDynamoDbTableAttributeDefinitionUnmarshaller>(AwsDynamoDbTableAttributeDefinitionUnmarshaller.Instance);
                     unmarshalledObject.AttributeDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BillingModeSummary", targetDepth))
+                if (context.TestExpression("BillingModeSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsDynamoDbTableBillingModeSummaryUnmarshaller.Instance;
                     unmarshalledObject.BillingModeSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationDateTime", targetDepth))
+                if (context.TestExpression("CreationDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeletionProtectionEnabled", targetDepth))
+                if (context.TestExpression("DeletionProtectionEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableGlobalSecondaryIndex, AwsDynamoDbTableGlobalSecondaryIndexUnmarshaller>(AwsDynamoDbTableGlobalSecondaryIndexUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlobalTableVersion", targetDepth))
+                if (context.TestExpression("GlobalTableVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GlobalTableVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ItemCount", targetDepth))
+                if (context.TestExpression("ItemCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeySchema", targetDepth))
+                if (context.TestExpression("KeySchema", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableKeySchema, AwsDynamoDbTableKeySchemaUnmarshaller>(AwsDynamoDbTableKeySchemaUnmarshaller.Instance);
                     unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestStreamArn", targetDepth))
+                if (context.TestExpression("LatestStreamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LatestStreamArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestStreamLabel", targetDepth))
+                if (context.TestExpression("LatestStreamLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LatestStreamLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("LocalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableLocalSecondaryIndex, AwsDynamoDbTableLocalSecondaryIndexUnmarshaller>(AwsDynamoDbTableLocalSecondaryIndexUnmarshaller.Instance);
                     unmarshalledObject.LocalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedThroughput", targetDepth))
+                if (context.TestExpression("ProvisionedThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsDynamoDbTableProvisionedThroughputUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Replicas", targetDepth))
+                if (context.TestExpression("Replicas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableReplica, AwsDynamoDbTableReplicaUnmarshaller>(AwsDynamoDbTableReplicaUnmarshaller.Instance);
                     unmarshalledObject.Replicas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestoreSummary", targetDepth))
+                if (context.TestExpression("RestoreSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsDynamoDbTableRestoreSummaryUnmarshaller.Instance;
                     unmarshalledObject.RestoreSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SseDescription", targetDepth))
+                if (context.TestExpression("SseDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsDynamoDbTableSseDescriptionUnmarshaller.Instance;
                     unmarshalledObject.SseDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamSpecification", targetDepth))
+                if (context.TestExpression("StreamSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsDynamoDbTableStreamSpecificationUnmarshaller.Instance;
                     unmarshalledObject.StreamSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableId", targetDepth))
+                if (context.TestExpression("TableId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableSizeBytes", targetDepth))
+                if (context.TestExpression("TableSizeBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TableSizeBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableStatus", targetDepth))
+                if (context.TestExpression("TableStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context, ref reader);

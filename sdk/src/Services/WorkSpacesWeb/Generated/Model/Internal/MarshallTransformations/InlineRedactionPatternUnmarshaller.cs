@@ -56,37 +56,37 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("builtInPatternId", targetDepth))
+                if (context.TestExpression("builtInPatternId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuiltInPatternId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("confidenceLevel", targetDepth))
+                if (context.TestExpression("confidenceLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConfidenceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customPattern", targetDepth))
+                if (context.TestExpression("customPattern", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomPatternUnmarshaller.Instance;
                     unmarshalledObject.CustomPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enforcedUrls", targetDepth))
+                if (context.TestExpression("enforcedUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EnforcedUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exemptUrls", targetDepth))
+                if (context.TestExpression("exemptUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExemptUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redactionPlaceHolder", targetDepth))
+                if (context.TestExpression("redactionPlaceHolder", targetDepth, ref reader))
                 {
                     var unmarshaller = RedactionPlaceHolderUnmarshaller.Instance;
                     unmarshalledObject.RedactionPlaceHolder = unmarshaller.Unmarshall(context, ref reader);

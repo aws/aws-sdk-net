@@ -52,7 +52,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChangeTokenStatus", targetDepth))
+                if (context.TestExpression("ChangeTokenStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChangeTokenStatus = unmarshaller.Unmarshall(context, ref reader);

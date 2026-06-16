@@ -52,13 +52,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainPackageDetailsList", targetDepth))
+                if (context.TestExpression("DomainPackageDetailsList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DomainPackageDetails, DomainPackageDetailsUnmarshaller>(DomainPackageDetailsUnmarshaller.Instance);
                     response.DomainPackageDetailsList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

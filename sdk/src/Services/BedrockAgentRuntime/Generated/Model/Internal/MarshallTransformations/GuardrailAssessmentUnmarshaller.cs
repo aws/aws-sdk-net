@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentPolicy", targetDepth))
+                if (context.TestExpression("contentPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailContentPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.ContentPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitiveInformationPolicy", targetDepth))
+                if (context.TestExpression("sensitiveInformationPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailSensitiveInformationPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.SensitiveInformationPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicPolicy", targetDepth))
+                if (context.TestExpression("topicPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailTopicPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.TopicPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wordPolicy", targetDepth))
+                if (context.TestExpression("wordPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailWordPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.WordPolicy = unmarshaller.Unmarshall(context, ref reader);

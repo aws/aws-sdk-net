@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PermissionsBoundaryArn", targetDepth))
+                if (context.TestExpression("PermissionsBoundaryArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PermissionsBoundaryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PermissionsBoundaryType", targetDepth))
+                if (context.TestExpression("PermissionsBoundaryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PermissionsBoundaryType = unmarshaller.Unmarshall(context, ref reader);

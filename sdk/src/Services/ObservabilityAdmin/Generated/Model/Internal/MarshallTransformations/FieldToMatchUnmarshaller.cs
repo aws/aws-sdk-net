@@ -56,25 +56,25 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Method", targetDepth))
+                if (context.TestExpression("Method", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Method = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryString", targetDepth))
+                if (context.TestExpression("QueryString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SingleHeader", targetDepth))
+                if (context.TestExpression("SingleHeader", targetDepth, ref reader))
                 {
                     var unmarshaller = SingleHeaderUnmarshaller.Instance;
                     unmarshalledObject.SingleHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UriPath", targetDepth))
+                if (context.TestExpression("UriPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UriPath = unmarshaller.Unmarshall(context, ref reader);

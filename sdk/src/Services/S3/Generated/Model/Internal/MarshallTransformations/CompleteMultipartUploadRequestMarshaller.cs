@@ -74,6 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-checksum-crc64nvme"] = publicRequest.ChecksumCRC64NVME;
             }
         
+            if (publicRequest.IsSetChecksumMD5()) 
+            {
+                request.Headers["x-amz-checksum-md5"] = publicRequest.ChecksumMD5;
+            }
+        
             if (publicRequest.IsSetChecksumSHA1()) 
             {
                 request.Headers["x-amz-checksum-sha1"] = publicRequest.ChecksumSHA1;
@@ -84,9 +89,29 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-checksum-sha256"] = publicRequest.ChecksumSHA256;
             }
         
+            if (publicRequest.IsSetChecksumSHA512()) 
+            {
+                request.Headers["x-amz-checksum-sha512"] = publicRequest.ChecksumSHA512;
+            }
+        
             if (publicRequest.IsSetChecksumType()) 
             {
                 request.Headers["x-amz-checksum-type"] = publicRequest.ChecksumType;
+            }
+        
+            if (publicRequest.IsSetChecksumXXHASH128()) 
+            {
+                request.Headers["x-amz-checksum-xxhash128"] = publicRequest.ChecksumXXHASH128;
+            }
+        
+            if (publicRequest.IsSetChecksumXXHASH3()) 
+            {
+                request.Headers["x-amz-checksum-xxhash3"] = publicRequest.ChecksumXXHASH3;
+            }
+        
+            if (publicRequest.IsSetChecksumXXHASH64()) 
+            {
+                request.Headers["x-amz-checksum-xxhash64"] = publicRequest.ChecksumXXHASH64;
             }
         
             if (publicRequest.IsSetExpectedBucketOwner()) 
@@ -139,9 +164,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUploadId())
                 request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+#else
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {   
+            {
+#endif
                 SortPartsList(publicRequest);
                     xmlWriter.WriteStartElement("CompleteMultipartUpload", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestPartETags = publicRequest.PartETags;
@@ -158,10 +190,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("ChecksumCRC32C", StringUtils.FromString(publicRequestPartETagsValue.ChecksumCRC32C));
                                 if(publicRequestPartETagsValue.IsSetChecksumCRC64NVME())
                                     xmlWriter.WriteElementString("ChecksumCRC64NVME", StringUtils.FromString(publicRequestPartETagsValue.ChecksumCRC64NVME));
+                                if(publicRequestPartETagsValue.IsSetChecksumMD5())
+                                    xmlWriter.WriteElementString("ChecksumMD5", StringUtils.FromString(publicRequestPartETagsValue.ChecksumMD5));
                                 if(publicRequestPartETagsValue.IsSetChecksumSHA1())
                                     xmlWriter.WriteElementString("ChecksumSHA1", StringUtils.FromString(publicRequestPartETagsValue.ChecksumSHA1));
                                 if(publicRequestPartETagsValue.IsSetChecksumSHA256())
                                     xmlWriter.WriteElementString("ChecksumSHA256", StringUtils.FromString(publicRequestPartETagsValue.ChecksumSHA256));
+                                if(publicRequestPartETagsValue.IsSetChecksumSHA512())
+                                    xmlWriter.WriteElementString("ChecksumSHA512", StringUtils.FromString(publicRequestPartETagsValue.ChecksumSHA512));
+                                if(publicRequestPartETagsValue.IsSetChecksumXXHASH128())
+                                    xmlWriter.WriteElementString("ChecksumXXHASH128", StringUtils.FromString(publicRequestPartETagsValue.ChecksumXXHASH128));
+                                if(publicRequestPartETagsValue.IsSetChecksumXXHASH3())
+                                    xmlWriter.WriteElementString("ChecksumXXHASH3", StringUtils.FromString(publicRequestPartETagsValue.ChecksumXXHASH3));
+                                if(publicRequestPartETagsValue.IsSetChecksumXXHASH64())
+                                    xmlWriter.WriteElementString("ChecksumXXHASH64", StringUtils.FromString(publicRequestPartETagsValue.ChecksumXXHASH64));
                                 if(publicRequestPartETagsValue.IsSetETag())
                                     xmlWriter.WriteElementString("ETag", StringUtils.FromString(publicRequestPartETagsValue.ETag));
                                 if(publicRequestPartETagsValue.IsSetPartNumber())
@@ -176,10 +218,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             PostMarshallCustomization(request, publicRequest);
             try 
             {
+#if NETFRAMEWORK // For non .NET Framework targets the request payload is stored in the ContentStream via the PooledContentStream.
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+#endif
                 request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2006-03-01";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2006-03-01";
             } 
             catch (EncoderFallbackException e) 
             {

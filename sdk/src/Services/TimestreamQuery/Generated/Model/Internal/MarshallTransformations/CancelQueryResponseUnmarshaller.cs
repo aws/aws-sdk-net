@@ -52,7 +52,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CancellationMessage", targetDepth))
+                if (context.TestExpression("CancellationMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CancellationMessage = unmarshaller.Unmarshall(context, ref reader);

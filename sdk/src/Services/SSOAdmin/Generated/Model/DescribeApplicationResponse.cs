@@ -40,6 +40,7 @@ namespace Amazon.SSOAdmin.Model
         private DateTime? _createdDate;
         private string _createdFrom;
         private string _description;
+        private string _identityStoreArn;
         private string _instanceArn;
         private string _name;
         private PortalOptions _portalOptions;
@@ -156,6 +157,24 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreArn. 
+        /// <para>
+        /// The ARN of the identity store that is connected to the instance of IAM Identity Center.
+        /// </para>
+        /// </summary>
+        public string IdentityStoreArn
+        {
+            get { return this._identityStoreArn; }
+            set { this._identityStoreArn = value; }
+        }
+
+        // Check to see if IdentityStoreArn property is set
+        internal bool IsSetIdentityStoreArn()
+        {
+            return this._identityStoreArn != null;
         }
 
         /// <summary>

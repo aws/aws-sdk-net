@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the first release of the AWS Sustainability SDK, which enables customers to access their sustainability impact data via API.",
+  "generate-client-constructors": true
+}

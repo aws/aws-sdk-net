@@ -52,7 +52,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("stopDate", targetDepth))
+                if (context.TestExpression("stopDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StopDate = unmarshaller.Unmarshall(context, ref reader);

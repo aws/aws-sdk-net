@@ -56,25 +56,25 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocumentUrl", targetDepth))
+                if (context.TestExpression("DocumentUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentUrlExpirationDate", targetDepth))
+                if (context.TestExpression("DocumentUrlExpirationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DocumentUrlExpirationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvoiceId", targetDepth))
+                if (context.TestExpression("InvoiceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InvoiceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupplementalDocuments", targetDepth))
+                if (context.TestExpression("SupplementalDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SupplementalDocument, SupplementalDocumentUnmarshaller>(SupplementalDocumentUnmarshaller.Instance);
                     unmarshalledObject.SupplementalDocuments = unmarshaller.Unmarshall(context, ref reader);

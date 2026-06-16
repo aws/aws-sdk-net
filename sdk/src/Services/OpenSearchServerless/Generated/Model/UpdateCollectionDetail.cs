@@ -36,12 +36,14 @@ namespace Amazon.OpenSearchServerless.Model
     {
         private string _arn;
         private long? _createdDate;
+        private DeletionProtection _deletionProtection;
         private string _description;
         private string _id;
         private long? _lastModifiedDate;
         private string _name;
         private CollectionStatus _status;
         private CollectionType _type;
+        private VectorOptions _vectorOptions;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -77,6 +79,25 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Indicates whether deletion protection is <c>ENABLED</c> or <c>DISABLED</c> for the
+        /// collection.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
         }
 
         /// <summary>
@@ -140,7 +161,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The name of the collection.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
+        [AWSProperty(Min=3, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -187,6 +208,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorOptions. 
+        /// <para>
+        /// Configuration options for vector search capabilities in the collection.
+        /// </para>
+        /// </summary>
+        public VectorOptions VectorOptions
+        {
+            get { return this._vectorOptions; }
+            set { this._vectorOptions = value; }
+        }
+
+        // Check to see if VectorOptions property is set
+        internal bool IsSetVectorOptions()
+        {
+            return this._vectorOptions != null;
         }
 
     }

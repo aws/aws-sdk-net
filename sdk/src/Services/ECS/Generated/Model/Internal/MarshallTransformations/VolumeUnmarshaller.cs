@@ -56,40 +56,46 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuredAtLaunch", targetDepth))
+                if (context.TestExpression("configuredAtLaunch", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConfiguredAtLaunch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dockerVolumeConfiguration", targetDepth))
+                if (context.TestExpression("dockerVolumeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DockerVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("efsVolumeConfiguration", targetDepth))
+                if (context.TestExpression("efsVolumeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EFSVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth))
+                if (context.TestExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FSxWindowsFileServerVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FsxWindowsFileServerVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("host", targetDepth))
+                if (context.TestExpression("host", targetDepth, ref reader))
                 {
                     var unmarshaller = HostVolumePropertiesUnmarshaller.Instance;
                     unmarshalledObject.Host = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("s3filesVolumeConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = S3FilesVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3filesVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

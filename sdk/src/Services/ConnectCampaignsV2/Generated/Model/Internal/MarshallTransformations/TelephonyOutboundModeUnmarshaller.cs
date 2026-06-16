@@ -56,25 +56,25 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentless", targetDepth))
+                if (context.TestExpression("agentless", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentlessConfigUnmarshaller.Instance;
                     unmarshalledObject.Agentless = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("predictive", targetDepth))
+                if (context.TestExpression("predictive", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveConfigUnmarshaller.Instance;
                     unmarshalledObject.Predictive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preview", targetDepth))
+                if (context.TestExpression("preview", targetDepth, ref reader))
                 {
                     var unmarshaller = PreviewConfigUnmarshaller.Instance;
                     unmarshalledObject.Preview = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("progressive", targetDepth))
+                if (context.TestExpression("progressive", targetDepth, ref reader))
                 {
                     var unmarshaller = ProgressiveConfigUnmarshaller.Instance;
                     unmarshalledObject.Progressive = unmarshaller.Unmarshall(context, ref reader);

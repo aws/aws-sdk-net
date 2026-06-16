@@ -52,25 +52,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Applications", targetDepth))
+                if (context.TestExpression("Applications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SimplifiedApplication, SimplifiedApplicationUnmarshaller>(SimplifiedApplicationUnmarshaller.Instance);
                     response.Applications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailableOSReleases", targetDepth))
+                if (context.TestExpression("AvailableOSReleases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OSRelease, OSReleaseUnmarshaller>(OSReleaseUnmarshaller.Instance);
                     response.AvailableOSReleases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReleaseLabel", targetDepth))
+                if (context.TestExpression("ReleaseLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReleaseLabel = unmarshaller.Unmarshall(context, ref reader);

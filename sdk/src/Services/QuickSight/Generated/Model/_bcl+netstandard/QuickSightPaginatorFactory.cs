@@ -205,11 +205,27 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListKnowledgeBases operation
+        ///</summary>
+        public IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request) 
+        {
+            return new ListKnowledgeBasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
         public IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request) 
         {
             return new ListNamespacesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOAuthClientApplications operation
+        ///</summary>
+        public IListOAuthClientApplicationsPaginator ListOAuthClientApplications(ListOAuthClientApplicationsRequest request) 
+        {
+            return new ListOAuthClientApplicationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -354,6 +370,14 @@ namespace Amazon.QuickSight.Model
         public ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request) 
         {
             return new SearchGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchKnowledgeBases operation
+        ///</summary>
+        public ISearchKnowledgeBasesPaginator SearchKnowledgeBases(SearchKnowledgeBasesRequest request) 
+        {
+            return new SearchKnowledgeBasesPaginator(this.client, request);
         }
 
         /// <summary>

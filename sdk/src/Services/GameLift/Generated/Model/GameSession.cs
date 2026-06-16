@@ -51,6 +51,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class GameSession
     {
+        private string _computeName;
         private DateTime? _creationTime;
         private string _creatorId;
         private int? _currentPlayerSessionCount;
@@ -71,6 +72,28 @@ namespace Amazon.GameLift.Model
         private GameSessionStatus _status;
         private GameSessionStatusReason _statusReason;
         private DateTime? _terminationTime;
+
+        /// <summary>
+        /// Gets and sets the property ComputeName. 
+        /// <para>
+        /// A descriptive label for the compute resource. The compute resource that is hosting
+        /// the game session. For EC2 fleets, this is the EC2 instance ID. For Container fleets,
+        /// each game server container group on a fleet instance is assigned a compute name. For
+        /// Anywhere fleets, this is the custom compute name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ComputeName
+        {
+            get { return this._computeName; }
+            set { this._computeName = value; }
+        }
+
+        // Check to see if ComputeName property is set
+        internal bool IsSetComputeName()
+        {
+            return this._computeName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -266,9 +289,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// A unique identifier for the game session. A game session ARN has the following format:
-        /// <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string
-        /// or idempotency token&gt;</c>.
+        /// An identifier for the game session that is unique across all regions. The value is
+        /// always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

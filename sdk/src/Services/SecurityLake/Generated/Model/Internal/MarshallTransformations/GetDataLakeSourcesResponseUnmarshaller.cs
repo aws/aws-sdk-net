@@ -52,19 +52,19 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataLakeArn", targetDepth))
+                if (context.TestExpression("dataLakeArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataLakeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataLakeSources", targetDepth))
+                if (context.TestExpression("dataLakeSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakeSource, DataLakeSourceUnmarshaller>(DataLakeSourceUnmarshaller.Instance);
                     response.DataLakeSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

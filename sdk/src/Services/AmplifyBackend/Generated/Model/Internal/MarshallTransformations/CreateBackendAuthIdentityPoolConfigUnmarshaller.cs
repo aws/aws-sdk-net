@@ -56,13 +56,13 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identityPoolName", targetDepth))
+                if (context.TestExpression("identityPoolName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentityPoolName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unauthenticatedLogin", targetDepth))
+                if (context.TestExpression("unauthenticatedLogin", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UnauthenticatedLogin = unmarshaller.Unmarshall(context, ref reader);

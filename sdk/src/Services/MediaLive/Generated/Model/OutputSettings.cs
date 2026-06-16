@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private CmafIngestOutputSettings _cmafIngestOutputSettings;
         private FrameCaptureOutputSettings _frameCaptureOutputSettings;
         private HlsOutputSettings _hlsOutputSettings;
+        private MediaConnectRouterOutputSettings _mediaConnectRouterOutputSettings;
         private MediaPackageOutputSettings _mediaPackageOutputSettings;
         private MsSmoothOutputSettings _msSmoothOutputSettings;
         private MultiplexOutputSettings _multiplexOutputSettings;
@@ -103,6 +104,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsOutputSettings()
         {
             return this._hlsOutputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaConnectRouterOutputSettings.
+        /// </summary>
+        public MediaConnectRouterOutputSettings MediaConnectRouterOutputSettings
+        {
+            get { return this._mediaConnectRouterOutputSettings; }
+            set { this._mediaConnectRouterOutputSettings = value; }
+        }
+
+        // Check to see if MediaConnectRouterOutputSettings property is set
+        internal bool IsSetMediaConnectRouterOutputSettings()
+        {
+            return this._mediaConnectRouterOutputSettings != null;
         }
 
         /// <summary>

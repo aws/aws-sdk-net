@@ -34,6 +34,12 @@ namespace Amazon.GeoRoutes.Model
     /// Use <c>CalculateRouteMatrix</c> to compute results for all pairs of Origins to Destinations.
     /// Each row corresponds to one entry in Origins. Each entry in the row corresponds to
     /// the route from that entry in Origins to an entry in Destinations positions.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">Calculate
+    /// route matrix</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CalculateRouteMatrixRequest : AmazonGeoRoutesRequest
     {
@@ -73,9 +79,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Avoid. 
         /// <para>
-        /// Features that are avoided while calculating a route. Avoidance is on a best-case basis.
-        /// If an avoidance can't be satisfied for a particular case, it violates the avoidance
-        /// and the returned response produces a notice for the violation.
+        ///  Features that are avoided while calculating a route. Avoidance is on a best-case
+        /// basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance
+        /// and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>TollRoads</c>,
+        /// <c>Ferries</c>, and <c>ControlledAccessHighways</c>. 
         /// </para>
         /// </summary>
         public RouteMatrixAvoidanceOptions Avoid
@@ -112,7 +120,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DepartureTime. 
         /// <para>
-        /// Time of departure from thr origin.
+        /// Time of departure from the origin.
         /// </para>
         ///  
         /// <para>
@@ -147,15 +155,51 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// List of destinations for the route.
+        /// List of destinations for the route in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude].
         /// </para>
         ///  <note> 
         /// <para>
         /// Route calculations are billed for each origin and destination pair. If you use a large
-        /// matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
-        /// Amazon Location's pricing page</a> for more information.
+        /// matrix of origins and destinations, your costs will increase accordingly. For more
+        /// information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
+        /// pricing</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// The maximum number of destinations depends on the routing boundary configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c> set: maximum 500 destinations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c> set to <c>true</c>: maximum 100 destinations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: maximum 350 destinations
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The total matrix size (origins × destinations) must not exceed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c>: 160,000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c>: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: 122,500
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -178,7 +222,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Exclude. 
         /// <para>
-        /// Features to be strictly excluded while calculating the route.
+        ///  Features to be strictly excluded while calculating the route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteMatrixExclusionOptions Exclude
@@ -216,11 +262,12 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property OptimizeRoutingFor. 
         /// <para>
-        /// Specifies the optimization criteria for calculating a route.
+        /// Controls the trade-off between finding the shortest travel time (<c>FastestRoute</c>)
+        /// and the shortest distance (<c>ShortestRoute</c>) when calculating reachable areas.
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>FastestRoute</c> 
+        /// Default value: <c>FastestRoute</c> 
         /// </para>
         /// </summary>
         public RoutingObjective OptimizeRoutingFor
@@ -238,15 +285,51 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Origins. 
         /// <para>
-        /// The position in longitude and latitude for the origin.
+        /// List of origins for the route in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude].
         /// </para>
         ///  <note> 
         /// <para>
         /// Route calculations are billed for each origin and destination pair. Using a large
-        /// amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
-        /// Amazon Location's pricing page</a> for more information.
+        /// amount of Origins in a request can lead you to incur unexpected charges. For more
+        /// information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
+        /// pricing</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// The maximum number of origins depends on the routing boundary configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c> set: maximum 500 origins
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c> set to <c>true</c>: maximum 15 origins
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: maximum 350 origins
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The total matrix size (origins × destinations) must not exceed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c>: 160,000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c>: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: 122,500
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -269,17 +352,22 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property RoutingBoundary. 
         /// <para>
-        /// Boundary within which the matrix is to be calculated. All data, origins and destinations
-        /// outside the boundary are considered invalid.
+        ///  Boundary within which the matrix is to be calculated. All data, origins and destinations
+        /// outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>Unbounded</c>
+        /// set to <c>true</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>Unbounded set to true</c> 
         /// </para>
         ///  <note> 
         /// <para>
-        /// When request routing boundary was set as AutoCircle, the response routing boundary
-        /// will return Circle derived from the AutoCircle settings.
+        /// When <c>AutoCircle</c> is set in the request, the response routing boundary will return
+        /// <c>Circle</c> derived from the <c>AutoCircle</c> settings.
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RouteMatrixBoundary RoutingBoundary
         {
             get { return this._routingBoundary; }
@@ -295,7 +383,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Traffic. 
         /// <para>
-        /// Traffic related options.
+        ///  Traffic related options. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteMatrixTrafficOptions Traffic
@@ -313,12 +403,14 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TravelMode. 
         /// <para>
-        /// Specifies the mode of transport when calculating a route. Used in estimating the speed
-        /// of travel and road compatibility.
+        ///  Specifies the mode of transport when calculating a route. Used in estimating the
+        /// speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>Car</c>,
+        /// <c>Pedestrian</c>, and <c>Scooter</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>Car</c> 
+        /// Default value: <c>Car</c> 
         /// </para>
         /// </summary>
         public RouteMatrixTravelMode TravelMode
@@ -336,7 +428,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TravelModeOptions. 
         /// <para>
-        /// Travel mode related options for the provided travel mode.
+        ///  Travel mode related options for the provided travel mode. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteMatrixTravelModeOptions TravelModeOptions

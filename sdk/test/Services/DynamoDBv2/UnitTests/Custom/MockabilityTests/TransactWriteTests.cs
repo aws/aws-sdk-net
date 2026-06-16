@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 {
@@ -9,7 +11,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
     public class TransactWriteTests
     {
         [TestMethod]
-        public void TestMockability_TransactWrite()
+        public async Task TestMockability_TransactWrite()
         {
             var itemsToSave = new List<string>();
             var inMemoryTable = new List<string>();
@@ -30,7 +32,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             Assert.AreEqual(2, itemsToSave.Count);
             Assert.AreEqual(0, inMemoryTable.Count);
 
-            transactWrite.Execute();
+            await transactWrite.ExecuteAsync();
             Assert.AreEqual(0, itemsToSave.Count);
             Assert.AreEqual(2, inMemoryTable.Count);
             Assert.IsTrue(inMemoryTable.Contains("item1"));
@@ -38,7 +40,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
         }
 
         [TestMethod]
-        public void TestMockability_MultiTableTransactWrite()
+        public async Task TestMockability_MultiTableTransactWrite()
         {
             var itemsToSave_table1 = new List<string>();
             var inMemory_table1 = new List<string>();
@@ -63,7 +65,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             Assert.AreEqual(0, inMemory_table1.Count);
             Assert.AreEqual(0, inMemory_table2.Count);
 
-            multiTransactWrite.Execute();
+            await multiTransactWrite.ExecuteAsync();
             Assert.AreEqual(1, inMemory_table1.Count);
             Assert.AreEqual(1, inMemory_table2.Count);
             Assert.IsTrue(inMemory_table1.Contains("item1"));
@@ -78,8 +80,9 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 .Setup(x => x.AddSaveItem(It.IsAny<T>()))
                 .Callback((T item) => itemsToSave.Add(item));
 
-            transactWrite.
-                Setup(x => x.Execute())
+            transactWrite
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
                 .Callback(() =>
                 {
                     foreach (var item in itemsToSave)
@@ -106,12 +109,12 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 });
 
             multiTransactWrite
-                .Setup(x => x.Execute())
-                .Callback(() =>
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(async () =>
                 {
                     foreach (var batch in transactionParts)
                     {
-                        batch.Execute();
+                        await batch.ExecuteAsync();
                     }
                 });
 

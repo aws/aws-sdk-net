@@ -52,7 +52,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalysisReport", targetDepth))
+                if (context.TestExpression("AnalysisReport", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalysisReportUnmarshaller.Instance;
                     response.AnalysisReport = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("unprocessedAccounts", targetDepth))
+                if (context.TestExpression("unprocessedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedAccount, UnprocessedAccountUnmarshaller>(UnprocessedAccountUnmarshaller.Instance);
                     response.UnprocessedAccounts = unmarshaller.Unmarshall(context, ref reader);

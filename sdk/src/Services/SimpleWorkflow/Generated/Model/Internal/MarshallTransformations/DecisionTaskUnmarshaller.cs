@@ -56,43 +56,43 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("events", targetDepth))
+                if (context.TestExpression("events", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HistoryEvent, HistoryEventUnmarshaller>(HistoryEventUnmarshaller.Instance);
                     unmarshalledObject.Events = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextPageToken", targetDepth))
+                if (context.TestExpression("nextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("previousStartedEventId", targetDepth))
+                if (context.TestExpression("previousStartedEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PreviousStartedEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedEventId", targetDepth))
+                if (context.TestExpression("startedEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskToken", targetDepth))
+                if (context.TestExpression("taskToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowExecution", targetDepth))
+                if (context.TestExpression("workflowExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
                     unmarshalledObject.WorkflowExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowType", targetDepth))
+                if (context.TestExpression("workflowType", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowTypeUnmarshaller.Instance;
                     unmarshalledObject.WorkflowType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("simpleRuleEvaluation", targetDepth))
+                if (context.TestExpression("simpleRuleEvaluation", targetDepth, ref reader))
                 {
                     var unmarshaller = SimpleRuleEvaluationUnmarshaller.Instance;
                     unmarshalledObject.SimpleRuleEvaluation = unmarshaller.Unmarshall(context, ref reader);

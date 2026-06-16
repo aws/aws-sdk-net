@@ -81,6 +81,36 @@
         {"shape":"ServiceQuotaExceededException"}
       ]
     },
+    "CreateQuote":{
+      "name":"CreateQuote",
+      "http":{
+        "method":"POST",
+        "requestUri":"/quotes"
+      },
+      "input":{"shape":"CreateQuoteInput"},
+      "output":{"shape":"CreateQuoteOutput"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"NotFoundException"}
+      ]
+    },
+    "CreateRenewal":{
+      "name":"CreateRenewal",
+      "http":{
+        "method":"POST",
+        "requestUri":"/renewals"
+      },
+      "input":{"shape":"CreateRenewalInput"},
+      "output":{"shape":"CreateRenewalOutput"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ValidationException"}
+      ]
+    },
     "CreateSite":{
       "name":"CreateSite",
       "http":{
@@ -111,6 +141,21 @@
         {"shape":"NotFoundException"},
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
+      ]
+    },
+    "DeleteQuote":{
+      "name":"DeleteQuote",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/quotes/{QuoteIdentifier}"
+      },
+      "input":{"shape":"DeleteQuoteInput"},
+      "output":{"shape":"DeleteQuoteOutput"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ValidationException"}
       ]
     },
     "DeleteSite":{
@@ -247,6 +292,36 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "GetQuote":{
+      "name":"GetQuote",
+      "http":{
+        "method":"GET",
+        "requestUri":"/quotes/{QuoteIdentifier}"
+      },
+      "input":{"shape":"GetQuoteInput"},
+      "output":{"shape":"GetQuoteOutput"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ValidationException"}
+      ]
+    },
+    "GetRenewalPricing":{
+      "name":"GetRenewalPricing",
+      "http":{
+        "method":"GET",
+        "requestUri":"/outpost/{OutpostIdentifier}/renewal-pricing"
+      },
+      "input":{"shape":"GetRenewalPricingInput"},
+      "output":{"shape":"GetRenewalPricingOutput"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ValidationException"}
+      ]
+    },
     "GetSite":{
       "name":"GetSite",
       "http":{
@@ -352,6 +427,21 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "ListOrderableInstanceTypes":{
+      "name":"ListOrderableInstanceTypes",
+      "http":{
+        "method":"GET",
+        "requestUri":"/instanceTypes"
+      },
+      "input":{"shape":"ListOrderableInstanceTypesInput"},
+      "output":{"shape":"ListOrderableInstanceTypesOutput"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "ListOrders":{
       "name":"ListOrders",
       "http":{
@@ -377,6 +467,19 @@
       "output":{"shape":"ListOutpostsOutput"},
       "errors":[
         {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "ListQuotes":{
+      "name":"ListQuotes",
+      "http":{
+        "method":"GET",
+        "requestUri":"/quotes"
+      },
+      "input":{"shape":"ListQuotesInput"},
+      "output":{"shape":"ListQuotesOutput"},
+      "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
@@ -496,6 +599,21 @@
         {"shape":"ValidationException"},
         {"shape":"ConflictException"},
         {"shape":"NotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "UpdateQuote":{
+      "name":"UpdateQuote",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/quotes/{QuoteIdentifier}"
+      },
+      "input":{"shape":"UpdateQuoteInput"},
+      "output":{"shape":"UpdateQuoteOutput"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"}
       ]
@@ -708,12 +826,31 @@
       "enum":[
         "ACTIVE",
         "RETIRING",
-        "ISOLATED"
+        "ISOLATED",
+        "INSTALLING"
       ]
     },
     "AssetType":{
       "type":"string",
-      "enum":["COMPUTE"]
+      "enum":[
+        "COMPUTE",
+        "STORAGE",
+        "POWERSHELF",
+        "SWITCH",
+        "NETWORKING"
+      ]
+    },
+    "AssetTypeList":{
+      "type":"list",
+      "member":{"shape":"AssetType"},
+      "max":5,
+      "min":1
+    },
+    "AutoFillIdempotencyToken":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^.*$"
     },
     "AvailabilityZone":{
       "type":"string",
@@ -814,6 +951,14 @@
     "CancelOrderOutput":{
       "type":"structure",
       "members":{}
+    },
+    "CapacitySummary":{
+      "type":"structure",
+      "members":{
+        "ExistingCapacities":{"shape":"QuoteCapacityList"},
+        "FinalCapacities":{"shape":"QuoteCapacityList"},
+        "CapacityChange":{"shape":"QuoteCapacityList"}
+      }
     },
     "CapacityTaskFailure":{
       "type":"structure",
@@ -933,7 +1078,8 @@
       "enum":[
         "ACTIVE",
         "ISOLATED",
-        "RETIRING"
+        "RETIRING",
+        "INSTALLING"
       ]
     },
     "ComputeAttributes":{
@@ -972,6 +1118,12 @@
       "max":1024,
       "min":1,
       "pattern":"^[a-zA-Z0-9+/=]{1,1024}$"
+    },
+    "ConstraintValue":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^[\\S \\n]+$"
     },
     "ContactName":{
       "type":"string",
@@ -1036,6 +1188,56 @@
         "Outpost":{"shape":"Outpost"}
       }
     },
+    "CreateQuoteInput":{
+      "type":"structure",
+      "required":[
+        "CountryCode",
+        "RequestedCapacities"
+      ],
+      "members":{
+        "OutpostIdentifier":{"shape":"OutpostIdentifier"},
+        "CountryCode":{"shape":"CountryCode"},
+        "RequestedCapacities":{"shape":"QuoteCapacityList"},
+        "RequestedConstraints":{"shape":"QuoteConstraintList"},
+        "RequestedPaymentOptions":{"shape":"PaymentOptionList"},
+        "RequestedPaymentTerms":{"shape":"PaymentTermList"},
+        "Description":{"shape":"QuoteDescription"}
+      }
+    },
+    "CreateQuoteOutput":{
+      "type":"structure",
+      "members":{
+        "Quote":{"shape":"Quote"}
+      }
+    },
+    "CreateRenewalInput":{
+      "type":"structure",
+      "required":[
+        "PaymentOption",
+        "PaymentTerm",
+        "OutpostIdentifier"
+      ],
+      "members":{
+        "PaymentOption":{"shape":"PaymentOption"},
+        "PaymentTerm":{"shape":"PaymentTerm"},
+        "OutpostIdentifier":{"shape":"OutpostIdentifier"},
+        "ClientToken":{
+          "shape":"AutoFillIdempotencyToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreateRenewalOutput":{
+      "type":"structure",
+      "members":{
+        "PaymentOption":{"shape":"PaymentOption"},
+        "PaymentTerm":{"shape":"PaymentTerm"},
+        "OutpostId":{"shape":"OutpostIdOnly"},
+        "UpfrontPrice":{"shape":"NullableFloat"},
+        "MonthlyRecurringPrice":{"shape":"NullableFloat"},
+        "Currency":{"shape":"CurrencyCode"}
+      }
+    },
     "CreateSiteInput":{
       "type":"structure",
       "required":["Name"],
@@ -1054,6 +1256,10 @@
       "members":{
         "Site":{"shape":"Site"}
       }
+    },
+    "CurrencyCode":{
+      "type":"string",
+      "enum":["USD"]
     },
     "DecommissionRequestStatus":{
       "type":"string",
@@ -1078,6 +1284,21 @@
       "type":"structure",
       "members":{}
     },
+    "DeleteQuoteInput":{
+      "type":"structure",
+      "required":["QuoteIdentifier"],
+      "members":{
+        "QuoteIdentifier":{
+          "shape":"QuoteIdentifier",
+          "location":"uri",
+          "locationName":"QuoteIdentifier"
+        }
+      }
+    },
+    "DeleteQuoteOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "DeleteSiteInput":{
       "type":"structure",
       "required":["SiteId"],
@@ -1092,6 +1313,20 @@
     "DeleteSiteOutput":{
       "type":"structure",
       "members":{}
+    },
+    "DetailedInstanceTypeItem":{
+      "type":"structure",
+      "members":{
+        "InstanceType":{"shape":"InstanceType"},
+        "VCPUs":{"shape":"VCPUCount"},
+        "MemoryInMib":{"shape":"MemoryInMib"},
+        "NetworkPerformance":{"shape":"NetworkPerformance"},
+        "FormFactorConfigs":{"shape":"FormFactorConfigList"}
+      }
+    },
+    "DetailedInstanceTypeListDefinition":{
+      "type":"list",
+      "member":{"shape":"DetailedInstanceTypeItem"}
     },
     "DeviceSerialNumber":{
       "type":"string",
@@ -1132,7 +1367,7 @@
       "type":"string",
       "max":10,
       "min":1,
-      "pattern":"[a-z0-9]+"
+      "pattern":"^[a-z0-9]+[a-z0-9-]*[a-z0-9]+$"
     },
     "FiberOpticCableType":{
       "type":"string",
@@ -1140,6 +1375,24 @@
         "SINGLE_MODE",
         "MULTI_MODE"
       ]
+    },
+    "FormFactor":{
+      "type":"string",
+      "enum":[
+        "RACK",
+        "SERVER"
+      ]
+    },
+    "FormFactorConfig":{
+      "type":"structure",
+      "members":{
+        "FormFactor":{"shape":"FormFactor"},
+        "OutpostGeneration":{"shape":"OutpostGeneration"}
+      }
+    },
+    "FormFactorConfigList":{
+      "type":"list",
+      "member":{"shape":"FormFactorConfig"}
     },
     "GetCapacityTaskInput":{
       "type":"structure",
@@ -1256,7 +1509,9 @@
       "members":{
         "NextToken":{"shape":"Token"},
         "Subscriptions":{"shape":"SubscriptionList"},
-        "ContractEndDate":{"shape":"String"}
+        "ContractEndDate":{"shape":"String"},
+        "PaymentTerm":{"shape":"PaymentTerm"},
+        "PaymentOption":{"shape":"PaymentOption"}
       }
     },
     "GetOutpostInput":{
@@ -1342,6 +1597,41 @@
       "members":{
         "InstanceTypes":{"shape":"InstanceTypeListDefinition"},
         "NextToken":{"shape":"Token"}
+      }
+    },
+    "GetQuoteInput":{
+      "type":"structure",
+      "required":["QuoteIdentifier"],
+      "members":{
+        "QuoteIdentifier":{
+          "shape":"QuoteIdentifier",
+          "location":"uri",
+          "locationName":"QuoteIdentifier"
+        }
+      }
+    },
+    "GetQuoteOutput":{
+      "type":"structure",
+      "members":{
+        "Quote":{"shape":"Quote"}
+      }
+    },
+    "GetRenewalPricingInput":{
+      "type":"structure",
+      "required":["OutpostIdentifier"],
+      "members":{
+        "OutpostIdentifier":{
+          "shape":"OutpostIdentifier",
+          "location":"uri",
+          "locationName":"OutpostIdentifier"
+        }
+      }
+    },
+    "GetRenewalPricingOutput":{
+      "type":"structure",
+      "members":{
+        "PricingResult":{"shape":"PricingResult"},
+        "PricingOptions":{"shape":"PricingOptionList"}
       }
     },
     "GetSiteAddressInput":{
@@ -1625,6 +1915,11 @@
           "shape":"StatusList",
           "location":"querystring",
           "locationName":"StatusFilter"
+        },
+        "AssetTypeFilter":{
+          "shape":"AssetTypeList",
+          "location":"querystring",
+          "locationName":"AssetTypeFilter"
         }
       }
     },
@@ -1740,6 +2035,33 @@
         "NextToken":{"shape":"Token"}
       }
     },
+    "ListOrderableInstanceTypesInput":{
+      "type":"structure",
+      "members":{
+        "OutpostGenerationFilter":{
+          "shape":"OutpostGeneration",
+          "location":"querystring",
+          "locationName":"OutpostGenerationFilter"
+        },
+        "MaxResults":{
+          "shape":"MaxResults1000",
+          "location":"querystring",
+          "locationName":"MaxResults"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "location":"querystring",
+          "locationName":"NextToken"
+        }
+      }
+    },
+    "ListOrderableInstanceTypesOutput":{
+      "type":"structure",
+      "members":{
+        "InstanceTypes":{"shape":"DetailedInstanceTypeListDefinition"},
+        "NextToken":{"shape":"Token"}
+      }
+    },
     "ListOrdersInput":{
       "type":"structure",
       "members":{
@@ -1801,6 +2123,28 @@
       "type":"structure",
       "members":{
         "Outposts":{"shape":"outpostListDefinition"},
+        "NextToken":{"shape":"Token"}
+      }
+    },
+    "ListQuotesInput":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"Token",
+          "location":"querystring",
+          "locationName":"NextToken"
+        },
+        "MaxResults":{
+          "shape":"MaxResults1000",
+          "location":"querystring",
+          "locationName":"MaxResults"
+        }
+      }
+    },
+    "ListQuotesOutput":{
+      "type":"structure",
+      "members":{
+        "Quotes":{"shape":"QuoteSummaryListDefinition"},
         "NextToken":{"shape":"Token"}
       }
     },
@@ -1885,6 +2229,7 @@
         "MAX_2000_LBS"
       ]
     },
+    "MemoryInMib":{"type":"integer"},
     "Municipality":{
       "type":"string",
       "max":180,
@@ -1896,6 +2241,7 @@
       "max":1,
       "min":0
     },
+    "NetworkPerformance":{"type":"string"},
     "NotFoundException":{
       "type":"structure",
       "members":{
@@ -1905,6 +2251,10 @@
       "exception":true
     },
     "NullableDouble":{"type":"double"},
+    "NullableFloat":{
+      "type":"float",
+      "box":true
+    },
     "OpticalStandard":{
       "type":"string",
       "enum":[
@@ -1947,6 +2297,12 @@
       "type":"list",
       "member":{"shape":"String"}
     },
+    "OrderIdentifier":{
+      "type":"string",
+      "max":20,
+      "min":1,
+      "pattern":"^oo-[a-f0-9]{17}$"
+    },
     "OrderStatus":{
       "type":"string",
       "enum":[
@@ -1986,6 +2342,49 @@
         "REPLACEMENT"
       ]
     },
+    "OrderingRequirement":{
+      "type":"structure",
+      "members":{
+        "StatusMessage":{"shape":"StatusMessage"},
+        "OrderingRequirementType":{"shape":"OrderingRequirementType"},
+        "Status":{"shape":"OrderingRequirementStatus"}
+      }
+    },
+    "OrderingRequirementList":{
+      "type":"list",
+      "member":{"shape":"OrderingRequirement"},
+      "max":50
+    },
+    "OrderingRequirementStatus":{
+      "type":"string",
+      "enum":[
+        "PASS",
+        "FAIL",
+        "EXEMPT"
+      ]
+    },
+    "OrderingRequirementType":{
+      "type":"string",
+      "enum":[
+        "OUTPOST_ACTIVE_CHECK_ERROR",
+        "MAXIMUM_ALLOWED_ORDERS_CHECK_ERROR",
+        "VALID_ZIP_CODE_CHECK_ERROR",
+        "RACK_PHYSICAL_PROPERTIES_CHECK_ERROR",
+        "OPERATING_ADDRESS_EXISTENCE_CHECK_ERROR",
+        "SHIPPING_ADDRESS_EXISTENCE_CHECK_ERROR",
+        "COUNTRY_CODE_MISMATCH_CHECK_ERROR",
+        "OUTPOST_GENERATION_MISMATCH_ERROR",
+        "UNSUPPORTED",
+        "OUTPOST_ID_MISSING_ON_QUOTE_ERROR",
+        "ENTERPRISE_SUPPORT_ERROR",
+        "SHIPPING_ADDRESS_MISSING_CONTACT_NAME_ERROR",
+        "SHIPPING_ADDRESS_MISSING_CONTACT_NUMBER_ERROR",
+        "SHIPPING_ADDRESS_MISSING_CONTACT_INFO_ERROR",
+        "OUTPOST_STATE_CHANGED_ERROR",
+        "OUTPOST_NOT_FOUND_ERROR",
+        "OUTPOST_RENEWAL_REQUIRED_ERROR"
+      ]
+    },
     "Outpost":{
       "type":"structure",
       "members":{
@@ -2015,6 +2414,13 @@
       "min":0,
       "pattern":"^[\\S ]*$"
     },
+    "OutpostGeneration":{
+      "type":"string",
+      "enum":[
+        "GENERATION_2",
+        "GENERATION_1"
+      ]
+    },
     "OutpostId":{
       "type":"string",
       "max":180,
@@ -2032,6 +2438,12 @@
       "max":180,
       "min":1,
       "pattern":"^(arn:aws([a-z-]+)?:outposts:[a-z\\d-]+:\\d{12}:outpost/)?op-[a-f0-9]{17}$"
+    },
+    "OutpostIdentifierOrEmpty":{
+      "type":"string",
+      "max":180,
+      "min":0,
+      "pattern":"^((arn:aws([a-z-]+)?:outposts:[a-z\\d-]+:\\d{12}:outpost/)?op-[a-f0-9]{17})?$"
     },
     "OutpostInstanceType":{
       "type":"string",
@@ -2063,6 +2475,11 @@
         "PARTIAL_UPFRONT"
       ]
     },
+    "PaymentOptionList":{
+      "type":"list",
+      "member":{"shape":"PaymentOption"},
+      "max":3
+    },
     "PaymentTerm":{
       "type":"string",
       "enum":[
@@ -2070,6 +2487,11 @@
         "ONE_YEAR",
         "FIVE_YEARS"
       ]
+    },
+    "PaymentTermList":{
+      "type":"list",
+      "member":{"shape":"PaymentTerm"},
+      "max":3
     },
     "PostalCode":{
       "type":"string",
@@ -2110,7 +2532,195 @@
         "THREE_PHASE"
       ]
     },
+    "PricingOption":{
+      "type":"structure",
+      "members":{
+        "PricingType":{"shape":"QuotePricingType"},
+        "SubscriptionPricingDetails":{"shape":"SubscriptionPricingDetails"}
+      }
+    },
+    "PricingOptionList":{
+      "type":"list",
+      "member":{"shape":"PricingOption"},
+      "max":9
+    },
+    "PricingResult":{
+      "type":"string",
+      "enum":[
+        "PRICED",
+        "UNABLE_TO_PRICE"
+      ]
+    },
     "Quantity":{"type":"string"},
+    "Quote":{
+      "type":"structure",
+      "members":{
+        "QuoteId":{"shape":"QuoteId"},
+        "AccountId":{"shape":"AccountId"},
+        "QuoteStatus":{"shape":"QuoteStatus"},
+        "StatusMessage":{"shape":"StatusMessage"},
+        "OutpostArn":{"shape":"OutpostArn"},
+        "CountryCode":{"shape":"CountryCode"},
+        "RequestedCapacities":{"shape":"QuoteCapacityList"},
+        "RequestedConstraints":{"shape":"QuoteConstraintList"},
+        "RequestedPaymentOptions":{"shape":"PaymentOptionList"},
+        "RequestedPaymentTerms":{"shape":"PaymentTermList"},
+        "QuoteOptions":{"shape":"QuoteOptionList"},
+        "OrderingRequirements":{"shape":"OrderingRequirementList"},
+        "SubmittedOrderId":{"shape":"OrderIdentifier"},
+        "CreatedDate":{"shape":"ISO8601Timestamp"},
+        "ExpirationDate":{"shape":"ISO8601Timestamp"},
+        "Description":{"shape":"QuoteDescription"}
+      }
+    },
+    "QuoteCapacity":{
+      "type":"structure",
+      "members":{
+        "QuoteCapacityType":{"shape":"QuoteCapacityType"},
+        "Unit":{"shape":"String"},
+        "Quantity":{"shape":"NullableFloat"}
+      }
+    },
+    "QuoteCapacityList":{
+      "type":"list",
+      "member":{"shape":"QuoteCapacity"},
+      "max":2000
+    },
+    "QuoteCapacityType":{
+      "type":"string",
+      "enum":[
+        "EC2",
+        "EBS",
+        "S3"
+      ]
+    },
+    "QuoteConstraint":{
+      "type":"structure",
+      "members":{
+        "QuoteConstraintType":{"shape":"QuoteConstraintType"},
+        "Value":{"shape":"ConstraintValue"}
+      }
+    },
+    "QuoteConstraintList":{
+      "type":"list",
+      "member":{"shape":"QuoteConstraint"},
+      "max":10
+    },
+    "QuoteConstraintType":{
+      "type":"string",
+      "enum":[
+        "RACK_MAXIMUM",
+        "RACK_MAX_POWER_KVA",
+        "RACK_MAX_WEIGHT_LBS"
+      ]
+    },
+    "QuoteDescription":{
+      "type":"string",
+      "max":1024,
+      "min":0,
+      "pattern":"^[\\S \\n]*$",
+      "sensitive":true
+    },
+    "QuoteId":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^oq-[a-f0-9]{17}$"
+    },
+    "QuoteIdentifier":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^(arn:aws([a-z-]+)?:outposts:[a-z\\d-]+:\\d{12}:quote/)?oq-[a-f0-9]{17}$"
+    },
+    "QuoteOption":{
+      "type":"structure",
+      "members":{
+        "QuoteOptionIdentifier":{"shape":"QuoteOptionIdentifier"},
+        "Capacities":{"shape":"QuoteCapacityList"},
+        "CapacitySummary":{"shape":"CapacitySummary"},
+        "Specifications":{"shape":"QuoteSpecificationList"},
+        "PricingOptions":{"shape":"PricingOptionList"}
+      }
+    },
+    "QuoteOptionIdentifier":{
+      "type":"string",
+      "max":21,
+      "min":1,
+      "pattern":"^oqo-[a-f0-9]{17}$"
+    },
+    "QuoteOptionList":{
+      "type":"list",
+      "member":{"shape":"QuoteOption"},
+      "max":10
+    },
+    "QuotePricingType":{
+      "type":"string",
+      "enum":["SUBSCRIPTION"]
+    },
+    "QuoteRackUseType":{
+      "type":"string",
+      "enum":[
+        "NETWORKING",
+        "COMPUTE"
+      ]
+    },
+    "QuoteSpecification":{
+      "type":"structure",
+      "members":{
+        "QuoteSpecificationType":{"shape":"QuoteSpecificationType"},
+        "ExistingRackSpecificationDetails":{"shape":"RackSpecificationDetails"},
+        "FinalRackSpecificationDetails":{"shape":"RackSpecificationDetails"},
+        "ServerSpecificationDetails":{"shape":"ServerSpecificationDetails"}
+      }
+    },
+    "QuoteSpecificationList":{
+      "type":"list",
+      "member":{"shape":"QuoteSpecification"},
+      "max":100
+    },
+    "QuoteSpecificationType":{
+      "type":"string",
+      "enum":[
+        "UPDATED_RACK",
+        "NEW_RACK",
+        "EXISTING_RACK",
+        "SERVER"
+      ]
+    },
+    "QuoteStatus":{
+      "type":"string",
+      "enum":[
+        "CREATED",
+        "ORDER_SUBMITTED",
+        "EXPIRED"
+      ]
+    },
+    "QuoteSummary":{
+      "type":"structure",
+      "members":{
+        "QuoteId":{"shape":"QuoteId"},
+        "AccountId":{"shape":"AccountId"},
+        "QuoteStatus":{"shape":"QuoteStatus"},
+        "StatusMessage":{"shape":"StatusMessage"},
+        "OutpostArn":{"shape":"OutpostArn"},
+        "CountryCode":{"shape":"CountryCode"},
+        "RequestedCapacities":{"shape":"QuoteCapacityList"},
+        "RequestedConstraints":{"shape":"QuoteConstraintList"},
+        "RequestedPaymentOptions":{"shape":"PaymentOptionList"},
+        "RequestedPaymentTerms":{"shape":"PaymentTermList"},
+        "QuoteOptions":{"shape":"QuoteOptionList"},
+        "SubmittedOrderId":{"shape":"OrderIdentifier"},
+        "CreatedDate":{"shape":"ISO8601Timestamp"},
+        "ExpirationDate":{"shape":"ISO8601Timestamp"},
+        "Description":{"shape":"QuoteDescription"}
+      }
+    },
+    "QuoteSummaryListDefinition":{
+      "type":"list",
+      "member":{"shape":"QuoteSummary"},
+      "max":1000
+    },
     "RackElevation":{
       "type":"float",
       "box":true,
@@ -2137,6 +2747,28 @@
         "MaximumSupportedWeightLbs":{"shape":"MaximumSupportedWeightLbs"}
       }
     },
+    "RackSpecificationDetails":{
+      "type":"structure",
+      "members":{
+        "RackId":{"shape":"RackId"},
+        "RackUse":{"shape":"QuoteRackUseType"},
+        "RackPowerDrawKva":{"shape":"NullableFloat"},
+        "RackWeightLbs":{"shape":"NullableFloat"},
+        "RackHeightInches":{"shape":"NullableFloat"},
+        "RackWidthInches":{"shape":"NullableFloat"},
+        "RackDepthInches":{"shape":"NullableFloat"},
+        "RackUnitHeight":{"shape":"RackUnitHeight"},
+        "EC2Capacities":{"shape":"EC2CapacityListDefinition"}
+      }
+    },
+    "RackUnitHeight":{
+      "type":"string",
+      "enum":[
+        "HEIGHT_42U",
+        "HEIGHT_2U",
+        "HEIGHT_1U"
+      ]
+    },
     "RequestedInstancePools":{
       "type":"list",
       "member":{"shape":"InstanceTypeCapacity"}
@@ -2153,6 +2785,18 @@
       "max":21,
       "min":9,
       "pattern":"^([0-9]{1,3}\\.){3}[0-9]{1,3}:[0-9]{1,5}$"
+    },
+    "ServerSpecificationDetails":{
+      "type":"structure",
+      "members":{
+        "ServerPowerDrawKva":{"shape":"NullableFloat"},
+        "ServerWeightLbs":{"shape":"NullableFloat"},
+        "ServerHeightInches":{"shape":"NullableFloat"},
+        "ServerWidthInches":{"shape":"NullableFloat"},
+        "ServerDepthInches":{"shape":"NullableFloat"},
+        "RackUnitHeight":{"shape":"RackUnitHeight"},
+        "EC2Capacities":{"shape":"EC2CapacityListDefinition"}
+      }
     },
     "ServiceQuotaExceededException":{
       "type":"structure",
@@ -2322,8 +2966,14 @@
     "StatusList":{
       "type":"list",
       "member":{"shape":"AssetState"},
-      "max":3,
+      "max":5,
       "min":1
+    },
+    "StatusMessage":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^[\\S \\n]+$"
     },
     "String":{
       "type":"string",
@@ -2340,6 +2990,7 @@
         "OrderIds":{"shape":"OrderIdList"},
         "BeginDate":{"shape":"ISO8601Timestamp"},
         "EndDate":{"shape":"ISO8601Timestamp"},
+        "Currency":{"shape":"CurrencyCode"},
         "MonthlyRecurringPrice":{"shape":"NullableDouble"},
         "UpfrontPrice":{"shape":"NullableDouble"}
       }
@@ -2348,10 +2999,21 @@
       "type":"list",
       "member":{"shape":"Subscription"}
     },
+    "SubscriptionPricingDetails":{
+      "type":"structure",
+      "members":{
+        "PaymentOption":{"shape":"PaymentOption"},
+        "PaymentTerm":{"shape":"PaymentTerm"},
+        "UpfrontPrice":{"shape":"NullableFloat"},
+        "MonthlyRecurringPrice":{"shape":"NullableFloat"},
+        "Currency":{"shape":"CurrencyCode"}
+      }
+    },
     "SubscriptionStatus":{
       "type":"string",
       "enum":[
         "ACTIVE",
+        "PENDING",
         "INACTIVE",
         "CANCELLED"
       ]
@@ -2496,6 +3158,30 @@
       "type":"structure",
       "members":{
         "Outpost":{"shape":"Outpost"}
+      }
+    },
+    "UpdateQuoteInput":{
+      "type":"structure",
+      "required":["QuoteIdentifier"],
+      "members":{
+        "QuoteIdentifier":{
+          "shape":"QuoteIdentifier",
+          "location":"uri",
+          "locationName":"QuoteIdentifier"
+        },
+        "OutpostIdentifier":{"shape":"OutpostIdentifierOrEmpty"},
+        "CountryCode":{"shape":"CountryCode"},
+        "RequestedCapacities":{"shape":"QuoteCapacityList"},
+        "RequestedConstraints":{"shape":"QuoteConstraintList"},
+        "RequestedPaymentOptions":{"shape":"PaymentOptionList"},
+        "RequestedPaymentTerms":{"shape":"PaymentTermList"},
+        "Description":{"shape":"QuoteDescription"}
+      }
+    },
+    "UpdateQuoteOutput":{
+      "type":"structure",
+      "members":{
+        "Quote":{"shape":"Quote"}
       }
     },
     "UpdateSiteAddressInput":{

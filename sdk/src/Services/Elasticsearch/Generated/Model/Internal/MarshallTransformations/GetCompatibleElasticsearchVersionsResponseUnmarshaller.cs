@@ -52,7 +52,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompatibleElasticsearchVersions", targetDepth))
+                if (context.TestExpression("CompatibleElasticsearchVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompatibleVersionsMap, CompatibleVersionsMapUnmarshaller>(CompatibleVersionsMapUnmarshaller.Instance);
                     response.CompatibleElasticsearchVersions = unmarshaller.Unmarshall(context, ref reader);

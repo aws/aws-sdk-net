@@ -72,7 +72,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ResourceArn", targetDepth))
+                    if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);

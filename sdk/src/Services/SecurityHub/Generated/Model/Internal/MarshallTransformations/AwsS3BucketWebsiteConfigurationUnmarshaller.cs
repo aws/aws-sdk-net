@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorDocument", targetDepth))
+                if (context.TestExpression("ErrorDocument", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorDocument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexDocumentSuffix", targetDepth))
+                if (context.TestExpression("IndexDocumentSuffix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexDocumentSuffix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedirectAllRequestsTo", targetDepth))
+                if (context.TestExpression("RedirectAllRequestsTo", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketWebsiteConfigurationRedirectToUnmarshaller.Instance;
                     unmarshalledObject.RedirectAllRequestsTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingRules", targetDepth))
+                if (context.TestExpression("RoutingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsS3BucketWebsiteConfigurationRoutingRule, AwsS3BucketWebsiteConfigurationRoutingRuleUnmarshaller>(AwsS3BucketWebsiteConfigurationRoutingRuleUnmarshaller.Instance);
                     unmarshalledObject.RoutingRules = unmarshaller.Unmarshall(context, ref reader);

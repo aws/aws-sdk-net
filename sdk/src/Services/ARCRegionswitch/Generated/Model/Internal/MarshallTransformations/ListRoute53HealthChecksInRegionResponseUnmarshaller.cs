@@ -52,13 +52,13 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("healthChecks", targetDepth))
+                if (context.TestExpression("healthChecks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Route53HealthCheck, Route53HealthCheckUnmarshaller>(Route53HealthCheckUnmarshaller.Instance);
                     response.HealthChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

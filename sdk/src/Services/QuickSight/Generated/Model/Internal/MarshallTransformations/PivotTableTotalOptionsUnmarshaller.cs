@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnSubtotalOptions", targetDepth))
+                if (context.TestExpression("ColumnSubtotalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SubtotalOptionsUnmarshaller.Instance;
                     unmarshalledObject.ColumnSubtotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnTotalOptions", targetDepth))
+                if (context.TestExpression("ColumnTotalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = PivotTotalOptionsUnmarshaller.Instance;
                     unmarshalledObject.ColumnTotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowSubtotalOptions", targetDepth))
+                if (context.TestExpression("RowSubtotalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SubtotalOptionsUnmarshaller.Instance;
                     unmarshalledObject.RowSubtotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowTotalOptions", targetDepth))
+                if (context.TestExpression("RowTotalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = PivotTotalOptionsUnmarshaller.Instance;
                     unmarshalledObject.RowTotalOptions = unmarshaller.Unmarshall(context, ref reader);

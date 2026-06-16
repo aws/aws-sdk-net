@@ -67,14 +67,28 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeliverySourceConfiguration())
+            {
+                context.Writer.WritePropertyName("deliverySourceConfiguration");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDeliverySourceConfigurationKvp in publicRequest.DeliverySourceConfiguration)
+                {
+                    context.Writer.WritePropertyName(publicRequestDeliverySourceConfigurationKvp.Key);
+                    var publicRequestDeliverySourceConfigurationValue = publicRequestDeliverySourceConfigurationKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestDeliverySourceConfigurationValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetLogType())
             {
                 context.Writer.WritePropertyName("logType");
@@ -109,10 +123,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

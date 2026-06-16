@@ -52,13 +52,13 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PolicyValidationPassed", targetDepth))
+                if (context.TestExpression("PolicyValidationPassed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PolicyValidationPassed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationErrors", targetDepth))
+                if (context.TestExpression("ValidationErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ValidationErrorsEntry, ValidationErrorsEntryUnmarshaller>(ValidationErrorsEntryUnmarshaller.Instance);
                     response.ValidationErrors = unmarshaller.Unmarshall(context, ref reader);

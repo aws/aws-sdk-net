@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("public", targetDepth))
+                if (context.TestExpression("public", targetDepth, ref reader))
                 {
                     var unmarshaller = PublicRouterNetworkInterfaceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Public = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpc", targetDepth))
+                if (context.TestExpression("vpc", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcRouterNetworkInterfaceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);

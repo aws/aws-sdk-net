@@ -72,7 +72,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("resourceName", targetDepth))
+                    if (context.TestExpression("resourceName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context, ref reader);

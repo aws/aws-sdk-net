@@ -52,31 +52,31 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomDomains", targetDepth))
+                if (context.TestExpression("CustomDomains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomDomain, CustomDomainUnmarshaller>(CustomDomainUnmarshaller.Instance);
                     response.CustomDomains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DNSTarget", targetDepth))
+                if (context.TestExpression("DNSTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DNSTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceArn", targetDepth))
+                if (context.TestExpression("ServiceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcDNSTargets", targetDepth))
+                if (context.TestExpression("VpcDNSTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcDNSTarget, VpcDNSTargetUnmarshaller>(VpcDNSTargetUnmarshaller.Instance);
                     response.VpcDNSTargets = unmarshaller.Unmarshall(context, ref reader);

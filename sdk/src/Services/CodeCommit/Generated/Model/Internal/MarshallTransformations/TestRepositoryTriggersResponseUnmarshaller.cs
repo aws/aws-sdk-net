@@ -52,13 +52,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedExecutions", targetDepth))
+                if (context.TestExpression("failedExecutions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RepositoryTriggerExecutionFailure, RepositoryTriggerExecutionFailureUnmarshaller>(RepositoryTriggerExecutionFailureUnmarshaller.Instance);
                     response.FailedExecutions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successfulExecutions", targetDepth))
+                if (context.TestExpression("successfulExecutions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SuccessfulExecutions = unmarshaller.Unmarshall(context, ref reader);

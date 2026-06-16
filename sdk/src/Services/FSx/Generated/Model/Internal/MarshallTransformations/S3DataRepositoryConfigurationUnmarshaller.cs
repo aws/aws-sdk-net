@@ -56,13 +56,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoExportPolicy", targetDepth))
+                if (context.TestExpression("AutoExportPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoExportPolicyUnmarshaller.Instance;
                     unmarshalledObject.AutoExportPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoImportPolicy", targetDepth))
+                if (context.TestExpression("AutoImportPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoImportPolicyUnmarshaller.Instance;
                     unmarshalledObject.AutoImportPolicy = unmarshaller.Unmarshall(context, ref reader);

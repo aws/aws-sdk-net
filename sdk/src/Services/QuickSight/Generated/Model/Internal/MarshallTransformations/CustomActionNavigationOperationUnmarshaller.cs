@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LocalNavigationConfiguration", targetDepth))
+                if (context.TestExpression("LocalNavigationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalNavigationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LocalNavigationConfiguration = unmarshaller.Unmarshall(context, ref reader);

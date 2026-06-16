@@ -56,25 +56,25 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludeRateBasedDetails", targetDepth))
+                if (context.TestExpression("ExcludeRateBasedDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeRateBasedDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludeRuleMatchDetails", targetDepth))
+                if (context.TestExpression("ExcludeRuleMatchDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeRuleMatchDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Field", targetDepth))
+                if (context.TestExpression("Field", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldToProtectUnmarshaller.Instance;
                     unmarshalledObject.Field = unmarshaller.Unmarshall(context, ref reader);

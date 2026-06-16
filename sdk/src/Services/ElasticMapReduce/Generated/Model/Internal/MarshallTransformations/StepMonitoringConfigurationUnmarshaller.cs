@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3MonitoringConfiguration", targetDepth))
+                if (context.TestExpression("S3MonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);

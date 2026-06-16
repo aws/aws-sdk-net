@@ -56,19 +56,19 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("typeConfiguration", targetDepth))
+                if (context.TestExpression("typeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioExtractionCategoryTypeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TypeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("types", targetDepth))
+                if (context.TestExpression("types", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);

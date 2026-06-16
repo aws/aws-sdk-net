@@ -56,25 +56,31 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("infrastructureOptimization", targetDepth))
+                if (context.TestExpression("autoRepairConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = AutoRepairConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AutoRepairConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("infrastructureOptimization", targetDepth, ref reader))
                 {
                     var unmarshaller = InfrastructureOptimizationUnmarshaller.Instance;
                     unmarshalledObject.InfrastructureOptimization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("infrastructureRoleArn", targetDepth))
+                if (context.TestExpression("infrastructureRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InfrastructureRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceLaunchTemplate", targetDepth))
+                if (context.TestExpression("instanceLaunchTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceLaunchTemplateUnmarshaller.Instance;
                     unmarshalledObject.InstanceLaunchTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("propagateTags", targetDepth))
+                if (context.TestExpression("propagateTags", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context, ref reader);

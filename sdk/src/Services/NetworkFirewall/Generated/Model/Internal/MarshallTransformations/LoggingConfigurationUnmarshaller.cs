@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogDestinationConfigs", targetDepth))
+                if (context.TestExpression("LogDestinationConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LogDestinationConfig, LogDestinationConfigUnmarshaller>(LogDestinationConfigUnmarshaller.Instance);
                     unmarshalledObject.LogDestinationConfigs = unmarshaller.Unmarshall(context, ref reader);

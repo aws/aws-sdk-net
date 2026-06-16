@@ -52,7 +52,7 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaselineSessionArn", targetDepth))
+                if (context.TestExpression("BaselineSessionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BaselineSessionArn = unmarshaller.Unmarshall(context, ref reader);

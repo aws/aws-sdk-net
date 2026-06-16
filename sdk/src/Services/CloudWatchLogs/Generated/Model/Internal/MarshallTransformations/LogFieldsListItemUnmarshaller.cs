@@ -56,13 +56,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("logFieldName", targetDepth))
+                if (context.TestExpression("logFieldName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logFieldType", targetDepth))
+                if (context.TestExpression("logFieldType", targetDepth, ref reader))
                 {
                     var unmarshaller = LogFieldTypeUnmarshaller.Instance;
                     unmarshalledObject.LogFieldType = unmarshaller.Unmarshall(context, ref reader);

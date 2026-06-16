@@ -21,6 +21,25 @@
     "auth":["aws.auth#sigv4"]
   },
   "operations":{
+    "AssociateDatasetKmsKey":{
+      "name":"AssociateDatasetKmsKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateDatasetKmsKeyInput"},
+      "output":{
+        "shape":"AssociateDatasetKmsKeyOutput",
+        "resultWrapper":"AssociateDatasetKmsKeyResult"
+      },
+      "errors":[
+        {"shape":"KmsAccessDeniedException"},
+        {"shape":"KmsKeyNotFoundException"},
+        {"shape":"ConflictException"},
+        {"shape":"KmsKeyDisabledException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "DeleteAlarmMuteRule":{
       "name":"DeleteAlarmMuteRule",
       "http":{
@@ -72,7 +91,6 @@
       },
       "errors":[
         {"shape":"InvalidParameterValueException"},
-        {"shape":"DashboardNotFoundError"},
         {"shape":"InternalServiceFault"},
         {"shape":"ConflictException"}
       ]
@@ -225,6 +243,23 @@
         {"shape":"MissingRequiredParameterException"}
       ]
     },
+    "DisassociateDatasetKmsKey":{
+      "name":"DisassociateDatasetKmsKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateDatasetKmsKeyInput"},
+      "output":{
+        "shape":"DisassociateDatasetKmsKeyOutput",
+        "resultWrapper":"DisassociateDatasetKmsKeyResult"
+      },
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
     "EnableAlarmActions":{
       "name":"EnableAlarmActions",
       "http":{
@@ -281,6 +316,22 @@
         {"shape":"DashboardNotFoundError"},
         {"shape":"InternalServiceFault"}
       ]
+    },
+    "GetDataset":{
+      "name":"GetDataset",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetDatasetInput"},
+      "output":{
+        "shape":"GetDatasetOutput",
+        "resultWrapper":"GetDatasetResult"
+      },
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "readonly":true
     },
     "GetInsightRuleReport":{
       "name":"GetInsightRuleReport",
@@ -361,6 +412,18 @@
       "output":{
         "shape":"GetMetricWidgetImageOutput",
         "resultWrapper":"GetMetricWidgetImageResult"
+      }
+    },
+    "GetOTelEnrichment":{
+      "name":"GetOTelEnrichment",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetOTelEnrichmentInput"},
+      "output":{
+        "shape":"GetOTelEnrichmentOutput",
+        "resultWrapper":"GetOTelEnrichmentResult"
       }
     },
     "ListAlarmMuteRules":{
@@ -628,6 +691,18 @@
         {"shape":"MissingRequiredParameterException"}
       ]
     },
+    "StartOTelEnrichment":{
+      "name":"StartOTelEnrichment",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartOTelEnrichmentInput"},
+      "output":{
+        "shape":"StartOTelEnrichmentOutput",
+        "resultWrapper":"StartOTelEnrichmentResult"
+      }
+    },
     "StopMetricStreams":{
       "name":"StopMetricStreams",
       "http":{
@@ -644,6 +719,18 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"MissingRequiredParameterException"}
       ]
+    },
+    "StopOTelEnrichment":{
+      "name":"StopOTelEnrichment",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopOTelEnrichmentInput"},
+      "output":{
+        "shape":"StopOTelEnrichmentOutput",
+        "resultWrapper":"StopOTelEnrichmentResult"
+      }
     },
     "TagResource":{
       "name":"TagResource",
@@ -801,6 +888,15 @@
       "member":{"shape":"AlarmName"},
       "max":100
     },
+    "AlarmPromQLCriteria":{
+      "type":"structure",
+      "required":["Query"],
+      "members":{
+        "Query":{"shape":"Query"},
+        "PendingPeriod":{"shape":"PendingPeriod"},
+        "RecoveryPeriod":{"shape":"RecoveryPeriod"}
+      }
+    },
     "AlarmRule":{
       "type":"string",
       "max":10240,
@@ -902,6 +998,21 @@
       "max":1600,
       "min":1
     },
+    "AssociateDatasetKmsKeyInput":{
+      "type":"structure",
+      "required":[
+        "DatasetIdentifier",
+        "KmsKeyArn"
+      ],
+      "members":{
+        "DatasetIdentifier":{"shape":"DatasetIdentifier"},
+        "KmsKeyArn":{"shape":"KmsKeyArn"}
+      }
+    },
+    "AssociateDatasetKmsKeyOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "AttributeName":{
       "type":"string",
       "max":255,
@@ -1000,7 +1111,8 @@
       "type":"map",
       "key":{"shape":"AttributeName"},
       "value":{"shape":"AttributeValue"},
-      "max":30
+      "max":150,
+      "min":0
     },
     "ContributorId":{
       "type":"string",
@@ -1110,6 +1222,24 @@
     "DatapointsToAlarm":{
       "type":"integer",
       "min":1
+    },
+    "DatasetArn":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\\d{12}:dataset/default"
+    },
+    "DatasetId":{
+      "type":"string",
+      "max":7,
+      "min":7,
+      "pattern":"default"
+    },
+    "DatasetIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"(default|arn:[a-zA-Z0-9-]+:cloudwatch:[a-zA-Z0-9-]*:\\d{12}:dataset/default)"
     },
     "DeleteAlarmMuteRuleInput":{
       "type":"structure",
@@ -1367,6 +1497,17 @@
         "Failures":{"shape":"BatchFailures"}
       }
     },
+    "DisassociateDatasetKmsKeyInput":{
+      "type":"structure",
+      "required":["DatasetIdentifier"],
+      "members":{
+        "DatasetIdentifier":{"shape":"DatasetIdentifier"}
+      }
+    },
+    "DisassociateDatasetKmsKeyOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "Duration":{
       "type":"string",
       "max":50,
@@ -1454,6 +1595,18 @@
       "max":255,
       "min":1
     },
+    "EvaluationCriteria":{
+      "type":"structure",
+      "members":{
+        "PromQLCriteria":{"shape":"AlarmPromQLCriteria"}
+      },
+      "union":true
+    },
+    "EvaluationInterval":{
+      "type":"integer",
+      "max":3600,
+      "min":10
+    },
     "EvaluationPeriods":{
       "type":"integer",
       "min":1
@@ -1518,6 +1671,25 @@
         "DashboardArn":{"shape":"DashboardArn"},
         "DashboardBody":{"shape":"DashboardBody"},
         "DashboardName":{"shape":"DashboardName"}
+      }
+    },
+    "GetDatasetInput":{
+      "type":"structure",
+      "required":["DatasetIdentifier"],
+      "members":{
+        "DatasetIdentifier":{"shape":"DatasetIdentifier"}
+      }
+    },
+    "GetDatasetOutput":{
+      "type":"structure",
+      "required":[
+        "DatasetId",
+        "Arn"
+      ],
+      "members":{
+        "DatasetId":{"shape":"DatasetId"},
+        "Arn":{"shape":"DatasetArn"},
+        "KmsKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "GetInsightRuleReportInput":{
@@ -1640,6 +1812,17 @@
       "type":"structure",
       "members":{
         "MetricWidgetImage":{"shape":"MetricWidgetImage"}
+      }
+    },
+    "GetOTelEnrichmentInput":{
+      "type":"structure",
+      "members":{}
+    },
+    "GetOTelEnrichmentOutput":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{"shape":"OTelEnrichmentStatus"}
       }
     },
     "HistoryData":{
@@ -1856,6 +2039,36 @@
       },
       "exception":true,
       "synthetic":true
+    },
+    "KmsAccessDeniedException":{
+      "type":"structure",
+      "required":["Message"],
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "exception":true
+    },
+    "KmsKeyArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\\d{12}:key/[a-f0-9-]+"
+    },
+    "KmsKeyDisabledException":{
+      "type":"structure",
+      "required":["Message"],
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "exception":true
+    },
+    "KmsKeyNotFoundException":{
+      "type":"structure",
+      "required":["Message"],
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "exception":true
     },
     "LabelOptions":{
       "type":"structure",
@@ -2091,7 +2304,9 @@
         "Metrics":{"shape":"MetricDataQueries"},
         "ThresholdMetricId":{"shape":"MetricId"},
         "EvaluationState":{"shape":"EvaluationState"},
-        "StateTransitionedTimestamp":{"shape":"Timestamp"}
+        "StateTransitionedTimestamp":{"shape":"Timestamp"},
+        "EvaluationCriteria":{"shape":"EvaluationCriteria"},
+        "EvaluationInterval":{"shape":"EvaluationInterval"}
       },
       "xmlOrder":[
         "AlarmName",
@@ -2122,7 +2337,9 @@
         "Metrics",
         "ThresholdMetricId",
         "EvaluationState",
-        "StateTransitionedTimestamp"
+        "StateTransitionedTimestamp",
+        "EvaluationCriteria",
+        "EvaluationInterval"
       ]
     },
     "MetricAlarms":{
@@ -2356,6 +2573,13 @@
       "pattern":"[^:].*"
     },
     "NextToken":{"type":"string"},
+    "OTelEnrichmentStatus":{
+      "type":"string",
+      "enum":[
+        "Running",
+        "Stopped"
+      ]
+    },
     "OutputFormat":{"type":"string"},
     "OwningAccounts":{
       "type":"list",
@@ -2369,6 +2593,11 @@
         "FailureCode":{"shape":"FailureCode"},
         "FailureDescription":{"shape":"FailureDescription"}
       }
+    },
+    "PendingPeriod":{
+      "type":"integer",
+      "max":86400,
+      "min":0
     },
     "Period":{
       "type":"integer",
@@ -2452,7 +2681,8 @@
       ],
       "members":{
         "DashboardName":{"shape":"DashboardName"},
-        "DashboardBody":{"shape":"DashboardBody"}
+        "DashboardBody":{"shape":"DashboardBody"},
+        "Tags":{"shape":"TagList"}
       }
     },
     "PutDashboardOutput":{
@@ -2494,11 +2724,7 @@
     },
     "PutMetricAlarmInput":{
       "type":"structure",
-      "required":[
-        "AlarmName",
-        "EvaluationPeriods",
-        "ComparisonOperator"
-      ],
+      "required":["AlarmName"],
       "members":{
         "AlarmName":{"shape":"AlarmName"},
         "AlarmDescription":{"shape":"AlarmDescription"},
@@ -2521,7 +2747,9 @@
         "EvaluateLowSampleCountPercentile":{"shape":"EvaluateLowSampleCountPercentile"},
         "Metrics":{"shape":"MetricDataQueries"},
         "Tags":{"shape":"TagList"},
-        "ThresholdMetricId":{"shape":"MetricId"}
+        "ThresholdMetricId":{"shape":"MetricId"},
+        "EvaluationCriteria":{"shape":"EvaluationCriteria"},
+        "EvaluationInterval":{"shape":"EvaluationInterval"}
       }
     },
     "PutMetricDataInput":{
@@ -2563,6 +2791,11 @@
         "Arn":{"shape":"AmazonResourceName"}
       }
     },
+    "Query":{
+      "type":"string",
+      "max":10000,
+      "min":1
+    },
     "Range":{
       "type":"structure",
       "required":[
@@ -2581,6 +2814,11 @@
     "RecentlyActive":{
       "type":"string",
       "enum":["PT3H"]
+    },
+    "RecoveryPeriod":{
+      "type":"integer",
+      "max":86400,
+      "min":0
     },
     "ResourceId":{"type":"string"},
     "ResourceList":{
@@ -2714,6 +2952,14 @@
       "type":"structure",
       "members":{}
     },
+    "StartOTelEnrichmentInput":{
+      "type":"structure",
+      "members":{}
+    },
+    "StartOTelEnrichmentOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "Stat":{"type":"string"},
     "StateReason":{
       "type":"string",
@@ -2784,11 +3030,20 @@
       "type":"structure",
       "members":{}
     },
+    "StopOTelEnrichmentInput":{
+      "type":"structure",
+      "members":{}
+    },
+    "StopOTelEnrichmentOutput":{
+      "type":"structure",
+      "members":{}
+    },
     "StorageResolution":{
       "type":"integer",
       "min":1
     },
     "StrictEntityValidation":{"type":"boolean"},
+    "String":{"type":"string"},
     "SuppressorPeriod":{"type":"integer"},
     "Tag":{
       "type":"structure",

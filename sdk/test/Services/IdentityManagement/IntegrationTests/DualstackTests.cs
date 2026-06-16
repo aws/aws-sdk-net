@@ -1,19 +1,19 @@
 using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     /// <summary>
     /// Simple tests to verify that requests for dualstack endpoints cause the
-    /// SDK to compute the correct endpoint fir a region and calls resolve 
+    /// SDK to compute the correct endpoint for a region and calls resolve 
     /// successfully.
     /// </summary>
-    [TestClass]
-    [TestCategory("S3")]
+    [Trait("Category", "S3")]
+    [Collection("Serial")]
     public class DualstackTests
     {
         RegionEndpoint[] testRegions = new RegionEndpoint[]
@@ -28,7 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// endpoint for a handful of regions when using S3 is using calls that result in 
         /// both virtual host and path style addressing.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestSomeRegionsResolveV4Signing()
         {
             foreach (var testRegion in testRegions)
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     RegionEndpoint = testRegion,
                     UseDualstackEndpoint = true
                 };
-                
+
                 await ExecuteSomeBucketOperations(config);
             }
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // Call ListBuckets first to verify that AmazonS3PostMarshallHandler.ProcessRequestHandlers
                 // correctly computes the endpoint when no bucket name is present.
                 var listBucketsResponse = await s3Client.ListBucketsAsync();
-                Assert.IsNotNull(listBucketsResponse);
-                Assert.IsFalse(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
-                
+                Assert.NotNull(listBucketsResponse);
+                Assert.False(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
+
                 // Bonus call on ListObjects if we can find a bucket compatible with the test region (to avoid 301
                 // errors due to addressing bucket on wrong endpoint). This verifies that  
                 // AmazonS3PostMarshallHandler.ProcessRequestHandlers correctly computes the endpoint when 
@@ -83,7 +83,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             break;
                         }
                     }
-                    catch(AmazonS3Exception e)
+                    catch (AmazonS3Exception e)
                     {
                         if (e.StatusCode != System.Net.HttpStatusCode.NotFound)
                             throw;
@@ -93,8 +93,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 if (!string.IsNullOrEmpty(bucketName))
                 {
                     var listObjectsResponse = await s3Client.ListObjectsAsync(new ListObjectsRequest { BucketName = bucketName });
-                    Assert.IsNotNull(listObjectsResponse);
-                    Assert.IsNotNull(listObjectsResponse.ResponseMetadata);
+                    Assert.NotNull(listObjectsResponse);
+                    Assert.NotNull(listObjectsResponse.ResponseMetadata);
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// Verifies that we can successfully compute and execute against a HTTP dualstack
         /// endpoint.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestHttpAccessOnDualstackEndpoint()
         {
             var config = new AmazonS3Config
@@ -116,15 +116,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var s3Client = new AmazonS3Client(config))
             {
                 var listBucketsResponse = await s3Client.ListBucketsAsync();
-                Assert.IsNotNull(listBucketsResponse);
-                Assert.IsFalse(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
+                Assert.NotNull(listBucketsResponse);
+                Assert.False(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
             }
         }
 
         /// <summary>
         /// Tests we can invoke a dualstack endpoint using a service endpoint override.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestExplicitDualstackEndpoint()
         {
             var config = new AmazonS3Config
@@ -135,8 +135,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var s3Client = new AmazonS3Client(config))
             {
                 var listBucketsResponse = await s3Client.ListBucketsAsync();
-                Assert.IsNotNull(listBucketsResponse);
-                Assert.IsFalse(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
+                Assert.NotNull(listBucketsResponse);
+                Assert.False(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
             }
         }
     }

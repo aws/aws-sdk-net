@@ -166,10 +166,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges.
-        /// To prevent additional charges, turn off and then delete the compute environment. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
-        /// in the <i>Batch User Guide</i>.
+        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges,
+        /// for example, if they have running instances due to jobs that are still executing or
+        /// a non-zero <c>minvCpus</c> setting. To prevent additional charges, disable and delete
+        /// the compute environment.
         /// </para>
         ///  </note> 
         /// <para>

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
@@ -59,90 +58,76 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartICD10CMInferenceJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ComprehendMedical");
-            string target = "ComprehendMedical_20181030.StartICD10CMInferenceJob";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/ComprehendMedical_20181030/operation/StartICD10CMInferenceJob";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-30";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientRequestToken())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("ClientRequestToken");
-                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
-            }
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetClientRequestToken())
+                {
+                    context.Writer.WriteTextString("ClientRequestToken");
+                    context.Writer.WriteTextString(publicRequest.ClientRequestToken);
+                }
+                else if (!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WriteTextString("ClientRequestToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetDataAccessRoleArn())
+                {
+                    context.Writer.WriteTextString("DataAccessRoleArn");
+                    context.Writer.WriteTextString(publicRequest.DataAccessRoleArn);
+                }
+                if (publicRequest.IsSetInputDataConfig())
+                {
+                    context.Writer.WriteTextString("InputDataConfig");
+                    context.Writer.WriteStartMap(null);
 
-            else if(!(publicRequest.IsSetClientRequestToken()))
+                    var marshaller = InputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InputDataConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetJobName())
+                {
+                    context.Writer.WriteTextString("JobName");
+                    context.Writer.WriteTextString(publicRequest.JobName);
+                }
+                if (publicRequest.IsSetKMSKey())
+                {
+                    context.Writer.WriteTextString("KMSKey");
+                    context.Writer.WriteTextString(publicRequest.KMSKey);
+                }
+                if (publicRequest.IsSetLanguageCode())
+                {
+                    context.Writer.WriteTextString("LanguageCode");
+                    context.Writer.WriteTextString(publicRequest.LanguageCode);
+                }
+                if (publicRequest.IsSetOutputDataConfig())
+                {
+                    context.Writer.WriteTextString("OutputDataConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = OutputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("ClientRequestToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+                CborWriterPool.Return(writer);
             }
-            if(publicRequest.IsSetDataAccessRoleArn())
-            {
-                context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
-            }
-
-            if(publicRequest.IsSetInputDataConfig())
-            {
-                context.Writer.WritePropertyName("InputDataConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = InputDataConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetJobName())
-            {
-                context.Writer.WritePropertyName("JobName");
-                context.Writer.WriteStringValue(publicRequest.JobName);
-            }
-
-            if(publicRequest.IsSetKMSKey())
-            {
-                context.Writer.WritePropertyName("KMSKey");
-                context.Writer.WriteStringValue(publicRequest.KMSKey);
-            }
-
-            if(publicRequest.IsSetLanguageCode())
-            {
-                context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.WriteStringValue(publicRequest.LanguageCode);
-            }
-
-            if(publicRequest.IsSetOutputDataConfig())
-            {
-                context.Writer.WritePropertyName("OutputDataConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OutputDataConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static StartICD10CMInferenceJobRequestMarshaller _instance = new StartICD10CMInferenceJobRequestMarshaller();        

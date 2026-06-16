@@ -56,49 +56,49 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("captureConditional", targetDepth))
+                if (context.TestExpression("captureConditional", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CaptureConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captureNextStep", targetDepth))
+                if (context.TestExpression("captureNextStep", targetDepth, ref reader))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
                     unmarshalledObject.CaptureNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captureResponse", targetDepth))
+                if (context.TestExpression("captureResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CaptureResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeHook", targetDepth))
+                if (context.TestExpression("codeHook", targetDepth, ref reader))
                 {
                     var unmarshaller = DialogCodeHookInvocationSettingUnmarshaller.Instance;
                     unmarshalledObject.CodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elicitationCodeHook", targetDepth))
+                if (context.TestExpression("elicitationCodeHook", targetDepth, ref reader))
                 {
                     var unmarshaller = ElicitationCodeHookInvocationSettingUnmarshaller.Instance;
                     unmarshalledObject.ElicitationCodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureConditional", targetDepth))
+                if (context.TestExpression("failureConditional", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
                     unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureNextStep", targetDepth))
+                if (context.TestExpression("failureNextStep", targetDepth, ref reader))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
                     unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureResponse", targetDepth))
+                if (context.TestExpression("failureResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
                     unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context, ref reader);

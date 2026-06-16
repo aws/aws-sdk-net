@@ -56,37 +56,37 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackgroundColor", targetDepth))
+                if (context.TestExpression("BackgroundColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackgroundColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BodyConfig", targetDepth))
+                if (context.TestExpression("BodyConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InAppMessageBodyConfigUnmarshaller.Instance;
                     unmarshalledObject.BodyConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeaderConfig", targetDepth))
+                if (context.TestExpression("HeaderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InAppMessageHeaderConfigUnmarshaller.Instance;
                     unmarshalledObject.HeaderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageUrl", targetDepth))
+                if (context.TestExpression("ImageUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryBtn", targetDepth))
+                if (context.TestExpression("PrimaryBtn", targetDepth, ref reader))
                 {
                     var unmarshaller = InAppMessageButtonUnmarshaller.Instance;
                     unmarshalledObject.PrimaryBtn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryBtn", targetDepth))
+                if (context.TestExpression("SecondaryBtn", targetDepth, ref reader))
                 {
                     var unmarshaller = InAppMessageButtonUnmarshaller.Instance;
                     unmarshalledObject.SecondaryBtn = unmarshaller.Unmarshall(context, ref reader);

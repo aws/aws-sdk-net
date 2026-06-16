@@ -56,10 +56,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("namespaces", targetDepth))
+                if (context.TestExpression("memoryRecordSchema", targetDepth, ref reader))
+                {
+                    var unmarshaller = MemoryRecordSchemaUnmarshaller.Instance;
+                    unmarshalledObject.MemoryRecordSchema = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("namespaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Namespaces = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("namespaceTemplates", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NamespaceTemplates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -183,9 +183,8 @@ namespace AWSSDK.UnitTests
             typeof(SocketException));
 
             // Should make initial attempt + MAX_STALE_CONNECTION_RETRIES attempts
-            Assert.AreEqual(MAX_STALE_CONNECTION_RETRIES + 1, Tester.CallCount, 
-                "Should have made exactly {0} attempts (initial + {1} stale connection retries)", 
-                MAX_STALE_CONNECTION_RETRIES + 1, MAX_STALE_CONNECTION_RETRIES);
+            Assert.AreEqual(MAX_STALE_CONNECTION_RETRIES + 1, Tester.CallCount,
+                $"Should have made exactly {MAX_STALE_CONNECTION_RETRIES + 1} attempts (initial + {MAX_STALE_CONNECTION_RETRIES} stale connection retries)");
         }
 
         /// <summary>
@@ -210,8 +209,8 @@ namespace AWSSDK.UnitTests
             typeof(System.IO.IOException));
 
             // Should retry according to normal retry policy (MAX_RETRIES)
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount, 
-                "Should have made {0} attempts using normal retry logic", MAX_RETRIES + 1);
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount,
+                $"Should have made {MAX_RETRIES + 1} attempts using normal retry logic");
         }
 
         /// <summary>
@@ -246,8 +245,8 @@ namespace AWSSDK.UnitTests
 
             // Should make: 2 stale connection attempts, then normal retries (MAX_RETRIES + 1)
             Assert.AreEqual(2, staleConnectionAttempts, "Should have made 2 stale connection attempts");
-            Assert.AreEqual(2 + MAX_RETRIES + 1, Tester.CallCount, 
-                "Should have made 2 stale connection attempts + {0} normal retry attempts", MAX_RETRIES + 1);
+            Assert.AreEqual(2 + MAX_RETRIES + 1, Tester.CallCount,
+                $"Should have made 2 stale connection attempts + {MAX_RETRIES + 1} normal retry attempts");
         }
 
         /// <summary>
@@ -286,9 +285,8 @@ namespace AWSSDK.UnitTests
             typeof(SocketException));
 
             // Should make initial attempt + CUSTOM_MAX_STALE_RETRIES attempts
-            Assert.AreEqual(CUSTOM_MAX_STALE_RETRIES + 1, Tester.CallCount, 
-                "Should have made exactly {0} attempts (initial + {1} custom stale connection retries)", 
-                CUSTOM_MAX_STALE_RETRIES + 1, CUSTOM_MAX_STALE_RETRIES);
+            Assert.AreEqual(CUSTOM_MAX_STALE_RETRIES + 1, Tester.CallCount,
+                $"Should have made exactly {CUSTOM_MAX_STALE_RETRIES + 1} attempts (initial + {CUSTOM_MAX_STALE_RETRIES} custom stale connection retries)");
         }
 
         /// <summary>
@@ -362,9 +360,8 @@ namespace AWSSDK.UnitTests
             typeof(SocketException));
 
             // Should make initial attempt + MAX_STALE_CONNECTION_RETRIES attempts
-            Assert.AreEqual(MAX_STALE_CONNECTION_RETRIES + 1, Tester.CallCount, 
-                "Should have made exactly {0} attempts (initial + {1} stale connection retries)", 
-                MAX_STALE_CONNECTION_RETRIES + 1, MAX_STALE_CONNECTION_RETRIES);
+            Assert.AreEqual(MAX_STALE_CONNECTION_RETRIES + 1, Tester.CallCount,
+                $"Should have made exactly {MAX_STALE_CONNECTION_RETRIES + 1} attempts (initial + {MAX_STALE_CONNECTION_RETRIES} stale connection retries)");
         }
 #endif
     }

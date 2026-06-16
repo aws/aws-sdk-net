@@ -52,19 +52,19 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("destinationAccessToken", targetDepth))
+                if (context.TestExpression("destinationAccessToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DestinationAccessToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceAccessToken", targetDepth))
+                if (context.TestExpression("sourceAccessToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceAccessToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tunnelArn", targetDepth))
+                if (context.TestExpression("tunnelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TunnelArn = unmarshaller.Unmarshall(context, ref reader);

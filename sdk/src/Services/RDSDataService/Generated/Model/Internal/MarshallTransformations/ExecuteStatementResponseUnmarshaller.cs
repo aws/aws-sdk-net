@@ -52,31 +52,31 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("columnMetadata", targetDepth))
+                if (context.TestExpression("columnMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnMetadata, ColumnMetadataUnmarshaller>(ColumnMetadataUnmarshaller.Instance);
                     response.ColumnMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("formattedRecords", targetDepth))
+                if (context.TestExpression("formattedRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FormattedRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generatedFields", targetDepth))
+                if (context.TestExpression("generatedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
                     response.GeneratedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfRecordsUpdated", targetDepth))
+                if (context.TestExpression("numberOfRecordsUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfRecordsUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("records", targetDepth))
+                if (context.TestExpression("records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<Field>, JsonListUnmarshaller<Field,FieldUnmarshaller>>(new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance));
                     response.Records = unmarshaller.Unmarshall(context, ref reader);

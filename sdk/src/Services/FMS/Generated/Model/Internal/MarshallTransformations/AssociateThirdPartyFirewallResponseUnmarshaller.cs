@@ -52,7 +52,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ThirdPartyFirewallStatus", targetDepth))
+                if (context.TestExpression("ThirdPartyFirewallStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ThirdPartyFirewallStatus = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TagOptionDetail", targetDepth))
+                if (context.TestExpression("TagOptionDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = TagOptionDetailUnmarshaller.Instance;
                     response.TagOptionDetail = unmarshaller.Unmarshall(context, ref reader);

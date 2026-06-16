@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("virtualInterface", targetDepth))
+                if (context.TestExpression("virtualInterface", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualInterfaceUnmarshaller.Instance;
                     response.VirtualInterface = unmarshaller.Unmarshall(context, ref reader);

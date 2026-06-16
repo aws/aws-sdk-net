@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("citation", targetDepth))
+                if (context.TestExpression("citation", targetDepth, ref reader))
                 {
                     var unmarshaller = CitationUnmarshaller.Instance;
                     unmarshalledObject.Citation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generatedResponsePart", targetDepth))
+                if (context.TestExpression("generatedResponsePart", targetDepth, ref reader))
                 {
                     var unmarshaller = GeneratedResponsePartUnmarshaller.Instance;
                     unmarshalledObject.GeneratedResponsePart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retrievedReferences", targetDepth))
+                if (context.TestExpression("retrievedReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RetrievedReference, RetrievedReferenceUnmarshaller>(RetrievedReferenceUnmarshaller.Instance);
                     unmarshalledObject.RetrievedReferences = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("steps", targetDepth))
+                if (context.TestExpression("steps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Step, StepUnmarshaller>(StepUnmarshaller.Instance);
                     unmarshalledObject.Steps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("summary", targetDepth))
+                if (context.TestExpression("summary", targetDepth, ref reader))
                 {
                     var unmarshaller = JobSummaryUnmarshaller.Instance;
                     unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);

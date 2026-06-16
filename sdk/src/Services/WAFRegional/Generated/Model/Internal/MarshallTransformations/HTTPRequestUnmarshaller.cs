@@ -56,37 +56,37 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientIP", targetDepth))
+                if (context.TestExpression("ClientIP", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientIP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Country", targetDepth))
+                if (context.TestExpression("Country", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Headers", targetDepth))
+                if (context.TestExpression("Headers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HTTPHeader, HTTPHeaderUnmarshaller>(HTTPHeaderUnmarshaller.Instance);
                     unmarshalledObject.Headers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HTTPVersion", targetDepth))
+                if (context.TestExpression("HTTPVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HTTPVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Method", targetDepth))
+                if (context.TestExpression("Method", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Method = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("URI", targetDepth))
+                if (context.TestExpression("URI", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.URI = unmarshaller.Unmarshall(context, ref reader);

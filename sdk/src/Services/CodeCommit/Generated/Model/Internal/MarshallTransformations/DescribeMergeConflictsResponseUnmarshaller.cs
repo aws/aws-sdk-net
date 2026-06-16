@@ -52,37 +52,37 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("baseCommitId", targetDepth))
+                if (context.TestExpression("baseCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BaseCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conflictMetadata", targetDepth))
+                if (context.TestExpression("conflictMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ConflictMetadataUnmarshaller.Instance;
                     response.ConflictMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationCommitId", targetDepth))
+                if (context.TestExpression("destinationCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DestinationCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mergeHunks", targetDepth))
+                if (context.TestExpression("mergeHunks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MergeHunk, MergeHunkUnmarshaller>(MergeHunkUnmarshaller.Instance);
                     response.MergeHunks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceCommitId", targetDepth))
+                if (context.TestExpression("sourceCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceCommitId = unmarshaller.Unmarshall(context, ref reader);

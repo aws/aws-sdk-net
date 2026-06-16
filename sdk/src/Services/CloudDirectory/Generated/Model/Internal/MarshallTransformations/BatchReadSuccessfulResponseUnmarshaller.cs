@@ -56,85 +56,85 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GetLinkAttributes", targetDepth))
+                if (context.TestExpression("GetLinkAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchGetLinkAttributesResponseUnmarshaller.Instance;
                     unmarshalledObject.GetLinkAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GetObjectAttributes", targetDepth))
+                if (context.TestExpression("GetObjectAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchGetObjectAttributesResponseUnmarshaller.Instance;
                     unmarshalledObject.GetObjectAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GetObjectInformation", targetDepth))
+                if (context.TestExpression("GetObjectInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchGetObjectInformationResponseUnmarshaller.Instance;
                     unmarshalledObject.GetObjectInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListAttachedIndices", targetDepth))
+                if (context.TestExpression("ListAttachedIndices", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListAttachedIndicesResponseUnmarshaller.Instance;
                     unmarshalledObject.ListAttachedIndices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListIncomingTypedLinks", targetDepth))
+                if (context.TestExpression("ListIncomingTypedLinks", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListIncomingTypedLinksResponseUnmarshaller.Instance;
                     unmarshalledObject.ListIncomingTypedLinks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListIndex", targetDepth))
+                if (context.TestExpression("ListIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListIndexResponseUnmarshaller.Instance;
                     unmarshalledObject.ListIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListObjectAttributes", targetDepth))
+                if (context.TestExpression("ListObjectAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListObjectAttributesResponseUnmarshaller.Instance;
                     unmarshalledObject.ListObjectAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListObjectChildren", targetDepth))
+                if (context.TestExpression("ListObjectChildren", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListObjectChildrenResponseUnmarshaller.Instance;
                     unmarshalledObject.ListObjectChildren = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListObjectParentPaths", targetDepth))
+                if (context.TestExpression("ListObjectParentPaths", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListObjectParentPathsResponseUnmarshaller.Instance;
                     unmarshalledObject.ListObjectParentPaths = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListObjectParents", targetDepth))
+                if (context.TestExpression("ListObjectParents", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListObjectParentsResponseUnmarshaller.Instance;
                     unmarshalledObject.ListObjectParents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListObjectPolicies", targetDepth))
+                if (context.TestExpression("ListObjectPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListObjectPoliciesResponseUnmarshaller.Instance;
                     unmarshalledObject.ListObjectPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListOutgoingTypedLinks", targetDepth))
+                if (context.TestExpression("ListOutgoingTypedLinks", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListOutgoingTypedLinksResponseUnmarshaller.Instance;
                     unmarshalledObject.ListOutgoingTypedLinks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListPolicyAttachments", targetDepth))
+                if (context.TestExpression("ListPolicyAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchListPolicyAttachmentsResponseUnmarshaller.Instance;
                     unmarshalledObject.ListPolicyAttachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LookupPolicy", targetDepth))
+                if (context.TestExpression("LookupPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchLookupPolicyResponseUnmarshaller.Instance;
                     unmarshalledObject.LookupPolicy = unmarshaller.Unmarshall(context, ref reader);

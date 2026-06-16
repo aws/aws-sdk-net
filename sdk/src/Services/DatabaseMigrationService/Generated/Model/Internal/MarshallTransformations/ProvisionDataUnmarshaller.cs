@@ -56,37 +56,37 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateNewProvisioningDataAvailable", targetDepth))
+                if (context.TestExpression("DateNewProvisioningDataAvailable", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateNewProvisioningDataAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateProvisioned", targetDepth))
+                if (context.TestExpression("DateProvisioned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateProvisioned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsNewProvisioningAvailable", targetDepth))
+                if (context.TestExpression("IsNewProvisioningAvailable", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNewProvisioningAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedCapacityUnits", targetDepth))
+                if (context.TestExpression("ProvisionedCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionState", targetDepth))
+                if (context.TestExpression("ProvisionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvisionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReasonForNewProvisioningData", targetDepth))
+                if (context.TestExpression("ReasonForNewProvisioningData", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReasonForNewProvisioningData = unmarshaller.Unmarshall(context, ref reader);

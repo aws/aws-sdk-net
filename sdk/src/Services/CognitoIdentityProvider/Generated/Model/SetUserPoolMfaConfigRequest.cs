@@ -177,8 +177,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property WebAuthnConfiguration. 
         /// <para>
         /// The configuration of your user pool for passkey, or WebAuthn, authentication and registration.
-        /// You can set this configuration independent of the MFA configuration options in this
-        /// operation.
+        /// Includes relying-party configuration, user-verification requirements, and whether
+        /// passkeys can satisfy MFA requirements.
         /// </para>
         /// </summary>
         public WebAuthnConfigurationType WebAuthnConfiguration

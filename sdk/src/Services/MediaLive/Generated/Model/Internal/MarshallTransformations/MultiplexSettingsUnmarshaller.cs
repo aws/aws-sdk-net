@@ -56,25 +56,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maximumVideoBufferDelayMilliseconds", targetDepth))
+                if (context.TestExpression("maximumVideoBufferDelayMilliseconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumVideoBufferDelayMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transportStreamBitrate", targetDepth))
+                if (context.TestExpression("transportStreamBitrate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransportStreamBitrate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transportStreamId", targetDepth))
+                if (context.TestExpression("transportStreamId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransportStreamId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transportStreamReservedBitrate", targetDepth))
+                if (context.TestExpression("transportStreamReservedBitrate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransportStreamReservedBitrate = unmarshaller.Unmarshall(context, ref reader);

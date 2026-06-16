@@ -56,7 +56,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customerProfilesDomainArn", targetDepth))
+                if (context.TestExpression("customerProfilesDomainArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerProfilesDomainArn = unmarshaller.Unmarshall(context, ref reader);

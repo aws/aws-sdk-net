@@ -39,11 +39,13 @@ namespace Amazon.SageMaker.Model
         private string _imageId;
         private int? _instanceCount;
         private string _instanceGroupName;
+        private ClusterInstanceRequirements _instanceRequirements;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private ClusterKubernetesConfig _kubernetesConfig;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private int? _minInstanceCount;
+        private ClusterNetworkInterface _networkInterface;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
@@ -186,6 +188,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceRequirements. 
+        /// <para>
+        /// The instance requirements for the instance group, including the instance types to
+        /// use. Use this to create a flexible instance group that supports multiple instance
+        /// types. The <c>InstanceType</c> and <c>InstanceRequirements</c> properties are mutually
+        /// exclusive.
+        /// </para>
+        /// </summary>
+        public ClusterInstanceRequirements InstanceRequirements
+        {
+            get { return this._instanceRequirements; }
+            set { this._instanceRequirements = value; }
+        }
+
+        // Check to see if InstanceRequirements property is set
+        internal bool IsSetInstanceRequirements()
+        {
+            return this._instanceRequirements != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceStorageConfigs. 
         /// <para>
         /// Specifies the additional storage configurations for the instances in the SageMaker
@@ -216,7 +239,6 @@ namespace Amazon.SageMaker.Model
         /// Specifies the instance type of the instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClusterInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -255,7 +277,6 @@ namespace Amazon.SageMaker.Model
         /// Specifies the LifeCycle configuration for the instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClusterLifeCycleConfig LifeCycleConfig
         {
             get { return this._lifeCycleConfig; }
@@ -289,6 +310,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMinInstanceCount()
         {
             return this._minInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// The network interface configuration for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterNetworkInterface NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
         }
 
         /// <summary>

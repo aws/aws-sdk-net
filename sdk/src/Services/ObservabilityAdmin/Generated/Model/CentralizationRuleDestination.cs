@@ -36,6 +36,7 @@ namespace Amazon.ObservabilityAdmin.Model
     {
         private string _account;
         private DestinationLogsConfiguration _destinationLogsConfiguration;
+        private DestinationMetricsConfiguration _destinationMetricsConfiguration;
         private string _region;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetDestinationLogsConfiguration()
         {
             return this._destinationLogsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationMetricsConfiguration. 
+        /// <para>
+        /// Metric specific configuration for centralization destination metrics.
+        /// </para>
+        /// </summary>
+        public DestinationMetricsConfiguration DestinationMetricsConfiguration
+        {
+            get { return this._destinationMetricsConfiguration; }
+            set { this._destinationMetricsConfiguration = value; }
+        }
+
+        // Check to see if DestinationMetricsConfiguration property is set
+        internal bool IsSetDestinationMetricsConfiguration()
+        {
+            return this._destinationMetricsConfiguration != null;
         }
 
         /// <summary>

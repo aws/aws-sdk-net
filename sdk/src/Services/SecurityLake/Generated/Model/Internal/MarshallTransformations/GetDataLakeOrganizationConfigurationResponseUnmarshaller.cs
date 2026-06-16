@@ -52,7 +52,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoEnableNewAccount", targetDepth))
+                if (context.TestExpression("autoEnableNewAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakeAutoEnableNewAccountConfiguration, DataLakeAutoEnableNewAccountConfigurationUnmarshaller>(DataLakeAutoEnableNewAccountConfigurationUnmarshaller.Instance);
                     response.AutoEnableNewAccount = unmarshaller.Unmarshall(context, ref reader);

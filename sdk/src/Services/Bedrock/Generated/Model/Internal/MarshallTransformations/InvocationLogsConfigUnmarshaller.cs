@@ -56,19 +56,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("invocationLogSource", targetDepth))
+                if (context.TestExpression("invocationLogSource", targetDepth, ref reader))
                 {
                     var unmarshaller = InvocationLogSourceUnmarshaller.Instance;
                     unmarshalledObject.InvocationLogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestMetadataFilters", targetDepth))
+                if (context.TestExpression("requestMetadataFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestMetadataFiltersUnmarshaller.Instance;
                     unmarshalledObject.RequestMetadataFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usePromptResponse", targetDepth))
+                if (context.TestExpression("usePromptResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UsePromptResponse = unmarshaller.Unmarshall(context, ref reader);

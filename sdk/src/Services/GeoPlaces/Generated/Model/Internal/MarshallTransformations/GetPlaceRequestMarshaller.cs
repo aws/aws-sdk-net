@@ -80,7 +80,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPoliticalView())
                 request.Parameters.Add("political-view", StringUtils.FromString(publicRequest.PoliticalView));
-            request.ResourcePath = "/place/{PlaceId}";
+            request.ResourcePath = "/v2/place/{PlaceId}";
             request.UseQueryString = true;
 
             return request;

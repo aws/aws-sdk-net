@@ -56,13 +56,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enableHiveCompatiblePath", targetDepth))
+                if (context.TestExpression("enableHiveCompatiblePath", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableHiveCompatiblePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suffixPath", targetDepth))
+                if (context.TestExpression("suffixPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SuffixPath = unmarshaller.Unmarshall(context, ref reader);

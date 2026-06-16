@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategorySort", targetDepth))
+                if (context.TestExpression("CategorySort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.CategorySort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaginationConfiguration", targetDepth))
+                if (context.TestExpression("PaginationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PaginationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PaginationConfiguration = unmarshaller.Unmarshall(context, ref reader);

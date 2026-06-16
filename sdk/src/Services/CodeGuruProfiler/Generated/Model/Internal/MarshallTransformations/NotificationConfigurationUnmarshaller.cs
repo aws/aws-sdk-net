@@ -56,7 +56,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channels", targetDepth))
+                if (context.TestExpression("channels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Channel, ChannelUnmarshaller>(ChannelUnmarshaller.Instance);
                     unmarshalledObject.Channels = unmarshaller.Unmarshall(context, ref reader);

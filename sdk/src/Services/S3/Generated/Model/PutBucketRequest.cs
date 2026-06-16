@@ -50,6 +50,20 @@ namespace Amazon.S3.Model
     /// more information about these bucket types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
     /// configuring, and working with Amazon S3 buckets</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// General purpose buckets exist in a global namespace, which means that each bucket
+    /// name must be unique across all Amazon Web Services accounts in all the Amazon Web
+    /// Services Regions within a partition. A partition is a grouping of Regions. Amazon
+    /// Web Services currently has four partitions: <c>aws</c> (Standard Regions), <c>aws-cn</c>
+    /// (China Regions), <c>aws-us-gov</c> (Amazon Web Services GovCloud (US)), and <c>aws-eusc</c>
+    /// (European Sovereign Cloud). When you create a general purpose bucket, you can choose
+    /// to create a bucket in the shared global namespace or you can choose to create a bucket
+    /// in your account regional namespace. Your account regional namespace is a subdivision
+    /// of the global namespace that only your account can create buckets in. For more information
+    /// on account regional namespaces, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html">Namespaces
+    /// for general purpose buckets</a>.
+    /// </para>
     ///  <note> <ul> <li> 
     /// <para>
     ///  <b>General purpose buckets</b> - If you send your <c>CreateBucket</c> request to
@@ -181,6 +195,7 @@ namespace Amazon.S3.Model
     public partial class PutBucketRequest : PutWithACLRequest
     {
         private string _bucketName;
+        private BucketNamespace _bucketNamespace;
         private S3CannedACL _cannedACL;
         private bool? _objectLockEnabledForBucket;
         private ObjectOwnership _objectOwnership;
@@ -220,6 +235,45 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketNamespace. 
+        /// <para>
+        /// Specifies the namespace where you want to create your general purpose bucket. When
+        /// you create a general purpose bucket, you can choose to create a bucket in the shared
+        /// global namespace or you can choose to create a bucket in your account regional namespace.
+        /// Your account regional namespace is a subdivision of the global namespace that only
+        /// your account can create buckets in. For more information on bucket namespaces, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html">Namespaces
+        /// for general purpose buckets</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// General purpose buckets in your account regional namespace must follow a specific
+        /// naming convention. These buckets consist of a bucket name prefix that you create,
+        /// and a suffix that contains your 12-digit Amazon Web Services Account ID, the Amazon
+        /// Web Services Region code, and ends with <c>-an</c>. Bucket names must follow the format
+        /// <c>bucket-name-prefix-accountId-region-an</c> (for example, <c>amzn-s3-demo-bucket-111122223333-us-west-2-an</c>).
+        /// For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html#account-regional-naming-rules">Account
+        /// regional namespace naming rules</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public BucketNamespace BucketNamespace
+        {
+            get { return this._bucketNamespace; }
+            set { this._bucketNamespace = value; }
+        }
+
+        // Check to see if BucketNamespace property is set
+        internal bool IsSetBucketNamespace()
+        {
+            return this._bucketNamespace != null;
         }
 
         /// <summary>

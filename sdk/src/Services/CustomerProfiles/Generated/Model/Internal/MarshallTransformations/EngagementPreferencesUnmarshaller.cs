@@ -56,13 +56,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Email", targetDepth))
+                if (context.TestExpression("Email", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContactPreference, ContactPreferenceUnmarshaller>(ContactPreferenceUnmarshaller.Instance);
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Phone", targetDepth))
+                if (context.TestExpression("Phone", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContactPreference, ContactPreferenceUnmarshaller>(ContactPreferenceUnmarshaller.Instance);
                     unmarshalledObject.Phone = unmarshaller.Unmarshall(context, ref reader);

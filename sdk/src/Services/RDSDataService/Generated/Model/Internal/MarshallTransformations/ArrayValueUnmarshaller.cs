@@ -56,31 +56,31 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arrayValues", targetDepth))
+                if (context.TestExpression("arrayValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ArrayValue, ArrayValueUnmarshaller>(ArrayValueUnmarshaller.Instance);
                     unmarshalledObject.ArrayValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("booleanValues", targetDepth))
+                if (context.TestExpression("booleanValues", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<bool, BoolUnmarshaller>(BoolUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<bool?, NullableBoolUnmarshaller>(NullableBoolUnmarshaller.Instance);
                     unmarshalledObject.BooleanValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("doubleValues", targetDepth))
+                if (context.TestExpression("doubleValues", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<double?, NullableDoubleUnmarshaller>(NullableDoubleUnmarshaller.Instance);
                     unmarshalledObject.DoubleValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("longValues", targetDepth))
+                if (context.TestExpression("longValues", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<long?, NullableLongUnmarshaller>(NullableLongUnmarshaller.Instance);
                     unmarshalledObject.LongValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringValues", targetDepth))
+                if (context.TestExpression("stringValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StringValues = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("comment", targetDepth, ref reader))
                 {
                     var unmarshaller = CommentContentUnmarshaller.Instance;
                     unmarshalledObject.Comment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectCase", targetDepth))
+                if (context.TestExpression("connectCase", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectCaseContentUnmarshaller.Instance;
                     unmarshalledObject.ConnectCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contact", targetDepth))
+                if (context.TestExpression("contact", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactContentUnmarshaller.Instance;
                     unmarshalledObject.Contact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("custom", targetDepth))
+                if (context.TestExpression("custom", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomContentUnmarshaller.Instance;
                     unmarshalledObject.Custom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("file", targetDepth))
+                if (context.TestExpression("file", targetDepth, ref reader))
                 {
                     var unmarshaller = FileContentUnmarshaller.Instance;
                     unmarshalledObject.File = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sla", targetDepth))
+                if (context.TestExpression("sla", targetDepth, ref reader))
                 {
                     var unmarshaller = SlaContentUnmarshaller.Instance;
                     unmarshalledObject.Sla = unmarshaller.Unmarshall(context, ref reader);

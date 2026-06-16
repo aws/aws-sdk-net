@@ -72,19 +72,19 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("code", targetDepth))
+                    if (context.TestExpression("code", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("detailedMessage", targetDepth))
+                    if (context.TestExpression("detailedMessage", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DetailedMessage = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("requestId", targetDepth))
+                    if (context.TestExpression("requestId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RequestId = unmarshaller.Unmarshall(context, ref reader);

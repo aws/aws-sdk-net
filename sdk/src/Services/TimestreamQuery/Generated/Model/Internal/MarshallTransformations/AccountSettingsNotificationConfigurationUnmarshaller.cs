@@ -56,13 +56,13 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnsConfiguration", targetDepth))
+                if (context.TestExpression("SnsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SnsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SnsConfiguration = unmarshaller.Unmarshall(context, ref reader);

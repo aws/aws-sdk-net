@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("documentAttributeFilter", targetDepth))
+                if (context.TestExpression("documentAttributeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeFilterUnmarshaller.Instance;
                     unmarshalledObject.DocumentAttributeFilter = unmarshaller.Unmarshall(context, ref reader);

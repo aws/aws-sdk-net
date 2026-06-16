@@ -5008,7 +5008,9 @@
       "type": "string",
       "enum": [
         "ITU_1770_1",
-        "ITU_1770_2"
+        "ITU_1770_2",
+        "ITU_1770_3",
+        "ITU_1770_4"
       ]
     },
     "AudioNormalizationAlgorithmControl": {
@@ -5031,6 +5033,14 @@
         "TargetLkfs": {
           "shape": "__doubleMinNegative59Max0",
           "locationName": "targetLkfs"
+        },
+        "PeakCalculation": {
+          "shape": "AudioNormalizationPeakCalculation",
+          "locationName": "peakCalculation"
+        },
+        "PeakLimiterThreshold": {
+          "shape": "__doubleMinNegative8Max0",
+          "locationName": "peakLimiterThreshold"
         }
       }
     },
@@ -5077,6 +5087,10 @@
         "Pid": {
           "shape": "__integerMin0Max8191",
           "locationName": "pid"
+        },
+        "Pids": {
+          "shape": "__listOfAudioPid",
+          "locationName": "pids"
         }
       },
       "required": [
@@ -5142,6 +5156,10 @@
         "Track": {
           "shape": "__integerMin1",
           "locationName": "track"
+        },
+        "PremixSettings": {
+          "shape": "AudioPreMixerSettings",
+          "locationName": "premixSettings"
         }
       },
       "required": [
@@ -5977,6 +5995,10 @@
         "TeletextSourceSettings": {
           "shape": "TeletextSourceSettings",
           "locationName": "teletextSourceSettings"
+        },
+        "SmartSubtitleSourceSettings": {
+          "shape": "SmartSubtitleSourceSettings",
+          "locationName": "smartSubtitleSourceSettings"
         }
       }
     },
@@ -13662,6 +13684,10 @@
         "LogicalInterfaceNames": {
           "shape": "__listOf__string",
           "locationName": "logicalInterfaceNames"
+        },
+        "MediaConnectRouterSettings": {
+          "shape": "__listOfMediaConnectRouterOutputDestinationSettings",
+          "locationName": "mediaConnectRouterSettings"
         }
       }
     },
@@ -13749,6 +13775,10 @@
         "SrtGroupSettings": {
           "shape": "SrtGroupSettings",
           "locationName": "srtGroupSettings"
+        },
+        "MediaConnectRouterGroupSettings": {
+          "shape": "MediaConnectRouterGroupSettings",
+          "locationName": "mediaConnectRouterGroupSettings"
         }
       }
     },
@@ -13820,6 +13850,10 @@
         "SrtOutputSettings": {
           "shape": "SrtOutputSettings",
           "locationName": "srtOutputSettings"
+        },
+        "MediaConnectRouterOutputSettings": {
+          "shape": "MediaConnectRouterOutputSettings",
+          "locationName": "mediaConnectRouterOutputSettings"
         }
       }
     },
@@ -13862,6 +13896,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "MediaConnectRouterOutputConnectionMap": {
+          "shape": "MediaConnectRouterOutputConnections",
+          "locationName": "mediaConnectRouterOutputConnectionMap"
         }
       }
     },
@@ -15993,6 +16031,10 @@
         "InferenceSettings": {
           "shape": "InferenceSettings",
           "locationName": "inferenceSettings"
+        },
+        "SpecialRouterSettings": {
+          "shape": "SpecialRouterSettings",
+          "locationName": "specialRouterSettings"
         }
       }
     },
@@ -16110,6 +16152,10 @@
         "InferenceSettings": {
           "shape": "InferenceSettings",
           "locationName": "inferenceSettings"
+        },
+        "SpecialRouterSettings": {
+          "shape": "SpecialRouterSettings",
+          "locationName": "specialRouterSettings"
         }
       },
       "required": [
@@ -21802,6 +21848,10 @@
         "Rec709Settings": {
           "shape": "Rec709Settings",
           "locationName": "rec709Settings"
+        },
+        "Hlg2020Settings": {
+          "shape": "Hlg2020Settings",
+          "locationName": "hlg2020Settings"
         }
       }
     },
@@ -25567,6 +25617,10 @@
         "FeedArn": {
           "shape": "__string",
           "locationName": "feedArn"
+        },
+        "AudioFeedInputs": {
+          "shape": "__listOfAudioFeedInput",
+          "locationName": "audioFeedInputs"
         }
       }
     },
@@ -25576,7 +25630,215 @@
         "FeedArn": {
           "shape": "__string",
           "locationName": "feedArn"
+        },
+        "AudioFeedInputs": {
+          "shape": "__listOfAudioFeedInput",
+          "locationName": "audioFeedInputs"
         }
+      }
+    },
+    "MediaConnectRouterContainerSettings": {
+      "type": "structure",
+      "members": {
+        "M2tsSettings": {
+          "shape": "M2tsSettings",
+          "locationName": "m2tsSettings"
+        }
+      }
+    },
+    "MediaConnectRouterGroupSettings": {
+      "type": "structure",
+      "members": {
+        "AvailabilityZones": {
+          "shape": "__listOf__string",
+          "locationName": "availabilityZones"
+        }
+      }
+    },
+    "MediaConnectRouterOutputConnectionMap": {
+      "type": "structure",
+      "members": {
+        "Pipeline0": {
+          "shape": "__string",
+          "locationName": "pipeline0"
+        },
+        "Pipeline1": {
+          "shape": "__string",
+          "locationName": "pipeline1"
+        }
+      }
+    },
+    "MediaConnectRouterOutputDestinationSettings": {
+      "type": "structure",
+      "members": {
+        "EncryptionType": {
+          "shape": "MediaConnectRouterOutputEncryptionType",
+          "locationName": "encryptionType"
+        },
+        "SecretArn": {
+          "shape": "__string",
+          "locationName": "secretArn"
+        }
+      }
+    },
+    "MediaConnectRouterOutputEncryptionType": {
+      "type": "string",
+      "enum": [
+        "AUTOMATIC",
+        "SECRETS_MANAGER"
+      ]
+    },
+    "MediaConnectRouterOutputSettings": {
+      "type": "structure",
+      "members": {
+        "ConnectedRouterInputs": {
+          "shape": "MediaConnectRouterOutputConnectionMap",
+          "locationName": "connectedRouterInputs"
+        },
+        "ContainerSettings": {
+          "shape": "MediaConnectRouterContainerSettings",
+          "locationName": "containerSettings"
+        },
+        "Destination": {
+          "shape": "OutputLocationRef",
+          "locationName": "destination"
+        }
+      },
+      "required": [
+        "Destination",
+        "ContainerSettings"
+      ]
+    },
+    "__listOfMediaConnectRouterOutputDestinationSettings": {
+      "type": "list",
+      "member": {
+        "shape": "MediaConnectRouterOutputDestinationSettings"
+      }
+    },
+    "__listOfOutputLocationRef": {
+      "type": "list",
+      "member": {
+        "shape": "OutputLocationRef"
+      }
+    },
+    "MediaConnectRouterOutputConnection": {
+      "type": "structure",
+      "members": {
+        "RouterInputArn": {
+          "shape": "__string",
+          "locationName": "routerInputArn"
+        }
+      }
+    },
+    "MediaConnectRouterOutputConnections": {
+      "type": "map",
+      "key": {
+        "shape": "__string"
+      },
+      "value": {
+        "shape": "MediaConnectRouterOutputConnection"
+      }
+    },
+    "AudioFeedInput": {
+      "type": "structure",
+      "members": {
+        "AudioSelectorName": {
+          "shape": "__string",
+          "locationName": "audioSelectorName"
+        },
+        "FeedInput": {
+          "shape": "__string",
+          "locationName": "feedInput"
+        }
+      }
+    },
+    "CaptionSynchronizationMode": {
+      "type": "string",
+      "enum": [
+        "NO_VIDEO_DELAY",
+        "VIDEO_ALIGNED_CAPTIONS"
+      ]
+    },
+    "SmartSubtitleSourceSettings": {
+      "type": "structure",
+      "members": {
+        "CaptionSynchronizationMode": {
+          "shape": "CaptionSynchronizationMode",
+          "locationName": "captionSynchronizationMode"
+        },
+        "InferenceFeedOutput": {
+          "shape": "__string",
+          "locationName": "inferenceFeedOutput"
+        }
+      }
+    },
+    "__listOfAudioFeedInput": {
+      "type": "list",
+      "member": {
+        "shape": "AudioFeedInput"
+      }
+    },
+    "AudioNormalizationPeakCalculation": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "TRUE_PEAK"
+      ]
+    },
+    "AudioPid": {
+      "type": "structure",
+      "members": {
+        "DolbyEDecode": {
+          "shape": "AudioDolbyEDecode",
+          "locationName": "dolbyEDecode"
+        },
+        "Pid": {
+          "shape": "__integerMin0Max8191",
+          "locationName": "pid"
+        },
+        "PremixSettings": {
+          "shape": "AudioPreMixerSettings",
+          "locationName": "premixSettings"
+        }
+      },
+      "required": [
+        "Pid"
+      ]
+    },
+    "AudioPreMixerSettings": {
+      "type": "structure",
+      "members": {
+        "AudioNormalizationSettings": {
+          "shape": "AudioNormalizationSettings",
+          "locationName": "audioNormalizationSettings"
+        },
+        "Channels": {
+          "shape": "__integerMin1Max16",
+          "locationName": "channels"
+        },
+        "GainDb": {
+          "shape": "__doubleMinNegative60Max60",
+          "locationName": "gainDb"
+        },
+        "RemixSettings": {
+          "shape": "RemixSettings",
+          "locationName": "remixSettings"
+        }
+      }
+    },
+    "__doubleMinNegative100Max0": {
+      "type": "double"
+    },
+    "__doubleMinNegative60Max60": {
+      "type": "double"
+    },
+    "__doubleMinNegative8Max0": {
+      "type": "double"
+    },
+    "__listOfAudioPid": {
+      "type": "list",
+      "member": {
+        "shape": "AudioPid"
       }
     }
   }

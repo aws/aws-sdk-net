@@ -56,25 +56,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dateConfiguration", targetDepth))
+                if (context.TestExpression("dateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DateAttributeBoostingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DateConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberConfiguration", targetDepth))
+                if (context.TestExpression("numberConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NumberAttributeBoostingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NumberConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringConfiguration", targetDepth))
+                if (context.TestExpression("stringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringAttributeBoostingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringListConfiguration", targetDepth))
+                if (context.TestExpression("stringListConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringListAttributeBoostingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StringListConfiguration = unmarshaller.Unmarshall(context, ref reader);

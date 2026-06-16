@@ -52,7 +52,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("taxRegistration", targetDepth))
+                if (context.TestExpression("taxRegistration", targetDepth, ref reader))
                 {
                     var unmarshaller = TaxRegistrationUnmarshaller.Instance;
                     response.TaxRegistration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BranchName", targetDepth))
+                if (context.TestExpression("BranchName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BranchName = unmarshaller.Unmarshall(context, ref reader);

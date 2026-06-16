@@ -56,7 +56,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Exporting", targetDepth))
+                if (context.TestExpression("S3Exporting", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ExportingConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Exporting = unmarshaller.Unmarshall(context, ref reader);

@@ -71,14 +71,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             request.AddPathResource("{memoryId}", StringUtils.FromString(publicRequest.MemoryId));
             request.ResourcePath = "/memories/{memoryId}/actor/{actorId}/sessions";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SessionFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");
@@ -93,10 +104,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

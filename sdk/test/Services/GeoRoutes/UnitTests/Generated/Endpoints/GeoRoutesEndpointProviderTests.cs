@@ -47,13 +47,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("GeoRoutes")]
         [Description("For custom endpoint with fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_Test()
         {
             var parameters = new GeoRoutesEndpointParameters();
             parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -61,14 +63,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("GeoRoutes")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new GeoRoutesEndpointParameters();
             parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -83,7 +87,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo-fips.us-east-1.api.aws/v2", endpoint.URL);
+            Assert.AreEqual("https://routes.geo-fips.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -98,7 +102,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo-fips.us-east-1.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://routes.geo-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -113,7 +117,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo.us-east-1.api.aws/v2", endpoint.URL);
+            Assert.AreEqual("https://routes.geo.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -128,7 +132,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo.us-east-1.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://routes.geo.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -195,60 +199,30 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GeoRoutes")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GeoRoutesEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo-fips.us-gov-west-1.us-gov.api.aws/v2", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GeoRoutes")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GeoRoutesEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo-fips.us-gov-west-1.us-gov.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://geo-routes-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GeoRoutes")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GeoRoutesEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo.us-gov-west-1.us-gov.api.aws/v2", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GeoRoutes")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GeoRoutesEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://routes.geo.us-gov-west-1.us-gov.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://geo-routes.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
@@ -375,30 +349,60 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GeoRoutes")]
-        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GeoRoutesEndpointParameters();
-            parameters["Region"] = "eusc-de-east-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://geo-routes-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+            Assert.AreEqual("https://routes.geo-fips.us-gov-west-1.us-gov.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GeoRoutes")]
-        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GeoRoutesEndpointParameters();
-            parameters["Region"] = "eusc-de-east-1";
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://routes.geo-fips.us-gov-west-1.us-gov.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GeoRoutes")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new GeoRoutesEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://routes.geo.us-gov-west-1.us-gov.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GeoRoutes")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GeoRoutesEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://geo-routes.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+            Assert.AreEqual("https://routes.geo.us-gov-west-1.us-gov.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -406,11 +410,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("GeoRoutes")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new GeoRoutesEndpointParameters();
-            var endpoint = new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonGeoRoutesEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
     }

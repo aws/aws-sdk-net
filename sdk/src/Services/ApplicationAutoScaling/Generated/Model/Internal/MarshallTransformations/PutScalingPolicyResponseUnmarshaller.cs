@@ -52,13 +52,13 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Alarms", targetDepth))
+                if (context.TestExpression("Alarms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Alarm, AlarmUnmarshaller>(AlarmUnmarshaller.Instance);
                     response.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyARN", targetDepth))
+                if (context.TestExpression("PolicyARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PolicyARN = unmarshaller.Unmarshall(context, ref reader);

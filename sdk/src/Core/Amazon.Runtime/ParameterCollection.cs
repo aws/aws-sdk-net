@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -90,17 +91,39 @@ namespace Amazon.Runtime.Internal
                         yield return new KeyValuePair<string, string>(name, stringParameterValue.Value);
                         break;
                     case StringListParameterValue stringListParameterValue:
-                        var sortedStringListParameterValue = stringListParameterValue.Value;
-                        sortedStringListParameterValue.Sort(StringComparer.Ordinal);
-                        foreach (var listValue in sortedStringListParameterValue)
-                            yield return new KeyValuePair<string, string>(name, listValue);
+                    {
+                        var stringList = stringListParameterValue.Value;
+                        var stringArray = ArrayPool<string>.Shared.Rent(stringList.Count);
+                        try
+                        {
+                            stringList.CopyTo(stringArray);
+                            Array.Sort(stringArray, 0, stringList.Count, StringComparer.Ordinal);
+                            for (int i = 0; i < stringList.Count; i++)
+                                yield return new KeyValuePair<string, string>(name, stringArray[i]);
+                        }
+                        finally
+                        {
+                            ArrayPool<string>.Shared.Return(stringArray);
+                        }
                         break;
+                    }
                     case DoubleListParameterValue doubleListParameterValue:
-                        var sortedDoubleListParameterValue = doubleListParameterValue.Value;
-                        sortedDoubleListParameterValue.Sort();
-                        foreach (var listValue in sortedDoubleListParameterValue)
-                            yield return new KeyValuePair<string, string>(name, listValue.ToString(CultureInfo.InvariantCulture));
+                    {
+                        var doubleList = doubleListParameterValue.Value;
+                        var doubleArray = ArrayPool<double>.Shared.Rent(doubleList.Count);
+                        try
+                        {
+                            doubleList.CopyTo(doubleArray);
+                            Array.Sort(doubleArray, 0, doubleList.Count);
+                            for (int i = 0; i < doubleList.Count; i++)
+                                yield return new KeyValuePair<string, string>(name, doubleArray[i].ToString(CultureInfo.InvariantCulture));
+                        }
+                        finally
+                        {
+                            ArrayPool<double>.Shared.Return(doubleArray);
+                        }
                         break;
+                    }
                     default:
                         throw new AmazonClientException("Unsupported parameter value type '" + value.GetType().FullName + "'");
                 }

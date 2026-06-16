@@ -56,73 +56,73 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreateTimestamp", targetDepth))
+                if (context.TestExpression("CreateTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryStreamARN", targetDepth))
+                if (context.TestExpression("DeliveryStreamARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryStreamARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryStreamEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("DeliveryStreamEncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DeliveryStreamEncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DeliveryStreamEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryStreamName", targetDepth))
+                if (context.TestExpression("DeliveryStreamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryStreamStatus", targetDepth))
+                if (context.TestExpression("DeliveryStreamStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryStreamStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryStreamType", targetDepth))
+                if (context.TestExpression("DeliveryStreamType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryStreamType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Destinations", targetDepth))
+                if (context.TestExpression("Destinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DestinationDescription, DestinationDescriptionUnmarshaller>(DestinationDescriptionUnmarshaller.Instance);
                     unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureDescription", targetDepth))
+                if (context.TestExpression("FailureDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = FailureDescriptionUnmarshaller.Instance;
                     unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HasMoreDestinations", targetDepth))
+                if (context.TestExpression("HasMoreDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasMoreDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateTimestamp", targetDepth))
+                if (context.TestExpression("LastUpdateTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Source", targetDepth))
+                if (context.TestExpression("Source", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceDescriptionUnmarshaller.Instance;
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionId", targetDepth))
+                if (context.TestExpression("VersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VersionId = unmarshaller.Unmarshall(context, ref reader);

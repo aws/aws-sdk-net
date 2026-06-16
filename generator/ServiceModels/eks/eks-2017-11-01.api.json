@@ -1794,13 +1794,15 @@
     "ControlPlanePlacementRequest":{
       "type":"structure",
       "members":{
-        "groupName":{"shape":"String"}
+        "groupName":{"shape":"String"},
+        "spreadLevel":{"shape":"SpreadLevel"}
       }
     },
     "ControlPlanePlacementResponse":{
       "type":"structure",
       "members":{
-        "groupName":{"shape":"String"}
+        "groupName":{"shape":"String"},
+        "spreadLevel":{"shape":"SpreadLevel"}
       }
     },
     "ControlPlaneScalingConfig":{
@@ -2037,7 +2039,8 @@
         "nodeRepairConfig":{"shape":"NodeRepairConfig"},
         "capacityType":{"shape":"CapacityTypes"},
         "version":{"shape":"String"},
-        "releaseVersion":{"shape":"String"}
+        "releaseVersion":{"shape":"String"},
+        "warmPoolConfig":{"shape":"WarmPoolConfig"}
       }
     },
     "CreateNodegroupResponse":{
@@ -2893,6 +2896,18 @@
       "type":"list",
       "member":{"shape":"ErrorDetail"}
     },
+    "EtcdPlacementRequest":{
+      "type":"structure",
+      "members":{
+        "spreadLevel":{"shape":"SpreadLevel"}
+      }
+    },
+    "EtcdPlacementResponse":{
+      "type":"structure",
+      "members":{
+        "spreadLevel":{"shape":"SpreadLevel"}
+      }
+    },
     "FargateProfile":{
       "type":"structure",
       "members":{
@@ -3743,7 +3758,8 @@
         "updateConfig":{"shape":"NodegroupUpdateConfig"},
         "nodeRepairConfig":{"shape":"NodeRepairConfig"},
         "launchTemplate":{"shape":"LaunchTemplateSpecification"},
-        "tags":{"shape":"TagMap"}
+        "tags":{"shape":"TagMap"},
+        "warmPoolConfig":{"shape":"WarmPoolConfig"}
       }
     },
     "NodegroupHealth":{
@@ -3898,7 +3914,9 @@
       "members":{
         "outpostArns":{"shape":"StringList"},
         "controlPlaneInstanceType":{"shape":"String"},
-        "controlPlanePlacement":{"shape":"ControlPlanePlacementRequest"}
+        "controlPlanePlacement":{"shape":"ControlPlanePlacementRequest"},
+        "etcdInstanceType":{"shape":"String"},
+        "etcdPlacement":{"shape":"EtcdPlacementRequest"}
       }
     },
     "OutpostConfigResponse":{
@@ -3910,7 +3928,9 @@
       "members":{
         "outpostArns":{"shape":"StringList"},
         "controlPlaneInstanceType":{"shape":"String"},
-        "controlPlanePlacement":{"shape":"ControlPlanePlacementResponse"}
+        "controlPlanePlacement":{"shape":"ControlPlanePlacementResponse"},
+        "etcdInstanceType":{"shape":"String"},
+        "etcdPlacement":{"shape":"EtcdPlacementResponse"}
       }
     },
     "PercentCapacity":{
@@ -3965,7 +3985,8 @@
         "standard",
         "tier-xl",
         "tier-2xl",
-        "tier-4xl"
+        "tier-4xl",
+        "tier-8xl"
       ]
     },
     "RegisterClusterRequest":{
@@ -4118,6 +4139,13 @@
       "error":{"httpStatusCode":503},
       "exception":true,
       "fault":true
+    },
+    "SpreadLevel":{
+      "type":"string",
+      "enum":[
+        "host",
+        "rack"
+      ]
     },
     "SsoIdentity":{
       "type":"structure",
@@ -4523,6 +4551,7 @@
         "scalingConfig":{"shape":"NodegroupScalingConfig"},
         "updateConfig":{"shape":"NodegroupUpdateConfig"},
         "nodeRepairConfig":{"shape":"NodeRepairConfig"},
+        "warmPoolConfig":{"shape":"WarmPoolConfig"},
         "clientRequestToken":{
           "shape":"String",
           "idempotencyToken":true
@@ -4616,8 +4645,18 @@
         "RemoteNetworkConfig",
         "DeletionProtection",
         "NodeRepairConfig",
+        "RoleArn",
+        "RoleMappingsToAddOrUpdate",
+        "RoleMappingsToRemove",
+        "NetworkAccess",
+        "VendedLogs",
         "UpdatedTier",
-        "PreviousTier"
+        "PreviousTier",
+        "WarmPoolEnabled",
+        "WarmPoolMaxGroupPreparedCapacity",
+        "WarmPoolMinSize",
+        "WarmPoolState",
+        "WarmPoolReuseOnScaleIn"
       ]
     },
     "UpdateParams":{
@@ -4698,6 +4737,7 @@
         "AutoModeUpdate",
         "RemoteNetworkConfigUpdate",
         "DeletionProtectionUpdate",
+        "CapabilityUpdate",
         "ControlPlaneScalingConfigUpdate",
         "VendedLogsUpdate"
       ]
@@ -4743,6 +4783,24 @@
         "endpointPrivateAccess":{"shape":"Boolean"},
         "publicAccessCidrs":{"shape":"StringList"}
       }
+    },
+    "WarmPoolConfig":{
+      "type":"structure",
+      "members":{
+        "enabled":{"shape":"BoxedBoolean"},
+        "minSize":{"shape":"ZeroCapacity"},
+        "maxGroupPreparedCapacity":{"shape":"BoxedInteger"},
+        "poolState":{"shape":"WarmPoolState"},
+        "reuseOnScaleIn":{"shape":"BoxedBoolean"}
+      }
+    },
+    "WarmPoolState":{
+      "type":"string",
+      "enum":[
+        "STOPPED",
+        "RUNNING",
+        "HIBERNATED"
+      ]
     },
     "ZeroCapacity":{
       "type":"integer",

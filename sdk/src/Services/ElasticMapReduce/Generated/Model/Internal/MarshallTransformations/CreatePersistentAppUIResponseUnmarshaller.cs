@@ -52,13 +52,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PersistentAppUIId", targetDepth))
+                if (context.TestExpression("PersistentAppUIId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PersistentAppUIId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuntimeRoleEnabledCluster", targetDepth))
+                if (context.TestExpression("RuntimeRoleEnabledCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.RuntimeRoleEnabledCluster = unmarshaller.Unmarshall(context, ref reader);

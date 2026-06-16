@@ -93,6 +93,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListAttachedFilesConfigurations operation
+        ///</summary>
+        public IListAttachedFilesConfigurationsPaginator ListAttachedFilesConfigurations(ListAttachedFilesConfigurationsRequest request) 
+        {
+            return new ListAttachedFilesConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAuthenticationProfiles operation
         ///</summary>
         public IListAuthenticationProfilesPaginator ListAuthenticationProfiles(ListAuthenticationProfilesRequest request) 

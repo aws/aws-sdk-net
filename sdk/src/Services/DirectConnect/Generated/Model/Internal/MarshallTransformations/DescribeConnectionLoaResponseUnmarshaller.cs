@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("loa", targetDepth))
+                if (context.TestExpression("loa", targetDepth, ref reader))
                 {
                     var unmarshaller = LoaUnmarshaller.Instance;
                     response.Loa = unmarshaller.Unmarshall(context, ref reader);

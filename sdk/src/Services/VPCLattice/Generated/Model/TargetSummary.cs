@@ -106,7 +106,7 @@ namespace Amazon.VPCLattice.Model
         /// <para>
         ///  <c>DRAINING</c>: The target is being deregistered. No new connections are sent to
         /// this target while current connections are being drained. The default draining time
-        /// is 5 minutes.
+        /// is 1 minute.
         /// </para>
         ///  </li> <li> 
         /// <para>

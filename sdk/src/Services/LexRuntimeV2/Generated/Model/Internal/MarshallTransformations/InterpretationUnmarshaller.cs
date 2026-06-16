@@ -56,25 +56,25 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("intent", targetDepth))
+                if (context.TestExpression("intent", targetDepth, ref reader))
                 {
                     var unmarshaller = IntentUnmarshaller.Instance;
                     unmarshalledObject.Intent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interpretationSource", targetDepth))
+                if (context.TestExpression("interpretationSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InterpretationSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nluConfidence", targetDepth))
+                if (context.TestExpression("nluConfidence", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfidenceScoreUnmarshaller.Instance;
                     unmarshalledObject.NluConfidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sentimentResponse", targetDepth))
+                if (context.TestExpression("sentimentResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = SentimentResponseUnmarshaller.Instance;
                     unmarshalledObject.SentimentResponse = unmarshaller.Unmarshall(context, ref reader);

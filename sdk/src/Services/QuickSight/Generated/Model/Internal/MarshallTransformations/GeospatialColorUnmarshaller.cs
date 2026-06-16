@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Categorical", targetDepth))
+                if (context.TestExpression("Categorical", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialCategoricalColorUnmarshaller.Instance;
                     unmarshalledObject.Categorical = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Gradient", targetDepth))
+                if (context.TestExpression("Gradient", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialGradientColorUnmarshaller.Instance;
                     unmarshalledObject.Gradient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Solid", targetDepth))
+                if (context.TestExpression("Solid", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialSolidColorUnmarshaller.Instance;
                     unmarshalledObject.Solid = unmarshaller.Unmarshall(context, ref reader);

@@ -178,6 +178,16 @@ namespace Amazon.QConnect.Model
         IListMessageTemplateVersionsPaginator ListMessageTemplateVersions(ListMessageTemplateVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListModels operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListModelsPaginator ListModels(ListModelsRequest request);
+
+        /// <summary>
         /// Paginator for ListQuickResponses operation
         ///</summary>
         [AWSPaginator(

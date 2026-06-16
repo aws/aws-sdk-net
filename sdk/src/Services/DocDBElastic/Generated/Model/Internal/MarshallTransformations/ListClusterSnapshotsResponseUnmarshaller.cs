@@ -52,13 +52,13 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshots", targetDepth))
+                if (context.TestExpression("snapshots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterSnapshotInList, ClusterSnapshotInListUnmarshaller>(ClusterSnapshotInListUnmarshaller.Instance);
                     response.Snapshots = unmarshaller.Unmarshall(context, ref reader);

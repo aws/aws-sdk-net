@@ -56,13 +56,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompletionStatus", targetDepth))
+                if (context.TestExpression("CompletionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteAnalysisCompletionUnmarshaller.Instance;
                     unmarshalledObject.CompletionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Path", targetDepth))
+                if (context.TestExpression("Path", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PathComponent, PathComponentUnmarshaller>(PathComponentUnmarshaller.Instance);
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);

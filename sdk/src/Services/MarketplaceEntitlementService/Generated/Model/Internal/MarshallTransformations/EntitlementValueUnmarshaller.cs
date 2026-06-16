@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EntitlementValue Object
     /// </summary>  
-    public class EntitlementValueUnmarshaller : IJsonUnmarshaller<EntitlementValue, JsonUnmarshallerContext>
+    public class EntitlementValueUnmarshaller : ICborUnmarshaller<EntitlementValue, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EntitlementValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EntitlementValue Unmarshall(CborUnmarshallerContext context)
         {
             EntitlementValue unmarshalledObject = new EntitlementValue();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BooleanValue", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DoubleValue", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IntegerValue", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.IntegerValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StringValue", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "BooleanValue":
+                        {
+                            context.AddPathSegment("BooleanValue");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DoubleValue":
+                        {
+                            context.AddPathSegment("DoubleValue");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IntegerValue":
+                        {
+                            context.AddPathSegment("IntegerValue");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.IntegerValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StringValue":
+                        {
+                            context.AddPathSegment("StringValue");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

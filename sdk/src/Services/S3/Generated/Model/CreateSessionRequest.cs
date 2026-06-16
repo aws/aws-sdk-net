@@ -283,11 +283,15 @@ namespace Amazon.S3.Model
         /// Gets and sets the property SessionMode. 
         /// <para>
         /// Specifies the mode of the session that will be created, either <c>ReadWrite</c> or
-        /// <c>ReadOnly</c>. By default, a <c>ReadWrite</c> session is created. A <c>ReadWrite</c>
-        /// session is capable of executing all the Zonal endpoint API operations on a directory
-        /// bucket. A <c>ReadOnly</c> session is constrained to execute the following Zonal endpoint
-        /// API operations: <c>GetObject</c>, <c>HeadObject</c>, <c>ListObjectsV2</c>, <c>GetObjectAttributes</c>,
-        /// <c>ListParts</c>, and <c>ListMultipartUploads</c>.
+        /// <c>ReadOnly</c>. If no session mode is specified, the default behavior attempts to
+        /// create a session with the maximum allowable privilege. It will first attempt to create
+        /// a <c>ReadWrite</c> session, and if that is not allowed by permissions, it will attempt
+        /// to create a <c>ReadOnly</c> session. If neither session type is allowed, the request
+        /// will return an Access Denied error. A <c>ReadWrite</c> session is capable of executing
+        /// all the Zonal endpoint API operations on a directory bucket. A <c>ReadOnly</c> session
+        /// is constrained to execute the following Zonal endpoint API operations: <c>GetObject</c>,
+        /// <c>HeadObject</c>, <c>ListObjectsV2</c>, <c>GetObjectAttributes</c>, <c>ListParts</c>,
+        /// and <c>ListMultipartUploads</c>.
         /// </para>
         /// </summary>
         public SessionMode SessionMode

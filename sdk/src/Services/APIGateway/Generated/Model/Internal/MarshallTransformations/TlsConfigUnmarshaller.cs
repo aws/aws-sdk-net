@@ -56,7 +56,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("insecureSkipVerification", targetDepth))
+                if (context.TestExpression("insecureSkipVerification", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InsecureSkipVerification = unmarshaller.Unmarshall(context, ref reader);

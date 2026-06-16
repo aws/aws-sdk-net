@@ -43,6 +43,7 @@ namespace Amazon.Bedrock.Model
         private InputTags _inputTags;
         private ModelEnforcement _modelEnforcement;
         private ConfigurationOwner _owner;
+        private SelectiveContentGuarding _selectiveContentGuarding;
         private DateTime? _updatedAt;
         private string _updatedBy;
 
@@ -162,6 +163,7 @@ namespace Amazon.Bedrock.Model
         /// Whether to honor or ignore input tags at runtime.
         /// </para>
         /// </summary>
+        [Obsolete("This field is being deprecated and will be removed once customers transition their existing policies to the new schema.")]
         public InputTags InputTags
         {
             get { return this._inputTags; }
@@ -208,6 +210,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetOwner()
         {
             return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectiveContentGuarding. 
+        /// <para>
+        /// Selective content guarding controls for enforced guardrails.
+        /// </para>
+        /// </summary>
+        public SelectiveContentGuarding SelectiveContentGuarding
+        {
+            get { return this._selectiveContentGuarding; }
+            set { this._selectiveContentGuarding = value; }
+        }
+
+        // Check to see if SelectiveContentGuarding property is set
+        internal bool IsSetSelectiveContentGuarding()
+        {
+            return this._selectiveContentGuarding != null;
         }
 
         /// <summary>

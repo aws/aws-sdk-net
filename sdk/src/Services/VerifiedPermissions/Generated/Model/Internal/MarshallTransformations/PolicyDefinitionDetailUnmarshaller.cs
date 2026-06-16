@@ -56,13 +56,13 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("static", targetDepth))
+                if (context.TestExpression("static", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticPolicyDefinitionDetailUnmarshaller.Instance;
                     unmarshalledObject.Static = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("templateLinked", targetDepth))
+                if (context.TestExpression("templateLinked", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateLinkedPolicyDefinitionDetailUnmarshaller.Instance;
                     unmarshalledObject.TemplateLinked = unmarshaller.Unmarshall(context, ref reader);

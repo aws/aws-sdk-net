@@ -26,6 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.ConfigService.Model;
 using Amazon.ConfigService;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
@@ -48,3 +49,4 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         }
     }
 }
+#endif

@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("FieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PluginVisualFieldWell, PluginVisualFieldWellUnmarshaller>(PluginVisualFieldWellUnmarshaller.Instance);
                     unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SortConfiguration", targetDepth))
+                if (context.TestExpression("SortConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PluginVisualSortConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualOptions", targetDepth))
+                if (context.TestExpression("VisualOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = PluginVisualOptionsUnmarshaller.Instance;
                     unmarshalledObject.VisualOptions = unmarshaller.Unmarshall(context, ref reader);

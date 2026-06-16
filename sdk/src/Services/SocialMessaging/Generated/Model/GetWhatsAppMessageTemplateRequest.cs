@@ -37,6 +37,8 @@ namespace Amazon.SocialMessaging.Model
     {
         private string _id;
         private string _metaTemplateId;
+        private string _templateLanguageCode;
+        private string _templateName;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -63,7 +65,7 @@ namespace Amazon.SocialMessaging.Model
         /// The numeric ID of the template assigned by Meta.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string MetaTemplateId
         {
             get { return this._metaTemplateId; }
@@ -74,6 +76,47 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetMetaTemplateId()
         {
             return this._metaTemplateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateLanguageCode. 
+        /// <para>
+        /// The language code of the message template (for example, <c>en</c> or <c>en_US</c>).
+        /// Use together with <c>templateName</c> as an alternative to <c>metaTemplateId</c> to
+        /// identify a template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public string TemplateLanguageCode
+        {
+            get { return this._templateLanguageCode; }
+            set { this._templateLanguageCode = value; }
+        }
+
+        // Check to see if TemplateLanguageCode property is set
+        internal bool IsSetTemplateLanguageCode()
+        {
+            return this._templateLanguageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the message template. Use together with <c>templateLanguageCode</c> as
+        /// an alternative to <c>metaTemplateId</c> to identify a template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
         }
 
     }

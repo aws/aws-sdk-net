@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("event", targetDepth))
+                if (context.TestExpression("event", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomOrchestrationTraceEventUnmarshaller.Instance;
                     unmarshalledObject.Event = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("traceId", targetDepth))
+                if (context.TestExpression("traceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TraceId = unmarshaller.Unmarshall(context, ref reader);

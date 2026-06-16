@@ -56,19 +56,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("specification", targetDepth))
+                if (context.TestExpression("specification", targetDepth, ref reader))
                 {
                     var unmarshaller = ChangeSpecificationUnmarshaller.Instance;
                     unmarshalledObject.Specification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("specificationType", targetDepth))
+                if (context.TestExpression("specificationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpecificationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("types", targetDepth))
+                if (context.TestExpression("types", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);

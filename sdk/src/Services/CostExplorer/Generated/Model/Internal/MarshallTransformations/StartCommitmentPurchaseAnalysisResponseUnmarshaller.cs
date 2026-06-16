@@ -52,19 +52,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalysisId", targetDepth))
+                if (context.TestExpression("AnalysisId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalysisId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnalysisStartedTime", targetDepth))
+                if (context.TestExpression("AnalysisStartedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalysisStartedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedCompletionTime", targetDepth))
+                if (context.TestExpression("EstimatedCompletionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EstimatedCompletionTime = unmarshaller.Unmarshall(context, ref reader);

@@ -56,61 +56,61 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceProfileArn", targetDepth))
+                if (context.TestExpression("InstanceProfileArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceProfileArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceProfileName", targetDepth))
+                if (context.TestExpression("InstanceProfileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MigrationProjectArn", targetDepth))
+                if (context.TestExpression("MigrationProjectArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MigrationProjectCreationTime", targetDepth))
+                if (context.TestExpression("MigrationProjectCreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.MigrationProjectCreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MigrationProjectName", targetDepth))
+                if (context.TestExpression("MigrationProjectName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MigrationProjectName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaConversionApplicationAttributes", targetDepth))
+                if (context.TestExpression("SchemaConversionApplicationAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = SCApplicationAttributesUnmarshaller.Instance;
                     unmarshalledObject.SchemaConversionApplicationAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDataProviderDescriptors", targetDepth))
+                if (context.TestExpression("SourceDataProviderDescriptors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataProviderDescriptor, DataProviderDescriptorUnmarshaller>(DataProviderDescriptorUnmarshaller.Instance);
                     unmarshalledObject.SourceDataProviderDescriptors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetDataProviderDescriptors", targetDepth))
+                if (context.TestExpression("TargetDataProviderDescriptors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataProviderDescriptor, DataProviderDescriptorUnmarshaller>(DataProviderDescriptorUnmarshaller.Instance);
                     unmarshalledObject.TargetDataProviderDescriptors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformationRules", targetDepth))
+                if (context.TestExpression("TransformationRules", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransformationRules = unmarshaller.Unmarshall(context, ref reader);

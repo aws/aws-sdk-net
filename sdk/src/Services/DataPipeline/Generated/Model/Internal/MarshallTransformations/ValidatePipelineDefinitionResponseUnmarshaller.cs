@@ -52,19 +52,19 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errored", targetDepth))
+                if (context.TestExpression("errored", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Errored = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationErrors", targetDepth))
+                if (context.TestExpression("validationErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ValidationError, ValidationErrorUnmarshaller>(ValidationErrorUnmarshaller.Instance);
                     response.ValidationErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationWarnings", targetDepth))
+                if (context.TestExpression("validationWarnings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ValidationWarning, ValidationWarningUnmarshaller>(ValidationWarningUnmarshaller.Instance);
                     response.ValidationWarnings = unmarshaller.Unmarshall(context, ref reader);

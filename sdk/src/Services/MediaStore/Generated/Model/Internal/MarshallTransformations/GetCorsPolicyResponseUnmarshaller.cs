@@ -52,7 +52,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CorsPolicy", targetDepth))
+                if (context.TestExpression("CorsPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CorsRule, CorsRuleUnmarshaller>(CorsRuleUnmarshaller.Instance);
                     response.CorsPolicy = unmarshaller.Unmarshall(context, ref reader);

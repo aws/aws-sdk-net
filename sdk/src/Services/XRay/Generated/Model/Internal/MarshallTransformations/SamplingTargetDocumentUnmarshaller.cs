@@ -56,37 +56,37 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FixedRate", targetDepth))
+                if (context.TestExpression("FixedRate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.FixedRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Interval", targetDepth))
+                if (context.TestExpression("Interval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Interval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservoirQuota", targetDepth))
+                if (context.TestExpression("ReservoirQuota", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReservoirQuota = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservoirQuotaTTL", targetDepth))
+                if (context.TestExpression("ReservoirQuotaTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReservoirQuotaTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleName", targetDepth))
+                if (context.TestExpression("RuleName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SamplingBoost", targetDepth))
+                if (context.TestExpression("SamplingBoost", targetDepth, ref reader))
                 {
                     var unmarshaller = SamplingBoostUnmarshaller.Instance;
                     unmarshalledObject.SamplingBoost = unmarshaller.Unmarshall(context, ref reader);

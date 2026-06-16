@@ -56,25 +56,25 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentLength", targetDepth))
+                if (context.TestExpression("contentLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ContentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("partSize", targetDepth))
+                if (context.TestExpression("partSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PartSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Access", targetDepth))
+                if (context.TestExpression("s3Access", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadSetS3AccessUnmarshaller.Instance;
                     unmarshalledObject.S3Access = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalParts", targetDepth))
+                if (context.TestExpression("totalParts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalParts = unmarshaller.Unmarshall(context, ref reader);

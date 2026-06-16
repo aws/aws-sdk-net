@@ -56,49 +56,49 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalModelRequestFields", targetDepth))
+                if (context.TestExpression("additionalModelRequestFields", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("basePromptTemplate", targetDepth))
+                if (context.TestExpression("basePromptTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BasePromptTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("foundationModel", targetDepth))
+                if (context.TestExpression("foundationModel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inferenceConfiguration", targetDepth))
+                if (context.TestExpression("inferenceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parserMode", targetDepth))
+                if (context.TestExpression("parserMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParserMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptCreationMode", targetDepth))
+                if (context.TestExpression("promptCreationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PromptCreationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptState", targetDepth))
+                if (context.TestExpression("promptState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PromptState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptType", targetDepth))
+                if (context.TestExpression("promptType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PromptType = unmarshaller.Unmarshall(context, ref reader);

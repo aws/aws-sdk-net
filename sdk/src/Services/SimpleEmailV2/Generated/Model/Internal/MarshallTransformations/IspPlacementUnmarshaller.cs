@@ -56,13 +56,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IspName", targetDepth))
+                if (context.TestExpression("IspName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IspName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlacementStatistics", targetDepth))
+                if (context.TestExpression("PlacementStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = PlacementStatisticsUnmarshaller.Instance;
                     unmarshalledObject.PlacementStatistics = unmarshaller.Unmarshall(context, ref reader);

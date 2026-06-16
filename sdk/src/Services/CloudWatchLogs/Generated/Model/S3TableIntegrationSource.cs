@@ -38,6 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _createdTimeStamp;
         private DataSource _dataSource;
         private string _identifier;
+        private string _parentSourceIdentifier;
         private S3TableIntegrationSourceStatus _status;
         private string _statusReason;
 
@@ -95,6 +96,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentSourceIdentifier. 
+        /// <para>
+        /// The identifier of the parent data source for this association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ParentSourceIdentifier
+        {
+            get { return this._parentSourceIdentifier; }
+            set { this._parentSourceIdentifier = value; }
+        }
+
+        // Check to see if ParentSourceIdentifier property is set
+        internal bool IsSetParentSourceIdentifier()
+        {
+            return this._parentSourceIdentifier != null;
         }
 
         /// <summary>

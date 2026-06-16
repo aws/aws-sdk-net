@@ -115,10 +115,6 @@ namespace Amazon.Runtime
         /// If null, an HttpClient will be created by the SDK.
         /// Note that IClientConfig members such as ProxyHost, ProxyPort, GetWebProxy, and AllowAutoRedirect
         /// will have no effect unless they're used explicitly by the HttpClientFactory implementation.
-        ///
-        /// See https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack?context=xamarin/ios and
-        /// https://learn.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform
-        /// for guidance on creating HttpClients for your platform.
         /// </summary>
         public HttpClientFactory HttpClientFactory { get; set; } = AWSConfigs.HttpClientFactory;
         

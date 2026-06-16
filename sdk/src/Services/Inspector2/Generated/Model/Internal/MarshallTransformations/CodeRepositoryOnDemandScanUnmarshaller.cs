@@ -56,19 +56,19 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lastScanAt", targetDepth))
+                if (context.TestExpression("lastScanAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastScanAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastScannedCommitId", targetDepth))
+                if (context.TestExpression("lastScannedCommitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastScannedCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scanStatus", targetDepth))
+                if (context.TestExpression("scanStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ScanStatusUnmarshaller.Instance;
                     unmarshalledObject.ScanStatus = unmarshaller.Unmarshall(context, ref reader);

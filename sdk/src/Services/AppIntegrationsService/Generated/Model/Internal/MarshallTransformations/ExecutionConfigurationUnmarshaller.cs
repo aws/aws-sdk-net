@@ -56,19 +56,19 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecutionMode", targetDepth))
+                if (context.TestExpression("ExecutionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandConfiguration", targetDepth))
+                if (context.TestExpression("OnDemandConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OnDemandConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OnDemandConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduleConfiguration", targetDepth))
+                if (context.TestExpression("ScheduleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ScheduleConfiguration = unmarshaller.Unmarshall(context, ref reader);

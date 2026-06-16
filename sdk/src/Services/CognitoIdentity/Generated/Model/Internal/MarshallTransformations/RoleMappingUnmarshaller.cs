@@ -56,19 +56,19 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmbiguousRoleResolution", targetDepth))
+                if (context.TestExpression("AmbiguousRoleResolution", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmbiguousRoleResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RulesConfiguration", targetDepth))
+                if (context.TestExpression("RulesConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RulesConfigurationTypeUnmarshaller.Instance;
                     unmarshalledObject.RulesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

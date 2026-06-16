@@ -56,13 +56,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ARN", targetDepth))
+                if (context.TestExpression("ARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IPSetForwardedIPConfig", targetDepth))
+                if (context.TestExpression("IPSetForwardedIPConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IPSetForwardedIPConfigUnmarshaller.Instance;
                     unmarshalledObject.IPSetForwardedIPConfig = unmarshaller.Unmarshall(context, ref reader);

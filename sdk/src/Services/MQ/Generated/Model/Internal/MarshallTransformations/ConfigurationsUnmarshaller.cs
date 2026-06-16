@@ -56,19 +56,19 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("current", targetDepth))
+                if (context.TestExpression("current", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurationIdUnmarshaller.Instance;
                     unmarshalledObject.Current = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("history", targetDepth))
+                if (context.TestExpression("history", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConfigurationId, ConfigurationIdUnmarshaller>(ConfigurationIdUnmarshaller.Instance);
                     unmarshalledObject.History = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pending", targetDepth))
+                if (context.TestExpression("pending", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurationIdUnmarshaller.Instance;
                     unmarshalledObject.Pending = unmarshaller.Unmarshall(context, ref reader);

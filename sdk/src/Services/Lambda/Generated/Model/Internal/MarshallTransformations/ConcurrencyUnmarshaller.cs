@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReservedConcurrentExecutions", targetDepth))
+                if (context.TestExpression("ReservedConcurrentExecutions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReservedConcurrentExecutions = unmarshaller.Unmarshall(context, ref reader);

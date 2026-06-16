@@ -31,14 +31,32 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdateFindingsV2 operation.
-    /// Used by customers to update information about their investigation into a finding.
-    /// Requested by delegated administrator accounts or member accounts. Delegated administrator
+    /// Updates information about a customer's investigation into a finding. Delegated administrator
     /// accounts can update findings for their account and their member accounts. Member accounts
-    /// can update findings for their account. <c>BatchUpdateFindings</c> and <c>BatchUpdateFindingV2</c>
-    /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
-    /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
-    /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
-    /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>.
+    /// can update findings for their own account.
+    /// 
+    ///  
+    /// <para>
+    ///  <c>BatchUpdateFindings</c> and <c>BatchUpdateFindingsV2</c> both use <c>securityhub:BatchUpdateFindings</c>
+    /// in the <c>Action</c> element of an IAM policy statement. You must have permission
+    /// to perform the <c>securityhub:BatchUpdateFindings</c> action. You can configure IAM
+    /// policies to restrict access to specific finding fields or field values by using the
+    /// <c>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</c> condition key, where <c>&lt;fieldName&gt;</c>
+    /// is one of the following supported fields: <c>SeverityId</c>, <c>StatusId</c>, or <c>Comment</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To prevent a user from updating a specific field, use a <c>Null</c> condition with
+    /// <c>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</c> set to <c>"false"</c>. To prevent
+    /// a user from setting a field to a specific value, use a <c>StringEquals</c> condition
+    /// with <c>securityhub:OCSFSyntaxPath/&lt;fieldName&gt;</c> set to the disallowed value
+    /// or list of values.
+    /// </para>
+    ///  
+    /// <para>
+    /// Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of <c>finding_info.modified_time</c>,
+    /// <c>finding_info.modified_time_dt</c>, <c>time</c>, or <c>time_dt</c> for a finding.
+    /// </para>
     /// </summary>
     public partial class BatchUpdateFindingsV2Request : AmazonSecurityHubRequest
     {
@@ -121,8 +139,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SeverityId. 
         /// <para>
         /// The updated value for the normalized severity identifier. The severity ID is an integer
-        /// with the allowed enum values [0, 1, 2, 3, 4, 5, 99]. When customer provides the updated
-        /// severity ID, the string sibling severity will automatically be updated in the finding.
+        /// with the allowed enum values [0, 1, 2, 3, 4, 5, 6, 99]. When customer provides the
+        /// updated severity ID, the string sibling severity will automatically be updated in
+        /// the finding.
         /// </para>
         /// </summary>
         public int? SeverityId
@@ -141,9 +160,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property StatusId. 
         /// <para>
         /// The updated value for the normalized status identifier. The status ID is an integer
-        /// with the allowed enum values [0, 1, 2, 3, 4, 5, 6, 99]. When customer provides the
-        /// updated status ID, the string sibling status will automatically be updated in the
-        /// finding.
+        /// with the allowed enum values [0, 1, 2, 3, 4, 5, 99]. When customer provides the updated
+        /// status ID, the string sibling status will automatically be updated in the finding.
         /// </para>
         /// </summary>
         public int? StatusId

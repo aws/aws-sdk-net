@@ -56,19 +56,19 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExperienceScore", targetDepth))
+                if (context.TestExpression("ExperienceScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ExperienceScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PercentOfClientLocationImpacted", targetDepth))
+                if (context.TestExpression("PercentOfClientLocationImpacted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PercentOfClientLocationImpacted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PercentOfTotalTrafficImpacted", targetDepth))
+                if (context.TestExpression("PercentOfTotalTrafficImpacted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PercentOfTotalTrafficImpacted = unmarshaller.Unmarshall(context, ref reader);

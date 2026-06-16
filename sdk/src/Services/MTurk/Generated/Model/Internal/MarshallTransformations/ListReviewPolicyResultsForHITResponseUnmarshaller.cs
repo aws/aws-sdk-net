@@ -52,37 +52,37 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssignmentReviewPolicy", targetDepth))
+                if (context.TestExpression("AssignmentReviewPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ReviewPolicyUnmarshaller.Instance;
                     response.AssignmentReviewPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssignmentReviewReport", targetDepth))
+                if (context.TestExpression("AssignmentReviewReport", targetDepth, ref reader))
                 {
                     var unmarshaller = ReviewReportUnmarshaller.Instance;
                     response.AssignmentReviewReport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HITId", targetDepth))
+                if (context.TestExpression("HITId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HITId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HITReviewPolicy", targetDepth))
+                if (context.TestExpression("HITReviewPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ReviewPolicyUnmarshaller.Instance;
                     response.HITReviewPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HITReviewReport", targetDepth))
+                if (context.TestExpression("HITReviewReport", targetDepth, ref reader))
                 {
                     var unmarshaller = ReviewReportUnmarshaller.Instance;
                     response.HITReviewReport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

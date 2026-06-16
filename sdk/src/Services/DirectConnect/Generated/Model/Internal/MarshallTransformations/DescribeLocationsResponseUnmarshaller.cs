@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("locations", targetDepth))
+                if (context.TestExpression("locations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Location, LocationUnmarshaller>(LocationUnmarshaller.Instance);
                     response.Locations = unmarshaller.Unmarshall(context, ref reader);

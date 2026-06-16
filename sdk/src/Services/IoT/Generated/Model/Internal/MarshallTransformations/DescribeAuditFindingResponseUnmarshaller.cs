@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("finding", targetDepth))
+                if (context.TestExpression("finding", targetDepth, ref reader))
                 {
                     var unmarshaller = AuditFindingUnmarshaller.Instance;
                     response.Finding = unmarshaller.Unmarshall(context, ref reader);

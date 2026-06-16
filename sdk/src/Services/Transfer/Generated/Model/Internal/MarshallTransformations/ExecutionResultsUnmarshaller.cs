@@ -56,13 +56,13 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OnExceptionSteps", targetDepth))
+                if (context.TestExpression("OnExceptionSteps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExecutionStepResult, ExecutionStepResultUnmarshaller>(ExecutionStepResultUnmarshaller.Instance);
                     unmarshalledObject.OnExceptionSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Steps", targetDepth))
+                if (context.TestExpression("Steps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExecutionStepResult, ExecutionStepResultUnmarshaller>(ExecutionStepResultUnmarshaller.Instance);
                     unmarshalledObject.Steps = unmarshaller.Unmarshall(context, ref reader);

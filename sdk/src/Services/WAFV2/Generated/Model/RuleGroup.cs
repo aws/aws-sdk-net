@@ -45,6 +45,7 @@ namespace Amazon.WAFV2.Model
         private string _description;
         private string _id;
         private string _labelNamespace;
+        private MonetizationConfig _monetizationConfig;
         private string _name;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private VisibilityConfig _visibilityConfig;
@@ -266,6 +267,27 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetLabelNamespace()
         {
             return this._labelNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonetizationConfig. 
+        /// <para>
+        /// The monetization configuration for the rule group. Required when any rule in the rule
+        /// group uses the <c>Monetize</c> action. When a rule group with a <c>MonetizationConfig</c>
+        /// is used in a web ACL, the rule group's configuration applies to rules within that
+        /// group unless overridden at the web ACL level.
+        /// </para>
+        /// </summary>
+        public MonetizationConfig MonetizationConfig
+        {
+            get { return this._monetizationConfig; }
+            set { this._monetizationConfig = value; }
+        }
+
+        // Check to see if MonetizationConfig property is set
+        internal bool IsSetMonetizationConfig()
+        {
+            return this._monetizationConfig != null;
         }
 
         /// <summary>

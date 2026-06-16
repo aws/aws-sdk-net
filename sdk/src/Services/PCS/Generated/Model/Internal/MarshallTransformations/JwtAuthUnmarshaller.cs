@@ -56,7 +56,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jwtKey", targetDepth))
+                if (context.TestExpression("jwtKey", targetDepth, ref reader))
                 {
                     var unmarshaller = JwtKeyUnmarshaller.Instance;
                     unmarshalledObject.JwtKey = unmarshaller.Unmarshall(context, ref reader);

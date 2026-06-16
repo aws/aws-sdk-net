@@ -56,37 +56,37 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("IndexName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexStatus", targetDepth))
+                if (context.TestExpression("IndexStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth))
+                if (context.TestExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedReadCapacityUnits", targetDepth))
+                if (context.TestExpression("ProvisionedReadCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedReadCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth))
+                if (context.TestExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedWriteCapacityUnits", targetDepth))
+                if (context.TestExpression("ProvisionedWriteCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedWriteCapacityUnits = unmarshaller.Unmarshall(context, ref reader);

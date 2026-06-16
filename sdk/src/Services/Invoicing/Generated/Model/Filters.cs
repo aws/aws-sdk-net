@@ -72,8 +72,8 @@ namespace Amazon.Invoicing.Model
         /// <summary>
         /// Gets and sets the property BillSourceAccounts. 
         /// <para>
-        ///  A list of Amazon Web Services account account IDs used to filter invoice units. These
-        /// are payer accounts from other Organizations that have delegated their billing responsibility
+        ///  A list of Amazon Web Services account IDs used to filter invoice units. These are
+        /// payer accounts from other Organizations that have delegated their billing responsibility
         /// to the receiver account through the billing transfer feature. 
         /// </para>
         /// <para />

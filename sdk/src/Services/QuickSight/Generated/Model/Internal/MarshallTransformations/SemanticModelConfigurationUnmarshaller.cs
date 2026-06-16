@@ -56,7 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TableMap", targetDepth))
+                if (context.TestExpression("SemanticMetadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DataSetSemanticMetadata, DataSetSemanticMetadataUnmarshaller>(DataSetSemanticMetadataUnmarshaller.Instance);
+                    unmarshalledObject.SemanticMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TableMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, SemanticTable, StringUnmarshaller, SemanticTableUnmarshaller>(StringUnmarshaller.Instance, SemanticTableUnmarshaller.Instance);
                     unmarshalledObject.TableMap = unmarshaller.Unmarshall(context, ref reader);

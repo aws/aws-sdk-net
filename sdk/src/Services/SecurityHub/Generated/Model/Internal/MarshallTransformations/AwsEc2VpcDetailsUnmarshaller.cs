@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CidrBlockAssociationSet", targetDepth))
+                if (context.TestExpression("CidrBlockAssociationSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CidrBlockAssociation, CidrBlockAssociationUnmarshaller>(CidrBlockAssociationUnmarshaller.Instance);
                     unmarshalledObject.CidrBlockAssociationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DhcpOptionsId", targetDepth))
+                if (context.TestExpression("DhcpOptionsId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ipv6CidrBlockAssociationSet", targetDepth))
+                if (context.TestExpression("Ipv6CidrBlockAssociationSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Ipv6CidrBlockAssociation, Ipv6CidrBlockAssociationUnmarshaller>(Ipv6CidrBlockAssociationUnmarshaller.Instance);
                     unmarshalledObject.Ipv6CidrBlockAssociationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);

@@ -56,61 +56,61 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arrayValues", targetDepth))
+                if (context.TestExpression("arrayValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Value, ValueUnmarshaller>(ValueUnmarshaller.Instance);
                     unmarshalledObject.ArrayValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bigIntValue", targetDepth))
+                if (context.TestExpression("bigIntValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BigIntValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bitValue", targetDepth))
+                if (context.TestExpression("bitValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BitValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blobValue", targetDepth))
+                if (context.TestExpression("blobValue", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.BlobValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("doubleValue", targetDepth))
+                if (context.TestExpression("doubleValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intValue", targetDepth))
+                if (context.TestExpression("intValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isNull", targetDepth))
+                if (context.TestExpression("isNull", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNull = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("realValue", targetDepth))
+                if (context.TestExpression("realValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RealValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringValue", targetDepth))
+                if (context.TestExpression("stringValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StringValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("structValue", targetDepth))
+                if (context.TestExpression("structValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StructValueUnmarshaller.Instance;
                     unmarshalledObject.StructValue = unmarshaller.Unmarshall(context, ref reader);

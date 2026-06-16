@@ -56,7 +56,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("targetTrackingScalingPolicyConfiguration", targetDepth))
+                if (context.TestExpression("targetTrackingScalingPolicyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetTrackingScalingPolicyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TargetTrackingScalingPolicyConfiguration = unmarshaller.Unmarshall(context, ref reader);

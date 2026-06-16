@@ -39,6 +39,8 @@ namespace Amazon.IVSRealTime.Model
         private IngestProtocol _ingestProtocol;
         private string _name;
         private string _participantId;
+        private bool? _redundantIngest;
+        private List<RedundantIngestCredential> _redundantIngestCredentials = AWSConfigs.InitializeCollections ? new List<RedundantIngestCredential>() : null;
         private string _stageArn;
         private IngestConfigurationState _state;
         private string _streamKey;
@@ -146,6 +148,49 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetParticipantId()
         {
             return this._participantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantIngest. 
+        /// <para>
+        /// Indicates whether redundant ingest is enabled for the ingest configuration.
+        /// </para>
+        /// </summary>
+        public bool? RedundantIngest
+        {
+            get { return this._redundantIngest; }
+            set { this._redundantIngest = value; }
+        }
+
+        // Check to see if RedundantIngest property is set
+        internal bool IsSetRedundantIngest()
+        {
+            return this._redundantIngest.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantIngestCredentials. 
+        /// <para>
+        /// A list of redundant ingest credentials, present only when <c>redundantIngest</c> is
+        /// set to <c>true</c>. See <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html#redundant-ingest">Redundant
+        /// Ingest</a> in <i>IVS RTMP Publishing</i> for details.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RedundantIngestCredential> RedundantIngestCredentials
+        {
+            get { return this._redundantIngestCredentials; }
+            set { this._redundantIngestCredentials = value; }
+        }
+
+        // Check to see if RedundantIngestCredentials property is set
+        internal bool IsSetRedundantIngestCredentials()
+        {
+            return this._redundantIngestCredentials != null && (this._redundantIngestCredentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

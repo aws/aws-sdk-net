@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the UpdateEmailAddressMetadata operation.
     /// Updates an email address metadata. For more information about email addresses, see
     /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-    /// email addresses</a> in the Amazon Connect Administrator Guide.
+    /// email addresses</a> in the Connect Customer Administrator Guide.
     /// </summary>
     public partial class UpdateEmailAddressMetadataRequest : AmazonConnectRequest
     {
@@ -125,7 +125,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

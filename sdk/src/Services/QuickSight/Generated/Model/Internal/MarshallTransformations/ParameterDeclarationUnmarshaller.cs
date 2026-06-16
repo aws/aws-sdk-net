@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateTimeParameterDeclaration", targetDepth))
+                if (context.TestExpression("DateTimeParameterDeclaration", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeParameterDeclarationUnmarshaller.Instance;
                     unmarshalledObject.DateTimeParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DecimalParameterDeclaration", targetDepth))
+                if (context.TestExpression("DecimalParameterDeclaration", targetDepth, ref reader))
                 {
                     var unmarshaller = DecimalParameterDeclarationUnmarshaller.Instance;
                     unmarshalledObject.DecimalParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntegerParameterDeclaration", targetDepth))
+                if (context.TestExpression("IntegerParameterDeclaration", targetDepth, ref reader))
                 {
                     var unmarshaller = IntegerParameterDeclarationUnmarshaller.Instance;
                     unmarshalledObject.IntegerParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringParameterDeclaration", targetDepth))
+                if (context.TestExpression("StringParameterDeclaration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringParameterDeclarationUnmarshaller.Instance;
                     unmarshalledObject.StringParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationCidrBlock", targetDepth))
+                if (context.TestExpression("DestinationCidrBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Resource", targetDepth))
+                if (context.TestExpression("Resource", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkResourceSummaryUnmarshaller.Instance;
                     unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sequence", targetDepth))
+                if (context.TestExpression("Sequence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Sequence = unmarshaller.Unmarshall(context, ref reader);

@@ -46,6 +46,7 @@ namespace Amazon.PaymentCryptography.Model
         private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
         private KeyOrigin _keyOrigin;
         private KeyState _keyState;
+        private MpaStatus _mpaStatus;
         private MultiRegionKeyType _multiRegionKeyType;
         private string _primaryRegion;
         private Dictionary<string, ReplicationStatusType> _replicationStatus = AWSConfigs.InitializeCollections ? new Dictionary<string, ReplicationStatusType>() : null;
@@ -240,6 +241,8 @@ namespace Amazon.PaymentCryptography.Model
         /// with the key to be checked and retaining the 3 highest order bytes of the encrypted
         /// result. For AES keys, the KCV is computed using a CMAC algorithm where the input data
         /// is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.
+        /// For HMAC keys, the KCV is computed using the hash selected at key creation on a zero-length
+        /// message, taking the leftmost 3 bytes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -293,6 +296,24 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetKeyState()
         {
             return this._keyState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MpaStatus. 
+        /// <para>
+        /// The Multi-Party Approval (MPA) status for the key, if applicable.
+        /// </para>
+        /// </summary>
+        public MpaStatus MpaStatus
+        {
+            get { return this._mpaStatus; }
+            set { this._mpaStatus = value; }
+        }
+
+        // Check to see if MpaStatus property is set
+        internal bool IsSetMpaStatus()
+        {
+            return this._mpaStatus != null;
         }
 
         /// <summary>

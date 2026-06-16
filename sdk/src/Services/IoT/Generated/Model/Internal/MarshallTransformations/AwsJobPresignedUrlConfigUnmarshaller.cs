@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("expiresInSec", targetDepth))
+                if (context.TestExpression("expiresInSec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExpiresInSec = unmarshaller.Unmarshall(context, ref reader);

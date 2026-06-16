@@ -56,31 +56,31 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowActions", targetDepth))
+                if (context.TestExpression("AllowActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowAndroidApps", targetDepth))
+                if (context.TestExpression("AllowAndroidApps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AndroidApp, AndroidAppUnmarshaller>(AndroidAppUnmarshaller.Instance);
                     unmarshalledObject.AllowAndroidApps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowAppleApps", targetDepth))
+                if (context.TestExpression("AllowAppleApps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AppleApp, AppleAppUnmarshaller>(AppleAppUnmarshaller.Instance);
                     unmarshalledObject.AllowAppleApps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowReferers", targetDepth))
+                if (context.TestExpression("AllowReferers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowReferers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowResources", targetDepth))
+                if (context.TestExpression("AllowResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowResources = unmarshaller.Unmarshall(context, ref reader);

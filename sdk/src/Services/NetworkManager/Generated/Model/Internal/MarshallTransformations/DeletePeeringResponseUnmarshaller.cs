@@ -52,7 +52,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Peering", targetDepth))
+                if (context.TestExpression("Peering", targetDepth, ref reader))
                 {
                     var unmarshaller = PeeringUnmarshaller.Instance;
                     response.Peering = unmarshaller.Unmarshall(context, ref reader);

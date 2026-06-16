@@ -1288,7 +1288,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.InputParameters</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadata.PolicyRuntime</property>
@@ -1324,7 +1324,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.InputParameters</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomPolicyRuleMetadataNoPolicy.PolicyRuntime</property>
@@ -1355,7 +1355,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.InputParameters</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationCustomRuleMetadata.LambdaFunctionArn</property>
@@ -1385,7 +1385,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.InputParameters</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.OrganizationManagedRuleMetadata.ResourceIdScope</property>

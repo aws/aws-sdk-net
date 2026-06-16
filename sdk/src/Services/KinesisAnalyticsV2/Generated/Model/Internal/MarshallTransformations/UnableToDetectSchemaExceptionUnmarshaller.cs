@@ -72,13 +72,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ProcessedInputRecords", targetDepth))
+                    if (context.TestExpression("ProcessedInputRecords", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.ProcessedInputRecords = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("RawInputRecords", targetDepth))
+                    if (context.TestExpression("RawInputRecords", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.RawInputRecords = unmarshaller.Unmarshall(context, ref reader);

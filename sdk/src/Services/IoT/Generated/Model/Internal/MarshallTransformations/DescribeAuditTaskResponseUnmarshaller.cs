@@ -52,37 +52,37 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("auditDetails", targetDepth))
+                if (context.TestExpression("auditDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AuditCheckDetails, StringUnmarshaller, AuditCheckDetailsUnmarshaller>(StringUnmarshaller.Instance, AuditCheckDetailsUnmarshaller.Instance);
                     response.AuditDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduledAuditName", targetDepth))
+                if (context.TestExpression("scheduledAuditName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ScheduledAuditName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStartTime", targetDepth))
+                if (context.TestExpression("taskStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TaskStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStatistics", targetDepth))
+                if (context.TestExpression("taskStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskStatisticsUnmarshaller.Instance;
                     response.TaskStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStatus", targetDepth))
+                if (context.TestExpression("taskStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskType", targetDepth))
+                if (context.TestExpression("taskType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskType = unmarshaller.Unmarshall(context, ref reader);

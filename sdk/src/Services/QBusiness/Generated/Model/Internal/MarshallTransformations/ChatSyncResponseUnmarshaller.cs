@@ -52,49 +52,49 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionReview", targetDepth))
+                if (context.TestExpression("actionReview", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionReviewUnmarshaller.Instance;
                     response.ActionReview = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authChallengeRequest", targetDepth))
+                if (context.TestExpression("authChallengeRequest", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthChallengeRequestUnmarshaller.Instance;
                     response.AuthChallengeRequest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conversationId", targetDepth))
+                if (context.TestExpression("conversationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConversationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failedAttachments", targetDepth))
+                if (context.TestExpression("failedAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttachmentOutput, AttachmentOutputUnmarshaller>(AttachmentOutputUnmarshaller.Instance);
                     response.FailedAttachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceAttributions", targetDepth))
+                if (context.TestExpression("sourceAttributions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceAttribution, SourceAttributionUnmarshaller>(SourceAttributionUnmarshaller.Instance);
                     response.SourceAttributions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemMessage", targetDepth))
+                if (context.TestExpression("systemMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SystemMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemMessageId", targetDepth))
+                if (context.TestExpression("systemMessageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SystemMessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userMessageId", targetDepth))
+                if (context.TestExpression("userMessageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UserMessageId = unmarshaller.Unmarshall(context, ref reader);

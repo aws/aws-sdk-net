@@ -52,7 +52,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Trail", targetDepth))
+                if (context.TestExpression("Trail", targetDepth, ref reader))
                 {
                     var unmarshaller = TrailUnmarshaller.Instance;
                     response.Trail = unmarshaller.Unmarshall(context, ref reader);

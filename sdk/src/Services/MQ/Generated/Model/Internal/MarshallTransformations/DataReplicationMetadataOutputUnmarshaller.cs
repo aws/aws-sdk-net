@@ -56,13 +56,13 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataReplicationCounterpart", targetDepth))
+                if (context.TestExpression("dataReplicationCounterpart", targetDepth, ref reader))
                 {
                     var unmarshaller = DataReplicationCounterpartUnmarshaller.Instance;
                     unmarshalledObject.DataReplicationCounterpart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataReplicationRole", targetDepth))
+                if (context.TestExpression("dataReplicationRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataReplicationRole = unmarshaller.Unmarshall(context, ref reader);

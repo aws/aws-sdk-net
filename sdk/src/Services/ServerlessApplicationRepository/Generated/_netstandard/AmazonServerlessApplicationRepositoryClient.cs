@@ -39,6 +39,11 @@ namespace Amazon.ServerlessApplicationRepository
 {
     /// <summary>
     /// <para>Implementation for accessing ServerlessApplicationRepository</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The AWS Serverless Application Repository makes it easy for developers and enterprises
     /// to quickly find and deploy serverless applications in the AWS Cloud. For more information

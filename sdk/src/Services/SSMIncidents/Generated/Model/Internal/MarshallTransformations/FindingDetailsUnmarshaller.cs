@@ -56,13 +56,13 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudFormationStackUpdate", targetDepth))
+                if (context.TestExpression("cloudFormationStackUpdate", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudFormationStackUpdateUnmarshaller.Instance;
                     unmarshalledObject.CloudFormationStackUpdate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeDeployDeployment", targetDepth))
+                if (context.TestExpression("codeDeployDeployment", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeDeployDeploymentUnmarshaller.Instance;
                     unmarshalledObject.CodeDeployDeployment = unmarshaller.Unmarshall(context, ref reader);

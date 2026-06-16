@@ -56,19 +56,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("networkInterfaceArn", targetDepth))
+                if (context.TestExpression("networkInterfaceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkInterfaceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocol", targetDepth))
+                if (context.TestExpression("protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocolConfiguration", targetDepth))
+                if (context.TestExpression("protocolConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RouterOutputProtocolConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProtocolConfiguration = unmarshaller.Unmarshall(context, ref reader);

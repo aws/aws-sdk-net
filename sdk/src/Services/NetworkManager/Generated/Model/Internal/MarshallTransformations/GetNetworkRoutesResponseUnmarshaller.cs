@@ -52,31 +52,31 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CoreNetworkSegmentEdge", targetDepth))
+                if (context.TestExpression("CoreNetworkSegmentEdge", targetDepth, ref reader))
                 {
                     var unmarshaller = CoreNetworkSegmentEdgeIdentifierUnmarshaller.Instance;
                     response.CoreNetworkSegmentEdge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkRoutes", targetDepth))
+                if (context.TestExpression("NetworkRoutes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkRoute, NetworkRouteUnmarshaller>(NetworkRouteUnmarshaller.Instance);
                     response.NetworkRoutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteTableArn", targetDepth))
+                if (context.TestExpression("RouteTableArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RouteTableArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteTableTimestamp", targetDepth))
+                if (context.TestExpression("RouteTableTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.RouteTableTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteTableType", targetDepth))
+                if (context.TestExpression("RouteTableType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RouteTableType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buildStatus", targetDepth))
+                if (context.TestExpression("buildStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuildStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primaryArtifact", targetDepth))
+                if (context.TestExpression("primaryArtifact", targetDepth, ref reader))
                 {
                     var unmarshaller = ResolvedArtifactUnmarshaller.Instance;
                     unmarshalledObject.PrimaryArtifact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestedOn", targetDepth))
+                if (context.TestExpression("requestedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secondaryArtifacts", targetDepth))
+                if (context.TestExpression("secondaryArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResolvedArtifact, ResolvedArtifactUnmarshaller>(ResolvedArtifactUnmarshaller.Instance);
                     unmarshalledObject.SecondaryArtifacts = unmarshaller.Unmarshall(context, ref reader);

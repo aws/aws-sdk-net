@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("crawlerConfiguration", targetDepth))
+                if (context.TestExpression("crawlerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SharePointCrawlerConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CrawlerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceConfiguration", targetDepth))
+                if (context.TestExpression("sourceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SharePointSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context, ref reader);

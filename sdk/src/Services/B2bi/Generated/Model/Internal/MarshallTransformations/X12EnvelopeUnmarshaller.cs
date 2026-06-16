@@ -56,13 +56,13 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("common", targetDepth))
+                if (context.TestExpression("common", targetDepth, ref reader))
                 {
                     var unmarshaller = X12OutboundEdiHeadersUnmarshaller.Instance;
                     unmarshalledObject.Common = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wrapOptions", targetDepth))
+                if (context.TestExpression("wrapOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = WrapOptionsUnmarshaller.Instance;
                     unmarshalledObject.WrapOptions = unmarshaller.Unmarshall(context, ref reader);

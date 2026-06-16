@@ -475,6 +475,56 @@ namespace Amazon.ARCRegionswitch
 
 
     /// <summary>
+    /// Constants used for properties of type EventSourceMappingAction.
+    /// </summary>
+    public class EventSourceMappingAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for EventSourceMappingAction
+        /// </summary>
+        public static readonly EventSourceMappingAction Disable = new EventSourceMappingAction("disable");
+        /// <summary>
+        /// Constant Enable for EventSourceMappingAction
+        /// </summary>
+        public static readonly EventSourceMappingAction Enable = new EventSourceMappingAction("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSourceMappingAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSourceMappingAction FindValue(string value)
+        {
+            return FindValue<EventSourceMappingAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSourceMappingAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExecutionAction.
     /// </summary>
     public class ExecutionAction : ConstantClass
@@ -547,6 +597,14 @@ namespace Amazon.ARCRegionswitch
         /// </summary>
         public static readonly ExecutionBlockType AuroraGlobalDatabase = new ExecutionBlockType("AuroraGlobalDatabase");
         /// <summary>
+        /// Constant AuroraProvisionedScaling for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType AuroraProvisionedScaling = new ExecutionBlockType("AuroraProvisionedScaling");
+        /// <summary>
+        /// Constant AuroraServerlessScaling for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType AuroraServerlessScaling = new ExecutionBlockType("AuroraServerlessScaling");
+        /// <summary>
         /// Constant CustomActionLambda for ExecutionBlockType
         /// </summary>
         public static readonly ExecutionBlockType CustomActionLambda = new ExecutionBlockType("CustomActionLambda");
@@ -567,9 +625,17 @@ namespace Amazon.ARCRegionswitch
         /// </summary>
         public static readonly ExecutionBlockType EKSResourceScaling = new ExecutionBlockType("EKSResourceScaling");
         /// <summary>
+        /// Constant LambdaEventSourceMapping for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType LambdaEventSourceMapping = new ExecutionBlockType("LambdaEventSourceMapping");
+        /// <summary>
         /// Constant ManualApproval for ExecutionBlockType
         /// </summary>
         public static readonly ExecutionBlockType ManualApproval = new ExecutionBlockType("ManualApproval");
+        /// <summary>
+        /// Constant NeptuneGlobalDatabase for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType NeptuneGlobalDatabase = new ExecutionBlockType("NeptuneGlobalDatabase");
         /// <summary>
         /// Constant Parallel for ExecutionBlockType
         /// </summary>
@@ -1055,6 +1121,52 @@ namespace Amazon.ARCRegionswitch
 
 
     /// <summary>
+    /// Constants used for properties of type LambdaEventSourceMappingUngracefulBehavior.
+    /// </summary>
+    public class LambdaEventSourceMappingUngracefulBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Skip for LambdaEventSourceMappingUngracefulBehavior
+        /// </summary>
+        public static readonly LambdaEventSourceMappingUngracefulBehavior Skip = new LambdaEventSourceMappingUngracefulBehavior("skip");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaEventSourceMappingUngracefulBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaEventSourceMappingUngracefulBehavior FindValue(string value)
+        {
+            return FindValue<LambdaEventSourceMappingUngracefulBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaEventSourceMappingUngracefulBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LambdaUngracefulBehavior.
     /// </summary>
     public class LambdaUngracefulBehavior : ConstantClass
@@ -1094,6 +1206,102 @@ namespace Amazon.ARCRegionswitch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LambdaUngracefulBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NeptuneDefaultBehavior.
+    /// </summary>
+    public class NeptuneDefaultBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failover for NeptuneDefaultBehavior
+        /// </summary>
+        public static readonly NeptuneDefaultBehavior Failover = new NeptuneDefaultBehavior("failover");
+        /// <summary>
+        /// Constant SwitchoverOnly for NeptuneDefaultBehavior
+        /// </summary>
+        public static readonly NeptuneDefaultBehavior SwitchoverOnly = new NeptuneDefaultBehavior("switchoverOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NeptuneDefaultBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NeptuneDefaultBehavior FindValue(string value)
+        {
+            return FindValue<NeptuneDefaultBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NeptuneDefaultBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NeptuneUngracefulBehavior.
+    /// </summary>
+    public class NeptuneUngracefulBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failover for NeptuneUngracefulBehavior
+        /// </summary>
+        public static readonly NeptuneUngracefulBehavior Failover = new NeptuneUngracefulBehavior("failover");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NeptuneUngracefulBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NeptuneUngracefulBehavior FindValue(string value)
+        {
+            return FindValue<NeptuneUngracefulBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NeptuneUngracefulBehavior(string value)
         {
             return FindValue(value);
         }

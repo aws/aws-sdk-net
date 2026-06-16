@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SameSheetTargetVisualConfiguration", targetDepth))
+                if (context.TestExpression("SameSheetTargetVisualConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SameSheetTargetVisualConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SameSheetTargetVisualConfiguration = unmarshaller.Unmarshall(context, ref reader);

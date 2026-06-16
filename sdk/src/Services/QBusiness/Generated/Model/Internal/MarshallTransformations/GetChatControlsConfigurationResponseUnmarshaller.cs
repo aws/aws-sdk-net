@@ -52,43 +52,43 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blockedPhrases", targetDepth))
+                if (context.TestExpression("blockedPhrases", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockedPhrasesConfigurationUnmarshaller.Instance;
                     response.BlockedPhrases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creatorModeConfiguration", targetDepth))
+                if (context.TestExpression("creatorModeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AppliedCreatorModeConfigurationUnmarshaller.Instance;
                     response.CreatorModeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hallucinationReductionConfiguration", targetDepth))
+                if (context.TestExpression("hallucinationReductionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HallucinationReductionConfigurationUnmarshaller.Instance;
                     response.HallucinationReductionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orchestrationConfiguration", targetDepth))
+                if (context.TestExpression("orchestrationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AppliedOrchestrationConfigurationUnmarshaller.Instance;
                     response.OrchestrationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("responseScope", targetDepth))
+                if (context.TestExpression("responseScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResponseScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicConfigurations", targetDepth))
+                if (context.TestExpression("topicConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicConfiguration, TopicConfigurationUnmarshaller>(TopicConfigurationUnmarshaller.Instance);
                     response.TopicConfigurations = unmarshaller.Unmarshall(context, ref reader);

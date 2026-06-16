@@ -52,13 +52,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrincipalResourcePermissions", targetDepth))
+                if (context.TestExpression("PrincipalResourcePermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PrincipalResourcePermissions, PrincipalResourcePermissionsUnmarshaller>(PrincipalResourcePermissionsUnmarshaller.Instance);
                     response.PrincipalResourcePermissions = unmarshaller.Unmarshall(context, ref reader);

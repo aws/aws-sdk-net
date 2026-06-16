@@ -56,13 +56,13 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogDestination", targetDepth))
+                if (context.TestExpression("CloudWatchLogDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogDestinationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsLoggingEnabled", targetDepth))
+                if (context.TestExpression("IsLoggingEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLoggingEnabled = unmarshaller.Unmarshall(context, ref reader);

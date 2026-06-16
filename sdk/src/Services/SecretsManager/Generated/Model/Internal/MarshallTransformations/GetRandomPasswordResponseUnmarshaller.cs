@@ -52,7 +52,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RandomPassword", targetDepth))
+                if (context.TestExpression("RandomPassword", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RandomPassword = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Mapping", targetDepth))
+                if (context.TestExpression("Mapping", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MappingEntry, MappingEntryUnmarshaller>(MappingEntryUnmarshaller.Instance);
                     response.Mapping = unmarshaller.Unmarshall(context, ref reader);

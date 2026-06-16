@@ -68,8 +68,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
             request.ResourcePath = "/clusters/{name}/node-groups";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -250,12 +250,20 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Version);
             }
 
+            if(publicRequest.IsSetWarmPoolConfig())
+            {
+                context.Writer.WritePropertyName("warmPoolConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WarmPoolConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WarmPoolConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

@@ -56,25 +56,25 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecutionId", targetDepth))
+                if (context.TestExpression("ExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitialFileLocation", targetDepth))
+                if (context.TestExpression("InitialFileLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = FileLocationUnmarshaller.Instance;
                     unmarshalledObject.InitialFileLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceMetadata", targetDepth))
+                if (context.TestExpression("ServiceMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

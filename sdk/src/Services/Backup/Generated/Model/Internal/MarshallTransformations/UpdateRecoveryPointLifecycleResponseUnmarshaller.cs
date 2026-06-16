@@ -52,25 +52,25 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackupVaultArn", targetDepth))
+                if (context.TestExpression("BackupVaultArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BackupVaultArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CalculatedLifecycle", targetDepth))
+                if (context.TestExpression("CalculatedLifecycle", targetDepth, ref reader))
                 {
                     var unmarshaller = CalculatedLifecycleUnmarshaller.Instance;
                     response.CalculatedLifecycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Lifecycle", targetDepth))
+                if (context.TestExpression("Lifecycle", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecycleUnmarshaller.Instance;
                     response.Lifecycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecoveryPointArn", targetDepth))
+                if (context.TestExpression("RecoveryPointArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecoveryPointArn = unmarshaller.Unmarshall(context, ref reader);

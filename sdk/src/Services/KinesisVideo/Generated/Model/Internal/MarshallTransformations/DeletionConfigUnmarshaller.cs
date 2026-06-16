@@ -56,19 +56,19 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteAfterUpload", targetDepth))
+                if (context.TestExpression("DeleteAfterUpload", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteAfterUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeRetentionInHours", targetDepth))
+                if (context.TestExpression("EdgeRetentionInHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeRetentionInHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalSizeConfig", targetDepth))
+                if (context.TestExpression("LocalSizeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalSizeConfigUnmarshaller.Instance;
                     unmarshalledObject.LocalSizeConfig = unmarshaller.Unmarshall(context, ref reader);

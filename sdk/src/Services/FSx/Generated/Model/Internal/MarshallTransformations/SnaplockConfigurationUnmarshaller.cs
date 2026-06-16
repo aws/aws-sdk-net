@@ -56,37 +56,37 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditLogVolume", targetDepth))
+                if (context.TestExpression("AuditLogVolume", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AuditLogVolume = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutocommitPeriod", targetDepth))
+                if (context.TestExpression("AutocommitPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = AutocommitPeriodUnmarshaller.Instance;
                     unmarshalledObject.AutocommitPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrivilegedDelete", targetDepth))
+                if (context.TestExpression("PrivilegedDelete", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrivilegedDelete = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetentionPeriod", targetDepth))
+                if (context.TestExpression("RetentionPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = SnaplockRetentionPeriodUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnaplockType", targetDepth))
+                if (context.TestExpression("SnaplockType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnaplockType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeAppendModeEnabled", targetDepth))
+                if (context.TestExpression("VolumeAppendModeEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.VolumeAppendModeEnabled = unmarshaller.Unmarshall(context, ref reader);

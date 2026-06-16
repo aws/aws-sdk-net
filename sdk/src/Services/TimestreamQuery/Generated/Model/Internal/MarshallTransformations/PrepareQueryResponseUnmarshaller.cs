@@ -52,19 +52,19 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Columns", targetDepth))
+                if (context.TestExpression("Columns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SelectColumn, SelectColumnUnmarshaller>(SelectColumnUnmarshaller.Instance);
                     response.Columns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Parameters", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParameterMapping, ParameterMappingUnmarshaller>(ParameterMappingUnmarshaller.Instance);
                     response.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryString", targetDepth))
+                if (context.TestExpression("QueryString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueryString = unmarshaller.Unmarshall(context, ref reader);

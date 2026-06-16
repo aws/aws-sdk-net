@@ -9,7 +9,10 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!-- NuGet audit vulnerabilities are handled by a separate CI pipeline, not the build -->
     <NuGetAuditMode>direct</NuGetAuditMode>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\SDKDocGeneratorLib\SDKDocGeneratorLib.csproj" />

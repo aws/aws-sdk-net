@@ -52,19 +52,19 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AverageDownloadRateLimitInBitsPerSec", targetDepth))
+                if (context.TestExpression("AverageDownloadRateLimitInBitsPerSec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AverageDownloadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth))
+                if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("GatewayARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayARN = unmarshaller.Unmarshall(context, ref reader);

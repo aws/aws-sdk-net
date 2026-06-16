@@ -52,7 +52,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdentityProviderSummary", targetDepth))
+                if (context.TestExpression("IdentityProviderSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityProviderSummaryUnmarshaller.Instance;
                     response.IdentityProviderSummary = unmarshaller.Unmarshall(context, ref reader);

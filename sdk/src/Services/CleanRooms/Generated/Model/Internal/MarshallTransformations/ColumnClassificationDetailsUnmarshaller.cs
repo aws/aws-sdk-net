@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("columnMapping", targetDepth))
+                if (context.TestExpression("columnMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SyntheticDataColumnProperties, SyntheticDataColumnPropertiesUnmarshaller>(SyntheticDataColumnPropertiesUnmarshaller.Instance);
                     unmarshalledObject.ColumnMapping = unmarshaller.Unmarshall(context, ref reader);

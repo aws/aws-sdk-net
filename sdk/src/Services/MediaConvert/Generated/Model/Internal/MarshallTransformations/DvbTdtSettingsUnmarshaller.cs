@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tdtInterval", targetDepth))
+                if (context.TestExpression("tdtInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TdtInterval = unmarshaller.Unmarshall(context, ref reader);

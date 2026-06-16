@@ -56,7 +56,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxTimeToLiveInMinutes", targetDepth))
+                if (context.TestExpression("MaxTimeToLiveInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTimeToLiveInMinutes = unmarshaller.Unmarshall(context, ref reader);

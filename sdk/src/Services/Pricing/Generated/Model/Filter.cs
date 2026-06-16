@@ -125,12 +125,6 @@ namespace Amazon.Pricing.Model
         /// filtering by attribute name, this is the attribute value that you want the returned
         /// products to match, such as a <c>Provisioned IOPS</c> volume.
         /// </para>
-        ///  
-        /// <para>
-        /// For <c>ANY_OF</c> and <c>NONE_OF</c> filter types, you can provide multiple values
-        /// as a comma-separated string. For example, <c>t2.micro,t2.small,t2.medium</c> or <c>Compute
-        /// optimized, GPU instance, Micro instances</c>.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Value

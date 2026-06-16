@@ -67,7 +67,7 @@ namespace AWSSDK.UnitTests
         public void CreatePresignedPost_NullRequest_ThrowsArgumentNullException()
         {
             // Act & Assert
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 _s3Client.CreatePresignedPost(null));
         }
 
@@ -83,7 +83,7 @@ namespace AWSSDK.UnitTests
             };
 
             // Act & Assert
-            var exception = Assert.ThrowsException<ArgumentException>(() => 
+            var exception = Assert.ThrowsExactly<ArgumentException>(() => 
                 _s3Client.CreatePresignedPost(request));
             Assert.IsTrue(exception.Message.Contains("BucketName"));
         }
@@ -100,7 +100,7 @@ namespace AWSSDK.UnitTests
             };
 
             // Act & Assert
-            var exception = Assert.ThrowsException<ArgumentException>(() => 
+            var exception = Assert.ThrowsExactly<ArgumentException>(() => 
                 _s3Client.CreatePresignedPost(request));
             Assert.IsTrue(exception.Message.Contains("BucketName"));
         }
@@ -117,7 +117,7 @@ namespace AWSSDK.UnitTests
             };
 
             // Act & Assert
-            var exception = Assert.ThrowsException<ArgumentException>(() => 
+            var exception = Assert.ThrowsExactly<ArgumentException>(() => 
                 _s3Client.CreatePresignedPost(request));
             Assert.IsTrue(exception.Message.Contains("Expires"));
         }
@@ -134,7 +134,7 @@ namespace AWSSDK.UnitTests
             };
 
             // Act & Assert
-            var exception = Assert.ThrowsException<AmazonS3Exception>(() => 
+            var exception = Assert.ThrowsExactly<AmazonS3Exception>(() => 
                 _s3Client.CreatePresignedPost(request));
             Assert.IsTrue(exception.Message.Contains("presigned POST does not support access points"));
         }
@@ -151,7 +151,7 @@ namespace AWSSDK.UnitTests
             };
 
             // Act & Assert
-            var exception = Assert.ThrowsException<AmazonS3Exception>(() => 
+            var exception = Assert.ThrowsExactly<AmazonS3Exception>(() => 
                 _s3Client.CreatePresignedPost(request));
             Assert.IsTrue(exception.Message.Contains("presigned POST does not support access points"));
         }
@@ -479,7 +479,7 @@ namespace AWSSDK.UnitTests
         public async Task CreatePresignedPostAsync_NullRequest_ThrowsArgumentNullException()
         {
             // Act & Assert
-            await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => 
+            await Assert.ThrowsExactlyAsync<ArgumentNullException>(() => 
                 _s3Client.CreatePresignedPostAsync(null));
         }
 
@@ -495,7 +495,7 @@ namespace AWSSDK.UnitTests
             };
 
             // Act & Assert
-            var exception = await Assert.ThrowsExceptionAsync<ArgumentException>(() => 
+            var exception = await Assert.ThrowsExactlyAsync<ArgumentException>(() => 
                 _s3Client.CreatePresignedPostAsync(request));
             Assert.IsTrue(exception.Message.Contains("BucketName"));
         }

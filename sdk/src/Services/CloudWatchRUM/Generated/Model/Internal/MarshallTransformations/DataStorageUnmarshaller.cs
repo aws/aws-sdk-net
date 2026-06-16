@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CwLog", targetDepth))
+                if (context.TestExpression("CwLog", targetDepth, ref reader))
                 {
                     var unmarshaller = CwLogUnmarshaller.Instance;
                     unmarshalledObject.CwLog = unmarshaller.Unmarshall(context, ref reader);

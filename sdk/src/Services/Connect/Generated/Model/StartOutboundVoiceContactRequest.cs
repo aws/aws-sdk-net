@@ -50,15 +50,15 @@ namespace Amazon.Connect.Model
     /// <para>
     /// UK numbers with a 447 prefix are not allowed by default. Before you can dial these
     /// UK mobile numbers, you must submit a service quota increase request. For more information,
-    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-    /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+    /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>. 
     /// </para>
     ///  </note> <note> 
     /// <para>
     /// Campaign calls are not allowed by default. Before you can make a call with <c>TrafficType</c>
     /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
-    /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
-    /// Connect campaigns</a>. 
+    /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Connect
+    /// Customer campaigns</a>. 
     /// </para>
     ///  </note> <note> 
     /// <para>
@@ -108,8 +108,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
+        /// A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         ///  
         /// <para>
@@ -180,7 +180,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ContactFlowId. 
         /// <para>
         /// The identifier of the flow for the outbound call. To see the ContactFlowId in the
-        /// Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact
+        /// Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Contact
         /// Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show
         /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
         /// here in bold: 
@@ -209,7 +209,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A description of the voice contact that appears in the agent's snapshot in the CCP
         /// logs. For more information about CCP logs, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html">Download
-        /// and review CCP logs</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// and review CCP logs</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]
@@ -247,7 +247,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -395,7 +395,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SourcePhoneNumber. 
         /// <para>
-        /// The phone number associated with the Amazon Connect instance, in E.164 format. If
+        /// The phone number associated with the Connect Customer instance, in E.164 format. If
         /// you do not specify a source phone number, you must specify a queue.
         /// </para>
         /// </summary>
@@ -415,7 +415,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property TrafficType. 
         /// <para>
         /// Denotes the class of traffic. Calls with different traffic types are handled differently
-        /// by Amazon Connect. The default value is <c>GENERAL</c>. Use <c>CAMPAIGN</c> if <c>EnableAnswerMachineDetection</c>
+        /// by Connect Customer. The default value is <c>GENERAL</c>. Use <c>CAMPAIGN</c> if <c>EnableAnswerMachineDetection</c>
         /// is set to <c>true</c>. For all other cases, use <c>GENERAL</c>. 
         /// </para>
         /// </summary>

@@ -56,43 +56,43 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConformancePackInputParameters", targetDepth))
+                if (context.TestExpression("ConformancePackInputParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConformancePackInputParameter, ConformancePackInputParameterUnmarshaller>(ConformancePackInputParameterUnmarshaller.Instance);
                     unmarshalledObject.ConformancePackInputParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryS3Bucket", targetDepth))
+                if (context.TestExpression("DeliveryS3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryS3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryS3KeyPrefix", targetDepth))
+                if (context.TestExpression("DeliveryS3KeyPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryS3KeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludedAccounts", targetDepth))
+                if (context.TestExpression("ExcludedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludedAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateTime", targetDepth))
+                if (context.TestExpression("LastUpdateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationConformancePackArn", targetDepth))
+                if (context.TestExpression("OrganizationConformancePackArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationConformancePackArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationConformancePackName", targetDepth))
+                if (context.TestExpression("OrganizationConformancePackName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationConformancePackName = unmarshaller.Unmarshall(context, ref reader);

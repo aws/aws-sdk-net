@@ -57,6 +57,17 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIntermodal())
+            {
+                context.Writer.WritePropertyName("Intermodal");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteIntermodalOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Intermodal, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPedestrian())
             {
                 context.Writer.WritePropertyName("Pedestrian");
@@ -75,6 +86,17 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 
                 var marshaller = RouteScooterOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scooter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTransit())
+            {
+                context.Writer.WritePropertyName("Transit");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteTransitOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Transit, context);
 
                 context.Writer.WriteEndObject();
             }

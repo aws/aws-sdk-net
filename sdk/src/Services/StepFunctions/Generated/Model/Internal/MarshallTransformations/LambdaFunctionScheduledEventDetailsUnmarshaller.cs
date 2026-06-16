@@ -56,31 +56,31 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("input", targetDepth))
+                if (context.TestExpression("input", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputDetails", targetDepth))
+                if (context.TestExpression("inputDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = HistoryEventExecutionDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.InputDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resource", targetDepth))
+                if (context.TestExpression("resource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskCredentials", targetDepth))
+                if (context.TestExpression("taskCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskCredentialsUnmarshaller.Instance;
                     unmarshalledObject.TaskCredentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutInSeconds", targetDepth))
+                if (context.TestExpression("timeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);

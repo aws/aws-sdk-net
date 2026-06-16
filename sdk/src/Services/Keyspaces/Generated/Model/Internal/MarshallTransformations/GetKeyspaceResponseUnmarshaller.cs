@@ -52,31 +52,31 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("keyspaceName", targetDepth))
+                if (context.TestExpression("keyspaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyspaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationGroupStatuses", targetDepth))
+                if (context.TestExpression("replicationGroupStatuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationGroupStatus, ReplicationGroupStatusUnmarshaller>(ReplicationGroupStatusUnmarshaller.Instance);
                     response.ReplicationGroupStatuses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationRegions", targetDepth))
+                if (context.TestExpression("replicationRegions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ReplicationRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationStrategy", targetDepth))
+                if (context.TestExpression("replicationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceArn", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceArn = unmarshaller.Unmarshall(context, ref reader);

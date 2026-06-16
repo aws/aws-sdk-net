@@ -62,7 +62,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string PoolId
         {
             get { return this._poolId; }

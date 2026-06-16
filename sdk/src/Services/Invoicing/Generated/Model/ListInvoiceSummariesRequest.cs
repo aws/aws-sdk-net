@@ -80,8 +80,7 @@ namespace Amazon.Invoicing.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next set of results. Amazon Web Services provides the token
-        /// when the response from a previous call has more results than the maximum page size.
+        /// The token for the next set of results. (You received this token from a previous call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

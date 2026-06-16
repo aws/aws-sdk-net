@@ -56,13 +56,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RevokedStatusAction", targetDepth))
+                if (context.TestExpression("RevokedStatusAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RevokedStatusAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnknownStatusAction", targetDepth))
+                if (context.TestExpression("UnknownStatusAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnknownStatusAction = unmarshaller.Unmarshall(context, ref reader);

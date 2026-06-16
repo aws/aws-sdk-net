@@ -52,31 +52,31 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DkimVerificationStatus", targetDepth))
+                if (context.TestExpression("DkimVerificationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DkimVerificationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsDefault", targetDepth))
+                if (context.TestExpression("IsDefault", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsDefault = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsTestDomain", targetDepth))
+                if (context.TestExpression("IsTestDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsTestDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnershipVerificationStatus", targetDepth))
+                if (context.TestExpression("OwnershipVerificationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OwnershipVerificationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Records", targetDepth))
+                if (context.TestExpression("Records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DnsRecord, DnsRecordUnmarshaller>(DnsRecordUnmarshaller.Instance);
                     response.Records = unmarshaller.Unmarshall(context, ref reader);

@@ -12,6 +12,26 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.AttachImageWatermarkRequest.WatermarkName</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CopyImageRequest.ClientToken</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CopyImageRequest.Description</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CopyImageRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CopySnapshotRequest.CompletionDurationMinutes</property>
     <min>1</min>
     <max>2880</max>
@@ -30,6 +50,21 @@
     <pattern>^arn:aws([a-z-]+)?:ec2:[a-z\d-]+:\d{12}:placement-group/^.{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateImageRequest.Description</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateImageRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateImageUsageReportRequest.ClientToken</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateIpamPoolRequest.AllocationDefaultNetmaskLength</property>
     <min>0</min>
     <max>128</max>
@@ -43,12 +78,6 @@
     <property>Amazon.EC2.Model.CreateIpamPoolRequest.AllocationMinNetmaskLength</property>
     <min>0</min>
     <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.LaunchTemplateName</property>
-    <min>3</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.VersionDescription</property>
@@ -87,6 +116,11 @@
     <min>0</min>
     <max>15</max>
     <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateRestoreImageTaskRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DeleteLaunchTemplateRequest.LaunchTemplateName</property>
@@ -152,6 +186,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityReservationBillingRequestsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityReservationCancellationQuotesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -336,6 +375,11 @@
     <property>Amazon.EC2.Model.DescribeIpamPoliciesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPoolAllocationsRequest.MaxResults</property>
+    <min>1000</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamPoolsRequest.MaxResults</property>
@@ -768,6 +812,11 @@
     <min>3600</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetCapacityManagerMonitoredTagKeysRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetCapacityReservationUsageRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -979,6 +1028,16 @@
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.RegisterImageRequest.Description</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.RegisterImageRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.RegisterImageRequest.UefiData</property>
     <min>0</min>
     <max>64000</max>
@@ -1098,6 +1157,11 @@
     <property>Amazon.EC2.Model.DeprecationTimeConditionRequest.MaximumDaysSinceDeprecated</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DimensionCondition.Dimension</property>
+    <min>0</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Ec2InstanceConnectEndpoint.InstanceConnectEndpointArn</property>

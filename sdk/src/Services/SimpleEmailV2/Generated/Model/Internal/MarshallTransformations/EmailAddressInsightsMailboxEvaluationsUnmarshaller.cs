@@ -56,37 +56,37 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HasValidDnsRecords", targetDepth))
+                if (context.TestExpression("HasValidDnsRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailAddressInsightsVerdictUnmarshaller.Instance;
                     unmarshalledObject.HasValidDnsRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HasValidSyntax", targetDepth))
+                if (context.TestExpression("HasValidSyntax", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailAddressInsightsVerdictUnmarshaller.Instance;
                     unmarshalledObject.HasValidSyntax = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsDisposable", targetDepth))
+                if (context.TestExpression("IsDisposable", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailAddressInsightsVerdictUnmarshaller.Instance;
                     unmarshalledObject.IsDisposable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsRandomInput", targetDepth))
+                if (context.TestExpression("IsRandomInput", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailAddressInsightsVerdictUnmarshaller.Instance;
                     unmarshalledObject.IsRandomInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsRoleAddress", targetDepth))
+                if (context.TestExpression("IsRoleAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailAddressInsightsVerdictUnmarshaller.Instance;
                     unmarshalledObject.IsRoleAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MailboxExists", targetDepth))
+                if (context.TestExpression("MailboxExists", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailAddressInsightsVerdictUnmarshaller.Instance;
                     unmarshalledObject.MailboxExists = unmarshaller.Unmarshall(context, ref reader);

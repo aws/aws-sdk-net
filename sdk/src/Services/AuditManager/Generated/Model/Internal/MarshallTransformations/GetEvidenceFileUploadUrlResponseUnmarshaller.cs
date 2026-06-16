@@ -52,13 +52,13 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("evidenceFileName", targetDepth))
+                if (context.TestExpression("evidenceFileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EvidenceFileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uploadUrl", targetDepth))
+                if (context.TestExpression("uploadUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UploadUrl = unmarshaller.Unmarshall(context, ref reader);

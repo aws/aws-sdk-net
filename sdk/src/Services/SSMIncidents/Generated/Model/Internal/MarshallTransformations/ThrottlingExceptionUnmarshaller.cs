@@ -72,13 +72,13 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("quotaCode", targetDepth))
+                    if (context.TestExpression("quotaCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("serviceCode", targetDepth))
+                    if (context.TestExpression("serviceCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context, ref reader);

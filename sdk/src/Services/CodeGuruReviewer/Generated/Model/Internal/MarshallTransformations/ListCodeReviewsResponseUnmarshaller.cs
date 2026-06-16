@@ -52,13 +52,13 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeReviewSummaries", targetDepth))
+                if (context.TestExpression("CodeReviewSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CodeReviewSummary, CodeReviewSummaryUnmarshaller>(CodeReviewSummaryUnmarshaller.Instance);
                     response.CodeReviewSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

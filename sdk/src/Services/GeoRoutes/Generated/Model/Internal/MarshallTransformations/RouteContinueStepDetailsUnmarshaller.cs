@@ -56,7 +56,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Intersection", targetDepth))
+                if (context.TestExpression("Intersection", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LocalizedString, LocalizedStringUnmarshaller>(LocalizedStringUnmarshaller.Instance);
                     unmarshalledObject.Intersection = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatasetImportJobArn", targetDepth))
+                if (context.TestExpression("DatasetImportJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetImportJobArn = unmarshaller.Unmarshall(context, ref reader);

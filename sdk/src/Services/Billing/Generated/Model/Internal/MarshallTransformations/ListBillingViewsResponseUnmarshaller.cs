@@ -52,13 +52,13 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("billingViews", targetDepth))
+                if (context.TestExpression("billingViews", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BillingViewListElement, BillingViewListElementUnmarshaller>(BillingViewListElementUnmarshaller.Instance);
                     response.BillingViews = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

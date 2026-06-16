@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("generativeContentFeedbackData", targetDepth))
+                if (context.TestExpression("generativeContentFeedbackData", targetDepth, ref reader))
                 {
                     var unmarshaller = GenerativeContentFeedbackDataUnmarshaller.Instance;
                     unmarshalledObject.GenerativeContentFeedbackData = unmarshaller.Unmarshall(context, ref reader);

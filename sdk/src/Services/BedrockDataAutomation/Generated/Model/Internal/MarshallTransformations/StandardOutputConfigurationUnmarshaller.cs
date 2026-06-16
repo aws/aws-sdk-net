@@ -56,25 +56,25 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audio", targetDepth))
+                if (context.TestExpression("audio", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioStandardOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("document", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentStandardOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageStandardOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("video", targetDepth))
+                if (context.TestExpression("video", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoStandardOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);

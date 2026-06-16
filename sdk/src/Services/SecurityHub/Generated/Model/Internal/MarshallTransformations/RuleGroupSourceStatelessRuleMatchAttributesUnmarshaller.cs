@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationPorts", targetDepth))
+                if (context.TestExpression("DestinationPorts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts, RuleGroupSourceStatelessRuleMatchAttributesDestinationPortsUnmarshaller>(RuleGroupSourceStatelessRuleMatchAttributesDestinationPortsUnmarshaller.Instance);
                     unmarshalledObject.DestinationPorts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Destinations", targetDepth))
+                if (context.TestExpression("Destinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesDestinations, RuleGroupSourceStatelessRuleMatchAttributesDestinationsUnmarshaller>(RuleGroupSourceStatelessRuleMatchAttributesDestinationsUnmarshaller.Instance);
                     unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocols", targetDepth))
+                if (context.TestExpression("Protocols", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.Protocols = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourcePorts", targetDepth))
+                if (context.TestExpression("SourcePorts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts, RuleGroupSourceStatelessRuleMatchAttributesSourcePortsUnmarshaller>(RuleGroupSourceStatelessRuleMatchAttributesSourcePortsUnmarshaller.Instance);
                     unmarshalledObject.SourcePorts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sources", targetDepth))
+                if (context.TestExpression("Sources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesSources, RuleGroupSourceStatelessRuleMatchAttributesSourcesUnmarshaller>(RuleGroupSourceStatelessRuleMatchAttributesSourcesUnmarshaller.Instance);
                     unmarshalledObject.Sources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TcpFlags", targetDepth))
+                if (context.TestExpression("TcpFlags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags, RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsUnmarshaller>(RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsUnmarshaller.Instance);
                     unmarshalledObject.TcpFlags = unmarshaller.Unmarshall(context, ref reader);

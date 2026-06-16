@@ -52,7 +52,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DedicatedIp", targetDepth))
+                if (context.TestExpression("DedicatedIp", targetDepth, ref reader))
                 {
                     var unmarshaller = DedicatedIpUnmarshaller.Instance;
                     response.DedicatedIp = unmarshaller.Unmarshall(context, ref reader);

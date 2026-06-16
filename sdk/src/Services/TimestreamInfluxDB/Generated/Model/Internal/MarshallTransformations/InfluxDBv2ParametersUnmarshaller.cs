@@ -56,205 +56,205 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fluxLogEnabled", targetDepth))
+                if (context.TestExpression("fluxLogEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FluxLogEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpIdleTimeout", targetDepth))
+                if (context.TestExpression("httpIdleTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.HttpIdleTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpReadHeaderTimeout", targetDepth))
+                if (context.TestExpression("httpReadHeaderTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.HttpReadHeaderTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpReadTimeout", targetDepth))
+                if (context.TestExpression("httpReadTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.HttpReadTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpWriteTimeout", targetDepth))
+                if (context.TestExpression("httpWriteTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.HttpWriteTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("influxqlMaxSelectBuckets", targetDepth))
+                if (context.TestExpression("influxqlMaxSelectBuckets", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InfluxqlMaxSelectBuckets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("influxqlMaxSelectPoint", targetDepth))
+                if (context.TestExpression("influxqlMaxSelectPoint", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InfluxqlMaxSelectPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("influxqlMaxSelectSeries", targetDepth))
+                if (context.TestExpression("influxqlMaxSelectSeries", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InfluxqlMaxSelectSeries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logLevel", targetDepth))
+                if (context.TestExpression("logLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsDisabled", targetDepth))
+                if (context.TestExpression("metricsDisabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MetricsDisabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noTasks", targetDepth))
+                if (context.TestExpression("noTasks", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoTasks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pprofDisabled", targetDepth))
+                if (context.TestExpression("pprofDisabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PprofDisabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryConcurrency", targetDepth))
+                if (context.TestExpression("queryConcurrency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueryConcurrency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryInitialMemoryBytes", targetDepth))
+                if (context.TestExpression("queryInitialMemoryBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryInitialMemoryBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryMaxMemoryBytes", targetDepth))
+                if (context.TestExpression("queryMaxMemoryBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryMaxMemoryBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryMemoryBytes", targetDepth))
+                if (context.TestExpression("queryMemoryBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryMemoryBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryQueueSize", targetDepth))
+                if (context.TestExpression("queryQueueSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueryQueueSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionLength", targetDepth))
+                if (context.TestExpression("sessionLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SessionLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionRenewDisabled", targetDepth))
+                if (context.TestExpression("sessionRenewDisabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SessionRenewDisabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageCacheMaxMemorySize", targetDepth))
+                if (context.TestExpression("storageCacheMaxMemorySize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageCacheMaxMemorySize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageCacheSnapshotMemorySize", targetDepth))
+                if (context.TestExpression("storageCacheSnapshotMemorySize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageCacheSnapshotMemorySize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageCacheSnapshotWriteColdDuration", targetDepth))
+                if (context.TestExpression("storageCacheSnapshotWriteColdDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.StorageCacheSnapshotWriteColdDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageCompactFullWriteColdDuration", targetDepth))
+                if (context.TestExpression("storageCompactFullWriteColdDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.StorageCompactFullWriteColdDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageCompactThroughputBurst", targetDepth))
+                if (context.TestExpression("storageCompactThroughputBurst", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageCompactThroughputBurst = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageMaxConcurrentCompactions", targetDepth))
+                if (context.TestExpression("storageMaxConcurrentCompactions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageMaxConcurrentCompactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageMaxIndexLogFileSize", targetDepth))
+                if (context.TestExpression("storageMaxIndexLogFileSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageMaxIndexLogFileSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageNoValidateFieldSize", targetDepth))
+                if (context.TestExpression("storageNoValidateFieldSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StorageNoValidateFieldSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageRetentionCheckInterval", targetDepth))
+                if (context.TestExpression("storageRetentionCheckInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.StorageRetentionCheckInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageSeriesFileMaxConcurrentSnapshotCompactions", targetDepth))
+                if (context.TestExpression("storageSeriesFileMaxConcurrentSnapshotCompactions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageSeriesFileMaxConcurrentSnapshotCompactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageSeriesIdSetCacheSize", targetDepth))
+                if (context.TestExpression("storageSeriesIdSetCacheSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageSeriesIdSetCacheSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageWalMaxConcurrentWrites", targetDepth))
+                if (context.TestExpression("storageWalMaxConcurrentWrites", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageWalMaxConcurrentWrites = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageWalMaxWriteDelay", targetDepth))
+                if (context.TestExpression("storageWalMaxWriteDelay", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.StorageWalMaxWriteDelay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tracingType", targetDepth))
+                if (context.TestExpression("tracingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TracingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uiDisabled", targetDepth))
+                if (context.TestExpression("uiDisabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UiDisabled = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sortField", targetDepth))
+                if (context.TestExpression("sortField", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SortField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sortOrder", targetDepth))
+                if (context.TestExpression("sortOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SortOrder = unmarshaller.Unmarshall(context, ref reader);

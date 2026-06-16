@@ -303,6 +303,60 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type CarrierStatus.
+    /// </summary>
+    public class CarrierStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CarrierStatus
+        /// </summary>
+        public static readonly CarrierStatus ACTIVE = new CarrierStatus("ACTIVE");
+        /// <summary>
+        /// Constant PENDING for CarrierStatus
+        /// </summary>
+        public static readonly CarrierStatus PENDING = new CarrierStatus("PENDING");
+        /// <summary>
+        /// Constant REJECTED for CarrierStatus
+        /// </summary>
+        public static readonly CarrierStatus REJECTED = new CarrierStatus("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CarrierStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CarrierStatus FindValue(string value)
+        {
+            return FindValue<CarrierStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CarrierStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigurationSetFilterName.
     /// </summary>
     public class ConfigurationSetFilterName : ConstantClass
@@ -431,6 +485,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ConflictExceptionReason NO_ORIGINATION_IDENTITIES_FOUND = new ConflictExceptionReason("NO_ORIGINATION_IDENTITIES_FOUND");
         /// <summary>
+        /// Constant NOTIFY_CONFIGURATION_NOT_ACTIVE for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason NOTIFY_CONFIGURATION_NOT_ACTIVE = new ConflictExceptionReason("NOTIFY_CONFIGURATION_NOT_ACTIVE");
+        /// <summary>
         /// Constant NUMBER_CAPABILITIES_MISMATCH for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason NUMBER_CAPABILITIES_MISMATCH = new ConflictExceptionReason("NUMBER_CAPABILITIES_MISMATCH");
@@ -455,6 +513,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ConflictExceptionReason PHONE_NUMBER_NOT_IN_REGISTRATION_REGION = new ConflictExceptionReason("PHONE_NUMBER_NOT_IN_REGISTRATION_REGION");
         /// <summary>
+        /// Constant POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION = new ConflictExceptionReason("POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION");
+        /// <summary>
         /// Constant PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET = new ConflictExceptionReason("PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET");
@@ -467,6 +529,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ConflictExceptionReason PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET = new ConflictExceptionReason("PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET");
         /// <summary>
+        /// Constant RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE = new ConflictExceptionReason("RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE");
+        /// <summary>
+        /// Constant RCS_AGENT_ASSOCIATED_TO_POOL for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason RCS_AGENT_ASSOCIATED_TO_POOL = new ConflictExceptionReason("RCS_AGENT_ASSOCIATED_TO_POOL");
+        /// <summary>
         /// Constant REGISTRATION_ALREADY_SUBMITTED for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason REGISTRATION_ALREADY_SUBMITTED = new ConflictExceptionReason("REGISTRATION_ALREADY_SUBMITTED");
@@ -474,6 +544,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant REGISTRATION_NOT_COMPLETE for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason REGISTRATION_NOT_COMPLETE = new ConflictExceptionReason("REGISTRATION_NOT_COMPLETE");
+        /// <summary>
+        /// Constant RESOURCE_ALREADY_ASSOCIATED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason RESOURCE_ALREADY_ASSOCIATED = new ConflictExceptionReason("RESOURCE_ALREADY_ASSOCIATED");
         /// <summary>
         /// Constant RESOURCE_ALREADY_EXISTS for ConflictExceptionReason
         /// </summary>
@@ -548,6 +622,114 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConflictExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CountryLaunchStatus.
+    /// </summary>
+    public class CountryLaunchStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CountryLaunchStatus
+        /// </summary>
+        public static readonly CountryLaunchStatus ACTIVE = new CountryLaunchStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATED for CountryLaunchStatus
+        /// </summary>
+        public static readonly CountryLaunchStatus CREATED = new CountryLaunchStatus("CREATED");
+        /// <summary>
+        /// Constant PARTIAL for CountryLaunchStatus
+        /// </summary>
+        public static readonly CountryLaunchStatus PARTIAL = new CountryLaunchStatus("PARTIAL");
+        /// <summary>
+        /// Constant PENDING for CountryLaunchStatus
+        /// </summary>
+        public static readonly CountryLaunchStatus PENDING = new CountryLaunchStatus("PENDING");
+        /// <summary>
+        /// Constant REJECTED for CountryLaunchStatus
+        /// </summary>
+        public static readonly CountryLaunchStatus REJECTED = new CountryLaunchStatus("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CountryLaunchStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CountryLaunchStatus FindValue(string value)
+        {
+            return FindValue<CountryLaunchStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CountryLaunchStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CountryLaunchStatusFilterName.
+    /// </summary>
+    public class CountryLaunchStatusFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CountryLaunchStatus for CountryLaunchStatusFilterName
+        /// </summary>
+        public static readonly CountryLaunchStatusFilterName CountryLaunchStatus = new CountryLaunchStatusFilterName("country-launch-status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CountryLaunchStatusFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CountryLaunchStatusFilterName FindValue(string value)
+        {
+            return FindValue<CountryLaunchStatusFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CountryLaunchStatusFilterName(string value)
         {
             return FindValue(value);
         }
@@ -1221,6 +1403,400 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type NotifyConfigurationFilterName.
+    /// </summary>
+    public class NotifyConfigurationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DefaultPool for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName DefaultPool = new NotifyConfigurationFilterName("default-pool");
+        /// <summary>
+        /// Constant DefaultTemplate for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName DefaultTemplate = new NotifyConfigurationFilterName("default-template");
+        /// <summary>
+        /// Constant DeletionProtectionEnabled for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName DeletionProtectionEnabled = new NotifyConfigurationFilterName("deletion-protection-enabled");
+        /// <summary>
+        /// Constant DisplayName for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName DisplayName = new NotifyConfigurationFilterName("display-name");
+        /// <summary>
+        /// Constant EnabledChannels for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName EnabledChannels = new NotifyConfigurationFilterName("enabled-channels");
+        /// <summary>
+        /// Constant EnabledCountries for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName EnabledCountries = new NotifyConfigurationFilterName("enabled-countries");
+        /// <summary>
+        /// Constant Status for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName Status = new NotifyConfigurationFilterName("status");
+        /// <summary>
+        /// Constant TierUpgradeStatus for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName TierUpgradeStatus = new NotifyConfigurationFilterName("tier-upgrade-status");
+        /// <summary>
+        /// Constant UseCase for NotifyConfigurationFilterName
+        /// </summary>
+        public static readonly NotifyConfigurationFilterName UseCase = new NotifyConfigurationFilterName("use-case");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotifyConfigurationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyConfigurationFilterName FindValue(string value)
+        {
+            return FindValue<NotifyConfigurationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyConfigurationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotifyConfigurationStatus.
+    /// </summary>
+    public class NotifyConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for NotifyConfigurationStatus
+        /// </summary>
+        public static readonly NotifyConfigurationStatus ACTIVE = new NotifyConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant PENDING for NotifyConfigurationStatus
+        /// </summary>
+        public static readonly NotifyConfigurationStatus PENDING = new NotifyConfigurationStatus("PENDING");
+        /// <summary>
+        /// Constant REJECTED for NotifyConfigurationStatus
+        /// </summary>
+        public static readonly NotifyConfigurationStatus REJECTED = new NotifyConfigurationStatus("REJECTED");
+        /// <summary>
+        /// Constant REQUIRES_VERIFICATION for NotifyConfigurationStatus
+        /// </summary>
+        public static readonly NotifyConfigurationStatus REQUIRES_VERIFICATION = new NotifyConfigurationStatus("REQUIRES_VERIFICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotifyConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyConfigurationStatus FindValue(string value)
+        {
+            return FindValue<NotifyConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotifyConfigurationTier.
+    /// </summary>
+    public class NotifyConfigurationTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADVANCED for NotifyConfigurationTier
+        /// </summary>
+        public static readonly NotifyConfigurationTier ADVANCED = new NotifyConfigurationTier("ADVANCED");
+        /// <summary>
+        /// Constant BASIC for NotifyConfigurationTier
+        /// </summary>
+        public static readonly NotifyConfigurationTier BASIC = new NotifyConfigurationTier("BASIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotifyConfigurationTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyConfigurationTier FindValue(string value)
+        {
+            return FindValue<NotifyConfigurationTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyConfigurationTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotifyConfigurationUseCase.
+    /// </summary>
+    public class NotifyConfigurationUseCase : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODE_VERIFICATION for NotifyConfigurationUseCase
+        /// </summary>
+        public static readonly NotifyConfigurationUseCase CODE_VERIFICATION = new NotifyConfigurationUseCase("CODE_VERIFICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotifyConfigurationUseCase(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyConfigurationUseCase FindValue(string value)
+        {
+            return FindValue<NotifyConfigurationUseCase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyConfigurationUseCase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotifyTemplateFilterName.
+    /// </summary>
+    public class NotifyTemplateFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Channels for NotifyTemplateFilterName
+        /// </summary>
+        public static readonly NotifyTemplateFilterName Channels = new NotifyTemplateFilterName("channels");
+        /// <summary>
+        /// Constant LanguageCode for NotifyTemplateFilterName
+        /// </summary>
+        public static readonly NotifyTemplateFilterName LanguageCode = new NotifyTemplateFilterName("language-code");
+        /// <summary>
+        /// Constant SupportedCountries for NotifyTemplateFilterName
+        /// </summary>
+        public static readonly NotifyTemplateFilterName SupportedCountries = new NotifyTemplateFilterName("supported-countries");
+        /// <summary>
+        /// Constant SupportedVoiceIds for NotifyTemplateFilterName
+        /// </summary>
+        public static readonly NotifyTemplateFilterName SupportedVoiceIds = new NotifyTemplateFilterName("supported-voice-ids");
+        /// <summary>
+        /// Constant TemplateType for NotifyTemplateFilterName
+        /// </summary>
+        public static readonly NotifyTemplateFilterName TemplateType = new NotifyTemplateFilterName("template-type");
+        /// <summary>
+        /// Constant TierAccess for NotifyTemplateFilterName
+        /// </summary>
+        public static readonly NotifyTemplateFilterName TierAccess = new NotifyTemplateFilterName("tier-access");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotifyTemplateFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyTemplateFilterName FindValue(string value)
+        {
+            return FindValue<NotifyTemplateFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyTemplateFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotifyTemplateStatus.
+    /// </summary>
+    public class NotifyTemplateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for NotifyTemplateStatus
+        /// </summary>
+        public static readonly NotifyTemplateStatus ACTIVE = new NotifyTemplateStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for NotifyTemplateStatus
+        /// </summary>
+        public static readonly NotifyTemplateStatus INACTIVE = new NotifyTemplateStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotifyTemplateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyTemplateStatus FindValue(string value)
+        {
+            return FindValue<NotifyTemplateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyTemplateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotifyTemplateType.
+    /// </summary>
+    public class NotifyTemplateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OTP_VERIFICATION for NotifyTemplateType
+        /// </summary>
+        public static readonly NotifyTemplateType OTP_VERIFICATION = new NotifyTemplateType("OTP_VERIFICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotifyTemplateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyTemplateType FindValue(string value)
+        {
+            return FindValue<NotifyTemplateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyTemplateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NumberCapability.
     /// </summary>
     public class NumberCapability : ConstantClass
@@ -1230,6 +1806,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant MMS for NumberCapability
         /// </summary>
         public static readonly NumberCapability MMS = new NumberCapability("MMS");
+        /// <summary>
+        /// Constant RCS for NumberCapability
+        /// </summary>
+        public static readonly NumberCapability RCS = new NumberCapability("RCS");
         /// <summary>
         /// Constant SMS for NumberCapability
         /// </summary>
@@ -2041,6 +2621,138 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type RcsAgentFilterName.
+    /// </summary>
+    public class RcsAgentFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeletionProtectionEnabled for RcsAgentFilterName
+        /// </summary>
+        public static readonly RcsAgentFilterName DeletionProtectionEnabled = new RcsAgentFilterName("deletion-protection-enabled");
+        /// <summary>
+        /// Constant OptOutListName for RcsAgentFilterName
+        /// </summary>
+        public static readonly RcsAgentFilterName OptOutListName = new RcsAgentFilterName("opt-out-list-name");
+        /// <summary>
+        /// Constant SelfManagedOptOutsEnabled for RcsAgentFilterName
+        /// </summary>
+        public static readonly RcsAgentFilterName SelfManagedOptOutsEnabled = new RcsAgentFilterName("self-managed-opt-outs-enabled");
+        /// <summary>
+        /// Constant Status for RcsAgentFilterName
+        /// </summary>
+        public static readonly RcsAgentFilterName Status = new RcsAgentFilterName("status");
+        /// <summary>
+        /// Constant TwoWayChannelArn for RcsAgentFilterName
+        /// </summary>
+        public static readonly RcsAgentFilterName TwoWayChannelArn = new RcsAgentFilterName("two-way-channel-arn");
+        /// <summary>
+        /// Constant TwoWayEnabled for RcsAgentFilterName
+        /// </summary>
+        public static readonly RcsAgentFilterName TwoWayEnabled = new RcsAgentFilterName("two-way-enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RcsAgentFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RcsAgentFilterName FindValue(string value)
+        {
+            return FindValue<RcsAgentFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RcsAgentFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RcsAgentStatus.
+    /// </summary>
+    public class RcsAgentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RcsAgentStatus
+        /// </summary>
+        public static readonly RcsAgentStatus ACTIVE = new RcsAgentStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATED for RcsAgentStatus
+        /// </summary>
+        public static readonly RcsAgentStatus CREATED = new RcsAgentStatus("CREATED");
+        /// <summary>
+        /// Constant DELETED for RcsAgentStatus
+        /// </summary>
+        public static readonly RcsAgentStatus DELETED = new RcsAgentStatus("DELETED");
+        /// <summary>
+        /// Constant PARTIAL for RcsAgentStatus
+        /// </summary>
+        public static readonly RcsAgentStatus PARTIAL = new RcsAgentStatus("PARTIAL");
+        /// <summary>
+        /// Constant PENDING for RcsAgentStatus
+        /// </summary>
+        public static readonly RcsAgentStatus PENDING = new RcsAgentStatus("PENDING");
+        /// <summary>
+        /// Constant TESTING for RcsAgentStatus
+        /// </summary>
+        public static readonly RcsAgentStatus TESTING = new RcsAgentStatus("TESTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RcsAgentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RcsAgentStatus FindValue(string value)
+        {
+            return FindValue<RcsAgentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RcsAgentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RegistrationAssociationBehavior.
     /// </summary>
     public class RegistrationAssociationBehavior : ConstantClass
@@ -2507,6 +3219,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly RegistrationVersionStatus REQUIRES_AUTHENTICATION = new RegistrationVersionStatus("REQUIRES_AUTHENTICATION");
         /// <summary>
+        /// Constant REQUIRES_OFFLINE_REVIEW for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus REQUIRES_OFFLINE_REVIEW = new RegistrationVersionStatus("REQUIRES_OFFLINE_REVIEW");
+        /// <summary>
         /// Constant REVIEWING for RegistrationVersionStatus
         /// </summary>
         public static readonly RegistrationVersionStatus REVIEWING = new RegistrationVersionStatus("REVIEWING");
@@ -2643,6 +3359,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ResourceType MessageTemplate = new ResourceType("message-template");
         /// <summary>
+        /// Constant NotifyConfiguration for ResourceType
+        /// </summary>
+        public static readonly ResourceType NotifyConfiguration = new ResourceType("notify-configuration");
+        /// <summary>
+        /// Constant NotifyTemplate for ResourceType
+        /// </summary>
+        public static readonly ResourceType NotifyTemplate = new ResourceType("notify-template");
+        /// <summary>
         /// Constant OptedOutNumber for ResourceType
         /// </summary>
         public static readonly ResourceType OptedOutNumber = new ResourceType("opted-out-number");
@@ -2666,6 +3390,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant ProtectConfiguration for ResourceType
         /// </summary>
         public static readonly ResourceType ProtectConfiguration = new ResourceType("protect-configuration");
+        /// <summary>
+        /// Constant RcsAgent for ResourceType
+        /// </summary>
+        public static readonly ResourceType RcsAgent = new ResourceType("rcs-agent");
         /// <summary>
         /// Constant Registration for ResourceType
         /// </summary>
@@ -2799,6 +3527,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason DAILY_DESTINATION_CALL_LIMIT = new ServiceQuotaExceededExceptionReason("DAILY_DESTINATION_CALL_LIMIT");
         /// <summary>
+        /// Constant DAILY_NOTIFY_TIER_MESSAGE_LIMIT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason DAILY_NOTIFY_TIER_MESSAGE_LIMIT = new ServiceQuotaExceededExceptionReason("DAILY_NOTIFY_TIER_MESSAGE_LIMIT");
+        /// <summary>
         /// Constant EVENT_DESTINATIONS_PER_CONFIGURATION_SET for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason EVENT_DESTINATIONS_PER_CONFIGURATION_SET = new ServiceQuotaExceededExceptionReason("EVENT_DESTINATIONS_PER_CONFIGURATION_SET");
@@ -2815,6 +3547,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA");
         /// <summary>
+        /// Constant MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY");
+        /// <summary>
         /// Constant MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
@@ -2822,6 +3558,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE");
+        /// <summary>
+        /// Constant NOTIFY_CONFIGURATIONS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason NOTIFY_CONFIGURATIONS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("NOTIFY_CONFIGURATIONS_PER_ACCOUNT");
         /// <summary>
         /// Constant OPT_OUT_LISTS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
         /// </summary>
@@ -2846,6 +3586,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant PROTECT_CONFIGURATIONS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason PROTECT_CONFIGURATIONS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("PROTECT_CONFIGURATIONS_PER_ACCOUNT");
+        /// <summary>
+        /// Constant RCS_AGENTS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason RCS_AGENTS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("RCS_AGENTS_PER_ACCOUNT");
         /// <summary>
         /// Constant REGISTRATION_ATTACHMENTS_CREATED_PER_DAY for ServiceQuotaExceededExceptionReason
         /// </summary>
@@ -2925,6 +3669,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly SpendLimitName MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT = new SpendLimitName("MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT");
         /// <summary>
+        /// Constant NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT for SpendLimitName
+        /// </summary>
+        public static readonly SpendLimitName NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT = new SpendLimitName("NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT");
+        /// <summary>
         /// Constant TEXT_MESSAGE_MONTHLY_SPEND_LIMIT for SpendLimitName
         /// </summary>
         public static readonly SpendLimitName TEXT_MESSAGE_MONTHLY_SPEND_LIMIT = new SpendLimitName("TEXT_MESSAGE_MONTHLY_SPEND_LIMIT");
@@ -2969,6 +3717,222 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type TemplateVariableSource.
+    /// </summary>
+    public class TemplateVariableSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER for TemplateVariableSource
+        /// </summary>
+        public static readonly TemplateVariableSource CUSTOMER = new TemplateVariableSource("CUSTOMER");
+        /// <summary>
+        /// Constant SYSTEM for TemplateVariableSource
+        /// </summary>
+        public static readonly TemplateVariableSource SYSTEM = new TemplateVariableSource("SYSTEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TemplateVariableSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateVariableSource FindValue(string value)
+        {
+            return FindValue<TemplateVariableSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateVariableSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TemplateVariableType.
+    /// </summary>
+    public class TemplateVariableType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOOLEAN for TemplateVariableType
+        /// </summary>
+        public static readonly TemplateVariableType BOOLEAN = new TemplateVariableType("BOOLEAN");
+        /// <summary>
+        /// Constant INTEGER for TemplateVariableType
+        /// </summary>
+        public static readonly TemplateVariableType INTEGER = new TemplateVariableType("INTEGER");
+        /// <summary>
+        /// Constant STRING for TemplateVariableType
+        /// </summary>
+        public static readonly TemplateVariableType STRING = new TemplateVariableType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TemplateVariableType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateVariableType FindValue(string value)
+        {
+            return FindValue<TemplateVariableType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateVariableType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestingAgentStatus.
+    /// </summary>
+    public class TestingAgentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for TestingAgentStatus
+        /// </summary>
+        public static readonly TestingAgentStatus ACTIVE = new TestingAgentStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATED for TestingAgentStatus
+        /// </summary>
+        public static readonly TestingAgentStatus CREATED = new TestingAgentStatus("CREATED");
+        /// <summary>
+        /// Constant PENDING for TestingAgentStatus
+        /// </summary>
+        public static readonly TestingAgentStatus PENDING = new TestingAgentStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestingAgentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestingAgentStatus FindValue(string value)
+        {
+            return FindValue<TestingAgentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestingAgentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TierUpgradeStatus.
+    /// </summary>
+    public class TierUpgradeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADVANCED for TierUpgradeStatus
+        /// </summary>
+        public static readonly TierUpgradeStatus ADVANCED = new TierUpgradeStatus("ADVANCED");
+        /// <summary>
+        /// Constant BASIC for TierUpgradeStatus
+        /// </summary>
+        public static readonly TierUpgradeStatus BASIC = new TierUpgradeStatus("BASIC");
+        /// <summary>
+        /// Constant PENDING_UPGRADE for TierUpgradeStatus
+        /// </summary>
+        public static readonly TierUpgradeStatus PENDING_UPGRADE = new TierUpgradeStatus("PENDING_UPGRADE");
+        /// <summary>
+        /// Constant REJECTED for TierUpgradeStatus
+        /// </summary>
+        public static readonly TierUpgradeStatus REJECTED = new TierUpgradeStatus("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TierUpgradeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TierUpgradeStatus FindValue(string value)
+        {
+            return FindValue<TierUpgradeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TierUpgradeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
@@ -2987,9 +3951,17 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ValidationExceptionReason CANNOT_PARSE = new ValidationExceptionReason("CANNOT_PARSE");
         /// <summary>
+        /// Constant CHANNEL_NOT_ENABLED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CHANNEL_NOT_ENABLED = new ValidationExceptionReason("CHANNEL_NOT_ENABLED");
+        /// <summary>
         /// Constant COUNTRY_CODE_MISMATCH for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason COUNTRY_CODE_MISMATCH = new ValidationExceptionReason("COUNTRY_CODE_MISMATCH");
+        /// <summary>
+        /// Constant COUNTRY_NOT_ENABLED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason COUNTRY_NOT_ENABLED = new ValidationExceptionReason("COUNTRY_NOT_ENABLED");
         /// <summary>
         /// Constant DESTINATION_COUNTRY_BLOCKED for ValidationExceptionReason
         /// </summary>
@@ -3235,6 +4207,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly VerificationStatus PENDING = new VerificationStatus("PENDING");
         /// <summary>
+        /// Constant UNSUPPORTED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus UNSUPPORTED = new VerificationStatus("UNSUPPORTED");
+        /// <summary>
         /// Constant VERIFIED for VerificationStatus
         /// </summary>
         public static readonly VerificationStatus VERIFIED = new VerificationStatus("VERIFIED");
@@ -3280,6 +4256,10 @@ namespace Amazon.PinpointSMSVoiceV2
     public class VerifiedDestinationNumberFilterName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant RcsAgentId for VerifiedDestinationNumberFilterName
+        /// </summary>
+        public static readonly VerifiedDestinationNumberFilterName RcsAgentId = new VerifiedDestinationNumberFilterName("rcs-agent-id");
         /// <summary>
         /// Constant Status for VerifiedDestinationNumberFilterName
         /// </summary>

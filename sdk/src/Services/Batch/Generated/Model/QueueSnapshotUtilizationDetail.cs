@@ -30,13 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The job queue utilization at a specific point in time, including total capacity usage
-    /// and fairshare utilization breakdown.
+    /// The job queue utilization at a specific point in time, including total capacity usage,
+    /// and quota share or fairshare utilization breakdown depending on the job queue scheduling
+    /// policy.
     /// </summary>
     public partial class QueueSnapshotUtilizationDetail
     {
         private FairshareUtilizationDetail _fairshareUtilization;
         private long? _lastUpdatedAt;
+        private QuotaShareUtilizationDetail _quotaShareUtilization;
         private List<QueueSnapshotCapacityUsage> _totalCapacityUsage = AWSConfigs.InitializeCollections ? new List<QueueSnapshotCapacityUsage>() : null;
 
         /// <summary>
@@ -78,10 +80,27 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuotaShareUtilization. 
+        /// <para>
+        /// The utilization information for a job queue with a quota share scheduling policy.
+        /// </para>
+        /// </summary>
+        public QuotaShareUtilizationDetail QuotaShareUtilization
+        {
+            get { return this._quotaShareUtilization; }
+            set { this._quotaShareUtilization = value; }
+        }
+
+        // Check to see if QuotaShareUtilization property is set
+        internal bool IsSetQuotaShareUtilization()
+        {
+            return this._quotaShareUtilization != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TotalCapacityUsage. 
         /// <para>
-        /// The total capacity usage for the entire job queue, for both first-in, first-out (FIFO)
-        /// and fairshare scheduling job queue.
+        /// The total capacity usage for the entire job queue.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

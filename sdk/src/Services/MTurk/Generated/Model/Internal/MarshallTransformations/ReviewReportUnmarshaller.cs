@@ -56,13 +56,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReviewActions", targetDepth))
+                if (context.TestExpression("ReviewActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReviewActionDetail, ReviewActionDetailUnmarshaller>(ReviewActionDetailUnmarshaller.Instance);
                     unmarshalledObject.ReviewActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReviewResults", targetDepth))
+                if (context.TestExpression("ReviewResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReviewResultDetail, ReviewResultDetailUnmarshaller>(ReviewResultDetailUnmarshaller.Instance);
                     unmarshalledObject.ReviewResults = unmarshaller.Unmarshall(context, ref reader);

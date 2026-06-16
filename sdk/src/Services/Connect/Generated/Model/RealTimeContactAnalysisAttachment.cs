@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Describes the MIME file type of the attachment. For a list of supported file types,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
-        /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// specifications</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

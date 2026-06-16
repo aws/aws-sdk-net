@@ -56,7 +56,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceNetworkData", targetDepth))
+                if (context.TestExpression("sourceNetworkData", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceNetworkDataUnmarshaller.Instance;
                     unmarshalledObject.SourceNetworkData = unmarshaller.Unmarshall(context, ref reader);

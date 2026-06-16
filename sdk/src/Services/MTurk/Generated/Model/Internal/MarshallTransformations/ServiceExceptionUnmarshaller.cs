@@ -72,7 +72,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("TurkErrorCode", targetDepth))
+                    if (context.TestExpression("TurkErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TurkErrorCode = unmarshaller.Unmarshall(context, ref reader);

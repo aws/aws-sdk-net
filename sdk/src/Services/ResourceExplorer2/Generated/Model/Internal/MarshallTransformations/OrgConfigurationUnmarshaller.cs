@@ -56,13 +56,13 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AWSServiceAccessStatus", targetDepth))
+                if (context.TestExpression("AWSServiceAccessStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AWSServiceAccessStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceLinkedRole", targetDepth))
+                if (context.TestExpression("ServiceLinkedRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceLinkedRole = unmarshaller.Unmarshall(context, ref reader);

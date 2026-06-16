@@ -56,43 +56,43 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountScope", targetDepth))
+                if (context.TestExpression("AccountScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LookbackPeriodInDays", targetDepth))
+                if (context.TestExpression("LookbackPeriodInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaymentOption", targetDepth))
+                if (context.TestExpression("PaymentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendationDetails", targetDepth))
+                if (context.TestExpression("RecommendationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReservationPurchaseRecommendationDetail, ReservationPurchaseRecommendationDetailUnmarshaller>(ReservationPurchaseRecommendationDetailUnmarshaller.Instance);
                     unmarshalledObject.RecommendationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendationSummary", targetDepth))
+                if (context.TestExpression("RecommendationSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ReservationPurchaseRecommendationSummaryUnmarshaller.Instance;
                     unmarshalledObject.RecommendationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceSpecification", targetDepth))
+                if (context.TestExpression("ServiceSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceSpecificationUnmarshaller.Instance;
                     unmarshalledObject.ServiceSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TermInYears", targetDepth))
+                if (context.TestExpression("TermInYears", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TermInYears = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("selectionMode", targetDepth))
+                if (context.TestExpression("selectionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelectionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selectiveModeConfiguration", targetDepth))
+                if (context.TestExpression("selectiveModeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RerankingMetadataSelectiveModeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SelectiveModeConfiguration = unmarshaller.Unmarshall(context, ref reader);

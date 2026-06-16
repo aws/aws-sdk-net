@@ -52,13 +52,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computeNodeGroups", targetDepth))
+                if (context.TestExpression("computeNodeGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComputeNodeGroupSummary, ComputeNodeGroupSummaryUnmarshaller>(ComputeNodeGroupSummaryUnmarshaller.Instance);
                     response.ComputeNodeGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

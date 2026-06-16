@@ -56,13 +56,13 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("solutionKey", targetDepth))
+                if (context.TestExpression("solutionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SolutionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vsanKey", targetDepth))
+                if (context.TestExpression("vsanKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VsanKey = unmarshaller.Unmarshall(context, ref reader);

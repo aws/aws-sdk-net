@@ -57,15 +57,15 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             }
 
             if (x == null ^ y == null)
-                Assert.Fail("Either x or y is null. x={0} y={1}", x, y);
+                Assert.Fail($"Either x or y is null. x={x} y={y}");
 
 
             if (type.IsPrimitive)
-                Assert.IsTrue(x.Equals(y), "x is not equal to y. x={0} y={1}",x,y);
+                Assert.IsTrue(x.Equals(y), $"x is not equal to y. x={x} y={y}");
 
             if (type == typeof(string))
             {
-                Assert.IsTrue(x.Equals(y), "x is not equal to y. x={0} y={1}", x, y);
+                Assert.IsTrue(x.Equals(y), $"x is not equal to y. x={x} y={y}");
                 return;
             }
 
@@ -76,7 +76,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 xDate = xDate.Kind != DateTimeKind.Utc ? throw new Exception("xDate DateTime Kind is not UTC") : xDate;
                 yDate = yDate.Kind != DateTimeKind.Utc ? throw new Exception("yDate DateTime Kind is not UTC") : yDate;
 
-                Assert.IsTrue(xDate.Equals(yDate), "x is not equal to y. x={0} y={1}", xDate, yDate);
+                Assert.IsTrue(xDate.Equals(yDate), $"x is not equal to y. x={xDate} y={yDate}");
                 return;
             }
 
@@ -95,8 +95,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 var listY = y as IList;
 
                 if (listX.Count != listY.Count)
-                    Assert.Fail("Lists do not contain same number of elements. x count={0}  y count={1}",
-                        listX.Count, listY.Count);
+                    Assert.Fail($"Lists do not contain same number of elements. x count={listX.Count}  y count={listY.Count}");
 
                 for (int i = 0; i < listX.Count; i++)
                 {
@@ -112,8 +111,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 var mapY = y as IDictionary;
 
                 if (mapX.Count != mapY.Count)
-                    Assert.Fail("Dictionaries do not contain same number of elements. x count={0}  y count={1}",
-                        mapX.Count, mapY.Count);
+                    Assert.Fail($"Dictionaries do not contain same number of elements. x count={mapX.Count}  y count={mapY.Count}");
 
                 foreach (var keyX in mapX.Keys)
                 {

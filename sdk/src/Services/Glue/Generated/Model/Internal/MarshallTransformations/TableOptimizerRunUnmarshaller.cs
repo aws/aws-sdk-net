@@ -56,55 +56,55 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compactionMetrics", targetDepth))
+                if (context.TestExpression("compactionMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = CompactionMetricsUnmarshaller.Instance;
                     unmarshalledObject.CompactionMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("compactionStrategy", targetDepth))
+                if (context.TestExpression("compactionStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompactionStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endTimestamp", targetDepth))
+                if (context.TestExpression("endTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("error", targetDepth))
+                if (context.TestExpression("error", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventType", targetDepth))
+                if (context.TestExpression("eventType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metrics", targetDepth))
+                if (context.TestExpression("metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = RunMetricsUnmarshaller.Instance;
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orphanFileDeletionMetrics", targetDepth))
+                if (context.TestExpression("orphanFileDeletionMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = OrphanFileDeletionMetricsUnmarshaller.Instance;
                     unmarshalledObject.OrphanFileDeletionMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retentionMetrics", targetDepth))
+                if (context.TestExpression("retentionMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = RetentionMetricsUnmarshaller.Instance;
                     unmarshalledObject.RetentionMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTimestamp", targetDepth))
+                if (context.TestExpression("startTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Marker", targetDepth))
+                if (context.TestExpression("Marker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Marker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserActivities", targetDepth))
+                if (context.TestExpression("UserActivities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Activity, ActivityUnmarshaller>(ActivityUnmarshaller.Instance);
                     response.UserActivities = unmarshaller.Unmarshall(context, ref reader);

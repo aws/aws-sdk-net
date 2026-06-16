@@ -52,7 +52,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedEntityList", targetDepth))
+                if (context.TestExpression("FailedEntityList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedEntity, FailedEntityUnmarshaller>(FailedEntityUnmarshaller.Instance);
                     response.FailedEntityList = unmarshaller.Unmarshall(context, ref reader);

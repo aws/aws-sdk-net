@@ -58,6 +58,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.IsGroupVatEnabled.Value);
             }
 
+            if(requestObject.IsSetTaxRegistrationNumberType())
+            {
+                context.Writer.WritePropertyName("taxRegistrationNumberType");
+                context.Writer.WriteStringValue(requestObject.TaxRegistrationNumberType);
+            }
+
         }
 
         /// <summary>

@@ -52,7 +52,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cluster", targetDepth))
+                if (context.TestExpression("cluster", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterUnmarshaller.Instance;
                     response.Cluster = unmarshaller.Unmarshall(context, ref reader);

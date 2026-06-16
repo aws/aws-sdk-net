@@ -56,25 +56,25 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsRegion", targetDepth))
+                if (context.TestExpression("AwsRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Compliance", targetDepth))
+                if (context.TestExpression("Compliance", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregateConformancePackComplianceUnmarshaller.Instance;
                     unmarshalledObject.Compliance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConformancePackName", targetDepth))
+                if (context.TestExpression("ConformancePackName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConformancePackName = unmarshaller.Unmarshall(context, ref reader);

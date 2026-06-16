@@ -56,25 +56,25 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RegistryName", targetDepth))
+                if (context.TestExpression("RegistryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaArn", targetDepth))
+                if (context.TestExpression("SchemaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaName", targetDepth))
+                if (context.TestExpression("SchemaName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaVersions", targetDepth))
+                if (context.TestExpression("SchemaVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SearchSchemaVersionSummary, SearchSchemaVersionSummaryUnmarshaller>(SearchSchemaVersionSummaryUnmarshaller.Instance);
                     unmarshalledObject.SchemaVersions = unmarshaller.Unmarshall(context, ref reader);

@@ -37,10 +37,82 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class FsxProtocolSmb
     {
+        private CmkSecretConfig _cmkSecretConfig;
+        private CustomSecretConfig _customSecretConfig;
         private string _domain;
+        private ManagedSecretConfig _managedSecretConfig;
         private SmbMountOptions _mountOptions;
         private string _password;
         private string _user;
+
+        /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a DataSync-managed secret, which includes
+        /// the password that DataSync uses to access a specific FSx for ONTAP storage location
+        /// (using SMB), with a customer-managed KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you include this parameter as part of a <c>CreateLocationFsxOntap</c> request,
+        /// you provide only the KMS key ARN. DataSync uses this KMS key together with the <c>Password</c>
+        /// you specify for to create a DataSync-managed secret to store the location access credentials.
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure that DataSync has permission to access the KMS key that you specify. For
+        /// more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key">
+        /// Using a service-managed secret encrypted with a custom KMS key</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use either <c>CmkSecretConfig</c> (with <c>Password</c>) or <c>CustomSecretConfig</c>
+        /// (without <c>Password</c>) to provide credentials for a <c>CreateLocationFsxOntap</c>
+        /// request. Do not provide both parameters for the same request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a customer-managed Secrets Manager secret
+        /// where the password for an FSx for ONTAP storage location (using SMB) is stored in
+        /// plain text, in Secrets Manager. This configuration includes the secret ARN, and the
+        /// ARN for an IAM role that provides access to the secret. For more information, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key">
+        /// Using a secret that you manage</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use either <c>CmkSecretConfig</c> (with <c>Password</c>) or <c>CustomSecretConfig</c>
+        /// (without <c>Password</c>) to provide credentials for a <c>CreateLocationFsxOntap</c>
+        /// request. Do not provide both parameters for the same request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Domain. 
@@ -73,6 +145,32 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedSecretConfig. 
+        /// <para>
+        /// Describes configuration information for a DataSync-managed secret, such as a <c>Password</c>
+        /// that DataSync uses to access a specific storage location. DataSync uses the default
+        /// Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not provide this for a <c>CreateLocation</c> request. <c>ManagedSecretConfig</c>
+        /// is a ReadOnly property and is only be populated in the <c>DescribeLocation</c> response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ManagedSecretConfig ManagedSecretConfig
+        {
+            get { return this._managedSecretConfig; }
+            set { this._managedSecretConfig = value; }
+        }
+
+        // Check to see if ManagedSecretConfig property is set
+        internal bool IsSetManagedSecretConfig()
+        {
+            return this._managedSecretConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MountOptions.
         /// </summary>
         public SmbMountOptions MountOptions
@@ -93,7 +191,7 @@ namespace Amazon.DataSync.Model
         /// Specifies the password of a user who has permission to access your SVM.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=104)]
+        [AWSProperty(Sensitive=true, Max=104)]
         public string Password
         {
             get { return this._password; }

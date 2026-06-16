@@ -56,19 +56,19 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("observations", targetDepth))
+                if (context.TestExpression("observations", targetDepth, ref reader))
                 {
                     var unmarshaller = ObservationsUnmarshaller.Instance;
                     unmarshalledObject.Observations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profileSubtype", targetDepth))
+                if (context.TestExpression("profileSubtype", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileSubtype = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profileType", targetDepth))
+                if (context.TestExpression("profileType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileType = unmarshaller.Unmarshall(context, ref reader);

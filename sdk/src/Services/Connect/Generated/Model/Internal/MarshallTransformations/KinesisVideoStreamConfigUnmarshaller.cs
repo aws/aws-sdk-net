@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EncryptionConfig", targetDepth))
+                if (context.TestExpression("EncryptionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prefix", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetentionPeriodHours", targetDepth))
+                if (context.TestExpression("RetentionPeriodHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context, ref reader);

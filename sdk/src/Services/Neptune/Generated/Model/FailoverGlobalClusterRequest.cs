@@ -70,7 +70,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints:Can't be specified together with the <c>Switchover</c> parameter.
+        /// Constraints: Can't be specified together with the <c>Switchover</c> parameter.
         /// </para>
         /// </summary>
         public bool? AllowDataLoss
@@ -117,7 +117,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints:Can't be specified together with the <c>AllowDataLoss</c> parameter.
+        /// Constraints: Can't be specified together with the <c>AllowDataLoss</c> parameter.
         /// </para>
         /// </summary>
         public bool? Switchover

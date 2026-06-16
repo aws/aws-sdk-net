@@ -56,7 +56,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ssoClientId", targetDepth))
+                if (context.TestExpression("ssoClientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SsoClientId = unmarshaller.Unmarshall(context, ref reader);

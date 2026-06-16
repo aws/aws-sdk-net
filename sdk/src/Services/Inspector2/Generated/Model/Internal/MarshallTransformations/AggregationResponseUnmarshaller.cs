@@ -56,73 +56,73 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountAggregation", targetDepth))
+                if (context.TestExpression("accountAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.AccountAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("amiAggregation", targetDepth))
+                if (context.TestExpression("amiAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = AmiAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.AmiAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsEcrContainerAggregation", targetDepth))
+                if (context.TestExpression("awsEcrContainerAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcrContainerAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.AwsEcrContainerAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeRepositoryAggregation", targetDepth))
+                if (context.TestExpression("codeRepositoryAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeRepositoryAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.CodeRepositoryAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2InstanceAggregation", targetDepth))
+                if (context.TestExpression("ec2InstanceAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2InstanceAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.Ec2InstanceAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingTypeAggregation", targetDepth))
+                if (context.TestExpression("findingTypeAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = FindingTypeAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.FindingTypeAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageLayerAggregation", targetDepth))
+                if (context.TestExpression("imageLayerAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageLayerAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.ImageLayerAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionAggregation", targetDepth))
+                if (context.TestExpression("lambdaFunctionAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaLayerAggregation", targetDepth))
+                if (context.TestExpression("lambdaLayerAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaLayerAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.LambdaLayerAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packageAggregation", targetDepth))
+                if (context.TestExpression("packageAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.PackageAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryAggregation", targetDepth))
+                if (context.TestExpression("repositoryAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = RepositoryAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.RepositoryAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("titleAggregation", targetDepth))
+                if (context.TestExpression("titleAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = TitleAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.TitleAggregation = unmarshaller.Unmarshall(context, ref reader);

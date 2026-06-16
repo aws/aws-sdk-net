@@ -47,6 +47,7 @@ namespace Amazon.RTBFabric.Model
         private LinkLogSettings _logSettings;
         private string _peerGatewayId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private long? _timeoutInMillis;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -72,7 +73,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -128,7 +129,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the peer gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string PeerGatewayId
         {
             get { return this._peerGatewayId; }
@@ -162,6 +163,25 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutInMillis. 
+        /// <para>
+        /// The timeout value in milliseconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=100, Max=5000)]
+        public long? TimeoutInMillis
+        {
+            get { return this._timeoutInMillis; }
+            set { this._timeoutInMillis = value; }
+        }
+
+        // Check to see if TimeoutInMillis property is set
+        internal bool IsSetTimeoutInMillis()
+        {
+            return this._timeoutInMillis.HasValue; 
         }
 
     }

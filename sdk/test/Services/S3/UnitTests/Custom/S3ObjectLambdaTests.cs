@@ -89,7 +89,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("S3")]
         [TestCategory("UnitTest")]
-        [DynamicData(nameof(S3ObjectLambdaBucketFieldInputTestsData), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(S3ObjectLambdaBucketFieldInputTestsData))]
         public void S3ObjectLambdaBucketFieldInputTests(string bucketFieldInput, string clientRegion, string additionalFlags, string useArnRegion, string endpointUrl, string expectedEndpoint)
         {
             Console.WriteLine(string.Join(" | ", bucketFieldInput, clientRegion, additionalFlags, useArnRegion, endpointUrl, expectedEndpoint));
@@ -171,7 +171,7 @@ namespace AWSSDK.UnitTests
             Assert.IsNull(accessPoint);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "https://my-endpoint.com", true, "mybanner-123456789012.my-endpoint.com")]
         [DataRow("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "https://my-endpoint.com", false, "mybanner-123456789012.my-endpoint.com")]
@@ -259,7 +259,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(uri.Query.Contains("X-Amz-Algorithm=AWS4-HMAC-SHA256"));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("us-east-1", "", "route.s3-object-lambda.us-east-1.amazonaws.com")]
         [DataRow("us-east-1-regional", "", "route.s3-object-lambda.us-east-1.amazonaws.com")]
@@ -305,7 +305,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-object-lambda"));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow(true, (long)100, true, "100")]
         [DataRow(false, (long)100, false, "100")]

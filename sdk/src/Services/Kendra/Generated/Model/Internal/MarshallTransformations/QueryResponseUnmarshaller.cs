@@ -52,43 +52,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FacetResults", targetDepth))
+                if (context.TestExpression("FacetResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FacetResult, FacetResultUnmarshaller>(FacetResultUnmarshaller.Instance);
                     response.FacetResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeaturedResultsItems", targetDepth))
+                if (context.TestExpression("FeaturedResultsItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FeaturedResultsItem, FeaturedResultsItemUnmarshaller>(FeaturedResultsItemUnmarshaller.Instance);
                     response.FeaturedResultsItems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryId", targetDepth))
+                if (context.TestExpression("QueryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultItems", targetDepth))
+                if (context.TestExpression("ResultItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueryResultItem, QueryResultItemUnmarshaller>(QueryResultItemUnmarshaller.Instance);
                     response.ResultItems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpellCorrectedQueries", targetDepth))
+                if (context.TestExpression("SpellCorrectedQueries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SpellCorrectedQuery, SpellCorrectedQueryUnmarshaller>(SpellCorrectedQueryUnmarshaller.Instance);
                     response.SpellCorrectedQueries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfResults", targetDepth))
+                if (context.TestExpression("TotalNumberOfResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalNumberOfResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Warnings", targetDepth))
+                if (context.TestExpression("Warnings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Warning, WarningUnmarshaller>(WarningUnmarshaller.Instance);
                     response.Warnings = unmarshaller.Unmarshall(context, ref reader);

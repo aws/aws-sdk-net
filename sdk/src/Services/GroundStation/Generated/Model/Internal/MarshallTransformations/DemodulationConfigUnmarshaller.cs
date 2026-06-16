@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("unvalidatedJSON", targetDepth))
+                if (context.TestExpression("unvalidatedJSON", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnvalidatedJSON = unmarshaller.Unmarshall(context, ref reader);

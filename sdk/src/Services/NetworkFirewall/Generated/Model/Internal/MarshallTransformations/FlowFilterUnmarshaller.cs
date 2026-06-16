@@ -56,31 +56,31 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationAddress", targetDepth))
+                if (context.TestExpression("DestinationAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;
                     unmarshalledObject.DestinationAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationPort", targetDepth))
+                if (context.TestExpression("DestinationPort", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocols", targetDepth))
+                if (context.TestExpression("Protocols", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Protocols = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceAddress", targetDepth))
+                if (context.TestExpression("SourceAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;
                     unmarshalledObject.SourceAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourcePort", targetDepth))
+                if (context.TestExpression("SourcePort", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourcePort = unmarshaller.Unmarshall(context, ref reader);

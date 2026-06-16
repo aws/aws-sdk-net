@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A unique identifier for the instance fleet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=256)]
         public string InstanceFleetId
         {
             get { return this._instanceFleetId; }

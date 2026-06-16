@@ -56,7 +56,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DurationSinceLastAccess", targetDepth))
+                if (context.TestExpression("DurationSinceLastAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationSinceLastAccessUnmarshaller.Instance;
                     unmarshalledObject.DurationSinceLastAccess = unmarshaller.Unmarshall(context, ref reader);

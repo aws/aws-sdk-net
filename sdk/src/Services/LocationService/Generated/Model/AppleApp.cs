@@ -40,8 +40,12 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS, watchOS,
-        /// etc.)
+        /// The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and
+        /// watchOS).
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>com.mydomain.appname</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=155)]

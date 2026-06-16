@@ -52,19 +52,19 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageID", targetDepth))
+                if (context.TestExpression("PackageID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PackageID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageVersionHistoryList", targetDepth))
+                if (context.TestExpression("PackageVersionHistoryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PackageVersionHistory, PackageVersionHistoryUnmarshaller>(PackageVersionHistoryUnmarshaller.Instance);
                     response.PackageVersionHistoryList = unmarshaller.Unmarshall(context, ref reader);

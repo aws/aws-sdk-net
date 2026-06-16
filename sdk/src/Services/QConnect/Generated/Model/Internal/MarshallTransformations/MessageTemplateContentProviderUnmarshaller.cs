@@ -56,25 +56,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("email", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("push", targetDepth))
+                if (context.TestExpression("push", targetDepth, ref reader))
                 {
                     var unmarshaller = PushMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Push = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sms", targetDepth))
+                if (context.TestExpression("sms", targetDepth, ref reader))
                 {
                     var unmarshaller = SMSMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Sms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("whatsApp", targetDepth))
+                if (context.TestExpression("whatsApp", targetDepth, ref reader))
                 {
                     var unmarshaller = WhatsAppMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lifecyclePolicyDetails", targetDepth))
+                if (context.TestExpression("lifecyclePolicyDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LifecyclePolicyDetail, LifecyclePolicyDetailUnmarshaller>(LifecyclePolicyDetailUnmarshaller.Instance);
                     response.LifecyclePolicyDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecyclePolicyErrorDetails", targetDepth))
+                if (context.TestExpression("lifecyclePolicyErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LifecyclePolicyErrorDetail, LifecyclePolicyErrorDetailUnmarshaller>(LifecyclePolicyErrorDetailUnmarshaller.Instance);
                     response.LifecyclePolicyErrorDetails = unmarshaller.Unmarshall(context, ref reader);

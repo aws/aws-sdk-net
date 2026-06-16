@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("JobFlows", targetDepth))
+                if (context.TestExpression("JobFlows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobFlowDetail, JobFlowDetailUnmarshaller>(JobFlowDetailUnmarshaller.Instance);
                     response.JobFlows = unmarshaller.Unmarshall(context, ref reader);

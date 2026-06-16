@@ -56,31 +56,31 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audit", targetDepth))
+                if (context.TestExpression("audit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Audit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("auditLogGroup", targetDepth))
+                if (context.TestExpression("auditLogGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuditLogGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("general", targetDepth))
+                if (context.TestExpression("general", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.General = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generalLogGroup", targetDepth))
+                if (context.TestExpression("generalLogGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GeneralLogGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pending", targetDepth))
+                if (context.TestExpression("pending", targetDepth, ref reader))
                 {
                     var unmarshaller = PendingLogsUnmarshaller.Instance;
                     unmarshalledObject.Pending = unmarshaller.Unmarshall(context, ref reader);

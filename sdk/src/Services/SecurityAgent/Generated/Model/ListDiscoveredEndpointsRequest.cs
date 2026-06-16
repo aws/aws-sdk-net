@@ -1,0 +1,139 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the securityagent-2025-09-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.SecurityAgent.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ListDiscoveredEndpoints operation.
+    /// Returns a paginated list of endpoints discovered during a pentest job execution.
+    /// </summary>
+    public partial class ListDiscoveredEndpointsRequest : AmazonSecurityAgentRequest
+    {
+        private string _agentSpaceId;
+        private int? _maxResults;
+        private string _nextToken;
+        private string _pentestJobId;
+        private string _prefix;
+
+        /// <summary>
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The unique identifier of the agent space.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string AgentSpaceId
+        {
+            get { return this._agentSpaceId; }
+            set { this._agentSpaceId = value; }
+        }
+
+        // Check to see if AgentSpaceId property is set
+        internal bool IsSetAgentSpaceId()
+        {
+            return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call.
+        /// </para>
+        /// </summary>
+        public int? MaxResults
+        {
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PentestJobId. 
+        /// <para>
+        /// The unique identifier of the pentest job to list discovered endpoints for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string PentestJobId
+        {
+            get { return this._pentestJobId; }
+            set { this._pentestJobId = value; }
+        }
+
+        // Check to see if PentestJobId property is set
+        internal bool IsSetPentestJobId()
+        {
+            return this._pentestJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// A prefix to filter discovered endpoints by URI.
+        /// </para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
+        }
+
+    }
+}

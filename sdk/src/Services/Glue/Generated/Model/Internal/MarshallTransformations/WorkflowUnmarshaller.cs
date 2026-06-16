@@ -56,55 +56,55 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlueprintDetails", targetDepth))
+                if (context.TestExpression("BlueprintDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = BlueprintDetailsUnmarshaller.Instance;
                     unmarshalledObject.BlueprintDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedOn", targetDepth))
+                if (context.TestExpression("CreatedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultRunProperties", targetDepth))
+                if (context.TestExpression("DefaultRunProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.DefaultRunProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Graph", targetDepth))
+                if (context.TestExpression("Graph", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowGraphUnmarshaller.Instance;
                     unmarshalledObject.Graph = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedOn", targetDepth))
+                if (context.TestExpression("LastModifiedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastRun", targetDepth))
+                if (context.TestExpression("LastRun", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowRunUnmarshaller.Instance;
                     unmarshalledObject.LastRun = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxConcurrentRuns", targetDepth))
+                if (context.TestExpression("MaxConcurrentRuns", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentRuns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

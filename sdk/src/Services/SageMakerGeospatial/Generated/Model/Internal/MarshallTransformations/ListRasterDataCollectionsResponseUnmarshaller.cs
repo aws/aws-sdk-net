@@ -52,13 +52,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RasterDataCollectionSummaries", targetDepth))
+                if (context.TestExpression("RasterDataCollectionSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RasterDataCollectionMetadata, RasterDataCollectionMetadataUnmarshaller>(RasterDataCollectionMetadataUnmarshaller.Instance);
                     response.RasterDataCollectionSummaries = unmarshaller.Unmarshall(context, ref reader);

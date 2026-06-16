@@ -68,8 +68,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -103,6 +103,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
                 var marshaller = AdvancedSecurityOptionsInputMarshaller.Instance;
                 marshaller.Marshall(publicRequest.AdvancedSecurityOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAutomatedSnapshotPauseOptions())
+            {
+                context.Writer.WritePropertyName("AutomatedSnapshotPauseOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomatedSnapshotPauseRequestOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutomatedSnapshotPauseOptions, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -244,10 +255,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

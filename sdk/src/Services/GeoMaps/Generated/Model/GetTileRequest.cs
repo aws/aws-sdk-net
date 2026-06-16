@@ -31,7 +31,7 @@ namespace Amazon.GeoMaps.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTile operation.
-    /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. they're
+    /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. They're
     /// addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom)
     /// level.
     /// 
@@ -54,7 +54,9 @@ namespace Amazon.GeoMaps.Model
         /// Gets and sets the property AdditionalFeatures. 
         /// <para>
         /// A list of optional additional parameters such as map styles that can be requested
-        /// for each result.
+        /// for each result. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -98,7 +100,9 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property Tileset. 
         /// <para>
-        /// Specifies the desired tile set.
+        /// Specifies the desired tile set. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only the
+        /// <c>vector.basemap</c> value.
         /// </para>
         ///  
         /// <para>
@@ -122,7 +126,7 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property X. 
         /// <para>
-        /// The X axis value for the map tile. Must be between 0 and 19.
+        /// The X axis value for the map tile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=7)]

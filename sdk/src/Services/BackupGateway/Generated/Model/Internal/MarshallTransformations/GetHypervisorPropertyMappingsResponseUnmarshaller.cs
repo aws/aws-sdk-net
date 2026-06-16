@@ -52,19 +52,19 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HypervisorArn", targetDepth))
+                if (context.TestExpression("HypervisorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HypervisorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IamRoleArn", targetDepth))
+                if (context.TestExpression("IamRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IamRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VmwareToAwsTagMappings", targetDepth))
+                if (context.TestExpression("VmwareToAwsTagMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VmwareToAwsTagMapping, VmwareToAwsTagMappingUnmarshaller>(VmwareToAwsTagMappingUnmarshaller.Instance);
                     response.VmwareToAwsTagMappings = unmarshaller.Unmarshall(context, ref reader);

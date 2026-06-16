@@ -56,13 +56,13 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BooleanExpression", targetDepth))
+                if (context.TestExpression("BooleanExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveBooleanExpressionUnmarshaller.Instance;
                     unmarshalledObject.BooleanExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringExpression", targetDepth))
+                if (context.TestExpression("StringExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveStringExpressionUnmarshaller.Instance;
                     unmarshalledObject.StringExpression = unmarshaller.Unmarshall(context, ref reader);

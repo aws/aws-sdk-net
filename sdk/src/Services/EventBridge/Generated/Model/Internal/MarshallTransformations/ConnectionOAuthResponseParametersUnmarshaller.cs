@@ -56,25 +56,25 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizationEndpoint", targetDepth))
+                if (context.TestExpression("AuthorizationEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientParameters", targetDepth))
+                if (context.TestExpression("ClientParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionOAuthClientResponseParametersUnmarshaller.Instance;
                     unmarshalledObject.ClientParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpMethod", targetDepth))
+                if (context.TestExpression("HttpMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HttpMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OAuthHttpParameters", targetDepth))
+                if (context.TestExpression("OAuthHttpParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionHttpParametersUnmarshaller.Instance;
                     unmarshalledObject.OAuthHttpParameters = unmarshaller.Unmarshall(context, ref reader);

@@ -110,6 +110,7 @@ namespace Amazon.RDS.Model
         private string _hostedZoneId;
         private bool? _httpEndpointEnabled;
         private bool? _iamDatabaseAuthenticationEnabled;
+        private bool? _internetAccessGatewayEnabled;
         private DateTime? _ioOptimizedNextAllowedModificationTime;
         private int? _iops;
         private string _kmsKeyId;
@@ -146,6 +147,7 @@ namespace Amazon.RDS.Model
         private string _storageType;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private UpgradeRolloutOrder _upgradeRolloutOrder;
+        private bool? _vpcNetworkingEnabled;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
@@ -1150,6 +1152,30 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InternetAccessGatewayEnabled. 
+        /// <para>
+        /// Indicates whether the DB cluster has internet-based connectivity enabled through an
+        /// internet access gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is applicable only for Aurora PostgreSQL clusters created through express
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public bool? InternetAccessGatewayEnabled
+        {
+            get { return this._internetAccessGatewayEnabled; }
+            set { this._internetAccessGatewayEnabled = value; }
+        }
+
+        // Check to see if InternetAccessGatewayEnabled property is set
+        internal bool IsSetInternetAccessGatewayEnabled()
+        {
+            return this._internetAccessGatewayEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IOOptimizedNextAllowedModificationTime. 
         /// <para>
         /// The next time you can modify the DB cluster to use the <c>aurora-iopt1</c> storage
@@ -1965,6 +1991,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetUpgradeRolloutOrder()
         {
             return this._upgradeRolloutOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPCNetworkingEnabled. 
+        /// <para>
+        /// Indicates whether the DB cluster uses VPC-based networking.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is applicable only for Aurora PostgreSQL clusters created through express
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public bool? VPCNetworkingEnabled
+        {
+            get { return this._vpcNetworkingEnabled; }
+            set { this._vpcNetworkingEnabled = value; }
+        }
+
+        // Check to see if VPCNetworkingEnabled property is set
+        internal bool IsSetVPCNetworkingEnabled()
+        {
+            return this._vpcNetworkingEnabled.HasValue; 
         }
 
         /// <summary>

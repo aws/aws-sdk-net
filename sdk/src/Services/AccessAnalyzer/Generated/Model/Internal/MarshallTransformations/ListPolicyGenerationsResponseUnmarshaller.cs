@@ -52,13 +52,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyGenerations", targetDepth))
+                if (context.TestExpression("policyGenerations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PolicyGeneration, PolicyGenerationUnmarshaller>(PolicyGenerationUnmarshaller.Instance);
                     response.PolicyGenerations = unmarshaller.Unmarshall(context, ref reader);

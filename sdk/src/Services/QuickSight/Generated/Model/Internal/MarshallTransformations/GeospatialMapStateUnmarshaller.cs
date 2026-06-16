@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Bounds", targetDepth))
+                if (context.TestExpression("Bounds", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialCoordinateBoundsUnmarshaller.Instance;
                     unmarshalledObject.Bounds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MapNavigation", targetDepth))
+                if (context.TestExpression("MapNavigation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MapNavigation = unmarshaller.Unmarshall(context, ref reader);

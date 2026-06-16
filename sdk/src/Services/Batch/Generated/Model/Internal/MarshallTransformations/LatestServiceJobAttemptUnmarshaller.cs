@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("serviceResourceId", targetDepth))
+                if (context.TestExpression("serviceResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceResourceIdUnmarshaller.Instance;
                     unmarshalledObject.ServiceResourceId = unmarshaller.Unmarshall(context, ref reader);

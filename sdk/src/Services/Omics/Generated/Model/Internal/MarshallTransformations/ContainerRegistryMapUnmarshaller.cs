@@ -56,13 +56,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageMappings", targetDepth))
+                if (context.TestExpression("imageMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImageMapping, ImageMappingUnmarshaller>(ImageMappingUnmarshaller.Instance);
                     unmarshalledObject.ImageMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registryMappings", targetDepth))
+                if (context.TestExpression("registryMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegistryMapping, RegistryMappingUnmarshaller>(RegistryMappingUnmarshaller.Instance);
                     unmarshalledObject.RegistryMappings = unmarshaller.Unmarshall(context, ref reader);

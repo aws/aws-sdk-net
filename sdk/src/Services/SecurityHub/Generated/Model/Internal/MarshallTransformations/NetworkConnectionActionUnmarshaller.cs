@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Blocked", targetDepth))
+                if (context.TestExpression("Blocked", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Blocked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionDirection", targetDepth))
+                if (context.TestExpression("ConnectionDirection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectionDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalPortDetails", targetDepth))
+                if (context.TestExpression("LocalPortDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionLocalPortDetailsUnmarshaller.Instance;
                     unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocol", targetDepth))
+                if (context.TestExpression("Protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoteIpDetails", targetDepth))
+                if (context.TestExpression("RemoteIpDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionRemoteIpDetailsUnmarshaller.Instance;
                     unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemotePortDetails", targetDepth))
+                if (context.TestExpression("RemotePortDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionRemotePortDetailsUnmarshaller.Instance;
                     unmarshalledObject.RemotePortDetails = unmarshaller.Unmarshall(context, ref reader);

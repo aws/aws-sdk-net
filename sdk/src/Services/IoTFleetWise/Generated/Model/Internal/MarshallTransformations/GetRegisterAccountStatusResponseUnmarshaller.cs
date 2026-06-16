@@ -52,37 +52,37 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountStatus", targetDepth))
+                if (context.TestExpression("accountStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customerAccountId", targetDepth))
+                if (context.TestExpression("customerAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomerAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamRegistrationResponse", targetDepth))
+                if (context.TestExpression("iamRegistrationResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = IamRegistrationResponseUnmarshaller.Instance;
                     response.IamRegistrationResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModificationTime", targetDepth))
+                if (context.TestExpression("lastModificationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModificationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestreamRegistrationResponse", targetDepth))
+                if (context.TestExpression("timestreamRegistrationResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = TimestreamRegistrationResponseUnmarshaller.Instance;
                     response.TimestreamRegistrationResponse = unmarshaller.Unmarshall(context, ref reader);

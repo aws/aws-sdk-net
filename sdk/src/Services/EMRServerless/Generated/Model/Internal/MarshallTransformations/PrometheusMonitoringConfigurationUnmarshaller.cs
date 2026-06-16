@@ -56,7 +56,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("remoteWriteUrl", targetDepth))
+                if (context.TestExpression("remoteWriteUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteWriteUrl = unmarshaller.Unmarshall(context, ref reader);

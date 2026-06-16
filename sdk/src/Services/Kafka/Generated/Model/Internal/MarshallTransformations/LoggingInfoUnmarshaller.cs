@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("brokerLogs", targetDepth))
+                if (context.TestExpression("brokerLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = BrokerLogsUnmarshaller.Instance;
                     unmarshalledObject.BrokerLogs = unmarshaller.Unmarshall(context, ref reader);

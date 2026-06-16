@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("path", targetDepth))
+                if (context.TestExpression("path", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PathElement, PathElementUnmarshaller>(PathElementUnmarshaller.Instance);
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("span", targetDepth))
+                if (context.TestExpression("span", targetDepth, ref reader))
                 {
                     var unmarshaller = SpanUnmarshaller.Instance;
                     unmarshalledObject.Span = unmarshaller.Unmarshall(context, ref reader);

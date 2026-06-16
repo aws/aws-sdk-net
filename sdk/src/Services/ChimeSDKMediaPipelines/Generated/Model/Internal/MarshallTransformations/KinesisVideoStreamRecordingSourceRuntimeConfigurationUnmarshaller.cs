@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FragmentSelector", targetDepth))
+                if (context.TestExpression("FragmentSelector", targetDepth, ref reader))
                 {
                     var unmarshaller = FragmentSelectorUnmarshaller.Instance;
                     unmarshalledObject.FragmentSelector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Streams", targetDepth))
+                if (context.TestExpression("Streams", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecordingStreamConfiguration, RecordingStreamConfigurationUnmarshaller>(RecordingStreamConfigurationUnmarshaller.Instance);
                     unmarshalledObject.Streams = unmarshaller.Unmarshall(context, ref reader);

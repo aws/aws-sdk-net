@@ -56,55 +56,55 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BandMathConfig", targetDepth))
+                if (context.TestExpression("BandMathConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = BandMathConfigInputUnmarshaller.Instance;
                     unmarshalledObject.BandMathConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudMaskingConfig", targetDepth))
+                if (context.TestExpression("CloudMaskingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudMaskingConfigInputUnmarshaller.Instance;
                     unmarshalledObject.CloudMaskingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudRemovalConfig", targetDepth))
+                if (context.TestExpression("CloudRemovalConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudRemovalConfigInputUnmarshaller.Instance;
                     unmarshalledObject.CloudRemovalConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeoMosaicConfig", targetDepth))
+                if (context.TestExpression("GeoMosaicConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GeoMosaicConfigInputUnmarshaller.Instance;
                     unmarshalledObject.GeoMosaicConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LandCoverSegmentationConfig", targetDepth))
+                if (context.TestExpression("LandCoverSegmentationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LandCoverSegmentationConfigInputUnmarshaller.Instance;
                     unmarshalledObject.LandCoverSegmentationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResamplingConfig", targetDepth))
+                if (context.TestExpression("ResamplingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ResamplingConfigInputUnmarshaller.Instance;
                     unmarshalledObject.ResamplingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StackConfig", targetDepth))
+                if (context.TestExpression("StackConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = StackConfigInputUnmarshaller.Instance;
                     unmarshalledObject.StackConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemporalStatisticsConfig", targetDepth))
+                if (context.TestExpression("TemporalStatisticsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TemporalStatisticsConfigInputUnmarshaller.Instance;
                     unmarshalledObject.TemporalStatisticsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ZonalStatisticsConfig", targetDepth))
+                if (context.TestExpression("ZonalStatisticsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ZonalStatisticsConfigInputUnmarshaller.Instance;
                     unmarshalledObject.ZonalStatisticsConfig = unmarshaller.Unmarshall(context, ref reader);

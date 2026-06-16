@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectHealth.Model
 {
     /// <summary>
-    /// Input configuration for creating a Pulse web application. Used only in CreateDomain
-    /// operation input.
+    /// Input configuration for creating a web application. Used only in CreateDomain operation
+    /// input.
     /// </summary>
     public partial class CreateWebAppConfiguration
     {

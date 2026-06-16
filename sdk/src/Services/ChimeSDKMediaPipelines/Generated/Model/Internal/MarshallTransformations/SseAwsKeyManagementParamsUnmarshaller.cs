@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsKmsEncryptionContext", targetDepth))
+                if (context.TestExpression("AwsKmsEncryptionContext", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsKmsEncryptionContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsKmsKeyId", targetDepth))
+                if (context.TestExpression("AwsKmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsKmsKeyId = unmarshaller.Unmarshall(context, ref reader);

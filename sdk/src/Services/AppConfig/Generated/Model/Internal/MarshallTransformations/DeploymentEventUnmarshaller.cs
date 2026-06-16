@@ -56,31 +56,31 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionInvocations", targetDepth))
+                if (context.TestExpression("ActionInvocations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActionInvocation, ActionInvocationUnmarshaller>(ActionInvocationUnmarshaller.Instance);
                     unmarshalledObject.ActionInvocations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventType", targetDepth))
+                if (context.TestExpression("EventType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OccurredAt", targetDepth))
+                if (context.TestExpression("OccurredAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.OccurredAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TriggeredBy", targetDepth))
+                if (context.TestExpression("TriggeredBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TriggeredBy = unmarshaller.Unmarshall(context, ref reader);

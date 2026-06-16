@@ -56,13 +56,13 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("markAsAnomaly", targetDepth))
+                if (context.TestExpression("markAsAnomaly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MarkAsAnomaly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("skip", targetDepth))
+                if (context.TestExpression("skip", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Skip = unmarshaller.Unmarshall(context, ref reader);

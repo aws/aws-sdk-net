@@ -52,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventCategoryGroupList", targetDepth))
+                if (context.TestExpression("EventCategoryGroupList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventCategoryGroup, EventCategoryGroupUnmarshaller>(EventCategoryGroupUnmarshaller.Instance);
                     response.EventCategoryGroupList = unmarshaller.Unmarshall(context, ref reader);

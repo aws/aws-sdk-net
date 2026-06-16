@@ -56,25 +56,25 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatabaseInputDefinition", targetDepth))
+                if (context.TestExpression("DatabaseInputDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseInputDefinitionUnmarshaller.Instance;
                     unmarshalledObject.DatabaseInputDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataCatalogInputDefinition", targetDepth))
+                if (context.TestExpression("DataCatalogInputDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = DataCatalogInputDefinitionUnmarshaller.Instance;
                     unmarshalledObject.DataCatalogInputDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metadata", targetDepth))
+                if (context.TestExpression("Metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = MetadataUnmarshaller.Instance;
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3InputDefinition", targetDepth))
+                if (context.TestExpression("S3InputDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;
                     unmarshalledObject.S3InputDefinition = unmarshaller.Unmarshall(context, ref reader);

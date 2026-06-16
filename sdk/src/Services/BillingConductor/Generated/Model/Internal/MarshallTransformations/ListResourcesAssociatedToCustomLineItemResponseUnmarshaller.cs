@@ -52,19 +52,19 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssociatedResources", targetDepth))
+                if (context.TestExpression("AssociatedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListResourcesAssociatedToCustomLineItemResponseElement, ListResourcesAssociatedToCustomLineItemResponseElementUnmarshaller>(ListResourcesAssociatedToCustomLineItemResponseElementUnmarshaller.Instance);
                     response.AssociatedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

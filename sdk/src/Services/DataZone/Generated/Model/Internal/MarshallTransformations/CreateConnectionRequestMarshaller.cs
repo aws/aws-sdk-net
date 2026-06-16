@@ -68,8 +68,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/connections";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -98,6 +98,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetConfigurations())
+            {
+                context.Writer.WritePropertyName("configurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -141,10 +157,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

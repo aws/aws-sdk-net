@@ -56,13 +56,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Availability", targetDepth))
+                if (context.TestExpression("Availability", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailabilityMeasurementUnmarshaller.Instance;
                     unmarshalledObject.Availability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Performance", targetDepth))
+                if (context.TestExpression("Performance", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceMeasurementUnmarshaller.Instance;
                     unmarshalledObject.Performance = unmarshaller.Unmarshall(context, ref reader);

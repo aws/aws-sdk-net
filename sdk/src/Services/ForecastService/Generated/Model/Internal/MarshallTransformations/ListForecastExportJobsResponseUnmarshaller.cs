@@ -52,13 +52,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ForecastExportJobs", targetDepth))
+                if (context.TestExpression("ForecastExportJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ForecastExportJobSummary, ForecastExportJobSummaryUnmarshaller>(ForecastExportJobSummaryUnmarshaller.Instance);
                     response.ForecastExportJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

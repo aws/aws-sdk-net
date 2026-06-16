@@ -59,6 +59,7 @@ namespace Amazon.SageMaker.Model
         private ReservedCapacityInstanceType _instanceType;
         private DateTime? _startTimeAfter;
         private List<string> _targetResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _trainingPlanArn;
         private int? _ultraServerCount;
         private string _ultraServerType;
 
@@ -167,7 +168,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TargetResources. 
         /// <para>
         /// The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker
-        /// Endpoints) to search for in the offerings.
+        /// Endpoints, Studio apps) to search for in the offerings.
         /// </para>
         ///  
         /// <para>
@@ -188,6 +189,11 @@ namespace Amazon.SageMaker.Model
         /// A training plan for SageMaker endpoints can be used exclusively to provide compute
         /// resources to SageMaker endpoints for model deployment.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps
+        /// on reserved training plan capacity.
+        /// </para>
         ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -206,6 +212,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTargetResources()
         {
             return this._targetResources != null && (this._targetResources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of an existing training plan to search for extension
+        /// offerings. When specified, the API returns extension offerings that can be used to
+        /// extend the specified training plan.
+        /// </para>
+        /// </summary>
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
         /// <summary>

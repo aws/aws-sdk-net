@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UserImportJob", targetDepth))
+                if (context.TestExpression("UserImportJob", targetDepth, ref reader))
                 {
                     var unmarshaller = UserImportJobTypeUnmarshaller.Instance;
                     response.UserImportJob = unmarshaller.Unmarshall(context, ref reader);
@@ -94,6 +94,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
                 {
                     return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotEnabledException"))
+                {
+                    return OperationNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

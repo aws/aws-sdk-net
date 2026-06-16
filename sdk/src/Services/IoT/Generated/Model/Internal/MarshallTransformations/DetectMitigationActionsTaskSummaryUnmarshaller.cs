@@ -56,61 +56,61 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionsDefinition", targetDepth))
+                if (context.TestExpression("actionsDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MitigationAction, MitigationActionUnmarshaller>(MitigationActionUnmarshaller.Instance);
                     unmarshalledObject.ActionsDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onlyActiveViolationsIncluded", targetDepth))
+                if (context.TestExpression("onlyActiveViolationsIncluded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OnlyActiveViolationsIncluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suppressedAlertsIncluded", targetDepth))
+                if (context.TestExpression("suppressedAlertsIncluded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SuppressedAlertsIncluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("target", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectMitigationActionsTaskTargetUnmarshaller.Instance;
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskEndTime", targetDepth))
+                if (context.TestExpression("taskEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TaskEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskId", targetDepth))
+                if (context.TestExpression("taskId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStartTime", targetDepth))
+                if (context.TestExpression("taskStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TaskStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStatistics", targetDepth))
+                if (context.TestExpression("taskStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectMitigationActionsTaskStatisticsUnmarshaller.Instance;
                     unmarshalledObject.TaskStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStatus", targetDepth))
+                if (context.TestExpression("taskStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationEventOccurrenceRange", targetDepth))
+                if (context.TestExpression("violationEventOccurrenceRange", targetDepth, ref reader))
                 {
                     var unmarshaller = ViolationEventOccurrenceRangeUnmarshaller.Instance;
                     unmarshalledObject.ViolationEventOccurrenceRange = unmarshaller.Unmarshall(context, ref reader);

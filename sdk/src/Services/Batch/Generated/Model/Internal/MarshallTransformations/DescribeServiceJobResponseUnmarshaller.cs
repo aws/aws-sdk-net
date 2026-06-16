@@ -52,127 +52,145 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attempts", targetDepth))
+                if (context.TestExpression("attempts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceJobAttemptDetail, ServiceJobAttemptDetailUnmarshaller>(ServiceJobAttemptDetailUnmarshaller.Instance);
                     response.Attempts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("capacityUsage", targetDepth))
+                if (context.TestExpression("capacityUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceJobCapacityUsageDetail, ServiceJobCapacityUsageDetailUnmarshaller>(ServiceJobCapacityUsageDetailUnmarshaller.Instance);
                     response.CapacityUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isTerminated", targetDepth))
+                if (context.TestExpression("isTerminated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsTerminated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobArn", targetDepth))
+                if (context.TestExpression("jobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobId", targetDepth))
+                if (context.TestExpression("jobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobName", targetDepth))
+                if (context.TestExpression("jobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobQueue", targetDepth))
+                if (context.TestExpression("jobQueue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobQueue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestAttempt", targetDepth))
+                if (context.TestExpression("latestAttempt", targetDepth, ref reader))
                 {
                     var unmarshaller = LatestServiceJobAttemptUnmarshaller.Instance;
                     response.LatestAttempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retryStrategy", targetDepth))
+                if (context.TestExpression("preemptionConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServiceJobPreemptionConfigurationUnmarshaller.Instance;
+                    response.PreemptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("preemptionSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServiceJobPreemptionSummaryUnmarshaller.Instance;
+                    response.PreemptionSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("quotaShareName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.QuotaShareName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("retryStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceJobRetryStrategyUnmarshaller.Instance;
                     response.RetryStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduledAt", targetDepth))
+                if (context.TestExpression("scheduledAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ScheduledAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schedulingPriority", targetDepth))
+                if (context.TestExpression("schedulingPriority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.SchedulingPriority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceJobType", targetDepth))
+                if (context.TestExpression("serviceJobType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceJobType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceRequestPayload", targetDepth))
+                if (context.TestExpression("serviceRequestPayload", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceRequestPayload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shareIdentifier", targetDepth))
+                if (context.TestExpression("shareIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ShareIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedAt", targetDepth))
+                if (context.TestExpression("startedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stoppedAt", targetDepth))
+                if (context.TestExpression("stoppedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.StoppedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutConfig", targetDepth))
+                if (context.TestExpression("timeoutConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceJobTimeoutUnmarshaller.Instance;
                     response.TimeoutConfig = unmarshaller.Unmarshall(context, ref reader);

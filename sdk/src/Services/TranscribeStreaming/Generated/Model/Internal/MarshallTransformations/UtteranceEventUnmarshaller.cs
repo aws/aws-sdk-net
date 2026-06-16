@@ -56,73 +56,73 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BeginOffsetMillis", targetDepth))
+                if (context.TestExpression("BeginOffsetMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BeginOffsetMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndOffsetMillis", targetDepth))
+                if (context.TestExpression("EndOffsetMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Entities", targetDepth))
+                if (context.TestExpression("Entities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CallAnalyticsEntity, CallAnalyticsEntityUnmarshaller>(CallAnalyticsEntityUnmarshaller.Instance);
                     unmarshalledObject.Entities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsPartial", targetDepth))
+                if (context.TestExpression("IsPartial", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPartial = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IssuesDetected", targetDepth))
+                if (context.TestExpression("IssuesDetected", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IssueDetected, IssueDetectedUnmarshaller>(IssueDetectedUnmarshaller.Instance);
                     unmarshalledObject.IssuesDetected = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Items", targetDepth))
+                if (context.TestExpression("Items", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CallAnalyticsItem, CallAnalyticsItemUnmarshaller>(CallAnalyticsItemUnmarshaller.Instance);
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageCode", targetDepth))
+                if (context.TestExpression("LanguageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageIdentification", targetDepth))
+                if (context.TestExpression("LanguageIdentification", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CallAnalyticsLanguageWithScore, CallAnalyticsLanguageWithScoreUnmarshaller>(CallAnalyticsLanguageWithScoreUnmarshaller.Instance);
                     unmarshalledObject.LanguageIdentification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParticipantRole", targetDepth))
+                if (context.TestExpression("ParticipantRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParticipantRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sentiment", targetDepth))
+                if (context.TestExpression("Sentiment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Sentiment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transcript", targetDepth))
+                if (context.TestExpression("Transcript", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UtteranceId", targetDepth))
+                if (context.TestExpression("UtteranceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UtteranceId = unmarshaller.Unmarshall(context, ref reader);

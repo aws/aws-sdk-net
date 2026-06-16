@@ -61,6 +61,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
+    /// You can retrieve up to 100,000 log event results from a query, if available, by using
+    /// pagination. Use the <c>nextToken</c> returned in the response to request additional
+    /// pages of results, with each page returning up to 10,000 log events. This is only supported
+    /// for Logs Insights QL and is currently not supported for PPL and SQL query languages.
+    /// </para>
+    ///  
+    /// <para>
     /// If you are using CloudWatch cross-account observability, you can use this operation
     /// in a monitoring account to start queries in linked source accounts. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
@@ -69,7 +76,49 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class GetQueryResultsRequest : AmazonCloudWatchLogsRequest
     {
+        private int? _maxItems;
+        private string _nextToken;
         private string _queryId;
+
+        /// <summary>
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of log events to return in the response. The maximum is 10,000
+        /// log events per request. You can retrieve up to 100,000 log event results from a query
+        /// by paginating with the <c>nextToken</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public int? MaxItems
+        {
+            get { return this._maxItems; }
+            set { this._maxItems = value; }
+        }
+
+        // Check to see if MaxItems property is set
+        internal bool IsSetMaxItems()
+        {
+            return this._maxItems.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of items to return. The token expires after 1 hour.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property QueryId. 

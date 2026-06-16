@@ -56,19 +56,19 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableProperties", targetDepth))
+                if (context.TestExpression("TableProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TablePropertyDescription, TablePropertyDescriptionUnmarshaller>(TablePropertyDescriptionUnmarshaller.Instance);
                     unmarshalledObject.TableProperties = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrentLabels", targetDepth))
+                if (context.TestExpression("CurrentLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.CurrentLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentTaints", targetDepth))
+                if (context.TestExpression("CurrentTaints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterKubernetesTaint, ClusterKubernetesTaintUnmarshaller>(ClusterKubernetesTaintUnmarshaller.Instance);
                     unmarshalledObject.CurrentTaints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredLabels", targetDepth))
+                if (context.TestExpression("DesiredLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.DesiredLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredTaints", targetDepth))
+                if (context.TestExpression("DesiredTaints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterKubernetesTaint, ClusterKubernetesTaintUnmarshaller>(ClusterKubernetesTaintUnmarshaller.Instance);
                     unmarshalledObject.DesiredTaints = unmarshaller.Unmarshall(context, ref reader);

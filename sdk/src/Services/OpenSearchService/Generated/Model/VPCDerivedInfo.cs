@@ -39,6 +39,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class VPCDerivedInfo
     {
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _egressEnabled;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
@@ -64,6 +65,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EgressEnabled. 
+        /// <para>
+        /// Indicates whether egress traffic from the domain is routed through the customer VPC.
+        /// When <c>true</c>, outbound traffic flows through the VPC. When <c>false</c>, outbound
+        /// traffic goes through the public internet.
+        /// </para>
+        /// </summary>
+        public bool? EgressEnabled
+        {
+            get { return this._egressEnabled; }
+            set { this._egressEnabled = value; }
+        }
+
+        // Check to see if EgressEnabled property is set
+        internal bool IsSetEgressEnabled()
+        {
+            return this._egressEnabled.HasValue; 
         }
 
         /// <summary>

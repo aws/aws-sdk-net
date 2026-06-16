@@ -56,43 +56,43 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalDataSources", targetDepth))
+                if (context.TestExpression("AdditionalDataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalDataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AdditionalOptions", targetDepth))
+                if (context.TestExpression("AdditionalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Inputs", targetDepth))
+                if (context.TestExpression("Inputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Inputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublishingOptions", targetDepth))
+                if (context.TestExpression("PublishingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DQResultsPublishingOptionsUnmarshaller.Instance;
                     unmarshalledObject.PublishingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ruleset", targetDepth))
+                if (context.TestExpression("Ruleset", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ruleset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StopJobOnFailureOptions", targetDepth))
+                if (context.TestExpression("StopJobOnFailureOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DQStopJobOnFailureOptionsUnmarshaller.Instance;
                     unmarshalledObject.StopJobOnFailureOptions = unmarshaller.Unmarshall(context, ref reader);

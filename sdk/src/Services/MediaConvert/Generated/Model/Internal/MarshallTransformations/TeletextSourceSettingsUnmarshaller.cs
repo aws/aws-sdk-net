@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pageNumber", targetDepth))
+                if (context.TestExpression("pageNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context, ref reader);

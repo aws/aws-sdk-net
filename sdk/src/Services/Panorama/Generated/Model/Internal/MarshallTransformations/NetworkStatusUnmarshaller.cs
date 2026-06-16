@@ -56,25 +56,25 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Ethernet0Status", targetDepth))
+                if (context.TestExpression("Ethernet0Status", targetDepth, ref reader))
                 {
                     var unmarshaller = EthernetStatusUnmarshaller.Instance;
                     unmarshalledObject.Ethernet0Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ethernet1Status", targetDepth))
+                if (context.TestExpression("Ethernet1Status", targetDepth, ref reader))
                 {
                     var unmarshaller = EthernetStatusUnmarshaller.Instance;
                     unmarshalledObject.Ethernet1Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NtpStatus", targetDepth))
+                if (context.TestExpression("NtpStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = NtpStatusUnmarshaller.Instance;
                     unmarshalledObject.NtpStatus = unmarshaller.Unmarshall(context, ref reader);

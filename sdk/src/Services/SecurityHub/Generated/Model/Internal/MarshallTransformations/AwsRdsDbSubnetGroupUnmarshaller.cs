@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DbSubnetGroupArn", targetDepth))
+                if (context.TestExpression("DbSubnetGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DbSubnetGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DbSubnetGroupDescription", targetDepth))
+                if (context.TestExpression("DbSubnetGroupDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DbSubnetGroupDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DbSubnetGroupName", targetDepth))
+                if (context.TestExpression("DbSubnetGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DbSubnetGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetGroupStatus", targetDepth))
+                if (context.TestExpression("SubnetGroupStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubnetGroupStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subnets", targetDepth))
+                if (context.TestExpression("Subnets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsRdsDbSubnetGroupSubnet, AwsRdsDbSubnetGroupSubnetUnmarshaller>(AwsRdsDbSubnetGroupSubnetUnmarshaller.Instance);
                     unmarshalledObject.Subnets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcId", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);

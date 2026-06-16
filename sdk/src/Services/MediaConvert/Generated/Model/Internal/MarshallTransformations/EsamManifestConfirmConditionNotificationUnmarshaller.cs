@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mccXml", targetDepth))
+                if (context.TestExpression("mccXml", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MccXml = unmarshaller.Unmarshall(context, ref reader);

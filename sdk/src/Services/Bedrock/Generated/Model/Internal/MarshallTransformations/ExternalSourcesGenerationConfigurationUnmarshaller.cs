@@ -56,25 +56,25 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalModelRequestFields", targetDepth))
+                if (context.TestExpression("additionalModelRequestFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
                     unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("guardrailConfiguration", targetDepth))
+                if (context.TestExpression("guardrailConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kbInferenceConfig", targetDepth))
+                if (context.TestExpression("kbInferenceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KbInferenceConfigUnmarshaller.Instance;
                     unmarshalledObject.KbInferenceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptTemplate", targetDepth))
+                if (context.TestExpression("promptTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptTemplateUnmarshaller.Instance;
                     unmarshalledObject.PromptTemplate = unmarshaller.Unmarshall(context, ref reader);

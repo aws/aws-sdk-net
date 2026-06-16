@@ -224,12 +224,6 @@ namespace Amazon.ECS.Model
         /// The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter
         /// maps to the <c>--tmpfs</c> option to docker run.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you're using tasks that use the Fargate launch type, the <c>tmpfs</c> parameter
-        /// isn't supported.
-        /// </para>
-        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

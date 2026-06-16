@@ -52,49 +52,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentVersions", targetDepth))
+                if (context.TestExpression("AgentVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AgentVersion, AgentVersionUnmarshaller>(AgentVersionUnmarshaller.Instance);
                     response.AgentVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceFleetArn", targetDepth))
+                if (context.TestExpression("DeviceFleetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceFleetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceFleetName", targetDepth))
+                if (context.TestExpression("DeviceFleetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceFleetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceStats", targetDepth))
+                if (context.TestExpression("DeviceStats", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceStatsUnmarshaller.Instance;
                     response.DeviceStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelStats", targetDepth))
+                if (context.TestExpression("ModelStats", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EdgeModelStat, EdgeModelStatUnmarshaller>(EdgeModelStatUnmarshaller.Instance);
                     response.ModelStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputConfig", targetDepth))
+                if (context.TestExpression("OutputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EdgeOutputConfigUnmarshaller.Instance;
                     response.OutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReportGenerated", targetDepth))
+                if (context.TestExpression("ReportGenerated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ReportGenerated = unmarshaller.Unmarshall(context, ref reader);

@@ -403,6 +403,21 @@
       "min":1,
       "pattern":"[\\S]+"
     },
+    "CgroupCustomSetting":{
+      "type":"structure",
+      "required":[
+        "parameterName",
+        "parameterValue"
+      ],
+      "members":{
+        "parameterName":{"shape":"String"},
+        "parameterValue":{"shape":"String"}
+      }
+    },
+    "CgroupCustomSettings":{
+      "type":"list",
+      "member":{"shape":"CgroupCustomSetting"}
+    },
     "Cluster":{
       "type":"structure",
       "required":[
@@ -450,6 +465,8 @@
       "members":{
         "scaleDownIdleTimeInSeconds":{"shape":"ClusterSlurmConfigurationScaleDownIdleTimeInSecondsInteger"},
         "slurmCustomSettings":{"shape":"SlurmCustomSettings"},
+        "slurmdbdCustomSettings":{"shape":"SlurmdbdCustomSettings"},
+        "cgroupCustomSettings":{"shape":"CgroupCustomSettings"},
         "authKey":{"shape":"SlurmAuthKey"},
         "jwtAuth":{"shape":"JwtAuth"},
         "accounting":{"shape":"Accounting"},
@@ -461,6 +478,8 @@
       "members":{
         "scaleDownIdleTimeInSeconds":{"shape":"ClusterSlurmConfigurationRequestScaleDownIdleTimeInSecondsInteger"},
         "slurmCustomSettings":{"shape":"SlurmCustomSettings"},
+        "slurmdbdCustomSettings":{"shape":"SlurmdbdCustomSettings"},
+        "cgroupCustomSettings":{"shape":"CgroupCustomSettings"},
         "accounting":{"shape":"AccountingRequest"},
         "slurmRest":{"shape":"SlurmRestRequest"}
       }
@@ -574,14 +593,28 @@
     "ComputeNodeGroupSlurmConfiguration":{
       "type":"structure",
       "members":{
+        "scaleDownIdleTimeInSeconds":{"shape":"ComputeNodeGroupSlurmConfigurationScaleDownIdleTimeInSecondsInteger"},
         "slurmCustomSettings":{"shape":"SlurmCustomSettings"}
       }
     },
     "ComputeNodeGroupSlurmConfigurationRequest":{
       "type":"structure",
       "members":{
+        "scaleDownIdleTimeInSeconds":{"shape":"ComputeNodeGroupSlurmConfigurationRequestScaleDownIdleTimeInSecondsInteger"},
         "slurmCustomSettings":{"shape":"SlurmCustomSettings"}
       }
+    },
+    "ComputeNodeGroupSlurmConfigurationRequestScaleDownIdleTimeInSecondsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":10000000,
+      "min":-1
+    },
+    "ComputeNodeGroupSlurmConfigurationScaleDownIdleTimeInSecondsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":10000000,
+      "min":-1
     },
     "ComputeNodeGroupStatus":{
       "type":"string",
@@ -1011,7 +1044,8 @@
       "enum":[
         "ONDEMAND",
         "SPOT",
-        "CAPACITY_BLOCK"
+        "CAPACITY_BLOCK",
+        "INTERRUPTIBLE_CAPACITY_RESERVATION"
       ]
     },
     "Queue":{
@@ -1306,6 +1340,21 @@
         "mode":{"shape":"SlurmRestMode"}
       }
     },
+    "SlurmdbdCustomSetting":{
+      "type":"structure",
+      "required":[
+        "parameterName",
+        "parameterValue"
+      ],
+      "members":{
+        "parameterName":{"shape":"String"},
+        "parameterValue":{"shape":"String"}
+      }
+    },
+    "SlurmdbdCustomSettings":{
+      "type":"list",
+      "member":{"shape":"SlurmdbdCustomSetting"}
+    },
     "SpotAllocationStrategy":{
       "type":"string",
       "enum":[
@@ -1430,6 +1479,8 @@
       "members":{
         "scaleDownIdleTimeInSeconds":{"shape":"UpdateClusterSlurmConfigurationRequestScaleDownIdleTimeInSecondsInteger"},
         "slurmCustomSettings":{"shape":"SlurmCustomSettings"},
+        "slurmdbdCustomSettings":{"shape":"SlurmdbdCustomSettings"},
+        "cgroupCustomSettings":{"shape":"CgroupCustomSettings"},
         "accounting":{"shape":"UpdateAccountingRequest"},
         "slurmRest":{"shape":"UpdateSlurmRestRequest"}
       }
@@ -1472,8 +1523,15 @@
     "UpdateComputeNodeGroupSlurmConfigurationRequest":{
       "type":"structure",
       "members":{
+        "scaleDownIdleTimeInSeconds":{"shape":"UpdateComputeNodeGroupSlurmConfigurationRequestScaleDownIdleTimeInSecondsInteger"},
         "slurmCustomSettings":{"shape":"SlurmCustomSettings"}
       }
+    },
+    "UpdateComputeNodeGroupSlurmConfigurationRequestScaleDownIdleTimeInSecondsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":10000000,
+      "min":-1
     },
     "UpdateQueueRequest":{
       "type":"structure",

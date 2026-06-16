@@ -52,73 +52,73 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Catalog", targetDepth))
+                if (context.TestExpression("Catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Customer", targetDepth))
+                if (context.TestExpression("Customer", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsOpportunityCustomerUnmarshaller.Instance;
                     response.Customer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Insights", targetDepth))
+                if (context.TestExpression("Insights", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsOpportunityInsightsUnmarshaller.Instance;
                     response.Insights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvolvementType", targetDepth))
+                if (context.TestExpression("InvolvementType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InvolvementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvolvementTypeChangeReason", targetDepth))
+                if (context.TestExpression("InvolvementTypeChangeReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InvolvementTypeChangeReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LifeCycle", targetDepth))
+                if (context.TestExpression("LifeCycle", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsOpportunityLifeCycleUnmarshaller.Instance;
                     response.LifeCycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpportunityTeam", targetDepth))
+                if (context.TestExpression("OpportunityTeam", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsTeamMember, AwsTeamMemberUnmarshaller>(AwsTeamMemberUnmarshaller.Instance);
                     response.OpportunityTeam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Origin", targetDepth))
+                if (context.TestExpression("Origin", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Origin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Project", targetDepth))
+                if (context.TestExpression("Project", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsOpportunityProjectUnmarshaller.Instance;
                     response.Project = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedEntityIds", targetDepth))
+                if (context.TestExpression("RelatedEntityIds", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsOpportunityRelatedEntitiesUnmarshaller.Instance;
                     response.RelatedEntityIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedOpportunityId", targetDepth))
+                if (context.TestExpression("RelatedOpportunityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RelatedOpportunityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visibility", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Visibility = unmarshaller.Unmarshall(context, ref reader);

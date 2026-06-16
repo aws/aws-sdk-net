@@ -69,7 +69,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
     /// for the query. The <c>SOURCE</c> command can select log groups based on log group
     /// name prefix, account ID, and log class, or select data sources using dataSource syntax
-    /// in LogsQL, PPL, and SQL. 
+    /// in LogsQL, PPL, and SQL. In LogsQL, the <c>SOURCE</c> command also supports filtering
+    /// by log group tags. 
     /// </para>
     ///  
     /// <para>
@@ -97,7 +98,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
+    /// You can have up to 100 concurrent CloudWatch Logs insights queries, including queries
     /// that have been added to dashboards. 
     /// </para>
     /// </summary>
@@ -136,12 +137,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of log events to return in the query. If the query string uses
-        /// the <c>fields</c> command, only the specified fields and their values are returned.
-        /// The default is 10,000.
+        /// The maximum number of log events to return from the query. The maximum limit is 100,000.
+        /// The maximum events returned in a single GetQueryResults API call is 10,000 log events
+        /// per request. You can retrieve up to 100,000 log event results from a query by paginating
+        /// with the <c>nextToken</c>. 100,000 limit is only supported for Logs Insights QL and
+        /// is currently not supported for PPL and SQL query languages.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=100000)]
         public int? Limit
         {
             get { return this._limit; }

@@ -56,13 +56,13 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("differenceScenarios", targetDepth))
+                if (context.TestExpression("differenceScenarios", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailAutomatedReasoningScenario, GuardrailAutomatedReasoningScenarioUnmarshaller>(GuardrailAutomatedReasoningScenarioUnmarshaller.Instance);
                     unmarshalledObject.DifferenceScenarios = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("options", targetDepth))
+                if (context.TestExpression("options", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailAutomatedReasoningTranslationOption, GuardrailAutomatedReasoningTranslationOptionUnmarshaller>(GuardrailAutomatedReasoningTranslationOptionUnmarshaller.Instance);
                     unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);

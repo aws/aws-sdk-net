@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Meeting", targetDepth))
+                if (context.TestExpression("Meeting", targetDepth, ref reader))
                 {
                     var unmarshaller = MeetingUnmarshaller.Instance;
                     response.Meeting = unmarshaller.Unmarshall(context, ref reader);

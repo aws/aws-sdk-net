@@ -56,73 +56,73 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("equalTo", targetDepth))
+                if (context.TestExpression("equalTo", targetDepth, ref reader))
                 {
                     var unmarshaller = EqualToExpressionUnmarshaller.Instance;
                     unmarshalledObject.EqualTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("greaterThan", targetDepth))
+                if (context.TestExpression("greaterThan", targetDepth, ref reader))
                 {
                     var unmarshaller = GreaterThanExpressionUnmarshaller.Instance;
                     unmarshalledObject.GreaterThan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("greaterThanOrEqualTo", targetDepth))
+                if (context.TestExpression("greaterThanOrEqualTo", targetDepth, ref reader))
                 {
                     var unmarshaller = GreaterThanOrEqualToExpressionUnmarshaller.Instance;
                     unmarshalledObject.GreaterThanOrEqualTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("in", targetDepth))
+                if (context.TestExpression("in", targetDepth, ref reader))
                 {
                     var unmarshaller = InExpressionUnmarshaller.Instance;
                     unmarshalledObject.In = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isNotNull", targetDepth))
+                if (context.TestExpression("isNotNull", targetDepth, ref reader))
                 {
                     var unmarshaller = IsNotNullExpressionUnmarshaller.Instance;
                     unmarshalledObject.IsNotNull = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isNull", targetDepth))
+                if (context.TestExpression("isNull", targetDepth, ref reader))
                 {
                     var unmarshaller = IsNullExpressionUnmarshaller.Instance;
                     unmarshalledObject.IsNull = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lessThan", targetDepth))
+                if (context.TestExpression("lessThan", targetDepth, ref reader))
                 {
                     var unmarshaller = LessThanExpressionUnmarshaller.Instance;
                     unmarshalledObject.LessThan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lessThanOrEqualTo", targetDepth))
+                if (context.TestExpression("lessThanOrEqualTo", targetDepth, ref reader))
                 {
                     var unmarshaller = LessThanOrEqualToExpressionUnmarshaller.Instance;
                     unmarshalledObject.LessThanOrEqualTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("like", targetDepth))
+                if (context.TestExpression("like", targetDepth, ref reader))
                 {
                     var unmarshaller = LikeExpressionUnmarshaller.Instance;
                     unmarshalledObject.Like = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notEqualTo", targetDepth))
+                if (context.TestExpression("notEqualTo", targetDepth, ref reader))
                 {
                     var unmarshaller = NotEqualToExpressionUnmarshaller.Instance;
                     unmarshalledObject.NotEqualTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notIn", targetDepth))
+                if (context.TestExpression("notIn", targetDepth, ref reader))
                 {
                     var unmarshaller = NotInExpressionUnmarshaller.Instance;
                     unmarshalledObject.NotIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notLike", targetDepth))
+                if (context.TestExpression("notLike", targetDepth, ref reader))
                 {
                     var unmarshaller = NotLikeExpressionUnmarshaller.Instance;
                     unmarshalledObject.NotLike = unmarshaller.Unmarshall(context, ref reader);

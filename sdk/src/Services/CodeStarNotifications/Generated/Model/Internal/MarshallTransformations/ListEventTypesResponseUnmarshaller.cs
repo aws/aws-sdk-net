@@ -52,13 +52,13 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventTypes", targetDepth))
+                if (context.TestExpression("EventTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventTypeSummary, EventTypeSummaryUnmarshaller>(EventTypeSummaryUnmarshaller.Instance);
                     response.EventTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

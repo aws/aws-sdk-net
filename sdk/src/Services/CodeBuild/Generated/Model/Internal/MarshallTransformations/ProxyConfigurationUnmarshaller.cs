@@ -56,13 +56,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("defaultBehavior", targetDepth))
+                if (context.TestExpression("defaultBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orderedProxyRules", targetDepth))
+                if (context.TestExpression("orderedProxyRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FleetProxyRule, FleetProxyRuleUnmarshaller>(FleetProxyRuleUnmarshaller.Instance);
                     unmarshalledObject.OrderedProxyRules = unmarshaller.Unmarshall(context, ref reader);

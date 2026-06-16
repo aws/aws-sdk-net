@@ -56,19 +56,19 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LoggingFilter", targetDepth))
+                if (context.TestExpression("LoggingFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingFilterUnmarshaller.Instance;
                     unmarshalledObject.LoggingFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogType", targetDepth))
+                if (context.TestExpression("LogType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedactedFields", targetDepth))
+                if (context.TestExpression("RedactedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldToMatch, FieldToMatchUnmarshaller>(FieldToMatchUnmarshaller.Instance);
                     unmarshalledObject.RedactedFields = unmarshaller.Unmarshall(context, ref reader);

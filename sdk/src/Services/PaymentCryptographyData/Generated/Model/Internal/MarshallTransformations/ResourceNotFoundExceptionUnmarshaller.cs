@@ -72,7 +72,7 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ResourceId", targetDepth))
+                    if (context.TestExpression("ResourceId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);

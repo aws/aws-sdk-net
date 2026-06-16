@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceIdPreference", targetDepth))
+                if (context.TestExpression("ResourceIdPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceIdPreferenceUnmarshaller.Instance;
                     response.ResourceIdPreference = unmarshaller.Unmarshall(context, ref reader);

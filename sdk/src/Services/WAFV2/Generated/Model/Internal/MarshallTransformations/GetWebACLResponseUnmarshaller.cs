@@ -52,19 +52,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationIntegrationURL", targetDepth))
+                if (context.TestExpression("ApplicationIntegrationURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationIntegrationURL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LockToken", targetDepth))
+                if (context.TestExpression("LockToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LockToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebACL", targetDepth))
+                if (context.TestExpression("WebACL", targetDepth, ref reader))
                 {
                     var unmarshaller = WebACLUnmarshaller.Instance;
                     response.WebACL = unmarshaller.Unmarshall(context, ref reader);

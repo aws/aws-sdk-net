@@ -56,61 +56,61 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessEndpointConfig", targetDepth))
+                if (context.TestExpression("AccessEndpointConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessEndpointConfigUnmarshaller.Instance;
                     unmarshalledObject.AccessEndpointConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeAndroid", targetDepth))
+                if (context.TestExpression("DeviceTypeAndroid", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeAndroid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeChromeOs", targetDepth))
+                if (context.TestExpression("DeviceTypeChromeOs", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeChromeOs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeIos", targetDepth))
+                if (context.TestExpression("DeviceTypeIos", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeIos = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeLinux", targetDepth))
+                if (context.TestExpression("DeviceTypeLinux", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeLinux = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeOsx", targetDepth))
+                if (context.TestExpression("DeviceTypeOsx", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeOsx = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeWeb", targetDepth))
+                if (context.TestExpression("DeviceTypeWeb", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeWeb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeWindows", targetDepth))
+                if (context.TestExpression("DeviceTypeWindows", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeWindows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeWorkSpacesThinClient", targetDepth))
+                if (context.TestExpression("DeviceTypeWorkSpacesThinClient", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeWorkSpacesThinClient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceTypeZeroClient", targetDepth))
+                if (context.TestExpression("DeviceTypeZeroClient", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceTypeZeroClient = unmarshaller.Unmarshall(context, ref reader);

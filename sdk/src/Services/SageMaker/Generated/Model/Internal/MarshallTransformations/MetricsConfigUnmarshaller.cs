@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableEnhancedMetrics", targetDepth))
+                if (context.TestExpression("EnableEnhancedMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableEnhancedMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricPublishFrequencyInSeconds", targetDepth))
+                if (context.TestExpression("MetricPublishFrequencyInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MetricPublishFrequencyInSeconds = unmarshaller.Unmarshall(context, ref reader);

@@ -103,7 +103,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
+        [AWSProperty(Min=3, Max=64)]
         public string Name
         {
             get { return this._name; }

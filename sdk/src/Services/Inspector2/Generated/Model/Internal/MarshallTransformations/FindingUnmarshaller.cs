@@ -56,127 +56,127 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsAccountId", targetDepth))
+                if (context.TestExpression("awsAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeVulnerabilityDetails", targetDepth))
+                if (context.TestExpression("codeVulnerabilityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeVulnerabilityDetailsUnmarshaller.Instance;
                     unmarshalledObject.CodeVulnerabilityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("epss", targetDepth))
+                if (context.TestExpression("epss", targetDepth, ref reader))
                 {
                     var unmarshaller = EpssDetailsUnmarshaller.Instance;
                     unmarshalledObject.Epss = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exploitabilityDetails", targetDepth))
+                if (context.TestExpression("exploitabilityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExploitabilityDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExploitabilityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exploitAvailable", targetDepth))
+                if (context.TestExpression("exploitAvailable", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExploitAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingArn", targetDepth))
+                if (context.TestExpression("findingArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FindingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstObservedAt", targetDepth))
+                if (context.TestExpression("firstObservedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstObservedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fixAvailable", targetDepth))
+                if (context.TestExpression("fixAvailable", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FixAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inspectorScore", targetDepth))
+                if (context.TestExpression("inspectorScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.InspectorScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inspectorScoreDetails", targetDepth))
+                if (context.TestExpression("inspectorScoreDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = InspectorScoreDetailsUnmarshaller.Instance;
                     unmarshalledObject.InspectorScoreDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastObservedAt", targetDepth))
+                if (context.TestExpression("lastObservedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastObservedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkReachabilityDetails", targetDepth))
+                if (context.TestExpression("networkReachabilityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkReachabilityDetailsUnmarshaller.Instance;
                     unmarshalledObject.NetworkReachabilityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packageVulnerabilityDetails", targetDepth))
+                if (context.TestExpression("packageVulnerabilityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageVulnerabilityDetailsUnmarshaller.Instance;
                     unmarshalledObject.PackageVulnerabilityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remediation", targetDepth))
+                if (context.TestExpression("remediation", targetDepth, ref reader))
                 {
                     var unmarshaller = RemediationUnmarshaller.Instance;
                     unmarshalledObject.Remediation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resources", targetDepth))
+                if (context.TestExpression("resources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);
                     unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("severity", targetDepth))
+                if (context.TestExpression("severity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Severity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("title", targetDepth))
+                if (context.TestExpression("title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

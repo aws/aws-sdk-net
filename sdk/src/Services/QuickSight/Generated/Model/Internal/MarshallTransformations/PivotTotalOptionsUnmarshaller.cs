@@ -56,49 +56,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomLabel", targetDepth))
+                if (context.TestExpression("CustomLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricHeaderCellStyle", targetDepth))
+                if (context.TestExpression("MetricHeaderCellStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.MetricHeaderCellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Placement", targetDepth))
+                if (context.TestExpression("Placement", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Placement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScrollStatus", targetDepth))
+                if (context.TestExpression("ScrollStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScrollStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAggregationOptions", targetDepth))
+                if (context.TestExpression("TotalAggregationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TotalAggregationOption, TotalAggregationOptionUnmarshaller>(TotalAggregationOptionUnmarshaller.Instance);
                     unmarshalledObject.TotalAggregationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalCellStyle", targetDepth))
+                if (context.TestExpression("TotalCellStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.TotalCellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalsVisibility", targetDepth))
+                if (context.TestExpression("TotalsVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueCellStyle", targetDepth))
+                if (context.TestExpression("ValueCellStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.ValueCellStyle = unmarshaller.Unmarshall(context, ref reader);

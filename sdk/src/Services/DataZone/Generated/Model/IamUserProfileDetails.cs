@@ -35,7 +35,9 @@ namespace Amazon.DataZone.Model
     public partial class IamUserProfileDetails
     {
         private string _arn;
+        private string _groupProfileId;
         private string _principalId;
+        private string _sessionName;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -56,6 +58,25 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GroupProfileId. 
+        /// <para>
+        /// The identifier of the group profile associated with the IAM user profile. This links
+        /// the user to a specific group profile within the Amazon DataZone domain.
+        /// </para>
+        /// </summary>
+        public string GroupProfileId
+        {
+            get { return this._groupProfileId; }
+            set { this._groupProfileId = value; }
+        }
+
+        // Check to see if GroupProfileId property is set
+        internal bool IsSetGroupProfileId()
+        {
+            return this._groupProfileId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
         /// The principal ID as part of the IAM user profile details.
@@ -71,6 +92,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetPrincipalId()
         {
             return this._principalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionName. 
+        /// <para>
+        /// The session name for IAM role sessions.
+        /// </para>
+        /// </summary>
+        public string SessionName
+        {
+            get { return this._sessionName; }
+            set { this._sessionName = value; }
+        }
+
+        // Check to see if SessionName property is set
+        internal bool IsSetSessionName()
+        {
+            return this._sessionName != null;
         }
 
     }

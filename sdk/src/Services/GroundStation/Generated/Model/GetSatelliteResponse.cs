@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Output for the <c>GetSatellite</c> operation.
     /// </summary>
     public partial class GetSatelliteResponse : AmazonWebServiceResponse
     {
@@ -88,7 +88,7 @@ namespace Amazon.GroundStation.Model
         /// NORAD satellite ID number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=99999)]
+        [AWSProperty(Min=0, Max=339999)]
         public int? NoradSatelliteID
         {
             get { return this._noradSatelliteID; }

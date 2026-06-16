@@ -56,49 +56,49 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobAttachmentSettings", targetDepth))
+                if (context.TestExpression("jobAttachmentSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = JobAttachmentSettingsUnmarshaller.Instance;
                     unmarshalledObject.JobAttachmentSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobId", targetDepth))
+                if (context.TestExpression("jobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobRunAsUser", targetDepth))
+                if (context.TestExpression("jobRunAsUser", targetDepth, ref reader))
                 {
                     var unmarshaller = JobRunAsUserUnmarshaller.Instance;
                     unmarshalledObject.JobRunAsUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logGroupName", targetDepth))
+                if (context.TestExpression("logGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parameters", targetDepth))
+                if (context.TestExpression("parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, JobParameter, StringUnmarshaller, JobParameterUnmarshaller>(StringUnmarshaller.Instance, JobParameterUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pathMappingRules", targetDepth))
+                if (context.TestExpression("pathMappingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PathMappingRule, PathMappingRuleUnmarshaller>(PathMappingRuleUnmarshaller.Instance);
                     unmarshalledObject.PathMappingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queueRoleArn", targetDepth))
+                if (context.TestExpression("queueRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueueRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schemaVersion", targetDepth))
+                if (context.TestExpression("schemaVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context, ref reader);

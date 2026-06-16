@@ -1,53 +1,62 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Amazon.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    [TestClass]
-    public class AWSPublicIpAddressRangesTests
+    public class AWSPublicIpAddressRangesFixture : IAsyncLifetime
     {
-        private AWSPublicIpAddressRanges _addressRanges;
+        public AWSPublicIpAddressRanges AddressRanges { get; private set; }
 
-        [TestInitialize]
-        public void Init()
+        public ValueTask InitializeAsync()
         {
-            _addressRanges = AWSPublicIpAddressRanges.Load();
+            AddressRanges = AWSPublicIpAddressRanges.Load();
+            return default;
         }
 
-        [TestMethod]
-        [TestCategory("General")]
+        public ValueTask DisposeAsync() => default;
+    }
+
+    [Trait("Category", "General")]
+    public class AWSPublicIpAddressRangesTests : IClassFixture<AWSPublicIpAddressRangesFixture>
+    {
+        private readonly AWSPublicIpAddressRanges _addressRanges;
+
+        public AWSPublicIpAddressRangesTests(AWSPublicIpAddressRangesFixture fixture)
+        {
+            _addressRanges = fixture.AddressRanges;
+        }
+
+        [Fact]
         public void TestLoadAndParse()
         {
-            Assert.IsNotNull(_addressRanges);
-            Assert.IsTrue(_addressRanges.AllAddressRanges.Any());
+            Assert.NotNull(_addressRanges);
+            Assert.True(_addressRanges.AllAddressRanges.Any());
         }
 
-        [TestMethod]
-        [TestCategory("General")]
+        [Fact]
         public void TestQueryByServiceKey()
         {
             var ec2Ranges = _addressRanges.AddressRangesByServiceKey(AWSPublicIpAddressRanges.EC2ServiceKey);
-            Assert.IsTrue(ec2Ranges.Any());
+            Assert.True(ec2Ranges.Any());
         }
 
-        [TestMethod]
-        [TestCategory("General")]
+        [Fact]
         public void TestQueryByRegion()
         {
             var uswest1Ranges = _addressRanges.AddressRangesByRegion("us-west-1");
-            Assert.IsTrue(uswest1Ranges.Any());
+            Assert.True(uswest1Ranges.Any());
 
             var globalRanges = _addressRanges.AddressRangesByRegion(AWSPublicIpAddressRanges.GlobalRegionIdentifier);
-            Assert.IsTrue(globalRanges.Any());
+            Assert.True(globalRanges.Any());
         }
 
-        [TestMethod]
-        [TestCategory("General")]
+        [Fact]
         public void TestQueryByNetworkBorderGroup()
         {
             var useast1Ranges = _addressRanges.AddressRangesByNetworkBorderGroup("us-east-1");
-            Assert.IsTrue(useast1Ranges.Any());
+            Assert.True(useast1Ranges.Any());
         }
     }
 }

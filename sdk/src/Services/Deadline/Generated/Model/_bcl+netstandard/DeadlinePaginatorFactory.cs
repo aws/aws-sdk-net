@@ -261,6 +261,14 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Paginator for ListVolumes operation
+        ///</summary>
+        public IListVolumesPaginator ListVolumes(ListVolumesRequest request) 
+        {
+            return new ListVolumesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkers operation
         ///</summary>
         public IListWorkersPaginator ListWorkers(ListWorkersRequest request) 

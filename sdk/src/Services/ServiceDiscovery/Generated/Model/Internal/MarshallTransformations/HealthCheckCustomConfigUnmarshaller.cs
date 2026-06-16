@@ -56,7 +56,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailureThreshold", targetDepth))
+                if (context.TestExpression("FailureThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailureThreshold = unmarshaller.Unmarshall(context, ref reader);

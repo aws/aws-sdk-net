@@ -52,6 +52,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
+            if(requestObject.IsSetJwksUrl())
+            {
+                context.Writer.WritePropertyName("JwksUrl");
+                context.Writer.WriteStringValue(requestObject.JwksUrl);
+            }
+
             if(requestObject.IsSetPublicKey())
             {
                 context.Writer.WritePropertyName("PublicKey");
