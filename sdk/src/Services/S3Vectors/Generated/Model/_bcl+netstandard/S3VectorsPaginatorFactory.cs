@@ -59,5 +59,13 @@ namespace Amazon.S3Vectors.Model
         {
             return new ListVectorsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for QueryVectors operation
+        ///</summary>
+        public IQueryVectorsPaginator QueryVectors(QueryVectorsRequest request) 
+        {
+            return new QueryVectorsPaginator(this.client, request);
+        }
     }
 }
