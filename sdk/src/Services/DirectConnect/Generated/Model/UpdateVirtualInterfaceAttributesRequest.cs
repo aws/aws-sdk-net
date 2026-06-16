@@ -47,6 +47,7 @@ namespace Amazon.DirectConnect.Model
     {
         private bool? _enableSiteLink;
         private int? _mtu;
+        private string _rateLimit;
         private string _virtualInterfaceId;
         private string _virtualInterfaceName;
 
@@ -85,6 +86,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetMtu()
         {
             return this._mtu.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RateLimit. 
+        /// <para>
+        /// The rate limit (bandwidth allocation) to apply to the virtual interface. Use this
+        /// to update the bandwidth allocation on an existing virtual interface.
+        /// </para>
+        /// </summary>
+        public string RateLimit
+        {
+            get { return this._rateLimit; }
+            set { this._rateLimit = value; }
+        }
+
+        // Check to see if RateLimit property is set
+        internal bool IsSetRateLimit()
+        {
+            return this._rateLimit != null;
         }
 
         /// <summary>

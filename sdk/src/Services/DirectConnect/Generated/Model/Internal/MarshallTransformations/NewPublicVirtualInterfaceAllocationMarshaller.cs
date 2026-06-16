@@ -82,6 +82,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CustomerAddress);
             }
 
+            if(requestObject.IsSetRateLimit())
+            {
+                context.Writer.WritePropertyName("rateLimit");
+                context.Writer.WriteStringValue(requestObject.RateLimit);
+            }
+
             if(requestObject.IsSetRouteFilterPrefixes())
             {
                 context.Writer.WritePropertyName("routeFilterPrefixes");
