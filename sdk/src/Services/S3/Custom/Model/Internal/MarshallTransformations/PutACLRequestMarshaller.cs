@@ -65,16 +65,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectAclRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(putObjectAclRequest.VersionId));
 
-            var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (
-                var xmlWriter = XmlWriter.Create(stringWriter,
-                                                 new XmlWriterSettings()
-                                                     {
-                                                         Encoding = Encoding.UTF8,
-                                                         OmitXmlDeclaration = true,
-                                                         NewLineHandling = NewLineHandling.Entitize
-                                                     }))
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
+#else
+            var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+#endif
                 var accessControlPolicyAccessControlPolicy = putObjectAclRequest.AccessControlList;
                 if (accessControlPolicyAccessControlPolicy != null)
                 {
@@ -92,7 +92,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Owner");
                             if (ownerOwner.IsSetDisplayName())
                             {
-                                xmlWriter.WriteElementString("DisplayName", 
+                                xmlWriter.WriteElementString("DisplayName",
                                                              S3Transforms.ToXmlStringValue(ownerOwner.DisplayName));
                             }
                             if (ownerOwner.IsSetId())
@@ -109,14 +109,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             try
             {
+#if NETFRAMEWORK
                 var content = stringWriter.ToString();
                 request.Content = Encoding.UTF8.GetBytes(content);
+#endif
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
                 ChecksumUtils.SetChecksumData(
-                    request, 
-                    putObjectAclRequest.ChecksumAlgorithm, 
-                    fallbackToMD5: false, 
+                    request,
+                    putObjectAclRequest.ChecksumAlgorithm,
+                    fallbackToMD5: false,
                     isRequestChecksumRequired: true,
                     headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
                 );
