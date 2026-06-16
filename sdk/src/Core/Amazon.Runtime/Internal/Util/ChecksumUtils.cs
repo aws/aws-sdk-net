@@ -234,6 +234,14 @@ namespace Amazon.Runtime.Internal.Util
                     seekableStream.Seek(position, SeekOrigin.Begin);
                     return Convert.ToBase64String(checksumBytes);
                 }
+                else if (request.ContentStream.Length == 0)
+                {
+                    // Empty streams don't need seeking — the checksum is a known constant.
+                    // S3 handles this via trailing headers, but other services may not support
+                    // chunk encoding and will fall through to here.
+                    var checksumBytes = algorithm.ComputeHash(Array.Empty<byte>());
+                    return Convert.ToBase64String(checksumBytes);
+                }
                 else
                 {
                     throw new ArgumentException("Request must have a seekable content stream to calculate checksum");

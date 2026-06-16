@@ -183,8 +183,23 @@ namespace Amazon.S3.Internal
             {
                 // Wrap the stream in a stream that has a length
                 var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
-                if (streamWithLength.Length > 0 && !(putObjectRequest.DisablePayloadSigning ?? false))
-                    request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
+
+                // Non-seekable streams must use chunk encoding so the checksum can be computed incrementally and sent as a trailing header;
+                // the header-based checksum path requires seeking.
+                // This is enforced regardless of what the user set on UseChunkEncoding, since there's no other way to produce a
+                // valid checksum for a non-seekable stream (#4432).
+                if (!(putObjectRequest.DisablePayloadSigning ?? false))
+                {
+                    if (!streamWithLength.CanSeek)
+                    {
+                        request.UseChunkEncoding = true;
+                    }
+                    else if (streamWithLength.Length > 0)
+                    {
+                        request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
+                    }
+                }
+
                 var length = streamWithLength.Length - streamWithLength.Position;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));

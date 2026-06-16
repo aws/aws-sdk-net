@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async Task UploadPartWithUnseekableStream(bool disableDefaultChecksumValidation, bool useChunkEncoding, string checksumCRC32, bool streamReportsLength, bool setPartSize)
         {
             var data = Encoding.UTF8.GetBytes("Hello, S3!");
-            var stream = new UnseekableStream(data, streamReportsLength);
+            var stream = new NonSeekableStream(data, streamReportsLength);
 
             // When a PartSize is set on a length-reporting stream, make it oversized to verify
             // it is capped to the actual length; a forward-only stream needs the exact size.
@@ -108,7 +108,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async Task UploadPartWithUnseekableStreamAndPayloadSigningThrows()
         {
             var data = Encoding.UTF8.GetBytes("Hello, S3!");
-            var stream = new UnseekableStream(data);
+            var stream = new NonSeekableStream(data, reportsLength: false);
             var key = _keyPrefix + "should-fail.txt";
 
             var initiateResponse = await _client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
@@ -148,7 +148,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async Task UploadPartWithUnseekableStreamAndNoPartSizeThrows()
         {
             var data = Encoding.UTF8.GetBytes("Hello, S3!");
-            var stream = new UnseekableStream(data);
+            var stream = new NonSeekableStream(data, reportsLength: false);
             var key = _keyPrefix + "no-partsize.txt";
 
             var initiateResponse = await _client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
@@ -184,28 +184,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private class UnseekableStream : MemoryStream
-        {
-            private readonly bool _reportsLength;
-
-            // When reportsLength is false the stream is forward-only and throws on
-            // Length/Position (the SDK must rely on PartSize). When true, the stream
-            // is still non-seekable but exposes its length, so the SDK can cap a
-            // nominal PartSize down to the actual remaining bytes.
-            public UnseekableStream(byte[] buffer, bool reportsLength = false) : base(buffer)
-            {
-                _reportsLength = reportsLength;
-            }
-
-            public override bool CanSeek => false;
-
-            public override long Length => _reportsLength ? base.Length : throw new NotSupportedException();
-
-            public override long Position
-            {
-                get => _reportsLength ? base.Position : throw new NotSupportedException();
-                set => throw new NotSupportedException();
-            }
-        }
     }
 }
