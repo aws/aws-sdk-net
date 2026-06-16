@@ -397,6 +397,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         public override bool CanSeek => false;
+        public override long Seek(long offset, SeekOrigin origin) => throw new NotSupportedException();
         public override long Length => _reportsLength ? base.Length : throw new NotSupportedException();
         public override long Position
         {

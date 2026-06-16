@@ -184,10 +184,9 @@ namespace Amazon.S3.Internal
                 // Wrap the stream in a stream that has a length
                 var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
 
-                // Non-seekable streams must use chunk encoding so the checksum can be computed incrementally and sent as a trailing header;
-                // the header-based checksum path requires seeking.
-                // This is enforced regardless of what the user set on UseChunkEncoding, since there's no other way to produce a
-                // valid checksum for a non-seekable stream (#4432).
+                // Non-seekable streams require trailing checksums since the header-based path requires seeking.
+                // When payload signing is enabled, chunk encoding is the mechanism that enables trailing headers.
+                // When payload signing is disabled, trailing headers are used regardless of chunk encoding (#4432).
                 if (!(putObjectRequest.DisablePayloadSigning ?? false))
                 {
                     if (!streamWithLength.CanSeek)
