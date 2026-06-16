@@ -59,6 +59,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
+            if (publicRequest.IsSetAnnotationDirective()) 
+            {
+                request.Headers["x-amz-object-annotation-directive"] = publicRequest.AnnotationDirective;
+            }
+        
             if (publicRequest.IsSetBucketKeyEnabled()) 
             {
                 request.Headers.Add(Util.S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(publicRequest.BucketKeyEnabled.Value));

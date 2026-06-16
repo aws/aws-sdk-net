@@ -34,9 +34,28 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class MetadataConfigurationResult
     {
+        private AnnotationTableConfigurationResult _annotationTableConfigurationResult;
         private DestinationResult _destinationResult;
         private InventoryTableConfigurationResult _inventoryTableConfigurationResult;
         private JournalTableConfigurationResult _journalTableConfigurationResult;
+
+        /// <summary>
+        /// Gets and sets the property AnnotationTableConfigurationResult. 
+        /// <para>
+        /// The annotation table configuration result, if an annotation table is configured.
+        /// </para>
+        /// </summary>
+        public AnnotationTableConfigurationResult AnnotationTableConfigurationResult
+        {
+            get { return this._annotationTableConfigurationResult; }
+            set { this._annotationTableConfigurationResult = value; }
+        }
+
+        // Check to see if AnnotationTableConfigurationResult property is set
+        internal bool IsSetAnnotationTableConfigurationResult()
+        {
+            return this._annotationTableConfigurationResult != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationResult. 

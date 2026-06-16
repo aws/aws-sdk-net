@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetadataConfigurationResult Object
+    /// Response Unmarshaller for AnnotationEntry Object
     /// </summary>  
-    public partial class MetadataConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataConfigurationResult, XmlUnmarshallerContext>
+    public partial class AnnotationEntryUnmarshaller : IXmlUnmarshaller<AnnotationEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetadataConfigurationResult Unmarshall(XmlUnmarshallerContext context)
+        public AnnotationEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            MetadataConfigurationResult unmarshalledObject = new MetadataConfigurationResult();
+            AnnotationEntry unmarshalledObject = new AnnotationEntry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,28 +56,44 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AnnotationTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("AnnotationName", targetDepth))
                     {
-                        var unmarshaller = AnnotationTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.AnnotationTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AnnotationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("DestinationResult", targetDepth))
+                    if (context.TestExpression("ChecksumAlgorithm", targetDepth))
                     {
-                        var unmarshaller = DestinationResultUnmarshaller.Instance;
-                        unmarshalledObject.DestinationResult = unmarshaller.Unmarshall(context);
+                        if (unmarshalledObject.ChecksumAlgorithm == null)
+                        {
+                            unmarshalledObject.ChecksumAlgorithm = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChecksumAlgorithm.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("InventoryTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("ETag", targetDepth))
                     {
-                        var unmarshaller = InventoryTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.InventoryTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ETag = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("JournalTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("LastModified", targetDepth))
                     {
-                        var unmarshaller = JournalTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.JournalTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReplicationStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplicationStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Size", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
@@ -91,14 +107,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, MetadataConfigurationResult unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AnnotationEntry unmarshalledObject, int targetDepth);
 
-        private static MetadataConfigurationResultUnmarshaller _instance = new MetadataConfigurationResultUnmarshaller();        
+        private static AnnotationEntryUnmarshaller _instance = new AnnotationEntryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetadataConfigurationResultUnmarshaller Instance
+        public static AnnotationEntryUnmarshaller Instance
         {
             get
             {

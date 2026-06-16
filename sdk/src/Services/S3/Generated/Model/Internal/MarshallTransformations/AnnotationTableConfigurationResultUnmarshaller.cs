@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetadataConfigurationResult Object
+    /// Response Unmarshaller for AnnotationTableConfigurationResult Object
     /// </summary>  
-    public partial class MetadataConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataConfigurationResult, XmlUnmarshallerContext>
+    public partial class AnnotationTableConfigurationResultUnmarshaller : IXmlUnmarshaller<AnnotationTableConfigurationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetadataConfigurationResult Unmarshall(XmlUnmarshallerContext context)
+        public AnnotationTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            MetadataConfigurationResult unmarshalledObject = new MetadataConfigurationResult();
+            AnnotationTableConfigurationResult unmarshalledObject = new AnnotationTableConfigurationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,28 +56,40 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AnnotationTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("ConfigurationState", targetDepth))
                     {
-                        var unmarshaller = AnnotationTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.AnnotationTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ConfigurationState = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("DestinationResult", targetDepth))
+                    if (context.TestExpression("Error", targetDepth))
                     {
-                        var unmarshaller = DestinationResultUnmarshaller.Instance;
-                        unmarshalledObject.DestinationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ErrorDetailsUnmarshaller.Instance;
+                        unmarshalledObject.Error = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("InventoryTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("Role", targetDepth))
                     {
-                        var unmarshaller = InventoryTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.InventoryTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Role = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("JournalTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("TableArn", targetDepth))
                     {
-                        var unmarshaller = JournalTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.JournalTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TableName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TableStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
@@ -91,14 +103,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, MetadataConfigurationResult unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AnnotationTableConfigurationResult unmarshalledObject, int targetDepth);
 
-        private static MetadataConfigurationResultUnmarshaller _instance = new MetadataConfigurationResultUnmarshaller();        
+        private static AnnotationTableConfigurationResultUnmarshaller _instance = new AnnotationTableConfigurationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetadataConfigurationResultUnmarshaller Instance
+        public static AnnotationTableConfigurationResultUnmarshaller Instance
         {
             get
             {
