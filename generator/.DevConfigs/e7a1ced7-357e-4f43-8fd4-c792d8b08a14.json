@@ -1,4 +1,11 @@
 {
+  "core": {
+    "changeLogMessages": [
+      "Add fallback in the `ChecksumUtils` class for future services that won't support chunk encoding."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  },
   "services": [
     {
       "serviceName": "S3",
