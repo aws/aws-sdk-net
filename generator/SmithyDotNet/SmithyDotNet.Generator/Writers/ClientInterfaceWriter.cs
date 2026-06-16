@@ -5,14 +5,8 @@ namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
 /// Emits the C# source for the public service interface (e.g. <c>IAmazonCloudTrailData</c>),
-/// matching the public API surface of the existing AWS SDK for .NET.
-/// <para />
-/// Phase 1 scope: a synchronous and asynchronous method pair per operation, with doc comments.
-/// Protocol marshalling and the <c>DetermineServiceOperationEndpoint</c> member are deferred, as
-/// are the <c>NET8_0_OR_GREATER</c> static-factory members (<c>CreateDefaultClientConfig</c> /
-/// <c>CreateDefaultServiceClient</c>) that the base <see cref="Amazon.Runtime.IAmazonService"/>
-/// declares as <c>static abstract</c> — these construct the concrete client/config and land with
-/// the client writer.
+/// matching the public API surface of the existing AWS SDK for .NET. The interface declares a
+/// synchronous and asynchronous method pair per operation, with doc comments.
 /// </summary>
 public sealed class ClientInterfaceWriter(GenerationContext context, string modelFileName)
 {
@@ -76,57 +70,15 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
         // generator emits it in the _bcl file, which is excluded from the netstandard/net builds), so
         // guard it with #if NETFRAMEWORK in this single-file output.
         writer.WriteLine("#if NETFRAMEWORK");
-        WriteOperationDocumentation(writer, operation, isAsync: false);
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false);
         writer.WriteLine($"{responseType} {operation.Name}({requestType} request);");
         writer.WriteLine("#endif");
         writer.WriteLine();
 
         // Asynchronous overload.
-        WriteOperationDocumentation(writer, operation, isAsync: true);
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
         writer.WriteLine($"Task<{responseType}> {operation.Name}Async({requestType} request, CancellationToken cancellationToken = default(CancellationToken));");
         writer.WriteLine();
     }
 
-    private void WriteOperationDocumentation(CodeWriter writer, Operation operation, bool isAsync)
-    {
-        var cleaned = DocumentationFormatter.Cleanup(operation.Shape.GetDocumentation());
-        writer.WriteLine("/// <summary>");
-        if (cleaned.Length > 0)
-        {
-            DocumentationFormatter.WriteCommentBlock(writer, cleaned);
-        }
-
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"/// <param name=\"request\">Container for the necessary parameters to execute the {operation.Name} service method.</param>");
-
-        if (isAsync)
-        {
-            writer.WriteLine("/// <param name=\"cancellationToken\">");
-            writer.WriteLine("///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.");
-            writer.WriteLine("/// </param>");
-        }
-
-        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.ServiceName}.</returns>");
-
-        foreach (var error in operation.Errors)
-        {
-            WriteExceptionTag(writer, error);
-        }
-
-        writer.WriteLine($"/// <seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/{context.EndpointPrefix}-{context.ApiVersion}/{operation.Name}\">REST API Reference for {operation.Name} Operation</seealso>");
-    }
-
-    private void WriteExceptionTag(CodeWriter writer, OperationError error)
-    {
-        var exceptionName = ExceptionWriter.ToExceptionName(error.Id.Name);
-        writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
-
-        var cleaned = DocumentationFormatter.Cleanup(error.Shape.GetDocumentation());
-        if (cleaned.Length > 0)
-        {
-            DocumentationFormatter.WriteCommentBlock(writer, cleaned);
-        }
-
-        writer.WriteLine("/// </exception>");
-    }
 }
