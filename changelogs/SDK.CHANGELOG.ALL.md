@@ -1,3 +1,31 @@
+### 4.0.271.0 (2026-06-16 18:28 UTC)
+* DirectConnect (4.0.5.0)
+	* Added VIF rate limiting support for AWS Direct Connect, allowing customers to set bandwidth allocations on virtual interfaces to manage traffic on dedicated connections.
+* IoTEvents (Removed)
+	* AWS IoT Events has been removed from the SDK because it has been discontinued.
+* IoTEventsData (Removed)
+	* AWS IoT Events Data has been removed from the SDK because it has been discontinued.
+* Outposts (4.0.9.0)
+	* Adds support for creating an order from quotes.
+* Panorama (Removed)
+	* AWS Panorama has been removed from the SDK because it has been discontinued.
+* PartnerCentralSelling (4.0.13.0)
+	* Added Prospecting APIs to convert engagements into AI-enriched leads with scoring insights. Extended Engagement APIs with ProspectingResult and Lead contexts. Added CoSell Scoring to GetAwsOpportunitySummary- quality score, trend, agent-driven recommendations, and engagement classification.
+* Route53Resolver (4.0.9.0)
+	* Adds supports for PartnerManagedRules
+* S3 (4.0.25.0)
+	* Added support for annotations. You can now attach up to 1000 annotations (up to 1 MB each) directly to objects and create, retrieve, list, and delete them using new annotation APIs. Also added support for configuring an annotation table in S3 Metadata.
+	* Apply PooledContentStream optimization to S3 custom XML marshallers.
+* S3Vectors (4.0.6.0)
+	* Amazon S3 Vectors now supports paginated QueryVectors requests, returning up to 10,000 results per query.
+* SageMaker (4.0.65.0)
+	* Add EnableDetailedObservability to Endpoint MetricsConfig. Publishes GPU, host, and framework-native inference metrics to CloudWatch with per-inference-component, availability-zone, and instance dimensions. Adds Inference Component provisioning lifecycle and multi-AZ placement metrics.
+* SimSpaceWeaver (Removed)
+	* AWS SimSpace Weaver has been removed from the SDK because it has been discontinued.
+* Core 4.0.9.4
+	* [Breaking Change] When service clients are configured with a service URL and the signing region can not be determined from the host name the SDK would incorrectly default to us-east-1. Now the SDK will detect the default region configured for the environment and use that for signing region. If there is no default region the SDK falls back to the previous behavior and defaults to us-east-1.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.270.0 (2026-06-15 19:16 UTC)
 * BedrockRuntime (4.0.21.0)
 	* InvokeGuardrailChecks API evaluates prompts and responses against safety checks (content filters, prompt attacks, sensitive info) without creating guardrail resources. It's a detect-only API, returning numeric scores so you can build adaptive logic as per your application.

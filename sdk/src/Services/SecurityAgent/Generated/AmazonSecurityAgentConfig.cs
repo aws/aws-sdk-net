@@ -33,7 +33,7 @@ namespace Amazon.SecurityAgent
     public partial class AmazonSecurityAgentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SecurityAgent", "4.0.4.7");
+            InternalSDKUtils.BuildUserAgentString("SecurityAgent", "4.0.4.8");
 
         private static readonly AmazonSecurityAgentEndpointResolver EndpointResolver =
             new AmazonSecurityAgentEndpointResolver();
