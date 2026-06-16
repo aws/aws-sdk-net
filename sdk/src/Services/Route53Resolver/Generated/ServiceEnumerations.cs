@@ -799,6 +799,10 @@ namespace Amazon.Route53Resolver
         /// </summary>
         public static readonly IpAddressStatus FAILED_CREATION = new IpAddressStatus("FAILED_CREATION");
         /// <summary>
+        /// Constant FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST for IpAddressStatus
+        /// </summary>
+        public static readonly IpAddressStatus FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST = new IpAddressStatus("FAILED_CREATION_INSUFFICIENT_EC2_CAPACITY_IN_OUTPOST");
+        /// <summary>
         /// Constant FAILED_RESOURCE_GONE for IpAddressStatus
         /// </summary>
         public static readonly IpAddressStatus FAILED_RESOURCE_GONE = new IpAddressStatus("FAILED_RESOURCE_GONE");

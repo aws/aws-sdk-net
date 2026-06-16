@@ -90,7 +90,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DICT_DGA</c>: Dictionary-based domain generation algorithms detection. Dictionary
+        ///  <c>DICTIONARY_DGA</c>: Dictionary-based domain generation algorithms detection. Dictionary
         /// DGAs use wordlists to generate domains that appear more legitimate, making them harder
         /// to detect than traditional DGAs.
         /// </para>

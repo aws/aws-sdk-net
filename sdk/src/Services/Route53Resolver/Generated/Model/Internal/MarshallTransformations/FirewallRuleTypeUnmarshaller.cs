@@ -74,6 +74,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirewallAdvancedThreatCategory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PartnerThreatProtection", targetDepth, ref reader))
+                {
+                    var unmarshaller = PartnerThreatProtectionConfigUnmarshaller.Instance;
+                    unmarshalledObject.PartnerThreatProtection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

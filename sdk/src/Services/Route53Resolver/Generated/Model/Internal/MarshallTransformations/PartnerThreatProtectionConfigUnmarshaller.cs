@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FirewallRuleTypeDefinition Object
+    /// Response Unmarshaller for PartnerThreatProtectionConfig Object
     /// </summary>  
-    public class FirewallRuleTypeDefinitionUnmarshaller : IJsonUnmarshaller<FirewallRuleTypeDefinition, JsonUnmarshallerContext>
+    public class PartnerThreatProtectionConfigUnmarshaller : IJsonUnmarshaller<PartnerThreatProtectionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FirewallRuleTypeDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PartnerThreatProtectionConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FirewallRuleTypeDefinition unmarshalledObject = new FirewallRuleTypeDefinition();
+            PartnerThreatProtectionConfig unmarshalledObject = new PartnerThreatProtectionConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,10 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth, ref reader))
+                if (context.TestExpression("Partner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RuleType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubscriptionInfo", targetDepth, ref reader))
-                {
-                    var unmarshaller = SubscriptionInfoUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Partner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +67,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         }
 
 
-        private static FirewallRuleTypeDefinitionUnmarshaller _instance = new FirewallRuleTypeDefinitionUnmarshaller();        
+        private static PartnerThreatProtectionConfigUnmarshaller _instance = new PartnerThreatProtectionConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FirewallRuleTypeDefinitionUnmarshaller Instance
+        public static PartnerThreatProtectionConfigUnmarshaller Instance
         {
             get
             {
