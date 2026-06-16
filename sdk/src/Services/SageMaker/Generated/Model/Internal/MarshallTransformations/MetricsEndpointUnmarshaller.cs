@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InferenceComponentContainerSpecificationSummary Object
+    /// Response Unmarshaller for MetricsEndpoint Object
     /// </summary>  
-    public class InferenceComponentContainerSpecificationSummaryUnmarshaller : IJsonUnmarshaller<InferenceComponentContainerSpecificationSummary, JsonUnmarshallerContext>
+    public class MetricsEndpointUnmarshaller : IJsonUnmarshaller<MetricsEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InferenceComponentContainerSpecificationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MetricsEndpoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            InferenceComponentContainerSpecificationSummary unmarshalledObject = new InferenceComponentContainerSpecificationSummary();
+            MetricsEndpoint unmarshalledObject = new MetricsEndpoint();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArtifactUrl", targetDepth, ref reader))
+                if (context.TestExpression("MetricPublishFrequencyInSeconds", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MetricPublishFrequencyInSeconds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MetricsEndpointPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArtifactUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ContainerMetricsConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContainerMetricsConfigUnmarshaller.Instance;
-                    unmarshalledObject.ContainerMetricsConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeployedImage", targetDepth, ref reader))
-                {
-                    var unmarshaller = DeployedImageUnmarshaller.Instance;
-                    unmarshalledObject.DeployedImage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Environment", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MetricsEndpointPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static InferenceComponentContainerSpecificationSummaryUnmarshaller _instance = new InferenceComponentContainerSpecificationSummaryUnmarshaller();        
+        private static MetricsEndpointUnmarshaller _instance = new MetricsEndpointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InferenceComponentContainerSpecificationSummaryUnmarshaller Instance
+        public static MetricsEndpointUnmarshaller Instance
         {
             get
             {

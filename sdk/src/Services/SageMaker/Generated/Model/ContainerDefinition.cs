@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private List<AdditionalModelDataSource> _additionalModelDataSources = AWSConfigs.InitializeCollections ? new List<AdditionalModelDataSource>() : null;
         private string _containerHostname;
+        private ContainerMetricsConfig _containerMetricsConfig;
         private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _image;
         private ImageConfig _imageConfig;
@@ -100,6 +101,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetContainerHostname()
         {
             return this._containerHostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerMetricsConfig. 
+        /// <para>
+        /// The configuration for container metrics scraping. Specifies the metrics endpoint path
+        /// and publishing frequency. If not specified when <c>EnableDetailedObservability</c>
+        /// is <c>True</c>, the default path <c>/metrics</c> on port <c>8080</c> is used. For
+        /// first-party and Deep Learning Containers (DLC), the endpoint path is determined automatically
+        /// and this configuration is optional.
+        /// </para>
+        /// </summary>
+        public ContainerMetricsConfig ContainerMetricsConfig
+        {
+            get { return this._containerMetricsConfig; }
+            set { this._containerMetricsConfig = value; }
+        }
+
+        // Check to see if ContainerMetricsConfig property is set
+        internal bool IsSetContainerMetricsConfig()
+        {
+            return this._containerMetricsConfig != null;
         }
 
         /// <summary>

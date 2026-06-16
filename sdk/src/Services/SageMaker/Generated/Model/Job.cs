@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Search shape for Job. Mirrors DescribeJobResponse fields. If you update DescribeJobResponse,
-    /// update this structure as well.
+    /// The properties of a job returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API.
     /// </summary>
     public partial class Job
     {

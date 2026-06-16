@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MetricsConfig Marshaller
+    /// MetricsEndpoint Marshaller
     /// </summary>
-    public class MetricsConfigMarshaller : IRequestMarshaller<MetricsConfig, JsonMarshallerContext> 
+    public class MetricsEndpointMarshaller : IRequestMarshaller<MetricsEndpoint, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MetricsConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(MetricsEndpoint requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnableDetailedObservability())
-            {
-                context.Writer.WritePropertyName("EnableDetailedObservability");
-                context.Writer.WriteBooleanValue(requestObject.EnableDetailedObservability.Value);
-            }
-
-            if(requestObject.IsSetEnableEnhancedMetrics())
-            {
-                context.Writer.WritePropertyName("EnableEnhancedMetrics");
-                context.Writer.WriteBooleanValue(requestObject.EnableEnhancedMetrics.Value);
-            }
-
             if(requestObject.IsSetMetricPublishFrequencyInSeconds())
             {
                 context.Writer.WritePropertyName("MetricPublishFrequencyInSeconds");
                 context.Writer.WriteNumberValue(requestObject.MetricPublishFrequencyInSeconds.Value);
+            }
+
+            if(requestObject.IsSetMetricsEndpointPath())
+            {
+                context.Writer.WritePropertyName("MetricsEndpointPath");
+                context.Writer.WriteStringValue(requestObject.MetricsEndpointPath);
             }
 
         }
@@ -69,7 +63,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MetricsConfigMarshaller Instance = new MetricsConfigMarshaller();
+        public readonly static MetricsEndpointMarshaller Instance = new MetricsEndpointMarshaller();
 
     }
 }

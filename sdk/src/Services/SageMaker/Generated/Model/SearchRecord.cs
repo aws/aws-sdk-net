@@ -138,7 +138,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Job.
+        /// Gets and sets the property Job. 
+        /// <para>
+        /// The properties of a job.
+        /// </para>
         /// </summary>
         public Job Job
         {

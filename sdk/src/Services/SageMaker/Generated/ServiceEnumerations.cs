@@ -1307,6 +1307,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlG6Xlarge = new AppInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG7e12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e12xlarge = new AppInstanceType("ml.g7e.12xlarge");
+        /// <summary>
+        /// Constant MlG7e24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e24xlarge = new AppInstanceType("ml.g7e.24xlarge");
+        /// <summary>
+        /// Constant MlG7e2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e2xlarge = new AppInstanceType("ml.g7e.2xlarge");
+        /// <summary>
+        /// Constant MlG7e48xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e48xlarge = new AppInstanceType("ml.g7e.48xlarge");
+        /// <summary>
+        /// Constant MlG7e4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e4xlarge = new AppInstanceType("ml.g7e.4xlarge");
+        /// <summary>
+        /// Constant MlG7e8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e8xlarge = new AppInstanceType("ml.g7e.8xlarge");
+        /// <summary>
         /// Constant MlGeospatialInteractive for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlGeospatialInteractive = new AppInstanceType("ml.geospatial.interactive");

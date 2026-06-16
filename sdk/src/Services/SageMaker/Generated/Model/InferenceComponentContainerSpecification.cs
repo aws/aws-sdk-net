@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class InferenceComponentContainerSpecification
     {
         private string _artifactUrl;
+        private ContainerMetricsConfig _containerMetricsConfig;
         private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _image;
 
@@ -57,6 +58,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetArtifactUrl()
         {
             return this._artifactUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerMetricsConfig. 
+        /// <para>
+        /// The configuration for container metrics scraping. Specifies the metrics endpoint path
+        /// and publishing frequency for the inference component's container. If not specified
+        /// when <c>EnableDetailedObservability</c> is <c>True</c>, the default path <c>/metrics</c>
+        /// on port <c>8080</c> is used. For first-party and Deep Learning Containers (DLC), the
+        /// endpoint path is determined automatically and this configuration is optional.
+        /// </para>
+        /// </summary>
+        public ContainerMetricsConfig ContainerMetricsConfig
+        {
+            get { return this._containerMetricsConfig; }
+            set { this._containerMetricsConfig = value; }
+        }
+
+        // Check to see if ContainerMetricsConfig property is set
+        internal bool IsSetContainerMetricsConfig()
+        {
+            return this._containerMetricsConfig != null;
         }
 
         /// <summary>

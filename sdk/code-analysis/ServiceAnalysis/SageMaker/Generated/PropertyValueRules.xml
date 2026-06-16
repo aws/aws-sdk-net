@@ -12719,6 +12719,12 @@
     <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.MetricsEndpoint.MetricsEndpointPath</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>/(?!.*\.\.)[a-zA-Z0-9/_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.MetricsSource.ContentDigest</property>
     <min>0</min>
     <max>72</max>

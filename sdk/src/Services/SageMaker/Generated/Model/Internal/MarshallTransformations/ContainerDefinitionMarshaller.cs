@@ -68,6 +68,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ContainerHostname);
             }
 
+            if(requestObject.IsSetContainerMetricsConfig())
+            {
+                context.Writer.WritePropertyName("ContainerMetricsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContainerMetricsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerMetricsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
