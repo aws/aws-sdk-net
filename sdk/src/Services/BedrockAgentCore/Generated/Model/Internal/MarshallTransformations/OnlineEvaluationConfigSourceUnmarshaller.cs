@@ -62,10 +62,10 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.OnlineEvaluationConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionFilterConfig", targetDepth, ref reader))
+                if (context.TestExpression("timeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionFilterConfigUnmarshaller.Instance;
-                    unmarshalledObject.SessionFilterConfig = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

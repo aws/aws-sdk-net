@@ -68,6 +68,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetHarnessArn())
                 request.Parameters.Add("harnessArn", StringUtils.FromString(publicRequest.HarnessArn));
+            
+            if (publicRequest.IsSetQualifier())
+                request.Parameters.Add("qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/harnesses/invoke";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();

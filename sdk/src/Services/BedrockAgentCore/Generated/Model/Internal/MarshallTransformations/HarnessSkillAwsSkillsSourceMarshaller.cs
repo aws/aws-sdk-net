@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OnlineEvaluationConfigSource Marshaller
+    /// HarnessSkillAwsSkillsSource Marshaller
     /// </summary>
-    public class OnlineEvaluationConfigSourceMarshaller : IRequestMarshaller<OnlineEvaluationConfigSource, JsonMarshallerContext> 
+    public class HarnessSkillAwsSkillsSourceMarshaller : IRequestMarshaller<HarnessSkillAwsSkillsSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,19 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OnlineEvaluationConfigSource requestObject, JsonMarshallerContext context)
+        public void Marshall(HarnessSkillAwsSkillsSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetOnlineEvaluationConfigArn())
+            if(requestObject.IsSetPaths())
             {
-                context.Writer.WritePropertyName("onlineEvaluationConfigArn");
-                context.Writer.WriteStringValue(requestObject.OnlineEvaluationConfigArn);
-            }
-
-            if(requestObject.IsSetTimeRange())
-            {
-                context.Writer.WritePropertyName("timeRange");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SessionFilterConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.TimeRange, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("paths");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPathsListValue in requestObject.Paths)
+                {
+                        context.Writer.WriteStringValue(requestObjectPathsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -68,7 +62,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OnlineEvaluationConfigSourceMarshaller Instance = new OnlineEvaluationConfigSourceMarshaller();
+        public readonly static HarnessSkillAwsSkillsSourceMarshaller Instance = new HarnessSkillAwsSkillsSourceMarshaller();
 
     }
 }

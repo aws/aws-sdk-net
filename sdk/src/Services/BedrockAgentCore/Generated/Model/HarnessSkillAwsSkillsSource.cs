@@ -30,17 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// The user intent clustering result containing grouped user intents identified across
-    /// evaluated sessions.
+    /// Passed to show that AWS Skills should be included.
     /// </summary>
-    public partial class UserIntentClusteringResultContent
+    public partial class HarnessSkillAwsSkillsSource
     {
-        private List<UserIntentCluster> _userIntents = AWSConfigs.InitializeCollections ? new List<UserIntentCluster>() : null;
+        private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property UserIntents. 
+        /// Gets and sets the property Paths. 
         /// <para>
-        /// The list of user intent clusters identified across analyzed sessions.
+        /// Optionally filter allowed skills with glob syntax, e.g., ['core-skills/*'].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -48,17 +47,16 @@ namespace Amazon.BedrockAgentCore.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
-        public List<UserIntentCluster> UserIntents
+        public List<string> Paths
         {
-            get { return this._userIntents; }
-            set { this._userIntents = value; }
+            get { return this._paths; }
+            set { this._paths = value; }
         }
 
-        // Check to see if UserIntents property is set
-        internal bool IsSetUserIntents()
+        // Check to see if Paths property is set
+        internal bool IsSetPaths()
         {
-            return this._userIntents != null && (this._userIntents.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

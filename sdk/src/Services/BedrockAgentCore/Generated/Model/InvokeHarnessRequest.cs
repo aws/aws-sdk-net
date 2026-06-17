@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         private int? _maxTokens;
         private List<HarnessMessage> _messages = AWSConfigs.InitializeCollections ? new List<HarnessMessage>() : null;
         private HarnessModelConfiguration _model;
+        private string _qualifier;
         private string _runtimeSessionId;
         private string _runtimeUserId;
         private List<HarnessSkill> _skills = AWSConfigs.InitializeCollections ? new List<HarnessSkill>() : null;
@@ -189,6 +190,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetModel()
         {
             return this._model != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
         /// <summary>

@@ -39,7 +39,10 @@ namespace Amazon.BedrockAgentCore.Model
         private string _evidence;
 
         /// <summary>
-        /// Gets and sets the property Category.
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The failure category classification for this signal.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InsightsFailureCategory Category

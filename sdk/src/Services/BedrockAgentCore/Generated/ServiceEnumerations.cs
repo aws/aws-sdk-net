@@ -1507,6 +1507,10 @@ namespace Amazon.BedrockAgentCore
         /// </summary>
         public static readonly InsightsFailureCategory OrchestrationRelatedErrorsCategoryUnawareTermination = new InsightsFailureCategory("orchestration-related-errors-category-unaware-termination");
         /// <summary>
+        /// Constant Other for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory Other = new InsightsFailureCategory("other");
+        /// <summary>
         /// Constant RepetitiveBehaviorCategoryRepetitionInfo for InsightsFailureCategory
         /// </summary>
         public static readonly InsightsFailureCategory RepetitiveBehaviorCategoryRepetitionInfo = new InsightsFailureCategory("repetitive-behavior-category-repetition-info");

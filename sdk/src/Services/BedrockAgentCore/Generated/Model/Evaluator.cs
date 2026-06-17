@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// An evaluator to run against sessions
+    /// An evaluator to run against sessions during batch evaluation.
     /// </summary>
     public partial class Evaluator
     {
