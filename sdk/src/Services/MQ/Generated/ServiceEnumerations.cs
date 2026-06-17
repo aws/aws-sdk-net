@@ -579,4 +579,190 @@ namespace Amazon.MQ
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type SharedResourceErrorCode.
+    /// </summary>
+    public class SharedResourceErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZ_MISMATCH for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode AZ_MISMATCH = new SharedResourceErrorCode("AZ_MISMATCH");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode INTERNAL_ERROR = new SharedResourceErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVITE_FAILED for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode INVITE_FAILED = new SharedResourceErrorCode("INVITE_FAILED");
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode QUOTA_EXCEEDED = new SharedResourceErrorCode("QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant RESOURCE_CONFIGURATION_NOT_FOUND for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode RESOURCE_CONFIGURATION_NOT_FOUND = new SharedResourceErrorCode("RESOURCE_CONFIGURATION_NOT_FOUND");
+        /// <summary>
+        /// Constant SETUP_INCOMPLETE for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode SETUP_INCOMPLETE = new SharedResourceErrorCode("SETUP_INCOMPLETE");
+        /// <summary>
+        /// Constant SHARE_NOT_FOUND for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode SHARE_NOT_FOUND = new SharedResourceErrorCode("SHARE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharedResourceErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharedResourceErrorCode FindValue(string value)
+        {
+            return FindValue<SharedResourceErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharedResourceErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SharedResourceStatus.
+    /// </summary>
+    public class SharedResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus AVAILABLE = new SharedResourceStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETION_IN_PROGRESS for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus DELETION_IN_PROGRESS = new SharedResourceStatus("DELETION_IN_PROGRESS");
+        /// <summary>
+        /// Constant ERROR for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus ERROR = new SharedResourceStatus("ERROR");
+        /// <summary>
+        /// Constant PENDING_CREATE for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus PENDING_CREATE = new SharedResourceStatus("PENDING_CREATE");
+        /// <summary>
+        /// Constant PENDING_DELETE for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus PENDING_DELETE = new SharedResourceStatus("PENDING_DELETE");
+        /// <summary>
+        /// Constant SETUP_IN_PROGRESS for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus SETUP_IN_PROGRESS = new SharedResourceStatus("SETUP_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharedResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharedResourceStatus FindValue(string value)
+        {
+            return FindValue<SharedResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharedResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SharedResourceType.
+    /// </summary>
+    public class SharedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOURCE for SharedResourceType
+        /// </summary>
+        public static readonly SharedResourceType RESOURCE = new SharedResourceType("RESOURCE");
+        /// <summary>
+        /// Constant RESOURCE_SHARE for SharedResourceType
+        /// </summary>
+        public static readonly SharedResourceType RESOURCE_SHARE = new SharedResourceType("RESOURCE_SHARE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharedResourceType FindValue(string value)
+        {
+            return FindValue<SharedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

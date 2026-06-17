@@ -16,40 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the mq-2017-11-27.normal.json service model.
  */
-
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// Paginators for the MQ service
+    /// Paginator for the DescribeSharedResources operation
     ///</summary>
-    public class MQPaginatorFactory : IMQPaginatorFactory
+    public interface IDescribeSharedResourcesPaginator
     {
-        private readonly IAmazonMQ client;
-
-        internal MQPaginatorFactory(IAmazonMQ client) 
-        {
-            this.client = client;
-        }
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<DescribeSharedResourcesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for DescribeSharedResources operation
-        ///</summary>
-        public IDescribeSharedResourcesPaginator DescribeSharedResources(DescribeSharedResourcesRequest request) 
-        {
-            return new DescribeSharedResourcesPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListBrokers operation
-        ///</summary>
-        public IListBrokersPaginator ListBrokers(ListBrokersRequest request) 
-        {
-            return new ListBrokersPaginator(this.client, request);
-        }
+        /// Enumerable containing all of the SharedResources
+        /// </summary>
+        IPaginatedEnumerable<SharedResource> SharedResources { get; }
     }
 }
