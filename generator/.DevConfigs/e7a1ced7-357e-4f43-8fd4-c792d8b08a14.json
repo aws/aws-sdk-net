@@ -1,0 +1,18 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Add fallback in the `ChecksumUtils` class for future services that won't support chunk encoding."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix `PutObject` failing with `ArgumentException` when given a non-seekable zero-length stream that reports its length (https://github.com/aws/aws-sdk-net/issues/4432). The SDK now forces chunked transfer encoding for non-seekable streams so the checksum is sent as a trailing header, instead of requiring seekability for upfront calculation. Seekable streams are unaffected. Note: non-seekable streams that do not report their length still require `ContentLength` to be set on the request."
+      ]
+    }
+  ]
+}

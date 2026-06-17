@@ -375,4 +375,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 throw new Exception($"Presigned URL content mismatch: expected '{testContent}', got '{content}'");
         }
     }
+
+    /// <summary>
+    /// A MemoryStream that reports CanSeek as false.
+    /// When reportsLength is true (default), Length and Position getter are still accessible
+    /// so the SDK can cap a nominal PartSize down to the actual remaining bytes.
+    /// When false, they throw NotSupportedException — the SDK must rely on PartSize.
+    /// </summary>
+    internal class NonSeekableStream : MemoryStream
+    {
+        private readonly bool _reportsLength;
+
+        public NonSeekableStream(bool reportsLength = true) : base()
+        {
+            _reportsLength = reportsLength;
+        }
+
+        public NonSeekableStream(byte[] buffer, bool reportsLength = true) : base(buffer)
+        {
+            _reportsLength = reportsLength;
+        }
+
+        public override bool CanSeek => false;
+        public override long Seek(long offset, SeekOrigin origin) => throw new NotSupportedException();
+        public override long Length => _reportsLength ? base.Length : throw new NotSupportedException();
+        public override long Position
+        {
+            get => _reportsLength ? base.Position : throw new NotSupportedException();
+            set => throw new NotSupportedException();
+        }
+    }
 }
