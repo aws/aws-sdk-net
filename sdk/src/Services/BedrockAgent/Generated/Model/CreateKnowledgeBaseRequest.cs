@@ -39,9 +39,9 @@ namespace Amazon.BedrockAgent.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon
-    /// OpenSearch Service, use the console. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
-    /// a knowledge base</a>.
+    /// To create a managed knowledge base, provide a <c>managedKnowledgeBaseConfiguration</c>
+    /// during creation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-build-managed.html">Build
+    /// a managed knowledge base</a>.
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
@@ -54,13 +54,20 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Provide the embedding model to use in the <c>embeddingModelArn</c> field in the <c>knowledgeBaseConfiguration</c>
-    /// object.
+    /// For managed knowledge bases, set <c>embeddingModelType</c> to <c>MANAGED</c> to use
+    /// the service-managed embedding model, or <c>CUSTOM</c> with an <c>embeddingModelArn</c>
+    /// to use your own. To use your own KMS key for encryption, provide the ARN in <c>serverSideEncryptionConfiguration</c>.
+    /// No vector store configuration is required for managed knowledge bases.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Provide the configuration for your vector store in the <c>storageConfiguration</c>
-    /// object.
+    /// For self-managed knowledge bases, provide the embedding model to use in the <c>embeddingModelArn</c>
+    /// field in the <c>knowledgeBaseConfiguration</c> object.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For self-managed knowledge bases, provide the configuration for your vector store
+    /// in the <c>storageConfiguration</c> object.
     /// </para>
     ///  <ul> <li> 
     /// <para>

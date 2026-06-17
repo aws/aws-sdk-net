@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class DataSourceConfiguration
     {
         private ConfluenceDataSourceConfiguration _confluenceConfiguration;
+        private ManagedKnowledgeBaseConnectorConfiguration _managedKnowledgeBaseConnectorConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
         private SalesforceDataSourceConfiguration _salesforceConfiguration;
         private SharePointDataSourceConfiguration _sharePointConfiguration;
@@ -44,11 +45,14 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ConfluenceConfiguration. 
         /// <para>
-        /// The configuration information to connect to Confluence as your data source.
+        /// The configuration information to connect to Confluence as your data source for self-managed
+        /// knowledge bases.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Confluence data source connector is in preview release and is subject to change.
+        /// To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.
+        /// Confluence data source connector for self-managed knowledge bases is in preview release
+        /// and is subject to change.
         /// </para>
         ///  </note>
         /// </summary>
@@ -65,9 +69,31 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedKnowledgeBaseConnectorConfiguration. 
+        /// <para>
+        /// Contains the configuration for a data source that connects a managed knowledge base
+        /// to a supported data source connector. Specify this object when the data source type
+        /// is <c>MANAGED_KNOWLEDGE_BASE_CONNECTOR</c>.
+        /// </para>
+        /// </summary>
+        public ManagedKnowledgeBaseConnectorConfiguration ManagedKnowledgeBaseConnectorConfiguration
+        {
+            get { return this._managedKnowledgeBaseConnectorConfiguration; }
+            set { this._managedKnowledgeBaseConnectorConfiguration = value; }
+        }
+
+        // Check to see if ManagedKnowledgeBaseConnectorConfiguration property is set
+        internal bool IsSetManagedKnowledgeBaseConnectorConfiguration()
+        {
+            return this._managedKnowledgeBaseConnectorConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// The configuration information to connect to Amazon S3 as your data source.
+        /// The configuration information to connect to Amazon S3 as your data source for self-managed
+        /// knowledge bases. To configure this data source for managed knowledge bases, use <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.
         /// </para>
         /// </summary>
         public S3DataSourceConfiguration S3Configuration
@@ -89,7 +115,8 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Salesforce data source connector is in preview release and is subject to change.
+        /// Salesforce data source connector for self-managed knowledge bases is in preview release
+        /// and is subject to change.
         /// </para>
         ///  </note>
         /// </summary>
@@ -108,11 +135,14 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property SharePointConfiguration. 
         /// <para>
-        /// The configuration information to connect to SharePoint as your data source.
+        /// The configuration information to connect to SharePoint as your data source for self-managed
+        /// knowledge bases.
         /// </para>
         ///  <note> 
         /// <para>
-        /// SharePoint data source connector is in preview release and is subject to change.
+        /// To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.
+        /// SharePoint data source connector for self-managed knowledge bases is in preview release
+        /// and is subject to change.
         /// </para>
         ///  </note>
         /// </summary>
@@ -155,7 +185,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Crawling web URLs as your data source is in preview release and is subject to change.
+        /// To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.
+        /// Web crawler data source connector for self-managed knowledge bases is in preview release
+        /// and is subject to change.
         /// </para>
         ///  </note>
         /// </summary>

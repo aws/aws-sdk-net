@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgent.Model
         private long? _numberOfDocumentsDeleted;
         private long? _numberOfDocumentsFailed;
         private long? _numberOfDocumentsScanned;
+        private long? _numberOfDocumentsSkipped;
         private long? _numberOfMetadataDocumentsModified;
         private long? _numberOfMetadataDocumentsScanned;
         private long? _numberOfModifiedDocumentsIndexed;
@@ -95,6 +96,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetNumberOfDocumentsScanned()
         {
             return this._numberOfDocumentsScanned.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfDocumentsSkipped. 
+        /// <para>
+        /// The number of source documents that were skipped during ingestion.
+        /// </para>
+        /// </summary>
+        public long? NumberOfDocumentsSkipped
+        {
+            get { return this._numberOfDocumentsSkipped; }
+            set { this._numberOfDocumentsSkipped = value; }
+        }
+
+        // Check to see if NumberOfDocumentsSkipped property is set
+        internal bool IsSetNumberOfDocumentsSkipped()
+        {
+            return this._numberOfDocumentsSkipped.HasValue; 
         }
 
         /// <summary>

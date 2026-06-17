@@ -35,9 +35,34 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class DocumentMetadata
     {
+        private List<DocumentAccessControlEntry> _accessControlList = AWSConfigs.InitializeCollections ? new List<DocumentAccessControlEntry>() : null;
         private List<MetadataAttribute> _inlineAttributes = AWSConfigs.InitializeCollections ? new List<MetadataAttribute>() : null;
         private CustomS3Location _s3Location;
         private MetadataSourceType _type;
+
+        /// <summary>
+        /// Gets and sets the property AccessControlList. 
+        /// <para>
+        /// Access control list for the document. Used when metadata type is IN_LINE_ATTRIBUTE.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<DocumentAccessControlEntry> AccessControlList
+        {
+            get { return this._accessControlList; }
+            set { this._accessControlList = value; }
+        }
+
+        // Check to see if AccessControlList property is set
+        internal bool IsSetAccessControlList()
+        {
+            return this._accessControlList != null && (this._accessControlList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property InlineAttributes. 

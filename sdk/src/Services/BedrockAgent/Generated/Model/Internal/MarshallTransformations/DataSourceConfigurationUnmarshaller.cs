@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConfluenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("managedKnowledgeBaseConnectorConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ManagedKnowledgeBaseConnectorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedKnowledgeBaseConnectorConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("s3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DataSourceConfigurationUnmarshaller.Instance;

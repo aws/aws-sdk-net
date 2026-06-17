@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class KnowledgeBaseConfiguration
     {
         private KendraKnowledgeBaseConfiguration _kendraKnowledgeBaseConfiguration;
+        private ManagedKnowledgeBaseConfiguration _managedKnowledgeBaseConfiguration;
         private SqlKnowledgeBaseConfiguration _sqlKnowledgeBaseConfiguration;
         private KnowledgeBaseType _type;
         private VectorKnowledgeBaseConfiguration _vectorKnowledgeBaseConfiguration;
@@ -58,6 +59,21 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedKnowledgeBaseConfiguration.
+        /// </summary>
+        public ManagedKnowledgeBaseConfiguration ManagedKnowledgeBaseConfiguration
+        {
+            get { return this._managedKnowledgeBaseConfiguration; }
+            set { this._managedKnowledgeBaseConfiguration = value; }
+        }
+
+        // Check to see if ManagedKnowledgeBaseConfiguration property is set
+        internal bool IsSetManagedKnowledgeBaseConfiguration()
+        {
+            return this._managedKnowledgeBaseConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SqlKnowledgeBaseConfiguration. 
         /// <para>
         /// Specifies configurations for a knowledge base connected to an SQL database.
@@ -78,7 +94,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data that the data source is converted into for the knowledge base.
+        /// The type of data that the data source is converted into for the knowledge base. Choose
+        /// <c>MANAGED</c> to create a managed knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
