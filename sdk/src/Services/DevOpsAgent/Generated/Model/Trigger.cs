@@ -63,7 +63,10 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentSpaceId.
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The agent space this Trigger belongs to
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentSpaceId
@@ -136,7 +139,10 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TriggerId.
+        /// Gets and sets the property TriggerId. 
+        /// <para>
+        /// The unique identifier for this Trigger
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string TriggerId

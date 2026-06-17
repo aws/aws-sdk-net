@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// This is the response object from the GetTrigger operation.
+    /// Response structure for getting a Trigger
     /// </summary>
     public partial class GetTriggerResponse : AmazonWebServiceResponse
     {

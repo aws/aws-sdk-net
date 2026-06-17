@@ -86,6 +86,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepoName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("runtimeRoleArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeRoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

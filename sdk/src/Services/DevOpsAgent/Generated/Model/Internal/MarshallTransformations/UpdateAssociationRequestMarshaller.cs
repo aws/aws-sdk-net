@@ -79,6 +79,25 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCapabilities())
+            {
+                context.Writer.WritePropertyName("capabilities");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestCapabilitiesKvp in publicRequest.Capabilities)
+                {
+                    context.Writer.WritePropertyName(publicRequestCapabilitiesKvp.Key);
+                    var publicRequestCapabilitiesValue = publicRequestCapabilitiesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CapabilityConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCapabilitiesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");

@@ -39,6 +39,7 @@ namespace Amazon.DevOpsAgent.Model
         private GithubRepoOwnerType _ownerType;
         private string _repoId;
         private string _repoName;
+        private string _runtimeRoleArn;
 
         /// <summary>
         /// Gets and sets the property InstanceIdentifier. 
@@ -129,6 +130,26 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetRepoName()
         {
             return this._repoName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeRoleArn. 
+        /// <para>
+        /// Optional role ARN that AIDevOps assumes at runtime for automatic verification testing
+        /// and VPC connectivity on this association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string RuntimeRoleArn
+        {
+            get { return this._runtimeRoleArn; }
+            set { this._runtimeRoleArn = value; }
+        }
+
+        // Check to see if RuntimeRoleArn property is set
+        internal bool IsSetRuntimeRoleArn()
+        {
+            return this._runtimeRoleArn != null;
         }
 
     }
