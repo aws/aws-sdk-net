@@ -115,6 +115,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetUserContext())
+            {
+                context.Writer.WritePropertyName("userContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UserContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

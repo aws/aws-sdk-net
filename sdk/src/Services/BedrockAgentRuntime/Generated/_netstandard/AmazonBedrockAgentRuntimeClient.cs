@@ -268,6 +268,81 @@ namespace Amazon.BedrockAgentRuntime
         #endregion
 
 
+        #region  AgenticRetrieveStream
+
+        internal virtual AgenticRetrieveStreamResponse AgenticRetrieveStream(AgenticRetrieveStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AgenticRetrieveStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AgenticRetrieveStreamResponseUnmarshaller.Instance;
+
+            return Invoke<AgenticRetrieveStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information from one or more knowledge bases using an agentic approach.
+        /// Agentic retrieval uses a foundation model to intelligently decompose complex queries
+        /// into sub-queries and iteratively retrieve relevant information from your knowledge
+        /// bases. This approach improves retrieval accuracy for complex, multi-step questions
+        /// that a single retrieval pass might not fully address.
+        /// 
+        ///  
+        /// <para>
+        /// The operation returns results through a stream that includes retrieval results, trace
+        /// events for visibility into the process, and a generated response synthesized from
+        /// the results by default, which can be turned off.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AgenticRetrieveStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AgenticRetrieveStream service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/AgenticRetrieveStream">REST API Reference for AgenticRetrieveStream Operation</seealso>
+        public virtual Task<AgenticRetrieveStreamResponse> AgenticRetrieveStreamAsync(AgenticRetrieveStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AgenticRetrieveStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AgenticRetrieveStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AgenticRetrieveStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateInvocation
 
         internal virtual CreateInvocationResponse CreateInvocation(CreateInvocationRequest request)
@@ -752,6 +827,57 @@ namespace Amazon.BedrockAgentRuntime
             options.ResponseUnmarshaller = GetAgentMemoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAgentMemoryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetDocumentContent
+
+        internal virtual GetDocumentContentResponse GetDocumentContent(GetDocumentContentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDocumentContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentContentResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the content of an ingested document from a knowledge base. Returns a pre-signed
+        /// URL for secure document access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDocumentContent service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetDocumentContent">REST API Reference for GetDocumentContent Operation</seealso>
+        public virtual Task<GetDocumentContentResponse> GetDocumentContentAsync(GetDocumentContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDocumentContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentContentResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1868,6 +1994,14 @@ namespace Amazon.BedrockAgentRuntime
         /// Queries a knowledge base and generates responses based on the retrieved results and
         /// using the specified foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
         /// profile</a>. The response only cites sources that are relevant to the query.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API cannot be used with managed knowledge bases. Use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_AgenticRetrieveStream.html">AgenticRetrieveStream</a>
+        /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html">Retrieve</a>
+        /// with managed knowledge bases.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerate service method.</param>
         /// <param name="cancellationToken">
@@ -1935,6 +2069,12 @@ namespace Amazon.BedrockAgentRuntime
         /// output in streaming format.
         /// 
         ///  <note> 
+        /// <para>
+        /// This API cannot be used with managed knowledge bases. Use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_AgenticRetrieveStream.html">AgenticRetrieveStream</a>
+        /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html">Retrieve</a>
+        /// with managed knowledge bases.
+        /// </para>
+        ///  </note> <note> 
         /// <para>
         /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
         /// </para>

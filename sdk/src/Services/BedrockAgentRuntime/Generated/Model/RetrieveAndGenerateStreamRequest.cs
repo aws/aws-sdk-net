@@ -36,6 +36,12 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// 
     ///  <note> 
     /// <para>
+    /// This API cannot be used with managed knowledge bases. Use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_AgenticRetrieveStream.html">AgenticRetrieveStream</a>
+    /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html">Retrieve</a>
+    /// with managed knowledge bases.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
     /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
     /// </para>
     ///  </note> 
@@ -49,6 +55,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private RetrieveAndGenerateConfiguration _retrieveAndGenerateConfiguration;
         private RetrieveAndGenerateSessionConfiguration _sessionConfiguration;
         private string _sessionId;
+        private UserContext _userContext;
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -128,6 +135,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContext.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public UserContext UserContext
+        {
+            get { return this._userContext; }
+            set { this._userContext = value; }
+        }
+
+        // Check to see if UserContext property is set
+        internal bool IsSetUserContext()
+        {
+            return this._userContext != null;
         }
 
     }
