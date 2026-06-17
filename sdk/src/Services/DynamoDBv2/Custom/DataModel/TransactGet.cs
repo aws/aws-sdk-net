@@ -220,12 +220,6 @@ namespace Amazon.DynamoDBv2.DataModel
         public void AddTransactionPart(ITransactGet transactionPart);
 
         /// <summary>
-        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
-        /// </summary>
-        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
-        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
-
-        /// <summary>
         /// List of consumed capacity details.
         /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
         /// </summary>
@@ -239,7 +233,6 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class MultiTableTransactGet : IMultiTableTransactGet
     {
         private readonly List<ITransactGet> allTransactionParts;
-        private ReturnConsumedCapacity ReturnConsumedCapacity;
 
         internal TracerProvider TracerProvider { get; set; }
 
@@ -271,12 +264,6 @@ namespace Amazon.DynamoDBv2.DataModel
             allTransactionParts.Add(transactionPart);
         }
 
-        /// <inheritdoc/>
-        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity)
-        {
-            ReturnConsumedCapacity = returnConsumedCapacity;
-        }
-
         private void ExecuteHelper()
         {
             MultiTableDocumentTransactGet transaction = new MultiTableDocumentTransactGet();
@@ -286,7 +273,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
                 transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
-            transaction.SetReturnConsumedCapacity(ReturnConsumedCapacity);
             transaction.ExecuteHelper();
             ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
@@ -305,7 +291,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
                 transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
-            transaction.SetReturnConsumedCapacity(ReturnConsumedCapacity);
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)

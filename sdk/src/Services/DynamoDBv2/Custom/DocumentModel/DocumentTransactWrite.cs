@@ -581,12 +581,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         List<IDocumentTransactWrite> TransactionParts { get; }
 
         /// <summary>
-        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
-        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
-        /// </summary>
-        ReturnConsumedCapacity ReturnConsumedCapacity { get; }
-
-        /// <summary>
         /// List of consumed capacity details.
         /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
         /// </summary>
@@ -597,12 +591,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="transactionPart">DocumentTransactWrite to add.</param>
         void AddTransactionPart(IDocumentTransactWrite transactionPart);
-
-        /// <summary>
-        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
-        /// </summary>
-        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
-        void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
     }
 
     /// <summary>
@@ -617,9 +605,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<IDocumentTransactWrite> TransactionParts { get; private set; }
-
-        /// <inheritdoc/>
-        public ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
 
         /// <inheritdoc/>
         public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
@@ -652,12 +637,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public void AddTransactionPart(IDocumentTransactWrite transactionPart)
         {
             TransactionParts.Add(transactionPart);
-        }
-
-        /// <inheritdoc/>
-        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity)
-        {
-            ReturnConsumedCapacity = returnConsumedCapacity;
         }
 
         #endregion
@@ -712,14 +691,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private MultiTransactWrite GetMultiTransactWrite()
         {
             var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
+            
+            var docTransactWrite = TransactionParts.Select(x =>
+            {
+                var docTransactGet = x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg);
+                return docTransactGet;
+            }).ToList();
+            var returnConsumedCapacity = docTransactWrite.Select(x => x.ReturnConsumedCapacity);
             return new MultiTransactWrite
             {
-                Items = TransactionParts.SelectMany(x =>
-                {
-                    var docTransactWrite = x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg);
-                    return docTransactWrite.Items;
-                }).ToList(),
-                ReturnConsumedCapacity = ReturnConsumedCapacity
+                Items = docTransactWrite.SelectMany(x => x.Items).ToList(),
+                ReturnConsumedCapacity =
+                returnConsumedCapacity.Any(x => x == ReturnConsumedCapacity.INDEXES) ? ReturnConsumedCapacity.INDEXES :
+                returnConsumedCapacity.Any(x => x == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
+                ReturnConsumedCapacity.NONE
             };
         }
 

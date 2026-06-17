@@ -252,18 +252,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         void AddTransactionPart(IDocumentTransactGet transactionPart);
 
         /// <summary>
-        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
-        /// </summary>
-        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
-        void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
-
-        /// <summary>
-        /// List of DocumentTransactWrite objects to include in the multi-table
-        /// transaction request.
-        /// </summary>
-        ReturnConsumedCapacity ReturnConsumedCapacity { get; }
-
-        /// <summary>
         /// List of consumed capacity details.
         /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
         /// </summary>
@@ -281,9 +269,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<IDocumentTransactGet> TransactionParts { get; private set; }
-
-        /// <inheritdoc/>
-        public ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
 
         /// <inheritdoc/>
         public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
@@ -316,12 +301,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public void AddTransactionPart(IDocumentTransactGet transactionPart)
         {
             TransactionParts.Add(transactionPart);
-        }
-
-        /// <inheritdoc/>
-        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity)
-        {
-            ReturnConsumedCapacity = returnConsumedCapacity;
         }
 
         #endregion
@@ -360,14 +339,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private MultiTransactGet GetMultiTransactGet()
         {
             var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
+            var docTransactGets = TransactionParts.Select(x =>
+            {
+                var docTransactGet = x as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
+                return docTransactGet;
+            }).ToList();
+            var returnConsumedCapacity = docTransactGets.Select(x => x.ReturnConsumedCapacity);
             return new MultiTransactGet
             {
-                Items = TransactionParts.SelectMany(x =>
-                {
-                    var docTransactGet = x as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
-                    return docTransactGet.Items;
-                }).ToList(),
-                ReturnConsumedCapacity = ReturnConsumedCapacity
+                Items = docTransactGets.SelectMany(x => x.Items).ToList(),
+                ReturnConsumedCapacity =
+                returnConsumedCapacity.Any(x => x == ReturnConsumedCapacity.INDEXES) ? ReturnConsumedCapacity.INDEXES :
+                returnConsumedCapacity.Any(x => x == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
+                ReturnConsumedCapacity.NONE
             };
         }
 

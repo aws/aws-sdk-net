@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.Internal;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -17,6 +18,81 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public DataModelCompositeTableTests(DataModelCompositeTableFixture fixture)
         {
             _fixture = fixture;
+        }
+
+        [Fact]
+        public async Task TestMultiTableTransactionsReturnConsumedCapacity()
+        {
+            using (var context = new DynamoDBContextBuilder()
+                .WithDynamoDBClient(() => _fixture.Client)
+                .ConfigureContext(x =>
+                {
+                    x.TableNamePrefix = _fixture.TableNamePrefix;
+                })
+                .Build())
+            {
+                var entity1 = new CompositeHashRangeEntity
+                {
+                    Id = 111,
+                    Status = "active",
+                    UserName = "alice",
+                    Timestamp = 1000,
+                    OrderId = "order-1",
+                    Region = "us-west-2",
+                    Category = "electronics",
+                    Amount = 100,
+                    Priority = 4
+                };
+
+                var entity2 = new CompositeHashRangeEntity
+                {
+                    Id = 222,
+                    Status = "active",
+                    UserName = "alice",
+                    Timestamp = 1000,
+                    OrderId = "order-1",
+                    Region = "us-west-2",
+                    Category = "electronics",
+                    Amount = 100,
+                    Priority = 4
+                };
+
+                {
+                    var transactWrite = context.CreateTransactWrite<CompositeHashRangeEntity>(new TransactWriteConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                    ;
+                    transactWrite.AddSaveItem(entity1);
+                    transactWrite.AddSaveItem(entity2);
+                    var tran = context.CreateMultiTableTransactWrite(transactWrite);
+                    await tran.ExecuteAsync();
+
+                    Assert.Equal(1, tran.ConsumedCapacity.Count);
+                    var capacity = tran.ConsumedCapacity[0];
+                    Assert.Equal(12, capacity.WriteCapacityUnits);
+                    Assert.Equal(4, capacity.GlobalSecondaryIndexes.Count);
+                    capacity.GlobalSecondaryIndexes.ForEach(c =>
+                    {
+                        Assert.Equal(2, c.Value.WriteCapacityUnits);
+                        Assert.Null(c.Value.ReadCapacityUnits);
+                    });
+                    Assert.Null(capacity.ReadCapacityUnits);
+                    Assert.Null(capacity.LocalSecondaryIndexes);
+                }
+
+                {
+                    var transactGet = context.CreateTransactGet<CompositeHashRangeEntity>(new TransactGetConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                    transactGet.AddKey(entity1.Id, entity1.Status);
+                    transactGet.AddKey(entity2.Id, entity2.Status);
+                    var tran = context.CreateMultiTableTransactGet(transactGet);
+                    await tran.ExecuteAsync();
+
+                    Assert.Equal(1, tran.ConsumedCapacity.Count);
+                    var capacity = tran.ConsumedCapacity[0];
+                    Assert.Equal(4, capacity.ReadCapacityUnits);
+                    Assert.Null(capacity.GlobalSecondaryIndexes);
+                    Assert.Null(capacity.WriteCapacityUnits);
+                    Assert.Null(capacity.LocalSecondaryIndexes);
+                }
+            }
         }
 
         [Theory]
