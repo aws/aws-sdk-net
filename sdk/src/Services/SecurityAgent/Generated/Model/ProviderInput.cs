@@ -35,7 +35,46 @@ namespace Amazon.SecurityAgent.Model
     /// </summary>
     public partial class ProviderInput
     {
+        private BitbucketIntegrationInput _bitbucket;
+        private ConfluenceIntegrationInput _confluence;
         private GitHubIntegrationInput _github;
+        private GitLabIntegrationInput _gitlab;
+
+        /// <summary>
+        /// Gets and sets the property Bitbucket. 
+        /// <para>
+        /// The configuration for a Bitbucket integration.
+        /// </para>
+        /// </summary>
+        public BitbucketIntegrationInput Bitbucket
+        {
+            get { return this._bitbucket; }
+            set { this._bitbucket = value; }
+        }
+
+        // Check to see if Bitbucket property is set
+        internal bool IsSetBitbucket()
+        {
+            return this._bitbucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Confluence. 
+        /// <para>
+        /// The configuration for a Confluence integration.
+        /// </para>
+        /// </summary>
+        public ConfluenceIntegrationInput Confluence
+        {
+            get { return this._confluence; }
+            set { this._confluence = value; }
+        }
+
+        // Check to see if Confluence property is set
+        internal bool IsSetConfluence()
+        {
+            return this._confluence != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Github. 
@@ -53,6 +92,24 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetGithub()
         {
             return this._github != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Gitlab. 
+        /// <para>
+        /// The configuration for a GitLab integration.
+        /// </para>
+        /// </summary>
+        public GitLabIntegrationInput Gitlab
+        {
+            get { return this._gitlab; }
+            set { this._gitlab = value; }
+        }
+
+        // Check to see if Gitlab property is set
+        internal bool IsSetGitlab()
+        {
+            return this._gitlab != null;
         }
 
     }

@@ -47,6 +47,7 @@ namespace Amazon.SecurityAgent.Model
         private string _riskType;
         private FindingStatus _status;
         private DateTime? _updatedAt;
+        private ValidationStatus _validationStatus;
 
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
@@ -282,6 +283,24 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStatus. 
+        /// <para>
+        /// The simulated validation status of the finding.
+        /// </para>
+        /// </summary>
+        public ValidationStatus ValidationStatus
+        {
+            get { return this._validationStatus; }
+            set { this._validationStatus = value; }
+        }
+
+        // Check to see if ValidationStatus property is set
+        internal bool IsSetValidationStatus()
+        {
+            return this._validationStatus != null;
         }
 
     }

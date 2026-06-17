@@ -168,6 +168,36 @@ namespace Amazon.SecurityAgent.Model
         IListPentestsPaginator ListPentests(ListPentestsRequest request);
 
         /// <summary>
+        /// Paginator for ListPrivateConnections operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPrivateConnectionsPaginator ListPrivateConnections(ListPrivateConnectionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityRequirementPacks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSecurityRequirementPacksPaginator ListSecurityRequirementPacks(ListSecurityRequirementPacksRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityRequirements operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSecurityRequirementsPaginator ListSecurityRequirements(ListSecurityRequirementsRequest request);
+
+        /// <summary>
         /// Paginator for ListTargetDomains operation
         ///</summary>
         [AWSPaginator(
@@ -176,5 +206,45 @@ namespace Amazon.SecurityAgent.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListTargetDomainsPaginator ListTargetDomains(ListTargetDomainsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreatModelJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListThreatModelJobsPaginator ListThreatModelJobs(ListThreatModelJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreatModelJobTasks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListThreatModelJobTasksPaginator ListThreatModelJobTasks(ListThreatModelJobTasksRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreatModels operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListThreatModelsPaginator ListThreatModels(ListThreatModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreats operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListThreatsPaginator ListThreats(ListThreatsRequest request);
     }
 }

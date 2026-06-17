@@ -56,10 +56,28 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("bitbucketRepository", targetDepth, ref reader))
+                {
+                    var unmarshaller = BitbucketRepositoryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.BitbucketRepository = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("confluenceDocument", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConfluenceDocumentMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ConfluenceDocument = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("githubRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = GitHubRepositoryMetadataUnmarshaller.Instance;
                     unmarshalledObject.GithubRepository = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("gitlabRepository", targetDepth, ref reader))
+                {
+                    var unmarshaller = GitLabRepositoryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.GitlabRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

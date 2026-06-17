@@ -79,16 +79,58 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AgentSpaceId);
             }
 
+            if(publicRequest.IsSetAttackScript())
+            {
+                context.Writer.WritePropertyName("attackScript");
+                context.Writer.WriteStringValue(publicRequest.AttackScript);
+            }
+
+            if(publicRequest.IsSetCustomerNote())
+            {
+                context.Writer.WritePropertyName("customerNote");
+                context.Writer.WriteStringValue(publicRequest.CustomerNote);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
             if(publicRequest.IsSetFindingId())
             {
                 context.Writer.WritePropertyName("findingId");
                 context.Writer.WriteStringValue(publicRequest.FindingId);
             }
 
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetReasoning())
+            {
+                context.Writer.WritePropertyName("reasoning");
+                context.Writer.WriteStringValue(publicRequest.Reasoning);
+            }
+
             if(publicRequest.IsSetRiskLevel())
             {
                 context.Writer.WritePropertyName("riskLevel");
                 context.Writer.WriteStringValue(publicRequest.RiskLevel);
+            }
+
+            if(publicRequest.IsSetRiskScore())
+            {
+                context.Writer.WritePropertyName("riskScore");
+                context.Writer.WriteStringValue(publicRequest.RiskScore);
+            }
+
+            if(publicRequest.IsSetRiskType())
+            {
+                context.Writer.WritePropertyName("riskType");
+                context.Writer.WriteStringValue(publicRequest.RiskType);
             }
 
             if(publicRequest.IsSetStatus())

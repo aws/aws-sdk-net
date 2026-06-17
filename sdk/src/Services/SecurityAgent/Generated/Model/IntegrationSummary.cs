@@ -37,8 +37,10 @@ namespace Amazon.SecurityAgent.Model
         private string _displayName;
         private string _installationId;
         private string _integrationId;
+        private string _privateConnectionName;
         private Provider _provider;
         private ProviderType _providerType;
+        private string _targetUrl;
 
         /// <summary>
         /// Gets and sets the property DisplayName. 
@@ -98,6 +100,25 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateConnectionName. 
+        /// <para>
+        /// The name of the private connection used to reach the integration's self-hosted instance
+        /// over private networking, if one is configured.
+        /// </para>
+        /// </summary>
+        public string PrivateConnectionName
+        {
+            get { return this._privateConnectionName; }
+            set { this._privateConnectionName = value; }
+        }
+
+        // Check to see if PrivateConnectionName property is set
+        internal bool IsSetPrivateConnectionName()
+        {
+            return this._privateConnectionName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
         /// The integration provider.
@@ -133,6 +154,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetProviderType()
         {
             return this._providerType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetUrl. 
+        /// <para>
+        /// The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server
+        /// or self-managed GitLab instance. This value is absent for SaaS integrations.
+        /// </para>
+        /// </summary>
+        public string TargetUrl
+        {
+            get { return this._targetUrl; }
+            set { this._targetUrl = value; }
+        }
+
+        // Check to see if TargetUrl property is set
+        internal bool IsSetTargetUrl()
+        {
+            return this._targetUrl != null;
         }
 
     }

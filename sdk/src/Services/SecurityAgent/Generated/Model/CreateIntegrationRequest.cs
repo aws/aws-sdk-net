@@ -39,6 +39,7 @@ namespace Amazon.SecurityAgent.Model
         private ProviderInput _input;
         private string _integrationDisplayName;
         private string _kmsKeyId;
+        private string _privateConnectionName;
         private Provider _provider;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -96,6 +97,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateConnectionName. 
+        /// <para>
+        /// The name of an active private connection used to reach a self-hosted provider instance
+        /// over private networking. Specify this when the instance is not publicly reachable.
+        /// </para>
+        /// </summary>
+        public string PrivateConnectionName
+        {
+            get { return this._privateConnectionName; }
+            set { this._privateConnectionName = value; }
+        }
+
+        // Check to see if PrivateConnectionName property is set
+        internal bool IsSetPrivateConnectionName()
+        {
+            return this._privateConnectionName != null;
         }
 
         /// <summary>
