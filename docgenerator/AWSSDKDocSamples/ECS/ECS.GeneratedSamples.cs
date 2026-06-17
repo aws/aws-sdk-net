@@ -19,7 +19,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest 
             {
                 Action = "CONTINUE",
-                HookId = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567",
+                HookId = "ecs-pause-Xk7rT2mP9sLwQn4vB8fYd3hJ6gA1cE5iO0uR_ZpWq",
                 ServiceDeploymentArn = "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r"
             });
 
@@ -36,7 +36,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest 
             {
                 Action = "ROLLBACK",
-                HookId = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567",
+                HookId = "ecs-pause-Xk7rT2mP9sLwQn4vB8fYd3hJ6gA1cE5iO0uR_ZpWq",
                 ServiceDeploymentArn = "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r"
             });
 
