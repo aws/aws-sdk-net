@@ -314,7 +314,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetProspectingFromEngagementTaskResponse.TaskArn</property>
-    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/task/task-[0-9a-z]{14}</pattern>
+    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/prospecting-from-engagement-task/task-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetProspectingFromEngagementTaskResponse.TaskId</property>
@@ -736,7 +736,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskResponse.TaskArn</property>
-    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/task/task-[0-9a-z]{14}</pattern>
+    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/prospecting-from-engagement-task/task-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskResponse.TaskId</property>
@@ -1396,7 +1396,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ProspectingTaskSummary.TaskArn</property>
-    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/task/task-[0-9a-z]{14}</pattern>
+    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/prospecting-from-engagement-task/task-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ProspectingTaskSummary.TaskId</property>
