@@ -1,3 +1,33 @@
+### 4.0.272.0 (2026-06-17 18:16 UTC)
+* BedrockAgent (4.0.10.0)
+	* Launching Bedrock Managed Knowledge Bases. Added support for resource-based policies on Knowledge Base resources, enabling cross-account access for Managed Knowledge Bases.
+* BedrockAgentCore (4.0.30.0)
+	* AgentCore Harness service will be Generally Available at NYS 2026 with this Treb release. Harness will support invoking specific endpoints via the qualifier parameter, AWS Skills for pre-built agent capabilities, and improved validation for skill git source URLs.
+* BedrockAgentCoreControl (4.0.43.0)
+	* AgentCore Gateway now supports inference targets to LLM providers (direct config or built-in connectors), HTTP passthrough targets with session stickiness, runtime target API schemas, AWS WAF web ACL association with configurable fail-open or fail-close modes, and interceptor payload filtering.
+* BedrockAgentRuntime (4.0.10.0)
+	* Adds new AgenticRetrieveStream API for managed knowledge bases to use conversation history and autonomously plan for multi-hop multi-KB reasoning with built-in evaluation and access-control. Updates Retrieve API for access-control-based filtering for managed knowledge bases.
+* ComputeOptimizerAutomation (4.0.3.0)
+	* This launch adds IfExists comparison operators to Compute Optimizer Automation rule criteria, so a rule can include recommended actions whose specified attribute isn't present.
+* DevOpsAgent (4.0.8.0)
+	* Adds support for Remote A2A (Agent-to-Agent) agent registration and management. Adds new Release Readiness Review and Release Testing capabilities. Adds support for Git managed skills in AWS DevOps Agent.
+* ECS (4.0.25.0)
+	* Releasing the ability to bring-your-own task-definition for CreateExpressGatewayService and UpdateGatewayExpressService
+* Glue (4.0.33.0)
+	* This release adds support for Search and Discovery in AWS Glue, letting you and your applications search Data Catalog assets such as table and enrich them with business context and glossary terms.
+* MQ (4.0.5.0)
+	* This release adds private networking support for Amazon MQ for RabbitMQ. You can now associate AWS RAM resource shares with your broker and retrieve shared resource details using the new DescribeSharedResources API.
+* OpenSearchService (4.0.23.0)
+	* Adds support for configuring IAM Identity Center options on existing OpenSearch applications via the UpdateApplication API.
+* PartnerCentralSelling (4.0.14.0)
+	* Cosell Resonate AND Prospecing API Launch with ARN correction
+* S3 (4.0.25.1)
+	* Fix `PutObject` failing with `ArgumentException` when given a non-seekable zero-length stream that reports its length (https://github.com/aws/aws-sdk-net/issues/4432). The SDK now forces chunked transfer encoding for non-seekable streams so the checksum is sent as a trailing header, instead of requiring seekability for upfront calculation. Seekable streams are unaffected. Note: non-seekable streams that do not report their length still require `ContentLength` to be set on the request.
+* SecurityAgent (4.0.5.0)
+	* Updated AWS Security Agent SDK model with new APIs for threat modeling, code review, security requirements, and additional integration providers.
+* Core 4.0.9.5
+	* Add fallback in the `ChecksumUtils` class for future services that won't support chunk encoding.
+
 ### 4.0.271.0 (2026-06-16 18:28 UTC)
 * DirectConnect (4.0.5.0)
 	* Added VIF rate limiting support for AWS Direct Connect, allowing customers to set bandwidth allocations on virtual interfaces to manage traffic on dedicated connections.

@@ -33,7 +33,7 @@ namespace Amazon.DevOpsAgent
     public partial class AmazonDevOpsAgentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DevOps Agent", "4.0.7.2");
+            InternalSDKUtils.BuildUserAgentString("DevOps Agent", "4.0.8.0");
 
         private static readonly AmazonDevOpsAgentEndpointResolver EndpointResolver =
             new AmazonDevOpsAgentEndpointResolver();
