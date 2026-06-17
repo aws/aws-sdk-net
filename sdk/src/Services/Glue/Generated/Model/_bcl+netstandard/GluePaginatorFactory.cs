@@ -221,6 +221,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetTypes operation
+        ///</summary>
+        public IListAssetTypesPaginator ListAssetTypes(ListAssetTypesRequest request) 
+        {
+            return new ListAssetTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBlueprints operation
         ///</summary>
         public IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request) 
@@ -309,6 +317,38 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListFormTypes operation
+        ///</summary>
+        public IListFormTypesPaginator ListFormTypes(ListFormTypesRequest request) 
+        {
+            return new ListFormTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGlossaries operation
+        ///</summary>
+        public IListGlossariesPaginator ListGlossaries(ListGlossariesRequest request) 
+        {
+            return new ListGlossariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGlossaryTerms operation
+        ///</summary>
+        public IListGlossaryTermsPaginator ListGlossaryTerms(ListGlossaryTermsRequest request) 
+        {
+            return new ListGlossaryTermsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIterableForms operation
+        ///</summary>
+        public IListIterableFormsPaginator ListIterableForms(ListIterableFormsRequest request) 
+        {
+            return new ListIterableFormsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         public IListJobsPaginator ListJobs(ListJobsRequest request) 
@@ -394,6 +434,14 @@ namespace Amazon.Glue.Model
         public IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request) 
         {
             return new ListWorkflowsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for Search operation
+        ///</summary>
+        public ISearchPaginator Search(SearchRequest request) 
+        {
+            return new SearchPaginator(this.client, request);
         }
 
         /// <summary>
