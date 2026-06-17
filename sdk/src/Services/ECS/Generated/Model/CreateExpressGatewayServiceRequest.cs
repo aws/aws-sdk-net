@@ -61,6 +61,7 @@ namespace Amazon.ECS.Model
         private ExpressGatewayScalingTarget _scalingTarget;
         private string _serviceName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _taskDefinitionArn;
         private string _taskRoleArn;
 
         /// <summary>
@@ -119,7 +120,6 @@ namespace Amazon.ECS.Model
         /// startup and runtime for container management operations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -248,7 +248,6 @@ namespace Amazon.ECS.Model
         /// Hub, or any other container registry accessible to your execution role.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ExpressGatewayContainer PrimaryContainer
         {
             get { return this._primaryContainer; }
@@ -337,6 +336,37 @@ namespace Amazon.ECS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskDefinitionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway
+        /// service. This allows you to manage your own task definition, giving you more control
+        /// over the service configuration such as adding sidecar containers.
+        /// </para>
+        ///  
+        /// <para>
+        /// The task definition must have a container named <c>Main</c> with a single TCP port
+        /// mapping that includes a container port and port name. The task definition must also
+        /// have <c>FARGATE</c> compatibility.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide a task definition ARN, you cannot also specify <c>primaryContainer</c>,
+        /// <c>executionRoleArn</c>, <c>taskRoleArn</c>, <c>cpu</c>, or <c>memory</c>.
+        /// </para>
+        /// </summary>
+        public string TaskDefinitionArn
+        {
+            get { return this._taskDefinitionArn; }
+            set { this._taskDefinitionArn = value; }
+        }
+
+        // Check to see if TaskDefinitionArn property is set
+        internal bool IsSetTaskDefinitionArn()
+        {
+            return this._taskDefinitionArn != null;
         }
 
         /// <summary>
