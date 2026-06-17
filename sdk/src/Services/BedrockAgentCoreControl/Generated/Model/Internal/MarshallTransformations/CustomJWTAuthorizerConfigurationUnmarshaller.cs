@@ -74,6 +74,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowedScopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("allowedWorkloadConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = AllowedWorkloadConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AllowedWorkloadConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("customClaims", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomClaimValidationType, CustomClaimValidationTypeUnmarshaller>(CustomClaimValidationTypeUnmarshaller.Instance);

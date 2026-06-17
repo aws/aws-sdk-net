@@ -31,11 +31,12 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHarness operation.
-    /// Operation to get a single Harness.
+    /// Operation to get a single harness.
     /// </summary>
     public partial class GetHarnessRequest : AmazonBedrockAgentCoreControlRequest
     {
         private string _harnessId;
+        private string _harnessVersion;
 
         /// <summary>
         /// Gets and sets the property HarnessId. 
@@ -54,6 +55,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetHarnessId()
         {
             return this._harnessId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HarnessVersion. 
+        /// <para>
+        /// Specific version of the harness to retrieve. If omitted, returns the current Harness
+        /// configuration, including its status.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public string HarnessVersion
+        {
+            get { return this._harnessVersion; }
+            set { this._harnessVersion = value; }
+        }
+
+        // Check to see if HarnessVersion property is set
+        internal bool IsSetHarnessVersion()
+        {
+            return this._harnessVersion != null;
         }
 
     }

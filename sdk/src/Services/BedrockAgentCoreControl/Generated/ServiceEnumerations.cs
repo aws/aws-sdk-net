@@ -1539,6 +1539,56 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type EnforcementMode.
+    /// </summary>
+    public class EnforcementMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for EnforcementMode
+        /// </summary>
+        public static readonly EnforcementMode ACTIVE = new EnforcementMode("ACTIVE");
+        /// <summary>
+        /// Constant LOG_ONLY for EnforcementMode
+        /// </summary>
+        public static readonly EnforcementMode LOG_ONLY = new EnforcementMode("LOG_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnforcementMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnforcementMode FindValue(string value)
+        {
+            return FindValue<EnforcementMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnforcementMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluatorLevel.
     /// </summary>
     public class EvaluatorLevel : ConstantClass
@@ -2277,6 +2327,134 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type HarnessEndpointStatus.
+    /// </summary>
+    public class HarnessEndpointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for HarnessEndpointStatus
+        /// </summary>
+        public static readonly HarnessEndpointStatus CREATE_FAILED = new HarnessEndpointStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for HarnessEndpointStatus
+        /// </summary>
+        public static readonly HarnessEndpointStatus CREATING = new HarnessEndpointStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for HarnessEndpointStatus
+        /// </summary>
+        public static readonly HarnessEndpointStatus DELETE_FAILED = new HarnessEndpointStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for HarnessEndpointStatus
+        /// </summary>
+        public static readonly HarnessEndpointStatus DELETING = new HarnessEndpointStatus("DELETING");
+        /// <summary>
+        /// Constant READY for HarnessEndpointStatus
+        /// </summary>
+        public static readonly HarnessEndpointStatus READY = new HarnessEndpointStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for HarnessEndpointStatus
+        /// </summary>
+        public static readonly HarnessEndpointStatus UPDATE_FAILED = new HarnessEndpointStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for HarnessEndpointStatus
+        /// </summary>
+        public static readonly HarnessEndpointStatus UPDATING = new HarnessEndpointStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessEndpointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessEndpointStatus FindValue(string value)
+        {
+            return FindValue<HarnessEndpointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessManagedMemoryStrategyType.
+    /// </summary>
+    public class HarnessManagedMemoryStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EPISODIC for HarnessManagedMemoryStrategyType
+        /// </summary>
+        public static readonly HarnessManagedMemoryStrategyType EPISODIC = new HarnessManagedMemoryStrategyType("EPISODIC");
+        /// <summary>
+        /// Constant SEMANTIC for HarnessManagedMemoryStrategyType
+        /// </summary>
+        public static readonly HarnessManagedMemoryStrategyType SEMANTIC = new HarnessManagedMemoryStrategyType("SEMANTIC");
+        /// <summary>
+        /// Constant SUMMARIZATION for HarnessManagedMemoryStrategyType
+        /// </summary>
+        public static readonly HarnessManagedMemoryStrategyType SUMMARIZATION = new HarnessManagedMemoryStrategyType("SUMMARIZATION");
+        /// <summary>
+        /// Constant USER_PREFERENCE for HarnessManagedMemoryStrategyType
+        /// </summary>
+        public static readonly HarnessManagedMemoryStrategyType USER_PREFERENCE = new HarnessManagedMemoryStrategyType("USER_PREFERENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessManagedMemoryStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessManagedMemoryStrategyType FindValue(string value)
+        {
+            return FindValue<HarnessManagedMemoryStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessManagedMemoryStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HarnessOpenAiApiFormat.
     /// </summary>
     public class HarnessOpenAiApiFormat : ConstantClass
@@ -2606,6 +2784,52 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IncludedData(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InterceptorPayloadExclusion.
+    /// </summary>
+    public class InterceptorPayloadExclusion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESPONSE_BODY for InterceptorPayloadExclusion
+        /// </summary>
+        public static readonly InterceptorPayloadExclusion RESPONSE_BODY = new InterceptorPayloadExclusion("RESPONSE_BODY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InterceptorPayloadExclusion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InterceptorPayloadExclusion FindValue(string value)
+        {
+            return FindValue<InterceptorPayloadExclusion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InterceptorPayloadExclusion(string value)
         {
             return FindValue(value);
         }
@@ -3328,6 +3552,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OverrideType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PassthroughProtocolType.
+    /// </summary>
+    public class PassthroughProtocolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant A2A for PassthroughProtocolType
+        /// </summary>
+        public static readonly PassthroughProtocolType A2A = new PassthroughProtocolType("A2A");
+        /// <summary>
+        /// Constant CUSTOM for PassthroughProtocolType
+        /// </summary>
+        public static readonly PassthroughProtocolType CUSTOM = new PassthroughProtocolType("CUSTOM");
+        /// <summary>
+        /// Constant INFERENCE for PassthroughProtocolType
+        /// </summary>
+        public static readonly PassthroughProtocolType INFERENCE = new PassthroughProtocolType("INFERENCE");
+        /// <summary>
+        /// Constant MCP for PassthroughProtocolType
+        /// </summary>
+        public static readonly PassthroughProtocolType MCP = new PassthroughProtocolType("MCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PassthroughProtocolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PassthroughProtocolType FindValue(string value)
+        {
+            return FindValue<PassthroughProtocolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PassthroughProtocolType(string value)
         {
             return FindValue(value);
         }
@@ -4809,6 +5091,84 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENTCORE_RUNTIME for TargetType
+        /// </summary>
+        public static readonly TargetType AGENTCORE_RUNTIME = new TargetType("AGENTCORE_RUNTIME");
+        /// <summary>
+        /// Constant API_GATEWAY for TargetType
+        /// </summary>
+        public static readonly TargetType API_GATEWAY = new TargetType("API_GATEWAY");
+        /// <summary>
+        /// Constant CONNECTOR for TargetType
+        /// </summary>
+        public static readonly TargetType CONNECTOR = new TargetType("CONNECTOR");
+        /// <summary>
+        /// Constant LAMBDA for TargetType
+        /// </summary>
+        public static readonly TargetType LAMBDA = new TargetType("LAMBDA");
+        /// <summary>
+        /// Constant MCP_SERVER for TargetType
+        /// </summary>
+        public static readonly TargetType MCP_SERVER = new TargetType("MCP_SERVER");
+        /// <summary>
+        /// Constant OPEN_API_SCHEMA for TargetType
+        /// </summary>
+        public static readonly TargetType OPEN_API_SCHEMA = new TargetType("OPEN_API_SCHEMA");
+        /// <summary>
+        /// Constant PASSTHROUGH for TargetType
+        /// </summary>
+        public static readonly TargetType PASSTHROUGH = new TargetType("PASSTHROUGH");
+        /// <summary>
+        /// Constant PROVIDER for TargetType
+        /// </summary>
+        public static readonly TargetType PROVIDER = new TargetType("PROVIDER");
+        /// <summary>
+        /// Constant SMITHY_MODEL for TargetType
+        /// </summary>
+        public static readonly TargetType SMITHY_MODEL = new TargetType("SMITHY_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
@@ -4864,6 +5224,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WafFailureMode.
+    /// </summary>
+    public class WafFailureMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL_CLOSE for WafFailureMode
+        /// </summary>
+        public static readonly WafFailureMode FAIL_CLOSE = new WafFailureMode("FAIL_CLOSE");
+        /// <summary>
+        /// Constant FAIL_OPEN for WafFailureMode
+        /// </summary>
+        public static readonly WafFailureMode FAIL_OPEN = new WafFailureMode("FAIL_OPEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WafFailureMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WafFailureMode FindValue(string value)
+        {
+            return FindValue<WafFailureMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WafFailureMode(string value)
         {
             return FindValue(value);
         }

@@ -68,6 +68,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Qualifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("schema", targetDepth, ref reader))
+                {
+                    var unmarshaller = HttpApiSchemaConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Schema = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApiGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("connector", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConnectorTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Connector = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("lambda", targetDepth, ref reader))
                 {
                     var unmarshaller = McpLambdaTargetConfigurationUnmarshaller.Instance;

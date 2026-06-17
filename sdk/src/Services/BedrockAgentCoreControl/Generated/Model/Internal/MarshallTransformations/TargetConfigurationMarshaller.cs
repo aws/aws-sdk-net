@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInference())
+            {
+                context.Writer.WritePropertyName("inference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Inference, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMcp())
             {
                 context.Writer.WritePropertyName("mcp");

@@ -57,6 +57,28 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDisabled())
+            {
+                context.Writer.WritePropertyName("disabled");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarnessDisabledMemoryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Disabled, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetManagedMemoryConfiguration())
+            {
+                context.Writer.WritePropertyName("managedMemoryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarnessManagedMemoryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedMemoryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

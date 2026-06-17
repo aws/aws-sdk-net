@@ -52,6 +52,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.PassRequestHeaders.Value);
             }
 
+            if(requestObject.IsSetPayloadFilter())
+            {
+                context.Writer.WritePropertyName("payloadFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InterceptorPayloadFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.PayloadFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

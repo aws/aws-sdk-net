@@ -62,6 +62,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentCoreMemoryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("disabled", targetDepth, ref reader))
+                {
+                    var unmarshaller = HarnessDisabledMemoryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Disabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("managedMemoryConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = HarnessManagedMemoryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedMemoryConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

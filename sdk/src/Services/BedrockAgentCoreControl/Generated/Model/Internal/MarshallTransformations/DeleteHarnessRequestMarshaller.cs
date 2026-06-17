@@ -71,6 +71,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            
+            if (publicRequest.IsSetDeleteManagedMemory())
+                request.Parameters.Add("deleteManagedMemory", StringUtils.FromBool(publicRequest.DeleteManagedMemory));
             request.ResourcePath = "/harnesses/{harnessId}";
             request.UseQueryString = true;
 

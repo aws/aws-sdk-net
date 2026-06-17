@@ -104,6 +104,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetEnforcementMode())
+            {
+                context.Writer.WritePropertyName("enforcementMode");
+                context.Writer.WriteStringValue(publicRequest.EnforcementMode);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

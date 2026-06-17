@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _failureReason;
         private string _id;
         private List<IndexedKey> _indexedKeys = AWSConfigs.InitializeCollections ? new List<IndexedKey>() : null;
+        private string _managedByResourceArn;
         private string _memoryExecutionRoleArn;
         private string _name;
         private MemoryStatus _status;
@@ -203,6 +204,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetIndexedKeys()
         {
             return this._indexedKeys != null && (this._indexedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedByResourceArn. 
+        /// <para>
+        /// ARN of the resource managing this memory (e.g. a harness). When set, strategy modifications
+        /// and deletion are only allowed through the managing resource.
+        /// </para>
+        /// </summary>
+        public string ManagedByResourceArn
+        {
+            get { return this._managedByResourceArn; }
+            set { this._managedByResourceArn = value; }
+        }
+
+        // Check to see if ManagedByResourceArn property is set
+        internal bool IsSetManagedByResourceArn()
+        {
+            return this._managedByResourceArn != null;
         }
 
         /// <summary>

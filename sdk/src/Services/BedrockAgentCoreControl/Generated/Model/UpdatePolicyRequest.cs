@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private PolicyDefinition _definition;
         private UpdatedDescription _description;
+        private EnforcementMode _enforcementMode;
         private string _policyEngineId;
         private string _policyId;
         private PolicyValidationMode _validationMode;
@@ -81,6 +82,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnforcementMode. 
+        /// <para>
+        /// The enforcement mode for the policy. Run this policy in <c>LOG_ONLY</c> mode to collect
+        /// data on how it affects your application. Once you are satisfied with the data gathered,
+        /// switch the policy to <c>ACTIVE</c>. If you omit this field, the policy's existing
+        /// enforcement mode is unchanged.
+        /// </para>
+        /// </summary>
+        public EnforcementMode EnforcementMode
+        {
+            get { return this._enforcementMode; }
+            set { this._enforcementMode = value; }
+        }
+
+        // Check to see if EnforcementMode property is set
+        internal bool IsSetEnforcementMode()
+        {
+            return this._enforcementMode != null;
         }
 
         /// <summary>

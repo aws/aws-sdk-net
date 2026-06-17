@@ -81,7 +81,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AppSecretJsonKey. 
         /// <para>
-        /// The JSON key used to extract the app secret value from the AWS Secrets Manager secret.
+        /// The JSON key used to extract the app secret value from the Amazon Web Services Secrets
+        /// Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -101,7 +102,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property AppSecretSource. 
         /// <para>
         /// The source type of the app secret. Either <c>MANAGED</c> if the secret is managed
-        /// by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets Manager.
+        /// by the service, or <c>EXTERNAL</c> if managed by the user in Amazon Web Services Secrets
+        /// Manager.
         /// </para>
         /// </summary>
         public SecretSourceType AppSecretSource
@@ -154,8 +156,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizationPrivateKeyJsonKey. 
         /// <para>
-        /// The JSON key used to extract the authorization private key value from the AWS Secrets
-        /// Manager secret.
+        /// The JSON key used to extract the authorization private key value from the Amazon Web
+        /// Services Secrets Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -175,8 +177,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property AuthorizationPrivateKeySource. 
         /// <para>
         /// The source type of the authorization private key. Either <c>MANAGED</c> if the secret
-        /// is managed by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets
-        /// Manager.
+        /// is managed by the service, or <c>EXTERNAL</c> if managed by the user in Amazon Web
+        /// Services Secrets Manager.
         /// </para>
         /// </summary>
         public SecretSourceType AuthorizationPrivateKeySource

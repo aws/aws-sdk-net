@@ -35,13 +35,32 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class TargetSummary
     {
+        private AuthorizationData _authorizationData;
         private DateTime? _createdAt;
         private string _description;
+        private DateTime? _lastSynchronizedAt;
+        private ListingMode _listingMode;
         private string _name;
         private int? _resourcePriority;
         private TargetStatus _status;
         private string _targetId;
+        private TargetType _targetType;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationData.
+        /// </summary>
+        public AuthorizationData AuthorizationData
+        {
+            get { return this._authorizationData; }
+            set { this._authorizationData = value; }
+        }
+
+        // Check to see if AuthorizationData property is set
+        internal bool IsSetAuthorizationData()
+        {
+            return this._authorizationData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -79,6 +98,44 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSynchronizedAt. 
+        /// <para>
+        /// The timestamp when the target was last synchronized.
+        /// </para>
+        /// </summary>
+        public DateTime? LastSynchronizedAt
+        {
+            get { return this._lastSynchronizedAt; }
+            set { this._lastSynchronizedAt = value; }
+        }
+
+        // Check to see if LastSynchronizedAt property is set
+        internal bool IsSetLastSynchronizedAt()
+        {
+            return this._lastSynchronizedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListingMode. 
+        /// <para>
+        /// The listing mode for the target. MCP resources for <c>DEFAULT</c> targets are cached
+        /// at the control plane for faster access. MCP resources for <c>DYNAMIC</c> targets are
+        /// retrieved dynamically when listing tools.
+        /// </para>
+        /// </summary>
+        public ListingMode ListingMode
+        {
+            get { return this._listingMode; }
+            set { this._listingMode = value; }
+        }
+
+        // Check to see if ListingMode property is set
+        internal bool IsSetListingMode()
+        {
+            return this._listingMode != null;
         }
 
         /// <summary>
@@ -156,6 +213,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetTargetId()
         {
             return this._targetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The type of the target.
+        /// </para>
+        /// </summary>
+        public TargetType TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
         }
 
         /// <summary>

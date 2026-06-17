@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class InterceptorInputConfiguration
     {
         private bool? _passRequestHeaders;
+        private InterceptorPayloadFilter _payloadFilter;
 
         /// <summary>
         /// Gets and sets the property PassRequestHeaders. 
@@ -54,6 +55,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPassRequestHeaders()
         {
             return this._passRequestHeaders.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PayloadFilter. 
+        /// <para>
+        /// The filter that determines which parts of the request or response payload are passed
+        /// as input to the interceptor.
+        /// </para>
+        /// </summary>
+        public InterceptorPayloadFilter PayloadFilter
+        {
+            get { return this._payloadFilter; }
+            set { this._payloadFilter = value; }
+        }
+
+        // Check to see if PayloadFilter property is set
+        internal bool IsSetPayloadFilter()
+        {
+            return this._payloadFilter != null;
         }
 
     }

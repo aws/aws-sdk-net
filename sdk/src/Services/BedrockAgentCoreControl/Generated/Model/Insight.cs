@@ -30,14 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// A reference to an insight analysis to run against sessions.
+    /// A reference to an insight analysis to run against sessions during evaluation. Insights
+    /// provide deeper analysis beyond individual evaluator scores, including failure detection,
+    /// user intent clustering, and execution summarization.
     /// </summary>
     public partial class Insight
     {
         private string _insightId;
 
         /// <summary>
-        /// Gets and sets the property InsightId.
+        /// Gets and sets the property InsightId. 
+        /// <para>
+        /// The unique identifier of the insight to run.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string InsightId

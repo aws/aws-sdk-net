@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private List<string> _allowedAudience = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedClients = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AllowedWorkloadConfiguration _allowedWorkloadConfiguration;
         private List<CustomClaimValidationType> _customClaims = AWSConfigs.InitializeCollections ? new List<CustomClaimValidationType>() : null;
         private string _discoveryUrl;
         private PrivateEndpoint _privateEndpoint;
@@ -115,6 +116,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAllowedScopes()
         {
             return this._allowedScopes != null && (this._allowedScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowedWorkloadConfiguration. 
+        /// <para>
+        /// The configuration that restricts which workloads in the request's identity chain are
+        /// allowed to invoke the target, identified by their hosting environments and workload
+        /// identities. At launch, this is supported only for AgentCore Runtime targets, and the
+        /// allowed workloads are AgentCore Gateways.
+        /// </para>
+        /// </summary>
+        public AllowedWorkloadConfiguration AllowedWorkloadConfiguration
+        {
+            get { return this._allowedWorkloadConfiguration; }
+            set { this._allowedWorkloadConfiguration = value; }
+        }
+
+        // Check to see if AllowedWorkloadConfiguration property is set
+        internal bool IsSetAllowedWorkloadConfiguration()
+        {
+            return this._allowedWorkloadConfiguration != null;
         }
 
         /// <summary>
