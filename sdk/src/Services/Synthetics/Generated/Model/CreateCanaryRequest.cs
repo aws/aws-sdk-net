@@ -59,6 +59,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class CreateCanaryRequest : AmazonSyntheticsRequest
     {
+        private List<AddReplicaLocationInput> _addReplicaLocations = AWSConfigs.InitializeCollections ? new List<AddReplicaLocationInput>() : null;
         private ArtifactConfigInput _artifactConfig;
         private string _artifactS3Location;
         private List<BrowserConfig> _browserConfigs = AWSConfigs.InitializeCollections ? new List<BrowserConfig>() : null;
@@ -74,6 +75,32 @@ namespace Amazon.Synthetics.Model
         private int? _successRetentionPeriodInDays;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfigInput _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AddReplicaLocations. 
+        /// <para>
+        /// A list of locations (Amazon Web Services Regions) to add as replicas for the canary.
+        /// Each location specifies a Region and optional VPC configuration for the replica. You
+        /// can add up to 50 replica locations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<AddReplicaLocationInput> AddReplicaLocations
+        {
+            get { return this._addReplicaLocations; }
+            set { this._addReplicaLocations = value; }
+        }
+
+        // Check to see if AddReplicaLocations property is set
+        internal bool IsSetAddReplicaLocations()
+        {
+            return this._addReplicaLocations != null && (this._addReplicaLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ArtifactConfig. 

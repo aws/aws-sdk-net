@@ -315,6 +315,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.AddReplicaLocationInput.Location</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-{0,1}[0-9]{0,1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.BaseScreenshot.ScreenshotName</property>
     <min>1</min>
     <max>1024</max>
@@ -415,6 +421,12 @@
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRun.Id</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.CanaryRun.Location</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-{0,1}[0-9]{0,1}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRun.Name</property>
@@ -542,6 +554,28 @@
     <property>Amazon.Synthetics.Model.GroupSummary.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.MultiLocationConfig.PrimaryLocation</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-{0,1}[0-9]{0,1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.Replica.Location</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-{0,1}[0-9]{0,1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ReplicationStatus.StateReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ReplicationStatus.StateReasonCode</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.RetryConfigInput.MaxRetries</property>

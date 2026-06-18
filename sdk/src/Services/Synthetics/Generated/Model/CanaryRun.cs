@@ -38,6 +38,7 @@ namespace Amazon.Synthetics.Model
         private BrowserType _browserType;
         private CanaryDryRunConfigOutput _dryRunConfig;
         private string _id;
+        private string _location;
         private string _name;
         private int? _retryAttempt;
         private string _scheduledRunId;
@@ -116,6 +117,25 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The Amazon Web Services Region where this canary run was executed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
         /// <summary>

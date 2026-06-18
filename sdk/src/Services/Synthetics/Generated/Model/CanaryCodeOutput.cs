@@ -51,8 +51,8 @@ namespace Amazon.Synthetics.Model
         /// <para>
         /// Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes
         /// (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <c>BlueprintTypes</c>,
-        /// the Handler field cannot be specified since the blueprint provides a pre-defined entry
-        /// point.
+        /// the <c>Handler</c> field cannot be specified since the blueprint provides a pre-defined
+        /// entry point.
         /// </para>
         ///  
         /// <para>

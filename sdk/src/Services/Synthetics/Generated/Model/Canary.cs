@@ -44,6 +44,7 @@ namespace Amazon.Synthetics.Model
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
         private string _id;
+        private MultiLocationConfig _multiLocationConfig;
         private string _name;
         private ProvisionedResourceCleanupSetting _provisionedResourceCleanup;
         private CanaryRunConfigOutput _runConfig;
@@ -275,6 +276,25 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiLocationConfig. 
+        /// <para>
+        /// If this canary is part of a multi-location configuration, this structure contains
+        /// information about the canary's location type, primary location, and replicas.
+        /// </para>
+        /// </summary>
+        public MultiLocationConfig MultiLocationConfig
+        {
+            get { return this._multiLocationConfig; }
+            set { this._multiLocationConfig = value; }
+        }
+
+        // Check to see if MultiLocationConfig property is set
+        internal bool IsSetMultiLocationConfig()
+        {
+            return this._multiLocationConfig != null;
         }
 
         /// <summary>

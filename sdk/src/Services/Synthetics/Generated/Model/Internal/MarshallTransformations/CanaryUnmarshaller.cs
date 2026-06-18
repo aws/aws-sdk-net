@@ -116,6 +116,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MultiLocationConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = MultiLocationConfigUnmarshaller.Instance;
+                    unmarshalledObject.MultiLocationConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
