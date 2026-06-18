@@ -77,7 +77,7 @@ namespace Amazon.Lambda.Model
         /// or <c>lambda:GetFunction</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string Action
         {
             get { return this._action; }
@@ -200,7 +200,7 @@ namespace Amazon.Lambda.Model
         /// to limit who can invoke the function through that service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string Principal
         {
             get { return this._principal; }
@@ -304,6 +304,7 @@ namespace Amazon.Lambda.Model
         /// Note that Lambda configures the comparison using the <c>StringLike</c> operator.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SourceArn
         {
             get { return this._sourceArn; }

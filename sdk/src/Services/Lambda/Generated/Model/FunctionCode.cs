@@ -129,6 +129,7 @@ namespace Amazon.Lambda.Model
         /// Web Services owned key</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SourceKMSKeyArn
         {
             get { return this._sourceKMSKeyArn; }

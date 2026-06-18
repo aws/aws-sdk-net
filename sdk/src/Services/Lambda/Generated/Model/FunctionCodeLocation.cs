@@ -64,6 +64,7 @@ namespace Amazon.Lambda.Model
         /// A presigned URL that you can use to download the deployment package.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string Location
         {
             get { return this._location; }
@@ -121,6 +122,7 @@ namespace Amazon.Lambda.Model
         /// Web Services owned key</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SourceKMSKeyArn
         {
             get { return this._sourceKMSKeyArn; }

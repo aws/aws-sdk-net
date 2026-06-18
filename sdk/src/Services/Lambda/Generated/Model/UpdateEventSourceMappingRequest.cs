@@ -421,6 +421,7 @@ namespace Amazon.Lambda.Model
         /// this property to encrypt data using your own customer managed key. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string KMSKeyArn
         {
             get { return this._kmsKeyArn; }
@@ -631,7 +632,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=22)]
+        [AWSProperty(Min=0, Max=23)]
         public List<SourceAccessConfiguration> SourceAccessConfigurations
         {
             get { return this._sourceAccessConfigurations; }
@@ -671,7 +672,7 @@ namespace Amazon.Lambda.Model
         /// The identifier of the event source mapping.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string UUID
         {
             get { return this._uuid; }

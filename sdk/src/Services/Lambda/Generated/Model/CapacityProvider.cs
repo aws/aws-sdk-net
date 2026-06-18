@@ -105,6 +105,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the KMS key used to encrypt the capacity provider's resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }
@@ -123,6 +124,7 @@ namespace Amazon.Lambda.Model
         /// The date and time when the capacity provider was last modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string LastModified
         {
             get { return this._lastModified; }

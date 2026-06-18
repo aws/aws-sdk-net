@@ -308,6 +308,7 @@ namespace Amazon.Lambda.Model
         /// Lambda uses an Amazon Web Services managed key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SourceKMSKeyArn
         {
             get { return this._sourceKMSKeyArn; }

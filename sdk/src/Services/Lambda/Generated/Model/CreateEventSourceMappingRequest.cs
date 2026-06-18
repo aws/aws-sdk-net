@@ -366,6 +366,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string EventSourceArn
         {
             get { return this._eventSourceArn; }
@@ -476,6 +477,7 @@ namespace Amazon.Lambda.Model
         /// this property to encrypt data using your own customer managed key. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string KMSKeyArn
         {
             get { return this._kmsKeyArn; }
@@ -736,7 +738,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=22)]
+        [AWSProperty(Min=0, Max=23)]
         public List<SourceAccessConfiguration> SourceAccessConfigurations
         {
             get { return this._sourceAccessConfigurations; }

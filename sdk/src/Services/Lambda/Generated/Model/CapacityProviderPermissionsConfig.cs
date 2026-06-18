@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model
         /// and other Amazon Web Services resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string CapacityProviderOperatorRoleArn
         {
             get { return this._capacityProviderOperatorRoleArn; }
