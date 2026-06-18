@@ -134,6 +134,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetStartFromHead())
+            {
+                context.Writer.WritePropertyName("startFromHead");
+                context.Writer.WriteBooleanValue(publicRequest.StartFromHead.Value);
+            }
+
             if(publicRequest.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");

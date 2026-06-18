@@ -2490,7 +2490,10 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
-        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
+        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request. By
+        /// default, the events are returned in ascending timestamp order (oldest first). To return
+        /// events in descending timestamp order (newest first), set the <c>startFromHead</c>
+        /// parameter to <c>false</c>.
         /// </para>
         ///  
         /// <para>

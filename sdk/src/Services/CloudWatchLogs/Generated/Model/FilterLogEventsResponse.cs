@@ -64,8 +64,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use when requesting the next set of items. The token expires after 24
-        /// hours.
+        /// The token for the next set of items in the sorting direction specified by the <c>startFromHead</c>
+        /// parameter in the first request. The token expires after 24 hours.
         /// </para>
         ///  
         /// <para>
