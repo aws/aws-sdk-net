@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <remarks>
         /// Note: Conditions must be against non-key properties.
         /// </remarks>
-        public ContextExpression filterExpression { get; set; }
+        public ContextExpression FilterExpression { get; set; }
 
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
@@ -49,7 +49,7 @@ namespace Amazon.DynamoDBv2.DataModel
             var config = base.ToDynamoDBOperationConfig();
             config.SkipVersionCheck = SkipVersionCheck;
             config.IgnoreNullValues = IgnoreNullValues;
-            config.Expression = filterExpression;
+            config.Expression = FilterExpression;
 
             return config;
         }

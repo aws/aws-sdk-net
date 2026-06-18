@@ -90,6 +90,117 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [Fact]
+        public async Task TestSaveAsync_WithConditionalExpression_WithVersionCheck()
+        {
+            using (var context = new DynamoDBContextBuilder()
+                .WithDynamoDBClient(() => _fixture.Client)
+                .ConfigureContext(x =>
+                {
+                    x.Conversion = DynamoDBEntryConversion.V2;
+                    x.ConsistentRead = true;
+                    x.IsEmptyStringValueEnabled = true;
+                    x.DisableFetchingTableMetadata = true;
+                    x.TableNamePrefix = _fixture.TableNamePrefix;
+                })
+                .Build())
+            {
+                var vp = new VersionedProduct
+                {
+                    Id = 2222,
+                    Name = "TestProduct",
+                    Price = 100
+                };
+
+                await context.SaveAsync(vp);
+                vp.Price = 122;
+
+                var expr1 = new ContextExpression();
+                expr1.SetFilter<Product>(p => p.Name == "TestProduct");
+
+                await Assert.ThrowsAsync<InvalidOperationException>(() => context.SaveAsync(vp, new SaveConfig() { FilterExpression = expr1 }));
+            }
+        }
+
+        [Fact]
+        public async Task TestSaveAsync_WithConditionalExpression_SkipVersionCheck()
+        {
+            using (var context = new DynamoDBContextBuilder()
+                .WithDynamoDBClient(() => _fixture.Client)
+                .ConfigureContext(x =>
+                {
+                    x.Conversion = DynamoDBEntryConversion.V2;
+                    x.ConsistentRead = true;
+                    x.IsEmptyStringValueEnabled = true;
+                    x.DisableFetchingTableMetadata = true;
+                    x.TableNamePrefix = _fixture.TableNamePrefix;
+                })
+                .Build())
+            {
+                var vp = new VersionedProduct
+                {
+                    Id = 3333,
+                    Name = "TestProduct",
+                    Price = 100
+                };
+
+                await context.SaveAsync(vp);
+
+                var expr1 = new ContextExpression();
+                expr1.SetFilter<VersionedProduct>(p => p.Name == "TestProduct");
+
+                vp.Price = 122;
+
+                await context.SaveAsync(vp, new SaveConfig() 
+                { 
+                    FilterExpression = expr1,
+                    SkipVersionCheck = true
+                });
+
+                vp = await context.LoadAsync<VersionedProduct>(vp.Id);
+                Assert.Equal(122, vp.Price);
+            }
+        }
+
+        [Fact]
+        public async Task TestSaveAsync_WithConditionalExpression_WithEntityWithoutVersionCheck()
+        {
+            using (var context = new DynamoDBContextBuilder()
+                .WithDynamoDBClient(() => _fixture.Client)
+                .ConfigureContext(x =>
+                {
+                    x.Conversion = DynamoDBEntryConversion.V2;
+                    x.ConsistentRead = true;
+                    x.IsEmptyStringValueEnabled = true;
+                    x.DisableFetchingTableMetadata = true;
+                    x.TableNamePrefix = _fixture.TableNamePrefix;
+                })
+                .Build())
+            {
+                var vp = new Product
+                {
+                    Id = 444,
+                    Name = "TestProduct",
+                    Price = 100
+                };
+
+                await context.SaveAsync(vp);
+                vp.Price = 122;
+
+                var expr1 = new ContextExpression();
+                expr1.SetFilter<Product>(p => p.Name == "TestProduct");
+
+                await context.SaveAsync(vp, new SaveConfig()
+                {
+                    FilterExpression = expr1,
+                    SkipVersionCheck = true
+                });
+
+                vp = await context.LoadAsync<Product>(vp.Id);
+                Assert.Equal(122, vp.Price);
+            }
+        }
+
+        [Fact]
         public async Task TestContext_ScanWithExpression_NestedPaths()
         {
             var product1 = new Product
