@@ -118,15 +118,15 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>OperatingSystem</c> (omit to use default value)
+    ///  <c>OperatingSystem</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+    ///  <c>TotalMemoryLimitMebibytes</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>TotalVcpuLimit </c>(omit to use default value)
+    ///  <c>TotalVcpuLimit</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -146,7 +146,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>ServerSdkVersion</c> (omit to use default value)
+    ///  <c>ServerSdkVersion</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
@@ -163,15 +163,15 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>OperatingSystem</c> (omit to use default value)
+    ///  <c>OperatingSystem</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+    ///  <c>TotalMemoryLimitMebibytes</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>TotalVcpuLimit </c>(omit to use default value)
+    ///  <c>TotalVcpuLimit</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>

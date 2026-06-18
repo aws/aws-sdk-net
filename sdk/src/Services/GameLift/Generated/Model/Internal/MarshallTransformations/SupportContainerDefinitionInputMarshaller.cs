@@ -105,6 +105,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 context.Writer.WriteTextString("ImageUri");
                 context.Writer.WriteTextString(requestObject.ImageUri);
             }
+            if (requestObject.IsSetLinuxCapabilities())
+            {
+                context.Writer.WriteTextString("LinuxCapabilities");
+                context.Writer.WriteStartMap(null);
+
+                var marshaller = LinuxCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.LinuxCapabilities, context);
+
+                context.Writer.WriteEndMap();
+            }
             if (requestObject.IsSetMemoryHardLimitMebibytes())
             {
                 context.Writer.WriteTextString("MemoryHardLimitMebibytes");

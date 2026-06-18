@@ -4907,6 +4907,196 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type LinuxCapability.
+    /// </summary>
+    public class LinuxCapability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIT_CONTROL for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability AUDIT_CONTROL = new LinuxCapability("AUDIT_CONTROL");
+        /// <summary>
+        /// Constant AUDIT_WRITE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability AUDIT_WRITE = new LinuxCapability("AUDIT_WRITE");
+        /// <summary>
+        /// Constant BLOCK_SUSPEND for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability BLOCK_SUSPEND = new LinuxCapability("BLOCK_SUSPEND");
+        /// <summary>
+        /// Constant CHOWN for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability CHOWN = new LinuxCapability("CHOWN");
+        /// <summary>
+        /// Constant DAC_OVERRIDE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability DAC_OVERRIDE = new LinuxCapability("DAC_OVERRIDE");
+        /// <summary>
+        /// Constant DAC_READ_SEARCH for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability DAC_READ_SEARCH = new LinuxCapability("DAC_READ_SEARCH");
+        /// <summary>
+        /// Constant FOWNER for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability FOWNER = new LinuxCapability("FOWNER");
+        /// <summary>
+        /// Constant FSETID for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability FSETID = new LinuxCapability("FSETID");
+        /// <summary>
+        /// Constant IPC_LOCK for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability IPC_LOCK = new LinuxCapability("IPC_LOCK");
+        /// <summary>
+        /// Constant IPC_OWNER for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability IPC_OWNER = new LinuxCapability("IPC_OWNER");
+        /// <summary>
+        /// Constant KILL for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability KILL = new LinuxCapability("KILL");
+        /// <summary>
+        /// Constant LEASE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability LEASE = new LinuxCapability("LEASE");
+        /// <summary>
+        /// Constant LINUX_IMMUTABLE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability LINUX_IMMUTABLE = new LinuxCapability("LINUX_IMMUTABLE");
+        /// <summary>
+        /// Constant MAC_ADMIN for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability MAC_ADMIN = new LinuxCapability("MAC_ADMIN");
+        /// <summary>
+        /// Constant MAC_OVERRIDE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability MAC_OVERRIDE = new LinuxCapability("MAC_OVERRIDE");
+        /// <summary>
+        /// Constant MKNOD for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability MKNOD = new LinuxCapability("MKNOD");
+        /// <summary>
+        /// Constant NET_ADMIN for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability NET_ADMIN = new LinuxCapability("NET_ADMIN");
+        /// <summary>
+        /// Constant NET_BIND_SERVICE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability NET_BIND_SERVICE = new LinuxCapability("NET_BIND_SERVICE");
+        /// <summary>
+        /// Constant NET_BROADCAST for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability NET_BROADCAST = new LinuxCapability("NET_BROADCAST");
+        /// <summary>
+        /// Constant NET_RAW for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability NET_RAW = new LinuxCapability("NET_RAW");
+        /// <summary>
+        /// Constant SETFCAP for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SETFCAP = new LinuxCapability("SETFCAP");
+        /// <summary>
+        /// Constant SETGID for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SETGID = new LinuxCapability("SETGID");
+        /// <summary>
+        /// Constant SETPCAP for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SETPCAP = new LinuxCapability("SETPCAP");
+        /// <summary>
+        /// Constant SETUID for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SETUID = new LinuxCapability("SETUID");
+        /// <summary>
+        /// Constant SYS_ADMIN for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_ADMIN = new LinuxCapability("SYS_ADMIN");
+        /// <summary>
+        /// Constant SYS_BOOT for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_BOOT = new LinuxCapability("SYS_BOOT");
+        /// <summary>
+        /// Constant SYS_CHROOT for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_CHROOT = new LinuxCapability("SYS_CHROOT");
+        /// <summary>
+        /// Constant SYS_MODULE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_MODULE = new LinuxCapability("SYS_MODULE");
+        /// <summary>
+        /// Constant SYS_NICE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_NICE = new LinuxCapability("SYS_NICE");
+        /// <summary>
+        /// Constant SYS_PACCT for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_PACCT = new LinuxCapability("SYS_PACCT");
+        /// <summary>
+        /// Constant SYS_PTRACE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_PTRACE = new LinuxCapability("SYS_PTRACE");
+        /// <summary>
+        /// Constant SYS_RAWIO for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_RAWIO = new LinuxCapability("SYS_RAWIO");
+        /// <summary>
+        /// Constant SYS_RESOURCE for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_RESOURCE = new LinuxCapability("SYS_RESOURCE");
+        /// <summary>
+        /// Constant SYS_TIME for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_TIME = new LinuxCapability("SYS_TIME");
+        /// <summary>
+        /// Constant SYS_TTY_CONFIG for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYS_TTY_CONFIG = new LinuxCapability("SYS_TTY_CONFIG");
+        /// <summary>
+        /// Constant SYSLOG for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability SYSLOG = new LinuxCapability("SYSLOG");
+        /// <summary>
+        /// Constant WAKE_ALARM for LinuxCapability
+        /// </summary>
+        public static readonly LinuxCapability WAKE_ALARM = new LinuxCapability("WAKE_ALARM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LinuxCapability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LinuxCapability FindValue(string value)
+        {
+            return FindValue<LinuxCapability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LinuxCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListComputeInputStatus.
     /// </summary>
     public class ListComputeInputStatus : ConstantClass

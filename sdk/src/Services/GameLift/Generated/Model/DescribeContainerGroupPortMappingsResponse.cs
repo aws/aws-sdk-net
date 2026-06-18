@@ -38,6 +38,7 @@ namespace Amazon.GameLift.Model
         private string _containerGroupDefinitionArn;
         private List<ContainerGroupPortMapping> _containerGroupPortMappings = AWSConfigs.InitializeCollections ? new List<ContainerGroupPortMapping>() : null;
         private ContainerGroupType _containerGroupType;
+        private string _fleetArn;
         private string _fleetId;
         private string _instanceId;
         private string _location;
@@ -124,6 +125,28 @@ namespace Amazon.GameLift.Model
         internal bool IsSetContainerGroupType()
         {
             return this._containerGroupType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FleetArn. 
+        /// <para>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// that is assigned to a Amazon GameLift Servers fleet resource and uniquely identifies
+        /// it. ARNs are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
+        /// In a GameLift fleet ARN, the resource ID matches the <c>FleetId</c> value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string FleetArn
+        {
+            get { return this._fleetArn; }
+            set { this._fleetArn = value; }
+        }
+
+        // Check to see if FleetArn property is set
+        internal bool IsSetFleetArn()
+        {
+            return this._fleetArn != null;
         }
 
         /// <summary>

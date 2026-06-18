@@ -89,8 +89,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionId. 
         /// <para>
         /// An identifier for the game session that is unique across all regions to retrieve player
-        /// sessions for. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
-        /// ID&gt;/&lt;ID string&gt;</c>.
+        /// sessions for. The value is always a full ARN in the following format: For Home Region
+        /// game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID
+        /// string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

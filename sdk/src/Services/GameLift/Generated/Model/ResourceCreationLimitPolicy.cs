@@ -41,6 +41,15 @@ namespace Amazon.GameLift.Model
     /// (identified by <c>CreatorId</c>) has created fewer than game session limit in the
     /// specified time period.
     /// </para>
+    ///  
+    /// <para>
+    /// The purpose of this policy is to prevent a single player from consuming a large share
+    /// of available hosting resources. For example, setting <c>NewGameSessionsPerCreator</c>
+    /// to <c>4</c> and <c>PolicyPeriodInMinutes</c> to <c>10</c> limits each player to creating
+    /// 4 game sessions every 10 minutes. Setting these values too high (for example, 200
+    /// game sessions every 1000 minutes) still allows a single player to rapidly consume
+    /// resources. We recommend keeping these values small.
+    /// </para>
     /// </summary>
     public partial class ResourceCreationLimitPolicy
     {
