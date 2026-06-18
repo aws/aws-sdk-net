@@ -184,6 +184,32 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSCreateService()
+        {
+            #region example-4
+
+            var client = new AmazonECSClient();
+            var response = client.CreateService(new CreateServiceRequest 
+            {
+                DesiredCount = 2,
+                Monitoring = new MonitoringConfiguration { MetricConfigurations = new List<MetricConfiguration> {
+                    new MetricConfiguration {
+                        MetricNames = new List<string> {
+                            "CPUUtilization",
+                            "MemoryUtilization"
+                        },
+                        ResolutionSeconds = 20
+                    }
+                } },
+                ServiceName = "ecs-monitored-service",
+                TaskDefinition = "my-app:1"
+            });
+
+            Service service = response.Service;
+
+            #endregion
+        }
+
         public void ECSCreateTaskSet()
         {
             #region example-1
@@ -587,6 +613,24 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             {
                 ServiceRevisionArns = new List<string> {
                     "arn:aws:ecs:us-west-2:123456789012:service-revision/testc/sd1/4980306466373577095"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ServiceRevision> serviceRevisions = response.ServiceRevisions;
+
+            #endregion
+        }
+
+        public void ECSDescribeServiceRevisions()
+        {
+            #region example-2
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeServiceRevisions(new DescribeServiceRevisionsRequest 
+            {
+                ServiceRevisionArns = new List<string> {
+                    "arn:aws:ecs:us-east-1:012345678910:service-revision/default/ecs-monitored-service/8675309012345678901"
                 }
             });
 
@@ -1511,6 +1555,29 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                     Strategy = "BLUE_GREEN"
                 },
                 Service = "my-blue-green-service"
+            });
+
+
+            #endregion
+        }
+
+        public void ECSUpdateService()
+        {
+            #region example-4
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateService(new UpdateServiceRequest 
+            {
+                Monitoring = new MonitoringConfiguration { MetricConfigurations = new List<MetricConfiguration> {
+                    new MetricConfiguration {
+                        MetricNames = new List<string> {
+                            "CPUUtilization",
+                            "MemoryUtilization"
+                        },
+                        ResolutionSeconds = 20
+                    }
+                } },
+                Service = "ecs-monitored-service"
             });
 
 

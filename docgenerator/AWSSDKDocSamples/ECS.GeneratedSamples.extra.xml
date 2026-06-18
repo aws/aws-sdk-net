@@ -154,6 +154,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.CreateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a service with a monitoring configuration that sets 20-second resolution for CPUUtilization and MemoryUtilization CloudWatch metrics. The monitoring configuration is not returned in the CreateService response. Use DescribeServiceRevisions to view the monitoring configuration.
+                </para>
+                <code
+                    title="To create a service with a monitoring configuration"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.CreateTaskSet(Amazon.ECS.Model.CreateTaskSetRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.CreateTaskSet(Amazon.ECS.Model.CreateTaskSetRequest)" />
             <member name="T:Amazon.ECS.Model.CreateTaskSetRequest" />
@@ -605,6 +624,25 @@
                     title="To describe a service revision "
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeServiceRevisions(Amazon.ECS.Model.DescribeServiceRevisionsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeServiceRevisions(Amazon.ECS.Model.DescribeServiceRevisionsRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceRevisionsRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceRevisionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a service revision that has a monitoring configuration with 20-second resolution for CPUUtilization and MemoryUtilization CloudWatch metrics.
+                </para>
+                <code
+                    title="To describe a service revision with a monitoring configuration"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
@@ -1536,6 +1574,25 @@
                     title="To update a service to add a pause lifecycle hook"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates a service to add a monitoring configuration that sets 20-second resolution for CPUUtilization and MemoryUtilization CloudWatch metrics. The monitoring configuration is not returned in the UpdateService response. Use DescribeServiceRevisions to view the monitoring configuration.
+                </para>
+                <code
+                    title="To update a service with a monitoring configuration"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-4" />
             </example>
         </value>
     </doc>
