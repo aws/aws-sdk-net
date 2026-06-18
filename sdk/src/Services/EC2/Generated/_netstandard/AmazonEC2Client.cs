@@ -2533,7 +2533,10 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>scheduled</c> 
+        ///  <c>scheduled</c> — requires a cancellation quote. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote, then pass the quote ID with <c>ApplyCancellationCharges</c> set
+        /// to <c>commitment-wind-down</c>. The cancellation charge depends on how close the reservation
+        /// is to its start date.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2542,10 +2545,14 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
-        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
-        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
-        /// charges are applied.
+        ///  <c>active</c> during the commitment duration — requires a cancellation quote. Use
+        /// <c>CreateCapacityReservationCancellationQuote</c> to generate a quote, then pass the
+        /// quote ID with <c>ApplyCancellationCharges</c> set to <c>commitment-wind-down</c>.
+        /// The Capacity Reservation transitions to <c>cancelling</c> while charges are applied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>delayed</c> — the commitment duration is waived, so no cancellation charge applies.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -2553,11 +2560,6 @@ namespace Amazon.EC2
         /// Blocks for ML</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
-        /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
-        /// </para>
-        ///  
         /// <para>
         /// Instances running in the reserved capacity continue running until you stop them. Stopped
         /// instances that target the Capacity Reservation can no longer launch. Modify these
