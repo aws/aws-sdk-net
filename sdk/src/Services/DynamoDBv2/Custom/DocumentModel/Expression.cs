@@ -173,9 +173,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private void MergeAttributes(UpdateItemRequest request, Table table)
         {
             var convertToAttributeValues  = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
-            request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
             if (convertToAttributeValues != null)
             {
+                request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
                 foreach (var kvp in convertToAttributeValues)
                 {
                     request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
