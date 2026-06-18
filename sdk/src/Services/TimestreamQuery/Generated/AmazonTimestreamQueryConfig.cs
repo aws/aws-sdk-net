@@ -33,7 +33,7 @@ namespace Amazon.TimestreamQuery
     public partial class AmazonTimestreamQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Timestream Query", "4.0.4.4");
+            InternalSDKUtils.BuildUserAgentString("Timestream Query", "4.0.4.5");
 
         private static readonly AmazonTimestreamQueryEndpointResolver EndpointResolver =
             new AmazonTimestreamQueryEndpointResolver();

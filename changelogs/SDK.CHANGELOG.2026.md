@@ -1,3 +1,37 @@
+### 4.0.273.0 (2026-06-18 18:17 UTC)
+* ApplicationAutoScaling (4.0.4.0)
+	* Adds support for ECS high-resolution predefined scaling metrics (ECSServiceAverageCPUUtilizationHighResolution, ECSServiceAverageMemoryUtilizationHighResolution) enabling 20-second metric periods for faster scaling
+* Batch (4.0.11.0)
+	* Adds Support for ordered allocation strategies- BEST-FIT-PROGRESSIVE-ORDERED or SPOT-CAPACITY-OPTIMIZED-PRIORITIZED
+* CloudWatchLogs (4.0.28.0)
+	* Added optional startFromHead parameter to FilterLogEvents enabling descending timestamp order (newest first) when set to false. Default true preserves existing ascending order. Reverse sorting requires a startTime on or after Jan 1, 2024.
+* CognitoIdentityProvider (4.0.10.0)
+	* In order to support the new TLS Self-Service feature, this change adds SecurityPolicyType to CustomDomainConfigType. During CreateUserPoolDomain and UpdateUserPoolDomain this is used to select a custom domain's TLS enforcement, and for DescribeUserPoolDomain it informs users about the current TLS.
+* ComputeOptimizer (4.0.9.0)
+	* This release surfaces two new metrics Volume IOPS Exceeded and Volume Throughput Exceeded into EBS volume rightsizing recommendations.
+* DynamoDBv2 (4.0.21.6)
+	* Fix regression where null properties cannot be used in a Save operation (https://github.com/aws/aws-sdk-net/issues/4438)
+	* Fix empty ExpressionAttributeNames being sent for batch get ProjectionExpression
+* EC2 (4.0.93.4)
+	* Documentation updates clarifying CancelCapacityReservation cancellable states
+* ECS (4.0.26.0)
+	* Amazon ECS services now support high resolution (20 second) CloudWatch metrics for CPUUtilization and MemoryUtilization. Use these metrics for faster service auto scaling.
+* EKS (4.0.20.0)
+	* Adds support for configurable control plane egress routing in Amazon EKS, allowing you to route control plane egress traffic through your VPC and control how the control plane reaches resources in your network such as webhook servers and OIDC providers.
+* GameLift (4.0.12.0)
+	* Amazon GameLift Servers has launched support for customizing Linux capabilities in container fleets. You can now specify additional Linux capabilities for containers in a container group definition, giving you finer control over the default Docker capabilities available to your containers.
+* HealthLake (4.0.6.0)
+	* Adding New Configurations to the FHIR Create Datastore. The new configurations include NLP Configuration, AnalyticsConfiguration, ProfileConfiguration
+* Lambda (4.0.18.0)
+	* Converging and fixing existing documentation gaps in Lambda SDK
+* SageMaker (4.0.66.0)
+	* Adds support for automatic AMI patching on HyperPod clusters. Customers can configure patching strategies to automatically apply security patch with zero job termination. Customers can also specify an AMI version at instance group level and update cluster software to a certain AMI version.
+* Synthetics (4.0.10.0)
+	* CloudWatch Synthetics adds support for multi-location canaries. Customers can now monitor their endpoints from multiple locations with centralized management from a primary location. The SDK includes new parameters for configuring multiple locations and tracking their state.
+* Core 4.0.9.6
+	* Invalidate the DefaultAWSCredentialsIdentityResolver default-chain credential cache when the shared credentials file is modified, so credentials rotated by an external tool are picked up mid-process without requiring a restart.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.272.0 (2026-06-17 18:16 UTC)
 * BedrockAgent (4.0.10.0)
 	* Launching Bedrock Managed Knowledge Bases. Added support for resource-based policies on Knowledge Base resources, enabling cross-account access for Managed Knowledge Bases.

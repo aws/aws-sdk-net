@@ -33,7 +33,7 @@ namespace Amazon.KinesisVideoArchivedMedia
     public partial class AmazonKinesisVideoArchivedMediaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video Archived Media", "4.0.2.9");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video Archived Media", "4.0.2.10");
 
         private static readonly AmazonKinesisVideoArchivedMediaEndpointResolver EndpointResolver =
             new AmazonKinesisVideoArchivedMediaEndpointResolver();
