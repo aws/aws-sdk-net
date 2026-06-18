@@ -305,9 +305,17 @@ namespace Amazon.Batch
         /// </summary>
         public static readonly CRAllocationStrategy BEST_FIT_PROGRESSIVE = new CRAllocationStrategy("BEST_FIT_PROGRESSIVE");
         /// <summary>
+        /// Constant BEST_FIT_PROGRESSIVE_ORDERED for CRAllocationStrategy
+        /// </summary>
+        public static readonly CRAllocationStrategy BEST_FIT_PROGRESSIVE_ORDERED = new CRAllocationStrategy("BEST_FIT_PROGRESSIVE_ORDERED");
+        /// <summary>
         /// Constant SPOT_CAPACITY_OPTIMIZED for CRAllocationStrategy
         /// </summary>
         public static readonly CRAllocationStrategy SPOT_CAPACITY_OPTIMIZED = new CRAllocationStrategy("SPOT_CAPACITY_OPTIMIZED");
+        /// <summary>
+        /// Constant SPOT_CAPACITY_OPTIMIZED_PRIORITIZED for CRAllocationStrategy
+        /// </summary>
+        public static readonly CRAllocationStrategy SPOT_CAPACITY_OPTIMIZED_PRIORITIZED = new CRAllocationStrategy("SPOT_CAPACITY_OPTIMIZED_PRIORITIZED");
         /// <summary>
         /// Constant SPOT_PRICE_CAPACITY_OPTIMIZED for CRAllocationStrategy
         /// </summary>
@@ -417,9 +425,17 @@ namespace Amazon.Batch
         /// </summary>
         public static readonly CRUpdateAllocationStrategy BEST_FIT_PROGRESSIVE = new CRUpdateAllocationStrategy("BEST_FIT_PROGRESSIVE");
         /// <summary>
+        /// Constant BEST_FIT_PROGRESSIVE_ORDERED for CRUpdateAllocationStrategy
+        /// </summary>
+        public static readonly CRUpdateAllocationStrategy BEST_FIT_PROGRESSIVE_ORDERED = new CRUpdateAllocationStrategy("BEST_FIT_PROGRESSIVE_ORDERED");
+        /// <summary>
         /// Constant SPOT_CAPACITY_OPTIMIZED for CRUpdateAllocationStrategy
         /// </summary>
         public static readonly CRUpdateAllocationStrategy SPOT_CAPACITY_OPTIMIZED = new CRUpdateAllocationStrategy("SPOT_CAPACITY_OPTIMIZED");
+        /// <summary>
+        /// Constant SPOT_CAPACITY_OPTIMIZED_PRIORITIZED for CRUpdateAllocationStrategy
+        /// </summary>
+        public static readonly CRUpdateAllocationStrategy SPOT_CAPACITY_OPTIMIZED_PRIORITIZED = new CRUpdateAllocationStrategy("SPOT_CAPACITY_OPTIMIZED_PRIORITIZED");
         /// <summary>
         /// Constant SPOT_PRICE_CAPACITY_OPTIMIZED for CRUpdateAllocationStrategy
         /// </summary>
