@@ -90,6 +90,26 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// Unit: Bytes
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VolumeIOPSExceeded</c> - Indicates whether the volume's provisioned IOPS performance
+        /// was exceeded in a specified period of time. A value of <c>1</c> means the provisioned
+        /// IOPS were exceeded; a value of <c>0</c> means they were not.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: None
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VolumeThroughputExceeded</c> - Indicates whether the volume's provisioned throughput
+        /// performance was exceeded in a specified period of time. A value of <c>1</c> means
+        /// the provisioned throughput was exceeded; a value of <c>0</c> means it was not.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: None
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public EBSMetricName Name
