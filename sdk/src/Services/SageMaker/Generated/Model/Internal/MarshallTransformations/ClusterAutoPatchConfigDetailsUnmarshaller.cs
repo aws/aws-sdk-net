@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterSummary Object
+    /// Response Unmarshaller for ClusterAutoPatchConfigDetails Object
     /// </summary>  
-    public class ClusterSummaryUnmarshaller : IJsonUnmarshaller<ClusterSummary, JsonUnmarshallerContext>
+    public class ClusterAutoPatchConfigDetailsUnmarshaller : IJsonUnmarshaller<ClusterAutoPatchConfigDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterAutoPatchConfigDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClusterSummary unmarshalledObject = new ClusterSummary();
+            ClusterAutoPatchConfigDetails unmarshalledObject = new ClusterAutoPatchConfigDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClusterArn", targetDepth, ref reader))
+                if (context.TestExpression("CurrentPatchSchedule", targetDepth, ref reader))
+                {
+                    var unmarshaller = ClusterPatchScheduleDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CurrentPatchSchedule = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("DeploymentConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("DesiredPatchSchedule", targetDepth, ref reader))
+                {
+                    var unmarshaller = ClusterPatchScheduleDetailsUnmarshaller.Instance;
+                    unmarshalledObject.DesiredPatchSchedule = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PatchingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ClusterName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ClusterStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreationTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ImageVersionStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageVersionStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrainingPlanArns", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TrainingPlanArns = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.PatchingStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +85,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterSummaryUnmarshaller _instance = new ClusterSummaryUnmarshaller();        
+        private static ClusterAutoPatchConfigDetailsUnmarshaller _instance = new ClusterAutoPatchConfigDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterSummaryUnmarshaller Instance
+        public static ClusterAutoPatchConfigDetailsUnmarshaller Instance
         {
             get
             {

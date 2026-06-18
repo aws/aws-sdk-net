@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateClusterSoftwareInstanceGroupSpecification Marshaller
+    /// ClusterPatchSchedule Marshaller
     /// </summary>
-    public class UpdateClusterSoftwareInstanceGroupSpecificationMarshaller : IRequestMarshaller<UpdateClusterSoftwareInstanceGroupSpecification, JsonMarshallerContext> 
+    public class ClusterPatchScheduleMarshaller : IRequestMarshaller<ClusterPatchSchedule, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,20 +42,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateClusterSoftwareInstanceGroupSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterPatchSchedule requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetImageReleaseVersion())
+            if(requestObject.IsSetNextPatchDate())
             {
-                context.Writer.WritePropertyName("ImageReleaseVersion");
-                context.Writer.WriteStringValue(requestObject.ImageReleaseVersion);
-            }
-
-            if(requestObject.IsSetInstanceGroupName())
-            {
-                context.Writer.WritePropertyName("InstanceGroupName");
-                context.Writer.WriteStringValue(requestObject.InstanceGroupName);
+                context.Writer.WritePropertyName("NextPatchDate");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.NextPatchDate.Value)));
             }
 
         }
@@ -63,7 +57,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateClusterSoftwareInstanceGroupSpecificationMarshaller Instance = new UpdateClusterSoftwareInstanceGroupSpecificationMarshaller();
+        public readonly static ClusterPatchScheduleMarshaller Instance = new ClusterPatchScheduleMarshaller();
 
     }
 }

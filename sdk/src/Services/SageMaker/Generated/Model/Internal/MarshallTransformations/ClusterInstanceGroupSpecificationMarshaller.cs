@@ -46,6 +46,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoPatchConfig())
+            {
+                context.Writer.WritePropertyName("AutoPatchConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterAutoPatchConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoPatchConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCapacityRequirements())
             {
                 context.Writer.WritePropertyName("CapacityRequirements");
@@ -67,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ImageId");
                 context.Writer.WriteStringValue(requestObject.ImageId);
+            }
+
+            if(requestObject.IsSetImageReleaseVersion())
+            {
+                context.Writer.WritePropertyName("ImageReleaseVersion");
+                context.Writer.WriteStringValue(requestObject.ImageReleaseVersion);
             }
 
             if(requestObject.IsSetInstanceCount())

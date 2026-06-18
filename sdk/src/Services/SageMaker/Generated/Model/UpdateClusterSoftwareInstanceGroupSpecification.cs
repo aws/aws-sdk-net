@@ -34,7 +34,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateClusterSoftwareInstanceGroupSpecification
     {
+        private string _imageReleaseVersion;
         private string _instanceGroupName;
+
+        /// <summary>
+        /// Gets and sets the property ImageReleaseVersion. 
+        /// <para>
+        /// The version of the HyperPod-managed AMI to update to for the instance group. Uses
+        /// semantic versioning in the format <c>MAJOR.MINOR.PATCH</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string ImageReleaseVersion
+        {
+            get { return this._imageReleaseVersion; }
+            set { this._imageReleaseVersion = value; }
+        }
+
+        // Check to see if ImageReleaseVersion property is set
+        internal bool IsSetImageReleaseVersion()
+        {
+            return this._imageReleaseVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceGroupName. 

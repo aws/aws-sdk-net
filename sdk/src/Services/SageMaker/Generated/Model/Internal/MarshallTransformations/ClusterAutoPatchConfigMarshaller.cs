@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateClusterSoftwareInstanceGroupSpecification Marshaller
+    /// ClusterAutoPatchConfig Marshaller
     /// </summary>
-    public class UpdateClusterSoftwareInstanceGroupSpecificationMarshaller : IRequestMarshaller<UpdateClusterSoftwareInstanceGroupSpecification, JsonMarshallerContext> 
+    public class ClusterAutoPatchConfigMarshaller : IRequestMarshaller<ClusterAutoPatchConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,20 +42,36 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateClusterSoftwareInstanceGroupSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterAutoPatchConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetImageReleaseVersion())
+            if(requestObject.IsSetDeploymentConfig())
             {
-                context.Writer.WritePropertyName("ImageReleaseVersion");
-                context.Writer.WriteStringValue(requestObject.ImageReleaseVersion);
+                context.Writer.WritePropertyName("DeploymentConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeploymentConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetInstanceGroupName())
+            if(requestObject.IsSetPatchingStrategy())
             {
-                context.Writer.WritePropertyName("InstanceGroupName");
-                context.Writer.WriteStringValue(requestObject.InstanceGroupName);
+                context.Writer.WritePropertyName("PatchingStrategy");
+                context.Writer.WriteStringValue(requestObject.PatchingStrategy);
+            }
+
+            if(requestObject.IsSetPatchSchedule())
+            {
+                context.Writer.WritePropertyName("PatchSchedule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterPatchScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.PatchSchedule, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -63,7 +79,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateClusterSoftwareInstanceGroupSpecificationMarshaller Instance = new UpdateClusterSoftwareInstanceGroupSpecificationMarshaller();
+        public readonly static ClusterAutoPatchConfigMarshaller Instance = new ClusterAutoPatchConfigMarshaller();
 
     }
 }
