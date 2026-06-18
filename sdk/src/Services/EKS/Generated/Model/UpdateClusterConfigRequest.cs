@@ -278,7 +278,12 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourcesVpcConfig.
+        /// Gets and sets the property ResourcesVpcConfig. 
+        /// <para>
+        /// An object representing the VPC configuration to use for the cluster update. You can
+        /// use this parameter to update the control plane egress mode, the subnets used by the
+        /// cluster, the security groups, and the endpoint access settings.
+        /// </para>
         /// </summary>
         public VpcConfigRequest ResourcesVpcConfig
         {
