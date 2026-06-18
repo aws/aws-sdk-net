@@ -50,8 +50,10 @@ namespace Amazon.HealthLake.Model
         private SseConfiguration _sseConfiguration;
 
         /// <summary>
-        /// Gets and sets the property AnalyticsConfiguration. <para>The analytics configuration
-        /// for the data store.</para>
+        /// Gets and sets the property AnalyticsConfiguration. 
+        /// <para>
+        /// The analytics configuration for the data store.
+        /// </para>
         /// </summary>
         public AnalyticsConfiguration AnalyticsConfiguration
         {
@@ -235,8 +237,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NlpConfiguration. <para>The natural language processing
-        /// (NLP) configuration for the data store.</para>
+        /// Gets and sets the property NlpConfiguration. 
+        /// <para>
+        /// The natural language processing (NLP) configuration for the data store.
+        /// </para>
         /// </summary>
         public NlpConfiguration NlpConfiguration
         {
@@ -269,8 +273,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfileConfiguration. <para>The profile configuration for
-        /// the data store.</para>
+        /// Gets and sets the property ProfileConfiguration. 
+        /// <para>
+        /// The profile configuration for the data store.
+        /// </para>
         /// </summary>
         public ProfileConfiguration ProfileConfiguration
         {

@@ -75,6 +75,17 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAnalyticsConfiguration())
+            {
+                context.Writer.WritePropertyName("AnalyticsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnalyticsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AnalyticsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
@@ -109,6 +120,17 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetNlpConfiguration())
+            {
+                context.Writer.WritePropertyName("NlpConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NlpConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NlpConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPreloadDataConfig())
             {
                 context.Writer.WritePropertyName("PreloadDataConfig");
@@ -116,6 +138,17 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
                 var marshaller = PreloadDataConfigMarshaller.Instance;
                 marshaller.Marshall(publicRequest.PreloadDataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProfileConfiguration())
+            {
+                context.Writer.WritePropertyName("ProfileConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProfileConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProfileConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -37,7 +37,10 @@ namespace Amazon.HealthLake.Model
         private DatastoreProperties _datastoreProperties;
 
         /// <summary>
-        /// Gets and sets the property DatastoreProperties. <para>The data store properties.</para>
+        /// Gets and sets the property DatastoreProperties. 
+        /// <para>
+        /// The data store properties.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DatastoreProperties DatastoreProperties

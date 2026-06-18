@@ -37,7 +37,10 @@ namespace Amazon.HealthLake.Model
         private NlpStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Status. <para>The status of the NLP configuration.</para>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the NLP configuration.
+        /// </para>
         /// </summary>
         public NlpStatus Status
         {
