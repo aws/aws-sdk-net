@@ -30,11 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The configuration for a hosted UI custom domain.
+    /// The configuration for a custom domain, including the SSL certificate and TLS security
+    /// policy.
     /// </summary>
     public partial class CustomDomainConfigType
     {
         private string _certificateArn;
+        private SecurityPolicyType _securityPolicy;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
@@ -54,6 +56,41 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicy. 
+        /// <para>
+        /// The security policy for the custom domain. Defines the minimum TLS version and cipher
+        /// suites that CloudFront uses when communicating with viewers (clients). Valid values
+        /// are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>TLS_V1</c>: Supports TLS 1.0 and later. Provides the broadest client compatibility.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TLS_V1_2_2021</c>: Supports TLS 1.2 and later with 2021 cipher suites. Recommended
+        /// minimum for most use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TLS_V1_3_2025</c>: Supports TLS 1.3 and later with 2025 cipher suites. Provides
+        /// the strongest security posture.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SecurityPolicyType SecurityPolicy
+        {
+            get { return this._securityPolicy; }
+            set { this._securityPolicy = value; }
+        }
+
+        // Check to see if SecurityPolicy property is set
+        internal bool IsSetSecurityPolicy()
+        {
+            return this._securityPolicy != null;
         }
 
     }

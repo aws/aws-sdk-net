@@ -62,6 +62,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SecurityPolicy", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
