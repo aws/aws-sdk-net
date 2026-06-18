@@ -312,6 +312,7 @@ namespace Amazon.ECS.Model
         private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
         private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
+        private MonitoringConfiguration _monitoring;
         private NetworkConfiguration _networkConfiguration;
         private List<PlacementConstraint> _placementConstraints = AWSConfigs.InitializeCollections ? new List<PlacementConstraint>() : null;
         private List<PlacementStrategy> _placementStrategy = AWSConfigs.InitializeCollections ? new List<PlacementStrategy>() : null;
@@ -705,6 +706,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetLoadBalancers()
         {
             return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Monitoring. 
+        /// <para>
+        /// The optional monitoring configuration for the service, which defines the resolution
+        /// for the service-level <c>CPUUtilization</c> and <c>MemoryUtilization</c> Amazon CloudWatch
+        /// metrics. When not specified, Amazon ECS uses the default resolution of <c>60</c> seconds.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration Monitoring
+        {
+            get { return this._monitoring; }
+            set { this._monitoring = value; }
+        }
+
+        // Check to see if Monitoring property is set
+        internal bool IsSetMonitoring()
+        {
+            return this._monitoring != null;
         }
 
         /// <summary>
