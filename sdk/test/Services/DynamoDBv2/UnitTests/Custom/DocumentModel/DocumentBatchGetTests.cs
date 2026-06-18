@@ -157,6 +157,29 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(0, results.Count);
         }
 
+        [TestMethod]
+        public async Task ExecuteAsync_ProjectionWithoutAttributeNames_DoesNotSendEmptyExpressionAttributeNames()
+        {
+            var sentEmptyExpressionAttributeNames = false;
+            ddbClientMock
+                .Setup(c => c.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<BatchGetItemRequest, CancellationToken>((req, _) =>
+                    sentEmptyExpressionAttributeNames = req.RequestItems.Values.Any(k => k.ExpressionAttributeNames != null && k.ExpressionAttributeNames.Count == 0)
+                )
+                .ReturnsAsync(new BatchGetItemResponse
+                {
+                    Responses = new Dictionary<string, List<Dictionary<string, AttributeValue>>>(),
+                    UnprocessedKeys = new Dictionary<string, KeysAndAttributes>()
+                });
+
+            var batch = addressTable.CreateBatchGet();
+            batch.AddKey(new Primitive("A1"));
+            batch.ProjectionExpression = new Expression { ExpressionStatement = "Id, Zip" };
+
+            await batch.ExecuteAsync();
+            Assert.IsFalse(sentEmptyExpressionAttributeNames, "ExpressionAttributeNames must be either null or non-empty; DynamoDB rejects empty maps.");
+        }
+
         private static (IDocumentBatchGet AddressBatch, IDocumentBatchGet PersonBatch) CreateBatches(Table addressTable, Table personTable)
         {
             var addressBatch = addressTable.CreateBatchGet();

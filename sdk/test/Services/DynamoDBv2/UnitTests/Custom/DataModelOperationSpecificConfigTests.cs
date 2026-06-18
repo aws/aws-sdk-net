@@ -715,6 +715,32 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(4, typeof(GetTargetTableConfig).GetProperties().Length);
         }
 
+        [TestMethod]
+        public async Task SaveAsync_NullComplexProperty_DoesNotSendEmptyExpressionAttributeValues()
+        {
+            UpdateItemRequest capturedRequest = null;
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.UpdateItemAsync(It.IsAny<UpdateItemRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<UpdateItemRequest, CancellationToken>((req, _) => capturedRequest = req)
+                .ReturnsAsync(new UpdateItemResponse());
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            await context.SaveAsync(new DataModelWithComplexProperty
+            {
+                Id = "123",
+                Inner = null
+            });
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(
+                capturedRequest.ExpressionAttributeValues == null || capturedRequest.ExpressionAttributeValues.Count > 0,
+                "ExpressionAttributeValues must be either null or non-empty; DynamoDB rejects empty maps."
+            );
+        }
+
         [DynamoDBTable("TableName")]
         private class DataModel
         {
@@ -722,6 +748,22 @@ namespace AWSSDK_DotNet.UnitTests
             public string Id { get; set; }
 
             [DynamoDBRangeKey]
+            public string Name { get; set; }
+        }
+
+        [DynamoDBTable("TableName")]
+        private class DataModelWithComplexProperty
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBProperty("inner")]
+            public InnerModel Inner { get; set; }
+        }
+
+        private class InnerModel
+        {
+            [DynamoDBProperty("name")]
             public string Name { get; set; }
         }
     }
