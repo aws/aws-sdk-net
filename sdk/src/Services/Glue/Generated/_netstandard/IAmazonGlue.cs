@@ -8317,7 +8317,7 @@ namespace Amazon.Glue
 
         #endregion
                 
-        #region  Search
+        #region  SearchAssets
 
 
 
@@ -8325,12 +8325,12 @@ namespace Amazon.Glue
         /// Searches for assets in Glue Data Catalog using full-text search, filters, sorting,
         /// and aggregations. Returns matching assets with relevance-ranked results.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAssets service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the Search service method, as returned by Glue.</returns>
+        /// <returns>The response from the SearchAssets service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
         /// Access to a resource was denied.
         /// </exception>
@@ -8343,8 +8343,8 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.ThrottlingException">
         /// The throttling threshhold was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Search">REST API Reference for Search Operation</seealso>
-        Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchAssets">REST API Reference for SearchAssets Operation</seealso>
+        Task<SearchAssetsResponse> SearchAssetsAsync(SearchAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

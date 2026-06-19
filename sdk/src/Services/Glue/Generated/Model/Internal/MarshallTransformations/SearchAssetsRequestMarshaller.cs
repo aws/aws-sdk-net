@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Search Request Marshaller
+    /// SearchAssets Request Marshaller
     /// </summary>       
-    public class SearchRequestMarshaller : IMarshaller<IRequest, SearchRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class SearchAssetsRequestMarshaller : IMarshaller<IRequest, SearchAssetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SearchRequest)input);
+            return this.Marshall((SearchAssetsRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SearchRequest publicRequest)
+        public IRequest Marshall(SearchAssetsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.Search";
+            string target = "AWSGlue.SearchAssets";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
@@ -125,9 +125,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SearchRequestMarshaller _instance = new SearchRequestMarshaller();        
+        private static SearchAssetsRequestMarshaller _instance = new SearchAssetsRequestMarshaller();        
 
-        internal static SearchRequestMarshaller GetInstance()
+        internal static SearchAssetsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +135,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchRequestMarshaller Instance
+        public static SearchAssetsRequestMarshaller Instance
         {
             get
             {

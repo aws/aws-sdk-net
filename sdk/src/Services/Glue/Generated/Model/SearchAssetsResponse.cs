@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the Search operation.
+    /// This is the response object from the SearchAssets operation.
     /// </summary>
-    public partial class SearchResponse : AmazonWebServiceResponse
+    public partial class SearchAssetsResponse : AmazonWebServiceResponse
     {
         private List<SearchResultItem> _items = AWSConfigs.InitializeCollections ? new List<SearchResultItem>() : null;
         private string _nextToken;

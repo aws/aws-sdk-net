@@ -35,8 +35,29 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DeleteAttachmentRequest : AmazonGlueRequest
     {
+        private string _assetIdentifier;
         private string _attachmentName;
-        private string _identifier;
+        private string _itemIdentifier;
+        private string _iterableFormName;
+
+        /// <summary>
+        /// Gets and sets the property AssetIdentifier. 
+        /// <para>
+        /// The unique identifier of the asset from which to delete the attachment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1087)]
+        public string AssetIdentifier
+        {
+            get { return this._assetIdentifier; }
+            set { this._assetIdentifier = value; }
+        }
+
+        // Check to see if AssetIdentifier property is set
+        internal bool IsSetAssetIdentifier()
+        {
+            return this._assetIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AttachmentName. 
@@ -58,22 +79,44 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Identifier. 
+        /// Gets and sets the property ItemIdentifier. 
         /// <para>
-        /// The unique identifier of the asset from which to delete the attachment.
+        /// The identifier of the item within the iterable form. Required when <c>iterableFormName</c>
+        /// is specified.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1087)]
-        public string Identifier
+        [AWSProperty(Min=1, Max=1087)]
+        public string ItemIdentifier
         {
-            get { return this._identifier; }
-            set { this._identifier = value; }
+            get { return this._itemIdentifier; }
+            set { this._itemIdentifier = value; }
         }
 
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
+        // Check to see if ItemIdentifier property is set
+        internal bool IsSetItemIdentifier()
         {
-            return this._identifier != null;
+            return this._itemIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IterableFormName. 
+        /// <para>
+        /// The name of the iterable form. When specified along with <c>itemIdentifier</c>, the
+        /// attachment is deleted from an item within the iterable form rather than from the asset
+        /// itself.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string IterableFormName
+        {
+            get { return this._iterableFormName; }
+            set { this._iterableFormName = value; }
+        }
+
+        // Check to see if IterableFormName property is set
+        internal bool IsSetIterableFormName()
+        {
+            return this._iterableFormName != null;
         }
 
     }

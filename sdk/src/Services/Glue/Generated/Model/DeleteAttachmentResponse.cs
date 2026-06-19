@@ -34,25 +34,25 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DeleteAttachmentResponse : AmazonWebServiceResponse
     {
-        private string _identifier;
+        private string _assetIdentifier;
 
         /// <summary>
-        /// Gets and sets the property Identifier. 
+        /// Gets and sets the property AssetIdentifier. 
         /// <para>
         /// The unique identifier of the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1087)]
-        public string Identifier
+        public string AssetIdentifier
         {
-            get { return this._identifier; }
-            set { this._identifier = value; }
+            get { return this._assetIdentifier; }
+            set { this._assetIdentifier = value; }
         }
 
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
+        // Check to see if AssetIdentifier property is set
+        internal bool IsSetAssetIdentifier()
         {
-            return this._identifier != null;
+            return this._assetIdentifier != null;
         }
 
     }

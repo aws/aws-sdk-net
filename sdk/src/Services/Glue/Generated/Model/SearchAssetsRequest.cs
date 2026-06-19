@@ -30,11 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the Search operation.
+    /// Container for the parameters to the SearchAssets operation.
     /// Searches for assets in Glue Data Catalog using full-text search, filters, sorting,
     /// and aggregations. Returns matching assets with relevance-ranked results.
     /// </summary>
-    public partial class SearchRequest : AmazonGlueRequest
+    public partial class SearchAssetsRequest : AmazonGlueRequest
     {
         private SearchFilterClause _filterClause;
         private int? _maxResults;

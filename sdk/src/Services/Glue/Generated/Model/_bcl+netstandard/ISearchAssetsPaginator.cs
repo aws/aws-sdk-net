@@ -22,14 +22,14 @@ using Amazon.Runtime;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Paginator for the Search operation
+    /// Paginator for the SearchAssets operation
     ///</summary>
-    public interface ISearchPaginator
+    public interface ISearchAssetsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<SearchResponse> Responses { get; }
+        IPaginatedEnumerable<SearchAssetsResponse> Responses { get; }
 
         /// <summary>
         /// Enumerable containing all of the Items

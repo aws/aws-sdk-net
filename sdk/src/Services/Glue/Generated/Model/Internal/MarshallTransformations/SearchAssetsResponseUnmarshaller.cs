@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Search operation
+    /// Response Unmarshaller for SearchAssets operation
     /// </summary>  
-    public class SearchResponseUnmarshaller : JsonResponseUnmarshaller
+    public class SearchAssetsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SearchResponse response = new SearchResponse();
+            SearchAssetsResponse response = new SearchAssetsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -109,9 +109,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             return new AmazonGlueException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static SearchResponseUnmarshaller _instance = new SearchResponseUnmarshaller();        
+        private static SearchAssetsResponseUnmarshaller _instance = new SearchAssetsResponseUnmarshaller();        
 
-        internal static SearchResponseUnmarshaller GetInstance()
+        internal static SearchAssetsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +119,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchResponseUnmarshaller Instance
+        public static SearchAssetsResponseUnmarshaller Instance
         {
             get
             {

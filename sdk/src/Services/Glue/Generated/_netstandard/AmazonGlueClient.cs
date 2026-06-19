@@ -12097,15 +12097,15 @@ namespace Amazon.Glue
         }
         #endregion
         
-        #region  Search
+        #region  SearchAssets
 
-        internal virtual SearchResponse Search(SearchRequest request)
+        internal virtual SearchAssetsResponse SearchAssets(SearchAssetsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = SearchRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
+            options.RequestMarshaller = SearchAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAssetsResponseUnmarshaller.Instance;
 
-            return Invoke<SearchResponse>(request, options);
+            return Invoke<SearchAssetsResponse>(request, options);
         }
 
 
@@ -12114,12 +12114,12 @@ namespace Amazon.Glue
         /// Searches for assets in Glue Data Catalog using full-text search, filters, sorting,
         /// and aggregations. Returns matching assets with relevance-ranked results.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAssets service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the Search service method, as returned by Glue.</returns>
+        /// <returns>The response from the SearchAssets service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
         /// Access to a resource was denied.
         /// </exception>
@@ -12132,14 +12132,14 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.ThrottlingException">
         /// The throttling threshhold was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Search">REST API Reference for Search Operation</seealso>
-        public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchAssets">REST API Reference for SearchAssets Operation</seealso>
+        public virtual Task<SearchAssetsResponse> SearchAssetsAsync(SearchAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = SearchRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
+            options.RequestMarshaller = SearchAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAssetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<SearchResponse>(request, options, cancellationToken);
+            return InvokeAsync<SearchAssetsResponse>(request, options, cancellationToken);
         }
         #endregion
         

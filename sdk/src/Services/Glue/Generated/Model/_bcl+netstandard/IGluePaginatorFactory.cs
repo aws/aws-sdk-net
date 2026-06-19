@@ -528,14 +528,14 @@ namespace Amazon.Glue.Model
         IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request);
 
         /// <summary>
-        /// Paginator for Search operation
+        /// Paginator for SearchAssets operation
         ///</summary>
         [AWSPaginator(
             InputToken = new[] { "NextToken" },
             LimitKey = "MaxResults",
             OutputToken = new[] { "NextToken" }
         )]
-        ISearchPaginator Search(SearchRequest request);
+        ISearchAssetsPaginator SearchAssets(SearchAssetsRequest request);
 
         /// <summary>
         /// Paginator for SearchTables operation
