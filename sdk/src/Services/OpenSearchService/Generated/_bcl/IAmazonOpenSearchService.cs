@@ -445,6 +445,88 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  AttachDataSource
+
+
+        /// <summary>
+        /// Attaches a data source to an OpenSearch application. The data source can be an Amazon
+        /// OpenSearch Service domain or an Amazon OpenSearch Serverless collection. If both the
+        /// application and data source are in the <c>ACTIVE</c> state, the attachment completes
+        /// immediately and returns a status of <c>ATTACHED</c>. If either resource is not yet
+        /// active, the operation stores the request and returns a status of <c>PENDING</c>. A
+        /// background process then completes the attachment when both resources become active.
+        /// Pending attachments that are not completed within 24 hours are marked as <c>FAILED</c>.
+        /// This operation is idempotent. If a data source is already attached or pending for
+        /// the same application, the existing attachment is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachDataSource service method.</param>
+        /// 
+        /// <returns>The response from the AttachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AttachDataSource">REST API Reference for AttachDataSource Operation</seealso>
+        AttachDataSourceResponse AttachDataSource(AttachDataSourceRequest request);
+
+
+
+        /// <summary>
+        /// Attaches a data source to an OpenSearch application. The data source can be an Amazon
+        /// OpenSearch Service domain or an Amazon OpenSearch Serverless collection. If both the
+        /// application and data source are in the <c>ACTIVE</c> state, the attachment completes
+        /// immediately and returns a status of <c>ATTACHED</c>. If either resource is not yet
+        /// active, the operation stores the request and returns a status of <c>PENDING</c>. A
+        /// background process then completes the attachment when both resources become active.
+        /// Pending attachments that are not completed within 24 hours are marked as <c>FAILED</c>.
+        /// This operation is idempotent. If a data source is already attached or pending for
+        /// the same application, the existing attachment is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AttachDataSource">REST API Reference for AttachDataSource Operation</seealso>
+        Task<AttachDataSourceResponse> AttachDataSourceAsync(AttachDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AuthorizeVpcEndpointAccess
 
 
@@ -1665,6 +1747,68 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeDataSourceAttachment
+
+
+        /// <summary>
+        /// Returns the current status and details of a specific data source attachment for an
+        /// OpenSearch application. Throws a <c>ResourceNotFoundException</c> if no attachment
+        /// record exists for the specified application and data source combination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataSourceAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataSourceAttachment service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDataSourceAttachment">REST API Reference for DescribeDataSourceAttachment Operation</seealso>
+        DescribeDataSourceAttachmentResponse DescribeDataSourceAttachment(DescribeDataSourceAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Returns the current status and details of a specific data source attachment for an
+        /// OpenSearch application. Throws a <c>ResourceNotFoundException</c> if no attachment
+        /// record exists for the specified application and data source combination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataSourceAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataSourceAttachment service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDataSourceAttachment">REST API Reference for DescribeDataSourceAttachment Operation</seealso>
+        Task<DescribeDataSourceAttachmentResponse> DescribeDataSourceAttachmentAsync(DescribeDataSourceAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDomain
 
 
@@ -2571,6 +2715,80 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DetachDataSource
+
+
+        /// <summary>
+        /// Removes a data source from an OpenSearch application. The application must be in the
+        /// <c>ACTIVE</c> state. This operation removes the data source saved object from the
+        /// application and deletes the attachment record. Throws a <c>ConflictException</c> if
+        /// the specified data source has a <c>PENDING</c> attachment, and a <c>ResourceNotFoundException</c>
+        /// if the data source is not currently attached to the application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachDataSource service method.</param>
+        /// 
+        /// <returns>The response from the DetachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DetachDataSource">REST API Reference for DetachDataSource Operation</seealso>
+        DetachDataSourceResponse DetachDataSource(DetachDataSourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes a data source from an OpenSearch application. The application must be in the
+        /// <c>ACTIVE</c> state. This operation removes the data source saved object from the
+        /// application and deletes the attachment record. Throws a <c>ConflictException</c> if
+        /// the specified data source has a <c>PENDING</c> attachment, and a <c>ResourceNotFoundException</c>
+        /// if the data source is not currently attached to the application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DetachDataSource">REST API Reference for DetachDataSource Operation</seealso>
+        Task<DetachDataSourceResponse> DetachDataSourceAsync(DetachDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DissociatePackage
 
 
@@ -3466,6 +3684,66 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListApplications">REST API Reference for ListApplications Operation</seealso>
         Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDataSourceAttachments
+
+
+        /// <summary>
+        /// Returns a paginated list of all data source attachments for an OpenSearch application,
+        /// including attachments in all states (<c>PENDING</c>, <c>ATTACHED</c>, and <c>FAILED</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSourceAttachments service method.</param>
+        /// 
+        /// <returns>The response from the ListDataSourceAttachments service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSourceAttachments">REST API Reference for ListDataSourceAttachments Operation</seealso>
+        ListDataSourceAttachmentsResponse ListDataSourceAttachments(ListDataSourceAttachmentsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a paginated list of all data source attachments for an OpenSearch application,
+        /// including attachments in all states (<c>PENDING</c>, <c>ATTACHED</c>, and <c>FAILED</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSourceAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataSourceAttachments service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSourceAttachments">REST API Reference for ListDataSourceAttachments Operation</seealso>
+        Task<ListDataSourceAttachmentsResponse> ListDataSourceAttachmentsAsync(ListDataSourceAttachmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

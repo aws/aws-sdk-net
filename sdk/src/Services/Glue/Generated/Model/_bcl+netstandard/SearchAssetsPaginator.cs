@@ -29,32 +29,32 @@ using Amazon.Runtime;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Base class for Search paginators.
+    /// Base class for SearchAssets paginators.
     /// </summary>
-    internal sealed partial class SearchPaginator : IPaginator<SearchResponse>, ISearchPaginator
+    internal sealed partial class SearchAssetsPaginator : IPaginator<SearchAssetsResponse>, ISearchAssetsPaginator
     {
         private readonly IAmazonGlue _client;
-        private readonly SearchRequest _request;
+        private readonly SearchAssetsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<SearchResponse> Responses => new PaginatedResponse<SearchResponse>(this);
+        public IPaginatedEnumerable<SearchAssetsResponse> Responses => new PaginatedResponse<SearchAssetsResponse>(this);
 
         /// <summary>
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SearchResultItem> Items => 
-            new PaginatedResultKeyResponse<SearchResponse, SearchResultItem>(this, (i) => i.Items ?? new List<SearchResultItem>());
+            new PaginatedResultKeyResponse<SearchAssetsResponse, SearchResultItem>(this, (i) => i.Items ?? new List<SearchResultItem>());
 
-        internal SearchPaginator(IAmazonGlue client, SearchRequest request)
+        internal SearchAssetsPaginator(IAmazonGlue client, SearchAssetsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<SearchResponse> IPaginator<SearchResponse>.Paginate()
+        IEnumerable<SearchAssetsResponse> IPaginator<SearchAssetsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -62,11 +62,11 @@ namespace Amazon.Glue.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SearchResponse response;
+            SearchAssetsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.Search(_request);
+                response = _client.SearchAssets(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -74,7 +74,7 @@ namespace Amazon.Glue.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchResponse> IPaginator<SearchResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<SearchAssetsResponse> IPaginator<SearchAssetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -82,11 +82,11 @@ namespace Amazon.Glue.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            SearchResponse response;
+            SearchAssetsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.SearchAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.SearchAssetsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

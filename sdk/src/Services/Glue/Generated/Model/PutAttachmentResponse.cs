@@ -34,29 +34,29 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class PutAttachmentResponse : AmazonWebServiceResponse
     {
-        private string _assetId;
+        private string _assetIdentifier;
         private string _attachmentName;
         private string _formTypeId;
         private string _itemIdentifier;
         private string _iterableFormName;
 
         /// <summary>
-        /// Gets and sets the property AssetId. 
+        /// Gets and sets the property AssetIdentifier. 
         /// <para>
         /// The unique identifier of the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1087)]
-        public string AssetId
+        public string AssetIdentifier
         {
-            get { return this._assetId; }
-            set { this._assetId = value; }
+            get { return this._assetIdentifier; }
+            set { this._assetIdentifier = value; }
         }
 
-        // Check to see if AssetId property is set
-        internal bool IsSetAssetId()
+        // Check to see if AssetIdentifier property is set
+        internal bool IsSetAssetIdentifier()
         {
-            return this._assetId != null;
+            return this._assetIdentifier != null;
         }
 
         /// <summary>

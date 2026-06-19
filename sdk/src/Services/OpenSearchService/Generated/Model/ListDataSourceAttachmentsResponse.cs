@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
+ * Do not modify this file. This file is generated from the opensearch-2021-01-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -27,20 +27,20 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
-namespace Amazon.Glue.Model
+namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// This is the response object from the Search operation.
+    /// This is the response object from the ListDataSourceAttachments operation.
     /// </summary>
-    public partial class SearchResponse : AmazonWebServiceResponse
+    public partial class ListDataSourceAttachmentsResponse : AmazonWebServiceResponse
     {
-        private List<SearchResultItem> _items = AWSConfigs.InitializeCollections ? new List<SearchResultItem>() : null;
+        private List<DataSourceAttachmentSummary> _attachments = AWSConfigs.InitializeCollections ? new List<DataSourceAttachmentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Items. 
+        /// Gets and sets the property Attachments. 
         /// <para>
-        /// The list of assets matching the search criteria.
+        /// A list of data source attachment summaries for the specified application.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -48,22 +48,22 @@ namespace Amazon.Glue.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<SearchResultItem> Items
+        public List<DataSourceAttachmentSummary> Attachments
         {
-            get { return this._items; }
-            set { this._items = value; }
+            get { return this._attachments; }
+            set { this._attachments = value; }
         }
 
-        // Check to see if Items property is set
-        internal bool IsSetItems()
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
         {
-            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A continuation token, present if the current segment is not the last.
+        /// The pagination token to use in a subsequent call to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string NextToken

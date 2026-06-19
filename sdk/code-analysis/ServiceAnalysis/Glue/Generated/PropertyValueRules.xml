@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Glue.Model.AssociateGlossaryTermsRequest.AssetIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.AssociateGlossaryTermsRequest.ClientToken</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.AssociateGlossaryTermsRequest.Identifier</property>
-    <min>1</min>
-    <max>1087</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.Identifier</property>
+    <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.AssetIdentifier</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -852,18 +852,29 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteAttachmentRequest.AssetIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DeleteAttachmentRequest.AttachmentName</property>
     <min>1</min>
     <max>256</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.DeleteAttachmentRequest.Identifier</property>
+    <property>Amazon.Glue.Model.DeleteAttachmentRequest.ItemIdentifier</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.DeleteAttachmentResponse.Identifier</property>
+    <property>Amazon.Glue.Model.DeleteAttachmentRequest.IterableFormName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteAttachmentResponse.AssetIdentifier</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -1334,17 +1345,17 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DisassociateGlossaryTermsRequest.AssetIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DisassociateGlossaryTermsRequest.ClientToken</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.DisassociateGlossaryTermsRequest.Identifier</property>
-    <min>1</min>
-    <max>1087</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.Identifier</property>
+    <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.AssetIdentifier</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -2964,7 +2975,7 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.PutAttachmentResponse.AssetId</property>
+    <property>Amazon.Glue.Model.PutAttachmentResponse.AssetIdentifier</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -3238,12 +3249,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.SearchRequest.MaxResults</property>
+    <property>Amazon.Glue.Model.SearchAssetsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.SearchRequest.SearchText</property>
+    <property>Amazon.Glue.Model.SearchAssetsRequest.SearchText</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>

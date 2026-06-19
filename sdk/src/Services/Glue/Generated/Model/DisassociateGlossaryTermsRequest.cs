@@ -35,9 +35,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DisassociateGlossaryTermsRequest : AmazonGlueRequest
     {
+        private string _assetIdentifier;
         private string _clientToken;
         private List<string> _glossaryTermIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _identifier;
+
+        /// <summary>
+        /// Gets and sets the property AssetIdentifier. 
+        /// <para>
+        /// The unique identifier of the asset to disassociate glossary terms from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1087)]
+        public string AssetIdentifier
+        {
+            get { return this._assetIdentifier; }
+            set { this._assetIdentifier = value; }
+        }
+
+        // Check to see if AssetIdentifier property is set
+        internal bool IsSetAssetIdentifier()
+        {
+            return this._assetIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -81,25 +100,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetGlossaryTermIdentifiers()
         {
             return this._glossaryTermIdentifiers != null && (this._glossaryTermIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Identifier. 
-        /// <para>
-        /// The unique identifier of the asset to disassociate glossary terms from.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1087)]
-        public string Identifier
-        {
-            get { return this._identifier; }
-            set { this._identifier = value; }
-        }
-
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
-        {
-            return this._identifier != null;
         }
 
     }

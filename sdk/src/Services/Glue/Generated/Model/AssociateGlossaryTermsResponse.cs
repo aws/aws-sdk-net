@@ -34,8 +34,27 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class AssociateGlossaryTermsResponse : AmazonWebServiceResponse
     {
+        private string _assetIdentifier;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _identifier;
+
+        /// <summary>
+        /// Gets and sets the property AssetIdentifier. 
+        /// <para>
+        /// The unique identifier of the asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1087)]
+        public string AssetIdentifier
+        {
+            get { return this._assetIdentifier; }
+            set { this._assetIdentifier = value; }
+        }
+
+        // Check to see if AssetIdentifier property is set
+        internal bool IsSetAssetIdentifier()
+        {
+            return this._assetIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GlossaryTerms. 
@@ -59,25 +78,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetGlossaryTerms()
         {
             return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Identifier. 
-        /// <para>
-        /// The unique identifier of the asset.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1087)]
-        public string Identifier
-        {
-            get { return this._identifier; }
-            set { this._identifier = value; }
-        }
-
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
-        {
-            return this._identifier != null;
         }
 
     }

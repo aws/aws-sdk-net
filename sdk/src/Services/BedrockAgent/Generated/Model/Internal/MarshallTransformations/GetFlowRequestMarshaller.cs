@@ -65,7 +65,11 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFlowIdentifier())
                 throw new AmazonBedrockAgentException("Request object does not have required field FlowIdentifier set");
             request.AddPathResource("{flowIdentifier}", StringUtils.FromString(publicRequest.FlowIdentifier));
+            
+            if (publicRequest.IsSetIncludedData())
+                request.Parameters.Add("includedData", StringUtils.FromString(publicRequest.IncludedData));
             request.ResourcePath = "/flows/{flowIdentifier}/";
+            request.UseQueryString = true;
 
             return request;
         }

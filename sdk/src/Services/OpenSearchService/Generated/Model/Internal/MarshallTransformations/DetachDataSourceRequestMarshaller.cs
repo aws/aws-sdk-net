@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
+ * Do not modify this file. This file is generated from the opensearch-2021-01-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.Glue.Model;
+using Amazon.OpenSearchService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -34,12 +34,12 @@ using System.Buffers;
 using ThirdParty.RuntimeBackports;
 #endif
 #pragma warning disable CS0612,CS0618
-namespace Amazon.Glue.Model.Internal.MarshallTransformations
+namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Search Request Marshaller
+    /// DetachDataSource Request Marshaller
     /// </summary>       
-    public class SearchRequestMarshaller : IMarshaller<IRequest, SearchRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DetachDataSourceRequestMarshaller : IMarshaller<IRequest, DetachDataSourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SearchRequest)input);
+            return this.Marshall((DetachDataSourceRequest)input);
         }
 
         /// <summary>
@@ -56,16 +56,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SearchRequest publicRequest)
+        public IRequest Marshall(DetachDataSourceRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.Search";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            if (!publicRequest.IsSetId())
+                throw new AmazonOpenSearchServiceException("Request object does not have required field Id set");
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/2021-01-01/opensearch/application/{id}/detachDataSource";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -75,44 +76,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetFilterClause())
+            if(publicRequest.IsSetDataSourceArn())
             {
-                context.Writer.WritePropertyName("FilterClause");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SearchFilterClauseMarshaller.Instance;
-                marshaller.Marshall(publicRequest.FilterClause, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetSearchText())
-            {
-                context.Writer.WritePropertyName("SearchText");
-                context.Writer.WriteStringValue(publicRequest.SearchText);
-            }
-
-            if(publicRequest.IsSetSort())
-            {
-                context.Writer.WritePropertyName("Sort");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SearchSortMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Sort, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("dataSourceArn");
+                context.Writer.WriteStringValue(publicRequest.DataSourceArn);
             }
 
             writer.WriteEndObject();
@@ -125,9 +92,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SearchRequestMarshaller _instance = new SearchRequestMarshaller();        
+        private static DetachDataSourceRequestMarshaller _instance = new DetachDataSourceRequestMarshaller();        
 
-        internal static SearchRequestMarshaller GetInstance()
+        internal static DetachDataSourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +102,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchRequestMarshaller Instance
+        public static DetachDataSourceRequestMarshaller Instance
         {
             get
             {

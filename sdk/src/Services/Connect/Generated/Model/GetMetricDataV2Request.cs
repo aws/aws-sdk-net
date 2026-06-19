@@ -206,8 +206,8 @@ namespace Amazon.Connect.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>ROUTING_STEP_EXPRESSION</c> accepts a filter value up to 3,000 characters in length.
-        /// This filter is case-sensitive and order-sensitive. JSON string fields must be sorted
-        /// in ascending order, and JSON array order must be preserved.
+        /// Filter values are case-sensitive. JSON object key order and whitespace may be arbitrary;
+        /// array order and tree structure must be preserved.
         /// </para>
         ///  </li> <li> 
         /// <para>

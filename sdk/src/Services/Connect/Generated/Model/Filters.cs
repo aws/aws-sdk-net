@@ -143,7 +143,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property RoutingStepExpressions. 
         /// <para>
         /// A list of expressions as a filter, in which an expression is an object of a step in
-        /// a routing criteria.
+        /// a routing criteria. Accepts filter values up to 3,000 characters in length. Filter
+        /// values are case-sensitive. JSON object key order and whitespace may be arbitrary;
+        /// array order and tree structure must be preserved.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

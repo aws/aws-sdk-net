@@ -437,11 +437,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Paginator for Search operation
+        /// Paginator for SearchAssets operation
         ///</summary>
-        public ISearchPaginator Search(SearchRequest request) 
+        public ISearchAssetsPaginator SearchAssets(SearchAssetsRequest request) 
         {
-            return new SearchPaginator(this.client, request);
+            return new SearchAssetsPaginator(this.client, request);
         }
 
         /// <summary>

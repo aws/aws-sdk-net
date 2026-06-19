@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Identifier", targetDepth, ref reader))
+                if (context.TestExpression("AssetIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Identifier = unmarshaller.Unmarshall(context, ref reader);
+                    response.AssetIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

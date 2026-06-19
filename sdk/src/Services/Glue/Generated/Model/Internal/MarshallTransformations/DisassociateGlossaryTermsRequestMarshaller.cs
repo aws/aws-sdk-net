@@ -75,6 +75,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssetIdentifier())
+            {
+                context.Writer.WritePropertyName("AssetIdentifier");
+                context.Writer.WriteStringValue(publicRequest.AssetIdentifier);
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
@@ -95,12 +101,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestGlossaryTermIdentifiersListValue);
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetIdentifier())
-            {
-                context.Writer.WritePropertyName("Identifier");
-                context.Writer.WriteStringValue(publicRequest.Identifier);
             }
 
             writer.WriteEndObject();

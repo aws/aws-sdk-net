@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
+ * Do not modify this file. This file is generated from the opensearch-2021-01-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.Glue.Model;
+using Amazon.OpenSearchService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -32,12 +32,12 @@ using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
 using Amazon.Util;
 #pragma warning disable CS0612,CS0618
-namespace Amazon.Glue.Model.Internal.MarshallTransformations
+namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Search operation
+    /// Response Unmarshaller for ListDataSourceAttachments operation
     /// </summary>  
-    public class SearchResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListDataSourceAttachmentsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,19 +46,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SearchResponse response = new SearchResponse();
+            ListDataSourceAttachmentsResponse response = new ListDataSourceAttachmentsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Items", targetDepth, ref reader))
+                if (context.TestExpression("attachments", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<SearchResultItem, SearchResultItemUnmarshaller>(SearchResultItemUnmarshaller.Instance);
-                    response.Items = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<DataSourceAttachmentSummary, DataSourceAttachmentSummaryUnmarshaller>(DataSourceAttachmentSummaryUnmarshaller.Instance);
+                    response.Attachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth, ref reader))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
@@ -93,25 +93,29 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledOperationException"))
                 {
-                    return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                 {
-                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
-            return new AmazonGlueException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            return new AmazonOpenSearchServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static SearchResponseUnmarshaller _instance = new SearchResponseUnmarshaller();        
+        private static ListDataSourceAttachmentsResponseUnmarshaller _instance = new ListDataSourceAttachmentsResponseUnmarshaller();        
 
-        internal static SearchResponseUnmarshaller GetInstance()
+        internal static ListDataSourceAttachmentsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +123,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchResponseUnmarshaller Instance
+        public static ListDataSourceAttachmentsResponseUnmarshaller Instance
         {
             get
             {

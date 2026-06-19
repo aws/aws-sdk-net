@@ -2077,6 +2077,21 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.GetEvaluationFormValidationRequest.EvaluationFormId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetEvaluationFormValidationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetEvaluationFormValidationResponse.EvaluationFormId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.GetFederationTokenRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -3903,6 +3918,21 @@
     <property>Amazon.Connect.Model.StartEmailContactResponse.ContactId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartEvaluationFormValidationRequest.EvaluationFormId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartEvaluationFormValidationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartEvaluationFormValidationResponse.EvaluationFormId</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundChatContactRequest.ChatDurationInMinutes</property>
@@ -6267,11 +6297,6 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Connect.Model.EvaluationScore.Percentage</property>
-    <min>0</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationSearchMetadata.AcknowledgerComment</property>
     <min>0</min>
     <max>3072</max>
@@ -6305,11 +6330,6 @@
     <property>Amazon.Connect.Model.EvaluationSearchMetadata.SamplingJobId</property>
     <min>1</min>
     <max>500</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Connect.Model.EvaluationSearchMetadata.ScorePercentage</property>
-    <min>0</min>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationSearchSummary.EvaluationFormId</property>
@@ -6936,6 +6956,21 @@
     <property>Amazon.Connect.Model.PromptSummary.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.QuestionOptionPointsConfiguration.PointValue</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.QuestionPointsConfiguration.MaxPointValue</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.QuestionPointsConfiguration.MinPointValue</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Queue.Description</property>

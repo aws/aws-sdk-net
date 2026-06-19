@@ -63,6 +63,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPointsConfiguration())
+            {
+                context.Writer.WritePropertyName("PointsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QuestionOptionPointsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PointsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRefId())
             {
                 context.Writer.WritePropertyName("RefId");
