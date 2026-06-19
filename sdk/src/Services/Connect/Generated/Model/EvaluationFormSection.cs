@@ -37,8 +37,10 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSection
     {
         private string _instructions;
+        private bool? _isExcludedFromScoring;
         private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
         private string _refId;
+        private List<EvaluationFormScoreThreshold> _scoreThresholds = AWSConfigs.InitializeCollections ? new List<EvaluationFormScoreThreshold>() : null;
         private string _title;
         private double? _weight;
 
@@ -58,6 +60,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstructions()
         {
             return this._instructions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsExcludedFromScoring. 
+        /// <para>
+        /// The flag to exclude the section from scoring.
+        /// </para>
+        /// </summary>
+        public bool? IsExcludedFromScoring
+        {
+            get { return this._isExcludedFromScoring; }
+            set { this._isExcludedFromScoring = value; }
+        }
+
+        // Check to see if IsExcludedFromScoring property is set
+        internal bool IsSetIsExcludedFromScoring()
+        {
+            return this._isExcludedFromScoring.HasValue; 
         }
 
         /// <summary>
@@ -102,6 +122,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetRefId()
         {
             return this._refId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScoreThresholds. 
+        /// <para>
+        /// The score thresholds for performance categories.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<EvaluationFormScoreThreshold> ScoreThresholds
+        {
+            get { return this._scoreThresholds; }
+            set { this._scoreThresholds = value; }
+        }
+
+        // Check to see if ScoreThresholds property is set
+        internal bool IsSetScoreThresholds()
+        {
+            return this._scoreThresholds != null && (this._scoreThresholds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

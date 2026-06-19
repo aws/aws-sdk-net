@@ -36,8 +36,11 @@ namespace Amazon.Connect.Model
     {
         private double? _appliedWeight;
         private bool? _automaticFail;
+        private int? _earnedPoints;
+        private int? _maxBasePoint;
         private bool? _notApplicable;
         private double? _percentage;
+        private PerformanceCategoryName _performanceCategory;
 
         /// <summary>
         /// Gets and sets the property AppliedWeight. 
@@ -77,6 +80,42 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EarnedPoints. 
+        /// <para>
+        /// The points earned for the item.
+        /// </para>
+        /// </summary>
+        public int? EarnedPoints
+        {
+            get { return this._earnedPoints; }
+            set { this._earnedPoints = value; }
+        }
+
+        // Check to see if EarnedPoints property is set
+        internal bool IsSetEarnedPoints()
+        {
+            return this._earnedPoints.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBasePoint. 
+        /// <para>
+        /// The maximum base points possible for the item.
+        /// </para>
+        /// </summary>
+        public int? MaxBasePoint
+        {
+            get { return this._maxBasePoint; }
+            set { this._maxBasePoint = value; }
+        }
+
+        // Check to see if MaxBasePoint property is set
+        internal bool IsSetMaxBasePoint()
+        {
+            return this._maxBasePoint.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NotApplicable. 
         /// <para>
         /// The flag to mark the item as not applicable for scoring.
@@ -100,7 +139,6 @@ namespace Amazon.Connect.Model
         /// The score percentage for an item in a contact evaluation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public double? Percentage
         {
             get { return this._percentage; }
@@ -111,6 +149,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetPercentage()
         {
             return this._percentage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceCategory. 
+        /// <para>
+        /// The performance category for the score.
+        /// </para>
+        /// </summary>
+        public PerformanceCategoryName PerformanceCategory
+        {
+            get { return this._performanceCategory; }
+            set { this._performanceCategory = value; }
+        }
+
+        // Check to see if PerformanceCategory property is set
+        internal bool IsSetPerformanceCategory()
+        {
+            return this._performanceCategory != null;
         }
 
     }

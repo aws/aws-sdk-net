@@ -13135,6 +13135,68 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetEvaluationFormValidation
+
+
+        /// <summary>
+        /// Retrieves the status and results of a validation process started by <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEvaluationFormValidation.html">StartEvaluationFormValidation</a>.
+        /// Returns the current execution status (<c>IN_PROGRESS</c>, <c>COMPLETED</c>, or <c>FAILED</c>),
+        /// the validated form version, and when completed, a list of findings that identify structural
+        /// issues and quality improvements for the evaluation form, and may include suggested
+        /// fixes. If the validation failed, a reason is provided indicating the cause of the
+        /// failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvaluationFormValidation service method.</param>
+        /// 
+        /// <returns>The response from the GetEvaluationFormValidation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEvaluationFormValidation">REST API Reference for GetEvaluationFormValidation Operation</seealso>
+        GetEvaluationFormValidationResponse GetEvaluationFormValidation(GetEvaluationFormValidationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the status and results of a validation process started by <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartEvaluationFormValidation.html">StartEvaluationFormValidation</a>.
+        /// Returns the current execution status (<c>IN_PROGRESS</c>, <c>COMPLETED</c>, or <c>FAILED</c>),
+        /// the validated form version, and when completed, a list of findings that identify structural
+        /// issues and quality improvements for the evaluation form, and may include suggested
+        /// fixes. If the validation failed, a reason is provided indicating the cause of the
+        /// failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvaluationFormValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEvaluationFormValidation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEvaluationFormValidation">REST API Reference for GetEvaluationFormValidation Operation</seealso>
+        Task<GetEvaluationFormValidationResponse> GetEvaluationFormValidationAsync(GetEvaluationFormValidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetFederationToken
 
 
@@ -21994,6 +22056,80 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">REST API Reference for StartEmailContact Operation</seealso>
         Task<StartEmailContactResponse> StartEmailContactAsync(StartEmailContactRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartEvaluationFormValidation
+
+
+        /// <summary>
+        /// Starts an asynchronous validation process for an evaluation form version in the specified
+        /// Connect Customer instance. The validation first performs structural checks on the
+        /// form content (such as verifying required fields, valid scoring configuration, and
+        /// correct conditional logic), then asynchronously analyzes questions configured for
+        /// generative AI evaluation against a set of best practices. Use <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEvaluationFormValidation.html">GetEvaluationFormValidation</a>
+        /// to retrieve the status and results once the validation completes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEvaluationFormValidation service method.</param>
+        /// 
+        /// <returns>The response from the StartEvaluationFormValidation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEvaluationFormValidation">REST API Reference for StartEvaluationFormValidation Operation</seealso>
+        StartEvaluationFormValidationResponse StartEvaluationFormValidation(StartEvaluationFormValidationRequest request);
+
+
+
+        /// <summary>
+        /// Starts an asynchronous validation process for an evaluation form version in the specified
+        /// Connect Customer instance. The validation first performs structural checks on the
+        /// form content (such as verifying required fields, valid scoring configuration, and
+        /// correct conditional logic), then asynchronously analyzes questions configured for
+        /// generative AI evaluation against a set of best practices. Use <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetEvaluationFormValidation.html">GetEvaluationFormValidation</a>
+        /// to retrieve the status and results once the validation completes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEvaluationFormValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartEvaluationFormValidation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEvaluationFormValidation">REST API Reference for StartEvaluationFormValidation Operation</seealso>
+        Task<StartEvaluationFormValidationResponse> StartEvaluationFormValidationAsync(StartEvaluationFormValidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
