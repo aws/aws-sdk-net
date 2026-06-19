@@ -63,6 +63,37 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AttachDataSourceRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AttachDataSourceRequest.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AttachDataSourceRequest.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AttachDataSourceResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AttachDataSourceResponse.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AttachDataSourceResponse.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AuthorizeVpcEndpointAccessRequest.Account</property>
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
@@ -267,6 +298,32 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDataSourceAttachmentRequest.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDataSourceAttachmentRequest.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDataSourceAttachmentResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDataSourceAttachmentResponse.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDataSourceAttachmentResponse.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -400,6 +457,32 @@
     <property>Amazon.OpenSearchService.Model.DescribeReservedInstancesRequest.ReservedInstanceId</property>
     <min>36</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DetachDataSourceRequest.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DetachDataSourceRequest.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DetachDataSourceResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DetachDataSourceResponse.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DetachDataSourceResponse.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DissociatePackageRequest.DomainName</property>
@@ -587,6 +670,10 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListApplicationsRequest.MaxResults</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListDataSourceAttachmentsRequest.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListDataSourcesRequest.DomainName</property>
@@ -1069,6 +1156,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):iam::[0-9]+:role\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DataSourceAttachmentSummary.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DataSourceDetails.Description</property>
