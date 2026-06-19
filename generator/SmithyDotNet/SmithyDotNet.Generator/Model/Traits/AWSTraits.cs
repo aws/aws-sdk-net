@@ -4,7 +4,8 @@ using static SmithyDotNet.Generator.Model.Traits.TraitHelpers;
 namespace SmithyDotNet.Generator.Model.Traits;
 
 /// <summary>
-/// Extension methods for AWS-specific traits defined in the <c>aws.*</c> namespaces.
+/// Extension methods for the service traits the generator reads: the <c>aws.*</c> traits plus the
+/// <c>smithy.rules#endpointRuleSet</c> trait.
 /// </summary>
 public static class AWSTraits
 {
@@ -24,12 +25,9 @@ public static class AWSTraits
     public static SigV4Trait? GetSigV4(this Shape shape) => DeserializeTrait<SigV4Trait>(shape, "aws.auth#sigv4");
 
     /// <summary>
-    /// Whether the service shape carries a Smithy endpoint rule set. The legacy generator's
-    /// <c>ServiceConfig.tt</c> branches on <c>EndpointsRuleSet != null</c> to decide whether to emit
-    /// the endpoint resolver field, the <c>EndpointProvider</c> wiring, and the
-    /// <c>DetermineServiceOperationEndpoint</c> override; the presence of this trait is the Smithy-AST
-    /// equivalent of that condition. Rule-set <em>evaluation</em> (the resolver bodies) is a separate,
-    /// later concern; this reports presence only.
+    /// Whether the service shape carries a Smithy endpoint rule set. The config writer emits the
+    /// endpoint resolver field, <c>EndpointProvider</c> wiring, and <c>DetermineServiceOperationEndpoint</c>
+    /// override only when this is true. Reports trait presence only, not rule-set evaluation.
     /// </summary>
     /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointruleset-trait" /></remarks>
     public static bool HasEndpointRuleSet(this Shape shape) => shape.Traits.ContainsKey("smithy.rules#endpointRuleSet");

@@ -1,4 +1,3 @@
-using Microsoft.CodeAnalysis.CSharp;
 using SmithyDotNet.Generator.Generation;
 
 namespace SmithyDotNet.Generator.Writers;
@@ -10,16 +9,13 @@ namespace SmithyDotNet.Generator.Writers;
 /// <c>RegionEndpointServiceName</c>, plus the user-agent string and (for services with an endpoint
 /// rule set) the endpoint resolver/provider wiring.
 /// <para />
-/// Most of the class is a projection of the Smithy AST. The lone exception is the package build
-/// version baked into the user-agent string (<c>BuildUserAgentString(serviceId, version)</c>): that
-/// version is not in the model (it comes from the C2J <c>_sdk-versions.json</c>), so it is supplied
-/// to the writer as a constructor argument rather than derived, the same way the model file name is.
+/// The package build version is not in the Smithy model (it comes from C2J <c>_sdk-versions.json</c>),
+/// so it is supplied as a constructor argument.
 /// </summary>
 public sealed class ConfigWriter(GenerationContext context, string modelFileName, string serviceFileVersion)
 {
-    // The config references the service's .Internal types (EndpointResolver/Provider,
-    // DefaultConfiguration) alongside the runtime/auth/endpoint namespaces. Mirrors the using set of
-    // the existing C2J-generated config.
+    // The runtime/auth/endpoint namespaces and the service's .Internal types
+    // (EndpointResolver/Provider, DefaultConfiguration) the config references.
     private readonly IReadOnlyList<string> _usings =
     [
         "System",
@@ -44,15 +40,15 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("/// <summary>");
-            // The class doc uses the normalized service name (ClassName), not the raw sdkId, matching
-            // the legacy ServiceConfig.tt: "Configuration for accessing Amazon {ClassName} service".
+            // Class doc uses the normalized ServiceName (e.g. CloudTrailData), not the sdkId.
             writer.WriteLine($"/// Configuration for accessing Amazon {context.ServiceName} service");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {configName} : ClientConfig", () =>
             {
-                // Blank-line spacing between members matches the oracle.
                 WriteStaticFields(writer);
+                writer.WriteLine();
                 WriteServiceIdProperty(writer);
+                writer.WriteLine();
                 WriteConstructor(writer, configName);
                 writer.WriteLine();
                 WriteRegionEndpointServiceName(writer);
@@ -73,14 +69,12 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
 
     private void WriteStaticFields(CodeWriter writer)
     {
-        // The user-agent string pairs the raw sdkId with the external package build version (the one
-        // input not present in the Smithy model; see the class remarks).
+        // User-agent pairs the sdkId with the build version (see class remarks).
         writer.WriteLine("private static readonly string UserAgentString =");
-        writer.WriteLine($"    InternalSDKUtils.BuildUserAgentString({Literal(context.SdkId)}, {Literal(serviceFileVersion)});");
+        writer.WriteLine($"    InternalSDKUtils.BuildUserAgentString({CodeWriter.Literal(context.SdkId)}, {CodeWriter.Literal(serviceFileVersion)});");
         writer.WriteLine();
 
-        // The static endpoint resolver field exists only for services with an endpoint rule set
-        // (the legacy template's "EndpointsRuleSet != null" branch).
+        // The static endpoint resolver field exists only for services with an endpoint rule set.
         if (context.HasEndpointRuleSet)
         {
             writer.WriteLine($"private static readonly {context.ClientName}EndpointResolver EndpointResolver =");
@@ -93,12 +87,11 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
 
     private void WriteServiceIdProperty(CodeWriter writer)
     {
-        // The static ServiceId returns the verbatim sdkId ("CloudTrail Data"), NOT the normalized
-        // class-name component. The doc uses the C2J ServiceConfig.tt's tight "///<summary>" form.
-        writer.WriteLine("///<summary>");
+        // Static ServiceId is the sdkId ("CloudTrail Data"), not the normalized class name.
+        writer.WriteLine("/// <summary>");
         writer.WriteLine("/// The ServiceId, which is the unique identifier for a service.");
-        writer.WriteLine("///</summary>");
-        writer.WriteLine($"public static new string ServiceId => {Literal(context.SdkId)};");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public static new string ServiceId => {CodeWriter.Literal(context.SdkId)};");
     }
 
     private void WriteConstructor(CodeWriter writer, string configName)
@@ -107,19 +100,14 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.WriteLine("/// Default constructor");
         writer.WriteLine("/// </summary>");
         // CodeWriter has no constructor-initializer helper, so the ": base(...)" line is written as
-        // the OpenBlock header, matching the ClientClassWriter pattern.
+        // the OpenBlock header.
         writer.WriteLine($"public {configName}()");
         writer.OpenBlock($"    : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider({context.ClientName}DefaultConfiguration.GetAllConfigurations()))", () =>
         {
-            writer.WriteLine($"base.ServiceId = {Literal(context.SdkId)};");
-            // AuthenticationServiceName is always present (EndpointPrefix is required, and it is the
-            // fallback), so it is emitted unconditionally, matching every shipping config.
-            writer.WriteLine($"this.AuthenticationServiceName = {Literal(context.AuthenticationServiceName)};");
-            // The legacy template also emits MaxErrorRetry (from customizations.json
-            // overrideMaxRetries) and a RegionEndpoint fallback (from defaultRegion) here for the few
-            // services that customize them. Those values live in the C2J customization layer (the same
-            // layer that carries operation renames), not the Smithy model, so they are deferred to the
-            // customization-source hook (CloudTrailData has neither).
+            writer.WriteLine($"base.ServiceId = {CodeWriter.Literal(context.SdkId)};");
+            // AuthenticationServiceName is always present (EndpointPrefix is required and is the
+            // fallback), so it is emitted unconditionally.
+            writer.WriteLine($"this.AuthenticationServiceName = {CodeWriter.Literal(context.AuthenticationServiceName)};");
             if (context.HasEndpointRuleSet)
             {
                 writer.WriteLine($"this.EndpointProvider = new {context.ClientName}EndpointProvider();");
@@ -132,7 +120,7 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// The constant used to lookup in the region hash the endpoint.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public override string RegionEndpointServiceName => {Literal(context.EndpointPrefix)};");
+        writer.WriteLine($"public override string RegionEndpointServiceName => {CodeWriter.Literal(context.EndpointPrefix)};");
     }
 
     private void WriteServiceVersion(CodeWriter writer)
@@ -140,7 +128,7 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the ServiceVersion property.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public override string ServiceVersion => {Literal(context.ApiVersion)};");
+        writer.WriteLine($"public override string ServiceVersion => {CodeWriter.Literal(context.ApiVersion)};");
     }
 
     private static void WriteUserAgent(CodeWriter writer)
@@ -174,8 +162,4 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
             writer.WriteLine("return EndpointResolver.GetEndpoint(executionContext);");
         });
     }
-
-    // Renders a runtime string value as a quoted, fully-escaped C# string literal, so a value
-    // containing a quote or backslash still produces compilable source.
-    private static string Literal(string value) => SymbolDisplay.FormatLiteral(value, quote: true);
 }

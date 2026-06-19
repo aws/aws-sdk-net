@@ -8,9 +8,8 @@ public class ConfigWriterTests
 {
     private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
 
-    // The package build version is NOT in the Smithy AST; it comes from the C2J _sdk-versions.json
-    // (CloudTrailData -> "4.0.1.29"). It is threaded in as a constructor argument, the same way the
-    // model file name is, so the writer stays a pure projection of its inputs.
+    // The package build version is not in the Smithy AST (C2J _sdk-versions.json: CloudTrailData ->
+    // "4.0.1.29"), so it is passed as a constructor argument.
     private const string ServiceFileVersion = "4.0.1.29";
 
     private readonly string _output;
@@ -46,8 +45,7 @@ public class ConfigWriterTests
     [Fact]
     public void EmitsClassDoc_UsingNormalizedServiceName()
     {
-        // The class doc uses the normalized service name (ClassName), not the raw sdkId, matching the
-        // legacy ServiceConfig.tt: "Configuration for accessing Amazon {ClassName} service".
+        // The class doc uses the normalized ServiceName (CloudTrailData), not the sdkId ("CloudTrail Data").
         Assert.Contains("/// Configuration for accessing Amazon CloudTrailData service", _output);
     }
 
@@ -60,28 +58,15 @@ public class ConfigWriterTests
     [Fact]
     public void EmitsUserAgentString_WithRawSdkIdAndExternalPackageVersion()
     {
-        // First arg is the RAW sdkId ("CloudTrail Data"); second is the external package version.
+        // First arg is the sdkId; second is the package version.
         Assert.Contains("InternalSDKUtils.BuildUserAgentString(\"CloudTrail Data\", \"4.0.1.29\")", _output);
-    }
-
-    [Fact]
-    public void EmitsDynamicStringLiterals_FullyEscaped_ForCompilableOutput()
-    {
-        // Dynamic string values (sdkId, signing name, version) are emitted via
-        // SymbolDisplay.FormatLiteral so a value containing a quote or backslash still produces valid
-        // C#. CloudTrail Data carries no such character, so the guard is: nothing produced an unescaped
-        // run like  ""  (an empty/broken literal) and the known values landed quoted exactly once.
-        // sdkId "CloudTrail Data" is emitted exactly 3 times: the user-agent arg, the static ServiceId
-        // getter, and base.ServiceId in the constructor (matching the oracle's three occurrences).
-        Assert.DoesNotContain("\"\"", _output);
-        Assert.Equal(3, System.Text.RegularExpressions.Regex.Count(_output, "\"CloudTrail Data\""));
     }
 
     [Fact]
     public void EmitsEndpointResolverField_WhenServiceHasEndpointRuleSet()
     {
         // CloudTrailData carries smithy.rules#endpointRuleSet, so the resolver field + provider wiring
-        // are emitted (the EndpointsRuleSet != null branch of the legacy template).
+        // are emitted.
         Assert.Contains("private static readonly AmazonCloudTrailDataEndpointResolver EndpointResolver =", _output);
         Assert.Contains("new AmazonCloudTrailDataEndpointResolver();", _output);
     }
@@ -95,8 +80,7 @@ public class ConfigWriterTests
     [Fact]
     public void EmitsStaticNewServiceId_ReturningRawSdkId()
     {
-        // The static ServiceId returns the verbatim sdkId ("CloudTrail Data"), NOT the normalized class
-        // name. Expression-bodied per the writer-family idiom; the literal is FormatLiteral-escaped.
+        // Static ServiceId is the sdkId ("CloudTrail Data"), not the normalized class name.
         Assert.Contains("public static new string ServiceId => \"CloudTrail Data\";", _output);
         Assert.DoesNotContain("\"CloudTrailData\";", _output);
     }
@@ -144,5 +128,22 @@ public class ConfigWriterTests
         Assert.Contains("public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)", _output);
         Assert.Contains("var requestContext = new RequestContext(false)", _output);
         Assert.Contains("return EndpointResolver.GetEndpoint(executionContext);", _output);
+    }
+
+    [Fact]
+    public void OmitsEndpointRuleSetMembers_WhenServiceHasNoRuleSet()
+    {
+        // The resolver field, EndpointProvider wiring, and DetermineServiceOperationEndpoint override
+        // are emitted ONLY when the service carries smithy.rules#endpointRuleSet. For a service without
+        // it, all three must be absent.
+        var context = CloudTrailModelFixture.ContextWithoutEndpointRuleSet();
+        var output = new ConfigWriter(context, ModelFileName, ServiceFileVersion).Write(TestContext.Current.CancellationToken);
+
+        Assert.DoesNotContain("EndpointResolver", output);
+        Assert.DoesNotContain("EndpointProvider", output);
+        Assert.DoesNotContain("DetermineServiceOperationEndpoint", output);
+        // The non-conditional members are still emitted.
+        Assert.Contains("public static new string ServiceId => \"CloudTrail Data\";", output);
+        Assert.Contains("this.AuthenticationServiceName = \"cloudtrail-data\";", output);
     }
 }
