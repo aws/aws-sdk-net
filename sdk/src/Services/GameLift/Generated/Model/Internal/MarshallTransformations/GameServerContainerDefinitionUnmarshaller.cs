@@ -94,6 +94,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "LinuxCapabilities":
+                        {
+                            context.AddPathSegment("LinuxCapabilities");
+                            var unmarshaller = LinuxCapabilitiesUnmarshaller.Instance;
+                            unmarshalledObject.LinuxCapabilities = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "MountPoints":
                         {
                             context.AddPathSegment("MountPoints");

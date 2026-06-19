@@ -101,6 +101,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMonetize())
+            {
+                context.Writer.WritePropertyName("Monetize");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonetizeActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Monetize, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

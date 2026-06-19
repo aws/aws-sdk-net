@@ -2219,11 +2219,7 @@
     },
     "CreateExpressGatewayServiceRequest":{
       "type":"structure",
-      "required":[
-        "executionRoleArn",
-        "infrastructureRoleArn",
-        "primaryContainer"
-      ],
+      "required":["infrastructureRoleArn"],
       "members":{
         "executionRoleArn":{"shape":"String"},
         "infrastructureRoleArn":{"shape":"String"},
@@ -2236,7 +2232,8 @@
         "cpu":{"shape":"String"},
         "memory":{"shape":"String"},
         "scalingTarget":{"shape":"ExpressGatewayScalingTarget"},
-        "tags":{"shape":"Tags"}
+        "tags":{"shape":"Tags"},
+        "taskDefinitionArn":{"shape":"String"}
       }
     },
     "CreateExpressGatewayServiceResponse":{
@@ -2288,7 +2285,8 @@
         "enableExecuteCommand":{"shape":"Boolean"},
         "serviceConnectConfiguration":{"shape":"ServiceConnectConfiguration"},
         "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"},
-        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"}
+        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"},
+        "monitoring":{"shape":"MonitoringConfiguration"}
       }
     },
     "CreateServiceResponse":{
@@ -3569,6 +3567,7 @@
         "serviceRevisionArn":{"shape":"String"},
         "executionRoleArn":{"shape":"String"},
         "taskRoleArn":{"shape":"String"},
+        "taskDefinitionArn":{"shape":"String"},
         "cpu":{"shape":"String"},
         "memory":{"shape":"String"},
         "networkConfiguration":{"shape":"ExpressGatewayServiceNetworkConfiguration"},
@@ -4640,12 +4639,52 @@
         "max":{"shape":"BoxedInteger"}
       }
     },
+    "MetricConfiguration":{
+      "type":"structure",
+      "required":[
+        "metricNames",
+        "resolutionSeconds"
+      ],
+      "members":{
+        "metricNames":{"shape":"MetricNamesList"},
+        "resolutionSeconds":{"shape":"MetricResolutionSeconds"}
+      }
+    },
+    "MetricConfigurationList":{
+      "type":"list",
+      "member":{"shape":"MetricConfiguration"},
+      "max":5,
+      "min":0
+    },
+    "MetricName":{
+      "type":"string",
+      "max":255,
+      "min":1
+    },
+    "MetricNamesList":{
+      "type":"list",
+      "member":{"shape":"MetricName"},
+      "max":5,
+      "min":1
+    },
+    "MetricResolutionSeconds":{
+      "type":"integer",
+      "box":true,
+      "max":60,
+      "min":20
+    },
     "MissingVersionException":{
       "type":"structure",
       "members":{
         "message":{"shape":"String"}
       },
       "exception":true
+    },
+    "MonitoringConfiguration":{
+      "type":"structure",
+      "members":{
+        "metricConfigurations":{"shape":"MetricConfigurationList"}
+      }
     },
     "MountPoint":{
       "type":"structure",
@@ -5597,7 +5636,8 @@
         "createdAt":{"shape":"Timestamp"},
         "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"},
         "resolvedConfiguration":{"shape":"ResolvedConfiguration"},
-        "ecsManagedResources":{"shape":"ECSManagedResources"}
+        "ecsManagedResources":{"shape":"ECSManagedResources"},
+        "monitoring":{"shape":"MonitoringConfiguration"}
       }
     },
     "ServiceRevisionLoadBalancer":{
@@ -6392,7 +6432,8 @@
         "networkConfiguration":{"shape":"ExpressGatewayServiceNetworkConfiguration"},
         "cpu":{"shape":"String"},
         "memory":{"shape":"String"},
-        "scalingTarget":{"shape":"ExpressGatewayScalingTarget"}
+        "scalingTarget":{"shape":"ExpressGatewayScalingTarget"},
+        "taskDefinitionArn":{"shape":"String"}
       }
     },
     "UpdateExpressGatewayServiceResponse":{
@@ -6466,7 +6507,8 @@
         "serviceRegistries":{"shape":"ServiceRegistries"},
         "serviceConnectConfiguration":{"shape":"ServiceConnectConfiguration"},
         "volumeConfigurations":{"shape":"ServiceVolumeConfigurations"},
-        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"}
+        "vpcLatticeConfigurations":{"shape":"VpcLatticeConfigurations"},
+        "monitoring":{"shape":"MonitoringConfiguration"}
       }
     },
     "UpdateServiceResponse":{

@@ -6881,6 +6881,122 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type SearchFilterOperator.
+    /// </summary>
+    public class SearchFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Equals for SearchFilterOperator
+        /// </summary>
+        public new static readonly SearchFilterOperator Equals = new SearchFilterOperator("equals");
+        /// <summary>
+        /// Constant GreaterThan for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator GreaterThan = new SearchFilterOperator("greaterThan");
+        /// <summary>
+        /// Constant GreaterThanOrEquals for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator GreaterThanOrEquals = new SearchFilterOperator("greaterThanOrEquals");
+        /// <summary>
+        /// Constant LessThan for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator LessThan = new SearchFilterOperator("lessThan");
+        /// <summary>
+        /// Constant LessThanOrEquals for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator LessThanOrEquals = new SearchFilterOperator("lessThanOrEquals");
+        /// <summary>
+        /// Constant NotExists for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator NotExists = new SearchFilterOperator("notExists");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchFilterOperator FindValue(string value)
+        {
+            return FindValue<SearchFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchSortOrder.
+    /// </summary>
+    public class SearchSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SearchSortOrder
+        /// </summary>
+        public static readonly SearchSortOrder ASCENDING = new SearchSortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SearchSortOrder
+        /// </summary>
+        public static readonly SearchSortOrder DESCENDING = new SearchSortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchSortOrder FindValue(string value)
+        {
+            return FindValue<SearchSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchSortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Separator.
     /// </summary>
     public class Separator : ConstantClass
@@ -7500,6 +7616,14 @@ namespace Amazon.Glue
     public class TableAttributes : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DEFAULT for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes DEFAULT = new TableAttributes("DEFAULT");
+        /// <summary>
+        /// Constant LATEST_ICEBERG_METADATA for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes LATEST_ICEBERG_METADATA = new TableAttributes("LATEST_ICEBERG_METADATA");
         /// <summary>
         /// Constant NAME for TableAttributes
         /// </summary>

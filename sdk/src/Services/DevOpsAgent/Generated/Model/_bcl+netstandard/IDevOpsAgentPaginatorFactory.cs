@@ -136,5 +136,15 @@ namespace Amazon.DevOpsAgent.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListServicesPaginator ListServices(ListServicesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTriggers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTriggersPaginator ListTriggers(ListTriggersRequest request);
     }
 }

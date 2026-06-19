@@ -25,6 +25,102 @@ namespace Amazon.BedrockAgent
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessControlAccess.
+    /// </summary>
+    public class AccessControlAccess : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for AccessControlAccess
+        /// </summary>
+        public static readonly AccessControlAccess ALLOW = new AccessControlAccess("ALLOW");
+        /// <summary>
+        /// Constant DENY for AccessControlAccess
+        /// </summary>
+        public static readonly AccessControlAccess DENY = new AccessControlAccess("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessControlAccess(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessControlAccess FindValue(string value)
+        {
+            return FindValue<AccessControlAccess>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessControlAccess(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AccessControlPrincipalType.
+    /// </summary>
+    public class AccessControlPrincipalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USER for AccessControlPrincipalType
+        /// </summary>
+        public static readonly AccessControlPrincipalType USER = new AccessControlPrincipalType("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessControlPrincipalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessControlPrincipalType FindValue(string value)
+        {
+            return FindValue<AccessControlPrincipalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessControlPrincipalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ActionGroupSignature.
     /// </summary>
     public class ActionGroupSignature : ConstantClass
@@ -1029,6 +1125,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly DataSourceStatus AVAILABLE = new DataSourceStatus("AVAILABLE");
         /// <summary>
+        /// Constant CREATING for DataSourceStatus
+        /// </summary>
+        public static readonly DataSourceStatus CREATING = new DataSourceStatus("CREATING");
+        /// <summary>
         /// Constant DELETE_UNSUCCESSFUL for DataSourceStatus
         /// </summary>
         public static readonly DataSourceStatus DELETE_UNSUCCESSFUL = new DataSourceStatus("DELETE_UNSUCCESSFUL");
@@ -1036,6 +1136,14 @@ namespace Amazon.BedrockAgent
         /// Constant DELETING for DataSourceStatus
         /// </summary>
         public static readonly DataSourceStatus DELETING = new DataSourceStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for DataSourceStatus
+        /// </summary>
+        public static readonly DataSourceStatus FAILED = new DataSourceStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for DataSourceStatus
+        /// </summary>
+        public static readonly DataSourceStatus UPDATING = new DataSourceStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1086,6 +1194,10 @@ namespace Amazon.BedrockAgent
         /// Constant CUSTOM for DataSourceType
         /// </summary>
         public static readonly DataSourceType CUSTOM = new DataSourceType("CUSTOM");
+        /// <summary>
+        /// Constant MANAGED_KNOWLEDGE_BASE_CONNECTOR for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType MANAGED_KNOWLEDGE_BASE_CONNECTOR = new DataSourceType("MANAGED_KNOWLEDGE_BASE_CONNECTOR");
         /// <summary>
         /// Constant REDSHIFT_METADATA for DataSourceType
         /// </summary>
@@ -1276,6 +1388,106 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EmbeddingDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EmbeddingModelType.
+    /// </summary>
+    public class EmbeddingModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for EmbeddingModelType
+        /// </summary>
+        public static readonly EmbeddingModelType CUSTOM = new EmbeddingModelType("CUSTOM");
+        /// <summary>
+        /// Constant MANAGED for EmbeddingModelType
+        /// </summary>
+        public static readonly EmbeddingModelType MANAGED = new EmbeddingModelType("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmbeddingModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmbeddingModelType FindValue(string value)
+        {
+            return FindValue<EmbeddingModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmbeddingModelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnabledOrDisabledState.
+    /// </summary>
+    public class EnabledOrDisabledState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EnabledOrDisabledState
+        /// </summary>
+        public static readonly EnabledOrDisabledState DISABLED = new EnabledOrDisabledState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for EnabledOrDisabledState
+        /// </summary>
+        public static readonly EnabledOrDisabledState ENABLED = new EnabledOrDisabledState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnabledOrDisabledState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnabledOrDisabledState FindValue(string value)
+        {
+            return FindValue<EnabledOrDisabledState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnabledOrDisabledState(string value)
         {
             return FindValue(value);
         }
@@ -2325,6 +2537,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly KnowledgeBaseStatus FAILED = new KnowledgeBaseStatus("FAILED");
         /// <summary>
+        /// Constant UPDATE_UNSUCCESSFUL for KnowledgeBaseStatus
+        /// </summary>
+        public static readonly KnowledgeBaseStatus UPDATE_UNSUCCESSFUL = new KnowledgeBaseStatus("UPDATE_UNSUCCESSFUL");
+        /// <summary>
         /// Constant UPDATING for KnowledgeBaseStatus
         /// </summary>
         public static readonly KnowledgeBaseStatus UPDATING = new KnowledgeBaseStatus("UPDATING");
@@ -2448,6 +2664,10 @@ namespace Amazon.BedrockAgent
         /// Constant KENDRA for KnowledgeBaseType
         /// </summary>
         public static readonly KnowledgeBaseType KENDRA = new KnowledgeBaseType("KENDRA");
+        /// <summary>
+        /// Constant MANAGED for KnowledgeBaseType
+        /// </summary>
+        public static readonly KnowledgeBaseType MANAGED = new KnowledgeBaseType("MANAGED");
         /// <summary>
         /// Constant SQL for KnowledgeBaseType
         /// </summary>
@@ -2756,6 +2976,10 @@ namespace Amazon.BedrockAgent
         /// Constant BEDROCK_FOUNDATION_MODEL for ParsingStrategy
         /// </summary>
         public static readonly ParsingStrategy BEDROCK_FOUNDATION_MODEL = new ParsingStrategy("BEDROCK_FOUNDATION_MODEL");
+        /// <summary>
+        /// Constant SMART_PARSING for ParsingStrategy
+        /// </summary>
+        public static readonly ParsingStrategy SMART_PARSING = new ParsingStrategy("SMART_PARSING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

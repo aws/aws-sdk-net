@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArtifactUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ContainerMetricsConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerMetricsConfigUnmarshaller.Instance;
+                    unmarshalledObject.ContainerMetricsConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DeployedImage", targetDepth, ref reader))
                 {
                     var unmarshaller = DeployedImageUnmarshaller.Instance;

@@ -258,6 +258,16 @@ namespace Amazon.Glue.Model
         IGetWorkflowRunsPaginator GetWorkflowRuns(GetWorkflowRunsRequest request);
 
         /// <summary>
+        /// Paginator for ListAssetTypes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAssetTypesPaginator ListAssetTypes(ListAssetTypesRequest request);
+
+        /// <summary>
         /// Paginator for ListBlueprints operation
         ///</summary>
         [AWSPaginator(
@@ -368,6 +378,46 @@ namespace Amazon.Glue.Model
         IListEntitiesPaginator ListEntities(ListEntitiesRequest request);
 
         /// <summary>
+        /// Paginator for ListFormTypes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFormTypesPaginator ListFormTypes(ListFormTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListGlossaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListGlossariesPaginator ListGlossaries(ListGlossariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListGlossaryTerms operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListGlossaryTermsPaginator ListGlossaryTerms(ListGlossaryTermsRequest request);
+
+        /// <summary>
+        /// Paginator for ListIterableForms operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListIterableFormsPaginator ListIterableForms(ListIterableFormsRequest request);
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         [AWSPaginator(
@@ -476,6 +526,16 @@ namespace Amazon.Glue.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request);
+
+        /// <summary>
+        /// Paginator for Search operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchPaginator Search(SearchRequest request);
 
         /// <summary>
         /// Paginator for SearchTables operation

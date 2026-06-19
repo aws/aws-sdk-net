@@ -53,6 +53,7 @@ namespace Amazon.DirectConnect.Model
         private int? _numberOfConnections;
         private string _ownerAccount;
         private string _providerName;
+        private RateLimiterStatus _rateLimiterStatus;
         private string _region;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -446,6 +447,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetProviderName()
         {
             return this._providerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RateLimiterStatus. 
+        /// <para>
+        /// The rate limiter status for the LAG, including how many rate limiters are in use and
+        /// the maximum allowed.
+        /// </para>
+        /// </summary>
+        public RateLimiterStatus RateLimiterStatus
+        {
+            get { return this._rateLimiterStatus; }
+            set { this._rateLimiterStatus = value; }
+        }
+
+        // Check to see if RateLimiterStatus property is set
+        internal bool IsSetRateLimiterStatus()
+        {
+            return this._rateLimiterStatus != null;
         }
 
         /// <summary>

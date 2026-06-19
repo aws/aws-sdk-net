@@ -37,6 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private CustomerProjectsContext _customerProject;
         private LeadContext _lead;
+        private ProspectingResult _prospectingResult;
 
         /// <summary>
         /// Gets and sets the property CustomerProject. 
@@ -75,6 +76,26 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetLead()
         {
             return this._lead != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProspectingResult. 
+        /// <para>
+        /// Contains prospecting result data with enriched insights. The system generates these
+        /// insights when a partner runs an autonomous prospecting job on leads. This field appears
+        /// only when the context type is "ProspectingResult".
+        /// </para>
+        /// </summary>
+        public ProspectingResult ProspectingResult
+        {
+            get { return this._prospectingResult; }
+            set { this._prospectingResult = value; }
+        }
+
+        // Check to see if ProspectingResult property is set
+        internal bool IsSetProspectingResult()
+        {
+            return this._prospectingResult != null;
         }
 
     }

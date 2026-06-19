@@ -79,6 +79,56 @@ namespace Amazon.DevOpsAgent
 
 
     /// <summary>
+    /// Constants used for properties of type CapabilityType.
+    /// </summary>
+    public class CapabilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RELEASE_READINESS_REVIEW for CapabilityType
+        /// </summary>
+        public static readonly CapabilityType RELEASE_READINESS_REVIEW = new CapabilityType("RELEASE_READINESS_REVIEW");
+        /// <summary>
+        /// Constant RELEASE_READINESS_REVIEW_AUTOMATED_TESTING for CapabilityType
+        /// </summary>
+        public static readonly CapabilityType RELEASE_READINESS_REVIEW_AUTOMATED_TESTING = new CapabilityType("RELEASE_READINESS_REVIEW_AUTOMATED_TESTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityType FindValue(string value)
+        {
+            return FindValue<CapabilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventChannelType.
     /// </summary>
     public class EventChannelType : ConstantClass
@@ -699,6 +749,14 @@ namespace Amazon.DevOpsAgent
         /// </summary>
         public static readonly PostRegisterServiceSupportedService Pagerduty = new PostRegisterServiceSupportedService("pagerduty");
         /// <summary>
+        /// Constant Remoteagent for PostRegisterServiceSupportedService
+        /// </summary>
+        public static readonly PostRegisterServiceSupportedService Remoteagent = new PostRegisterServiceSupportedService("remoteagent");
+        /// <summary>
+        /// Constant Remoteagentsigv4 for PostRegisterServiceSupportedService
+        /// </summary>
+        public static readonly PostRegisterServiceSupportedService Remoteagentsigv4 = new PostRegisterServiceSupportedService("remoteagentsigv4");
+        /// <summary>
         /// Constant Servicenow for PostRegisterServiceSupportedService
         /// </summary>
         public static readonly PostRegisterServiceSupportedService Servicenow = new PostRegisterServiceSupportedService("servicenow");
@@ -1033,6 +1091,60 @@ namespace Amazon.DevOpsAgent
 
 
     /// <summary>
+    /// Constants used for properties of type RemoteAgentAuthorizationMethod.
+    /// </summary>
+    public class RemoteAgentAuthorizationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApiKey for RemoteAgentAuthorizationMethod
+        /// </summary>
+        public static readonly RemoteAgentAuthorizationMethod ApiKey = new RemoteAgentAuthorizationMethod("api-key");
+        /// <summary>
+        /// Constant BearerToken for RemoteAgentAuthorizationMethod
+        /// </summary>
+        public static readonly RemoteAgentAuthorizationMethod BearerToken = new RemoteAgentAuthorizationMethod("bearer-token");
+        /// <summary>
+        /// Constant OauthClientCredentials for RemoteAgentAuthorizationMethod
+        /// </summary>
+        public static readonly RemoteAgentAuthorizationMethod OauthClientCredentials = new RemoteAgentAuthorizationMethod("oauth-client-credentials");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RemoteAgentAuthorizationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemoteAgentAuthorizationMethod FindValue(string value)
+        {
+            return FindValue<RemoteAgentAuthorizationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemoteAgentAuthorizationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceConfigDnsResolution.
     /// </summary>
     public class ResourceConfigDnsResolution : ConstantClass
@@ -1194,6 +1306,14 @@ namespace Amazon.DevOpsAgent
         /// Constant Pagerduty for Service
         /// </summary>
         public static readonly Service Pagerduty = new Service("pagerduty");
+        /// <summary>
+        /// Constant Remoteagent for Service
+        /// </summary>
+        public static readonly Service Remoteagent = new Service("remoteagent");
+        /// <summary>
+        /// Constant Remoteagentsigv4 for Service
+        /// </summary>
+        public static readonly Service Remoteagentsigv4 = new Service("remoteagentsigv4");
         /// <summary>
         /// Constant Servicenow for Service
         /// </summary>
@@ -1480,6 +1600,14 @@ namespace Amazon.DevOpsAgent
         /// Constant INVESTIGATION for TaskType
         /// </summary>
         public static readonly TaskType INVESTIGATION = new TaskType("INVESTIGATION");
+        /// <summary>
+        /// Constant RELEASE_READINESS_REVIEW for TaskType
+        /// </summary>
+        public static readonly TaskType RELEASE_READINESS_REVIEW = new TaskType("RELEASE_READINESS_REVIEW");
+        /// <summary>
+        /// Constant RELEASE_TESTING for TaskType
+        /// </summary>
+        public static readonly TaskType RELEASE_TESTING = new TaskType("RELEASE_TESTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

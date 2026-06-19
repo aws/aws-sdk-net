@@ -67,6 +67,8 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
             {
                 WriteConstructors(writer, className);
                 writer.WriteLine();
+                // TODO: emit additional members (with [AWSProperty] and IsSet) when an exception
+                // shape carries fields beyond "message". CloudTrail Data has none.
                 WriteSerializationBlock(writer, className, includeGetObjectData: true);
             });
         });

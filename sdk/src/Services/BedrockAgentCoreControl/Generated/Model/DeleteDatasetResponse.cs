@@ -81,7 +81,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
-        /// The version deleted.
+        ///  The version that was deleted. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

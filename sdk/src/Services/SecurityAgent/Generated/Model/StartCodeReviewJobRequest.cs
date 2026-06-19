@@ -38,6 +38,7 @@ namespace Amazon.SecurityAgent.Model
     {
         private string _agentSpaceId;
         private string _codeReviewId;
+        private DiffSource _diffSource;
 
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
@@ -75,6 +76,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetCodeReviewId()
         {
             return this._codeReviewId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiffSource. 
+        /// <para>
+        /// Source of the diff for a differential scan. When present, the job analyzes only the
+        /// changed lines instead of performing a full scan.
+        /// </para>
+        /// </summary>
+        public DiffSource DiffSource
+        {
+            get { return this._diffSource; }
+            set { this._diffSource = value; }
+        }
+
+        // Check to see if DiffSource property is set
+        internal bool IsSetDiffSource()
+        {
+            return this._diffSource != null;
         }
 
     }

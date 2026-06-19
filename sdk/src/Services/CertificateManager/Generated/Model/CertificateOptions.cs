@@ -31,15 +31,12 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Structure that contains options for your certificate. You can use this structure to
-    /// specify whether to opt in to or out of certificate transparency logging and export
-    /// your certificate. 
+    /// specify whether to export your certificate.
     /// 
     ///  
     /// <para>
-    /// Some browsers require that public certificates issued for your domain be recorded
-    /// in a log. Certificates that are not logged typically generate a browser error. Transparency
-    /// makes it possible for you to detect SSL/TLS certificates that have been mistakenly
-    /// or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
+    /// Certificate transparency logging opt-out is no longer available. All public certificates
+    /// are recorded in a certificate transparency log. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
     /// Transparency Logging</a>.
     /// </para>
     ///  
@@ -57,10 +54,12 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateTransparencyLoggingPreference. 
         /// <para>
-        /// You can opt out of certificate transparency logging by specifying the <c>DISABLED</c>
-        /// option. Opt in by specifying <c>ENABLED</c>. 
+        /// This parameter has been deprecated. Certificate transparency logging opt-out is no
+        /// longer available. All public certificates are recorded in a certificate transparency
+        /// log.
         /// </para>
         /// </summary>
+        [Obsolete("Certificate transparency logging opt-out is no longer available.")]
         public CertificateTransparencyLoggingPreference CertificateTransparencyLoggingPreference
         {
             get { return this._certificateTransparencyLoggingPreference; }

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
-    /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+    /// The service deploy ARN that you specified in the <c>ContinueServiceDeployment</c>
+    /// doesn't exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
     /// ARNs.
     /// </summary>
     #if !NETSTANDARD

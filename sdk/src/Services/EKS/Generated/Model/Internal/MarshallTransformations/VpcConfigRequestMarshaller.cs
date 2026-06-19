@@ -46,6 +46,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetControlPlaneEgressMode())
+            {
+                context.Writer.WritePropertyName("controlPlaneEgressMode");
+                context.Writer.WriteStringValue(requestObject.ControlPlaneEgressMode);
+            }
+
             if(requestObject.IsSetEndpointPrivateAccess())
             {
                 context.Writer.WritePropertyName("endpointPrivateAccess");

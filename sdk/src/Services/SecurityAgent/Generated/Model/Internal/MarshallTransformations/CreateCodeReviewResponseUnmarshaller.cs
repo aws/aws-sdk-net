@@ -106,6 +106,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("validationMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ValidationMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

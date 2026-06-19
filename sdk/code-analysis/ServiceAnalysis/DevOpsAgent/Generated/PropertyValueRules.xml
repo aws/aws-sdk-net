@@ -72,7 +72,7 @@
     <property>Amazon.DevOpsAgent.Model.CreateAssetFileRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9_./-]+</pattern>
+    <pattern>[a-zA-Z0-9_./ ()-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.CreateBacklogTaskRequest.AgentSpaceId</property>
@@ -146,6 +146,25 @@
     <pattern>vpc-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.Type</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DeleteAgentSpaceRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -173,7 +192,7 @@
     <property>Amazon.DevOpsAgent.Model.DeleteAssetFileRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9_./-]+</pattern>
+    <pattern>[a-zA-Z0-9_./ ()-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DeletePrivateConnectionRequest.Name</property>
@@ -186,6 +205,16 @@
     <min>3</min>
     <max>30</max>
     <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteTriggerRequest.TriggerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DeregisterServiceRequest.ServiceId</property>
@@ -328,7 +357,7 @@
     <property>Amazon.DevOpsAgent.Model.GetAssetFileRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9_./-]+</pattern>
+    <pattern>[a-zA-Z0-9_./ ()-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GetAssociationRequest.AgentSpaceId</property>
@@ -375,6 +404,16 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetTriggerRequest.TriggerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ListAgentSpacesRequest.MaxResults</property>
@@ -645,6 +684,30 @@
     <pattern>arn:aws:aidevops:[a-z0-9-]+:\d{12}:(agentspace|service)/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ListWebhooksRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -777,7 +840,7 @@
     <property>Amazon.DevOpsAgent.Model.UpdateAssetFileRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9_./-]+</pattern>
+    <pattern>[a-zA-Z0-9_./ ()-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.UpdateAssociationRequest.AgentSpaceId</property>
@@ -873,6 +936,26 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.TriggerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ValidateAwsAssociationsRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -918,7 +1001,7 @@
     <property>Amazon.DevOpsAgent.Model.AssetFile.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9_./-]+</pattern>
+    <pattern>[a-zA-Z0-9_./ ()-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.AssetFileBody.Bytes</property>
@@ -934,13 +1017,19 @@
     <property>Amazon.DevOpsAgent.Model.AssetFileContent.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9_./-]+</pattern>
+    <pattern>[a-zA-Z0-9_./ ()-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.AssetFileSummary.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9_./-]+</pattern>
+    <pattern>[a-zA-Z0-9_./ ()-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetSourceUrlContent.Url</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.AssetTypeSummary.AssetType</property>
@@ -1034,6 +1123,18 @@
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GenericWebhook.ApiKey</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GitHubConfiguration.RuntimeRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GitLabConfiguration.RuntimeRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GitLabDetails.TargetUrl</property>
@@ -1144,9 +1245,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuth3LOConfig.ClientSecret</property>
-    <min>1</min>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\S]+</pattern>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuth3LOConfig.ExchangeUrl</property>
@@ -1399,6 +1500,59 @@
     <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentDetails.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.Region</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>(\*|[a-z]{2,4}(-[a-z]+)+-\d+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.RoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredRemoteAgentSigV4Details.Service</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredService.KmsKeyArn</property>
     <min>20</min>
     <pattern>arn:aws[a-zA-Z-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
@@ -1426,6 +1580,111 @@
     <min>1</min>
     <max>255</max>
     <pattern>https://[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])\.service-now\.com/?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentAPIKeyConfig.ApiKeyHeader</property>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentAPIKeyConfig.ApiKeyName</property>
+    <pattern>[a-zA-Z0-9_\s-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentAPIKeyConfig.ApiKeyValue</property>
+    <min>1</min>
+    <pattern>[!-~]([ \t]*[!-~])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentBearerTokenConfig.AuthorizationHeader</property>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentBearerTokenConfig.TokenName</property>
+    <pattern>[a-zA-Z0-9_\s-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentBearerTokenConfig.TokenValue</property>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentOAuthClientCredentialsConfig.ClientId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\u0020-\u007E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentOAuthClientCredentialsConfig.ClientName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\p{L}\p{N}\p{Z}._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentOAuthClientCredentialsConfig.ClientSecret</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentOAuthClientCredentialsConfig.ExchangeUrl</property>
+    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentServiceDetails.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentServiceDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentServiceDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4AuthorizationConfig.Region</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>(\*|[a-z]{2,4}(-[a-z]+)+-\d+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4AuthorizationConfig.RoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4AuthorizationConfig.Service</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4ServiceDetails.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4ServiceDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RemoteAgentSigV4ServiceDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ScheduleCondition.Expression</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SelfManagedInput.Certificate</property>
@@ -1509,6 +1768,26 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.TriggerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.Type</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.Webhook.WebhookId</property>

@@ -34,6 +34,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class GetOnlineEvaluationConfigResponse : AmazonWebServiceResponse
     {
+        private ClusteringConfig _clusteringConfig;
         private DateTime? _createdAt;
         private DataSourceConfig _dataSourceConfig;
         private string _description;
@@ -41,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private List<EvaluatorReference> _evaluators = AWSConfigs.InitializeCollections ? new List<EvaluatorReference>() : null;
         private OnlineEvaluationExecutionStatus _executionStatus;
         private string _failureReason;
+        private List<Insight> _insights = AWSConfigs.InitializeCollections ? new List<Insight>() : null;
         private string _onlineEvaluationConfigArn;
         private string _onlineEvaluationConfigId;
         private string _onlineEvaluationConfigName;
@@ -48,6 +50,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private Rule _rule;
         private OnlineEvaluationConfigStatus _status;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property ClusteringConfig. 
+        /// <para>
+        /// The clustering configuration for periodic batch evaluation.
+        /// </para>
+        /// </summary>
+        public ClusteringConfig ClusteringConfig
+        {
+            get { return this._clusteringConfig; }
+            set { this._clusteringConfig = value; }
+        }
+
+        // Check to see if ClusteringConfig property is set
+        internal bool IsSetClusteringConfig()
+        {
+            return this._clusteringConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -137,7 +157,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<EvaluatorReference> Evaluators
         {
             get { return this._evaluators; }
@@ -186,6 +206,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Insights. 
+        /// <para>
+        /// The list of insight types configured for this evaluation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<Insight> Insights
+        {
+            get { return this._insights; }
+            set { this._insights = value; }
+        }
+
+        // Check to see if Insights property is set
+        internal bool IsSetInsights()
+        {
+            return this._insights != null && (this._insights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

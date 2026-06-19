@@ -1387,6 +1387,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode KMSKeyNotFound = new LastUpdateStatusReasonCode("KMSKeyNotFound");
         /// <summary>
+        /// Constant ServiceQuotaExceededException for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode ServiceQuotaExceededException = new LastUpdateStatusReasonCode("ServiceQuotaExceededException");
+        /// <summary>
         /// Constant SubnetOutOfIPAddresses for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode SubnetOutOfIPAddresses = new LastUpdateStatusReasonCode("SubnetOutOfIPAddresses");
@@ -2660,6 +2664,10 @@ namespace Amazon.Lambda
         /// Constant Restoring for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode Restoring = new StateReasonCode("Restoring");
+        /// <summary>
+        /// Constant ServiceQuotaExceededException for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode ServiceQuotaExceededException = new StateReasonCode("ServiceQuotaExceededException");
         /// <summary>
         /// Constant SubnetOutOfIPAddresses for StateReasonCode
         /// </summary>

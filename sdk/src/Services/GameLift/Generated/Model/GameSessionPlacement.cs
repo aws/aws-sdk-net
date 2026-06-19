@@ -162,9 +162,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionArn. 
         /// <para>
         /// An identifier for the game session that is unique across all regions. The value is
-        /// always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
-        /// ID&gt;/&lt;ID string&gt;</c>. This value is the same as <c>GameSessionId</c>. This
-        /// value isn't final until placement status is <c>FULFILLED</c>.
+        /// always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>. This value is the same as <c>GameSessionId</c>.
+        /// This value isn't final until placement status is <c>FULFILLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -206,9 +207,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionId. 
         /// <para>
         /// An identifier for the game session that is unique across all regions. The value is
-        /// always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
-        /// ID&gt;/&lt;ID string&gt;</c>. This value is the same as <c>GameSessionArn</c>. This
-        /// value isn't final until placement status is <c>FULFILLED</c>.
+        /// always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>. This value is the same as <c>GameSessionArn</c>.
+        /// This value isn't final until placement status is <c>FULFILLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -432,7 +434,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// A set of values, expressed in milliseconds, that indicates the amount of latency that
-        /// a player experiences when connected to Amazon Web Services Regions.
+        /// a player experiences when connected to a fleet location (Amazon Web Services Regions
+        /// or custom locations for Amazon GameLift Servers Anywhere fleets).
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

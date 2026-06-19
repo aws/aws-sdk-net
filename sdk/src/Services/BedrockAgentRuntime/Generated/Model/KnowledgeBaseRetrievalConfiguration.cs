@@ -51,7 +51,27 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class KnowledgeBaseRetrievalConfiguration
     {
+        private ManagedSearchConfiguration _managedSearchConfiguration;
         private KnowledgeBaseVectorSearchConfiguration _vectorSearchConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property ManagedSearchConfiguration. 
+        /// <para>
+        /// Contains configurations for managed search. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
+        /// </para>
+        /// </summary>
+        public ManagedSearchConfiguration ManagedSearchConfiguration
+        {
+            get { return this._managedSearchConfiguration; }
+            set { this._managedSearchConfiguration = value; }
+        }
+
+        // Check to see if ManagedSearchConfiguration property is set
+        internal bool IsSetManagedSearchConfiguration()
+        {
+            return this._managedSearchConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property VectorSearchConfiguration. 
@@ -61,7 +81,6 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// configurations</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public KnowledgeBaseVectorSearchConfiguration VectorSearchConfiguration
         {
             get { return this._vectorSearchConfiguration; }

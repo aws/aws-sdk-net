@@ -88,6 +88,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.Body</property>
+    <max>128000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.ContentType</property>
     <max>1024</max>
   </property-value-rule>

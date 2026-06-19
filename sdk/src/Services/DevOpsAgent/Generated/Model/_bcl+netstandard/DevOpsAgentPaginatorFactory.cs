@@ -123,5 +123,13 @@ namespace Amazon.DevOpsAgent.Model
         {
             return new ListServicesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListTriggers operation
+        ///</summary>
+        public IListTriggersPaginator ListTriggers(ListTriggersRequest request) 
+        {
+            return new ListTriggersPaginator(this.client, request);
+        }
     }
 }

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// The configuration information to connect to SharePoint as your data source.
+    /// The configuration information to connect to SharePoint as your data source for self-managed
+    /// knowledge bases.
     /// </summary>
     public partial class SharePointDataSourceConfiguration
     {

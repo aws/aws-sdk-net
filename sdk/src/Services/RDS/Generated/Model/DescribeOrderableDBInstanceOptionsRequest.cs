@@ -130,6 +130,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>db2-ce</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 

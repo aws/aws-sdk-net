@@ -56,6 +56,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("batchEvaluation", targetDepth, ref reader))
+                {
+                    var unmarshaller = BatchEvaluationTraceConfigUnmarshaller.Instance;
+                    unmarshalledObject.BatchEvaluation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("cloudwatchLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsTraceConfigUnmarshaller.Instance;

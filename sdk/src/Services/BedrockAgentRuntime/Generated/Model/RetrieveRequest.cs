@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _nextToken;
         private KnowledgeBaseRetrievalConfiguration _retrievalConfiguration;
         private KnowledgeBaseQuery _retrievalQuery;
+        private UserContext _userContext;
 
         /// <summary>
         /// Gets and sets the property GuardrailConfiguration. 
@@ -65,7 +66,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The unique identifier of the knowledge base to query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10)]
+        [AWSProperty(Required=true, Min=10, Max=2048)]
         public string KnowledgeBaseId
         {
             get { return this._knowledgeBaseId; }
@@ -136,6 +137,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetRetrievalQuery()
         {
             return this._retrievalQuery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContext.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public UserContext UserContext
+        {
+            get { return this._userContext; }
+            set { this._userContext = value; }
+        }
+
+        // Check to see if UserContext property is set
+        internal bool IsSetUserContext()
+        {
+            return this._userContext != null;
         }
 
     }

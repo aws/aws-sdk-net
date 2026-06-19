@@ -99,8 +99,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Always CREATING immediately after this call. Poll GetDataset until status == ACTIVE
-        /// (draftStatus=MODIFIED) or CREATE_FAILED.
+        ///  Always CREATING immediately after this call. Poll <c>GetDataset</c> until status
+        /// transitions to ACTIVE or CREATE_FAILED. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

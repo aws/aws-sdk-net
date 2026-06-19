@@ -76,6 +76,7 @@ namespace Amazon.Lambda.Model
         /// registry. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string URI
         {
             get { return this._uri; }

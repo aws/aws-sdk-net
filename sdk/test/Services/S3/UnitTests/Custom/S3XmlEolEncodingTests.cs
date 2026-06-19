@@ -12,8 +12,7 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
-using Amazon;
-using Amazon.S3;
+using Amazon.Runtime.Internal;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -45,8 +44,13 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var internalRequest = S3ArnTestUtils.RunMockRequest(request, DeleteObjectsRequestMarshaller.Instance, new AmazonS3Config { RegionEndpoint = RegionEndpoint.USEast1 });
-            var content = System.Text.Encoding.UTF8.GetString(internalRequest.Content);
+            using var internalRequest = DeleteObjectsRequestMarshaller.Instance.Marshall(request);
+            var contentBytes = internalRequest.Content
+#if !NETFRAMEWORK
+                ?? ((PooledContentStream)internalRequest.ContentStream).Content.ToArray()
+#endif
+                ;
+            var content = System.Text.Encoding.UTF8.GetString(contentBytes);
 
             Assert.IsFalse(content.Contains(objectKey));
             Assert.IsTrue(content.Contains(expectedEscapedKey));

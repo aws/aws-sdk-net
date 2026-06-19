@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the configuration for server-side encryption.
+    /// Contains the configuration for server-side encryption for your managed knowledge base.
     /// </summary>
     public partial class ServerSideEncryptionConfiguration
     {

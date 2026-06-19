@@ -857,6 +857,84 @@ namespace Amazon.BedrockRuntime
 
         #endregion
         
+        #region  InvokeGuardrailChecks
+
+
+        /// <summary>
+        /// Evaluates messages against inline guardrail checks. You specify the check configurations
+        /// directly in the request, and Amazon Bedrock returns per-check results with severity
+        /// or confidence scores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeGuardrailChecks service method.</param>
+        /// 
+        /// <returns>The response from the InvokeGuardrailChecks service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeGuardrailChecks">REST API Reference for InvokeGuardrailChecks Operation</seealso>
+        InvokeGuardrailChecksResponse InvokeGuardrailChecks(InvokeGuardrailChecksRequest request);
+
+
+
+        /// <summary>
+        /// Evaluates messages against inline guardrail checks. You specify the check configurations
+        /// directly in the request, and Amazon Bedrock returns per-check results with severity
+        /// or confidence scores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeGuardrailChecks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeGuardrailChecks service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeGuardrailChecks">REST API Reference for InvokeGuardrailChecks Operation</seealso>
+        Task<InvokeGuardrailChecksResponse> InvokeGuardrailChecksAsync(InvokeGuardrailChecksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  InvokeModel
 
 

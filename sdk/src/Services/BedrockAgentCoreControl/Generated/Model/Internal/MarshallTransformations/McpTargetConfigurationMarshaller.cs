@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetConnector())
+            {
+                context.Writer.WritePropertyName("connector");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConnectorTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Connector, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");

@@ -580,6 +580,28 @@
     <pattern>[0-9]{1,5}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteResourcePolicyRequest.ExpectedRevisionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:knowledge-base/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteResourcePolicyResponse.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:knowledge-base/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteResourcePolicyResponse.RevisionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.DisassociateAgentCollaboratorRequest.AgentId</property>
     <pattern>[0-9a-zA-Z]{10}</pattern>
   </property-value-rule>
@@ -854,6 +876,29 @@
     <min>1</min>
     <max>5</max>
     <pattern>(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:knowledge-base/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20480</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetResourcePolicyResponse.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:knowledge-base/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetResourcePolicyResponse.RevisionId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.IngestKnowledgeBaseDocumentsRequest.ClientToken</property>
@@ -1198,6 +1243,34 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PrepareFlowResponse.Id</property>
     <pattern>[0-9a-zA-Z]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.PutResourcePolicyRequest.ExpectedRevisionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.PutResourcePolicyRequest.Policy</property>
+    <min>1</min>
+    <max>20480</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:knowledge-base/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.PutResourcePolicyResponse.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:knowledge-base/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.PutResourcePolicyResponse.RevisionId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.StartIngestionJobRequest.ClientToken</property>
@@ -2004,6 +2077,16 @@
     <pattern>([0-9a-zA-Z][_-]?){1,100}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeletionProtectionConfiguration.DeletionProtectionThreshold</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DocumentAccessControlEntry.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.DuplicateConditionExpressionFlowValidationDetails.Expression</property>
     <min>1</min>
     <max>64</max>
@@ -2028,6 +2111,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.FixedSizeChunkingConfiguration.MaxTokens</property>
     <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.FixedSizeChunkingConfiguration.OverlapPercentage</property>
@@ -2384,6 +2468,12 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MalformedNodeInputExpressionFlowValidationDetails.Node</property>
     <pattern>[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ManagedKnowledgeBaseConfiguration.EmbeddingModelArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(arn:aws(-[^:]{1,12})?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MemoryConfiguration.StorageDays</property>
@@ -2950,6 +3040,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.SemanticChunkingConfiguration.MaxTokens</property>
     <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ServerSideEncryptionConfiguration.KmsKeyArn</property>

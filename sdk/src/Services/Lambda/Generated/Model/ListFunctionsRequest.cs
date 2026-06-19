@@ -101,6 +101,7 @@ namespace Amazon.Lambda.Model
         /// you must set <c>FunctionVersion</c> to <c>ALL</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string MasterRegion
         {
             get { return this._masterRegion; }

@@ -136,6 +136,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>db2-ce</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
@@ -181,6 +185,10 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>sqlserver-web</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sqlserver-dev-ee</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

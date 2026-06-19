@@ -47,7 +47,14 @@ namespace Amazon.GameLift.Model
     /// that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity.
     /// If successful, a <c>GameServerGroup</c> object is returned.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Target tracking Auto Scaling policies on the Auto Scaling group cannot be updated
+    /// through the Amazon Web Services Management Console. Instead, use the Amazon Elastic
+    /// Compute Cloud Auto Scaling <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html">
+    /// <c>PutScalingPolicy</c> </a> API action to update these policies.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Learn more</b> 
     /// </para>

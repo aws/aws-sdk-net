@@ -74,6 +74,18 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.NextBestActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("OpportunityQuality", targetDepth, ref reader))
+                {
+                    var unmarshaller = OpportunityQualityUnmarshaller.Instance;
+                    unmarshalledObject.OpportunityQuality = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Recommendations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Recommendation, RecommendationUnmarshaller>(RecommendationUnmarshaller.Instance);
+                    unmarshalledObject.Recommendations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterNodeSummary
     {
+        private string _currentImageReleaseVersion;
         private ClusterImageVersionStatus _imageVersionStatus;
         private string _instanceGroupName;
         private string _instanceId;
@@ -45,6 +46,25 @@ namespace Amazon.SageMaker.Model
         private string _nodeLogicalId;
         private string _privateDnsHostname;
         private UltraServerInfo _ultraServerInfo;
+
+        /// <summary>
+        /// Gets and sets the property CurrentImageReleaseVersion. 
+        /// <para>
+        /// The version of the HyperPod-managed AMI currently running on the node.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string CurrentImageReleaseVersion
+        {
+            get { return this._currentImageReleaseVersion; }
+            set { this._currentImageReleaseVersion = value; }
+        }
+
+        // Check to see if CurrentImageReleaseVersion property is set
+        internal bool IsSetCurrentImageReleaseVersion()
+        {
+            return this._currentImageReleaseVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageVersionStatus. 

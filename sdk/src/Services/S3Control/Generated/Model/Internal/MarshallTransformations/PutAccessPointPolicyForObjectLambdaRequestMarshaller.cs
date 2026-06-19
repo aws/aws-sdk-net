@@ -68,9 +68,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v20180820/accesspointforobjectlambda/{name}/policy";
 
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+#else
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {   
+            {
+#endif
                 xmlWriter.WriteStartElement("PutAccessPointPolicyForObjectLambdaRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetPolicy())
                     xmlWriter.WriteElementString("Policy", StringUtils.FromString(publicRequest.Policy));
@@ -81,10 +88,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             PostMarshallCustomization(request, publicRequest);
             try 
             {
+#if NETFRAMEWORK // For non .NET Framework targets the request payload is stored in the ContentStream via the PooledContentStream.
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+#endif
                 request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-20";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-20";
             } 
             catch (EncoderFallbackException e) 
             {

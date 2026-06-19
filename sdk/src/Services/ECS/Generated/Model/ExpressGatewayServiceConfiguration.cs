@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private ExpressGatewayContainer _primaryContainer;
         private ExpressGatewayScalingTarget _scalingTarget;
         private string _serviceRevisionArn;
+        private string _taskDefinitionArn;
         private string _taskRoleArn;
 
         /// <summary>
@@ -230,6 +231,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetServiceRevisionArn()
         {
             return this._serviceRevisionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskDefinitionArn. 
+        /// <para>
+        /// The ARN of the task definition used by this service revision. This is present for
+        /// all Express services and reflects the task definition in use, whether managed by Amazon
+        /// ECS or provided by the customer.
+        /// </para>
+        /// </summary>
+        public string TaskDefinitionArn
+        {
+            get { return this._taskDefinitionArn; }
+            set { this._taskDefinitionArn = value; }
+        }
+
+        // Check to see if TaskDefinitionArn property is set
+        internal bool IsSetTaskDefinitionArn()
+        {
+            return this._taskDefinitionArn != null;
         }
 
         /// <summary>

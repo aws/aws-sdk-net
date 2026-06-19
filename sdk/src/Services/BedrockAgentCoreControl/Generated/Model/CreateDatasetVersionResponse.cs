@@ -100,7 +100,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
-        /// The version being created.
+        ///  The version number being created. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,8 +119,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Always UPDATING immediately after this call. Poll GetDataset until status == ACTIVE
-        /// (draftStatus=UNMODIFIED) or UPDATE_FAILED.
+        ///  Always UPDATING immediately after this call. Poll <c>GetDataset</c> until status
+        /// transitions to ACTIVE or UPDATE_FAILED. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

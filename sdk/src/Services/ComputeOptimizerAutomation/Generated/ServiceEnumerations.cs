@@ -159,6 +159,10 @@ namespace Amazon.ComputeOptimizerAutomation
         /// </summary>
         public static readonly ComparisonOperator NumericEquals = new ComparisonOperator("NumericEquals");
         /// <summary>
+        /// Constant NumericEqualsIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NumericEqualsIfExists = new ComparisonOperator("NumericEqualsIfExists");
+        /// <summary>
         /// Constant NumericGreaterThan for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator NumericGreaterThan = new ComparisonOperator("NumericGreaterThan");
@@ -166,6 +170,14 @@ namespace Amazon.ComputeOptimizerAutomation
         /// Constant NumericGreaterThanEquals for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator NumericGreaterThanEquals = new ComparisonOperator("NumericGreaterThanEquals");
+        /// <summary>
+        /// Constant NumericGreaterThanEqualsIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NumericGreaterThanEqualsIfExists = new ComparisonOperator("NumericGreaterThanEqualsIfExists");
+        /// <summary>
+        /// Constant NumericGreaterThanIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NumericGreaterThanIfExists = new ComparisonOperator("NumericGreaterThanIfExists");
         /// <summary>
         /// Constant NumericLessThan for ComparisonOperator
         /// </summary>
@@ -175,33 +187,69 @@ namespace Amazon.ComputeOptimizerAutomation
         /// </summary>
         public static readonly ComparisonOperator NumericLessThanEquals = new ComparisonOperator("NumericLessThanEquals");
         /// <summary>
+        /// Constant NumericLessThanEqualsIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NumericLessThanEqualsIfExists = new ComparisonOperator("NumericLessThanEqualsIfExists");
+        /// <summary>
+        /// Constant NumericLessThanIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NumericLessThanIfExists = new ComparisonOperator("NumericLessThanIfExists");
+        /// <summary>
         /// Constant NumericNotEquals for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator NumericNotEquals = new ComparisonOperator("NumericNotEquals");
+        /// <summary>
+        /// Constant NumericNotEqualsIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NumericNotEqualsIfExists = new ComparisonOperator("NumericNotEqualsIfExists");
         /// <summary>
         /// Constant StringEquals for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator StringEquals = new ComparisonOperator("StringEquals");
         /// <summary>
+        /// Constant StringEqualsIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringEqualsIfExists = new ComparisonOperator("StringEqualsIfExists");
+        /// <summary>
         /// Constant StringEqualsIgnoreCase for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator StringEqualsIgnoreCase = new ComparisonOperator("StringEqualsIgnoreCase");
+        /// <summary>
+        /// Constant StringEqualsIgnoreCaseIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringEqualsIgnoreCaseIfExists = new ComparisonOperator("StringEqualsIgnoreCaseIfExists");
         /// <summary>
         /// Constant StringLike for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator StringLike = new ComparisonOperator("StringLike");
         /// <summary>
+        /// Constant StringLikeIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringLikeIfExists = new ComparisonOperator("StringLikeIfExists");
+        /// <summary>
         /// Constant StringNotEquals for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator StringNotEquals = new ComparisonOperator("StringNotEquals");
+        /// <summary>
+        /// Constant StringNotEqualsIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringNotEqualsIfExists = new ComparisonOperator("StringNotEqualsIfExists");
         /// <summary>
         /// Constant StringNotEqualsIgnoreCase for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator StringNotEqualsIgnoreCase = new ComparisonOperator("StringNotEqualsIgnoreCase");
         /// <summary>
+        /// Constant StringNotEqualsIgnoreCaseIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringNotEqualsIgnoreCaseIfExists = new ComparisonOperator("StringNotEqualsIgnoreCaseIfExists");
+        /// <summary>
         /// Constant StringNotLike for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator StringNotLike = new ComparisonOperator("StringNotLike");
+        /// <summary>
+        /// Constant StringNotLikeIfExists for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringNotLikeIfExists = new ComparisonOperator("StringNotLikeIfExists");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

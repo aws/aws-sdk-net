@@ -33,11 +33,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// Container for the parameters to the ListDatasetVersions operation.
     /// Lists all published versions of a dataset, sorted by version number descending (newest
     /// first). Does not include the DRAFT working copy.
-    /// 
-    ///  
-    /// <para>
-    /// <strong>State guard:</strong> Allowed for all statuses including DELETING.
-    /// </para>
     /// </summary>
     public partial class ListDatasetVersionsRequest : AmazonBedrockAgentCoreControlRequest
     {

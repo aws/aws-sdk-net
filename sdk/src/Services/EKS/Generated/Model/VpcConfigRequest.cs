@@ -34,11 +34,42 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class VpcConfigRequest
     {
+        private ControlPlaneEgressModeType _controlPlaneEgressMode;
         private bool? _endpointPrivateAccess;
         private bool? _endpointPublicAccess;
         private List<string> _publicAccessCidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ControlPlaneEgressMode. 
+        /// <para>
+        /// Specifies the control plane egress routing mode for the cluster. If the cluster is
+        /// set to <c>AWS_MANAGED</c>, Amazon EKS manages the egress path from the control plane
+        /// and you don't need to configure NAT gateways or other routing infrastructure for control
+        /// plane traffic. If the cluster is set to <c>CUSTOMER_ROUTED</c>, you manage the egress
+        /// path from the control plane in your VPC subnets. You are responsible for ensuring
+        /// that the control plane can reach required endpoints such as webhook servers and OIDC
+        /// providers. The default value is <c>AWS_MANAGED</c>. Once set to <c>CUSTOMER_ROUTED</c>,
+        /// this setting cannot be changed back to <c>AWS_MANAGED</c> on the same cluster.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn
+        /// more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a> 
+        /// </para>
+        /// </summary>
+        public ControlPlaneEgressModeType ControlPlaneEgressMode
+        {
+            get { return this._controlPlaneEgressMode; }
+            set { this._controlPlaneEgressMode = value; }
+        }
+
+        // Check to see if ControlPlaneEgressMode property is set
+        internal bool IsSetControlPlaneEgressMode()
+        {
+            return this._controlPlaneEgressMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointPrivateAccess. 

@@ -37,6 +37,14 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSharedResources operation
+        ///</summary>
+        public IDescribeSharedResourcesPaginator DescribeSharedResources(DescribeSharedResourcesRequest request) 
+        {
+            return new DescribeSharedResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBrokers operation
         ///</summary>
         public IListBrokersPaginator ListBrokers(ListBrokersRequest request) 

@@ -36,8 +36,15 @@ namespace Amazon.SecurityAgent.Model
     public partial class UpdateFindingRequest : AmazonSecurityAgentRequest
     {
         private string _agentSpaceId;
+        private string _attackScript;
+        private string _customerNote;
+        private string _description;
         private string _findingId;
+        private string _name;
+        private string _reasoning;
         private RiskLevel _riskLevel;
+        private string _riskScore;
+        private string _riskType;
         private FindingStatus _status;
 
         /// <summary>
@@ -60,6 +67,60 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AttackScript. 
+        /// <para>
+        /// The updated attack script for the finding.
+        /// </para>
+        /// </summary>
+        public string AttackScript
+        {
+            get { return this._attackScript; }
+            set { this._attackScript = value; }
+        }
+
+        // Check to see if AttackScript property is set
+        internal bool IsSetAttackScript()
+        {
+            return this._attackScript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerNote. 
+        /// <para>
+        /// A customer-provided note on the finding.
+        /// </para>
+        /// </summary>
+        public string CustomerNote
+        {
+            get { return this._customerNote; }
+            set { this._customerNote = value; }
+        }
+
+        // Check to see if CustomerNote property is set
+        internal bool IsSetCustomerNote()
+        {
+            return this._customerNote != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The updated description for the finding.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FindingId. 
         /// <para>
         /// The unique identifier of the finding to update.
@@ -79,6 +140,42 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The updated name for the finding.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reasoning. 
+        /// <para>
+        /// The updated reasoning for the finding.
+        /// </para>
+        /// </summary>
+        public string Reasoning
+        {
+            get { return this._reasoning; }
+            set { this._reasoning = value; }
+        }
+
+        // Check to see if Reasoning property is set
+        internal bool IsSetReasoning()
+        {
+            return this._reasoning != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RiskLevel. 
         /// <para>
         /// The updated risk level for the finding.
@@ -94,6 +191,42 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetRiskLevel()
         {
             return this._riskLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RiskScore. 
+        /// <para>
+        /// The updated numerical risk score for the finding.
+        /// </para>
+        /// </summary>
+        public string RiskScore
+        {
+            get { return this._riskScore; }
+            set { this._riskScore = value; }
+        }
+
+        // Check to see if RiskScore property is set
+        internal bool IsSetRiskScore()
+        {
+            return this._riskScore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RiskType. 
+        /// <para>
+        /// The updated risk type for the finding.
+        /// </para>
+        /// </summary>
+        public string RiskType
+        {
+            get { return this._riskType; }
+            set { this._riskType = value; }
+        }
+
+        // Check to see if RiskType property is set
+        internal bool IsSetRiskType()
+        {
+            return this._riskType != null;
         }
 
         /// <summary>

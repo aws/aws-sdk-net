@@ -88,6 +88,7 @@ namespace Amazon.Lambda.Model
         /// 8601 format</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string LastModified
         {
             get { return this._lastModified; }

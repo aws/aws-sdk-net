@@ -34,9 +34,28 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class HarnessSkill
     {
+        private HarnessSkillAwsSkillsSource _awsSkills;
         private HarnessSkillGitSource _git;
         private string _path;
         private HarnessSkillS3Source _s3;
+
+        /// <summary>
+        /// Gets and sets the property AwsSkills. 
+        /// <para>
+        /// AWS Skills baked into the harness's underlying Runtime.
+        /// </para>
+        /// </summary>
+        public HarnessSkillAwsSkillsSource AwsSkills
+        {
+            get { return this._awsSkills; }
+            set { this._awsSkills = value; }
+        }
+
+        // Check to see if AwsSkills property is set
+        internal bool IsSetAwsSkills()
+        {
+            return this._awsSkills != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Git. 

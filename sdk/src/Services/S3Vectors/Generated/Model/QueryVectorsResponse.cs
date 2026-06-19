@@ -35,6 +35,7 @@ namespace Amazon.S3Vectors.Model
     public partial class QueryVectorsResponse : AmazonWebServiceResponse
     {
         private DistanceMetric _distanceMetric;
+        private string _nextToken;
         private List<QueryOutputVector> _vectors = AWSConfigs.InitializeCollections ? new List<QueryOutputVector>() : null;
 
         /// <summary>
@@ -55,6 +56,26 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetDistanceMetric()
         {
             return this._distanceMetric != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination token to be used in the subsequent page request. The field is empty if
+        /// no further pagination is required.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

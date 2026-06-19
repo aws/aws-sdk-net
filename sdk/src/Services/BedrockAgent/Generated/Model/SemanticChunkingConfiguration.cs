@@ -102,7 +102,7 @@ namespace Amazon.BedrockAgent.Model
         /// The maximum number of tokens that a chunk can contain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=8192)]
         public int? MaxTokens
         {
             get { return this._maxTokens; }

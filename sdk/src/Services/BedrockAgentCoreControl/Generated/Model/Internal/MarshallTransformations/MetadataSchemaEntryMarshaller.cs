@@ -57,6 +57,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetExtractionType())
+            {
+                context.Writer.WritePropertyName("extractionType");
+                context.Writer.WriteStringValue(requestObject.ExtractionType);
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");

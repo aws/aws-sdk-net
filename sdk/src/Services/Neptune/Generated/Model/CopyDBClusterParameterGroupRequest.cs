@@ -57,14 +57,13 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source DB cluster parameter group is in the same Amazon Region as the copy,
-        /// specify a valid DB parameter group identifier, for example <c>my-db-cluster-param-group</c>,
+        /// Must specify a valid DB cluster parameter group identifier, for example <c>my-db-cluster-param-group</c>,
         /// or a valid ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source DB parameter group is in a different Amazon Region than the copy, specify
-        /// a valid DB cluster parameter group ARN, for example <c>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</c>.
+        /// The source DB cluster parameter group must be in the same Amazon Region as the copy.
+        /// Neptune does not support cross-Region copying of parameter groups.
         /// </para>
         ///  </li> </ul>
         /// </summary>

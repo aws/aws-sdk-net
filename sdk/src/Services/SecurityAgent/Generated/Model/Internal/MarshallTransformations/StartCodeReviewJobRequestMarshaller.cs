@@ -85,6 +85,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CodeReviewId);
             }
 
+            if(publicRequest.IsSetDiffSource())
+            {
+                context.Writer.WritePropertyName("diffSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DiffSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DiffSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

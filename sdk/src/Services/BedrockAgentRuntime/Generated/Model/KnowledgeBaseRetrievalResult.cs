@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class KnowledgeBaseRetrievalResult
     {
         private RetrievalResultContent _content;
+        private string _documentId;
         private RetrievalResultLocation _location;
         private Dictionary<string, Amazon.Runtime.Documents.Document> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private double? _score;
@@ -67,6 +68,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentId. 
+        /// <para>
+        /// The unique identifier of the document. Use with <c>GetDocumentContent</c> to retrieve
+        /// the full document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1825)]
+        public string DocumentId
+        {
+            get { return this._documentId; }
+            set { this._documentId = value; }
+        }
+
+        // Check to see if DocumentId property is set
+        internal bool IsSetDocumentId()
+        {
+            return this._documentId != null;
         }
 
         /// <summary>

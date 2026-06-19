@@ -83,6 +83,7 @@ namespace Amazon.Lambda.Model
         /// A link to the layer archive in Amazon S3 that is valid for 10 minutes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string Location
         {
             get { return this._location; }
@@ -101,6 +102,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of a signing job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningJobArn
         {
             get { return this._signingJobArn; }
@@ -119,6 +121,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) for a signing profile version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningProfileVersionArn
         {
             get { return this._signingProfileVersionArn; }

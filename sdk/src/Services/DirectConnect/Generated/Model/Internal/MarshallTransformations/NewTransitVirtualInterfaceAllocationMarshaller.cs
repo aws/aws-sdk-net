@@ -88,6 +88,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Mtu.Value);
             }
 
+            if(requestObject.IsSetRateLimit())
+            {
+                context.Writer.WritePropertyName("rateLimit");
+                context.Writer.WriteStringValue(requestObject.RateLimit);
+            }
+
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

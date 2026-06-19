@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private DateTime? _createdAt;
         private string _description;
+        private string _kmsKeyArn;
         private string _name;
         private string _recommendationArn;
         private RecommendationConfig _recommendationConfig;
@@ -81,6 +82,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The ARN of the KMS key used to encrypt recommendation data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

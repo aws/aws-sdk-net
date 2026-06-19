@@ -39,6 +39,7 @@ namespace Amazon.DevOpsAgent.Model
     {
         private string _agentSpaceId;
         private string _associationId;
+        private Dictionary<string, CapabilityConfiguration> _capabilities = AWSConfigs.InitializeCollections ? new Dictionary<string, CapabilityConfiguration>() : null;
         private ServiceConfiguration _configuration;
 
         /// <summary>
@@ -77,6 +78,29 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// Enabled capabilities for this association.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, CapabilityConfiguration> Capabilities
+        {
+            get { return this._capabilities; }
+            set { this._capabilities = value; }
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

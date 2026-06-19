@@ -1,7 +1,6 @@
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
-using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
 
@@ -28,8 +27,7 @@ public class StructureWriterTests
     private static string WriteStructure(GenerationContext context, StructureWriter writer, string shapeName)
     {
         var shapeId = ShapeId.Parse($"{Namespace}#{shapeName}");
-        var structure = (StructureShape)context.Resolve(shapeId);
-        return writer.Write(structure, shapeId, TestContext.Current.CancellationToken);
+        return writer.Write(context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
     }
 
     [Fact]
@@ -95,5 +93,13 @@ public class StructureWriterTests
         Assert.Contains("public partial class AuditEventResultEntry", _auditEventResultEntry);
         Assert.Contains("public string EventID", _auditEventResultEntry);
         Assert.Contains("public string Id", _auditEventResultEntry);
+    }
+
+    [Fact]
+    public void AuditEvent_EmitsIsSetPerMember()
+    {
+        Assert.Contains("internal bool IsSetEventData() => this.EventData != null;", _auditEvent);
+        Assert.Contains("internal bool IsSetEventDataChecksum() => this.EventDataChecksum != null;", _auditEvent);
+        Assert.Contains("internal bool IsSetId() => this.Id != null;", _auditEvent);
     }
 }

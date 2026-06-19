@@ -119,7 +119,7 @@ namespace Amazon.Lambda.Model
         /// to have usage permission to this layer. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string Principal
         {
             get { return this._principal; }

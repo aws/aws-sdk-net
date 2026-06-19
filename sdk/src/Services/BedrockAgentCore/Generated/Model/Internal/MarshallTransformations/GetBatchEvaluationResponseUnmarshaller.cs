@@ -106,6 +106,30 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     response.Evaluators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("executionSummaryResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExecutionSummaryClusteringResultContentUnmarshaller.Instance;
+                    response.ExecutionSummaryResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("failureAnalysisResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = FailureAnalysisResultContentUnmarshaller.Instance;
+                    response.FailureAnalysisResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("insights", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Insight, InsightUnmarshaller>(InsightUnmarshaller.Instance);
+                    response.Insights = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("kmsKeyArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("outputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputConfigUnmarshaller.Instance;
@@ -122,6 +146,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("userIntentResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = UserIntentClusteringResultContentUnmarshaller.Instance;
+                    response.UserIntentResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

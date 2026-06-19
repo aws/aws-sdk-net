@@ -34,8 +34,29 @@ namespace Amazon.BedrockAgentCore.Model
     /// </summary>
     public partial class ToolDescriptionOutput
     {
+        private string _explanation;
         private string _recommendedToolDescription;
         private string _toolName;
+
+        /// <summary>
+        /// Gets and sets the property Explanation. 
+        /// <para>
+        /// An explanation of why the recommendation was generated for this tool and what patterns
+        /// were identified in the agent traces.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public string Explanation
+        {
+            get { return this._explanation; }
+            set { this._explanation = value; }
+        }
+
+        // Check to see if Explanation property is set
+        internal bool IsSetExplanation()
+        {
+            return this._explanation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RecommendedToolDescription. 

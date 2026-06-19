@@ -107,6 +107,18 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.PaymentTerm);
             }
 
+            if(publicRequest.IsSetQuoteIdentifier())
+            {
+                context.Writer.WritePropertyName("QuoteIdentifier");
+                context.Writer.WriteStringValue(publicRequest.QuoteIdentifier);
+            }
+
+            if(publicRequest.IsSetQuoteOptionIdentifier())
+            {
+                context.Writer.WritePropertyName("QuoteOptionIdentifier");
+                context.Writer.WriteStringValue(publicRequest.QuoteOptionIdentifier);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

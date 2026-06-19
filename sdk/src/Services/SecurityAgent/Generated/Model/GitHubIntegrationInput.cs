@@ -36,8 +36,10 @@ namespace Amazon.SecurityAgent.Model
     public partial class GitHubIntegrationInput
     {
         private string _code;
+        private string _installationId;
         private string _organizationName;
         private string _state;
+        private string _targetUrl;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -56,6 +58,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstallationId. 
+        /// <para>
+        /// The installation identifier provided by GitHub Enterprise Server on the install callback.
+        /// Required for GitHub Enterprise Server integrations and ignored for GitHub.com.
+        /// </para>
+        /// </summary>
+        public string InstallationId
+        {
+            get { return this._installationId; }
+            set { this._installationId = value; }
+        }
+
+        // Check to see if InstallationId property is set
+        internal bool IsSetInstallationId()
+        {
+            return this._installationId != null;
         }
 
         /// <summary>
@@ -93,6 +114,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetUrl. 
+        /// <para>
+        /// The HTTPS URL of a self-hosted GitHub Enterprise Server instance. Omit this value
+        /// for GitHub.com.
+        /// </para>
+        /// </summary>
+        public string TargetUrl
+        {
+            get { return this._targetUrl; }
+            set { this._targetUrl = value; }
+        }
+
+        // Check to see if TargetUrl property is set
+        internal bool IsSetTargetUrl()
+        {
+            return this._targetUrl != null;
         }
 
     }

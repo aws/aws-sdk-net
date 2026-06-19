@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class UpdateLeadContext
     {
         private LeadCustomer _customer;
+        private LeadInsights _insights;
         private LeadInteraction _interaction;
         private string _qualificationStatus;
 
@@ -56,6 +57,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCustomer()
         {
             return this._customer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Insights. 
+        /// <para>
+        /// Insights that AI generates and associates with the lead. These insights provide automated
+        /// analysis to help partners assess the lead quality and readiness.
+        /// </para>
+        /// </summary>
+        public LeadInsights Insights
+        {
+            get { return this._insights; }
+            set { this._insights = value; }
+        }
+
+        // Check to see if Insights property is set
+        internal bool IsSetInsights()
+        {
+            return this._insights != null;
         }
 
         /// <summary>

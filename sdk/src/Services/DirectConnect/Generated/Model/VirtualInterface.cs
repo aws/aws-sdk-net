@@ -51,6 +51,7 @@ namespace Amazon.DirectConnect.Model
         private string _location;
         private int? _mtu;
         private string _ownerAccount;
+        private string _rateLimit;
         private string _region;
         private List<RouteFilterPrefix> _routeFilterPrefixes = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
         private bool? _siteLinkEnabled;
@@ -123,21 +124,27 @@ namespace Amazon.DirectConnect.Model
         /// Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum,
         /// an error is returned. Use <c>asnLong</c> instead.
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
         /// <para>
         /// You can use <c>asnLong</c> or <c>asn</c>, but not both. We recommend using <c>asnLong</c>
         /// as it supports a greater pool of numbers. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The <c>asnLong</c> attribute accepts both ASN and long ASN ranges.
-        /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you provide a value in the same API call for both <c>asn</c> and <c>asnLong</c>,
-        /// the API will only accept the value for <c>asnLong</c>.
+        /// the API will only accept the value for <c>asnLong</c>. 
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If you enter a 4-byte ASN for the <c>asn</c> parameter, the API returns an error.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using a 2-byte ASN, the API response will include the 2-byte value for
+        /// both the <c>asn</c> and <c>asnLong</c> fields.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int? Asn
         {
@@ -157,21 +164,37 @@ namespace Amazon.DirectConnect.Model
         /// The long ASN for the virtual interface. The valid range is from 1 to 4294967294 for
         /// BGP configuration.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Note the following limitations when using <c>asnLong</c>:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// You can use <c>asnLong</c> or <c>asn</c>, but not both. We recommend using <c>asnLong</c>
         /// as it supports a greater pool of numbers. 
         /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// The <c>asnLong</c> attribute accepts both ASN and long ASN ranges.
+        ///  <c>asnLong</c> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When using a 4-byte <c>asnLong</c>, the API response returns <c>0</c> for the legacy
+        /// <c>asn</c> attribute since 4-byte ASN values exceed the maximum supported value of
+        /// 2,147,483,647.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using a 2-byte ASN, the API response will include the 2-byte value for
+        /// both the <c>asn</c> and <c>asnLong</c> fields.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you provide a value in the same API call for both <c>asn</c> and <c>asnLong</c>,
         /// the API will only accept the value for <c>asnLong</c>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul>
         /// </summary>
         public long? AsnLong
         {
@@ -407,6 +430,26 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetOwnerAccount()
         {
             return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RateLimit. 
+        /// <para>
+        /// The rate limit (bandwidth allocation) applied to the virtual interface. The possible
+        /// values are <c>50 Mbps</c>, <c>100 Mbps</c>, <c>200 Mbps</c>, <c>300 Mbps</c>, <c>400
+        /// Mbps</c>, <c>500 Mbps</c>, <c>1 Gbps</c>, <c>2 Gbps</c>, <c>5 Gbps</c>, or <c>10 Gbps</c>.
+        /// </para>
+        /// </summary>
+        public string RateLimit
+        {
+            get { return this._rateLimit; }
+            set { this._rateLimit = value; }
+        }
+
+        // Check to see if RateLimit property is set
+        internal bool IsSetRateLimit()
+        {
+            return this._rateLimit != null;
         }
 
         /// <summary>

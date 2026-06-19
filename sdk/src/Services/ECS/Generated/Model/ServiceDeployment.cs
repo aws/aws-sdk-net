@@ -251,12 +251,22 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// PRE_PRODUCTION_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// Occurs before production traffic shift. For linear and canary deployments, this stage
+        /// is invoked before every traffic shift step.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// PRODUCTION_TRAFFIC_SHIFT
         /// </para>
         ///  
         /// <para>
         /// Production traffic is shifting to the green service revision. The green service revision
-        /// is migrating from 0% to 100% of production traffic.
+        /// is migrating from 0% to 100% of production traffic. For linear and canary deployments,
+        /// this stage is invoked at every traffic shift step.
         /// </para>
         ///  </li> <li> 
         /// <para>

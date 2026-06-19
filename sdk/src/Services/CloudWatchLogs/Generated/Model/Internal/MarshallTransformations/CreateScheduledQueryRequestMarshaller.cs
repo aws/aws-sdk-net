@@ -92,6 +92,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetEndTimeOffset())
+            {
+                context.Writer.WritePropertyName("endTimeOffset");
+                context.Writer.WriteNumberValue(publicRequest.EndTimeOffset.Value);
+            }
+
             if(publicRequest.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("executionRoleArn");

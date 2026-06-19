@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class PolicyDefinition
     {
         private CedarPolicy _cedar;
+        private PolicyStatement _policy;
         private PolicyGenerationDetails _policyGeneration;
 
         /// <summary>
@@ -62,6 +63,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCedar()
         {
             return this._cedar != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// An AgentCore policy statement that defines the access control rules. The statement
+        /// can be a Cedar policy or a guardrails definition.
+        /// </para>
+        /// </summary>
+        public PolicyStatement Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>

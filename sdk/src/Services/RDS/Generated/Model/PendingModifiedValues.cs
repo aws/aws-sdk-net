@@ -322,7 +322,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Valid values: <c>license-included</c> | <c>bring-your-own-license</c> | <c>general-public-license</c>
-        /// 
+        /// | <c>bring-your-own-media</c> 
         /// </para>
         /// </summary>
         public string LicenseModel

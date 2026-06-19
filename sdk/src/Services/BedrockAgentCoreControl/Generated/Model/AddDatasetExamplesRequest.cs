@@ -31,29 +31,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the AddDatasetExamples operation.
-    /// Adds examples to the dataset's DRAFT.
-    /// 
-    ///  
-    /// <para>
-    /// <strong>Validation:</strong> All examples are validated against the dataset's schemaType
-    /// before any writes occur. If any example fails validation, the entire batch is rejected
-    /// with ValidationException — no examples are written (all-or-nothing semantics).
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
-    /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
-    /// dataset status is not in {DRAFT, ACTIVE}.
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>Request size limit:</strong> Max 5 MB total request body. Max 1000 examples
-    /// per call.
-    /// </para>
+    /// Adds examples to the dataset's DRAFT. All examples are validated against the dataset's
+    /// schema type before any writes occur. If any example fails validation, the entire batch
+    /// is rejected (all-or-nothing semantics).
     /// </summary>
     public partial class AddDatasetExamplesRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -106,8 +86,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Source of examples to add. Provide either inline examples or an S3 URI pointing to
-        /// a JSONL file.
+        ///  Source of examples to add. Provide either inline examples or an S3 URI pointing to
+        /// a JSONL file. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

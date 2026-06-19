@@ -90,10 +90,28 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetFqdnForActionFramework())
+            {
+                context.Writer.WritePropertyName("fqdnForActionFramework");
+                context.Writer.WriteStringValue(publicRequest.FqdnForActionFramework);
+            }
+
+            if(publicRequest.IsSetPlatform())
+            {
+                context.Writer.WritePropertyName("platform");
+                context.Writer.WriteStringValue(publicRequest.Platform);
+            }
+
             if(publicRequest.IsSetSourceServerID())
             {
                 context.Writer.WritePropertyName("sourceServerID");
                 context.Writer.WriteStringValue(publicRequest.SourceServerID);
+            }
+
+            if(publicRequest.IsSetUserProvidedID())
+            {
+                context.Writer.WritePropertyName("userProvidedID");
+                context.Writer.WriteStringValue(publicRequest.UserProvidedID);
             }
 
             writer.WriteEndObject();

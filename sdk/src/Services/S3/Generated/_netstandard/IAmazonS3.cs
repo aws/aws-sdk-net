@@ -2018,11 +2018,20 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>s3tables:PutTableBucketPolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>s3tables:PutTableEncryption</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>kms:DescribeKey</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam:PassRole</c> - required if you include an <c>AnnotationTableConfiguration</c>
+        /// with an IAM role.
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -2048,7 +2057,20 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataAnnotationTableConfiguration.html">UpdateBucketMetadataAnnotationTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you include an <c>AnnotationTableConfiguration</c> with an IAM role, the role must
+        /// have a trust policy that allows the Amazon S3 metadata service to assume it, and a
+        /// permissions policy that grants the actions needed to read annotations from your bucket.
+        /// The following examples show a trust policy and a permissions policy that you can adapt
+        /// for your bucket and account.
+        /// </para>
+        ///  <important> 
         /// <para>
         /// You must URL encode any signed header values that contain spaces. For example, if
         /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
@@ -4299,6 +4321,64 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteObjectAnnotation
+
+
+
+        /// <summary>
+        /// Deletes a specific annotation from an Amazon S3 object. Use the <c>x-amz-object-if-match</c>
+        /// header to perform a conditional delete that only succeeds if the object's ETag matches
+        /// the provided value, preventing race conditions during concurrent updates.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting an annotation is permanent. Annotations are not independently versioned,
+        /// so there is no delete marker or way to recover a deleted annotation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>s3:DeleteObjectAnnotation</c> permission.
+        /// If the object is protected by Object Lock in governance mode, you must also include
+        /// the <c>x-amz-bypass-governance-retention</c> header.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Annotations are not supported by the following features: S3 Inventory Reports, API
+        /// Gateway, S3 Storage Lens, Amazon S3 File Gateway, Amazon FSx, S3 on Outposts, and
+        /// S3 Express One Zone (directory buckets).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following operations are related to <c>DeleteObjectAnnotation</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html">PutObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html">GetObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html">ListObjectAnnotations</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectAnnotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteObjectAnnotation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectAnnotation">REST API Reference for DeleteObjectAnnotation Operation</seealso>
+        Task<DeleteObjectAnnotationResponse> DeleteObjectAnnotationAsync(DeleteObjectAnnotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7553,6 +7633,57 @@ namespace Amazon.S3
 
         #endregion
                 
+        #region  GetObjectAnnotation
+
+
+
+        /// <summary>
+        /// Retrieves an annotation from an Amazon S3 object. To use this operation, you must
+        /// have the <c>s3:GetObjectAnnotation</c> permission.
+        /// 
+        ///  
+        /// <para>
+        /// If checksum mode is enabled via the <c>x-amz-checksum-mode</c> header, Amazon S3 returns
+        /// the stored checksum in the response headers for client-side validation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Annotations are not supported by the following features: S3 Inventory Reports, API
+        /// Gateway, S3 Storage Lens, Amazon S3 File Gateway, Amazon FSx, S3 on Outposts, and
+        /// S3 Express One Zone (directory buckets).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following operations are related to <c>GetObjectAnnotation</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html">PutObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html">ListObjectAnnotations</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html">DeleteObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectAnnotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetObjectAnnotation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAnnotation">REST API Reference for GetObjectAnnotation Operation</seealso>
+        Task<GetObjectAnnotationResponse> GetObjectAnnotationAsync(GetObjectAnnotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetObjectAttributes
 
 
@@ -10357,6 +10488,57 @@ namespace Amazon.S3
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListObjectAnnotations
+
+
+
+        /// <summary>
+        /// Lists the annotations attached to an Amazon S3 object. Results are paginated, with
+        /// a maximum of 1,000 annotations per object. Use the <c>AnnotationPrefix</c> parameter
+        /// to filter the results by name prefix.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>s3:ListObjectAnnotations</c> permission.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Annotations are not supported by the following features: S3 Inventory Reports, API
+        /// Gateway, S3 Storage Lens, Amazon S3 File Gateway, Amazon FSx, S3 on Outposts, and
+        /// S3 Express One Zone (directory buckets).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following operations are related to <c>ListObjectAnnotations</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAnnotation.html">PutObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html">GetObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html">DeleteObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectAnnotations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListObjectAnnotations service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectAnnotations">REST API Reference for ListObjectAnnotations Operation</seealso>
+        Task<ListObjectAnnotationsResponse> ListObjectAnnotationsAsync(ListObjectAnnotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -14935,6 +15117,70 @@ namespace Amazon.S3
 
         #endregion
                 
+        #region  PutObjectAnnotation
+
+
+
+        /// <summary>
+        /// Attaches an annotation to an Amazon S3 object. An annotation is a named payload of
+        /// 1 byte to 1 MiB that you can associate with a specific object or object version. Each
+        /// object can have up to 1,000 annotations.
+        /// 
+        ///  
+        /// <para>
+        /// For annotation naming rules and restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/annotations-overview.html">Annotation
+        /// naming guidelines</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Annotations inherit the encryption of their parent object. For objects without server-side
+        /// encryption, annotations are encrypted with SSE-S3 (the default for new objects). Objects
+        /// encrypted with SSE-C cannot have annotations.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>s3:PutObjectAnnotation</c> permission.
+        /// If the bucket has Requester Pays enabled, you must include the <c>x-amz-request-payer</c>
+        /// header.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Annotations are not supported by the following features: S3 Inventory Reports, API
+        /// Gateway, S3 Storage Lens, Amazon S3 File Gateway, Amazon FSx, S3 on Outposts, and
+        /// S3 Express One Zone (directory buckets).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following operations are related to <c>PutObjectAnnotation</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAnnotation.html">GetObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectAnnotations.html">ListObjectAnnotations</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectAnnotation.html">DeleteObjectAnnotation</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectAnnotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutObjectAnnotation service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAnnotation">REST API Reference for PutObjectAnnotation Operation</seealso>
+        Task<PutObjectAnnotationResponse> PutObjectAnnotationAsync(PutObjectAnnotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutObjectLegalHold
 
 
@@ -16596,6 +16842,61 @@ namespace Amazon.S3
         /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         Task<SelectObjectContentResponse> SelectObjectContentAsync(SelectObjectContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateBucketMetadataAnnotationTableConfiguration
+
+
+
+        /// <summary>
+        /// Updates the annotation table configuration for an Amazon S3 bucket's metadata configuration.
+        /// Use this operation to enable or disable the annotation table, or to update its associated
+        /// IAM role.
+        /// 
+        ///  
+        /// <para>
+        /// An annotation table is a queryable Iceberg table that contains records of all annotations
+        /// attached to objects in the bucket. To use this operation, the bucket must have an
+        /// existing Amazon S3 Metadata configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>s3:UpdateBucketMetadataAnnotationTableConfiguration</c>
+        /// permission. If you are specifying or changing the IAM role, you must also have <c>iam:PassRole</c>
+        /// permission for the role.
+        /// </para>
+        ///  
+        /// <para>
+        /// The IAM role must have a trust policy that allows the Amazon S3 metadata service to
+        /// assume it, and a permissions policy that grants the actions needed to read annotations
+        /// from your bucket. The following examples show a trust policy and a permissions policy
+        /// that you can adapt for your bucket and account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>UpdateBucketMetadataAnnotationTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataAnnotationTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBucketMetadataAnnotationTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataAnnotationTableConfiguration">REST API Reference for UpdateBucketMetadataAnnotationTableConfiguration Operation</seealso>
+        Task<UpdateBucketMetadataAnnotationTableConfigurationResponse> UpdateBucketMetadataAnnotationTableConfigurationAsync(UpdateBucketMetadataAnnotationTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

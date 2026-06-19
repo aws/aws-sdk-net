@@ -1791,16 +1791,26 @@
         "roleArn":{"shape":"String"}
       }
     },
+    "ControlPlaneEgressModeType":{
+      "type":"string",
+      "enum":[
+        "AWS_MANAGED",
+        "CUSTOMER_ROUTED",
+        "CUSTOMER_ISOLATED"
+      ]
+    },
     "ControlPlanePlacementRequest":{
       "type":"structure",
       "members":{
-        "groupName":{"shape":"String"}
+        "groupName":{"shape":"String"},
+        "spreadLevel":{"shape":"SpreadLevel"}
       }
     },
     "ControlPlanePlacementResponse":{
       "type":"structure",
       "members":{
-        "groupName":{"shape":"String"}
+        "groupName":{"shape":"String"},
+        "spreadLevel":{"shape":"SpreadLevel"}
       }
     },
     "ControlPlaneScalingConfig":{
@@ -2894,6 +2904,18 @@
       "type":"list",
       "member":{"shape":"ErrorDetail"}
     },
+    "EtcdPlacementRequest":{
+      "type":"structure",
+      "members":{
+        "spreadLevel":{"shape":"SpreadLevel"}
+      }
+    },
+    "EtcdPlacementResponse":{
+      "type":"structure",
+      "members":{
+        "spreadLevel":{"shape":"SpreadLevel"}
+      }
+    },
     "FargateProfile":{
       "type":"structure",
       "members":{
@@ -3900,7 +3922,9 @@
       "members":{
         "outpostArns":{"shape":"StringList"},
         "controlPlaneInstanceType":{"shape":"String"},
-        "controlPlanePlacement":{"shape":"ControlPlanePlacementRequest"}
+        "controlPlanePlacement":{"shape":"ControlPlanePlacementRequest"},
+        "etcdInstanceType":{"shape":"String"},
+        "etcdPlacement":{"shape":"EtcdPlacementRequest"}
       }
     },
     "OutpostConfigResponse":{
@@ -3912,7 +3936,9 @@
       "members":{
         "outpostArns":{"shape":"StringList"},
         "controlPlaneInstanceType":{"shape":"String"},
-        "controlPlanePlacement":{"shape":"ControlPlanePlacementResponse"}
+        "controlPlanePlacement":{"shape":"ControlPlanePlacementResponse"},
+        "etcdInstanceType":{"shape":"String"},
+        "etcdPlacement":{"shape":"EtcdPlacementResponse"}
       }
     },
     "PercentCapacity":{
@@ -4121,6 +4147,13 @@
       "error":{"httpStatusCode":503},
       "exception":true,
       "fault":true
+    },
+    "SpreadLevel":{
+      "type":"string",
+      "enum":[
+        "host",
+        "rack"
+      ]
     },
     "SsoIdentity":{
       "type":"structure",
@@ -4620,6 +4653,10 @@
         "RemoteNetworkConfig",
         "DeletionProtection",
         "NodeRepairConfig",
+        "RoleArn",
+        "RoleMappingsToAddOrUpdate",
+        "RoleMappingsToRemove",
+        "NetworkAccess",
         "VendedLogs",
         "UpdatedTier",
         "PreviousTier",
@@ -4627,7 +4664,8 @@
         "WarmPoolMaxGroupPreparedCapacity",
         "WarmPoolMinSize",
         "WarmPoolState",
-        "WarmPoolReuseOnScaleIn"
+        "WarmPoolReuseOnScaleIn",
+        "ControlPlaneEgressMode"
       ]
     },
     "UpdateParams":{
@@ -4708,8 +4746,10 @@
         "AutoModeUpdate",
         "RemoteNetworkConfigUpdate",
         "DeletionProtectionUpdate",
+        "CapabilityUpdate",
         "ControlPlaneScalingConfigUpdate",
-        "VendedLogsUpdate"
+        "VendedLogsUpdate",
+        "ControlPlaneEgressUpdate"
       ]
     },
     "UpgradePolicyRequest":{
@@ -4739,7 +4779,8 @@
         "securityGroupIds":{"shape":"StringList"},
         "endpointPublicAccess":{"shape":"BoxedBoolean"},
         "endpointPrivateAccess":{"shape":"BoxedBoolean"},
-        "publicAccessCidrs":{"shape":"StringList"}
+        "publicAccessCidrs":{"shape":"StringList"},
+        "controlPlaneEgressMode":{"shape":"ControlPlaneEgressModeType"}
       }
     },
     "VpcConfigResponse":{
@@ -4751,7 +4792,8 @@
         "vpcId":{"shape":"String"},
         "endpointPublicAccess":{"shape":"Boolean"},
         "endpointPrivateAccess":{"shape":"Boolean"},
-        "publicAccessCidrs":{"shape":"StringList"}
+        "publicAccessCidrs":{"shape":"StringList"},
+        "controlPlaneEgressMode":{"shape":"ControlPlaneEgressModeType"}
       }
     },
     "WarmPoolConfig":{

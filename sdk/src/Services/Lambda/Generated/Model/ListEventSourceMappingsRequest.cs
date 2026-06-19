@@ -74,6 +74,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string EventSourceArn
         {
             get { return this._eventSourceArn; }

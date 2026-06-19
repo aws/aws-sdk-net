@@ -305,6 +305,27 @@
     <pattern>(?s).{0,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.GetProspectingFromEngagementTaskRequest.Catalog</property>
+    <pattern>[a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.GetProspectingFromEngagementTaskRequest.TaskIdentifier</property>
+    <pattern>task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.GetProspectingFromEngagementTaskResponse.TaskArn</property>
+    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/prospecting-from-engagement-task/task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.GetProspectingFromEngagementTaskResponse.TaskId</property>
+    <pattern>task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.GetProspectingFromEngagementTaskResponse.TaskName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotRequest.Catalog</property>
     <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
@@ -501,6 +522,19 @@
     <pattern>(?s).{1,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ListProspectingFromEngagementTasksRequest.Catalog</property>
+    <pattern>[a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ListProspectingFromEngagementTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ListProspectingFromEngagementTasksResponse.NextToken</property>
+    <pattern>(?s).{1,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotJobsRequest.Catalog</property>
     <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
@@ -686,6 +720,32 @@
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartOpportunityFromEngagementTaskResponse.TaskId</property>
     <pattern>.*task-[0-9a-z]{13}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskRequest.Catalog</property>
+    <pattern>[a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskRequest.ClientToken</property>
+    <pattern>.{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskRequest.TaskName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskResponse.TaskArn</property>
+    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/prospecting-from-engagement-task/task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskResponse.TaskId</property>
+    <pattern>task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.StartProspectingFromEngagementTaskResponse.TaskName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartResourceSnapshotJobRequest.Catalog</property>
@@ -972,6 +1032,14 @@
     <pattern>(?s).{1,120}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.EngagementProspectingResult.EngagementContextId</property>
+    <pattern>ctx-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.EngagementProspectingResult.EngagementIdentifier</property>
+    <pattern>eng-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementResourceAssociationSummary.Catalog</property>
     <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
@@ -1212,6 +1280,11 @@
     <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.OpportunityQuality.Score</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.OpportunitySummary.Arn</property>
     <pattern>arn:.*</pattern>
   </property-value-rule>
@@ -1262,6 +1335,77 @@
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ProjectView.OtherSolutionDescription</property>
     <pattern>(?s).{0,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingInsights.MarketplaceEngagementScore</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultAws.TaskArn</property>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultAws.TaskId</property>
+    <pattern>task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultAws.TaskName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.AccountName</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.CompanySize</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.Geo</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.PublicProfileSummary</property>
+    <min>0</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.Region</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.Segment</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.SubIndustry</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingResultCustomer.SubRegion</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingTaskSummary.TaskArn</property>
+    <pattern>arn:aws:partnercentral-selling:.*:.*:catalog/.*/prospecting-from-engagement-task/task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingTaskSummary.TaskId</property>
+    <pattern>task-[0-9a-z]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ProspectingTaskSummary.TaskName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotJobSummary.Arn</property>

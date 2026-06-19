@@ -33,6 +33,13 @@ namespace Amazon.Route53Resolver.Model
     /// Container for the parameters to the AssociateFirewallRuleGroup operation.
     /// Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the
     /// VPC.
+    /// 
+    ///  
+    /// <para>
+    /// If the rule group contains any rule configured with the <c>PartnerThreatProtection</c>
+    /// rule type, the calling account must hold an active AWS Marketplace subscription to
+    /// the named partner. If the subscription is missing, the association request is rejected.
+    /// </para>
     /// </summary>
     public partial class AssociateFirewallRuleGroupRequest : AmazonRoute53ResolverRequest
     {

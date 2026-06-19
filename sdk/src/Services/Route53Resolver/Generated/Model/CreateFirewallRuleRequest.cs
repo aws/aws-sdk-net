@@ -31,8 +31,35 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFirewallRule operation.
-    /// Creates a single DNS Firewall rule in the specified rule group, using the specified
-    /// domain list.
+    /// Creates a single DNS Firewall rule in the specified rule group. The rule can use any
+    /// one of the following match sources, and the chosen source must be supplied through
+    /// the matching request field — they are mutually exclusive:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>FirewallDomainListId</c> — match a customer-managed or AWS-managed domain list.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>DnsThreatProtection</c> — match a built-in DNS Firewall Advanced threat detector
+    /// (<c>DGA</c>, <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>FirewallRuleType</c> — match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
+    /// <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>,
+    /// or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c> variant requires
+    /// an active AWS Marketplace subscription to the named partner product.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For rules that require asynchronous provisioning (today, the <c>PartnerThreatProtection</c>
+    /// rule type), the rule's <c>Status</c> begins at <c>CREATING</c> and transitions to
+    /// <c>COMPLETE</c> once the rule is provisioned and the marketplace entitlement is verified.
+    /// If provisioning fails, <c>Status</c> becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c>
+    /// contains a human-readable reason; the rule is then immutable and must be removed with
+    /// <a>DeleteFirewallRule</a>.
+    /// </para>
     /// </summary>
     public partial class CreateFirewallRuleRequest : AmazonRoute53ResolverRequest
     {
@@ -256,8 +283,27 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property DnsThreatProtection. 
         /// <para>
-        ///  Use to create a DNS Firewall Advanced rule. 
+        ///  The type of the DNS Firewall Advanced rule. This setting is mutually exclusive with
+        /// <c>FirewallDomainListId</c> and <c>FirewallRuleType</c>. Valid values are: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DGA</c>: Domain generation algorithms detection. DGAs are used by attackers to
+        /// generate a large number of domains to launch malware attacks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DNS_TUNNELING</c>: DNS tunneling detection. DNS tunneling is used by attackers
+        /// to exfiltrate data from the client by using the DNS tunnel without making a network
+        /// connection to the client.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DICTIONARY_DGA</c>: Dictionary-based domain generation algorithms detection. Dictionary
+        /// DGAs use wordlists to generate domains that appear more legitimate, making them harder
+        /// to detect than traditional DGAs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DnsThreatProtection DnsThreatProtection
         {
@@ -345,8 +391,34 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallRuleType. 
         /// <para>
-        /// The rule type configuration for the firewall rule. This setting is mutually exclusive
-        /// with the top-level <c>FirewallDomainListId</c> and <c>DnsThreatProtection</c> fields.
+        /// The rule type configuration for the firewall rule. This is a tagged union — set exactly
+        /// one of its members. This setting is mutually exclusive with the top-level <c>FirewallDomainListId</c>
+        /// and <c>DnsThreatProtection</c> fields. Use one of:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedContentCategory</c> — match an AWS-managed content category (for
+        /// example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedThreatCategory</c> — match an AWS-managed advanced threat category
+        /// (for example, <c>PHISHING</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DnsThreatProtection</c> — match a built-in DNS Firewall Advanced threat detector
+        /// (<c>DGA</c>, <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartnerThreatProtection</c> — match a third-party threat feed delivered through
+        /// AWS Marketplace. The selected partner must be an active subscription on the calling
+        /// account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType

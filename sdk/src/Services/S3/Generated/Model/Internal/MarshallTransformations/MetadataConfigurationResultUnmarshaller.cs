@@ -56,6 +56,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AnnotationTableConfigurationResult", targetDepth))
+                    {
+                        var unmarshaller = AnnotationTableConfigurationResultUnmarshaller.Instance;
+                        unmarshalledObject.AnnotationTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DestinationResult", targetDepth))
                     {
                         var unmarshaller = DestinationResultUnmarshaller.Instance;

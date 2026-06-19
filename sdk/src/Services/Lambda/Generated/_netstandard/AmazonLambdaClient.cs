@@ -514,6 +514,13 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
+        /// The resource-based policy you tried to add to the Lambda function would grant public
+        /// access to it, and your account's <c>BlockPublicAccess</c> setting prevents public
+        /// access. For more information about blocking public access to Lambda functions, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#access-control-block-public-access">Block
+        /// public access to Lambda resources</a>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
         /// </exception>
@@ -622,6 +629,12 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.AliasLimitExceededException">
+        /// Lambda couldn't create the alias because your Amazon Web Services account has exceeded
+        /// the maximum number of aliases allowed per Lambda function. For more information, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
@@ -1130,6 +1143,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -1595,6 +1611,9 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the DeleteFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
         /// </exception>
@@ -1644,6 +1663,12 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the DeleteLayerVersion service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -2193,6 +2218,9 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the GetFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
@@ -2916,6 +2944,21 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the Invoke service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeArtifactUserDeletedException">
+        /// The Lambda function couldn't be invoked because its code artifact user has been deleted.
+        /// Wait for Lambda to provision a new code artifact user, or update the function's code
+        /// package to recreate it.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeArtifactUserFailedException">
+        /// The Lambda function couldn't be invoked because provisioning of its code artifact
+        /// user failed. Update the function's code package or check the Lambda function's <c>State</c>
+        /// and <c>StateReasonCode</c> for additional context.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeArtifactUserPendingException">
+        /// The Lambda function couldn't be invoked because its code artifact user is still being
+        /// provisioned. Wait for the function's <c>State</c> to become <c>Active</c> and try
+        /// the request again.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.DurableExecutionAlreadyStartedException">
         /// The durable execution with the specified name has already been started. Each durable
         /// execution name must be unique within the function. Use a different name or check the
@@ -2952,6 +2995,12 @@ namespace Amazon.Lambda
         /// reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
         /// quotas</a>.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ENINotReadyException">
+        /// Lambda couldn't invoke the Lambda function because the elastic network interface (ENI)
+        /// configured for its VPC connection isn't ready yet. Wait a few moments and try the
+        /// request again. For more information about VPC configuration, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring
+        /// a Lambda function to access resources in a VPC</a>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
@@ -2986,6 +3035,13 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ModeNotSupportedException">
+        /// The Lambda function doesn't support the invocation mode requested. For example, calling
+        /// <c>Invoke</c> with <c>InvocationType=RequestResponse</c> on a function configured
+        /// for asynchronous-only invocation, or vice versa. For more information about invocation
+        /// types, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-options.html">Invoking
+        /// Lambda functions</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.NoPublishedVersionException">
         /// The function has no published versions available.
@@ -3027,6 +3083,12 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota. For more information about Lambda service
+        /// quotas, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>. To request a quota increase, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting
+        /// a quota increase</a> in the <i>Service Quotas User Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartException">
         /// The <c>afterRestore()</c> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
         /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
@@ -3034,6 +3096,13 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
         /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
         /// state</a> becomes <c>Active</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartRegenerationFailureException">
+        /// Lambda couldn't regenerate the SnapStart snapshot for the function. SnapStart-enabled
+        /// functions periodically regenerate snapshots when their underlying runtime or dependencies
+        /// change; this regeneration failed. Wait for Lambda to retry, or update the function's
+        /// configuration to trigger a new snapshot. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda
+        /// SnapStart</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
         /// Lambda couldn't restore the snapshot within the timeout limit.
@@ -3198,6 +3267,12 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota. For more information about Lambda service
+        /// quotas, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>. To request a quota increase, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting
+        /// a quota increase</a> in the <i>Service Quotas User Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartException">
         /// The <c>afterRestore()</c> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
         /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
@@ -3205,6 +3280,13 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
         /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
         /// state</a> becomes <c>Active</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SnapStartRegenerationFailureException">
+        /// Lambda couldn't regenerate the SnapStart snapshot for the function. SnapStart-enabled
+        /// functions periodically regenerate snapshots when their underlying runtime or dependencies
+        /// change; this regeneration failed. Wait for Lambda to retry, or update the function's
+        /// configuration to trigger a new snapshot. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda
+        /// SnapStart</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
         /// Lambda couldn't restore the snapshot within the timeout limit.
@@ -4648,6 +4730,13 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PublicPolicyException">
+        /// The resource-based policy you tried to add to the Lambda function would grant public
+        /// access to it, and your account's <c>BlockPublicAccess</c> setting prevents public
+        /// access. For more information about blocking public access to Lambda functions, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#access-control-block-public-access">Block
+        /// public access to Lambda resources</a>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -4699,6 +4788,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -4748,6 +4840,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -4795,6 +4890,9 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.

@@ -271,6 +271,57 @@ namespace Amazon.Glue
         #endregion
 
 
+        #region  AssociateGlossaryTerms
+
+        internal virtual AssociateGlossaryTermsResponse AssociateGlossaryTerms(AssociateGlossaryTermsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateGlossaryTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateGlossaryTermsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateGlossaryTermsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates one or more glossary terms with an asset in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateGlossaryTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateGlossaryTerms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AssociateGlossaryTerms">REST API Reference for AssociateGlossaryTerms Operation</seealso>
+        public virtual Task<AssociateGlossaryTermsResponse> AssociateGlossaryTermsAsync(AssociateGlossaryTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateGlossaryTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateGlossaryTermsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateGlossaryTermsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchCreatePartition
 
         internal virtual BatchCreatePartitionResponse BatchCreatePartition(BatchCreatePartitionRequest request)
@@ -732,6 +783,55 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = BatchGetDevEndpointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetDevEndpointsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetIterableForms
+
+        internal virtual BatchGetIterableFormsResponse BatchGetIterableForms(BatchGetIterableFormsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetIterableFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetIterableFormsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetIterableFormsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple items from an iterable form on an asset in Glue Data Catalog in
+        /// a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetIterableForms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetIterableForms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetIterableForms">REST API Reference for BatchGetIterableForms Operation</seealso>
+        public virtual Task<BatchGetIterableFormsResponse> BatchGetIterableFormsAsync(BatchGetIterableFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetIterableFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetIterableFormsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetIterableFormsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1894,6 +1994,112 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  CreateGlossary
+
+        internal virtual CreateGlossaryResponse CreateGlossary(CreateGlossaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlossaryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlossaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a business glossary in Glue Data Catalog. A glossary is a container for glossary
+        /// terms that define business concepts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlossary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGlossary service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlossary">REST API Reference for CreateGlossary Operation</seealso>
+        public virtual Task<CreateGlossaryResponse> CreateGlossaryAsync(CreateGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlossaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlossaryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateGlossaryTerm
+
+        internal virtual CreateGlossaryTermResponse CreateGlossaryTerm(CreateGlossaryTermRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlossaryTermResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlossaryTermResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a glossary term within a business glossary in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlossaryTerm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGlossaryTerm service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlossaryTerm">REST API Reference for CreateGlossaryTerm Operation</seealso>
+        public virtual Task<CreateGlossaryTermResponse> CreateGlossaryTermAsync(CreateGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlossaryTermResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlossaryTermResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateGlueIdentityCenterConfiguration
 
         internal virtual CreateGlueIdentityCenterConfigurationResponse CreateGlueIdentityCenterConfiguration(CreateGlueIdentityCenterConfigurationRequest request)
@@ -2982,6 +3188,153 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  DeleteAsset
+
+        internal virtual DeleteAssetResponse DeleteAsset(DeleteAssetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAssetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an asset from Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAsset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
+        public virtual Task<DeleteAssetResponse> DeleteAssetAsync(DeleteAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAssetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteAssetType
+
+        internal virtual DeleteAssetTypeResponse DeleteAssetType(DeleteAssetTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAssetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAssetTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an asset type from Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssetType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAssetType">REST API Reference for DeleteAssetType Operation</seealso>
+        public virtual Task<DeleteAssetTypeResponse> DeleteAssetTypeAsync(DeleteAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAssetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAssetTypeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteAttachment
+
+        internal virtual DeleteAttachmentResponse DeleteAttachment(DeleteAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a form attachment from an asset in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAttachment service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        public virtual Task<DeleteAttachmentResponse> DeleteAttachmentAsync(DeleteAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAttachmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteBlueprint
 
         internal virtual DeleteBlueprintResponse DeleteBlueprint(DeleteBlueprintRequest request)
@@ -3634,6 +3987,158 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteDevEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDevEndpointResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteFormType
+
+        internal virtual DeleteFormTypeResponse DeleteFormType(DeleteFormTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteFormTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFormTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFormTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a form type from Glue Data Catalog. A form type cannot be deleted if it is
+        /// still referenced by an asset type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFormType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFormType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteFormType">REST API Reference for DeleteFormType Operation</seealso>
+        public virtual Task<DeleteFormTypeResponse> DeleteFormTypeAsync(DeleteFormTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteFormTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFormTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFormTypeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteGlossary
+
+        internal virtual DeleteGlossaryResponse DeleteGlossary(DeleteGlossaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlossaryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGlossaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a business glossary from Glue Data Catalog. A glossary cannot be deleted if
+        /// it still contains glossary terms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlossary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGlossary service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlossary">REST API Reference for DeleteGlossary Operation</seealso>
+        public virtual Task<DeleteGlossaryResponse> DeleteGlossaryAsync(DeleteGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlossaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGlossaryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteGlossaryTerm
+
+        internal virtual DeleteGlossaryTermResponse DeleteGlossaryTerm(DeleteGlossaryTermRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlossaryTermResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGlossaryTermResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a glossary term from Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlossaryTerm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGlossaryTerm service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlossaryTerm">REST API Reference for DeleteGlossaryTerm Operation</seealso>
+        public virtual Task<DeleteGlossaryTermResponse> DeleteGlossaryTermAsync(DeleteGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlossaryTermResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGlossaryTermResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4933,6 +5438,154 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIntegrationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DisassociateGlossaryTerms
+
+        internal virtual DisassociateGlossaryTermsResponse DisassociateGlossaryTerms(DisassociateGlossaryTermsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateGlossaryTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateGlossaryTermsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateGlossaryTermsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association of one or more glossary terms from an asset in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGlossaryTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateGlossaryTerms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DisassociateGlossaryTerms">REST API Reference for DisassociateGlossaryTerms Operation</seealso>
+        public virtual Task<DisassociateGlossaryTermsResponse> DisassociateGlossaryTermsAsync(DisassociateGlossaryTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateGlossaryTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateGlossaryTermsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateGlossaryTermsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetAsset
+
+        internal virtual GetAssetResponse GetAsset(GetAssetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssetResponseUnmarshaller.Instance;
+
+            return Invoke<GetAssetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for an asset in Glue Data Catalog, including its forms, additional
+        /// attachments, and associated glossary terms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAsset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetAsset">REST API Reference for GetAsset Operation</seealso>
+        public virtual Task<GetAssetResponse> GetAssetAsync(GetAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAssetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetAssetType
+
+        internal virtual GetAssetTypeResponse GetAssetType(GetAssetTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAssetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssetTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetAssetTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an asset type in Glue Data Catalog by its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssetType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssetType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetAssetType">REST API Reference for GetAssetType Operation</seealso>
+        public virtual Task<GetAssetTypeResponse> GetAssetTypeAsync(GetAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAssetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAssetTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAssetTypeResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -6456,6 +7109,144 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = GetEntityRecordsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEntityRecordsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetFormType
+
+        internal virtual GetFormTypeResponse GetFormType(GetFormTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFormTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFormTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetFormTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a form type in Glue Data Catalog by its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFormType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFormType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetFormType">REST API Reference for GetFormType Operation</seealso>
+        public virtual Task<GetFormTypeResponse> GetFormTypeAsync(GetFormTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFormTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFormTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFormTypeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetGlossary
+
+        internal virtual GetGlossaryResponse GetGlossary(GetGlossaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlossaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetGlossaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a business glossary in Glue Data Catalog by its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlossary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGlossary service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlossary">REST API Reference for GetGlossary Operation</seealso>
+        public virtual Task<GetGlossaryResponse> GetGlossaryAsync(GetGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlossaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGlossaryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetGlossaryTerm
+
+        internal virtual GetGlossaryTermResponse GetGlossaryTerm(GetGlossaryTermRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlossaryTermResponseUnmarshaller.Instance;
+
+            return Invoke<GetGlossaryTermResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a glossary term in Glue Data Catalog by its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlossaryTerm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGlossaryTerm service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlossaryTerm">REST API Reference for GetGlossaryTerm Operation</seealso>
+        public virtual Task<GetGlossaryTermResponse> GetGlossaryTermAsync(GetGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlossaryTermResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGlossaryTermResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -8892,6 +9683,51 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  ListAssetTypes
+
+        internal virtual ListAssetTypesResponse ListAssetTypes(ListAssetTypesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAssetTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the asset types defined in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssetTypes service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListAssetTypes">REST API Reference for ListAssetTypes Operation</seealso>
+        public virtual Task<ListAssetTypesResponse> ListAssetTypesAsync(ListAssetTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAssetTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAssetTypesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListBlueprints
 
         internal virtual ListBlueprintsResponse ListBlueprints(ListBlueprintsRequest request)
@@ -9535,6 +10371,141 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  ListFormTypes
+
+        internal virtual ListFormTypesResponse ListFormTypes(ListFormTypesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFormTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFormTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFormTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the form types defined in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFormTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFormTypes service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListFormTypes">REST API Reference for ListFormTypes Operation</seealso>
+        public virtual Task<ListFormTypesResponse> ListFormTypesAsync(ListFormTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFormTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFormTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFormTypesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListGlossaries
+
+        internal virtual ListGlossariesResponse ListGlossaries(ListGlossariesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGlossariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGlossariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGlossariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists business glossaries in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlossaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGlossaries service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListGlossaries">REST API Reference for ListGlossaries Operation</seealso>
+        public virtual Task<ListGlossariesResponse> ListGlossariesAsync(ListGlossariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGlossariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGlossariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGlossariesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListGlossaryTerms
+
+        internal virtual ListGlossaryTermsResponse ListGlossaryTerms(ListGlossaryTermsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGlossaryTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGlossaryTermsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGlossaryTermsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists glossary terms within a business glossary in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlossaryTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGlossaryTerms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListGlossaryTerms">REST API Reference for ListGlossaryTerms Operation</seealso>
+        public virtual Task<ListGlossaryTermsResponse> ListGlossaryTermsAsync(ListGlossaryTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGlossaryTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGlossaryTermsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGlossaryTermsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListIntegrationResourceProperties
 
         internal virtual ListIntegrationResourcePropertiesResponse ListIntegrationResourceProperties(ListIntegrationResourcePropertiesRequest request)
@@ -9587,6 +10558,55 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = ListIntegrationResourcePropertiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIntegrationResourcePropertiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListIterableForms
+
+        internal virtual ListIterableFormsResponse ListIterableForms(ListIterableFormsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIterableFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIterableFormsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIterableFormsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the items in an iterable form on an asset in Glue Data Catalog. For example,
+        /// lists the columns of a table asset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIterableForms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIterableForms service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIterableForms">REST API Reference for ListIterableForms Operation</seealso>
+        public virtual Task<ListIterableFormsResponse> ListIterableFormsAsync(ListIterableFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIterableFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIterableFormsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIterableFormsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -10233,6 +11253,160 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  PutAsset
+
+        internal virtual PutAssetResponse PutAsset(PutAssetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAssetResponseUnmarshaller.Instance;
+
+            return Invoke<PutAssetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates an asset in Glue Data Catalog. If the asset already exists, this
+        /// operation updates it; otherwise, a new asset is created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAsset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAsset">REST API Reference for PutAsset Operation</seealso>
+        public virtual Task<PutAssetResponse> PutAssetAsync(PutAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAssetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAssetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutAssetType
+
+        internal virtual PutAssetTypeResponse PutAssetType(PutAssetTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAssetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAssetTypeResponseUnmarshaller.Instance;
+
+            return Invoke<PutAssetTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates an asset type in Glue Data Catalog. An asset type defines the structure
+        /// of assets by specifying which forms they include. If an asset type with the given
+        /// name already exists, it is updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAssetType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAssetType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAssetType">REST API Reference for PutAssetType Operation</seealso>
+        public virtual Task<PutAssetTypeResponse> PutAssetTypeAsync(PutAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAssetTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAssetTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAssetTypeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutAttachment
+
+        internal virtual PutAttachmentResponse PutAttachment(PutAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<PutAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches a form to an asset or an iterable form item in Glue Data Catalog. If an attachment
+        /// with the same name already exists, it is overwritten.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAttachment service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAttachment">REST API Reference for PutAttachment Operation</seealso>
+        public virtual Task<PutAttachmentResponse> PutAttachmentAsync(PutAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAttachmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  PutDataCatalogEncryptionSettings
 
         internal virtual PutDataCatalogEncryptionSettingsResponse PutDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request)
@@ -10315,6 +11489,55 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = PutDataQualityProfileAnnotationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutDataQualityProfileAnnotationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutFormType
+
+        internal virtual PutFormTypeResponse PutFormType(PutFormTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutFormTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFormTypeResponseUnmarshaller.Instance;
+
+            return Invoke<PutFormTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a form type in Glue Data Catalog. A form type defines the schema
+        /// for structured metadata that can be attached to assets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFormType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFormType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutFormType">REST API Reference for PutFormType Operation</seealso>
+        public virtual Task<PutFormTypeResponse> PutFormTypeAsync(PutFormTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutFormTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFormTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutFormTypeResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -10871,6 +12094,52 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = RunStatementResponseUnmarshaller.Instance;
 
             return InvokeAsync<RunStatementResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  Search
+
+        internal virtual SearchResponse Search(SearchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
+
+            return Invoke<SearchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for assets in Glue Data Catalog using full-text search, filters, sorting,
+        /// and aggregations. Returns matching assets with relevance-ranked results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Search service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Search">REST API Reference for Search Operation</seealso>
+        public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -12892,6 +14161,114 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = UpdateDevEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDevEndpointResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateGlossary
+
+        internal virtual UpdateGlossaryResponse UpdateGlossary(UpdateGlossaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlossaryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlossaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a business glossary in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlossary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlossary service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlossary">REST API Reference for UpdateGlossary Operation</seealso>
+        public virtual Task<UpdateGlossaryResponse> UpdateGlossaryAsync(UpdateGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlossaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlossaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlossaryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateGlossaryTerm
+
+        internal virtual UpdateGlossaryTermResponse UpdateGlossaryTerm(UpdateGlossaryTermRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlossaryTermResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlossaryTermResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a glossary term in Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlossaryTerm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlossaryTerm service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlossaryTerm">REST API Reference for UpdateGlossaryTerm Operation</seealso>
+        public virtual Task<UpdateGlossaryTermResponse> UpdateGlossaryTermAsync(UpdateGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlossaryTermRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlossaryTermResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlossaryTermResponse>(request, options, cancellationToken);
         }
         #endregion
         

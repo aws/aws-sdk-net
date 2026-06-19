@@ -45,6 +45,7 @@ namespace Amazon.Neptune.Model
         private string _dbSubnetGroupName;
         private string _subnetGroupStatus;
         private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -140,6 +141,34 @@ namespace Amazon.Neptune.Model
         internal bool IsSetSubnets()
         {
             return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The network types supported by the DB subnet group.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid network types include <c>IPV4</c> and <c>DUAL</c>. A DB subnet group supports
+        /// <c>DUAL</c> if all subnets in the group have both IPv4 and IPv6 CIDRs.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

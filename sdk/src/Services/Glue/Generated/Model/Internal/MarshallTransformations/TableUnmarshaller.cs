@@ -92,6 +92,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.FederatedTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IcebergTableMetadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = IcebergTableMetadataUnmarshaller.Instance;
+                    unmarshalledObject.IcebergTableMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IsMaterializedView", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains information about a storage location for images extracted from multimodal
-    /// documents in your data source.
+    /// Contains information about a storage location for multimedia content (images, audio,
+    /// and video) extracted from multimodal documents in your data source.
     /// </summary>
     public partial class SupplementalDataStorageLocation
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// Contains information about the Amazon S3 location for the extracted images.
+        /// Contains information about the Amazon S3 location for the extracted multimedia content.
         /// </para>
         /// </summary>
         public S3Location S3Location

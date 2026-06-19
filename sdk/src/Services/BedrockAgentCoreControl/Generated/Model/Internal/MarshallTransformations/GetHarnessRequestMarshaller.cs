@@ -65,7 +65,11 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetHarnessId())
                 throw new AmazonBedrockAgentCoreControlException("Request object does not have required field HarnessId set");
             request.AddPathResource("{harnessId}", StringUtils.FromString(publicRequest.HarnessId));
+            
+            if (publicRequest.IsSetHarnessVersion())
+                request.Parameters.Add("harnessVersion", StringUtils.FromString(publicRequest.HarnessVersion));
             request.ResourcePath = "/harnesses/{harnessId}";
+            request.UseQueryString = true;
 
             return request;
         }

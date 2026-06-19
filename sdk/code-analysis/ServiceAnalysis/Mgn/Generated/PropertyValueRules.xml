@@ -2577,10 +2577,26 @@
     <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerRequest.FqdnForActionFramework</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_](([a-zA-Z0-9_\-]{0,61}[a-zA-Z0-9_])?\.)+[a-zA-Z]{2,63}$|^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$|^(?:[A-Fa-f0-9]{1,4}:){7}[A-Fa-f0-9]{1,4}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerRequest.Platform</property>
+    <pattern>(linux|windows)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateSourceServerRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
     <pattern>s-[0-9a-zA-Z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerRequest.UserProvidedID</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\s\x00]( *[^\s\x00])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateSourceServerResponse.ApplicationID</property>
@@ -2972,6 +2988,18 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.FsxOntapConfiguration.CredentialsSecretArn</property>
+    <min>20</min>
+    <max>256</max>
+    <pattern>arn:[\w-]+:secretsmanager:([a-z]{2}-(gov-)?[a-z]+-\d{1})?:(\d{12})?:secret:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.FsxOntapConfiguration.StorageVirtualMachineId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>(svm-[0-9a-f]{17,})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.IdentificationHints.AwsInstanceID</property>
     <min>0</min>
     <max>255</max>
@@ -3170,6 +3198,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.JobPostLaunchActionsLaunchStatus.FailureReason</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.LastKnownCheck.Error</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.LastKnownCheck.Name</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
@@ -3746,7 +3784,7 @@
   <property-value-rule>
     <property>Amazon.Mgn.Model.SourceServerConnectorAction.CredentialsSecretArn</property>
     <min>20</min>
-    <max>100</max>
+    <max>256</max>
     <pattern>arn:[\w-]+:secretsmanager:([a-z]{2}-(gov-)?[a-z]+-\d{1})?:(\d{12})?:secret:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -4417,7 +4417,10 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
-        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
+        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request. By
+        /// default, the events are returned in ascending timestamp order (oldest first). To return
+        /// events in descending timestamp order (newest first), set the <c>startFromHead</c>
+        /// parameter to <c>false</c>.
         /// </para>
         ///  
         /// <para>
@@ -4504,7 +4507,10 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
-        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
+        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request. By
+        /// default, the events are returned in ascending timestamp order (oldest first). To return
+        /// events in descending timestamp order (newest first), set the <c>startFromHead</c>
+        /// parameter to <c>false</c>.
         /// </para>
         ///  
         /// <para>
@@ -5527,7 +5533,8 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// You can retrieve up to 100,000 log event results from a query, if available, by using
         /// pagination. Use the <c>nextToken</c> returned in the response to request additional
-        /// pages of results, with each page returning up to 10,000 log events.
+        /// pages of results, with each page returning up to 10,000 log events. This is only supported
+        /// for Logs Insights QL and is currently not supported for PPL and SQL query languages.
         /// </para>
         ///  
         /// <para>
@@ -5587,7 +5594,8 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// You can retrieve up to 100,000 log event results from a query, if available, by using
         /// pagination. Use the <c>nextToken</c> returned in the response to request additional
-        /// pages of results, with each page returning up to 10,000 log events.
+        /// pages of results, with each page returning up to 10,000 log events. This is only supported
+        /// for Logs Insights QL and is currently not supported for PPL and SQL query languages.
         /// </para>
         ///  
         /// <para>
@@ -10848,6 +10856,9 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
         /// You don't have sufficient permissions to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
         /// An internal server error occurred while processing the request. This exception is
         /// returned when the service encounters an unexpected condition that prevents it from
@@ -10879,6 +10890,9 @@ namespace Amazon.CloudWatchLogs
         /// <returns>The response from the UpdateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
         /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
         /// An internal server error occurred while processing the request. This exception is

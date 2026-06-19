@@ -25,6 +25,72 @@ namespace Amazon.HealthLake
 {
 
     /// <summary>
+    /// Constants used for properties of type AnalyticsStatus.
+    /// </summary>
+    public class AnalyticsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AnalyticsStatus
+        /// </summary>
+        public static readonly AnalyticsStatus DISABLED = new AnalyticsStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for AnalyticsStatus
+        /// </summary>
+        public static readonly AnalyticsStatus DISABLING = new AnalyticsStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for AnalyticsStatus
+        /// </summary>
+        public static readonly AnalyticsStatus ENABLED = new AnalyticsStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for AnalyticsStatus
+        /// </summary>
+        public static readonly AnalyticsStatus ENABLING = new AnalyticsStatus("ENABLING");
+        /// <summary>
+        /// Constant PAUSED for AnalyticsStatus
+        /// </summary>
+        public static readonly AnalyticsStatus PAUSED = new AnalyticsStatus("PAUSED");
+        /// <summary>
+        /// Constant PAUSING for AnalyticsStatus
+        /// </summary>
+        public static readonly AnalyticsStatus PAUSING = new AnalyticsStatus("PAUSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsStatus FindValue(string value)
+        {
+            return FindValue<AnalyticsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthorizationStrategy.
     /// </summary>
     public class AuthorizationStrategy : ConstantClass
@@ -154,6 +220,14 @@ namespace Amazon.HealthLake
         /// Constant DELETING for DatastoreStatus
         /// </summary>
         public static readonly DatastoreStatus DELETING = new DatastoreStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for DatastoreStatus
+        /// </summary>
+        public static readonly DatastoreStatus UPDATE_FAILED = new DatastoreStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for DatastoreStatus
+        /// </summary>
+        public static readonly DatastoreStatus UPDATING = new DatastoreStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -362,6 +436,64 @@ namespace Amazon.HealthLake
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NlpStatus.
+    /// </summary>
+    public class NlpStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for NlpStatus
+        /// </summary>
+        public static readonly NlpStatus DISABLED = new NlpStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for NlpStatus
+        /// </summary>
+        public static readonly NlpStatus DISABLING = new NlpStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for NlpStatus
+        /// </summary>
+        public static readonly NlpStatus ENABLED = new NlpStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for NlpStatus
+        /// </summary>
+        public static readonly NlpStatus ENABLING = new NlpStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NlpStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NlpStatus FindValue(string value)
+        {
+            return FindValue<NlpStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NlpStatus(string value)
         {
             return FindValue(value);
         }

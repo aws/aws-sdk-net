@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetTableRequest : AmazonGlueRequest
     {
+        private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AuditContext _auditContext;
         private string _catalogId;
         private string _databaseName;
@@ -42,6 +43,48 @@ namespace Amazon.Glue.Model
         private string _name;
         private DateTime? _queryAsOfTime;
         private string _transactionId;
+
+        /// <summary>
+        /// Gets and sets the property AttributesToGet. 
+        /// <para>
+        /// Specifies the table fields returned by the <c>GetTable</c> call. This parameter doesn't
+        /// accept an empty list.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the valid combinations of values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DEFAULT</c> - Returns the Hive-style table definition only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LATEST_ICEBERG_METADATA</c> - Returns only the latest Apache Iceberg table metadata.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DEFAULT</c>, <c>LATEST_ICEBERG_METADATA</c> - Returns both the Hive-style table
+        /// definition and the latest Apache Iceberg table metadata.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AttributesToGet
+        {
+            get { return this._attributesToGet; }
+            set { this._attributesToGet = value; }
+        }
+
+        // Check to see if AttributesToGet property is set
+        internal bool IsSetAttributesToGet()
+        {
+            return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AuditContext. 

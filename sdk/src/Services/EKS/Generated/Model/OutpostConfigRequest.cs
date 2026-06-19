@@ -39,21 +39,21 @@ namespace Amazon.EKS.Model
     {
         private string _controlPlaneInstanceType;
         private ControlPlanePlacementRequest _controlPlanePlacement;
+        private string _etcdInstanceType;
+        private EtcdPlacementRequest _etcdPlacement;
         private List<string> _outpostArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ControlPlaneInstanceType. 
         /// <para>
-        /// The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster
-        /// on Outposts. Choose an instance type based on the number of nodes that your cluster
-        /// will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
-        /// considerations</a> in the <i>Amazon EKS User Guide</i>.
+        /// The Amazon EC2 instance type for the Kubernetes control plane instances of your local
+        /// Amazon EKS cluster on Amazon Web Services Outposts. This instance type applies to
+        /// all control plane instances and cannot be changed after cluster creation.
         /// </para>
         ///  
         /// <para>
-        /// The instance type that you specify is used for all Kubernetes control plane instances.
-        /// The instance type can't be changed after cluster creation. The control plane is not
-        /// automatically scaled by Amazon EKS.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+        /// considerations</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -92,6 +92,47 @@ namespace Amazon.EKS.Model
         internal bool IsSetControlPlanePlacement()
         {
             return this._controlPlanePlacement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EtcdInstanceType. 
+        /// <para>
+        /// The Amazon EC2 instance type for etcd instances of your local Amazon EKS cluster on
+        /// Amazon Web Services Outposts. This instance type applies to all etcd instances and
+        /// cannot be changed after cluster creation.
+        /// </para>
+        /// </summary>
+        public string EtcdInstanceType
+        {
+            get { return this._etcdInstanceType; }
+            set { this._etcdInstanceType = value; }
+        }
+
+        // Check to see if EtcdInstanceType property is set
+        internal bool IsSetEtcdInstanceType()
+        {
+            return this._etcdInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EtcdPlacement. 
+        /// <para>
+        /// An object representing the placement configuration for the etcd instances of your
+        /// local Amazon EKS cluster on an Amazon Web Services Outpost. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+        /// considerations</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public EtcdPlacementRequest EtcdPlacement
+        {
+            get { return this._etcdPlacement; }
+            set { this._etcdPlacement = value; }
+        }
+
+        // Check to see if EtcdPlacement property is set
+        internal bool IsSetEtcdPlacement()
+        {
+            return this._etcdPlacement != null;
         }
 
         /// <summary>

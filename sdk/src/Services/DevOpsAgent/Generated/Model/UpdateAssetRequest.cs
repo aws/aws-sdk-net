@@ -101,8 +101,8 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Optional content to set or replace. A single file adds or replaces one file; a zip
-        /// replaces all files.
+        /// Optional content update. A single file adds or replaces one file; a zip replaces all
+        /// files; a sourceUrl re-syncs from the original source.
         /// </para>
         /// </summary>
         public AssetContent Content

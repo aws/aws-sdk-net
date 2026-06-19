@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.PassRequestHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("payloadFilter", targetDepth, ref reader))
+                {
+                    var unmarshaller = InterceptorPayloadFilterUnmarshaller.Instance;
+                    unmarshalledObject.PayloadFilter = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

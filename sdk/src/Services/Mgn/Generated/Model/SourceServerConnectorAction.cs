@@ -62,7 +62,7 @@ namespace Amazon.Mgn.Model
         /// Source Server connector action credentials secret arn.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=100)]
+        [AWSProperty(Min=20, Max=256)]
         public string CredentialsSecretArn
         {
             get { return this._credentialsSecretArn; }

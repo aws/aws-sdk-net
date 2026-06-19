@@ -48,7 +48,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// provide guidance on how to interact with the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string Instructions
         {
             get { return this._instructions; }

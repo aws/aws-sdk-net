@@ -86,6 +86,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Monetize", targetDepth, ref reader))
+                {
+                    var unmarshaller = MonetizeActionUnmarshaller.Instance;
+                    unmarshalledObject.Monetize = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

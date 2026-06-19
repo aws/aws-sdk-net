@@ -1,5 +1,8 @@
 using System.Text;
 using System.Text.RegularExpressions;
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Model.Shapes;
+using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -105,6 +108,59 @@ public static partial class DocumentationFormatter
         {
             writer.WriteLine($"/// {line}");
         }
+    }
+
+    /// <summary>
+    /// Writes the XML doc comment for an operation method — summary, the <c>request</c> (and, for the
+    /// async overload, <c>cancellationToken</c>) <c>&lt;param&gt;</c> tags, the <c>&lt;returns&gt;</c>
+    /// tag, an <c>&lt;exception&gt;</c> tag per modeled error, and the REST-API-reference
+    /// <c>&lt;seealso&gt;</c>. Shared by the client and interface writers so the two cannot drift.
+    /// </summary>
+    public static void WriteOperationDocumentation(CodeWriter writer, GenerationContext context, Operation operation, bool isAsync)
+    {
+        var cleaned = Cleanup(operation.Shape.GetDocumentation());
+        writer.WriteLine("/// <summary>");
+        if (cleaned.Length > 0)
+        {
+            WriteCommentBlock(writer, cleaned);
+        }
+
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"/// <param name=\"request\">Container for the necessary parameters to execute the {operation.Name} service method.</param>");
+
+        if (isAsync)
+        {
+            writer.WriteLine("/// <param name=\"cancellationToken\">");
+            writer.WriteLine("///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.");
+            writer.WriteLine("/// </param>");
+        }
+
+        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.ServiceName}.</returns>");
+
+        foreach (var error in operation.Errors)
+        {
+            WriteExceptionTag(writer, context, error);
+        }
+
+        writer.WriteLine($"/// <seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/{context.EndpointPrefix}-{context.ApiVersion}/{operation.Name}\">REST API Reference for {operation.Name} Operation</seealso>");
+    }
+
+    /// <summary>
+    /// Writes an <c>&lt;exception cref="..."&gt;</c> doc tag for a single modeled operation error,
+    /// with the error shape's cleaned documentation as the tag body.
+    /// </summary>
+    public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, OperationError error)
+    {
+        var exceptionName = ExceptionWriter.ToExceptionName(error.Id.Name);
+        writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
+
+        var cleaned = Cleanup(error.Shape.GetDocumentation());
+        if (cleaned.Length > 0)
+        {
+            WriteCommentBlock(writer, cleaned);
+        }
+
+        writer.WriteLine("/// </exception>");
     }
 
     private static string RemoveSnippets(string documentation, string startToken, string endToken)

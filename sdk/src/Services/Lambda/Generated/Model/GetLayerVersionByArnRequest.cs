@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the layer version.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=140)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Arn
         {
             get { return this._arn; }

@@ -52,6 +52,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GroupName);
             }
 
+            if(requestObject.IsSetSpreadLevel())
+            {
+                context.Writer.WritePropertyName("spreadLevel");
+                context.Writer.WriteStringValue(requestObject.SpreadLevel);
+            }
+
         }
 
         /// <summary>

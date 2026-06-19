@@ -166,6 +166,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.ProviderName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("rateLimiterStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = RateLimiterStatusUnmarshaller.Instance;
+                    response.RateLimiterStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

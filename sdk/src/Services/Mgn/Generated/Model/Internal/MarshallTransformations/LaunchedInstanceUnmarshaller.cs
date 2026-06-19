@@ -74,6 +74,18 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("lastKnownChecks", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<LastKnownCheck, LastKnownCheckUnmarshaller>(LastKnownCheckUnmarshaller.Instance);
+                    unmarshalledObject.LastKnownChecks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("lastKnownFsxChecksStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastKnownFsxChecksStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

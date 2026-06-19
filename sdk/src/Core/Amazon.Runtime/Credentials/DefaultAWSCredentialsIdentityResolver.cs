@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -23,6 +24,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Credentials
 {
@@ -47,6 +49,13 @@ namespace Amazon.Runtime.Credentials
         private readonly CachedProfileCredentialResolver _cachedProfileCredentialResolver = new();
         private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new();
         private bool _disposed;
+        private readonly ConcurrentDictionary<string, SharedFileWatcher> _fileWatchers = new();
+        private SharedFileWatcher _credentialsFileWatcher;
+        private SharedFileWatcher _configFileWatcher;
+        private SharedFileWatcher _netSdkCredentialsFileWatcher;
+        private long _lastSeenCredentialsFileToken;
+        private long _lastSeenConfigFileToken;
+        private long _lastSeenNetSdkFileToken;
 
         public DefaultAWSCredentialsIdentityResolver()
         {
@@ -142,12 +151,77 @@ namespace Amazon.Runtime.Credentials
             var cached = _cachedCredentials;
             if (cached != null)
             {
-                if (!_lastKnownEnvironmentState.HasEnvironmentChanged())
+                if (!_lastKnownEnvironmentState.HasEnvironmentChanged() && !HasCredentialsFileChanged())
                 {
                     return cached;
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// Returns true if any of the credentials/config files backing the cached credentials have
+        /// changed since they were resolved. Purely an in-memory change-token comparison, no I/O on
+        /// this path, so it is safe to call on every credential resolution.
+        /// <para />
+        /// Invalidation is intentionally not gated on the resolved credential type. Profile edits can
+        /// switch a profile between credential types (e.g., from static keys to <c>source_profile</c>/
+        /// assume-role, or repoint <c>source_profile</c> at a different role) — changes that a
+        /// self-refreshing credential object cannot detect on its own because it keeps using the
+        /// role/values it was constructed with. Re-resolving on any file change is cheap and rare and
+        /// avoids serving credentials from a stale profile definition.
+        /// </summary>
+        private bool HasCredentialsFileChanged()
+        {
+            if (_credentialsFileWatcher != null && _credentialsFileWatcher.ChangeToken != _lastSeenCredentialsFileToken)
+                return true;
+
+            if (_configFileWatcher != null && _configFileWatcher.ChangeToken != _lastSeenConfigFileToken)
+                return true;
+
+            if (_netSdkCredentialsFileWatcher != null && _netSdkCredentialsFileWatcher.ChangeToken != _lastSeenNetSdkFileToken)
+                return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// After the credential chain resolves, capture the current change tokens of the
+        /// credentials/config files so a later <see cref="HasCredentialsFileChanged"/> check can detect
+        /// edits made after this point. Tracking is set up regardless of the resolved credential type:
+        /// a file edit can switch a profile between credential types, which a self-refreshing credential
+        /// object cannot detect on its own, so any file change must invalidate the cache.
+        /// <para />
+        /// Must only be called while holding <see cref="_credentialResolutionLock"/>, before
+        /// <see cref="_cachedCredentials"/> is published, so that a concurrent lock-free reader that
+        /// observes the new credentials also observes the tracking state captured here.
+        /// </summary>
+        private void UpdateFileChangeTracking()
+        {
+            // The default chain resolves the profile with no explicit location override
+            // (see _credentialProfileChain), so resolve file paths the same way.
+            var credentialsFilePath = CachedProfileCredentialResolver.GetEffectiveCredentialsFilePath(null);
+            var configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
+            var netSdkCredentialsFilePath = CachedProfileCredentialResolver.GetNetSdkCredentialsFilePath(null);
+
+            _credentialsFileWatcher = GetOrCreateFileWatcher(credentialsFilePath);
+            _configFileWatcher = GetOrCreateFileWatcher(configFilePath);
+            _netSdkCredentialsFileWatcher = GetOrCreateFileWatcher(netSdkCredentialsFilePath);
+
+            _lastSeenCredentialsFileToken = _credentialsFileWatcher?.ChangeToken ?? 0;
+            _lastSeenConfigFileToken = _configFileWatcher?.ChangeToken ?? 0;
+            _lastSeenNetSdkFileToken = _netSdkCredentialsFileWatcher?.ChangeToken ?? 0;
+        }
+
+        /// <summary>
+        /// Gets or creates a shared file watcher for the given path. Returns null for a null/empty path.
+        /// Multiple resolutions that depend on the same file reuse one watcher, minimizing OS handles.
+        /// </summary>
+        private SharedFileWatcher GetOrCreateFileWatcher(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+                return null;
+            return _fileWatchers.GetOrAdd(filePath, path => new SharedFileWatcher(path));
         }
 
         /// <summary>
@@ -213,6 +287,7 @@ namespace Amazon.Runtime.Credentials
                 // snapshot is being updated.
                 _cachedCredentials = null;
                 _lastKnownEnvironmentState.UpdateEnvironment();
+                UpdateFileChangeTracking();
                 _cachedCredentials = resolvedCredentials;
                 return resolvedCredentials;
             }
@@ -379,6 +454,9 @@ namespace Amazon.Runtime.Credentials
             {
                 _credentialResolutionLock.Dispose();
                 _cachedProfileCredentialResolver.Dispose();
+
+                foreach (var watcher in _fileWatchers.Values)
+                    watcher.Dispose();
             }
             _disposed = true;
         }

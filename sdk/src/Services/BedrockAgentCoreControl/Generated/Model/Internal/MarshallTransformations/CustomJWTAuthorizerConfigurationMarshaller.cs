@@ -79,6 +79,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetAllowedWorkloadConfiguration())
+            {
+                context.Writer.WritePropertyName("allowedWorkloadConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AllowedWorkloadConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AllowedWorkloadConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCustomClaims())
             {
                 context.Writer.WritePropertyName("customClaims");

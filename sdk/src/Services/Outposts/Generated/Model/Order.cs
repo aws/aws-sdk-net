@@ -42,6 +42,8 @@ namespace Amazon.Outposts.Model
         private string _outpostId;
         private PaymentOption _paymentOption;
         private PaymentTerm _paymentTerm;
+        private string _quoteIdentifier;
+        private string _quoteOptionIdentifier;
         private OrderStatus _status;
 
         /// <summary>
@@ -193,6 +195,44 @@ namespace Amazon.Outposts.Model
         internal bool IsSetPaymentTerm()
         {
             return this._paymentTerm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuoteIdentifier. 
+        /// <para>
+        /// The ID of the quote associated with the order.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string QuoteIdentifier
+        {
+            get { return this._quoteIdentifier; }
+            set { this._quoteIdentifier = value; }
+        }
+
+        // Check to see if QuoteIdentifier property is set
+        internal bool IsSetQuoteIdentifier()
+        {
+            return this._quoteIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuoteOptionIdentifier. 
+        /// <para>
+        /// The ID of the quote option associated with the order.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=21)]
+        public string QuoteOptionIdentifier
+        {
+            get { return this._quoteOptionIdentifier; }
+            set { this._quoteOptionIdentifier = value; }
+        }
+
+        // Check to see if QuoteOptionIdentifier property is set
+        internal bool IsSetQuoteOptionIdentifier()
+        {
+            return this._quoteOptionIdentifier != null;
         }
 
         /// <summary>

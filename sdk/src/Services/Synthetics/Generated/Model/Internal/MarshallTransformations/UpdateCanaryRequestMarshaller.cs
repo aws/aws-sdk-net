@@ -76,6 +76,22 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddReplicaLocations())
+            {
+                context.Writer.WritePropertyName("AddReplicaLocations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddReplicaLocationsListValue in publicRequest.AddReplicaLocations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AddReplicaLocationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAddReplicaLocationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetArtifactConfig())
             {
                 context.Writer.WritePropertyName("ArtifactConfig");
@@ -142,6 +158,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ProvisionedResourceCleanup");
                 context.Writer.WriteStringValue(publicRequest.ProvisionedResourceCleanup);
+            }
+
+            if(publicRequest.IsSetRemoveReplicaLocations())
+            {
+                context.Writer.WritePropertyName("RemoveReplicaLocations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemoveReplicaLocationsListValue in publicRequest.RemoveReplicaLocations)
+                {
+                        context.Writer.WriteStringValue(publicRequestRemoveReplicaLocationsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetRunConfig())

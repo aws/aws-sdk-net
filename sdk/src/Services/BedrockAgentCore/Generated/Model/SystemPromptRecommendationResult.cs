@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCore.Model
         private RecommendationResultConfigurationBundle _configurationBundle;
         private string _errorCode;
         private string _errorMessage;
+        private string _explanation;
         private string _recommendedSystemPrompt;
 
         /// <summary>
@@ -94,6 +95,26 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Explanation. 
+        /// <para>
+        /// An explanation of why the recommendation was generated and what patterns were identified
+        /// in the agent traces.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public string Explanation
+        {
+            get { return this._explanation; }
+            set { this._explanation = value; }
+        }
+
+        // Check to see if Explanation property is set
+        internal bool IsSetExplanation()
+        {
+            return this._explanation != null;
         }
 
         /// <summary>

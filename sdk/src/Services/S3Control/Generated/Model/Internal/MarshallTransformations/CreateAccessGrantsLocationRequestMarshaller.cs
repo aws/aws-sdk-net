@@ -65,9 +65,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             request.ResourcePath = "/v20180820/accessgrantsinstance/location";
 
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+#else
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {   
+            {
+#endif
                 xmlWriter.WriteStartElement("CreateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetIAMRoleArn())
                     xmlWriter.WriteElementString("IAMRoleArn", StringUtils.FromString(publicRequest.IAMRoleArn));
@@ -99,11 +106,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             PostMarshallCustomization(request, publicRequest);
             try 
             {
+#if NETFRAMEWORK // For non .NET Framework targets the request payload is stored in the ContentStream via the PooledContentStream.
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+#endif
                 request.Headers["Content-Type"] = "application/xml";
                 ChecksumUtils.SetChecksumData(request);
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-20";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-20";
             } 
             catch (EncoderFallbackException e) 
             {

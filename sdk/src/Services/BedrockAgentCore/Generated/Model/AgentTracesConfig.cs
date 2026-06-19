@@ -34,8 +34,27 @@ namespace Amazon.BedrockAgentCore.Model
     /// </summary>
     public partial class AgentTracesConfig
     {
+        private BatchEvaluationTraceConfig _batchEvaluation;
         private CloudWatchLogsTraceConfig _cloudwatchLogs;
         private List<Amazon.Runtime.Documents.Document> _sessionSpans = AWSConfigs.InitializeCollections ? new List<Amazon.Runtime.Documents.Document>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BatchEvaluation. 
+        /// <para>
+        /// Use a completed batch evaluation as the source of agent traces.
+        /// </para>
+        /// </summary>
+        public BatchEvaluationTraceConfig BatchEvaluation
+        {
+            get { return this._batchEvaluation; }
+            set { this._batchEvaluation = value; }
+        }
+
+        // Check to see if BatchEvaluation property is set
+        internal bool IsSetBatchEvaluation()
+        {
+            return this._batchEvaluation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CloudwatchLogs. 

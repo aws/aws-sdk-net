@@ -1,0 +1,344 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the securityagent-2025-09-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.SecurityAgent.Model
+{
+    /// <summary>
+    /// Represents a threat model job, which is an execution instance of a threat model.
+    /// </summary>
+    public partial class ThreatModelJob
+    {
+        private string _agentSpaceId;
+        private DateTime? _createdAt;
+        private List<DocumentInfo> _documents = AWSConfigs.InitializeCollections ? new List<DocumentInfo>() : null;
+        private ErrorInformation _errorInformation;
+        private DateTime? _executionEndTime;
+        private DateTime? _executionStartTime;
+        private List<IntegratedRepository> _integratedRepositories = AWSConfigs.InitializeCollections ? new List<IntegratedRepository>() : null;
+        private List<DocumentInfo> _scopeDocs = AWSConfigs.InitializeCollections ? new List<DocumentInfo>() : null;
+        private List<SourceCodeRepository> _sourceCode = AWSConfigs.InitializeCollections ? new List<SourceCodeRepository>() : null;
+        private JobStatus _status;
+        private string _systemOverview;
+        private string _threatModelId;
+        private string _threatModelJobId;
+        private string _title;
+        private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The unique identifier of the agent space.
+        /// </para>
+        /// </summary>
+        public string AgentSpaceId
+        {
+            get { return this._agentSpaceId; }
+            set { this._agentSpaceId = value; }
+        }
+
+        // Check to see if AgentSpaceId property is set
+        internal bool IsSetAgentSpaceId()
+        {
+            return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time the threat model job was created, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Documents. 
+        /// <para>
+        /// The list of documents used for threat modeling.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DocumentInfo> Documents
+        {
+            get { return this._documents; }
+            set { this._documents = value; }
+        }
+
+        // Check to see if Documents property is set
+        internal bool IsSetDocuments()
+        {
+            return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorInformation. 
+        /// <para>
+        /// Error information if the threat model job encountered an error.
+        /// </para>
+        /// </summary>
+        public ErrorInformation ErrorInformation
+        {
+            get { return this._errorInformation; }
+            set { this._errorInformation = value; }
+        }
+
+        // Check to see if ErrorInformation property is set
+        internal bool IsSetErrorInformation()
+        {
+            return this._errorInformation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionEndTime. 
+        /// <para>
+        /// The date and time the threat model job execution ended, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? ExecutionEndTime
+        {
+            get { return this._executionEndTime; }
+            set { this._executionEndTime = value; }
+        }
+
+        // Check to see if ExecutionEndTime property is set
+        internal bool IsSetExecutionEndTime()
+        {
+            return this._executionEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionStartTime. 
+        /// <para>
+        /// The date and time the threat model job execution started, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? ExecutionStartTime
+        {
+            get { return this._executionStartTime; }
+            set { this._executionStartTime = value; }
+        }
+
+        // Check to see if ExecutionStartTime property is set
+        internal bool IsSetExecutionStartTime()
+        {
+            return this._executionStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegratedRepositories. 
+        /// <para>
+        /// The list of integrated repositories used for threat modeling.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<IntegratedRepository> IntegratedRepositories
+        {
+            get { return this._integratedRepositories; }
+            set { this._integratedRepositories = value; }
+        }
+
+        // Check to see if IntegratedRepositories property is set
+        internal bool IsSetIntegratedRepositories()
+        {
+            return this._integratedRepositories != null && (this._integratedRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeDocs. 
+        /// <para>
+        /// The scoped documents for the agent to focus on during threat modeling.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DocumentInfo> ScopeDocs
+        {
+            get { return this._scopeDocs; }
+            set { this._scopeDocs = value; }
+        }
+
+        // Check to see if ScopeDocs property is set
+        internal bool IsSetScopeDocs()
+        {
+            return this._scopeDocs != null && (this._scopeDocs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCode. 
+        /// <para>
+        /// The list of source code repositories used for threat modeling.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<SourceCodeRepository> SourceCode
+        {
+            get { return this._sourceCode; }
+            set { this._sourceCode = value; }
+        }
+
+        // Check to see if SourceCode property is set
+        internal bool IsSetSourceCode()
+        {
+            return this._sourceCode != null && (this._sourceCode.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the threat model job.
+        /// </para>
+        /// </summary>
+        public JobStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SystemOverview. 
+        /// <para>
+        /// The system overview generated during threat modeling.
+        /// </para>
+        /// </summary>
+        public string SystemOverview
+        {
+            get { return this._systemOverview; }
+            set { this._systemOverview = value; }
+        }
+
+        // Check to see if SystemOverview property is set
+        internal bool IsSetSystemOverview()
+        {
+            return this._systemOverview != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThreatModelId. 
+        /// <para>
+        /// The unique identifier of the threat model associated with the job.
+        /// </para>
+        /// </summary>
+        public string ThreatModelId
+        {
+            get { return this._threatModelId; }
+            set { this._threatModelId = value; }
+        }
+
+        // Check to see if ThreatModelId property is set
+        internal bool IsSetThreatModelId()
+        {
+            return this._threatModelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThreatModelJobId. 
+        /// <para>
+        /// The unique identifier of the threat model job.
+        /// </para>
+        /// </summary>
+        public string ThreatModelJobId
+        {
+            get { return this._threatModelJobId; }
+            set { this._threatModelJobId = value; }
+        }
+
+        // Check to see if ThreatModelJobId property is set
+        internal bool IsSetThreatModelJobId()
+        {
+            return this._threatModelJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The title of the threat model job.
+        /// </para>
+        /// </summary>
+        public string Title
+        {
+            get { return this._title; }
+            set { this._title = value; }
+        }
+
+        // Check to see if Title property is set
+        internal bool IsSetTitle()
+        {
+            return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time the threat model job was last updated, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+    }
+}

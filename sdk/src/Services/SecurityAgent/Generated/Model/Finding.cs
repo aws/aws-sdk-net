@@ -37,6 +37,7 @@ namespace Amazon.SecurityAgent.Model
     public partial class Finding
     {
         private string _agentSpaceId;
+        private string _alignmentRationale;
         private string _attackScript;
         private List<CodeLocation> _codeLocations = AWSConfigs.InitializeCollections ? new List<CodeLocation>() : null;
         private CodeRemediationTask _codeRemediationTask;
@@ -44,6 +45,7 @@ namespace Amazon.SecurityAgent.Model
         private string _codeReviewJobId;
         private ConfidenceLevel _confidence;
         private DateTime? _createdAt;
+        private string _customerNote;
         private string _description;
         private string _findingId;
         private string _lastUpdatedBy;
@@ -57,6 +59,7 @@ namespace Amazon.SecurityAgent.Model
         private FindingStatus _status;
         private string _taskId;
         private DateTime? _updatedAt;
+        private ValidationStatus _validationStatus;
         private VerificationScript _verificationScript;
 
         /// <summary>
@@ -76,6 +79,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetAgentSpaceId()
         {
             return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlignmentRationale. 
+        /// <para>
+        /// The rationale provided by the alignment agent explaining how the finding was adjusted
+        /// based on customer preferences.
+        /// </para>
+        /// </summary>
+        public string AlignmentRationale
+        {
+            get { return this._alignmentRationale; }
+            set { this._alignmentRationale = value; }
+        }
+
+        // Check to see if AlignmentRationale property is set
+        internal bool IsSetAlignmentRationale()
+        {
+            return this._alignmentRationale != null;
         }
 
         /// <summary>
@@ -208,6 +230,24 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerNote. 
+        /// <para>
+        /// A customer-provided note on the finding.
+        /// </para>
+        /// </summary>
+        public string CustomerNote
+        {
+            get { return this._customerNote; }
+            set { this._customerNote = value; }
+        }
+
+        // Check to see if CustomerNote property is set
+        internal bool IsSetCustomerNote()
+        {
+            return this._customerNote != null;
         }
 
         /// <summary>
@@ -445,6 +485,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStatus. 
+        /// <para>
+        /// The simulated validation status of the finding. Valid values are NOT_VALIDATED, VALIDATING,
+        /// CONFIRMED, NOT_REPRODUCED, and VALIDATION_FAILED.
+        /// </para>
+        /// </summary>
+        public ValidationStatus ValidationStatus
+        {
+            get { return this._validationStatus; }
+            set { this._validationStatus = value; }
+        }
+
+        // Check to see if ValidationStatus property is set
+        internal bool IsSetValidationStatus()
+        {
+            return this._validationStatus != null;
         }
 
         /// <summary>

@@ -93,7 +93,9 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ParsingStrategy. 
         /// <para>
-        /// The parsing strategy for the data source.
+        /// The parsing strategy for the data source. Only <c>SMART_PARSING</c> can be selected
+        /// for managed knowledge bases. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-customize-ingestion.html">Customize
+        /// ingestion for managed knowledge bases</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

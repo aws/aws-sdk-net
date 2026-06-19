@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property InlineExamples. 
         /// <para>
-        /// Inline examples provided directly in the request body.
+        ///  Inline examples provided directly in the request body. 
         /// </para>
         /// </summary>
         public InlineExamplesSource InlineExamples
@@ -58,8 +58,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property S3Source. 
         /// <para>
-        /// S3 URI pointing to a JSONL file in the customer's bucket. The service reads this file
-        /// using the caller's FAS credentials.
+        ///  Amazon S3 URI pointing to a JSONL file in the customer's bucket. 
         /// </para>
         /// </summary>
         public S3Source S3Source

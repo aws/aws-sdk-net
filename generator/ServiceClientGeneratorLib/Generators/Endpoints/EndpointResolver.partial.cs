@@ -78,8 +78,11 @@ namespace ServiceClientGenerator.Generators.Endpoints
 
                 if (op.RequestStructure == null)
                 {
+                    code.AppendLine($@"{innerIndent}return result;");
+                    code.AppendLine($@"{indent}}}");
                     continue;
                 }
+
                 var memberswithContextParameter = op.RequestStructure.Members.Where(c => c.ContextParameter != null).ToList();
                 if (memberswithContextParameter.Count > 0 || op.OperationContextParameters.Count > 0)
                 {

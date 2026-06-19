@@ -36,6 +36,9 @@ public class GenerationContext
     /// <summary>The service class name (e.g. "CloudTrailData"). Used to derive all other names.</summary>
     public string ServiceName { get; }
 
+    /// <summary>The raw, unmodified <c>sdkId</c> from the <c>aws.api#service</c> trait (e.g. "CloudTrail Data"). Unlike <see cref="ServiceName"/>, this is not normalized; it is the verbatim ServiceId the SDK metadata exposes.</summary>
+    public string SdkId { get; }
+
     /// <summary>The client class name without "Client" suffix (e.g. "AmazonCloudTrailData").</summary>
     public string ClientName { get; }
 
@@ -70,7 +73,8 @@ public class GenerationContext
         _index = index;
 
         var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException("Service shape is missing the aws.api#service trait.");
-        ServiceName = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
+        SdkId = serviceTrait.SdkId;
+        ServiceName = SdkNaming.NormalizeSdkId(SdkId);
         Namespace = $"Amazon.{ServiceName}";
         ClientName = $"Amazon{ServiceName}";
         ApiVersion = index.Service.ApiVersion;

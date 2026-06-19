@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Contains a reference to a secret stored in AWS Secrets Manager.
+    /// Contains a reference to a secret stored in Amazon Web Services Secrets Manager.
     /// </summary>
     public partial class SecretReference
     {
@@ -40,7 +40,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property JsonKey. 
         /// <para>
-        /// The JSON key used to extract the secret value from the AWS Secrets Manager secret.
+        /// The JSON key used to extract the secret value from the Amazon Web Services Secrets
+        /// Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,7 +60,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// The ID of the AWS Secrets Manager secret that stores the secret value.
+        /// The ID of the Amazon Web Services Secrets Manager secret that stores the secret value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

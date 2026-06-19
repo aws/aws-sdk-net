@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHarness operation.
-    /// Operation to create a Harness.
+    /// Operation to create a harness.
     /// </summary>
     public partial class CreateHarnessRequest : AmazonBedrockAgentCoreControlRequest
     {

@@ -87,6 +87,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetScheduleType())
+            {
+                context.Writer.WritePropertyName("scheduleType");
+                context.Writer.WriteStringValue(publicRequest.ScheduleType);
+            }
+
             if(publicRequest.IsSetState())
             {
                 context.Writer.WritePropertyName("state");

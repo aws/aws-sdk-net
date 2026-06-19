@@ -48,29 +48,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Adds examples to the dataset's DRAFT.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Validation:</strong> All examples are validated against the dataset's schemaType
-        /// before any writes occur. If any example fails validation, the entire batch is rejected
-        /// with ValidationException — no examples are written (all-or-nothing semantics).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
-        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
-        /// dataset status is not in {DRAFT, ACTIVE}.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Request size limit:</strong> Max 5 MB total request body. Max 1000 examples
-        /// per call.
-        /// </para>
+        /// Adds examples to the dataset's DRAFT. All examples are validated against the dataset's
+        /// schema type before any writes occur. If any example fails validation, the entire batch
+        /// is rejected (all-or-nothing semantics).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddDatasetExamples service method.</param>
         /// 
@@ -102,29 +82,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Adds examples to the dataset's DRAFT.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Validation:</strong> All examples are validated against the dataset's schemaType
-        /// before any writes occur. If any example fails validation, the entire batch is rejected
-        /// with ValidationException — no examples are written (all-or-nothing semantics).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
-        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
-        /// dataset status is not in {DRAFT, ACTIVE}.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Request size limit:</strong> Max 5 MB total request body. Max 1000 examples
-        /// per call.
-        /// </para>
+        /// Adds examples to the dataset's DRAFT. All examples are validated against the dataset's
+        /// schema type before any writes occur. If any example fails validation, the entire batch
+        /// is rejected (all-or-nothing semantics).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddDatasetExamples service method.</param>
         /// <param name="cancellationToken">
@@ -654,13 +614,8 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Creates a new Dataset resource asynchronously.
-        /// 
-        ///  
-        /// <para>
-        /// Returns immediately with status CREATING. Poll GetDataset until status transitions
-        /// to ACTIVE or CREATE_FAILED (with failureReason).
-        /// </para>
+        /// Creates a new dataset resource asynchronously. Returns immediately with status CREATING.
+        /// Poll <c>GetDataset</c> until status transitions to ACTIVE or CREATE_FAILED.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// 
@@ -689,13 +644,8 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Creates a new Dataset resource asynchronously.
-        /// 
-        ///  
-        /// <para>
-        /// Returns immediately with status CREATING. Poll GetDataset until status transitions
-        /// to ACTIVE or CREATE_FAILED (with failureReason).
-        /// </para>
+        /// Creates a new dataset resource asynchronously. Returns immediately with status CREATING.
+        /// Poll <c>GetDataset</c> until status transitions to ACTIVE or CREATE_FAILED.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -730,25 +680,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Publishes the current DRAFT as a new numbered version.
-        /// 
-        ///  
-        /// <para>
-        /// Snapshots the DRAFT examples as the next version (1, 2, 3, ...). The DRAFT is preserved
-        /// and remains editable after publishing. Returns immediately with status UPDATING. Poll
-        /// GetDataset until status transitions to ACTIVE (draftStatus=UNMODIFIED) or UPDATE_FAILED.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if status
-        /// is in {CREATING, UPDATING, DELETING}, or DATASET_IN_FAILED_STATE if status is in {CREATE_FAILED,
-        /// DELETE_FAILED}.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Quota:</strong> MAX_VERSIONS_PER_DATASET applies to published versions only
-        /// (not DRAFT).
-        /// </para>
+        /// Publishes the current DRAFT as a new numbered version. The DRAFT is preserved and
+        /// remains editable after publishing. Returns immediately with status UPDATING. Poll
+        /// <c>GetDataset</c> until status transitions to ACTIVE or UPDATE_FAILED.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetVersion service method.</param>
         /// 
@@ -780,25 +714,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Publishes the current DRAFT as a new numbered version.
-        /// 
-        ///  
-        /// <para>
-        /// Snapshots the DRAFT examples as the next version (1, 2, 3, ...). The DRAFT is preserved
-        /// and remains editable after publishing. Returns immediately with status UPDATING. Poll
-        /// GetDataset until status transitions to ACTIVE (draftStatus=UNMODIFIED) or UPDATE_FAILED.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if status
-        /// is in {CREATING, UPDATING, DELETING}, or DATASET_IN_FAILED_STATE if status is in {CREATE_FAILED,
-        /// DELETE_FAILED}.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Quota:</strong> MAX_VERSIONS_PER_DATASET applies to published versions only
-        /// (not DRAFT).
-        /// </para>
+        /// Publishes the current DRAFT as a new numbered version. The DRAFT is preserved and
+        /// remains editable after publishing. Returns immediately with status UPDATING. Poll
+        /// <c>GetDataset</c> until status transitions to ACTIVE or UPDATE_FAILED.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1130,7 +1048,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Operation to create a Harness.
+        /// Operation to create a harness.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHarness service method.</param>
         /// 
@@ -1159,7 +1077,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Operation to create a Harness.
+        /// Operation to create a harness.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHarness service method.</param>
         /// <param name="cancellationToken">
@@ -1187,6 +1105,76 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarness">REST API Reference for CreateHarness Operation</seealso>
         Task<CreateHarnessResponse> CreateHarnessAsync(CreateHarnessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateHarnessEndpoint
+
+
+        /// <summary>
+        /// Operation to create a harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarnessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarnessEndpoint">REST API Reference for CreateHarnessEndpoint Operation</seealso>
+        CreateHarnessEndpointResponse CreateHarnessEndpoint(CreateHarnessEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Operation to create a harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarnessEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarnessEndpoint">REST API Reference for CreateHarnessEndpoint Operation</seealso>
+        Task<CreateHarnessEndpointResponse> CreateHarnessEndpointAsync(CreateHarnessEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2522,45 +2510,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes a dataset version or an entire dataset (all versions + name claim). Asynchronous
-        /// 202.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>State transitions:</strong>
-        /// </para>
-        ///  <ul> <li>If <c>datasetVersion</c> is absent (full delete): status transitions to
-        /// DELETING immediately.</li> <li>If <c>datasetVersion</c> is provided (version-specific
-        /// delete): status transitions to UPDATING.</li> </ul> 
-        /// <para>
-        /// <strong>State guard (full delete):</strong> Returns ConflictException (DATASET_NOT_READY)
-        /// if the dataset status is in {CREATING, UPDATING}. Deletion is allowed from ACTIVE,
-        /// CREATE_FAILED, UPDATE_FAILED, and DELETE_FAILED states.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard (version-specific delete):</strong> Returns ConflictException
-        /// (DATASET_NOT_READY) if the dataset status is not in {ACTIVE, CREATE_FAILED, UPDATE_FAILED}.
-        /// </para>
-        ///  
-        /// <para>
-        /// Fails with ConflictException (REFERENCED_BY_EVAL_JOB) if referenced by an active evaluation
-        /// job (full delete only).
-        /// </para>
-        ///  
-        /// <para>
-        /// If the delete workflow fails after retries, status is set to DELETE_FAILED (full delete)
-        /// or UPDATE_FAILED (version-specific delete). Calling DeleteDataset on a DELETE_FAILED
-        /// dataset re-triggers the delete workflow (idempotent retry path).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Version parameter:</strong>
-        /// </para>
-        ///  <ul> <li>If <c>datasetVersion</c> is absent: deletes ALL versions and the Dataset
-        /// record itself.</li> <li>If <c>datasetVersion</c> is provided: deletes only that specific
-        /// DatasetVersion. Returns ResourceNotFoundException if the specified version does not
-        /// exist.</li> </ul>
+        /// Deletes a dataset version or an entire dataset asynchronously. If <c>datasetVersion</c>
+        /// is absent, deletes all versions and the dataset record itself. If provided, deletes
+        /// only that specific version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
@@ -2589,45 +2541,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes a dataset version or an entire dataset (all versions + name claim). Asynchronous
-        /// 202.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>State transitions:</strong>
-        /// </para>
-        ///  <ul> <li>If <c>datasetVersion</c> is absent (full delete): status transitions to
-        /// DELETING immediately.</li> <li>If <c>datasetVersion</c> is provided (version-specific
-        /// delete): status transitions to UPDATING.</li> </ul> 
-        /// <para>
-        /// <strong>State guard (full delete):</strong> Returns ConflictException (DATASET_NOT_READY)
-        /// if the dataset status is in {CREATING, UPDATING}. Deletion is allowed from ACTIVE,
-        /// CREATE_FAILED, UPDATE_FAILED, and DELETE_FAILED states.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard (version-specific delete):</strong> Returns ConflictException
-        /// (DATASET_NOT_READY) if the dataset status is not in {ACTIVE, CREATE_FAILED, UPDATE_FAILED}.
-        /// </para>
-        ///  
-        /// <para>
-        /// Fails with ConflictException (REFERENCED_BY_EVAL_JOB) if referenced by an active evaluation
-        /// job (full delete only).
-        /// </para>
-        ///  
-        /// <para>
-        /// If the delete workflow fails after retries, status is set to DELETE_FAILED (full delete)
-        /// or UPDATE_FAILED (version-specific delete). Calling DeleteDataset on a DELETE_FAILED
-        /// dataset re-triggers the delete workflow (idempotent retry path).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Version parameter:</strong>
-        /// </para>
-        ///  <ul> <li>If <c>datasetVersion</c> is absent: deletes ALL versions and the Dataset
-        /// record itself.</li> <li>If <c>datasetVersion</c> is provided: deletes only that specific
-        /// DatasetVersion. Returns ResourceNotFoundException if the specified version does not
-        /// exist.</li> </ul>
+        /// Deletes a dataset version or an entire dataset asynchronously. If <c>datasetVersion</c>
+        /// is absent, deletes all versions and the dataset record itself. If provided, deletes
+        /// only that specific version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// <param name="cancellationToken">
@@ -2662,24 +2578,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes specific examples by ID from DRAFT.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Validation:</strong> All example IDs are validated before any deletes occur.
-        /// If any ID does not exist in DRAFT, the entire batch is rejected with ResourceNotFoundException
-        /// — no examples are deleted (all-or-nothing semantics).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
-        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
-        /// dataset status is not in {DRAFT, ACTIVE}.
-        /// </para>
+        /// Deletes specific examples by ID from DRAFT. All example IDs are validated before
+        /// any deletes occur. If any ID does not exist in DRAFT, the entire batch is rejected
+        /// (all-or-nothing semantics).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetExamples service method.</param>
         /// 
@@ -2708,24 +2609,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes specific examples by ID from DRAFT.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Validation:</strong> All example IDs are validated before any deletes occur.
-        /// If any ID does not exist in DRAFT, the entire batch is rejected with ResourceNotFoundException
-        /// — no examples are deleted (all-or-nothing semantics).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
-        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
-        /// dataset status is not in {DRAFT, ACTIVE}.
-        /// </para>
+        /// Deletes specific examples by ID from DRAFT. All example IDs are validated before
+        /// any deletes occur. If any ID does not exist in DRAFT, the entire batch is rejected
+        /// (all-or-nothing semantics).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetExamples service method.</param>
         /// <param name="cancellationToken">
@@ -3089,6 +2975,70 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarness">REST API Reference for DeleteHarness Operation</seealso>
         Task<DeleteHarnessResponse> DeleteHarnessAsync(DeleteHarnessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteHarnessEndpoint
+
+
+        /// <summary>
+        /// Operation to delete a harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHarnessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarnessEndpoint">REST API Reference for DeleteHarnessEndpoint Operation</seealso>
+        DeleteHarnessEndpointResponse DeleteHarnessEndpoint(DeleteHarnessEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Operation to delete a harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHarnessEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarnessEndpoint">REST API Reference for DeleteHarnessEndpoint Operation</seealso>
+        Task<DeleteHarnessEndpointResponse> DeleteHarnessEndpointAsync(DeleteHarnessEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4376,37 +4326,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Retrieves dataset metadata only.
-        /// 
-        ///  
-        /// <para>
-        /// Use <c>?datasetVersion=DRAFT</c> or <c>?datasetVersion=N</c> to retrieve a specific
-        /// version's metadata. If absent, defaults to DRAFT (the mutable working copy). Returns
-        /// ResourceNotFoundException if the specified version is not found.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Initial state after CreateDataset:</strong> When CreateDataset completes successfully
-        /// (status transitions to ACTIVE), only a DRAFT working copy exists. No published versions
-        /// exist until CreateDatasetVersion is called. At this point draftStatus is MODIFIED
-        /// because the DRAFT has content that has never been published.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Default version behavior:</strong> When <c>datasetVersion</c> is omitted,
-        /// the operation returns the DRAFT working copy. To retrieve a specific published version,
-        /// pass the version number as a string (e.g. <c>?datasetVersion=1</c>).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Allowed for all statuses including DELETING. Returns
-        /// the dataset record with its current status so callers can observe the deletion in
-        /// progress.
-        /// </para>
-        ///  
-        /// <para>
-        /// For paginated example IDs use ListDatasetExamples.
-        /// </para>
+        /// Retrieves dataset metadata. Use the <c>datasetVersion</c> query parameter to retrieve
+        /// a specific version's metadata. If absent, defaults to DRAFT. For paginated example
+        /// content, use <c>ListDatasetExamples</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
         /// 
@@ -4435,37 +4357,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Retrieves dataset metadata only.
-        /// 
-        ///  
-        /// <para>
-        /// Use <c>?datasetVersion=DRAFT</c> or <c>?datasetVersion=N</c> to retrieve a specific
-        /// version's metadata. If absent, defaults to DRAFT (the mutable working copy). Returns
-        /// ResourceNotFoundException if the specified version is not found.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Initial state after CreateDataset:</strong> When CreateDataset completes successfully
-        /// (status transitions to ACTIVE), only a DRAFT working copy exists. No published versions
-        /// exist until CreateDatasetVersion is called. At this point draftStatus is MODIFIED
-        /// because the DRAFT has content that has never been published.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Default version behavior:</strong> When <c>datasetVersion</c> is omitted,
-        /// the operation returns the DRAFT working copy. To retrieve a specific published version,
-        /// pass the version number as a string (e.g. <c>?datasetVersion=1</c>).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Allowed for all statuses including DELETING. Returns
-        /// the dataset record with its current status so callers can observe the deletion in
-        /// progress.
-        /// </para>
-        ///  
-        /// <para>
-        /// For paginated example IDs use ListDatasetExamples.
-        /// </para>
+        /// Retrieves dataset metadata. Use the <c>datasetVersion</c> query parameter to retrieve
+        /// a specific version's metadata. If absent, defaults to DRAFT. For paginated example
+        /// content, use <c>ListDatasetExamples</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
         /// <param name="cancellationToken">
@@ -4734,7 +4628,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Operation to get a single Harness.
+        /// Operation to get a single harness.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHarness service method.</param>
         /// 
@@ -4760,7 +4654,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Operation to get a single Harness.
+        /// Operation to get a single harness.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHarness service method.</param>
         /// <param name="cancellationToken">
@@ -4785,6 +4679,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarness">REST API Reference for GetHarness Operation</seealso>
         Task<GetHarnessResponse> GetHarnessAsync(GetHarnessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetHarnessEndpoint
+
+
+        /// <summary>
+        /// Operation to get a single harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarnessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the GetHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarnessEndpoint">REST API Reference for GetHarnessEndpoint Operation</seealso>
+        GetHarnessEndpointResponse GetHarnessEndpoint(GetHarnessEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Operation to get a single harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarnessEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarnessEndpoint">REST API Reference for GetHarnessEndpoint Operation</seealso>
+        Task<GetHarnessEndpointResponse> GetHarnessEndpointAsync(GetHarnessEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6378,20 +6330,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Returns paginated examples from the dataset.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Version-pinned pagination:</strong> The server embeds the resolved version
-        /// in the <c>nextToken</c>. Once pagination begins, all subsequent pages are pinned to
-        /// that version regardless of concurrent mutations or whether <c>datasetVersion</c> is
-        /// passed on subsequent requests. The <c>datasetVersion</c> query parameter is only used
-        /// for the first request (when <c>nextToken</c> is absent); if omitted, defaults to DRAFT.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Allowed for all statuses including DELETING.
-        /// </para>
+        /// Returns paginated examples from the dataset. The server embeds the resolved version
+        /// in the pagination token. Once pagination begins, all subsequent pages are pinned to
+        /// that version regardless of concurrent mutations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetExamples service method.</param>
         /// 
@@ -6420,20 +6361,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Returns paginated examples from the dataset.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Version-pinned pagination:</strong> The server embeds the resolved version
-        /// in the <c>nextToken</c>. Once pagination begins, all subsequent pages are pinned to
-        /// that version regardless of concurrent mutations or whether <c>datasetVersion</c> is
-        /// passed on subsequent requests. The <c>datasetVersion</c> query parameter is only used
-        /// for the first request (when <c>nextToken</c> is absent); if omitted, defaults to DRAFT.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Allowed for all statuses including DELETING.
-        /// </para>
+        /// Returns paginated examples from the dataset. The server embeds the resolved version
+        /// in the pagination token. Once pagination begins, all subsequent pages are pinned to
+        /// that version regardless of concurrent mutations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetExamples service method.</param>
         /// <param name="cancellationToken">
@@ -6468,7 +6398,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Lists all datasets in the caller's account, paginated. No presigned URLs in list results.
+        /// Lists all datasets in the caller's account, paginated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
@@ -6491,7 +6421,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Lists all datasets in the caller's account, paginated. No presigned URLs in list results.
+        /// Lists all datasets in the caller's account, paginated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// <param name="cancellationToken">
@@ -6522,11 +6452,6 @@ namespace Amazon.BedrockAgentCoreControl
         /// <summary>
         /// Lists all published versions of a dataset, sorted by version number descending (newest
         /// first). Does not include the DRAFT working copy.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Allowed for all statuses including DELETING.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetVersions service method.</param>
         /// 
@@ -6554,11 +6479,6 @@ namespace Amazon.BedrockAgentCoreControl
         /// <summary>
         /// Lists all published versions of a dataset, sorted by version number descending (newest
         /// first). Does not include the DRAFT working copy.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Allowed for all statuses including DELETING.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetVersions service method.</param>
         /// <param name="cancellationToken">
@@ -6765,6 +6685,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
         /// This exception is thrown when the number of requests exceeds the limit
         /// </exception>
@@ -6791,6 +6714,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
         /// This exception is thrown when the number of requests exceeds the limit
         /// </exception>
@@ -6802,11 +6728,69 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  ListHarnessEndpoints
+
+
+        /// <summary>
+        /// Operation to list the endpoints of a harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnessEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListHarnessEndpoints service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessEndpoints">REST API Reference for ListHarnessEndpoints Operation</seealso>
+        ListHarnessEndpointsResponse ListHarnessEndpoints(ListHarnessEndpointsRequest request);
+
+
+
+        /// <summary>
+        /// Operation to list the endpoints of a harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnessEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHarnessEndpoints service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessEndpoints">REST API Reference for ListHarnessEndpoints Operation</seealso>
+        Task<ListHarnessEndpointsResponse> ListHarnessEndpointsAsync(ListHarnessEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListHarnesses
 
 
         /// <summary>
-        /// Operation to list Harnesses.
+        /// Operation to list harnesses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHarnesses service method.</param>
         /// 
@@ -6829,7 +6813,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Operation to list Harnesses.
+        /// Operation to list harnesses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHarnesses service method.</param>
         /// <param name="cancellationToken">
@@ -6851,6 +6835,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnesses">REST API Reference for ListHarnesses Operation</seealso>
         Task<ListHarnessesResponse> ListHarnessesAsync(ListHarnessesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListHarnessVersions
+
+
+        /// <summary>
+        /// Operation to list the versions of a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnessVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListHarnessVersions service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessVersions">REST API Reference for ListHarnessVersions Operation</seealso>
+        ListHarnessVersionsResponse ListHarnessVersions(ListHarnessVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Operation to list the versions of a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnessVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHarnessVersions service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnessVersions">REST API Reference for ListHarnessVersions Operation</seealso>
+        Task<ListHarnessVersionsResponse> ListHarnessVersionsAsync(ListHarnessVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8763,16 +8805,8 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Updates a dataset's metadata. Synchronous operation. Only provided fields are updated;
-        /// omitted fields remain unchanged.
-        /// 
-        ///  
-        /// <para>
-        /// To modify dataset content, use AddDatasetExamples, UpdateDatasetExamples, or DeleteDatasetExamples.
-        /// </para>
-        ///  
-        /// <para>
-        /// Cannot update: name, schemaType, kmsKeyArn (immutable after creation).
-        /// </para>
+        /// omitted fields remain unchanged. To modify dataset content, use <c>AddDatasetExamples</c>,
+        /// <c>UpdateDatasetExamples</c>, or <c>DeleteDatasetExamples</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
         /// 
@@ -8802,16 +8836,8 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Updates a dataset's metadata. Synchronous operation. Only provided fields are updated;
-        /// omitted fields remain unchanged.
-        /// 
-        ///  
-        /// <para>
-        /// To modify dataset content, use AddDatasetExamples, UpdateDatasetExamples, or DeleteDatasetExamples.
-        /// </para>
-        ///  
-        /// <para>
-        /// Cannot update: name, schemaType, kmsKeyArn (immutable after creation).
-        /// </para>
+        /// omitted fields remain unchanged. To modify dataset content, use <c>AddDatasetExamples</c>,
+        /// <c>UpdateDatasetExamples</c>, or <c>DeleteDatasetExamples</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -8846,34 +8872,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Updates multiple existing examples in-place on DRAFT.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Validation:</strong> All examples are validated against the dataset's schemaType
-        /// before any writes occur. If any example fails validation, the entire batch is rejected
-        /// with ValidationException — no examples are updated (all-or-nothing semantics).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
-        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
-        /// </para>
-        ///  
-        /// <para>
-        /// Fails with ResourceNotFoundException if any exampleId does not exist in DRAFT. To
-        /// add new examples, use AddDatasetExamples instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
-        /// dataset status is not in {DRAFT, ACTIVE}.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Request size limit:</strong> Max 5 MB total request body. Max 1000 examples
-        /// per call.
-        /// </para>
+        /// Updates multiple existing examples in-place on DRAFT. All examples are validated
+        /// against the dataset's schema type before any writes occur. If any example fails validation,
+        /// the entire batch is rejected (all-or-nothing semantics).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDatasetExamples service method.</param>
         /// 
@@ -8905,34 +8906,9 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Updates multiple existing examples in-place on DRAFT.
-        /// 
-        ///  
-        /// <para>
-        /// <strong>Validation:</strong> All examples are validated against the dataset's schemaType
-        /// before any writes occur. If any example fails validation, the entire batch is rejected
-        /// with ValidationException — no examples are updated (all-or-nothing semantics).
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
-        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
-        /// </para>
-        ///  
-        /// <para>
-        /// Fails with ResourceNotFoundException if any exampleId does not exist in DRAFT. To
-        /// add new examples, use AddDatasetExamples instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
-        /// dataset status is not in {DRAFT, ACTIVE}.
-        /// </para>
-        ///  
-        /// <para>
-        /// <strong>Request size limit:</strong> Max 5 MB total request body. Max 1000 examples
-        /// per call.
-        /// </para>
+        /// Updates multiple existing examples in-place on DRAFT. All examples are validated
+        /// against the dataset's schema type before any writes occur. If any example fails validation,
+        /// the entire batch is rejected (all-or-nothing semantics).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDatasetExamples service method.</param>
         /// <param name="cancellationToken">
@@ -9260,7 +9236,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Operation to update a Harness.
+        /// Operation to update a harness.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHarness service method.</param>
         /// 
@@ -9289,7 +9265,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Operation to update a Harness.
+        /// Operation to update a harness.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHarness service method.</param>
         /// <param name="cancellationToken">
@@ -9317,6 +9293,76 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarness">REST API Reference for UpdateHarness Operation</seealso>
         Task<UpdateHarnessResponse> UpdateHarnessAsync(UpdateHarnessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateHarnessEndpoint
+
+
+        /// <summary>
+        /// Operation to update a harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHarnessEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarnessEndpoint">REST API Reference for UpdateHarnessEndpoint Operation</seealso>
+        UpdateHarnessEndpointResponse UpdateHarnessEndpoint(UpdateHarnessEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Operation to update a harness endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHarnessEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHarnessEndpoint service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarnessEndpoint">REST API Reference for UpdateHarnessEndpoint Operation</seealso>
+        Task<UpdateHarnessEndpointResponse> UpdateHarnessEndpointAsync(UpdateHarnessEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

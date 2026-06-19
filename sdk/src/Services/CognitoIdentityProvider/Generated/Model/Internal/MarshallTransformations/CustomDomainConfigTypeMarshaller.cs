@@ -52,6 +52,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
+            if(requestObject.IsSetSecurityPolicy())
+            {
+                context.Writer.WritePropertyName("SecurityPolicy");
+                context.Writer.WriteStringValue(requestObject.SecurityPolicy);
+            }
+
         }
 
         /// <summary>

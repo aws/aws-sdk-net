@@ -41,6 +41,7 @@ namespace Amazon.Neptune.Model
         private string _engineVersion;
         private bool? _iamDatabaseAuthenticationEnabled;
         private int? _iops;
+        private string _networkType;
         private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
         private string _storageType;
 
@@ -154,6 +155,28 @@ namespace Amazon.Neptune.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The pending change in network type for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>IPV4</c>, <c>DUAL</c> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

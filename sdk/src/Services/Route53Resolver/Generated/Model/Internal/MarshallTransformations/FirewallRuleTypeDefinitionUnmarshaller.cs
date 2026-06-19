@@ -74,6 +74,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SubscriptionInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = SubscriptionInfoUnmarshaller.Instance;
+                    unmarshalledObject.SubscriptionInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Value", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

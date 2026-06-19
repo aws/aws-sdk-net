@@ -58,6 +58,12 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                     response.DistanceMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("vectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueryOutputVector, QueryOutputVectorUnmarshaller>(QueryOutputVectorUnmarshaller.Instance);

@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBatchEvaluation())
+            {
+                context.Writer.WritePropertyName("batchEvaluation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BatchEvaluationTraceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.BatchEvaluation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCloudwatchLogs())
             {
                 context.Writer.WritePropertyName("cloudwatchLogs");

@@ -61,8 +61,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the step. Valid values include PREFLIGHT, STATIC_ANALYSIS, PENTEST, and
-        /// FINALIZING.
+        /// The name of the step. Valid values include PREFLIGHT, STATIC_ANALYSIS, PENTEST, VALIDATION,
+        /// and FINALIZING.
         /// </para>
         /// </summary>
         public StepName Name

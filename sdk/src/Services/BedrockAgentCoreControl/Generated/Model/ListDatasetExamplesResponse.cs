@@ -81,7 +81,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
-        /// The version returned.
+        ///  The version returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,8 +100,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Examples. 
         /// <para>
-        /// Paginated example content. Each element is a JSON object containing at least an <c>exampleId</c>
-        /// field plus the schema-specific content fields.
+        ///  Paginated example content. Each element is a JSON object containing at least an <c>exampleId</c>
+        /// field plus the schema-specific content fields. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

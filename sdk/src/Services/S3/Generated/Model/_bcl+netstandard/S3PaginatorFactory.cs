@@ -61,6 +61,14 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Paginator for ListObjectAnnotations operation
+        ///</summary>
+        public IListObjectAnnotationsPaginator ListObjectAnnotations(ListObjectAnnotationsRequest request) 
+        {
+            return new ListObjectAnnotationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListObjectsV2 operation
         ///</summary>
         public IListObjectsV2Paginator ListObjectsV2(ListObjectsV2Request request) 

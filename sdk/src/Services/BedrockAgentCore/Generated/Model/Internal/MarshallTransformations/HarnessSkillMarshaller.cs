@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAwsSkills())
+            {
+                context.Writer.WritePropertyName("awsSkills");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarnessSkillAwsSkillsSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsSkills, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetGit())
             {
                 context.Writer.WritePropertyName("git");

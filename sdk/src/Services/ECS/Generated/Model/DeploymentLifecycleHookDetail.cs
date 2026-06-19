@@ -87,19 +87,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the lifecycle hook. Valid values depend on the hook type:
+        /// The status of the lifecycle hook. Valid values include <c>AWAITING_ACTION</c>, <c>IN_PROGRESS</c>,
+        /// <c>SUCCEEDED</c>, <c>FAILED</c>, and <c>TIMED_OUT</c>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For <c>AWS_LAMBDA</c> hooks: <c>IN_PROGRESS</c>, <c>SUCCEEDED</c>, <c>FAILED</c>,
-        /// and <c>TIMED_OUT</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For <c>PAUSE</c> hooks: <c>AWAITING_ACTION</c>, <c>SUCCEEDED</c>, <c>FAILED</c>, and
-        /// <c>TIMED_OUT</c>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public DeploymentLifecycleHookStatus Status
         {

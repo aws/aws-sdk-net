@@ -150,6 +150,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetResourceShareArns())
+            {
+                context.Writer.WritePropertyName("resourceShareArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceShareArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("securityGroups");

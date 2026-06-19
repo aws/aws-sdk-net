@@ -34,9 +34,11 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterInstanceGroupSpecification
     {
+        private ClusterAutoPatchConfig _autoPatchConfig;
         private ClusterCapacityRequirements _capacityRequirements;
         private string _executionRole;
         private string _imageId;
+        private string _imageReleaseVersion;
         private int? _instanceCount;
         private string _instanceGroupName;
         private ClusterInstanceRequirements _instanceRequirements;
@@ -52,6 +54,25 @@ namespace Amazon.SageMaker.Model
         private ClusterSlurmConfig _slurmConfig;
         private int? _threadsPerCore;
         private string _trainingPlanArn;
+
+        /// <summary>
+        /// Gets and sets the property AutoPatchConfig. 
+        /// <para>
+        /// The configuration for automatic OS security patching. If present, the system automatically
+        /// applies PATCH AMI updates to this instance group.
+        /// </para>
+        /// </summary>
+        public ClusterAutoPatchConfig AutoPatchConfig
+        {
+            get { return this._autoPatchConfig; }
+            set { this._autoPatchConfig = value; }
+        }
+
+        // Check to see if AutoPatchConfig property is set
+        internal bool IsSetAutoPatchConfig()
+        {
+            return this._autoPatchConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityRequirements. 
@@ -146,6 +167,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImageId()
         {
             return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageReleaseVersion. 
+        /// <para>
+        /// The version of the HyperPod-managed AMI to use for the instance group. Uses semantic
+        /// versioning in the format <c>MAJOR.MINOR.PATCH</c> (for example, <c>1.2.3</c>). If
+        /// omitted, the latest available version is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string ImageReleaseVersion
+        {
+            get { return this._imageReleaseVersion; }
+            set { this._imageReleaseVersion = value; }
+        }
+
+        // Check to see if ImageReleaseVersion property is set
+        internal bool IsSetImageReleaseVersion()
+        {
+            return this._imageReleaseVersion != null;
         }
 
         /// <summary>

@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "For .NET 8\u002B reduce allocations when computing the HMAC by using .NET\u0027s newer static .NET runtime HashData method"
-    ]
-  }
-}

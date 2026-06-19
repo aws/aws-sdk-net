@@ -1167,6 +1167,60 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type ControlPlaneEgressModeType.
+    /// </summary>
+    public class ControlPlaneEgressModeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for ControlPlaneEgressModeType
+        /// </summary>
+        public static readonly ControlPlaneEgressModeType AWS_MANAGED = new ControlPlaneEgressModeType("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_ISOLATED for ControlPlaneEgressModeType
+        /// </summary>
+        public static readonly ControlPlaneEgressModeType CUSTOMER_ISOLATED = new ControlPlaneEgressModeType("CUSTOMER_ISOLATED");
+        /// <summary>
+        /// Constant CUSTOMER_ROUTED for ControlPlaneEgressModeType
+        /// </summary>
+        public static readonly ControlPlaneEgressModeType CUSTOMER_ROUTED = new ControlPlaneEgressModeType("CUSTOMER_ROUTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlPlaneEgressModeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlPlaneEgressModeType FindValue(string value)
+        {
+            return FindValue<ControlPlaneEgressModeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlPlaneEgressModeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EksAnywhereSubscriptionLicenseType.
     /// </summary>
     public class EksAnywhereSubscriptionLicenseType : ConstantClass
@@ -2255,6 +2309,56 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type SpreadLevel.
+    /// </summary>
+    public class SpreadLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Host for SpreadLevel
+        /// </summary>
+        public static readonly SpreadLevel Host = new SpreadLevel("host");
+        /// <summary>
+        /// Constant Rack for SpreadLevel
+        /// </summary>
+        public static readonly SpreadLevel Rack = new SpreadLevel("rack");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpreadLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpreadLevel FindValue(string value)
+        {
+            return FindValue<SpreadLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpreadLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SsoIdentityType.
     /// </summary>
     public class SsoIdentityType : ConstantClass
@@ -2435,6 +2539,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ConfigurationValues = new UpdateParamType("ConfigurationValues");
         /// <summary>
+        /// Constant ControlPlaneEgressMode for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ControlPlaneEgressMode = new UpdateParamType("ControlPlaneEgressMode");
+        /// <summary>
         /// Constant DeletionProtection for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType DeletionProtection = new UpdateParamType("DeletionProtection");
@@ -2495,6 +2603,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");
         /// <summary>
+        /// Constant NetworkAccess for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType NetworkAccess = new UpdateParamType("NetworkAccess");
+        /// <summary>
         /// Constant NodeRepairConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType NodeRepairConfig = new UpdateParamType("NodeRepairConfig");
@@ -2530,6 +2642,18 @@ namespace Amazon.EKS
         /// Constant ResolveConflicts for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ResolveConflicts = new UpdateParamType("ResolveConflicts");
+        /// <summary>
+        /// Constant RoleArn for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleArn = new UpdateParamType("RoleArn");
+        /// <summary>
+        /// Constant RoleMappingsToAddOrUpdate for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleMappingsToAddOrUpdate = new UpdateParamType("RoleMappingsToAddOrUpdate");
+        /// <summary>
+        /// Constant RoleMappingsToRemove for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleMappingsToRemove = new UpdateParamType("RoleMappingsToRemove");
         /// <summary>
         /// Constant SecurityGroups for UpdateParamType
         /// </summary>
@@ -2719,9 +2843,17 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateType AutoModeUpdate = new UpdateType("AutoModeUpdate");
         /// <summary>
+        /// Constant CapabilityUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType CapabilityUpdate = new UpdateType("CapabilityUpdate");
+        /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
+        /// <summary>
+        /// Constant ControlPlaneEgressUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ControlPlaneEgressUpdate = new UpdateType("ControlPlaneEgressUpdate");
         /// <summary>
         /// Constant ControlPlaneScalingConfigUpdate for UpdateType
         /// </summary>

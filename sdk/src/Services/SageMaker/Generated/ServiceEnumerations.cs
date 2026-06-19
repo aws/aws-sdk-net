@@ -1307,6 +1307,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlG6Xlarge = new AppInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG7e12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e12xlarge = new AppInstanceType("ml.g7e.12xlarge");
+        /// <summary>
+        /// Constant MlG7e24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e24xlarge = new AppInstanceType("ml.g7e.24xlarge");
+        /// <summary>
+        /// Constant MlG7e2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e2xlarge = new AppInstanceType("ml.g7e.2xlarge");
+        /// <summary>
+        /// Constant MlG7e48xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e48xlarge = new AppInstanceType("ml.g7e.48xlarge");
+        /// <summary>
+        /// Constant MlG7e4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e4xlarge = new AppInstanceType("ml.g7e.4xlarge");
+        /// <summary>
+        /// Constant MlG7e8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG7e8xlarge = new AppInstanceType("ml.g7e.8xlarge");
+        /// <summary>
         /// Constant MlGeospatialInteractive for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlGeospatialInteractive = new AppInstanceType("ml.geospatial.interactive");
@@ -5125,6 +5149,14 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant EndOfLife for ClusterImageVersionStatus
+        /// </summary>
+        public static readonly ClusterImageVersionStatus EndOfLife = new ClusterImageVersionStatus("EndOfLife");
+        /// <summary>
+        /// Constant SecurityUpdateRequired for ClusterImageVersionStatus
+        /// </summary>
+        public static readonly ClusterImageVersionStatus SecurityUpdateRequired = new ClusterImageVersionStatus("SecurityUpdateRequired");
+        /// <summary>
         /// Constant UpdateAvailable for ClusterImageVersionStatus
         /// </summary>
         public static readonly ClusterImageVersionStatus UpdateAvailable = new ClusterImageVersionStatus("UpdateAvailable");
@@ -5966,6 +5998,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterNodeRecovery(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterPatchingStrategy.
+    /// </summary>
+    public class ClusterPatchingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WhenAllIdle for ClusterPatchingStrategy
+        /// </summary>
+        public static readonly ClusterPatchingStrategy WhenAllIdle = new ClusterPatchingStrategy("WhenAllIdle");
+        /// <summary>
+        /// Constant WhenIdle for ClusterPatchingStrategy
+        /// </summary>
+        public static readonly ClusterPatchingStrategy WhenIdle = new ClusterPatchingStrategy("WhenIdle");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterPatchingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterPatchingStrategy FindValue(string value)
+        {
+            return FindValue<ClusterPatchingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterPatchingStrategy(string value)
         {
             return FindValue(value);
         }

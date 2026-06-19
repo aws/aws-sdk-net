@@ -507,6 +507,10 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly DataReplicationErrorString FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER = new DataReplicationErrorString("FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER");
         /// <summary>
+        /// Constant FAILED_TO_CREATE_FSX_SNAPSHOT for DataReplicationErrorString
+        /// </summary>
+        public static readonly DataReplicationErrorString FAILED_TO_CREATE_FSX_SNAPSHOT = new DataReplicationErrorString("FAILED_TO_CREATE_FSX_SNAPSHOT");
+        /// <summary>
         /// Constant FAILED_TO_CREATE_SECURITY_GROUP for DataReplicationErrorString
         /// </summary>
         public static readonly DataReplicationErrorString FAILED_TO_CREATE_SECURITY_GROUP = new DataReplicationErrorString("FAILED_TO_CREATE_SECURITY_GROUP");
@@ -526,6 +530,10 @@ namespace Amazon.Mgn
         /// Constant FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT for DataReplicationErrorString
         /// </summary>
         public static readonly DataReplicationErrorString FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT = new DataReplicationErrorString("FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT");
+        /// <summary>
+        /// Constant FAILED_TO_SETUP_FSX_PROXY for DataReplicationErrorString
+        /// </summary>
+        public static readonly DataReplicationErrorString FAILED_TO_SETUP_FSX_PROXY = new DataReplicationErrorString("FAILED_TO_SETUP_FSX_PROXY");
         /// <summary>
         /// Constant FAILED_TO_START_DATA_TRANSFER for DataReplicationErrorString
         /// </summary>
@@ -628,6 +636,10 @@ namespace Amazon.Mgn
         /// Constant PAIR_REPLICATION_SERVER_WITH_AGENT for DataReplicationInitiationStepName
         /// </summary>
         public static readonly DataReplicationInitiationStepName PAIR_REPLICATION_SERVER_WITH_AGENT = new DataReplicationInitiationStepName("PAIR_REPLICATION_SERVER_WITH_AGENT");
+        /// <summary>
+        /// Constant SETUP_FSX_PROXY for DataReplicationInitiationStepName
+        /// </summary>
+        public static readonly DataReplicationInitiationStepName SETUP_FSX_PROXY = new DataReplicationInitiationStepName("SETUP_FSX_PROXY");
         /// <summary>
         /// Constant START_DATA_TRANSFER for DataReplicationInitiationStepName
         /// </summary>
@@ -1711,6 +1723,110 @@ namespace Amazon.Mgn
 
 
     /// <summary>
+    /// Constants used for properties of type LastKnownCheckStatus.
+    /// </summary>
+    public class LastKnownCheckStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LastKnownCheckStatus
+        /// </summary>
+        public static readonly LastKnownCheckStatus FAILED = new LastKnownCheckStatus("FAILED");
+        /// <summary>
+        /// Constant PASSED for LastKnownCheckStatus
+        /// </summary>
+        public static readonly LastKnownCheckStatus PASSED = new LastKnownCheckStatus("PASSED");
+        /// <summary>
+        /// Constant PENDING for LastKnownCheckStatus
+        /// </summary>
+        public static readonly LastKnownCheckStatus PENDING = new LastKnownCheckStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastKnownCheckStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastKnownCheckStatus FindValue(string value)
+        {
+            return FindValue<LastKnownCheckStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastKnownCheckStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LastKnownCheckType.
+    /// </summary>
+    public class LastKnownCheckType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2 for LastKnownCheckType
+        /// </summary>
+        public static readonly LastKnownCheckType EC2 = new LastKnownCheckType("EC2");
+        /// <summary>
+        /// Constant FSx for LastKnownCheckType
+        /// </summary>
+        public static readonly LastKnownCheckType FSx = new LastKnownCheckType("FSx");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastKnownCheckType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastKnownCheckType FindValue(string value)
+        {
+            return FindValue<LastKnownCheckType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastKnownCheckType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LaunchDisposition.
     /// </summary>
     public class LaunchDisposition : ConstantClass
@@ -2629,6 +2745,10 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly ReplicationConfigurationReplicatedDiskStagingDiskType AUTO = new ReplicationConfigurationReplicatedDiskStagingDiskType("AUTO");
         /// <summary>
+        /// Constant FSX_ONTAP for ReplicationConfigurationReplicatedDiskStagingDiskType
+        /// </summary>
+        public static readonly ReplicationConfigurationReplicatedDiskStagingDiskType FSX_ONTAP = new ReplicationConfigurationReplicatedDiskStagingDiskType("FSX_ONTAP");
+        /// <summary>
         /// Constant GP2 for ReplicationConfigurationReplicatedDiskStagingDiskType
         /// </summary>
         public static readonly ReplicationConfigurationReplicatedDiskStagingDiskType GP2 = new ReplicationConfigurationReplicatedDiskStagingDiskType("GP2");
@@ -2964,6 +3084,56 @@ namespace Amazon.Mgn
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SsmParameterStoreParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageType.
+    /// </summary>
+    public class StorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBS for StorageType
+        /// </summary>
+        public static readonly StorageType EBS = new StorageType("EBS");
+        /// <summary>
+        /// Constant FSX_ONTAP for StorageType
+        /// </summary>
+        public static readonly StorageType FSX_ONTAP = new StorageType("FSX_ONTAP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageType FindValue(string value)
+        {
+            return FindValue<StorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageType(string value)
         {
             return FindValue(value);
         }

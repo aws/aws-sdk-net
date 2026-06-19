@@ -38,6 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private ScheduleType _scheduleType;
         private ScheduledQueryState _state;
 
         /// <summary>
@@ -73,6 +74,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleType. 
+        /// <para>
+        /// Filter scheduled queries by schedule type. Valid values are <c>CUSTOMER_MANAGED</c>
+        /// and <c>AWS_MANAGED</c>. If not specified, scheduled queries of all schedule types
+        /// are returned.
+        /// </para>
+        /// </summary>
+        public ScheduleType ScheduleType
+        {
+            get { return this._scheduleType; }
+            set { this._scheduleType = value; }
+        }
+
+        // Check to see if ScheduleType property is set
+        internal bool IsSetScheduleType()
+        {
+            return this._scheduleType != null;
         }
 
         /// <summary>

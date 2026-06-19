@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _creationTime;
         private string _description;
         private DestinationConfiguration _destinationConfiguration;
+        private long? _endTimeOffset;
         private string _executionRoleArn;
         private ExecutionStatus _lastExecutionStatus;
         private long? _lastTriggeredTime;
@@ -49,6 +50,7 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _scheduleEndTime;
         private string _scheduleExpression;
         private long? _scheduleStartTime;
+        private ScheduleType _scheduleType;
         private long? _startTimeOffset;
         private ScheduledQueryState _state;
         private string _timezone;
@@ -107,6 +109,24 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDestinationConfiguration()
         {
             return this._destinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTimeOffset. 
+        /// <para>
+        /// The end time offset in seconds of the updated scheduled query.
+        /// </para>
+        /// </summary>
+        public long? EndTimeOffset
+        {
+            get { return this._endTimeOffset; }
+            set { this._endTimeOffset = value; }
+        }
+
+        // Check to see if EndTimeOffset property is set
+        internal bool IsSetEndTimeOffset()
+        {
+            return this._endTimeOffset.HasValue; 
         }
 
         /// <summary>
@@ -214,7 +234,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the updated scheduled query.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }
@@ -337,6 +357,24 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetScheduleStartTime()
         {
             return this._scheduleStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleType. 
+        /// <para>
+        /// The schedule type of the updated scheduled query.
+        /// </para>
+        /// </summary>
+        public ScheduleType ScheduleType
+        {
+            get { return this._scheduleType; }
+            set { this._scheduleType = value; }
+        }
+
+        // Check to see if ScheduleType property is set
+        internal bool IsSetScheduleType()
+        {
+            return this._scheduleType != null;
         }
 
         /// <summary>

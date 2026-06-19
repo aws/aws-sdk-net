@@ -47,6 +47,7 @@ namespace Amazon.WAFV2.Model
         private long? _capacity;
         private Dictionary<string, CustomResponseBody> _customResponseBodies = AWSConfigs.InitializeCollections ? new Dictionary<string, CustomResponseBody>() : null;
         private string _description;
+        private MonetizationConfig _monetizationConfig;
         private string _name;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private Scope _scope;
@@ -142,6 +143,25 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonetizationConfig. 
+        /// <para>
+        /// The monetization configuration for the rule group. Provide this when any rule in the
+        /// rule group uses the <c>Monetize</c> action.
+        /// </para>
+        /// </summary>
+        public MonetizationConfig MonetizationConfig
+        {
+            get { return this._monetizationConfig; }
+            set { this._monetizationConfig = value; }
+        }
+
+        // Check to see if MonetizationConfig property is set
+        internal bool IsSetMonetizationConfig()
+        {
+            return this._monetizationConfig != null;
         }
 
         /// <summary>
