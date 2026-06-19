@@ -178,7 +178,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal abstract void PopulateObjects();
 
         /// <inheritdoc/>
-        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
     }
 
     /// <summary>
@@ -202,8 +202,6 @@ namespace Amazon.DynamoDBv2.DataModel
             // table.CreateTransactWrite() return the IDocumentTransactWrite interface.
             // But since we rely on the internal behavior of DocumentTransactWrite, we instatiate it via the constructor.
             DocumentTransaction = new DocumentTransactWrite(table, _config.ReturnConsumedCapacity);
-
-            // add here return consumed capacity from config
 
             TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
@@ -515,7 +513,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal TracerProvider TracerProvider { get; set; }
 
         /// <inheritdoc/>
-        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
 
 
         /// <summary>
@@ -552,8 +550,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
                 transaction.AddTransactionPart(abstractTransactWrite.DocumentTransaction);
             }
-            ConsumedCapacity = transaction.ConsumedCapacity;
             transaction.ExecuteHelper();
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);

@@ -237,7 +237,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal TracerProvider TracerProvider { get; set; }
 
         /// <inheritdoc/>
-        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
 
         /// <summary>
         /// Constructs a MultiTableTransactGet object from a number of

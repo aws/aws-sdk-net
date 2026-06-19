@@ -871,8 +871,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         TransactWriteItemOperationConfig OperationConfig { get; }
 
-        List<ConsumedCapacity> ConsumedCapacity { get; }
-
         #endregion
 
 
@@ -890,8 +888,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public DocumentTransactWrite TransactionPart { get; set; }
 
         public TransactWriteItemOperationConfig OperationConfig { get; set; }
-
-        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
 
         public abstract TransactWriteItem GetRequest();
 

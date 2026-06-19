@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Internal;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -35,7 +34,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     Id = 111,
                     Status = "active",
-                    UserName = "alice",
+                    UserName = "username1",
                     Timestamp = 1000,
                     OrderId = "order-1",
                     Region = "us-west-2",
@@ -48,7 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     Id = 222,
                     Status = "active",
-                    UserName = "alice",
+                    UserName = "username2",
                     Timestamp = 1000,
                     OrderId = "order-1",
                     Region = "us-west-2",
@@ -69,11 +68,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     var capacity = tran.ConsumedCapacity[0];
                     Assert.Equal(12, capacity.WriteCapacityUnits);
                     Assert.Equal(4, capacity.GlobalSecondaryIndexes.Count);
-                    capacity.GlobalSecondaryIndexes.ForEach(c =>
+                    foreach (var item in capacity.GlobalSecondaryIndexes)
                     {
-                        Assert.Equal(2, c.Value.WriteCapacityUnits);
-                        Assert.Null(c.Value.ReadCapacityUnits);
-                    });
+                        Assert.Equal(2, item.Value.WriteCapacityUnits);
+                        Assert.Null(item.Value.ReadCapacityUnits);
+                    } 
                     Assert.Null(capacity.ReadCapacityUnits);
                     Assert.Null(capacity.LocalSecondaryIndexes);
                 }
