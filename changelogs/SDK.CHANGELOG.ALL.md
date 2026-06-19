@@ -1,3 +1,15 @@
+### 4.0.274.0 (2026-06-19 18:16 UTC)
+* AppStream (4.0.13.0)
+	* Amazon WorkSpaces Agent Access now supports domain-joined fleets for enterprise identity integration, real-time agent observation with instant stop controls, and MCP tool forwarding for lower-latency, cost-effective desktop tool access.
+* BedrockAgent (4.0.11.0)
+	* Add support for metadata-only retrieval on GetFlow, GetFlowVersion, and GetPrompt APIs.
+* Connect (4.0.48.0)
+	* This is the release for point based scoring system and the evaluation form validation project
+* Glue (4.0.34.0)
+	* Adds the SearchAssets operation for discovering assets in the AWS Glue Data Catalog using full-text search and filters. Minor naming refinements across the Glossary Terms and Attachment APIs for consistency.
+* OpenSearchService (4.0.24.0)
+	* This release introduces data source attachment APIs, enabling users to attach and detach Amazon OpenSearch Service domains and Amazon OpenSearch Serverless collections to an OpenSearch application.
+
 ### 4.0.273.0 (2026-06-18 18:17 UTC)
 * ApplicationAutoScaling (4.0.4.0)
 	* Adds support for ECS high-resolution predefined scaling metrics (ECSServiceAverageCPUUtilizationHighResolution, ECSServiceAverageMemoryUtilizationHighResolution) enabling 20-second metric periods for faster scaling
