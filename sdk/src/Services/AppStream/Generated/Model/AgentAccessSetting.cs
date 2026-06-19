@@ -41,8 +41,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AgentAction. 
         /// <para>
-        /// The agent action to configure. Valid values are COMPUTER_VISION and COMPUTER_INPUT.
-        /// If you enable COMPUTER_INPUT, you must also enable COMPUTER_VISION.
+        /// The agent action to configure. Valid values are COMPUTER_VISION, COMPUTER_INPUT, and
+        /// FORWARD_MCP_TOOLS. If you enable COMPUTER_INPUT, you must also enable COMPUTER_VISION.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

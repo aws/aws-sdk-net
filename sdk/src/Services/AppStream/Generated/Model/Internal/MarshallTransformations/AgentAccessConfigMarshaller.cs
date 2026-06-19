@@ -86,6 +86,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetUserControlMode())
+            {
+                context.Writer.WritePropertyName("UserControlMode");
+                context.Writer.WriteStringValue(requestObject.UserControlMode);
+            }
+
         }
 
         /// <summary>
