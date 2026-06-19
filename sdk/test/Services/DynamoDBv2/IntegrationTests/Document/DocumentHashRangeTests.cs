@@ -3,7 +3,6 @@ using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -654,10 +653,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         private async Task TestReturnConsumedCapacity(ITable hashRangeTable)
         {
+            var name1 = UtilityMethods.GenerateName("Lewis");
+            var name2 = UtilityMethods.GenerateName("Frida");
+
             var hDoc1 = new Document
             {
                 ["Id"] = 6041,
-                ["Name"] = "Lewis",
+                ["Name"] = name1,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 1000,
                 ["Garbage"] = "asdf",
@@ -668,7 +670,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var hDoc2 = new Document
             {
                 ["Id"] = 6042,
-                ["Name"] = "Frida",
+                ["Name"] = name2,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 500,
                 ["Garbage"] = "hjkl",
@@ -693,8 +695,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactGet = hashRangeTable.CreateTransactGet(ReturnConsumedCapacity.TOTAL);
-                transactGet.AddKey(hashKey: "Lewis", rangeKey: 6);
-                transactGet.AddKey(hashKey: "Frida", rangeKey: 3);
+                transactGet.AddKey(hashKey: name1, rangeKey: 6);
+                transactGet.AddKey(hashKey: name2, rangeKey: 3);
                 await transactGet.ExecuteAsync();
 
                 Assert.Equal(1, transactGet.ConsumedCapacity.Count);

@@ -2,6 +2,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var entity1 = new CompositeHashRangeEntity
                 {
-                    Id = 111,
+                    Id = UtilityMethods.GenerateId(),
                     Status = "active",
                     UserName = "username1",
                     Timestamp = 1000,
@@ -45,7 +46,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 var entity2 = new CompositeHashRangeEntity
                 {
-                    Id = 222,
+                    Id = UtilityMethods.GenerateId(),
                     Status = "active",
                     UserName = "username2",
                     Timestamp = 1000,
@@ -58,7 +59,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 {
                     var transactWrite = context.CreateTransactWrite<CompositeHashRangeEntity>(new TransactWriteConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
-                    ;
                     transactWrite.AddSaveItem(entity1);
                     transactWrite.AddSaveItem(entity2);
                     var tran = context.CreateMultiTableTransactWrite(transactWrite);

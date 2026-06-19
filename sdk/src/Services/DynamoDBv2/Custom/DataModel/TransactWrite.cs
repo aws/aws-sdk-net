@@ -515,7 +515,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <inheritdoc/>
         public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
 
-
         /// <summary>
         /// Constructs a MultiTableTransactWrite object from a number of
         /// TransactWrite objects

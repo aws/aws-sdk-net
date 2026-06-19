@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -799,14 +798,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             var employee1 = new Employee
             {
-                Name = "Alan",
+                Name = UtilityMethods.GenerateName("Alan"),
                 MiddleName = "Matt",
                 Age = 31,
             };
 
             var employee2 = new Employee
             {
-                Name = "Mark",
+                Name = UtilityMethods.GenerateName("Mark"),
                 MiddleName = "John",
                 Age = 40,
             };

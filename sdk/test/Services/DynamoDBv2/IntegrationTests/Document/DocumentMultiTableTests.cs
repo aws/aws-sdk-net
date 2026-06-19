@@ -1,6 +1,7 @@
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -335,9 +336,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             var multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
 
+            var hId1 = UtilityMethods.GenerateId();
+            var hId2 = UtilityMethods.GenerateId();
+            var hrName1 = UtilityMethods.GenerateName("Alan");
+            var hrName2 = UtilityMethods.GenerateName("Diane");
+
             var hDoc1 = new Document
             {
-                ["Id"] = 6011,
+                ["Id"] = hId1,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 1000,
                 ["Garbage"] = "asdf"
@@ -345,7 +351,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hDoc2 = new Document
             {
-                ["Id"] = 6012,
+                ["Id"] = hId2,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 500,
                 ["Garbage"] = "hjkl"
@@ -360,7 +366,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hrDoc1 = new Document
             {
-                ["Name"] = "Alan",
+                ["Name"] = hrName1,
                 ["Age"] = 30,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Score"] = 100,
@@ -369,7 +375,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hrDoc2 = new Document
             {
-                ["Name"] = "Diane",
+                ["Name"] = hrName2,
                 ["Age"] = 40,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Score"] = 150,
@@ -389,13 +395,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
                 var hTransactGet = hashTable.CreateTransactGet(ReturnConsumedCapacity.TOTAL);
-                hTransactGet.AddKey(hashKey: 6011);
-                hTransactGet.AddKey(hashKey: 6012);
+                hTransactGet.AddKey(hashKey: hId1);
+                hTransactGet.AddKey(hashKey: hId2);
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
                 var hrTransactGet = hashRangeTable.CreateTransactGet(ReturnConsumedCapacity.TOTAL);
-                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
-                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
+                hrTransactGet.AddKey(hashKey: hrName1, rangeKey: 30);
+                hrTransactGet.AddKey(hashKey: hrName2, rangeKey: 40);
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
                 await multiTableDocumentTransactGet.ExecuteAsync();
                 Assert.Equal(2, hTransactGet.Results.Count);
@@ -432,7 +438,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hDoc1 = new Document
             {
-                ["Id"] = 6011,
+                ["Id"] = UtilityMethods.GenerateId(),
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 1000,
                 ["Garbage"] = "asdf"
@@ -440,7 +446,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hDoc2 = new Document
             {
-                ["Id"] = 6012,
+                ["Id"] = UtilityMethods.GenerateId(),
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 500,
                 ["Garbage"] = "hjkl"
@@ -450,10 +456,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             transactWriteHDoc.AddDocumentToPut(hDoc1);
             transactWriteHDoc.AddDocumentToPut(hDoc2);
             multiTableDocumentTransactWrite.AddTransactionPart(transactWriteHDoc);
-            
+
             var hrDoc1 = new Document
             {
-                ["Name"] = "Alan",
+                ["Name"] = UtilityMethods.GenerateName("Alan"),
                 ["Age"] = 30,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Score"] = 100,
@@ -462,7 +468,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hrDoc2 = new Document
             {
-                ["Name"] = "Diane",
+                ["Name"] = UtilityMethods.GenerateName("Diane"),
                 ["Age"] = 40,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Score"] = 150,
