@@ -869,16 +869,26 @@ namespace Amazon.Util
             return a.Count == b.Count && !a.Except(b).Any();
         }
 
-        /// <summary>
-        /// Utility method for converting a string to a MemoryStream.
-        /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
-        public static MemoryStream GenerateMemoryStreamFromString(string s)
-        {
-            MemoryStream stream = new MemoryStream();
-            StreamWriter writer = new StreamWriter(stream);
-            writer.Write(s);
+#if !NETCOREAPP
+		//mirrors defaults used by more modern StreamWriter constructors
+		private static readonly Encoding UTF8NoBOM = new UTF8Encoding(false, true);
+		private const int DefaultStreamWriterBufferSize = 1024;
+#endif
+
+		/// <summary>
+		/// Utility method for converting a string to a MemoryStream.
+		/// </summary>
+		/// <param name="s"></param>
+		/// <returns></returns>
+		public static MemoryStream GenerateMemoryStreamFromString(string s)
+		{
+			MemoryStream stream = new MemoryStream();
+#if NETCOREAPP
+            using StreamWriter writer = new(stream, leaveOpen: true);
+#else
+			using StreamWriter writer = new(stream, UTF8NoBOM, DefaultStreamWriterBufferSize, leaveOpen: true);
+#endif
+			writer.Write(s);
             writer.Flush();
             stream.Position = 0;
             return stream;

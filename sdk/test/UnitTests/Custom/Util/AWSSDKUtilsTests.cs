@@ -206,5 +206,18 @@ namespace AWSSDK.UnitTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void GenerateMemoryStreamFromString_ReturnsReadableStream_WhenInputIsValid()
+        {
+            var input = "Hello World";
+            var expectedBytes = Encoding.UTF8.GetBytes(input);
+            using var memoryStream = AWSSDKUtils.GenerateMemoryStreamFromString(input);
+            var actualBytes = new byte[memoryStream.Length];
+            memoryStream.Read(actualBytes, 0, actualBytes.Length);
+            CollectionAssert.AreEqual(expectedBytes, actualBytes);
+        }
     }
 }
