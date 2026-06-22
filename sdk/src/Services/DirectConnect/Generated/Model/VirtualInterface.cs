@@ -435,9 +435,21 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property RateLimit. 
         /// <para>
-        /// The rate limit (bandwidth allocation) applied to the virtual interface. The possible
-        /// values are <c>50 Mbps</c>, <c>100 Mbps</c>, <c>200 Mbps</c>, <c>300 Mbps</c>, <c>400
-        /// Mbps</c>, <c>500 Mbps</c>, <c>1 Gbps</c>, <c>2 Gbps</c>, <c>5 Gbps</c>, or <c>10 Gbps</c>.
+        /// The rate limit (bandwidth allocation) applied to the virtual interface. The value
+        /// must be one of the supported bandwidth values and cannot exceed the bandwidth of the
+        /// parent connection or LAG. Supported values: <c>50Mbps</c>, <c>100Mbps</c>, <c>200Mbps</c>,
+        /// <c>300Mbps</c>, <c>400Mbps</c>, <c>500Mbps</c>, <c>600Mbps</c>, <c>700Mbps</c>, <c>800Mbps</c>,
+        /// <c>900Mbps</c>, <c>1Gbps</c>, <c>1.2Gbps</c>, <c>1.5Gbps</c>, <c>1.8Gbps</c>, <c>2Gbps</c>,
+        /// <c>2.1Gbps</c>, <c>2.4Gbps</c>, <c>2.7Gbps</c>, <c>3Gbps</c>, <c>3.2Gbps</c>, <c>3.6Gbps</c>,
+        /// <c>4Gbps</c>, <c>5Gbps</c>, <c>6Gbps</c>, <c>7Gbps</c>, <c>8Gbps</c>, <c>9Gbps</c>,
+        /// <c>10Gbps</c>, <c>12Gbps</c>, <c>15Gbps</c>, <c>18Gbps</c>, <c>20Gbps</c>, <c>21Gbps</c>,
+        /// <c>24Gbps</c>, <c>27Gbps</c>, <c>30Gbps</c>, <c>32Gbps</c>, <c>36Gbps</c>, <c>40Gbps</c>,
+        /// <c>50Gbps</c>, <c>60Gbps</c>, <c>70Gbps</c>, <c>80Gbps</c>, <c>100Gbps</c>, <c>120Gbps</c>,
+        /// <c>150Gbps</c>, <c>180Gbps</c>, <c>200Gbps</c>, <c>210Gbps</c>, <c>240Gbps</c>, <c>270Gbps</c>,
+        /// <c>300Gbps</c>, <c>320Gbps</c>, <c>360Gbps</c>, <c>400Gbps</c>, <c>450Gbps</c>, <c>480Gbps</c>,
+        /// <c>500Gbps</c>, <c>540Gbps</c>, <c>600Gbps</c>, <c>700Gbps</c>, <c>800Gbps</c>, <c>900Gbps</c>,
+        /// <c>1Tbps</c>, <c>1.1Tbps</c>, <c>1.2Tbps</c>, <c>1.3Tbps</c>, <c>1.4Tbps</c>, <c>1.5Tbps</c>,
+        /// <c>1.6Tbps</c>.
         /// </para>
         /// </summary>
         public string RateLimit
