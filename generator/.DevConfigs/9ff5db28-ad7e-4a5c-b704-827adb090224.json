@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Revert change in Core 4.0.9.4 due to multiple regressions"
-    ]
-  }
-}

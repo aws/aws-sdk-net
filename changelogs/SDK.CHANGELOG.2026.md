@@ -1,3 +1,8 @@
+### 4.0.275.1 (2026-06-22 21:15 UTC)
+* Core 4.0.9.7
+	* Revert change in Core 4.0.9.4 due to multiple regressions
+	* All service and extension packages updated to require new Core
+
 ### 4.0.275.0 (2026-06-22 19:05 UTC)
 * ApplicationSignals (4.0.10.0)
 	* Application Signals now supports dynamic instrumentation and Service Events telemetry. Add instrumentation at runtime without restarts, and use fine-grained profiling data to quickly pinpoint latency and error root causes.
