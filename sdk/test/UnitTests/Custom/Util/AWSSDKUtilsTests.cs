@@ -15,6 +15,7 @@
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -66,7 +67,11 @@ namespace AWSSDK.UnitTests
         public void TestWhiteSpaceCompression()
         {
             const string text = "qqdglmcdoxtqiwwlucjv      xtehwhfhchtkhgoufyzgtkxvgcmcyvifp  sgseqpnzvaecjcwdjsylcilfkh";
-            Assert.IsFalse(AWSSDKUtils.CompressSpaces(text).Contains("  "));
+            const string expected = "qqdglmcdoxtqiwwlucjv xtehwhfhchtkhgoufyzgtkxvgcmcyvifp sgseqpnzvaecjcwdjsylcilfkh";
+
+            var compressed = AWSSDKUtils.CompressSpaces(text);
+            Assert.IsFalse(compressed.Contains("  "));
+            Assert.AreEqual(expected, compressed);
         }
 
         [TestMethod]
@@ -159,7 +164,7 @@ namespace AWSSDK.UnitTests
             // Sample UTC value: 9/8/2020 18:48:34
             var expectedDateTime = new DateTime(2020, 9, 8, 18, 48, 34, DateTimeKind.Utc);
             var dateTime = AWSSDKUtils.ConvertFromUnixEpochMilliseconds(1599590914000);
-            
+
             Assert.AreEqual(expectedDateTime, dateTime);
         }
 
@@ -171,7 +176,7 @@ namespace AWSSDK.UnitTests
             // Sample UTC value: 9/8/2020 18:48:34.970
             var expectedDateTime = new DateTime(2020, 9, 8, 18, 48, 34, DateTimeKind.Utc).AddMilliseconds(970);
             var dateTime = AWSSDKUtils.ConvertFromUnixEpochMilliseconds(1599590914970);
-            
+
             Assert.AreEqual(expectedDateTime, dateTime);
         }
 
@@ -219,5 +224,78 @@ namespace AWSSDK.UnitTests
             memoryStream.Read(actualBytes, 0, actualBytes.Length);
             CollectionAssert.AreEqual(expectedBytes, actualBytes);
         }
-    }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void DictionariesAreEqual_ReturnsTrue_WhenDictionariesAreEqual()
+        {
+            var dict1 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "value2" }
+            };
+            var dict2 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "value2" }
+            };
+            Assert.IsTrue(AWSSDKUtils.DictionariesAreEqual(dict1, dict2));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void DictionariesAreEqual_ReturnsFalse_WhenDictionariesAreNotEqual()
+        {
+            var dict1 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "value2" }
+            };
+            var dict2 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "differentValue" }
+            };
+            Assert.IsFalse(AWSSDKUtils.DictionariesAreEqual(dict1, dict2));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataRow("")]
+        [DataRow(null)]
+        [DataRow("invalid-hex-string")]
+        [DataRow("123H")]
+		[DataRow("12345")]
+		[TestMethod]
+        public void HexStringToBytes_Throws_WhenInputIsNotValidHexString(string input)
+        {
+            Assert.Throws<Exception>(() => AWSSDKUtils.HexStringToBytes(input));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataRow("48656c6c6f20576f726c64", "Hello World")]
+        [DataRow("48656C6C6F20576F726C64", "Hello World")]
+        [TestMethod]
+        public void HexStringToBytes_ReturnsCorrectBytes_WhenInputIsValidHexString(string hexString, string expectedString)
+        {
+            var expectedBytes = Encoding.UTF8.GetBytes(expectedString);
+            var actualBytes = AWSSDKUtils.HexStringToBytes(hexString);
+            CollectionAssert.AreEqual(expectedBytes, actualBytes);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void GenerateChecksumForBytes_ReturnsCorrectChecksum()
+		{
+			var input = "Hello World";
+			var inputBytes = Encoding.UTF8.GetBytes(input);
+			var expectedChecksum = "B10A8DB164E0754105B7A99BE72E3FE5";
+            var actualChecksum = AWSSDKUtils.GenerateChecksumForBytes(inputBytes, false);
+			Assert.AreEqual(expectedChecksum, actualChecksum);
+		}
+	}
 }

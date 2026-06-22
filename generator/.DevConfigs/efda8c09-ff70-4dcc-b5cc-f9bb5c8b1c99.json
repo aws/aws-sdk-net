@@ -3,7 +3,7 @@
     "updateMinimum": false,
     "type": "patch",
     "changeLogMessages": [
-      "Fix StreamWriter missing disposal"
+      "small improvements in AWSSDKUtils"
     ]
   }
 }
