@@ -30,48 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Configures settings for the <c>BlackFrames</c> metric.
+    /// The content quality analysis configuration for the router input.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// The content quality analysis feature only monitors the first video stream and the
+    /// first audio stream it encounters within the router input source.
+    /// </para>
+    ///  </important>
     /// </summary>
-    public partial class BlackFrames
+    public partial class RouterContentQualityAnalysisConfiguration
     {
-        private State _state;
-        private int? _thresholdSeconds;
+        private ContentQualityAnalysisFeatureConfiguration _contentLevel;
 
         /// <summary>
-        /// Gets and sets the property State. 
+        /// Gets and sets the property ContentLevel. 
         /// <para>
-        ///  Indicates whether the <c>BlackFrames</c> metric is enabled or disabled.
+        /// The content quality analysis configuration.
         /// </para>
         /// </summary>
-        public State State
+        public ContentQualityAnalysisFeatureConfiguration ContentLevel
         {
-            get { return this._state; }
-            set { this._state = value; }
+            get { return this._contentLevel; }
+            set { this._contentLevel = value; }
         }
 
-        // Check to see if State property is set
-        internal bool IsSetState()
+        // Check to see if ContentLevel property is set
+        internal bool IsSetContentLevel()
         {
-            return this._state != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ThresholdSeconds. 
-        /// <para>
-        ///  Specifies the number of consecutive seconds of black frames that triggers an event
-        /// or alert.
-        /// </para>
-        /// </summary>
-        public int? ThresholdSeconds
-        {
-            get { return this._thresholdSeconds; }
-            set { this._thresholdSeconds = value; }
-        }
-
-        // Check to see if ThresholdSeconds property is set
-        internal bool IsSetThresholdSeconds()
-        {
-            return this._thresholdSeconds.HasValue; 
+            return this._contentLevel != null;
         }
 
     }

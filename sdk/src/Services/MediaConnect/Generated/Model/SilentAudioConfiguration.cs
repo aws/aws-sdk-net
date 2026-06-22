@@ -30,20 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Configures settings for the <c>BlackFrames</c> metric.
+    /// Detects silent audio in the router input's source content and reports it through a
+    /// CloudWatch metric, an EventBridge event, and a router input message.
     /// </summary>
-    public partial class BlackFrames
+    public partial class SilentAudioConfiguration
     {
-        private State _state;
+        private ContentQualityAnalysisState _state;
         private int? _thresholdSeconds;
 
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        ///  Indicates whether the <c>BlackFrames</c> metric is enabled or disabled.
+        /// Indicates whether silent audio detection is enabled or disabled.
         /// </para>
         /// </summary>
-        public State State
+        [AWSProperty(Required=true)]
+        public ContentQualityAnalysisState State
         {
             get { return this._state; }
             set { this._state = value; }
@@ -58,10 +60,11 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property ThresholdSeconds. 
         /// <para>
-        ///  Specifies the number of consecutive seconds of black frames that triggers an event
-        /// or alert.
+        /// The number of consecutive seconds of silence that MediaConnect must detect before
+        /// it reports an issue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=10, Max=60)]
         public int? ThresholdSeconds
         {
             get { return this._thresholdSeconds; }
