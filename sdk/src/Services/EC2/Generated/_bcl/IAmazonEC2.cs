@@ -2009,8 +2009,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
         /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
-        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>.
         /// 
         ///  
         /// <para>
@@ -2028,8 +2027,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
         /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
-        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>.
         /// 
         ///  
         /// <para>
@@ -2614,10 +2612,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>scheduled</c> — requires a cancellation quote. Use <c>CreateCapacityReservationCancellationQuote</c>
-        /// to generate a quote, then pass the quote ID with <c>ApplyCancellationCharges</c> set
-        /// to <c>commitment-wind-down</c>. The cancellation charge depends on how close the reservation
-        /// is to its start date.
+        ///  <c>scheduled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2626,14 +2621,10 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>active</c> during the commitment duration — requires a cancellation quote. Use
-        /// <c>CreateCapacityReservationCancellationQuote</c> to generate a quote, then pass the
-        /// quote ID with <c>ApplyCancellationCharges</c> set to <c>commitment-wind-down</c>.
-        /// The Capacity Reservation transitions to <c>cancelling</c> while charges are applied.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>delayed</c> — the commitment duration is waived, so no cancellation charge applies.
+        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
+        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
+        /// charges are applied.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -2641,6 +2632,11 @@ namespace Amazon.EC2
         /// Blocks for ML</a>.
         /// </para>
         ///  </note> 
+        /// <para>
+        /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
+        /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
+        /// </para>
+        ///  
         /// <para>
         /// Instances running in the reserved capacity continue running until you stop them. Stopped
         /// instances that target the Capacity Reservation can no longer launch. Modify these
@@ -2671,10 +2667,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>scheduled</c> — requires a cancellation quote. Use <c>CreateCapacityReservationCancellationQuote</c>
-        /// to generate a quote, then pass the quote ID with <c>ApplyCancellationCharges</c> set
-        /// to <c>commitment-wind-down</c>. The cancellation charge depends on how close the reservation
-        /// is to its start date.
+        ///  <c>scheduled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2683,14 +2676,10 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>active</c> during the commitment duration — requires a cancellation quote. Use
-        /// <c>CreateCapacityReservationCancellationQuote</c> to generate a quote, then pass the
-        /// quote ID with <c>ApplyCancellationCharges</c> set to <c>commitment-wind-down</c>.
-        /// The Capacity Reservation transitions to <c>cancelling</c> while charges are applied.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>delayed</c> — the commitment duration is waived, so no cancellation charge applies.
+        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
+        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
+        /// charges are applied.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -2698,6 +2687,11 @@ namespace Amazon.EC2
         /// Blocks for ML</a>.
         /// </para>
         ///  </note> 
+        /// <para>
+        /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
+        /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
+        /// </para>
+        ///  
         /// <para>
         /// Instances running in the reserved capacity continue running until you stop them. Stopped
         /// instances that target the Capacity Reservation can no longer launch. Modify these
@@ -34410,7 +34404,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Sets or replaces the criteria for Allowed AMIs.
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// The <c>ImageCriteria</c> can include up to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 10 <c>ImageCriterion</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
         /// of the criteria you set, the AMIs created by your account will always be discoverable
@@ -34434,7 +34436,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Sets or replaces the criteria for Allowed AMIs.
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// The <c>ImageCriteria</c> can include up to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 10 <c>ImageCriterion</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
         /// of the criteria you set, the AMIs created by your account will always be discoverable

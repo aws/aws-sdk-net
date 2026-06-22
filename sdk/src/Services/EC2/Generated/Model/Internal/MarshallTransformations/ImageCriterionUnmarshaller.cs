@@ -89,6 +89,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ImageProviders.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("imageWatermarkSet/item", targetDepth))
+                    {
+                        var unmarshaller = ImageWatermarkFilterResponseUnmarshaller.Instance;
+                        if (unmarshalledObject.ImageWatermarks == null)
+                        {
+                            unmarshalledObject.ImageWatermarks = new List<ImageWatermarkFilterResponse>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ImageWatermarks.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("marketplaceProductCodeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
