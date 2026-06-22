@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KafkaClusterClientAuthentication Object
+    /// Response Unmarshaller for KafkaClusterMTLSAuthentication Object
     /// </summary>  
-    public class KafkaClusterClientAuthenticationUnmarshaller : IJsonUnmarshaller<KafkaClusterClientAuthentication, JsonUnmarshallerContext>
+    public class KafkaClusterMTLSAuthenticationUnmarshaller : IJsonUnmarshaller<KafkaClusterMTLSAuthentication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KafkaClusterClientAuthentication Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public KafkaClusterMTLSAuthentication Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KafkaClusterClientAuthentication unmarshalledObject = new KafkaClusterClientAuthentication();
+            KafkaClusterMTLSAuthentication unmarshalledObject = new KafkaClusterMTLSAuthentication();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mTLS", targetDepth, ref reader))
+                if (context.TestExpression("secretArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = KafkaClusterMTLSAuthenticationUnmarshaller.Instance;
-                    unmarshalledObject.MTLS = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("saslScram", targetDepth, ref reader))
-                {
-                    var unmarshaller = KafkaClusterSaslScramAuthenticationUnmarshaller.Instance;
-                    unmarshalledObject.SaslScram = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static KafkaClusterClientAuthenticationUnmarshaller _instance = new KafkaClusterClientAuthenticationUnmarshaller();        
+        private static KafkaClusterMTLSAuthenticationUnmarshaller _instance = new KafkaClusterMTLSAuthenticationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KafkaClusterClientAuthenticationUnmarshaller Instance
+        public static KafkaClusterMTLSAuthenticationUnmarshaller Instance
         {
             get
             {

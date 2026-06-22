@@ -30,48 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Details of the client authentication used by the Apache Kafka cluster.
+    /// Details for mTLS client authentication.
     /// </summary>
-    public partial class KafkaClusterClientAuthentication
+    public partial class KafkaClusterMTLSAuthentication
     {
-        private KafkaClusterMTLSAuthentication _mtls;
-        private KafkaClusterSaslScramAuthentication _saslScram;
+        private string _secretArn;
 
         /// <summary>
-        /// Gets and sets the property MTLS. 
+        /// Gets and sets the property SecretArn. 
         /// <para>
-        /// Details for mTLS client authentication.
-        /// </para>
-        /// </summary>
-        public KafkaClusterMTLSAuthentication MTLS
-        {
-            get { return this._mtls; }
-            set { this._mtls = value; }
-        }
-
-        // Check to see if MTLS property is set
-        internal bool IsSetMTLS()
-        {
-            return this._mtls != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SaslScram. 
-        /// <para>
-        /// Details for SASL/SCRAM client authentication.
+        /// The Amazon Resource Name (ARN) of the Secrets Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public KafkaClusterSaslScramAuthentication SaslScram
+        public string SecretArn
         {
-            get { return this._saslScram; }
-            set { this._saslScram = value; }
+            get { return this._secretArn; }
+            set { this._secretArn = value; }
         }
 
-        // Check to see if SaslScram property is set
-        internal bool IsSetSaslScram()
+        // Check to see if SecretArn property is set
+        internal bool IsSetSecretArn()
         {
-            return this._saslScram != null;
+            return this._secretArn != null;
         }
 
     }

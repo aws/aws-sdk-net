@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// KafkaClusterClientAuthentication Marshaller
+    /// KafkaClusterMTLSAuthentication Marshaller
     /// </summary>
-    public class KafkaClusterClientAuthenticationMarshaller : IRequestMarshaller<KafkaClusterClientAuthentication, JsonMarshallerContext> 
+    public class KafkaClusterMTLSAuthenticationMarshaller : IRequestMarshaller<KafkaClusterMTLSAuthentication, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KafkaClusterClientAuthentication requestObject, JsonMarshallerContext context)
+        public void Marshall(KafkaClusterMTLSAuthentication requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMTLS())
+            if(requestObject.IsSetSecretArn())
             {
-                context.Writer.WritePropertyName("mTLS");
-                context.Writer.WriteStartObject();
-
-                var marshaller = KafkaClusterMTLSAuthenticationMarshaller.Instance;
-                marshaller.Marshall(requestObject.MTLS, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSaslScram())
-            {
-                context.Writer.WritePropertyName("saslScram");
-                context.Writer.WriteStartObject();
-
-                var marshaller = KafkaClusterSaslScramAuthenticationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SaslScram, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("secretArn");
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static KafkaClusterClientAuthenticationMarshaller Instance = new KafkaClusterClientAuthenticationMarshaller();
+        public readonly static KafkaClusterMTLSAuthenticationMarshaller Instance = new KafkaClusterMTLSAuthenticationMarshaller();
 
     }
 }
