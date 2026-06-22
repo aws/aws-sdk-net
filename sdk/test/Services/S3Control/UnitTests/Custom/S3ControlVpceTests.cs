@@ -36,21 +36,15 @@ namespace AWSSDK.UnitTests
         private const string S3Outposts = "s3-outposts";
         private const string USWest2 = "us-west-2";
         private const string USEast1 = "us-east-1";
-        private static string FallbackRegion => FallbackRegionFactory.GetRegionEndpoint()?.SystemName;
 
         [Flags]
         public enum Flags { None = 0, Dualstack = 2, UseArnRegion = 4 }
 
-        private static IEnumerable<object[]> GetAccessPointTestCases => new List<object[]>
-        {
-            new object[] { "apname", "https://beta.example.com", Flags.None, "https://123456789012.beta.example.com", FallbackRegion, S3 },
-            new object[] { "apname", "https://s3.us-west-2.amazonaws.com", Flags.None, "https://123456789012.s3.us-west-2.amazonaws.com", USWest2, S3 },
-            new object[] { "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts },
-            new object[] { "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "https://s3-outposts.eu-west-1.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.eu-west-1.amazonaws.com", USWest2, S3Outposts }, //This will produce a signing error for a real request but are the expected values
-        };
-
         [TestMethod]
-        [DynamicData(nameof(GetAccessPointTestCases))]
+        [DataRow("apname", "https://beta.example.com", Flags.None, "https://123456789012.beta.example.com", USEast1, S3)]
+        [DataRow("apname", "https://s3.us-west-2.amazonaws.com", Flags.None, "https://123456789012.s3.us-west-2.amazonaws.com", USWest2, S3)]        
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "https://s3-outposts.eu-west-1.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.eu-west-1.amazonaws.com", USWest2, S3Outposts)] //This will produce a signing error for a real request but are the expected values
         [TestCategory("S3Control")]
         public void VpceEndpointTests_GetAccessPoint(string accessPointName, string serviceUrl, Flags flags,
             string expectedUri, string expectedRegion, string expectedService)
@@ -58,7 +52,7 @@ namespace AWSSDK.UnitTests
             var request = new GetAccessPointRequest
             {
                 AccountId = "123456789012",
-                Name = accessPointName
+                Name = accessPointName                
             };
 
             RunTestRequest(request, GetAccessPointRequestMarshaller.Instance,
@@ -66,14 +60,9 @@ namespace AWSSDK.UnitTests
                 expectedUri, expectedRegion, expectedService);
         }
 
-        private static IEnumerable<object[]> CreateBucketTestCases => new List<object[]>
-        {
-            new object[] { "bucketname", "https://beta.example.com", Flags.None, "https://beta.example.com", FallbackRegion, S3Outposts },
-            new object[] { "bucketname", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts },
-        };
-
         [TestMethod]
-        [DynamicData(nameof(CreateBucketTestCases))]
+        [DataRow("bucketname", "https://beta.example.com", Flags.None, "https://beta.example.com", USEast1, S3Outposts)]
+        [DataRow("bucketname", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
         [TestCategory("S3Control")]
         public void VpceEndpointTests_CreateBucket(string bucketName, string serviceUrl, Flags flags,
             string expectedUri, string expectedRegion, string expectedService)
@@ -89,22 +78,17 @@ namespace AWSSDK.UnitTests
                 expectedUri, expectedRegion, expectedService);
         }
 
-        private static IEnumerable<object[]> GetBucketTestCases => new List<object[]>
-        {
-            new object[] { $"arn:aws:s3-outposts:{FallbackRegion}:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://beta.example.com", Flags.None, "https://beta.example.com", FallbackRegion, S3Outposts },
-            new object[] { "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts },
-            new object[] { "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.us-west-2.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts },
-            new object[] { "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.eu-west-1.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.eu-west-1.amazonaws.com", USWest2, S3Outposts }, //This will produce a signing error for a real request but are the expected values
-        };
-
         [TestMethod]
-        [DynamicData(nameof(GetBucketTestCases))]
+        [DataRow("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://beta.example.com", Flags.None, "https://beta.example.com", USEast1, S3Outposts)]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.us-west-2.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.eu-west-1.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.eu-west-1.amazonaws.com", USWest2, S3Outposts)] //This will produce a signing error for a real request but are the expected values
         [TestCategory("S3Control")]
         public void VpceEndpointTests_GetBucket(string bucketName, string serviceUrl, Flags flags,
             string expectedUri, string expectedRegion, string expectedService)
         {
             var request = new GetBucketRequest
-            {
+            {                
                 Bucket = bucketName
             };
 
@@ -122,7 +106,6 @@ namespace AWSSDK.UnitTests
                 Name = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"
             };
             var config = CreateConfig("https://beta.example.com", Flags.None);
-            config.RegionEndpoint = RegionEndpoint.USEast2;
             Assert.ThrowsExactly<AmazonClientException>(() =>
                 S3ControlArnTestUtils.RunMockRequest(request, GetAccessPointRequestMarshaller.Instance, config));
         }
