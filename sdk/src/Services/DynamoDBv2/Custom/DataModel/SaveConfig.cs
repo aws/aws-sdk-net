@@ -39,7 +39,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Represents a filter expression that can be used to filter results in DynamoDB operations.
         /// </summary>
         /// <remarks>
-        /// Note: Conditions must be against non-key properties.
+        /// Filter expressions may target key properties and non-key properties.
+        /// When used with versioned entities, SkipVersionCheck must be enabled.
         /// </remarks>
         public ContextExpression FilterExpression { get; set; }
 

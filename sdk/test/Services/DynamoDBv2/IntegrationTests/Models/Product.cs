@@ -53,6 +53,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public Dictionary<string, string> Map { get; set; }
 
         public S3Link FullProductDescription { get; set; }
+
+        public int?[] Test { get; set; }
     }
 
     [DynamoDBTable("HashTable", false, ConversionSchema.V2)]

@@ -1671,6 +1671,64 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public void Save_WithContidionalExpression_SkipVersionCheck()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient
+                .Setup(client => client.UpdateItem(
+                    It.Is<UpdateItemRequest>(request =>
+                        request.TableName == "TableNameWithVersion" &&
+                        request.ConditionExpression == "#C0 = :C0" &&
+                        request.ExpressionAttributeNames.Count == 2 &&
+                        request.ExpressionAttributeValues.Count == 1 &&
+                        request.ExpressionAttributeValues.Values.Any(v => v.S == "Name"))))
+                .Returns(new UpdateItemResponse())
+                .Verifiable();
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            var expr1 = new ContextExpression();
+            expr1.SetFilter<VersionedDataModel>(p => p.Name == "Name");
+
+            context.Save(new VersionedDataModel { Id = "234", Name = "Alice"}, new SaveConfig { SkipVersionCheck = true, FilterExpression = expr1 });
+
+            mockClient.VerifyAll();
+        }
+
+        [TestMethod]
+        public void Save_WithContidionalExpression_ThowsIfVersionCheckPresent()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient
+                .Setup(client => client.UpdateItem(
+                    It.Is<UpdateItemRequest>(request =>
+                        request.TableName == "TableNameWithVersion" &&
+                        request.ConditionExpression == "#C0 = :C0" &&
+                        request.ExpressionAttributeNames.Count == 2 &&
+                        request.ExpressionAttributeValues.Count == 1 &&
+                        request.ExpressionAttributeValues.Values.Any(v => v.S == "Name"))))
+                .Returns(new UpdateItemResponse())
+                .Verifiable();
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            var expr1 = new ContextExpression();
+            expr1.SetFilter<VersionedDataModel>(p => p.Name == "Name");
+
+            // Act & Assert
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.Save(new VersionedDataModel { Id = "234", Name = "Alice" }, new SaveConfig { FilterExpression = expr1 }));
+
+            Assert.IsTrue(ex.Message.Contains("QueryFilter is not supported with version check. Use SkipVersionCheck to skip version check and use QueryFilter"));
+        }
+
+        [TestMethod]
         public void DeleteItem_WithConditionalExpression()
         {
             mockClient

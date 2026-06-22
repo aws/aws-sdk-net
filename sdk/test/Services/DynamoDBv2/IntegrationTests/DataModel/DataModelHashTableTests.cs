@@ -140,24 +140,85 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     Id = 3333,
                     Name = "TestProduct",
-                    Price = 100
+                    Price = 100,
+                    CompanyInfo = new CompanyInfo
+                    {
+                        Name = "Acme",
+                        Founded = new DateTime(2000, 1, 1),
+                        AllProducts = new List<Product>
+                    {
+                        new Product { Id = 2, Name = "Gadget" }
+                    },
+                        FeaturedBrands = new[] { "Acme", "Contoso" }
+                    },
+                    Test = new int?[3] { 1, 2 , null},
                 };
 
                 await context.SaveAsync(vp);
 
-                var expr1 = new ContextExpression();
-                expr1.SetFilter<VersionedProduct>(p => p.Name == "TestProduct");
+                {
+                    var expr1 = new ContextExpression();
+                    expr1.SetFilter<VersionedProduct>(p => p.Name == "TestProduct");
+                    vp.Price = 122;
 
-                vp.Price = 122;
+                    await context.SaveAsync(vp, new SaveConfig()
+                    {
+                        FilterExpression = expr1,
+                        SkipVersionCheck = true
+                    });
 
-                await context.SaveAsync(vp, new SaveConfig() 
-                { 
-                    FilterExpression = expr1,
-                    SkipVersionCheck = true
-                });
+                    vp = await context.LoadAsync<VersionedProduct>(vp.Id);
+                    Assert.Equal(122, vp.Price);
+                }
 
-                vp = await context.LoadAsync<VersionedProduct>(vp.Id);
-                Assert.Equal(122, vp.Price);
+                {
+                    var expr1 = new ContextExpression();
+                    expr1.SetFilter<VersionedProduct>(p => p.CompanyInfo.Name == "Acme");
+                    vp.CompanyInfo.FeaturedBrands = new[] { "Contoso2" };
+
+                    await context.SaveAsync(vp, new SaveConfig()
+                    {
+                        FilterExpression = expr1,
+                        SkipVersionCheck = true
+                    });
+
+                    vp = await context.LoadAsync<VersionedProduct>(vp.Id);
+
+                    Assert.Equal(1, vp.CompanyInfo.FeaturedBrands.Length);
+                    Assert.Equal("Contoso2", vp.CompanyInfo.FeaturedBrands[0]);
+                }
+
+                {
+                    var expr1 = new ContextExpression();
+                    expr1.SetFilter<VersionedProduct>(p => p.Version == 0);
+                    vp.Version = 9999;
+
+                    await context.SaveAsync(vp, new SaveConfig()
+                    {
+                        FilterExpression = expr1,
+                        SkipVersionCheck = true
+                    });
+
+                    vp = await context.LoadAsync<VersionedProduct>(vp.Id);
+
+                    Assert.Equal(9999, vp.Version);
+                }
+
+                {
+                    var expr1 = new ContextExpression();
+                    expr1.SetFilter<VersionedProduct>(p => p.Id == 3333);
+                    vp.Version = 1234;
+
+                    await context.SaveAsync(vp, new SaveConfig()
+                    {
+                        FilterExpression = expr1,
+                        SkipVersionCheck = true
+                    });
+
+                    vp = await context.LoadAsync<VersionedProduct>(vp.Id);
+
+                    Assert.Equal(1234, vp.Version);
+                }
             }
         }
 
@@ -180,23 +241,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     Id = 444,
                     Name = "TestProduct",
-                    Price = 100
+                    Price = 100,
+                    CompanyInfo = new CompanyInfo
+                    {
+                        Name = "Acme",
+                        Founded = new DateTime(2000, 1, 1),
+                        AllProducts = new List<Product>
+                    {
+                        new Product { Id = 2, Name = "Gadget" }
+                    },
+                        FeaturedBrands = new[] { "Acme", "Contoso" }
+                    },
                 };
 
                 await context.SaveAsync(vp);
-                vp.Price = 122;
 
-                var expr1 = new ContextExpression();
-                expr1.SetFilter<Product>(p => p.Name == "TestProduct");
-
-                await context.SaveAsync(vp, new SaveConfig()
                 {
-                    FilterExpression = expr1,
-                    SkipVersionCheck = true
-                });
+                    var expr1 = new ContextExpression();
+                    expr1.SetFilter<Product>(p => p.Name == "TestProduct");
+                    vp.Price = 122;
 
-                vp = await context.LoadAsync<Product>(vp.Id);
-                Assert.Equal(122, vp.Price);
+                    await context.SaveAsync(vp, new SaveConfig()
+                    {
+                        FilterExpression = expr1,
+                        SkipVersionCheck = true
+                    });
+
+                    vp = await context.LoadAsync<Product>(vp.Id);
+                    Assert.Equal(122, vp.Price);
+                }
+
+                {
+                    var expr1 = new ContextExpression();
+                    expr1.SetFilter<Product>(p => p.CompanyInfo.Name == "Acme");
+                    vp.CompanyInfo.FeaturedBrands = new[] { "Contoso2" };
+
+                    await context.SaveAsync(vp, new SaveConfig()
+                    {
+                        FilterExpression = expr1,
+                        SkipVersionCheck = true
+                    });
+
+                    vp = await context.LoadAsync<Product>(vp.Id);
+
+                    Assert.Equal(1, vp.CompanyInfo.FeaturedBrands.Length);
+                    Assert.Equal("Contoso2", vp.CompanyInfo.FeaturedBrands[0]);
+                }
+
             }
         }
 
