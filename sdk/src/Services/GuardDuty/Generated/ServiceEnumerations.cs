@@ -129,6 +129,52 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type CloudProvider.
+    /// </summary>
+    public class CloudProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for CloudProvider
+        /// </summary>
+        public static readonly CloudProvider AWS = new CloudProvider("AWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudProvider FindValue(string value)
+        {
+            return FindValue<CloudProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterStatus.
     /// </summary>
     public class ClusterStatus : ConstantClass
@@ -188,6 +234,64 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Confidence.
+    /// </summary>
+    public class Confidence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for Confidence
+        /// </summary>
+        public static readonly Confidence High = new Confidence("High");
+        /// <summary>
+        /// Constant Low for Confidence
+        /// </summary>
+        public static readonly Confidence Low = new Confidence("Low");
+        /// <summary>
+        /// Constant Medium for Confidence
+        /// </summary>
+        public static readonly Confidence Medium = new Confidence("Medium");
+        /// <summary>
+        /// Constant Unknown for Confidence
+        /// </summary>
+        public static readonly Confidence Unknown = new Confidence("Unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Confidence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Confidence FindValue(string value)
+        {
+            return FindValue<Confidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Confidence(string value)
         {
             return FindValue(value);
         }
@@ -1793,6 +1897,122 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type InvestigationSortField.
+    /// </summary>
+    public class InvestigationSortField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIDENCE for InvestigationSortField
+        /// </summary>
+        public static readonly InvestigationSortField CONFIDENCE = new InvestigationSortField("CONFIDENCE");
+        /// <summary>
+        /// Constant END_TIME for InvestigationSortField
+        /// </summary>
+        public static readonly InvestigationSortField END_TIME = new InvestigationSortField("END_TIME");
+        /// <summary>
+        /// Constant RISK_LEVEL for InvestigationSortField
+        /// </summary>
+        public static readonly InvestigationSortField RISK_LEVEL = new InvestigationSortField("RISK_LEVEL");
+        /// <summary>
+        /// Constant START_TIME for InvestigationSortField
+        /// </summary>
+        public static readonly InvestigationSortField START_TIME = new InvestigationSortField("START_TIME");
+        /// <summary>
+        /// Constant STATUS for InvestigationSortField
+        /// </summary>
+        public static readonly InvestigationSortField STATUS = new InvestigationSortField("STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InvestigationSortField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestigationSortField FindValue(string value)
+        {
+            return FindValue<InvestigationSortField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestigationSortField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InvestigationStatus.
+    /// </summary>
+    public class InvestigationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for InvestigationStatus
+        /// </summary>
+        public static readonly InvestigationStatus COMPLETED = new InvestigationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for InvestigationStatus
+        /// </summary>
+        public static readonly InvestigationStatus FAILED = new InvestigationStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for InvestigationStatus
+        /// </summary>
+        public static readonly InvestigationStatus RUNNING = new InvestigationStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InvestigationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvestigationStatus FindValue(string value)
+        {
+            return FindValue<InvestigationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvestigationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpSetFormat.
     /// </summary>
     public class IpSetFormat : ConstantClass
@@ -3116,6 +3336,68 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RiskLevel.
+    /// </summary>
+    public class RiskLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Critical for RiskLevel
+        /// </summary>
+        public static readonly RiskLevel Critical = new RiskLevel("Critical");
+        /// <summary>
+        /// Constant High for RiskLevel
+        /// </summary>
+        public static readonly RiskLevel High = new RiskLevel("High");
+        /// <summary>
+        /// Constant Info for RiskLevel
+        /// </summary>
+        public static readonly RiskLevel Info = new RiskLevel("Info");
+        /// <summary>
+        /// Constant Low for RiskLevel
+        /// </summary>
+        public static readonly RiskLevel Low = new RiskLevel("Low");
+        /// <summary>
+        /// Constant Medium for RiskLevel
+        /// </summary>
+        public static readonly RiskLevel Medium = new RiskLevel("Medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RiskLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RiskLevel FindValue(string value)
+        {
+            return FindValue<RiskLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RiskLevel(string value)
         {
             return FindValue(value);
         }
