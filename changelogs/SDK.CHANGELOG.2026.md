@@ -1,3 +1,31 @@
+### 4.0.275.0 (2026-06-22 19:05 UTC)
+* ApplicationSignals (4.0.10.0)
+	* Application Signals now supports dynamic instrumentation and Service Events telemetry. Add instrumentation at runtime without restarts, and use fine-grained profiling data to quickly pinpoint latency and error root causes.
+* BedrockAgentCore (4.0.31.0)
+	* Adds an optional extractionMode field to CreateEvent. SKIP retains the event in short-term memory but excludes it from long-term memory extraction.
+* CloudWatchLogs (4.0.29.0)
+	* CloudWatch Logs Updates - New APIs introduced to support syslog ingestion to a log group. For more information, see CloudWatch Logs API documentation.
+* DirectConnect (4.0.6.0)
+	* Added VIF rate limiting support for AWS Direct Connect, allowing customers to set bandwidth allocations on virtual interfaces to manage traffic on dedicated connections.
+* EC2 (4.0.94.0)
+	* This release adds support for AMI Watermark and Allowed AMIs integration
+* GuardDuty (4.0.23.0)
+	* Added AI-powered investigations that automatically analyze security findings, correlate related activity, and produce structured summaries with risk assessment, confidence scoring, MITRE technique classification, and actionable next steps.
+* Kafka (4.0.11.0)
+	* Amazon MSK Replicator now supports mTLS authentication when connecting to external Apache Kafka clusters, enabling customers to replicate data from clusters that require mutual TLS for client authentication. This capability is supported when replicating to Amazon MSK Express brokers.
+* Lambda (4.0.19.0)
+	* Add support for tagging Network Connector resources in AWS Lambda.
+* LambdaCore (4.0.0.0)
+	* Initial release of the AWS Lambda Core SDK with APIs to create, manage, and tag network connectors that enable Lambda compute resources to access private resources in your Amazon VPC.
+* LambdaMicrovms (4.0.0.0)
+	* Lambda MicroVMs GA launch. Lambda MicroVMs enable isolated and highly responsive execution of user-supplied or LLM-generated code.
+* MediaConnect (4.0.10.0)
+	* AWS MediaConnect now supports Content Quality Analysis for Router Inputs, enabling detection of black frames, frozen frames, and silent audio with configurable thresholds.
+* Omics (4.0.13.0)
+	* Adds support for scratch ephemeral storage mounted at tmp
+* QuickSight (4.0.27.0)
+	* Updated the Amazon Quick Spaces API to remove unsupported SPACE and ARTIFACT values from the SpaceQuickSightResourceType enum.
+
 ### 4.0.274.0 (2026-06-19 18:16 UTC)
 * AppStream (4.0.13.0)
 	* Amazon WorkSpaces Agent Access now supports domain-joined fleets for enterprise identity integration, real-time agent observation with instant stop controls, and MCP tool forwarding for lower-latency, cost-effective desktop tool access.
