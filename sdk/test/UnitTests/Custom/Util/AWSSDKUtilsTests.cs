@@ -267,8 +267,8 @@ namespace AWSSDK.UnitTests
         [DataRow(null)]
         [DataRow("invalid-hex-string")]
         [DataRow("123H")]
-		[DataRow("12345")]
-		[TestMethod]
+        [DataRow("12345")]
+        [TestMethod]
         public void HexStringToBytes_Throws_WhenInputIsNotValidHexString(string input)
         {
             Assert.Throws<Exception>(() => AWSSDKUtils.HexStringToBytes(input));
@@ -289,13 +289,13 @@ namespace AWSSDK.UnitTests
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
         [TestMethod]
-        public void GenerateChecksumForBytes_ReturnsCorrectChecksum()
-		{
-			var input = "Hello World";
-			var inputBytes = Encoding.UTF8.GetBytes(input);
-			var expectedChecksum = "B10A8DB164E0754105B7A99BE72E3FE5";
+        public void GenerateChecksumForBytes_ReturnsCorrectChecksum_WhenHexEncodingIsUsed()
+        {
+            var input = "Hello World";
+            var inputBytes = Encoding.UTF8.GetBytes(input);
+            var expectedChecksum = "B10A8DB164E0754105B7A99BE72E3FE5";
             var actualChecksum = AWSSDKUtils.GenerateChecksumForBytes(inputBytes, false);
-			Assert.AreEqual(expectedChecksum, actualChecksum);
-		}
-	}
+            Assert.AreEqual(expectedChecksum, actualChecksum);
+        }
+    }
 }

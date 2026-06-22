@@ -308,27 +308,27 @@ namespace Amazon.Util
          * Determines the string to be signed based on the input parameters for
          * AWS Signature Version 2
          */
-		internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
-		{
-			StringBuilder data = new StringBuilder("POST\n", 512);
+        internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
+        {
+            StringBuilder data = new StringBuilder("POST\n", 512);
             var sortedParameters = parameterCollection.GetParametersEnumerable();
-			Uri endpoint = new Uri(serviceUrl);
+            Uri endpoint = new Uri(serviceUrl);
 
-			data.Append(endpoint.Host);
-			data.Append('\n');
-			string uri = endpoint.AbsolutePath;
-			if (uri == null || uri.Length == 0)
-			{
-				uri = "/";
-			}
+            data.Append(endpoint.Host);
+            data.Append('\n');
+            string uri = endpoint.AbsolutePath;
+            if (uri == null || uri.Length == 0)
+            {
+                uri = "/";
+            }
 
-			data.Append(AWSSDKUtils.UrlEncode(uri, true));
-			data.Append('\n');
+            data.Append(AWSSDKUtils.UrlEncode(uri, true));
+            data.Append('\n');
             bool followup = false;
-			foreach (KeyValuePair<string, string> pair in sortedParameters)
-			{
-				if (pair.Value != null)
-				{
+            foreach (KeyValuePair<string, string> pair in sortedParameters)
+            {
+                if (pair.Value != null)
+                {
                     if (followup)
                     {
                         data.Append('&');
@@ -337,19 +337,19 @@ namespace Amazon.Util
                     {
                         followup = true;
                     }
-					data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-					data.Append('=');
-					data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-				}
-			}
+                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
+                    data.Append('=');
+                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
+                }
+            }
 
             return data.ToString();
-		}
+        }
 
-		/**
+        /**
          * Convert request parameters to Url encoded query string
          */
-		internal static string GetParametersAsString(IRequest request)
+        internal static string GetParametersAsString(IRequest request)
         {
             return GetParametersAsString(request.ParameterCollection);
         }
@@ -576,14 +576,14 @@ namespace Amazon.Util
         }
 
 
-		/// <summary>
-		/// Takes a patterned resource path and resolves it using the key/value path resources into
-		/// a segmented encoded URL.
-		/// </summary>
-		/// <param name="resourcePath">The patterned resourcePath</param>
-		/// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
-		/// <returns></returns>
-		public static string ResolveResourcePathV2(string resourcePath, IDictionary<string, string> pathResources)
+        /// <summary>
+        /// Takes a patterned resource path and resolves it using the key/value path resources into
+        /// a segmented encoded URL.
+        /// </summary>
+        /// <param name="resourcePath">The patterned resourcePath</param>
+        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
+        /// <returns></returns>
+        public static string ResolveResourcePathV2(string resourcePath, IDictionary<string, string> pathResources)
         {
             if (string.IsNullOrEmpty(resourcePath))
             {
@@ -765,13 +765,13 @@ namespace Amazon.Util
 #endif
         }
 
-		/// <summary>
-		/// Calls a specific EventHandler in a background thread
-		/// </summary>
-		/// <param name="handler"></param>
-		/// <param name="args"></param>
-		/// <param name="sender"></param>
-		public static void InvokeInBackground<T>(EventHandler<T> handler, T args, object sender) where T : EventArgs
+        /// <summary>
+        /// Calls a specific EventHandler in a background thread
+        /// </summary>
+        /// <param name="handler"></param>
+        /// <param name="args"></param>
+        /// <param name="sender"></param>
+        public static void InvokeInBackground<T>(EventHandler<T> handler, T args, object sender) where T : EventArgs
         {
             if (handler == null) return;
 
@@ -834,7 +834,7 @@ namespace Amazon.Util
             return parameters;
         }
 
-		internal static bool AreEqual(object[] itemsA, object[] itemsB)
+        internal static bool AreEqual(object[] itemsA, object[] itemsB)
         {
             if (itemsA == null || itemsB == null)
                 return (itemsA == itemsB);
@@ -865,29 +865,29 @@ namespace Amazon.Util
             return (a.Equals(b));
         }
 
-		public static bool DictionariesAreEqual<TKey,TValue>(Dictionary<TKey, TValue> a, Dictionary<TKey, TValue> b)
-		{
-			if (a == null || b == null)
-				return (a == b);
+        internal static bool DictionariesAreEqual<TKey,TValue>(Dictionary<TKey, TValue> a, Dictionary<TKey, TValue> b)
+        {
+            if (a == null || b == null)
+                return (a == b);
 
-			if (object.ReferenceEquals(a, b))
-				return true;
+            if (object.ReferenceEquals(a, b))
+                return true;
 
-			return a.Count == b.Count && a.All(aKV => b.TryGetValue(aKV.Key, out var bVal) && EqualityComparer<TValue>.Default.Equals(aKV.Value, bVal));
-		}
+            return a.Count == b.Count && a.All(aKV => b.TryGetValue(aKV.Key, out var bVal) && EqualityComparer<TValue>.Default.Equals(aKV.Value, bVal));
+        }
 
-		/// <summary>
-		/// Utility method for converting a string to a MemoryStream.
-		/// </summary>
-		/// <param name="s"></param>
-		/// <returns></returns>
-		public static MemoryStream GenerateMemoryStreamFromString(string s)
-		{
-			MemoryStream stream = new MemoryStream();
-			StreamWriter writer = new StreamWriter(stream);
-			writer.Write(s);
-			writer.Flush();
-			stream.Position = 0;
+        /// <summary>
+        /// Utility method for converting a string to a MemoryStream.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static MemoryStream GenerateMemoryStreamFromString(string s)
+        {
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(s);
+            writer.Flush();
+            stream.Position = 0;
             return stream;
         }
 
@@ -1229,19 +1229,19 @@ namespace Amazon.Util
         private static readonly char[] upperHex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 
         private static void ToHexString(ReadOnlySpan<byte> source, Span<char> destination, bool lowercase)
-		{
-			var converter = lowercase ? lowerHex : upperHex;
-			for (int i = source.Length - 1; i >= 0; i--)
-			{
-				// Break apart the byte into two four-bit components and
-				// then convert each into their hexadecimal equivalent.
-				byte b = source[i];
-				int hiNibble = b >> 4;
-				int loNibble = b & 0xF;
-				destination[i * 2] = converter[hiNibble];
-				destination[i * 2 + 1] = converter[loNibble];
-			}
-		}
+        {
+            var converter = lowercase ? lowerHex : upperHex;
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                // Break apart the byte into two four-bit components and
+                // then convert each into their hexadecimal equivalent.
+                byte b = source[i];
+                int hiNibble = b >> 4;
+                int loNibble = b & 0xF;
+                destination[i * 2] = converter[hiNibble];
+                destination[i * 2 + 1] = converter[loNibble];
+            }
+        }
 
         internal static string UrlEncodeSlash(string data)
         {
@@ -1369,39 +1369,39 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="hex">Hexadecimal string</param>
         /// <returns>Byte array corresponding to the hex string.</returns>
-		public static byte[] HexStringToBytes(string hex)
-		{
+        public static byte[] HexStringToBytes(string hex)
+        {
 #if NET8_0_OR_GREATER
             ArgumentOutOfRangeException.ThrowIfNullOrEmpty(hex, nameof(hex));
-			return Convert.FromHexString(hex);
+            return Convert.FromHexString(hex);
 #else
             if (string.IsNullOrEmpty(hex) || hex.Length % 2 == 1)
                 throw new ArgumentOutOfRangeException(nameof(hex));
 
             byte[] buffer = new byte[hex.Length / 2];
-			for (int i = 0, j = 0; i < hex.Length; i += 2, j++)
-				buffer[j] = (byte)((HexCharToNibble(hex[i]) << 4) | HexCharToNibble(hex[i + 1]));
+            for (int i = 0, j = 0; i < hex.Length; i += 2, j++)
+                buffer[j] = (byte)((HexCharToNibble(hex[i]) << 4) | HexCharToNibble(hex[i + 1]));
 
-			return buffer;
+            return buffer;
 
-		}
+        }
 
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		private static int HexCharToNibble(char c)
-		{
-			if ((uint)(c - '0') <= 9) return c - '0';
-			if ((uint)(c - 'A') <= 5) return c - 'A' + 10;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static int HexCharToNibble(char c)
+        {
+            if ((uint)(c - '0') <= 9) return c - '0';
+            if ((uint)(c - 'A') <= 5) return c - 'A' + 10;
             if ((uint)(c - 'a') <= 5) return c - 'a' + 10;
             throw new ArgumentOutOfRangeException(nameof(c), "Invalid hex character: " + c);
 #endif
-		}
+        }
 
-		/// <summary>
-		/// Returns DateTime.UtcNow + ManualClockCorrection when
-		/// <seealso cref="AWSConfigs.ManualClockCorrection"/> is set.
-		/// This value should be used instead of DateTime.UtcNow to factor in manual clock correction
-		/// </summary>
-		public static DateTime CorrectedUtcNow
+        /// <summary>
+        /// Returns DateTime.UtcNow + ManualClockCorrection when
+        /// <seealso cref="AWSConfigs.ManualClockCorrection"/> is set.
+        /// This value should be used instead of DateTime.UtcNow to factor in manual clock correction
+        /// </summary>
+        public static DateTime CorrectedUtcNow
         {
             get
             {
@@ -1412,37 +1412,37 @@ namespace Amazon.Util
             }
         }
 
-		private static readonly char[] _bidiControlChars =
-		{
-			'\u200E', // LRM
-			'\u200F', // RLM
-			'\u202A', // LRE
-			'\u202B', // RLE
-			'\u202C', // PDF
-			'\u202D', // LRO
-			'\u202E'  // RLO
-		};
+        private static readonly char[] _bidiControlChars =
+        {
+            '\u200E', // LRM
+            '\u200F', // RLM
+            '\u202A', // LRE
+            '\u202B', // RLE
+            '\u202C', // PDF
+            '\u202D', // LRO
+            '\u202E'  // RLO
+        };
 
 #if NET8_0_OR_GREATER
-		private static readonly SearchValues<char> _bidiControlCharSearchValues =
-			SearchValues.Create(_bidiControlChars);
+        private static readonly SearchValues<char> _bidiControlCharSearchValues =
+            SearchValues.Create(_bidiControlChars);
 #endif
 
-		/// <summary>
-		/// Returns true if the string has any bidirectional control characters.
-		/// </summary>
-		/// <param name="input"></param>
-		/// <returns></returns>
-		public static bool HasBidiControlCharacters(string input)
-		{
-			if (string.IsNullOrEmpty(input))
-				return false;
+        /// <summary>
+        /// Returns true if the string has any bidirectional control characters.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static bool HasBidiControlCharacters(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return false;
 #if NET8_0_OR_GREATER
-			return input.AsSpan().IndexOfAny(_bidiControlCharSearchValues) >= 0;
+            return input.AsSpan().IndexOfAny(_bidiControlCharSearchValues) >= 0;
 #else
-			return input.AsSpan().IndexOfAny(_bidiControlChars) >= 0;
+            return input.AsSpan().IndexOfAny(_bidiControlChars) >= 0;
 #endif
-		}
+        }
 
         public static string DownloadStringContent(Uri uri)
         {
@@ -1709,12 +1709,12 @@ namespace Amazon.Util
 #endif
         }
 
-		/// <summary>
-		/// Utility method that accepts a string and replaces white spaces with a space.
-		/// </summary>
-		/// <param name="data"></param>
-		/// <returns></returns>
-		public static string CompressSpaces(string data)
+        /// <summary>
+        /// Utility method that accepts a string and replaces white spaces with a space.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static string CompressSpaces(string data)
         {
             if (data == null)
             {
