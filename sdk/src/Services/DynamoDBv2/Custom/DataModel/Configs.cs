@@ -272,9 +272,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Represents a filter expression that can be used to filter results in DynamoDB operations.
         /// </summary>
-        /// <remarks>
-        /// Note: Conditions must be against non-key properties.
-        /// </remarks>
         public ContextExpression Expression { get; set; }
 
         /// <summary>
