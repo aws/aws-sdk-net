@@ -326,6 +326,16 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteSyslogConfigurationRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteSyslogConfigurationRequest.VpcEndpointId</property>
+    <pattern>^vpce-[0-9a-f]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteTransformerRequest.LogGroupIdentifier</property>
     <min>1</min>
     <max>2048</max>
@@ -1169,6 +1179,29 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ListSyslogConfigurationsRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ListSyslogConfigurationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ListSyslogConfigurationsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ListSyslogConfigurationsRequest.VpcEndpointId</property>
+    <pattern>^vpce-[0-9a-f]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ListSyslogConfigurationsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -1400,6 +1433,16 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutSubscriptionFilterRequest.RoleArn</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutSyslogConfigurationRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutSyslogConfigurationRequest.VpcEndpointId</property>
+    <pattern>^vpce-[0-9a-f]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutTransformerRequest.LogGroupIdentifier</property>
@@ -2625,6 +2668,20 @@
     <property>Amazon.CloudWatchLogs.Model.SubstituteStringEntry.To</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.SyslogConfiguration.CreatedAt</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.SyslogConfiguration.LogGroupArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.SyslogConfiguration.VpcEndpointId</property>
+    <pattern>^vpce-[0-9a-f]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.TagFilter.Key</property>
