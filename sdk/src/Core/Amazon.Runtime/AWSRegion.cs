@@ -234,7 +234,7 @@ namespace Amazon.Runtime
                     {
                         cachedRegion = generator();
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         cachedRegion = null;
                     }
