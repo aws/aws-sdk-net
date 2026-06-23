@@ -421,12 +421,12 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 if (hasVersionCheck)
                 {
-                    throw new InvalidOperationException("QueryFilter is not supported with version check. Use SkipVersionCheck to skip version check and use QueryFilter");
+                    throw new InvalidOperationException("FilterExpression is not supported with version check. Set SkipVersionCheck to true to use FilterExpression with versioned entities.");
                 }
 
                 if (flatConfig.QueryFilter != null && flatConfig.QueryFilter.Count != 0)
                 {
-                    throw new InvalidOperationException("QueryFilter is not supported with filter expression. Use either QueryFilter or filter expression, but not both.");
+                    throw new InvalidOperationException("QueryFilter is not supported with FilterExpression. Use either QueryFilter or FilterExpression, but not both.");
                 }
 
                 expression = ComposeExpression(flatConfig.FilterExpression.Filter, storage.Config, flatConfig);

@@ -115,7 +115,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 vp.Price = 122;
 
                 var expr1 = new ContextExpression();
-                expr1.SetFilter<Product>(p => p.Name == "TestProduct");
+                expr1.SetFilter<VersionedProduct>(p => p.Name == "TestProduct");
 
                 await Assert.ThrowsAsync<InvalidOperationException>(() => context.SaveAsync(vp, new SaveConfig() { FilterExpression = expr1 }));
             }
@@ -150,8 +150,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         new Product { Id = 2, Name = "Gadget" }
                     },
                         FeaturedBrands = new[] { "Acme", "Contoso" }
-                    },
-                    Test = new int?[3] { 1, 2 , null},
+                    }
                 };
 
                 await context.SaveAsync(vp);

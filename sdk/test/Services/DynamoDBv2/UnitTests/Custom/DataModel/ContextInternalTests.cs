@@ -1671,7 +1671,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void Save_WithContidionalExpression_SkipVersionCheck()
+        public void Save_WithConditionalExpression_SkipVersionCheck()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
             mockClient
@@ -1699,7 +1699,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void Save_WithContidionalExpression_ThowsIfVersionCheckPresent()
+        public void Save_WithConditionalExpression_ThrowsIfVersionCheckPresent()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
             mockClient

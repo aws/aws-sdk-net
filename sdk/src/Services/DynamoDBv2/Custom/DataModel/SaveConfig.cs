@@ -36,11 +36,11 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? IgnoreNullValues { get; set; }
 
         /// <summary>
-        /// Represents a filter expression that can be used to filter results in DynamoDB operations.
+        /// Represents a conditional expression applied to the underlying Save (UpdateItem) request.
         /// </summary>
         /// <remarks>
-        /// Filter expressions may target key properties and non-key properties.
-        /// When used with versioned entities, SkipVersionCheck must be enabled.
+        /// Conditional expressions may target key properties and non-key properties.
+        /// When used with versioned entities, <see cref="SkipVersionCheck"/> must be enabled.
         /// </remarks>
         public ContextExpression FilterExpression { get; set; }
 

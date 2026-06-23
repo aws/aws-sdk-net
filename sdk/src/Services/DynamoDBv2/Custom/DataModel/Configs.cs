@@ -570,10 +570,11 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
-        /// Represents a filter expression that can be used to filter results in DynamoDB operations.
+        /// Represents an expression used by the high-level object persistence model.
+        /// For Query/Scan operations this is used as a filter expression; for Save operations this is used as a conditional expression.
         /// </summary>
         /// <remarks>
-        /// Note: Conditions must be against non-key properties.
+        /// When used with Query operations, conditions must be against non-key properties.
         /// </remarks>
         public ContextExpression FilterExpression { get; set; }
 
