@@ -48,6 +48,22 @@ public class GenerationContext
     /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data"). Used in generated doc links.</summary>
     public string EndpointPrefix { get; }
 
+    /// <summary>
+    /// The signing name used as the service config's <c>AuthenticationServiceName</c> (e.g.
+    /// "cloudtrail-data"). This is the <c>aws.auth#sigv4</c> trait's <c>name</c> when present,
+    /// falling back to <see cref="EndpointPrefix"/>, matching the legacy generator's precedence
+    /// (<c>SigningName ?? EndpointPrefix</c>).
+    /// </summary>
+    public string AuthenticationServiceName { get; }
+
+    /// <summary>
+    /// Whether the service carries a Smithy endpoint rule set (<c>smithy.rules#endpointRuleSet</c>).
+    /// The service config emits its endpoint resolver field, <c>EndpointProvider</c> wiring, and
+    /// <c>DetermineServiceOperationEndpoint</c> override only when this is true: the Smithy-AST
+    /// equivalent of the legacy template's <c>EndpointsRuleSet != null</c> branch.
+    /// </summary>
+    public bool HasEndpointRuleSet { get; }
+
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
 
@@ -83,6 +99,10 @@ public class GenerationContext
         // whitespace value in either would silently produce a malformed URL. Validate both once more
         // services are onboarded.
         EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
+        // AuthenticationServiceName follows the legacy generator's precedence: the sigv4 signing name
+        // when the trait is present, otherwise the endpoint prefix.
+        AuthenticationServiceName = index.Service.GetSigV4()?.SigningName ?? EndpointPrefix;
+        HasEndpointRuleSet = index.Service.HasEndpointRuleSet();
         ServiceDocumentation = index.Service.GetDocumentation();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
