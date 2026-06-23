@@ -704,12 +704,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private MultiTransactWrite GetMultiTransactWrite()
         {
             var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
-            
+
             var docTransactWrite = TransactionParts.Select(x =>
-            {
-                var docTransactGet = x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg);
-                return docTransactGet;
-            }).ToList();
+                x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)
+            ).ToList();
             var returnConsumedCapacity = docTransactWrite.Select(x => x.ReturnConsumedCapacity);
             return new MultiTransactWrite
             {
@@ -744,7 +742,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<ITransactWriteRequestItem> Items { get; set; }
 
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
-
 
         #endregion
 
