@@ -61,7 +61,6 @@ namespace Amazon.Kafka.Model
         /// Details for SASL/SCRAM client authentication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public KafkaClusterSaslScramAuthentication SaslScram
         {
             get { return this._saslScram; }
