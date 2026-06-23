@@ -136,8 +136,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Constructs a DocumentTransactGet instance for a specific table.
         /// </summary>
         /// <param name="targetTable">Table to get items from.</param>
+        public DocumentTransactGet(Table targetTable)
+        {
+            TargetTable = targetTable;
+            Items = new List<TransactGetRequestItem>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
+        }
+
+        /// <summary>
+        /// Constructs a DocumentTransactGet instance for a specific table.
+        /// </summary>
+        /// <param name="targetTable">Table to get items from.</param>
         /// <param name="returnConsumedCapacity">Type of ReturnConsumedCapacity to be returned after Execute call.</param>
-        public DocumentTransactGet(Table targetTable, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public DocumentTransactGet(Table targetTable, ReturnConsumedCapacity returnConsumedCapacity)
         {
             TargetTable = targetTable;
             Items = new List<TransactGetRequestItem>();

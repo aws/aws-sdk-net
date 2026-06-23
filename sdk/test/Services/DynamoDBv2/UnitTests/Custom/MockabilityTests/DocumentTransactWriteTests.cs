@@ -18,7 +18,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var inMemoryTable = new List<Document>();
 
             var mockTable = new Mock<ITable>();
-            mockTable.Setup(x => x.CreateTransactWrite(null)).Returns(CreateDocumentTransactWriteMock(itemsToPut, inMemoryTable));
+            mockTable.Setup(x => x.CreateTransactWrite()).Returns(CreateDocumentTransactWriteMock(itemsToPut, inMemoryTable));
             var table = mockTable.Object;
 
             var docTransactWrite = table.CreateTransactWrite();

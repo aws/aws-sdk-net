@@ -246,7 +246,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a transactional get operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentTransactGet object.</returns>
-        IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity = null);
+        IDocumentTransactGet CreateTransactGet();
+
+        /// <summary>
+        /// Creates a DocumentTransactGet object for the current table, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactGet object.</returns>
+        /// <param name="returnConsumedCapacity">Type of ReturnConsumedCapacity to be returned after Execute call.</param>
+        IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity);
 
         #endregion
 
@@ -257,7 +265,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a transactional condition-check/put/update/delete operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentTransactWrite object.</returns>
-        IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity = null);
+        IDocumentTransactWrite CreateTransactWrite();
+
+        /// <summary>
+        /// Creates a DocumentTransactWrite object for the current table, allowing
+        /// a transactional condition-check/put/update/delete operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactWrite object.</returns>
+        /// <param name="returnConsumedCapacity">Type of ReturnConsumedCapacity to be returned after Execute call.</param>
+        IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity);
 
         #endregion
     }
@@ -2054,22 +2070,33 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region TransactGet
 
         /// <inheritdoc/>
-        public IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity = null)
+        public IDocumentTransactGet CreateTransactGet()
+        {
+            return new DocumentTransactGet(this);
+        }
+
+        /// <inheritdoc/>
+        public IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity)
         {
             return new DocumentTransactGet(this, returnConsumedCapacity);
         }
-
         #endregion
 
 
         #region TransactWrite
 
         /// <inheritdoc/>
-        public IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity = null)
+        public IDocumentTransactWrite CreateTransactWrite()
+        {
+            return new DocumentTransactWrite(this);
+        }
+
+        /// <inheritdoc/>
+        public IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity)
         {
             return new DocumentTransactWrite(this, returnConsumedCapacity);
         }
         #endregion
-  
+
     }
 }
