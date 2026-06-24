@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Remove unnecessary allocation for unused exceptions in `FallbackRegionFactory.GetRegionEndpoint` (https://github.com/aws/aws-sdk-net/pull/4448)"
+    ]
+  }
+}
