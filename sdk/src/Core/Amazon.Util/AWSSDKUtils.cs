@@ -308,42 +308,42 @@ namespace Amazon.Util
          * Determines the string to be signed based on the input parameters for
          * AWS Signature Version 2
          */
-		internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
-		{
-			StringBuilder data = new StringBuilder("POST\n", 512);
-			var sortedParameters = parameterCollection.GetParametersEnumerable();
-			Uri endpoint = new Uri(serviceUrl);
+        internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
+        {
+            StringBuilder data = new StringBuilder("POST\n", 512);
+            var sortedParameters = parameterCollection.GetParametersEnumerable();
+            Uri endpoint = new Uri(serviceUrl);
 
-			data.Append(endpoint.Host);
-			data.Append('\n');
-			string uri = endpoint.AbsolutePath;
-			if (string.IsNullOrEmpty(uri))
-			{
-				uri = "/";
-			}
+            data.Append(endpoint.Host);
+            data.Append('\n');
+            string uri = endpoint.AbsolutePath;
+            if (string.IsNullOrEmpty(uri))
+            {
+                uri = "/";
+            }
 
-			data.Append(AWSSDKUtils.UrlEncode(uri, true));
-			data.Append('\n');
+            data.Append(AWSSDKUtils.UrlEncode(uri, true));
+            data.Append('\n');
 
-			foreach (KeyValuePair<string, string> pair in sortedParameters)
-			{
-				if (pair.Value != null)
-				{
-					data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-					data.Append('=');
-					data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
+            foreach (KeyValuePair<string, string> pair in sortedParameters)
+            {
+                if (pair.Value != null)
+                {
+                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
+                    data.Append('=');
+                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
                     data.Append('&');
-				}
-			}
+                }
+            }
 
             data.Remove(data.Length - 1, 1); // Remove the trailing '\n' or '&' character
-			return data.ToString();
-		}
+            return data.ToString();
+        }
 
-		/**
+        /**
          * Convert request parameters to Url encoded query string
          */
-		internal static string GetParametersAsString(IRequest request)
+        internal static string GetParametersAsString(IRequest request)
         {
             return GetParametersAsString(request.ParameterCollection);
         }
@@ -1766,14 +1766,14 @@ namespace Amazon.Util
             return stringBuilder.ToString();
         }
 
-		/// <summary>
-		/// Extracts the operation name from a given request name.
-		/// </summary>
-		/// <param name="requestName">The name of the request from which the operation name is to be extracted.</param>
-		/// <returns>
-		/// The operation name if the request name ends with "Request"; otherwise, returns the original request name.
-		/// </returns>
-		internal static string ExtractOperationName(string requestName)
+        /// <summary>
+        /// Extracts the operation name from a given request name.
+        /// </summary>
+        /// <param name="requestName">The name of the request from which the operation name is to be extracted.</param>
+        /// <returns>
+        /// The operation name if the request name ends with "Request"; otherwise, returns the original request name.
+        /// </returns>
+        internal static string ExtractOperationName(string requestName)
         {
             if (requestName.EndsWith("Request", StringComparison.Ordinal))
             {
