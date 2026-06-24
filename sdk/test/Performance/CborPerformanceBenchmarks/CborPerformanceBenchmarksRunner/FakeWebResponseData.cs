@@ -1,4 +1,5 @@
-﻿using Amazon.Runtime.Internal.Transform;
+﻿using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.Internal.Transform;
 using System.Net;
 
 
