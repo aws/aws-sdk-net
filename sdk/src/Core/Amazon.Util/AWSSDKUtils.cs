@@ -308,48 +308,42 @@ namespace Amazon.Util
          * Determines the string to be signed based on the input parameters for
          * AWS Signature Version 2
          */
-        internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
-        {
-            StringBuilder data = new StringBuilder("POST\n", 512);
-            var sortedParameters = parameterCollection.GetParametersEnumerable();
-            Uri endpoint = new Uri(serviceUrl);
+		internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
+		{
+			StringBuilder data = new StringBuilder("POST\n", 512);
+			var sortedParameters = parameterCollection.GetParametersEnumerable();
+			Uri endpoint = new Uri(serviceUrl);
 
-            data.Append(endpoint.Host);
-            data.Append('\n');
-            string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
-            {
-                uri = "/";
-            }
+			data.Append(endpoint.Host);
+			data.Append('\n');
+			string uri = endpoint.AbsolutePath;
+			if (string.IsNullOrEmpty(uri))
+			{
+				uri = "/";
+			}
 
-            data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append('\n');
-            bool followup = false;
-            foreach (KeyValuePair<string, string> pair in sortedParameters)
-            {
-                if (pair.Value != null)
-                {
-                    if (followup)
-                    {
-                        data.Append('&');
-                    }
-                    else
-                    {
-                        followup = true;
-                    }
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                }
-            }
+			data.Append(AWSSDKUtils.UrlEncode(uri, true));
+			data.Append('\n');
 
-            return data.ToString();
-        }
+			foreach (KeyValuePair<string, string> pair in sortedParameters)
+			{
+				if (pair.Value != null)
+				{
+					data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
+					data.Append('=');
+					data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
+                    data.Append('&');
+				}
+			}
 
-        /**
+            data.Remove(data.Length - 1, 1); // Remove the trailing '\n' or '&' character
+			return data.ToString();
+		}
+
+		/**
          * Convert request parameters to Url encoded query string
          */
-        internal static string GetParametersAsString(IRequest request)
+		internal static string GetParametersAsString(IRequest request)
         {
             return GetParametersAsString(request.ParameterCollection);
         }
@@ -1371,30 +1365,31 @@ namespace Amazon.Util
         /// <returns>Byte array corresponding to the hex string.</returns>
         public static byte[] HexStringToBytes(string hex)
         {
+            if (string.IsNullOrEmpty(hex) || hex.Length % 2 == 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(hex));
+            }
 #if NET8_0_OR_GREATER
-            ArgumentOutOfRangeException.ThrowIfNullOrEmpty(hex, nameof(hex));
             return Convert.FromHexString(hex);
 #else
-            if (string.IsNullOrEmpty(hex) || hex.Length % 2 == 1)
-                throw new ArgumentOutOfRangeException(nameof(hex));
-
             byte[] buffer = new byte[hex.Length / 2];
             for (int i = 0, j = 0; i < hex.Length; i += 2, j++)
                 buffer[j] = (byte)((HexCharToNibble(hex[i]) << 4) | HexCharToNibble(hex[i + 1]));
 
             return buffer;
-
+#endif
         }
 
+#if !NET8_0_OR_GREATER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static int HexCharToNibble(char c)
         {
             if ((uint)(c - '0') <= 9) return c - '0';
             if ((uint)(c - 'A') <= 5) return c - 'A' + 10;
             if ((uint)(c - 'a') <= 5) return c - 'a' + 10;
-			throw new FormatException("Invalid hex character: " + c);
+            throw new FormatException("Invalid hex character: " + c);
+        }
 #endif
-		}
 
         /// <summary>
         /// Returns DateTime.UtcNow + ManualClockCorrection when
@@ -1716,6 +1711,7 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string CompressSpaces(string data)
         {
+            const char SPACE = ' ';
             if (data == null)
             {
                 return null;
@@ -1727,14 +1723,15 @@ namespace Amazon.Util
                 return string.Empty;
             }
 
-            // Fast path: scan for the first run of consecutive whitespace.
+            // Fast path: scan for the first run of consecutive whitespace or non-space whitespacecharacter.
             // If none exists the string is already compact — return it unchanged with no allocation.
             bool prevWasWhiteSpace = false;
             int firstRunIndex = -1;
             for (int i = 0; i < dataLength; i++)
             {
-                bool isWS = char.IsWhiteSpace(data[i]);
-                if (isWS && prevWasWhiteSpace)
+                char c = data[i];
+                bool isWS = char.IsWhiteSpace(c);
+                if (isWS && (prevWasWhiteSpace || c != SPACE))
                 {
                     firstRunIndex = i - 1;
                     break;
@@ -1756,7 +1753,7 @@ namespace Amazon.Util
             {
                 if (char.IsWhiteSpace(data[pos]))
                 {
-                    stringBuilder.Append(' ');
+                    stringBuilder.Append(SPACE);
                     do { pos++; } while (pos < dataLength && char.IsWhiteSpace(data[pos]));
                 }
                 else
@@ -1769,14 +1766,14 @@ namespace Amazon.Util
             return stringBuilder.ToString();
         }
 
-        /// <summary>
-        /// Extracts the operation name from a given request name.
-        /// </summary>
-        /// <param name="requestName">The name of the request from which the operation name is to be extracted.</param>
-        /// <returns>
-        /// The operation name if the request name ends with "Request"; otherwise, returns the original request name.
-        /// </returns>
-        internal static string ExtractOperationName(string requestName)
+		/// <summary>
+		/// Extracts the operation name from a given request name.
+		/// </summary>
+		/// <param name="requestName">The name of the request from which the operation name is to be extracted.</param>
+		/// <returns>
+		/// The operation name if the request name ends with "Request"; otherwise, returns the original request name.
+		/// </returns>
+		internal static string ExtractOperationName(string requestName)
         {
             if (requestName.EndsWith("Request", StringComparison.Ordinal))
             {

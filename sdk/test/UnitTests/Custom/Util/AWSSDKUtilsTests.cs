@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -64,14 +65,26 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
-        public void TestWhiteSpaceCompression()
+        [DataRow("qqdglmcdoxtqiwwlucjv      xtehwhfhchtkhgoufyzgtkxvgcmcyvifp  sgseqpnzvaecjcwdjsylcilfkh", "qqdglmcdoxtqiwwlucjv xtehwhfhchtkhgoufyzgtkxvgcmcyvifp sgseqpnzvaecjcwdjsylcilfkh")]
+        [DataRow("input \ttext", "input text")]
+        [DataRow("input \ntext", "input text")]
+        [DataRow("input \r\ntext", "input text")]
+        [DataRow("input\ttext", "input text")]
+        [DataRow(" input text ", " input text ")]
+        public void CompressSpaces_ReplacesWhitespaceWithSingleSpace_WhenInputContainsVariousWhitespaceCharacters(string inputText, string expected)
         {
-            const string text = "qqdglmcdoxtqiwwlucjv      xtehwhfhchtkhgoufyzgtkxvgcmcyvifp  sgseqpnzvaecjcwdjsylcilfkh";
-            const string expected = "qqdglmcdoxtqiwwlucjv xtehwhfhchtkhgoufyzgtkxvgcmcyvifp sgseqpnzvaecjcwdjsylcilfkh";
-
-            var compressed = AWSSDKUtils.CompressSpaces(text);
-            Assert.IsFalse(compressed.Contains("  "));
+            var compressed = AWSSDKUtils.CompressSpaces(inputText);
             Assert.AreEqual(expected, compressed);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void CompressSpaces_ReturnsSameString_WhenInputContainsSingleSpaceOnly()
+        {
+            const string input = "input text";
+            var compressed = AWSSDKUtils.CompressSpaces(input);
+            Assert.AreSame(input, compressed);
         }
 
         [TestMethod]
@@ -265,13 +278,19 @@ namespace AWSSDK.UnitTests
         [TestCategory("Util")]
         [DataRow("")]
         [DataRow(null)]
-        [DataRow("invalid-hex-string")]
-        [DataRow("123H")]
         [DataRow("12345")]
         [TestMethod]
-        public void HexStringToBytes_Throws_WhenInputIsNotValidHexString(string input)
+        public void HexStringToBytes_ThrowsArgumentOutOfRangeException_WhenInputIsInvalid(string input)
         {
-            Assert.Throws<Exception>(() => AWSSDKUtils.HexStringToBytes(input));
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => AWSSDKUtils.HexStringToBytes(input));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void HexStringToBytes_ThrowsFormatException_WhenInputIsNotValidHexString()
+        {
+            Assert.ThrowsExactly<FormatException>(() => AWSSDKUtils.HexStringToBytes("123H"));
         }
 
         [TestCategory("UnitTest")]
@@ -296,6 +315,91 @@ namespace AWSSDK.UnitTests
             var expectedChecksum = "B10A8DB164E0754105B7A99BE72E3FE5";
             var actualChecksum = AWSSDKUtils.GenerateChecksumForBytes(inputBytes, false);
             Assert.AreEqual(expectedChecksum, actualChecksum);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        [DataRow("https://example.com", "POST\nexample.com\n/")]
+        [DataRow("https://example.com/", "POST\nexample.com\n/")]
+        [DataRow("https://example.com/path", "POST\nexample.com\n/path")]
+        public void CalculateStringToSignV2_ShouldReturnStringWithoutTrailingWhitespace_WhenCalledWithEmptyParameterCollection(string serviceUrl, string expectedResult)
+        {
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(new ParameterCollection(), serviceUrl);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnStringWithSingleParameter_WhenCalledWithParameterCollectionSizedOne()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "param1", "value1" }
+            };
+            var serviceUrl = "https://example.com/path";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            var expectedResult = "POST\nexample.com\n/path\nparam1=value1";
+            
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnStringWithMultipleParameters_WhenCalledWithNonEmptyParameterCollectionSizedTwo()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "param1", "value1" },
+                { "param2", "value2" }
+            };
+            var serviceUrl = "https://example.com/path";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            var expectedResult = "POST\nexample.com\n/path\nparam1=value1&param2=value2";
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnSanitizedString_WhenServiceUrlContainsSpecialCharacters()
+        {
+            var parameters = new ParameterCollection();
+            var serviceUrl = "https://example.com/path with spaces";
+            var expectedResult = "POST\nexample.com\n/path%2520with%2520spaces";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnSanitizedStringWithoutQuery_WhenServiceUrlContainsQuery()
+        {
+            var parameters = new ParameterCollection();
+            var serviceUrl = "https://example.com/path?query=param";
+            var expectedResult = "POST\nexample.com\n/path";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnSanitizedStringWithEncodedParameters_WhenParametersContainSpecialCharacters()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "param1&", "value1=" }
+            };
+            var serviceUrl = "https://example.com";
+            var expectedResult = "POST\nexample.com\n/\nparam1%26=value1%3D";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
