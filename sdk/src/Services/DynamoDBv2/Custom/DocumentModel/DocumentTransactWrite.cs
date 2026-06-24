@@ -413,7 +413,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             try
             {
                 GetMultiTransactWrite().WriteItems();
-                ConsumedCapacity = Items[0].TransactionPart.ConsumedCapacity;
+                if (Items != null && Items.Any())
+                    ConsumedCapacity = Items[0].TransactionPart.ConsumedCapacity;
             }
             finally
             {
@@ -427,7 +428,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             try
             {
                 await GetMultiTransactWrite().WriteItemsAsync(cancellationToken).ConfigureAwait(false);
-                ConsumedCapacity = Items[0].TransactionPart.ConsumedCapacity;
+                if (Items != null && Items.Any())
+                    ConsumedCapacity = Items[0].TransactionPart.ConsumedCapacity;
             }
             finally
             {
@@ -663,7 +665,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 GetMultiTransactWrite().WriteItems();
                 var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
                 docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
-                ConsumedCapacity = docTransactionParts[0].ConsumedCapacity;
+
+                if (docTransactionParts != null && docTransactionParts.Any())
+                    ConsumedCapacity = docTransactionParts[0].ConsumedCapacity;
             }
             finally
             {
@@ -685,7 +689,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 await GetMultiTransactWrite().WriteItemsAsync(cancellationToken).ConfigureAwait(false);
                 var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
                 docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
-                ConsumedCapacity = docTransactionParts[0].ConsumedCapacity;
+
+                if (docTransactionParts != null && docTransactionParts.Any())
+                    ConsumedCapacity = docTransactionParts[0].ConsumedCapacity;
             }
             finally
             {
