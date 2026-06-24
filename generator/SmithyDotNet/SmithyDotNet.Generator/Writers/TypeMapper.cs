@@ -6,14 +6,15 @@ using SmithyDotNet.Generator.Model.Traits;
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
-/// A resolved structure member ready for codegen: .NET type, attribute, and doc.
+/// A resolved structure member ready for codegen: .NET type, attribute, doc, and modeledName (the name as it appears in the model)
 /// </summary>
 public sealed record Member(
     string PropertyName,
     string DotNetType,
     bool IsCollection,
     string? AwsProperty,
-    string Documentation
+    string Documentation,
+    string ModeledName
 )
 {
     /// <summary>
@@ -49,7 +50,8 @@ public static class TypeMapper
                 DotNetType: MapType(member.Target, target, context),
                 IsCollection: IsCollection(target),
                 AwsProperty: BuildAwsProperty(member, target),
-                Documentation: member.GetDocumentation() ?? string.Empty)
+                Documentation: member.GetDocumentation() ?? string.Empty,
+                ModeledName: memberName)
             );
         }
 

@@ -13,6 +13,11 @@ public static class FileHeader
     public static IReadOnlyList<string> ModelWarnings { get; } = ["CS0612", "CS0618", "CS1570"];
 
     /// <summary>
+    /// The default warning codes suppressed in marshaller-level generated files.
+    /// </summary>
+    public static IReadOnlyList<string> MarshallerWarnings { get; } = ["CS0612", "CS0618"];
+
+    /// <summary>
     /// Usings for model-level files (structures, exceptions, request/response).
     /// </summary>
     public static IReadOnlyList<string> ModelUsings { get; } =
@@ -25,6 +30,15 @@ public static class FileHeader
         "System.Net",
         "Amazon.Runtime",
         "Amazon.Runtime.Internal",
+    ];
+
+    /// <summary>
+    /// Usings for marshaller files. These usings should be combined with the base-level ModelUsings
+    /// </summary>
+    public static IReadOnlyList<string> MarshallerUsings { get; } =
+    [
+        "Amazon.Runtime.Internal.Transform",
+        "Amazon.Runtime.Internal.Util"
     ];
     
     /// <summary>
