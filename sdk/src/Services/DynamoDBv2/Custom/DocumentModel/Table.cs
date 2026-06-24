@@ -248,6 +248,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Empty DocumentTransactGet object.</returns>
         IDocumentTransactGet CreateTransactGet();
 
+        /// <summary>
+        /// Creates a DocumentTransactGet object for the current table, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactGet object.</returns>
+        /// <param name="returnConsumedCapacity">Type of ReturnConsumedCapacity to be returned after Execute call.</param>
+        IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity);
+
         #endregion
 
         #region TransactWrite
@@ -258,6 +266,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <returns>Empty DocumentTransactWrite object.</returns>
         IDocumentTransactWrite CreateTransactWrite();
+
+        /// <summary>
+        /// Creates a DocumentTransactWrite object for the current table, allowing
+        /// a transactional condition-check/put/update/delete operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactWrite object.</returns>
+        /// <param name="returnConsumedCapacity">Type of ReturnConsumedCapacity to be returned after Execute call.</param>
+        IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity);
 
         #endregion
     }
@@ -2059,6 +2075,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new DocumentTransactGet(this);
         }
 
+        /// <inheritdoc/>
+        public IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity)
+        {
+            return new DocumentTransactGet(this, returnConsumedCapacity);
+        }
         #endregion
 
 
@@ -2069,7 +2090,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return new DocumentTransactWrite(this);
         }
+
+        /// <inheritdoc/>
+        public IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity)
+        {
+            return new DocumentTransactWrite(this, returnConsumedCapacity);
+        }
         #endregion
-  
+
     }
 }

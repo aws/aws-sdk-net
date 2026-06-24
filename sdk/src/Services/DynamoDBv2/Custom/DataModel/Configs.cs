@@ -230,6 +230,12 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? RetrieveDateTimeInUtc { get; set; }
 
         /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
+        /// <summary>
         /// Indicates whether a query should traverse the index backwards in descending order by range key value.
         /// If the property is false (or not set), traversal shall be in ascending order.
         /// </summary>
@@ -450,6 +456,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             DynamoDBEntryConversion conversion = contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
             string tableNamePrefix = operationConfig.TableNamePrefix ?? contextConfig.TableNamePrefix ?? string.Empty;
+            ReturnConsumedCapacity returnConsumedCapacity = operationConfig.ReturnConsumedCapacity ?? ReturnConsumedCapacity.NONE;
 
             // These properties can only be set at the operation level
             bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
@@ -484,6 +491,7 @@ namespace Amazon.DynamoDBv2.DataModel
             MetadataCachingMode = metadataCachingMode;
             DisableFetchingTableMetadata = disableFetchingTableMetadata;
             RetrieveDateTimeInUtc = retrieveDateTimeInUtc;
+            ReturnConsumedCapacity = returnConsumedCapacity;
             DerivedTypeAttributeName = derivedTypeAttributeName;
 
             State = new OperationState();
@@ -600,6 +608,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc cref="DynamoDBContextConfig.RetrieveDateTimeInUtc"/>
         public bool RetrieveDateTimeInUtc { get; set; }
+
+        /// <inheritdoc cref="ReturnConsumedCapacity"/>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation => !string.IsNullOrEmpty(IndexName);
