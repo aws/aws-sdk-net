@@ -388,8 +388,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 using JsonDocument doc = JsonDocument.Parse(json);
                 var element = doc.RootElement;
 #if !NETFRAMEWORK
-				// We assume new json will be at least similar size to the original json, so we can use the original json length as the initial buffer size.
-				using var baseWriter = new ArrayPoolBufferWriter<byte>(json.Length);
+                // We assume new json will be at least similar size to the original json, so we can use the original json length as the initial buffer size.
+                using var baseWriter = new ArrayPoolBufferWriter<byte>(json.Length);
                 using var utf8Writer = new Utf8JsonWriter(baseWriter);
 
                 InterpolateJson(element, refs, utf8Writer);
