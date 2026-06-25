@@ -117,6 +117,18 @@ namespace Amazon.Util
         /// </summary>
         public const string ValidTraceIdHeaderValueCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=;:+&[]{}\"',";
 
+        private static readonly bool[] ValidTraceIdHeaderValueCharactersLookup = BuildTraceIdHeaderValueLookup(ValidTraceIdHeaderValueCharacters);
+
+        private static bool[] BuildTraceIdHeaderValueLookup(string validTraceIdHeaderValueCharacters)
+        {
+            var lookup = new bool[128];
+            foreach (var c in validTraceIdHeaderValueCharacters)
+            {
+                if (c < 128) lookup[c] = true;
+            }
+            return lookup;
+        }
+
 
         // Valid path characters per RFC 3986 https://datatracker.ietf.org/doc/html/rfc3986#section-3.3
         // segment-nz-nc = 1*( unreserved / pct-encoded / sub-delims / "@" ) ; non-zero-length segment without any colon ":"
@@ -537,7 +549,7 @@ namespace Amazon.Util
 
             return uriComponentSegments;
         }
-        
+
         /// <summary>
         /// Joins all path segments with the / character and encodes each segment before joining
         /// </summary>
@@ -1256,21 +1268,33 @@ namespace Amazon.Util
         internal static string EncodeTraceIdHeaderValue(string value)
         {
             var encoded = new StringBuilder(value.Length * 2);
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(value))
+            var utf8Bytes = ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetMaxByteCount(value.Length));
+            try
             {
-                if (ValidTraceIdHeaderValueCharacters.IndexOf(symbol) != -1)
+#if NETCOREAPP3_1_OR_GREATER
+                var length = Encoding.UTF8.GetBytes(value, utf8Bytes);
+#else
+                var length = Encoding.UTF8.GetBytes(value, 0, value.Length, utf8Bytes, 0);
+#endif
+                for (int i = 0; i < length; i++)
                 {
-                    encoded.Append(symbol);
-                }
-                else
-                {
-                    encoded.Append('%').Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    var b = utf8Bytes[i];
+                    if (b < 128 && ValidTraceIdHeaderValueCharactersLookup[b])
+                    {
+                        encoded.Append((char)b);
+                    }
+                    else
+                    {
+                        encoded.Append('%').Append(upperHex[b >> 4]).Append(upperHex[b & 0xF]);
+                    }
                 }
             }
-
+            finally
+            {
+                ArrayPool<byte>.Shared.Return(utf8Bytes);
+            }
             return encoded.ToString();
         }
-
 
         /// <summary>
         /// Generates an MD5 Digest for the stream specified
