@@ -1,0 +1,18 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduce memory allocations in CBOR request marshalling by encoding directly into a pooled buffer."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  },
+  "extensions": [
+    {
+      "extensionName": "Extensions.CborProtocol",
+      "type": "patch",
+      "changeLogMessages": [
+        "Use Lax CBOR conformance mode in the writer pool to avoid per-request map-key sorting, reducing marshal CPU for key-heavy payloads."
+      ]
+    }
+  ]
+}
