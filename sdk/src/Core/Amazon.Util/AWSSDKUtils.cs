@@ -1267,7 +1267,7 @@ namespace Amazon.Util
         /// <returns>An encoded X-Amzn-Trace-Id header value.</returns>
         internal static string EncodeTraceIdHeaderValue(string value)
         {
-            var encoded = new StringBuilder(value.Length * 2);
+            var encoded = new ValueStringBuilder(value.Length * 2);
             var utf8Bytes = ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetMaxByteCount(value.Length));
             try
             {
@@ -1285,7 +1285,9 @@ namespace Amazon.Util
                     }
                     else
                     {
-                        encoded.Append('%').Append(upperHex[b >> 4]).Append(upperHex[b & 0xF]);
+                        encoded.Append('%');
+                        encoded.Append(upperHex[b >> 4]);
+                        encoded.Append(upperHex[b & 0xF]);
                     }
                 }
             }
