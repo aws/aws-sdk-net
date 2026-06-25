@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "One time synchronized package versions to mark build system changes."
+    ],
+    "updateMinimum": true
+  },
+  "overrideVersion": "4.0.100.0"
+}
