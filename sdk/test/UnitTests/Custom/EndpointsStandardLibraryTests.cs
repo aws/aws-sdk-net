@@ -130,5 +130,113 @@ namespace AWSSDK.UnitTests
         {
             Assert.ThrowsExactly<ArgumentException>(() => Fn.Interpolate("{Region}}", refs));
         }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Interpolate_MultipleHash_KeepsOnlyFirstPathSegment()
+        {
+            var localRefs = new Dictionary<string, object>
+            {
+                { "obj", new Test2 { Prop2 = "value" } }
+            };
+            Assert.AreEqual("value", Fn.Interpolate("{obj#Prop2#extra}", localRefs));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_NestedIndexer_UsesLastBracket()
+        {
+            var bag = new PropertyBag();
+            bag["List[0]"] = new List<string> { "a", "b" };
+            Assert.AreEqual("b", Fn.GetAttr(bag, "List[0][1]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_IndexerOnNonBag_ThrowsInvalidCast()
+        {
+            Assert.ThrowsExactly<InvalidCastException>(() => Fn.GetAttr("not-a-bag", "Foo[0]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_BadIndexOnNonBag_ThrowsFormat()
+        {
+            Assert.ThrowsExactly<FormatException>(() => Fn.GetAttr("not-a-bag", "Foo[x]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_PathNullOrEmpty_ThrowsArgumentNullException()
+        {
+            Assert.ThrowsExactly<ArgumentNullException>(() => Fn.GetAttr("not-a-bag", null));
+            Assert.ThrowsExactly<ArgumentNullException>(() => Fn.GetAttr("not-a-bag", ""));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_PropertyValueIsNotEnumerable_ThrowsArgumentException()
+        {
+            var bag = new PropertyBag();
+            bag["NotEnumerable"] = 42; // int is not enumerable
+            Assert.ThrowsExactly<ArgumentException>(() => Fn.GetAttr(bag, "NotEnumerable[0]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_PropertyValueIsNotListWhenInRange_ReturnsValue()
+        {
+            var bag = new PropertyBag();
+            bag["NotList"] = new HashSet<string> { "a", "b" }; // not IList, but is IEnumerable
+            Assert.AreEqual("a", Fn.GetAttr(bag, "NotList[0]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_PropertyValueIsNotListWhenNotInRange_ReturnsNull()
+        {
+            var bag = new PropertyBag();
+            bag["NotList"] = new HashSet<string> { "a", "b" }; // not IList, but is IEnumerable
+            Assert.AreEqual(null, Fn.GetAttr(bag, "NotList[2]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_PropertyValueIsListWhenInRange_ReturnsValue()
+        {
+            var bag = new PropertyBag();
+            bag["List"] = new List<string> { "a", "b" };
+            Assert.AreEqual("a", Fn.GetAttr(bag, "List[0]"));
+        }
+
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_PropertyValueIsListWhenNotInRange_ReturnsNull()
+        {
+            var bag = new PropertyBag();
+            bag["List"] = new List<string> { "a", "b" };
+            Assert.AreEqual(null, Fn.GetAttr(bag, "List[2]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_NestedPropertyValueIsNotBag_ThrowsArgumentException()
+        {
+            var bag = new PropertyBag();
+            bag["property"] = 42; // int is not a PropertyBag
+            Assert.ThrowsExactly<ArgumentException>(() => Fn.GetAttr(bag, "property.subproperty"));
+        }
     }
 }

@@ -57,39 +57,66 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static object GetAttr(object value, string path)
         {
-            if (string.IsNullOrEmpty(path)) throw new ArgumentNullException("path");
+#if NET8_0_OR_GREATER
+            ArgumentNullException.ThrowIfNull(path);
+#else
+            if (path is null) throw new ArgumentNullException(nameof(path));
+#endif
+
+            return GetAttr(value, path.AsSpan());
+        }
+
+        private static object GetAttr(object value, ReadOnlySpan<char> path)
+        {
+            if (path.Length == 0) throw new ArgumentNullException(nameof(path));
 
             var propertyValue = value;
-            var segStart = 0;
 
-            while (true)
+            bool isLastSegment = false;
+            var remainder = path;
+            while (!isLastSegment)
             {
-                var dotPos = path.IndexOf('.', segStart);
-                var segEnd = dotPos < 0 ? path.Length : dotPos;
-                var isLast = dotPos < 0;
+                var dotPos = remainder.IndexOf('.');
+                isLastSegment = dotPos == -1;
+                ReadOnlySpan<char> segment;
+                if (isLastSegment)
+                {
+                    segment = remainder;
+                }
+                else
+                {
+                    segment = remainder.Slice(0, dotPos);
+                    remainder = remainder.Slice(dotPos + 1);
+                }
+
 
                 // indexer is always at the end of path e.g. "Part1.Part2[3]" or "[0]"
-                if (isLast)
+                // multiple indexers only consume the last segment e.g. "Part1[1][2]" consumes [2]
+                if (isLastSegment)
                 {
-                    var bracketPos = path.IndexOf('[', segStart);
+                    var bracketPos = segment.LastIndexOf('[');
                     if (bracketPos >= 0)
                     {
+                        var indexSegment = segment.Slice(bracketPos + 1, segment.Length - bracketPos - 2);
+
+#if NETCOREAPP3_1_OR_GREATER
+                        var index = int.Parse(indexSegment);
+#else
+                        var index = int.Parse(indexSegment.ToString());
+#endif
+
                         // property segment before the bracket e.g. "Part2[3]"
-                        if (bracketPos > segStart)
+                        if (bracketPos > 0)
                         {
                             if (propertyValue is not IPropertyBag propBag)
-                                throw new ArgumentException($"Object addressing by pathing segment must be IPropertyBag");
-                            propertyValue = propBag[path.Substring(segStart, bracketPos - segStart)];
+                                throw new InvalidCastException($"Object addressing by pathing segment must be IPropertyBag");
+                            propertyValue = propBag[segment.Slice(0, bracketPos).ToString()];
                         }
 
                         if (propertyValue is not IEnumerable enumerable)
                             throw new ArgumentException($"Object addressing by pathing segment with indexer must be IEnumerable");
 
-#if NETCOREAPP3_1_OR_GREATER
-                        var index = int.Parse(path.AsSpan(bracketPos + 1, segEnd - bracketPos - 2));
-#else
-                        var index = int.Parse(path.Substring(bracketPos + 1, segEnd - bracketPos - 2));
-#endif
+
 
                         // avoid Cast<object>().ToList() – use IList direct access when possible
                         if (enumerable is IList directList)
@@ -107,11 +134,9 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 
                 if (propertyValue is not IPropertyBag bag)
                     throw new ArgumentException($"Object addressing by pathing segment must be IPropertyBag");
-                propertyValue = bag[path.Substring(segStart, segEnd - segStart)];
-
-                if (isLast) return propertyValue;
-                segStart = dotPos + 1;
+                propertyValue = bag[segment.ToString()];
             }
+            return propertyValue;
         }
 
         /// <summary>
@@ -272,9 +297,9 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 
 #if NET8_0_OR_GREATER
         private static readonly FrozenSet<string> SupportedSchemas = new HashSet<string> { "http", "https", "wss" }
-            .ToFrozenSet(StringComparer.OrdinalIgnoreCase);
+            .ToFrozenSet(StringComparer.Ordinal);
 #else
-        private static readonly HashSet<string> SupportedSchemas = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "http", "https", "wss" };
+        private static readonly HashSet<string> SupportedSchemas = new HashSet<string>(StringComparer.Ordinal) { "http", "https", "wss" };
 #endif
 
         /// <summary>
@@ -328,49 +353,63 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         {
             const char OpenBracket = '{';
             const char CloseBracket = '}';
-            var result = new StringBuilder();
-            for (int i = 0; i < template.Length; i++)
+            const char Hash = '#';
+            var result = new ValueStringBuilder(template.Length); // preallocate to template length, will grow if needed
+            var remainder = template.AsSpan();
+            while (remainder.Length > 0)
             {
-                var currentChar = template[i];
-                char nextChar = (i < template.Length - 1) ? template[i + 1] : default(char);
-                // translate {{ -> { and }} -> }
-                if (currentChar == OpenBracket && nextChar == OpenBracket || currentChar == CloseBracket && nextChar == CloseBracket)
+                var specialPos = remainder.IndexOfAny(OpenBracket, CloseBracket);
+                if (specialPos < 0)
+                {
+                    result.Append(remainder);
+                    break;
+                }
+
+                // copy the literal segment before the special character
+                if (specialPos > 0)
+                {
+                    result.Append(remainder.Slice(0, specialPos));
+                    remainder = remainder.Slice(specialPos);
+                }
+
+                var currentChar = remainder[0];
+                var nextChar = remainder.Length > 1 ? remainder[1] : default(char);
+
+                // {{ -> { and }} -> } escape sequences
+                if (currentChar == nextChar)
                 {
                     result.Append(currentChar);
-                    i++;
+                    remainder = remainder.Slice(2);
                     continue;
                 }
 
-                // translate {object#path} -> value
-                if (currentChar == OpenBracket)
-                {
-                    var placeholderStart = i + 1;
-                    var closingBracket = template.IndexOf(CloseBracket, placeholderStart);
-                    if (closingBracket < 0)
-                        throw new ArgumentException("template is missing closing }");
-
-                    var hashPos = template.IndexOf('#', placeholderStart, closingBracket - placeholderStart);
-                    if (hashPos >= 0)
-                    {
-                        var refName = template.Substring(placeholderStart, hashPos - placeholderStart);
-                        var path = template.Substring(hashPos + 1, closingBracket - hashPos - 1);
-                        result.Append(GetAttr(refs[refName], path).ToString());
-                    }
-                    else
-                    {
-                        var refName = template.Substring(placeholderStart, closingBracket - placeholderStart);
-                        result.Append(refs[refName].ToString());
-                    }
-                    i = closingBracket; // outer i++ will advance past }
-                }
-                else if (currentChar == CloseBracket)
-                {
+                if (currentChar == CloseBracket)
                     throw new ArgumentException("template has non-matching closing bracket, use }} to output }");
+
+                // currentChar == OpenBracket: resolve {ref} or {ref#path}
+                var closingBracket = remainder.IndexOf(CloseBracket);
+                if (closingBracket < 0)
+                    throw new ArgumentException("template is missing closing }");
+
+                var segment = remainder.Slice(1, closingBracket - 1);
+                var hashPos = segment.IndexOf(Hash);
+                if (hashPos >= 0)
+                {
+                    var refName = segment.Slice(0, hashPos).ToString();
+                    segment = segment.Slice(hashPos + 1);
+
+                    // If there is a secondary hash, we only want the path up to that point
+                    var secondaryHashPos = segment.IndexOf(Hash);
+                    if (secondaryHashPos >= 0)
+                        segment = segment.Slice(0, secondaryHashPos);
+
+                    result.Append(GetAttr(refs[refName], segment).ToString());
                 }
                 else
                 {
-                    result.Append(currentChar);
+                    result.Append(refs[segment.ToString()].ToString());
                 }
+                remainder = remainder.Slice(closingBracket + 1);
             }
 
             return result.ToString();
