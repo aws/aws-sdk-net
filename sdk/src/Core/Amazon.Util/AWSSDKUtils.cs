@@ -117,19 +117,6 @@ namespace Amazon.Util
         /// </summary>
         public const string ValidTraceIdHeaderValueCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=;:+&[]{}\"',";
 
-        private static readonly bool[] ValidTraceIdHeaderValueCharactersLookup = BuildTraceIdHeaderValueLookup(ValidTraceIdHeaderValueCharacters);
-
-        private static bool[] BuildTraceIdHeaderValueLookup(string validTraceIdHeaderValueCharacters)
-        {
-            var lookup = new bool[128];
-            foreach (var c in validTraceIdHeaderValueCharacters)
-            {
-                if (c < 128) lookup[c] = true;
-            }
-            return lookup;
-        }
-
-
         // Valid path characters per RFC 3986 https://datatracker.ietf.org/doc/html/rfc3986#section-3.3
         // segment-nz-nc = 1*( unreserved / pct-encoded / sub-delims / "@" ) ; non-zero-length segment without any colon ":"
         // check https://datatracker.ietf.org/doc/html/rfc3986#section-2.2 for sub-delims
@@ -1259,6 +1246,19 @@ namespace Amazon.Util
             return data.Replace("/", EncodedSlash);
         }
 
+
+        private static readonly bool[] ValidTraceIdHeaderValueCharactersLookup = BuildTraceIdHeaderValueLookup(ValidTraceIdHeaderValueCharacters);
+
+        private static bool[] BuildTraceIdHeaderValueLookup(string validTraceIdHeaderValueCharacters)
+        {
+            var lookup = new bool[128];
+            foreach (var c in validTraceIdHeaderValueCharacters)
+            {
+                if (c < 128) lookup[c] = true;
+            }
+            return lookup;
+        }
+
         /// <summary>
         /// Percent encodes the X-Amzn-Trace-Id header value skipping any characters within the
         /// ValidTraceIdHeaderValueCharacters character set.
@@ -1276,9 +1276,8 @@ namespace Amazon.Util
 #else
                 var length = Encoding.UTF8.GetBytes(value, 0, value.Length, utf8Bytes, 0);
 #endif
-                for (int i = 0; i < length; i++)
+                foreach (var b in utf8Bytes.AsSpan(0, length))
                 {
-                    var b = utf8Bytes[i];
                     if (b < 128 && ValidTraceIdHeaderValueCharactersLookup[b])
                     {
                         encoded.Append((char)b);
