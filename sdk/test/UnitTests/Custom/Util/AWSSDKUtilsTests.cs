@@ -90,6 +90,19 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
+        [DataRow("  hello world  ", "hello world")]
+        [DataRow("  hello   world  ", "hello world")]
+        [DataRow("hello world", "hello world")]
+        [DataRow("  ", "")]
+        public void CompressSpaces_TrimsLeadingAndTrailing_WhenTrimIsTrue(string inputText, string expected)
+        {
+            var compressed = AWSSDKUtils.CompressSpaces(inputText, trim: true);
+            Assert.AreEqual(expected, compressed);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
         public void TestIsAbsolutePathBadInput()
         {
             Assert.IsFalse(AWSSDKUtils.IsAbsolutePath(new string(Path.GetInvalidPathChars())));

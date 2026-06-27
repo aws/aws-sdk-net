@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Memory \u0026 CPU optimizations in AWS4Signer"
+    ]
+  }
+}

@@ -537,7 +537,7 @@ namespace Amazon.Util
 
             return uriComponentSegments;
         }
-        
+
         /// <summary>
         /// Joins all path segments with the / character and encodes each segment before joining
         /// </summary>
@@ -1704,12 +1704,26 @@ namespace Amazon.Util
 #endif
         }
 
+#if !NETCOREAPP
         /// <summary>
         /// Utility method that accepts a string and replaces white spaces with a space.
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        /// <param name="data">The input string to process.</param>
+        /// <returns>The processed string with compressed spaces.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string CompressSpaces(string data)
+        {
+            return CompressSpaces(data, false);
+        }
+#endif
+
+        /// <summary>
+        /// Utility method that accepts a string and replaces white spaces with a space.
+        /// </summary>
+        /// <param name="data">The input string to process.</param>
+        /// <param name="trim">When <see langword="true"/>, leading and trailing whitespace is also removed.</param>
+        /// <returns>The processed string with compressed spaces.</returns>
+        public static string CompressSpaces(string data, bool trim = false)
         {
             const char SPACE = ' ';
             if (data == null)
@@ -1723,8 +1737,8 @@ namespace Amazon.Util
                 return string.Empty;
             }
 
-            // Fast path: scan for the first run of consecutive whitespace or non-space whitespacecharacter.
-            // If none exists the string is already compact — return it unchanged with no allocation.
+            // Fast path: scan for the first run of consecutive whitespace or a non-space whitespace character.
+            // If none is found the string is already compact.
             bool prevWasWhiteSpace = false;
             int firstRunIndex = -1;
             for (int i = 0; i < dataLength; i++)
@@ -1740,30 +1754,56 @@ namespace Amazon.Util
             }
 
             if (firstRunIndex < 0)
-                return data;
+            {
+                // No inner compression needed.
+                return trim ? data.Trim() : data;
+            }
 
-            // Slow path: at least one run was found.  Copy the clean prefix directly,
-            // then process the remainder segment-by-segment: flush each non-WS run as a
-            // single Append(span) call and skip each WS run with a do-while.
-            var stringBuilder = new ValueStringBuilder(dataLength);
-            stringBuilder.Append(data.AsSpan(0, firstRunIndex));
+            // Trim once at the top as a free span pointer adjustment — no allocation.
+            // All subsequent logic operates uniformly on this span.
+            var span = data.AsSpan();
+            if (trim)
+            {
+                span = span.Trim();
+            }
+
+            var spanLength = span.Length;
+            if (spanLength == 0)
+            {
+                return string.Empty;
+            }
+
+            return CompressSpacesSlow(span, firstRunIndex);
+        }
+
+        private static string CompressSpacesSlow(ReadOnlySpan<char> span, int firstRunIndex)
+        {
+            const char SPACE = ' ';
+            int spanLength = span.Length;
+            // Use a stack-allocated buffer for typical inputs; fall back to ArrayPool for large ones.
+            // Needs to be in separate method from fast path to allow fast path inlining.
+            const int StackAllocThreshold = 256;
+            var sb = spanLength <= StackAllocThreshold
+                ? new ValueStringBuilder(stackalloc char[spanLength])
+                : new ValueStringBuilder(spanLength);
+            sb.Append(span.Slice(0, firstRunIndex));
 
             int pos = firstRunIndex;
-            while (pos < dataLength)
+            while (pos < spanLength)
             {
-                if (char.IsWhiteSpace(data[pos]))
+                if (char.IsWhiteSpace(span[pos]))
                 {
-                    stringBuilder.Append(SPACE);
-                    do { pos++; } while (pos < dataLength && char.IsWhiteSpace(data[pos]));
+                    sb.Append(SPACE);
+                    do { pos++; } while (pos < spanLength && char.IsWhiteSpace(span[pos]));
                 }
                 else
                 {
                     int segStart = pos;
-                    do { pos++; } while (pos < dataLength && !char.IsWhiteSpace(data[pos]));
-                    stringBuilder.Append(data.AsSpan(segStart, pos - segStart));
+                    do { pos++; } while (pos < spanLength && !char.IsWhiteSpace(span[pos]));
+                    sb.Append(span.Slice(segStart, pos - segStart));
                 }
             }
-            return stringBuilder.ToString();
+            return sb.ToString();
         }
 
         /// <summary>
