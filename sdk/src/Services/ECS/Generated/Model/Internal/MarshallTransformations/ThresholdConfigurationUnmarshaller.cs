@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentCircuitBreaker Object
+    /// Response Unmarshaller for ThresholdConfiguration Object
     /// </summary>  
-    public class DeploymentCircuitBreakerUnmarshaller : IJsonUnmarshaller<DeploymentCircuitBreaker, JsonUnmarshallerContext>
+    public class ThresholdConfigurationUnmarshaller : IJsonUnmarshaller<ThresholdConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentCircuitBreaker Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ThresholdConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DeploymentCircuitBreaker unmarshalledObject = new DeploymentCircuitBreaker();
+            ThresholdConfiguration unmarshalledObject = new ThresholdConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enable", targetDepth, ref reader))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enable = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resetOnHealthyTask", targetDepth, ref reader))
+                if (context.TestExpression("value", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ResetOnHealthyTask = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rollback", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Rollback = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("thresholdConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = ThresholdConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ThresholdConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentCircuitBreakerUnmarshaller _instance = new DeploymentCircuitBreakerUnmarshaller();        
+        private static ThresholdConfigurationUnmarshaller _instance = new ThresholdConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentCircuitBreakerUnmarshaller Instance
+        public static ThresholdConfigurationUnmarshaller Instance
         {
             get
             {

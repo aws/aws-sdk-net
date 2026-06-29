@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeploymentCircuitBreaker Marshaller
+    /// ThresholdConfiguration Marshaller
     /// </summary>
-    public class DeploymentCircuitBreakerMarshaller : IRequestMarshaller<DeploymentCircuitBreaker, JsonMarshallerContext> 
+    public class ThresholdConfigurationMarshaller : IRequestMarshaller<ThresholdConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,20 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentCircuitBreaker requestObject, JsonMarshallerContext context)
+        public void Marshall(ThresholdConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnable())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("enable");
-                context.Writer.WriteBooleanValue(requestObject.Enable.Value);
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
-            if(requestObject.IsSetResetOnHealthyTask())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("resetOnHealthyTask");
-                context.Writer.WriteBooleanValue(requestObject.ResetOnHealthyTask.Value);
-            }
-
-            if(requestObject.IsSetRollback())
-            {
-                context.Writer.WritePropertyName("rollback");
-                context.Writer.WriteBooleanValue(requestObject.Rollback.Value);
-            }
-
-            if(requestObject.IsSetThresholdConfiguration())
-            {
-                context.Writer.WritePropertyName("thresholdConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ThresholdConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ThresholdConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("value");
+                context.Writer.WriteNumberValue(requestObject.Value.Value);
             }
 
         }
@@ -80,7 +63,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DeploymentCircuitBreakerMarshaller Instance = new DeploymentCircuitBreakerMarshaller();
+        public readonly static ThresholdConfigurationMarshaller Instance = new ThresholdConfigurationMarshaller();
 
     }
 }

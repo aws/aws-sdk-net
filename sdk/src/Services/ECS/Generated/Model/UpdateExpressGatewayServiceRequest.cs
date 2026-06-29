@@ -222,7 +222,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If you provide a task definition ARN, you cannot also specify <c>primaryContainer</c>,
-        /// <c>taskRoleArn</c>, <c>cpu</c>, or <c>memory</c>.
+        /// <c>executionRoleArn</c>, <c>taskRoleArn</c>, <c>cpu</c>, or <c>memory</c>.
         /// </para>
         /// </summary>
         public string TaskDefinitionArn
