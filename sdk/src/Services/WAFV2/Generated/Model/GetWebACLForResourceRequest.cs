@@ -106,6 +106,11 @@ namespace Amazon.WAFV2.Model
         /// For an Amplify application: <c>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i>
         /// </c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Amazon Bedrock AgentCore Gateway: <c>arn:<i>partition</i>:bedrock-agentcore:<i>region</i>:<i>account-id</i>:gateway/<i>gateway-id</i>
+        /// </c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
