@@ -33,7 +33,7 @@ namespace Amazon.ConnectCampaignsV2
     public partial class AmazonConnectCampaignsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectCampaignsV2", "4.0.9.9");
+            InternalSDKUtils.BuildUserAgentString("ConnectCampaignsV2", "4.0.100.0");
 
         private static readonly AmazonConnectCampaignsV2EndpointResolver EndpointResolver =
             new AmazonConnectCampaignsV2EndpointResolver();

@@ -33,7 +33,7 @@ namespace Amazon.KinesisVideo
     public partial class AmazonKinesisVideoConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video", "4.0.4.9");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video", "4.0.100.0");
 
         private static readonly AmazonKinesisVideoEndpointResolver EndpointResolver =
             new AmazonKinesisVideoEndpointResolver();

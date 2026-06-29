@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "Small performance improvements in `AWSSDKUtils` class (https://github.com/aws/aws-sdk-net/pull/4447)"
-    ]
-  }
-}

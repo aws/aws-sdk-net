@@ -33,7 +33,7 @@ namespace Amazon.DocDBElastic
     public partial class AmazonDocDBElasticConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DocDB Elastic", "4.0.2.10");
+            InternalSDKUtils.BuildUserAgentString("DocDB Elastic", "4.0.100.0");
 
         private static readonly AmazonDocDBElasticEndpointResolver EndpointResolver =
             new AmazonDocDBElasticEndpointResolver();

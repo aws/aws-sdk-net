@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise
     public partial class AmazonIoTSiteWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTSiteWise", "4.0.5.6");
+            InternalSDKUtils.BuildUserAgentString("IoTSiteWise", "4.0.100.0");
 
         private static readonly AmazonIoTSiteWiseEndpointResolver EndpointResolver =
             new AmazonIoTSiteWiseEndpointResolver();
