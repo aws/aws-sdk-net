@@ -38,8 +38,31 @@ public static class FileHeader
     public static IReadOnlyList<string> MarshallerUsings { get; } =
     [
         "Amazon.Runtime.Internal.Transform",
-        "Amazon.Runtime.Internal.Util"
+        "Amazon.Runtime.Internal.Util",
     ];
+
+    // these three exist in marshallers today but are unused so far. if future marshallers need them, add them back.
+    // "System.Xml.Serialization",
+    // "System.Globalization",
+    // "System.Text"
+    /// <summary>
+    /// Usings for Json Request Marshaller files. Used individually for JsonRequest Marshallers
+    /// </summary>
+    public static IReadOnlyList<string> JsonRequestMarshallerUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.IO",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Internal",
+        "Amazon.Runtime.Internal.Transform",
+        "Amazon.Runtime.Internal.Util",
+        "System.Text.Json",
+        "System.Buffers",
+    ];
+        
+
+    
     
     /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,

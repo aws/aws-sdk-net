@@ -24,7 +24,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
 
         FileHeader.WriteLicense(writer, modelFileName);
         FileHeader.WriteUsings(writer, FileHeader.ModelUsings);
-        FileHeader.WriteUsings(writer, [$"{context.Namespace}.Model"]);
+        writer.WriteLine($"using {context.Namespace}.Model;");
         FileHeader.WriteUsings(writer, FileHeader.MarshallerUsings);
         FileHeader.WritePragma(writer, FileHeader.MarshallerWarnings);
             
@@ -60,7 +60,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         });
     }
 
-    // The marshalName can be overridden via https://smithy.io/2.0/spec/protocol-traits.html#jsonname-trait, but we won't handle that for now.
+    // The marshalName can be overridden via https://smithy.io/2.0/spec/protocol-traits.html#jsonname-trait
     private void WriteMemberMarshallers(CodeWriter writer, List<Member> members)
     {
         for (int i = 0; i< members.Count; i++)
@@ -69,7 +69,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
             {
                 writer.OpenBlock($"if (requestObject.IsSet{members[i].PropertyName}())", () =>
                 {
-                    writer.WriteLine($"context.Writer.WritePropertyName(\"{members[i].ModeledName}\");");
+                    writer.WriteLine($"context.Writer.WritePropertyName(\"{members[i].JsonName ?? members[i].ModeledName}\");");
                     writer.WriteLine($"context.Writer.WriteStringValue(requestObject.{members[i].PropertyName});");
                 });
             }
