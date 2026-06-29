@@ -108,7 +108,7 @@ namespace Amazon.Glue.Model
         /// The JSON content of the form, conforming to the schema of the specified form type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=300000)]
+        [AWSProperty(Required=true)]
         public string Content
         {
             get { return this._content; }
