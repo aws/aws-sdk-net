@@ -3666,6 +3666,8 @@ namespace Amazon.EC2
         /// A <c>spread</c> placement group places instances on distinct hardware. A <c>partition</c>
         /// placement group places groups of instances in different partitions, where instances
         /// in one partition do not share the same hardware with instances in another partition.
+        /// A <c>precision-time</c> placement group places instances on supported hardware with
+        /// direct access to high-precision time sources in AWS infrastructure.
         /// </para>
         ///  
         /// <para>
@@ -6244,7 +6246,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
-        /// group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// group before you can delete the placement group. You cannot delete a placement group
+        /// that is a parent of a cluster placement group. Delete the cluster placement groups
+        /// first. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>

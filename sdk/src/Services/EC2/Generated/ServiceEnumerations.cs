@@ -21523,6 +21523,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly PlacementStrategy Partition = new PlacementStrategy("partition");
         /// <summary>
+        /// Constant PrecisionTime for PlacementStrategy
+        /// </summary>
+        public static readonly PlacementStrategy PrecisionTime = new PlacementStrategy("precision-time");
+        /// <summary>
         /// Constant Spread for PlacementStrategy
         /// </summary>
         public static readonly PlacementStrategy Spread = new PlacementStrategy("spread");

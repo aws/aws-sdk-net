@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _groupName;
         private string _linkedGroupId;
         private OperatorResponse _operator;
+        private string _parentGroupId;
         private int? _partitionCount;
         private SpreadLevel _spreadLevel;
         private PlacementGroupState _state;
@@ -147,6 +148,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOperator()
         {
             return this._operator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentGroupId. 
+        /// <para>
+        /// The ID of the parent placement group.
+        /// </para>
+        /// </summary>
+        public string ParentGroupId
+        {
+            get { return this._parentGroupId; }
+            set { this._parentGroupId = value; }
+        }
+
+        // Check to see if ParentGroupId property is set
+        internal bool IsSetParentGroupId()
+        {
+            return this._parentGroupId != null;
         }
 
         /// <summary>
