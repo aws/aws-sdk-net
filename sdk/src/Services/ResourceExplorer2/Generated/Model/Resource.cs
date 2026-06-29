@@ -37,6 +37,7 @@ namespace Amazon.ResourceExplorer2.Model
     public partial class Resource
     {
         private string _arn;
+        private string _cfnResourceType;
         private DateTime? _lastReportedAt;
         private string _owningAccountId;
         private List<ResourceProperty> _properties = AWSConfigs.InitializeCollections ? new List<ResourceProperty>() : null;
@@ -61,6 +62,25 @@ namespace Amazon.ResourceExplorer2.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CfnResourceType. 
+        /// <para>
+        /// The CloudFormation resource type identifier for the resource, such as <c>AWS::EC2::Instance</c>
+        /// or <c>AWS::S3::Bucket</c>.
+        /// </para>
+        /// </summary>
+        public string CfnResourceType
+        {
+            get { return this._cfnResourceType; }
+            set { this._cfnResourceType = value; }
+        }
+
+        // Check to see if CfnResourceType property is set
+        internal bool IsSetCfnResourceType()
+        {
+            return this._cfnResourceType != null;
         }
 
         /// <summary>

@@ -35,8 +35,32 @@ namespace Amazon.ResourceExplorer2.Model
     /// </summary>
     public partial class SupportedResourceType
     {
+        private List<string> _cfnResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceType;
         private string _service;
+
+        /// <summary>
+        /// Gets and sets the property CFNResourceTypes. 
+        /// <para>
+        /// The CloudFormation resource type identifiers for this resource type, such as <c>AWS::EC2::Instance</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> CFNResourceTypes
+        {
+            get { return this._cfnResourceTypes; }
+            set { this._cfnResourceTypes = value; }
+        }
+
+        // Check to see if CFNResourceTypes property is set
+        internal bool IsSetCFNResourceTypes()
+        {
+            return this._cfnResourceTypes != null && (this._cfnResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceType. 

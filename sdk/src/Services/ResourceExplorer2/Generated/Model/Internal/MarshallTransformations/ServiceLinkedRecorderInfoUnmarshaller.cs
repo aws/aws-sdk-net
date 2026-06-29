@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceView Object
+    /// Response Unmarshaller for ServiceLinkedRecorderInfo Object
     /// </summary>  
-    public class ServiceViewUnmarshaller : IJsonUnmarshaller<ServiceView, JsonUnmarshallerContext>
+    public class ServiceLinkedRecorderInfoUnmarshaller : IJsonUnmarshaller<ServiceLinkedRecorderInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceView Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServiceLinkedRecorderInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServiceView unmarshalledObject = new ServiceView();
+            ServiceLinkedRecorderInfo unmarshalledObject = new ServiceLinkedRecorderInfo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,46 +56,22 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Filters", targetDepth, ref reader))
-                {
-                    var unmarshaller = SearchFilterUnmarshaller.Instance;
-                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IncludedProperties", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<IncludedProperty, IncludedPropertyUnmarshaller>(IncludedPropertyUnmarshaller.Instance);
-                    unmarshalledObject.IncludedProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ScopeType", targetDepth, ref reader))
+                if (context.TestExpression("RecorderName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScopeType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RecorderName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceLinkedRecorder", targetDepth, ref reader))
-                {
-                    var unmarshaller = ServiceLinkedRecorderInfoUnmarshaller.Instance;
-                    unmarshalledObject.ServiceLinkedRecorder = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ServiceViewArn", targetDepth, ref reader))
+                if (context.TestExpression("RecorderType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceViewArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RecorderType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceViewName", targetDepth, ref reader))
+                if (context.TestExpression("ServicePrincipal", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceViewName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StreamingAccessForService", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamingAccessForService = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ServicePrincipal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -103,12 +79,12 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceViewUnmarshaller _instance = new ServiceViewUnmarshaller();        
+        private static ServiceLinkedRecorderInfoUnmarshaller _instance = new ServiceLinkedRecorderInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceViewUnmarshaller Instance
+        public static ServiceLinkedRecorderInfoUnmarshaller Instance
         {
             get
             {
