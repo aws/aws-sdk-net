@@ -58,7 +58,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property Checks. 
         /// <para>
-        /// A check on the environment to identify instance health and VMware VCF licensing issues.
+        /// A check on the environment to identify connector health.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

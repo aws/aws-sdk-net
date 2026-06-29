@@ -33,6 +33,12 @@ namespace Amazon.Evs.Model
     /// The connectivity configuration for the environment. Amazon EVS requires that you specify
     /// two route server peer IDs. During environment creation, the route server endpoints
     /// peer with the NSX uplink VLAN for connectivity to the NSX overlay network.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ConnectivityInfo
     {
