@@ -32,6 +32,17 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Container for the parameters to the StartDeployment operation.
     /// Starts a deployment.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// AppConfig Agent supports deploying feature flag or free-form configuration data to
+    /// specific segments or individual users during a gradual rollout. Entity-based gradual
+    /// deployments ensure that once a user or segment receives a configuration version, they
+    /// continue to receive that same version throughout the deployment period, regardless
+    /// of which compute resource serves their requests. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using
+    /// AppConfig Agent for user-based or entity-based gradual deployments</a> 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StartDeploymentRequest : AmazonAppConfigRequest
     {
@@ -43,6 +54,7 @@ namespace Amazon.AppConfig.Model
         private Dictionary<string, string> _dynamicExtensionParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _environmentId;
         private string _kmsKeyIdentifier;
+        private int? _latestDeploymentNumber;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -51,7 +63,7 @@ namespace Amazon.AppConfig.Model
         /// The application ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -70,7 +82,7 @@ namespace Amazon.AppConfig.Model
         /// The configuration profile ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigurationProfileId
         {
             get { return this._configurationProfileId; }
@@ -173,7 +185,7 @@ namespace Amazon.AppConfig.Model
         /// The environment ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EnvironmentId
         {
             get { return this._environmentId; }
@@ -204,6 +216,25 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetKmsKeyIdentifier()
         {
             return this._kmsKeyIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDeploymentNumber. 
+        /// <para>
+        /// The number of the latest deployment. Use this value to ensure that the deployment
+        /// starts from the expected state and to prevent conflicting updates.
+        /// </para>
+        /// </summary>
+        public int? LatestDeploymentNumber
+        {
+            get { return this._latestDeploymentNumber; }
+            set { this._latestDeploymentNumber = value; }
+        }
+
+        // Check to see if LatestDeploymentNumber property is set
+        internal bool IsSetLatestDeploymentNumber()
+        {
+            return this._latestDeploymentNumber.HasValue; 
         }
 
         /// <summary>

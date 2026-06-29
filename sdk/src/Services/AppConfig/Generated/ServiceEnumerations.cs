@@ -191,6 +191,56 @@ namespace Amazon.AppConfig
 
 
     /// <summary>
+    /// Constants used for properties of type DeleteType.
+    /// </summary>
+    public class DeleteType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVE for DeleteType
+        /// </summary>
+        public static readonly DeleteType ARCHIVE = new DeleteType("ARCHIVE");
+        /// <summary>
+        /// Constant DESTROY for DeleteType
+        /// </summary>
+        public static readonly DeleteType DESTROY = new DeleteType("DESTROY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteType FindValue(string value)
+        {
+            return FindValue<DeleteType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeletionProtectionCheck.
     /// </summary>
     public class DeletionProtectionCheck : ConstantClass
@@ -385,6 +435,56 @@ namespace Amazon.AppConfig
 
 
     /// <summary>
+    /// Constants used for properties of type DeploymentType.
+    /// </summary>
+    public class DeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANAGED for DeploymentType
+        /// </summary>
+        public static readonly DeploymentType MANAGED = new DeploymentType("MANAGED");
+        /// <summary>
+        /// Constant USER for DeploymentType
+        /// </summary>
+        public static readonly DeploymentType USER = new DeploymentType("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentType FindValue(string value)
+        {
+            return FindValue<DeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnvironmentState.
     /// </summary>
     public class EnvironmentState : ConstantClass
@@ -440,6 +540,168 @@ namespace Amazon.AppConfig
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnvironmentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExperimentDefinitionStatus.
+    /// </summary>
+    public class ExperimentDefinitionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ExperimentDefinitionStatus
+        /// </summary>
+        public static readonly ExperimentDefinitionStatus ACTIVE = new ExperimentDefinitionStatus("ACTIVE");
+        /// <summary>
+        /// Constant ARCHIVED for ExperimentDefinitionStatus
+        /// </summary>
+        public static readonly ExperimentDefinitionStatus ARCHIVED = new ExperimentDefinitionStatus("ARCHIVED");
+        /// <summary>
+        /// Constant IDLE for ExperimentDefinitionStatus
+        /// </summary>
+        public static readonly ExperimentDefinitionStatus IDLE = new ExperimentDefinitionStatus("IDLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExperimentDefinitionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExperimentDefinitionStatus FindValue(string value)
+        {
+            return FindValue<ExperimentDefinitionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExperimentDefinitionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExperimentRunEventType.
+    /// </summary>
+    public class ExperimentRunEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPOSURE_UPDATED for ExperimentRunEventType
+        /// </summary>
+        public static readonly ExperimentRunEventType EXPOSURE_UPDATED = new ExperimentRunEventType("EXPOSURE_UPDATED");
+        /// <summary>
+        /// Constant OVERRIDES_UPDATED for ExperimentRunEventType
+        /// </summary>
+        public static readonly ExperimentRunEventType OVERRIDES_UPDATED = new ExperimentRunEventType("OVERRIDES_UPDATED");
+        /// <summary>
+        /// Constant RUN_STARTED for ExperimentRunEventType
+        /// </summary>
+        public static readonly ExperimentRunEventType RUN_STARTED = new ExperimentRunEventType("RUN_STARTED");
+        /// <summary>
+        /// Constant RUN_STOPPED for ExperimentRunEventType
+        /// </summary>
+        public static readonly ExperimentRunEventType RUN_STOPPED = new ExperimentRunEventType("RUN_STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExperimentRunEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExperimentRunEventType FindValue(string value)
+        {
+            return FindValue<ExperimentRunEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExperimentRunEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExperimentRunStatus.
+    /// </summary>
+    public class ExperimentRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DONE for ExperimentRunStatus
+        /// </summary>
+        public static readonly ExperimentRunStatus DONE = new ExperimentRunStatus("DONE");
+        /// <summary>
+        /// Constant RUNNING for ExperimentRunStatus
+        /// </summary>
+        public static readonly ExperimentRunStatus RUNNING = new ExperimentRunStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExperimentRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExperimentRunStatus FindValue(string value)
+        {
+            return FindValue<ExperimentRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExperimentRunStatus(string value)
         {
             return FindValue(value);
         }

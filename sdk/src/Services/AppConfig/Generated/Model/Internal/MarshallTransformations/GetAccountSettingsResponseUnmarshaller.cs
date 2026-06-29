@@ -58,6 +58,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     response.DeletionProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("VendedMetrics", targetDepth, ref reader))
+                {
+                    var unmarshaller = VendedMetricsSettingsUnmarshaller.Instance;
+                    response.VendedMetrics = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

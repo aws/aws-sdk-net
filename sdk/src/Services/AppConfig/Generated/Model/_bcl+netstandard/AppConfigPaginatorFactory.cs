@@ -77,6 +77,30 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
+        /// Paginator for ListExperimentDefinitions operation
+        ///</summary>
+        public IListExperimentDefinitionsPaginator ListExperimentDefinitions(ListExperimentDefinitionsRequest request) 
+        {
+            return new ListExperimentDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExperimentRunEvents operation
+        ///</summary>
+        public IListExperimentRunEventsPaginator ListExperimentRunEvents(ListExperimentRunEventsRequest request) 
+        {
+            return new ListExperimentRunEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExperimentRuns operation
+        ///</summary>
+        public IListExperimentRunsPaginator ListExperimentRuns(ListExperimentRunsRequest request) 
+        {
+            return new ListExperimentRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListExtensionAssociations operation
         ///</summary>
         public IListExtensionAssociationsPaginator ListExtensionAssociations(ListExtensionAssociationsRequest request) 

@@ -103,7 +103,7 @@ namespace Amazon.AppConfig.Model
         /// The application ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }

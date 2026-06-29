@@ -39,18 +39,6 @@ namespace Amazon.AppConfig.Model
     /// </para>
     ///  
     /// <para>
-    /// Deployment strategies: 20 max
-    /// </para>
-    ///  
-    /// <para>
-    /// Configuration profiles: 100 max per application
-    /// </para>
-    ///  
-    /// <para>
-    /// Environments: 20 max per application
-    /// </para>
-    ///  
-    /// <para>
     /// To resolve this issue, you can delete one or more resources and try again. Or, you
     /// can request a quota increase. For more information about quotas and to request an
     /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
