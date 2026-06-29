@@ -40,6 +40,7 @@ namespace Amazon.VPCLattice.Model
         private string _customDomainName;
         private DnsEntry _dnsEntry;
         private string _id;
+        private int? _idleTimeoutSeconds;
         private string _name;
         private ServiceStatus _status;
 
@@ -153,6 +154,26 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdleTimeoutSeconds. 
+        /// <para>
+        /// The amount of time, in seconds, that a connection can remain idle before VPC Lattice
+        /// closes it.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=600)]
+        public int? IdleTimeoutSeconds
+        {
+            get { return this._idleTimeoutSeconds; }
+            set { this._idleTimeoutSeconds = value; }
+        }
+
+        // Check to see if IdleTimeoutSeconds property is set
+        internal bool IsSetIdleTimeoutSeconds()
+        {
+            return this._idleTimeoutSeconds.HasValue; 
         }
 
         /// <summary>
