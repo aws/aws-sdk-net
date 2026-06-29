@@ -1071,8 +1071,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// DistributeImage distributes existing AMIs to additional regions and accounts without
-        /// rebuilding the image.
+        /// Distributes an existing AMI to target Regions and accounts without running the full
+        /// image build process. This operation only runs the distribution phase on an image that
+        /// has already been built.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DistributeImage service method.</param>
         /// <param name="cancellationToken">

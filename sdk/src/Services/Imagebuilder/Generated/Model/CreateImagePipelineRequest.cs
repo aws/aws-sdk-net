@@ -274,7 +274,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// Define logging configuration for the image build process.
+        /// Specifies the logging configuration for the image pipeline. Use this to define custom
+        /// CloudWatch Logs log groups for your pipeline execution logs and image build logs.
+        /// The service manages log groups with names starting with <c>/aws/imagebuilder/</c>
+        /// using the service-linked role. For custom log group names outside of this prefix,
+        /// you must also provide an <c>executionRole</c>.
         /// </para>
         /// </summary>
         public PipelineLoggingConfiguration LoggingConfiguration

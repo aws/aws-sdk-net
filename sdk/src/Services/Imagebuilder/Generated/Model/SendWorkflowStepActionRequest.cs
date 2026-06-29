@@ -45,8 +45,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action for the image creation process to take while a workflow <c>WaitForAction</c>
-        /// step waits for an asynchronous action to complete.
+        /// The action to perform on the paused workflow step. The workflow step must be in a
+        /// waiting state to accept an action. The request fails if the step has already timed
+        /// out or been actioned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +87,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image build version to send action for.
+        /// The Amazon Resource Name (ARN) of the image build version associated with the workflow
+        /// step execution. This value must match the image that owns the waiting step. If the
+        /// ARN does not correspond to the image running the workflow, then the request fails
+        /// with a validation error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +109,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason why this action is sent.
+        /// The reason for the action. This value is stored with the step execution record and
+        /// is accessible in subsequent workflow steps via step output references.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

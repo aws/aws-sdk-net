@@ -40,8 +40,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageLogGroupName. 
         /// <para>
-        /// The log group name that Image Builder uses for image creation. If not specified, the
-        /// log group name defaults to <c>/aws/imagebuilder/image-name</c>.
+        /// Specifies the CloudWatch Logs log group name for image build logs. The log group name
+        /// can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods,
+        /// up to 512 characters. Log group names not starting with <c>/aws/imagebuilder/</c>
+        /// require an <c>executionRole</c> with CloudWatch Logs write permissions. If not specified,
+        /// defaults to <c>/aws/imagebuilder/image-name</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -60,8 +63,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PipelineLogGroupName. 
         /// <para>
-        /// The log group name that Image Builder uses for the log output during creation of a
-        /// new pipeline. If not specified, the pipeline log group name defaults to <c>/aws/imagebuilder/pipeline/pipeline-name</c>.
+        /// Specifies the CloudWatch Logs log group name for pipeline execution logs. The log
+        /// group name can contain alphanumeric characters, hyphens, underscores, forward slashes,
+        /// and periods, up to 512 characters. Log group names not starting with <c>/aws/imagebuilder/</c>
+        /// require an <c>executionRole</c> with CloudWatch Logs write permissions. If not specified,
+        /// defaults to <c>/aws/imagebuilder/pipeline/pipeline-name</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

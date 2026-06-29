@@ -98,6 +98,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAmiWatermarks())
+            {
+                context.Writer.WritePropertyName("amiWatermarks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAmiWatermarksListValue in publicRequest.AmiWatermarks)
+                {
+                        context.Writer.WriteStringValue(publicRequestAmiWatermarksListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetBlockDeviceMappings())
             {
                 context.Writer.WritePropertyName("blockDeviceMappings");
