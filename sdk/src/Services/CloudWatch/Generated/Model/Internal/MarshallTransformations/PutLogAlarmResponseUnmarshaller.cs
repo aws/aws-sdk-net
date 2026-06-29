@@ -37,9 +37,9 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteAlarms operation
+    /// Response Unmarshaller for PutLogAlarm operation
     /// </summary>  
-    public class DeleteAlarmsResponseUnmarshaller : CborResponseUnmarshaller
+    public class PutLogAlarmResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,9 +48,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
-            DeleteAlarmsResponse response = new DeleteAlarmsResponse();
+            PutLogAlarmResponse response = new PutLogAlarmResponse();
             var reader = context.Reader;
-            context.AddPathSegment("DeleteAlarms");
+            context.AddPathSegment("PutLogAlarm");
 
             return response;
         }
@@ -92,21 +92,21 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if (errorTypeName != null && errorTypeName.Equals("LimitExceededFault"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorTypeName != null && errorTypeName.Equals("ResourceConflict"))
                 {
                     return ResourceConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorTypeName != null && errorTypeName.Equals("ResourceNotFound"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteAlarmsResponseUnmarshaller _instance = new DeleteAlarmsResponseUnmarshaller();        
+        private static PutLogAlarmResponseUnmarshaller _instance = new PutLogAlarmResponseUnmarshaller();        
 
-        internal static DeleteAlarmsResponseUnmarshaller GetInstance()
+        internal static PutLogAlarmResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +114,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteAlarmsResponseUnmarshaller Instance
+        public static PutLogAlarmResponseUnmarshaller Instance
         {
             get
             {
