@@ -30,7 +30,7 @@ public abstract class BaseDoubleBenchmarks : BaseBenchmarks
     [GlobalCleanup(Target = nameof(Marshall2))]
     public virtual void AfterMarshall2()
     {
-        RequestSizeBytes2 = Math.Max(RequestSizeBytes2, MarshalledRequest2.Content.Length);
+        RequestSizeBytes2 = Math.Max(RequestSizeBytes2, Utils.GetContentLengthAndDispose(MarshalledRequest2));
 
         var record = new BenchmarkRecord(Service, TestCase2, Protocol, DimensionValue, "Request payload size (bytes)", RequestSizeBytes2, RequestSizeBytes2, RequestSizeBytes2);
         Utils.StoreBenchmarkRecords(new List<BenchmarkRecord> { record });
