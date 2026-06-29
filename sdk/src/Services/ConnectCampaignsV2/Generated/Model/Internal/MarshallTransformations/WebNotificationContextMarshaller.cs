@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProfileOutboundRequest Marshaller
+    /// WebNotificationContext Marshaller
     /// </summary>
-    public class ProfileOutboundRequestMarshaller : IRequestMarshaller<ProfileOutboundRequest, JsonMarshallerContext> 
+    public class WebNotificationContextMarshaller : IRequestMarshaller<WebNotificationContext, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,20 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProfileOutboundRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(WebNotificationContext requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetClientToken())
+            if(requestObject.IsSetBrowserId())
             {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(requestObject.ClientToken);
+                context.Writer.WritePropertyName("browserId");
+                context.Writer.WriteStringValue(requestObject.BrowserId);
             }
 
-            if(requestObject.IsSetEventTriggerContext())
+            if(requestObject.IsSetSessionId())
             {
-                context.Writer.WritePropertyName("eventTriggerContext");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EventTriggerContextMarshaller.Instance;
-                marshaller.Marshall(requestObject.EventTriggerContext, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetExpirationTime())
-            {
-                context.Writer.WritePropertyName("expirationTime");
-                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.ExpirationTime));
-            }
-
-            if(requestObject.IsSetProfileId())
-            {
-                context.Writer.WritePropertyName("profileId");
-                context.Writer.WriteStringValue(requestObject.ProfileId);
+                context.Writer.WritePropertyName("sessionId");
+                context.Writer.WriteStringValue(requestObject.SessionId);
             }
 
         }
@@ -80,7 +63,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProfileOutboundRequestMarshaller Instance = new ProfileOutboundRequestMarshaller();
+        public readonly static WebNotificationContextMarshaller Instance = new WebNotificationContextMarshaller();
 
     }
 }

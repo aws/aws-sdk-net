@@ -533,6 +533,10 @@ namespace Amazon.ConnectCampaignsV2
         /// </summary>
         public static readonly EventType CampaignTelephony = new EventType("Campaign-Telephony");
         /// <summary>
+        /// Constant CampaignWebNotification for EventType
+        /// </summary>
+        public static readonly EventType CampaignWebNotification = new EventType("Campaign-WebNotification");
+        /// <summary>
         /// Constant CampaignWhatsApp for EventType
         /// </summary>
         public static readonly EventType CampaignWhatsApp = new EventType("Campaign-WhatsApp");

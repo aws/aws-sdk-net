@@ -417,6 +417,10 @@
     <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-z]{2}-[a-z]+-\d{1,2}:[a-zA-Z0-9-]+:[^:]+(?:/[^:]+)*(?:/[^:]+)?(?:\:[^:]+)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.EventTriggerContext.SourceEvent</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.FailedCampaignStateResponse.CampaignId</property>
     <min>1</min>
     <max>256</max>
@@ -683,6 +687,16 @@
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.TimeRange.StartTime</property>
     <pattern>T\d{2}:\d{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WebNotificationContext.BrowserId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WebNotificationContext.SessionId</property>
+    <min>1</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.WhatsAppChannelSubtypeConfig.Capacity</property>
