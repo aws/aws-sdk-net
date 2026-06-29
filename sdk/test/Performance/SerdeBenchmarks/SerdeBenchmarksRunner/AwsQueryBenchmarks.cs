@@ -58,15 +58,15 @@ public class AwsQueryBenchmarks
     }
 
     // --- PutMetricData Request ---
-    [Benchmark] public void awsQuery_PutMetricDataRequest_Baseline() => PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricBaseline);
-    [Benchmark] public void awsQuery_PutMetricDataRequest_S() => PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricS);
-    [Benchmark] public void awsQuery_PutMetricDataRequest_M() => PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricM);
-    [Benchmark] public void awsQuery_PutMetricDataRequest_L() => PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricL);
+    [Benchmark] public long awsQuery_PutMetricDataRequest_Baseline() => TestDataHelpers.GetContentLengthAndDispose(PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricBaseline));
+    [Benchmark] public long awsQuery_PutMetricDataRequest_S() => TestDataHelpers.GetContentLengthAndDispose(PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricS));
+    [Benchmark] public long awsQuery_PutMetricDataRequest_M() => TestDataHelpers.GetContentLengthAndDispose(PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricM));
+    [Benchmark] public long awsQuery_PutMetricDataRequest_L() => TestDataHelpers.GetContentLengthAndDispose(PutMetricDataRequestMarshaller.Instance.Marshall(_putMetricL));
 
     // --- GetMetricData Request ---
-    [Benchmark] public void awsQuery_GetMetricDataRequest_S() => GetMetricDataRequestMarshaller.Instance.Marshall(_getMetricReqS);
-    [Benchmark] public void awsQuery_GetMetricDataRequest_M() => GetMetricDataRequestMarshaller.Instance.Marshall(_getMetricReqM);
-    [Benchmark] public void awsQuery_GetMetricDataRequest_L() => GetMetricDataRequestMarshaller.Instance.Marshall(_getMetricReqL);
+    [Benchmark] public long awsQuery_GetMetricDataRequest_S() => TestDataHelpers.GetContentLengthAndDispose(GetMetricDataRequestMarshaller.Instance.Marshall(_getMetricReqS));
+    [Benchmark] public long awsQuery_GetMetricDataRequest_M() => TestDataHelpers.GetContentLengthAndDispose(GetMetricDataRequestMarshaller.Instance.Marshall(_getMetricReqM));
+    [Benchmark] public long awsQuery_GetMetricDataRequest_L() => TestDataHelpers.GetContentLengthAndDispose(GetMetricDataRequestMarshaller.Instance.Marshall(_getMetricReqL));
 
     // --- GetMetricData Response ---
     [Benchmark] public void awsQuery_GetMetricDataResponse_S() => UnmarshallXml(_getMetricRespSBytes);

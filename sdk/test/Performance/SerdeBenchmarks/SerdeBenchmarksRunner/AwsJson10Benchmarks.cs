@@ -123,11 +123,11 @@ public class AwsJson10Benchmarks
     }
 
     // --- Healthcheck ---
-    [Benchmark] public void awsJson1_0_HealthcheckRequest_Example() => HealthcheckRequestMarshaller.Instance.Marshall(_healthcheckRequest);
+    [Benchmark] public long awsJson1_0_HealthcheckRequest_Example() => TestDataHelpers.GetContentLengthAndDispose(HealthcheckRequestMarshaller.Instance.Marshall(_healthcheckRequest));
     [Benchmark] public void awsJson1_0_HealthcheckResponse_Example() => UnmarshallJson(_healthcheckResponseBytes, _healthcheckUnmarshaller);
 
     // --- GetItem ---
-    [Benchmark] public void awsJson1_0_GetItemInput_Baseline() => GetItemRequestMarshaller.Instance.Marshall(_getItemBaseline);
+    [Benchmark] public long awsJson1_0_GetItemInput_Baseline() => TestDataHelpers.GetContentLengthAndDispose(GetItemRequestMarshaller.Instance.Marshall(_getItemBaseline));
     [Benchmark] public void awsJson1_0_GetItemOutput_Baseline() => UnmarshallJson(_getItemOutputBaselineBytes, _getItemUnmarshaller);
     [Benchmark] public void awsJson1_0_GetItemOutput_S() => UnmarshallJson(_getItemOutputSBytes, _getItemUnmarshaller);
     [Benchmark] public void awsJson1_0_GetItemOutput_M() => UnmarshallJson(_getItemOutputMBytes, _getItemUnmarshaller);
@@ -137,16 +137,16 @@ public class AwsJson10Benchmarks
     [Benchmark] public void awsJson1_0_GetItemOutputBinary_L() => UnmarshallJson(_getItemOutputBinaryLBytes, _getItemUnmarshaller);
 
     // --- PutItem ---
-    [Benchmark] public void awsJson1_0_PutItemRequest_Baseline() => PutItemRequestMarshaller.Instance.Marshall(_putItemBaseline);
-    [Benchmark] public void awsJson1_0_PutItemRequest_BinaryData_S() => PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryS);
-    [Benchmark] public void awsJson1_0_PutItemRequest_BinaryData_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryM);
-    [Benchmark] public void awsJson1_0_PutItemRequest_BinaryData_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryL);
-    [Benchmark] public void awsJson1_0_PutItemRequest_MixedItem_S() => PutItemRequestMarshaller.Instance.Marshall(_putItemMixedS);
-    [Benchmark] public void awsJson1_0_PutItemRequest_MixedItem_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemMixedM);
-    [Benchmark] public void awsJson1_0_PutItemRequest_MixedItem_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemMixedL);
-    [Benchmark] public void awsJson1_0_PutItemRequest_Nested_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemNestedM);
-    [Benchmark] public void awsJson1_0_PutItemRequest_Nested_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemNestedL);
-    [Benchmark] public void awsJson1_0_PutItemRequest_ShallowMap_S() => PutItemRequestMarshaller.Instance.Marshall(_putItemShallowS);
-    [Benchmark] public void awsJson1_0_PutItemRequest_ShallowMap_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemShallowM);
-    [Benchmark] public void awsJson1_0_PutItemRequest_ShallowMap_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemShallowL);
+    [Benchmark] public long awsJson1_0_PutItemRequest_Baseline() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBaseline));
+    [Benchmark] public long awsJson1_0_PutItemRequest_BinaryData_S() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryS));
+    [Benchmark] public long awsJson1_0_PutItemRequest_BinaryData_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryM));
+    [Benchmark] public long awsJson1_0_PutItemRequest_BinaryData_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryL));
+    [Benchmark] public long awsJson1_0_PutItemRequest_MixedItem_S() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemMixedS));
+    [Benchmark] public long awsJson1_0_PutItemRequest_MixedItem_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemMixedM));
+    [Benchmark] public long awsJson1_0_PutItemRequest_MixedItem_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemMixedL));
+    [Benchmark] public long awsJson1_0_PutItemRequest_Nested_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemNestedM));
+    [Benchmark] public long awsJson1_0_PutItemRequest_Nested_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemNestedL));
+    [Benchmark] public long awsJson1_0_PutItemRequest_ShallowMap_S() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemShallowS));
+    [Benchmark] public long awsJson1_0_PutItemRequest_ShallowMap_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemShallowM));
+    [Benchmark] public long awsJson1_0_PutItemRequest_ShallowMap_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemShallowL));
 }

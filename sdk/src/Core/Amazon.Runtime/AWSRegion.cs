@@ -226,8 +226,6 @@ namespace Amazon.Runtime
                 if (cachedRegion != null)
                     return cachedRegion.Region;
 
-                List<Exception> errors = new List<Exception>();
-
                 IEnumerable<RegionGenerator> generators
                     = includeInstanceMetadata ? AllGenerators : NonMetadataGenerators;
                 foreach (var generator in generators)
@@ -236,10 +234,9 @@ namespace Amazon.Runtime
                     {
                         cachedRegion = generator();
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         cachedRegion = null;
-                        errors.Add(e);
                     }
 
                     if (cachedRegion != null)

@@ -196,6 +196,18 @@ namespace ThirdParty.RuntimeBackports
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void Append(ReadOnlySpan<char> value)
+        {
+            int pos = _pos;
+            if (pos > _chars.Length - value.Length)
+            {
+                Grow(value.Length);
+            }
+            value.CopyTo(_chars.Slice(pos));
+            _pos += value.Length;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Append(string? s)
         {
             if (s == null)

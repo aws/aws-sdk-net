@@ -183,6 +183,29 @@ public static class Utils
             max: ToMs(stats.Max));
     }
 
+    /// <summary>
+    /// Returns the marshalled request body length and disposes the request, mirroring what the
+    /// production pipeline does after marshalling. Disposing matters when the request body is backed
+    /// by a pooled buffer: it returns that buffer to the pool. Reads the length from the byte[]
+    /// Content when present, otherwise from a seekable ContentStream (covers both the pooled buffer
+    /// and user-provided body streams). Works whether or not the marshaller used a pooled buffer.
+    /// </summary>
+    public static long GetContentLengthAndDispose(IRequest request)
+    {
+        try
+        {
+            if (request.Content != null)
+                return request.Content.Length;
+            if (request.ContentStream != null && request.ContentStream.CanSeek)
+                return request.ContentStream.Length;
+            return 0;
+        }
+        finally
+        {
+            request.Dispose();
+        }
+    }
+
     public static string GetParametersAsString(ParameterCollection parameterCollection)
     {
         var parameterBuilder = new StringBuilder(512);

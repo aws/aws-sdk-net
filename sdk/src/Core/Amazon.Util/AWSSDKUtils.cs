@@ -110,7 +110,7 @@ namespace Amazon.Util
         /// <summary>
         /// The set of accepted and valid Url path characters per RFC3986.
         /// </summary>
-        private static string ValidPathCharacters = DetermineValidPathCharacters();
+        private static readonly string ValidPathCharacters = DetermineValidPathCharacters();
 
         /// <summary>
         /// The set of characters which are not to be encoded as part of the X-Amzn-Trace-Id header values
@@ -311,32 +311,33 @@ namespace Amazon.Util
         internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
         {
             StringBuilder data = new StringBuilder("POST\n", 512);
-            var sortedParameters = parameterCollection.GetSortedParametersList();
+            var sortedParameters = parameterCollection.GetParametersEnumerable();
             Uri endpoint = new Uri(serviceUrl);
 
             data.Append(endpoint.Host);
-            data.Append("\n");
+            data.Append('\n');
             string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
+            if (string.IsNullOrEmpty(uri))
             {
                 uri = "/";
             }
 
             data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append("\n");
+            data.Append('\n');
+
             foreach (KeyValuePair<string, string> pair in sortedParameters)
             {
                 if (pair.Value != null)
                 {
                     data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
+                    data.Append('=');
                     data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
+                    data.Append('&');
                 }
             }
 
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
+            data.Remove(data.Length - 1, 1); // Remove the trailing '\n' or '&' character
+            return data.ToString();
         }
 
         /**
@@ -557,13 +558,13 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string JoinResourcePathSegmentsV2(IEnumerable<UriComponent> pathSegments)
         {
-            List<string> encodedSegments = pathSegments.Select(segment =>
+            string[] encodedSegments = pathSegments.Select(segment =>
             {
                 if (segment.SegmentType == SegmentType.Label)
                     return UrlEncode(segment.Value, false);
                 else
                     return UrlEncode(segment.Value, true);
-            }).ToList();
+            }).ToArray();
             // join the encoded segments with /
             return string.Join(Slash, encodedSegments);
         }
@@ -858,7 +859,7 @@ namespace Amazon.Util
             return (a.Equals(b));
         }
 
-        internal static bool DictionariesAreEqual<K,V>(Dictionary<K, V> a, Dictionary<K, V> b)
+        internal static bool DictionariesAreEqual<TKey,TValue>(Dictionary<TKey, TValue> a, Dictionary<TKey, TValue> b)
         {
             if (a == null || b == null)
                 return (a == b);
@@ -866,7 +867,7 @@ namespace Amazon.Util
             if (object.ReferenceEquals(a, b))
                 return true;
 
-            return a.Count == b.Count && !a.Except(b).Any();
+            return a.Count == b.Count && a.All(aKV => b.TryGetValue(aKV.Key, out var bVal) && EqualityComparer<TValue>.Default.Equals(aKV.Value, bVal));
         }
 
         /// <summary>
@@ -1182,8 +1183,8 @@ namespace Amazon.Util
                         // then convert each into their hexadecimal equivalent.
                         var hiNibble = symbol >> 4;
                         var loNibble = symbol & 0xF;
-                        dataBuffer[index++] = (byte)ToUpperHex(hiNibble);
-                        dataBuffer[index++] = (byte)ToUpperHex(loNibble);
+                        dataBuffer[index++] = (byte)upperHex[hiNibble];
+                        dataBuffer[index++] = (byte)upperHex[loNibble];
                     }
                 }
 
@@ -1218,10 +1219,12 @@ namespace Amazon.Util
             return false;
         }
 
-        private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
-        {
-            Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
+        private static readonly char[] lowerHex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+        private static readonly char[] upperHex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 
+        private static void ToHexString(ReadOnlySpan<byte> source, Span<char> destination, bool lowercase)
+        {
+            var converter = lowercase ? lowerHex : upperHex;
             for (int i = source.Length - 1; i >= 0; i--)
             {
                 // Break apart the byte into two four-bit components and
@@ -1229,32 +1232,9 @@ namespace Amazon.Util
                 byte b = source[i];
                 int hiNibble = b >> 4;
                 int loNibble = b & 0xF;
-
-                destination[i * 2] = converter(hiNibble);
-                destination[i * 2 + 1] = converter(loNibble);
+                destination[i * 2] = converter[hiNibble];
+                destination[i * 2 + 1] = converter[loNibble];
             }
-        }
-
-        private static char ToUpperHex(int value)
-        {
-            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
-            if (value <= 9)
-            {
-                return (char)(value + '0');
-            }
-            // Maps 10-15 to the Unicode range of 'A' - 'F' (0x41 - 0x46).
-            return (char)(value - 10 + 'A');
-        }
-
-        private static char ToLowerHex(int value)
-        {
-            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
-            if (value <= 9)
-            {
-                return (char)(value + '0');
-            }
-            // Maps 10-15 to the Unicode range of 'a' - 'f' (0x61 - 0x66).
-            return (char)(value - 10 + 'a');
         }
 
         internal static string UrlEncodeSlash(string data)
@@ -1284,7 +1264,7 @@ namespace Amazon.Util
                 }
                 else
                 {
-                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    encoded.Append('%').Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
                 }
             }
 
@@ -1365,7 +1345,11 @@ namespace Amazon.Util
             }
             else
             {
+#if NET8_0_OR_GREATER
+                return Convert.ToHexString(hashed);
+#else
                 return BitConverter.ToString(hashed).Replace("-", String.Empty);
+#endif
             }
         }
 
@@ -1382,20 +1366,30 @@ namespace Amazon.Util
         public static byte[] HexStringToBytes(string hex)
         {
             if (string.IsNullOrEmpty(hex) || hex.Length % 2 == 1)
-                throw new ArgumentOutOfRangeException("hex");
-
-            int count = 0;
-            byte[] buffer = new byte[hex.Length / 2];
-            for (int i = 0; i < hex.Length; i += 2)
             {
-                string sub = hex.Substring(i, 2);
-                byte b = Convert.ToByte(sub, 16);
-                buffer[count] = b;
-                count++;
+                throw new ArgumentOutOfRangeException(nameof(hex));
             }
+#if NET8_0_OR_GREATER
+            return Convert.FromHexString(hex);
+#else
+            byte[] buffer = new byte[hex.Length / 2];
+            for (int i = 0, j = 0; i < hex.Length; i += 2, j++)
+                buffer[j] = (byte)((HexCharToNibble(hex[i]) << 4) | HexCharToNibble(hex[i + 1]));
 
             return buffer;
+#endif
         }
+
+#if !NET8_0_OR_GREATER
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static int HexCharToNibble(char c)
+        {
+            if ((uint)(c - '0') <= 9) return c - '0';
+            if ((uint)(c - 'A') <= 5) return c - 'A' + 10;
+            if ((uint)(c - 'a') <= 5) return c - 'a' + 10;
+            throw new FormatException("Invalid hex character: " + c);
+        }
+#endif
 
         /// <summary>
         /// Returns DateTime.UtcNow + ManualClockCorrection when
@@ -1413,6 +1407,22 @@ namespace Amazon.Util
             }
         }
 
+        private static readonly char[] _bidiControlChars =
+        {
+            '\u200E', // LRM
+            '\u200F', // RLM
+            '\u202A', // LRE
+            '\u202B', // RLE
+            '\u202C', // PDF
+            '\u202D', // LRO
+            '\u202E'  // RLO
+        };
+
+#if NET8_0_OR_GREATER
+        private static readonly SearchValues<char> _bidiControlCharSearchValues =
+            SearchValues.Create(_bidiControlChars);
+#endif
+
         /// <summary>
         /// Returns true if the string has any bidirectional control characters.
         /// </summary>
@@ -1422,30 +1432,11 @@ namespace Amazon.Util
         {
             if (string.IsNullOrEmpty(input))
                 return false;
-
-            foreach (var c in input)
-            {
-                if (IsBidiControlChar(c))
-                    return true;
-            }
-            return false;
-        }
-        private static bool IsBidiControlChar(char c)
-        {
-            // check general range
-            if (c < '\u200E' || c > '\u202E')
-                return false;
-
-            // check specific characters
-            return (
-                c == '\u200E' || // LRM
-                c == '\u200F' || // RLM
-                c == '\u202A' || // LRE
-                c == '\u202B' || // RLE
-                c == '\u202C' || // PDF
-                c == '\u202D' || // LRO
-                c == '\u202E'    // RLO
-            );
+#if NET8_0_OR_GREATER
+            return input.AsSpan().IndexOfAny(_bidiControlCharSearchValues) >= 0;
+#else
+            return input.AsSpan().IndexOfAny(_bidiControlChars) >= 0;
+#endif
         }
 
         public static string DownloadStringContent(Uri uri)
@@ -1720,6 +1711,7 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string CompressSpaces(string data)
         {
+            const char SPACE = ' ';
             if (data == null)
             {
                 return null;
@@ -1731,18 +1723,47 @@ namespace Amazon.Util
                 return string.Empty;
             }
 
-            var stringBuilder = new ValueStringBuilder(dataLength);
-            int index = 0;
-            var isWhiteSpace = false;
-            foreach (var character in data)
+            // Fast path: scan for the first run of consecutive whitespace or non-space whitespacecharacter.
+            // If none exists the string is already compact — return it unchanged with no allocation.
+            bool prevWasWhiteSpace = false;
+            int firstRunIndex = -1;
+            for (int i = 0; i < dataLength; i++)
             {
-                if (!isWhiteSpace | !(isWhiteSpace = char.IsWhiteSpace(character)))
+                char c = data[i];
+                bool isWS = char.IsWhiteSpace(c);
+                if (isWS && (prevWasWhiteSpace || c != SPACE))
                 {
-                    stringBuilder.Append(isWhiteSpace ? ' ' : character);
-                    index++;
+                    firstRunIndex = i - 1;
+                    break;
+                }
+                prevWasWhiteSpace = isWS;
+            }
+
+            if (firstRunIndex < 0)
+                return data;
+
+            // Slow path: at least one run was found.  Copy the clean prefix directly,
+            // then process the remainder segment-by-segment: flush each non-WS run as a
+            // single Append(span) call and skip each WS run with a do-while.
+            var stringBuilder = new ValueStringBuilder(dataLength);
+            stringBuilder.Append(data.AsSpan(0, firstRunIndex));
+
+            int pos = firstRunIndex;
+            while (pos < dataLength)
+            {
+                if (char.IsWhiteSpace(data[pos]))
+                {
+                    stringBuilder.Append(SPACE);
+                    do { pos++; } while (pos < dataLength && char.IsWhiteSpace(data[pos]));
+                }
+                else
+                {
+                    int segStart = pos;
+                    do { pos++; } while (pos < dataLength && !char.IsWhiteSpace(data[pos]));
+                    stringBuilder.Append(data.AsSpan(segStart, pos - segStart));
                 }
             }
-            return stringBuilder.ToString(0, index);
+            return stringBuilder.ToString();
         }
 
         /// <summary>
@@ -1880,7 +1901,7 @@ namespace Amazon.Util
 
 #region Private Methods, Static Fields and Classes
 
-        private static LruCache<IsSetMethodsCacheKey, MethodInfo> IsSetMethodsCache = new LruCache<IsSetMethodsCacheKey, MethodInfo>(MaxIsSetMethodsCacheSize);
+        private static readonly LruCache<IsSetMethodsCacheKey, MethodInfo> IsSetMethodsCache = new LruCache<IsSetMethodsCacheKey, MethodInfo>(MaxIsSetMethodsCacheSize);
 
         private class IsSetMethodsCacheKey
         {
@@ -1916,10 +1937,10 @@ namespace Amazon.Util
 
     public class JitteredDelay
     {
-        private TimeSpan _maxDelay;
-        private TimeSpan _variance;
-        private TimeSpan _baseIncrement;
-        private Random _rand = null;
+        private readonly TimeSpan _maxDelay;
+        private readonly TimeSpan _variance;
+        private readonly TimeSpan _baseIncrement;
+        private readonly Random _rand = null;
         private int _count = 0;
 
         public JitteredDelay(TimeSpan baseIncrement, TimeSpan variance)
