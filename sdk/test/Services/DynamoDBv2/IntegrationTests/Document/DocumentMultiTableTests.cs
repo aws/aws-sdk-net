@@ -153,9 +153,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Test multi-table transactional put
             var multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
 
+            // Use unique keys so concurrent runs of this helper (across conversions) operate on
+            // different items and don't collide in the transaction window, which would surface as
+            // a TransactionConflict cancellation.
+            var hId1 = UtilityMethods.GenerateId();
+            var hId2 = UtilityMethods.GenerateId();
+            var hrName1 = UtilityMethods.GenerateName("Alan");
+            var hrName2 = UtilityMethods.GenerateName("Diane");
+
             var hDoc1 = new Document
             {
-                ["Id"] = 6001,
+                ["Id"] = hId1,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 1000,
                 ["Garbage"] = "asdf"
@@ -163,7 +171,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hDoc2 = new Document
             {
-                ["Id"] = 6002,
+                ["Id"] = hId2,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Price"] = 500,
                 ["Garbage"] = "hjkl"
@@ -178,7 +186,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hrDoc1 = new Document
             {
-                ["Name"] = "Alan",
+                ["Name"] = hrName1,
                 ["Age"] = 30,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Score"] = 100,
@@ -187,7 +195,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var hrDoc2 = new Document
             {
-                ["Name"] = "Diane",
+                ["Name"] = hrName2,
                 ["Age"] = 40,
                 ["Data"] = Guid.NewGuid().ToString(),
                 ["Score"] = 150,
@@ -207,13 +215,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
                 var hTransactGet = hashTable.CreateTransactGet();
-                hTransactGet.AddKey(hashKey: 6001);
-                hTransactGet.AddKey(hashKey: 6002);
+                hTransactGet.AddKey(hashKey: hId1);
+                hTransactGet.AddKey(hashKey: hId2);
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
                 var hrTransactGet = hashRangeTable.CreateTransactGet();
-                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
-                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
+                hrTransactGet.AddKey(hashKey: hrName1, rangeKey: 30);
+                hrTransactGet.AddKey(hashKey: hrName2, rangeKey: 40);
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
 
                 await multiTableDocumentTransactGet.ExecuteAsync();
@@ -234,12 +242,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     ["Price"] = 1001,
                     ["Garbage"] = null
-                }, hashKey: 6001);
+                }, hashKey: hId1);
                 transactWrite.AddDocumentToUpdate(new Document
                 {
                     ["Price"] = 501,
                     ["Garbage"] = null
-                }, key: new Document { ["Id"] = 6002 });
+                }, key: new Document { ["Id"] = hId2 });
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
             }
 
@@ -249,12 +257,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     ["Score"] = 101,
                     ["Garbage"] = null
-                }, hashKey: "Alan", rangeKey: 30);
+                }, hashKey: hrName1, rangeKey: 30);
                 transactWrite.AddDocumentToUpdate(new Document
                 {
                     ["Score"] = 151,
                     ["Garbage"] = null
-                }, key: new Document { ["Name"] = "Diane", ["Age"] = 40 });
+                }, key: new Document { ["Name"] = hrName2, ["Age"] = 40 });
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
             }
 
@@ -264,13 +272,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
                 var hTransactGet = hashTable.CreateTransactGet();
-                hTransactGet.AddKey(key: new Document { ["Id"] = 6001 });
-                hTransactGet.AddKey(key: new Document { ["Id"] = 6002 });
+                hTransactGet.AddKey(key: new Document { ["Id"] = hId1 });
+                hTransactGet.AddKey(key: new Document { ["Id"] = hId2 });
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
                 var hrTransactGet = hashRangeTable.CreateTransactGet();
-                hrTransactGet.AddKey(key: new Document { ["Name"] = "Alan", ["Age"] = 30 });
-                hrTransactGet.AddKey(key: new Document { ["Name"] = "Diane", ["Age"] = 40 });
+                hrTransactGet.AddKey(key: new Document { ["Name"] = hrName1, ["Age"] = 30 });
+                hrTransactGet.AddKey(key: new Document { ["Name"] = hrName2, ["Age"] = 40 });
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
 
                 await multiTableDocumentTransactGet.ExecuteAsync();
@@ -299,15 +307,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = hashTable.CreateTransactWrite();
-                transactWrite.AddKeyToDelete(hashKey: 6001);
-                transactWrite.AddKeyToDelete(key: new Document { ["Id"] = 6002 });
+                transactWrite.AddKeyToDelete(hashKey: hId1);
+                transactWrite.AddKeyToDelete(key: new Document { ["Id"] = hId2 });
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
             }
 
             {
                 var transactWrite = hashRangeTable.CreateTransactWrite();
-                transactWrite.AddKeyToDelete(hashKey: "Alan", rangeKey: 30);
-                transactWrite.AddKeyToDelete(new Document { ["Name"] = "Diane", ["Age"] = 40 });
+                transactWrite.AddKeyToDelete(hashKey: hrName1, rangeKey: 30);
+                transactWrite.AddKeyToDelete(new Document { ["Name"] = hrName2, ["Age"] = 40 });
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
             }
 
@@ -317,13 +325,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
                 var hTransactGet = hashTable.CreateTransactGet();
-                hTransactGet.AddKey(hashKey: 6001);
-                hTransactGet.AddKey(hashKey: 6002);
+                hTransactGet.AddKey(hashKey: hId1);
+                hTransactGet.AddKey(hashKey: hId2);
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
                 var hrTransactGet = hashRangeTable.CreateTransactGet();
-                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
-                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
+                hrTransactGet.AddKey(hashKey: hrName1, rangeKey: 30);
+                hrTransactGet.AddKey(hashKey: hrName2, rangeKey: 40);
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
 
                 await multiTableDocumentTransactGet.ExecuteAsync();
