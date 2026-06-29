@@ -30,44 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// The cluster management and job scheduling software associated with the cluster.
+    /// The scheduler configuration for updating a cluster. Use this to specify the Slurm
+    /// version to upgrade to.
     /// </summary>
-    public partial class Scheduler
+    public partial class UpdateSchedulerRequest
     {
-        private SchedulerType _type;
         private string _version;
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The software PCS uses to manage cluster scaling and job scheduling.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public SchedulerType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the specified scheduling software that PCS uses to manage cluster scaling
-        /// and job scheduling. You can upgrade this version using the <c>UpdateCluster</c> API
-        /// action. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
-        /// the Slurm version on a cluster</a> and <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm
-        /// versions in PCS</a> in the <i>PCS User Guide</i>.
+        /// The Slurm version to upgrade the cluster to. You can only upgrade to a newer version.
+        /// For more information about supported versions and upgrade paths, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
+        /// the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>23.11 | 24.05 | 24.11 | 25.05 | 25.11</c> 
+        /// Valid Values: <c>24.05 | 24.11 | 25.05 | 25.11</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
