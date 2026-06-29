@@ -295,7 +295,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property OriginationIdentity. 
         /// <para>
         /// The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId,
-        /// PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.
+        /// PhoneNumberArn, RcsAgentId, RcsAgentArn, SenderId, SenderIdArn, PoolId, or PoolArn.
         /// </para>
         ///  <important> 
         /// <para>

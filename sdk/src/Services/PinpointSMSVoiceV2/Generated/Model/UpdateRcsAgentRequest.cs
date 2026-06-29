@@ -43,6 +43,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _twoWayChannelArn;
         private string _twoWayChannelRole;
         private bool? _twoWayEnabled;
+        private string _twoWayMediaS3BucketName;
+        private string _twoWayMediaS3KeyPrefix;
+        private string _twoWayMediaS3Role;
+        private List<string> _twoWayRcsEventsEnabled = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeletionProtectionEnabled. 
@@ -177,6 +181,94 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetTwoWayEnabled()
         {
             return this._twoWayEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TwoWayMediaS3BucketName. 
+        /// <para>
+        /// The name of the S3 bucket where inbound RCS media files are stored. Two-way messaging
+        /// must be enabled on the agent. To remove the media configuration, pass the sentinel
+        /// value <c>UNSET_RCS_MEDIA_CONFIGURATION</c> for both this field and TwoWayMediaS3Role.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=63)]
+        public string TwoWayMediaS3BucketName
+        {
+            get { return this._twoWayMediaS3BucketName; }
+            set { this._twoWayMediaS3BucketName = value; }
+        }
+
+        // Check to see if TwoWayMediaS3BucketName property is set
+        internal bool IsSetTwoWayMediaS3BucketName()
+        {
+            return this._twoWayMediaS3BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TwoWayMediaS3KeyPrefix. 
+        /// <para>
+        /// The key prefix used for inbound RCS media objects in the S3 bucket.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string TwoWayMediaS3KeyPrefix
+        {
+            get { return this._twoWayMediaS3KeyPrefix; }
+            set { this._twoWayMediaS3KeyPrefix = value; }
+        }
+
+        // Check to see if TwoWayMediaS3KeyPrefix property is set
+        internal bool IsSetTwoWayMediaS3KeyPrefix()
+        {
+            return this._twoWayMediaS3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TwoWayMediaS3Role. 
+        /// <para>
+        /// The ARN of the IAM role used to write inbound RCS media files to the S3 bucket. The
+        /// role must have <c>s3:PutObject</c> permission on the bucket and a trust policy allowing
+        /// <c>sms-voice.amazonaws.com</c> to assume it. To remove the media configuration, pass
+        /// the sentinel value <c>UNSET_RCS_MEDIA_CONFIGURATION</c> for both this field and TwoWayMediaS3BucketName.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string TwoWayMediaS3Role
+        {
+            get { return this._twoWayMediaS3Role; }
+            set { this._twoWayMediaS3Role = value; }
+        }
+
+        // Check to see if TwoWayMediaS3Role property is set
+        internal bool IsSetTwoWayMediaS3Role()
+        {
+            return this._twoWayMediaS3Role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TwoWayRcsEventsEnabled. 
+        /// <para>
+        /// The list of RCS event types to enable for two-way messaging. Pass an empty list to
+        /// disable all event types. The special value <c>ALL</c> enables all current and future
+        /// event types and must be the sole element if used.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> TwoWayRcsEventsEnabled
+        {
+            get { return this._twoWayRcsEventsEnabled; }
+            set { this._twoWayRcsEventsEnabled = value; }
+        }
+
+        // Check to see if TwoWayRcsEventsEnabled property is set
+        internal bool IsSetTwoWayRcsEventsEnabled()
+        {
+            return this._twoWayRcsEventsEnabled != null && (this._twoWayRcsEventsEnabled.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
