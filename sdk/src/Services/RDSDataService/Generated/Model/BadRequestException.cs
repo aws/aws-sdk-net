@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// There is an error in the call or in a SQL statement. (This error only appears in calls
-    /// from Aurora Serverless v1 databases.)
+    /// There is an error in the call or in a SQL statement. This exception is deprecated.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
