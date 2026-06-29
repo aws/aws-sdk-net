@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
         private string _codeSha256;
         private long? _codeSize;
         private string _location;
+        private ResolvedS3Object _resolvedS3Object;
         private string _signingJobArn;
         private string _signingProfileVersionArn;
 
@@ -94,6 +95,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedS3Object.
+        /// </summary>
+        public ResolvedS3Object ResolvedS3Object
+        {
+            get { return this._resolvedS3Object; }
+            set { this._resolvedS3Object = value; }
+        }
+
+        // Check to see if ResolvedS3Object property is set
+        internal bool IsSetResolvedS3Object()
+        {
+            return this._resolvedS3Object != null;
         }
 
         /// <summary>

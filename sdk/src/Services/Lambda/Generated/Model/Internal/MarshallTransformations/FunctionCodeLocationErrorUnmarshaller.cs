@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LayerVersionContentOutput Object
+    /// Response Unmarshaller for FunctionCodeLocationError Object
     /// </summary>  
-    public class LayerVersionContentOutputUnmarshaller : IJsonUnmarshaller<LayerVersionContentOutput, JsonUnmarshallerContext>
+    public class FunctionCodeLocationErrorUnmarshaller : IJsonUnmarshaller<FunctionCodeLocationError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LayerVersionContentOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FunctionCodeLocationError Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LayerVersionContentOutput unmarshalledObject = new LayerVersionContentOutput();
+            FunctionCodeLocationError unmarshalledObject = new FunctionCodeLocationError();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeSha256", targetDepth, ref reader))
+                if (context.TestExpression("ErrorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CodeSha256 = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeSize", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CodeSize = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Location", targetDepth, ref reader))
+                if (context.TestExpression("Message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ResolvedS3Object", targetDepth, ref reader))
-                {
-                    var unmarshaller = ResolvedS3ObjectUnmarshaller.Instance;
-                    unmarshalledObject.ResolvedS3Object = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SigningJobArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SigningJobArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SigningProfileVersionArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SigningProfileVersionArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static LayerVersionContentOutputUnmarshaller _instance = new LayerVersionContentOutputUnmarshaller();        
+        private static FunctionCodeLocationErrorUnmarshaller _instance = new FunctionCodeLocationErrorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LayerVersionContentOutputUnmarshaller Instance
+        public static FunctionCodeLocationErrorUnmarshaller Instance
         {
             get
             {

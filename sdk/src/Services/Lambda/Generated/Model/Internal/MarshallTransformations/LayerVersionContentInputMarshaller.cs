@@ -58,6 +58,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.S3Key);
             }
 
+            if(requestObject.IsSetS3ObjectStorageMode())
+            {
+                context.Writer.WritePropertyName("S3ObjectStorageMode");
+                context.Writer.WriteStringValue(requestObject.S3ObjectStorageMode);
+            }
+
             if(requestObject.IsSetS3ObjectVersion())
             {
                 context.Writer.WritePropertyName("S3ObjectVersion");

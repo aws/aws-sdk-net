@@ -30,22 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-    /// layer</a>. You can specify either an Amazon S3 location, or upload a layer archive
-    /// directly.
+    /// Details about the resolved Amazon S3 object that contains a function's deployment
+    /// package.
     /// </summary>
-    public partial class LayerVersionContentInput
+    public partial class ResolvedS3Object
     {
         private string _s3Bucket;
         private string _s3Key;
-        private S3ObjectStorageMode _s3ObjectStorageMode;
         private string _s3ObjectVersion;
-        private MemoryStream _zipFile;
 
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// The Amazon S3 bucket of the layer archive.
+        /// The Amazon S3 bucket that contains the deployment package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -64,7 +61,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The Amazon S3 key of the layer archive.
+        /// The Amazon S3 key of the deployment package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -81,24 +78,9 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3ObjectStorageMode.
-        /// </summary>
-        public S3ObjectStorageMode S3ObjectStorageMode
-        {
-            get { return this._s3ObjectStorageMode; }
-            set { this._s3ObjectStorageMode = value; }
-        }
-
-        // Check to see if S3ObjectStorageMode property is set
-        internal bool IsSetS3ObjectStorageMode()
-        {
-            return this._s3ObjectStorageMode != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property S3ObjectVersion. 
         /// <para>
-        /// For versioned objects, the version of the layer archive object to use.
+        /// The version of the deployment package object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -112,26 +94,6 @@ namespace Amazon.Lambda.Model
         internal bool IsSetS3ObjectVersion()
         {
             return this._s3ObjectVersion != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ZipFile. 
-        /// <para>
-        /// The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon
-        /// Web Services CLI clients handle the encoding for you.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public MemoryStream ZipFile
-        {
-            get { return this._zipFile; }
-            set { this._zipFile = value; }
-        }
-
-        // Check to see if ZipFile property is set
-        internal bool IsSetZipFile()
-        {
-            return this._zipFile != null;
         }
 
     }
