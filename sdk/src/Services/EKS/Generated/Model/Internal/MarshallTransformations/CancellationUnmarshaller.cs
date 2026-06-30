@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Update Object
+    /// Response Unmarshaller for Cancellation Object
     /// </summary>  
-    public class UpdateUnmarshaller : IJsonUnmarshaller<Update, JsonUnmarshallerContext>
+    public class CancellationUnmarshaller : IJsonUnmarshaller<Cancellation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Update Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Cancellation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Update unmarshalledObject = new Update();
+            Cancellation unmarshalledObject = new Cancellation();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,10 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cancellation", targetDepth, ref reader))
-                {
-                    var unmarshaller = CancellationUnmarshaller.Instance;
-                    unmarshalledObject.Cancellation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("createdAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("errors", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth, ref reader))
+                if (context.TestExpression("reason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("params", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<UpdateParam, UpdateParamUnmarshaller>(UpdateParamUnmarshaller.Instance);
-                    unmarshalledObject.Params = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth, ref reader))
@@ -92,23 +68,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static UpdateUnmarshaller _instance = new UpdateUnmarshaller();        
+        private static CancellationUnmarshaller _instance = new CancellationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateUnmarshaller Instance
+        public static CancellationUnmarshaller Instance
         {
             get
             {

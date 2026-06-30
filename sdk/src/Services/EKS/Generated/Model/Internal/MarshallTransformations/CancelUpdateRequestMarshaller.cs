@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateClusterVersion Request Marshaller
+    /// CancelUpdate Request Marshaller
     /// </summary>       
-    public class UpdateClusterVersionRequestMarshaller : IMarshaller<IRequest, UpdateClusterVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CancelUpdateRequestMarshaller : IMarshaller<IRequest, CancelUpdateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateClusterVersionRequest)input);
+            return this.Marshall((CancelUpdateRequest)input);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateClusterVersionRequest publicRequest)
+        public IRequest Marshall(CancelUpdateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
             request.Headers["Content-Type"] = "application/json";
@@ -66,7 +66,10 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetName())
                 throw new AmazonEKSException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
-            request.ResourcePath = "/clusters/{name}/updates";
+            if (!publicRequest.IsSetUpdateId())
+                throw new AmazonEKSException("Request object does not have required field UpdateId set");
+            request.AddPathResource("{updateId}", StringUtils.FromString(publicRequest.UpdateId));
+            request.ResourcePath = "/clusters/{name}/updates/{updateId}/cancel-update";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -87,29 +90,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientRequestToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetForce())
-            {
-                context.Writer.WritePropertyName("force");
-                context.Writer.WriteBooleanValue(publicRequest.Force.Value);
-            }
-
-            if(publicRequest.IsSetRollbackConfig())
-            {
-                context.Writer.WritePropertyName("rollbackConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RollbackConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RollbackConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetVersion())
-            {
-                context.Writer.WritePropertyName("version");
-                context.Writer.WriteStringValue(publicRequest.Version);
-            }
-
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK
@@ -120,9 +100,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateClusterVersionRequestMarshaller _instance = new UpdateClusterVersionRequestMarshaller();        
+        private static CancelUpdateRequestMarshaller _instance = new CancelUpdateRequestMarshaller();        
 
-        internal static UpdateClusterVersionRequestMarshaller GetInstance()
+        internal static CancelUpdateRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +110,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateClusterVersionRequestMarshaller Instance
+        public static CancelUpdateRequestMarshaller Instance
         {
             get
             {
