@@ -2334,6 +2334,73 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateAttachedFile
+
+        internal virtual CreateAttachedFileResponse CreateAttachedFile(CreateAttachedFileRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAttachedFileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAttachedFileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an attached file for a completed voice contact by copying a recording from
+        /// a source S3 URI into Connect Customer managed storage. Use this API to attach voice
+        /// recordings to contacts for downstream processing such as conversational analytics.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The <c>AssociatedResourceArn</c> must be the ARN of a completed voice contact, <c>FileUseCaseType</c>
+        /// must be set to <c>VOICE_RECORDING</c>, and <c>FileSourceUri</c> must be a valid S3
+        /// URI.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// For example, you can call <c>CreateContact</c>, then <c>CreateAttachedFile</c>, then
+        /// <c>StartContactConversationalAnalyticsJob</c> to create a contact, attach a recording,
+        /// and run post-call analytics.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAttachedFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAttachedFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAttachedFile">REST API Reference for CreateAttachedFile Operation</seealso>
+        public virtual Task<CreateAttachedFileResponse> CreateAttachedFileAsync(CreateAttachedFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAttachedFileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAttachedFileResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateContact
 
         internal virtual CreateContactResponse CreateContact(CreateContactRequest request)
@@ -16444,6 +16511,73 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = StartChatContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartChatContactResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StartContactConversationalAnalyticsJob
+
+        internal virtual StartContactConversationalAnalyticsJobResponse StartContactConversationalAnalyticsJob(StartContactConversationalAnalyticsJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactConversationalAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactConversationalAnalyticsJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartContactConversationalAnalyticsJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a Contact Lens post-call analytics job for the specified contact. This API
+        /// runs Conversational Analytics post-contact analysis on a voice recording that is already
+        /// attached to the contact, generating transcription, sentiment analysis, redaction,
+        /// and summarization results based on the provided configuration.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// A voice recording must already be attached to the contact before calling this API.
+        /// Use <c>CreateAttachedFile</c> to attach a recording from an S3 source URI.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// For example, you can call <c>CreateContact</c>, then <c>CreateAttachedFile</c>, then
+        /// <c>StartContactConversationalAnalyticsJob</c> to create a contact, attach a recording,
+        /// and run post-call analytics.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactConversationalAnalyticsJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartContactConversationalAnalyticsJob service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactConversationalAnalyticsJob">REST API Reference for StartContactConversationalAnalyticsJob Operation</seealso>
+        public virtual Task<StartContactConversationalAnalyticsJobResponse> StartContactConversationalAnalyticsJobAsync(StartContactConversationalAnalyticsJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactConversationalAnalyticsJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactConversationalAnalyticsJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartContactConversationalAnalyticsJobResponse>(request, options, cancellationToken);
         }
         #endregion
         

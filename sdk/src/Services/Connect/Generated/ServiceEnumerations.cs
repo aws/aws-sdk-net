@@ -403,6 +403,64 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type AnalyticsMode.
+    /// </summary>
+    public class AnalyticsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutomatedInteraction for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode AutomatedInteraction = new AnalyticsMode("AutomatedInteraction");
+        /// <summary>
+        /// Constant ContactLens for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode ContactLens = new AnalyticsMode("ContactLens");
+        /// <summary>
+        /// Constant PostContact for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode PostContact = new AnalyticsMode("PostContact");
+        /// <summary>
+        /// Constant RealTime for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode RealTime = new AnalyticsMode("RealTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsMode FindValue(string value)
+        {
+            return FindValue<AnalyticsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnsweringMachineDetectionStatus.
     /// </summary>
     public class AnsweringMachineDetectionStatus : ConstantClass
@@ -814,6 +872,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutoEvaluationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Behavior.
+    /// </summary>
+    public class Behavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for Behavior
+        /// </summary>
+        public static readonly Behavior Disable = new Behavior("Disable");
+        /// <summary>
+        /// Constant Enable for Behavior
+        /// </summary>
+        public static readonly Behavior Enable = new Behavior("Enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Behavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Behavior FindValue(string value)
+        {
+            return FindValue<Behavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Behavior(string value)
         {
             return FindValue(value);
         }
@@ -4224,6 +4332,10 @@ namespace Amazon.Connect
         /// Constant EMAIL_MESSAGE_REDACTED for FileUseCaseType
         /// </summary>
         public static readonly FileUseCaseType EMAIL_MESSAGE_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_REDACTED");
+        /// <summary>
+        /// Constant VOICE_RECORDING for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType VOICE_RECORDING = new FileUseCaseType("VOICE_RECORDING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5556,6 +5668,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LocaleCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaskMode.
+    /// </summary>
+    public class MaskMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EntityType for MaskMode
+        /// </summary>
+        public static readonly MaskMode EntityType = new MaskMode("EntityType");
+        /// <summary>
+        /// Constant PII for MaskMode
+        /// </summary>
+        public static readonly MaskMode PII = new MaskMode("PII");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaskMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaskMode FindValue(string value)
+        {
+            return FindValue<MaskMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaskMode(string value)
         {
             return FindValue(value);
         }
@@ -8047,6 +8209,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type Policy.
+    /// </summary>
+    public class Policy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for Policy
+        /// </summary>
+        public static readonly Policy None = new Policy("None");
+        /// <summary>
+        /// Constant RedactedAndOriginal for Policy
+        /// </summary>
+        public static readonly Policy RedactedAndOriginal = new Policy("RedactedAndOriginal");
+        /// <summary>
+        /// Constant RedactedOnly for Policy
+        /// </summary>
+        public static readonly Policy RedactedOnly = new Policy("RedactedOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Policy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Policy FindValue(string value)
+        {
+            return FindValue<Policy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Policy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PropertyValidationExceptionReason.
     /// </summary>
     public class PropertyValidationExceptionReason : ConstantClass
@@ -10032,6 +10248,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StringComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SummaryMode.
+    /// </summary>
+    public class SummaryMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutomatedInteraction for SummaryMode
+        /// </summary>
+        public static readonly SummaryMode AutomatedInteraction = new SummaryMode("AutomatedInteraction");
+        /// <summary>
+        /// Constant ContactChain for SummaryMode
+        /// </summary>
+        public static readonly SummaryMode ContactChain = new SummaryMode("ContactChain");
+        /// <summary>
+        /// Constant PostContact for SummaryMode
+        /// </summary>
+        public static readonly SummaryMode PostContact = new SummaryMode("PostContact");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SummaryMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SummaryMode FindValue(string value)
+        {
+            return FindValue<SummaryMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SummaryMode(string value)
         {
             return FindValue(value);
         }
