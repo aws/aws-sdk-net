@@ -4169,6 +4169,14 @@ namespace Amazon.PartnerCentralSelling
         /// </summary>
         public static readonly RelatedEntityType AwsMarketplaceOfferSets = new RelatedEntityType("AwsMarketplaceOfferSets");
         /// <summary>
+        /// Constant AwsMarketplaceProducts for RelatedEntityType
+        /// </summary>
+        public static readonly RelatedEntityType AwsMarketplaceProducts = new RelatedEntityType("AwsMarketplaceProducts");
+        /// <summary>
+        /// Constant AwsMarketplaceSolutions for RelatedEntityType
+        /// </summary>
+        public static readonly RelatedEntityType AwsMarketplaceSolutions = new RelatedEntityType("AwsMarketplaceSolutions");
+        /// <summary>
         /// Constant AwsProducts for RelatedEntityType
         /// </summary>
         public static readonly RelatedEntityType AwsProducts = new RelatedEntityType("AwsProducts");

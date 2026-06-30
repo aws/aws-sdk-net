@@ -36,8 +36,56 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class AwsOpportunityRelatedEntities
     {
+        private List<string> _awsMarketplaceProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _awsMarketplaceSolutions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _awsProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _solutions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AwsMarketplaceProducts. 
+        /// <para>
+        /// The AWS Marketplace product ARNs associated with this opportunity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AwsMarketplaceProducts
+        {
+            get { return this._awsMarketplaceProducts; }
+            set { this._awsMarketplaceProducts = value; }
+        }
+
+        // Check to see if AwsMarketplaceProducts property is set
+        internal bool IsSetAwsMarketplaceProducts()
+        {
+            return this._awsMarketplaceProducts != null && (this._awsMarketplaceProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsMarketplaceSolutions. 
+        /// <para>
+        /// The AWS Marketplace solution ARNs associated with this opportunity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AwsMarketplaceSolutions
+        {
+            get { return this._awsMarketplaceSolutions; }
+            set { this._awsMarketplaceSolutions = value; }
+        }
+
+        // Check to see if AwsMarketplaceSolutions property is set
+        internal bool IsSetAwsMarketplaceSolutions()
+        {
+            return this._awsMarketplaceSolutions != null && (this._awsMarketplaceSolutions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AwsProducts. 

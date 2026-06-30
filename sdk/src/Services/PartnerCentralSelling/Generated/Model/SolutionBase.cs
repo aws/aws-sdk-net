@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class SolutionBase
     {
         private string _arn;
+        private string _awsMarketplaceSolutionArn;
         private string _catalog;
         private string _category;
         private DateTime? _createdDate;
@@ -59,6 +60,26 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsMarketplaceSolutionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Marketplace solution associated with this
+        /// partner solution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=2048)]
+        public string AwsMarketplaceSolutionArn
+        {
+            get { return this._awsMarketplaceSolutionArn; }
+            set { this._awsMarketplaceSolutionArn = value; }
+        }
+
+        // Check to see if AwsMarketplaceSolutionArn property is set
+        internal bool IsSetAwsMarketplaceSolutionArn()
+        {
+            return this._awsMarketplaceSolutionArn != null;
         }
 
         /// <summary>

@@ -1472,6 +1472,12 @@
     <pattern>S-[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.SolutionBase.AwsMarketplaceSolutionArn</property>
+    <min>4</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SolutionBase.Catalog</property>
     <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
