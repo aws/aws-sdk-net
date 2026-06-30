@@ -40,11 +40,19 @@ internal sealed partial class BedrockChatClient : IChatClient
     private const string ResponseFormatToolName = "generate_response";
     /// <summary>The description used for the synthetic tool that enforces response format.</summary>
     private const string ResponseFormatToolDescription = "Generate response in specified format";
+    /// <summary>
+    /// Permissive schema used for native structured outputs when the caller requests JSON output without
+    /// supplying a schema (<c>ChatResponseFormat.Json</c>). Mirrors the synthetic-tool path's behavior so
+    /// that schema-less JSON mode keeps working, and satisfies the required <c>jsonSchema.schema</c> field.
+    /// </summary>
+    private const string DefaultJsonSchema = "{\"type\":\"object\"}";
 
     /// <summary>The wrapped <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     private readonly IAmazonBedrockRuntime _runtime;
     /// <summary>Default model ID to use when no model is specified in the request.</summary>
     private readonly string? _modelId;
+    /// <summary>How <see cref="ChatOptions.ResponseFormat"/> is realized against the Converse API.</summary>
+    private readonly BedrockStructuredOutputMode _structuredOutputMode;
     /// <summary>Metadata describing the chat client.</summary>
     private readonly ChatClientMetadata _metadata;
 
@@ -53,12 +61,15 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// </summary>
     /// <param name="runtime">The <see cref="IAmazonBedrockRuntime"/> instance to wrap.</param>
     /// <param name="defaultModelId">Model ID to use as the default when no model ID is specified in a request.</param>
-    public BedrockChatClient(IAmazonBedrockRuntime runtime, string? defaultModelId)
+    /// <param name="structuredOutputMode">How <see cref="ChatOptions.ResponseFormat"/> is realized against the Converse API.</param>
+    public BedrockChatClient(IAmazonBedrockRuntime runtime, string? defaultModelId,
+        BedrockStructuredOutputMode structuredOutputMode = BedrockStructuredOutputMode.SyntheticTool)
     {
         Debug.Assert(runtime is not null);
 
         _runtime = runtime!;
         _modelId = defaultModelId;
+        _structuredOutputMode = structuredOutputMode;
 
         _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, defaultModelId: defaultModelId);
     }
@@ -71,11 +82,24 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <inheritdoc />
     /// <remarks>
     /// <para>
-    /// When <see cref="ChatOptions.ResponseFormat"/> is specified, the model must support
-    /// the ToolChoice feature. Models without this support will return an error from the Bedrock API
-    /// (typically <see cref="Amazon.BedrockRuntime.AmazonBedrockRuntimeException"/> with ErrorCode "ValidationException").
-    /// If the model fails to return the expected structured output, <see cref="InvalidOperationException"/>
-    /// is thrown.
+    /// When <see cref="ChatOptions.ResponseFormat"/> is specified, structured output is realized
+    /// according to the <see cref="BedrockStructuredOutputMode"/> the client was created with. In
+    /// <see cref="BedrockStructuredOutputMode.SyntheticTool"/> mode (the default) the schema is enforced
+    /// with a forced synthetic tool, which requires ToolChoice support, cannot be combined with
+    /// user-provided tools, and throws <see cref="InvalidOperationException"/> if the model fails to
+    /// return the expected tool output. In <see cref="BedrockStructuredOutputMode.Native"/> mode the
+    /// schema is sent via the request's <c>outputConfig.textFormat</c> field, composes with user-provided
+    /// <see cref="ChatOptions.Tools"/>, and the constrained JSON is returned as ordinary text content;
+    /// native structured outputs is only supported on newer models (for example Anthropic Claude 4.5+
+    /// and a number of open-weight models) and not on older models such as Claude 3.x, Amazon Titan,
+    /// Meta Llama, Cohere, or AI21.
+    /// </para>
+    /// <para>
+    /// The caller's schema is forwarded to Bedrock unchanged. If it uses JSON Schema features outside
+    /// Bedrock's supported subset (for example, <c>additionalProperties</c> must be <c>false</c> and
+    /// numeric/length constraints are not supported), the Bedrock API returns a validation error
+    /// (typically <see cref="Amazon.BedrockRuntime.AmazonBedrockRuntimeException"/> with ErrorCode
+    /// "ValidationException") which is surfaced to the caller.
     /// </para>
     /// <para>
     /// When <see cref="ChatOptions.Reasoning"/> is specified with a non-<see cref="ReasoningEffort.None"/> effort,
@@ -95,7 +119,8 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.ModelId ??= options?.ModelId ?? _modelId;
         request.Messages = CreateMessages(request.Messages, messages);
         request.System = CreateSystem(request.System, messages, options);
-        request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
+        request.ToolConfig = CreateToolConfig(request.ToolConfig, options, _structuredOutputMode);
+        request.OutputConfig = CreateOutputConfig(request.OutputConfig, options, _structuredOutputMode);
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
         request.AdditionalModelRequestFields = ApplyReasoningConfig(request.AdditionalModelRequestFields, request.InferenceConfig, options);
 
@@ -109,11 +134,14 @@ internal sealed partial class BedrockChatClient : IChatClient
             MessageId = Guid.NewGuid().ToString("N"),
         };
 
-        // Check if ResponseFormat was used and extract structured content
-        // When ResponseFormat is active, Bedrock returns the JSON response as a ToolUseBlock
-        // within the Message.Content array, rather than as plain text.
-        bool usingResponseFormat = options?.ResponseFormat is ChatResponseFormatJson;
-        if (usingResponseFormat)
+        // Check if the synthetic-tool ResponseFormat strategy was used and extract structured content.
+        // In SyntheticTool mode, Bedrock returns the JSON response as a ToolUseBlock within the
+        // Message.Content array, rather than as plain text. In Native mode the structured JSON arrives
+        // as an ordinary text ContentBlock and is handled by the normal content processing below.
+        bool usingSyntheticResponseFormat =
+            _structuredOutputMode == BedrockStructuredOutputMode.SyntheticTool &&
+            options?.ResponseFormat is ChatResponseFormatJson;
+        if (usingSyntheticResponseFormat)
         {
             // Search the response's ContentBlocks for our synthetic tool's input
             // (ConverseResponse.Output.Message.Content contains a list of ContentBlock objects)
@@ -239,6 +267,13 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <inheritdoc />
     /// <remarks>
     /// <para>
+    /// <see cref="ChatOptions.ResponseFormat"/> is supported while streaming only in
+    /// <see cref="BedrockStructuredOutputMode.Native"/> mode, where the constrained JSON
+    /// streams back as ordinary text deltas. In <see cref="BedrockStructuredOutputMode.SyntheticTool"/>
+    /// mode a JSON <see cref="ChatOptions.ResponseFormat"/> throws <see cref="NotSupportedException"/>;
+    /// use <see cref="GetResponseAsync"/> for that strategy.
+    /// </para>
+    /// <para>
     /// When <see cref="ChatOptions.Reasoning"/> is specified with a non-<see cref="ReasoningEffort.None"/> effort,
     /// the model must support extended thinking (e.g. Anthropic Claude). Models without this support will return
     /// an error from the Bedrock API.
@@ -252,25 +287,26 @@ internal sealed partial class BedrockChatClient : IChatClient
             throw new ArgumentNullException(nameof(messages));
         }
 
-        // ResponseFormat is not supported for streaming because it requires forcing a specific
-        // tool via ToolChoice. Since we create a synthetic tool for ResponseFormat and set
-        // toolChoice to force its use, this conflicts with the dynamic nature of streaming responses
-        // where tool calls may be interleaved with text content.
-        //
-        // For more information about tool use in streaming, see:
-        // https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features
-        if (options?.ResponseFormat is ChatResponseFormatJson)
+        // The synthetic-tool ResponseFormat strategy is not supported for streaming because it forces a
+        // specific tool via ToolChoice, which conflicts with the dynamic nature of streaming responses
+        // where tool calls may be interleaved with text content. Native structured outputs has no such
+        // limitation: outputConfig.textFormat is orthogonal to toolConfig and the constrained JSON
+        // streams back as ordinary text deltas, so only SyntheticTool mode is rejected here.
+        if (_structuredOutputMode == BedrockStructuredOutputMode.SyntheticTool &&
+            options?.ResponseFormat is ChatResponseFormatJson)
         {
             throw new NotSupportedException(
-                "ResponseFormat is not yet supported for streaming responses with Amazon Bedrock. " +
-                "Please use GetResponseAsync for structured output.");
+                "ResponseFormat is not supported for streaming responses when using " +
+                "BedrockStructuredOutputMode.SyntheticTool. Use BedrockStructuredOutputMode.Native " +
+                "for streaming structured output, or GetResponseAsync for the synthetic-tool strategy.");
         }
 
         ConverseStreamRequest request = options?.RawRepresentationFactory?.Invoke(this) as ConverseStreamRequest ?? new();
         request.ModelId ??= options?.ModelId ?? _modelId;
         request.Messages = CreateMessages(request.Messages, messages);
         request.System = CreateSystem(request.System, messages, options);
-        request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
+        request.ToolConfig = CreateToolConfig(request.ToolConfig, options, _structuredOutputMode);
+        request.OutputConfig = CreateOutputConfig(request.OutputConfig, options, _structuredOutputMode);
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
         request.AdditionalModelRequestFields = ApplyReasoningConfig(request.AdditionalModelRequestFields, request.InferenceConfig, options);
 
@@ -900,14 +936,19 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <summary>Creates a <see cref="ToolConfiguration"/> from the specified options.</summary>
-    private static ToolConfiguration? CreateToolConfig(ToolConfiguration? toolConfig, ChatOptions? options)
+    private static ToolConfiguration? CreateToolConfig(ToolConfiguration? toolConfig, ChatOptions? options,
+        BedrockStructuredOutputMode mode)
     {
         if (options?.Tools is { Count: > 0 } tools)
         {
             toolConfig = AddUserTools(toolConfig, tools);
         }
 
-        if (options?.ResponseFormat is ChatResponseFormatJson jsonFormat)
+        // Only the legacy SyntheticTool strategy realizes ResponseFormat through the tool mechanism.
+        // In Native mode ResponseFormat is handled via OutputConfig (see CreateOutputConfig), leaving
+        // toolConfig free for the caller's own tools.
+        if (mode == BedrockStructuredOutputMode.SyntheticTool &&
+            options?.ResponseFormat is ChatResponseFormatJson jsonFormat)
         {
             toolConfig = AddResponseFormatTool(toolConfig, jsonFormat);
         }
@@ -918,6 +959,77 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
 
         return toolConfig;
+    }
+
+    /// <summary>
+    /// Creates an <see cref="OutputConfig"/> for Bedrock native structured outputs when
+    /// <see cref="BedrockStructuredOutputMode.Native"/> is in effect and the request specifies a JSON
+    /// <see cref="ChatOptions.ResponseFormat"/>. Returns <see langword="null"/> otherwise.
+    /// </summary>
+    /// <remarks>
+    /// The caller's MEAI schema is forwarded verbatim as a serialized JSON string, matching the wire
+    /// shape used by the Converse API and other AWS SDKs. If the schema uses features outside Bedrock's
+    /// supported JSON Schema subset, Bedrock returns a validation error which is surfaced to the caller.
+    /// A caller-provided <see cref="OutputConfig"/> (via <see cref="ChatOptions.RawRepresentationFactory"/>)
+    /// is respected and never overwritten.
+    /// </remarks>
+    private static OutputConfig? CreateOutputConfig(OutputConfig? existing, ChatOptions? options,
+        BedrockStructuredOutputMode mode)
+    {
+        if (existing is not null)
+        {
+            return existing;
+        }
+
+        if (mode != BedrockStructuredOutputMode.Native ||
+            options?.ResponseFormat is not ChatResponseFormatJson jsonFormat)
+        {
+            return null;
+        }
+
+        return new OutputConfig
+        {
+            TextFormat = new OutputFormat
+            {
+                Type = OutputFormatType.Json_schema,
+                Structure = new OutputFormatStructure
+                {
+                    JsonSchema = new JsonSchemaDefinition
+                    {
+                        // JsonElement -> raw JSON string; the field is a string on the wire. When the
+                        // caller requests JSON without a schema, fall back to a permissive object schema
+                        // (the schema field is required by the Bedrock model).
+                        Schema = jsonFormat.Schema?.GetRawText() ?? DefaultJsonSchema,
+                        Name = jsonFormat.SchemaName ?? TryGetSchemaTitle(jsonFormat.Schema) ?? "output_schema",
+                        Description = jsonFormat.SchemaDescription,
+                    }
+                }
+            }
+        };
+    }
+
+    /// <summary>
+    /// Attempts to derive a schema name from the schema's own <c>title</c> (then <c>name</c>) string
+    /// property, mirroring how other AWS SDKs default the structured-output name.
+    /// </summary>
+    private static string? TryGetSchemaTitle(JsonElement? schema)
+    {
+        if (schema is not { ValueKind: JsonValueKind.Object } element)
+        {
+            return null;
+        }
+
+        if (element.TryGetProperty("title", out JsonElement title) && title.ValueKind == JsonValueKind.String)
+        {
+            return title.GetString();
+        }
+
+        if (element.TryGetProperty("name", out JsonElement name) && name.ValueKind == JsonValueKind.String)
+        {
+            return name.GetString();
+        }
+
+        return null;
     }
 
     /// <summary>Adds user-provided tools to the tool configuration.</summary>
