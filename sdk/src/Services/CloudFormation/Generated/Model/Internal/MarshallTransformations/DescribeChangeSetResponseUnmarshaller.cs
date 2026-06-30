@@ -122,6 +122,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeploymentConfig", targetDepth))
+                    {
+                        var unmarshaller = DeploymentConfigUnmarshaller.Instance;
+                        response.DeploymentConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeploymentMode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -39,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTime;
         private DeletionMode _deletionMode;
         private DateTime? _deletionTime;
+        private DeploymentConfig _deploymentConfig;
         private string _description;
         private DetailedStatus _detailedStatus;
         private bool? _disableRollback;
@@ -167,6 +168,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDeletionTime()
         {
             return this._deletionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration for the stack, including the deployment mode used for
+        /// stack operations.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
         }
 
         /// <summary>

@@ -67,6 +67,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeletionMode", StringUtils.FromString(publicRequest.DeletionMode));
                 }
+                if(publicRequest.IsSetDeploymentConfig())
+                {
+                    if(publicRequest.DeploymentConfig.IsSetDisableRollback())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "DisableRollback", StringUtils.FromBool(publicRequest.DeploymentConfig.DisableRollback));
+                    }
+                    if(publicRequest.DeploymentConfig.IsSetMode())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "Mode", StringUtils.FromString(publicRequest.DeploymentConfig.Mode));
+                    }
+                }
                 if(publicRequest.IsSetRetainResources())
                 {
                     if (publicRequest.RetainResources.Count == 0)

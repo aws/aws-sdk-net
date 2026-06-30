@@ -85,6 +85,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetDeploymentConfig())
+                {
+                    if(publicRequest.DeploymentConfig.IsSetDisableRollback())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "DisableRollback", StringUtils.FromBool(publicRequest.DeploymentConfig.DisableRollback));
+                    }
+                    if(publicRequest.DeploymentConfig.IsSetMode())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "Mode", StringUtils.FromString(publicRequest.DeploymentConfig.Mode));
+                    }
+                }
                 if(publicRequest.IsSetDeploymentMode())
                 {
                     request.Parameters.Add("DeploymentMode", StringUtils.FromString(publicRequest.DeploymentMode));
@@ -92,6 +103,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetDisableValidation())
+                {
+                    request.Parameters.Add("DisableValidation", StringUtils.FromBool(publicRequest.DisableValidation));
                 }
                 if(publicRequest.IsSetImportExistingResources())
                 {

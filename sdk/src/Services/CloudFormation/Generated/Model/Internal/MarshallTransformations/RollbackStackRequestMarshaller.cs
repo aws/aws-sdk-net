@@ -63,6 +63,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
+                if(publicRequest.IsSetDeploymentConfig())
+                {
+                    if(publicRequest.DeploymentConfig.IsSetDisableRollback())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "DisableRollback", StringUtils.FromBool(publicRequest.DeploymentConfig.DisableRollback));
+                    }
+                    if(publicRequest.DeploymentConfig.IsSetMode())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "Mode", StringUtils.FromString(publicRequest.DeploymentConfig.Mode));
+                    }
+                }
                 if(publicRequest.IsSetRetainExceptOnCreate())
                 {
                     request.Parameters.Add("RetainExceptOnCreate", StringUtils.FromBool(publicRequest.RetainExceptOnCreate));
