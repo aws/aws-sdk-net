@@ -5727,6 +5727,24 @@
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.ConnectivityProperties.Description</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\u0020-\uD7FF\uE000-\uFFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ConnectivityProperties.Name</property>
+    <min>1</min>
+    <max>41</max>
+    <pattern>[\u0020-\uD7FF\uE000-\uFFFF\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ConnectivityPropertiesPatch.Description</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentProfilePolicyGrantDetail.DomainUnitId</property>
     <min>1</min>
     <max>256</max>
@@ -6453,6 +6471,18 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageSyncInput.Schedule</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>cron\((\b[0-5]?[0-9]\b) ([*]|\b2[0-3]\b|\b[0-1]?[0-9]\b) ([-?*,/\dLW]){1,83} ([-*,/\d]|[a-zA-Z]{3}){1,23} ([-?#*,/\dL]|[a-zA-Z]{3}){1,13} ([^\)]+)\)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageSyncOutput.Schedule</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>cron\((\b[0-5]?[0-9]\b) ([*]|\b2[0-3]\b|\b[0-1]?[0-9]\b) ([-?*,/\dLW]){1,83} ([-*,/\d]|[a-zA-Z]{3}){1,23} ([-?#*,/\dL]|[a-zA-Z]{3}){1,13} ([^\)]+)\)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.LineageSyncSchedule.Schedule</property>
     <pattern>cron\((\b[0-5]?[0-9]\b) (\b2[0-3]\b|\b[0-1]?[0-9]\b) ([-?*,/\dLW]){1,83} ([-*,/\d]|[a-zA-Z]{3}){1,23} ([-?#*,/\dL]|[a-zA-Z]{3}){1,13} ([^\)]+)\)</pattern>
   </property-value-rule>
@@ -6959,6 +6989,24 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.SingleSignOn.IdcInstanceArn</property>
     <pattern>.*arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.SnowflakePropertiesInput.SnowflakeRole</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_$]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.SnowflakePropertiesOutput.SnowflakeRole</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_$]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.SnowflakePropertiesPatch.SnowflakeRole</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SourceLocation.S3</property>
