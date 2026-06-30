@@ -914,4 +914,9 @@
     <min>0</min>
     <max>256</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.WallClockWindow.Timezone</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
 </property-value-rules>

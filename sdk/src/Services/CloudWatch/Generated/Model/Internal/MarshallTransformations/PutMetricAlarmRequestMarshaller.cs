@@ -146,6 +146,16 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("EvaluationPeriods");
                     context.Writer.WriteInt32(publicRequest.EvaluationPeriods.Value);
                 }
+                if (publicRequest.IsSetEvaluationWindow())
+                {
+                    context.Writer.WriteTextString("EvaluationWindow");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = EvaluationWindowMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EvaluationWindow, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetExtendedStatistic())
                 {
                     context.Writer.WriteTextString("ExtendedStatistic");
