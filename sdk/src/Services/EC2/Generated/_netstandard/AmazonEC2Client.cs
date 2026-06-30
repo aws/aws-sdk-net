@@ -29765,6 +29765,39 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  ModifyVpcEndpointPayerResponsibility
+
+        internal virtual ModifyVpcEndpointPayerResponsibilityResponse ModifyVpcEndpointPayerResponsibility(ModifyVpcEndpointPayerResponsibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEndpointPayerResponsibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEndpointPayerResponsibilityResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointPayerResponsibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the billing account for VPC endpoint usage/charges.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointPayerResponsibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointPayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointPayerResponsibility">REST API Reference for ModifyVpcEndpointPayerResponsibility Operation</seealso>
+        public virtual Task<ModifyVpcEndpointPayerResponsibilityResponse> ModifyVpcEndpointPayerResponsibilityAsync(ModifyVpcEndpointPayerResponsibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEndpointPayerResponsibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEndpointPayerResponsibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointPayerResponsibilityResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ModifyVpcEndpointServiceConfiguration
 
         internal virtual ModifyVpcEndpointServiceConfigurationResponse ModifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request)

@@ -32470,6 +32470,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcEndpointPayerResponsibility
+
+
+        /// <summary>
+        /// Modifies the billing account for VPC endpoint usage/charges.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointPayerResponsibility service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointPayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointPayerResponsibility">REST API Reference for ModifyVpcEndpointPayerResponsibility Operation</seealso>
+        ModifyVpcEndpointPayerResponsibilityResponse ModifyVpcEndpointPayerResponsibility(ModifyVpcEndpointPayerResponsibilityRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the billing account for VPC endpoint usage/charges.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointPayerResponsibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointPayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointPayerResponsibility">REST API Reference for ModifyVpcEndpointPayerResponsibility Operation</seealso>
+        Task<ModifyVpcEndpointPayerResponsibilityResponse> ModifyVpcEndpointPayerResponsibilityAsync(ModifyVpcEndpointPayerResponsibilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyVpcEndpointServiceConfiguration
 
 
