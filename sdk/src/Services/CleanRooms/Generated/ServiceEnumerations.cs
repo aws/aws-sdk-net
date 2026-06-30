@@ -811,6 +811,110 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type BaseTableDependencyType.
+    /// </summary>
+    public class BaseTableDependencyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ID_MAPPING_TABLE for BaseTableDependencyType
+        /// </summary>
+        public static readonly BaseTableDependencyType ID_MAPPING_TABLE = new BaseTableDependencyType("ID_MAPPING_TABLE");
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE for BaseTableDependencyType
+        /// </summary>
+        public static readonly BaseTableDependencyType INTERMEDIATE_TABLE = new BaseTableDependencyType("INTERMEDIATE_TABLE");
+        /// <summary>
+        /// Constant TABLE for BaseTableDependencyType
+        /// </summary>
+        public static readonly BaseTableDependencyType TABLE = new BaseTableDependencyType("TABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BaseTableDependencyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BaseTableDependencyType FindValue(string value)
+        {
+            return FindValue<BaseTableDependencyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BaseTableDependencyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BaseTableParentType.
+    /// </summary>
+    public class BaseTableParentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECT for BaseTableParentType
+        /// </summary>
+        public static readonly BaseTableParentType DIRECT = new BaseTableParentType("DIRECT");
+        /// <summary>
+        /// Constant INDIRECT for BaseTableParentType
+        /// </summary>
+        public static readonly BaseTableParentType INDIRECT = new BaseTableParentType("INDIRECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BaseTableParentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BaseTableParentType FindValue(string value)
+        {
+            return FindValue<BaseTableParentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BaseTableParentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeRequestAction.
     /// </summary>
     public class ChangeRequestAction : ConstantClass
@@ -1056,6 +1160,52 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChildResourceType.
+    /// </summary>
+    public class ChildResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE for ChildResourceType
+        /// </summary>
+        public static readonly ChildResourceType INTERMEDIATE_TABLE = new ChildResourceType("INTERMEDIATE_TABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChildResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChildResourceType FindValue(string value)
+        {
+            return FindValue<ChildResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChildResourceType(string value)
         {
             return FindValue(value);
         }
@@ -1757,6 +1907,180 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type IntermediateTableAnalysisRuleType.
+    /// </summary>
+    public class IntermediateTableAnalysisRuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for IntermediateTableAnalysisRuleType
+        /// </summary>
+        public static readonly IntermediateTableAnalysisRuleType CUSTOM = new IntermediateTableAnalysisRuleType("CUSTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntermediateTableAnalysisRuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntermediateTableAnalysisRuleType FindValue(string value)
+        {
+            return FindValue<IntermediateTableAnalysisRuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntermediateTableAnalysisRuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntermediateTableStatus.
+    /// </summary>
+    public class IntermediateTableStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASE_TABLE_REMOVED for IntermediateTableStatus
+        /// </summary>
+        public static readonly IntermediateTableStatus BASE_TABLE_REMOVED = new IntermediateTableStatus("BASE_TABLE_REMOVED");
+        /// <summary>
+        /// Constant CREATED for IntermediateTableStatus
+        /// </summary>
+        public static readonly IntermediateTableStatus CREATED = new IntermediateTableStatus("CREATED");
+        /// <summary>
+        /// Constant DISALLOWED_BY_DATA_PROVIDER for IntermediateTableStatus
+        /// </summary>
+        public static readonly IntermediateTableStatus DISALLOWED_BY_DATA_PROVIDER = new IntermediateTableStatus("DISALLOWED_BY_DATA_PROVIDER");
+        /// <summary>
+        /// Constant POPULATE_FAILED for IntermediateTableStatus
+        /// </summary>
+        public static readonly IntermediateTableStatus POPULATE_FAILED = new IntermediateTableStatus("POPULATE_FAILED");
+        /// <summary>
+        /// Constant POPULATE_STARTED for IntermediateTableStatus
+        /// </summary>
+        public static readonly IntermediateTableStatus POPULATE_STARTED = new IntermediateTableStatus("POPULATE_STARTED");
+        /// <summary>
+        /// Constant POPULATE_SUCCESS for IntermediateTableStatus
+        /// </summary>
+        public static readonly IntermediateTableStatus POPULATE_SUCCESS = new IntermediateTableStatus("POPULATE_SUCCESS");
+        /// <summary>
+        /// Constant RETENTION_PERIOD_EXPIRED for IntermediateTableStatus
+        /// </summary>
+        public static readonly IntermediateTableStatus RETENTION_PERIOD_EXPIRED = new IntermediateTableStatus("RETENTION_PERIOD_EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntermediateTableStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntermediateTableStatus FindValue(string value)
+        {
+            return FindValue<IntermediateTableStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntermediateTableStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntermediateTableVersionStatus.
+    /// </summary>
+    public class IntermediateTableVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POPULATE_FAILED for IntermediateTableVersionStatus
+        /// </summary>
+        public static readonly IntermediateTableVersionStatus POPULATE_FAILED = new IntermediateTableVersionStatus("POPULATE_FAILED");
+        /// <summary>
+        /// Constant POPULATE_STARTED for IntermediateTableVersionStatus
+        /// </summary>
+        public static readonly IntermediateTableVersionStatus POPULATE_STARTED = new IntermediateTableVersionStatus("POPULATE_STARTED");
+        /// <summary>
+        /// Constant POPULATE_SUCCESS for IntermediateTableVersionStatus
+        /// </summary>
+        public static readonly IntermediateTableVersionStatus POPULATE_SUCCESS = new IntermediateTableVersionStatus("POPULATE_SUCCESS");
+        /// <summary>
+        /// Constant RETENTION_PERIOD_EXPIRED for IntermediateTableVersionStatus
+        /// </summary>
+        public static readonly IntermediateTableVersionStatus RETENTION_PERIOD_EXPIRED = new IntermediateTableVersionStatus("RETENTION_PERIOD_EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntermediateTableVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntermediateTableVersionStatus FindValue(string value)
+        {
+            return FindValue<IntermediateTableVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntermediateTableVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobType.
     /// </summary>
     public class JobType : ConstantClass
@@ -2327,6 +2651,52 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type PopulateIntermediateTableAnalysisType.
+    /// </summary>
+    public class PopulateIntermediateTableAnalysisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUERY for PopulateIntermediateTableAnalysisType
+        /// </summary>
+        public static readonly PopulateIntermediateTableAnalysisType QUERY = new PopulateIntermediateTableAnalysisType("QUERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PopulateIntermediateTableAnalysisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PopulateIntermediateTableAnalysisType FindValue(string value)
+        {
+            return FindValue<PopulateIntermediateTableAnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PopulateIntermediateTableAnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PrivacyBudgetTemplateAutoRefresh.
     /// </summary>
     public class PrivacyBudgetTemplateAutoRefresh : ConstantClass
@@ -2751,6 +3121,76 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceStatus.
+    /// </summary>
+    public class ResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASE_TABLE_REMOVED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus BASE_TABLE_REMOVED = new ResourceStatus("BASE_TABLE_REMOVED");
+        /// <summary>
+        /// Constant CREATED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus CREATED = new ResourceStatus("CREATED");
+        /// <summary>
+        /// Constant DISALLOWED_BY_DATA_PROVIDER for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus DISALLOWED_BY_DATA_PROVIDER = new ResourceStatus("DISALLOWED_BY_DATA_PROVIDER");
+        /// <summary>
+        /// Constant POPULATE_FAILED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus POPULATE_FAILED = new ResourceStatus("POPULATE_FAILED");
+        /// <summary>
+        /// Constant POPULATE_STARTED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus POPULATE_STARTED = new ResourceStatus("POPULATE_STARTED");
+        /// <summary>
+        /// Constant POPULATE_SUCCESS for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus POPULATE_SUCCESS = new ResourceStatus("POPULATE_SUCCESS");
+        /// <summary>
+        /// Constant RETENTION_PERIOD_EXPIRED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus RETENTION_PERIOD_EXPIRED = new ResourceStatus("RETENTION_PERIOD_EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceStatus FindValue(string value)
+        {
+            return FindValue<ResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -3135,6 +3575,30 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly SchemaStatusReasonCode ID_MAPPING_TABLE_NOT_POPULATED = new SchemaStatusReasonCode("ID_MAPPING_TABLE_NOT_POPULATED");
         /// <summary>
+        /// Constant INTERMEDIATE_TABLE_ANALYSIS_RULE_MISSING for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode INTERMEDIATE_TABLE_ANALYSIS_RULE_MISSING = new SchemaStatusReasonCode("INTERMEDIATE_TABLE_ANALYSIS_RULE_MISSING");
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE_BASE_TABLE_REMOVED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode INTERMEDIATE_TABLE_BASE_TABLE_REMOVED = new SchemaStatusReasonCode("INTERMEDIATE_TABLE_BASE_TABLE_REMOVED");
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE_DISALLOWED_BY_DATA_PROVIDER for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode INTERMEDIATE_TABLE_DISALLOWED_BY_DATA_PROVIDER = new SchemaStatusReasonCode("INTERMEDIATE_TABLE_DISALLOWED_BY_DATA_PROVIDER");
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE_INHERITED_CONSTRAINTS_VIOLATED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode INTERMEDIATE_TABLE_INHERITED_CONSTRAINTS_VIOLATED = new SchemaStatusReasonCode("INTERMEDIATE_TABLE_INHERITED_CONSTRAINTS_VIOLATED");
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE_NOT_POPULATED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode INTERMEDIATE_TABLE_NOT_POPULATED = new SchemaStatusReasonCode("INTERMEDIATE_TABLE_NOT_POPULATED");
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE_RETENTION_PERIOD_EXPIRED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode INTERMEDIATE_TABLE_RETENTION_PERIOD_EXPIRED = new SchemaStatusReasonCode("INTERMEDIATE_TABLE_RETENTION_PERIOD_EXPIRED");
+        /// <summary>
         /// Constant RESULT_RECEIVERS_NOT_ALLOWED for SchemaStatusReasonCode
         /// </summary>
         public static readonly SchemaStatusReasonCode RESULT_RECEIVERS_NOT_ALLOWED = new SchemaStatusReasonCode("RESULT_RECEIVERS_NOT_ALLOWED");
@@ -3188,6 +3652,10 @@ namespace Amazon.CleanRooms
         /// Constant ID_MAPPING_TABLE for SchemaType
         /// </summary>
         public static readonly SchemaType ID_MAPPING_TABLE = new SchemaType("ID_MAPPING_TABLE");
+        /// <summary>
+        /// Constant INTERMEDIATE_TABLE for SchemaType
+        /// </summary>
+        public static readonly SchemaType INTERMEDIATE_TABLE = new SchemaType("INTERMEDIATE_TABLE");
         /// <summary>
         /// Constant TABLE for SchemaType
         /// </summary>

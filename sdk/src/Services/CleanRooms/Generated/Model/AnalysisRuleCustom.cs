@@ -36,8 +36,10 @@ namespace Amazon.CleanRooms.Model
     public partial class AnalysisRuleCustom
     {
         private AdditionalAnalyses _additionalAnalyses;
+        private List<string> _allowedAdditionalAnalyses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedAnalyses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedAnalysisProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedResultReceivers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DifferentialPrivacyConfiguration _differentialPrivacy;
         private List<string> _disallowedOutputColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -58,6 +60,30 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAdditionalAnalyses()
         {
             return this._additionalAnalyses != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowedAdditionalAnalyses. 
+        /// <para>
+        /// The list of allowed additional analyses for the custom analysis rule.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<string> AllowedAdditionalAnalyses
+        {
+            get { return this._allowedAdditionalAnalyses; }
+            set { this._allowedAdditionalAnalyses = value; }
+        }
+
+        // Check to see if AllowedAdditionalAnalyses property is set
+        internal bool IsSetAllowedAdditionalAnalyses()
+        {
+            return this._allowedAdditionalAnalyses != null && (this._allowedAdditionalAnalyses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,6 +133,30 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAllowedAnalysisProviders()
         {
             return this._allowedAnalysisProviders != null && (this._allowedAnalysisProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowedResultReceivers. 
+        /// <para>
+        /// The list of Amazon Web Services account IDs that are allowed to receive results from
+        /// queries run on the configured table.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AllowedResultReceivers
+        {
+            get { return this._allowedResultReceivers; }
+            set { this._allowedResultReceivers = value; }
+        }
+
+        // Check to see if AllowedResultReceivers property is set
+        internal bool IsSetAllowedResultReceivers()
+        {
+            return this._allowedResultReceivers != null && (this._allowedResultReceivers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

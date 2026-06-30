@@ -34,7 +34,27 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class SchemaTypeProperties
     {
+        private ConfiguredTableAssociationSchemaTypeProperties _configuredTableAssociation;
         private IdMappingTableSchemaTypeProperties _idMappingTable;
+        private IntermediateTableSchemaTypeProperties _intermediateTable;
+
+        /// <summary>
+        /// Gets and sets the property ConfiguredTableAssociation. 
+        /// <para>
+        /// The schema type properties for a configured table association.
+        /// </para>
+        /// </summary>
+        public ConfiguredTableAssociationSchemaTypeProperties ConfiguredTableAssociation
+        {
+            get { return this._configuredTableAssociation; }
+            set { this._configuredTableAssociation = value; }
+        }
+
+        // Check to see if ConfiguredTableAssociation property is set
+        internal bool IsSetConfiguredTableAssociation()
+        {
+            return this._configuredTableAssociation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdMappingTable. 
@@ -52,6 +72,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetIdMappingTable()
         {
             return this._idMappingTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntermediateTable. 
+        /// <para>
+        /// The schema type properties for an intermediate table.
+        /// </para>
+        /// </summary>
+        public IntermediateTableSchemaTypeProperties IntermediateTable
+        {
+            get { return this._intermediateTable; }
+            set { this._intermediateTable = value; }
+        }
+
+        // Check to see if IntermediateTable property is set
+        internal bool IsSetIntermediateTable()
+        {
+            return this._intermediateTable != null;
         }
 
     }

@@ -57,6 +57,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIntermediateTable())
+            {
+                context.Writer.WritePropertyName("intermediateTable");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IntermediateTableOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IntermediateTable, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMember())
             {
                 context.Writer.WritePropertyName("member");

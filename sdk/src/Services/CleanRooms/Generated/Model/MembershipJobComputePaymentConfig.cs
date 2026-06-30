@@ -45,7 +45,8 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         ///  
         /// <para>
-        /// There is only one member who pays for queries and jobs. 
+        /// There can be one or more members who are designated as payer candidates for queries
+        /// and jobs. 
         /// </para>
         ///  
         /// <para>
