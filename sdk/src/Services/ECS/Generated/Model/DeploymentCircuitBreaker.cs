@@ -123,7 +123,6 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ThresholdConfiguration. 
         /// <para>
         /// The threshold configuration that controls when the deployment circuit breaker triggers.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ThresholdConfiguration.html">ThresholdConfiguration</a>.
         /// </para>
         /// </summary>
         public ThresholdConfiguration ThresholdConfiguration
