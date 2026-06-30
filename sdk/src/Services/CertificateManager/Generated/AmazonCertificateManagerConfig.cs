@@ -94,6 +94,11 @@ namespace Amazon.CertificateManager
         }
 
         /// <summary>
+        /// The service type: ACM or ACM-ACME. Injected via @staticContextParams.
+        /// </summary>
+        public string ServiceType { get; set; }
+
+        /// <summary>
         /// Returns the endpoint that will be used for a particular request.
         /// </summary>
         /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>

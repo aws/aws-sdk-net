@@ -7,10 +7,88 @@
     <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CreateAcmeDomainValidationRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CreateAcmeDomainValidationRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)*[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CreateAcmeDomainValidationResponse.AcmeDomainValidationArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-domain-validation/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CreateAcmeEndpointResponse.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CreateAcmeExternalAccountBindingRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CreateAcmeExternalAccountBindingRequest.RoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DeleteAcmeDomainValidationRequest.AcmeDomainValidationArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-domain-validation/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DeleteAcmeEndpointRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DeleteAcmeExternalAccountBindingRequest.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.DeleteCertificateRequest.CertificateArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DescribeAcmeAccountRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DescribeAcmeDomainValidationRequest.AcmeDomainValidationArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-domain-validation/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DescribeAcmeEndpointRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DescribeAcmeExternalAccountBindingRequest.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.DescribeCertificateRequest.CertificateArn</property>
@@ -46,6 +124,12 @@
     <min>1</min>
     <max>524288</max>
     <pattern>-{5}BEGIN PRIVATE KEY-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END PRIVATE KEY-{5}(\u000D?\u000A)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.GetAcmeExternalAccountBindingCredentialsRequest.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.GetCertificateRequest.CertificateArn</property>
@@ -93,6 +177,44 @@
     <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListAcmeAccountsRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListAcmeAccountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListAcmeDomainValidationsRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListAcmeDomainValidationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListAcmeEndpointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListAcmeExternalAccountBindingsRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListAcmeExternalAccountBindingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.ListCertificatesRequest.MaxItems</property>
     <min>1</min>
     <max>1000</max>
@@ -111,6 +233,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.ListTagsForCertificateRequest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
@@ -176,6 +304,18 @@
     <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.RevokeAcmeAccountRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.RevokeAcmeExternalAccountBindingRequest.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.RevokeCertificateRequest.CertificateArn</property>
     <min>20</min>
     <max>2048</max>
@@ -205,7 +345,160 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.TagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.UntagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.UpdateAcmeDomainValidationRequest.AcmeDomainValidationArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-domain-validation/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.UpdateAcmeEndpointRequest.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.UpdateCertificateOptionsRequest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmCertificateMetadata.AcmeAccountId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmCertificateMetadata.AcmeEndpointArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmCertificateMetadataFilter.AcmeAccountId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmCertificateMetadataFilter.AcmeEndpointArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeAccount.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeAccountSummary.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeDomainValidation.AcmeDomainValidationArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-domain-validation/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeDomainValidation.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeDomainValidation.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)*[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeDomainValidationSummary.AcmeDomainValidationArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-domain-validation/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeDomainValidationSummary.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeDomainValidationSummary.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)*[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeEndpoint.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeEndpointSummary.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeExternalAccountBinding.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeExternalAccountBinding.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeExternalAccountBinding.RoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeExternalAccountBindingSummary.AcmeEndpointArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeExternalAccountBindingSummary.AcmeExternalAccountBindingArn</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>arn:aws[a-z-]*:acm:[a-z0-9-]+:[0-9]{12}:acme-endpoint/[a-zA-Z0-9-]+/acme-external-account-binding/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.AcmeExternalAccountBindingSummary.RoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CertificateDetail.AcmeAccountId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CertificateDetail.AcmeEndpointArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
@@ -263,6 +556,18 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DnsPrevalidationDetails.HostedZoneId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>Z[A-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DnsPrevalidationOptions.HostedZoneId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>Z[A-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.DomainValidation.DomainName</property>
     <min>1</min>
     <max>253</max>
@@ -287,6 +592,10 @@
     <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.Expiration.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.ExpiryEventsConfiguration.DaysBeforeExpiry</property>
     <min>1</min>
   </property-value-rule>
@@ -294,13 +603,13 @@
     <property>Amazon.CertificateManager.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:\/=+\-@]*</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[\p{L}\p{Z}\p{N}_.:\/=+\-@]*</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.X509AttributeFilter.SerialNumber</property>

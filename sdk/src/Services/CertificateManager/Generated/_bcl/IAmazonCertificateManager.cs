@@ -60,7 +60,12 @@ namespace Amazon.CertificateManager
         /// and an optional <c>value</c>. You specify the certificate on input by its Amazon Resource
         /// Name (ARN). You specify the tag by using a key-value pair. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This action applies only to the <c>certificate</c> resource type. For all other ACM
+        /// resource types, use <a>TagResource</a> instead.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can apply a tag to just one certificate if you want to identify a specific characteristic
         /// of that certificate, or you can apply the same tag to multiple certificates if you
@@ -104,6 +109,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
         AddTagsToCertificateResponse AddTagsToCertificate(AddTagsToCertificateRequest request);
 
@@ -115,7 +123,12 @@ namespace Amazon.CertificateManager
         /// and an optional <c>value</c>. You specify the certificate on input by its Amazon Resource
         /// Name (ARN). You specify the tag by using a key-value pair. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This action applies only to the <c>certificate</c> resource type. For all other ACM
+        /// resource types, use <a>TagResource</a> instead.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can apply a tag to just one certificate if you want to identify a specific characteristic
         /// of that certificate, or you can apply the same tag to multiple certificates if you
@@ -162,8 +175,419 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
         Task<AddTagsToCertificateResponse> AddTagsToCertificateAsync(AddTagsToCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAcmeDomainValidation
+
+
+        /// <summary>
+        /// Creates a domain validation for an ACME endpoint. Domain validations authorize the
+        /// endpoint to issue certificates for specified domain names. You configure prevalidation
+        /// to prove domain ownership.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAcmeDomainValidation service method.</param>
+        /// 
+        /// <returns>The response from the CreateAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeDomainValidation">REST API Reference for CreateAcmeDomainValidation Operation</seealso>
+        CreateAcmeDomainValidationResponse CreateAcmeDomainValidation(CreateAcmeDomainValidationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a domain validation for an ACME endpoint. Domain validations authorize the
+        /// endpoint to issue certificates for specified domain names. You configure prevalidation
+        /// to prove domain ownership.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAcmeDomainValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeDomainValidation">REST API Reference for CreateAcmeDomainValidation Operation</seealso>
+        Task<CreateAcmeDomainValidationResponse> CreateAcmeDomainValidationAsync(CreateAcmeDomainValidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAcmeEndpoint
+
+
+        /// <summary>
+        /// Creates an ACME endpoint, which is a managed ACME server with a unique endpoint URL.
+        /// After creation, ACME clients can use the endpoint URL to automate certificate issuance
+        /// using the ACME protocol.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAcmeEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeEndpoint">REST API Reference for CreateAcmeEndpoint Operation</seealso>
+        CreateAcmeEndpointResponse CreateAcmeEndpoint(CreateAcmeEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Creates an ACME endpoint, which is a managed ACME server with a unique endpoint URL.
+        /// After creation, ACME clients can use the endpoint URL to automate certificate issuance
+        /// using the ACME protocol.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAcmeEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeEndpoint">REST API Reference for CreateAcmeEndpoint Operation</seealso>
+        Task<CreateAcmeEndpointResponse> CreateAcmeEndpointAsync(CreateAcmeEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAcmeExternalAccountBinding
+
+
+        /// <summary>
+        /// Creates an external account binding (EAB) for an ACME endpoint. An EAB provides credentials
+        /// that authorize an ACME client to register an account with the endpoint. Each EAB is
+        /// associated with an IAM role that controls what certificate operations the ACME client
+        /// can perform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAcmeExternalAccountBinding service method.</param>
+        /// 
+        /// <returns>The response from the CreateAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeExternalAccountBinding">REST API Reference for CreateAcmeExternalAccountBinding Operation</seealso>
+        CreateAcmeExternalAccountBindingResponse CreateAcmeExternalAccountBinding(CreateAcmeExternalAccountBindingRequest request);
+
+
+
+        /// <summary>
+        /// Creates an external account binding (EAB) for an ACME endpoint. An EAB provides credentials
+        /// that authorize an ACME client to register an account with the endpoint. Each EAB is
+        /// associated with an IAM role that controls what certificate operations the ACME client
+        /// can perform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAcmeExternalAccountBinding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CreateAcmeExternalAccountBinding">REST API Reference for CreateAcmeExternalAccountBinding Operation</seealso>
+        Task<CreateAcmeExternalAccountBindingResponse> CreateAcmeExternalAccountBindingAsync(CreateAcmeExternalAccountBindingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAcmeDomainValidation
+
+
+        /// <summary>
+        /// Deletes a domain validation. After deletion, the ACME endpoint can no longer issue
+        /// certificates for the associated domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAcmeDomainValidation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeDomainValidation">REST API Reference for DeleteAcmeDomainValidation Operation</seealso>
+        DeleteAcmeDomainValidationResponse DeleteAcmeDomainValidation(DeleteAcmeDomainValidationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a domain validation. After deletion, the ACME endpoint can no longer issue
+        /// certificates for the associated domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAcmeDomainValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeDomainValidation">REST API Reference for DeleteAcmeDomainValidation Operation</seealso>
+        Task<DeleteAcmeDomainValidationResponse> DeleteAcmeDomainValidationAsync(DeleteAcmeDomainValidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAcmeEndpoint
+
+
+        /// <summary>
+        /// Deletes an ACME endpoint. After deletion, the endpoint URL is no longer accessible
+        /// and ACME clients cannot issue certificates through it. Any existing external account
+        /// bindings and domain validations associated with the endpoint are also deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAcmeEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeEndpoint">REST API Reference for DeleteAcmeEndpoint Operation</seealso>
+        DeleteAcmeEndpointResponse DeleteAcmeEndpoint(DeleteAcmeEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an ACME endpoint. After deletion, the endpoint URL is no longer accessible
+        /// and ACME clients cannot issue certificates through it. Any existing external account
+        /// bindings and domain validations associated with the endpoint are also deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAcmeEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeEndpoint">REST API Reference for DeleteAcmeEndpoint Operation</seealso>
+        Task<DeleteAcmeEndpointResponse> DeleteAcmeEndpointAsync(DeleteAcmeEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAcmeExternalAccountBinding
+
+
+        /// <summary>
+        /// Deletes an external account binding. Previously fetched credentials for this binding
+        /// will no longer be usable for account registration. A deleted binding cannot be recovered.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAcmeExternalAccountBinding service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeExternalAccountBinding">REST API Reference for DeleteAcmeExternalAccountBinding Operation</seealso>
+        DeleteAcmeExternalAccountBindingResponse DeleteAcmeExternalAccountBinding(DeleteAcmeExternalAccountBindingRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an external account binding. Previously fetched credentials for this binding
+        /// will no longer be usable for account registration. A deleted binding cannot be recovered.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAcmeExternalAccountBinding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteAcmeExternalAccountBinding">REST API Reference for DeleteAcmeExternalAccountBinding Operation</seealso>
+        Task<DeleteAcmeExternalAccountBindingResponse> DeleteAcmeExternalAccountBindingAsync(DeleteAcmeExternalAccountBindingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -191,6 +615,11 @@ namespace Amazon.CertificateManager
         /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
         /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot delete a certificate with a <c>CertificateKeyPairOrigin</c> of <c>ACME</c>.
+        /// ACM automatically deletes these certificates 1 year after they expire.
+        /// </para>
         ///  </note> 
         /// <para>
         /// Deleting a certificate issued by a private certificate authority (CA) has no effect
@@ -224,6 +653,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         DeleteCertificateResponse DeleteCertificate(string certificateArn);
 
@@ -247,6 +679,11 @@ namespace Amazon.CertificateManager
         /// on the CA. You will continue to be charged for the CA until it is deleted. For more
         /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
         /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot delete a certificate with a <c>CertificateKeyPairOrigin</c> of <c>ACME</c>.
+        /// ACM automatically deletes these certificates 1 year after they expire.
         /// </para>
         ///  </note> 
         /// <para>
@@ -280,6 +717,9 @@ namespace Amazon.CertificateManager
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request);
@@ -306,6 +746,11 @@ namespace Amazon.CertificateManager
         /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
         /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot delete a certificate with a <c>CertificateKeyPairOrigin</c> of <c>ACME</c>.
+        /// ACM automatically deletes these certificates 1 year after they expire.
+        /// </para>
         ///  </note> 
         /// <para>
         /// Deleting a certificate issued by a private certificate authority (CA) has no effect
@@ -342,6 +787,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -366,6 +814,11 @@ namespace Amazon.CertificateManager
         /// on the CA. You will continue to be charged for the CA until it is deleted. For more
         /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
         /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot delete a certificate with a <c>CertificateKeyPairOrigin</c> of <c>ACME</c>.
+        /// ACM automatically deletes these certificates 1 year after they expire.
         /// </para>
         ///  </note> 
         /// <para>
@@ -403,8 +856,259 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAcmeAccount
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified ACME account, including its status,
+        /// public key thumbprint, and associated external account binding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeAccount service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAcmeAccount service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeAccount">REST API Reference for DescribeAcmeAccount Operation</seealso>
+        DescribeAcmeAccountResponse DescribeAcmeAccount(DescribeAcmeAccountRequest request);
+
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified ACME account, including its status,
+        /// public key thumbprint, and associated external account binding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAcmeAccount service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeAccount">REST API Reference for DescribeAcmeAccount Operation</seealso>
+        Task<DescribeAcmeAccountResponse> DescribeAcmeAccountAsync(DescribeAcmeAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAcmeDomainValidation
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified domain validation, including its status,
+        /// domain scope, and DNS resource records required for validation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeDomainValidation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeDomainValidation">REST API Reference for DescribeAcmeDomainValidation Operation</seealso>
+        DescribeAcmeDomainValidationResponse DescribeAcmeDomainValidation(DescribeAcmeDomainValidationRequest request);
+
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified domain validation, including its status,
+        /// domain scope, and DNS resource records required for validation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeDomainValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeDomainValidation">REST API Reference for DescribeAcmeDomainValidation Operation</seealso>
+        Task<DescribeAcmeDomainValidationResponse> DescribeAcmeDomainValidationAsync(DescribeAcmeDomainValidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAcmeEndpoint
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified ACME endpoint, including its status,
+        /// URL, authorization behavior, and certificate authority configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeEndpoint">REST API Reference for DescribeAcmeEndpoint Operation</seealso>
+        DescribeAcmeEndpointResponse DescribeAcmeEndpoint(DescribeAcmeEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified ACME endpoint, including its status,
+        /// URL, authorization behavior, and certificate authority configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeEndpoint">REST API Reference for DescribeAcmeEndpoint Operation</seealso>
+        Task<DescribeAcmeEndpointResponse> DescribeAcmeEndpointAsync(DescribeAcmeEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAcmeExternalAccountBinding
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified external account binding, including
+        /// the associated IAM role, expiration time, and usage history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeExternalAccountBinding service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeExternalAccountBinding">REST API Reference for DescribeAcmeExternalAccountBinding Operation</seealso>
+        DescribeAcmeExternalAccountBindingResponse DescribeAcmeExternalAccountBinding(DescribeAcmeExternalAccountBindingRequest request);
+
+
+
+        /// <summary>
+        /// Returns detailed metadata about the specified external account binding, including
+        /// the associated IAM role, expiration time, and usage history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcmeExternalAccountBinding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeAcmeExternalAccountBinding">REST API Reference for DescribeAcmeExternalAccountBinding Operation</seealso>
+        Task<DescribeAcmeExternalAccountBindingResponse> DescribeAcmeExternalAccountBindingAsync(DescribeAcmeExternalAccountBindingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -430,6 +1134,9 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         DescribeCertificateResponse DescribeCertificate(string certificateArn);
 
@@ -451,6 +1158,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request);
@@ -478,6 +1188,9 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         Task<DescribeCertificateResponse> DescribeCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -503,6 +1216,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -549,6 +1265,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">REST API Reference for ExportCertificate Operation</seealso>
         ExportCertificateResponse ExportCertificate(ExportCertificateRequest request);
 
@@ -593,6 +1312,9 @@ namespace Amazon.CertificateManager
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">REST API Reference for ExportCertificate Operation</seealso>
         Task<ExportCertificateResponse> ExportCertificateAsync(ExportCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -639,6 +1361,68 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  GetAcmeExternalAccountBindingCredentials
+
+
+        /// <summary>
+        /// Retrieves the key ID and MAC key credentials for an external account binding. These
+        /// credentials are used by ACME clients during account registration to bind to the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAcmeExternalAccountBindingCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetAcmeExternalAccountBindingCredentials service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAcmeExternalAccountBindingCredentials">REST API Reference for GetAcmeExternalAccountBindingCredentials Operation</seealso>
+        GetAcmeExternalAccountBindingCredentialsResponse GetAcmeExternalAccountBindingCredentials(GetAcmeExternalAccountBindingCredentialsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the key ID and MAC key credentials for an external account binding. These
+        /// credentials are used by ACME clients during account registration to bind to the endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAcmeExternalAccountBindingCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAcmeExternalAccountBindingCredentials service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAcmeExternalAccountBindingCredentials">REST API Reference for GetAcmeExternalAccountBindingCredentials Operation</seealso>
+        Task<GetAcmeExternalAccountBindingCredentialsResponse> GetAcmeExternalAccountBindingCredentialsAsync(GetAcmeExternalAccountBindingCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCertificate
 
 
@@ -665,6 +1449,9 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         GetCertificateResponse GetCertificate(string certificateArn);
 
@@ -690,6 +1477,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         GetCertificateResponse GetCertificate(GetCertificateRequest request);
@@ -721,6 +1511,9 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         Task<GetCertificateResponse> GetCertificateAsync(string certificateArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -750,6 +1543,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         Task<GetCertificateResponse> GetCertificateAsync(GetCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -868,6 +1664,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         ImportCertificateResponse ImportCertificate(ImportCertificateRequest request);
 
@@ -985,8 +1784,247 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAcmeAccounts
+
+
+        /// <summary>
+        /// Retrieves a list of ACME accounts registered with the specified ACME endpoint. ACME
+        /// accounts are created when clients use external account binding credentials to register.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListAcmeAccounts service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeAccounts">REST API Reference for ListAcmeAccounts Operation</seealso>
+        ListAcmeAccountsResponse ListAcmeAccounts(ListAcmeAccountsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of ACME accounts registered with the specified ACME endpoint. ACME
+        /// accounts are created when clients use external account binding credentials to register.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAcmeAccounts service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeAccounts">REST API Reference for ListAcmeAccounts Operation</seealso>
+        Task<ListAcmeAccountsResponse> ListAcmeAccountsAsync(ListAcmeAccountsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAcmeDomainValidations
+
+
+        /// <summary>
+        /// Retrieves a list of domain validations for the specified ACME endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeDomainValidations service method.</param>
+        /// 
+        /// <returns>The response from the ListAcmeDomainValidations service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeDomainValidations">REST API Reference for ListAcmeDomainValidations Operation</seealso>
+        ListAcmeDomainValidationsResponse ListAcmeDomainValidations(ListAcmeDomainValidationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of domain validations for the specified ACME endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeDomainValidations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAcmeDomainValidations service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeDomainValidations">REST API Reference for ListAcmeDomainValidations Operation</seealso>
+        Task<ListAcmeDomainValidationsResponse> ListAcmeDomainValidationsAsync(ListAcmeDomainValidationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAcmeEndpoints
+
+
+        /// <summary>
+        /// Retrieves a list of ACME endpoints in your account. Use this operation to view all
+        /// configured ACME endpoints and their current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListAcmeEndpoints service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeEndpoints">REST API Reference for ListAcmeEndpoints Operation</seealso>
+        ListAcmeEndpointsResponse ListAcmeEndpoints(ListAcmeEndpointsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of ACME endpoints in your account. Use this operation to view all
+        /// configured ACME endpoints and their current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAcmeEndpoints service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeEndpoints">REST API Reference for ListAcmeEndpoints Operation</seealso>
+        Task<ListAcmeEndpointsResponse> ListAcmeEndpointsAsync(ListAcmeEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAcmeExternalAccountBindings
+
+
+        /// <summary>
+        /// Retrieves a list of external account bindings for the specified ACME endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeExternalAccountBindings service method.</param>
+        /// 
+        /// <returns>The response from the ListAcmeExternalAccountBindings service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeExternalAccountBindings">REST API Reference for ListAcmeExternalAccountBindings Operation</seealso>
+        ListAcmeExternalAccountBindingsResponse ListAcmeExternalAccountBindings(ListAcmeExternalAccountBindingsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of external account bindings for the specified ACME endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAcmeExternalAccountBindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAcmeExternalAccountBindings service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListAcmeExternalAccountBindings">REST API Reference for ListAcmeExternalAccountBindings Operation</seealso>
+        Task<ListAcmeExternalAccountBindingsResponse> ListAcmeExternalAccountBindingsAsync(ListAcmeExternalAccountBindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -998,6 +2036,14 @@ namespace Amazon.CertificateManager
         /// that match a specific status be listed. You can also filter by specific attributes
         /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
         /// more information, see <a>Filters</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>CertificateKeyPairOrigin</c>
+        /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
+        /// filter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
@@ -1016,6 +2062,14 @@ namespace Amazon.CertificateManager
         /// that match a specific status be listed. You can also filter by specific attributes
         /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
         /// more information, see <a>Filters</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>CertificateKeyPairOrigin</c>
+        /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
+        /// filter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
@@ -1035,6 +2089,14 @@ namespace Amazon.CertificateManager
         /// that match a specific status be listed. You can also filter by specific attributes
         /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
         /// more information, see <a>Filters</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>CertificateKeyPairOrigin</c>
+        /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
+        /// filter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1057,6 +2119,14 @@ namespace Amazon.CertificateManager
         /// that match a specific status be listed. You can also filter by specific attributes
         /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
         /// more information, see <a>Filters</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>CertificateKeyPairOrigin</c>
+        /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
+        /// filter.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -1082,7 +2152,14 @@ namespace Amazon.CertificateManager
         /// Lists the tags that have been applied to the ACM certificate. Use the certificate's
         /// Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate,
         /// use the <a>AddTagsToCertificate</a> action. To delete a tag, use the <a>RemoveTagsFromCertificate</a>
-        /// action.
+        /// action. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action applies only to the <c>certificate</c> resource type. For all other ACM
+        /// resource types, use <a>ListTagsForResource</a> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForCertificate service method.</param>
         /// 
@@ -1094,6 +2171,9 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
         ListTagsForCertificateResponse ListTagsForCertificate(ListTagsForCertificateRequest request);
 
@@ -1103,7 +2183,14 @@ namespace Amazon.CertificateManager
         /// Lists the tags that have been applied to the ACM certificate. Use the certificate's
         /// Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate,
         /// use the <a>AddTagsToCertificate</a> action. To delete a tag, use the <a>RemoveTagsFromCertificate</a>
-        /// action.
+        /// action. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action applies only to the <c>certificate</c> resource type. For all other ACM
+        /// resource types, use <a>ListTagsForResource</a> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -1118,8 +2205,75 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
         Task<ListTagsForCertificateResponse> ListTagsForCertificateAsync(ListTagsForCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists the tags associated with an ACM resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Use this action for all ACM resource types except the <c>certificate</c> resource
+        /// type. For certificate resources, use <a>ListTagsForCertificate</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To add one or more tags, use the <a>TagResource</a> action. To remove one or more
+        /// tags, use the <a>UntagResource</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Lists the tags associated with an ACM resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Use this action for all ACM resource types except the <c>certificate</c> resource
+        /// type. For certificate resources, use <a>ListTagsForCertificate</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To add one or more tags, use the <a>TagResource</a> action. To remove one or more
+        /// tags, use the <a>UntagResource</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1202,7 +2356,12 @@ namespace Amazon.CertificateManager
         /// tag will be removed regardless of value. If you specify a value, the tag is removed
         /// only if it is associated with the specified value. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This action applies only to the <c>certificate</c> resource type. For all other ACM
+        /// resource types, use <a>UntagResource</a> instead.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view
         /// all of the tags that have been applied to a specific ACM certificate, use the <a>ListTagsForCertificate</a>
@@ -1232,6 +2391,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request);
 
@@ -1243,7 +2405,12 @@ namespace Amazon.CertificateManager
         /// tag will be removed regardless of value. If you specify a value, the tag is removed
         /// only if it is associated with the specified value. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This action applies only to the <c>certificate</c> resource type. For all other ACM
+        /// resource types, use <a>UntagResource</a> instead.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view
         /// all of the tags that have been applied to a specific ACM certificate, use the <a>ListTagsForCertificate</a>
@@ -1275,6 +2442,9 @@ namespace Amazon.CertificateManager
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         Task<RemoveTagsFromCertificateResponse> RemoveTagsFromCertificateAsync(RemoveTagsFromCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1305,6 +2475,9 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewCertificate">REST API Reference for RenewCertificate Operation</seealso>
         RenewCertificateResponse RenewCertificate(RenewCertificateRequest request);
 
@@ -1333,6 +2506,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewCertificate">REST API Reference for RenewCertificate Operation</seealso>
         Task<RenewCertificateResponse> RenewCertificateAsync(RenewCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1599,6 +2775,9 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
         ResendValidationEmailResponse ResendValidationEmail(ResendValidationEmailRequest request);
 
@@ -1635,8 +2814,153 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
         Task<ResendValidationEmailResponse> ResendValidationEmailAsync(ResendValidationEmailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeAcmeAccount
+
+
+        /// <summary>
+        /// Revokes an ACME account, preventing it from requesting or revoking certificates. This
+        /// operation is irreversible.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeAcmeAccount service method.</param>
+        /// 
+        /// <returns>The response from the RevokeAcmeAccount service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeAcmeAccount">REST API Reference for RevokeAcmeAccount Operation</seealso>
+        RevokeAcmeAccountResponse RevokeAcmeAccount(RevokeAcmeAccountRequest request);
+
+
+
+        /// <summary>
+        /// Revokes an ACME account, preventing it from requesting or revoking certificates. This
+        /// operation is irreversible.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeAcmeAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeAcmeAccount service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeAcmeAccount">REST API Reference for RevokeAcmeAccount Operation</seealso>
+        Task<RevokeAcmeAccountResponse> RevokeAcmeAccountAsync(RevokeAcmeAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeAcmeExternalAccountBinding
+
+
+        /// <summary>
+        /// Revokes an external account binding, preventing new ACME accounts from being registered
+        /// using this binding. Existing ACME accounts that were previously registered using the
+        /// binding are not affected and must be revoked separately.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeAcmeExternalAccountBinding service method.</param>
+        /// 
+        /// <returns>The response from the RevokeAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeAcmeExternalAccountBinding">REST API Reference for RevokeAcmeExternalAccountBinding Operation</seealso>
+        RevokeAcmeExternalAccountBindingResponse RevokeAcmeExternalAccountBinding(RevokeAcmeExternalAccountBindingRequest request);
+
+
+
+        /// <summary>
+        /// Revokes an external account binding, preventing new ACME accounts from being registered
+        /// using this binding. Existing ACME accounts that were previously registered using the
+        /// binding are not affected and must be revoked separately.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeAcmeExternalAccountBinding service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeAcmeExternalAccountBinding service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeAcmeExternalAccountBinding">REST API Reference for RevokeAcmeExternalAccountBinding Operation</seealso>
+        Task<RevokeAcmeExternalAccountBindingResponse> RevokeAcmeExternalAccountBindingAsync(RevokeAcmeExternalAccountBindingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1677,6 +3001,9 @@ namespace Amazon.CertificateManager
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeCertificate">REST API Reference for RevokeCertificate Operation</seealso>
         RevokeCertificateResponse RevokeCertificate(RevokeCertificateRequest request);
@@ -1720,6 +3047,9 @@ namespace Amazon.CertificateManager
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
         /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeCertificate">REST API Reference for RevokeCertificate Operation</seealso>
         Task<RevokeCertificateResponse> RevokeCertificateAsync(RevokeCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1778,6 +3108,282 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds one or more tags to an ACM resource. Tags are labels that you can use to identify
+        /// and organize your Amazon Web Services resources. Each tag consists of a <c>key</c>
+        /// and an optional <c>value</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Use this action for all ACM resource types except the <c>certificate</c> resource
+        /// type. For certificate resources, use <a>AddTagsToCertificate</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To remove one or more tags, use the <a>UntagResource</a> action. To view all of the
+        /// tags that have been applied to a resource, use the <a>ListTagsForResource</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Adds one or more tags to an ACM resource. Tags are labels that you can use to identify
+        /// and organize your Amazon Web Services resources. Each tag consists of a <c>key</c>
+        /// and an optional <c>value</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Use this action for all ACM resource types except the <c>certificate</c> resource
+        /// type. For certificate resources, use <a>AddTagsToCertificate</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To remove one or more tags, use the <a>UntagResource</a> action. To view all of the
+        /// tags that have been applied to a resource, use the <a>ListTagsForResource</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from an ACM resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Use this action for all ACM resource types except the <c>certificate</c> resource
+        /// type. For certificate resources, use <a>RemoveTagsFromCertificate</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To add one or more tags, use the <a>TagResource</a> action. To view all of the tags
+        /// that have been applied to a resource, use the <a>ListTagsForResource</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes one or more tags from an ACM resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Use this action for all ACM resource types except the <c>certificate</c> resource
+        /// type. For certificate resources, use <a>RemoveTagsFromCertificate</a> instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To add one or more tags, use the <a>TagResource</a> action. To view all of the tags
+        /// that have been applied to a resource, use the <a>ListTagsForResource</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAcmeDomainValidation
+
+
+        /// <summary>
+        /// Updates the prevalidation configuration of an existing domain validation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAcmeDomainValidation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateAcmeDomainValidation">REST API Reference for UpdateAcmeDomainValidation Operation</seealso>
+        UpdateAcmeDomainValidationResponse UpdateAcmeDomainValidation(UpdateAcmeDomainValidationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the prevalidation configuration of an existing domain validation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAcmeDomainValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAcmeDomainValidation service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateAcmeDomainValidation">REST API Reference for UpdateAcmeDomainValidation Operation</seealso>
+        Task<UpdateAcmeDomainValidationResponse> UpdateAcmeDomainValidationAsync(UpdateAcmeDomainValidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAcmeEndpoint
+
+
+        /// <summary>
+        /// Updates the configuration of an existing ACME endpoint. You can change the authorization
+        /// behavior, contact requirement, or certificate authority settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAcmeEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateAcmeEndpoint">REST API Reference for UpdateAcmeEndpoint Operation</seealso>
+        UpdateAcmeEndpointResponse UpdateAcmeEndpoint(UpdateAcmeEndpointRequest request);
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing ACME endpoint. You can change the authorization
+        /// behavior, contact requirement, or certificate authority settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAcmeEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAcmeEndpoint service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateAcmeEndpoint">REST API Reference for UpdateAcmeEndpoint Operation</seealso>
+        Task<UpdateAcmeEndpointResponse> UpdateAcmeEndpointAsync(UpdateAcmeEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateCertificateOptions
 
 
@@ -1803,6 +3409,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">REST API Reference for UpdateCertificateOptions Operation</seealso>
         UpdateCertificateOptionsResponse UpdateCertificateOptions(UpdateCertificateOptionsRequest request);
@@ -1834,6 +3443,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">REST API Reference for UpdateCertificateOptions Operation</seealso>
         Task<UpdateCertificateOptionsResponse> UpdateCertificateOptionsAsync(UpdateCertificateOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));

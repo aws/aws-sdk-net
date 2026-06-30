@@ -39,6 +39,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -54,6 +55,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-east-1.amazonaws.com", endpoint.URL);
         }
@@ -69,6 +71,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -84,6 +87,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-northeast-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -99,6 +103,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-northeast-3";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-northeast-3.amazonaws.com", endpoint.URL);
         }
@@ -114,6 +119,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-south-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -129,6 +135,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-southeast-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -144,6 +151,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-southeast-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -159,6 +167,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ap-southeast-3";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ap-southeast-3.amazonaws.com", endpoint.URL);
         }
@@ -174,23 +183,9 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "ca-central-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.ca-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm-fips.ca-central-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -204,6 +199,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-central-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -219,6 +215,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-north-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -234,6 +231,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-south-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.eu-south-1.amazonaws.com", endpoint.URL);
         }
@@ -249,6 +247,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -264,6 +263,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-west-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -279,6 +279,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "eu-west-3";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -294,6 +295,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "me-south-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.me-south-1.amazonaws.com", endpoint.URL);
         }
@@ -309,6 +311,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "sa-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -324,23 +327,9 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -354,23 +343,9 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-east-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-east-2";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -384,23 +359,9 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm-fips.us-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -414,8 +375,73 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "ca-central-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-fips.ca-central-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-fips.us-east-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-fips.us-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -429,6 +455,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -444,6 +471,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -459,6 +487,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-east-1.api.aws", endpoint.URL);
         }
@@ -474,6 +503,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -489,6 +519,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -504,6 +535,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -519,6 +551,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -534,6 +567,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -549,6 +583,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -564,6 +599,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -579,6 +615,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -594,6 +631,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -609,6 +647,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-gov-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://acm.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -617,73 +656,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CertificateManager")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://acm.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For custom endpoint with region set and fips disabled and DualStack disabled")]
+        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CertificateManagerEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -693,12 +673,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CertificateManager")]
-        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For custom endpoint with FIPS enabled and DualStack disabled")]
+        public void For_custom_endpoint_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CertificateManagerEndpointParameters();
-            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -708,50 +690,104 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CertificateManager")]
-        [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new CertificateManagerEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
-                new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            });
-            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("CertificateManager")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        [Description("For custom endpoint with FIPS disabled and dualstack enabled")]
+        public void For_custom_endpoint_with_FIPS_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new CertificateManagerEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
+            parameters["ServiceType"] = "ACM";
             parameters["Endpoint"] = "https://example.com";
-            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
-                new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
-            });
-            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("CertificateManager")]
-        [Description("Missing region")]
-        public void Missing_region_Test()
+        [Description("ACM-ACME standard endpoint for us-east-1")]
+        public void ACMACME_standard_endpoint_for_useast1_Test()
         {
             var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://acm-acme.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("ACM-ACME FIPS returns error")]
+        public void ACMACME_FIPS_returns_error_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
             var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
                 new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
             });
-            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
+            Assert.AreEqual(@"FIPS endpoints are not available for ACME operations", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("ACM-ACME custom endpoint")]
+        public void ACMACME_custom_endpoint_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
+            parameters["Endpoint"] = "https://custom.example.com";
+            var endpoint = new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://custom.example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("ACM-ACME in us-gov-west-1 returns partition error")]
+        public void ACMACME_in_usgovwest1_returns_partition_error_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"ACME operations are only available in commercial AWS partitions", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CertificateManager")]
+        [Description("ACM-ACME in cn-north-1 returns partition error")]
+        public void ACMACME_in_cnnorth1_returns_partition_error_Test()
+        {
+            var parameters = new CertificateManagerEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ServiceType"] = "ACM-ACME";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonCertificateManagerEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"ACME operations are only available in commercial AWS partitions", exception.Message);
         }
 
     }
