@@ -268,7 +268,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <remarks>
     /// <para>
     /// <see cref="ChatOptions.ResponseFormat"/> is supported while streaming only in
-    /// <see cref="BedrockStructuredOutputMode.Native"/> mode (the default), where the constrained JSON
+    /// <see cref="BedrockStructuredOutputMode.Native"/> mode, where the constrained JSON
     /// streams back as ordinary text deltas. In <see cref="BedrockStructuredOutputMode.SyntheticTool"/>
     /// mode a JSON <see cref="ChatOptions.ResponseFormat"/> throws <see cref="NotSupportedException"/>;
     /// use <see cref="GetResponseAsync"/> for that strategy.
@@ -298,7 +298,7 @@ internal sealed partial class BedrockChatClient : IChatClient
             throw new NotSupportedException(
                 "ResponseFormat is not supported for streaming responses when using " +
                 "BedrockStructuredOutputMode.SyntheticTool. Use BedrockStructuredOutputMode.Native " +
-                "(the default) for streaming structured output, or GetResponseAsync for the synthetic-tool strategy.");
+                "for streaming structured output, or GetResponseAsync for the synthetic-tool strategy.");
         }
 
         ConverseStreamRequest request = options?.RawRepresentationFactory?.Invoke(this) as ConverseStreamRequest ?? new();
