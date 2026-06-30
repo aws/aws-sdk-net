@@ -29,10 +29,6 @@ namespace Amazon.Runtime.Internal.Util
     public ref struct StreamingUtf8JsonReader
     {
         private Utf8JsonReader _reader;
-        private static JsonReaderOptions _jsonOptions = new JsonReaderOptions
-        {
-            AllowTrailingCommas = true
-        };
         /// <summary>
         /// The UTF8JsonReader attached to the instance. 
         /// </summary>
@@ -79,7 +75,20 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="stream">the stream containing the data</param>
         /// <param name="bufferSize">the size of the buffer when reading data from the stream</param>
         /// <exception cref="ArgumentException"></exception>
-        public StreamingUtf8JsonReader(Stream stream, int bufferSize)
+        public StreamingUtf8JsonReader(Stream stream, int bufferSize) : this(stream, bufferSize, 64)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the StreamingUtf8JsonReader with a custom maximum JSON depth.
+        /// Upon initialization the reader will read from the stream and fill the buffer.
+        /// If a UTF8 BOM is present in the stream, it will be skipped.
+        /// </summary>
+        /// <param name="stream">the stream containing the data</param>
+        /// <param name="bufferSize">the size of the buffer when reading data from the stream</param>
+        /// <param name="maxDepth">the maximum depth allowed when reading JSON data</param>
+        /// <exception cref="ArgumentException"></exception>
+        public StreamingUtf8JsonReader(Stream stream, int bufferSize, int maxDepth)
         {
             if (stream is null)
                 throw new ArgumentException("Stream must not be null. Please initialize a stream and pass it into the constructor.");
@@ -89,7 +98,7 @@ namespace Amazon.Runtime.Internal.Util
             int utf8BomLength = JsonConstants.Utf8Bom.Length;
             Debug.Assert(_buffer.Length >= utf8BomLength);
 
-            int bytesRead = FillBuffer(stream, ref _buffer,0, _buffer.Length);
+            int bytesRead = FillBuffer(stream, ref _buffer, 0, _buffer.Length);
             int start = 0;
             if (_buffer.AsSpan().StartsWith(JsonConstants.Utf8Bom))
             {
@@ -97,7 +106,12 @@ namespace Amazon.Runtime.Internal.Util
                 bytesRead -= utf8BomLength;
             }
 
-            _reader = new Utf8JsonReader(_buffer.AsSpan(start, bytesRead), isFinalBlock: bytesRead == 0, new JsonReaderState(_jsonOptions));
+            var options = new JsonReaderOptions
+            {
+                AllowTrailingCommas = true,
+                MaxDepth = maxDepth
+            };
+            _reader = new Utf8JsonReader(_buffer.AsSpan(start, bytesRead), isFinalBlock: bytesRead == 0, new JsonReaderState(options));
         }
 
         /// <summary>

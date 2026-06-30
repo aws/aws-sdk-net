@@ -636,13 +636,26 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Gets and Sets the BufferSize property.
-        /// The BufferSize controls the buffer used to read in from input streams and write 
+        /// The BufferSize controls the buffer used to read in from input streams and write
         /// out to the request.
         /// </summary>
         public int BufferSize
         {
             get { return this.bufferSize; }
             set { this.bufferSize = value; }
+        }
+
+        private int jsonMaxDepth = 64;
+
+        /// <summary>
+        /// Gets or sets the maximum depth allowed when reading JSON responses.
+        /// The default is 64. Increase this value if you encounter
+        /// AmazonUnmarshallingException due to deeply nested response structures.
+        /// </summary>
+        public int JsonMaxDepth
+        {
+            get { return this.jsonMaxDepth; }
+            set { this.jsonMaxDepth = value; }
         }
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             CreateNotebookResponse response = new CreateNotebookResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
@@ -72,7 +72,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;

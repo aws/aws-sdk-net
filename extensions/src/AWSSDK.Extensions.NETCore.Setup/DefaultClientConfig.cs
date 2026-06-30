@@ -130,6 +130,13 @@ namespace Amazon.Extensions.NETCore.Setup
         public bool? IgnoreConfiguredEndpointUrls { get; set; }
 
         /// <summary>
+        /// Gets or sets the maximum depth allowed when reading JSON responses.
+        /// The default is 64. Increase this value if you encounter
+        /// AmazonUnmarshallingException due to deeply nested response structures.
+        /// </summary>
+        public int? JsonMaxDepth { get; set; }
+
+        /// <summary>
         /// Flag on whether to log metrics for service calls.
         /// </summary>
         public bool? LogMetrics { get; set; }
