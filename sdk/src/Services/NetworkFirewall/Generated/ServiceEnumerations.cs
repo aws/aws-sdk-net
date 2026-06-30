@@ -145,6 +145,110 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerAssociationStatus.
+    /// </summary>
+    public class ContainerAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus ACTIVE = new ContainerAssociationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus CREATING = new ContainerAssociationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus DELETING = new ContainerAssociationStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerAssociationStatus FindValue(string value)
+        {
+            return FindValue<ContainerAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerMonitoringType.
+    /// </summary>
+    public class ContainerMonitoringType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ECS for ContainerMonitoringType
+        /// </summary>
+        public static readonly ContainerMonitoringType ECS = new ContainerMonitoringType("ECS");
+        /// <summary>
+        /// Constant EKS for ContainerMonitoringType
+        /// </summary>
+        public static readonly ContainerMonitoringType EKS = new ContainerMonitoringType("EKS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerMonitoringType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerMonitoringType FindValue(string value)
+        {
+            return FindValue<ContainerMonitoringType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerMonitoringType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnabledAnalysisType.
     /// </summary>
     public class EnabledAnalysisType : ConstantClass

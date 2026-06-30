@@ -53,6 +53,14 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Paginator for ListContainerAssociations operation
+        ///</summary>
+        public IListContainerAssociationsPaginator ListContainerAssociations(ListContainerAssociationsRequest request) 
+        {
+            return new ListContainerAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         ///</summary>
         public IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request) 
