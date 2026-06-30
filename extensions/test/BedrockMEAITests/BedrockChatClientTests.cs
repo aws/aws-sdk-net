@@ -465,8 +465,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("end_turn")
             });
 
-        // Default client => Native structured outputs mode.
-        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0");
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
         var messages = new[] { new ChatMessage(ChatRole.User, "Summarize") };
 
         var schemaJson = """
@@ -510,6 +509,48 @@ public class BedrockChatClientTests
 
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
+    public async Task ResponseFormat_Json_Native_NoSchema_UsesDefaultObjectSchema()
+    {
+        // Arrange - ChatResponseFormat.Json carries no schema. The Bedrock model requires
+        // jsonSchema.schema, so Native mode must fall back to a permissive object schema rather
+        // than emitting a null (which would fail marshalling/validation).
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+        ConverseRequest capturedRequest = null;
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .Callback<ConverseRequest, CancellationToken>((req, ct) => capturedRequest = req)
+            .ReturnsAsync(new ConverseResponse
+            {
+                Output = new ConverseOutput
+                {
+                    Message = new Message
+                    {
+                        Role = ConversationRole.Assistant,
+                        Content = new List<ContentBlock> { new ContentBlock { Text = "{}" } }
+                    }
+                },
+                StopReason = new StopReason("end_turn")
+            });
+
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
+        var messages = new[] { new ChatMessage(ChatRole.User, "Summarize") };
+        var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
+
+        // Act
+        await client.GetResponseAsync(messages, options);
+
+        // Assert - schema is populated with a permissive object schema, not null.
+        Assert.NotNull(capturedRequest?.OutputConfig?.TextFormat?.Structure?.JsonSchema);
+        var jsonSchema = capturedRequest.OutputConfig.TextFormat.Structure.JsonSchema;
+        Assert.False(string.IsNullOrEmpty(jsonSchema.Schema));
+
+        using var actualSchema = JsonDocument.Parse(jsonSchema.Schema);
+        Assert.Equal("object", actualSchema.RootElement.GetProperty("type").GetString());
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
     public async Task ResponseFormat_Json_Native_WithTools_PassesBothThrough()
     {
         // Arrange - the core regression from issue #4425: Tools + ResponseFormat must compose in Native mode.
@@ -532,7 +573,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("end_turn")
             });
 
-        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0");
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
         var messages = new[] { new ChatMessage(ChatRole.User, "What's the weather in Melbourne?") };
 
         var weatherSchema = JsonDocument.Parse("""{"type":"object","properties":{"city":{"type":"string"}}}""").RootElement;
@@ -587,7 +628,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("end_turn")
             });
 
-        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0");
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
         var messages = new[] { new ChatMessage(ChatRole.User, "Summarize") };
         var schema = JsonDocument.Parse("""{"type":"object","properties":{"summary":{"type":"string"}}}""").RootElement;
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.ForJsonSchema(schema) };
@@ -622,7 +663,7 @@ public class BedrockChatClientTests
             return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
         });
 
-        IChatClient client = mock.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0");
+        IChatClient client = mock.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
         var schema = JsonDocument.Parse(
             """{"type":"object","properties":{"summary":{"type":"string"}},"required":["summary"],"additionalProperties":false}""").RootElement;
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.ForJsonSchema(schema) };

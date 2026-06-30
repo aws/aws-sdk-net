@@ -40,6 +40,12 @@ internal sealed partial class BedrockChatClient : IChatClient
     private const string ResponseFormatToolName = "generate_response";
     /// <summary>The description used for the synthetic tool that enforces response format.</summary>
     private const string ResponseFormatToolDescription = "Generate response in specified format";
+    /// <summary>
+    /// Permissive schema used for native structured outputs when the caller requests JSON output without
+    /// supplying a schema (<c>ChatResponseFormat.Json</c>). Mirrors the synthetic-tool path's behavior so
+    /// that schema-less JSON mode keeps working, and satisfies the required <c>jsonSchema.schema</c> field.
+    /// </summary>
+    private const string DefaultJsonSchema = "{\"type\":\"object\"}";
 
     /// <summary>The wrapped <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     private readonly IAmazonBedrockRuntime _runtime;
@@ -57,7 +63,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <param name="defaultModelId">Model ID to use as the default when no model ID is specified in a request.</param>
     /// <param name="structuredOutputMode">How <see cref="ChatOptions.ResponseFormat"/> is realized against the Converse API.</param>
     public BedrockChatClient(IAmazonBedrockRuntime runtime, string? defaultModelId,
-        BedrockStructuredOutputMode structuredOutputMode = BedrockStructuredOutputMode.Native)
+        BedrockStructuredOutputMode structuredOutputMode = BedrockStructuredOutputMode.SyntheticTool)
     {
         Debug.Assert(runtime is not null);
 
@@ -78,15 +84,15 @@ internal sealed partial class BedrockChatClient : IChatClient
     /// <para>
     /// When <see cref="ChatOptions.ResponseFormat"/> is specified, structured output is realized
     /// according to the <see cref="BedrockStructuredOutputMode"/> the client was created with. In
-    /// <see cref="BedrockStructuredOutputMode.Native"/> mode (the default) the schema is sent via the
-    /// request's <c>outputConfig.textFormat</c> field, composes with user-provided
+    /// <see cref="BedrockStructuredOutputMode.SyntheticTool"/> mode (the default) the schema is enforced
+    /// with a forced synthetic tool, which requires ToolChoice support, cannot be combined with
+    /// user-provided tools, and throws <see cref="InvalidOperationException"/> if the model fails to
+    /// return the expected tool output. In <see cref="BedrockStructuredOutputMode.Native"/> mode the
+    /// schema is sent via the request's <c>outputConfig.textFormat</c> field, composes with user-provided
     /// <see cref="ChatOptions.Tools"/>, and the constrained JSON is returned as ordinary text content;
     /// native structured outputs is only supported on newer models (for example Anthropic Claude 4.5+
     /// and a number of open-weight models) and not on older models such as Claude 3.x, Amazon Titan,
-    /// Meta Llama, Cohere, or AI21. In <see cref="BedrockStructuredOutputMode.SyntheticTool"/> mode the
-    /// schema is enforced with a forced synthetic tool, which requires ToolChoice support, cannot be
-    /// combined with user-provided tools, and throws <see cref="InvalidOperationException"/> if the
-    /// model fails to return the expected tool output.
+    /// Meta Llama, Cohere, or AI21.
     /// </para>
     /// <para>
     /// The caller's schema is forwarded to Bedrock unchanged. If it uses JSON Schema features outside
@@ -990,8 +996,10 @@ internal sealed partial class BedrockChatClient : IChatClient
                 {
                     JsonSchema = new JsonSchemaDefinition
                     {
-                        // JsonElement -> raw JSON string; the field is a string on the wire.
-                        Schema = jsonFormat.Schema?.GetRawText(),
+                        // JsonElement -> raw JSON string; the field is a string on the wire. When the
+                        // caller requests JSON without a schema, fall back to a permissive object schema
+                        // (the schema field is required by the Bedrock model).
+                        Schema = jsonFormat.Schema?.GetRawText() ?? DefaultJsonSchema,
                         Name = jsonFormat.SchemaName ?? TryGetSchemaTitle(jsonFormat.Schema) ?? "output_schema",
                         Description = jsonFormat.SchemaDescription,
                     }
