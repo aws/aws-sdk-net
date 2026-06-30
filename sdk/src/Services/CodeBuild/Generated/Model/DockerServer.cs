@@ -117,6 +117,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// A DockerServerStatus object to use for this docker server.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Note that <c>status</c> is only an output and cannot be passed in as an input.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DockerServerStatus Status
         {
