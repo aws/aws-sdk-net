@@ -19,6 +19,10 @@ Under `Generated/Model/Internal/MarshallTransformations/`:
 Singleton patterns differ by file type:
 - Structure marshallers: `public readonly static {Shape}Marshaller Instance = new {Shape}Marshaller();`
 - Many operation marshallers/unmarshallers use `private static ... _instance = new ...();` plus a public `Instance` property (and sometimes `internal static GetInstance()`).
+
+## Class Signature
+All marshallers and unmarshallers should be partial classes.
+
 ## Request Marshaller Scaffolding
 
 Every request marshaller sets up:

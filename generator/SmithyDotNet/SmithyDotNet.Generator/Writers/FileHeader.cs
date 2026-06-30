@@ -93,14 +93,16 @@ public static class FileHeader
     /// <summary>
     /// Writes one <c>using {namespace};</c> directive per entry, in the order given.
     /// </summary>
-    public static void WriteUsings(CodeWriter writer, IReadOnlyList<string> namespaces)
+    public static void WriteUsings(CodeWriter writer, IReadOnlyList<string> namespaces, bool emitTrailingNewLine = true)
     {
         foreach (var ns in namespaces)
         {
             writer.WriteLine($"using {ns};");
         }
-
-        writer.WriteLine();
+        if (emitTrailingNewLine)
+        {
+            writer.WriteLine();
+        }
     }
 
     /// <summary>
