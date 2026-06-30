@@ -38,6 +38,7 @@ namespace Amazon.ObservabilityAdmin.Model
     {
         private TelemetryPipelineConfiguration _configuration;
         private List<Record> _records = AWSConfigs.InitializeCollections ? new List<Record>() : null;
+        private SignalType _signalType;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -80,6 +81,24 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetRecords()
         {
             return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignalType. 
+        /// <para>
+        /// The type of telemetry signal to test. If not specified, defaults to log processing.
+        /// </para>
+        /// </summary>
+        public SignalType SignalType
+        {
+            get { return this._signalType; }
+            set { this._signalType = value; }
+        }
+
+        // Check to see if SignalType property is set
+        internal bool IsSetSignalType()
+        {
+            return this._signalType != null;
         }
 
     }
