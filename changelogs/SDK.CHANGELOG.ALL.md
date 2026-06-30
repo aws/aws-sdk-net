@@ -1,3 +1,39 @@
+### 4.0.278.0 (2026-06-30 18:41 UTC)
+* AutoScaling (4.0.101.0)
+	* This release adds support for a new reservations-then-balanced capacity distribution strategy, which first attempts to launch instances into your Capacity Reservations and then balances remaining capacity across healthy Availability Zones.
+* CertificateManager (4.0.101.0)
+	* AWS Certificate Manager now supports the Automatic Certificate Management Environment (ACME) protocol to issue public certificates. ACME is an industry-standard protocol for automating certificate lifecycle on customer-managed infrastructure such as on-premises servers and Kubernetes clusters.
+* CleanRooms (4.0.101.0)
+	* Adds support for intermediate tables in AWS Clean Rooms collaborations.
+* CloudFormation (4.0.101.0)
+	* AWS CloudFormation adds a DeploymentConfig parameter to enable Express mode, which completes stack operations as soon as resource configuration is applied. Also adds a DisableValidation parameter to skip pre-deployment validation, which now runs automatically on CreateStack and UpdateStak.
+* CloudWatch (4.0.101.0)
+	* Customers can configure alarms with wall-clock-aligned evaluation windows instead of sliding windows, with optional timezone support for daily or weekly periods
+* CodeBuild (4.0.101.0)
+	* Adds support for host kernel selection for on-demand builds.
+* Connect (4.0.101.0)
+	* Amazon Connect - Added CreateAttachedFile and StartContactConversationalAnalyticsJob APIs to import call recordings and run conversational analytics.
+* DataZone (4.0.101.0)
+	* Amazon DataZone now supports SNOWFLAKE as a connection type in the CreateConnection API, enabling metadata and lineage retrieval from Snowflake databases. Specify snowflakeProperties with connection details, a Secrets Manager secret, an Athena spill bucket, and an identity mapping for Snowflake.
+* EC2 (4.0.101.0)
+	* Adds ModifyVpcEndpointPayerResponsibility API, which enables VPC endpoint service owners to modify the billing account for VPC endpoint usage charges at the individual endpoint level
+* ECS (4.0.100.1)
+	* Updated threshold configuration documentation.
+* EKS (4.0.101.0)
+	* Adds Kubernetes version rollback support, including the CancelUpdate operation to cancel an in-progress VersionRollback update, the RollbackConfig structure with a timeoutMinutes field, and the Cancellation structure surfaced via the new cancellation field on the Update object.
+* NetworkFirewall (4.0.101.0)
+	* AWS Network Firewall now supports container associations for monitoring ECS and EKS workloads. You can create container associations to dynamically track the IP addresses of running containers in your Amazon ECS and Amazon EKS clusters.
+* ObservabilityAdmin (4.0.101.0)
+	* Organization and account level telemetry rule via Observability Admin and CloudWatch pipelines for metrics
+* PartnerCentralSelling (4.0.101.0)
+	* This release adds AwsMarketplaceSolutions and AwsMarketplaceProducts entity types to the Associate and Disassociate APIs, returns them in GetOpportunity, and adds AwsMarketplaceSolutionArn to ListSolutions ,letting partners link Marketplace listings directly to opportunities.
+* SSOAdmin (4.0.101.0)
+	* AWS IAM Identity Center now returns PrimaryRegion and Regions in the ListInstances response, providing information about replicated instances.
+* SupportAuthZ (4.0.100.0)
+	* New SDK release for SupportAuthZ.
+* Extensions.Bedrock.MEAI (4.0.101.0)
+	* Add support for native structured outputs (https://github.com/aws/aws-sdk-net/issues/4425)
+
 ### 4.0.277.0 (2026-06-29 18:17 UTC)
 * AppConfig (4.0.100.0)
 	* AWS AppConfig introduces Experimentation tools - enhanced capabilities within AWS AppConfig that enable you to run AB tests, multivariate tests, and gradual feature rollouts across your application stack.
