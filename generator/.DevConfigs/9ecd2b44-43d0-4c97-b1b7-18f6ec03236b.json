@@ -1,0 +1,11 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.Bedrock.MEAI",
+      "type": "minor",
+      "changeLogMessages": [
+        "Add support for native structured outputs (https://github.com/aws/aws-sdk-net/issues/4425)"
+      ]
+    }
+  ]
+}
