@@ -104,6 +104,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntropyEncoding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("explicitWeightedPrediction", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExplicitWeightedPrediction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("fieldEncoding", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
