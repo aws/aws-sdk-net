@@ -340,7 +340,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         /// <summary>
         /// Gets the maximum depth allowed when reading JSON responses.
-        /// The default is 64.
+        /// The default is 256.
         /// </summary>
         public int JsonMaxDepth
         {
