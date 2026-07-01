@@ -243,7 +243,7 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Gets the maximum depth allowed when reading JSON responses.
-        /// The default is 64. Increase this value if you encounter
+        /// The default is 256. Increase this value if you encounter
         /// AmazonUnmarshallingException due to deeply nested response structures.
         /// </summary>
         int JsonMaxDepth { get; }
