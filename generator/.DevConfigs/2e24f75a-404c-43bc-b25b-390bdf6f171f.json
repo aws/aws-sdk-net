@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Add MaxDepth option to ClientConfigs for reading deeply nested JSON documents."
+      "Add JsonMaxDepth option to ClientConfig for reading deeply nested JSON documents."
     ]
   },
   "extensions": [
@@ -11,7 +11,7 @@
       "extensionName": "Extensions.NETCore.Setup",
       "type": "patch",
       "changeLogMessages": [
-        "Add MaxDepth to DefaultClientConfig to mirror ClientConfig in Core."
+        "Add JsonMaxDepth to DefaultClientConfig to mirror ClientConfig in Core."
       ]
     }
   ]
