@@ -50,6 +50,7 @@ namespace Amazon.OpenSearchService.Model
         private DryRunMode _dryRunMode;
         private EBSOptions _ebsOptions;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
+        private EngineMode _engineMode;
         private IdentityCenterOptionsInput _identityCenterOptions;
         private IPAddressType _ipAddressType;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
@@ -57,6 +58,7 @@ namespace Amazon.OpenSearchService.Model
         private OffPeakWindowOptions _offPeakWindowOptions;
         private SnapshotOptions _snapshotOptions;
         private SoftwareUpdateOptions _softwareUpdateOptions;
+        private DomainUseCase _useCase;
         private VPCOptions _vpcOptions;
 
         /// <summary>
@@ -390,6 +392,25 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode for the domain. The engine mode can't be changed after the domain
+        /// is created. For valid values, see <c>EngineMode</c>.
+        /// </para>
+        /// </summary>
+        public EngineMode EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentityCenterOptions.
         /// </summary>
         public IdentityCenterOptionsInput IdentityCenterOptions
@@ -519,6 +540,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetSoftwareUpdateOptions()
         {
             return this._softwareUpdateOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The primary use case for the domain. For valid values, see <c>DomainUseCase</c>.
+        /// </para>
+        /// </summary>
+        public DomainUseCase UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
         /// <summary>

@@ -209,6 +209,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetEngineMode())
+            {
+                context.Writer.WritePropertyName("EngineMode");
+                context.Writer.WriteStringValue(publicRequest.EngineMode);
+            }
+
             if(publicRequest.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
@@ -309,6 +315,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUseCase())
+            {
+                context.Writer.WritePropertyName("UseCase");
+                context.Writer.WriteStringValue(publicRequest.UseCase);
             }
 
             if(publicRequest.IsSetVPCOptions())

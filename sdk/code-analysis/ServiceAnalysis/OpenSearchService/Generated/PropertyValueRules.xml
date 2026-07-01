@@ -668,6 +668,16 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.InsightFeedbackRequest.FeedbackText</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.InsightFeedbackRequest.InsightId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListApplicationsRequest.MaxResults</property>
     <max>100</max>
   </property-value-rule>
@@ -1415,6 +1425,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.InsightEntity.Value</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>([a-z][a-z0-9\-]+|\d{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.InsightFeedbackEntity.Value</property>
     <min>3</min>
     <max>28</max>
     <pattern>([a-z][a-z0-9\-]+|\d{12})</pattern>

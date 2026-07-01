@@ -57,6 +57,7 @@ namespace Amazon.OpenSearchService.Model
         private string _endpoint;
         private Dictionary<string, string> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _endpointV2;
+        private EngineMode _engineMode;
         private string _engineVersion;
         private IdentityCenterOptions _identityCenterOptions;
         private IPAddressType _ipAddressType;
@@ -69,6 +70,7 @@ namespace Amazon.OpenSearchService.Model
         private SnapshotOptions _snapshotOptions;
         private SoftwareUpdateOptions _softwareUpdateOptions;
         private bool? _upgradeProcessing;
+        private DomainUseCase _useCase;
         private VPCDerivedInfo _vpcOptions;
 
         /// <summary>
@@ -525,6 +527,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode for the domain.
+        /// </para>
+        /// </summary>
+        public EngineMode EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// Version of OpenSearch or Elasticsearch that the domain is running, in the format <c>Elasticsearch_X.Y</c>
@@ -755,6 +775,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetUpgradeProcessing()
         {
             return this._upgradeProcessing.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The primary use case for the domain.
+        /// </para>
+        /// </summary>
+        public DomainUseCase UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
         /// <summary>
