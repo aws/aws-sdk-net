@@ -210,5 +210,35 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual<string>(new string('x', size), value);
             }
         }
+
+        [TestMethod]
+        public void CustomMaxDepthAllowsDeeperNesting()
+        {
+            int depth = 100;
+            string json = GenerateNestedJson(depth);
+            byte[] payload = Encoding.UTF8.GetBytes(json);
+            using (var stream = new MemoryStream(payload))
+            {
+                var reader = new StreamingUtf8JsonReader(stream, 4096, 128);
+                int maxDepthSeen = 0;
+                while (reader.Read())
+                {
+                    if (reader.Reader.CurrentDepth > maxDepthSeen)
+                        maxDepthSeen = (int)reader.Reader.CurrentDepth;
+                }
+                Assert.IsTrue(maxDepthSeen >= depth);
+            }
+        }
+
+        private static string GenerateNestedJson(int depth)
+        {
+            var sb = new StringBuilder();
+            for (int i = 0; i < depth; i++)
+                sb.Append("{\"a\":");
+            sb.Append("1");
+            for (int i = 0; i < depth; i++)
+                sb.Append("}");
+            return sb.ToString();
+        }
     }
 }
