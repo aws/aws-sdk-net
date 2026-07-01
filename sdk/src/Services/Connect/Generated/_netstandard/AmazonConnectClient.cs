@@ -16362,6 +16362,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SendOutboundWebNotification
+
+        internal virtual SendOutboundWebNotificationResponse SendOutboundWebNotification(SendOutboundWebNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendOutboundWebNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendOutboundWebNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<SendOutboundWebNotificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends an outbound web notification to a customer's web browser for outbound campaigns.
+        /// For more information about outbound campaigns, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+        /// up Connect Customer outbound campaigns</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the Connect Customer outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendOutboundWebNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendOutboundWebNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundWebNotification">REST API Reference for SendOutboundWebNotification Operation</seealso>
+        public virtual Task<SendOutboundWebNotificationResponse> SendOutboundWebNotificationAsync(SendOutboundWebNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendOutboundWebNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendOutboundWebNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendOutboundWebNotificationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartAttachedFileUpload
 
         internal virtual StartAttachedFileUploadResponse StartAttachedFileUpload(StartAttachedFileUploadRequest request)

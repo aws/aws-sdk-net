@@ -3755,6 +3755,25 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SendOutboundWebNotificationRequest.BrowserId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SendOutboundWebNotificationRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SendOutboundWebNotificationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SendOutboundWebNotificationRequest.SessionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -7193,6 +7212,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.RecommenderConfig.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RecommenderConfig.RecommenderName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.RecordingInfo.FragmentStartNumber</property>
     <min>0</min>
     <max>128</max>
@@ -7902,6 +7931,21 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.VoiceCallEntryPointParameters.SourcePhoneNumber</property>
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.WebNotificationContent.ViewArn</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.WidgetDestination.ProfileId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.WidgetDestination.WidgetId</property>
+    <min>1</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Workspace.Description</property>
