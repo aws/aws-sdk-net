@@ -1560,7 +1560,10 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>scheduled</c> 
+        ///  <c>scheduled</c> — requires a cancellation quote. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote, then pass the quote ID with <c>ApplyCancellationCharges</c> set
+        /// to <c>commitment-wind-down</c>. The cancellation charge depends on how close the reservation
+        /// is to its start date.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1569,10 +1572,14 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
-        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
-        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
-        /// charges are applied.
+        ///  <c>active</c> during the commitment duration — requires a cancellation quote. Use
+        /// <c>CreateCapacityReservationCancellationQuote</c> to generate a quote, then pass the
+        /// quote ID with <c>ApplyCancellationCharges</c> set to <c>commitment-wind-down</c>.
+        /// The Capacity Reservation transitions to <c>cancelling</c> while charges are applied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>delayed</c> — the commitment duration is waived, so no cancellation charge applies.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -1580,11 +1587,6 @@ namespace Amazon.EC2
         /// Blocks for ML</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
-        /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
-        /// </para>
-        ///  
         /// <para>
         /// Instances running in the reserved capacity continue running until you stop them. Stopped
         /// instances that target the Capacity Reservation can no longer launch. Modify these
@@ -3667,7 +3669,7 @@ namespace Amazon.EC2
         /// placement group places groups of instances in different partitions, where instances
         /// in one partition do not share the same hardware with instances in another partition.
         /// A <c>precision-time</c> placement group places instances on supported hardware with
-        /// direct access to high-precision time sources in AWS infrastructure.
+        /// direct access to high-precision time sources in Amazon Web Services infrastructure.
         /// </para>
         ///  
         /// <para>
@@ -7658,6 +7660,32 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeAccountVpcEncryptionControl
+
+
+
+        /// <summary>
+        /// Describes the account-level VPC Encryption Control configuration for your account.
+        /// VPC Encryption Control enables you to enforce encryption for all data in transit within
+        /// and between VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountVpcEncryptionControl">REST API Reference for DescribeAccountVpcEncryptionControl Operation</seealso>
+        Task<DescribeAccountVpcEncryptionControlResponse> DescribeAccountVpcEncryptionControlAsync(DescribeAccountVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -17179,6 +17207,33 @@ namespace Amazon.EC2
         /// <returns>The response from the LockSnapshot service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
         Task<LockSnapshotResponse> LockSnapshotAsync(LockSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyAccountVpcEncryptionControl
+
+
+
+        /// <summary>
+        /// Modifies the account-level VPC Encryption Control configuration. This sets the encryption
+        /// control mode and resource exclusions that apply to the VPCs in your account. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccountVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAccountVpcEncryptionControl">REST API Reference for ModifyAccountVpcEncryptionControl Operation</seealso>
+        Task<ModifyAccountVpcEncryptionControlResponse> ModifyAccountVpcEncryptionControlAsync(ModifyAccountVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

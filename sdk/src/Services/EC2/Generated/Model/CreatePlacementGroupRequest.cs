@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     /// placement group places groups of instances in different partitions, where instances
     /// in one partition do not share the same hardware with instances in another partition.
     /// A <c>precision-time</c> placement group places instances on supported hardware with
-    /// direct access to high-precision time sources in AWS infrastructure.
+    /// direct access to high-precision time sources in Amazon Web Services infrastructure.
     /// </para>
     ///  
     /// <para>

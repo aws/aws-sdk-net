@@ -89,6 +89,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetCpuOptions())
+                {
+                    if(publicRequest.CpuOptions.IsSetAmdSevSnp())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "AmdSevSnp", StringUtils.FromString(publicRequest.CpuOptions.AmdSevSnp));
+                    }
+                }
                 if(publicRequest.IsSetHostMaintenance())
                 {
                     request.Parameters.Add("HostMaintenance", StringUtils.FromString(publicRequest.HostMaintenance));
