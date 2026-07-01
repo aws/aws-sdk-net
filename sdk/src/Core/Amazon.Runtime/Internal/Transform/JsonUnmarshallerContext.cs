@@ -140,7 +140,7 @@ namespace Amazon.Runtime.Internal.Transform
             else
                 baseStream = responseStream;
 
-            _jsonMaxDepth = requestContext.ClientConfig.JsonMaxDepth;
+            _jsonMaxDepth = requestContext?.ClientConfig?.JsonMaxDepth ?? JsonConstants.JsonMaxDepth;
         }
 
         #endregion
