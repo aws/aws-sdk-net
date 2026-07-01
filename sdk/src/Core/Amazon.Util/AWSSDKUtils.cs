@@ -1267,7 +1267,7 @@ namespace Amazon.Util
         /// <returns>An encoded X-Amzn-Trace-Id header value.</returns>
         internal static string EncodeTraceIdHeaderValue(string value)
         {
-            var encoded = new ValueStringBuilder(value.Length * 2);
+            using var encoded = new ValueStringBuilder(value.Length * 2);
             var utf8Bytes = ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetMaxByteCount(value.Length));
             try
             {
