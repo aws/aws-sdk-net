@@ -60,10 +60,7 @@ public static class FileHeader
         "System.Text.Json",
         "System.Buffers",
     ];
-        
 
-    
-    
     /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.

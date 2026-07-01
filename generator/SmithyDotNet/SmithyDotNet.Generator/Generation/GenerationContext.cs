@@ -160,7 +160,6 @@ public class GenerationContext
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => shapeId.Name;
 
-
     private static AWSProtocol DetectProtocol(ServiceShape service)
     {
         if (service.IsRestJson1())

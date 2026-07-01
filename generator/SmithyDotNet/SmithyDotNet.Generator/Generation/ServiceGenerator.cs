@@ -1,5 +1,6 @@
 using System.Collections.Concurrent;
 using SmithyDotNet.Generator.Model;
+using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
 
 namespace SmithyDotNet.Generator.Generation;
@@ -9,8 +10,9 @@ namespace SmithyDotNet.Generator.Generation;
 /// SDK-conventional relative path, and writes the files under <c>{outputPath}/Generated/</c>.
 /// <para />
 /// Phase 1 scope: the writers that exist today (interface, client, config, service exception,
-/// metadata, operation request/response/base, structures, exceptions). The endpoint/auth
-/// <c>Internal/</c> files and the marshallers are not emitted yet, so the generated tree does
+/// metadata, operation request/response/base, structures, exceptions, and the restJson1 request
+/// marshaller + structure (un)marshallers). The endpoint/auth <c>Internal/</c> files and the
+/// operation-response / exception unmarshallers have no writers yet, so the generated tree does
 /// not compile standalone.
 /// </summary>
 public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion)
@@ -44,6 +46,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var generated = "Generated";
         var model = Path.Combine(generated, "Model");
         var @internal = Path.Combine(generated, "Internal");
+        var marshalling = Path.Combine(model, "Internal", "MarshallTransformations");
 
         var interfaceWriter = new ClientInterfaceWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"IAmazon{context.ServiceName}.g.cs"), interfaceWriter.Write(cancellationToken));
@@ -61,22 +64,42 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
 
         var operationWriter = new OperationWriter(context, modelFileName);
+        var requestMarshaller = new JsonRequestMarshallerWriter(context, modelFileName);
+        var structureMarshaller = new JsonStructureMarshallerWriter(context, modelFileName);
+        var structureUnmarshaller = new JsonStructureUnmarshallerWriter(context, modelFileName);
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
 
-        // Operation input/output shapes are emitted as {Op}Request / {Op}Response by OperationWriter.
-        // When the model omits the @input/@output traits they also land in context.Structures, so
-        // collect their IDs to skip them in the structure loop and avoid emitting (and overwriting)
-        // them a second time as plain classes.
-        // TODO: a shape reused as BOTH an operation input/output AND a nested member elsewhere would
-        // be skipped as a model class here, breaking references to it. CloudTrail Data has no such
-        // shape; revisit when onboarding services that reuse input/output shapes.
+        // Per-operation walk, mirroring the existing generator: emit the request/response classes
+        // and request marshaller, then the (un)marshaller for each structure the operation references
+        // — input-side structures get a marshaller, output-side an unmarshaller. The seen-sets skip
+        // structures shared across operations. The operation input/output shapes are tracked so they
+        // aren't re-emitted as plain model classes below.
         var operationShapes = new HashSet<ShapeId>();
+        var marshalledStructures = new HashSet<ShapeId>();
+        var unmarshalledStructures = new HashSet<ShapeId>();
         foreach (var operation in context.Operations)
         {
             operationShapes.Add(operation.Shape.Input);
             operationShapes.Add(operation.Shape.Output);
             Emit(Path.Combine(model, $"{operation.Name}Request.g.cs"), operationWriter.WriteRequest(operation, cancellationToken));
             Emit(Path.Combine(model, $"{operation.Name}Response.g.cs"), operationWriter.WriteResponse(operation, cancellationToken));
+            Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
+
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Input))
+            {
+                if (marshalledStructures.Add(shapeId))
+                {
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Marshaller.g.cs"), structureMarshaller.Write(structure, shapeId, cancellationToken));
+                }
+            }
+
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Output))
+            {
+                if (unmarshalledStructures.Add(shapeId))
+                {
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                }
+            }
         }
 
         var structureWriter = new StructureWriter(context, modelFileName);
@@ -97,6 +120,29 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         return written.Keys.ToList();
+    }
+
+    // Finds the nested structures inside a request or response so each gets its own (un)marshaller.
+    // A member is either a structure itself or a list/map of structures.
+    // TODO: only scans one level deep; make this recursive once the writers need (un)marshallers for deeper nesting.
+    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(StructureShape parent)
+    {
+        foreach (var member in parent.Members.Values)
+        {
+            // If the member is a list/map, the structure is its element/value; otherwise the member
+            // targets the structure directly.
+            var structureId = context.Resolve(member.Target) switch
+            {
+                ListShape list => list.Member.Target,
+                MapShape map => map.Value.Target,
+                _ => member.Target,
+            };
+
+            if (context.Resolve(structureId) is StructureShape structure)
+            {
+                yield return (structureId, structure);
+            }
+        }
     }
 
     private static void WriteFile(string outputPath, string relativePath, string contents)

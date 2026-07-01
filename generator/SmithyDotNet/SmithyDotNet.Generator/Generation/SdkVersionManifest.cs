@@ -16,6 +16,9 @@ public static class SdkVersionManifest
     /// </summary>
     public static string Lookup(string manifestPath, string serviceName)
     {
+        // TODO: serviceName is the normalized sdkId, but _sdk-versions.json is keyed by legacy .NET
+        // service names. Most match, but some don't (sdkId DynamoDB → manifest DynamoDBv2, EFS →
+        // ElasticFileSystem, EMR → ElasticMapReduce); those will throw below until a mapping is added.
         using var stream = File.OpenRead(manifestPath);
         using var document = JsonDocument.Parse(stream);
 

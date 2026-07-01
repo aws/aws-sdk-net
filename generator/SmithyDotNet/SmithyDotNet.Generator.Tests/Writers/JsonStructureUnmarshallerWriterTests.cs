@@ -91,6 +91,6 @@ public class JsonStructureUnmarshallerWriterTests
         Assert.Contains("/// Gets the singleton", _auditEventUnmarshaller);
         Assert.Contains("/// </summary>", _auditEventUnmarshaller);
         Assert.Contains("private static AuditEventResultEntryUnmarshaller _instance = new AuditEventResultEntryUnmarshaller();", _auditEventUnmarshaller);
-        Assert.Contains("public static AuditEventResultEntryUnmarshaller Instance => return _instance;", _auditEventUnmarshaller);
+        Assert.Contains("public static AuditEventResultEntryUnmarshaller Instance => _instance;", _auditEventUnmarshaller);
     }
 }

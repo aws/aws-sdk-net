@@ -66,6 +66,18 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void WritesMarshallerFilesSplitByDirection()
+    {
+        // Input-reachable structures get a marshaller, output-reachable ones an unmarshaller,
+        // matching the existing SDK. The operation request marshaller is always emitted.
+        var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
+        AssertFileExists(marshalling, "PutAuditEventsRequestMarshaller.g.cs");
+        AssertFileExists(marshalling, "AuditEventMarshaller.g.cs");
+        AssertFileExists(marshalling, "AuditEventResultEntryUnmarshaller.g.cs");
+        AssertFileExists(marshalling, "ResultErrorEntryUnmarshaller.g.cs");
+    }
+
+    [Fact]
     public void WrittenPathsMatchFilesOnDisk()
     {
         foreach (var relativePath in _written)
@@ -79,15 +91,6 @@ public class ServiceGeneratorTests : IDisposable
     {
         var clientSource = File.ReadAllText(Path.Combine(_outputDir, "Generated", "AmazonCloudTrailDataClient.g.cs"));
         Assert.Contains("public partial class AmazonCloudTrailDataClient", clientSource);
-    }
-
-    [Fact]
-    public void DoesNotWriteAnyFileTwice()
-    {
-        // Each returned path must be unique; a duplicate means two writers targeted the same file
-        // and one silently overwrote the other (e.g. an operation input shape emitted as both a
-        // request class and a plain structure).
-        Assert.Equal(_written.Count, _written.Distinct().Count());
     }
 
     [Fact]

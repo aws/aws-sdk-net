@@ -1,0 +1,2 @@
+# Local generator output (default output dir for `dotnet run` / the launch profile)
+generated-output/

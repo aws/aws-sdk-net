@@ -2,7 +2,6 @@ using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
-using System.Collections.Generic;
 
 namespace SmithyDotNet.Generator.Writers;
 

@@ -1,7 +1,6 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
-using System.Collections.Generic;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -103,6 +102,6 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the singleton.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public static {className}Unmarshaller Instance => return _instance;");
+        writer.WriteLine($"public static {className}Unmarshaller Instance => _instance;");
     }
 }
