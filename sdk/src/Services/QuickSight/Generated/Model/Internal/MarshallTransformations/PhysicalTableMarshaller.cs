@@ -57,6 +57,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetFileSource())
+            {
+                context.Writer.WritePropertyName("FileSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FileSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.FileSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRelationalTable())
             {
                 context.Writer.WritePropertyName("RelationalTable");

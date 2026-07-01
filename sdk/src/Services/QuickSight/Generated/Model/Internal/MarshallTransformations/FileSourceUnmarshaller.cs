@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PhysicalTable Object
+    /// Response Unmarshaller for FileSource Object
     /// </summary>  
-    public class PhysicalTableUnmarshaller : IJsonUnmarshaller<PhysicalTable, JsonUnmarshallerContext>
+    public class FileSourceUnmarshaller : IJsonUnmarshaller<FileSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PhysicalTable Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FileSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PhysicalTable unmarshalledObject = new PhysicalTable();
+            FileSource unmarshalledObject = new FileSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomSql", targetDepth, ref reader))
+                if (context.TestExpression("DataSourceArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = CustomSqlUnmarshaller.Instance;
-                    unmarshalledObject.CustomSql = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataSourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSource", targetDepth, ref reader))
+                if (context.TestExpression("InputColumns", targetDepth, ref reader))
                 {
-                    var unmarshaller = FileSourceUnmarshaller.Instance;
-                    unmarshalledObject.FileSource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<InputColumn, InputColumnUnmarshaller>(InputColumnUnmarshaller.Instance);
+                    unmarshalledObject.InputColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelationalTable", targetDepth, ref reader))
+                if (context.TestExpression("SheetIndex", targetDepth, ref reader))
                 {
-                    var unmarshaller = RelationalTableUnmarshaller.Instance;
-                    unmarshalledObject.RelationalTable = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.SheetIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Source", targetDepth, ref reader))
+                if (context.TestExpression("UploadSettings", targetDepth, ref reader))
                 {
-                    var unmarshaller = S3SourceUnmarshaller.Instance;
-                    unmarshalledObject.S3Source = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SaaSTable", targetDepth, ref reader))
-                {
-                    var unmarshaller = SaaSTableUnmarshaller.Instance;
-                    unmarshalledObject.SaaSTable = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = UploadSettingsUnmarshaller.Instance;
+                    unmarshalledObject.UploadSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +85,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static PhysicalTableUnmarshaller _instance = new PhysicalTableUnmarshaller();        
+        private static FileSourceUnmarshaller _instance = new FileSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PhysicalTableUnmarshaller Instance
+        public static FileSourceUnmarshaller Instance
         {
             get
             {
