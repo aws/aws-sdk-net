@@ -1,3 +1,29 @@
+### 4.0.279.0 (2026-07-01 18:16 UTC)
+* Artifact (4.0.101.0)
+	* Add support for Assurance Assistant APIs for managing compliance inquiries along with tagging features.
+* AWSMarketplaceMetering (4.0.100.1)
+	* The usage reporting window for the BatchMeterUsage API has been extended from 6 hours to 24 hours. Sellers can now submit usage records for up to 24 hours after a metered event occurs.
+* Cloud9 (4.0.100.1)
+	* Since Amazon Linux 2 (AL2) will reach its end-of-life (EOL) and stop receiving security updates on June 30, 2026, Cloud9 will remove AL2 from AMI options in public API create-environment-ec2.
+* Connect (4.0.102.0)
+	* Adds a new Amazon Connect Service API, SendOutboundWebNotification, that delivers web notifications to end-customer chat widget sessions. Callable only by the Amazon Connect Outbound Campaigns service principal.
+* EC2 (4.0.102.0)
+	* Use declarative policies to enable VPC Encryption Controls across your organization or select accounts. Added AMD SEV-SNP support for EC2 Dedicated Hosts. Managed resource visibility settings control whether AWS-provisioned resources in your account appear in console views and API list operations.
+* GameLiftStreams (4.0.101.0)
+	* Added CreateStreamSessionAdminShell API operation to enable customers to establish secure terminal connections to the live runtime environment of streaming sessions for troubleshooting purposes.
+* MediaConvert (4.0.101.0)
+	* Adds support for integer-second duration normalization and the option to disable explicit weighted prediction.
+* OpenSearchService (4.0.101.0)
+	* To create a Mustang domain via the AWS CLI, you must pass EngineMode OPTIMIZED (along with UseCase OBSERVABILITY or MIXED)  without it, the domain defaults to a regular (GENERAL) domain. Also this release includes Insights Feedback API which user can use to provide feedback for Insight API.
+* QuickSight (4.0.101.0)
+	* Adding support for FileSource PhysicalTables.  This adds support for datasets with file sources.
+* SSOOIDC (4.0.100.1)
+	* Add SSO_LOGIN_VANITY_URL feature ID on SSO-OIDC requests when login resolves a vanity URL.
+* Core 4.0.100.1
+	* Add vanity URL resolution support for SSO login flow.
+	* Optimize Fn.Interpolate
+	* All service and extension packages updated to require new Core
+
 ### 4.0.278.0 (2026-06-30 18:41 UTC)
 * AutoScaling (4.0.101.0)
 	* This release adds support for a new reservations-then-balanced capacity distribution strategy, which first attempts to launch instances into your Capacity Reservations and then balances remaining capacity across healthy Availability Zones.

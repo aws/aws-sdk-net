@@ -33,7 +33,7 @@ namespace Amazon.CodeGuruSecurity
     public partial class AmazonCodeGuruSecurityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeGuru Security", "4.0.100.0");
+            InternalSDKUtils.BuildUserAgentString("CodeGuru Security", "4.0.100.1");
 
         private static readonly AmazonCodeGuruSecurityEndpointResolver EndpointResolver =
             new AmazonCodeGuruSecurityEndpointResolver();
