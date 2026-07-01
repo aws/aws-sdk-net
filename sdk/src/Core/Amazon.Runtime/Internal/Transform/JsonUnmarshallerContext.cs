@@ -54,9 +54,9 @@ namespace Amazon.Runtime.Internal.Transform
         private JsonTokenType? currentToken = null;
         private bool disposed = false;
         private bool wasPeeked = false;
-        // a default value of 64 is used here to mirror the default on system.text.json as specified here:
+        // a default value of 256 is used here (from the ClientConfig)
         // https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonreaderoptions.maxdepth?view=net-8.0#system-text-json-jsonreaderoptions-maxdepth
-        private readonly int _jsonMaxDepth = 64;
+        private int _jsonMaxDepth;
         #endregion
 
         #region Constructors
@@ -140,7 +140,7 @@ namespace Amazon.Runtime.Internal.Transform
             else
                 baseStream = responseStream;
 
-            _jsonMaxDepth = requestContext?.ClientConfig?.JsonMaxDepth ?? 64;
+            _jsonMaxDepth = requestContext.ClientConfig.JsonMaxDepth;
         }
 
         #endregion

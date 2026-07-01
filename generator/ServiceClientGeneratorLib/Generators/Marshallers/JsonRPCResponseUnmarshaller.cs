@@ -356,9 +356,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true" +
-                    ", context.ResponseData))\r\n            {\r\n                StreamingUtf8JsonReader" +
-                    " readerCopy = new StreamingUtf8JsonReader(streamCopy);\r\n");
+            this.Write(@"            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
+            {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+");
             
             #line 164 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
@@ -396,9 +397,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, fals" +
-                    "e, context.ResponseData))\r\n            {\r\n                StreamingUtf8JsonReade" +
-                    "r readerCopy = new StreamingUtf8JsonReader(streamCopy);\r\n");
+            this.Write(@"            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+            {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+");
             
             #line 182 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 

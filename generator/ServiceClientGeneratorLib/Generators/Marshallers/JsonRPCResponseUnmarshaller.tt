@@ -160,7 +160,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <# // Create a copy of context with headers in the response #>
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 <#
                 GenerateAWSQueryCompatibleBlock();
     foreach (var exception in this.Operation.Exceptions)
@@ -178,7 +178,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 <#
     foreach (var exception in this.Operation.Exceptions)
     {

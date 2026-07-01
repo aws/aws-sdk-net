@@ -75,7 +75,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="stream">the stream containing the data</param>
         /// <param name="bufferSize">the size of the buffer when reading data from the stream</param>
         /// <exception cref="ArgumentException"></exception>
-        public StreamingUtf8JsonReader(Stream stream, int bufferSize) : this(stream, bufferSize, 64)
+        public StreamingUtf8JsonReader(Stream stream, int bufferSize) : this(stream, bufferSize, JsonConstants.JsonMaxDepth)
         {
         }
 
