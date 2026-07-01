@@ -105,6 +105,11 @@ namespace Amazon.SSOOIDC.Internal
             }
 
             InternalSDKUtils.ApplyValuesV2(registerClientRequest, request.AdditionalProperties);
+            ((IAmazonWebServiceRequest)registerClientRequest).UserAgentDetails.AddFeature(featureId);
+            if (request.IsVanityUrl)
+            {
+                ((IAmazonWebServiceRequest)registerClientRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+            }
             var registerClientResponse = client.RegisterClient(registerClientRequest);
 
             if (useDeviceCodeFlow)
@@ -117,6 +122,10 @@ namespace Amazon.SSOOIDC.Internal
                 };
                 InternalSDKUtils.ApplyValuesV2(startDeviceAuthorizationRequest, request.AdditionalProperties);
                 ((IAmazonWebServiceRequest)startDeviceAuthorizationRequest).UserAgentDetails.AddFeature(featureId);
+                if (request.IsVanityUrl)
+                {
+                    ((IAmazonWebServiceRequest)startDeviceAuthorizationRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+                }
 
                 var startDeviceAuthorizationResponse = client.StartDeviceAuthorization(startDeviceAuthorizationRequest);
 
@@ -139,6 +148,11 @@ namespace Amazon.SSOOIDC.Internal
                     DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
+                if (request.IsVanityUrl)
+                {
+                    ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+                }
 
                 createTokenResponse = PollForSsoToken(client, createTokenRequest, startDeviceAuthorizationResponse.Interval.Value, deviceCodeExpiration, context);
             }
@@ -163,6 +177,10 @@ namespace Amazon.SSOOIDC.Internal
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
                 ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
+                if (request.IsVanityUrl)
+                {
+                    ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+                }
 
                 createTokenResponse = client.CreateToken(createTokenRequest);
             }
@@ -263,6 +281,11 @@ namespace Amazon.SSOOIDC.Internal
             }
 
             InternalSDKUtils.ApplyValuesV2(registerClientRequest, request.AdditionalProperties);
+            ((IAmazonWebServiceRequest)registerClientRequest).UserAgentDetails.AddFeature(featureId);
+            if (request.IsVanityUrl)
+            {
+                ((IAmazonWebServiceRequest)registerClientRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+            }
             var registerClientResponse = await client.RegisterClientAsync(registerClientRequest, cancellationToken).ConfigureAwait(false);
 
             if (useDeviceCodeFlow)
@@ -275,6 +298,10 @@ namespace Amazon.SSOOIDC.Internal
                 };
                 InternalSDKUtils.ApplyValuesV2(startDeviceAuthorizationRequest, request.AdditionalProperties);
                 ((IAmazonWebServiceRequest)startDeviceAuthorizationRequest).UserAgentDetails.AddFeature(featureId);
+                if (request.IsVanityUrl)
+                {
+                    ((IAmazonWebServiceRequest)startDeviceAuthorizationRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+                }
 
                 var startDeviceAuthorizationResponse =
                     await client.StartDeviceAuthorizationAsync(startDeviceAuthorizationRequest, cancellationToken).ConfigureAwait(false);
@@ -298,6 +325,11 @@ namespace Amazon.SSOOIDC.Internal
                     DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
+                if (request.IsVanityUrl)
+                {
+                    ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+                }
 
                 createTokenResponse = await PollForSsoTokenAsync(
                     client,
@@ -332,6 +364,10 @@ namespace Amazon.SSOOIDC.Internal
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
                 ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
+                if (request.IsVanityUrl)
+                {
+                    ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.SSO_LOGIN_VANITY_URL);
+                }
 
                 createTokenResponse = await client.CreateTokenAsync(createTokenRequest, cancellationToken).ConfigureAwait(false);
             }

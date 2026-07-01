@@ -185,10 +185,16 @@ namespace Amazon.Runtime.SharedInterfaces
         public IList<string> Scopes { get; set; }
 
         /// <summary>
-        /// This property MUST be specified if the client wishes to use the Authorization Code Flow 
+        /// This property MUST be specified if the client wishes to use the Authorization Code Flow
         /// with PKCE (if null, the SSO Token Manager will default to the Device Authorization Flow).
         /// </summary>
         public PkceFlowOptions PkceFlowOptions { get; set; }
+
+        /// <summary>
+        /// Indicates the StartUrl was resolved from a customer vanity URL to an AWS-owned endpoint.
+        /// When true, the SSO_LOGIN_VANITY_URL feature ID is set on SSO-OIDC requests.
+        /// </summary>
+        public bool IsVanityUrl { get; set; }
     }
 
     public class GetSsoTokenResponse
