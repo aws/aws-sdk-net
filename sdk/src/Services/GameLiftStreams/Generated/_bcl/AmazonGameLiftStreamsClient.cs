@@ -521,7 +521,13 @@ namespace Amazon.GameLiftStreams
         /// to use. If you change the files at a later time, you will need to create a new Amazon
         /// GameLift Streams application. 
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        ///  Creating an application is the only time Amazon GameLift Streams accesses your Amazon
+        /// S3 bucket. After the application reaches <c>READY</c> status, you can delete the original
+        /// files from your Amazon S3 bucket without affecting the application. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  If the request is successful, Amazon GameLift Streams begins to create an application
         /// and sets the status to <c>INITIALIZED</c>. When an application reaches <c>READY</c>
@@ -584,7 +590,13 @@ namespace Amazon.GameLiftStreams
         /// to use. If you change the files at a later time, you will need to create a new Amazon
         /// GameLift Streams application. 
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        ///  Creating an application is the only time Amazon GameLift Streams accesses your Amazon
+        /// S3 bucket. After the application reaches <c>READY</c> status, you can delete the original
+        /// files from your Amazon S3 bucket without affecting the application. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  If the request is successful, Amazon GameLift Streams begins to create an application
         /// and sets the status to <c>INITIALIZED</c>. When an application reaches <c>READY</c>
@@ -849,6 +861,143 @@ namespace Amazon.GameLiftStreams
             options.ResponseUnmarshaller = CreateStreamGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateStreamGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateStreamSessionAdminShell
+
+
+        /// <summary>
+        /// Creates an administrative terminal session with full access to the live runtime environment
+        /// of the Amazon GameLift Streams stream session. Use the returned credentials (<c>SessionId</c>,
+        /// <c>StreamUrl</c> and <c>TokenValue</c>) with the Amazon Web Services Systems Manager
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Session
+        /// Manager plugin</a> for the CLI to access the terminal session.
+        /// 
+        ///  
+        /// <para>
+        /// The stream session must be in one of the following statuses: <c>ACTIVE</c>, <c>CONNECTED</c>,
+        /// <c>PENDING_CLIENT_RECONNECTION</c>, or <c>RECONNECTING</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>StreamUrl</c> is valid for 60 seconds. After it expires, call this operation
+        /// again to get a new URL.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The returned credentials grant full access to the live runtime environment of the
+        /// Amazon GameLift Streams stream session. The operator who connects to the terminal
+        /// session has the same level of access that your Amazon GameLift Streams applications
+        /// have, including potentially user input, screen images, and application data files.
+        /// Grant permissions to call this operation only to trusted IAM identities that require
+        /// live runtime environment access.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamSessionAdminShell service method.</param>
+        /// 
+        /// <returns>The response from the CreateStreamSessionAdminShell service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.StreamSessionAccessNotReadyException">
+        /// The terminal connection to the stream session is not yet available. Wait before retrying
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamSessionAdminShell">REST API Reference for CreateStreamSessionAdminShell Operation</seealso>
+        public virtual CreateStreamSessionAdminShellResponse CreateStreamSessionAdminShell(CreateStreamSessionAdminShellRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateStreamSessionAdminShellRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamSessionAdminShellResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStreamSessionAdminShellResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an administrative terminal session with full access to the live runtime environment
+        /// of the Amazon GameLift Streams stream session. Use the returned credentials (<c>SessionId</c>,
+        /// <c>StreamUrl</c> and <c>TokenValue</c>) with the Amazon Web Services Systems Manager
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Session
+        /// Manager plugin</a> for the CLI to access the terminal session.
+        /// 
+        ///  
+        /// <para>
+        /// The stream session must be in one of the following statuses: <c>ACTIVE</c>, <c>CONNECTED</c>,
+        /// <c>PENDING_CLIENT_RECONNECTION</c>, or <c>RECONNECTING</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>StreamUrl</c> is valid for 60 seconds. After it expires, call this operation
+        /// again to get a new URL.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The returned credentials grant full access to the live runtime environment of the
+        /// Amazon GameLift Streams stream session. The operator who connects to the terminal
+        /// session has the same level of access that your Amazon GameLift Streams applications
+        /// have, including potentially user input, screen images, and application data files.
+        /// Grant permissions to call this operation only to trusted IAM identities that require
+        /// live runtime environment access.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamSessionAdminShell service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStreamSessionAdminShell service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.StreamSessionAccessNotReadyException">
+        /// The terminal connection to the stream session is not yet available. Wait before retrying
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamSessionAdminShell">REST API Reference for CreateStreamSessionAdminShell Operation</seealso>
+        public virtual Task<CreateStreamSessionAdminShellResponse> CreateStreamSessionAdminShellAsync(CreateStreamSessionAdminShellRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateStreamSessionAdminShellRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamSessionAdminShellResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateStreamSessionAdminShellResponse>(request, options, cancellationToken);
         }
 
         #endregion

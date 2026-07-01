@@ -47,7 +47,13 @@ namespace Amazon.GameLiftStreams.Model
     /// to use. If you change the files at a later time, you will need to create a new Amazon
     /// GameLift Streams application. 
     /// </para>
-    ///  </important> 
+    ///  </important> <note> 
+    /// <para>
+    ///  Creating an application is the only time Amazon GameLift Streams accesses your Amazon
+    /// S3 bucket. After the application reaches <c>READY</c> status, you can delete the original
+    /// files from your Amazon S3 bucket without affecting the application. 
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  If the request is successful, Amazon GameLift Streams begins to create an application
     /// and sets the status to <c>INITIALIZED</c>. When an application reaches <c>READY</c>
