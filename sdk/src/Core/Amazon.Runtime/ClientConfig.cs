@@ -652,17 +652,17 @@ namespace Amazon.Runtime
         /// The default is 64. Increase this value if you encounter
         /// AmazonUnmarshallingException due to deeply nested response structures.
         /// </summary>
-public int JsonMaxDepth
-{
-    get { return this.jsonMaxDepth; }
-    set
-    {
-        if (value <= 0)
-            throw new ArgumentOutOfRangeException(nameof(value), "JsonMaxDepth must be a positive integer.");
+        public int JsonMaxDepth
+        {
+            get { return this.jsonMaxDepth; }
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentOutOfRangeException(nameof(value), "JsonMaxDepth must be a positive integer.");
 
-        this.jsonMaxDepth = value;
-    }
-}
+                this.jsonMaxDepth = value;
+            }
+        }
 
         /// <summary>
         /// <para>

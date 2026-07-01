@@ -235,19 +235,19 @@ namespace Microsoft.Extensions.Configuration
 
                     options.DefaultClientConfig.IgnoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrls;
                 }
-else if (string.Equals(element.Key, nameof(DefaultClientConfig.JsonMaxDepth), StringComparison.OrdinalIgnoreCase))
-{
-    if (!int.TryParse(element.Value, out var jsonMaxDepth))
-    {
-        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.JsonMaxDepth)}.");
-    }
-    if (jsonMaxDepth <= 0)
-    {
-        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.JsonMaxDepth)}. Value must be positive.");
-    }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.JsonMaxDepth), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var jsonMaxDepth))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.JsonMaxDepth)}.");
+                    }
+                    if (jsonMaxDepth <= 0)
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.JsonMaxDepth)}. Value must be positive.");
+                    }
 
-    options.DefaultClientConfig.JsonMaxDepth = jsonMaxDepth;
-}
+                    options.DefaultClientConfig.JsonMaxDepth = jsonMaxDepth;
+                }
 
                 else if (string.Equals(element.Key, nameof(DefaultClientConfig.LogMetrics), StringComparison.OrdinalIgnoreCase))
                 {
