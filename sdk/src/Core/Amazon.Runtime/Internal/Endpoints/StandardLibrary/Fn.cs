@@ -109,14 +109,12 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                         if (bracketPos > 0)
                         {
                             if (propertyValue is not IPropertyBag propBag)
-                                throw new InvalidCastException($"Object addressing by pathing segment must be IPropertyBag");
+                                throw new InvalidCastException("Object addressing by pathing segment must be IPropertyBag");
                             propertyValue = propBag[segment.Slice(0, bracketPos).ToString()];
                         }
 
                         if (propertyValue is not IEnumerable enumerable)
-                            throw new ArgumentException($"Object addressing by pathing segment with indexer must be IEnumerable");
-
-
+                            throw new ArgumentException("Object addressing by pathing segment with indexer must be IEnumerable");
 
                         // avoid Cast<object>().ToList() – use IList direct access when possible
                         if (enumerable is IList directList)
@@ -354,7 +352,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             const char OpenBracket = '{';
             const char CloseBracket = '}';
             const char Hash = '#';
-            var result = new ValueStringBuilder(template.Length); // preallocate to template length, will grow if needed
+            using var result = new ValueStringBuilder(template.Length); // preallocate to template length, will grow if needed
             var remainder = template.AsSpan();
             while (remainder.Length > 0)
             {

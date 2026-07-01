@@ -194,7 +194,7 @@ namespace AWSSDK.UnitTests
         public void GetAttr_PropertyValueIsNotListWhenInRange_ReturnsValue()
         {
             var bag = new PropertyBag();
-            bag["NotList"] = new HashSet<string> { "a", "b" }; // not IList, but is IEnumerable
+            bag["NotList"] = new Queue<string>(new[] { "a", "b" });
             Assert.AreEqual("a", Fn.GetAttr(bag, "NotList[0]"));
         }
 
