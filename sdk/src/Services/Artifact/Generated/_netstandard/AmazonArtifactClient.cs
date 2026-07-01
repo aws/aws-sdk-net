@@ -268,6 +268,102 @@ namespace Amazon.Artifact
         #endregion
 
 
+        #region  CreateComplianceInquiry
+
+        internal virtual CreateComplianceInquiryResponse CreateComplianceInquiry(CreateComplianceInquiryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateComplianceInquiryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComplianceInquiryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateComplianceInquiryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a new compliance inquiry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComplianceInquiry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateComplianceInquiry service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ConflictException">
+        /// Request to create/modify content would result in a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/CreateComplianceInquiry">REST API Reference for CreateComplianceInquiry Operation</seealso>
+        public virtual Task<CreateComplianceInquiryResponse> CreateComplianceInquiryAsync(CreateComplianceInquiryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateComplianceInquiryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComplianceInquiryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateComplianceInquiryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ExportComplianceInquiry
+
+        internal virtual ExportComplianceInquiryResponse ExportComplianceInquiry(ExportComplianceInquiryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExportComplianceInquiryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportComplianceInquiryResponseUnmarshaller.Instance;
+
+            return Invoke<ExportComplianceInquiryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Export a compliance inquiry report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportComplianceInquiry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportComplianceInquiry service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ExportComplianceInquiry">REST API Reference for ExportComplianceInquiry Operation</seealso>
+        public virtual Task<ExportComplianceInquiryResponse> ExportComplianceInquiryAsync(ExportComplianceInquiryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExportComplianceInquiryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportComplianceInquiryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportComplianceInquiryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetAccountSettings
 
         internal virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
@@ -319,6 +415,54 @@ namespace Amazon.Artifact
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetComplianceInquiryMetadata
+
+        internal virtual GetComplianceInquiryMetadataResponse GetComplianceInquiryMetadata(GetComplianceInquiryMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetComplianceInquiryMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceInquiryMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetComplianceInquiryMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the metadata for a single compliance inquiry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceInquiryMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetComplianceInquiryMetadata service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetComplianceInquiryMetadata">REST API Reference for GetComplianceInquiryMetadata Operation</seealso>
+        public virtual Task<GetComplianceInquiryMetadataResponse> GetComplianceInquiryMetadataAsync(GetComplianceInquiryMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetComplianceInquiryMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetComplianceInquiryMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetComplianceInquiryMetadataResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -481,6 +625,102 @@ namespace Amazon.Artifact
         }
         #endregion
         
+        #region  ListComplianceInquiries
+
+        internal virtual ListComplianceInquiriesResponse ListComplianceInquiries(ListComplianceInquiriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComplianceInquiriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceInquiriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListComplianceInquiriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List available compliance inquiries.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceInquiries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComplianceInquiries service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListComplianceInquiries">REST API Reference for ListComplianceInquiries Operation</seealso>
+        public virtual Task<ListComplianceInquiriesResponse> ListComplianceInquiriesAsync(ListComplianceInquiriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComplianceInquiriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceInquiriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListComplianceInquiriesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListComplianceInquiryQueries
+
+        internal virtual ListComplianceInquiryQueriesResponse ListComplianceInquiryQueries(ListComplianceInquiryQueriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComplianceInquiryQueriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceInquiryQueriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListComplianceInquiryQueriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List queries within a compliance inquiry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceInquiryQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComplianceInquiryQueries service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListComplianceInquiryQueries">REST API Reference for ListComplianceInquiryQueries Operation</seealso>
+        public virtual Task<ListComplianceInquiryQueriesResponse> ListComplianceInquiryQueriesAsync(ListComplianceInquiryQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComplianceInquiryQueriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComplianceInquiryQueriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListComplianceInquiryQueriesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListCustomerAgreements
 
         internal virtual ListCustomerAgreementsResponse ListCustomerAgreements(ListCustomerAgreementsRequest request)
@@ -628,6 +868,54 @@ namespace Amazon.Artifact
         }
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List tags for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  PutAccountSettings
 
         internal virtual PutAccountSettingsResponse PutAccountSettings(PutAccountSettingsRequest request)
@@ -679,6 +967,102 @@ namespace Amazon.Artifact
             options.ResponseUnmarshaller = PutAccountSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutAccountSettingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Add tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Remove tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
         #endregion
         

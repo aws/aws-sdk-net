@@ -37,6 +37,22 @@ namespace Amazon.Artifact.Model
         }
 
         /// <summary>
+        /// Paginator for ListComplianceInquiries operation
+        ///</summary>
+        public IListComplianceInquiriesPaginator ListComplianceInquiries(ListComplianceInquiriesRequest request) 
+        {
+            return new ListComplianceInquiriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListComplianceInquiryQueries operation
+        ///</summary>
+        public IListComplianceInquiryQueriesPaginator ListComplianceInquiryQueries(ListComplianceInquiryQueriesRequest request) 
+        {
+            return new ListComplianceInquiryQueriesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCustomerAgreements operation
         ///</summary>
         public IListCustomerAgreementsPaginator ListCustomerAgreements(ListCustomerAgreementsRequest request) 

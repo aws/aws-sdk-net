@@ -74,7 +74,7 @@ namespace Amazon.Artifact.Model
         /// ARN for the report resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -131,7 +131,7 @@ namespace Amazon.Artifact.Model
         /// Description for the report resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Description
         {
             get { return this._description; }
