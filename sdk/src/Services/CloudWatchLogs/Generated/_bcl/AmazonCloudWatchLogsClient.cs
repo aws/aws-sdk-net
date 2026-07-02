@@ -53,6 +53,11 @@ namespace Amazon.CloudWatchLogs
     /// 
     ///  
     /// <para>
+    /// For more information about CloudWatch Logs features, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">Amazon
+    /// CloudWatch Logs User Guide</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// You can use CloudWatch Logs to:
     /// </para>
     ///  <ul> <li> 
@@ -82,7 +87,13 @@ namespace Amazon.CloudWatchLogs
     /// send both rotated and non-rotated log data off of a host and into the log service.
     /// You can then access the raw log data when you need it.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// CloudWatch Logs might log request contents for fields that aren't considered sensitive,
+    /// such as API request parameters for CloudWatch Logs actions. This provides debugging
+    /// information for failed API requests.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AmazonCloudWatchLogsClient : AmazonServiceClient, IAmazonCloudWatchLogs
     {
@@ -3478,6 +3489,91 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = DeleteSubscriptionFilterResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteSubscriptionFilterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSyslogConfiguration
+
+
+        /// <summary>
+        /// Deletes a syslog configuration for a log group. After deletion, syslog data is no
+        /// longer ingested through the specified VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyslogConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSyslogConfiguration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSyslogConfiguration">REST API Reference for DeleteSyslogConfiguration Operation</seealso>
+        public virtual DeleteSyslogConfigurationResponse DeleteSyslogConfiguration(DeleteSyslogConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSyslogConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyslogConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSyslogConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a syslog configuration for a log group. After deletion, syslog data is no
+        /// longer ingested through the specified VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyslogConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSyslogConfiguration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSyslogConfiguration">REST API Reference for DeleteSyslogConfiguration Operation</seealso>
+        public virtual Task<DeleteSyslogConfigurationResponse> DeleteSyslogConfigurationAsync(DeleteSyslogConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSyslogConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyslogConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSyslogConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7562,6 +7658,85 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  ListSyslogConfigurations
+
+
+        /// <summary>
+        /// Returns a list of syslog configurations. You can optionally filter the results by
+        /// log group or VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyslogConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListSyslogConfigurations service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListSyslogConfigurations">REST API Reference for ListSyslogConfigurations Operation</seealso>
+        public virtual ListSyslogConfigurationsResponse ListSyslogConfigurations(ListSyslogConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSyslogConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyslogConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSyslogConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of syslog configurations. You can optionally filter the results by
+        /// log group or VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyslogConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSyslogConfigurations service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListSyslogConfigurations">REST API Reference for ListSyslogConfigurations Operation</seealso>
+        public virtual Task<ListSyslogConfigurationsResponse> ListSyslogConfigurationsAsync(ListSyslogConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSyslogConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyslogConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSyslogConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -7705,7 +7880,53 @@ namespace Amazon.CloudWatchLogs
         /// log groups, a subset of log groups, or a data source name and type combination in
         /// the account.
         /// 
+        ///  <important> 
+        /// <para>
+        ///  <c>PutAccountPolicy</c> is an account-wide administrative operation intended for
+        /// CloudWatch Logs administrators. Because it affects all log groups (or a broad subset)
+        /// in the account, you should grant <c>logs:PutAccountPolicy</c> permissions only to
+        /// administrators who manage logging configuration across the account, not to application
+        /// teams or individual log group owners.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Conflict resolution between account-level and log-group-level policies</b> 
+        /// </para>
         ///  
+        /// <para>
+        /// When both an account-level policy and a log-group-level policy of the same type apply
+        /// to a log group, the resolution depends on the policy type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Data protection</i> — The two policies are cumulative. Any sensitive term specified
+        /// in either the account-level or the log-group-level policy is masked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Subscription filters</i> — Account-level and log-group-level subscription filters
+        /// are additive. A log group can have up to 1 account-level and up to 2 log-group-level
+        /// subscription filters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Transformers</i> — A log-group-level transformer overrides the account-level transformer.
+        /// If a log group has its own transformer, it ignores the account-level transformer policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Field index policies</i> — If a log group has its own field index policy (created
+        /// with <c>PutIndexPolicy</c>), any account-level policy that uses <c>LogGroupNamePrefix</c>
+        /// selection criteria or has no selection criteria is ignored for that log group. However,
+        /// account-level policies that use <c>DataSourceName</c> and <c>DataSourceType</c> selection
+        /// criteria still apply alongside the log-group-level policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Metric extraction policies</i> — Metric extraction policies are account-level
+        /// only and have no log-group-level equivalent, so no conflict resolution applies.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For field index policies, you can configure indexed fields as <i>facets</i> to enable
         /// interactive exploration of your logs. Facets provide value distributions and counts
@@ -8237,7 +8458,53 @@ namespace Amazon.CloudWatchLogs
         /// log groups, a subset of log groups, or a data source name and type combination in
         /// the account.
         /// 
+        ///  <important> 
+        /// <para>
+        ///  <c>PutAccountPolicy</c> is an account-wide administrative operation intended for
+        /// CloudWatch Logs administrators. Because it affects all log groups (or a broad subset)
+        /// in the account, you should grant <c>logs:PutAccountPolicy</c> permissions only to
+        /// administrators who manage logging configuration across the account, not to application
+        /// teams or individual log group owners.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Conflict resolution between account-level and log-group-level policies</b> 
+        /// </para>
         ///  
+        /// <para>
+        /// When both an account-level policy and a log-group-level policy of the same type apply
+        /// to a log group, the resolution depends on the policy type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Data protection</i> — The two policies are cumulative. Any sensitive term specified
+        /// in either the account-level or the log-group-level policy is masked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Subscription filters</i> — Account-level and log-group-level subscription filters
+        /// are additive. A log group can have up to 1 account-level and up to 2 log-group-level
+        /// subscription filters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Transformers</i> — A log-group-level transformer overrides the account-level transformer.
+        /// If a log group has its own transformer, it ignores the account-level transformer policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Field index policies</i> — If a log group has its own field index policy (created
+        /// with <c>PutIndexPolicy</c>), any account-level policy that uses <c>LogGroupNamePrefix</c>
+        /// selection criteria or has no selection criteria is ignored for that log group. However,
+        /// account-level policies that use <c>DataSourceName</c> and <c>DataSourceType</c> selection
+        /// criteria still apply alongside the log-group-level policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Metric extraction policies</i> — Metric extraction policies are account-level
+        /// only and have no log-group-level equivalent, so no conflict resolution applies.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For field index policies, you can configure indexed fields as <i>facets</i> to enable
         /// interactive exploration of your logs. Facets provide value distributions and counts
@@ -11021,6 +11288,91 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutSubscriptionFilterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutSyslogConfiguration
+
+
+        /// <summary>
+        /// Creates or updates a syslog configuration for a log group. This enables ingestion
+        /// of syslog data through the specified VPC endpoint into the log group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSyslogConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutSyslogConfiguration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSyslogConfiguration">REST API Reference for PutSyslogConfiguration Operation</seealso>
+        public virtual PutSyslogConfigurationResponse PutSyslogConfiguration(PutSyslogConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutSyslogConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSyslogConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutSyslogConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates a syslog configuration for a log group. This enables ingestion
+        /// of syslog data through the specified VPC endpoint into the log group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSyslogConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSyslogConfiguration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSyslogConfiguration">REST API Reference for PutSyslogConfiguration Operation</seealso>
+        public virtual Task<PutSyslogConfigurationResponse> PutSyslogConfigurationAsync(PutSyslogConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutSyslogConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSyslogConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutSyslogConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

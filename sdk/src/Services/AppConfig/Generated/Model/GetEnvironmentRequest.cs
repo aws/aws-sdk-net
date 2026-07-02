@@ -48,7 +48,7 @@ namespace Amazon.AppConfig.Model
         /// The ID of the application that includes the environment you want to get.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -67,7 +67,7 @@ namespace Amazon.AppConfig.Model
         /// The ID of the environment that you want to get.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EnvironmentId
         {
             get { return this._environmentId; }

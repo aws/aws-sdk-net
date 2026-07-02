@@ -33,7 +33,7 @@ namespace Amazon.CertificateManager
     public partial class AmazonCertificateManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ACM", "4.0.5.3");
+            InternalSDKUtils.BuildUserAgentString("ACM", "4.0.101.1");
 
         private static readonly AmazonCertificateManagerEndpointResolver EndpointResolver =
             new AmazonCertificateManagerEndpointResolver();
@@ -92,6 +92,11 @@ namespace Amazon.CertificateManager
                 return _userAgent;
             }
         }
+
+        /// <summary>
+        /// The service type: ACM or ACM-ACME. Injected via @staticContextParams.
+        /// </summary>
+        public string ServiceType { get; set; }
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.

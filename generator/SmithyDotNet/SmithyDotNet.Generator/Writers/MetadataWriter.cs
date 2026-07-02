@@ -1,4 +1,3 @@
-using Microsoft.CodeAnalysis.CSharp;
 using SmithyDotNet.Generator.Generation;
 
 namespace SmithyDotNet.Generator.Writers;
@@ -7,7 +6,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// Emits the C# source for the internal service metadata class (e.g.
 /// <c>AmazonCloudTrailDataMetadata</c>), which implements <c>IServiceMetadata</c> and exposes the
 /// service's ServiceId and its renamed-operation mapping. Written under the service's
-/// <c>.Internal</c> namespace, matching the existing AWS SDK for .NET layout.
+/// <c>.Internal</c> namespace.
 /// </summary>
 public sealed class MetadataWriter(GenerationContext context, string modelFileName)
 {
@@ -41,10 +40,9 @@ public sealed class MetadataWriter(GenerationContext context, string modelFileNa
 
     private void WriteServiceId(CodeWriter writer)
     {
-        // The metadata ServiceId is the verbatim sdkId (e.g. "CloudTrail Data"), not the normalized
-        // class-name component (context.ServiceName), so it is sourced from context.SdkId. The value
-        // is escaped through Roslyn so an sdkId containing quotes or backslashes still emits valid C#.
-        var serviceId = SymbolDisplay.FormatLiteral(context.SdkId, quote: true);
+        // The metadata ServiceId is the sdkId (e.g. "CloudTrail Data"), not the normalized
+        // class name (context.ServiceName), so it is sourced from context.SdkId.
+        var serviceId = CodeWriter.Literal(context.SdkId);
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the value of the Service Id.");
         writer.WriteLine("/// </summary>");
@@ -53,8 +51,7 @@ public sealed class MetadataWriter(GenerationContext context, string modelFileNa
 
     private static void WriteOperationNameMapping(CodeWriter writer)
     {
-        // Phase 1 has no customization rename map, so the mapping is empty. When operation renames
-        // are layered into GenerationContext, this emits one entry per renamed operation.
+        // No operation renames are modeled yet, so the mapping is empty.
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the dictionary that gives mapping of renamed operations");
         writer.WriteLine("/// </summary>");

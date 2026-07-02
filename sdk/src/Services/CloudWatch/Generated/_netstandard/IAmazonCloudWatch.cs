@@ -32,24 +32,81 @@ namespace Amazon.CloudWatch
     /// <summary>
     /// <para>Interface for accessing CloudWatch</para>
     ///
-    /// Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources
-    /// and the applications you run on Amazon Web Services in real time. You can use CloudWatch
-    /// to collect and track metrics, which are the variables you want to measure for your
-    /// resources and applications.
+    /// Amazon CloudWatch enables you to publish, monitor, and manage various metrics, as
+    /// well as configure alarm actions based on data from metrics. This guide provides detailed
+    /// information about CloudWatch actions, data types, parameters, and errors. For more
+    /// information about CloudWatch features, see <a href="https://aws.amazon.com/cloudwatch">Amazon
+    /// CloudWatch</a> and the <i>Amazon CloudWatch User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// CloudWatch alarms send notifications or automatically change the resources you are
-    /// monitoring based on rules that you define. For example, you can monitor the CPU usage
-    /// and disk reads and writes of your Amazon EC2 instances. Then, use this data to determine
-    /// whether you should launch additional instances to handle increased load. You can also
-    /// use this data to stop under-used instances to save money.
+    /// For information about the metrics that other Amazon Web Services products send to
+    /// CloudWatch, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon
+    /// CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// In addition to monitoring the built-in metrics that come with Amazon Web Services,
-    /// you can monitor your own custom metrics. With CloudWatch, you gain system-wide visibility
-    /// into resource utilization, application performance, and operational health.
+    /// Use the following links to get started using the CloudWatch Query API:
+    /// </para>
+    ///  
+    /// <para>
+    /// : An alphabetical list of all CloudWatch actions.
+    /// </para>
+    ///  
+    /// <para>
+    /// : An alphabetical list of all CloudWatch data types.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a>CommonParameters</a>: Parameters that all Query actions can use.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a>CommonErrors</a>: Client and server errors that all actions can return.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Regions
+    /// and Endpoints</a>: Supported regions and endpoints for all Amazon Web Services products.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternatively, you can use one of the <a href="https://aws.amazon.com/tools/#sdk">Amazon
+    /// Web Services SDKs</a> to access CloudWatch using an API tailored to your programming
+    /// language or platform.
+    /// </para>
+    ///  
+    /// <para>
+    /// Developers in the Amazon Web Services developer community also provide their own libraries,
+    /// which you can find at the following Amazon Web Services developer centers:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="http://aws.amazon.com/java/">Java Developer Center</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="http://aws.amazon.com/javascript/">JavaScript Developer Center</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="http://aws.amazon.com/mobile/">Amazon Web Services Mobile Services</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="http://aws.amazon.com/php/">PHP Developer Center</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="http://aws.amazon.com/python/">Python Developer Center</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="http://aws.amazon.com/ruby/">Ruby Developer Center</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="http://aws.amazon.com/net/">Windows and .NET Developer Center</a> 
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudWatch : IAmazonService, IDisposable
@@ -227,7 +284,7 @@ namespace Amazon.CloudWatch
         /// Deletes the specified alarms. You can delete up to 100 alarms in one operation. However,
         /// this total can include no more than one composite alarm. For example, you could delete
         /// 99 metric alarms and one composite alarms with one operation, but you can't delete
-        /// two composite alarms with one operation.
+        /// two composite alarms with one operation. Log alarms cannot be batch deleted.
         /// 
         ///  
         /// <para>
@@ -264,6 +321,10 @@ namespace Amazon.CloudWatch
         /// </param>
         /// 
         /// <returns>The response from the DeleteAlarms service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceConflictException">
+        /// The operation could not be completed because the request conflicts with the current
+        /// state of the alarm or its underlying scheduled query resource.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
         /// The named resource does not exist.
         /// </exception>
@@ -1836,6 +1897,66 @@ namespace Amazon.CloudWatch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
         Task<PutInsightRuleResponse> PutInsightRuleAsync(PutInsightRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutLogAlarm
+
+
+
+        /// <summary>
+        /// Creates or updates a log alarm. A log alarm evaluates the results of a CloudWatch
+        /// Logs scheduled query against the configured threshold and comparison operator to determine
+        /// its state.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a log alarm, the operation creates a service-managed CloudWatch Logs
+        /// scheduled query that runs the query string you provide on the schedule you configure.
+        /// Each scheduled query execution returns one or more aggregated values determined by
+        /// the <c>AggregationExpression</c>, and each aggregated value is compared against the
+        /// alarm <c>Threshold</c> to determine the alarm state. The alarm uses M-out-of-N evaluation:
+        /// if <c>QueryResultsToAlarm</c> out of the most recent <c>QueryResultsToEvaluate</c>
+        /// query results breach the threshold, the alarm transitions to <c>ALARM</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Log alarms support the alarm states (<c>OK</c>, <c>ALARM</c>, <c>INSUFFICIENT_DATA</c>).
+        /// Configure transition actions using <c>OKActions</c>, <c>AlarmActions</c>, and <c>InsufficientDataActions</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you call this operation with the name of an existing log alarm, the operation replaces
+        /// the previous configuration of that alarm.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a log alarm, you must have the <c>cloudwatch:PutLogAlarm</c> permission.
+        /// The IAM role specified in <c>ScheduledQueryRoleARN</c> must grant the CloudWatch Alarms
+        /// service permission to execute scheduled queries on the specified log groups. If you
+        /// set <c>ActionLogLineCount</c>, the role specified in <c>ActionLogLineRoleArn</c> must
+        /// grant permission to retrieve log events for inclusion in alarm notifications.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLogAlarm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutLogAlarm service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceConflictException">
+        /// The operation could not be completed because the request conflicts with the current
+        /// state of the alarm or its underlying scheduled query resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutLogAlarm">REST API Reference for PutLogAlarm Operation</seealso>
+        Task<PutLogAlarmResponse> PutLogAlarmAsync(PutLogAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

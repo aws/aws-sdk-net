@@ -2419,6 +2419,15 @@
       "input":{"shape":"DescribeAccountAttributesRequest"},
       "output":{"shape":"DescribeAccountAttributesResult"}
     },
+    "DescribeAccountVpcEncryptionControl":{
+      "name":"DescribeAccountVpcEncryptionControl",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeAccountVpcEncryptionControlRequest"},
+      "output":{"shape":"DescribeAccountVpcEncryptionControlResult"}
+    },
     "DescribeAddressTransfers":{
       "name":"DescribeAddressTransfers",
       "http":{
@@ -5471,6 +5480,15 @@
       "input":{"shape":"LockSnapshotRequest"},
       "output":{"shape":"LockSnapshotResult"}
     },
+    "ModifyAccountVpcEncryptionControl":{
+      "name":"ModifyAccountVpcEncryptionControl",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyAccountVpcEncryptionControlRequest"},
+      "output":{"shape":"ModifyAccountVpcEncryptionControlResult"}
+    },
     "ModifyAddressAttribute":{
       "name":"ModifyAddressAttribute",
       "http":{
@@ -6091,6 +6109,15 @@
       },
       "input":{"shape":"ModifyVpcEndpointConnectionNotificationRequest"},
       "output":{"shape":"ModifyVpcEndpointConnectionNotificationResult"}
+    },
+    "ModifyVpcEndpointPayerResponsibility":{
+      "name":"ModifyVpcEndpointPayerResponsibility",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyVpcEndpointPayerResponsibilityRequest"},
+      "output":{"shape":"ModifyVpcEndpointPayerResponsibilityResult"}
     },
     "ModifyVpcEndpointServiceConfiguration":{
       "name":"ModifyVpcEndpointServiceConfiguration",
@@ -7292,6 +7319,86 @@
       "min":12,
       "pattern":"[0-9]{12}"
     },
+    "AccountVpcEncryptionControl":{
+      "type":"structure",
+      "members":{
+        "State":{
+          "shape":"AccountVpcEncryptionControlState",
+          "locationName":"state"
+        },
+        "Mode":{
+          "shape":"AccountVpcEncryptionControlMode",
+          "locationName":"mode"
+        },
+        "Exclusions":{
+          "shape":"AccountVpcEncryptionControlExclusions",
+          "locationName":"exclusions"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "locationName":"managedBy"
+        },
+        "LastUpdateTimestamp":{
+          "shape":"MillisecondDateTime",
+          "locationName":"lastUpdateTimestamp"
+        }
+      }
+    },
+    "AccountVpcEncryptionControlExclusions":{
+      "type":"structure",
+      "members":{
+        "InternetGateway":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"internetGateway"
+        },
+        "EgressOnlyInternetGateway":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"egressOnlyInternetGateway"
+        },
+        "NatGateway":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"natGateway"
+        },
+        "VirtualPrivateGateway":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"virtualPrivateGateway"
+        },
+        "VpcPeering":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"vpcPeering"
+        },
+        "Lambda":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"lambda"
+        },
+        "VpcLattice":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"vpcLattice"
+        },
+        "ElasticFileSystem":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"elasticFileSystem"
+        }
+      }
+    },
+    "AccountVpcEncryptionControlMode":{
+      "type":"string",
+      "enum":[
+        "unmanaged",
+        "attempt-monitor",
+        "attempt-enforce"
+      ]
+    },
+    "AccountVpcEncryptionControlState":{
+      "type":"string",
+      "enum":[
+        "default-state",
+        "transitions-in-progress",
+        "transitions-partially-successful",
+        "transitions-successful",
+        "transitions-failed"
+      ]
+    },
     "ActiveInstance":{
       "type":"structure",
       "members":{
@@ -7743,6 +7850,7 @@
           "locationName":"AssetId"
         },
         "AvailabilityZoneId":{"shape":"AvailabilityZoneId"},
+        "CpuOptions":{"shape":"HostCpuOptionsRequest"},
         "AutoPlacement":{
           "shape":"AutoPlacement",
           "locationName":"autoPlacement"
@@ -7834,7 +7942,8 @@
         "permanent-failure",
         "released",
         "released-permanent-failure",
-        "pending"
+        "pending",
+        "configuring"
       ]
     },
     "AllocationStrategy":{
@@ -7939,6 +8048,13 @@
         "shape":"AlternatePathHint",
         "locationName":"item"
       }
+    },
+    "AmdSevSnp":{
+      "type":"string",
+      "enum":[
+        "enabled",
+        "disabled"
+      ]
     },
     "AmdSevSnpSpecification":{
       "type":"string",
@@ -14847,6 +14963,7 @@
         "SpreadLevel":{"shape":"SpreadLevel"},
         "LinkedGroupId":{"shape":"PlacementGroupId"},
         "Operator":{"shape":"OperatorRequest"},
+        "ParentGroupId":{"shape":"PlacementGroupId"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -18887,6 +19004,21 @@
         "AccountAttributes":{
           "shape":"AccountAttributeList",
           "locationName":"accountAttributeSet"
+        }
+      }
+    },
+    "DescribeAccountVpcEncryptionControlRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "DescribeAccountVpcEncryptionControlResult":{
+      "type":"structure",
+      "members":{
+        "AccountVpcEncryptionControl":{
+          "shape":"AccountVpcEncryptionControl",
+          "locationName":"accountVpcEncryptionControl"
         }
       }
     },
@@ -24308,7 +24440,8 @@
           "locationName":"Filter"
         },
         "NextToken":{"shape":"String"},
-        "MaxResults":{"shape":"Integer"}
+        "MaxResults":{"shape":"Integer"},
+        "IncludeManagedResources":{"shape":"Boolean"}
       }
     },
     "DescribeVolumesModificationsResult":{
@@ -31593,7 +31726,26 @@
         "AssetId":{
           "shape":"AssetId",
           "locationName":"assetId"
+        },
+        "CpuOptions":{
+          "shape":"HostCpuOptions",
+          "locationName":"cpuOptions"
         }
+      }
+    },
+    "HostCpuOptions":{
+      "type":"structure",
+      "members":{
+        "AmdSevSnp":{
+          "shape":"AmdSevSnp",
+          "locationName":"amdSevSnp"
+        }
+      }
+    },
+    "HostCpuOptionsRequest":{
+      "type":"structure",
+      "members":{
+        "AmdSevSnp":{"shape":"AmdSevSnp"}
       }
     },
     "HostInstance":{
@@ -32262,6 +32414,10 @@
         "CreationDateCondition":{
           "shape":"CreationDateCondition",
           "locationName":"creationDateCondition"
+        },
+        "ImageWatermarks":{
+          "shape":"ImageWatermarkFilterResponseList",
+          "locationName":"imageWatermarkSet"
         }
       }
     },
@@ -32288,7 +32444,11 @@
           "locationName":"ImageName"
         },
         "DeprecationTimeCondition":{"shape":"DeprecationTimeConditionRequest"},
-        "CreationDateCondition":{"shape":"CreationDateConditionRequest"}
+        "CreationDateCondition":{"shape":"CreationDateConditionRequest"},
+        "ImageWatermarks":{
+          "shape":"ImageWatermarkFilterRequestList",
+          "locationName":"ImageWatermark"
+        }
       }
     },
     "ImageCriterionRequestList":{
@@ -32730,6 +32890,50 @@
           "shape":"MillisecondDateTime",
           "locationName":"watermarkCreationTime"
         }
+      }
+    },
+    "ImageWatermarkFilterRequest":{
+      "type":"structure",
+      "members":{
+        "WatermarkKey":{"shape":"String"},
+        "SourceImageRegion":{"shape":"String"},
+        "MaximumDaysSinceSourceImageCreated":{"shape":"Integer"},
+        "MaximumDaysSinceWatermarkCreated":{"shape":"Integer"}
+      }
+    },
+    "ImageWatermarkFilterRequestList":{
+      "type":"list",
+      "member":{
+        "shape":"ImageWatermarkFilterRequest",
+        "locationName":"item"
+      }
+    },
+    "ImageWatermarkFilterResponse":{
+      "type":"structure",
+      "members":{
+        "WatermarkKey":{
+          "shape":"String",
+          "locationName":"watermarkKey"
+        },
+        "SourceImageRegion":{
+          "shape":"String",
+          "locationName":"sourceImageRegion"
+        },
+        "MaximumDaysSinceSourceImageCreated":{
+          "shape":"Integer",
+          "locationName":"maximumDaysSinceSourceImageCreated"
+        },
+        "MaximumDaysSinceWatermarkCreated":{
+          "shape":"Integer",
+          "locationName":"maximumDaysSinceWatermarkCreated"
+        }
+      }
+    },
+    "ImageWatermarkFilterResponseList":{
+      "type":"list",
+      "member":{
+        "shape":"ImageWatermarkFilterResponse",
+        "locationName":"item"
       }
     },
     "ImageWatermarkList":{
@@ -41678,6 +41882,30 @@
       }
     },
     "MillisecondDateTime":{"type":"timestamp"},
+    "ModifyAccountVpcEncryptionControlRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "Mode":{"shape":"AccountVpcEncryptionControlMode"},
+        "InternetGateway":{"shape":"VpcEncryptionControlExclusionStateInput"},
+        "EgressOnlyInternetGateway":{"shape":"VpcEncryptionControlExclusionStateInput"},
+        "NatGateway":{"shape":"VpcEncryptionControlExclusionStateInput"},
+        "VirtualPrivateGateway":{"shape":"VpcEncryptionControlExclusionStateInput"},
+        "VpcPeering":{"shape":"VpcEncryptionControlExclusionStateInput"},
+        "Lambda":{"shape":"VpcEncryptionControlExclusionStateInput"},
+        "VpcLattice":{"shape":"VpcEncryptionControlExclusionStateInput"},
+        "ElasticFileSystem":{"shape":"VpcEncryptionControlExclusionStateInput"}
+      }
+    },
+    "ModifyAccountVpcEncryptionControlResult":{
+      "type":"structure",
+      "members":{
+        "AccountVpcEncryptionControl":{
+          "shape":"AccountVpcEncryptionControl",
+          "locationName":"accountVpcEncryptionControl"
+        }
+      }
+    },
     "ModifyAddressAttributeRequest":{
       "type":"structure",
       "required":["AllocationId"],
@@ -43540,6 +43768,34 @@
         "ReturnValue":{
           "shape":"Boolean",
           "locationName":"return"
+        }
+      }
+    },
+    "ModifyVpcEndpointPayerResponsibilityRequest":{
+      "type":"structure",
+      "required":[
+        "VpcEndpointId",
+        "PayerResponsibility",
+        "Scope"
+      ],
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "ServiceId":{"shape":"VpcEndpointServiceId"},
+        "VpcEndpointId":{"shape":"VpcEndpointId"},
+        "PayerResponsibility":{"shape":"PayerResponsibilityType"},
+        "Scope":{"shape":"PayerResponsibilityScope"}
+      }
+    },
+    "ModifyVpcEndpointPayerResponsibilityResult":{
+      "type":"structure",
+      "members":{
+        "VpcEndpointId":{
+          "shape":"String",
+          "locationName":"vpcEndpointId"
+        },
+        "PayerResponsibilities":{
+          "shape":"PayerResponsibilitySet",
+          "locationName":"payerResponsibilitySet"
         }
       }
     },
@@ -45873,6 +46129,37 @@
       "type":"string",
       "enum":["ServiceOwner"]
     },
+    "PayerResponsibilityEntry":{
+      "type":"structure",
+      "members":{
+        "Scope":{
+          "shape":"PayerResponsibilityScope",
+          "locationName":"scope"
+        },
+        "PayerResponsibilityType":{
+          "shape":"PayerResponsibilityType",
+          "locationName":"payerResponsibilityType"
+        }
+      }
+    },
+    "PayerResponsibilityScope":{
+      "type":"string",
+      "enum":["vpc-endpoint-charges"]
+    },
+    "PayerResponsibilitySet":{
+      "type":"list",
+      "member":{
+        "shape":"PayerResponsibilityEntry",
+        "locationName":"item"
+      }
+    },
+    "PayerResponsibilityType":{
+      "type":"string",
+      "enum":[
+        "vpc-endpoint-account",
+        "vpc-endpoint-service-account"
+      ]
+    },
     "PaymentOption":{
       "type":"string",
       "enum":[
@@ -46266,6 +46553,10 @@
         "Operator":{
           "shape":"OperatorResponse",
           "locationName":"operator"
+        },
+        "ParentGroupId":{
+          "shape":"PlacementGroupId",
+          "locationName":"parentGroupId"
         }
       }
     },
@@ -46341,7 +46632,8 @@
       "enum":[
         "cluster",
         "spread",
-        "partition"
+        "partition",
+        "precision-time"
       ]
     },
     "PlatformValues":{
@@ -58567,6 +58859,10 @@
         "EndTime":{
           "shape":"DateTime",
           "locationName":"endTime"
+        },
+        "Operator":{
+          "shape":"OperatorResponse",
+          "locationName":"operator"
         }
       }
     },
@@ -59431,6 +59727,10 @@
         "ServiceRegion":{
           "shape":"String",
           "locationName":"serviceRegion"
+        },
+        "PayerResponsibilities":{
+          "shape":"PayerResponsibilitySet",
+          "locationName":"payerResponsibilitySet"
         }
       }
     },
@@ -59544,6 +59844,10 @@
         "VpcEndpointRegion":{
           "shape":"String",
           "locationName":"vpcEndpointRegion"
+        },
+        "PayerResponsibilities":{
+          "shape":"PayerResponsibilitySet",
+          "locationName":"payerResponsibilitySet"
         }
       }
     },

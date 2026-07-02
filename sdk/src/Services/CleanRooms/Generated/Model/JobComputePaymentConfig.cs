@@ -46,9 +46,8 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         ///  
         /// <para>
-        /// Exactly one member can be configured to pay for query and job compute costs. An error
-        /// is returned if the collaboration creator sets a <c>TRUE</c> value for more than one
-        /// member in the collaboration. 
+        /// One or more members can be configured as payer candidates for query and job compute
+        /// costs.
         /// </para>
         ///  
         /// <para>

@@ -792,5 +792,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 await context.DeleteAsync(loaded);
             }
         }
+
+        [Fact]
+        public async Task TestTransactOperationsWithReturnConsumedCapacity()
+        {
+            var employee1 = new Employee
+            {
+                Name = UtilityMethods.GenerateName("Alan"),
+                MiddleName = "Matt",
+                Age = 31,
+            };
+
+            var employee2 = new Employee
+            {
+                Name = UtilityMethods.GenerateName("Mark"),
+                MiddleName = "John",
+                Age = 40,
+            };
+
+            {
+                var transactWrite = _context.CreateTransactWrite<Employee>(new TransactWriteConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES});
+                transactWrite.AddSaveItems(new List<Employee> { employee1, employee2 });
+                await transactWrite.ExecuteAsync();
+
+                Assert.NotNull(transactWrite.ConsumedCapacity);
+                Assert.Equal(1, transactWrite.ConsumedCapacity.Count);
+
+                var consumedCapacity = transactWrite.ConsumedCapacity.SingleOrDefault();
+                Assert.Equal(4, consumedCapacity.WriteCapacityUnits);
+                Assert.Null(consumedCapacity.ReadCapacityUnits);
+                Assert.Null(consumedCapacity.GlobalSecondaryIndexes);
+                Assert.Null(consumedCapacity.LocalSecondaryIndexes);
+            }
+
+            {
+                var transactGet = _context.CreateTransactGet<Employee>(new TransactGetConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                transactGet.AddKeys(new List<Employee> { employee1, employee2 });
+                await transactGet.ExecuteAsync();
+
+                Assert.NotNull(transactGet.ConsumedCapacity);
+                Assert.Equal(1, transactGet.ConsumedCapacity.Count);
+
+                var consumedCapacity = transactGet.ConsumedCapacity.SingleOrDefault();
+                Assert.Equal(4, consumedCapacity.ReadCapacityUnits);
+                Assert.Null(consumedCapacity.WriteCapacityUnits);
+                Assert.Null(consumedCapacity.GlobalSecondaryIndexes);
+                Assert.Null(consumedCapacity.LocalSecondaryIndexes);
+            }
+        }
     }
 }

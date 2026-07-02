@@ -111,7 +111,7 @@
         <ItemGroup>
             <SignableItems Include="../sdk/src/Core/**/bin/$(Configuration)/*/AWSSDK*.dll" />
             <SignableItems Include="../sdk/src/Services/**/bin/$(Configuration)/*/AWSSDK*.dll" Exclude="**/AWSSDK.Core.dll" />
-            <SignableItems Include="../Extensions/src/**/bin/$(Configuration)/*/AWSSDK.Extensions*.dll" />
+            <SignableItems Include="../extensions/src/**/bin/$(Configuration)/*/AWSSDK.Extensions*.dll" />
             <SignableItems Include="../sdk/code-analysis/ServiceAnalysis/**/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/install.ps1" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />

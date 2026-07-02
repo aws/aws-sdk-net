@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     {
         private DateTime? _createTime;
         private string _id;
+        private IntermediateTableOutputConfiguration _intermediateTableConfiguration;
         private string _membershipArn;
         private string _membershipId;
         private string _queryComputePayerAccountId;
@@ -78,6 +79,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntermediateTableConfiguration. 
+        /// <para>
+        /// The intermediate table configuration, present when the protected query was triggered
+        /// by a populate operation.
+        /// </para>
+        /// </summary>
+        public IntermediateTableOutputConfiguration IntermediateTableConfiguration
+        {
+            get { return this._intermediateTableConfiguration; }
+            set { this._intermediateTableConfiguration = value; }
+        }
+
+        // Check to see if IntermediateTableConfiguration property is set
+        internal bool IsSetIntermediateTableConfiguration()
+        {
+            return this._intermediateTableConfiguration != null;
         }
 
         /// <summary>

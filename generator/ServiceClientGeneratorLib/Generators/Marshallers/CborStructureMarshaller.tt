@@ -69,7 +69,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else if (member.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WriteByteString(<#=variableName + "." + member.PropertyName#>.ToArray());
+<#=new string(' ', level * 4)#>                context.Writer.WriteByteString(<#=variableName + "." + member.PropertyName#>);
 <#+
 			}
 			else if (member.IsTimeStamp)
@@ -163,7 +163,7 @@ protected void ProcessStructure(int level, string variableName, Shape structure,
 			else if (structure.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>            context.Writer.WriteByteString(<#=variableName#>.ToArray());
+<#=new string(' ', level * 4)#>            context.Writer.WriteByteString(<#=variableName#>);
 <#+
 			}
 			else

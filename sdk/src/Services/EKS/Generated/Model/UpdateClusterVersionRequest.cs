@@ -55,6 +55,7 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private bool? _force;
         private string _name;
+        private RollbackConfig _rollbackConfig;
         private string _version;
 
         /// <summary>
@@ -79,8 +80,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Set this value to <c>true</c> to override upgrade-blocking readiness checks when updating
-        /// a cluster.
+        /// Set this value to <c>true</c> to override upgrade-blocking or rollback-blocking readiness
+        /// checks when updating a cluster.
         /// </para>
         /// </summary>
         public bool? Force
@@ -112,6 +113,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RollbackConfig. 
+        /// <para>
+        /// The rollback configuration for the cluster version rollback.
+        /// </para>
+        /// </summary>
+        public RollbackConfig RollbackConfig
+        {
+            get { return this._rollbackConfig; }
+            set { this._rollbackConfig = value; }
+        }
+
+        // Check to see if RollbackConfig property is set
+        internal bool IsSetRollbackConfig()
+        {
+            return this._rollbackConfig != null;
         }
 
         /// <summary>

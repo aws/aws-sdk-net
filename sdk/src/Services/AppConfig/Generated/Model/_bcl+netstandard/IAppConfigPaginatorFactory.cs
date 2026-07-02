@@ -78,6 +78,36 @@ namespace Amazon.AppConfig.Model
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
+        /// Paginator for ListExperimentDefinitions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListExperimentDefinitionsPaginator ListExperimentDefinitions(ListExperimentDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListExperimentRunEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListExperimentRunEventsPaginator ListExperimentRunEvents(ListExperimentRunEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListExperimentRuns operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListExperimentRunsPaginator ListExperimentRuns(ListExperimentRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListExtensionAssociations operation
         ///</summary>
         [AWSPaginator(

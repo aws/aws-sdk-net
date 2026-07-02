@@ -224,7 +224,7 @@ namespace Amazon.AWSMarketplaceMetering
         ///  
         /// <para>
         /// Usage records should be submitted in quick succession following a recorded event.
-        /// Usage records aren't accepted 6 hours or more after an event.
+        /// Usage records aren't accepted 24 hours or more after an event.
         /// </para>
         ///  
         /// <para>

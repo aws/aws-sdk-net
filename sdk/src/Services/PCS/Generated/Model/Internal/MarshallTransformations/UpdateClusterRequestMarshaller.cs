@@ -92,6 +92,17 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClusterIdentifier);
             }
 
+            if(publicRequest.IsSetScheduler())
+            {
+                context.Writer.WritePropertyName("scheduler");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateSchedulerRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Scheduler, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSlurmConfiguration())
             {
                 context.Writer.WritePropertyName("slurmConfiguration");

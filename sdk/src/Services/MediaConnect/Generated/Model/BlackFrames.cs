@@ -40,7 +40,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        ///  Indicates whether the <c>BlackFrames</c> metric is enabled or disabled..
+        ///  Indicates whether the <c>BlackFrames</c> metric is enabled or disabled.
         /// </para>
         /// </summary>
         public State State

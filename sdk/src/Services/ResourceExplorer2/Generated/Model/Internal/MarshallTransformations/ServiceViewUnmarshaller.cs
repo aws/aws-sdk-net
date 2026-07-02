@@ -74,6 +74,12 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScopeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ServiceLinkedRecorder", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServiceLinkedRecorderInfoUnmarshaller.Instance;
+                    unmarshalledObject.ServiceLinkedRecorder = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ServiceViewArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -13,6 +13,11 @@ public static class FileHeader
     public static IReadOnlyList<string> ModelWarnings { get; } = ["CS0612", "CS0618", "CS1570"];
 
     /// <summary>
+    /// The default warning codes suppressed in marshaller-level generated files.
+    /// </summary>
+    public static IReadOnlyList<string> MarshallerWarnings { get; } = ["CS0612", "CS0618"];
+
+    /// <summary>
     /// Usings for model-level files (structures, exceptions, request/response).
     /// </summary>
     public static IReadOnlyList<string> ModelUsings { get; } =
@@ -26,7 +31,59 @@ public static class FileHeader
         "Amazon.Runtime",
         "Amazon.Runtime.Internal",
     ];
-    
+
+    /// <summary>
+    /// Usings for marshaller files. These usings should be combined with the base-level ModelUsings
+    /// </summary>
+    public static IReadOnlyList<string> MarshallerUsings { get; } =
+    [
+        "Amazon.Runtime.Internal.Transform",
+        "Amazon.Runtime.Internal.Util",
+    ];
+
+    /// <summary>
+    /// Usings for the endpoint parameters file.
+    /// </summary>
+    public static IReadOnlyList<string> EndpointParametersUsings { get; } =
+    [
+        "System.Collections.Generic",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Endpoints",
+    ];
+
+    /// <summary>
+    /// Usings for the endpoint provider file. The static import brings in the rules-engine
+    /// standard library (<c>IsSet</c>, <c>Equals</c>, <c>Partition</c>, ...) the compiled rules call.
+    /// </summary>
+    public static IReadOnlyList<string> EndpointProviderUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Endpoints",
+        "static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn",
+    ];
+
+    // these three exist in marshallers today but are unused so far. if future marshallers need them, add them back.
+    // "System.Xml.Serialization",
+    // "System.Globalization",
+    // "System.Text"
+    /// <summary>
+    /// Usings for Json Request Marshaller files. Used individually for JsonRequest Marshallers
+    /// </summary>
+    public static IReadOnlyList<string> JsonRequestMarshallerUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.IO",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Internal",
+        "Amazon.Runtime.Internal.Transform",
+        "Amazon.Runtime.Internal.Util",
+        "System.Text.Json",
+        "System.Buffers",
+    ];
+
     /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.
@@ -56,14 +113,16 @@ public static class FileHeader
     /// <summary>
     /// Writes one <c>using {namespace};</c> directive per entry, in the order given.
     /// </summary>
-    public static void WriteUsings(CodeWriter writer, IReadOnlyList<string> namespaces)
+    public static void WriteUsings(CodeWriter writer, IReadOnlyList<string> namespaces, bool emitTrailingNewLine = true)
     {
         foreach (var ns in namespaces)
         {
             writer.WriteLine($"using {ns};");
         }
-
-        writer.WriteLine();
+        if (emitTrailingNewLine)
+        {
+            writer.WriteLine();
+        }
     }
 
     /// <summary>

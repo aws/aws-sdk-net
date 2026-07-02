@@ -73,6 +73,12 @@ public class CodeWriter
     }
 
     /// <summary>
+    /// Renders a runtime string value as a quoted, fully-escaped C# string literal, so a value
+    /// containing a quote or backslash still produces compilable source.
+    /// </summary>
+    public static string Literal(string value) => SymbolDisplay.FormatLiteral(value, quote: true);
+
+    /// <summary>
     /// Returns the buffered source after running it through the Roslyn formatter.
     /// </summary>
     public string ToFormattedString(CancellationToken cancellationToken = default)

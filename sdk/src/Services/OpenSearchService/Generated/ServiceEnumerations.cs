@@ -1297,6 +1297,64 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type DomainUseCase.
+    /// </summary>
+    public class DomainUseCase : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MIXED for DomainUseCase
+        /// </summary>
+        public static readonly DomainUseCase MIXED = new DomainUseCase("MIXED");
+        /// <summary>
+        /// Constant OBSERVABILITY for DomainUseCase
+        /// </summary>
+        public static readonly DomainUseCase OBSERVABILITY = new DomainUseCase("OBSERVABILITY");
+        /// <summary>
+        /// Constant SEARCH for DomainUseCase
+        /// </summary>
+        public static readonly DomainUseCase SEARCH = new DomainUseCase("SEARCH");
+        /// <summary>
+        /// Constant VECTOR for DomainUseCase
+        /// </summary>
+        public static readonly DomainUseCase VECTOR = new DomainUseCase("VECTOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainUseCase(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainUseCase FindValue(string value)
+        {
+            return FindValue<DomainUseCase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainUseCase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DryRunMode.
     /// </summary>
     public class DryRunMode : ConstantClass
@@ -1340,6 +1398,56 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DryRunMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EngineMode.
+    /// </summary>
+    public class EngineMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GENERAL for EngineMode
+        /// </summary>
+        public static readonly EngineMode GENERAL = new EngineMode("GENERAL");
+        /// <summary>
+        /// Constant OPTIMIZED for EngineMode
+        /// </summary>
+        public static readonly EngineMode OPTIMIZED = new EngineMode("OPTIMIZED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EngineMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngineMode FindValue(string value)
+        {
+            return FindValue<EngineMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngineMode(string value)
         {
             return FindValue(value);
         }
@@ -1625,6 +1733,102 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type InsightFeedbackEntityType.
+    /// </summary>
+    public class InsightFeedbackEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DomainName for InsightFeedbackEntityType
+        /// </summary>
+        public static readonly InsightFeedbackEntityType DomainName = new InsightFeedbackEntityType("DomainName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightFeedbackEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightFeedbackEntityType FindValue(string value)
+        {
+            return FindValue<InsightFeedbackEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightFeedbackEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightFeedbackThumbs.
+    /// </summary>
+    public class InsightFeedbackThumbs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Down for InsightFeedbackThumbs
+        /// </summary>
+        public static readonly InsightFeedbackThumbs Down = new InsightFeedbackThumbs("Down");
+        /// <summary>
+        /// Constant Up for InsightFeedbackThumbs
+        /// </summary>
+        public static readonly InsightFeedbackThumbs Up = new InsightFeedbackThumbs("Up");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightFeedbackThumbs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightFeedbackThumbs FindValue(string value)
+        {
+            return FindValue<InsightFeedbackThumbs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightFeedbackThumbs(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InsightFieldType.
     /// </summary>
     public class InsightFieldType : ConstantClass
@@ -1726,6 +1930,56 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InsightPriorityLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightResponseStatus.
+    /// </summary>
+    public class InsightResponseStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for InsightResponseStatus
+        /// </summary>
+        public static readonly InsightResponseStatus ERROR = new InsightResponseStatus("ERROR");
+        /// <summary>
+        /// Constant SUCCESS for InsightResponseStatus
+        /// </summary>
+        public static readonly InsightResponseStatus SUCCESS = new InsightResponseStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightResponseStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightResponseStatus FindValue(string value)
+        {
+            return FindValue<InsightResponseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightResponseStatus(string value)
         {
             return FindValue(value);
         }

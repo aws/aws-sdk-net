@@ -300,6 +300,5 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
             writer.WriteLine("var parameters = new ServiceOperationEndpointParameters(request);");
             writer.WriteLine("return Config.DetermineServiceOperationEndpoint(parameters);");
         });
-        writer.WriteLine();
     }
 }

@@ -123,6 +123,28 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.CreateStreamSessionAdminShellRequest.Identifier</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.CreateStreamSessionAdminShellRequest.StreamSessionIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.CreateStreamSessionAdminShellResponse.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.CreateStreamSessionAdminShellResponse.TokenValue</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamSessionConnectionRequest.ClientToken</property>
     <min>32</min>
     <max>128</max>

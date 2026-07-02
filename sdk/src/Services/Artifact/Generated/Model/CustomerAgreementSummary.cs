@@ -78,7 +78,7 @@ namespace Amazon.Artifact.Model
         /// ARN of the agreement resource the customer-agreement resource represents.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string AgreementArn
         {
             get { return this._agreementArn; }
@@ -97,7 +97,7 @@ namespace Amazon.Artifact.Model
         /// ARN of the customer-agreement resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -135,7 +135,7 @@ namespace Amazon.Artifact.Model
         /// Description of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -208,7 +208,7 @@ namespace Amazon.Artifact.Model
         /// Name of the customer-agreement resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Name
         {
             get { return this._name; }
@@ -227,7 +227,7 @@ namespace Amazon.Artifact.Model
         /// ARN of the organization that owns the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string OrganizationArn
         {
             get { return this._organizationArn; }

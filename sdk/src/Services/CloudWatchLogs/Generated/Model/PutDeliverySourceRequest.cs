@@ -154,6 +154,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Amazon Bedrock AgentCore Payments, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For CloudFront, the valid value is <c>ACCESS_LOGS</c>.
         /// </para>
         ///  </li> <li> 
@@ -180,6 +185,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Amazon EKS Capability Logs, the valid values are <c>EKS_CAPABILITY_ACK_LOGS</c>,
+        /// <c>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</c>, <c>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</c>,
+        /// <c>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</c>, <c>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</c>,
+        /// <c>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</c>, and <c>EKS_CAPABILITY_KRO_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Entity Resolution, the valid value is <c>WORKFLOW_LOGS</c>.
         /// </para>
         ///  </li> <li> 
@@ -202,7 +214,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Quick, the valid values are <c>CHAT_LOGS</c> and <c>FEEDBACK_LOGS</c>.
+        /// For Quick, the valid values are <c>AGENT_HOURS_LOGS</c>, <c>CHAT_LOGS</c>, <c>FEEDBACK_LOGS</c>,
+        /// and <c>INDEX_USAGE_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

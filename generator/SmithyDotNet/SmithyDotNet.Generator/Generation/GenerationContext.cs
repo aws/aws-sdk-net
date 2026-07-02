@@ -48,6 +48,34 @@ public class GenerationContext
     /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data"). Used in generated doc links.</summary>
     public string EndpointPrefix { get; }
 
+    /// <summary>
+    /// The signing name used as the service config's <c>AuthenticationServiceName</c> (e.g.
+    /// "cloudtrail-data"). This is the <c>aws.auth#sigv4</c> trait's <c>name</c> when present,
+    /// falling back to <see cref="EndpointPrefix"/>, matching the legacy generator's precedence
+    /// (<c>SigningName ?? EndpointPrefix</c>).
+    /// </summary>
+    public string AuthenticationServiceName { get; }
+
+    /// <summary>
+    /// Whether the service carries a Smithy endpoint rule set (<c>smithy.rules#endpointRuleSet</c>).
+    /// The service config emits its endpoint resolver field, <c>EndpointProvider</c> wiring, and
+    /// <c>DetermineServiceOperationEndpoint</c> override only when this is true: the Smithy-AST
+    /// equivalent of the legacy template's <c>EndpointsRuleSet != null</c> branch.
+    /// </summary>
+    public bool HasEndpointRuleSet { get; }
+
+    /// <summary>
+    /// The parsed endpoint rule set, or <c>null</c> when <see cref="HasEndpointRuleSet"/> is false.
+    /// The endpoint writers compile this into the parameters class and the endpoint provider.
+    /// </summary>
+    public EndpointRuleSet? EndpointRuleSet { get; }
+
+    /// <summary>
+    /// Whether any shape carries an endpoint context-parameter trait (service <c>clientContextParams</c>,
+    /// operation <c>staticContextParams</c>, or member <c>contextParam</c>).
+    /// </summary>
+    public bool HasEndpointContextParams { get; }
+
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
 
@@ -78,11 +106,20 @@ public class GenerationContext
         Namespace = $"Amazon.{ServiceName}";
         ClientName = $"Amazon{ServiceName}";
         ApiVersion = index.Service.ApiVersion;
+        
         // TODO: EndpointPrefix and ApiVersion together form the generated <seealso> doc URL
         // ("{EndpointPrefix}-{ApiVersion}"). EndpointPrefix is null-guarded below, but an empty or
         // whitespace value in either would silently produce a malformed URL. Validate both once more
         // services are onboarded.
         EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
+        
+        // AuthenticationServiceName follows the legacy generator's precedence: the sigv4 signing name
+        // when the trait is present, otherwise the endpoint prefix.
+        AuthenticationServiceName = index.Service.GetSigV4()?.SigningName ?? EndpointPrefix;
+        
+        EndpointRuleSet = index.Service.GetEndpointRuleSet();
+        HasEndpointRuleSet = EndpointRuleSet is not null;
+        HasEndpointContextParams = DetectEndpointContextParams(index);
         ServiceDocumentation = index.Service.GetDocumentation();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
@@ -140,6 +177,25 @@ public class GenerationContext
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => shapeId.Name;
 
+    // Context params live on the service, on operations, or on structure members, so all three are
+    // scanned. Members are only reachable through the shapes index.
+    private static bool DetectEndpointContextParams(ServiceIndex index)
+    {
+        if (index.Service.HasEndpointContextParams())
+        {
+            return true;
+        }
+
+        if (index.Operations.Any(operation => operation.HasEndpointContextParams()))
+        {
+            return true;
+        }
+
+        return index.Shapes.Values
+            .OfType<StructureShape>()
+            .SelectMany(structure => structure.Members.Values)
+            .Any(member => member.HasEndpointContextParams());
+    }
 
     private static AWSProtocol DetectProtocol(ServiceShape service)
     {

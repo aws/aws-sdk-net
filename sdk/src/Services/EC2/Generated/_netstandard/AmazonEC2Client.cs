@@ -2016,8 +2016,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
         /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
-        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>.
         /// 
         ///  
         /// <para>
@@ -5653,6 +5652,8 @@ namespace Amazon.EC2
         /// A <c>spread</c> placement group places instances on distinct hardware. A <c>partition</c>
         /// placement group places groups of instances in different partitions, where instances
         /// in one partition do not share the same hardware with instances in another partition.
+        /// A <c>precision-time</c> placement group places instances on supported hardware with
+        /// direct access to high-precision time sources in Amazon Web Services infrastructure.
         /// </para>
         ///  
         /// <para>
@@ -9671,7 +9672,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
-        /// group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// group before you can delete the placement group. You cannot delete a placement group
+        /// that is a parent of a cluster placement group. Delete the cluster placement groups
+        /// first. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
@@ -11971,6 +11974,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAccountAttributesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeAccountVpcEncryptionControl
+
+        internal virtual DescribeAccountVpcEncryptionControlResponse DescribeAccountVpcEncryptionControl(DescribeAccountVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAccountVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountVpcEncryptionControlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the account-level VPC Encryption Control configuration for your account.
+        /// VPC Encryption Control enables you to enforce encryption for all data in transit within
+        /// and between VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountVpcEncryptionControl">REST API Reference for DescribeAccountVpcEncryptionControl Operation</seealso>
+        public virtual Task<DescribeAccountVpcEncryptionControlResponse> DescribeAccountVpcEncryptionControlAsync(DescribeAccountVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAccountVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountVpcEncryptionControlResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -26833,6 +26877,48 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  ModifyAccountVpcEncryptionControl
+
+        internal virtual ModifyAccountVpcEncryptionControlResponse ModifyAccountVpcEncryptionControl(ModifyAccountVpcEncryptionControlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyAccountVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyAccountVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyAccountVpcEncryptionControlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the account-level VPC Encryption Control configuration. This sets the encryption
+        /// control mode and resource exclusions that apply to the VPCs in your account. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccountVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAccountVpcEncryptionControl">REST API Reference for ModifyAccountVpcEncryptionControl Operation</seealso>
+        public virtual Task<ModifyAccountVpcEncryptionControlResponse> ModifyAccountVpcEncryptionControlAsync(ModifyAccountVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyAccountVpcEncryptionControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyAccountVpcEncryptionControlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyAccountVpcEncryptionControlResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ModifyAddressAttribute
 
         internal virtual ModifyAddressAttributeResponse ModifyAddressAttribute(ModifyAddressAttributeRequest request)
@@ -29764,6 +29850,39 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  ModifyVpcEndpointPayerResponsibility
+
+        internal virtual ModifyVpcEndpointPayerResponsibilityResponse ModifyVpcEndpointPayerResponsibility(ModifyVpcEndpointPayerResponsibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEndpointPayerResponsibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEndpointPayerResponsibilityResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointPayerResponsibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the billing account for VPC endpoint usage/charges.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointPayerResponsibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointPayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointPayerResponsibility">REST API Reference for ModifyVpcEndpointPayerResponsibility Operation</seealso>
+        public virtual Task<ModifyVpcEndpointPayerResponsibilityResponse> ModifyVpcEndpointPayerResponsibilityAsync(ModifyVpcEndpointPayerResponsibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEndpointPayerResponsibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEndpointPayerResponsibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointPayerResponsibilityResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ModifyVpcEndpointServiceConfiguration
 
         internal virtual ModifyVpcEndpointServiceConfigurationResponse ModifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request)
@@ -31470,7 +31589,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Sets or replaces the criteria for Allowed AMIs.
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// The <c>ImageCriteria</c> can include up to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 10 <c>ImageCriterion</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
         /// of the criteria you set, the AMIs created by your account will always be discoverable

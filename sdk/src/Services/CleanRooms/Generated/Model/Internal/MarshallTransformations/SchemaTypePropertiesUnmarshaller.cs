@@ -56,10 +56,22 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("configuredTableAssociation", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConfiguredTableAssociationSchemaTypePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.ConfiguredTableAssociation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("idMappingTable", targetDepth, ref reader))
                 {
                     var unmarshaller = IdMappingTableSchemaTypePropertiesUnmarshaller.Instance;
                     unmarshalledObject.IdMappingTable = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("intermediateTable", targetDepth, ref reader))
+                {
+                    var unmarshaller = IntermediateTableSchemaTypePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.IntermediateTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

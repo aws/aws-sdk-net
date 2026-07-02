@@ -62,10 +62,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("resetOnHealthyTask", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ResetOnHealthyTask = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("rollback", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Rollback = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("thresholdConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ThresholdConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ThresholdConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

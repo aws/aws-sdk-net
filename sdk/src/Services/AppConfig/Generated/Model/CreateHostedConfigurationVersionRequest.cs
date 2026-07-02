@@ -33,7 +33,7 @@ namespace Amazon.AppConfig.Model
     /// Container for the parameters to the CreateHostedConfigurationVersion operation.
     /// Creates a new configuration in the AppConfig hosted configuration store. If you're
     /// creating a feature flag, we recommend you familiarize yourself with the JSON schema
-    /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type
+    /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-type-reference-feature-flags.html">Type
     /// reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class CreateHostedConfigurationVersionRequest : AmazonAppConfigRequest
@@ -52,7 +52,7 @@ namespace Amazon.AppConfig.Model
         /// The application ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -71,7 +71,7 @@ namespace Amazon.AppConfig.Model
         /// The configuration profile ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigurationProfileId
         {
             get { return this._configurationProfileId; }
@@ -134,6 +134,11 @@ namespace Amazon.AppConfig.Model
         /// <para>
         /// A description of the configuration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Due to HTTP limitations, this field only supports ASCII characters.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string Description

@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class IdMappingTable
     {
         private string _arn;
+        private List<ChildResource> _childResources = AWSConfigs.InitializeCollections ? new List<ChildResource>() : null;
         private string _collaborationArn;
         private string _collaborationId;
         private DateTime? _createTime;
@@ -65,6 +66,29 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChildResources. 
+        /// <para>
+        /// The child resources that depend on this ID mapping table.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ChildResource> ChildResources
+        {
+            get { return this._childResources; }
+            set { this._childResources = value; }
+        }
+
+        // Check to see if ChildResources property is set
+        internal bool IsSetChildResources()
+        {
+            return this._childResources != null && (this._childResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

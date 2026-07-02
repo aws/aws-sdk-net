@@ -28,6 +28,27 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest.FeatureGroupName</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.PutRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
@@ -67,6 +88,21 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResultDetail.RecordIdentifierValueAsString</property>
     <max>358400</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordEntry.FeatureGroupName</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordError.ErrorCode</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordError.ErrorMessage</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.FeatureName</property>

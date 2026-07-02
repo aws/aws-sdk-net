@@ -15,12 +15,33 @@
 
 using System;
 using System.Formats.Cbor;
+using System.IO;
 using Amazon.Util;
 
 namespace Amazon.Extensions.CborProtocol
 {
     public static class CborWriterExtensions
     {
+        /// <summary>
+        /// Writes the contents of a <see cref="MemoryStream"/> as a CBOR byte string.
+        /// Uses the stream's underlying buffer directly when it is publicly visible
+        /// (<see cref="MemoryStream.TryGetBuffer"/>), avoiding the byte[] copy that
+        /// <see cref="MemoryStream.ToArray"/> would allocate, otherwise falls back to ToArray().
+        /// </summary>
+        /// <param name="writer">The CBOR writer to use.</param>
+        /// <param name="value">The stream whose contents to write.</param>
+        public static void WriteByteString(this CborWriter writer, MemoryStream value)
+        {
+            if (value.TryGetBuffer(out var segment))
+            {
+                writer.WriteByteString(segment.AsSpan());
+            }
+            else
+            {
+                writer.WriteByteString(value.ToArray());
+            }
+        }
+
         /// <summary>
         /// Writes the DateTime as UnixEpochSeconds which is the only type we support for CBOR.
         /// </summary>
@@ -108,6 +129,13 @@ namespace Amazon.Extensions.CborProtocol
             }
 
             // Manual encoding to avoid half-precision floats
+#if NET8_0_OR_GREATER
+            // Encode straight into a stack buffer: no byte[] allocation and no separate endian reversal
+            Span<byte> encoded = stackalloc byte[5];
+            encoded[0] = 0xFA; // CBOR float32 marker
+            System.Buffers.Binary.BinaryPrimitives.WriteSingleBigEndian(encoded.Slice(1), value);
+            writer.WriteEncodedValue(encoded);
+#else
             var bytes = new byte[5];
             bytes[0] = 0xFA; // CBOR float32 marker
             BitConverter.GetBytes(value).CopyTo(bytes, 1);
@@ -117,6 +145,7 @@ namespace Amazon.Extensions.CborProtocol
                 Array.Reverse(bytes, 1, 4);
 
             writer.WriteEncodedValue(bytes);
+#endif
         }
     }
 }

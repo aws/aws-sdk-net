@@ -12,9 +12,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -63,10 +65,26 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
-        public void TestWhiteSpaceCompression()
+        [DataRow("qqdglmcdoxtqiwwlucjv      xtehwhfhchtkhgoufyzgtkxvgcmcyvifp  sgseqpnzvaecjcwdjsylcilfkh", "qqdglmcdoxtqiwwlucjv xtehwhfhchtkhgoufyzgtkxvgcmcyvifp sgseqpnzvaecjcwdjsylcilfkh")]
+        [DataRow("input \ttext", "input text")]
+        [DataRow("input \ntext", "input text")]
+        [DataRow("input \r\ntext", "input text")]
+        [DataRow("input\ttext", "input text")]
+        [DataRow(" input text ", " input text ")]
+        public void CompressSpaces_ReplacesWhitespaceWithSingleSpace_WhenInputContainsVariousWhitespaceCharacters(string inputText, string expected)
         {
-            const string text = "qqdglmcdoxtqiwwlucjv      xtehwhfhchtkhgoufyzgtkxvgcmcyvifp  sgseqpnzvaecjcwdjsylcilfkh";
-            Assert.IsFalse(AWSSDKUtils.CompressSpaces(text).Contains("  "));
+            var compressed = AWSSDKUtils.CompressSpaces(inputText);
+            Assert.AreEqual(expected, compressed);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void CompressSpaces_ReturnsSameString_WhenInputContainsSingleSpaceOnly()
+        {
+            const string input = "input text";
+            var compressed = AWSSDKUtils.CompressSpaces(input);
+            Assert.AreSame(input, compressed);
         }
 
         [TestMethod]
@@ -159,7 +177,7 @@ namespace AWSSDK.UnitTests
             // Sample UTC value: 9/8/2020 18:48:34
             var expectedDateTime = new DateTime(2020, 9, 8, 18, 48, 34, DateTimeKind.Utc);
             var dateTime = AWSSDKUtils.ConvertFromUnixEpochMilliseconds(1599590914000);
-            
+
             Assert.AreEqual(expectedDateTime, dateTime);
         }
 
@@ -171,7 +189,7 @@ namespace AWSSDK.UnitTests
             // Sample UTC value: 9/8/2020 18:48:34.970
             var expectedDateTime = new DateTime(2020, 9, 8, 18, 48, 34, DateTimeKind.Utc).AddMilliseconds(970);
             var dateTime = AWSSDKUtils.ConvertFromUnixEpochMilliseconds(1599590914970);
-            
+
             Assert.AreEqual(expectedDateTime, dateTime);
         }
 
@@ -205,6 +223,183 @@ namespace AWSSDK.UnitTests
             var actual = AWSSDKUtils.GetExtension(input);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void GenerateMemoryStreamFromString_ReturnsReadableStream_WhenInputIsValid()
+        {
+            var input = "Hello World";
+            var expectedBytes = Encoding.UTF8.GetBytes(input);
+            using var memoryStream = AWSSDKUtils.GenerateMemoryStreamFromString(input);
+            var actualBytes = new byte[memoryStream.Length];
+            memoryStream.Read(actualBytes, 0, actualBytes.Length);
+            CollectionAssert.AreEqual(expectedBytes, actualBytes);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void DictionariesAreEqual_ReturnsTrue_WhenDictionariesAreEqual()
+        {
+            var dict1 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "value2" }
+            };
+            var dict2 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "value2" }
+            };
+            Assert.IsTrue(AWSSDKUtils.DictionariesAreEqual(dict1, dict2));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void DictionariesAreEqual_ReturnsFalse_WhenDictionariesAreNotEqual()
+        {
+            var dict1 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "value2" }
+            };
+            var dict2 = new Dictionary<string, string>
+            {
+                { "key1", "value1" },
+                { "key2", "differentValue" }
+            };
+            Assert.IsFalse(AWSSDKUtils.DictionariesAreEqual(dict1, dict2));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataRow("")]
+        [DataRow(null)]
+        [DataRow("12345")]
+        [TestMethod]
+        public void HexStringToBytes_ThrowsArgumentOutOfRangeException_WhenInputIsInvalid(string input)
+        {
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => AWSSDKUtils.HexStringToBytes(input));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void HexStringToBytes_ThrowsFormatException_WhenInputIsNotValidHexString()
+        {
+            Assert.ThrowsExactly<FormatException>(() => AWSSDKUtils.HexStringToBytes("123H"));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataRow("48656c6c6f20576f726c64", "Hello World")]
+        [DataRow("48656C6C6F20576F726C64", "Hello World")]
+        [TestMethod]
+        public void HexStringToBytes_ReturnsCorrectBytes_WhenInputIsValidHexString(string hexString, string expectedString)
+        {
+            var expectedBytes = Encoding.UTF8.GetBytes(expectedString);
+            var actualBytes = AWSSDKUtils.HexStringToBytes(hexString);
+            CollectionAssert.AreEqual(expectedBytes, actualBytes);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void GenerateChecksumForBytes_ReturnsCorrectChecksum_WhenHexEncodingIsUsed()
+        {
+            var input = "Hello World";
+            var inputBytes = Encoding.UTF8.GetBytes(input);
+            var expectedChecksum = "B10A8DB164E0754105B7A99BE72E3FE5";
+            var actualChecksum = AWSSDKUtils.GenerateChecksumForBytes(inputBytes, false);
+            Assert.AreEqual(expectedChecksum, actualChecksum);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        [DataRow("https://example.com", "POST\nexample.com\n/")]
+        [DataRow("https://example.com/", "POST\nexample.com\n/")]
+        [DataRow("https://example.com/path", "POST\nexample.com\n/path")]
+        public void CalculateStringToSignV2_ShouldReturnStringWithoutTrailingWhitespace_WhenCalledWithEmptyParameterCollection(string serviceUrl, string expectedResult)
+        {
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(new ParameterCollection(), serviceUrl);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnStringWithSingleParameter_WhenCalledWithParameterCollectionSizedOne()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "param1", "value1" }
+            };
+            var serviceUrl = "https://example.com/path";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            var expectedResult = "POST\nexample.com\n/path\nparam1=value1";
+            
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnStringWithMultipleParameters_WhenCalledWithNonEmptyParameterCollectionSizedTwo()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "param1", "value1" },
+                { "param2", "value2" }
+            };
+            var serviceUrl = "https://example.com/path";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            var expectedResult = "POST\nexample.com\n/path\nparam1=value1&param2=value2";
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnSanitizedString_WhenServiceUrlContainsSpecialCharacters()
+        {
+            var parameters = new ParameterCollection();
+            var serviceUrl = "https://example.com/path with spaces";
+            var expectedResult = "POST\nexample.com\n/path%2520with%2520spaces";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnSanitizedStringWithoutQuery_WhenServiceUrlContainsQuery()
+        {
+            var parameters = new ParameterCollection();
+            var serviceUrl = "https://example.com/path?query=param";
+            var expectedResult = "POST\nexample.com\n/path";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void CalculateStringToSignV2_ShouldReturnSanitizedStringWithEncodedParameters_WhenParametersContainSpecialCharacters()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "param1&", "value1=" }
+            };
+            var serviceUrl = "https://example.com";
+            var expectedResult = "POST\nexample.com\n/\nparam1%26=value1%3D";
+            var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }

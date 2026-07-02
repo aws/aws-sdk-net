@@ -41,6 +41,8 @@ namespace Amazon.EC2.Model
     /// A <c>spread</c> placement group places instances on distinct hardware. A <c>partition</c>
     /// placement group places groups of instances in different partitions, where instances
     /// in one partition do not share the same hardware with instances in another partition.
+    /// A <c>precision-time</c> placement group places instances on supported hardware with
+    /// direct access to high-precision time sources in Amazon Web Services infrastructure.
     /// </para>
     ///  
     /// <para>
@@ -54,6 +56,7 @@ namespace Amazon.EC2.Model
         private string _groupName;
         private string _linkedGroupId;
         private OperatorRequest _operator;
+        private string _parentGroupId;
         private int? _partitionCount;
         private SpreadLevel _spreadLevel;
         private PlacementStrategy _strategy;
@@ -152,6 +155,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOperator()
         {
             return this._operator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentGroupId. 
+        /// <para>
+        /// The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <c>cluster</c>.
+        /// </para>
+        /// </summary>
+        public string ParentGroupId
+        {
+            get { return this._parentGroupId; }
+            set { this._parentGroupId = value; }
+        }
+
+        // Check to see if ParentGroupId property is set
+        internal bool IsSetParentGroupId()
+        {
+            return this._parentGroupId != null;
         }
 
         /// <summary>

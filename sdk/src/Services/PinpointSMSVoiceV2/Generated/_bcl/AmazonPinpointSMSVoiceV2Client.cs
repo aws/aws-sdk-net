@@ -3229,6 +3229,81 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  DeleteRcsMessageSpendLimitOverride
+
+
+        /// <summary>
+        /// Deletes an account-level monthly spending limit override for sending RCS messages.
+        /// Deleting a spend limit override sets the <c>EnforcedLimit</c> to equal the <c>MaxLimit</c>,
+        /// which is set by Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRcsMessageSpendLimitOverride service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRcsMessageSpendLimitOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRcsMessageSpendLimitOverride">REST API Reference for DeleteRcsMessageSpendLimitOverride Operation</seealso>
+        public virtual DeleteRcsMessageSpendLimitOverrideResponse DeleteRcsMessageSpendLimitOverride(DeleteRcsMessageSpendLimitOverrideRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRcsMessageSpendLimitOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRcsMessageSpendLimitOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRcsMessageSpendLimitOverrideResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an account-level monthly spending limit override for sending RCS messages.
+        /// Deleting a spend limit override sets the <c>EnforcedLimit</c> to equal the <c>MaxLimit</c>,
+        /// which is set by Amazon Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRcsMessageSpendLimitOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRcsMessageSpendLimitOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRcsMessageSpendLimitOverride">REST API Reference for DeleteRcsMessageSpendLimitOverride Operation</seealso>
+        public virtual Task<DeleteRcsMessageSpendLimitOverrideResponse> DeleteRcsMessageSpendLimitOverrideAsync(DeleteRcsMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRcsMessageSpendLimitOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRcsMessageSpendLimitOverrideResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRcsMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRegistration
 
 
@@ -8037,6 +8112,103 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  SendRcsMessage
+
+
+        /// <summary>
+        /// Creates a new RCS message and sends it to a recipient's phone number. RCS messages
+        /// support rich content including text, files, rich cards, and carousels with interactive
+        /// suggested actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendRcsMessage service method.</param>
+        /// 
+        /// <returns>The response from the SendRcsMessage service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendRcsMessage">REST API Reference for SendRcsMessage Operation</seealso>
+        public virtual SendRcsMessageResponse SendRcsMessage(SendRcsMessageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendRcsMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendRcsMessageResponseUnmarshaller.Instance;
+
+            return Invoke<SendRcsMessageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new RCS message and sends it to a recipient's phone number. RCS messages
+        /// support rich content including text, files, rich cards, and carousels with interactive
+        /// suggested actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendRcsMessage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendRcsMessage service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendRcsMessage">REST API Reference for SendRcsMessage Operation</seealso>
+        public virtual Task<SendRcsMessageResponse> SendRcsMessageAsync(SendRcsMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendRcsMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendRcsMessageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendRcsMessageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendTextMessage
 
 
@@ -8735,6 +8907,81 @@ namespace Amazon.PinpointSMSVoiceV2
             options.ResponseUnmarshaller = SetNotifyMessageSpendLimitOverrideResponseUnmarshaller.Instance;
             
             return InvokeAsync<SetNotifyMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetRcsMessageSpendLimitOverride
+
+
+        /// <summary>
+        /// Sets an account level monthly spend limit override for sending RCS messages. The requested
+        /// spend limit must be less than or equal to the <c>MaxLimit</c>, which is set by Amazon
+        /// Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetRcsMessageSpendLimitOverride service method.</param>
+        /// 
+        /// <returns>The response from the SetRcsMessageSpendLimitOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetRcsMessageSpendLimitOverride">REST API Reference for SetRcsMessageSpendLimitOverride Operation</seealso>
+        public virtual SetRcsMessageSpendLimitOverrideResponse SetRcsMessageSpendLimitOverride(SetRcsMessageSpendLimitOverrideRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetRcsMessageSpendLimitOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetRcsMessageSpendLimitOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<SetRcsMessageSpendLimitOverrideResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets an account level monthly spend limit override for sending RCS messages. The requested
+        /// spend limit must be less than or equal to the <c>MaxLimit</c>, which is set by Amazon
+        /// Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetRcsMessageSpendLimitOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetRcsMessageSpendLimitOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetRcsMessageSpendLimitOverride">REST API Reference for SetRcsMessageSpendLimitOverride Operation</seealso>
+        public virtual Task<SetRcsMessageSpendLimitOverrideResponse> SetRcsMessageSpendLimitOverrideAsync(SetRcsMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetRcsMessageSpendLimitOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetRcsMessageSpendLimitOverrideResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SetRcsMessageSpendLimitOverrideResponse>(request, options, cancellationToken);
         }
 
         #endregion

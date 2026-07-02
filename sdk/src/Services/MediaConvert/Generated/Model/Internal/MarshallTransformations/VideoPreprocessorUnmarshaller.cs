@@ -74,6 +74,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.DolbyVision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("durationControl", targetDepth, ref reader))
+                {
+                    var unmarshaller = DurationControlUnmarshaller.Instance;
+                    unmarshalledObject.DurationControl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("hdr10Plus", targetDepth, ref reader))
                 {
                     var unmarshaller = Hdr10PlusUnmarshaller.Instance;

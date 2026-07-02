@@ -2953,15 +2953,9 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.PutAttachmentRequest.Content</property>
-    <min>0</min>
-    <max>300000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Glue.Model.PutAttachmentRequest.FormTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutAttachmentRequest.ItemIdentifier</property>
@@ -2989,7 +2983,6 @@
     <property>Amazon.Glue.Model.PutAttachmentResponse.FormTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutAttachmentResponse.ItemIdentifier</property>
@@ -3597,6 +3590,21 @@
     <min>1</min>
     <max>10240</max>
     <pattern>arn:aws(-(cn|us-gov|iso(-[bef])?))?:glue:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateAssetRequest.ClientToken</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateAssetRequest.Identifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateAssetResponse.Id</property>
+    <min>1</min>
+    <max>1087</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateBlueprintRequest.BlueprintLocation</property>

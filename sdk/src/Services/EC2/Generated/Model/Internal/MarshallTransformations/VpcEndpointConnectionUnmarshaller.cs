@@ -100,6 +100,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkLoadBalancerArns.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("payerResponsibilitySet/item", targetDepth))
+                    {
+                        var unmarshaller = PayerResponsibilityEntryUnmarshaller.Instance;
+                        if (unmarshalledObject.PayerResponsibilities == null)
+                        {
+                            unmarshalledObject.PayerResponsibilities = new List<PayerResponsibilityEntry>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PayerResponsibilities.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("serviceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

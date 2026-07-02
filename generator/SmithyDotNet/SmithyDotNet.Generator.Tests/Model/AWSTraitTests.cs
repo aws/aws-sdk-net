@@ -38,4 +38,18 @@ public class AWSTraitTests(CloudTrailModelFixture fixture)
         Assert.NotNull(sigv4);
         Assert.Equal("cloudtrail-data", sigv4.SigningName);
     }
+
+    [Fact]
+    public void HasEndpointRuleSet_ReturnsTrueForServiceWithRuleSet()
+    {
+        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#CloudTrailDataService");
+        Assert.True(shape.HasEndpointRuleSet());
+    }
+
+    [Fact]
+    public void HasEndpointRuleSet_ReturnsFalseForShapeWithoutRuleSet()
+    {
+        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#AuditEvent");
+        Assert.False(shape.HasEndpointRuleSet());
+    }
 }

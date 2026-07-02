@@ -49,6 +49,7 @@ namespace Amazon.OpenSearchService.Model
         private string _domainName;
         private EBSOptions _ebsOptions;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
+        private EngineMode _engineMode;
         private string _engineVersion;
         private IdentityCenterOptionsInput _identityCenterOptions;
         private IPAddressType _ipAddressType;
@@ -58,6 +59,7 @@ namespace Amazon.OpenSearchService.Model
         private SnapshotOptions _snapshotOptions;
         private SoftwareUpdateOptions _softwareUpdateOptions;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private DomainUseCase _useCase;
         private VPCOptions _vpcOptions;
 
         /// <summary>
@@ -352,6 +354,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode for the domain. For valid values and requirements, see <c>EngineMode</c>.
+        /// </para>
+        /// </summary>
+        public EngineMode EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version
@@ -533,6 +553,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetTagList()
         {
             return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The primary use case for the domain. For valid values, see <c>DomainUseCase</c>.
+        /// </para>
+        /// </summary>
+        public DomainUseCase UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
         /// <summary>

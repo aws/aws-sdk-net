@@ -1,3 +1,152 @@
+### 4.0.279.0 (2026-07-01 18:16 UTC)
+* Artifact (4.0.101.0)
+	* Add support for Assurance Assistant APIs for managing compliance inquiries along with tagging features.
+* AWSMarketplaceMetering (4.0.100.1)
+	* The usage reporting window for the BatchMeterUsage API has been extended from 6 hours to 24 hours. Sellers can now submit usage records for up to 24 hours after a metered event occurs.
+* Cloud9 (4.0.100.1)
+	* Since Amazon Linux 2 (AL2) will reach its end-of-life (EOL) and stop receiving security updates on June 30, 2026, Cloud9 will remove AL2 from AMI options in public API create-environment-ec2.
+* Connect (4.0.102.0)
+	* Adds a new Amazon Connect Service API, SendOutboundWebNotification, that delivers web notifications to end-customer chat widget sessions. Callable only by the Amazon Connect Outbound Campaigns service principal.
+* EC2 (4.0.102.0)
+	* Use declarative policies to enable VPC Encryption Controls across your organization or select accounts. Added AMD SEV-SNP support for EC2 Dedicated Hosts. Managed resource visibility settings control whether AWS-provisioned resources in your account appear in console views and API list operations.
+* GameLiftStreams (4.0.101.0)
+	* Added CreateStreamSessionAdminShell API operation to enable customers to establish secure terminal connections to the live runtime environment of streaming sessions for troubleshooting purposes.
+* MediaConvert (4.0.101.0)
+	* Adds support for integer-second duration normalization and the option to disable explicit weighted prediction.
+* OpenSearchService (4.0.101.0)
+	* To create a Mustang domain via the AWS CLI, you must pass EngineMode OPTIMIZED (along with UseCase OBSERVABILITY or MIXED)  without it, the domain defaults to a regular (GENERAL) domain. Also this release includes Insights Feedback API which user can use to provide feedback for Insight API.
+* QuickSight (4.0.101.0)
+	* Adding support for FileSource PhysicalTables.  This adds support for datasets with file sources.
+* SSOOIDC (4.0.100.1)
+	* Add SSO_LOGIN_VANITY_URL feature ID on SSO-OIDC requests when login resolves a vanity URL.
+* Core 4.0.100.1
+	* Add vanity URL resolution support for SSO login flow.
+	* Optimize Fn.Interpolate
+	* All service and extension packages updated to require new Core
+
+### 4.0.278.0 (2026-06-30 18:41 UTC)
+* AutoScaling (4.0.101.0)
+	* This release adds support for a new reservations-then-balanced capacity distribution strategy, which first attempts to launch instances into your Capacity Reservations and then balances remaining capacity across healthy Availability Zones.
+* CertificateManager (4.0.101.0)
+	* AWS Certificate Manager now supports the Automatic Certificate Management Environment (ACME) protocol to issue public certificates. ACME is an industry-standard protocol for automating certificate lifecycle on customer-managed infrastructure such as on-premises servers and Kubernetes clusters.
+* CleanRooms (4.0.101.0)
+	* Adds support for intermediate tables in AWS Clean Rooms collaborations.
+* CloudFormation (4.0.101.0)
+	* AWS CloudFormation adds a DeploymentConfig parameter to enable Express mode, which completes stack operations as soon as resource configuration is applied. Also adds a DisableValidation parameter to skip pre-deployment validation, which now runs automatically on CreateStack and UpdateStak.
+* CloudWatch (4.0.101.0)
+	* Customers can configure alarms with wall-clock-aligned evaluation windows instead of sliding windows, with optional timezone support for daily or weekly periods
+* CodeBuild (4.0.101.0)
+	* Adds support for host kernel selection for on-demand builds.
+* Connect (4.0.101.0)
+	* Amazon Connect - Added CreateAttachedFile and StartContactConversationalAnalyticsJob APIs to import call recordings and run conversational analytics.
+* DataZone (4.0.101.0)
+	* Amazon DataZone now supports SNOWFLAKE as a connection type in the CreateConnection API, enabling metadata and lineage retrieval from Snowflake databases. Specify snowflakeProperties with connection details, a Secrets Manager secret, an Athena spill bucket, and an identity mapping for Snowflake.
+* EC2 (4.0.101.0)
+	* Adds ModifyVpcEndpointPayerResponsibility API, which enables VPC endpoint service owners to modify the billing account for VPC endpoint usage charges at the individual endpoint level
+* ECS (4.0.100.1)
+	* Updated threshold configuration documentation.
+* EKS (4.0.101.0)
+	* Adds Kubernetes version rollback support, including the CancelUpdate operation to cancel an in-progress VersionRollback update, the RollbackConfig structure with a timeoutMinutes field, and the Cancellation structure surfaced via the new cancellation field on the Update object.
+* NetworkFirewall (4.0.101.0)
+	* AWS Network Firewall now supports container associations for monitoring ECS and EKS workloads. You can create container associations to dynamically track the IP addresses of running containers in your Amazon ECS and Amazon EKS clusters.
+* ObservabilityAdmin (4.0.101.0)
+	* Organization and account level telemetry rule via Observability Admin and CloudWatch pipelines for metrics
+* PartnerCentralSelling (4.0.101.0)
+	* This release adds AwsMarketplaceSolutions and AwsMarketplaceProducts entity types to the Associate and Disassociate APIs, returns them in GetOpportunity, and adds AwsMarketplaceSolutionArn to ListSolutions ,letting partners link Marketplace listings directly to opportunities.
+* SSOAdmin (4.0.101.0)
+	* AWS IAM Identity Center now returns PrimaryRegion and Regions in the ListInstances response, providing information about replicated instances.
+* SupportAuthZ (4.0.100.0)
+	* New SDK release for SupportAuthZ.
+* Extensions.Bedrock.MEAI (4.0.101.0)
+	* Add support for native structured outputs (https://github.com/aws/aws-sdk-net/issues/4425)
+
+### 4.0.277.0 (2026-06-29 18:17 UTC)
+* AppConfig (4.0.100.0)
+	* AWS AppConfig introduces Experimentation tools - enhanced capabilities within AWS AppConfig that enable you to run AB tests, multivariate tests, and gradual feature rollouts across your application stack.
+* CloudWatch (4.0.100.0)
+	* This release adds the API (PutLogAlarm) to manage a new CloudWatch resource, Log Based Alarms. Log Based Alarms allows customers to alarm directly on CloudWatch Logs query results.
+* ConnectCampaignsV2 (4.0.100.0)
+	* Adding new attributes to PutProfileOutboundRequest API that will create an outbound request call for the customer's Web Notification outbound campaign.
+* ConnectHealth (4.0.100.0)
+	* Expand input validation to support Unicode characters and markdown table syntax.
+* DynamoDBv2 (4.0.100.0)
+	* ReturnConsumedCapacity Support for DynamoDB Transactions in DynamoDBContext and Table APIs
+* EC2 (4.0.100.0)
+	* Adds support for the precision time strategy and a parentGroupId parameter on CreatePlacementGroup and DescribePlacementGroups. Precision time placement groups and cluster placement groups with a parent precision time placement group ensure instances launch on precision time capable hardware.
+* ECS (4.0.100.0)
+	* Amazon ECS now supports customizable deployment circuit breaker configurations. Customers can now define the failure threshold or control the failure counting mechanism.
+* ElastiCache (4.0.100.0)
+	* Updated documentation for the ApplyImmediately parameter in ModifyCacheCluster and ModifyReplicationGroup to clarify modification behavior.
+* Evs (4.0.100.0)
+	* Amazon EVS introduces a VMware Cloud Foundation (VCF) self-deployed mode, along with new connectors to VCF components such as the Operations and SDDC managers to monitor coverage and usage.
+* Glue (4.0.100.0)
+	* Added the UpdateAsset operation to set the business name and description for an existing AWS Glue Data Catalog asset.
+* Imagebuilder (4.0.100.0)
+	* Adds support for AMI watermarks in Image Builder.
+* Lambda (4.0.100.0)
+	* Lambda now supports self-managed S3 buckets for Lambda code storage giving you the option for Lambda to reference a copy of your source code from your own S3 buckets. This allows you to maintain a single copy of your source code and manage your own code storage limits.
+* PCS (4.0.100.0)
+	* Add support for in-place Slurm version upgrades on existing clusters by accepting scheduler.version in UpdateCluster.
+* PinpointSMSVoiceV2 (4.0.100.0)
+	* This launch is an expansion of our Q1 RCS for business launch where we will release an API that supports rich media and interactive messaging elements.
+* RDSDataService (4.0.100.0)
+	* Updated documentation to remove Aurora Serverless V1 references.
+* ResourceExplorer2 (4.0.100.0)
+	* Added CFN resource type fields for Search and ListSupportedResourceTypes responses. Added SLRec field for ServiceView
+* SageMakerFeatureStoreRuntime (4.0.100.0)
+	* Add support for ListRecords and BatchWriteRecord APIs to Feature Store.
+* VPCLattice (4.0.100.0)
+	* Amazon VPC Lattice now supports mutable idle timeout configuration on VPC Lattice Services
+* WAFV2 (4.0.100.0)
+	* AWS WAF added support for associating AWS WAF web ACLs with Amazon Bedrock AgentCore Gateway resources. You can now use AssociateWebACL, DisassociateWebACL, GetWebACLForResource, and ListResourcesForWebACL to protect your AgentCore Gateways with AWS WAF.
+* Extensions.CborProtocol (4.0.100.0)
+	* Use Lax CBOR conformance mode in the writer pool to avoid per-request map-key sorting, reducing marshal CPU for key-heavy payloads.
+* Extensions.Logging.ILoggerAdaptor (4.0.100.0)
+	* ILoggerAdapter ConfigureAWSSDKLogging now throws when called with null ILoggerFactory
+* Core 4.0.100.0
+	* One time synchronized package versions to mark build system changes.
+	* Reduce memory allocations in CBOR request marshalling by encoding directly into a pooled buffer.
+	* Remove unnecessary allocation for unused exceptions in `FallbackRegionFactory.GetRegionEndpoint` (https://github.com/aws/aws-sdk-net/pull/4448)
+	* Small performance improvements in `AWSSDKUtils` class (https://github.com/aws/aws-sdk-net/pull/4447)
+	* All service and extension packages updated to require new Core
+
+### 4.0.276.0 (2026-06-23 01:32 UTC)
+* Kafka (4.0.12.0)
+	* Amazon MSK Replicator now supports mTLS authentication when connecting to external Apache Kafka clusters, enabling customers to replicate data from clusters that require mutual TLS for client authentication. This capability is supported when replicating to Amazon MSK Express brokers.
+
+### 4.0.275.1 (2026-06-22 21:15 UTC)
+* Core 4.0.9.7
+	* Revert change in Core 4.0.9.4 due to multiple regressions
+	* All service and extension packages updated to require new Core
+
+### 4.0.275.0 (2026-06-22 19:05 UTC)
+* ApplicationSignals (4.0.10.0)
+	* Application Signals now supports dynamic instrumentation and Service Events telemetry. Add instrumentation at runtime without restarts, and use fine-grained profiling data to quickly pinpoint latency and error root causes.
+* BedrockAgentCore (4.0.31.0)
+	* Adds an optional extractionMode field to CreateEvent. SKIP retains the event in short-term memory but excludes it from long-term memory extraction.
+* CloudWatchLogs (4.0.29.0)
+	* CloudWatch Logs Updates - New APIs introduced to support syslog ingestion to a log group. For more information, see CloudWatch Logs API documentation.
+* DirectConnect (4.0.6.0)
+	* Added VIF rate limiting support for AWS Direct Connect, allowing customers to set bandwidth allocations on virtual interfaces to manage traffic on dedicated connections.
+* EC2 (4.0.94.0)
+	* This release adds support for AMI Watermark and Allowed AMIs integration
+* GuardDuty (4.0.23.0)
+	* Added AI-powered investigations that automatically analyze security findings, correlate related activity, and produce structured summaries with risk assessment, confidence scoring, MITRE technique classification, and actionable next steps.
+* Kafka (4.0.11.0)
+	* Amazon MSK Replicator now supports mTLS authentication when connecting to external Apache Kafka clusters, enabling customers to replicate data from clusters that require mutual TLS for client authentication. This capability is supported when replicating to Amazon MSK Express brokers.
+* Lambda (4.0.19.0)
+	* Add support for tagging Network Connector resources in AWS Lambda.
+* LambdaCore (4.0.0.0)
+	* Initial release of the AWS Lambda Core SDK with APIs to create, manage, and tag network connectors that enable Lambda compute resources to access private resources in your Amazon VPC.
+* LambdaMicrovms (4.0.0.0)
+	* Lambda MicroVMs GA launch. Lambda MicroVMs enable isolated and highly responsive execution of user-supplied or LLM-generated code.
+* MediaConnect (4.0.10.0)
+	* AWS MediaConnect now supports Content Quality Analysis for Router Inputs, enabling detection of black frames, frozen frames, and silent audio with configurable thresholds.
+* Omics (4.0.13.0)
+	* Adds support for scratch ephemeral storage mounted at tmp
+* QuickSight (4.0.27.0)
+	* Updated the Amazon Quick Spaces API to remove unsupported SPACE and ARTIFACT values from the SpaceQuickSightResourceType enum.
+
 ### 4.0.274.0 (2026-06-19 18:16 UTC)
 * AppStream (4.0.13.0)
 	* Amazon WorkSpaces Agent Access now supports domain-joined fleets for enterprise identity integration, real-time agent observation with instant stop controls, and MCP tool forwarding for lower-latency, cost-effective desktop tool access.

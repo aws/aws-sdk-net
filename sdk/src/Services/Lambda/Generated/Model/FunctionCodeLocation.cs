@@ -34,11 +34,32 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class FunctionCodeLocation
     {
+        private FunctionCodeLocationError _error;
         private string _imageUri;
         private string _location;
         private string _repositoryType;
         private string _resolvedImageUri;
+        private ResolvedS3Object _resolvedS3Object;
         private string _sourceKMSKeyArn;
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// An object that contains details about an error related to function deployment package
+        /// retrieval.
+        /// </para>
+        /// </summary>
+        public FunctionCodeLocationError Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageUri. 
@@ -111,6 +132,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetResolvedImageUri()
         {
             return this._resolvedImageUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedS3Object. 
+        /// <para>
+        /// The resolved Amazon S3 object that contains the deployment package.
+        /// </para>
+        /// </summary>
+        public ResolvedS3Object ResolvedS3Object
+        {
+            get { return this._resolvedS3Object; }
+            set { this._resolvedS3Object = value; }
+        }
+
+        // Check to see if ResolvedS3Object property is set
+        internal bool IsSetResolvedS3Object()
+        {
+            return this._resolvedS3Object != null;
         }
 
         /// <summary>

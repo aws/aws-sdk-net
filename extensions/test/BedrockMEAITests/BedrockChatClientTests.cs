@@ -105,7 +105,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("tool_use")
             });
 
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var client = mockRuntime.Object.AsIChatClient("claude-3", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Test") };
 
         var schemaJson = """
@@ -198,7 +198,7 @@ public class BedrockChatClientTests
                 Usage = new TokenUsage { InputTokens = 10, OutputTokens = 20, TotalTokens = 30 }
             });
 
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var client = mockRuntime.Object.AsIChatClient("claude-3", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Get weather") };
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
 
@@ -218,11 +218,12 @@ public class BedrockChatClientTests
 
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
-    public async Task ResponseFormat_Json_WithTools_ThrowsArgumentException()
+    public async Task ResponseFormat_Json_WithTools_SyntheticToolMode_ThrowsArgumentException()
     {
-        // Arrange
+        // Arrange - SyntheticTool mode consumes the single forced tool, so it cannot be combined with
+        // user-provided tools. (Native mode, exercised separately, composes the two.)
         var mockRuntime = new Mock<IAmazonBedrockRuntime>();
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var client = mockRuntime.Object.AsIChatClient("claude-3", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Test") };
 
         // Create test tool
@@ -254,7 +255,7 @@ public class BedrockChatClientTests
                 ErrorCode = "ValidationException"
             });
 
-        var client = mockRuntime.Object.AsIChatClient("titan");
+        var client = mockRuntime.Object.AsIChatClient("titan", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Test") };
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
 
@@ -291,7 +292,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("end_turn")
             });
 
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var client = mockRuntime.Object.AsIChatClient("claude-3", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Generate data") };
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
 
@@ -339,7 +340,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("tool_use")
             });
 
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var client = mockRuntime.Object.AsIChatClient("claude-3", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Generate data") };
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
 
@@ -383,7 +384,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("tool_use")
             });
 
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var client = mockRuntime.Object.AsIChatClient("claude-3", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Generate data") };
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
 
@@ -429,7 +430,7 @@ public class BedrockChatClientTests
                 StopReason = new StopReason("tool_use")
             });
 
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var client = mockRuntime.Object.AsIChatClient("claude-3", BedrockStructuredOutputMode.SyntheticTool);
         var messages = new[] { new ChatMessage(ChatRole.User, "Generate data") };
         var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
 
@@ -438,6 +439,256 @@ public class BedrockChatClientTests
             await client.GetResponseAsync(messages, options));
 
         Assert.Contains("did not return structured output", ex.Message);
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task ResponseFormat_Json_Native_SetsOutputConfigNotTool()
+    {
+        // Arrange
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+        ConverseRequest capturedRequest = null;
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .Callback<ConverseRequest, CancellationToken>((req, ct) => capturedRequest = req)
+            .ReturnsAsync(new ConverseResponse
+            {
+                Output = new ConverseOutput
+                {
+                    Message = new Message
+                    {
+                        Role = ConversationRole.Assistant,
+                        Content = new List<ContentBlock> { new ContentBlock { Text = "{\"summary\":\"ok\"}" } }
+                    }
+                },
+                StopReason = new StopReason("end_turn")
+            });
+
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
+        var messages = new[] { new ChatMessage(ChatRole.User, "Summarize") };
+
+        var schemaJson = """
+            {
+                "type": "object",
+                "properties": { "summary": { "type": "string" } },
+                "required": ["summary"],
+                "additionalProperties": false
+            }
+            """;
+        var schemaElement = JsonDocument.Parse(schemaJson).RootElement;
+        var options = new ChatOptions
+        {
+            ResponseFormat = ChatResponseFormat.ForJsonSchema(schemaElement,
+                schemaName: "SummarySchema",
+                schemaDescription: "A summary object")
+        };
+
+        // Act
+        await client.GetResponseAsync(messages, options);
+
+        // Assert - native structured outputs is realized via OutputConfig, not a synthetic tool.
+        Assert.NotNull(capturedRequest);
+        Assert.NotNull(capturedRequest.OutputConfig);
+        Assert.NotNull(capturedRequest.OutputConfig.TextFormat);
+        Assert.Equal(OutputFormatType.Json_schema, capturedRequest.OutputConfig.TextFormat.Type);
+
+        var jsonSchema = capturedRequest.OutputConfig.TextFormat.Structure.JsonSchema;
+        Assert.Equal("SummarySchema", jsonSchema.Name);
+        Assert.Equal("A summary object", jsonSchema.Description);
+
+        // Schema is the supplied schema serialized to a JSON string.
+        using var actualSchema = JsonDocument.Parse(jsonSchema.Schema);
+        Assert.Equal("object", actualSchema.RootElement.GetProperty("type").GetString());
+        Assert.True(actualSchema.RootElement.GetProperty("properties").TryGetProperty("summary", out _));
+
+        // No synthetic generate_response tool / forced ToolChoice was added.
+        bool hasSyntheticTool = capturedRequest.ToolConfig?.Tools?.Any(t => t.ToolSpec?.Name == "generate_response") ?? false;
+        Assert.False(hasSyntheticTool);
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task ResponseFormat_Json_Native_NoSchema_UsesDefaultObjectSchema()
+    {
+        // Arrange - ChatResponseFormat.Json carries no schema. The Bedrock model requires
+        // jsonSchema.schema, so Native mode must fall back to a permissive object schema rather
+        // than emitting a null (which would fail marshalling/validation).
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+        ConverseRequest capturedRequest = null;
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .Callback<ConverseRequest, CancellationToken>((req, ct) => capturedRequest = req)
+            .ReturnsAsync(new ConverseResponse
+            {
+                Output = new ConverseOutput
+                {
+                    Message = new Message
+                    {
+                        Role = ConversationRole.Assistant,
+                        Content = new List<ContentBlock> { new ContentBlock { Text = "{}" } }
+                    }
+                },
+                StopReason = new StopReason("end_turn")
+            });
+
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
+        var messages = new[] { new ChatMessage(ChatRole.User, "Summarize") };
+        var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
+
+        // Act
+        await client.GetResponseAsync(messages, options);
+
+        // Assert - schema is populated with a permissive object schema, not null.
+        Assert.NotNull(capturedRequest?.OutputConfig?.TextFormat?.Structure?.JsonSchema);
+        var jsonSchema = capturedRequest.OutputConfig.TextFormat.Structure.JsonSchema;
+        Assert.False(string.IsNullOrEmpty(jsonSchema.Schema));
+
+        using var actualSchema = JsonDocument.Parse(jsonSchema.Schema);
+        Assert.Equal("object", actualSchema.RootElement.GetProperty("type").GetString());
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task ResponseFormat_Json_Native_WithTools_PassesBothThrough()
+    {
+        // Arrange - the core regression from issue #4425: Tools + ResponseFormat must compose in Native mode.
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+        ConverseRequest capturedRequest = null;
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .Callback<ConverseRequest, CancellationToken>((req, ct) => capturedRequest = req)
+            .ReturnsAsync(new ConverseResponse
+            {
+                Output = new ConverseOutput
+                {
+                    Message = new Message
+                    {
+                        Role = ConversationRole.Assistant,
+                        Content = new List<ContentBlock> { new ContentBlock { Text = "{\"summary\":\"ok\"}" } }
+                    }
+                },
+                StopReason = new StopReason("end_turn")
+            });
+
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
+        var messages = new[] { new ChatMessage(ChatRole.User, "What's the weather in Melbourne?") };
+
+        var weatherSchema = JsonDocument.Parse("""{"type":"object","properties":{"city":{"type":"string"}}}""").RootElement;
+        var tool = new TestAIFunction("get_weather", "Get the weather", weatherSchema);
+
+        var responseSchema = JsonDocument.Parse(
+            """{"type":"object","properties":{"summary":{"type":"string"}},"required":["summary"],"additionalProperties":false}""").RootElement;
+
+        var options = new ChatOptions
+        {
+            Tools = new[] { tool },
+            ResponseFormat = ChatResponseFormat.ForJsonSchema(responseSchema)
+        };
+
+        // Act - must NOT throw (previously threw ArgumentException before reaching Bedrock).
+        var response = await client.GetResponseAsync(messages, options);
+
+        // Assert
+        Assert.NotNull(response);
+        Assert.NotNull(capturedRequest);
+        Assert.NotNull(capturedRequest.ToolConfig);
+
+        // User tool survives, no synthetic tool injected.
+        Assert.Contains(capturedRequest.ToolConfig.Tools, t => t.ToolSpec?.Name == "get_weather");
+        Assert.DoesNotContain(capturedRequest.ToolConfig.Tools, t => t.ToolSpec?.Name == "generate_response");
+
+        // Structured output requested via OutputConfig.
+        Assert.NotNull(capturedRequest.OutputConfig);
+        Assert.Equal(OutputFormatType.Json_schema, capturedRequest.OutputConfig.TextFormat.Type);
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task ResponseFormat_Json_Native_ModelReturnsText_ParsedAsContent()
+    {
+        // Arrange - in Native mode the constrained JSON arrives as a normal text ContentBlock.
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+        var json = "{\"summary\":\"all good\"}";
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new ConverseResponse
+            {
+                Output = new ConverseOutput
+                {
+                    Message = new Message
+                    {
+                        Role = ConversationRole.Assistant,
+                        Content = new List<ContentBlock> { new ContentBlock { Text = json } }
+                    }
+                },
+                StopReason = new StopReason("end_turn")
+            });
+
+        var client = mockRuntime.Object.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
+        var messages = new[] { new ChatMessage(ChatRole.User, "Summarize") };
+        var schema = JsonDocument.Parse("""{"type":"object","properties":{"summary":{"type":"string"}}}""").RootElement;
+        var options = new ChatOptions { ResponseFormat = ChatResponseFormat.ForJsonSchema(schema) };
+
+        // Act - no InvalidOperationException (that path is SyntheticTool-only).
+        var response = await client.GetResponseAsync(messages, options);
+
+        // Assert
+        Assert.Equal(json, response.Text);
+        var parsed = JsonDocument.Parse(response.Text);
+        Assert.Equal("all good", parsed.RootElement.GetProperty("summary").GetString());
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task ResponseFormat_Json_Native_Streaming_DoesNotThrow_AndSetsOutputConfig()
+    {
+        // Arrange
+        ConverseStreamRequest capturedRequest = null;
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
+        {
+            capturedRequest = request;
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "{\"summary\":"),
+                CreateContentBlockDeltaEvent(0, "\"ok\"}"),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
+
+        IChatClient client = mock.AsIChatClient("us.anthropic.claude-sonnet-4-5-20250929-v1:0", BedrockStructuredOutputMode.Native);
+        var schema = JsonDocument.Parse(
+            """{"type":"object","properties":{"summary":{"type":"string"}},"required":["summary"],"additionalProperties":false}""").RootElement;
+        var options = new ChatOptions { ResponseFormat = ChatResponseFormat.ForJsonSchema(schema) };
+
+        // Act - Native mode supports streaming ResponseFormat (no NotSupportedException).
+        var updates = new List<ChatResponseUpdate>();
+        await foreach (var update in client.GetStreamingResponseAsync([new(ChatRole.User, "Summarize")], options))
+        {
+            updates.Add(update);
+        }
+
+        // Assert
+        Assert.NotEmpty(updates);
+
+        Assert.NotNull(capturedRequest);
+        Assert.NotNull(capturedRequest.OutputConfig);
+        Assert.Equal(OutputFormatType.Json_schema, capturedRequest.OutputConfig.TextFormat.Type);
+
+        // The constrained JSON streamed back as ordinary text deltas.
+        string fullText = string.Concat(updates
+            .SelectMany(u => u.Contents.OfType<TextContent>())
+            .Select(c => c.Text));
+        Assert.Equal("{\"summary\":\"ok\"}", fullText);
+        var parsed = JsonDocument.Parse(fullText);
+        Assert.Equal("ok", parsed.RootElement.GetProperty("summary").GetString());
     }
 
 

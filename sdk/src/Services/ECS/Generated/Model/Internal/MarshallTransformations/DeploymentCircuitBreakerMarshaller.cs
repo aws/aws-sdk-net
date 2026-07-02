@@ -52,10 +52,27 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Enable.Value);
             }
 
+            if(requestObject.IsSetResetOnHealthyTask())
+            {
+                context.Writer.WritePropertyName("resetOnHealthyTask");
+                context.Writer.WriteBooleanValue(requestObject.ResetOnHealthyTask.Value);
+            }
+
             if(requestObject.IsSetRollback())
             {
                 context.Writer.WritePropertyName("rollback");
                 context.Writer.WriteBooleanValue(requestObject.Rollback.Value);
+            }
+
+            if(requestObject.IsSetThresholdConfiguration())
+            {
+                context.Writer.WritePropertyName("thresholdConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ThresholdConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThresholdConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

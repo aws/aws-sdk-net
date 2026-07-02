@@ -68,6 +68,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("childResources", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ChildResource, ChildResourceUnmarshaller>(ChildResourceUnmarshaller.Instance);
+                    unmarshalledObject.ChildResources = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("configuredTableArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

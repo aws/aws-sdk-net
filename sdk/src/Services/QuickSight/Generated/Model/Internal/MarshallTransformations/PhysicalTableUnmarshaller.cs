@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomSql = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FileSource", targetDepth, ref reader))
+                {
+                    var unmarshaller = FileSourceUnmarshaller.Instance;
+                    unmarshalledObject.FileSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RelationalTable", targetDepth, ref reader))
                 {
                     var unmarshaller = RelationalTableUnmarshaller.Instance;

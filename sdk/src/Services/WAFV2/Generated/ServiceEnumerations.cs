@@ -101,6 +101,10 @@ namespace Amazon.WAFV2
     {
 
         /// <summary>
+        /// Constant AGENTCORE_GATEWAY for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType AGENTCORE_GATEWAY = new AssociatedResourceType("AGENTCORE_GATEWAY");
+        /// <summary>
         /// Constant API_GATEWAY for AssociatedResourceType
         /// </summary>
         public static readonly AssociatedResourceType API_GATEWAY = new AssociatedResourceType("API_GATEWAY");
@@ -3150,6 +3154,10 @@ namespace Amazon.WAFV2
     public class ResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AGENTCORE_GATEWAY for ResourceType
+        /// </summary>
+        public static readonly ResourceType AGENTCORE_GATEWAY = new ResourceType("AGENTCORE_GATEWAY");
         /// <summary>
         /// Constant AMPLIFY for ResourceType
         /// </summary>

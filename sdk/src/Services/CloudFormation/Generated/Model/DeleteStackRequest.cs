@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
     {
         private string _clientRequestToken;
         private DeletionMode _deletionMode;
+        private DeploymentConfig _deploymentConfig;
         private List<string> _retainResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleARN;
         private string _stackName;
@@ -113,6 +114,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDeletionMode()
         {
             return this._deletionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration for this stack operation, including the deployment mode.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
         }
 
         /// <summary>

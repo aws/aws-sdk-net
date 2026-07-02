@@ -13550,6 +13550,58 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  UpdateAsset
+
+        internal virtual UpdateAssetResponse UpdateAsset(UpdateAssetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the name and description of an existing asset in Glue Data Catalog. Only the
+        /// fields that you provide are updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAsset service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
+        public virtual Task<UpdateAssetResponse> UpdateAssetAsync(UpdateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAssetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateBlueprint
 
         internal virtual UpdateBlueprintResponse UpdateBlueprint(UpdateBlueprintRequest request)

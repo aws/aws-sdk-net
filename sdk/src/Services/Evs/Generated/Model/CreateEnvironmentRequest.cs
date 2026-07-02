@@ -34,21 +34,24 @@ namespace Amazon.Evs.Model
     /// Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX
     /// Manager, and vCenter Server.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// During environment creation, Amazon EVS performs validations on DNS settings, provisions
-    /// VLAN subnets and hosts, and deploys the supplied version of VCF.
+    /// When you specify <c>SELF_DEPLOYED</c> for <c>vcfVersion</c>, Amazon EVS provisions
+    /// only the VLAN subnets; no hosts are added and no VCF installation is performed. After
+    /// the environment is created, you can add hosts with <c>CreateEnvironmentHost</c> and
+    /// install VCF yourself. The <c>licenseInfo</c>, <c>hosts</c>, <c>vcfHostnames</c>, <c>siteId</c>,
+    /// and <c>connectivityInfo</c> parameters are not supported in this mode.
     /// </para>
-    ///  
+    ///  </note> 
     /// <para>
-    /// It can take several hours to create an environment. After the deployment completes,
-    /// you can configure VCF in the vSphere user interface according to your needs.
+    /// When you specify any other VCF version, Amazon EVS installs and configures VCF for
+    /// you. For more information, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/getting-started-self-deployed.html">Self-deployed
+    /// mode</a> in the <i>Amazon EVS User Guide</i>.
     /// </para>
     ///  <important> 
     /// <para>
-    /// When creating a new environment, the default ESX version for the selected VCF version
-    /// will be used, you cannot choose a specific ESX version in <c>CreateEnvironment</c>
-    /// action. When a host has been added with a specific ESX version, it can only be upgraded
+    /// When Amazon EVS installs VCF, the default ESX version for the selected VCF version
+    /// will be used. After a host is added with a specific ESX version, it can only be upgraded
     /// using vCenter Lifecycle Manager.
     /// </para>
     ///  </important> <note> 
@@ -110,13 +113,17 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property ConnectivityInfo. 
         /// <para>
-        ///  The connectivity configuration for the environment. Amazon EVS requires that you
-        /// specify two route server peer IDs. During environment creation, the route server endpoints
+        /// The connectivity configuration for the environment. Amazon EVS requires that you specify
+        /// two route server peer IDs. During environment creation, the route server endpoints
         /// peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing
         /// for overlay networks.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ConnectivityInfo ConnectivityInfo
         {
             get { return this._connectivityInfo; }
@@ -155,22 +162,23 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property Hosts. 
         /// <para>
-        /// The ESX hosts to add to the environment. Amazon EVS requires that you provide details
-        /// for a minimum of 4 hosts during environment creation.
+        /// The ESX hosts to add to the environment. For each host, provide the desired hostname,
+        /// EC2 SSH keypair name, and EC2 instance type. Optionally, provide a partition or cluster
+        /// placement group, or use Amazon EC2 Dedicated Hosts.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2
-        /// instance type. Optionally, you can also provide a partition or cluster placement group
-        /// to use, or use Amazon EC2 Dedicated Hosts.
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>. In that case, you can
+        /// add hosts using <c>CreateEnvironmentHost</c> after the environment is created.
         /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=4)]
+        [AWSProperty(Min=4, Max=4)]
         public List<HostInfoForCreate> Hosts
         {
             get { return this._hosts; }
@@ -250,13 +258,18 @@ namespace Amazon.Evs.Model
         /// <para>
         /// VCF license information can be retrieved from the Broadcom portal.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<LicenseInfo> LicenseInfo
         {
             get { return this._licenseInfo; }
@@ -314,8 +327,8 @@ namespace Amazon.Evs.Model
         /// Gets and sets the property ServiceAccessSubnetId. 
         /// <para>
         /// The subnet that is used to establish connectivity between the Amazon EVS control plane
-        /// and VPC. Amazon EVS uses this subnet to validate mandatory DNS records for your VCF
-        /// appliances and hosts and create the environment.
+        /// and VPC. The Amazon EVS control plane uses this subnet to interface with your environment.
+        /// This includes validating DNS records and enabling Amazon EVS Connectors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=15, Max=24)]
@@ -340,8 +353,12 @@ namespace Amazon.Evs.Model
         /// EVS uses the Broadcom Site ID that you provide to meet Broadcom VCF license usage
         /// reporting requirements for Amazon EVS.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SiteId
         {
             get { return this._siteId; }
@@ -383,11 +400,11 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property TermsAccepted. 
         /// <para>
-        /// Customer confirmation that the customer has purchased and will continue to maintain
-        /// the required number of VCF software licenses to cover all physical processor cores
-        /// in the Amazon EVS environment. Information about your VCF software in Amazon EVS will
-        /// be shared with Broadcom to verify license compliance. Amazon EVS does not validate
-        /// license keys. To validate license keys, visit the Broadcom support portal.
+        /// Confirmation that the customer has purchased and will continue to maintain the required
+        /// number of VCF software licenses to cover all physical processor cores in the Amazon
+        /// EVS environment. Information about your VCF software in Amazon EVS will be shared
+        /// with Broadcom to verify license compliance. Amazon EVS does not validate license keys.
+        /// To validate license keys, visit the Broadcom support portal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -407,11 +424,14 @@ namespace Amazon.Evs.Model
         /// Gets and sets the property VcfHostnames. 
         /// <para>
         /// The DNS hostnames for the virtual machines that host the VCF management appliances.
-        /// Amazon EVS requires that you provide DNS hostnames for the following appliances: vCenter,
-        /// NSX Manager, SDDC Manager, and Cloud Builder.
+        /// Provide hostnames for vCenter, NSX Manager, SDDC Manager, and Cloud Builder.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public VcfHostnames VcfHostnames
         {
             get { return this._vcfHostnames; }
@@ -427,8 +447,20 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property VcfVersion. 
         /// <para>
-        ///  The VCF version to use for the environment.
+        /// The VCF version to use for the environment.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SELF_DEPLOYED</c>: You install VCF yourself. The <c>licenseInfo</c>, <c>hosts</c>,
+        /// <c>vcfHostnames</c>, <c>siteId</c>, and <c>connectivityInfo</c> parameters are not
+        /// supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any other valid value: Amazon EVS installs and configures VCF for you in the version
+        /// you specify.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public VcfVersion VcfVersion

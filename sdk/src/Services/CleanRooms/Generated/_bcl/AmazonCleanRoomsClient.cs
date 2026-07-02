@@ -1317,6 +1317,184 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  CreateIntermediateTable
+
+
+        /// <summary>
+        /// Creates an intermediate table in a membership. An intermediate table stores a query
+        /// definition that you can execute later using <c>PopulateIntermediateTable</c> to materialize
+        /// cached results. The intermediate table is owned by the member with the CAN_QUERY ability.
+        /// This operation does not execute the stored query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTable">REST API Reference for CreateIntermediateTable Operation</seealso>
+        public virtual CreateIntermediateTableResponse CreateIntermediateTable(CreateIntermediateTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntermediateTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIntermediateTableResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an intermediate table in a membership. An intermediate table stores a query
+        /// definition that you can execute later using <c>PopulateIntermediateTable</c> to materialize
+        /// cached results. The intermediate table is owned by the member with the CAN_QUERY ability.
+        /// This operation does not execute the stored query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTable">REST API Reference for CreateIntermediateTable Operation</seealso>
+        public virtual Task<CreateIntermediateTableResponse> CreateIntermediateTableAsync(CreateIntermediateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntermediateTableResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIntermediateTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIntermediateTableAnalysisRule
+
+
+        /// <summary>
+        /// Creates an analysis rule for an intermediate table. Only the CUSTOM analysis rule
+        /// type is supported. The service automatically determines whether the rule is first-party
+        /// or multi-party restricted based on the intermediate table's inherited constraints.
+        /// Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTableAnalysisRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTableAnalysisRule">REST API Reference for CreateIntermediateTableAnalysisRule Operation</seealso>
+        public virtual CreateIntermediateTableAnalysisRuleResponse CreateIntermediateTableAnalysisRule(CreateIntermediateTableAnalysisRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIntermediateTableAnalysisRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an analysis rule for an intermediate table. Only the CUSTOM analysis rule
+        /// type is supported. The service automatically determines whether the rule is first-party
+        /// or multi-party restricted based on the intermediate table's inherited constraints.
+        /// Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTableAnalysisRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIntermediateTableAnalysisRule">REST API Reference for CreateIntermediateTableAnalysisRule Operation</seealso>
+        public virtual Task<CreateIntermediateTableAnalysisRuleResponse> CreateIntermediateTableAnalysisRuleAsync(CreateIntermediateTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIntermediateTableAnalysisRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMembership
 
 
@@ -2144,6 +2322,168 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  DeleteIntermediateTable
+
+
+        /// <summary>
+        /// Deletes an intermediate table. When you delete the table, the service marks it as
+        /// DELETED, removes its analysis rule and schema, and triggers storage cleanup. This
+        /// operation is idempotent. Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntermediateTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIntermediateTable">REST API Reference for DeleteIntermediateTable Operation</seealso>
+        public virtual DeleteIntermediateTableResponse DeleteIntermediateTable(DeleteIntermediateTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntermediateTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntermediateTableResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an intermediate table. When you delete the table, the service marks it as
+        /// DELETED, removes its analysis rule and schema, and triggers storage cleanup. This
+        /// operation is idempotent. Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntermediateTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIntermediateTable">REST API Reference for DeleteIntermediateTable Operation</seealso>
+        public virtual Task<DeleteIntermediateTableResponse> DeleteIntermediateTableAsync(DeleteIntermediateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntermediateTableResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIntermediateTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIntermediateTableAnalysisRule
+
+
+        /// <summary>
+        /// Deletes an analysis rule from an intermediate table. After the analysis rule is deleted,
+        /// the intermediate table becomes unqueryable until a new analysis rule is attached.
+        /// Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntermediateTableAnalysisRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIntermediateTableAnalysisRule">REST API Reference for DeleteIntermediateTableAnalysisRule Operation</seealso>
+        public virtual DeleteIntermediateTableAnalysisRuleResponse DeleteIntermediateTableAnalysisRule(DeleteIntermediateTableAnalysisRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntermediateTableAnalysisRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an analysis rule from an intermediate table. After the analysis rule is deleted,
+        /// the intermediate table becomes unqueryable until a new analysis rule is attached.
+        /// Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntermediateTableAnalysisRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIntermediateTableAnalysisRule">REST API Reference for DeleteIntermediateTableAnalysisRule Operation</seealso>
+        public virtual Task<DeleteIntermediateTableAnalysisRuleResponse> DeleteIntermediateTableAnalysisRuleAsync(DeleteIntermediateTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIntermediateTableAnalysisRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMember
 
 
@@ -2369,6 +2709,87 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = DeletePrivacyBudgetTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePrivacyBudgetTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisallowIntermediateTable
+
+
+        /// <summary>
+        /// Invalidates a specific intermediate table that references the caller's base table.
+        /// The data provider (base table owner) calls this operation, not the intermediate table
+        /// owner. By default, invalidation cascades to descendant intermediate tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisallowIntermediateTable service method.</param>
+        /// 
+        /// <returns>The response from the DisallowIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DisallowIntermediateTable">REST API Reference for DisallowIntermediateTable Operation</seealso>
+        public virtual DisallowIntermediateTableResponse DisallowIntermediateTable(DisallowIntermediateTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisallowIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisallowIntermediateTableResponseUnmarshaller.Instance;
+
+            return Invoke<DisallowIntermediateTableResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Invalidates a specific intermediate table that references the caller's base table.
+        /// The data provider (base table owner) calls this operation, not the intermediate table
+        /// owner. By default, invalidation cascades to descendant intermediate tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisallowIntermediateTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisallowIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DisallowIntermediateTable">REST API Reference for DisallowIntermediateTable Operation</seealso>
+        public virtual Task<DisallowIntermediateTableResponse> DisallowIntermediateTableAsync(DisallowIntermediateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisallowIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisallowIntermediateTableResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisallowIntermediateTableResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3357,6 +3778,152 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = GetIdNamespaceAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetIdNamespaceAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIntermediateTable
+
+
+        /// <summary>
+        /// Retrieves an intermediate table. Returns the full details of the intermediate table,
+        /// including schema, table dependencies, inherited constraints, child resources, and
+        /// status. Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntermediateTable service method.</param>
+        /// 
+        /// <returns>The response from the GetIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIntermediateTable">REST API Reference for GetIntermediateTable Operation</seealso>
+        public virtual GetIntermediateTableResponse GetIntermediateTable(GetIntermediateTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntermediateTableResponseUnmarshaller.Instance;
+
+            return Invoke<GetIntermediateTableResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves an intermediate table. Returns the full details of the intermediate table,
+        /// including schema, table dependencies, inherited constraints, child resources, and
+        /// status. Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntermediateTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIntermediateTable">REST API Reference for GetIntermediateTable Operation</seealso>
+        public virtual Task<GetIntermediateTableResponse> GetIntermediateTableAsync(GetIntermediateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntermediateTableResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIntermediateTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIntermediateTableAnalysisRule
+
+
+        /// <summary>
+        /// Retrieves the analysis rule for an intermediate table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntermediateTableAnalysisRule service method.</param>
+        /// 
+        /// <returns>The response from the GetIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIntermediateTableAnalysisRule">REST API Reference for GetIntermediateTableAnalysisRule Operation</seealso>
+        public virtual GetIntermediateTableAnalysisRuleResponse GetIntermediateTableAnalysisRule(GetIntermediateTableAnalysisRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetIntermediateTableAnalysisRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the analysis rule for an intermediate table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntermediateTableAnalysisRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIntermediateTableAnalysisRule">REST API Reference for GetIntermediateTableAnalysisRule Operation</seealso>
+        public virtual Task<GetIntermediateTableAnalysisRuleResponse> GetIntermediateTableAnalysisRuleAsync(GetIntermediateTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIntermediateTableAnalysisRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4704,6 +5271,154 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  ListIntermediateTables
+
+
+        /// <summary>
+        /// Lists intermediate tables owned by the caller in a membership. We recommend using
+        /// pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntermediateTables service method.</param>
+        /// 
+        /// <returns>The response from the ListIntermediateTables service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIntermediateTables">REST API Reference for ListIntermediateTables Operation</seealso>
+        public virtual ListIntermediateTablesResponse ListIntermediateTables(ListIntermediateTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntermediateTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntermediateTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntermediateTablesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists intermediate tables owned by the caller in a membership. We recommend using
+        /// pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntermediateTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntermediateTables service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIntermediateTables">REST API Reference for ListIntermediateTables Operation</seealso>
+        public virtual Task<ListIntermediateTablesResponse> ListIntermediateTablesAsync(ListIntermediateTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntermediateTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntermediateTablesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListIntermediateTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIntermediateTableVersions
+
+
+        /// <summary>
+        /// Lists the version history of an intermediate table. Each call to <c>PopulateIntermediateTable</c>
+        /// creates a new version. We recommend using pagination to ensure that the operation
+        /// returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntermediateTableVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListIntermediateTableVersions service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIntermediateTableVersions">REST API Reference for ListIntermediateTableVersions Operation</seealso>
+        public virtual ListIntermediateTableVersionsResponse ListIntermediateTableVersions(ListIntermediateTableVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntermediateTableVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntermediateTableVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntermediateTableVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the version history of an intermediate table. Each call to <c>PopulateIntermediateTable</c>
+        /// creates a new version. We recommend using pagination to ensure that the operation
+        /// returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntermediateTableVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntermediateTableVersions service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIntermediateTableVersions">REST API Reference for ListIntermediateTableVersions Operation</seealso>
+        public virtual Task<ListIntermediateTableVersionsResponse> ListIntermediateTableVersionsAsync(ListIntermediateTableVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntermediateTableVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntermediateTableVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListIntermediateTableVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMembers
 
 
@@ -5327,6 +6042,95 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = PopulateIdMappingTableResponseUnmarshaller.Instance;
             
             return InvokeAsync<PopulateIdMappingTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PopulateIntermediateTable
+
+
+        /// <summary>
+        /// Executes the stored query of an intermediate table to materialize data into managed
+        /// storage. With this operation, you can perform initial population and subsequent refreshes.
+        /// Each call creates a new version. The returned analysis ID can be tracked using <c>GetProtectedQuery</c>.
+        /// Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PopulateIntermediateTable service method.</param>
+        /// 
+        /// <returns>The response from the PopulateIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIntermediateTable">REST API Reference for PopulateIntermediateTable Operation</seealso>
+        public virtual PopulateIntermediateTableResponse PopulateIntermediateTable(PopulateIntermediateTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PopulateIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PopulateIntermediateTableResponseUnmarshaller.Instance;
+
+            return Invoke<PopulateIntermediateTableResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Executes the stored query of an intermediate table to materialize data into managed
+        /// storage. With this operation, you can perform initial population and subsequent refreshes.
+        /// Each call creates a new version. The returned analysis ID can be tracked using <c>GetProtectedQuery</c>.
+        /// Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PopulateIntermediateTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PopulateIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIntermediateTable">REST API Reference for PopulateIntermediateTable Operation</seealso>
+        public virtual Task<PopulateIntermediateTableResponse> PopulateIntermediateTableAsync(PopulateIntermediateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PopulateIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PopulateIntermediateTableResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PopulateIntermediateTableResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6416,6 +7220,158 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = UpdateIdNamespaceAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateIdNamespaceAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIntermediateTable
+
+
+        /// <summary>
+        /// Updates an intermediate table. You can update the description, KMS key ARN, and column
+        /// types of existing columns. Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntermediateTable service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIntermediateTable">REST API Reference for UpdateIntermediateTable Operation</seealso>
+        public virtual UpdateIntermediateTableResponse UpdateIntermediateTable(UpdateIntermediateTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntermediateTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIntermediateTableResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an intermediate table. You can update the description, KMS key ARN, and column
+        /// types of existing columns. Only the intermediate table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntermediateTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIntermediateTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIntermediateTable">REST API Reference for UpdateIntermediateTable Operation</seealso>
+        public virtual Task<UpdateIntermediateTableResponse> UpdateIntermediateTableAsync(UpdateIntermediateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIntermediateTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntermediateTableResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateIntermediateTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIntermediateTableAnalysisRule
+
+
+        /// <summary>
+        /// Updates the analysis rule policy for an intermediate table. Only the intermediate
+        /// table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntermediateTableAnalysisRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIntermediateTableAnalysisRule">REST API Reference for UpdateIntermediateTableAnalysisRule Operation</seealso>
+        public virtual UpdateIntermediateTableAnalysisRuleResponse UpdateIntermediateTableAnalysisRule(UpdateIntermediateTableAnalysisRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIntermediateTableAnalysisRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the analysis rule policy for an intermediate table. Only the intermediate
+        /// table owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntermediateTableAnalysisRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIntermediateTableAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIntermediateTableAnalysisRule">REST API Reference for UpdateIntermediateTableAnalysisRule Operation</seealso>
+        public virtual Task<UpdateIntermediateTableAnalysisRuleResponse> UpdateIntermediateTableAnalysisRuleAsync(UpdateIntermediateTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIntermediateTableAnalysisRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIntermediateTableAnalysisRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateIntermediateTableAnalysisRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion

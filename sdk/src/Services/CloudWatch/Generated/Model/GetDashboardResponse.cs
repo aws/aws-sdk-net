@@ -61,7 +61,7 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The detailed information about the dashboard, including what widgets are included
         /// and their location on the dashboard. For more information about the <c>DashboardBody</c>
-        /// syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+        /// syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Dashboard-Body-Structure.html">Dashboard
         /// Body Structure and Syntax</a>. 
         /// </para>
         /// </summary>

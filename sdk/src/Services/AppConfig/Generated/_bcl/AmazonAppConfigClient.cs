@@ -45,47 +45,39 @@ namespace Amazon.AppConfig
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// AppConfig feature flags and dynamic configurations help software builders quickly
-    /// and securely adjust application behavior in production environments without full code
-    /// deployments. AppConfig speeds up software release frequency, improves application
-    /// resiliency, and helps you address emergent issues more quickly. With feature flags,
-    /// you can gradually release new capabilities to users and measure the impact of those
-    /// changes before fully deploying the new capabilities to all users. With operational
-    /// flags and dynamic configurations, you can update block lists, allow lists, throttling
-    /// limits, logging verbosity, and perform other operational tuning to quickly respond
-    /// to issues in production environments.
+    /// AppConfig helps you safely change application behavior in production without redeploying
+    /// code. Using feature flags and dynamic free-form configurations, you can control how
+    /// your application runs in real time. This approach reduces risk, accelerates releases,
+    /// and enables faster responses to issues. You can gradually roll out new features to
+    /// specific users, monitor their impact, and expand availability with confidence. You
+    /// can also update block lists, allow lists, throttling limits, and logging levels instantly,
+    /// allowing you to mitigate issues and fine-tune performance without a deployment.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// AppConfig is a tool in Amazon Web Services Systems Manager.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Despite the fact that application configuration content can vary greatly from application
-    /// to application, AppConfig supports the following use cases, which cover a broad spectrum
-    /// of customer needs:
+    /// AppConfig supports a broad spectrum of use cases:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Feature flags and toggles</b> - Safely release new capabilities to your customers
-    /// in a controlled environment. Instantly roll back changes if you experience a problem.
+    ///  <b>Feature flags and toggles</b> – Gradually release new capabilities to targeted
+    /// users, monitor impact, and instantly roll back changes if issues occur.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Application tuning</b> - Carefully introduce application changes while testing
-    /// the impact of those changes with users in production environments.
+    ///  <b>Application tuning</b> – Introduce changes safely in production, measure their
+    /// effects, and refine behavior without redeploying code.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Allow list or block list</b> - Control access to premium features or instantly
-    /// block specific users without deploying new code. 
+    ///  <b>Allow list or block list</b> – Control access to features or restrict specific
+    /// users in real time, without modifying application code. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Centralized configuration storage</b> - Keep your configuration data organized
-    /// and consistent across all of your workloads. You can use AppConfig to deploy configuration
-    /// data stored in the AppConfig hosted configuration store, Secrets Manager, Systems
-    /// Manager, Parameter Store, or Amazon S3.
+    ///  <b>Centralized configuration storage</b> – Manage configuration data consistently
+    /// across workloads. AppConfig can deploy configuration from the AppConfig hosted configuration
+    /// store, Secrets Manager, Systems Manager, Systems Manager Parameter Store, or Amazon
+    /// S3.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -96,116 +88,97 @@ namespace Amazon.AppConfig
     /// This section provides a high-level description of how AppConfig works and how you
     /// get started.
     /// </para>
-    ///  <dl> <dt>1. Identify configuration values in code you want to manage in the cloud</dt>
-    /// <dd> 
+    ///  <dl> <dt>1. Identify configuration data to manage in AppConfig</dt> <dd> 
     /// <para>
-    /// Before you start creating AppConfig artifacts, we recommend you identify configuration
-    /// data in your code that you want to dynamically manage using AppConfig. Good examples
-    /// include feature flags or toggles, allow and block lists, logging verbosity, service
-    /// limits, and throttling rules, to name a few.
+    /// Before creating a configuration profile, identify the configuration data in your code
+    /// that you want to manage dynamically using AppConfig. Common examples include feature
+    /// flags, allow and block lists, logging levels, service limits, and throttling rules.
+    /// These values tend to change frequently and can cause issues if misconfigured.
     /// </para>
     ///  
     /// <para>
-    /// If your configuration data already exists in the cloud, you can take advantage of
-    /// AppConfig validation, deployment, and extension features to further streamline configuration
-    /// data management.
+    /// If your configuration data already exists in cloud services such as Systems Manager
+    /// Parameter Store or Amazon S3, you can use AppConfig to validate, deploy, and manage
+    /// that data more effectively.
     /// </para>
-    ///  </dd> <dt>2. Create an application namespace</dt> <dd> 
+    ///  </dd> <dt>2. Create a configuration profile in AppConfig</dt> <dd> 
     /// <para>
-    /// To create a namespace, you create an AppConfig artifact called an application. An
-    /// application is simply an organizational construct like a folder.
-    /// </para>
-    ///  </dd> <dt>3. Create environments</dt> <dd> 
-    /// <para>
-    /// For each AppConfig application, you define one or more environments. An environment
-    /// is a logical grouping of targets, such as applications in a <c>Beta</c> or <c>Production</c>
-    /// environment, Lambda functions, or containers. You can also define environments for
-    /// application subcomponents, such as the <c>Web</c>, <c>Mobile</c>, and <c>Back-end</c>.
+    /// A configuration profile defines how AppConfig locates and manages your configuration
+    /// data. It includes a URI that points to the data source and a profile type.
     /// </para>
     ///  
     /// <para>
-    /// You can configure Amazon CloudWatch alarms for each environment. The system monitors
-    /// alarms during a configuration deployment. If an alarm is triggered, the system rolls
-    /// back the configuration.
-    /// </para>
-    ///  </dd> <dt>4. Create a configuration profile</dt> <dd> 
-    /// <para>
-    /// A configuration profile includes, among other things, a URI that enables AppConfig
-    /// to locate your configuration data in its stored location and a profile type. AppConfig
-    /// supports two configuration profile types: feature flags and freeform configurations.
-    /// Feature flag configuration profiles store their data in the AppConfig hosted configuration
-    /// store and the URI is simply <c>hosted</c>. For freeform configuration profiles, you
-    /// can store your data in the AppConfig hosted configuration store or any Amazon Web
-    /// Services service that integrates with AppConfig, as described in <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-free-form-configurations-creating.html">Creating
-    /// a free form configuration profile</a> in the the <i>AppConfig User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// A configuration profile can also include optional validators to ensure your configuration
-    /// data is syntactically and semantically correct. AppConfig performs a check using the
-    /// validators when you start a deployment. If any errors are detected, the deployment
-    /// rolls back to the previous configuration data.
-    /// </para>
-    ///  </dd> <dt>5. Deploy configuration data</dt> <dd> 
-    /// <para>
-    /// When you create a new deployment, you specify the following:
+    /// AppConfig supports two profile types
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// An application ID
+    ///  <b>Feature flags</b> – Enable controlled feature releases, gradual rollouts, and
+    /// testing in production.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A configuration profile ID
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A configuration version
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// An environment ID where you want to deploy the configuration data
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// A deployment strategy ID that defines how fast you want the changes to take effect
+    ///  <b>Free-form configurations</b> – Store and retrieve configuration data from external
+    /// sources and update it without redeploying code.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// When you call the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html">StartDeployment</a>
-    /// API action, AppConfig performs the following tasks:
-    /// </para>
-    ///  <ol> <li> 
-    /// <para>
-    /// Retrieves the configuration data from the underlying data store by using the location
-    /// URI in the configuration profile.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Verifies the configuration data is syntactically and semantically correct by using
-    /// the validators you specified when you created your configuration profile.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Caches a copy of the data so it is ready to be retrieved by your application. This
-    /// cached copy is called the <i>deployed data</i>.
-    /// </para>
-    ///  </li> </ol> </dd> <dt>6. Retrieve the configuration</dt> <dd> 
-    /// <para>
-    /// You can configure AppConfig Agent as a local host and have the agent poll AppConfig
-    /// for configuration updates. The agent calls the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
-    /// and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
-    /// API actions and caches your configuration data locally. To retrieve the data, your
-    /// application makes an HTTP call to the localhost server. AppConfig Agent supports several
-    /// use cases, as described in <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-simplified-methods.html">Simplified
-    /// retrieval methods</a> in the the <i>AppConfig User Guide</i>.
+    /// Both profile types help decouple configuration from code, support continuous delivery,
+    /// and reduce deployment risk.
     /// </para>
     ///  
     /// <para>
-    /// If AppConfig Agent isn't supported for your use case, you can configure your application
-    /// to poll AppConfig for configuration updates by directly calling the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
+    /// You can also add optional validators to ensure that configuration data is syntactically
+    /// and semantically correct. During deployment, AppConfig evaluates these validators
+    /// and automatically rolls back changes if validation fails.
+    /// </para>
+    ///  
+    /// <para>
+    /// Each configuration profile is associated with an application, which acts as a logical
+    /// container for your configuration resources. For more information about creating a
+    /// configuration profile, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html">Creating
+    /// a configuration profile in AppConfig</a> in the the <i>AppConfig User Guide</i>.
+    /// </para>
+    ///  </dd> <dt>3. Deploy configuration data</dt> <dd> 
+    /// <para>
+    /// When you start a deployment, AppConfig:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// Retrieves configuration data from the source defined in the configuration profile
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Validates the data using the configured validators
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Delivers the validated configuration to AppConfig Agent
+    /// </para>
+    ///  </li> </ol> 
+    /// <para>
+    /// The delivered configuration becomes the deployed version used by your application.
+    /// For more information about deploying a configuration, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/deploying-feature-flags.html">Deploying
+    /// feature flags and configuration data in AppConfig</a>.
+    /// </para>
+    ///  </dd> <dt>4. Retrieve configuration data</dt> <dd> 
+    /// <para>
+    /// Your application retrieves configuration data by calling a local endpoint exposed
+    /// by AppConfig Agent, which caches the deployed configuration. Retrieving data is a
+    /// metered event. AppConfig Agent supports a variety of use cases, as described in <a
+    /// href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html">How
+    /// to use AppConfig Agent to retrieve configuration data</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the agent is not suitable for your use case, your application can retrieve configuration
+    /// data directly from AppConfig by calling the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
     /// and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
     /// API actions. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about retrieving a configuration, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html">Retrieving
+    /// feature flags and configuration data in AppConfig</a>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -459,18 +432,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -514,18 +475,6 @@ namespace Amazon.AppConfig
         ///  
         /// <para>
         /// Applications: 100 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
         /// </para>
         ///  
         /// <para>
@@ -627,18 +576,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -736,18 +673,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -794,18 +719,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -848,18 +761,6 @@ namespace Amazon.AppConfig
         ///  
         /// <para>
         /// Applications: 100 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
         /// </para>
         ///  
         /// <para>
@@ -915,18 +816,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -978,18 +867,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -1004,6 +881,109 @@ namespace Amazon.AppConfig
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateExperimentDefinition
+
+
+        /// <summary>
+        /// Creates an experiment definition in AppConfig. An experiment definition describes
+        /// the purpose, scope, and operational configuration of an experiment, including the
+        /// target audience, feature flag, and treatment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExperimentDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExperimentDefinition">REST API Reference for CreateExperimentDefinition Operation</seealso>
+        public virtual CreateExperimentDefinitionResponse CreateExperimentDefinition(CreateExperimentDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExperimentDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExperimentDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an experiment definition in AppConfig. An experiment definition describes
+        /// the purpose, scope, and operational configuration of an experiment, including the
+        /// target audience, feature flag, and treatment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExperimentDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of one more AppConfig resources exceeds the maximum allowed. Verify that
+        /// your environment doesn't exceed the following service quotas:
+        /// 
+        ///  
+        /// <para>
+        /// Applications: 100 max
+        /// </para>
+        ///  
+        /// <para>
+        /// To resolve this issue, you can delete one or more resources and try again. Or, you
+        /// can request a quota increase. For more information about quotas and to request an
+        /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
+        /// quotas for AppConfig</a> in the Amazon Web Services General Reference.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExperimentDefinition">REST API Reference for CreateExperimentDefinition Operation</seealso>
+        public virtual Task<CreateExperimentDefinitionResponse> CreateExperimentDefinitionAsync(CreateExperimentDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExperimentDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateExperimentDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1066,18 +1046,6 @@ namespace Amazon.AppConfig
         ///  
         /// <para>
         /// Applications: 100 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
         /// </para>
         ///  
         /// <para>
@@ -1159,18 +1127,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -1223,18 +1179,6 @@ namespace Amazon.AppConfig
         ///  
         /// <para>
         /// Applications: 100 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
         /// </para>
         ///  
         /// <para>
@@ -1292,18 +1236,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -1328,7 +1260,7 @@ namespace Amazon.AppConfig
         /// <summary>
         /// Creates a new configuration in the AppConfig hosted configuration store. If you're
         /// creating a feature flag, we recommend you familiarize yourself with the JSON schema
-        /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type
+        /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-type-reference-feature-flags.html">Type
         /// reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
@@ -1360,18 +1292,6 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
-        /// </para>
-        ///  
-        /// <para>
         /// To resolve this issue, you can delete one or more resources and try again. Or, you
         /// can request a quota increase. For more information about quotas and to request an
         /// increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service
@@ -1392,7 +1312,7 @@ namespace Amazon.AppConfig
         /// <summary>
         /// Creates a new configuration in the AppConfig hosted configuration store. If you're
         /// creating a feature flag, we recommend you familiarize yourself with the JSON schema
-        /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type
+        /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-type-reference-feature-flags.html">Type
         /// reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
@@ -1424,18 +1344,6 @@ namespace Amazon.AppConfig
         ///  
         /// <para>
         /// Applications: 100 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Deployment strategies: 20 max
-        /// </para>
-        ///  
-        /// <para>
-        /// Configuration profiles: 100 max per application
-        /// </para>
-        ///  
-        /// <para>
-        /// Environments: 20 max per application
         /// </para>
         ///  
         /// <para>
@@ -1733,6 +1641,77 @@ namespace Amazon.AppConfig
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteExperimentDefinition
+
+
+        /// <summary>
+        /// Deletes an experiment definition. You can archive the definition to hide it from the
+        /// active list while preserving it for future reference, or permanently delete it along
+        /// with all associated run history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExperimentDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExperimentDefinition">REST API Reference for DeleteExperimentDefinition Operation</seealso>
+        public virtual DeleteExperimentDefinitionResponse DeleteExperimentDefinition(DeleteExperimentDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExperimentDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExperimentDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an experiment definition. You can archive the definition to hide it from the
+        /// active list while preserving it for future reference, or permanently delete it along
+        /// with all associated run history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExperimentDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExperimentDefinition">REST API Reference for DeleteExperimentDefinition Operation</seealso>
+        public virtual Task<DeleteExperimentDefinitionResponse> DeleteExperimentDefinitionAsync(DeleteExperimentDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExperimentDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteExperimentDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2377,6 +2356,126 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  GetExperimentDefinition
+
+
+        /// <summary>
+        /// Retrieves information about an experiment definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperimentDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExperimentDefinition">REST API Reference for GetExperimentDefinition Operation</seealso>
+        public virtual GetExperimentDefinitionResponse GetExperimentDefinition(GetExperimentDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetExperimentDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about an experiment definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperimentDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExperimentDefinition">REST API Reference for GetExperimentDefinition Operation</seealso>
+        public virtual Task<GetExperimentDefinitionResponse> GetExperimentDefinitionAsync(GetExperimentDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetExperimentDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetExperimentRun
+
+
+        /// <summary>
+        /// Retrieves information about an experiment run, including its status, start time, and
+        /// exposure settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperimentRun service method.</param>
+        /// 
+        /// <returns>The response from the GetExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExperimentRun">REST API Reference for GetExperimentRun Operation</seealso>
+        public virtual GetExperimentRunResponse GetExperimentRun(GetExperimentRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetExperimentRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about an experiment run, including its status, start time, and
+        /// exposure settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperimentRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExperimentRun">REST API Reference for GetExperimentRun Operation</seealso>
+        public virtual Task<GetExperimentRunResponse> GetExperimentRunAsync(GetExperimentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetExperimentRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetExtension
 
 
@@ -2841,6 +2940,189 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  ListExperimentDefinitions
+
+
+        /// <summary>
+        /// Lists the experiment definitions for an account. You can filter results by application,
+        /// configuration profile, environment, or status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListExperimentDefinitions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentDefinitions">REST API Reference for ListExperimentDefinitions Operation</seealso>
+        public virtual ListExperimentDefinitionsResponse ListExperimentDefinitions(ListExperimentDefinitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExperimentDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExperimentDefinitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the experiment definitions for an account. You can filter results by application,
+        /// configuration profile, environment, or status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperimentDefinitions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentDefinitions">REST API Reference for ListExperimentDefinitions Operation</seealso>
+        public virtual Task<ListExperimentDefinitionsResponse> ListExperimentDefinitionsAsync(ListExperimentDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExperimentDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentDefinitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExperimentDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExperimentRunEvents
+
+
+        /// <summary>
+        /// Lists the events for a specified experiment run. Events provide a timeline of actions
+        /// and state changes that occurred during the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentRunEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListExperimentRunEvents service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentRunEvents">REST API Reference for ListExperimentRunEvents Operation</seealso>
+        public virtual ListExperimentRunEventsResponse ListExperimentRunEvents(ListExperimentRunEventsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExperimentRunEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentRunEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExperimentRunEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the events for a specified experiment run. Events provide a timeline of actions
+        /// and state changes that occurred during the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentRunEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperimentRunEvents service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentRunEvents">REST API Reference for ListExperimentRunEvents Operation</seealso>
+        public virtual Task<ListExperimentRunEventsResponse> ListExperimentRunEventsAsync(ListExperimentRunEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExperimentRunEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentRunEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExperimentRunEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExperimentRuns
+
+
+        /// <summary>
+        /// Lists the experiment runs for a specified experiment definition. You can filter by
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListExperimentRuns service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentRuns">REST API Reference for ListExperimentRuns Operation</seealso>
+        public virtual ListExperimentRunsResponse ListExperimentRuns(ListExperimentRunsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExperimentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentRunsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExperimentRunsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the experiment runs for a specified experiment definition. You can filter by
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperimentRuns service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExperimentRuns">REST API Reference for ListExperimentRuns Operation</seealso>
+        public virtual Task<ListExperimentRunsResponse> ListExperimentRunsAsync(ListExperimentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExperimentRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentRunsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExperimentRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListExtensionAssociations
 
 
@@ -3078,6 +3360,17 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Starts a deployment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// AppConfig Agent supports deploying feature flag or free-form configuration data to
+        /// specific segments or individual users during a gradual rollout. Entity-based gradual
+        /// deployments ensure that once a user or segment receives a configuration version, they
+        /// continue to receive that same version throughout the deployment period, regardless
+        /// of which compute resource serves their requests. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using
+        /// AppConfig Agent for user-based or entity-based gradual deployments</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>
         /// 
@@ -3108,6 +3401,17 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Starts a deployment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// AppConfig Agent supports deploying feature flag or free-form configuration data to
+        /// specific segments or individual users during a gradual rollout. Entity-based gradual
+        /// deployments ensure that once a user or segment receives a configuration version, they
+        /// continue to receive that same version throughout the deployment period, regardless
+        /// of which compute resource serves their requests. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using
+        /// AppConfig Agent for user-based or entity-based gradual deployments</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -3136,6 +3440,77 @@ namespace Amazon.AppConfig
             options.ResponseUnmarshaller = StartDeploymentResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartExperimentRun
+
+
+        /// <summary>
+        /// Starts an experiment run for the specified experiment definition. An experiment run
+        /// delivers treatments to the target audience and collects metrics. You can start multiple
+        /// experiment runs from the same experiment definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExperimentRun service method.</param>
+        /// 
+        /// <returns>The response from the StartExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartExperimentRun">REST API Reference for StartExperimentRun Operation</seealso>
+        public virtual StartExperimentRunResponse StartExperimentRun(StartExperimentRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExperimentRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartExperimentRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an experiment run for the specified experiment definition. An experiment run
+        /// delivers treatments to the target audience and collects metrics. You can start multiple
+        /// experiment runs from the same experiment definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExperimentRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartExperimentRun">REST API Reference for StartExperimentRun Operation</seealso>
+        public virtual Task<StartExperimentRunResponse> StartExperimentRunAsync(StartExperimentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExperimentRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartExperimentRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3203,6 +3578,67 @@ namespace Amazon.AppConfig
             options.ResponseUnmarshaller = StopDeploymentResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopExperimentRun
+
+
+        /// <summary>
+        /// Stops a running experiment. Stopping an experiment run ends audience exposure and
+        /// returns users to the currently deployed feature flag configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopExperimentRun service method.</param>
+        /// 
+        /// <returns>The response from the StopExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StopExperimentRun">REST API Reference for StopExperimentRun Operation</seealso>
+        public virtual StopExperimentRunResponse StopExperimentRun(StopExperimentRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopExperimentRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopExperimentRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running experiment. Stopping an experiment run ends audience exposure and
+        /// returns users to the currently deployed feature flag configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopExperimentRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StopExperimentRun">REST API Reference for StopExperimentRun Operation</seealso>
+        public virtual Task<StopExperimentRunResponse> StopExperimentRunAsync(StopExperimentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopExperimentRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopExperimentRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3614,6 +4050,148 @@ namespace Amazon.AppConfig
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateExperimentDefinition
+
+
+        /// <summary>
+        /// Updates an experiment definition. You can update treatments, the control, audience
+        /// rules, and other properties. You cannot update an experiment definition while an experiment
+        /// run is active.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExperimentDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExperimentDefinition">REST API Reference for UpdateExperimentDefinition Operation</seealso>
+        public virtual UpdateExperimentDefinitionResponse UpdateExperimentDefinition(UpdateExperimentDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExperimentDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExperimentDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an experiment definition. You can update treatments, the control, audience
+        /// rules, and other properties. You cannot update an experiment definition while an experiment
+        /// run is active.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExperimentDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExperimentDefinition service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExperimentDefinition">REST API Reference for UpdateExperimentDefinition Operation</seealso>
+        public virtual Task<UpdateExperimentDefinitionResponse> UpdateExperimentDefinitionAsync(UpdateExperimentDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExperimentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExperimentDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateExperimentDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateExperimentRun
+
+
+        /// <summary>
+        /// Updates a running experiment. Use this operation to increase audience exposure, modify
+        /// treatment assignment overrides, or update the description of an active experiment
+        /// run. Audience exposure can only be increased, not decreased.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExperimentRun service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExperimentRun">REST API Reference for UpdateExperimentRun Operation</seealso>
+        public virtual UpdateExperimentRunResponse UpdateExperimentRun(UpdateExperimentRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExperimentRunResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExperimentRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a running experiment. Use this operation to increase audience exposure, modify
+        /// treatment assignment overrides, or update the description of an active experiment
+        /// run. Audience exposure can only be increased, not decreased.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExperimentRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExperimentRun service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExperimentRun">REST API Reference for UpdateExperimentRun Operation</seealso>
+        public virtual Task<UpdateExperimentRunResponse> UpdateExperimentRunAsync(UpdateExperimentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExperimentRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExperimentRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateExperimentRunResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -14169,10 +14169,6 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly SpaceQuickSightResourceType ACTION_CONNECTOR = new SpaceQuickSightResourceType("ACTION_CONNECTOR");
         /// <summary>
-        /// Constant ARTIFACT for SpaceQuickSightResourceType
-        /// </summary>
-        public static readonly SpaceQuickSightResourceType ARTIFACT = new SpaceQuickSightResourceType("ARTIFACT");
-        /// <summary>
         /// Constant DASHBOARD for SpaceQuickSightResourceType
         /// </summary>
         public static readonly SpaceQuickSightResourceType DASHBOARD = new SpaceQuickSightResourceType("DASHBOARD");
@@ -14184,10 +14180,6 @@ namespace Amazon.QuickSight
         /// Constant KNOWLEDGE_BASE for SpaceQuickSightResourceType
         /// </summary>
         public static readonly SpaceQuickSightResourceType KNOWLEDGE_BASE = new SpaceQuickSightResourceType("KNOWLEDGE_BASE");
-        /// <summary>
-        /// Constant SPACE for SpaceQuickSightResourceType
-        /// </summary>
-        public static readonly SpaceQuickSightResourceType SPACE = new SpaceQuickSightResourceType("SPACE");
         /// <summary>
         /// Constant TOPIC for SpaceQuickSightResourceType
         /// </summary>

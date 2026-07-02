@@ -36,8 +36,8 @@ namespace Amazon.CertificateManager.Endpoints
         /// </summary>
         public CertificateManagerEndpointParameters()
         {
-            UseDualStack = false;
             UseFIPS = false;
+            UseDualStack = false;
         }
 
         /// <summary>
@@ -50,12 +50,12 @@ namespace Amazon.CertificateManager.Endpoints
         }
 
         /// <summary>
-        /// UseDualStack parameter
+        /// Endpoint parameter
         /// </summary>
-        public bool? UseDualStack 
+        public string Endpoint 
         { 
-            get { return (bool?)this["UseDualStack"]; }
-            set { this["UseDualStack"] = value; } 
+            get { return (string)this["Endpoint"]; }
+            set { this["Endpoint"] = value; } 
         }
 
         /// <summary>
@@ -68,12 +68,21 @@ namespace Amazon.CertificateManager.Endpoints
         }
 
         /// <summary>
-        /// Endpoint parameter
+        /// UseDualStack parameter
         /// </summary>
-        public string Endpoint 
+        public bool? UseDualStack 
         { 
-            get { return (string)this["Endpoint"]; }
-            set { this["Endpoint"] = value; } 
+            get { return (bool?)this["UseDualStack"]; }
+            set { this["UseDualStack"] = value; } 
+        }
+
+        /// <summary>
+        /// ServiceType parameter
+        /// </summary>
+        public string ServiceType 
+        { 
+            get { return (string)this["ServiceType"]; }
+            set { this["ServiceType"] = value; } 
         }
     }
 }

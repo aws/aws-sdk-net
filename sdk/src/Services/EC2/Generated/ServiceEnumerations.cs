@@ -313,6 +313,122 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AccountVpcEncryptionControlMode.
+    /// </summary>
+    public class AccountVpcEncryptionControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AttemptEnforce for AccountVpcEncryptionControlMode
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlMode AttemptEnforce = new AccountVpcEncryptionControlMode("attempt-enforce");
+        /// <summary>
+        /// Constant AttemptMonitor for AccountVpcEncryptionControlMode
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlMode AttemptMonitor = new AccountVpcEncryptionControlMode("attempt-monitor");
+        /// <summary>
+        /// Constant Unmanaged for AccountVpcEncryptionControlMode
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlMode Unmanaged = new AccountVpcEncryptionControlMode("unmanaged");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountVpcEncryptionControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountVpcEncryptionControlMode FindValue(string value)
+        {
+            return FindValue<AccountVpcEncryptionControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountVpcEncryptionControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AccountVpcEncryptionControlState.
+    /// </summary>
+    public class AccountVpcEncryptionControlState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DefaultState for AccountVpcEncryptionControlState
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlState DefaultState = new AccountVpcEncryptionControlState("default-state");
+        /// <summary>
+        /// Constant TransitionsFailed for AccountVpcEncryptionControlState
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlState TransitionsFailed = new AccountVpcEncryptionControlState("transitions-failed");
+        /// <summary>
+        /// Constant TransitionsInProgress for AccountVpcEncryptionControlState
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlState TransitionsInProgress = new AccountVpcEncryptionControlState("transitions-in-progress");
+        /// <summary>
+        /// Constant TransitionsPartiallySuccessful for AccountVpcEncryptionControlState
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlState TransitionsPartiallySuccessful = new AccountVpcEncryptionControlState("transitions-partially-successful");
+        /// <summary>
+        /// Constant TransitionsSuccessful for AccountVpcEncryptionControlState
+        /// </summary>
+        public static readonly AccountVpcEncryptionControlState TransitionsSuccessful = new AccountVpcEncryptionControlState("transitions-successful");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountVpcEncryptionControlState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountVpcEncryptionControlState FindValue(string value)
+        {
+            return FindValue<AccountVpcEncryptionControlState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountVpcEncryptionControlState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ActivityStatus.
     /// </summary>
     public class ActivityStatus : ConstantClass
@@ -580,6 +696,10 @@ namespace Amazon.EC2
         /// Constant Available for AllocationState
         /// </summary>
         public static readonly AllocationState Available = new AllocationState("available");
+        /// <summary>
+        /// Constant Configuring for AllocationState
+        /// </summary>
+        public static readonly AllocationState Configuring = new AllocationState("configuring");
         /// <summary>
         /// Constant Pending for AllocationState
         /// </summary>
@@ -892,6 +1012,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AllowsMultipleInstanceTypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AmdSevSnp.
+    /// </summary>
+    public class AmdSevSnp : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for AmdSevSnp
+        /// </summary>
+        public static readonly AmdSevSnp Disabled = new AmdSevSnp("disabled");
+        /// <summary>
+        /// Constant Enabled for AmdSevSnp
+        /// </summary>
+        public static readonly AmdSevSnp Enabled = new AmdSevSnp("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AmdSevSnp(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmdSevSnp FindValue(string value)
+        {
+            return FindValue<AmdSevSnp>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmdSevSnp(string value)
         {
             return FindValue(value);
         }
@@ -21181,6 +21351,102 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type PayerResponsibilityScope.
+    /// </summary>
+    public class PayerResponsibilityScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VpcEndpointCharges for PayerResponsibilityScope
+        /// </summary>
+        public static readonly PayerResponsibilityScope VpcEndpointCharges = new PayerResponsibilityScope("vpc-endpoint-charges");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PayerResponsibilityScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PayerResponsibilityScope FindValue(string value)
+        {
+            return FindValue<PayerResponsibilityScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PayerResponsibilityScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PayerResponsibilityType.
+    /// </summary>
+    public class PayerResponsibilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VpcEndpointAccount for PayerResponsibilityType
+        /// </summary>
+        public static readonly PayerResponsibilityType VpcEndpointAccount = new PayerResponsibilityType("vpc-endpoint-account");
+        /// <summary>
+        /// Constant VpcEndpointServiceAccount for PayerResponsibilityType
+        /// </summary>
+        public static readonly PayerResponsibilityType VpcEndpointServiceAccount = new PayerResponsibilityType("vpc-endpoint-service-account");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PayerResponsibilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PayerResponsibilityType FindValue(string value)
+        {
+            return FindValue<PayerResponsibilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PayerResponsibilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PaymentOption.
     /// </summary>
     public class PaymentOption : ConstantClass
@@ -21522,6 +21788,10 @@ namespace Amazon.EC2
         /// Constant Partition for PlacementStrategy
         /// </summary>
         public static readonly PlacementStrategy Partition = new PlacementStrategy("partition");
+        /// <summary>
+        /// Constant PrecisionTime for PlacementStrategy
+        /// </summary>
+        public static readonly PlacementStrategy PrecisionTime = new PlacementStrategy("precision-time");
         /// <summary>
         /// Constant Spread for PlacementStrategy
         /// </summary>

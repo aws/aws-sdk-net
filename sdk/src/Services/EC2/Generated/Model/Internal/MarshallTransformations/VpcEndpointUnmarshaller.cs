@@ -146,6 +146,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("payerResponsibilitySet/item", targetDepth))
+                    {
+                        var unmarshaller = PayerResponsibilityEntryUnmarshaller.Instance;
+                        if (unmarshalledObject.PayerResponsibilities == null)
+                        {
+                            unmarshalledObject.PayerResponsibilities = new List<PayerResponsibilityEntry>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PayerResponsibilities.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("policyDocument", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -37,40 +37,33 @@ namespace AWSSDK.UnitTests
         private const string USWest2 = "us-west-2";
         private const string USEast1 = "us-east-1";
 
-        private static string regionEndpoint = FallbackRegionFactory.GetRegionEndpoint().SystemName;
-
         [Flags]
         public enum Flags { None = 0, Dualstack = 2, Accelerate = 4, PathStyle = 8, UseArnRegion = 16 }
 
         [TestMethod]
-        [DynamicData(nameof(ListObjectsTestData))]
+        [DataRow("bucketname", "https://beta.example.com", Flags.None, "https://bucketname.beta.example.com", USEast1, S3)]
+        [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "https://beta.example.com", Flags.None, "https://myendpoint-123456789012.beta.example.com", USEast1, S3)]
+        [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://beta.example.com", Flags.UseArnRegion, "https://myendpoint-123456789012.beta.example.com", USWest2, S3)]
+        [DataRow("bucketname", "https://s3.us-west-2.amazonaws.com", Flags.None, "https://bucketname.s3.us-west-2.amazonaws.com", USWest2, S3)]
+        [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://s3.us-west-2.amazonaws.com", Flags.None, "https://myendpoint-123456789012.s3.us-west-2.amazonaws.com", USWest2, S3)]
+        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myendpoint", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://myendpoint-123456789012.op-01234567890123456.s3-outposts.us-west-2.amazonaws.com", "*", S3Outposts)]
+        [DataRow("bucketname", "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.PathStyle, "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com/bucketname/", USWest2, S3)]
+        [DataRow("bucketname", "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.None, "https://bucketname.bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", USWest2, S3)]
+        [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.None, "https://myendpoint-123456789012.accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", USWest2, S3)]
+        [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.UseArnRegion, "https://myendpoint-123456789012.accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", USWest2, S3)]
+        [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://accesspoint.vpce-123-abc.s3.eu-west-1.vpce.amazonaws.com", Flags.UseArnRegion, "https://myendpoint-123456789012.accesspoint.vpce-123-abc.s3.eu-west-1.vpce.amazonaws.com", USWest2, S3)] //This will produce a signing error for a real request but are the expected values
         [TestCategory("S3")]
         public void VpceEndpointTests_ListObjects(string bucketName, string serviceUrl, Flags flags,
             string expectedUri, string expectedRegion, string expectedService)
-        {
+        {                        
             var request = new ListObjectsRequest
             {
                 BucketName = bucketName
             };
 
             RunTestRequest(request, ListObjectsRequestMarshaller.Instance,
-                Arn.IsArn(bucketName), serviceUrl, flags,
-                expectedUri, expectedRegion, expectedService);
-        }
-
-        private static IEnumerable<object[]> ListObjectsTestData()
-        {
-            yield return new object[] { "bucketname", "https://beta.example.com", Flags.None, "https://bucketname.beta.example.com", regionEndpoint, S3 };
-            yield return new object[] { $"arn:aws:s3:{regionEndpoint}:123456789012:accesspoint:myendpoint", "https://beta.example.com", Flags.None, "https://myendpoint-123456789012.beta.example.com", regionEndpoint, S3 };
-            yield return new object[] { "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://beta.example.com", Flags.UseArnRegion, "https://myendpoint-123456789012.beta.example.com", USWest2, S3 };
-            yield return new object[] { "bucketname", "https://s3.us-west-2.amazonaws.com", Flags.None, "https://bucketname.s3.us-west-2.amazonaws.com", USWest2, S3 };
-            yield return new object[] { "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://s3.us-west-2.amazonaws.com", Flags.None, "https://myendpoint-123456789012.s3.us-west-2.amazonaws.com", USWest2, S3 };
-            yield return new object[] { "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myendpoint", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://myendpoint-123456789012.op-01234567890123456.s3-outposts.us-west-2.amazonaws.com", "*", S3Outposts };
-            yield return new object[] { "bucketname", "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.PathStyle, "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com/bucketname/", USWest2, S3 };
-            yield return new object[] { "bucketname", "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.None, "https://bucketname.bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", USWest2, S3 };
-            yield return new object[] { "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.None, "https://myendpoint-123456789012.accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", USWest2, S3 };
-            yield return new object[] { "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.UseArnRegion, "https://myendpoint-123456789012.accesspoint.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", USWest2, S3 };
-            yield return new object[] { "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://accesspoint.vpce-123-abc.s3.eu-west-1.vpce.amazonaws.com", Flags.UseArnRegion, "https://myendpoint-123456789012.accesspoint.vpce-123-abc.s3.eu-west-1.vpce.amazonaws.com", USWest2, S3 };
+                Arn.IsArn(bucketName), serviceUrl, flags, 
+                expectedUri, expectedRegion, expectedService);                        
         }
 
         [TestMethod]

@@ -28,6 +28,46 @@ namespace Amazon.CertificateManager.Model
     {
 
         /// <summary>
+        /// Paginator for ListAcmeAccounts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAcmeAccountsPaginator ListAcmeAccounts(ListAcmeAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAcmeDomainValidations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAcmeDomainValidationsPaginator ListAcmeDomainValidations(ListAcmeDomainValidationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAcmeEndpoints operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAcmeEndpointsPaginator ListAcmeEndpoints(ListAcmeEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAcmeExternalAccountBindings operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAcmeExternalAccountBindingsPaginator ListAcmeExternalAccountBindings(ListAcmeExternalAccountBindingsRequest request);
+
+        /// <summary>
         /// Paginator for ListCertificates operation
         ///</summary>
         [AWSPaginator(

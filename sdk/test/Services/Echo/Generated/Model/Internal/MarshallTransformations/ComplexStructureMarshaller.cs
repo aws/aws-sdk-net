@@ -53,7 +53,7 @@ namespace Amazon.Echo.Model.Internal.MarshallTransformations
             if (requestObject.IsSetBlobMember())
             {
                 context.Writer.WriteTextString("blobMember");
-                context.Writer.WriteByteString(requestObject.BlobMember.ToArray());
+                context.Writer.WriteByteString(requestObject.BlobMember);
             }
             if (requestObject.IsSetBooleanMember())
             {

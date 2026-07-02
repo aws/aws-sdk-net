@@ -3623,6 +3623,74 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  InsightFeedback
+
+
+        /// <summary>
+        /// Submits feedback for an existing insight in an Amazon OpenSearch Service domain. Allows
+        /// users to provide a thumbs up or thumbs down rating and optional text feedback for
+        /// a specific insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InsightFeedback service method.</param>
+        /// 
+        /// <returns>The response from the InsightFeedback service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InsightFeedback">REST API Reference for InsightFeedback Operation</seealso>
+        InsightFeedbackResponse InsightFeedback(InsightFeedbackRequest request);
+
+
+
+        /// <summary>
+        /// Submits feedback for an existing insight in an Amazon OpenSearch Service domain. Allows
+        /// users to provide a thumbs up or thumbs down rating and optional text feedback for
+        /// a specific insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InsightFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InsightFeedback service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InsightFeedback">REST API Reference for InsightFeedback Operation</seealso>
+        Task<InsightFeedbackResponse> InsightFeedbackAsync(InsightFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListApplications
 
 

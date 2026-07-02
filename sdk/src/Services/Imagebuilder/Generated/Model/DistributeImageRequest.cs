@@ -31,8 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the DistributeImage operation.
-    /// DistributeImage distributes existing AMIs to additional regions and accounts without
-    /// rebuilding the image.
+    /// Distributes an existing AMI to target Regions and accounts without running the full
+    /// image build process. This operation only runs the distribution phase on an image that
+    /// has already been built.
     /// </summary>
     public partial class DistributeImageRequest : AmazonImagebuilderRequest
     {
@@ -67,7 +68,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the distribution configuration to use.
+        /// The Amazon Resource Name (ARN) of the distribution configuration. The configuration
+        /// defines target Regions, accounts, and AMI settings. The distribution configuration
+        /// must be in the same Region as this operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +89,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
-        /// The IAM role to use for the distribution.
+        /// The name or Amazon Resource Name (ARN) of the IAM role that Image Builder assumes
+        /// to distribute the image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -123,7 +127,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SourceImage. 
         /// <para>
-        /// The source image Amazon Resource Name (ARN) to distribute.
+        /// The source image to distribute. Specify an AMI identifier, SSM parameter path, or
+        /// Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder
+        /// image Amazon Resource Name (ARN), the image must be in the <c>AVAILABLE</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -36,9 +36,14 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
             WriteInterfaceDocumentation(writer);
             writer.OpenBlock($"public partial interface I{context.ClientName} : IAmazonService, IDisposable", () =>
             {
-                foreach (var operation in context.Operations)
+                for (var i = 0; i < context.Operations.Count; i++)
                 {
-                    WriteOperation(writer, operation);
+                    if (i > 0)
+                    {
+                        writer.WriteLine();
+                    }
+
+                    WriteOperation(writer, context.Operations[i]);
                 }
             });
         });
@@ -78,7 +83,6 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
         // Asynchronous overload.
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
         writer.WriteLine($"Task<{responseType}> {operation.Name}Async({requestType} request, CancellationToken cancellationToken = default(CancellationToken));");
-        writer.WriteLine();
     }
 
 }

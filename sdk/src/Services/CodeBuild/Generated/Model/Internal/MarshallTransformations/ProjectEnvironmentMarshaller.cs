@@ -107,6 +107,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetHostKernel())
+            {
+                context.Writer.WritePropertyName("hostKernel");
+                context.Writer.WriteStringValue(requestObject.HostKernel);
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");

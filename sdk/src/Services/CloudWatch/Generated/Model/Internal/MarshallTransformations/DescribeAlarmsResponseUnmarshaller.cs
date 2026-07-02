@@ -65,6 +65,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "LogAlarms":
+                        {
+                            context.AddPathSegment("LogAlarms");
+                            var unmarshaller = new CborListUnmarshaller<LogAlarm, LogAlarmUnmarshaller>(LogAlarmUnmarshaller.Instance);
+                            response.LogAlarms = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "MetricAlarms":
                         {
                             context.AddPathSegment("MetricAlarms");

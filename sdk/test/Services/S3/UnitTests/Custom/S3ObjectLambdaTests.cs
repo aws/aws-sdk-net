@@ -22,7 +22,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class S3ObjectLambdaTests
     {
-        private static readonly string regionEndpoint = (FallbackRegionFactory.GetRegionEndpoint(includeInstanceMetadata: false) ?? RegionEndpoint.USEast1).SystemName;
+        
         public static IEnumerable<object[]> S3ObjectLambdaBucketFieldInputTestsData()
         {
             var testDataFromSpecMarkDown =
@@ -173,7 +173,8 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        [DynamicData(nameof(CustomEndpointUrlTestData))]
+        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "https://my-endpoint.com", true, "mybanner-123456789012.my-endpoint.com")]
+        [DataRow("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "https://my-endpoint.com", false, "mybanner-123456789012.my-endpoint.com")]
         public void CustomEndpointUrlTest(string arnString, string serviceUrl, bool useArnRegion, string expectedEndpointHost)
         {
             var request = new GetObjectRequest
@@ -189,12 +190,6 @@ namespace AWSSDK.UnitTests
             };
             var internalRequest = S3ArnTestUtils.RunMockRequest(request, GetObjectRequestMarshaller.Instance, config);
             Assert.AreEqual(expectedEndpointHost, internalRequest.Endpoint.Host);
-        }
-
-        private static IEnumerable<object[]> CustomEndpointUrlTestData()
-        {
-            yield return new object[] { "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "https://my-endpoint.com", true, "mybanner-123456789012.my-endpoint.com" };
-            yield return new object[] { $"arn:aws:s3-object-lambda:{regionEndpoint}:123456789012:accesspoint/mybanner", "https://my-endpoint.com", false, "mybanner-123456789012.my-endpoint.com" };
         }
 
         [TestMethod]

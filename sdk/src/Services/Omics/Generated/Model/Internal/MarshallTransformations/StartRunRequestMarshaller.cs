@@ -168,6 +168,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RunId);
             }
 
+            if(publicRequest.IsSetScratchStorageMode())
+            {
+                context.Writer.WritePropertyName("scratchStorageMode");
+                context.Writer.WriteStringValue(publicRequest.ScratchStorageMode);
+            }
+
             if(publicRequest.IsSetStorageCapacity())
             {
                 context.Writer.WritePropertyName("storageCapacity");

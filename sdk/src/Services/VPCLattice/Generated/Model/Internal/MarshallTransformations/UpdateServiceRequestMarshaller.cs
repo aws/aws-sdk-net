@@ -88,6 +88,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CertificateArn);
             }
 
+            if(publicRequest.IsSetIdleTimeoutSeconds())
+            {
+                context.Writer.WritePropertyName("idleTimeoutSeconds");
+                context.Writer.WriteNumberValue(publicRequest.IdleTimeoutSeconds.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

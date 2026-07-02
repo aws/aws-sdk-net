@@ -35,6 +35,7 @@ namespace Amazon.CloudWatch.Model
     public partial class DescribeAlarmsResponse : AmazonWebServiceResponse
     {
         private List<CompositeAlarm> _compositeAlarms = AWSConfigs.InitializeCollections ? new List<CompositeAlarm>() : null;
+        private List<LogAlarm> _logAlarms = AWSConfigs.InitializeCollections ? new List<LogAlarm>() : null;
         private List<MetricAlarm> _metricAlarms = AWSConfigs.InitializeCollections ? new List<MetricAlarm>() : null;
         private string _nextToken;
 
@@ -59,6 +60,29 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetCompositeAlarms()
         {
             return this._compositeAlarms != null && (this._compositeAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogAlarms. 
+        /// <para>
+        /// The information about any log alarms returned by the operation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<LogAlarm> LogAlarms
+        {
+            get { return this._logAlarms; }
+            set { this._logAlarms = value; }
+        }
+
+        // Check to see if LogAlarms property is set
+        internal bool IsSetLogAlarms()
+        {
+            return this._logAlarms != null && (this._logAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

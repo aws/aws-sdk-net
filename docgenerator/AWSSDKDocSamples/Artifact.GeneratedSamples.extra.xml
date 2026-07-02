@@ -2,6 +2,44 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.CreateComplianceInquiry(Amazon.Artifact.Model.CreateComplianceInquiryRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.CreateComplianceInquiry(Amazon.Artifact.Model.CreateComplianceInquiryRequest)" />
+            <member name="T:Amazon.Artifact.Model.CreateComplianceInquiryRequest" />
+            <member name="T:Amazon.Artifact.Model.CreateComplianceInquiryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a compliance inquiry with a single text query.
+                </para>
+                <code
+                    title="Invoke CreateComplianceInquiry operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.ExportComplianceInquiry(Amazon.Artifact.Model.ExportComplianceInquiryRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.ExportComplianceInquiry(Amazon.Artifact.Model.ExportComplianceInquiryRequest)" />
+            <member name="T:Amazon.Artifact.Model.ExportComplianceInquiryRequest" />
+            <member name="T:Amazon.Artifact.Model.ExportComplianceInquiryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Exports a compliance inquiry report.
+                </para>
+                <code
+                    title="Invoke ExportComplianceInquiry operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Artifact.IAmazonArtifact.GetAccountSettings(Amazon.Artifact.Model.GetAccountSettingsRequest)" />
             <member name="M:Amazon.Artifact.AmazonArtifactClient.GetAccountSettings(Amazon.Artifact.Model.GetAccountSettingsRequest)" />
             <member name="T:Amazon.Artifact.Model.GetAccountSettingsRequest" />
@@ -14,6 +52,25 @@
                 </para>
                 <code
                     title="Invoke GetAccountSettings operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.GetComplianceInquiryMetadata(Amazon.Artifact.Model.GetComplianceInquiryMetadataRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.GetComplianceInquiryMetadata(Amazon.Artifact.Model.GetComplianceInquiryMetadataRequest)" />
+            <member name="T:Amazon.Artifact.Model.GetComplianceInquiryMetadataRequest" />
+            <member name="T:Amazon.Artifact.Model.GetComplianceInquiryMetadataResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Gets metadata for a compliance inquiry.
+                </para>
+                <code
+                    title="Invoke GetComplianceInquiryMetadata operation"
                     source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -76,6 +133,44 @@
                 </para>
                 <code
                     title="Invoke GetTermForReport operation on the latest version of a specific report"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.ListComplianceInquiries(Amazon.Artifact.Model.ListComplianceInquiriesRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.ListComplianceInquiries(Amazon.Artifact.Model.ListComplianceInquiriesRequest)" />
+            <member name="T:Amazon.Artifact.Model.ListComplianceInquiriesRequest" />
+            <member name="T:Amazon.Artifact.Model.ListComplianceInquiriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists all compliance inquiries.
+                </para>
+                <code
+                    title="Invoke ListComplianceInquiries operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.ListComplianceInquiryQueries(Amazon.Artifact.Model.ListComplianceInquiryQueriesRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.ListComplianceInquiryQueries(Amazon.Artifact.Model.ListComplianceInquiryQueriesRequest)" />
+            <member name="T:Amazon.Artifact.Model.ListComplianceInquiryQueriesRequest" />
+            <member name="T:Amazon.Artifact.Model.ListComplianceInquiryQueriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists queries within a compliance inquiry.
+                </para>
+                <code
+                    title="Invoke ListComplianceInquiryQueries operation"
                     source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
                     region="example-1" />
             </example>

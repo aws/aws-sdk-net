@@ -3281,6 +3281,7 @@
         "S3Bucket":{"shape":"S3Bucket"},
         "S3Key":{"shape":"S3Key"},
         "S3ObjectVersion":{"shape":"S3ObjectVersion"},
+        "S3ObjectStorageMode":{"shape":"S3ObjectStorageMode"},
         "ImageUri":{"shape":"String"},
         "SourceKMSKeyArn":{"shape":"KMSKeyArn"}
       }
@@ -3292,7 +3293,16 @@
         "Location":{"shape":"SensitiveStringOnServerOnly"},
         "ImageUri":{"shape":"String"},
         "ResolvedImageUri":{"shape":"String"},
-        "SourceKMSKeyArn":{"shape":"KMSKeyArn"}
+        "ResolvedS3Object":{"shape":"ResolvedS3Object"},
+        "SourceKMSKeyArn":{"shape":"KMSKeyArn"},
+        "Error":{"shape":"FunctionCodeLocationError"}
+      }
+    },
+    "FunctionCodeLocationError":{
+      "type":"structure",
+      "members":{
+        "ErrorCode":{"shape":"String"},
+        "Message":{"shape":"SensitiveString"}
       }
     },
     "FunctionConfiguration":{
@@ -4558,6 +4568,7 @@
         "S3Bucket":{"shape":"S3Bucket"},
         "S3Key":{"shape":"S3Key"},
         "S3ObjectVersion":{"shape":"S3ObjectVersion"},
+        "S3ObjectStorageMode":{"shape":"S3ObjectStorageMode"},
         "ZipFile":{"shape":"Blob"}
       }
     },
@@ -4568,7 +4579,8 @@
         "CodeSha256":{"shape":"String"},
         "CodeSize":{"shape":"Long"},
         "SigningProfileVersionArn":{"shape":"Arn"},
-        "SigningJobArn":{"shape":"Arn"}
+        "SigningJobArn":{"shape":"Arn"},
+        "ResolvedS3Object":{"shape":"ResolvedS3Object"}
       }
     },
     "LayerVersionNumber":{"type":"long"},
@@ -5919,6 +5931,14 @@
       "box":true,
       "min":0
     },
+    "ResolvedS3Object":{
+      "type":"structure",
+      "members":{
+        "S3Bucket":{"shape":"S3Bucket"},
+        "S3Key":{"shape":"S3Key"},
+        "S3ObjectVersion":{"shape":"S3ObjectVersion"}
+      }
+    },
     "ResourceArn":{
       "type":"string",
       "max":10000,
@@ -6119,6 +6139,13 @@
       "max":1024,
       "min":1,
       "pattern":".*"
+    },
+    "S3ObjectStorageMode":{
+      "type":"string",
+      "enum":[
+        "COPY",
+        "REFERENCE"
+      ]
     },
     "S3ObjectVersion":{
       "type":"string",
@@ -6586,7 +6613,7 @@
       "type":"string",
       "max":10000,
       "min":1,
-      "pattern":"arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\\d{1}:\\d{12}:(function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|capacity-provider:[a-zA-Z0-9-_]{1,64})"
+      "pattern":"arn:(aws[a-zA-Z-]*):lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\\d{1}:\\d{12}:(function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|(capacity-provider|network-connector):[a-zA-Z0-9-_]{1,64})"
     },
     "Tags":{
       "type":"map",
@@ -6894,6 +6921,7 @@
         "S3Bucket":{"shape":"S3Bucket"},
         "S3Key":{"shape":"S3Key"},
         "S3ObjectVersion":{"shape":"S3ObjectVersion"},
+        "S3ObjectStorageMode":{"shape":"S3ObjectStorageMode"},
         "ImageUri":{"shape":"String"},
         "Architectures":{"shape":"ArchitecturesList"},
         "Publish":{"shape":"Boolean"},

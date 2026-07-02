@@ -200,7 +200,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Verified. 
         /// <para>
-        /// Whether the AI bot's identity was verified.
+        /// Indicates whether the AI bot's identity was verified — for example, through a cryptographically
+        /// signed request (Web Bot Auth) or another published verification method. This value
+        /// is meaningful only when GroupBy is NAME, where each result represents a single, identifiable
+        /// bot. For all other GroupBy values (CATEGORY, INTENT, ORGANIZATION, or WEBACL), a result
+        /// aggregates multiple bots that may have different verification states, so Verified
+        /// is always returned as false and should be ignored. Type and required-ness are unchanged
+        /// (Boolean, optional).
         /// </para>
         /// </summary>
         public bool? Verified

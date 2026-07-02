@@ -48,6 +48,7 @@ namespace Amazon.CloudWatch.Model
         private int? _evaluationInterval;
         private int? _evaluationPeriods;
         private EvaluationState _evaluationState;
+        private EvaluationWindow _evaluationWindow;
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _metricName;
@@ -354,6 +355,27 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetEvaluationState()
         {
             return this._evaluationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationWindow. 
+        /// <para>
+        /// The evaluation window that the alarm uses to select the range of metric data that
+        /// it evaluates. This is either a sliding window or a wall clock window. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm
+        /// evaluation windows</a> in the <i>CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public EvaluationWindow EvaluationWindow
+        {
+            get { return this._evaluationWindow; }
+            set { this._evaluationWindow = value; }
+        }
+
+        // Check to see if EvaluationWindow property is set
+        internal bool IsSetEvaluationWindow()
+        {
+            return this._evaluationWindow != null;
         }
 
         /// <summary>

@@ -155,7 +155,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or unique stack ID for which you want to retrieve events.
+        /// The name or unique stack ID for which you want to retrieve events. If you specified
+        /// the name of a change set, specify the stack name or ID (ARN) of the change set you
+        /// want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

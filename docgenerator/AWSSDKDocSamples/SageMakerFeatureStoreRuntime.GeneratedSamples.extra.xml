@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.IAmazonSageMakerFeatureStoreRuntime.BatchWriteRecord(Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordRequest)" />
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.AmazonSageMakerFeatureStoreRuntimeClient.BatchWriteRecord(Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordRequest)" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordRequest" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Write records to multiple feature groups"
+                    source=".\AWSSDKDocSamples\SageMakerFeatureStoreRuntime\SageMakerFeatureStoreRuntime.GeneratedSamples.cs"
+                    region="batch-write-record-example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.IAmazonSageMakerFeatureStoreRuntime.ListRecords(Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest)" />
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.AmazonSageMakerFeatureStoreRuntimeClient.ListRecords(Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest)" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List record identifiers from a feature group"
+                    source=".\AWSSDKDocSamples\SageMakerFeatureStoreRuntime\SageMakerFeatureStoreRuntime.GeneratedSamples.cs"
+                    region="list-records-example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

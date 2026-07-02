@@ -114,6 +114,35 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                      }
                                 }
                             }
+                            if(publicRequestlistValue.IsSetImageWatermarks())
+                            {
+                                if (publicRequestlistValue.ImageWatermarks.Count == 0)
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageWatermark", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ImageWatermarks)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetMaximumDaysSinceSourceImageCreated())
+                                        {
+                                            request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageWatermark" + "." + publicRequestlistValuelistValueIndex + "." + "MaximumDaysSinceSourceImageCreated", StringUtils.FromInt(publicRequestlistValuelistValue.MaximumDaysSinceSourceImageCreated));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetMaximumDaysSinceWatermarkCreated())
+                                        {
+                                            request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageWatermark" + "." + publicRequestlistValuelistValueIndex + "." + "MaximumDaysSinceWatermarkCreated", StringUtils.FromInt(publicRequestlistValuelistValue.MaximumDaysSinceWatermarkCreated));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetSourceImageRegion())
+                                        {
+                                            request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageWatermark" + "." + publicRequestlistValuelistValueIndex + "." + "SourceImageRegion", StringUtils.FromString(publicRequestlistValuelistValue.SourceImageRegion));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetWatermarkKey())
+                                        {
+                                            request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageWatermark" + "." + publicRequestlistValuelistValueIndex + "." + "WatermarkKey", StringUtils.FromString(publicRequestlistValuelistValue.WatermarkKey));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
                             if(publicRequestlistValue.IsSetMarketplaceProductCodes())
                             {
                                 if (publicRequestlistValue.MarketplaceProductCodes.Count == 0)

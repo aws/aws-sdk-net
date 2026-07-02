@@ -4,7 +4,8 @@ using static SmithyDotNet.Generator.Model.Traits.TraitHelpers;
 namespace SmithyDotNet.Generator.Model.Traits;
 
 /// <summary>
-/// Extension methods for AWS-specific traits defined in the <c>aws.*</c> namespaces.
+/// Extension methods for the service traits the generator reads: the <c>aws.*</c> traits plus the
+/// <c>smithy.rules#endpointRuleSet</c> trait.
 /// </summary>
 public static class AWSTraits
 {
@@ -22,6 +23,33 @@ public static class AWSTraits
 
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-sigv4-trait" /></remarks>
     public static SigV4Trait? GetSigV4(this Shape shape) => DeserializeTrait<SigV4Trait>(shape, "aws.auth#sigv4");
+
+    /// <summary>
+    /// Whether the service shape carries a Smithy endpoint rule set. The config writer emits the
+    /// endpoint resolver field, <c>EndpointProvider</c> wiring, and <c>DetermineServiceOperationEndpoint</c>
+    /// override only when this is true. Reports trait presence only, not rule-set evaluation.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointruleset-trait" /></remarks>
+    public static bool HasEndpointRuleSet(this Shape shape) => shape.Traits.ContainsKey("smithy.rules#endpointRuleSet");
+
+    /// <summary>
+    /// The service's endpoint rule set, or <c>null</c> when the trait is absent. The endpoint
+    /// writers compile this into the parameters class and the endpoint provider.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointruleset-trait" /></remarks>
+    public static EndpointRuleSet? GetEndpointRuleSet(this Shape shape) => DeserializeTrait<EndpointRuleSet>(shape, "smithy.rules#endpointRuleSet");
+
+    /// <summary>
+    /// Whether the shape carries an endpoint context-parameter trait: <c>clientContextParams</c>
+    /// (service), <c>staticContextParams</c> (operation), or <c>contextParam</c> (member). These feed
+    /// per-operation endpoint parameter assignment, which the resolver writer doesn't emit yet, so it
+    /// fails loud when one is present.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/parameters.html" /></remarks>
+    public static bool HasEndpointContextParams(this Shape shape) =>
+        shape.Traits.ContainsKey("smithy.rules#clientContextParams")
+        || shape.Traits.ContainsKey("smithy.rules#staticContextParams")
+        || shape.Traits.ContainsKey("smithy.rules#contextParam");
 
     #endregion
 }

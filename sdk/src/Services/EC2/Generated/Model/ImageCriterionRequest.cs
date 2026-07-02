@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model
     /// <para>
     /// 50 values for <c>MarketplaceProductCodes</c> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 50 values for <c>ImageWatermarks</c> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html#how-allowed-amis-works">How
@@ -69,6 +73,7 @@ namespace Amazon.EC2.Model
         private DeprecationTimeConditionRequest _deprecationTimeCondition;
         private List<string> _imageNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _imageProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ImageWatermarkFilterRequest> _imageWatermarks = AWSConfigs.InitializeCollections ? new List<ImageWatermarkFilterRequest>() : null;
         private List<string> _marketplaceProductCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -210,6 +215,36 @@ namespace Amazon.EC2.Model
         internal bool IsSetImageProviders()
         {
             return this._imageProviders != null && (this._imageProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageWatermarks. 
+        /// <para>
+        /// The watermark criteria that an AMI must match to be allowed. An AMI is allowed if
+        /// it carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark
+        /// satisfies a filter when all specified fields in the ImageWatermarkFilter match the
+        /// corresponding values on the watermark of the AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// Maximum: 50 values
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ImageWatermarkFilterRequest> ImageWatermarks
+        {
+            get { return this._imageWatermarks; }
+            set { this._imageWatermarks = value; }
+        }
+
+        // Check to see if ImageWatermarks property is set
+        internal bool IsSetImageWatermarks()
+        {
+            return this._imageWatermarks != null && (this._imageWatermarks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

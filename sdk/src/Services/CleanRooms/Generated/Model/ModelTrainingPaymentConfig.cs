@@ -46,15 +46,12 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         ///  
         /// <para>
-        /// Exactly one member can be configured to pay for model training costs. An error is
-        /// returned if the collaboration creator sets a <c>TRUE</c> value for more than one member
-        /// in the collaboration. 
+        /// One or more members can be configured as payer candidates for model training costs.
         /// </para>
         ///  
         /// <para>
         /// If the collaboration creator hasn't specified anyone as the member paying for model
-        /// training costs, then the member who can query is the default payer. An error is returned
-        /// if the collaboration creator sets a <c>FALSE</c> value for the member who can query.
+        /// training costs, then the member who can query is the default payer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

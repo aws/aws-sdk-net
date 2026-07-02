@@ -6,14 +6,31 @@ using SmithyDotNet.Generator.Model.Traits;
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
-/// A resolved structure member ready for codegen: .NET type, attribute, and doc.
+/// A resolved structure member ready for codegen: .NET type, attribute, doc, and modeledName (the name as it appears in the model)
 /// </summary>
+/// <param name="PropertyName">The name of the member as it appears in generated code.</param>
+/// <param name="DotNetType">The .NET type</param>
+/// <param name="IsCollection">True if member is a collection type.</param>
+/// <param name="IsStructure">True if the member is a structure. IsElementStructure should be used for members that are structure and the target of a list.</param>
+/// <param name="IsRequired">True if the member is required.</param>
+/// <param name="IsElementStructure">True if the member is a structure and the target of a list. i.e. List of structure.</param>
+/// <param name="AwsProperty">The attributes that are part of [AwsProperty(...)]</param>
+/// <param name="Documentation">The documentation for the member.</param>
+/// <param name="ModeledName">The name of the member as it appears in the model</param>
+/// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
+/// <param name="ElementType">The type of the list element.</param>
 public sealed record Member(
     string PropertyName,
     string DotNetType,
     bool IsCollection,
+    bool IsStructure,
+    bool IsRequired,
+    bool IsElementStructure,
     string? AwsProperty,
-    string Documentation
+    string Documentation,
+    string ModeledName,
+    string? JsonName = null,
+    string? ElementType = null
 )
 {
     /// <summary>
@@ -44,12 +61,28 @@ public static class TypeMapper
         foreach (var (memberName, member) in structure.Members)
         {
             var target = context.Resolve(member.Target);
+            string? elementType = null;
+            bool isStructure = target is StructureShape;
+            bool isElementStructure = false;
+            if (target is ListShape list)
+            {
+                var elementTarget = context.Resolve(list.Member.Target);
+                elementType = MapType(list.Member.Target, elementTarget, context);
+                isElementStructure = elementTarget is StructureShape;
+            }
+
             resolved.Add(new Member(
                 PropertyName: SdkNaming.ToUpperFirstCharacter(memberName),
                 DotNetType: MapType(member.Target, target, context),
                 IsCollection: IsCollection(target),
+                IsStructure: isStructure,
+                IsRequired: member.IsRequired(),
+                IsElementStructure: isElementStructure,
                 AwsProperty: BuildAwsProperty(member, target),
-                Documentation: member.GetDocumentation() ?? string.Empty)
+                Documentation: member.GetDocumentation() ?? string.Empty,
+                ModeledName: memberName,
+                JsonName: member.GetJsonName(),
+                ElementType: elementType)
             );
         }
 

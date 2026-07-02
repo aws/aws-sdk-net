@@ -102,6 +102,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CustomDomainName);
             }
 
+            if(publicRequest.IsSetIdleTimeoutSeconds())
+            {
+                context.Writer.WritePropertyName("idleTimeoutSeconds");
+                context.Writer.WriteNumberValue(publicRequest.IdleTimeoutSeconds.Value);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

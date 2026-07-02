@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
     public partial class PhysicalTable
     {
         private CustomSql _customSql;
+        private FileSource _fileSource;
         private RelationalTable _relationalTable;
         private S3Source _s3Source;
         private SaaSTable _saaSTable;
@@ -60,6 +61,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileSource. 
+        /// <para>
+        /// A physical table type for a file data source.
+        /// </para>
+        /// </summary>
+        public FileSource FileSource
+        {
+            get { return this._fileSource; }
+            set { this._fileSource = value; }
+        }
+
+        // Check to see if FileSource property is set
+        internal bool IsSetFileSource()
+        {
+            return this._fileSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RelationalTable. 
         /// <para>
         /// A physical table type for relational data sources.
@@ -80,7 +99,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property S3Source. 
         /// <para>
-        /// A physical table type for as S3 data source.
+        /// A physical table type for an S3 data source.
         /// </para>
         /// </summary>
         public S3Source S3Source

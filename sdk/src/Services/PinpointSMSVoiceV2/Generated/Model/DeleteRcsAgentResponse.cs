@@ -44,6 +44,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _twoWayChannelArn;
         private string _twoWayChannelRole;
         private bool? _twoWayEnabled;
+        private List<string> _twoWayRcsEventsEnabled = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
@@ -237,6 +238,31 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetTwoWayEnabled()
         {
             return this._twoWayEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TwoWayRcsEventsEnabled. 
+        /// <para>
+        /// The list of RCS event types that were enabled for two-way messaging on the deleted
+        /// agent.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> TwoWayRcsEventsEnabled
+        {
+            get { return this._twoWayRcsEventsEnabled; }
+            set { this._twoWayRcsEventsEnabled = value; }
+        }
+
+        // Check to see if TwoWayRcsEventsEnabled property is set
+        internal bool IsSetTwoWayRcsEventsEnabled()
+        {
+            return this._twoWayRcsEventsEnabled != null && (this._twoWayRcsEventsEnabled.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

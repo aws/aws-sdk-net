@@ -418,25 +418,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await batchWrite.ExecuteAsync();
 
             // query
-            var toTest = await hashRangeTable.Query("Bob", new QueryFilter()).GetRemainingAsync();
+            // Use consistent reads so the items just written via BatchWrite are guaranteed visible;
+            // the default eventually-consistent Query/Scan can return nothing on a fresh table.
+            var toTest = await hashRangeTable.Query(new QueryOperationConfig
+            {
+                Filter = new QueryFilter("Name", QueryOperator.Equal, "Bob"),
+                ConsistentRead = true
+            }).GetRemainingAsync();
             TestForInts(toTest);
-            toTest = await epochTable.Query("Bob", new QueryFilter()).GetRemainingAsync();
+            toTest = await epochTable.Query(new QueryOperationConfig
+            {
+                Filter = new QueryFilter("Name", QueryOperator.Equal, "Bob"),
+                ConsistentRead = true
+            }).GetRemainingAsync();
             TestForDateTime(toTest);
 
             // scan, condition is epoch seconds attribute
             var scanFilter = new ScanFilter();
             scanFilter.AddCondition("CreationTime", ScanOperator.Equal, EpochDate);
-            toTest = await hashRangeTable.Scan(scanFilter).GetRemainingAsync();
+            toTest = await hashRangeTable.Scan(new ScanOperationConfig { Filter = scanFilter, ConsistentRead = true }).GetRemainingAsync();
             Assert.Equal(0, toTest.Count);
-            toTest = await epochTable.Scan(scanFilter).GetRemainingAsync();
+            toTest = await epochTable.Scan(new ScanOperationConfig { Filter = scanFilter, ConsistentRead = true }).GetRemainingAsync();
             TestForDateTime(toTest);
 
             // scan, condition is Name
             scanFilter = new ScanFilter();
             scanFilter.AddCondition("Name", ScanOperator.Equal, "Bob");
-            toTest = await hashRangeTable.Scan(scanFilter).GetRemainingAsync();
+            toTest = await hashRangeTable.Scan(new ScanOperationConfig { Filter = scanFilter, ConsistentRead = true }).GetRemainingAsync();
             TestForInts(toTest);
-            toTest = await epochTable.Scan(scanFilter).GetRemainingAsync();
+            toTest = await epochTable.Scan(new ScanOperationConfig { Filter = scanFilter, ConsistentRead = true }).GetRemainingAsync();
             TestForDateTime(toTest);
         }
 

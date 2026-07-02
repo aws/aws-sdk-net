@@ -94,6 +94,47 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
+        public void AppConfigCreateExperimentDefinition()
+        {
+            #region to-create-an-experiment-definition-1632264511615
+
+            var client = new AmazonAppConfigClient();
+            var response = client.CreateExperimentDefinition(new CreateExperimentDefinitionRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                AudienceRule = "(eq $country \"US\")",
+                ConfigurationProfileIdentifier = "ur8hx2f",
+                Control = new TreatmentInput {
+                    FlagValue = new FlagValue { Enabled = false },
+                    Weight = 50
+                },
+                EnvironmentIdentifier = "54j1r29",
+                FlagKey = "my-feature-flag",
+                Name = "Example-Experiment-Definition",
+                Treatments = new List<TreatmentInput> {
+                    new TreatmentInput {
+                        FlagValue = new FlagValue { Enabled = true },
+                        Weight = 50
+                    }
+                }
+            });
+
+            string applicationId = response.ApplicationId;
+            string audienceRule = response.AudienceRule;
+            string configurationProfileId = response.ConfigurationProfileId;
+            Treatment control = response.Control;
+            DateTime createdAt = response.CreatedAt;
+            string environmentId = response.EnvironmentId;
+            string flagKey = response.FlagKey;
+            string id = response.Id;
+            string name = response.Name;
+            string status = response.Status;
+            List<Treatment> treatments = response.Treatments;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
         public void AppConfigCreateHostedConfigurationVersion()
         {
             #region to-create-a-hosted-configuration-version-1632265196980
@@ -168,6 +209,21 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             {
                 ApplicationId = "339ohji",
                 EnvironmentId = "54j1r29"
+            });
+
+
+            #endregion
+        }
+
+        public void AppConfigDeleteExperimentDefinition()
+        {
+            #region to-delete-an-experiment-definition-1632264511619
+
+            var client = new AmazonAppConfigClient();
+            var response = client.DeleteExperimentDefinition(new DeleteExperimentDefinitionRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k"
             });
 
 
@@ -318,6 +374,57 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
+        public void AppConfigGetExperimentDefinition()
+        {
+            #region to-get-an-experiment-definition-1632264511616
+
+            var client = new AmazonAppConfigClient();
+            var response = client.GetExperimentDefinition(new GetExperimentDefinitionRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k"
+            });
+
+            string applicationId = response.ApplicationId;
+            string audienceRule = response.AudienceRule;
+            string configurationProfileId = response.ConfigurationProfileId;
+            Treatment control = response.Control;
+            DateTime createdAt = response.CreatedAt;
+            string environmentId = response.EnvironmentId;
+            string flagKey = response.FlagKey;
+            string id = response.Id;
+            string name = response.Name;
+            string status = response.Status;
+            List<Treatment> treatments = response.Treatments;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void AppConfigGetExperimentRun()
+        {
+            #region to-get-an-experiment-run-1632264511621
+
+            var client = new AmazonAppConfigClient();
+            var response = client.GetExperimentRun(new GetExperimentRunRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k",
+                Run = 1
+            });
+
+            string applicationId = response.ApplicationId;
+            string experimentDefinitionId = response.ExperimentDefinitionId;
+            ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
+            float exposurePercentage = response.ExposurePercentage;
+            int run = response.Run;
+            DateTime startedAt = response.StartedAt;
+            string status = response.Status;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
         public void AppConfigGetHostedConfigurationVersion()
         {
             #region to-retrieve-hosted-configuration-details-1632267003527
@@ -412,6 +519,54 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
+        public void AppConfigListExperimentDefinitions()
+        {
+            #region to-list-experiment-definitions-1632264511617
+
+            var client = new AmazonAppConfigClient();
+            var response = client.ListExperimentDefinitions(new ListExperimentDefinitionsRequest 
+            {
+                ApplicationIdentifier = "339ohji"
+            });
+
+            List<ExperimentDefinitionSummary> items = response.Items;
+
+            #endregion
+        }
+
+        public void AppConfigListExperimentRunEvents()
+        {
+            #region to-list-experiment-run-events-1632264511625
+
+            var client = new AmazonAppConfigClient();
+            var response = client.ListExperimentRunEvents(new ListExperimentRunEventsRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k",
+                Run = 1
+            });
+
+            List<ExperimentRunEvent> items = response.Items;
+
+            #endregion
+        }
+
+        public void AppConfigListExperimentRuns()
+        {
+            #region to-list-experiment-runs-1632264511622
+
+            var client = new AmazonAppConfigClient();
+            var response = client.ListExperimentRuns(new ListExperimentRunsRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k"
+            });
+
+            List<ExperimentRunSummary> items = response.Items;
+
+            #endregion
+        }
+
         public void AppConfigListHostedConfigurationVersions()
         {
             #region to-list-the-available-hosted-configuration-versions-1632267647667
@@ -481,6 +636,30 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             #endregion
         }
 
+        public void AppConfigStartExperimentRun()
+        {
+            #region to-start-an-experiment-run-1632264511620
+
+            var client = new AmazonAppConfigClient();
+            var response = client.StartExperimentRun(new StartExperimentRunRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k",
+                ExposurePercentage = 50
+            });
+
+            string applicationId = response.ApplicationId;
+            string experimentDefinitionId = response.ExperimentDefinitionId;
+            ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
+            float exposurePercentage = response.ExposurePercentage;
+            int run = response.Run;
+            DateTime startedAt = response.StartedAt;
+            string status = response.Status;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
         public void AppConfigStopDeployment()
         {
             #region to-stop-configuration-deployment-1632329139126
@@ -498,6 +677,36 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             int finalBakeTimeInMinutes = response.FinalBakeTimeInMinutes;
             float growthFactor = response.GrowthFactor;
             float percentageComplete = response.PercentageComplete;
+
+            #endregion
+        }
+
+        public void AppConfigStopExperimentRun()
+        {
+            #region to-stop-an-experiment-run-1632264511624
+
+            var client = new AmazonAppConfigClient();
+            var response = client.StopExperimentRun(new StopExperimentRunRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k",
+                Result = new ExperimentRunResult {
+                    ExecutiveSummary = "t1 wins with 16% lift in conversion",
+                    ReasonsToLaunch = "Significant improvement in key metric"
+                },
+                Run = 1
+            });
+
+            string applicationId = response.ApplicationId;
+            DateTime endedAt = response.EndedAt;
+            string experimentDefinitionId = response.ExperimentDefinitionId;
+            ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
+            float exposurePercentage = response.ExposurePercentage;
+            ExperimentRunResult result = response.Result;
+            int run = response.Run;
+            DateTime startedAt = response.StartedAt;
+            string status = response.Status;
+            DateTime updatedAt = response.UpdatedAt;
 
             #endregion
         }
@@ -616,6 +825,61 @@ namespace AWSSDKDocSamples.Amazon.AppConfig.Generated
             string id = response.Id;
             string name = response.Name;
             string state = response.State;
+
+            #endregion
+        }
+
+        public void AppConfigUpdateExperimentDefinition()
+        {
+            #region to-update-an-experiment-definition-1632264511618
+
+            var client = new AmazonAppConfigClient();
+            var response = client.UpdateExperimentDefinition(new UpdateExperimentDefinitionRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                AudienceRule = "(eq $country \"US\")",
+                ExperimentDefinitionIdentifier = "bsxyd7k",
+                Hypothesis = "Enabling the feature will increase conversion by 10%"
+            });
+
+            string applicationId = response.ApplicationId;
+            string audienceRule = response.AudienceRule;
+            string configurationProfileId = response.ConfigurationProfileId;
+            Treatment control = response.Control;
+            DateTime createdAt = response.CreatedAt;
+            string environmentId = response.EnvironmentId;
+            string flagKey = response.FlagKey;
+            string hypothesis = response.Hypothesis;
+            string id = response.Id;
+            string name = response.Name;
+            string status = response.Status;
+            List<Treatment> treatments = response.Treatments;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void AppConfigUpdateExperimentRun()
+        {
+            #region to-update-an-experiment-run-1632264511623
+
+            var client = new AmazonAppConfigClient();
+            var response = client.UpdateExperimentRun(new UpdateExperimentRunRequest 
+            {
+                ApplicationIdentifier = "339ohji",
+                ExperimentDefinitionIdentifier = "bsxyd7k",
+                ExposurePercentage = 75,
+                Run = 1
+            });
+
+            string applicationId = response.ApplicationId;
+            string experimentDefinitionId = response.ExperimentDefinitionId;
+            ExperimentDefinitionSnapshot experimentDefinitionSnapshot = response.ExperimentDefinitionSnapshot;
+            float exposurePercentage = response.ExposurePercentage;
+            int run = response.Run;
+            DateTime startedAt = response.StartedAt;
+            string status = response.Status;
+            DateTime updatedAt = response.UpdatedAt;
 
             #endregion
         }

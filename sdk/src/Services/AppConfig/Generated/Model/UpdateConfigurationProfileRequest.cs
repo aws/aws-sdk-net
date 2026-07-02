@@ -49,7 +49,7 @@ namespace Amazon.AppConfig.Model
         /// The application ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -68,7 +68,7 @@ namespace Amazon.AppConfig.Model
         /// The ID of the configuration profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigurationProfileId
         {
             get { return this._configurationProfileId; }

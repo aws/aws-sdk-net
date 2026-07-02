@@ -34,7 +34,26 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class KafkaClusterClientAuthentication
     {
+        private KafkaClusterMTLSAuthentication _mtls;
         private KafkaClusterSaslScramAuthentication _saslScram;
+
+        /// <summary>
+        /// Gets and sets the property MTLS. 
+        /// <para>
+        /// Details for mTLS client authentication.
+        /// </para>
+        /// </summary>
+        public KafkaClusterMTLSAuthentication MTLS
+        {
+            get { return this._mtls; }
+            set { this._mtls = value; }
+        }
+
+        // Check to see if MTLS property is set
+        internal bool IsSetMTLS()
+        {
+            return this._mtls != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SaslScram. 
@@ -42,7 +61,6 @@ namespace Amazon.Kafka.Model
         /// Details for SASL/SCRAM client authentication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public KafkaClusterSaslScramAuthentication SaslScram
         {
             get { return this._saslScram; }

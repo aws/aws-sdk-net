@@ -36,6 +36,7 @@ namespace Amazon.AppConfig.Model
     public partial class UpdateAccountSettingsRequest : AmazonAppConfigRequest
     {
         private DeletionProtectionSettings _deletionProtection;
+        private VendedMetricsSettings _vendedMetrics;
 
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
@@ -57,6 +58,24 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VendedMetrics. 
+        /// <para>
+        /// Configuration for vended metrics in the account.
+        /// </para>
+        /// </summary>
+        public VendedMetricsSettings VendedMetrics
+        {
+            get { return this._vendedMetrics; }
+            set { this._vendedMetrics = value; }
+        }
+
+        // Check to see if VendedMetrics property is set
+        internal bool IsSetVendedMetrics()
+        {
+            return this._vendedMetrics != null;
         }
 
     }

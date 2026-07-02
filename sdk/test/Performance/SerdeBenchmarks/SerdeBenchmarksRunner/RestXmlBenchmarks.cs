@@ -96,13 +96,13 @@ public class RestXmlBenchmarks
         unmarshaller.Unmarshall(ctx);
     }
 
-    [Benchmark] public void restXml_CopyObjectRequest_Baseline() => CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectBaseline);
-    [Benchmark] public void restXml_CopyObjectRequest_M() => CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectMedium);
+    [Benchmark] public long restXml_CopyObjectRequest_Baseline() => TestDataHelpers.GetContentLengthAndDispose(CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectBaseline));
+    [Benchmark] public long restXml_CopyObjectRequest_M() => TestDataHelpers.GetContentLengthAndDispose(CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectMedium));
     [Benchmark] public void restXml_CopyObjectOutput_Baseline() => UnmarshallXml(_copyOutputBaselineBytes, _copyObjectUnmarshaller);
     [Benchmark] public void restXml_CopyObjectOutput_M() => UnmarshallXml(_copyOutputMBytes, _copyObjectUnmarshaller);
-    [Benchmark] public void restXml_PutObject_S() { _putObjectS.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectS); }
-    [Benchmark] public void restXml_PutObject_M() { _putObjectM.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectM); }
-    [Benchmark] public void restXml_PutObject_L() { _putObjectL.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectL); }
+    [Benchmark] public long restXml_PutObject_S() { _putObjectS.Body.Position = 0; return TestDataHelpers.GetContentLengthAndDispose(PutObjectRequestMarshaller.Instance.Marshall(_putObjectS)); }
+    [Benchmark] public long restXml_PutObject_M() { _putObjectM.Body.Position = 0; return TestDataHelpers.GetContentLengthAndDispose(PutObjectRequestMarshaller.Instance.Marshall(_putObjectM)); }
+    [Benchmark] public long restXml_PutObject_L() { _putObjectL.Body.Position = 0; return TestDataHelpers.GetContentLengthAndDispose(PutObjectRequestMarshaller.Instance.Marshall(_putObjectL)); }
 
     [Benchmark]
     public void restXml_GetObject_S()

@@ -39,6 +39,7 @@ namespace Amazon.Lambda.Model
         private string _imageUri;
         private string _s3Bucket;
         private string _s3Key;
+        private S3ObjectStorageMode _s3ObjectStorageMode;
         private string _s3ObjectVersion;
         private string _sourceKMSKeyArn;
         private MemoryStream _zipFile;
@@ -99,6 +100,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetS3Key()
         {
             return this._s3Key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ObjectStorageMode. 
+        /// <para>
+        /// Specifies how the deployment package is stored. Use <c>COPY</c> (default) to upload
+        /// a copy of your deployment package to Lambda. Use <c>REFERENCE</c> to have Lambda reference
+        /// the deployment package from the specified Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public S3ObjectStorageMode S3ObjectStorageMode
+        {
+            get { return this._s3ObjectStorageMode; }
+            set { this._s3ObjectStorageMode = value; }
+        }
+
+        // Check to see if S3ObjectStorageMode property is set
+        internal bool IsSetS3ObjectStorageMode()
+        {
+            return this._s3ObjectStorageMode != null;
         }
 
         /// <summary>

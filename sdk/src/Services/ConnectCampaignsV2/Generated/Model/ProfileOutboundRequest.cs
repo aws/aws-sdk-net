@@ -35,6 +35,7 @@ namespace Amazon.ConnectCampaignsV2.Model
     public partial class ProfileOutboundRequest
     {
         private string _clientToken;
+        private EventTriggerContext _eventTriggerContext;
         private DateTime? _expirationTime;
         private string _profileId;
 
@@ -52,6 +53,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTriggerContext.
+        /// </summary>
+        public EventTriggerContext EventTriggerContext
+        {
+            get { return this._eventTriggerContext; }
+            set { this._eventTriggerContext = value; }
+        }
+
+        // Check to see if EventTriggerContext property is set
+        internal bool IsSetEventTriggerContext()
+        {
+            return this._eventTriggerContext != null;
         }
 
         /// <summary>

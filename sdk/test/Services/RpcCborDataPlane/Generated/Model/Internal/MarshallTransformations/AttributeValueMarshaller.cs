@@ -53,7 +53,7 @@ namespace Amazon.RpcCborDataPlane.Model.Internal.MarshallTransformations
             if (requestObject.IsSetB())
             {
                 context.Writer.WriteTextString("B");
-                context.Writer.WriteByteString(requestObject.B.ToArray());
+                context.Writer.WriteByteString(requestObject.B);
             }
             if (requestObject.IsSetBOOL())
             {
@@ -66,7 +66,7 @@ namespace Amazon.RpcCborDataPlane.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray(requestObject.BS.Count);
                 foreach(var requestObjectBSListValue in requestObject.BS)
                 {
-                    context.Writer.WriteByteString(requestObjectBSListValue.ToArray());
+                    context.Writer.WriteByteString(requestObjectBSListValue);
                 }
                 context.Writer.WriteEndArray();
             }

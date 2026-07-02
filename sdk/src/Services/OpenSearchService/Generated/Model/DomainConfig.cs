@@ -47,6 +47,7 @@ namespace Amazon.OpenSearchService.Model
         private DomainEndpointOptionsStatus _domainEndpointOptions;
         private EBSOptionsStatus _ebsOptions;
         private EncryptionAtRestOptionsStatus _encryptionAtRestOptions;
+        private EngineModeStatus _engineMode;
         private VersionStatus _engineVersion;
         private IdentityCenterOptionsStatus _identityCenterOptions;
         private IPAddressTypeStatus _ipAddressType;
@@ -56,6 +57,7 @@ namespace Amazon.OpenSearchService.Model
         private OffPeakWindowOptionsStatus _offPeakWindowOptions;
         private SnapshotOptionsStatus _snapshotOptions;
         private SoftwareUpdateOptionsStatus _softwareUpdateOptions;
+        private UseCaseStatus _useCase;
         private VPCDerivedInfoStatus _vpcOptions;
 
         /// <summary>
@@ -296,6 +298,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode configured for the domain.
+        /// </para>
+        /// </summary>
+        public EngineModeStatus EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The OpenSearch or Elasticsearch version that the domain is running.
@@ -465,6 +485,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetSoftwareUpdateOptions()
         {
             return this._softwareUpdateOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The use case configured for the domain.
+        /// </para>
+        /// </summary>
+        public UseCaseStatus UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
         /// <summary>

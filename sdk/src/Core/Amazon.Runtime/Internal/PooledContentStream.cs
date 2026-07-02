@@ -39,6 +39,18 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Creates a new PooledContentStream whose underlying buffer is rented with at least
+        /// <paramref name="initialCapacity"/> bytes. Use this when the final content size is known
+        /// up front (e.g. CBOR's writer.BytesWritten) to rent a right-sized buffer immediately and
+        /// avoid the default-size rent followed by a resize+return.
+        /// </summary>
+        /// <param name="initialCapacity">The minimum capacity to rent for the underlying buffer.</param>
+        public PooledContentStream(int initialCapacity)
+        {
+            _writer = new ArrayPoolBufferWriter<byte>(initialCapacity);
+        }
+
+        /// <summary>
         /// The underlying buffer writer. Use this to write content (e.g. via Utf8JsonWriter or XmlWriter).
         /// Must not be accessed after the stream is set as ContentStream and pipeline processing begins.
         /// </summary>

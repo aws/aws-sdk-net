@@ -31,8 +31,10 @@ namespace Amazon.PCS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCluster operation.
-    /// Updates a cluster configuration. You can modify Slurm scheduler settings, accounting
-    /// configuration, and security groups for an existing cluster. 
+    /// Updates a cluster configuration. You can upgrade the Slurm version, modify scheduler
+    /// settings, and update accounting configuration for an existing cluster. For more information
+    /// about upgrading the Slurm version, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
+    /// the Slurm version on a cluster</a> in the <i>PCS User Guide</i>. 
     /// 
     ///  <note> 
     /// <para>
@@ -46,6 +48,7 @@ namespace Amazon.PCS.Model
     {
         private string _clientToken;
         private string _clusterIdentifier;
+        private UpdateSchedulerRequest _scheduler;
         private UpdateClusterSlurmConfigurationRequest _slurmConfiguration;
 
         /// <summary>
@@ -89,6 +92,26 @@ namespace Amazon.PCS.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scheduler. 
+        /// <para>
+        /// The scheduler configuration to update for the cluster. Use this to upgrade the Slurm
+        /// version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
+        /// the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public UpdateSchedulerRequest Scheduler
+        {
+            get { return this._scheduler; }
+            set { this._scheduler = value; }
+        }
+
+        // Check to see if Scheduler property is set
+        internal bool IsSetScheduler()
+        {
+            return this._scheduler != null;
         }
 
         /// <summary>

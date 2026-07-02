@@ -56,6 +56,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("mTLS", targetDepth, ref reader))
+                {
+                    var unmarshaller = KafkaClusterMTLSAuthenticationUnmarshaller.Instance;
+                    unmarshalledObject.MTLS = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("saslScram", targetDepth, ref reader))
                 {
                     var unmarshaller = KafkaClusterSaslScramAuthenticationUnmarshaller.Instance;
