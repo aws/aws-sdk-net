@@ -38,6 +38,7 @@ namespace Amazon.CustomerProfiles.Model
     {
         private List<string> _candidateIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private RecommendationDiversityConfig _diversityConfig;
         private string _domainName;
         private int? _maxResults;
         private MetadataConfig _metadataConfig;
@@ -94,6 +95,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetContext()
         {
             return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiversityConfig. 
+        /// <para>
+        /// Runtime diversity configuration for this request. Enables diversity-aware recommendations
+        /// and optionally supplies values for placeholder-based diversity caps configured on
+        /// the recommender.
+        /// </para>
+        /// </summary>
+        public RecommendationDiversityConfig DiversityConfig
+        {
+            get { return this._diversityConfig; }
+            set { this._diversityConfig = value; }
+        }
+
+        // Check to see if DiversityConfig property is set
+        internal bool IsSetDiversityConfig()
+        {
+            return this._diversityConfig != null;
         }
 
         /// <summary>

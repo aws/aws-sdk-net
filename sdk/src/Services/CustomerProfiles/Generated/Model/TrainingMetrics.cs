@@ -35,6 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class TrainingMetrics
     {
         private Dictionary<string, double> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
+        private string _recommenderVersionName;
         private DateTime? _time;
 
         /// <summary>
@@ -58,6 +59,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetMetrics()
         {
             return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderVersionName. 
+        /// <para>
+        /// The name of the recommender version that produced these training metrics.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string RecommenderVersionName
+        {
+            get { return this._recommenderVersionName; }
+            set { this._recommenderVersionName = value; }
+        }
+
+        // Check to see if RecommenderVersionName property is set
+        internal bool IsSetRecommenderVersionName()
+        {
+            return this._recommenderVersionName != null;
         }
 
         /// <summary>

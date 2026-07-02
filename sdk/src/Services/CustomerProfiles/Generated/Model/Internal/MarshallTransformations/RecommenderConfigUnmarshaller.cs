@@ -56,6 +56,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("DiversityConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = DiversityConfigUnmarshaller.Instance;
+                    unmarshalledObject.DiversityConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("EventsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventsConfigUnmarshaller.Instance;

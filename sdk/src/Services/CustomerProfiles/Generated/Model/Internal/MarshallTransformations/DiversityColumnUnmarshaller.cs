@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TrainingMetrics Object
+    /// Response Unmarshaller for DiversityColumn Object
     /// </summary>  
-    public class TrainingMetricsUnmarshaller : IJsonUnmarshaller<TrainingMetrics, JsonUnmarshallerContext>
+    public class DiversityColumnUnmarshaller : IJsonUnmarshaller<DiversityColumn, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrainingMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DiversityColumn Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TrainingMetrics unmarshalledObject = new TrainingMetrics();
+            DiversityColumn unmarshalledObject = new DiversityColumn();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Metrics", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderVersionName", targetDepth, ref reader))
+                if (context.TestExpression("CapType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommenderVersionName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CapType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Time", targetDepth, ref reader))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Time = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Target", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         }
 
 
-        private static TrainingMetricsUnmarshaller _instance = new TrainingMetricsUnmarshaller();        
+        private static DiversityColumnUnmarshaller _instance = new DiversityColumnUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TrainingMetricsUnmarshaller Instance
+        public static DiversityColumnUnmarshaller Instance
         {
             get
             {

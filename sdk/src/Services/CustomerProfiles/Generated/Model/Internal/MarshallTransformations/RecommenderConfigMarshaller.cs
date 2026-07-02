@@ -46,6 +46,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDiversityConfig())
+            {
+                context.Writer.WritePropertyName("DiversityConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DiversityConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DiversityConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEventsConfig())
             {
                 context.Writer.WritePropertyName("EventsConfig");
