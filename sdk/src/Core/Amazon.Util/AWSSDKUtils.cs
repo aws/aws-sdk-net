@@ -1294,7 +1294,7 @@ namespace Amazon.Util
             {
                 ArrayPool<byte>.Shared.Return(utf8Bytes);
             }
-            return encoded.ToString();
+            return encoded.AsSpan().ToString();
         }
 
         /// <summary>
