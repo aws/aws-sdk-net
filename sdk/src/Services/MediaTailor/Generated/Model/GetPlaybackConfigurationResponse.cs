@@ -42,6 +42,8 @@ namespace Amazon.MediaTailor.Model
         private CdnConfiguration _cdnConfiguration;
         private Dictionary<string, Dictionary<string, string>> _configurationAliases = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private DashConfiguration _dashConfiguration;
+        private string _dualStackPlaybackEndpointPrefix;
+        private string _dualStackSessionInitializationEndpointPrefix;
         private Dictionary<string, string> _functionMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private HlsConfiguration _hlsConfiguration;
         private InsertionMode _insertionMode;
@@ -217,6 +219,44 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetDashConfiguration()
         {
             return this._dashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DualStackPlaybackEndpointPrefix. 
+        /// <para>
+        /// The dual-stack (IPv4 and IPv6) URL that your player accesses to get a manifest from
+        /// AWS Elemental MediaTailor. The session uses server-side reporting.
+        /// </para>
+        /// </summary>
+        public string DualStackPlaybackEndpointPrefix
+        {
+            get { return this._dualStackPlaybackEndpointPrefix; }
+            set { this._dualStackPlaybackEndpointPrefix = value; }
+        }
+
+        // Check to see if DualStackPlaybackEndpointPrefix property is set
+        internal bool IsSetDualStackPlaybackEndpointPrefix()
+        {
+            return this._dualStackPlaybackEndpointPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DualStackSessionInitializationEndpointPrefix. 
+        /// <para>
+        /// The dual-stack (IPv4 and IPv6) URL that your player uses to initialize a session that
+        /// uses client-side reporting.
+        /// </para>
+        /// </summary>
+        public string DualStackSessionInitializationEndpointPrefix
+        {
+            get { return this._dualStackSessionInitializationEndpointPrefix; }
+            set { this._dualStackSessionInitializationEndpointPrefix = value; }
+        }
+
+        // Check to see if DualStackSessionInitializationEndpointPrefix property is set
+        internal bool IsSetDualStackSessionInitializationEndpointPrefix()
+        {
+            return this._dualStackSessionInitializationEndpointPrefix != null;
         }
 
         /// <summary>
@@ -406,8 +446,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackEndpointPrefix. 
         /// <para>
-        /// The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
-        /// This session will use server-side reporting.
+        /// The URL that your player accesses to get a manifest from AWS Elemental MediaTailor.
+        /// The session uses server-side reporting.
         /// </para>
         /// </summary>
         public string PlaybackEndpointPrefix
@@ -425,7 +465,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SessionInitializationEndpointPrefix. 
         /// <para>
-        /// The URL that the player uses to initialize a session that uses client-side reporting.
+        /// The URL that your player uses to initialize a session that uses client-side reporting.
         /// </para>
         /// </summary>
         public string SessionInitializationEndpointPrefix
