@@ -144,7 +144,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property ContactPhoneNumber. 
         /// <para>
-        /// The phone number of the contact.
+        /// The phone number of the contact, including the country code (for example, <c>+12065550100</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

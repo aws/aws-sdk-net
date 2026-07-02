@@ -749,7 +749,7 @@
     <property>Amazon.Outposts.Model.Address.ContactPhoneNumber</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[\S ]+$</pattern>
+    <pattern>\+[1-9][0-9]{1,18}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Address.CountryCode</property>
