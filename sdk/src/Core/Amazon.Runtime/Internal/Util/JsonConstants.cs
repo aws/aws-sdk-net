@@ -25,5 +25,6 @@ namespace Amazon.Runtime.Internal.Util
     {
         private static byte[] _utf8BomBytes = new byte[] { 0xEF, 0xBB, 0xBF };
         public static ReadOnlySpan<byte>  Utf8Bom => _utf8BomBytes;
+        public static readonly int JsonMaxDepth = 256;
     }
 }
