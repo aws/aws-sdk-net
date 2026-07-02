@@ -79,7 +79,9 @@ namespace Amazon.DSQL.Util
         /// </remarks>
         /// </summary>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAuthToken(string hostname, TimeSpan expiresIn)
         {
@@ -114,7 +116,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAuthToken(RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
@@ -149,7 +153,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAuthToken(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
         {
@@ -169,7 +175,10 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = credentials.GetCredentials();
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? refreshing.ForceRefresh(FifteenMinutes)
+                : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
         }
 
@@ -179,14 +188,22 @@ namespace Amazon.DSQL.Util
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAuthToken(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = credentials.GetCredentials();
+            // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
+            ValidateExpiresIn(expiresIn);
+
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? refreshing.ForceRefresh(expiresIn)
+                : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
 
@@ -215,7 +232,9 @@ namespace Amazon.DSQL.Util
         /// </remarks>
         /// </summary>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(string hostname, TimeSpan expiresIn)
         {
@@ -250,7 +269,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
@@ -285,7 +306,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
         {
@@ -305,7 +328,10 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? await refreshing.ForceRefreshAsync(FifteenMinutes).ConfigureAwait(false)
+                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
         }
 
@@ -315,14 +341,22 @@ namespace Amazon.DSQL.Util
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
+            ValidateExpiresIn(expiresIn);
+
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? await refreshing.ForceRefreshAsync(expiresIn).ConfigureAwait(false)
+                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
 
@@ -351,7 +385,9 @@ namespace Amazon.DSQL.Util
         /// </remarks>
         /// </summary>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAdminAuthToken(string hostname, TimeSpan expiresIn)
         {
@@ -386,7 +422,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAdminAuthToken(RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
@@ -421,7 +459,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAdminAuthToken(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
         {
@@ -441,7 +481,10 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = credentials.GetCredentials();
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? refreshing.ForceRefresh(FifteenMinutes)
+                : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
         }
 
@@ -451,14 +494,22 @@ namespace Amazon.DSQL.Util
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static string GenerateDbConnectAdminAuthToken(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = credentials.GetCredentials();
+            // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
+            ValidateExpiresIn(expiresIn);
+
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? refreshing.ForceRefresh(expiresIn)
+                : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
         }
 
@@ -487,7 +538,9 @@ namespace Amazon.DSQL.Util
         /// </remarks>
         /// </summary>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(string hostname, TimeSpan expiresIn)
         {
@@ -522,7 +575,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
@@ -557,7 +612,9 @@ namespace Amazon.DSQL.Util
         /// </summary>
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
         {
@@ -577,7 +634,10 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? await refreshing.ForceRefreshAsync(FifteenMinutes).ConfigureAwait(false)
+                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
         }
 
@@ -587,15 +647,29 @@ namespace Amazon.DSQL.Util
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="region">The region of the DSQL database.</param>
         /// <param name="hostname">Hostname of the DSQL database.</param>
-        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.
+        /// A token signed with temporary credentials becomes invalid when the credentials session expires, even if this duration is longer;
+        /// durations beyond the credentials session lifetime require long-term credentials.</param>
         /// <returns></returns>
         public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
         {
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
+            ValidateExpiresIn(expiresIn);
+
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? await refreshing.ForceRefreshAsync(expiresIn).ConfigureAwait(false)
+                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
+        }
+
+        private static void ValidateExpiresIn(TimeSpan expiresIn)
+        {
+            if (expiresIn <= TimeSpan.Zero || expiresIn > MaxExpiresIn)
+                throw new ArgumentOutOfRangeException("expiresIn", "ExpiresIn must be between 0 (exclusive) and 7 days (inclusive).");
         }
 
         private static string GenerateAuthToken(ImmutableCredentials immutableCredentials, RegionEndpoint region, string hostname, string actionValue, TimeSpan expiresIn)
@@ -610,8 +684,7 @@ namespace Amazon.DSQL.Util
             if (string.IsNullOrEmpty(hostname))
                 throw new ArgumentException("Hostname must not be null or empty.");
 
-            if (expiresIn <= TimeSpan.Zero || expiresIn > MaxExpiresIn)
-                throw new ArgumentOutOfRangeException("expiresIn", "ExpiresIn must be between 0 (exclusive) and 7 days (inclusive).");
+            ValidateExpiresIn(expiresIn);
 
             GenerateDSQLAuthTokenRequest authTokenRequest = new GenerateDSQLAuthTokenRequest();
             IRequest request = new DefaultRequest(authTokenRequest, DSQLServiceName);

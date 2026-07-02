@@ -459,6 +459,100 @@ namespace Amazon.Runtime
             currentState = null;
         }
 
+        /// <summary>
+        /// Returns credentials that remain valid for at least <paramref name="minimumLifetime"/> when the credential
+        /// provider can supply them, regenerating the current credentials if they would expire sooner. This lets callers
+        /// such as the RDS and DSQL auth-token generators ensure the generated token stays valid for its full lifetime.
+        /// If the regenerated credentials still expire within <paramref name="minimumLifetime"/> (for example, the
+        /// requested lifetime exceeds the provider's maximum session duration), they are returned anyway and an
+        /// informational message is logged. Exceptions thrown while regenerating the credentials propagate to the caller.
+        /// </summary>
+        public ImmutableCredentials ForceRefresh(TimeSpan minimumLifetime)
+        {
+            if (minimumLifetime < TimeSpan.Zero)
+                throw new ArgumentOutOfRangeException("minimumLifetime", "minimumLifetime cannot be negative");
+
+            // Lock-free fast path, mirroring GetCredentials: most calls will find credentials
+            // that already satisfy the minimum lifetime.
+            var tempState = currentState;
+            if (tempState != null && !tempState.IsExpiredWithin(minimumLifetime))
+                return tempState.Credentials;
+
+            _updateGeneratedCredentialsSemaphore.Wait();
+            try
+            {
+                // Re-check under the lock in case another thread refreshed first.
+                tempState = currentState;
+                if (tempState != null && !tempState.IsExpiredWithin(minimumLifetime))
+                    return tempState.Credentials;
+
+                var newState = GenerateNewCredentials();
+                ValidateGeneratedCredentials(newState);
+                LogCredentialsBelowMinimumLifetime(newState, minimumLifetime);
+
+                // currentLoadState is intentionally not modified here: if a background refresh is in
+                // flight it must stay Loading so no duplicate background refresh is started, and the
+                // background task resets the flag itself when it completes or fails.
+                currentState = newState;
+                return newState.Credentials;
+            }
+            finally
+            {
+                _updateGeneratedCredentialsSemaphore.Release();
+            }
+        }
+
+        /// <inheritdoc cref="ForceRefresh(TimeSpan)"/>
+        public async Task<ImmutableCredentials> ForceRefreshAsync(TimeSpan minimumLifetime)
+        {
+            if (minimumLifetime < TimeSpan.Zero)
+                throw new ArgumentOutOfRangeException("minimumLifetime", "minimumLifetime cannot be negative");
+
+            // Lock-free fast path, mirroring GetCredentialsAsync: most calls will find credentials
+            // that already satisfy the minimum lifetime.
+            var tempState = currentState;
+            if (tempState != null && !tempState.IsExpiredWithin(minimumLifetime))
+                return tempState.Credentials;
+
+            await _updateGeneratedCredentialsSemaphore.WaitAsync().ConfigureAwait(false);
+            try
+            {
+                // Re-check under the lock in case another thread refreshed first.
+                tempState = currentState;
+                if (tempState != null && !tempState.IsExpiredWithin(minimumLifetime))
+                    return tempState.Credentials;
+
+                var newState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
+                ValidateGeneratedCredentials(newState);
+                LogCredentialsBelowMinimumLifetime(newState, minimumLifetime);
+
+                // currentLoadState is intentionally not modified here: if a background refresh is in
+                // flight it must stay Loading so no duplicate background refresh is started, and the
+                // background task resets the flag itself when it completes or fails.
+                currentState = newState;
+                return newState.Credentials;
+            }
+            finally
+            {
+                _updateGeneratedCredentialsSemaphore.Release();
+            }
+        }
+
+        private void LogCredentialsBelowMinimumLifetime(CredentialsRefreshState state, TimeSpan minimumLifetime)
+        {
+            if (!state.IsExpiredWithin(minimumLifetime))
+            {
+                return;
+            }
+
+            _logger.InfoFormat(
+                "Newly generated credentials expire at {0}, which does not satisfy the requested minimum lifetime of {1}. " +
+                "This typically means the requested lifetime exceeds the credential provider's maximum session duration.",
+                state.Expiration.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
+                minimumLifetime
+            );
+        }
+
         public void Dispose()
         {
             Dispose(true);
