@@ -2,6 +2,7 @@ using System.Collections.Concurrent;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
+using SmithyDotNet.Generator.Writers.Endpoints;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -10,10 +11,10 @@ namespace SmithyDotNet.Generator.Generation;
 /// SDK-conventional relative path, and writes the files under <c>{outputPath}/Generated/</c>.
 /// <para />
 /// Phase 1 scope: the writers that exist today (interface, client, config, service exception,
-/// metadata, operation request/response/base, structures, exceptions, and the restJson1 request
-/// marshaller + structure (un)marshallers). The endpoint/auth <c>Internal/</c> files and the
-/// operation-response / exception unmarshallers have no writers yet, so the generated tree does
-/// not compile standalone.
+/// metadata, endpoint parameters/provider/resolver, operation request/response/base, structures,
+/// exceptions, and the restJson1 request marshaller + structure (un)marshallers). The auth
+/// <c>Internal/</c> files and the operation-response / exception unmarshallers have no writers yet,
+/// so the generated tree does not compile standalone.
 /// </summary>
 public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion)
 {
@@ -59,6 +60,21 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         var metadataWriter = new MetadataWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));
+
+        // Endpoint files are emitted only when the service carries an endpoint rule set. The
+        // parameters class lives in the *.Endpoints namespace (emitted under Generated/), the
+        // provider and resolver under Internal/.
+        if (context.HasEndpointRuleSet)
+        {
+            var endpointParametersWriter = new EndpointParametersWriter(context, modelFileName);
+            Emit(Path.Combine(generated, $"{clientName}EndpointParameters.g.cs"), endpointParametersWriter.Write(cancellationToken));
+
+            var endpointProviderWriter = new EndpointProviderWriter(context, modelFileName);
+            Emit(Path.Combine(@internal, $"{clientName}EndpointProvider.g.cs"), endpointProviderWriter.Write(cancellationToken));
+
+            var endpointResolverWriter = new EndpointResolverWriter(context, modelFileName);
+            Emit(Path.Combine(@internal, $"{clientName}EndpointResolver.g.cs"), endpointResolverWriter.Write(cancellationToken));
+        }
 
         var exceptionWriter = new ExceptionWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));

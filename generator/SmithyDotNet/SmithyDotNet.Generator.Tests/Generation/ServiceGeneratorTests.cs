@@ -78,6 +78,16 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void WritesEndpointFiles()
+    {
+        // CloudTrailData carries an endpoint rule set, so all three endpoint files are emitted:
+        // the parameters class under Generated/, the provider and resolver under Generated/Internal/.
+        AssertFileExists("Generated", "AmazonCloudTrailDataEndpointParameters.g.cs");
+        AssertFileExists("Generated", "Internal", "AmazonCloudTrailDataEndpointProvider.g.cs");
+        AssertFileExists("Generated", "Internal", "AmazonCloudTrailDataEndpointResolver.g.cs");
+    }
+
+    [Fact]
     public void WrittenPathsMatchFilesOnDisk()
     {
         foreach (var relativePath in _written)

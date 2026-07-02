@@ -41,6 +41,29 @@ public static class FileHeader
         "Amazon.Runtime.Internal.Util",
     ];
 
+    /// <summary>
+    /// Usings for the endpoint parameters file.
+    /// </summary>
+    public static IReadOnlyList<string> EndpointParametersUsings { get; } =
+    [
+        "System.Collections.Generic",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Endpoints",
+    ];
+
+    /// <summary>
+    /// Usings for the endpoint provider file. The static import brings in the rules-engine
+    /// standard library (<c>IsSet</c>, <c>Equals</c>, <c>Partition</c>, ...) the compiled rules call.
+    /// </summary>
+    public static IReadOnlyList<string> EndpointProviderUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Endpoints",
+        "static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn",
+    ];
+
     // these three exist in marshallers today but are unused so far. if future marshallers need them, add them back.
     // "System.Xml.Serialization",
     // "System.Globalization",

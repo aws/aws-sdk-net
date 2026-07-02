@@ -64,6 +64,18 @@ public class GenerationContext
     /// </summary>
     public bool HasEndpointRuleSet { get; }
 
+    /// <summary>
+    /// The parsed endpoint rule set, or <c>null</c> when <see cref="HasEndpointRuleSet"/> is false.
+    /// The endpoint writers compile this into the parameters class and the endpoint provider.
+    /// </summary>
+    public EndpointRuleSet? EndpointRuleSet { get; }
+
+    /// <summary>
+    /// Whether any shape carries an endpoint context-parameter trait (service <c>clientContextParams</c>,
+    /// operation <c>staticContextParams</c>, or member <c>contextParam</c>).
+    /// </summary>
+    public bool HasEndpointContextParams { get; }
+
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
 
@@ -94,15 +106,20 @@ public class GenerationContext
         Namespace = $"Amazon.{ServiceName}";
         ClientName = $"Amazon{ServiceName}";
         ApiVersion = index.Service.ApiVersion;
+        
         // TODO: EndpointPrefix and ApiVersion together form the generated <seealso> doc URL
         // ("{EndpointPrefix}-{ApiVersion}"). EndpointPrefix is null-guarded below, but an empty or
         // whitespace value in either would silently produce a malformed URL. Validate both once more
         // services are onboarded.
         EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
+        
         // AuthenticationServiceName follows the legacy generator's precedence: the sigv4 signing name
         // when the trait is present, otherwise the endpoint prefix.
         AuthenticationServiceName = index.Service.GetSigV4()?.SigningName ?? EndpointPrefix;
-        HasEndpointRuleSet = index.Service.HasEndpointRuleSet();
+        
+        EndpointRuleSet = index.Service.GetEndpointRuleSet();
+        HasEndpointRuleSet = EndpointRuleSet is not null;
+        HasEndpointContextParams = DetectEndpointContextParams(index);
         ServiceDocumentation = index.Service.GetDocumentation();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
@@ -159,6 +176,26 @@ public class GenerationContext
     /// 4. EC2 query name (aws.protocols#ec2QueryName trait for protocol-specific naming)
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => shapeId.Name;
+
+    // Context params live on the service, on operations, or on structure members, so all three are
+    // scanned. Members are only reachable through the shapes index.
+    private static bool DetectEndpointContextParams(ServiceIndex index)
+    {
+        if (index.Service.HasEndpointContextParams())
+        {
+            return true;
+        }
+
+        if (index.Operations.Any(operation => operation.HasEndpointContextParams()))
+        {
+            return true;
+        }
+
+        return index.Shapes.Values
+            .OfType<StructureShape>()
+            .SelectMany(structure => structure.Members.Values)
+            .Any(member => member.HasEndpointContextParams());
+    }
 
     private static AWSProtocol DetectProtocol(ServiceShape service)
     {
