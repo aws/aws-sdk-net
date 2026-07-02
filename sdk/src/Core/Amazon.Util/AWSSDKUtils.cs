@@ -117,7 +117,6 @@ namespace Amazon.Util
         /// </summary>
         public const string ValidTraceIdHeaderValueCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=;:+&[]{}\"',";
 
-
         // Valid path characters per RFC 3986 https://datatracker.ietf.org/doc/html/rfc3986#section-3.3
         // segment-nz-nc = 1*( unreserved / pct-encoded / sub-delims / "@" ) ; non-zero-length segment without any colon ":"
         // check https://datatracker.ietf.org/doc/html/rfc3986#section-2.2 for sub-delims
@@ -537,7 +536,7 @@ namespace Amazon.Util
 
             return uriComponentSegments;
         }
-        
+
         /// <summary>
         /// Joins all path segments with the / character and encodes each segment before joining
         /// </summary>
@@ -1247,6 +1246,19 @@ namespace Amazon.Util
             return data.Replace("/", EncodedSlash);
         }
 
+
+        private static readonly bool[] ValidTraceIdHeaderValueCharactersLookup = BuildTraceIdHeaderValueLookup(ValidTraceIdHeaderValueCharacters);
+
+        private static bool[] BuildTraceIdHeaderValueLookup(string validTraceIdHeaderValueCharacters)
+        {
+            var lookup = new bool[128];
+            foreach (var c in validTraceIdHeaderValueCharacters)
+            {
+                if (c < 128) lookup[c] = true;
+            }
+            return lookup;
+        }
+
         /// <summary>
         /// Percent encodes the X-Amzn-Trace-Id header value skipping any characters within the
         /// ValidTraceIdHeaderValueCharacters character set.
@@ -1255,22 +1267,35 @@ namespace Amazon.Util
         /// <returns>An encoded X-Amzn-Trace-Id header value.</returns>
         internal static string EncodeTraceIdHeaderValue(string value)
         {
-            var encoded = new StringBuilder(value.Length * 2);
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(value))
+            using var encoded = new ValueStringBuilder(value.Length * 2);
+            var utf8Bytes = ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetMaxByteCount(value.Length));
+            try
             {
-                if (ValidTraceIdHeaderValueCharacters.IndexOf(symbol) != -1)
+#if NETCOREAPP3_1_OR_GREATER
+                var length = Encoding.UTF8.GetBytes(value, utf8Bytes);
+#else
+                var length = Encoding.UTF8.GetBytes(value, 0, value.Length, utf8Bytes, 0);
+#endif
+                foreach (var b in utf8Bytes.AsSpan(0, length))
                 {
-                    encoded.Append(symbol);
-                }
-                else
-                {
-                    encoded.Append('%').Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    if (b < 128 && ValidTraceIdHeaderValueCharactersLookup[b])
+                    {
+                        encoded.Append((char)b);
+                    }
+                    else
+                    {
+                        encoded.Append('%');
+                        encoded.Append(upperHex[b >> 4]);
+                        encoded.Append(upperHex[b & 0xF]);
+                    }
                 }
             }
-
-            return encoded.ToString();
+            finally
+            {
+                ArrayPool<byte>.Shared.Return(utf8Bytes);
+            }
+            return encoded.AsSpan().ToString();
         }
-
 
         /// <summary>
         /// Generates an MD5 Digest for the stream specified
