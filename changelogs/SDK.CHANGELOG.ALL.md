@@ -1,3 +1,23 @@
+### 4.0.280.0 (2026-07-02 20:08 UTC)
+* CognitoIdentityProvider (4.0.101.0)
+	* Add support for provisioned limit management, enabling customers to view and update their provisioned API rate limits for Amazon Cognito User Pools programmatically through the new GetProvisionedLimit and UpdateProvisionedLimit APIs.
+* ConfigService (4.0.101.0)
+	* AWS Config now supports tag-on-create for organization-managed Config rules and conformance packs through the PutOrganizationConfigRule and PutOrganizationConformancePack APIs.
+* CustomerProfiles (4.0.101.0)
+	* Amazon Connect Customer Profiles adds support for diversityConfig to recommenderConfig which can be used for diversifying the recommendations. This release also includes model versioning support which helps customer to rollback trained models.
+* ElementalInference (4.0.101.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaTailor (4.0.101.0)
+	* Added dual-stack (IPv4 and IPv6) endpoint fields to SSAI and Channel Assembly API responses.
+* Outposts (4.0.101.0)
+	* Tighten Outpost site ContactPhoneNumber regex to perform phone number validation.
+* Extensions.NETCore.Setup (4.0.100.2)
+	* Add JsonMaxDepth to DefaultClientConfig to mirror ClientConfig in Core.
+* Core 4.0.100.2
+	* Add JsonMaxDepth option to ClientConfig for reading deeply nested JSON documents.
+	* AWSSDKUtils.EncodeTraceIdHeaderValue now uses rented buffers and O(1) lookup
+	* All service and extension packages updated to require new Core
+
 ### 4.0.279.0 (2026-07-01 18:16 UTC)
 * Artifact (4.0.101.0)
 	* Add support for Assurance Assistant APIs for managing compliance inquiries along with tagging features.

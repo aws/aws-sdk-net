@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "AWSSDKUtils.EncodeTraceIdHeaderValue now uses rented buffers and O(1) lookup"
-    ]
-  }
-}
