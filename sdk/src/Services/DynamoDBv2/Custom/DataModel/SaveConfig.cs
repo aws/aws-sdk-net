@@ -42,7 +42,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Conditional expressions may target key properties and non-key properties.
         /// When used with versioned entities, <see cref="SkipVersionCheck"/> must be enabled.
         /// </remarks>
-        public ContextExpression FilterExpression { get; set; }
+        public ContextExpression ConditionalExpression { get; set; }
 
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
@@ -50,7 +50,7 @@ namespace Amazon.DynamoDBv2.DataModel
             var config = base.ToDynamoDBOperationConfig();
             config.SkipVersionCheck = SkipVersionCheck;
             config.IgnoreNullValues = IgnoreNullValues;
-            config.Expression = FilterExpression;
+            config.Expression = ConditionalExpression;
 
             return config;
         }

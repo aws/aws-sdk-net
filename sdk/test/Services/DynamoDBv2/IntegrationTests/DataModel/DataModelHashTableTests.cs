@@ -117,7 +117,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var expr1 = new ContextExpression();
                 expr1.SetFilter<VersionedProduct>(p => p.Name == "TestProduct");
 
-                await Assert.ThrowsAsync<InvalidOperationException>(() => context.SaveAsync(vp, new SaveConfig() { FilterExpression = expr1 }));
+                await Assert.ThrowsAsync<InvalidOperationException>(() => context.SaveAsync(vp, new SaveConfig() { ConditionalExpression = expr1 }));
             }
         }
 
@@ -162,7 +162,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                     await context.SaveAsync(vp, new SaveConfig()
                     {
-                        FilterExpression = expr1,
+                        ConditionalExpression = expr1,
                         SkipVersionCheck = true
                     });
 
@@ -177,7 +177,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                     await context.SaveAsync(vp, new SaveConfig()
                     {
-                        FilterExpression = expr1,
+                        ConditionalExpression = expr1,
                         SkipVersionCheck = true
                     });
 
@@ -194,7 +194,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                     await context.SaveAsync(vp, new SaveConfig()
                     {
-                        FilterExpression = expr1,
+                        ConditionalExpression = expr1,
                         SkipVersionCheck = true
                     });
 
@@ -210,7 +210,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                     await context.SaveAsync(vp, new SaveConfig()
                     {
-                        FilterExpression = expr1,
+                        ConditionalExpression = expr1,
                         SkipVersionCheck = true
                     });
 
@@ -262,7 +262,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                     await context.SaveAsync(vp, new SaveConfig()
                     {
-                        FilterExpression = expr1,
+                        ConditionalExpression = expr1,
                         SkipVersionCheck = true
                     });
 
@@ -277,7 +277,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                     await context.SaveAsync(vp, new SaveConfig()
                     {
-                        FilterExpression = expr1,
+                        ConditionalExpression = expr1,
                         SkipVersionCheck = true
                     });
 
