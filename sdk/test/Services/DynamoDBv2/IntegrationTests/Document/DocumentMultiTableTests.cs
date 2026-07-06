@@ -59,16 +59,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         private async Task TestMultiTableDocumentBatchWriteHelper(ITable hashTable, ITable hashRangeTable)
         {
             var multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
+            var id = UtilityMethods.GenerateId();
 
             var doc1a = new Document
             {
-                ["Id"] = 5101,
+                ["Id"] = id,
                 ["Data"] = Guid.NewGuid().ToString()
             };
 
             var doc1b = new Document
             {
-                ["Id"] = 5102,
+                ["Id"] = id + 1,
                 ["Data"] = Guid.NewGuid().ToString()
             };
 
@@ -81,13 +82,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var doc2a = new Document
             {
-                ["Id"] = 5201,
+                ["Id"] = id + 2,
                 ["Data"] = Guid.NewGuid().ToString()
             };
 
             var doc2b = new Document
             {
-                ["Id"] = 5202,
+                ["Id"] = id + 3,
                 ["Data"] = Guid.NewGuid().ToString()
             };
 
@@ -100,7 +101,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var doc3a = new Document
             {
-                ["Name"] = "Gunnar",
+                ["Name"] = UtilityMethods.GenerateName("Gunnar"),
                 ["Age"] = 77,
                 ["Job"] = "Retired",
                 ["Data"] = Guid.NewGuid().ToString()
@@ -116,19 +117,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Document getDoc;
             var consistentRead = new GetItemOperationConfig { ConsistentRead = true };
 
-            getDoc = await hashTable.GetItemAsync(5101, consistentRead);
+            getDoc = await hashTable.GetItemAsync(doc1a["Id"].AsInt(), consistentRead);
             Assert.Equal(doc1a["Data"].AsString(), getDoc["Data"].AsString());
 
-            getDoc = await hashTable.GetItemAsync(5102, consistentRead);
+            getDoc = await hashTable.GetItemAsync(doc1b["Id"].AsInt(), consistentRead);
             Assert.Equal(doc1b["Data"].AsString(), getDoc["Data"].AsString());
 
-            getDoc = await hashTable.GetItemAsync(5201, consistentRead);
+            getDoc = await hashTable.GetItemAsync(doc2a["Id"].AsInt(), consistentRead);
             Assert.Equal(doc2a["Data"].AsString(), getDoc["Data"].AsString());
 
-            getDoc = await hashTable.GetItemAsync(5202, consistentRead);
+            getDoc = await hashTable.GetItemAsync(doc2b["Id"].AsInt(), consistentRead);
             Assert.Equal(doc2b["Data"].AsString(), getDoc["Data"].AsString());
 
-            getDoc = await hashRangeTable.GetItemAsync("Gunnar", 77, consistentRead);
+            getDoc = await hashRangeTable.GetItemAsync(doc3a["Name"].AsString(), 77, consistentRead);
             Assert.Equal(doc3a["Data"].AsString(), getDoc["Data"].AsString());
 
             multiTableDocumentBatchWrite = new MultiTableDocumentBatchWrite();
