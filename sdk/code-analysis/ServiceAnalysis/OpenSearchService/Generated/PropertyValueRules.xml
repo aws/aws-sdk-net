@@ -640,6 +640,10 @@
     <pattern>^(?!\.\.?$)[^_ ,:"+/*\\|?#&gt;&lt;A-Z-][^ ,:"+/*\\|?#&gt;&lt;A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetMigrationResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetPackageVersionHistoryRequest.MaxResults</property>
     <max>100</max>
   </property-value-rule>
@@ -735,6 +739,10 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListInstanceTypeDetailsRequest.MaxResults</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListMigrationsRequest.ApplicationId</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListPackagesForDomainRequest.DomainName</property>
@@ -880,6 +888,15 @@
     <min>1</min>
     <max>100</max>
     <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.StartMigrationRequest.ApplicationId</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.StartMigrationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.StartServiceSoftwareUpdateRequest.DomainName</property>
@@ -1439,7 +1456,7 @@
     <property>Amazon.OpenSearchService.Model.JWTOptionsInput.JwksUrl</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^$|^https://(?!(?:10|127|169\.254|192\.168|172\.(?:1[6-9]|2[0-9]|3[01]))\.)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}(?::[0-9]{1,5})?(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:']*)?$</pattern>
+    <pattern>^$|^https://(?!(?:10|127|169\.254|192\.168|172\.(?:1[6-9]|2[0-9]|3[01]))\.)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}(?::[0-9]{1,5})?(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:'@]*(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:'@]*)*)?(?:\?[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:'/@?]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.JWTOptionsInput.RolesKey</property>
@@ -1455,7 +1472,7 @@
     <property>Amazon.OpenSearchService.Model.JWTOptionsOutput.JwksUrl</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^$|^https://(?!(?:10|127|169\.254|192\.168|172\.(?:1[6-9]|2[0-9]|3[01]))\.)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}(?::[0-9]{1,5})?(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:']*)?$</pattern>
+    <pattern>^$|^https://(?!(?:10|127|169\.254|192\.168|172\.(?:1[6-9]|2[0-9]|3[01]))\.)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}(?::[0-9]{1,5})?(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:'@]*(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:'@]*)*)?(?:\?[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:'/@?]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.KeyStoreAccessOption.KeyAccessRoleArn</property>
@@ -1486,6 +1503,16 @@
     <min>8</min>
     <max>128</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.MigrationSource.DatasourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.MigrationSummary.ApplicationId</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.OptionStatus.UpdateVersion</property>
