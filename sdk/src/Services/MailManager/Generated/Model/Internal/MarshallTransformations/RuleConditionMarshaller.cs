@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleCondition Marshaller
     /// </summary>
-    public class RuleConditionMarshaller : IRequestMarshaller<RuleCondition, JsonMarshallerContext> 
+    public class RuleConditionMarshaller : IRequestMarshaller<RuleCondition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,76 +45,71 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleCondition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBooleanExpression())
+
+            if (requestObject.IsSetBooleanExpression())
             {
-                context.Writer.WritePropertyName("BooleanExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("BooleanExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleBooleanExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BooleanExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDmarcExpression())
+            if (requestObject.IsSetDmarcExpression())
             {
-                context.Writer.WritePropertyName("DmarcExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DmarcExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleDmarcExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DmarcExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetIpExpression())
+            if (requestObject.IsSetIpExpression())
             {
-                context.Writer.WritePropertyName("IpExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("IpExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleIpExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IpExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetNumberExpression())
+            if (requestObject.IsSetNumberExpression())
             {
-                context.Writer.WritePropertyName("NumberExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NumberExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleNumberExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumberExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetStringExpression())
+            if (requestObject.IsSetStringExpression())
             {
-                context.Writer.WritePropertyName("StringExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("StringExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleStringExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetVerdictExpression())
+            if (requestObject.IsSetVerdictExpression())
             {
-                context.Writer.WritePropertyName("VerdictExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("VerdictExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleVerdictExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.VerdictExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

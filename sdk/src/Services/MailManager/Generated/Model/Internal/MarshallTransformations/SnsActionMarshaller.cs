@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnsAction Marshaller
     /// </summary>
-    public class SnsActionMarshaller : IRequestMarshaller<SnsAction, JsonMarshallerContext> 
+    public class SnsActionMarshaller : IRequestMarshaller<SnsAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,40 +45,36 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SnsAction requestObject, JsonMarshallerContext context)
+        public void Marshall(SnsAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetActionFailurePolicy())
-            {
-                context.Writer.WritePropertyName("ActionFailurePolicy");
-                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
-            }
 
-            if(requestObject.IsSetEncoding())
+            if (requestObject.IsSetActionFailurePolicy())
             {
-                context.Writer.WritePropertyName("Encoding");
-                context.Writer.WriteStringValue(requestObject.Encoding);
+                context.Writer.WriteTextString("ActionFailurePolicy");
+                context.Writer.WriteTextString(requestObject.ActionFailurePolicy);
             }
-
-            if(requestObject.IsSetPayloadType())
+            if (requestObject.IsSetEncoding())
             {
-                context.Writer.WritePropertyName("PayloadType");
-                context.Writer.WriteStringValue(requestObject.PayloadType);
+                context.Writer.WriteTextString("Encoding");
+                context.Writer.WriteTextString(requestObject.Encoding);
             }
-
-            if(requestObject.IsSetRoleArn())
+            if (requestObject.IsSetPayloadType())
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
+                context.Writer.WriteTextString("PayloadType");
+                context.Writer.WriteTextString(requestObject.PayloadType);
             }
-
-            if(requestObject.IsSetTopicArn())
+            if (requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("TopicArn");
-                context.Writer.WriteStringValue(requestObject.TopicArn);
+                context.Writer.WriteTextString("RoleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
             }
-
+            if (requestObject.IsSetTopicArn())
+            {
+                context.Writer.WriteTextString("TopicArn");
+                context.Writer.WriteTextString(requestObject.TopicArn);
+            }
         }
 
         /// <summary>

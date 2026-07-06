@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExportDestinationConfiguration Marshaller
     /// </summary>
-    public class ExportDestinationConfigurationMarshaller : IRequestMarshaller<ExportDestinationConfiguration, JsonMarshallerContext> 
+    public class ExportDestinationConfigurationMarshaller : IRequestMarshaller<ExportDestinationConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExportDestinationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ExportDestinationConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetS3())
+
+            if (requestObject.IsSetS3())
             {
-                context.Writer.WritePropertyName("S3");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("S3");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3ExportDestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

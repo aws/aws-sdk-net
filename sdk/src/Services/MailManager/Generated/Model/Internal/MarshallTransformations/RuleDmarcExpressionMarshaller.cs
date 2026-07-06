@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleDmarcExpression Marshaller
     /// </summary>
-    public class RuleDmarcExpressionMarshaller : IRequestMarshaller<RuleDmarcExpression, JsonMarshallerContext> 
+    public class RuleDmarcExpressionMarshaller : IRequestMarshaller<RuleDmarcExpression, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleDmarcExpression requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleDmarcExpression requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetOperator())
-            {
-                context.Writer.WritePropertyName("Operator");
-                context.Writer.WriteStringValue(requestObject.Operator);
-            }
 
-            if(requestObject.IsSetValues())
+            if (requestObject.IsSetOperator())
             {
-                context.Writer.WritePropertyName("Values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Operator");
+                context.Writer.WriteTextString(requestObject.Operator);
+            }
+            if (requestObject.IsSetValues())
+            {
+                context.Writer.WriteTextString("Values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.WriteStringValue(requestObjectValuesListValue);
+                        context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

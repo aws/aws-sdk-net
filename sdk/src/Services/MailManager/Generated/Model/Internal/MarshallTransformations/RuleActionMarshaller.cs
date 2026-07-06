@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleAction Marshaller
     /// </summary>
-    public class RuleActionMarshaller : IRequestMarshaller<RuleAction, JsonMarshallerContext> 
+    public class RuleActionMarshaller : IRequestMarshaller<RuleAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,142 +45,131 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleAction requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAddHeader())
+
+            if (requestObject.IsSetAddHeader())
             {
-                context.Writer.WritePropertyName("AddHeader");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AddHeader");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AddHeaderActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddHeader, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetArchive())
+            if (requestObject.IsSetArchive())
             {
-                context.Writer.WritePropertyName("Archive");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Archive");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ArchiveActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Archive, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetBounce())
+            if (requestObject.IsSetBounce())
             {
-                context.Writer.WritePropertyName("Bounce");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Bounce");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = BounceActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Bounce, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDeliverToMailbox())
+            if (requestObject.IsSetDeliverToMailbox())
             {
-                context.Writer.WritePropertyName("DeliverToMailbox");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DeliverToMailbox");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DeliverToMailboxActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeliverToMailbox, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDeliverToQBusiness())
+            if (requestObject.IsSetDeliverToQBusiness())
             {
-                context.Writer.WritePropertyName("DeliverToQBusiness");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DeliverToQBusiness");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DeliverToQBusinessActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeliverToQBusiness, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDrop())
+            if (requestObject.IsSetDrop())
             {
-                context.Writer.WritePropertyName("Drop");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Drop");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DropActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Drop, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetInvokeLambda())
+            if (requestObject.IsSetInvokeLambda())
             {
-                context.Writer.WritePropertyName("InvokeLambda");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("InvokeLambda");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = InvokeLambdaActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.InvokeLambda, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPublishToSns())
+            if (requestObject.IsSetPublishToSns())
             {
-                context.Writer.WritePropertyName("PublishToSns");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PublishToSns");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SnsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublishToSns, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetRelay())
+            if (requestObject.IsSetRelay())
             {
-                context.Writer.WritePropertyName("Relay");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Relay");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RelayActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Relay, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetReplaceRecipient())
+            if (requestObject.IsSetReplaceRecipient())
             {
-                context.Writer.WritePropertyName("ReplaceRecipient");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ReplaceRecipient");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ReplaceRecipientActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReplaceRecipient, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSend())
+            if (requestObject.IsSetSend())
             {
-                context.Writer.WritePropertyName("Send");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Send");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SendActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Send, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetWriteToS3())
+            if (requestObject.IsSetWriteToS3())
             {
-                context.Writer.WritePropertyName("WriteToS3");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("WriteToS3");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3ActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.WriteToS3, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

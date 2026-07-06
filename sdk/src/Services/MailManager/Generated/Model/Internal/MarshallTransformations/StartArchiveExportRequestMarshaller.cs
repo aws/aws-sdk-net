@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -59,82 +58,83 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartArchiveExportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MailManager");
-            string target = "MailManagerSvc.StartArchiveExport";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/MailManagerSvc/operation/StartArchiveExport";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-10-17";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetArchiveId())
+                {
+                    context.Writer.WriteTextString("ArchiveId");
+                    context.Writer.WriteTextString(publicRequest.ArchiveId);
+                }
+                if (publicRequest.IsSetExportDestinationConfiguration())
+                {
+                    context.Writer.WriteTextString("ExportDestinationConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ExportDestinationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExportDestinationConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetFilters())
+                {
+                    context.Writer.WriteTextString("Filters");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ArchiveFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filters, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetFromTimestamp())
+                {
+                    context.Writer.WriteTextString("FromTimestamp");
+                    context.Writer.WriteDateTime(publicRequest.FromTimestamp.Value);
+                }
+                if (publicRequest.IsSetIncludeMetadata())
+                {
+                    context.Writer.WriteTextString("IncludeMetadata");
+                    context.Writer.WriteBoolean(publicRequest.IncludeMetadata.Value);
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetToTimestamp())
+                {
+                    context.Writer.WriteTextString("ToTimestamp");
+                    context.Writer.WriteDateTime(publicRequest.ToTimestamp.Value);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetArchiveId())
-            {
-                context.Writer.WritePropertyName("ArchiveId");
-                context.Writer.WriteStringValue(publicRequest.ArchiveId);
             }
-
-            if(publicRequest.IsSetExportDestinationConfiguration())
+            finally
             {
-                context.Writer.WritePropertyName("ExportDestinationConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ExportDestinationConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ExportDestinationConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetFilters())
-            {
-                context.Writer.WritePropertyName("Filters");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ArchiveFiltersMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Filters, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetFromTimestamp())
-            {
-                context.Writer.WritePropertyName("FromTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.FromTimestamp.Value)));
-            }
-
-            if(publicRequest.IsSetIncludeMetadata())
-            {
-                context.Writer.WritePropertyName("IncludeMetadata");
-                context.Writer.WriteBooleanValue(publicRequest.IncludeMetadata.Value);
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetToTimestamp())
-            {
-                context.Writer.WritePropertyName("ToTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ToTimestamp.Value)));
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static StartArchiveExportRequestMarshaller _instance = new StartArchiveExportRequestMarshaller();        

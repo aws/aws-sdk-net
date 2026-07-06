@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArchiveFilters Marshaller
     /// </summary>
-    public class ArchiveFiltersMarshaller : IRequestMarshaller<ArchiveFilters, JsonMarshallerContext> 
+    public class ArchiveFiltersMarshaller : IRequestMarshaller<ArchiveFilters, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +45,41 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArchiveFilters requestObject, JsonMarshallerContext context)
+        public void Marshall(ArchiveFilters requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetInclude())
+
+            if (requestObject.IsSetInclude())
             {
-                context.Writer.WritePropertyName("Include");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Include");
+                context.Writer.WriteStartArray(requestObject.Include.Count);
                 foreach(var requestObjectIncludeListValue in requestObject.Include)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ArchiveFilterConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectIncludeListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetUnless())
+            if (requestObject.IsSetUnless())
             {
-                context.Writer.WritePropertyName("Unless");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Unless");
+                context.Writer.WriteStartArray(requestObject.Unless.Count);
                 foreach(var requestObjectUnlessListValue in requestObject.Unless)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ArchiveFilterConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectUnlessListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

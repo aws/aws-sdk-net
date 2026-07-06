@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeliverToQBusinessAction Marshaller
     /// </summary>
-    public class DeliverToQBusinessActionMarshaller : IRequestMarshaller<DeliverToQBusinessAction, JsonMarshallerContext> 
+    public class DeliverToQBusinessActionMarshaller : IRequestMarshaller<DeliverToQBusinessAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +45,31 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeliverToQBusinessAction requestObject, JsonMarshallerContext context)
+        public void Marshall(DeliverToQBusinessAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetActionFailurePolicy())
-            {
-                context.Writer.WritePropertyName("ActionFailurePolicy");
-                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
-            }
 
-            if(requestObject.IsSetApplicationId())
+            if (requestObject.IsSetActionFailurePolicy())
             {
-                context.Writer.WritePropertyName("ApplicationId");
-                context.Writer.WriteStringValue(requestObject.ApplicationId);
+                context.Writer.WriteTextString("ActionFailurePolicy");
+                context.Writer.WriteTextString(requestObject.ActionFailurePolicy);
             }
-
-            if(requestObject.IsSetIndexId())
+            if (requestObject.IsSetApplicationId())
             {
-                context.Writer.WritePropertyName("IndexId");
-                context.Writer.WriteStringValue(requestObject.IndexId);
+                context.Writer.WriteTextString("ApplicationId");
+                context.Writer.WriteTextString(requestObject.ApplicationId);
             }
-
-            if(requestObject.IsSetRoleArn())
+            if (requestObject.IsSetIndexId())
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
+                context.Writer.WriteTextString("IndexId");
+                context.Writer.WriteTextString(requestObject.IndexId);
             }
-
+            if (requestObject.IsSetRoleArn())
+            {
+                context.Writer.WriteTextString("RoleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
+            }
         }
 
         /// <summary>

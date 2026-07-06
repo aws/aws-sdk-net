@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArchiveFilterCondition Marshaller
     /// </summary>
-    public class ArchiveFilterConditionMarshaller : IRequestMarshaller<ArchiveFilterCondition, JsonMarshallerContext> 
+    public class ArchiveFilterConditionMarshaller : IRequestMarshaller<ArchiveFilterCondition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArchiveFilterCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(ArchiveFilterCondition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBooleanExpression())
+
+            if (requestObject.IsSetBooleanExpression())
             {
-                context.Writer.WritePropertyName("BooleanExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("BooleanExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ArchiveBooleanExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BooleanExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetStringExpression())
+            if (requestObject.IsSetStringExpression())
             {
-                context.Writer.WritePropertyName("StringExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("StringExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ArchiveStringExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

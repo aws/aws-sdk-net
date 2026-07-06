@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IngressPointConfiguration Marshaller
     /// </summary>
-    public class IngressPointConfigurationMarshaller : IRequestMarshaller<IngressPointConfiguration, JsonMarshallerContext> 
+    public class IngressPointConfigurationMarshaller : IRequestMarshaller<IngressPointConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IngressPointConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(IngressPointConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSecretArn())
-            {
-                context.Writer.WritePropertyName("SecretArn");
-                context.Writer.WriteStringValue(requestObject.SecretArn);
-            }
 
-            if(requestObject.IsSetSmtpPassword())
+            if (requestObject.IsSetSecretArn())
             {
-                context.Writer.WritePropertyName("SmtpPassword");
-                context.Writer.WriteStringValue(requestObject.SmtpPassword);
+                context.Writer.WriteTextString("SecretArn");
+                context.Writer.WriteTextString(requestObject.SecretArn);
             }
-
-            if(requestObject.IsSetTlsAuthConfiguration())
+            if (requestObject.IsSetSmtpPassword())
             {
-                context.Writer.WritePropertyName("TlsAuthConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("SmtpPassword");
+                context.Writer.WriteTextString(requestObject.SmtpPassword);
+            }
+            if (requestObject.IsSetTlsAuthConfiguration())
+            {
+                context.Writer.WriteTextString("TlsAuthConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TlsAuthConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TlsAuthConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

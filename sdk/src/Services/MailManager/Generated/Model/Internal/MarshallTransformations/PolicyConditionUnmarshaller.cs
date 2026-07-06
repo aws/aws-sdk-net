@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PolicyCondition Object
     /// </summary>  
-    public class PolicyConditionUnmarshaller : IJsonUnmarshaller<PolicyCondition, JsonUnmarshallerContext>
+    public class PolicyConditionUnmarshaller : ICborUnmarshaller<PolicyCondition, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyCondition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PolicyCondition Unmarshall(CborUnmarshallerContext context)
         {
             PolicyCondition unmarshalledObject = new PolicyCondition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BooleanExpression", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = IngressBooleanExpressionUnmarshaller.Instance;
-                    unmarshalledObject.BooleanExpression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpExpression", targetDepth, ref reader))
-                {
-                    var unmarshaller = IngressIpv4ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.IpExpression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Ipv6Expression", targetDepth, ref reader))
-                {
-                    var unmarshaller = IngressIpv6ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.Ipv6Expression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StringExpression", targetDepth, ref reader))
-                {
-                    var unmarshaller = IngressStringExpressionUnmarshaller.Instance;
-                    unmarshalledObject.StringExpression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TlsExpression", targetDepth, ref reader))
-                {
-                    var unmarshaller = IngressTlsProtocolExpressionUnmarshaller.Instance;
-                    unmarshalledObject.TlsExpression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "BooleanExpression":
+                        {
+                            context.AddPathSegment("BooleanExpression");
+                            var unmarshaller = IngressBooleanExpressionUnmarshaller.Instance;
+                            unmarshalledObject.BooleanExpression = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IpExpression":
+                        {
+                            context.AddPathSegment("IpExpression");
+                            var unmarshaller = IngressIpv4ExpressionUnmarshaller.Instance;
+                            unmarshalledObject.IpExpression = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Ipv6Expression":
+                        {
+                            context.AddPathSegment("Ipv6Expression");
+                            var unmarshaller = IngressIpv6ExpressionUnmarshaller.Instance;
+                            unmarshalledObject.Ipv6Expression = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StringExpression":
+                        {
+                            context.AddPathSegment("StringExpression");
+                            var unmarshaller = IngressStringExpressionUnmarshaller.Instance;
+                            unmarshalledObject.StringExpression = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TlsExpression":
+                        {
+                            context.AddPathSegment("TlsExpression");
+                            var unmarshaller = IngressTlsProtocolExpressionUnmarshaller.Instance;
+                            unmarshalledObject.TlsExpression = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

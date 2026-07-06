@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkConfiguration Marshaller
     /// </summary>
-    public class NetworkConfigurationMarshaller : IRequestMarshaller<NetworkConfiguration, JsonMarshallerContext> 
+    public class NetworkConfigurationMarshaller : IRequestMarshaller<NetworkConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NetworkConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetPrivateNetworkConfiguration())
+
+            if (requestObject.IsSetPrivateNetworkConfiguration())
             {
-                context.Writer.WritePropertyName("PrivateNetworkConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PrivateNetworkConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PrivateNetworkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrivateNetworkConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPublicNetworkConfiguration())
+            if (requestObject.IsSetPublicNetworkConfiguration())
             {
-                context.Writer.WritePropertyName("PublicNetworkConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PublicNetworkConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PublicNetworkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublicNetworkConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>
