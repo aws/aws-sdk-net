@@ -1034,6 +1034,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetStorageTierPolicyResponse.LastUpdatedTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetTransformerRequest.LogGroupIdentifier</property>
     <min>1</min>
     <max>2048</max>
@@ -1403,6 +1407,10 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutStorageTierPolicyResponse.LastUpdatedTime</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutSubscriptionFilterRequest.DestinationArn</property>

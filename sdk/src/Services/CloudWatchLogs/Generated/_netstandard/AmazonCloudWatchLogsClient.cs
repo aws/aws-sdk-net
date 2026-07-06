@@ -4546,6 +4546,54 @@ namespace Amazon.CloudWatchLogs
         }
         #endregion
         
+        #region  GetStorageTierPolicy
+
+        internal virtual GetStorageTierPolicyResponse GetStorageTierPolicy(GetStorageTierPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStorageTierPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageTierPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetStorageTierPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the storage tier policy for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageTierPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStorageTierPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetStorageTierPolicy">REST API Reference for GetStorageTierPolicy Operation</seealso>
+        public virtual Task<GetStorageTierPolicyResponse> GetStorageTierPolicyAsync(GetStorageTierPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStorageTierPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageTierPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStorageTierPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetTransformer
 
         internal virtual GetTransformerResponse GetTransformer(GetTransformerRequest request)
@@ -6959,6 +7007,56 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRetentionPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutStorageTierPolicy
+
+        internal virtual PutStorageTierPolicyResponse PutStorageTierPolicy(PutStorageTierPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutStorageTierPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutStorageTierPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutStorageTierPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sets the storage tier policy for your account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
+        /// CloudWatch Logs automatically moves your log data between storage tiers based on access
+        /// patterns to optimize costs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutStorageTierPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutStorageTierPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutStorageTierPolicy">REST API Reference for PutStorageTierPolicy Operation</seealso>
+        public virtual Task<PutStorageTierPolicyResponse> PutStorageTierPolicyAsync(PutStorageTierPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutStorageTierPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutStorageTierPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutStorageTierPolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         
