@@ -677,8 +677,7 @@ public class BedrockChatClientTests
         // Assert
         Assert.NotNull(capturedRequest);
         var toolSpec = capturedRequest.ToolConfig.Tools[0].ToolSpec;
-        Assert.True(toolSpec.Strict);
-
+        Assert.True(toolSpec.Strict is true);
         var schemaDict = toolSpec.InputSchema.Json.AsDictionary();
         Assert.True(schemaDict.ContainsKey("additionalProperties"));
         Assert.False(schemaDict["additionalProperties"].AsBool());
