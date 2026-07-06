@@ -1061,6 +1061,12 @@ internal sealed partial class BedrockChatClient : IChatClient
                 }
             }
 
+            // Opt-in strict tool use: callers request it per-tool via a boolean "strict"
+            // entry on the AIFunction's AdditionalProperties (mirrors the CachePoint pattern).
+            bool strict =
+                f.AdditionalProperties?.TryGetValue("strict", out object? maybeStrict) == true &&
+                maybeStrict is true;
+
             Dictionary<string, Document> schemaDictionary = new()
             {
                 ["type"] = new Document("object"),
@@ -1076,6 +1082,12 @@ internal sealed partial class BedrockChatClient : IChatClient
                 schemaDictionary["required"] = new Document(required);
             }
 
+            if (strict)
+            {
+                // Bedrock strict tool use requires the input schema to forbid extra properties.
+                schemaDictionary["additionalProperties"] = new Document(false);
+            }
+
             toolConfig ??= new();
             toolConfig.Tools ??= [];
             toolConfig.Tools.Add(new()
@@ -1088,6 +1100,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                     {
                         Json = new(schemaDictionary)
                     },
+                    Strict = strict ? true : null,
                 },
             });
         }
