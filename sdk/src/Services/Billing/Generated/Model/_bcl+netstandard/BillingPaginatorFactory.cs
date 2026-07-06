@@ -37,6 +37,14 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Paginator for GetCreditAllocationHistory operation
+        ///</summary>
+        public IGetCreditAllocationHistoryPaginator GetCreditAllocationHistory(GetCreditAllocationHistoryRequest request) 
+        {
+            return new GetCreditAllocationHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBillingViews operation
         ///</summary>
         public IListBillingViewsPaginator ListBillingViews(ListBillingViewsRequest request) 

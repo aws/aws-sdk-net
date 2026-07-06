@@ -30,36 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// This is the response object from the ListSourceViewsForBillingView operation.
+    /// A filter that narrows the set of preferences returned by <c>GetBillingPreferences</c>.
     /// </summary>
-    public partial class ListSourceViewsForBillingViewResponse : AmazonWebServiceResponse
+    public partial class BillingFeatureFilter
     {
-        private string _nextToken;
-        private List<string> _sourceViews = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private BillingFeatureFilterName _name;
+        private List<string> _value = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Name. 
         /// <para>
-        ///  The pagination token that is used on subsequent calls to list billing views. 
+        /// The filter name. Currently the only supported value is <c>PREFERENCE_KEY</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4095)]
-        public string NextToken
+        public BillingFeatureFilterName Name
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._nextToken != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SourceViews. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// A list of billing views used as the data source for the custom billing view. 
+        /// The filter values to match. For <c>PREFERENCE_KEY</c>, supply 1 to 10 preference key
+        /// values to match.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,17 +67,17 @@ namespace Amazon.Billing.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> SourceViews
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Value
         {
-            get { return this._sourceViews; }
-            set { this._sourceViews = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if SourceViews property is set
-        internal bool IsSetSourceViews()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._sourceViews != null && (this._sourceViews.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._value != null && (this._value.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

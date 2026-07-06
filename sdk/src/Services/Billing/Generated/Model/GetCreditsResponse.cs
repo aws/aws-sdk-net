@@ -30,36 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// This is the response object from the ListSourceViewsForBillingView operation.
+    /// This is the response object from the GetCredits operation.
     /// </summary>
-    public partial class ListSourceViewsForBillingViewResponse : AmazonWebServiceResponse
+    public partial class GetCreditsResponse : AmazonWebServiceResponse
     {
-        private string _nextToken;
-        private List<string> _sourceViews = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<CreditData> _credits = AWSConfigs.InitializeCollections ? new List<CreditData>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Credits. 
         /// <para>
-        ///  The pagination token that is used on subsequent calls to list billing views. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=4095)]
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceViews. 
-        /// <para>
-        /// A list of billing views used as the data source for the custom billing view. 
+        /// The list of credits matching the request. Returns an empty list when no credits exist.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,17 +47,16 @@ namespace Amazon.Billing.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> SourceViews
+        public List<CreditData> Credits
         {
-            get { return this._sourceViews; }
-            set { this._sourceViews = value; }
+            get { return this._credits; }
+            set { this._credits = value; }
         }
 
-        // Check to see if SourceViews property is set
-        internal bool IsSetSourceViews()
+        // Check to see if Credits property is set
+        internal bool IsSetCredits()
         {
-            return this._sourceViews != null && (this._sourceViews.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._credits != null && (this._credits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

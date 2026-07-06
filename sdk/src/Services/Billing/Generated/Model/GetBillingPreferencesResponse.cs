@@ -30,59 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListSourceViewsForBillingView operation.
-    /// Lists the source views (managed Amazon Web Services billing views) associated with
-    /// the billing view.
+    /// This is the response object from the GetBillingPreferences operation.
     /// </summary>
-    public partial class ListSourceViewsForBillingViewRequest : AmazonBillingRequest
+    public partial class GetBillingPreferencesResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-        private int? _maxResults;
+        private List<BillingPreferenceSummary> _billingPreferences = AWSConfigs.InitializeCollections ? new List<BillingPreferenceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property BillingPreferences. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that can be used to uniquely identify the billing
-        /// view. 
+        /// The list of preference entries matching the request.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Arn
+        public List<BillingPreferenceSummary> BillingPreferences
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._billingPreferences; }
+            set { this._billingPreferences = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if BillingPreferences property is set
+        internal bool IsSetBillingPreferences()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        ///  The number of entries a paginated response contains. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
-        {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._billingPreferences != null && (this._billingPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token that is used on subsequent calls to list billing views. 
+        /// Pagination token. Present when more pages are available; <c>null</c> when there are
+        /// no more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4095)]

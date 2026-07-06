@@ -505,6 +505,54 @@ namespace Amazon.Billing
         }
         #endregion
         
+        #region  GetBillingPreferences
+
+        internal virtual GetBillingPreferencesResponse GetBillingPreferences(GetBillingPreferencesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBillingPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingPreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<GetBillingPreferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves billing preferences for the specified feature. Each feature controls a distinct
+        /// billing capability: which accounts can share Reserved Instances or credits, whether
+        /// billing alerts are enabled, the historical record of sharing changes, and per-credit
+        /// options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBillingPreferences service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingPreferences">REST API Reference for GetBillingPreferences Operation</seealso>
+        public virtual Task<GetBillingPreferencesResponse> GetBillingPreferencesAsync(GetBillingPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBillingPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingPreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBillingPreferencesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetBillingView
 
         internal virtual GetBillingViewResponse GetBillingView(GetBillingViewRequest request)
@@ -550,6 +598,108 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBillingViewResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetCreditAllocationHistory
+
+        internal virtual GetCreditAllocationHistoryResponse GetCreditAllocationHistory(GetCreditAllocationHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCreditAllocationHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCreditAllocationHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetCreditAllocationHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the per-billing-month allocation history for credits applied to an Amazon
+        /// Web Services account's bills. Traverses the consolidated billing family to capture
+        /// cross-account credit applications. Supports pagination and optional filtering to a
+        /// single credit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCreditAllocationHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCreditAllocationHistory service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetCreditAllocationHistory">REST API Reference for GetCreditAllocationHistory Operation</seealso>
+        public virtual Task<GetCreditAllocationHistoryResponse> GetCreditAllocationHistoryAsync(GetCreditAllocationHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCreditAllocationHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCreditAllocationHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCreditAllocationHistoryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetCredits
+
+        internal virtual GetCreditsResponse GetCredits(GetCreditsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCreditsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCreditsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCreditsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the list of Amazon Web Services account credits for the specified account.
+        /// Each credit includes its identifier, type, monetary amounts, applicable products,
+        /// expiration, sharing configuration, and current enabled status.
+        /// 
+        ///  
+        /// <para>
+        /// When the caller is the management account of a consolidated billing family and <c>payerAccountFlag</c>
+        /// is <c>true</c>, the response aggregates credits across the entire family. Otherwise,
+        /// the response includes only credits owned by the account specified in <c>accountId</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCredits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCredits service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetCredits">REST API Reference for GetCredits Operation</seealso>
+        public virtual Task<GetCreditsResponse> GetCreditsAsync(GetCreditsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCreditsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCreditsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCreditsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -752,6 +902,55 @@ namespace Amazon.Billing
         }
         #endregion
         
+        #region  RedeemCredits
+
+        internal virtual RedeemCreditsResponse RedeemCredits(RedeemCreditsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RedeemCreditsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RedeemCreditsResponseUnmarshaller.Instance;
+
+            return Invoke<RedeemCreditsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Redeems an Amazon Web Services promotional credit code on behalf of the calling account.
+        /// On success, a new credit is added to the account's credit ledger with the amount,
+        /// validity period, and applicable products defined by the promotion. The credit is then
+        /// automatically applied to subsequent bills according to the standard credit application
+        /// order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RedeemCredits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RedeemCredits service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/RedeemCredits">REST API Reference for RedeemCredits Operation</seealso>
+        public virtual Task<RedeemCreditsResponse> RedeemCreditsAsync(RedeemCreditsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RedeemCreditsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RedeemCreditsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RedeemCreditsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -846,6 +1045,62 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateBillingPreferences
+
+        internal virtual UpdateBillingPreferencesResponse UpdateBillingPreferences(UpdateBillingPreferencesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateBillingPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingPreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBillingPreferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates billing preferences for the specified feature. Each feature targets a distinct
+        /// billing capability and has its own set of supported keys. The action sets the value
+        /// for each provided key; keys not present in the request are unchanged.
+        /// 
+        ///  
+        /// <para>
+        /// Sharing keys (<c>RI_SHARING</c>, <c>CREDIT_SHARING</c>, <c>CREDIT_LEVEL_SHARING</c>,
+        /// and sharing keys under <c>CREDIT_PREFERENCE_OPTIONS</c>) may only be set by the management
+        /// account of a consolidated billing family. The <c>credit/{creditId}/status</c> key
+        /// may be set by member accounts for credits they own, or by the management account for
+        /// any credit in the family.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBillingPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBillingPreferences service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingPreferences">REST API Reference for UpdateBillingPreferences Operation</seealso>
+        public virtual Task<UpdateBillingPreferencesResponse> UpdateBillingPreferencesAsync(UpdateBillingPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateBillingPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingPreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBillingPreferencesResponse>(request, options, cancellationToken);
         }
         #endregion
         
