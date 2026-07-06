@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Eliminates the intermediate string allocations in the AWS Query request marshalling"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}

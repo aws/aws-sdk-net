@@ -351,25 +351,25 @@ namespace Amazon.Util
         /// Returns the request parameters in the form of a query string.
         /// </summary>
         /// <param name="request">The request instance</param>
-        /// <param name="usesQueryString">Optional parameter: if true, we will return an empty string</param>
+        /// <param name="usesQueryString">Optional parameter: if true, we will return an empty byte array</param>
         /// <returns>Request parameters in query string byte array format</returns>
         public static byte[] GetRequestPayloadBytes(IRequest request, bool? usesQueryString = null)
         {
             if (request.Content != null)
                 return request.Content;
 
-            string content;
-
-            if(usesQueryString.HasValue && usesQueryString.Value)
+            if (usesQueryString.HasValue && usesQueryString.Value)
             {
-                content = string.Empty;
-            }
-            else
-            {
-                content = GetParametersAsString(request);
+                return ArrayEx.Empty<byte>();
             }
 
-            return Encoding.UTF8.GetBytes(content);
+#if !NETFRAMEWORK
+            // Build the form-url-encoded body straight into UTF-8 bytes, skipping the intermediate
+            // UTF-16 string (and per-value encode strings) that the string path allocates.
+            return GetParametersAsBytes(request.ParameterCollection);
+#else
+            return Encoding.UTF8.GetBytes(GetParametersAsString(request));
+#endif
         }
 
         /**
@@ -392,6 +392,86 @@ namespace Amazon.Util
             var length = parameterBuilder.Length;
             return length == 0 ? string.Empty : parameterBuilder.ToString(0, length - 1);
         }
+
+#if !NETFRAMEWORK
+        /// <summary>
+        /// Builds the form-url-encoded body ("key=value&amp;key=value") from the parameter collection
+        /// straight into UTF-8 bytes, byte-for-byte identical to
+        /// <c>Encoding.UTF8.GetBytes(GetParametersAsString(parameterCollection))</c> but without the
+        /// intermediate UTF-16 string or per-value encode strings.
+        /// </summary>
+        internal static byte[] GetParametersAsBytes(ParameterCollection parameterCollection)
+        {
+            using var writer = new ArrayPoolBufferWriter<byte>();
+            WriteParameters(writer, parameterCollection);
+
+            var written = writer.WrittenSpan;
+            return written.Length == 0 ? ArrayEx.Empty<byte>() : written.ToArray();
+        }
+
+        /// <summary>
+        /// Writes the form-url-encoded body of <paramref name="request"/>'s parameters into a
+        /// <see cref="PooledContentStream"/>, avoiding the per-request byte[] that
+        /// <see cref="GetRequestPayloadBytes"/> allocates.
+        /// </summary>
+        public static PooledContentStream WriteParametersToPooledStream(IRequest request)
+        {
+            var stream = new PooledContentStream();
+            try
+            {
+                WriteParameters(stream.BufferWriter, request.ParameterCollection);
+            }
+            catch
+            {
+                stream.Dispose();
+                throw;
+            }
+            return stream;
+        }
+
+        /// <summary>
+        /// Emits "key=urlencoded(value)" pairs joined by '&amp;' (no trailing '&amp;'),
+        /// skipping parameters with a null value, exactly as
+        /// <see cref="GetParametersAsString(ParameterCollection)"/> does.
+        /// </summary>
+        private static void WriteParameters(IBufferWriter<byte> buffer, ParameterCollection parameterCollection)
+        {
+            var first = true;
+            foreach (var kvp in parameterCollection.GetParametersEnumerable())
+            {
+                var value = kvp.Value;
+                if (value == null)
+                    continue;
+
+                // Prefix '&' before every pair except the first, which yields no trailing '&' — matching
+                // GetParametersAsString's append-then-drop-last-'&' behavior.
+                if (!first)
+                    WriteByte(buffer, (byte)'&');
+                first = false;
+
+                WriteUtf8(buffer, kvp.Key);
+                WriteByte(buffer, (byte)'=');
+                UrlEncodeToBuffer(3986, buffer, value, false);
+            }
+        }
+
+        private static void WriteByte(IBufferWriter<byte> buffer, byte value)
+        {
+            var span = buffer.GetSpan(1);
+            span[0] = value;
+            buffer.Advance(1);
+        }
+
+        private static void WriteUtf8(IBufferWriter<byte> buffer, string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return;
+
+            var span = buffer.GetSpan(Encoding.UTF8.GetMaxByteCount(value.Length));
+            var written = Encoding.UTF8.GetBytes(value.AsSpan(), span);
+            buffer.Advance(written);
+        }
+#endif
 
         /// <summary>
         /// Returns the canonicalized resource path for the service endpoint.
@@ -1118,8 +1198,6 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(data))
                 return string.Empty;
 
-            var unreservedChars = GetUrlEncodeLookup(rfcNumber, path);
-
             byte[] sharedDataBuffer = null;
             const int MaxStackLimit = 256;
             try
@@ -1139,66 +1217,128 @@ namespace Amazon.Util
                     ? stackalloc byte[MaxStackLimit]
                     : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
 
-                // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
-                // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer
-                // for the encoded representation.
-                var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
-                var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
-                var encodingBytes = encodingBuffer.Slice(0, bytesWritten);
-
-                var index = 0;
-                var startIndex = 0;
-
-#if NET8_0_OR_GREATER
-                // Vectorized scan to the first byte that needs encoding. When there is none, the output equals
-                // the input, so return the original string - the common case for already-safe values.
-                var firstEncoded = ((ReadOnlySpan<byte>)encodingBytes).IndexOfAnyExcept(GetUrlEncodeSearchValues(rfcNumber, path));
-                if (firstEncoded == -1)
-                    return data;
-
-                // Bulk-copy the safe prefix, then let the per-byte loop handle the remainder.
-                if (firstEncoded > 0)
-                {
-                    encodingBytes.Slice(0, firstEncoded).CopyTo(dataBuffer);
-                    index = firstEncoded;
-                    startIndex = firstEncoded;
-                }
-#endif
-
-                var encoded = false;
-                for (var i = startIndex; i < encodingBytes.Length; i++)
-                {
-                    var symbol = encodingBytes[i];
-                    if (symbol < 128 && unreservedChars[symbol])
-                    {
-                        dataBuffer[index++] = symbol;
-                    }
-                    else
-                    {
-                        encoded = true;
-                        dataBuffer[index++] = (byte)'%';
-
-                        // Break apart the byte into two four-bit components and
-                        // then convert each into their hexadecimal equivalent.
-                        var hiNibble = symbol >> 4;
-                        var loNibble = symbol & 0xF;
-                        dataBuffer[index++] = (byte)upperHex[hiNibble];
-                        dataBuffer[index++] = (byte)upperHex[loNibble];
-                    }
-                }
+                var output = UrlEncodeToSpan(rfcNumber, dataAsSpan, path, dataBuffer, out var encoded);
 
                 // Nothing was encoded, so the output equals the input; return the original string and skip the
-                // allocation. (On net8+ this case is already handled by the vectorized fast path above.)
+                // allocation.
                 if (!encoded)
                     return data;
 
-                return encoding.GetString(dataBuffer.Slice(0, index));
+                return encoding.GetString(output);
             }
             finally
             {
                 if (sharedDataBuffer != null) ArrayPool<byte>.Shared.Return(sharedDataBuffer);
             }
         }
+
+        /// <summary>
+        /// Core of <see cref="UrlEncode(int, string, bool)"/>: UTF-8 encodes <paramref name="data"/> and
+        /// percent-encodes it per the given RFC into <paramref name="dataBuffer"/>, which must be at least
+        /// 3x the UTF-8 max byte count of <paramref name="data"/>. Returns the slice of bytes that form the
+        /// output (this aliases into <paramref name="dataBuffer"/>) and sets <paramref name="encoded"/> to
+        /// false when no character needed escaping (the returned slice is then the raw UTF-8 bytes).
+        /// </summary>
+        private static ReadOnlySpan<byte> UrlEncodeToSpan(int rfcNumber, ReadOnlySpan<char> data, bool path, Span<byte> dataBuffer, out bool encoded)
+        {
+            var unreservedChars = GetUrlEncodeLookup(rfcNumber, path);
+            var encoding = Encoding.UTF8;
+
+            var dataByteLength = encoding.GetMaxByteCount(data.Length);
+
+            // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
+            // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer
+            // for the encoded representation.
+            var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
+            var bytesWritten = encoding.GetBytes(data, encodingBuffer);
+            var encodingBytes = encodingBuffer.Slice(0, bytesWritten);
+
+            var index = 0;
+            var startIndex = 0;
+
+#if NET8_0_OR_GREATER
+            // Vectorized scan to the first byte that needs encoding. When there is none, the output equals
+            // the raw utf8 bytes; return the encodingBytes unchanged - the common case for already-safe values.
+            var firstEncoded = ((ReadOnlySpan<byte>)encodingBytes).IndexOfAnyExcept(GetUrlEncodeSearchValues(rfcNumber, path));
+            if (firstEncoded == -1)
+            {
+                encoded = false;
+                return encodingBytes;
+            }
+
+            // Bulk-copy the safe prefix, then let the per-byte loop handle the remainder.
+            if (firstEncoded > 0)
+            {
+                encodingBytes.Slice(0, firstEncoded).CopyTo(dataBuffer);
+                index = firstEncoded;
+                startIndex = firstEncoded;
+            }
+#endif
+
+            encoded = false;
+            for (var i = startIndex; i < encodingBytes.Length; i++)
+            {
+                var symbol = encodingBytes[i];
+                if (symbol < 128 && unreservedChars[symbol])
+                {
+                    dataBuffer[index++] = symbol;
+                }
+                else
+                {
+                    encoded = true;
+                    dataBuffer[index++] = (byte)'%';
+
+                    // Break apart the byte into two four-bit components and
+                    // then convert each into their hexadecimal equivalent.
+                    var hiNibble = symbol >> 4;
+                    var loNibble = symbol & 0xF;
+                    dataBuffer[index++] = (byte)upperHex[hiNibble];
+                    dataBuffer[index++] = (byte)upperHex[loNibble];
+                }
+            }
+
+            return dataBuffer.Slice(0, index);
+        }
+
+#if !NETFRAMEWORK
+        /// <summary>
+        /// Percent-encodes <paramref name="data"/> per the given RFC and writes the resulting UTF-8 bytes
+        /// directly into <paramref name="buffer"/>, avoiding the intermediate string that
+        /// <see cref="UrlEncode(int, string, bool)"/> allocates. Used by the Query-protocol body builders to
+        /// write straight into a pooled buffer. Produces byte-for-byte the same output as
+        /// <c>Encoding.UTF8.GetBytes(UrlEncode(rfcNumber, data, path))</c>.
+        /// </summary>
+        [SkipLocalsInit]
+        internal static void UrlEncodeToBuffer(int rfcNumber, IBufferWriter<byte> buffer, string data, bool path)
+        {
+            if (string.IsNullOrEmpty(data))
+                return;
+
+            byte[] sharedDataBuffer = null;
+            const int MaxStackLimit = 256;
+            try
+            {
+                var dataAsSpan = data.AsSpan();
+                var encodedByteLength = 3 * Encoding.UTF8.GetMaxByteCount(dataAsSpan.Length);
+                var dataBuffer = encodedByteLength <= MaxStackLimit
+                    ? stackalloc byte[MaxStackLimit]
+                    : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
+
+                // Unlike the string overload, the no-encode case must still WRITE the raw utf8 bytes (the
+                // string overload returns the original string instead). UrlEncodeToSpan returns the output
+                // slice for both the encoded and the raw-passthrough case, so we always copy what it returns.
+                var output = UrlEncodeToSpan(rfcNumber, dataAsSpan, path, dataBuffer, out _);
+
+                var dest = buffer.GetSpan(output.Length);
+                output.CopyTo(dest);
+                buffer.Advance(output.Length);
+            }
+            finally
+            {
+                if (sharedDataBuffer != null) ArrayPool<byte>.Shared.Return(sharedDataBuffer);
+            }
+        }
+#endif
         
         internal static bool TryGetRFCEncodingSchemes(int rfcNumber, out string encodingScheme)
         {
