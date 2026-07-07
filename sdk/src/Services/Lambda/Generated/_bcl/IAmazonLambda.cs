@@ -444,6 +444,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -477,6 +493,22 @@ namespace Amazon.Lambda
         /// <returns>The response from the CheckpointDurableExecution service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -2319,6 +2351,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -2347,6 +2395,22 @@ namespace Amazon.Lambda
         /// <returns>The response from the GetDurableExecution service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2384,6 +2448,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -2419,6 +2499,22 @@ namespace Amazon.Lambda
         /// <returns>The response from the GetDurableExecutionHistory service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -2457,6 +2553,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -2490,6 +2602,22 @@ namespace Amazon.Lambda
         /// <returns>The response from the GetDurableExecutionState service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -6223,6 +6351,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -6254,6 +6398,22 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -6353,6 +6513,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -6385,6 +6561,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -6414,6 +6606,22 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
         /// </exception>
@@ -6442,6 +6650,22 @@ namespace Amazon.Lambda
         /// <returns>The response from the StopDurableExecution service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda couldn't decrypt the environment variables because KMS access was denied. Check
+        /// the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key used is disabled.
+        /// Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda couldn't decrypt the environment variables because the state of the KMS key
+        /// used is not valid for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
+        /// Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.

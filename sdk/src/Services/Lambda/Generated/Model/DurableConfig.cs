@@ -31,11 +31,15 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Configuration settings for <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
-    /// functions</a>, including execution timeout and retention period for execution history.
+    /// functions</a>, including execution timeout, retention period for execution history,
+    /// and an optional ARN of the Key Management Service (KMS) customer managed key that
+    /// is used to encrypt your durable execution's payload data, including input, output,
+    /// and error payloads.
     /// </summary>
     public partial class DurableConfig
     {
         private int? _executionTimeout;
+        private string _kmsKeyArn;
         private int? _retentionPeriodInDays;
 
         /// <summary>
@@ -56,6 +60,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetExecutionTimeout()
         {
             return this._executionTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The ARN of the Key Management Service (KMS) customer managed key that is used to encrypt
+        /// your durable execution's payload data, including input, output, and error payloads.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>
