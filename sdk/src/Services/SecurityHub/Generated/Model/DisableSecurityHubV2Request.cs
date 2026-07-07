@@ -32,7 +32,8 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the DisableSecurityHubV2 operation.
     /// Disable the service for the current Amazon Web Services Region or specified Amazon
-    /// Web Services Region.
+    /// Web Services Region. Disabling the service also disables all opt-in features that
+    /// are currently enabled in that Region.
     /// </summary>
     public partial class DisableSecurityHubV2Request : AmazonSecurityHubRequest
     {

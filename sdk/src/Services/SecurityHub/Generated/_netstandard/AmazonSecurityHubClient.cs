@@ -1585,6 +1585,67 @@ namespace Amazon.SecurityHub
         }
         #endregion
         
+        #region  CreateConnector
+
+        internal virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a cloud service provider management (CSPM) connector in Security Hub CSPM.
+        /// A connector establishes a connection between Security Hub CSPM and a third-party cloud
+        /// provider, enabling Security Hub CSPM to ingest security findings and resource data
+        /// from the connected environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnector service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateConnectorV2
 
         internal virtual CreateConnectorV2Response CreateConnectorV2(CreateConnectorV2Request request)
@@ -2210,6 +2271,62 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = DeleteConfigurationPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConfigurationPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteConnector
+
+        internal virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a CSPM connector. When you delete a connector, Security Hub CSPM stops ingesting
+        /// findings and resource data from the connected cloud provider environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnector service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3096,6 +3213,57 @@ namespace Amazon.SecurityHub
         }
         #endregion
         
+        #region  DisableSecurityHubFeatureV2
+
+        internal virtual DisableSecurityHubFeatureV2Response DisableSecurityHubFeatureV2(DisableSecurityHubFeatureV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableSecurityHubFeatureV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSecurityHubFeatureV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DisableSecurityHubFeatureV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables an opt-in feature for the calling account in the current Amazon Web Services
+        /// Region. The operation is idempotent. If the feature is already disabled, no changes
+        /// are made. You cannot disable a feature that is managed by an organization policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubFeatureV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableSecurityHubFeatureV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubFeatureV2">REST API Reference for DisableSecurityHubFeatureV2 Operation</seealso>
+        public virtual Task<DisableSecurityHubFeatureV2Response> DisableSecurityHubFeatureV2Async(DisableSecurityHubFeatureV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableSecurityHubFeatureV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSecurityHubFeatureV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableSecurityHubFeatureV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisableSecurityHubV2
 
         internal virtual DisableSecurityHubV2Response DisableSecurityHubV2(DisableSecurityHubV2Request request)
@@ -3111,7 +3279,8 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disable the service for the current Amazon Web Services Region or specified Amazon
-        /// Web Services Region.
+        /// Web Services Region. Disabling the service also disables all opt-in features that
+        /// are currently enabled in that Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3534,6 +3703,58 @@ namespace Amazon.SecurityHub
         }
         #endregion
         
+        #region  EnableSecurityHubFeatureV2
+
+        internal virtual EnableSecurityHubFeatureV2Response EnableSecurityHubFeatureV2(EnableSecurityHubFeatureV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableSecurityHubFeatureV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSecurityHubFeatureV2ResponseUnmarshaller.Instance;
+
+            return Invoke<EnableSecurityHubFeatureV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables an opt-in feature for the calling account in the current Amazon Web Services
+        /// Region. The service must be enabled before you can enable a feature. The operation
+        /// is idempotent. If the feature is already enabled, no changes are made. You cannot
+        /// enable a feature that is managed by an organization policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubFeatureV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableSecurityHubFeatureV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubFeatureV2">REST API Reference for EnableSecurityHubFeatureV2 Operation</seealso>
+        public virtual Task<EnableSecurityHubFeatureV2Response> EnableSecurityHubFeatureV2Async(EnableSecurityHubFeatureV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableSecurityHubFeatureV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSecurityHubFeatureV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableSecurityHubFeatureV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  EnableSecurityHubV2
 
         internal virtual EnableSecurityHubV2Response EnableSecurityHubV2(EnableSecurityHubV2Request request)
@@ -3906,6 +4127,61 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = GetConfigurationPolicyAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConfigurationPolicyAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetConnector
+
+        internal virtual GetConnectorResponse GetConnector(GetConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details for a CSPM connector based on the connector ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnector service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConnector">REST API Reference for GetConnector Operation</seealso>
+        public virtual Task<GetConnectorResponse> GetConnectorAsync(GetConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -5315,6 +5591,61 @@ namespace Amazon.SecurityHub
         }
         #endregion
         
+        #region  ListConnectors
+
+        internal virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the CSPM connectors and their metadata for the calling account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListConnectorsV2
 
         internal virtual ListConnectorsV2Response ListConnectorsV2(ListConnectorsV2Request request)
@@ -6238,6 +6569,62 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = UpdateConfigurationPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfigurationPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateConnector
+
+        internal virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a CSPM connector's configuration, such as the scope or regions for the connected
+        /// cloud provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnector service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual Task<UpdateConnectorResponse> UpdateConnectorAsync(UpdateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         

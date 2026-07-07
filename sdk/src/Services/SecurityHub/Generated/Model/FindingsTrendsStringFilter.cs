@@ -40,8 +40,75 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FieldName. 
         /// <para>
-        /// The name of the findings field to filter on.
+        /// The name of the findings field to filter on. You can specify one of the following
+        /// fields.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>account_id</c> – The Amazon Web Services account ID associated with the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>region</c> – The Amazon Web Services Region associated with the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_types</c> – The finding types associated with the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_status</c> – The status of the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_cve_ids</c> – The Common Vulnerabilities and Exposures (CVE) identifiers
+        /// associated with the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_compliance_status</c> – The compliance status of the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_control_id</c> – The identifier of the security control associated with
+        /// the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_class_name</c> – The finding class, such as <c>Compliance Finding</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_provider</c> – The name of the product that generated the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>finding_activity_name</c> – The activity name associated with the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_cloud_providers</c> – The cloud providers of the resources that the finding
+        /// is associated with. Valid values are <c>AWS</c> and <c>Azure</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_regions</c> – The Regions of the associated resources. For an Amazon
+        /// Web Services resource, this is the Amazon Web Services Region. For an Azure resource,
+        /// this is the Azure Region, such as <c>eastus</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_owner_ids</c> – The identifiers of the accounts that own the associated
+        /// resources. For an Amazon Web Services resource, this is the Amazon Web Services account
+        /// ID. For an Azure resource, this is the Azure subscription ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_owner_organization_ids</c> – The identifiers of the organizations that
+        /// own the associated resources. For an Amazon Web Services resource, this is the Amazon
+        /// Web Services organization ID. For an Azure resource, this is the Azure tenant ID.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public FindingsTrendsStringField FieldName
         {

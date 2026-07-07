@@ -638,6 +638,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsXrayEncryptionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AzureResource", targetDepth, ref reader))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    unmarshalledObject.AzureResource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CodeRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeRepositoryDetailsUnmarshaller.Instance;

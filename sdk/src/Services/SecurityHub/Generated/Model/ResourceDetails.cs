@@ -148,6 +148,7 @@ namespace Amazon.SecurityHub.Model
         private AwsWafv2WebAclDetails _awsWafv2WebAcl;
         private AwsWafWebAclDetails _awsWafWebAcl;
         private AwsXrayEncryptionConfigDetails _awsXrayEncryptionConfig;
+        private Amazon.Runtime.Documents.Document _azureResource;
         private CodeRepositoryDetails _codeRepository;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -1919,6 +1920,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsXrayEncryptionConfig()
         {
             return this._awsXrayEncryptionConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AzureResource. 
+        /// <para>
+        /// Details about an Azure resource that is related to a finding.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AzureResource
+        {
+            get { return this._azureResource; }
+            set { this._azureResource = value; }
+        }
+
+        // Check to see if AzureResource property is set
+        internal bool IsSetAzureResource()
+        {
+            return !this._azureResource.IsNull();
         }
 
         /// <summary>

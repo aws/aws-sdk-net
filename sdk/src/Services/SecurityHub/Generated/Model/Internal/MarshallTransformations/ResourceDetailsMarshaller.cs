@@ -1113,6 +1113,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetAzureResource())
+            {
+                context.Writer.WritePropertyName("AzureResource");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AzureResource);
+            }
+
             if(requestObject.IsSetCodeRepository())
             {
                 context.Writer.WritePropertyName("CodeRepository");

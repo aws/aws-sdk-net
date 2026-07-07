@@ -76,6 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     response.ConnectorStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EnablementStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EnablementStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

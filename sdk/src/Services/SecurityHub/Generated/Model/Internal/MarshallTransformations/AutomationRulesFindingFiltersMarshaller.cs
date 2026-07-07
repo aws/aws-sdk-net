@@ -462,6 +462,38 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetResourceOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("ResourceOwnerAccountId");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectResourceOwnerAccountIdListValue in requestObject.ResourceOwnerAccountId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceOwnerAccountIdListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetResourceOwnerOrgId())
+            {
+                context.Writer.WritePropertyName("ResourceOwnerOrgId");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectResourceOwnerOrgIdListValue in requestObject.ResourceOwnerOrgId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceOwnerOrgIdListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetResourcePartition())
             {
                 context.Writer.WritePropertyName("ResourcePartition");
@@ -472,6 +504,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourcePartitionListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetResourceProvider())
+            {
+                context.Writer.WritePropertyName("ResourceProvider");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectResourceProviderListValue in requestObject.ResourceProvider)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceProviderListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
