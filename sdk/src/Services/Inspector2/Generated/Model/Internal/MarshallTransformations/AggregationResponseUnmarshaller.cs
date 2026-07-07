@@ -80,6 +80,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeRepositoryAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("containerImageAggregation", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerImageAggregationResponseUnmarshaller.Instance;
+                    unmarshalledObject.ContainerImageAggregation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ec2InstanceAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2InstanceAggregationResponseUnmarshaller.Instance;
@@ -122,10 +128,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepositoryAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("serverlessFunctionAggregation", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServerlessFunctionAggregationResponseUnmarshaller.Instance;
+                    unmarshalledObject.ServerlessFunctionAggregation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("titleAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = TitleAggregationResponseUnmarshaller.Instance;
                     unmarshalledObject.TitleAggregation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vmInstanceAggregation", targetDepth, ref reader))
+                {
+                    var unmarshaller = VmInstanceAggregationResponseUnmarshaller.Instance;
+                    unmarshalledObject.VmInstanceAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

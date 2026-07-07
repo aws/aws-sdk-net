@@ -46,6 +46,86 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCloudAccountIds())
+            {
+                context.Writer.WritePropertyName("cloudAccountIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudAccountIdsListValue in requestObject.CloudAccountIds)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudAccountIdsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudOrgIds())
+            {
+                context.Writer.WritePropertyName("cloudOrgIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudOrgIdsListValue in requestObject.CloudOrgIds)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudOrgIdsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudPartitions())
+            {
+                context.Writer.WritePropertyName("cloudPartitions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudPartitionsListValue in requestObject.CloudPartitions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudPartitionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudProviders())
+            {
+                context.Writer.WritePropertyName("cloudProviders");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudProvidersListValue in requestObject.CloudProviders)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudProvidersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudRegions())
+            {
+                context.Writer.WritePropertyName("cloudRegions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudRegionsListValue in requestObject.CloudRegions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudRegionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetLayerHashes())
             {
                 context.Writer.WritePropertyName("layerHashes");

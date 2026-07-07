@@ -34,10 +34,29 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class Usage
     {
+        private CloudProvider _cloudProvider;
         private Currency _currency;
         private double? _estimatedMonthlyCost;
         private double? _total;
         private UsageType _type;
+
+        /// <summary>
+        /// Gets and sets the property CloudProvider. 
+        /// <para>
+        /// The cloud provider associated with the usage information.
+        /// </para>
+        /// </summary>
+        public CloudProvider CloudProvider
+        {
+            get { return this._cloudProvider; }
+            set { this._cloudProvider = value; }
+        }
+
+        // Check to see if CloudProvider property is set
+        internal bool IsSetCloudProvider()
+        {
+            return this._cloudProvider != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Currency. 

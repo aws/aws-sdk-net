@@ -62,6 +62,24 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("containerImage", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerImageMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ContainerImage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("containerRegistry", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerRegistryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ContainerRegistry = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("containerRepository", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContainerRepositoryMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ContainerRepository = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ec2", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2MetadataUnmarshaller.Instance;
@@ -84,6 +102,18 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LambdaFunctionMetadataUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("serverlessFunction", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServerlessFunctionMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ServerlessFunction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vmInstance", targetDepth, ref reader))
+                {
+                    var unmarshaller = VmInstanceMetadataUnmarshaller.Instance;
+                    unmarshalledObject.VmInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
