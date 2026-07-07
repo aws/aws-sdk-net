@@ -1717,7 +1717,7 @@ namespace AWSSDK_DotNet.UnitTests
                     new SaveConfig { ConditionalExpression = expr1 }));
 
             Assert.IsTrue(ex.Message.Contains(
-                "FilterExpression is not supported with version check. Set SkipVersionCheck to true to use FilterExpression with versioned entities."));
+                "ConditionalExpression is not supported with version check. Set SkipVersionCheck to true to use ConditionalExpression with versioned entities."));
 
             mockClient.Verify(
                 client => client.UpdateItem(It.IsAny<UpdateItemRequest>()),
