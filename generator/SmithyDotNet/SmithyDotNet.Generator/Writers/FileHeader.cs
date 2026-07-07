@@ -64,6 +64,19 @@ public static class FileHeader
         "static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn",
     ];
 
+    /// <summary>
+    /// Usings for the auth resolver file: the runtime, auth, and identity namespaces the resolver references.
+    /// </summary>
+    public static IReadOnlyList<string> AuthResolverUsings { get; } =
+    [
+        "Amazon.Runtime",
+        "Amazon.Runtime.Credentials.Internal",
+        "Amazon.Runtime.Internal",
+        "Amazon.Runtime.Internal.Auth",
+        "Amazon.Runtime.Identity",
+        "System.Collections.Generic",
+    ];
+
     // these three exist in marshallers today but are unused so far. if future marshallers need them, add them back.
     // "System.Xml.Serialization",
     // "System.Globalization",

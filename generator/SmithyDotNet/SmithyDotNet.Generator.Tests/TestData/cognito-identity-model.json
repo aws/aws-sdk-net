@@ -1,0 +1,194 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.cognitoidentity#Service": {
+      "type": "service",
+      "version": "2014-06-30",
+      "operations": [
+        {
+          "target": "com.amazonaws.cognitoidentity#GetCredentialsForIdentity"
+        },
+        {
+          "target": "com.amazonaws.cognitoidentity#GetId"
+        },
+        {
+          "target": "com.amazonaws.cognitoidentity#GetOpenIdToken"
+        },
+        {
+          "target": "com.amazonaws.cognitoidentity#UnlinkIdentity"
+        },
+        {
+          "target": "com.amazonaws.cognitoidentity#DescribeIdentityPool"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Cognito Identity",
+          "endpointPrefix": "cognito-identity"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Cognito Identity",
+        "aws.auth#sigv4": {
+          "name": "cognito-identity"
+        }
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetCredentialsForIdentity": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.cognitoidentity#GetCredentialsForIdentityRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.cognitoidentity#GetCredentialsForIdentityResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/GetCredentialsForIdentity",
+          "method": "POST"
+        },
+        "smithy.api#auth": [
+          "smithy.api#noAuth"
+        ]
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetCredentialsForIdentityRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetCredentialsForIdentityResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetId": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.cognitoidentity#GetIdRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.cognitoidentity#GetIdResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/GetId",
+          "method": "POST"
+        },
+        "smithy.api#auth": [
+          "smithy.api#noAuth"
+        ]
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetIdRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetIdResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetOpenIdToken": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.cognitoidentity#GetOpenIdTokenRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.cognitoidentity#GetOpenIdTokenResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/GetOpenIdToken",
+          "method": "POST"
+        },
+        "smithy.api#auth": [
+          "smithy.api#noAuth"
+        ]
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetOpenIdTokenRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#GetOpenIdTokenResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#UnlinkIdentity": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.cognitoidentity#UnlinkIdentityRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.cognitoidentity#UnlinkIdentityResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/UnlinkIdentity",
+          "method": "POST"
+        },
+        "smithy.api#auth": [
+          "smithy.api#noAuth"
+        ]
+      }
+    },
+    "com.amazonaws.cognitoidentity#UnlinkIdentityRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#UnlinkIdentityResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#DescribeIdentityPool": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.cognitoidentity#DescribeIdentityPoolRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.cognitoidentity#DescribeIdentityPoolResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/DescribeIdentityPool",
+          "method": "POST"
+        }
+      }
+    },
+    "com.amazonaws.cognitoidentity#DescribeIdentityPoolRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.cognitoidentity#DescribeIdentityPoolResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}

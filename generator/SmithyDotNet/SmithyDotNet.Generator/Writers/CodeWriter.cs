@@ -41,6 +41,25 @@ public class CodeWriter
     }
 
     /// <summary>
+    /// Runs <paramref name="body"/> with the indent increased one level, for content that nests
+    /// without its own braces (e.g. statements under a <c>switch</c> case label).
+    /// </summary>
+    public CodeWriter Indent(Action body)
+    {
+        _indent++;
+        try
+        {
+            body();
+        }
+        finally
+        {
+            _indent--;
+        }
+
+        return this;
+    }
+
+    /// <summary>
     /// Emits <paramref name="header"/>, then <c>{</c>, executes <paramref name="body"/>,
     /// and closes with <paramref name="close"/>.
     /// </summary>
@@ -49,8 +68,15 @@ public class CodeWriter
         WriteLine(header);
         WriteLine("{");
         _indent++;
-        body();
-        _indent--;
+        try
+        {
+            body();
+        }
+        finally
+        {
+            _indent--;
+        }
+
         WriteLine(close);
         return this;
     }

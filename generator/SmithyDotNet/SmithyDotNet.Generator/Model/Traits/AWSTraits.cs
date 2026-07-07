@@ -4,8 +4,8 @@ using static SmithyDotNet.Generator.Model.Traits.TraitHelpers;
 namespace SmithyDotNet.Generator.Model.Traits;
 
 /// <summary>
-/// Extension methods for the service traits the generator reads: the <c>aws.*</c> traits plus the
-/// <c>smithy.rules#endpointRuleSet</c> trait.
+/// Extension methods for the service traits the generator reads: the <c>aws.*</c> traits, the
+/// <c>smithy.api#httpBearerAuth</c> auth trait, plus the <c>smithy.rules#endpointRuleSet</c> trait.
 /// </summary>
 public static class AWSTraits
 {
@@ -23,6 +23,14 @@ public static class AWSTraits
 
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-sigv4-trait" /></remarks>
     public static SigV4Trait? GetSigV4(this Shape shape) => DeserializeTrait<SigV4Trait>(shape, "aws.auth#sigv4");
+
+    /// <summary>Whether the shape carries the <c>aws.auth#sigv4a</c> trait.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-sigv4a-trait" /></remarks>
+    public static bool HasSigV4A(this Shape shape) => shape.Traits.ContainsKey("aws.auth#sigv4a");
+
+    /// <summary>Whether the shape carries the <c>smithy.api#httpBearerAuth</c> trait.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/authentication-traits.html#httpbearerauth-trait" /></remarks>
+    public static bool HasHttpBearerAuth(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpBearerAuth");
 
     /// <summary>
     /// Whether the service shape carries a Smithy endpoint rule set. The config writer emits the

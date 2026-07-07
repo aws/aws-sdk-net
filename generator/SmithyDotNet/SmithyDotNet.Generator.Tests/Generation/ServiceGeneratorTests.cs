@@ -43,6 +43,12 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void WritesAuthResolverUnderInternal()
+    {
+        AssertFileExists("Generated", "Internal", "AmazonCloudTrailDataAuthResolver.g.cs");
+    }
+
+    [Fact]
     public void WritesOperationModelFiles()
     {
         AssertFileExists("Generated", "Model", "AmazonCloudTrailDataRequest.g.cs");

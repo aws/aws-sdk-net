@@ -12,9 +12,9 @@ namespace SmithyDotNet.Generator.Generation;
 /// <para />
 /// Phase 1 scope: the writers that exist today (interface, client, config, service exception,
 /// metadata, endpoint parameters/provider/resolver, operation request/response/base, structures,
-/// exceptions, and the restJson1 request marshaller + structure (un)marshallers). The auth
-/// <c>Internal/</c> files and the operation-response / exception unmarshallers have no writers yet,
-/// so the generated tree does not compile standalone.
+/// exceptions, the restJson1 request marshaller + structure (un)marshallers, and the auth resolver).
+/// The operation-response / exception unmarshallers have no writers yet, so the generated tree does
+/// not compile standalone.
 /// </summary>
 public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion)
 {
@@ -117,6 +117,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 }
             }
         }
+
+        // Every service gets an auth resolver: a service that models no auth falls back to noAuth, so
+        // this is emitted unconditionally (unlike the endpoint files, which are gated on a rule set).
+        var authResolverWriter = new AuthResolverWriter(context, modelFileName);
+        Emit(Path.Combine(@internal, $"{clientName}AuthResolver.g.cs"), authResolverWriter.Write(cancellationToken));
 
         var structureWriter = new StructureWriter(context, modelFileName);
         foreach (var (shapeId, structure) in context.Structures)

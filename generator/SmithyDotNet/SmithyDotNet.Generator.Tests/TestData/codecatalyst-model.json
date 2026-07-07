@@ -1,0 +1,52 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.codecatalyst#Service": {
+      "type": "service",
+      "version": "2022-09-28",
+      "operations": [
+        {
+          "target": "com.amazonaws.codecatalyst#GetSpace"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "CodeCatalyst",
+          "endpointPrefix": "codecatalyst"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Amazon CodeCatalyst",
+        "smithy.api#httpBearerAuth": {}
+      }
+    },
+    "com.amazonaws.codecatalyst#GetSpace": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.codecatalyst#GetSpaceRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.codecatalyst#GetSpaceResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/v1/spaces/{name}",
+          "method": "GET"
+        }
+      }
+    },
+    "com.amazonaws.codecatalyst#GetSpaceRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.codecatalyst#GetSpaceResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}

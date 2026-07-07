@@ -1,0 +1,57 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example.dualsigning#Service": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        {
+          "target": "com.example.dualsigning#GetItem"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Dual Signing",
+          "endpointPrefix": "dual-signing"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Dual Signing (synthetic test service)",
+        "aws.auth#sigv4": {
+          "name": "dual-signing"
+        },
+        "aws.auth#sigv4a": {
+          "name": "dual-signing"
+        }
+      }
+    },
+    "com.example.dualsigning#GetItem": {
+      "type": "operation",
+      "input": {
+        "target": "com.example.dualsigning#GetItemRequest"
+      },
+      "output": {
+        "target": "com.example.dualsigning#GetItemResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/{Id}",
+          "method": "GET"
+        }
+      }
+    },
+    "com.example.dualsigning#GetItemRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.example.dualsigning#GetItemResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}
