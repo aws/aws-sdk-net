@@ -356,6 +356,31 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAuthCodeRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAuthCodeRequest.MaxSessionDurationMinutes</property>
+    <min>1440</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAuthCodeRequest.SessionInactivityDurationMinutes</property>
+    <min>0</min>
+    <max>20160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAuthCodeResponse.EntityId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateAuthCodeResponse.SessionId</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -1386,6 +1411,15 @@
     <property>Amazon.Connect.Model.DeleteSecurityProfileRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteSessionRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteSessionRequest.SessionId</property>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteTaskTemplateRequest.InstanceId</property>
@@ -5516,6 +5550,18 @@
     <property>Amazon.Connect.Model.AuthenticationProfileSummary.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthScope.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthScope.EntityId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AvailableNumberSummary.PhoneNumber</property>

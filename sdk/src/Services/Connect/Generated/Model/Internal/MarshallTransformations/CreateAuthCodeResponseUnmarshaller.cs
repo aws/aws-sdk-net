@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetFederationToken operation
+    /// Response Unmarshaller for CreateAuthCode operation
     /// </summary>  
-    public class GetFederationTokenResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateAuthCodeResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetFederationTokenResponse response = new GetFederationTokenResponse();
+            CreateAuthCodeResponse response = new CreateAuthCodeResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Credentials", targetDepth, ref reader))
-                {
-                    var unmarshaller = CredentialsUnmarshaller.Instance;
-                    response.Credentials = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SignInUrl", targetDepth, ref reader))
+                if (context.TestExpression("AuthCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SignInUrl = unmarshaller.Unmarshall(context, ref reader);
+                    response.AuthCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserArn", targetDepth, ref reader))
+                if (context.TestExpression("EntityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.UserArn = unmarshaller.Unmarshall(context, ref reader);
+                    response.EntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserId", targetDepth, ref reader))
+                if (context.TestExpression("EntityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.UserId = unmarshaller.Unmarshall(context, ref reader);
+                    response.EntityType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SessionId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -101,9 +101,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateResourceException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return DuplicateResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
@@ -125,17 +125,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotFoundException"))
-                {
-                    return UserNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
             }
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetFederationTokenResponseUnmarshaller _instance = new GetFederationTokenResponseUnmarshaller();        
+        private static CreateAuthCodeResponseUnmarshaller _instance = new CreateAuthCodeResponseUnmarshaller();        
 
-        internal static GetFederationTokenResponseUnmarshaller GetInstance()
+        internal static CreateAuthCodeResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +139,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetFederationTokenResponseUnmarshaller Instance
+        public static CreateAuthCodeResponseUnmarshaller Instance
         {
             get
             {
