@@ -41,11 +41,13 @@ namespace Amazon.ConfigService.Model
     public partial class ConfigurationRecorder
     {
         private string _arn;
+        private string _connectorArn;
         private string _name;
         private RecordingGroup _recordingGroup;
         private RecordingMode _recordingMode;
         private RecordingScope _recordingScope;
         private string _rolearn;
+        private ScopeConfiguration _scopeConfiguration;
         private string _servicePrincipal;
 
         /// <summary>
@@ -65,6 +67,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the connector that specifies the connection between
+        /// a third-party cloud service provider and Config.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string ConnectorArn
+        {
+            get { return this._connectorArn; }
+            set { this._connectorArn = value; }
+        }
+
+        // Check to see if ConnectorArn property is set
+        internal bool IsSetConnectorArn()
+        {
+            return this._connectorArn != null;
         }
 
         /// <summary>
@@ -291,6 +313,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetRoleARN()
         {
             return this._rolearn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeConfiguration. 
+        /// <para>
+        /// Specifies the scope of resources to record from the third-party cloud service provider
+        /// connected through the connector.
+        /// </para>
+        /// </summary>
+        public ScopeConfiguration ScopeConfiguration
+        {
+            get { return this._scopeConfiguration; }
+            set { this._scopeConfiguration = value; }
+        }
+
+        // Check to see if ScopeConfiguration property is set
+        internal bool IsSetScopeConfiguration()
+        {
+            return this._scopeConfiguration != null;
         }
 
         /// <summary>

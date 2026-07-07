@@ -72,6 +72,12 @@ namespace Amazon.ConfigService.Model
     /// a service-linked configuration recorder cannot be created because you do not have
     /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+    /// a connector cannot be created because you do not have the following permissions: IAM
+    /// <c>CreateServiceLinkedRole</c>.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD

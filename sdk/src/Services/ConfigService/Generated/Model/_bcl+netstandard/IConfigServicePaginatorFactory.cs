@@ -378,6 +378,16 @@ namespace Amazon.ConfigService.Model
         IListConformancePackComplianceScoresPaginator ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request);
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListDiscoveredResources operation
         ///</summary>
         [AWSPaginator(
