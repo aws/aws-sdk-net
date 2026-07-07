@@ -287,6 +287,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateConnector(Amazon.SecurityHub.Model.CreateConnectorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateConnector(Amazon.SecurityHub.Model.CreateConnectorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateConnectorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a CSPM connector to connect Security Hub to an Azure environment.
+                </para>
+                <code
+                    title="To create a CSPM connector"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-create-a-cspm-connector-1716000000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateFindingAggregator(Amazon.SecurityHub.Model.CreateFindingAggregatorRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateFindingAggregator(Amazon.SecurityHub.Model.CreateFindingAggregatorRequest)" />
             <member name="T:Amazon.SecurityHub.Model.CreateFindingAggregatorRequest" />
@@ -396,6 +415,25 @@
                     title="To delete a configuration policy"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-delete-a-configuration-policy-1695174614062" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeleteConnector(Amazon.SecurityHub.Model.DeleteConnectorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeleteConnector(Amazon.SecurityHub.Model.DeleteConnectorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteConnectorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a CSPM connector.
+                </para>
+                <code
+                    title="To delete a CSPM connector"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-a-cspm-connector-1716000000000" />
             </example>
         </value>
     </doc>
@@ -800,6 +838,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetConnector(Amazon.SecurityHub.Model.GetConnectorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetConnector(Amazon.SecurityHub.Model.GetConnectorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetConnectorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves details for a CSPM connector.
+                </para>
+                <code
+                    title="To get details of a CSPM connector"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-a-cspm-connector-1716000000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetEnabledStandards(Amazon.SecurityHub.Model.GetEnabledStandardsRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetEnabledStandards(Amazon.SecurityHub.Model.GetEnabledStandardsRequest)" />
             <member name="T:Amazon.SecurityHub.Model.GetEnabledStandardsRequest" />
@@ -1044,6 +1101,25 @@
                     title="To list configuration associations"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-list-configuration-associations-1695177309791" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListConnectors(Amazon.SecurityHub.Model.ListConnectorsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListConnectors(Amazon.SecurityHub.Model.ListConnectorsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListConnectorsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListConnectorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation lists the CSPM connectors for the calling account.
+                </para>
+                <code
+                    title="To list CSPM connectors"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-cspm-connectors-1716000000000" />
             </example>
         </value>
     </doc>
@@ -1310,6 +1386,25 @@
                     title="To update a configuration policy"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-update-a-configuration-policy-1695174120555" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateConnector(Amazon.SecurityHub.Model.UpdateConnectorRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateConnector(Amazon.SecurityHub.Model.UpdateConnectorRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateConnectorRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates the configuration of a CSPM connector.
+                </para>
+                <code
+                    title="To update a CSPM connector"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-a-cspm-connector-1716000000000" />
             </example>
         </value>
     </doc>

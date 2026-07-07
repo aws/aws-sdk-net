@@ -40,6 +40,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.CreateConnector(Amazon.Inspector2.Model.CreateConnectorRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.CreateConnector(Amazon.Inspector2.Model.CreateConnectorRequest)" />
+            <member name="T:Amazon.Inspector2.Model.CreateConnectorRequest" />
+            <member name="T:Amazon.Inspector2.Model.CreateConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create an Azure customer-managed connector for VM scanning at SUBSCRIPTION scope"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Inspector2.IAmazonInspector2.DeleteCisScanConfiguration(Amazon.Inspector2.Model.DeleteCisScanConfigurationRequest)" />
             <member name="M:Amazon.Inspector2.AmazonInspector2Client.DeleteCisScanConfiguration(Amazon.Inspector2.Model.DeleteCisScanConfigurationRequest)" />
             <member name="T:Amazon.Inspector2.Model.DeleteCisScanConfigurationRequest" />
@@ -52,6 +71,25 @@
                 </para>
                 <code
                     title="Sample DeleteCisScanConfiguration Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.DeleteConnector(Amazon.Inspector2.Model.DeleteConnectorRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.DeleteConnector(Amazon.Inspector2.Model.DeleteConnectorRequest)" />
+            <member name="T:Amazon.Inspector2.Model.DeleteConnectorRequest" />
+            <member name="T:Amazon.Inspector2.Model.DeleteConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a customer-managed connector"
                     source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -173,6 +211,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.ListConnectors(Amazon.Inspector2.Model.ListConnectorsRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.ListConnectors(Amazon.Inspector2.Model.ListConnectorsRequest)" />
+            <member name="T:Amazon.Inspector2.Model.ListConnectorsRequest" />
+            <member name="T:Amazon.Inspector2.Model.ListConnectorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all Azure customer-managed connectors"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.ListConnectorScanConfigurations(Amazon.Inspector2.Model.ListConnectorScanConfigurationsRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.ListConnectorScanConfigurations(Amazon.Inspector2.Model.ListConnectorScanConfigurationsRequest)" />
+            <member name="T:Amazon.Inspector2.Model.ListConnectorScanConfigurationsRequest" />
+            <member name="T:Amazon.Inspector2.Model.ListConnectorScanConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List scan configurations for a specific AWS Config connector"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Inspector2.IAmazonInspector2.SendCisSessionHealth(Amazon.Inspector2.Model.SendCisSessionHealthRequest)" />
             <member name="M:Amazon.Inspector2.AmazonInspector2Client.SendCisSessionHealth(Amazon.Inspector2.Model.SendCisSessionHealthRequest)" />
             <member name="T:Amazon.Inspector2.Model.SendCisSessionHealthRequest" />
@@ -261,6 +337,44 @@
                 </para>
                 <code
                     title="Sample UpdateCisScanConfiguration Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.UpdateConnector(Amazon.Inspector2.Model.UpdateConnectorRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.UpdateConnector(Amazon.Inspector2.Model.UpdateConnectorRequest)" />
+            <member name="T:Amazon.Inspector2.Model.UpdateConnectorRequest" />
+            <member name="T:Amazon.Inspector2.Model.UpdateConnectorResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Expand the Azure regions covered by a connector"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.UpdateConnectorScanConfiguration(Amazon.Inspector2.Model.UpdateConnectorScanConfigurationRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.UpdateConnectorScanConfiguration(Amazon.Inspector2.Model.UpdateConnectorScanConfigurationRequest)" />
+            <member name="T:Amazon.Inspector2.Model.UpdateConnectorScanConfigurationRequest" />
+            <member name="T:Amazon.Inspector2.Model.UpdateConnectorScanConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Set 30-day push and 14-day pull rescan durations for an Azure container registry connector"
                     source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
                     region="example-1" />
             </example>
