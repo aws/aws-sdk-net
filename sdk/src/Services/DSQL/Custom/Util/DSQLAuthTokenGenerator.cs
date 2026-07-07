@@ -177,7 +177,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.ForceRefresh(FifteenMinutes)
+                ? refreshing.GetCredentials(FifteenMinutes)
                 : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
         }
@@ -202,7 +202,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.ForceRefresh(expiresIn)
+                ? refreshing.GetCredentials(expiresIn)
                 : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
@@ -330,7 +330,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.ForceRefreshAsync(FifteenMinutes).ConfigureAwait(false)
+                ? await refreshing.GetCredentialsAsync(FifteenMinutes).ConfigureAwait(false)
                 : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
         }
@@ -355,7 +355,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.ForceRefreshAsync(expiresIn).ConfigureAwait(false)
+                ? await refreshing.GetCredentialsAsync(expiresIn).ConfigureAwait(false)
                 : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
@@ -483,7 +483,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.ForceRefresh(FifteenMinutes)
+                ? refreshing.GetCredentials(FifteenMinutes)
                 : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
         }
@@ -508,7 +508,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.ForceRefresh(expiresIn)
+                ? refreshing.GetCredentials(expiresIn)
                 : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
         }
@@ -636,7 +636,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.ForceRefreshAsync(FifteenMinutes).ConfigureAwait(false)
+                ? await refreshing.GetCredentialsAsync(FifteenMinutes).ConfigureAwait(false)
                 : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
         }
@@ -661,7 +661,7 @@ namespace Amazon.DSQL.Util
 
             // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
             var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.ForceRefreshAsync(expiresIn).ConfigureAwait(false)
+                ? await refreshing.GetCredentialsAsync(expiresIn).ConfigureAwait(false)
                 : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
         }
