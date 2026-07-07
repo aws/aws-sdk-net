@@ -18,16 +18,22 @@ namespace Amazon.BedrockRuntime;
 // Simple test implementation of AIFunctionDeclaration
 internal sealed class TestAIFunction : AIFunctionDeclaration
 {
-    public TestAIFunction(string name, string description, JsonElement jsonSchema)
+    public TestAIFunction(
+        string name,
+        string description,
+        JsonElement jsonSchema,
+        IReadOnlyDictionary<string, object> additionalProperties = null)
     {
         Name = name;
         Description = description;
         JsonSchema = jsonSchema;
+        AdditionalProperties = additionalProperties;
     }
 
     public override string Name { get; }
     public override string Description { get; }
     public override JsonElement JsonSchema { get; }
+    public override IReadOnlyDictionary<string, object> AdditionalProperties { get; }
 }
 
 public class BedrockChatClientTests
@@ -603,6 +609,78 @@ public class BedrockChatClientTests
         // Structured output requested via OutputConfig.
         Assert.NotNull(capturedRequest.OutputConfig);
         Assert.Equal(OutputFormatType.Json_schema, capturedRequest.OutputConfig.TextFormat.Type);
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task Tool_WithoutStrictOptIn_LeavesStrictNull_AndNoAdditionalProperties()
+    {
+        // Arrange
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+        ConverseRequest capturedRequest = null;
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .Callback<ConverseRequest, CancellationToken>((req, ct) => capturedRequest = req)
+            .ReturnsAsync(CreateResponse("ok"));
+
+        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var messages = new[] { new ChatMessage(ChatRole.User, "Test") };
+
+        var schema = JsonDocument.Parse(
+            """{"type":"object","properties":{"city":{"type":"string"}},"required":["city"]}""").RootElement;
+        var tool = new TestAIFunction("get_weather", "Get the weather", schema);
+
+        var options = new ChatOptions { Tools = new[] { tool } };
+
+        // Act
+        await client.GetResponseAsync(messages, options);
+
+        // Assert
+        Assert.NotNull(capturedRequest);
+        var toolSpec = capturedRequest.ToolConfig.Tools[0].ToolSpec;
+        Assert.Null(toolSpec.Strict);
+
+        var schemaDict = toolSpec.InputSchema.Json.AsDictionary();
+        Assert.False(schemaDict.ContainsKey("additionalProperties"));
+    }
+
+    [Fact]
+    [Trait("UnitTest", "BedrockRuntime")]
+    public async Task Tool_WithStrictOptIn_SetsStrictTrue_AndAdditionalPropertiesFalse()
+    {
+        // Arrange
+        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
+        ConverseRequest capturedRequest = null;
+
+        mockRuntime
+            .Setup(x => x.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+            .Callback<ConverseRequest, CancellationToken>((req, ct) => capturedRequest = req)
+            .ReturnsAsync(CreateResponse("ok"));
+
+        var client = mockRuntime.Object.AsIChatClient("claude-3");
+        var messages = new[] { new ChatMessage(ChatRole.User, "Test") };
+
+        var schema = JsonDocument.Parse(
+            """{"type":"object","properties":{"city":{"type":"string"}},"required":["city"]}""").RootElement;
+        var tool = new TestAIFunction(
+            "get_weather",
+            "Get the weather",
+            schema,
+            new Dictionary<string, object> { ["Strict"] = true });
+
+        var options = new ChatOptions { Tools = new[] { tool } };
+
+        // Act
+        await client.GetResponseAsync(messages, options);
+
+        // Assert
+        Assert.NotNull(capturedRequest);
+        var toolSpec = capturedRequest.ToolConfig.Tools[0].ToolSpec;
+        Assert.True(toolSpec.Strict is true);
+        var schemaDict = toolSpec.InputSchema.Json.AsDictionary();
+        Assert.True(schemaDict.ContainsKey("additionalProperties"));
+        Assert.False(schemaDict["additionalProperties"].AsBool());
     }
 
     [Fact]
