@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole
-        /// | InstanceIds | PingStatus | PlatformType | ResourceType | SourceIds | SourceTypes
+        /// | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes
         /// | "tag-key" | "tag:<c>{keyname}</c> 
         /// </para>
         ///  <ul> <li> 
@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for the <c>PlatformType</c> filter key: Windows | Linux | MacOS
+        /// Valid values for the <c>PlatformTypes</c> filter key: Windows | Linux | MacOS
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Valid values for the <c>SourceType</c> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance
-        /// | AWS::IoT::Thing
+        /// | AWS::IoT::Thing | Microsoft.Compute/virtualMachines
         /// </para>
         ///  </li> <li> 
         /// <para>

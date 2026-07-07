@@ -1244,6 +1244,60 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreateCloudConnector
+
+
+        /// <summary>
+        /// Creates a cloud connector that establishes a connection between Systems Manager and
+        /// a third-party cloud environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota. Service quotas, also referred to as limits,
+        /// are the maximum number of service resources or operations for your Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateCloudConnector">REST API Reference for CreateCloudConnector Operation</seealso>
+        CreateCloudConnectorResponse CreateCloudConnector(CreateCloudConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Creates a cloud connector that establishes a connection between Systems Manager and
+        /// a third-party cloud environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota. Service quotas, also referred to as limits,
+        /// are the maximum number of service resources or operations for your Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateCloudConnector">REST API Reference for CreateCloudConnector Operation</seealso>
+        Task<CreateCloudConnectorResponse> CreateCloudConnectorAsync(CreateCloudConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDocument
 
 
@@ -2139,6 +2193,54 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         Task<DeleteAssociationResponse> DeleteAssociationAsync(DeleteAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCloudConnector
+
+
+        /// <summary>
+        /// Deletes a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteCloudConnector">REST API Reference for DeleteCloudConnector Operation</seealso>
+        DeleteCloudConnectorResponse DeleteCloudConnector(DeleteCloudConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteCloudConnector">REST API Reference for DeleteCloudConnector Operation</seealso>
+        Task<DeleteCloudConnectorResponse> DeleteCloudConnectorAsync(DeleteCloudConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5754,6 +5856,46 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetCloudConnector
+
+
+        /// <summary>
+        /// Returns detailed information about a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the GetCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCloudConnector">REST API Reference for GetCloudConnector Operation</seealso>
+        GetCloudConnectorResponse GetCloudConnector(GetCloudConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Returns detailed information about a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCloudConnector">REST API Reference for GetCloudConnector Operation</seealso>
+        Task<GetCloudConnectorResponse> GetCloudConnectorAsync(GetCloudConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCommandInvocation
 
 
@@ -6822,6 +6964,25 @@ namespace Amazon.SimpleSystemsManagement
         /// To get information about more than one parameter at a time, use the <a>GetParameters</a>
         /// operation.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameter service method.</param>
@@ -6866,6 +7027,25 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// To get information about more than one parameter at a time, use the <a>GetParameters</a>
         /// operation.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7014,6 +7194,26 @@ namespace Amazon.SimpleSystemsManagement
         /// the beginning or end of a parameter name. If the specified name for a parameter contains
         /// spaces between characters, the request fails with a <c>ValidationException</c> error.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// 
@@ -7043,6 +7243,26 @@ namespace Amazon.SimpleSystemsManagement
         /// the beginning or end of a parameter name. If the specified name for a parameter contains
         /// spaces between characters, the request fails with a <c>ValidationException</c> error.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// <param name="cancellationToken">
@@ -7660,6 +7880,42 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions">REST API Reference for ListAssociationVersions Operation</seealso>
         Task<ListAssociationVersionsResponse> ListAssociationVersionsAsync(ListAssociationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCloudConnectors
+
+
+        /// <summary>
+        /// Returns a list of cloud connectors in the current Amazon Web Services account and
+        /// Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListCloudConnectors service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCloudConnectors">REST API Reference for ListCloudConnectors Operation</seealso>
+        ListCloudConnectorsResponse ListCloudConnectors(ListCloudConnectorsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of cloud connectors in the current Amazon Web Services account and
+        /// Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCloudConnectors service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCloudConnectors">REST API Reference for ListCloudConnectors Operation</seealso>
+        Task<ListCloudConnectorsResponse> ListCloudConnectorsAsync(ListCloudConnectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9627,6 +9883,27 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Create or update a parameter in Parameter Store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
         /// 
@@ -9713,6 +9990,27 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Create or update a parameter in Parameter Store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
         /// <param name="cancellationToken">
@@ -11783,6 +12081,54 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  UpdateCloudConnector
+
+
+        /// <summary>
+        /// Updates an existing cloud connector with new configuration details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
+        UpdateCloudConnectorResponse UpdateCloudConnector(UpdateCloudConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing cloud connector with new configuration details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
+        Task<UpdateCloudConnectorResponse> UpdateCloudConnectorAsync(UpdateCloudConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateDocument
 
 
@@ -12866,6 +13212,46 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">REST API Reference for UpdateServiceSetting Operation</seealso>
         Task<UpdateServiceSettingResponse> UpdateServiceSettingAsync(UpdateServiceSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ValidateCloudConnector
+
+
+        /// <summary>
+        /// Validates the configuration and connectivity of a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateCloudConnector service method.</param>
+        /// 
+        /// <returns>The response from the ValidateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ValidateCloudConnector">REST API Reference for ValidateCloudConnector Operation</seealso>
+        ValidateCloudConnectorResponse ValidateCloudConnector(ValidateCloudConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Validates the configuration and connectivity of a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ValidateCloudConnector">REST API Reference for ValidateCloudConnector Operation</seealso>
+        Task<ValidateCloudConnectorResponse> ValidateCloudConnectorAsync(ValidateCloudConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
