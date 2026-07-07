@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListHostedZoneAssociations Request Marshaller
+    /// ListSharedDNSViews Request Marshaller
     /// </summary>       
-    public class ListHostedZoneAssociationsRequestMarshaller : IMarshaller<IRequest, ListHostedZoneAssociationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListSharedDNSViewsRequestMarshaller : IMarshaller<IRequest, ListSharedDNSViewsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListHostedZoneAssociationsRequest)input);
+            return this.Marshall((ListSharedDNSViewsRequest)input);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListHostedZoneAssociationsRequest publicRequest)
+        public IRequest Marshall(ListSharedDNSViewsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53GlobalResolver");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-09-27";
@@ -68,17 +68,14 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetResourceArn())
-                request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
-            request.ResourcePath = "/hosted-zone-associations";
+            request.ResourcePath = "/shared-dns-views";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListHostedZoneAssociationsRequestMarshaller _instance = new ListHostedZoneAssociationsRequestMarshaller();        
+        private static ListSharedDNSViewsRequestMarshaller _instance = new ListSharedDNSViewsRequestMarshaller();        
 
-        internal static ListHostedZoneAssociationsRequestMarshaller GetInstance()
+        internal static ListSharedDNSViewsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +83,7 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListHostedZoneAssociationsRequestMarshaller Instance
+        public static ListSharedDNSViewsRequestMarshaller Instance
         {
             get
             {

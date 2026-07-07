@@ -30,11 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53GlobalResolver.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListHostedZoneAssociations operation.
-    /// Lists hosted zone associations with pagination support. Specify a DNS view through
-    /// the <c>resourceArn</c> parameter to list the hosted zone associations for that DNS
-    /// view, or omit it to list all hosted zone associations in your Amazon Web Services
-    /// account.
+    /// Container for the parameters to the ListSharedDNSViews operation.
+    /// Lists the DNS views that have been shared with your Amazon Web Services account through
+    /// Amazon Web Services Resource Access Manager (Amazon Web Services RAM), with pagination
+    /// support.
     /// 
     ///  <important> 
     /// <para>
@@ -45,11 +44,10 @@ namespace Amazon.Route53GlobalResolver.Model
     /// </para>
     ///  </important>
     /// </summary>
-    public partial class ListHostedZoneAssociationsRequest : AmazonRoute53GlobalResolverRequest
+    public partial class ListSharedDNSViewsRequest : AmazonRoute53GlobalResolverRequest
     {
         private int? _maxResults;
         private string _nextToken;
-        private string _resourceArn;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -86,27 +84,6 @@ namespace Amazon.Route53GlobalResolver.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the DNS view to list hosted zone associations for.
-        /// This parameter is optional; if you omit it, all hosted zone associations in your Amazon
-        /// Web Services account are returned.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string ResourceArn
-        {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
-        }
-
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
-        {
-            return this._resourceArn != null;
         }
 
     }
