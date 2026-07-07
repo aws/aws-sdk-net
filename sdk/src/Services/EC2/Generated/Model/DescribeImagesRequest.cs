@@ -226,6 +226,35 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>image-watermark.source-image-creation-time</c> - The creation date of the source
+        /// AMI, in the ISO 8601 format in the UTC time zone (<c> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i>
+        /// </c>). You can use a wildcard (<c>*</c>), for example, <c>2021-09-29T*</c>, which
+        /// matches an entire day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>image-watermark.source-image-id</c> - The ID of the AMI to which the watermark
+        /// was originally attached.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>image-watermark.source-image-region</c> - The Region where the watermark was originally
+        /// attached.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>image-watermark.watermark-creation-time</c> - The date and time the watermark
+        /// was attached to the AMI, in the ISO 8601 format in the UTC time zone (<c> <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>.<i>ssssss</i>+<i>HH</i>:<i>MM</i>
+        /// </c>). You can use a wildcard (<c>*</c>), for example, <c>2021-09-29T*</c>, which
+        /// matches an entire day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>image-watermark.watermark-key</c> - The watermark identifier, in <c>accountId:watermarkName</c>
+        /// format (for example, <c>123456789012:approvedAmi</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>image-type</c> - The image type (<c>machine</c> | <c>kernel</c> | <c>ramdisk</c>).
         /// </para>
         ///  </li> <li> 
@@ -267,6 +296,13 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>product-code.type</c> - The type of the product code (<c>marketplace</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>public-ssm-parameter-name</c> - The name of a public Systems Manager parameter
+        /// associated with the AMI. The parameter must be in a trusted Amazon Web Services namespace
+        /// under <c>aws/service/</c>. Returns all AMIs that have ever been associated with the
+        /// parameter, including previous versions.
         /// </para>
         ///  </li> <li> 
         /// <para>
