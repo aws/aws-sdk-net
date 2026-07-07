@@ -1061,10 +1061,8 @@ internal sealed partial class BedrockChatClient : IChatClient
                 }
             }
 
-            // Opt-in strict tool use: callers request it per-tool via a boolean "strict"
-            // entry on the AIFunction's AdditionalProperties (mirrors the CachePoint pattern).
             bool strict =
-                f.AdditionalProperties?.TryGetValue("strict", out object? maybeStrict) == true &&
+                f.AdditionalProperties?.TryGetValue(nameof(ToolSpecification.Strict), out object? maybeStrict) == true &&
                 maybeStrict is true;
 
             Dictionary<string, Document> schemaDictionary = new()

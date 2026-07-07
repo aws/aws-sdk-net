@@ -667,7 +667,7 @@ public class BedrockChatClientTests
             "get_weather",
             "Get the weather",
             schema,
-            new Dictionary<string, object> { ["strict"] = true });
+            new Dictionary<string, object> { ["Strict"] = true });
 
         var options = new ChatOptions { Tools = new[] { tool } };
 
