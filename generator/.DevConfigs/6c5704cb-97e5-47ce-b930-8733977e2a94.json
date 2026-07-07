@@ -1,0 +1,25 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added `RefreshingAWSCredentials.GetCredentials(TimeSpan)` and `GetCredentialsAsync(TimeSpan)` methods that regenerate credentials when the current credentials would expire within the requested minimum lifetime, and return the existing credentials otherwise."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  },
+  "services": [
+    {
+      "serviceName": "RDS",
+      "type": "minor",
+      "changeLogMessages": [
+        "`RDSAuthTokenGenerator` now forces a refresh when the credentials would expire before the generated token, so the token remains valid for its full lifetime. This applies to credential providers deriving from `RefreshingAWSCredentials` (such as `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials`); EC2 instance profile credentials and static credentials are unaffected. `GenerateAuthToken` may now throw if the credentials refresh fails; previously a token could be returned signed with credentials nearing expiration, which the database could reject."
+      ]
+    },
+    {
+      "serviceName": "DSQL",
+      "type": "minor",
+      "changeLogMessages": [
+        "`DSQLAuthTokenGenerator` now forces a refresh when the credentials would expire before the generated token, so the token remains valid for its full lifetime (or as close to it as the credentials session duration allows). This applies to credential providers deriving from `RefreshingAWSCredentials` (such as `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials`); EC2 instance profile credentials and static credentials are unaffected. Token generation may now throw if the credentials refresh fails; previously a token could be returned signed with credentials nearing expiration, which the database could reject."
+      ]
+    }
+  ]
+}
