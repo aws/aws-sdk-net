@@ -162,7 +162,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// GetCredentials may refresh credentials if the credentials are in the pre-empt expiration window. This will trigger
         /// a background refresh of the credentials and could force an update to the credentials and to the expiration. Users should
-        /// not rely on the <see cref="Expiration"/> property before calling <see cref="GetCredentials"/> because the <see cref="Expiration"/>
+        /// not rely on the <see cref="Expiration"/> property before calling <see cref="GetCredentials()"/> because the <see cref="Expiration"/>
         /// could be updated.
         /// </summary>
         /// <returns>An instance of ImmutableCredentials</returns>
@@ -234,7 +234,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// GetCredentialsAsync may refresh credentials if the credentials are in the pre-empt expiration window. This will trigger
         /// a background refresh of the credentials and could force an update to the credentials and to the expiration. Users should
-        /// not rely on the <see cref="Expiration"/> property before calling <see cref="GetCredentialsAsync"/> because the <see cref="Expiration"/>
+        /// not rely on the <see cref="Expiration"/> property before calling <see cref="GetCredentialsAsync()"/> because the <see cref="Expiration"/>
         /// could be updated.
         /// </summary>
         /// <returns>A task whose result is an ImmutableCredentials instance.</returns>
@@ -467,7 +467,7 @@ namespace Amazon.Runtime
         /// requested lifetime exceeds the provider's maximum session duration), they are returned anyway and an
         /// informational message is logged. Exceptions thrown while regenerating the credentials propagate to the caller.
         /// </summary>
-        public ImmutableCredentials ForceRefresh(TimeSpan minimumLifetime)
+        public ImmutableCredentials GetCredentials(TimeSpan minimumLifetime)
         {
             if (minimumLifetime < TimeSpan.Zero)
                 throw new ArgumentOutOfRangeException("minimumLifetime", "minimumLifetime cannot be negative");
@@ -502,8 +502,8 @@ namespace Amazon.Runtime
             }
         }
 
-        /// <inheritdoc cref="ForceRefresh(TimeSpan)"/>
-        public async Task<ImmutableCredentials> ForceRefreshAsync(TimeSpan minimumLifetime)
+        /// <inheritdoc cref="GetCredentials(TimeSpan)"/>
+        public async Task<ImmutableCredentials> GetCredentialsAsync(TimeSpan minimumLifetime)
         {
             if (minimumLifetime < TimeSpan.Zero)
                 throw new ArgumentOutOfRangeException("minimumLifetime", "minimumLifetime cannot be negative");

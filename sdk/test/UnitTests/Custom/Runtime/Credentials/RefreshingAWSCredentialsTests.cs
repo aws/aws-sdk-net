@@ -207,7 +207,7 @@ namespace AWSSDK.UnitTests
         [DataRow(0)]
         [DataRow(30)]
         [DataRow(44)] // Exactly minimumLifetime remaining is not considered expired-within.
-        public void ForceRefreshReturnsCurrentCredentialsWhenMinimumLifetimeIsSatisfied(double instantInMinutes)
+        public void GetCredentialsReturnsCurrentCredentialsWhenMinimumLifetimeIsSatisfied(double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
@@ -215,7 +215,7 @@ namespace AWSSDK.UnitTests
             var initialCreds = mockCredentials.GetCredentials();
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
-            var creds = mockCredentials.ForceRefresh(TimeSpan.FromMinutes(15));
+            var creds = mockCredentials.GetCredentials(TimeSpan.FromMinutes(15));
 
             Assert.AreEqual(initialCreds, creds);
             Assert.AreEqual(1, mockCredentials.GeneratedTokenCount);
@@ -225,7 +225,7 @@ namespace AWSSDK.UnitTests
         [DataRow(0)]
         [DataRow(30)]
         [DataRow(44)] // Exactly minimumLifetime remaining is not considered expired-within.
-        public async Task ForceRefreshReturnsCurrentCredentialsWhenMinimumLifetimeIsSatisfiedAsync(double instantInMinutes)
+        public async Task GetCredentialsReturnsCurrentCredentialsWhenMinimumLifetimeIsSatisfiedAsync(double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
@@ -233,7 +233,7 @@ namespace AWSSDK.UnitTests
             var initialCreds = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
-            var creds = await mockCredentials.ForceRefreshAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
+            var creds = await mockCredentials.GetCredentialsAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
 
             Assert.AreEqual(initialCreds, creds);
             Assert.AreEqual(1, mockCredentials.GeneratedTokenCount);
@@ -243,7 +243,7 @@ namespace AWSSDK.UnitTests
         [DataRow(44.5)] // Credentials expire within the minimum lifetime.
         [DataRow(58)]   // Credentials are close to expiration.
         [DataRow(75)]   // Credentials are fully expired.
-        public void ForceRefreshRegeneratesCredentialsExpiringWithinMinimumLifetime(double instantInMinutes)
+        public void GetCredentialsRegeneratesCredentialsExpiringWithinMinimumLifetime(double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
@@ -251,7 +251,7 @@ namespace AWSSDK.UnitTests
             var initialCreds = mockCredentials.GetCredentials();
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
-            var creds = mockCredentials.ForceRefresh(TimeSpan.FromMinutes(15));
+            var creds = mockCredentials.GetCredentials(TimeSpan.FromMinutes(15));
 
             Assert.AreNotEqual(initialCreds, creds);
             Assert.AreEqual(2, mockCredentials.GeneratedTokenCount);
@@ -262,7 +262,7 @@ namespace AWSSDK.UnitTests
         [DataRow(44.5)] // Credentials expire within the minimum lifetime.
         [DataRow(58)]   // Credentials are close to expiration.
         [DataRow(75)]   // Credentials are fully expired.
-        public async Task ForceRefreshRegeneratesCredentialsExpiringWithinMinimumLifetimeAsync(double instantInMinutes)
+        public async Task GetCredentialsRegeneratesCredentialsExpiringWithinMinimumLifetimeAsync(double instantInMinutes)
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
@@ -270,7 +270,7 @@ namespace AWSSDK.UnitTests
             var initialCreds = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
-            var creds = await mockCredentials.ForceRefreshAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
+            var creds = await mockCredentials.GetCredentialsAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
 
             Assert.AreNotEqual(initialCreds, creds);
             Assert.AreEqual(2, mockCredentials.GeneratedTokenCount);
@@ -278,61 +278,61 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void ForceRefreshGeneratesCredentialsWhenNoneExist()
+        public void GetCredentialsGeneratesCredentialsWhenNoneExist()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc;
-            var creds = mockCredentials.ForceRefresh(TimeSpan.FromMinutes(15));
+            var creds = mockCredentials.GetCredentials(TimeSpan.FromMinutes(15));
 
             Assert.IsNotNull(creds);
             Assert.AreEqual(1, mockCredentials.GeneratedTokenCount);
         }
 
         [TestMethod]
-        public async Task ForceRefreshGeneratesCredentialsWhenNoneExistAsync()
+        public async Task GetCredentialsGeneratesCredentialsWhenNoneExistAsync()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc;
-            var creds = await mockCredentials.ForceRefreshAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
+            var creds = await mockCredentials.GetCredentialsAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
 
             Assert.IsNotNull(creds);
             Assert.AreEqual(1, mockCredentials.GeneratedTokenCount);
         }
 
         [TestMethod]
-        public void ForceRefreshRegeneratesOnEveryCallWhenMinimumLifetimeExceedsSessionDuration()
+        public void GetCredentialsRegeneratesOnEveryCallWhenMinimumLifetimeExceedsSessionDuration()
         {
             // A provider whose sessions are shorter than the requested minimum lifetime can never
-            // satisfy it; ForceRefresh still returns the freshest credentials available on every call.
+            // satisfy it; GetCredentials still returns the freshest credentials available on every call.
             var mockCredentials = new MockRefreshingAWSCredentials(TimeSpan.FromMinutes(10), _mockProvider);
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc;
-            var firstCreds = mockCredentials.ForceRefresh(TimeSpan.FromMinutes(15));
-            var secondCreds = mockCredentials.ForceRefresh(TimeSpan.FromMinutes(15));
+            var firstCreds = mockCredentials.GetCredentials(TimeSpan.FromMinutes(15));
+            var secondCreds = mockCredentials.GetCredentials(TimeSpan.FromMinutes(15));
 
             Assert.AreNotEqual(firstCreds, secondCreds);
             Assert.AreEqual(2, mockCredentials.GeneratedTokenCount);
         }
 
         [TestMethod]
-        public async Task ForceRefreshRegeneratesOnEveryCallWhenMinimumLifetimeExceedsSessionDurationAsync()
+        public async Task GetCredentialsRegeneratesOnEveryCallWhenMinimumLifetimeExceedsSessionDurationAsync()
         {
             // A provider whose sessions are shorter than the requested minimum lifetime can never
-            // satisfy it; ForceRefresh still returns the freshest credentials available on every call.
+            // satisfy it; GetCredentials still returns the freshest credentials available on every call.
             var mockCredentials = new MockRefreshingAWSCredentials(TimeSpan.FromMinutes(10), _mockProvider);
 
             _mockProvider.CorrectedUtcNow = _baseTimeUtc;
-            var firstCreds = await mockCredentials.ForceRefreshAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
-            var secondCreds = await mockCredentials.ForceRefreshAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
+            var firstCreds = await mockCredentials.GetCredentialsAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
+            var secondCreds = await mockCredentials.GetCredentialsAsync(TimeSpan.FromMinutes(15)).ConfigureAwait(false);
 
             Assert.AreNotEqual(firstCreds, secondCreds);
             Assert.AreEqual(2, mockCredentials.GeneratedTokenCount);
         }
 
         [TestMethod]
-        public void ConcurrentCallsToForceRefreshOnlyGeneratesNewCredentialsOnce()
+        public void ConcurrentCallsToGetCredentialsOnlyGeneratesNewCredentialsOnce()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
@@ -342,7 +342,7 @@ namespace AWSSDK.UnitTests
             _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(50);
             mockCredentials.CloseGenerateCredentialsGate();
             var concurrentCredentialTasks = Task.WhenAll(
-                Enumerable.Range(1, 5).Select(i => Task.Run(() => mockCredentials.ForceRefresh(TimeSpan.FromMinutes(15))))
+                Enumerable.Range(1, 5).Select(i => Task.Run(() => mockCredentials.GetCredentials(TimeSpan.FromMinutes(15))))
             );
 
             mockCredentials.OpenGenerateCredentialsGate();
@@ -357,7 +357,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task ConcurrentCallsToForceRefreshOnlyGeneratesNewCredentialsOnceAsync()
+        public async Task ConcurrentCallsToGetCredentialsOnlyGeneratesNewCredentialsOnceAsync()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
 
@@ -367,7 +367,7 @@ namespace AWSSDK.UnitTests
             _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(50);
             mockCredentials.CloseGenerateCredentialsGate();
             var concurrentCredentialTasks = Task.WhenAll(
-                Enumerable.Range(1, 5).Select(i => mockCredentials.ForceRefreshAsync(TimeSpan.FromMinutes(15)))
+                Enumerable.Range(1, 5).Select(i => mockCredentials.GetCredentialsAsync(TimeSpan.FromMinutes(15)))
             );
 
             mockCredentials.OpenGenerateCredentialsGate();
@@ -382,17 +382,17 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void ForceRefreshRejectsNegativeMinimumLifetime()
+        public void GetCredentialsRejectsNegativeMinimumLifetime()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
-            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => mockCredentials.ForceRefresh(TimeSpan.FromMinutes(-1)));
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => mockCredentials.GetCredentials(TimeSpan.FromMinutes(-1)));
         }
 
         [TestMethod]
-        public async Task ForceRefreshRejectsNegativeMinimumLifetimeAsync()
+        public async Task GetCredentialsRejectsNegativeMinimumLifetimeAsync()
         {
             var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider);
-            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(() => mockCredentials.ForceRefreshAsync(TimeSpan.FromMinutes(-1)));
+            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(() => mockCredentials.GetCredentialsAsync(TimeSpan.FromMinutes(-1)));
         }
 
         private void AssertCredentialsWereRefreshedAtCurrentTime(MockRefreshingAWSCredentials mockCredentials)

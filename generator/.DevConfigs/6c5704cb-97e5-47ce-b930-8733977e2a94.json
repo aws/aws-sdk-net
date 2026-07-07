@@ -1,7 +1,7 @@
 {
   "core": {
     "changeLogMessages": [
-      "Added `RefreshingAWSCredentials.ForceRefresh(TimeSpan)` and `ForceRefreshAsync(TimeSpan)` methods that regenerate credentials when the current credentials would expire within the requested minimum lifetime, and return the existing credentials otherwise."
+      "Added `RefreshingAWSCredentials.GetCredentials(TimeSpan)` and `GetCredentialsAsync(TimeSpan)` methods that regenerate credentials when the current credentials would expire within the requested minimum lifetime, and return the existing credentials otherwise."
     ],
     "type": "patch",
     "updateMinimum": true
