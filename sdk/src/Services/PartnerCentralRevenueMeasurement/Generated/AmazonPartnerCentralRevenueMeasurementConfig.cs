@@ -33,7 +33,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement
     public partial class AmazonPartnerCentralRevenueMeasurementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Revenue Measurement", "4.0");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Revenue Measurement", "4.0.100.0");
 
         private static readonly AmazonPartnerCentralRevenueMeasurementEndpointResolver EndpointResolver =
             new AmazonPartnerCentralRevenueMeasurementEndpointResolver();

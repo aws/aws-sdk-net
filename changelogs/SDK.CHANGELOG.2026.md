@@ -1,3 +1,30 @@
+### 4.0.282.0 (2026-07-07 18:19 UTC)
+* AWSMarketplaceMetering (4.0.100.3)
+	* The usage reporting window for the BatchMeterUsage API has been extended from 6 hours to 24 hours. Sellers can now submit usage records for up to 24 hours after a metered event occurs. The existing 6-hour grace period at the end of a billing cycle still applies.
+* ConfigService (4.0.102.0)
+	* Added support for connecting AWS Config to third-party cloud service providers. New APIs include PutConnector, GetConnector, DeleteConnector, and ListConnectors for managing connectors, and PutThirdPartyServiceLinkedConfigurationRecorder for creating third-party service-linked recorders.
+* Connect (4.0.103.0)
+	* Adds support for CreateAuthCode and DeleteSession APIs.
+* DynamoDBv2 (4.0.101.0)
+	* Fix `BatchGet` to honor `ConsistentRead` from `BatchGetConfig` (previously the config value was silently dropped, causing all batch gets to use eventually-consistent reads)
+	* Added `SaveConfig.ConditionalExpression` to support conditional expressions on `DynamoDBContext.SaveAsync` and fixed expression evaluation for nullable-typed constants (e.g. comparisons against int?) in `DynamoDBContext` filter/condition expressions
+* EC2 (4.0.103.0)
+	* This launch surfaces the public SSM parameter associated with public AMIs in the AMI metadata.
+* Inspector2 (4.0.101.0)
+	* This release extends vulnerability management to Azure VM, container registries and function apps. Adds support for per-member-account scan configuration settings.
+* Lambda (4.0.101.0)
+	* AWS Lambda Durable Functions now supports customer managed KMS keys. This allows customers to configure a KMS key in Durable Config to have all their durable execution data encrypted.
+* MarketplaceCatalog (4.0.101.0)
+	* This release enhances the ListEntities API to support ResellerRole filter for ResaleAuthorization entity.
+* PartnerCentralRevenueMeasurement (4.0.100.0)
+	* Add support for AWS Partner Central Revenue Measurement API for creating, managing, and tracking revenue attributions and marketplace revenue share allocations.
+* Route53GlobalResolver (4.0.101.0)
+	* Adds ListSharedDNSViews operation to list all DNS Views shared with caller using AWS Resource Access Manager. Also updates ListHostedZoneAssociations operation so that resource ARN param is optional, allowing caller to list all HostedZoneAssociations in account.
+* SecurityHub (4.0.101.0)
+	* release SecurityHub MultiCloud integration with Azure
+* SimpleSystemsManagement (4.0.101.0)
+	* Adding SSM Cloud Connector to support Azure Virtual Machines onboarding to AWS Systems Manager
+
 ### 4.0.281.0 (2026-07-06 18:18 UTC)
 * Billing (4.0.101.0)
 	* Adds support for managing AWS account credits and billing preferences, including retrieving credit details, viewing per-month credit allocation history, redeeming promotional codes, and configuring credit sharing and billing preferences.
