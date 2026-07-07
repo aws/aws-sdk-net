@@ -175,10 +175,7 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.GetCredentials(FifteenMinutes)
-                : credentials.GetCredentials();
+            var immutableCredentials = ResolveCredentials(credentials, FifteenMinutes);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
         }
 
@@ -200,10 +197,7 @@ namespace Amazon.DSQL.Util
             // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
             ValidateExpiresIn(expiresIn);
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.GetCredentials(expiresIn)
-                : credentials.GetCredentials();
+            var immutableCredentials = ResolveCredentials(credentials, expiresIn);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
 
@@ -328,10 +322,7 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.GetCredentialsAsync(FifteenMinutes).ConfigureAwait(false)
-                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            var immutableCredentials = await ResolveCredentialsAsync(credentials, FifteenMinutes).ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
         }
 
@@ -353,10 +344,7 @@ namespace Amazon.DSQL.Util
             // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
             ValidateExpiresIn(expiresIn);
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.GetCredentialsAsync(expiresIn).ConfigureAwait(false)
-                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            var immutableCredentials = await ResolveCredentialsAsync(credentials, expiresIn).ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
 
@@ -481,10 +469,7 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.GetCredentials(FifteenMinutes)
-                : credentials.GetCredentials();
+            var immutableCredentials = ResolveCredentials(credentials, FifteenMinutes);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
         }
 
@@ -506,10 +491,7 @@ namespace Amazon.DSQL.Util
             // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
             ValidateExpiresIn(expiresIn);
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? refreshing.GetCredentials(expiresIn)
-                : credentials.GetCredentials();
+            var immutableCredentials = ResolveCredentials(credentials, expiresIn);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
         }
 
@@ -634,10 +616,7 @@ namespace Amazon.DSQL.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.GetCredentialsAsync(FifteenMinutes).ConfigureAwait(false)
-                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            var immutableCredentials = await ResolveCredentialsAsync(credentials, FifteenMinutes).ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
         }
 
@@ -659,11 +638,34 @@ namespace Amazon.DSQL.Util
             // Validate before the refresh below so an out-of-range expiration cannot trigger a credentials fetch.
             ValidateExpiresIn(expiresIn);
 
-            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
-            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
-                ? await refreshing.GetCredentialsAsync(expiresIn).ConfigureAwait(false)
-                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            var immutableCredentials = await ResolveCredentialsAsync(credentials, expiresIn).ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
+        }
+
+        /// <summary>
+        /// Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+        /// If someone requests a 30-minute token, we ensure the underlying credentials will last at least that long.
+        /// The floor of 15 minutes prevents very short token lifetimes from accepting nearly-expired credentials.
+        /// </summary>
+        private static ImmutableCredentials ResolveCredentials(AWSCredentials credentials, TimeSpan tokenLifetime)
+        {
+            var minimumCredentialLifetime = tokenLifetime > FifteenMinutes ? tokenLifetime : FifteenMinutes;
+            return credentials is RefreshingAWSCredentials refreshing
+                ? refreshing.GetCredentials(minimumCredentialLifetime)
+                : credentials.GetCredentials();
+        }
+
+        /// <summary>
+        /// Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+        /// If someone requests a 30-minute token, we ensure the underlying credentials will last at least that long.
+        /// The floor of 15 minutes prevents very short token lifetimes from accepting nearly-expired credentials.
+        /// </summary>
+        private static async System.Threading.Tasks.Task<ImmutableCredentials> ResolveCredentialsAsync(AWSCredentials credentials, TimeSpan tokenLifetime)
+        {
+            var minimumCredentialLifetime = tokenLifetime > FifteenMinutes ? tokenLifetime : FifteenMinutes;
+            return credentials is RefreshingAWSCredentials refreshing
+                ? await refreshing.GetCredentialsAsync(minimumCredentialLifetime).ConfigureAwait(false)
+                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
         }
 
         private static void ValidateExpiresIn(TimeSpan expiresIn)
