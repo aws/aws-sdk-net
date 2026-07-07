@@ -106,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var vp = new VersionedProduct
                 {
-                    Id = 2222,
+                    Id = UtilityMethods.GenerateId(),
                     Name = "TestProduct",
                     Price = 100
                 };
@@ -136,9 +136,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 })
                 .Build())
             {
+                var id = UtilityMethods.GenerateId();
                 var vp = new VersionedProduct
                 {
-                    Id = 3333,
+                    Id = id,
                     Name = "TestProduct",
                     Price = 100,
                     CompanyInfo = new CompanyInfo
@@ -146,9 +147,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         Name = "Acme",
                         Founded = new DateTime(2000, 1, 1),
                         AllProducts = new List<Product>
-                    {
-                        new Product { Id = 2, Name = "Gadget" }
-                    },
+                        {
+                            new Product { Id = 2, Name = "Gadget" }
+                        },
                         FeaturedBrands = new[] { "Acme", "Contoso" }
                     }
                 };
@@ -182,14 +183,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     });
 
                     vp = await context.LoadAsync<VersionedProduct>(vp.Id);
-
                     Assert.Equal(1, vp.CompanyInfo.FeaturedBrands.Length);
                     Assert.Equal("Contoso2", vp.CompanyInfo.FeaturedBrands[0]);
                 }
 
                 {
+                    var currentVersion = vp.Version;
                     var expr1 = new ContextExpression();
-                    expr1.SetFilter<VersionedProduct>(p => p.Version == 0);
+                    expr1.SetFilter<VersionedProduct>(p => p.Version == currentVersion);
                     vp.Version = 9999;
 
                     await context.SaveAsync(vp, new SaveConfig()
@@ -199,13 +200,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     });
 
                     vp = await context.LoadAsync<VersionedProduct>(vp.Id);
-
                     Assert.Equal(9999, vp.Version);
                 }
 
                 {
                     var expr1 = new ContextExpression();
-                    expr1.SetFilter<VersionedProduct>(p => p.Id == 3333);
+                    expr1.SetFilter<VersionedProduct>(p => p.Id == id);
                     vp.Version = 1234;
 
                     await context.SaveAsync(vp, new SaveConfig()
@@ -215,7 +215,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     });
 
                     vp = await context.LoadAsync<VersionedProduct>(vp.Id);
-
                     Assert.Equal(1234, vp.Version);
                 }
             }
@@ -238,7 +237,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var vp = new Product
                 {
-                    Id = 444,
+                    Id = UtilityMethods.GenerateId(),
                     Name = "TestProduct",
                     Price = 100,
                     CompanyInfo = new CompanyInfo
@@ -246,9 +245,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         Name = "Acme",
                         Founded = new DateTime(2000, 1, 1),
                         AllProducts = new List<Product>
-                    {
-                        new Product { Id = 2, Name = "Gadget" }
-                    },
+                        {
+                            new Product { Id = 2, Name = "Gadget" }
+                        },
                         FeaturedBrands = new[] { "Acme", "Contoso" }
                     },
                 };
@@ -282,11 +281,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     });
 
                     vp = await context.LoadAsync<Product>(vp.Id);
-
                     Assert.Equal(1, vp.CompanyInfo.FeaturedBrands.Length);
                     Assert.Equal("Contoso2", vp.CompanyInfo.FeaturedBrands[0]);
                 }
-
             }
         }
 
