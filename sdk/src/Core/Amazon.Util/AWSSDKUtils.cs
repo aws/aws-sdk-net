@@ -1704,7 +1704,6 @@ namespace Amazon.Util
 #endif
         }
 
-#if !NETCOREAPP
         /// <summary>
         /// Utility method that accepts a string and replaces white spaces with a space.
         /// </summary>
@@ -1715,7 +1714,6 @@ namespace Amazon.Util
         {
             return CompressSpaces(data, false);
         }
-#endif
 
         /// <summary>
         /// Utility method that accepts a string and replaces white spaces with a space.
