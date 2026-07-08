@@ -125,6 +125,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetVolumeId())
+                {
+                    request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
+                }
                 if(publicRequest.IsSetVolumeInitializationRate())
                 {
                     request.Parameters.Add("VolumeInitializationRate", StringUtils.FromLong(publicRequest.VolumeInitializationRate));
