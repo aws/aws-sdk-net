@@ -1,3 +1,29 @@
+### 4.0.283.0 (2026-07-08 18:19 UTC)
+* AppConfig (4.0.101.0)
+	* Update ExperimentRun APIs to support ConflictExceptions.
+* BedrockAgentCoreControl (4.0.101.0)
+	* AgentCore Gateway now supports mapping allowed scopes to separate advertised scopes on the inbound authorizer.
+* DSQL (4.0.101.0)
+	* `DSQLAuthTokenGenerator` now forces a refresh when the credentials would expire before the generated token, so the token remains valid for its full lifetime (or as close to it as the credentials session duration allows). This applies to credential providers deriving from `RefreshingAWSCredentials` (such as `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials`); EC2 instance profile credentials and static credentials are unaffected. Token generation may now throw if the credentials refresh fails; previously a token could be returned signed with credentials nearing expiration, which the database could reject.
+* EC2 (4.0.104.0)
+	* Replace Root Volume now supports a VolumeId parameter. This allows the customer to pass in a pre-prepared volume as the target root volume for an RRV workflow.
+* ECS (4.0.101.0)
+	* Amazon ECS now automatically detects the correct CPU architecture for Express Mode services.
+* GeoPlaces (4.0.101.0)
+	* Added AddressNamesMode, AddressNameTranslations, MobilityMode, PostalCodeMode, SecondaryAddresses, and DriveThrough features across Places V2 APIs to support address name formatting,  multilingual translations, travel-aware search, multi-city postal codes, and unit-level address resolution.
+* IoTWireless (4.0.101.0)
+	* Default session downlink transmission parameters have been added to the existing Multicast Group APIs. Explicit transmission parameters are no longer required when starting a multicast session during the FUOTA procedure.
+* RDS (4.0.101.0)
+	* `RDSAuthTokenGenerator` now forces a refresh when the credentials would expire before the generated token, so the token remains valid for its full lifetime. This applies to credential providers deriving from `RefreshingAWSCredentials` (such as `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials`); EC2 instance profile credentials and static credentials are unaffected. `GenerateAuthToken` may now throw if the credentials refresh fails; previously a token could be returned signed with credentials nearing expiration, which the database could reject.
+* Resiliencehubv2 (4.0.101.0)
+	* Next Generation Resilience Hub now supports filtering and sorting failure mode assessments, resource type filtering in ListResources, cross-region and cross-account topology edges, data recovery achievability status, and more granular dependency discovery progress tracking.
+* Extensions.Bedrock.MEAI (4.0.101.3)
+	* Surface strict tool use (ToolSpecification.Strict) through BedrockChatClient
+* Core 4.0.100.3
+	* Added `RefreshingAWSCredentials.GetCredentials(TimeSpan)` and `GetCredentialsAsync(TimeSpan)` methods that regenerate credentials when the current credentials would expire within the requested minimum lifetime, and return the existing credentials otherwise.
+	* Eliminates the intermediate string allocations in the AWS Query request marshalling
+	* All service and extension packages updated to require new Core
+
 ### 4.0.282.0 (2026-07-07 18:19 UTC)
 * AWSMarketplaceMetering (4.0.100.3)
 	* The usage reporting window for the BatchMeterUsage API has been extended from 6 hours to 24 hours. Sellers can now submit usage records for up to 24 hours after a metered event occurs. The existing 6-hour grace period at the end of a billing cycle still applies.
