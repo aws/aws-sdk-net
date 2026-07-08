@@ -65,6 +65,17 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the endpoint provider tests file. Callers append the service's
+    /// <c>*.Endpoints</c> and <c>*.Internal</c> namespaces for the parameters and provider types.
+    /// </summary>
+    public static IReadOnlyList<string> EndpointProviderTestsUsings { get; } =
+    [
+        "Microsoft.VisualStudio.TestTools.UnitTesting",
+        "System.Collections.Generic",
+        "Amazon.Runtime",
+    ];
+
+    /// <summary>
     /// Usings for the auth resolver file: the runtime, auth, and identity namespaces the resolver references.
     /// </summary>
     public static IReadOnlyList<string> AuthResolverUsings { get; } =

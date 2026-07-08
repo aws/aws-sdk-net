@@ -52,4 +52,27 @@ public class AWSTraitTests(CloudTrailModelFixture fixture)
         var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#AuditEvent");
         Assert.False(shape.HasEndpointRuleSet());
     }
+
+    [Fact]
+    public void HasEndpointTests_ReturnsTrueForServiceWithEndpointTests()
+    {
+        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#CloudTrailDataService");
+        Assert.True(shape.HasEndpointTests());
+    }
+
+    [Fact]
+    public void HasEndpointTests_ReturnsFalseForShapeWithoutEndpointTests()
+    {
+        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#AuditEvent");
+        Assert.False(shape.HasEndpointTests());
+    }
+
+    [Fact]
+    public void GetEndpointTests_ReturnsTwentyOneTestCases()
+    {
+        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#CloudTrailDataService");
+        var suite = shape.GetEndpointTests();
+        Assert.NotNull(suite);
+        Assert.Equal(21, suite.TestCases.Count);
+    }
 }

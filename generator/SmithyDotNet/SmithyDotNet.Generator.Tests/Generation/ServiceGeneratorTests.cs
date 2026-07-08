@@ -9,14 +9,19 @@ public class ServiceGeneratorTests : IDisposable
     private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
     private const string ServiceFileVersion = "4.0.2.8";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _outputDir;
+    private readonly string _testsOutputDir;
     private readonly IReadOnlyList<string> _written;
 
     public ServiceGeneratorTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         _outputDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
+        _testsOutputDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
+
         var generator = new ServiceGenerator(fixture.Context, ModelFileName, ServiceFileVersion);
-        _written = generator.Generate(_outputDir, TestContext.Current.CancellationToken);
+        _written = generator.Generate(_outputDir, _testsOutputDir, TestContext.Current.CancellationToken);
     }
 
     public void Dispose()
@@ -24,6 +29,11 @@ public class ServiceGeneratorTests : IDisposable
         if (Directory.Exists(_outputDir))
         {
             Directory.Delete(_outputDir, recursive: true);
+        }
+
+        if (Directory.Exists(_testsOutputDir))
+        {
+            Directory.Delete(_testsOutputDir, recursive: true);
         }
     }
 
@@ -117,6 +127,21 @@ public class ServiceGeneratorTests : IDisposable
         // not overwritten by a plain structure.
         var requestSource = File.ReadAllText(Path.Combine(_outputDir, "Generated", "Model", "PutAuditEventsRequest.g.cs"));
         Assert.Contains("public partial class PutAuditEventsRequest : AmazonCloudTrailDataRequest", requestSource);
+    }
+
+    [Fact]
+    public void WritesEndpointProviderTestsUnderTestsOutputPath()
+    {
+        var path = Path.Combine(_testsOutputDir, "UnitTests", "Generated", "Endpoints", "CloudTrailDataEndpointProviderTests.g.cs");
+        Assert.True(File.Exists(path));
+    }
+
+    [Fact]
+    public void EndpointProviderTestsPathIsNotInWrittenList()
+    {
+        // It lives under a different root (testsOutputDir) than everything else (outputDir), so it
+        // isn't tracked in the returned relative-path list, which is outputDir-relative.
+        Assert.DoesNotContain(_written, path => path.Contains("EndpointProviderTests"));
     }
 
     private void AssertFileExists(params string[] segments)

@@ -1,7 +1,9 @@
 using System.Text;
+using System.Text.Json;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Formatting;
+using SmithyDotNet.Generator;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -103,6 +105,34 @@ public class CodeWriter
     /// containing a quote or backslash still produces compilable source.
     /// </summary>
     public static string Literal(string value) => SymbolDisplay.FormatLiteral(value, quote: true);
+
+    /// <summary>
+    /// Renders a JSON boolean, string, or string-array value as the equivalent C# literal
+    /// (<c>true</c>/<c>false</c>, a quoted string, or a <c>List&lt;string&gt;</c> collection
+    /// initializer). Used wherever a Smithy model value (an endpoint parameter default, an
+    /// endpoint test case's parameter value) needs to become a literal in generated source. Other
+    /// kinds fail loud rather than emitting an unverified literal — extend as more are onboarded.
+    /// </summary>
+    public static string NativeValue(JsonElement value) => value.ValueKind switch
+    {
+        JsonValueKind.True => "true",
+        JsonValueKind.False => "false",
+        JsonValueKind.String => Literal(value.GetString() ?? string.Empty),
+        JsonValueKind.Array => NativeArrayValue(value),
+        _ => throw new GeneratorException($"JSON value of kind '{value.ValueKind}' is not supported yet."),
+    };
+
+    // Matches the legacy generator's array support: endpoint parameters/test values only ever
+    // carry string arrays (Smithy's stringArray endpoint parameter type), so this fails loud on
+    // any element that isn't a string rather than guessing a collection type.
+    private static string NativeArrayValue(JsonElement value)
+    {
+        var elements = value.EnumerateArray().Select(element => element.ValueKind == JsonValueKind.String
+            ? Literal(element.GetString() ?? string.Empty)
+            : throw new GeneratorException($"Array element of kind '{element.ValueKind}' is not supported yet; only string arrays are."));
+
+        return $"new List<string> {{ {string.Join(", ", elements)} }}";
+    }
 
     /// <summary>
     /// Returns the buffered source after running it through the Roslyn formatter.

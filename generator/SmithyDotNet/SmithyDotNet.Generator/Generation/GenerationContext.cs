@@ -77,6 +77,19 @@ public class GenerationContext
     public bool HasEndpointContextParams { get; }
 
     /// <summary>
+    /// Whether the service carries a Smithy endpoint test suite (<c>smithy.rules#endpointTests</c>).
+    /// The endpoint provider tests file is emitted only when this is true. The constructor throws if
+    /// this is true while <see cref="HasEndpointRuleSet"/> is false: the generated tests reference the
+    /// endpoint parameters/provider types, which only exist when a rule set is also present.
+    /// </summary>
+    public bool HasEndpointTests { get; }
+
+    /// <summary>
+    /// The parsed endpoint test suite, or <c>null</c> when <see cref="HasEndpointTests"/> is false.
+    /// </summary>
+    public EndpointTestSuite? EndpointTests { get; }
+
+    /// <summary>
     /// The service-level auth scheme shape IDs the resolver's <c>default</c> arm returns (e.g.
     /// <c>["aws.auth#sigv4"]</c>): the service's <c>smithy.api#auth</c> trait when present, otherwise
     /// derived from its auth traits.
@@ -140,6 +153,14 @@ public class GenerationContext
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
         HasEndpointContextParams = DetectEndpointContextParams(index);
+        
+        EndpointTests = index.Service.GetEndpointTests();
+        HasEndpointTests = EndpointTests is not null;
+        if (HasEndpointTests && !HasEndpointRuleSet)
+        {
+            throw new GeneratorException("Service carries smithy.rules#endpointTests but no smithy.rules#endpointRuleSet.");
+        }
+        
         ServiceDocumentation = index.Service.GetDocumentation();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);

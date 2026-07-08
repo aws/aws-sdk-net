@@ -59,5 +59,18 @@ public static class AWSTraits
         || shape.Traits.ContainsKey("smithy.rules#staticContextParams")
         || shape.Traits.ContainsKey("smithy.rules#contextParam");
 
+    /// <summary>
+    /// Whether the service shape carries Smithy endpoint tests. The endpoint provider tests writer
+    /// emits one <c>[TestMethod]</c> per case only when this is true.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointtests-trait" /></remarks>
+    public static bool HasEndpointTests(this Shape shape) => shape.Traits.ContainsKey("smithy.rules#endpointTests");
+
+    /// <summary>
+    /// The service's endpoint test suite, or <c>null</c> when the trait is absent.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointtests-trait" /></remarks>
+    public static EndpointTestSuite? GetEndpointTests(this Shape shape) => DeserializeTrait<EndpointTestSuite>(shape, "smithy.rules#endpointTests");
+
     #endregion
 }

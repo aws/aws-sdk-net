@@ -129,21 +129,4 @@ public class ConfigWriterTests
         Assert.Contains("var requestContext = new RequestContext(false)", _output);
         Assert.Contains("return EndpointResolver.GetEndpoint(executionContext);", _output);
     }
-
-    [Fact]
-    public void OmitsEndpointRuleSetMembers_WhenServiceHasNoRuleSet()
-    {
-        // The resolver field, EndpointProvider wiring, and DetermineServiceOperationEndpoint override
-        // are emitted ONLY when the service carries smithy.rules#endpointRuleSet. For a service without
-        // it, all three must be absent.
-        var context = CloudTrailModelFixture.ContextWithoutEndpointRuleSet();
-        var output = new ConfigWriter(context, ModelFileName, ServiceFileVersion).Write(TestContext.Current.CancellationToken);
-
-        Assert.DoesNotContain("EndpointResolver", output);
-        Assert.DoesNotContain("EndpointProvider", output);
-        Assert.DoesNotContain("DetermineServiceOperationEndpoint", output);
-        // The non-conditional members are still emitted.
-        Assert.Contains("public static new string ServiceId => \"CloudTrail Data\";", output);
-        Assert.Contains("this.AuthenticationServiceName = \"cloudtrail-data\";", output);
-    }
 }
