@@ -73,7 +73,11 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static SetSubscriptionAttributesRequestMarshaller _instance = new SetSubscriptionAttributesRequestMarshaller();        
