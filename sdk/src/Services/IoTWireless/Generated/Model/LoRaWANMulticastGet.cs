@@ -34,11 +34,30 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class LoRaWANMulticastGet
     {
+        private DefaultSessionParametersMulticast _defaultSessionParameters;
         private DlClass _dlClass;
         private int? _numberOfDevicesInGroup;
         private int? _numberOfDevicesRequested;
         private ParticipatingGatewaysMulticast _participatingGateways;
         private SupportedRfRegion _rfRegion;
+
+        /// <summary>
+        /// Gets and sets the property DefaultSessionParameters. 
+        /// <para>
+        /// The default session parameters for the multicast group.
+        /// </para>
+        /// </summary>
+        public DefaultSessionParametersMulticast DefaultSessionParameters
+        {
+            get { return this._defaultSessionParameters; }
+            set { this._defaultSessionParameters = value; }
+        }
+
+        // Check to see if DefaultSessionParameters property is set
+        internal bool IsSetDefaultSessionParameters()
+        {
+            return this._defaultSessionParameters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DlClass.

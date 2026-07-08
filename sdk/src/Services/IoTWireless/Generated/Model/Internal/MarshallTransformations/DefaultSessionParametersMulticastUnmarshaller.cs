@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LoRaWANMulticastGet Object
+    /// Response Unmarshaller for DefaultSessionParametersMulticast Object
     /// </summary>  
-    public class LoRaWANMulticastGetUnmarshaller : IJsonUnmarshaller<LoRaWANMulticastGet, JsonUnmarshallerContext>
+    public class DefaultSessionParametersMulticastUnmarshaller : IJsonUnmarshaller<DefaultSessionParametersMulticast, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoRaWANMulticastGet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DefaultSessionParametersMulticast Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LoRaWANMulticastGet unmarshalledObject = new LoRaWANMulticastGet();
+            DefaultSessionParametersMulticast unmarshalledObject = new DefaultSessionParametersMulticast();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultSessionParameters", targetDepth, ref reader))
-                {
-                    var unmarshaller = DefaultSessionParametersMulticastUnmarshaller.Instance;
-                    unmarshalledObject.DefaultSessionParameters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DlClass", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DlClass = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("NumberOfDevicesInGroup", targetDepth, ref reader))
+                if (context.TestExpression("DlDr", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDevicesInGroup = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DlDr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfDevicesRequested", targetDepth, ref reader))
+                if (context.TestExpression("DlFreq", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDevicesRequested = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ParticipatingGateways", targetDepth, ref reader))
-                {
-                    var unmarshaller = ParticipatingGatewaysMulticastUnmarshaller.Instance;
-                    unmarshalledObject.ParticipatingGateways = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RfRegion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DlFreq = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static LoRaWANMulticastGetUnmarshaller _instance = new LoRaWANMulticastGetUnmarshaller();        
+        private static DefaultSessionParametersMulticastUnmarshaller _instance = new DefaultSessionParametersMulticastUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LoRaWANMulticastGetUnmarshaller Instance
+        public static DefaultSessionParametersMulticastUnmarshaller Instance
         {
             get
             {

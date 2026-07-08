@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoRaWANMulticast Marshaller
+    /// DefaultSessionParametersMulticast Marshaller
     /// </summary>
-    public class LoRaWANMulticastMarshaller : IRequestMarshaller<LoRaWANMulticast, JsonMarshallerContext> 
+    public class DefaultSessionParametersMulticastMarshaller : IRequestMarshaller<DefaultSessionParametersMulticast, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,20 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoRaWANMulticast requestObject, JsonMarshallerContext context)
+        public void Marshall(DefaultSessionParametersMulticast requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDefaultSessionParameters())
+            if(requestObject.IsSetDlDr())
             {
-                context.Writer.WritePropertyName("DefaultSessionParameters");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DefaultSessionParametersMulticastMarshaller.Instance;
-                marshaller.Marshall(requestObject.DefaultSessionParameters, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("DlDr");
+                context.Writer.WriteNumberValue(requestObject.DlDr.Value);
             }
 
-            if(requestObject.IsSetDlClass())
+            if(requestObject.IsSetDlFreq())
             {
-                context.Writer.WritePropertyName("DlClass");
-                context.Writer.WriteStringValue(requestObject.DlClass);
-            }
-
-            if(requestObject.IsSetParticipatingGateways())
-            {
-                context.Writer.WritePropertyName("ParticipatingGateways");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ParticipatingGatewaysMulticastMarshaller.Instance;
-                marshaller.Marshall(requestObject.ParticipatingGateways, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetRfRegion())
-            {
-                context.Writer.WritePropertyName("RfRegion");
-                context.Writer.WriteStringValue(requestObject.RfRegion);
+                context.Writer.WritePropertyName("DlFreq");
+                context.Writer.WriteNumberValue(requestObject.DlFreq.Value);
             }
 
         }
@@ -85,7 +63,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoRaWANMulticastMarshaller Instance = new LoRaWANMulticastMarshaller();
+        public readonly static DefaultSessionParametersMulticastMarshaller Instance = new DefaultSessionParametersMulticastMarshaller();
 
     }
 }
