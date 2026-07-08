@@ -1,3 +1,7 @@
+### 4.0.284.0 (2026-07-08 23:18 UTC)
+* Signin (4.0.101.0)
+	* Adds support for OAuth 2.0 token operations in AWS Sign-In, CreateOAuth2TokenWithIAM (client credentials flow), IntrospectOAuth2TokenWithIAM (token inspection), and RevokeOAuth2TokenWithIAM (token revocation).
+
 ### 4.0.283.0 (2026-07-08 18:19 UTC)
 * AppConfig (4.0.101.0)
 	* Update ExperimentRun APIs to support ConflictExceptions.
