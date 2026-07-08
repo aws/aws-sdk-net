@@ -17,34 +17,29 @@ using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Reports;
-using BenchmarkDotNet.Toolchains.InProcess.Emit;
 using Perfolizer.Horology;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
-/// Shared BenchmarkDotNet configuration for serde benchmarks.
+/// BenchmarkDotNet configuration for serde (marshal/unmarshal) benchmarks.
 /// 
-/// Configures RunStrategy.Throughput with 5 warmup iterations and max 20 measurement
-/// iterations, letting BenchmarkDotNet automatically determine invocation counts for
-/// accurate measurement of fast micro-benchmarks (μs-scale serde operations).
-/// With 71 tests, this configuration targets ~12-18 minutes total runtime.
+/// Uses OutOfProcess (default BDN toolchain) with WarmupCount=10 and BDN
+/// auto-determined iteration counts for maximum measurement accuracy.
+/// These benchmarks produce the baselines for cross-SDK performance comparison,
+/// so speed and accuracy are prioritized over runtime.
 /// 
-/// BDN Throughput mode reports P50, P90, P95 from per-iteration averages.
-/// Max is included as an upper-bound outlier indicator.
+/// With 71 tests, this configuration targets ~45-60 minutes total runtime.
 /// </summary>
 public class SerdeBenchmarkConfig : ManualConfig
 {
     public SerdeBenchmarkConfig()
     {
-        // Performance Baselines Report used: WarmupCount=10, no Min/MaxIterationCount (BDN auto)
-        // Optimized for CI/build system runtime: WarmupCount=5, MinIter=5, MaxIter=20
+        // OutOfProcess (Job.Default) for maximum speed — no InProcess overhead.
+        // WarmupCount=10, BDN auto iterations for statistically stable results.
         AddJob(Job.Default
-            .WithToolchain(InProcessEmitToolchain.Instance)
             .WithStrategy(BenchmarkDotNet.Engines.RunStrategy.Throughput)
-            .WithWarmupCount(5)
-            .WithMinIterationCount(5)
-            .WithMaxIterationCount(20));
+            .WithWarmupCount(10));
 
         // Add percentile columns
         AddColumn(StatisticColumn.P50);
