@@ -259,5 +259,127 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             Assert.AreEqual("https://us-isob-east-1.signin.sc2shome.sgov.gov", endpoint.URL);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("OAuth endpoint in us-east-1 (aws partition)")]
+        public void OAuth_endpoint_in_useast1_aws_partition_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsOAuthEndpoint"] = true;
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://us-east-1.oauth.signin.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("OAuth endpoint in us-west-2 (aws partition)")]
+        public void OAuth_endpoint_in_uswest2_aws_partition_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsOAuthEndpoint"] = true;
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://us-west-2.oauth.signin.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("OAuth endpoint with FIPS returns an error (no FIPS variant exists)")]
+        public void OAuth_endpoint_with_FIPS_returns_an_error_no_FIPS_variant_exists_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsOAuthEndpoint"] = true;
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("OAuth endpoint with FIPS returns an error in us-west-2 (aws partition)")]
+        public void OAuth_endpoint_with_FIPS_returns_an_error_in_uswest2_aws_partition_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsOAuthEndpoint"] = true;
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("OAuth endpoint with FIPS returns an error in cn-north-1 (non-aws partition, error is partition-agnostic)")]
+        public void OAuth_endpoint_with_FIPS_returns_an_error_in_cnnorth1_nonaws_partition_error_is_partitionagnostic_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsOAuthEndpoint"] = true;
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("OAuth endpoint with FIPS returns an error even with a custom SDK endpoint override")]
+        public void OAuth_endpoint_with_FIPS_returns_an_error_even_with_a_custom_SDK_endpoint_override_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsOAuthEndpoint"] = true;
+            parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://custom.signin.example.com";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("OAuth operation with custom SDK endpoint override")]
+        public void OAuth_operation_with_custom_SDK_endpoint_override_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsOAuthEndpoint"] = true;
+            parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://custom.signin.example.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://custom.signin.example.com", endpoint.URL);
+        }
+
     }
 }

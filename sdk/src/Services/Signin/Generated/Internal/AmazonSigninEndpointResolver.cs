@@ -90,6 +90,10 @@ namespace Amazon.Signin.Internal
                 result.IsControlPlane = false;
                 return result;
             }
+            if (requestContext.RequestName == "CreateOAuth2TokenWithIAMRequest") {
+                result.IsOAuthEndpoint = true;
+                return result;
+            }
             if (requestContext.RequestName == "DeleteConsoleAuthorizationConfigurationRequest") {
                 result.IsControlPlane = true;
                 return result;
@@ -106,6 +110,10 @@ namespace Amazon.Signin.Internal
                 result.IsControlPlane = true;
                 return result;
             }
+            if (requestContext.RequestName == "IntrospectOAuth2TokenWithIAMRequest") {
+                result.IsOAuthEndpoint = true;
+                return result;
+            }
             if (requestContext.RequestName == "ListResourcePermissionStatementsRequest") {
                 result.IsControlPlane = true;
                 return result;
@@ -116,6 +124,10 @@ namespace Amazon.Signin.Internal
             }
             if (requestContext.RequestName == "PutResourcePermissionStatementRequest") {
                 result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "RevokeOAuth2TokenWithIAMRequest") {
+                result.IsOAuthEndpoint = true;
                 return result;
             }
 

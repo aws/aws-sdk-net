@@ -52,6 +52,7 @@ namespace Amazon.Signin.Internal
                 ["Endpoint"] = parameters["Endpoint"],
                 ["Region"] = parameters["Region"],
                 ["IsControlPlane"] = parameters["IsControlPlane"],
+                ["IsOAuthEndpoint"] = parameters["IsOAuthEndpoint"],
             };
             if (IsSet(refs["IsControlPlane"]) && Equals(refs["IsControlPlane"], true) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
             {
@@ -64,6 +65,14 @@ namespace Amazon.Signin.Internal
                     return new Endpoint(Interpolate(@"https://signin.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""signin"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://signin.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""signin"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["IsOAuthEndpoint"]) && Equals(refs["IsOAuthEndpoint"], true) && Equals(refs["UseFIPS"], true))
+            {
+                throw new AmazonClientException("FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation.");
+            }
+            if (IsSet(refs["IsOAuthEndpoint"]) && Equals(refs["IsOAuthEndpoint"], true) && IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.oauth.signin.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""signin"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
             }
             if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
             {
