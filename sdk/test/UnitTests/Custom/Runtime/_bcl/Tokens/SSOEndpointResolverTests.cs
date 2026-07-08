@@ -34,7 +34,10 @@ namespace AWSSDK.UnitTests.Runtime
         [DataRow("https://ssoins-testinstanceid.portal.us-west-2.app.aws", "us-west-2")]
         [DataRow("https://ssoins-testinstanceid.portal.us-east-1.app.aws/start", "us-east-1")]
         [DataRow("https://ssoins-testinstanceid.portal.eu-west-1.app.aws/", "eu-west-1")]
-        [DataRow("https://SSOINS-ABC123.PORTAL.US-WEST-2.APP.AWS", "us-west-2")]
+        [DataRow("https://SSOINS-ABC123.PORTAL.US-WEST-2.APP.AWS", "us-west-2")]        
+        [DataRow("https://ssoins-testinstanceid.portal.cn-north-1.app.amazonwebservices.com.cn", "cn-north-1")]
+        [DataRow("https://ssoins-testinstanceid.portal.cn-northwest-1.app.amazonwebservices.com.cn/start", "cn-northwest-1")]
+        [DataRow("https://ssoins-testinstanceid.portal.eusc-de-east-1.api.amazonwebservices.eu", "eusc-de-east-1")]
         public async Task ResolveAsync_NewPortalDualStack_ExtractsRegion(string url, string expectedRegion)
         {
             var result = await SSOEndpointResolver.ResolveAsync(url, null);
@@ -51,6 +54,10 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [DataRow("https://ssoins-testinstanceid.us-west-2.portal.amazonaws.com", "us-west-2")]
         [DataRow("https://ssoins-testinstanceid.ap-northeast-1.portal.amazonaws.com/start", "ap-northeast-1")]
+        [DataRow("https://ssoins-testinstanceid.us-gov-west-1.portal.amazonaws.com", "us-gov-west-1")]
+        [DataRow("https://ssoins-testinstanceid.cn-north-1.portal.amazonaws.com.cn", "cn-north-1")]
+        [DataRow("https://ssoins-testinstanceid.cn-northwest-1.portal.amazonaws.com.cn/start", "cn-northwest-1")]
+        [DataRow("https://ssoins-testinstanceid.eusc-de-east-1.portal.amazonaws.eu", "eusc-de-east-1")]
         public async Task ResolveAsync_NewPortalIPv4_ExtractsRegion(string url, string expectedRegion)
         {
             var result = await SSOEndpointResolver.ResolveAsync(url, null);
@@ -65,8 +72,14 @@ namespace AWSSDK.UnitTests.Runtime
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestMethod]
+        // Commercial: https://{directoryId}.awsapps.com/start and https://{alias}.awsapps.com/start
         [DataRow("https://d-testdirectoryid.awsapps.com/start")]
         [DataRow("https://myalias.awsapps.com/start")]
+        // China: https://start.{region}.home.awsapps.cn/directory/{directoryId} 
+        [DataRow("https://start.cn-north-1.home.awsapps.cn/directory/d-testdirectoryid")]
+        [DataRow("https://start.cn-northwest-1.home.awsapps.cn/directory/d-testdirectoryid")]
+        // GovCloud: https://start.us-gov-home.awsapps.com/directory/{directoryId}
+        [DataRow("https://start.us-gov-home.awsapps.com/directory/d-testdirectoryid")]
         public async Task ResolveAsync_LegacyAwsApps_RegionIsNull(string url)
         {
             var result = await SSOEndpointResolver.ResolveAsync(url, null);
@@ -81,6 +94,25 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var result = await SSOEndpointResolver.ResolveAsync("https://d-testdirectoryid.awsapps.com/start", "eu-west-1");
             Assert.AreEqual("eu-west-1", result.Region);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public async Task ResolveAsync_LegacyChinaAwsApps_WithRegionOverride_UsesOverride()
+        {
+            // China legacy form is region-less, so region comes from the override.
+            var result = await SSOEndpointResolver.ResolveAsync("https://start.cn-north-1.home.awsapps.cn/directory/d-testdirectoryid", "cn-north-1");
+            Assert.AreEqual("cn-north-1", result.Region);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public async Task ResolveAsync_LegacyGovCloudAwsApps_WithRegionOverride_UsesOverride()
+        {
+            var result = await SSOEndpointResolver.ResolveAsync("https://start.us-gov-home.awsapps.com/directory/d-testdirectoryid", "us-gov-west-1");
+            Assert.AreEqual("us-gov-west-1", result.Region);
         }
 
         #endregion
@@ -107,6 +139,17 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.AreEqual("us-east-1", result.Region);
         }
 
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public async Task ResolveAsync_ChinaIssuerUrl_RecognizedAndRegionFromOverride()
+        {
+            var result = await SSOEndpointResolver.ResolveAsync("https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid", "cn-north-1");
+            Assert.AreEqual("cn-north-1", result.Region);
+            Assert.IsFalse(result.IsVanityUrl);
+            Assert.AreEqual("https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid", result.IssuerUrl);
+        }
+
         #endregion
 
         #region ResolveAsync - Issuer URL extraction
@@ -119,6 +162,13 @@ namespace AWSSDK.UnitTests.Runtime
         [DataRow("https://d-testdirectoryid.awsapps.com/start", "https://identitycenter.amazonaws.com/d-testdirectoryid")]
         [DataRow("https://myalias.awsapps.com/start", "https://identitycenter.amazonaws.com/myalias")]
         [DataRow("https://identitycenter.amazonaws.com/ssoins-testinstanceid", "https://identitycenter.amazonaws.com/ssoins-testinstanceid")]
+        [DataRow("https://ssoins-testinstanceid.cn-north-1.portal.amazonaws.com.cn", "https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid")]
+        [DataRow("https://ssoins-testinstanceid.portal.cn-north-1.app.amazonwebservices.com.cn", "https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid")]
+        // China legacy: directoryId parsed from the path, maps to the China issuer host
+        [DataRow("https://start.cn-north-1.home.awsapps.cn/directory/d-testdirectoryid", "https://identitycenter.amazonaws.com.cn/d-testdirectoryid")]
+        [DataRow("https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid", "https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid")]
+        // GovCloud legacy: directoryId parsed from the path, maps to the commercial issuer host
+        [DataRow("https://start.us-gov-home.awsapps.com/directory/d-testdirectoryid", "https://identitycenter.amazonaws.com/d-testdirectoryid")]
         public async Task ResolveAsync_ExtractsIssuerUrl(string url, string expectedIssuerUrl)
         {
             var result = await SSOEndpointResolver.ResolveAsync(url, "us-west-2");
@@ -218,11 +268,14 @@ namespace AWSSDK.UnitTests.Runtime
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestMethod]
-        public async Task ResolveAsync_LookAlikeDomain_NotTreatedAsAws()
+        [DataRow("https://d-testdirectoryid.awsapps.com.evil.net/start")]
+        [DataRow("https://awsapps.cn.evil.net/start")]
+        [DataRow("https://evil-awsapps.cn/start")]
+        [DataRow("https://portal.amazonaws.com.cn.evil.net/start")]
+        public async Task ResolveAsync_LookAlikeDomain_NotTreatedAsAws(string url)
         {
-            // awsapps.com.evil.net should NOT match as AWS-owned
             await Assert.ThrowsExactlyAsync<ArgumentException>(
-                () => SSOEndpointResolver.ResolveAsync("https://d-testdirectoryid.awsapps.com.evil.net/start", null));
+                () => SSOEndpointResolver.ResolveAsync(url, null));
         }
 
         #endregion

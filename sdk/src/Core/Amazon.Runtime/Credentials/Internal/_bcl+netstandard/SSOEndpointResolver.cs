@@ -30,20 +30,45 @@ namespace Amazon.Runtime.Credentials.Internal
     /// </summary>
     public static class SSOEndpointResolver
     {
-        // AWS-owned domain suffixes for label-boundary matching.
+        // AWS-owned Identity Center domain suffixes for label-boundary matching.
         // Each entry is matched as a suffix on a DNS label boundary (preceded by '.' or equal to the full hostname).
-        private static readonly string[] AwsDomainSuffixes = { ".app.aws", ".portal.amazonaws.com", ".awsapps.com" };
+        // Covers the aws, aws-cn, and aws-eusc partitions; GovCloud (aws-us-gov) reuses the commercial
+        // ".awsapps.com" / ".portal.amazonaws.com" domains and is covered by the commercial entries.
+        private static readonly string[] AwsDomainSuffixes =
+        {
+            ".app.aws", ".portal.amazonaws.com", ".awsapps.com", // Commercial (aws)
+            ".portal.amazonaws.com.cn", ".app.amazonwebservices.com.cn", ".awsapps.cn",  // China (aws-cn)
+            ".portal.amazonaws.eu", ".api.amazonwebservices.eu", // European Sovereign Cloud (aws-eusc)
+        };
 
-        // identitycenter.amazonaws.com is matched as an exact hostname (not a suffix).
-        private const string IdentityCenterDomain = "identitycenter.amazonaws.com";
+        private static readonly string[] IdentityCenterDomains =
+        {
+            "identitycenter.amazonaws.com",
+            "identitycenter.amazonaws.com.cn",
+        };
 
         private static readonly Regex[] UrlPatterns =
         {
+            // New portal, DualStack: https://{idcInstanceId}.portal.{region}.app.amazonwebservices.com.cn
+            new Regex(@"^(https?://)?(?<id>[^.]+)\.portal\.(?<region>[^./]+)\.app\.amazonwebservices\.com\.cn", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // New portal, IPv4-only: https://{idcInstanceId}.{region}.portal.amazonaws.com.cn
+            new Regex(@"^(https?://)?(?<id>[^.]+)\.(?<region>[^.]+)\.portal\.amazonaws\.com\.cn", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // Legacy portal: https://start.{region}.home.awsapps.cn/directory/{directoryId}
+            new Regex(@"^(https?://)?start\.(?:[^./]+\.)?home\.awsapps\.cn/directory/(?<id>[^/?#]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // Issuer URL: https://identitycenter.amazonaws.com.cn/{idcInstanceId} (region-less)
+            new Regex(@"^(https?://)?identitycenter\.amazonaws\.com\.cn/(?<id>[^/]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // New portal, DualStack: https://{idcInstanceId}.portal.{region}.api.amazonwebservices.eu
+            new Regex(@"^(https?://)?(?<id>[^.]+)\.portal\.(?<region>[^./]+)\.api\.amazonwebservices\.eu", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // New portal, IPv4-only: https://{idcInstanceId}.{region}.portal.amazonaws.eu
+            new Regex(@"^(https?://)?(?<id>[^.]+)\.(?<region>[^.]+)\.portal\.amazonaws\.eu", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+
             // New portal, DualStack: https://{idcInstanceId}.portal.{region}.app.aws
             new Regex(@"^(https?://)?(?<id>[^.]+)\.portal\.(?<region>[^./]+)\.app\.aws", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
             // New portal, IPv4-only: https://{idcInstanceId}.{region}.portal.amazonaws.com
             new Regex(@"^(https?://)?(?<id>[^.]+)\.(?<region>[^.]+)\.portal\.amazonaws\.com", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
-            // Legacy portal: https://{directoryId}.awsapps.com
+            // GovCloud legacy portal: https://start.us-gov-home.awsapps.com/directory/{directoryId}
+            new Regex(@"^(https?://)?start\.us-gov-home\.awsapps\.com/directory/(?<id>[^/?#]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // Legacy portal: https://{directoryId}.awsapps.com/start (also https://{alias}.awsapps.com/start)
             new Regex(@"^(https?://)?(?<id>[^.]+)\.awsapps\.com", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
             // Issuer URL: https://identitycenter.amazonaws.com/{idcInstanceId}
             new Regex(@"^(https?://)?identitycenter\.amazonaws\.com/(?<id>[^/]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
@@ -81,7 +106,7 @@ namespace Amazon.Runtime.Credentials.Internal
                     "The URL must be an AWS-generated domain or a vanity domain that redirects to one.");
             }
             var parts = ParseUrl(resolvedUrl, startUrl);
-            var issuerUrl = $"https://identitycenter.amazonaws.com/{parts.InstanceId}";
+            var issuerUrl = $"https://{GetIssuerHost(resolvedUrl)}/{parts.InstanceId}";
 
             // Region is NOT validated against a local list of known region codes.
             // Validating would block users authenticating against newly launched or unreleased
@@ -243,10 +268,13 @@ namespace Amazon.Runtime.Credentials.Internal
                 var hostname = new Uri(url).Host.ToLowerInvariant();
 #pragma warning restore CA1308
 
-                // Check exact match for identitycenter.amazonaws.com
-                if (hostname.Equals(IdentityCenterDomain, StringComparison.Ordinal))
+                // Check exact match for identity center issuer hostnames (all partitions)
+                foreach (var issuerDomain in IdentityCenterDomains)
                 {
-                    return true;
+                    if (hostname.Equals(issuerDomain, StringComparison.Ordinal))
+                    {
+                        return true;
+                    }
                 }
 
                 // Check label-boundary suffix match for other domains
@@ -268,6 +296,31 @@ namespace Amazon.Runtime.Credentials.Internal
             {
             }
             return false;
+        }
+
+        /// <summary>
+        /// Returns the partition-appropriate Identity Center issuer hostname for a resolved AWS-owned URL.
+        /// The issuer host differs by partition (e.g. China uses identitycenter.amazonaws.com.cn), so it
+        /// MUST NOT be hardcoded to the commercial host.
+        /// </summary>
+        private static string GetIssuerHost(string resolvedUrl)
+        {
+            try
+            {
+#pragma warning disable CA1308 // Hostnames are ASCII; lowercase is the canonical form for DNS comparison
+                var hostname = new Uri(resolvedUrl).Host.ToLowerInvariant();
+#pragma warning restore CA1308
+
+                if (hostname.EndsWith(".cn", StringComparison.Ordinal))
+                {
+                    return "identitycenter.amazonaws.com.cn";
+                }
+            }
+            catch (UriFormatException)
+            {
+            }
+
+            return "identitycenter.amazonaws.com";
         }
 
         /// <summary>
@@ -295,6 +348,8 @@ namespace Amazon.Runtime.Credentials.Internal
                 "https://{{id}}.{{region}}.portal.amazonaws.com, " +
                 "https://{{id}}.awsapps.com, " +
                 "https://identitycenter.amazonaws.com/{{id}}, " +
+                "the equivalent China (amazonaws.com.cn, amazonwebservices.com.cn, awsapps.cn) " +
+                "and European Sovereign Cloud (amazonaws.eu, amazonwebservices.eu) formats, " +
                 "or a vanity domain that redirects to one of these.");
         }
 
