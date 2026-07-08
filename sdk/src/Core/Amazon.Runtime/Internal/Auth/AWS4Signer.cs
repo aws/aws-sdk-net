@@ -795,6 +795,7 @@ namespace Amazon.Runtime.Internal.Auth
             canonicalRequest.Append(canonicalQueryString);
             canonicalRequest.Append('\n');
 
+            // We avoid using CanonicalizeHeaders() and CanonicalizeHeaderNames() here to avoid multiple passes of same collection
             foreach (var entry in sortedHeaders)
             {
                 AppendLowerInvariant(ref canonicalRequest, entry.Key);
@@ -1013,18 +1014,9 @@ namespace Amazon.Runtime.Internal.Auth
             if (parameters is ICollection<KeyValuePair<string, string>> coll && coll.Count == 0)
                 return string.Empty;
 
-            // Sort in-place when the caller passes a locally-owned List (avoids LINQ EnumerableSorter +
-            // key-array allocations); fall back to OrderBy for arbitrary enumerables.
-            List<KeyValuePair<string, string>> sortedParameters;
-            if (parameters is List<KeyValuePair<string, string>> paramList)
-            {
-                paramList.Sort((x, y) => StringComparer.Ordinal.Compare(x.Key, y.Key));
-                sortedParameters = paramList;
-            }
-            else
-            {
-                sortedParameters = parameters.OrderBy(kvp => kvp.Key, StringComparer.Ordinal).ToList();
-            }
+            // Make a copy of the parameters so we can sort them without affecting the original collection.
+            List<KeyValuePair<string, string>> sortedParameters = new(parameters);
+            sortedParameters.Sort((x, y) => StringComparer.Ordinal.Compare(x.Key, y.Key));
 
             var canonicalQueryString = new ValueStringBuilder(sortedParameters.Count * 32);
             for (int i = 0; i < sortedParameters.Count; i++)
