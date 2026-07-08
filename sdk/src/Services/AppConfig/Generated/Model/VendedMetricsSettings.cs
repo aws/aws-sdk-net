@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Configuration settings for vended metrics.
+    /// The configuration settings for vended metrics in your AppConfig account.
     /// </summary>
     public partial class VendedMetricsSettings
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether vended metrics are enabled for the account.
+        /// Specifies whether vended metrics are enabled for the account.
         /// </para>
         /// </summary>
         public bool? Enabled

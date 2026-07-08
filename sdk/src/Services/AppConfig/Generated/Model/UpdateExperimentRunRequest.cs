@@ -67,7 +67,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property DeploymentParameters. 
         /// <para>
-        /// Updated deployment parameters.
+        /// The updated deployment parameters for the experiment run.
         /// </para>
         /// </summary>
         public DeploymentParameters DeploymentParameters
@@ -161,7 +161,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property TreatmentOverrides. 
         /// <para>
-        /// Updated treatment assignment overrides.
+        /// The updated treatment assignment overrides that assign specific entity IDs to treatments,
+        /// bypassing random assignment.
         /// </para>
         /// </summary>
         public TreatmentOverrides TreatmentOverrides

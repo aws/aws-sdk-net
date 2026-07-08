@@ -34,6 +34,14 @@ namespace Amazon.AppConfig.Model
     /// Starts an experiment run for the specified experiment definition. An experiment run
     /// delivers treatments to the target audience and collects metrics. You can start multiple
     /// experiment runs from the same experiment definition.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Billing for this experiment begins when you call this operation and continues until
+    /// the experiment is stopped. For pricing details, see <a href="https://aws.amazon.com/systems-manager/pricing/">AppConfig
+    /// pricing</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StartExperimentRunRequest : AmazonAppConfigRequest
     {
@@ -67,7 +75,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property DeploymentParameters. 
         /// <para>
-        /// Optional deployment parameters including a KMS key for encryption.
+        /// The deployment parameters for the experiment run, including a KMS key identifier for
+        /// encryption.
         /// </para>
         /// </summary>
         public DeploymentParameters DeploymentParameters
