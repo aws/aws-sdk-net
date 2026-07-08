@@ -34,9 +34,51 @@ namespace Amazon.Resiliencehubv2.Model
     /// </summary>
     public partial class ServiceTopologyEdgeSummary
     {
+        private string _destinationAccount;
+        private string _destinationRegion;
         private string _destinationResourceIdentifier;
         private List<EdgePropertySummary> _properties = AWSConfigs.InitializeCollections ? new List<EdgePropertySummary>() : null;
+        private string _sourceAccount;
+        private string _sourceRegion;
         private string _sourceResourceIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property DestinationAccount. 
+        /// <para>
+        /// The AWS account ID of the destination resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string DestinationAccount
+        {
+            get { return this._destinationAccount; }
+            set { this._destinationAccount = value; }
+        }
+
+        // Check to see if DestinationAccount property is set
+        internal bool IsSetDestinationAccount()
+        {
+            return this._destinationAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationRegion. 
+        /// <para>
+        /// The AWS Region of the destination resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=6)]
+        public string DestinationRegion
+        {
+            get { return this._destinationRegion; }
+            set { this._destinationRegion = value; }
+        }
+
+        // Check to see if DestinationRegion property is set
+        internal bool IsSetDestinationRegion()
+        {
+            return this._destinationRegion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationResourceIdentifier. 
@@ -79,6 +121,44 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetProperties()
         {
             return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccount. 
+        /// <para>
+        /// The AWS account ID of the source resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string SourceAccount
+        {
+            get { return this._sourceAccount; }
+            set { this._sourceAccount = value; }
+        }
+
+        // Check to see if SourceAccount property is set
+        internal bool IsSetSourceAccount()
+        {
+            return this._sourceAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceRegion. 
+        /// <para>
+        /// The AWS Region of the source resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=6)]
+        public string SourceRegion
+        {
+            get { return this._sourceRegion; }
+            set { this._sourceRegion = value; }
+        }
+
+        // Check to see if SourceRegion property is set
+        internal bool IsSetSourceRegion()
+        {
+            return this._sourceRegion != null;
         }
 
         /// <summary>

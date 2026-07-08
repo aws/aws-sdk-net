@@ -36,6 +36,7 @@ namespace Amazon.Resiliencehubv2.Model
     public partial class Achievability
     {
         private AchievabilityStatus _availabilitySlo;
+        private AchievabilityStatus _dataRecoveryTimeBetweenBackups;
         private AchievabilityStatus _multiAzRtoRpo;
         private AchievabilityStatus _multiRegionRtoRpo;
 
@@ -55,6 +56,24 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetAvailabilitySlo()
         {
             return this._availabilitySlo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataRecoveryTimeBetweenBackups. 
+        /// <para>
+        /// The achievability status of the data recovery time between backups for the service.
+        /// </para>
+        /// </summary>
+        public AchievabilityStatus DataRecoveryTimeBetweenBackups
+        {
+            get { return this._dataRecoveryTimeBetweenBackups; }
+            set { this._dataRecoveryTimeBetweenBackups = value; }
+        }
+
+        // Check to see if DataRecoveryTimeBetweenBackups property is set
+        internal bool IsSetDataRecoveryTimeBetweenBackups()
+        {
+            return this._dataRecoveryTimeBetweenBackups != null;
         }
 
         /// <summary>
