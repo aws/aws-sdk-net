@@ -103,8 +103,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         var operationWriter = new OperationWriter(context, modelFileName);
         var requestMarshaller = new JsonRequestMarshallerWriter(context, modelFileName);
+        var responseUnmarshaller = new JsonResponseUnmarshallerWriter(context, modelFileName);
         var structureMarshaller = new JsonStructureMarshallerWriter(context, modelFileName);
         var structureUnmarshaller = new JsonStructureUnmarshallerWriter(context, modelFileName);
+        var exceptionUnmarshallerWriter = new JsonExceptionUnmarshallerWriter(context, modelFileName);
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
 
         // Per-operation walk, mirroring the existing generator: emit the request/response classes
@@ -115,6 +117,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var operationShapes = new HashSet<ShapeId>();
         var marshalledStructures = new HashSet<ShapeId>();
         var unmarshalledStructures = new HashSet<ShapeId>();
+        var errorStructures = new HashSet<ShapeId>();
         foreach (var operation in context.Operations)
         {
             operationShapes.Add(operation.Shape.Input);
@@ -122,7 +125,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(model, $"{operation.Name}Request.g.cs"), operationWriter.WriteRequest(operation, cancellationToken));
             Emit(Path.Combine(model, $"{operation.Name}Response.g.cs"), operationWriter.WriteResponse(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
-
+            Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
             foreach (var (shapeId, structure) in ReferencedStructures(operation.Input))
             {
                 if (marshalledStructures.Add(shapeId))
@@ -136,6 +139,15 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 if (unmarshalledStructures.Add(shapeId))
                 {
                     Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                }
+            }
+
+            foreach (var error in operation.Errors)
+            {
+                if (errorStructures.Add(error.Id))
+                {
+                    var name = ExceptionWriter.ToExceptionName(error.Id.Name);
+                    Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(error.Shape, error.Id, cancellationToken));
                 }
             }
         }

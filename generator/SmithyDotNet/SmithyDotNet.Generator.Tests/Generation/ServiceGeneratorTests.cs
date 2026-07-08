@@ -94,6 +94,21 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void WritesResponseUnmarshallerFiles()
+    {
+        var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
+        AssertFileExists(marshalling, "PutAuditEventsResponseUnmarshaller.g.cs");
+    }
+
+    [Fact]
+    public void WritesExceptionUnmarshallerFiles()
+    {
+        var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
+        AssertFileExists(marshalling, "ChannelNotFoundExceptionUnmarshaller.g.cs");
+        AssertFileExists(marshalling, "UnsupportedOperationExceptionUnmarshaller.g.cs");
+    }
+
+    [Fact]
     public void WritesEndpointFiles()
     {
         // CloudTrailData carries an endpoint rule set, so all three endpoint files are emitted:

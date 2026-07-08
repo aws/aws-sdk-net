@@ -42,6 +42,22 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the exception (error-response) unmarshaller file. Carries
+    /// <c>System.Globalization</c>, which the shared <see cref="ModelUsings"/> omit, to match the
+    /// legacy generated output verbatim.
+    /// </summary>
+    public static IReadOnlyList<string> ExceptionUnmarshallerUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.IO",
+        "System.Net",
+        "System.Text",
+        "System.Xml.Serialization",
+    ];
+
+    /// <summary>
     /// Usings for the endpoint parameters file.
     /// </summary>
     public static IReadOnlyList<string> EndpointParametersUsings { get; } =
