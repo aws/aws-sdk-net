@@ -87,6 +87,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetAddressNamesMode())
+            {
+                context.Writer.WritePropertyName("AddressNamesMode");
+                context.Writer.WriteStringValue(publicRequest.AddressNamesMode);
+            }
+
             if(publicRequest.IsSetFilter())
             {
                 context.Writer.WritePropertyName("Filter");

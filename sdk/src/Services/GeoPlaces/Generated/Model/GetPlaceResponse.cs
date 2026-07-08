@@ -41,11 +41,14 @@ namespace Amazon.GeoPlaces.Model
         private List<BusinessChain> _businessChains = AWSConfigs.InitializeCollections ? new List<BusinessChain>() : null;
         private List<Category> _categories = AWSConfigs.InitializeCollections ? new List<Category>() : null;
         private Contacts _contacts;
+        private List<CrossReference> _crossReferences = AWSConfigs.InitializeCollections ? new List<CrossReference>() : null;
+        private bool? _estimatedPointAddress;
         private List<FoodType> _foodTypes = AWSConfigs.InitializeCollections ? new List<FoodType>() : null;
         private RelatedPlace _mainAddress;
         private List<double> _mapView = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private List<OpeningHours> _openingHours = AWSConfigs.InitializeCollections ? new List<OpeningHours>() : null;
         private PhonemeDetails _phonemes;
+        private List<string> _placeAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _placeId;
         private PlaceType _placeType;
         private string _politicalView;
@@ -218,6 +221,51 @@ namespace Amazon.GeoPlaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CrossReferences. 
+        /// <para>
+        /// The list of supplier references available for this place. Requires the <c>CrossReferences</c>
+        /// additional feature to be enabled.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<CrossReference> CrossReferences
+        {
+            get { return this._crossReferences; }
+            set { this._crossReferences = value; }
+        }
+
+        // Check to see if CrossReferences property is set
+        internal bool IsSetCrossReferences()
+        {
+            return this._crossReferences != null && (this._crossReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedPointAddress. 
+        /// <para>
+        /// If <c>true</c>, indicates that the coordinates of the position and access points of
+        /// the point address are estimated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public bool? EstimatedPointAddress
+        {
+            get { return this._estimatedPointAddress; }
+            set { this._estimatedPointAddress = value; }
+        }
+
+        // Check to see if EstimatedPointAddress property is set
+        internal bool IsSetEstimatedPointAddress()
+        {
+            return this._estimatedPointAddress.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FoodTypes. 
         /// <para>
         ///  List of food types offered by this result. Not available in <c>ap-southeast-1</c>
@@ -337,6 +385,31 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetPhonemes()
         {
             return this._phonemes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlaceAttributes. 
+        /// <para>
+        /// A list of place attributes for the result, such as whether the business offers drive-through
+        /// service.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> PlaceAttributes
+        {
+            get { return this._placeAttributes; }
+            set { this._placeAttributes = value; }
+        }
+
+        // Check to see if PlaceAttributes property is set
+        internal bool IsSetPlaceAttributes()
+        {
+            return this._placeAttributes != null && (this._placeAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

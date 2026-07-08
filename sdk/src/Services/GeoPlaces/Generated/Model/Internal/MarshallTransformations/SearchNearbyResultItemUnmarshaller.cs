@@ -98,6 +98,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Contacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("CrossReferences", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CrossReference, CrossReferenceUnmarshaller>(CrossReferenceUnmarshaller.Instance);
+                    unmarshalledObject.CrossReferences = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Distance", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
@@ -126,6 +132,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PhonemeDetailsUnmarshaller.Instance;
                     unmarshalledObject.Phonemes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PlaceAttributes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PlaceAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlaceId", targetDepth, ref reader))

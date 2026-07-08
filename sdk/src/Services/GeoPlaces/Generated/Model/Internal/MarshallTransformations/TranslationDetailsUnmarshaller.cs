@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccessPoint Object
+    /// Response Unmarshaller for TranslationDetails Object
     /// </summary>  
-    public class AccessPointUnmarshaller : IJsonUnmarshaller<AccessPoint, JsonUnmarshallerContext>
+    public class TranslationDetailsUnmarshaller : IJsonUnmarshaller<TranslationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AccessPoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TranslationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AccessPoint unmarshalledObject = new AccessPoint();
+            TranslationDetails unmarshalledObject = new TranslationDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,28 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Label", targetDepth, ref reader))
+                if (context.TestExpression("District", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<AdminNames, AdminNamesUnmarshaller>(AdminNamesUnmarshaller.Instance);
+                    unmarshalledObject.District = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Position", targetDepth, ref reader))
+                if (context.TestExpression("Locality", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<AdminNames, AdminNamesUnmarshaller>(AdminNamesUnmarshaller.Instance);
+                    unmarshalledObject.Locality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Primary", targetDepth, ref reader))
+                if (context.TestExpression("Region", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<AdminNames, AdminNamesUnmarshaller>(AdminNamesUnmarshaller.Instance);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth, ref reader))
+                if (context.TestExpression("SubRegion", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<AdminNames, AdminNamesUnmarshaller>(AdminNamesUnmarshaller.Instance);
+                    unmarshalledObject.SubRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +85,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccessPointUnmarshaller _instance = new AccessPointUnmarshaller();        
+        private static TranslationDetailsUnmarshaller _instance = new TranslationDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccessPointUnmarshaller Instance
+        public static TranslationDetailsUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccessPoint Object
+    /// Response Unmarshaller for AdminNames Object
     /// </summary>  
-    public class AccessPointUnmarshaller : IJsonUnmarshaller<AccessPoint, JsonUnmarshallerContext>
+    public class AdminNamesUnmarshaller : IJsonUnmarshaller<AdminNames, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AccessPoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AdminNames Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AccessPoint unmarshalledObject = new AccessPoint();
+            AdminNames unmarshalledObject = new AdminNames();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Label", targetDepth, ref reader))
+                if (context.TestExpression("Names", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TranslationName, TranslationNameUnmarshaller>(TranslationNameUnmarshaller.Instance);
+                    unmarshalledObject.Names = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Preference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Position", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Primary", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Preference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccessPointUnmarshaller _instance = new AccessPointUnmarshaller();        
+        private static AdminNamesUnmarshaller _instance = new AdminNamesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccessPointUnmarshaller Instance
+        public static AdminNamesUnmarshaller Instance
         {
             get
             {

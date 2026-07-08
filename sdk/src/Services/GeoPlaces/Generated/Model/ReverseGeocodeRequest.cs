@@ -47,6 +47,7 @@ namespace Amazon.GeoPlaces.Model
     public partial class ReverseGeocodeRequest : AmazonGeoPlacesRequest
     {
         private List<string> _additionalFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ReverseGeocodeAddressNamesMode _addressNamesMode;
         private ReverseGeocodeFilter _filter;
         private double? _heading;
         private ReverseGeocodeIntendedUse _intendedUse;
@@ -82,6 +83,26 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetAdditionalFeatures()
         {
             return this._additionalFeatures != null && (this._additionalFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddressNamesMode. 
+        /// <para>
+        /// Specifies how address names are returned. When set to <c>Administrative</c>, the service
+        /// returns the official administrative names for address components. <c>Administrative</c>
+        /// currently applies only to addresses in the United States.
+        /// </para>
+        /// </summary>
+        public ReverseGeocodeAddressNamesMode AddressNamesMode
+        {
+            get { return this._addressNamesMode; }
+            set { this._addressNamesMode = value; }
+        }
+
+        // Check to see if AddressNamesMode property is set
+        internal bool IsSetAddressNamesMode()
+        {
+            return this._addressNamesMode != null;
         }
 
         /// <summary>
@@ -179,10 +200,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        ///  A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a> compliant
-        /// language codes for the results to be rendered in. If there is no data for the result
-        /// in the requested language, data will be returned in the default language for the entry.
-        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        ///  A list of <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
+        /// 47</a> compliant language codes for the results to be rendered in. If there is no
+        /// data for the result in the requested language, data will be returned in the default
+        /// language for the entry. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
         /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only the
         /// following codes: <c>en, id, km, lo, ms, my, pt, th, tl, vi, zh</c> 
         /// </para>

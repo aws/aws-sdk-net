@@ -36,6 +36,7 @@ namespace Amazon.GeoPlaces.Model
     {
         private Address _address;
         private long? _distance;
+        private bool? _estimatedPointAddress;
         private AutocompleteHighlights _highlights;
         private string _language;
         private string _placeId;
@@ -82,6 +83,26 @@ namespace Amazon.GeoPlaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EstimatedPointAddress. 
+        /// <para>
+        /// If <c>true</c>, indicates that the coordinates of the position and access points of
+        /// the point address are estimated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public bool? EstimatedPointAddress
+        {
+            get { return this._estimatedPointAddress; }
+            set { this._estimatedPointAddress = value; }
+        }
+
+        // Check to see if EstimatedPointAddress property is set
+        internal bool IsSetEstimatedPointAddress()
+        {
+            return this._estimatedPointAddress.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Highlights. 
         /// <para>
         /// Indicates the starting and ending index of the place in the text query that match
@@ -103,9 +124,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a> compliant
-        /// language codes for the results to be rendered in. If there is no data for the result
-        /// in the requested language, data will be returned in the default language for the entry.
+        /// A list of <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
+        /// 47</a> compliant language codes for the results to be rendered in. If there is no
+        /// data for the result in the requested language, data will be returned in the default
+        /// language for the entry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]

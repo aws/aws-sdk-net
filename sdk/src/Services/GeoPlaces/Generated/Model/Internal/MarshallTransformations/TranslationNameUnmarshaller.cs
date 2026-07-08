@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccessPoint Object
+    /// Response Unmarshaller for TranslationName Object
     /// </summary>  
-    public class AccessPointUnmarshaller : IJsonUnmarshaller<AccessPoint, JsonUnmarshallerContext>
+    public class TranslationNameUnmarshaller : IJsonUnmarshaller<TranslationName, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AccessPoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TranslationName Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AccessPoint unmarshalledObject = new AccessPoint();
+            TranslationName unmarshalledObject = new TranslationName();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Label", targetDepth, ref reader))
+                if (context.TestExpression("Language", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Position", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Language = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Primary", targetDepth, ref reader))
@@ -74,10 +68,22 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Transliterated", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Transliterated = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +91,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccessPointUnmarshaller _instance = new AccessPointUnmarshaller();        
+        private static TranslationNameUnmarshaller _instance = new TranslationNameUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccessPointUnmarshaller Instance
+        public static TranslationNameUnmarshaller Instance
         {
             get
             {

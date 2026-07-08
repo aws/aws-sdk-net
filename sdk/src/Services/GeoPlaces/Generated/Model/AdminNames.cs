@@ -30,18 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoPlaces.Model
 {
     /// <summary>
-    /// The included place types.
+    /// The official administrative names for an address component, returned when <c>AddressNamesMode</c>
+    /// is set to <c>Administrative</c>.
     /// </summary>
-    public partial class ReverseGeocodeFilter
+    public partial class AdminNames
     {
-        private List<string> _includePlaceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TranslationName> _names = AWSConfigs.InitializeCollections ? new List<TranslationName>() : null;
+        private AdminNamesPreference _preference;
 
         /// <summary>
-        /// Gets and sets the property IncludePlaceTypes. 
+        /// Gets and sets the property Names. 
         /// <para>
-        ///  The included place types. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
-        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>Street</c>
-        /// and <c>PointAddress</c> values. 
+        /// A list of translation names for the administrative address component, including name
+        /// variants and translations in available languages.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -49,17 +50,36 @@ namespace Amazon.GeoPlaces.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=7)]
-        public List<string> IncludePlaceTypes
+        [AWSProperty(Required=true, Min=1)]
+        public List<TranslationName> Names
         {
-            get { return this._includePlaceTypes; }
-            set { this._includePlaceTypes = value; }
+            get { return this._names; }
+            set { this._names = value; }
         }
 
-        // Check to see if IncludePlaceTypes property is set
-        internal bool IsSetIncludePlaceTypes()
+        // Check to see if Names property is set
+        internal bool IsSetNames()
         {
-            return this._includePlaceTypes != null && (this._includePlaceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preference. 
+        /// <para>
+        /// Indicates the preference level of the administrative name. Valid values are <c>Primary</c>
+        /// and <c>Alternative</c>.
+        /// </para>
+        /// </summary>
+        public AdminNamesPreference Preference
+        {
+            get { return this._preference; }
+            set { this._preference = value; }
+        }
+
+        // Check to see if Preference property is set
+        internal bool IsSetPreference()
+        {
+            return this._preference != null;
         }
 
     }
