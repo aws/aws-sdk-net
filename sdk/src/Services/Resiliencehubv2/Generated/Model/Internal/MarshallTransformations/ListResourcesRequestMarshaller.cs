@@ -66,11 +66,17 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAwsRegion())
                 request.Parameters.Add("awsRegion", StringUtils.FromString(publicRequest.AwsRegion));
             
+            if (publicRequest.IsSetBillable())
+                request.Parameters.Add("billable", StringUtils.FromBool(publicRequest.Billable));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetResourceTypes())
+                request.ParameterCollection.Add("resourceTypes", publicRequest.ResourceTypes);
             if (string.IsNullOrEmpty(publicRequest.ServiceArn))
                 throw new AmazonResiliencehubv2Exception("Request object does not have required field ServiceArn set");
             

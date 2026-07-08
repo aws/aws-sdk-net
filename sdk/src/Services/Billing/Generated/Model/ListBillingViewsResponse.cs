@@ -67,7 +67,7 @@ namespace Amazon.Billing.Model
         /// The pagination token to use on subsequent calls to list billing views. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2047)]
+        [AWSProperty(Min=1, Max=4095)]
         public string NextToken
         {
             get { return this._nextToken; }

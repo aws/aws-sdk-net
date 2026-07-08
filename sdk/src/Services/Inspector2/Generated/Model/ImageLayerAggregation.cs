@@ -34,11 +34,172 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ImageLayerAggregation
     {
+        private List<StringFilter> _cloudAccountIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudOrgIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudPartitions = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudProviders = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudRegions = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _layerHashes = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _repositories = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _resourceIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private ImageLayerSortBy _sortBy;
         private SortOrder _sortOrder;
+
+        /// <summary>
+        /// Gets and sets the property CloudAccountIds. 
+        /// <para>
+        /// The cloud account IDs to aggregate findings for.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudAccountIds
+        {
+            get { return this._cloudAccountIds; }
+            set { this._cloudAccountIds = value; }
+        }
+
+        // Check to see if CloudAccountIds property is set
+        internal bool IsSetCloudAccountIds()
+        {
+            return this._cloudAccountIds != null && (this._cloudAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudOrgIds. 
+        /// <para>
+        /// The cloud organization IDs to aggregate findings for.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudOrgIds
+        {
+            get { return this._cloudOrgIds; }
+            set { this._cloudOrgIds = value; }
+        }
+
+        // Check to see if CloudOrgIds property is set
+        internal bool IsSetCloudOrgIds()
+        {
+            return this._cloudOrgIds != null && (this._cloudOrgIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudPartitions. 
+        /// <para>
+        /// The cloud partitions to aggregate findings for. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>aws</c> – Amazon Web Services commercial Regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>aws-cn</c> – Amazon Web Services China Regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>aws-us-gov</c> – Amazon Web Services GovCloud (US) Regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AzureCloud</c> – Azure commercial Regions.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudPartitions
+        {
+            get { return this._cloudPartitions; }
+            set { this._cloudPartitions = value; }
+        }
+
+        // Check to see if CloudPartitions property is set
+        internal bool IsSetCloudPartitions()
+        {
+            return this._cloudPartitions != null && (this._cloudPartitions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudProviders. 
+        /// <para>
+        /// The cloud providers to aggregate findings for. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS</c> – Findings from Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – Findings from Microsoft Azure resources.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudProviders
+        {
+            get { return this._cloudProviders; }
+            set { this._cloudProviders = value; }
+        }
+
+        // Check to see if CloudProviders property is set
+        internal bool IsSetCloudProviders()
+        {
+            return this._cloudProviders != null && (this._cloudProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudRegions. 
+        /// <para>
+        /// The cloud regions to aggregate findings for. The value format depends on the cloud
+        /// provider:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services Region, such as <c>us-east-1</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Azure region, such as <c>eastus</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudRegions
+        {
+            get { return this._cloudRegions; }
+            set { this._cloudRegions = value; }
+        }
+
+        // Check to see if CloudRegions property is set
+        internal bool IsSetCloudRegions()
+        {
+            return this._cloudRegions != null && (this._cloudRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property LayerHashes. 

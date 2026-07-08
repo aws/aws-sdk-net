@@ -122,6 +122,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("overrides", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServiceRevisionOverridesUnmarshaller.Instance;
+                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("platformFamily", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -19,12 +19,13 @@ public static class Program
         if (args.Length < 2)
         {
             Console.Error.WriteLine("Error: expected a Smithy model path and an output directory.");
-            Console.Error.WriteLine("Usage: dotnet run --project SmithyDotNet.Generator/SmithyDotNet.Generator.csproj -- <path-to-model.json> <output-dir> [path-to-_sdk-versions.json]");
+            Console.Error.WriteLine("Usage: dotnet run --project SmithyDotNet.Generator/SmithyDotNet.Generator.csproj -- <path-to-model.json> <output-dir> [tests-output-dir] [path-to-_sdk-versions.json]");
             return 1;
         }
 
         var modelPath = args[0];
         var outputPath = args[1];
+        var testsOutputPath = args.Length >= 3 ? args[2] : null;
         if (!File.Exists(modelPath))
         {
             Console.Error.WriteLine($"Error: model file not found: {modelPath}");
@@ -56,10 +57,10 @@ public static class Program
             var index = new ServiceIndex(model);
             var context = new GenerationContext(index);
 
-            var manifestPath = args.Length >= 3 ? args[2] : FindVersionManifest(modelPath);
+            var manifestPath = args.Length >= 4 ? args[3] : FindVersionManifest(modelPath);
             if (manifestPath is null)
             {
-                Console.Error.WriteLine($"Error: could not locate '{ManifestRelativePath}'. Pass its path as the third argument.");
+                Console.Error.WriteLine($"Error: could not locate '{ManifestRelativePath}'. Pass its path as the fourth argument.");
                 return 1;
             }
 
@@ -67,9 +68,14 @@ public static class Program
             var modelFileName = Path.GetFileName(modelPath);
 
             var generator = new ServiceGenerator(context, modelFileName, serviceFileVersion);
-            var written = generator.Generate(outputPath);
+            var written = generator.Generate(outputPath, testsOutputPath);
 
             Console.WriteLine($"Generated {written.Count} files for {context.ServiceName} under '{Path.GetFullPath(outputPath)}'.");
+            if (context.HasEndpointTests && testsOutputPath is not null)
+            {
+                Console.WriteLine($"Generated endpoint provider tests for {context.ServiceName} under '{Path.GetFullPath(testsOutputPath)}'.");
+            }
+
             return 0;
         }
         catch (Exception ex) when (ex is GeneratorException or IOException or UnauthorizedAccessException or JsonException)

@@ -34,6 +34,44 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class UpdateConnectorV2Response : AmazonWebServiceResponse
     {
+        private ConnectorStatus _connectorStatus;
+        private EnablementStatus _enablementStatus;
+
+        /// <summary>
+        /// Gets and sets the property ConnectorStatus. 
+        /// <para>
+        /// The status of the connector after the update.
+        /// </para>
+        /// </summary>
+        public ConnectorStatus ConnectorStatus
+        {
+            get { return this._connectorStatus; }
+            set { this._connectorStatus = value; }
+        }
+
+        // Check to see if ConnectorStatus property is set
+        internal bool IsSetConnectorStatus()
+        {
+            return this._connectorStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatus. 
+        /// <para>
+        /// The enablement status of the connector after the update.
+        /// </para>
+        /// </summary>
+        public EnablementStatus EnablementStatus
+        {
+            get { return this._enablementStatus; }
+            set { this._enablementStatus = value; }
+        }
+
+        // Check to see if EnablementStatus property is set
+        internal bool IsSetEnablementStatus()
+        {
+            return this._enablementStatus != null;
+        }
 
     }
 }

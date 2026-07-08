@@ -64,7 +64,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property DeploymentParameters. 
         /// <para>
-        /// Optional deployment parameters for the stop operation.
+        /// The deployment parameters for the stop operation.
         /// </para>
         /// </summary>
         public DeploymentParameters DeploymentParameters

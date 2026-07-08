@@ -39,6 +39,7 @@ namespace Amazon.GeoPlaces.Model
         private bool? _addressNumberCorrected;
         private List<Category> _categories = AWSConfigs.InitializeCollections ? new List<Category>() : null;
         private long? _distance;
+        private bool? _estimatedPointAddress;
         private List<FoodType> _foodTypes = AWSConfigs.InitializeCollections ? new List<FoodType>() : null;
         private List<Intersection> _intersections = AWSConfigs.InitializeCollections ? new List<Intersection>() : null;
         private RelatedPlace _mainAddress;
@@ -53,6 +54,7 @@ namespace Amazon.GeoPlaces.Model
         private List<RelatedPlace> _secondaryAddresses = AWSConfigs.InitializeCollections ? new List<RelatedPlace>() : null;
         private TimeZone _timeZone;
         private string _title;
+        private TranslationDetails _translations;
 
         /// <summary>
         /// Gets and sets the property AccessPoints. 
@@ -157,6 +159,26 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetDistance()
         {
             return this._distance.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedPointAddress. 
+        /// <para>
+        /// If <c>true</c>, indicates that the coordinates of the position and access points of
+        /// the point address are estimated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public bool? EstimatedPointAddress
+        {
+            get { return this._estimatedPointAddress; }
+            set { this._estimatedPointAddress = value; }
+        }
+
+        // Check to see if EstimatedPointAddress property is set
+        internal bool IsSetEstimatedPointAddress()
+        {
+            return this._estimatedPointAddress.HasValue; 
         }
 
         /// <summary>
@@ -467,6 +489,25 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Translations. 
+        /// <para>
+        /// All name translations and alternative names for the requested address fields in all
+        /// available languages.
+        /// </para>
+        /// </summary>
+        public TranslationDetails Translations
+        {
+            get { return this._translations; }
+            set { this._translations = value; }
+        }
+
+        // Check to see if Translations property is set
+        internal bool IsSetTranslations()
+        {
+            return this._translations != null;
         }
 
     }

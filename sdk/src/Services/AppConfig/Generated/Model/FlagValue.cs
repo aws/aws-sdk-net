@@ -65,7 +65,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether the feature flag is enabled for this treatment.
+        /// Specifies whether the feature flag is enabled for this treatment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

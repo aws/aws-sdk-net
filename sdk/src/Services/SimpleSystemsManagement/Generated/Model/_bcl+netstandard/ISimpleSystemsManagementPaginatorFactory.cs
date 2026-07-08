@@ -398,6 +398,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         IListAssociationVersionsPaginator ListAssociationVersions(ListAssociationVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListCloudConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCloudConnectorsPaginator ListCloudConnectors(ListCloudConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListCommandInvocations operation
         ///</summary>
         [AWSPaginator(
@@ -526,5 +536,15 @@ namespace Amazon.SimpleSystemsManagement.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListResourceDataSyncPaginator ListResourceDataSync(ListResourceDataSyncRequest request);
+
+        /// <summary>
+        /// Paginator for ValidateCloudConnector operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IValidateCloudConnectorPaginator ValidateCloudConnector(ValidateCloudConnectorRequest request);
     }
 }

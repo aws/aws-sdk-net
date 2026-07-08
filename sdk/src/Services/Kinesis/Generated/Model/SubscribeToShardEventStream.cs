@@ -52,7 +52,7 @@ namespace Amazon.Kinesis.Model
             {"SubscribeToShardEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new SubscribeToShardEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -66,63 +66,63 @@ namespace Amazon.Kinesis.Model
                     {"InternalFailureException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalFailureExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"KMSAccessDeniedException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new KMSAccessDeniedExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"KMSDisabledException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new KMSDisabledExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"KMSInvalidStateException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new KMSInvalidStateExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"KMSNotFoundException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new KMSNotFoundExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"KMSOptInRequired", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new KMSOptInRequiredExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"KMSThrottlingException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new KMSThrottlingExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ResourceInUseException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ResourceInUseExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ResourceNotFoundException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new KinesisEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ResourceNotFoundExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

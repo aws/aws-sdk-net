@@ -80,6 +80,10 @@ namespace Amazon.ConfigService.Model
         /// <para>
         ///  <c>StoredQuery</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Connector</c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

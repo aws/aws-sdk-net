@@ -88,9 +88,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// A <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a> compliant language
-        /// codes for the results to be rendered in. If there is no data for the result in the
-        /// requested language, data will be returned in the default language for the entry.
+        /// A <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
+        /// 47</a> compliant language codes for the results to be rendered in. If there is no
+        /// data for the result in the requested language, data will be returned in the default
+        /// language for the entry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]

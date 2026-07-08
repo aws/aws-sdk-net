@@ -3451,6 +3451,14 @@ namespace Amazon.AppConfig
         /// Starts an experiment run for the specified experiment definition. An experiment run
         /// delivers treatments to the target audience and collects metrics. You can start multiple
         /// experiment runs from the same experiment definition.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Billing for this experiment begins when you call this operation and continues until
+        /// the experiment is stopped. For pricing details, see <a href="https://aws.amazon.com/systems-manager/pricing/">AppConfig
+        /// pricing</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartExperimentRun service method.</param>
         /// 
@@ -3483,6 +3491,14 @@ namespace Amazon.AppConfig
         /// Starts an experiment run for the specified experiment definition. An experiment run
         /// delivers treatments to the target audience and collects metrics. You can start multiple
         /// experiment runs from the same experiment definition.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Billing for this experiment begins when you call this operation and continues until
+        /// the experiment is stopped. For pricing details, see <a href="https://aws.amazon.com/systems-manager/pricing/">AppConfig
+        /// pricing</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartExperimentRun service method.</param>
         /// <param name="cancellationToken">
@@ -3595,6 +3611,10 @@ namespace Amazon.AppConfig
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
         /// </exception>
@@ -3624,6 +3644,10 @@ namespace Amazon.AppConfig
         /// <returns>The response from the StopExperimentRun service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.

@@ -35,6 +35,25 @@ namespace Amazon.Inspector2.Model
     public partial class FilterCriteria
     {
         private List<StringFilter> _awsAccountId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudImageArchitecture = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudImageDigest = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<NumberFilter> _cloudImageInUseCount = AWSConfigs.InitializeCollections ? new List<NumberFilter>() : null;
+        private List<DateFilter> _cloudImageLastInUseAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<DateFilter> _cloudImagePushedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _cloudImageRegistry = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudImageRepositoryName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudImageTags = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudProvider = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudProviderAccountId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudProviderOrgId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudProviderRegion = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudServerlessFunctionExecutionRole = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _cloudServerlessFunctionLastModifiedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _cloudServerlessFunctionName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudServerlessFunctionRuntime = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudVmImageReference = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudVmNetworkId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _cloudVmSubnetIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _codeRepositoryProjectName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _codeRepositoryProviderType = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _codeVulnerabilityDetectorName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
@@ -103,6 +122,462 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null && (this._awsAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImageArchitecture. 
+        /// <para>
+        /// Filter criteria for the architecture of a container image.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudImageArchitecture
+        {
+            get { return this._cloudImageArchitecture; }
+            set { this._cloudImageArchitecture = value; }
+        }
+
+        // Check to see if CloudImageArchitecture property is set
+        internal bool IsSetCloudImageArchitecture()
+        {
+            return this._cloudImageArchitecture != null && (this._cloudImageArchitecture.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImageDigest. 
+        /// <para>
+        /// Filter criteria for the digest of a container image.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudImageDigest
+        {
+            get { return this._cloudImageDigest; }
+            set { this._cloudImageDigest = value; }
+        }
+
+        // Check to see if CloudImageDigest property is set
+        internal bool IsSetCloudImageDigest()
+        {
+            return this._cloudImageDigest != null && (this._cloudImageDigest.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImageInUseCount. 
+        /// <para>
+        /// Filter criteria for the in-use count of a container image.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<NumberFilter> CloudImageInUseCount
+        {
+            get { return this._cloudImageInUseCount; }
+            set { this._cloudImageInUseCount = value; }
+        }
+
+        // Check to see if CloudImageInUseCount property is set
+        internal bool IsSetCloudImageInUseCount()
+        {
+            return this._cloudImageInUseCount != null && (this._cloudImageInUseCount.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImageLastInUseAt. 
+        /// <para>
+        /// Filter criteria for the last time a container image was in use.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<DateFilter> CloudImageLastInUseAt
+        {
+            get { return this._cloudImageLastInUseAt; }
+            set { this._cloudImageLastInUseAt = value; }
+        }
+
+        // Check to see if CloudImageLastInUseAt property is set
+        internal bool IsSetCloudImageLastInUseAt()
+        {
+            return this._cloudImageLastInUseAt != null && (this._cloudImageLastInUseAt.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImagePushedAt. 
+        /// <para>
+        /// Filter criteria for when a container image was pushed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<DateFilter> CloudImagePushedAt
+        {
+            get { return this._cloudImagePushedAt; }
+            set { this._cloudImagePushedAt = value; }
+        }
+
+        // Check to see if CloudImagePushedAt property is set
+        internal bool IsSetCloudImagePushedAt()
+        {
+            return this._cloudImagePushedAt != null && (this._cloudImagePushedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImageRegistry. 
+        /// <para>
+        /// Filter criteria for the registry of a container image.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudImageRegistry
+        {
+            get { return this._cloudImageRegistry; }
+            set { this._cloudImageRegistry = value; }
+        }
+
+        // Check to see if CloudImageRegistry property is set
+        internal bool IsSetCloudImageRegistry()
+        {
+            return this._cloudImageRegistry != null && (this._cloudImageRegistry.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImageRepositoryName. 
+        /// <para>
+        /// Filter criteria for the repository name of a container image.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudImageRepositoryName
+        {
+            get { return this._cloudImageRepositoryName; }
+            set { this._cloudImageRepositoryName = value; }
+        }
+
+        // Check to see if CloudImageRepositoryName property is set
+        internal bool IsSetCloudImageRepositoryName()
+        {
+            return this._cloudImageRepositoryName != null && (this._cloudImageRepositoryName.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudImageTags. 
+        /// <para>
+        /// Filter criteria for the tags of a container image.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudImageTags
+        {
+            get { return this._cloudImageTags; }
+            set { this._cloudImageTags = value; }
+        }
+
+        // Check to see if CloudImageTags property is set
+        internal bool IsSetCloudImageTags()
+        {
+            return this._cloudImageTags != null && (this._cloudImageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudProvider. 
+        /// <para>
+        /// Filter criteria for the cloud provider.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudProvider
+        {
+            get { return this._cloudProvider; }
+            set { this._cloudProvider = value; }
+        }
+
+        // Check to see if CloudProvider property is set
+        internal bool IsSetCloudProvider()
+        {
+            return this._cloudProvider != null && (this._cloudProvider.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudProviderAccountId. 
+        /// <para>
+        /// Filter criteria for the cloud provider account ID.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudProviderAccountId
+        {
+            get { return this._cloudProviderAccountId; }
+            set { this._cloudProviderAccountId = value; }
+        }
+
+        // Check to see if CloudProviderAccountId property is set
+        internal bool IsSetCloudProviderAccountId()
+        {
+            return this._cloudProviderAccountId != null && (this._cloudProviderAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudProviderOrgId. 
+        /// <para>
+        /// Filter criteria for the cloud provider organization ID.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudProviderOrgId
+        {
+            get { return this._cloudProviderOrgId; }
+            set { this._cloudProviderOrgId = value; }
+        }
+
+        // Check to see if CloudProviderOrgId property is set
+        internal bool IsSetCloudProviderOrgId()
+        {
+            return this._cloudProviderOrgId != null && (this._cloudProviderOrgId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudProviderRegion. 
+        /// <para>
+        /// Filter criteria for the cloud provider region.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudProviderRegion
+        {
+            get { return this._cloudProviderRegion; }
+            set { this._cloudProviderRegion = value; }
+        }
+
+        // Check to see if CloudProviderRegion property is set
+        internal bool IsSetCloudProviderRegion()
+        {
+            return this._cloudProviderRegion != null && (this._cloudProviderRegion.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudServerlessFunctionExecutionRole. 
+        /// <para>
+        /// Filter criteria for the execution role of a serverless function.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudServerlessFunctionExecutionRole
+        {
+            get { return this._cloudServerlessFunctionExecutionRole; }
+            set { this._cloudServerlessFunctionExecutionRole = value; }
+        }
+
+        // Check to see if CloudServerlessFunctionExecutionRole property is set
+        internal bool IsSetCloudServerlessFunctionExecutionRole()
+        {
+            return this._cloudServerlessFunctionExecutionRole != null && (this._cloudServerlessFunctionExecutionRole.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudServerlessFunctionLastModifiedAt. 
+        /// <para>
+        /// Filter criteria for when a serverless function was last modified.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<DateFilter> CloudServerlessFunctionLastModifiedAt
+        {
+            get { return this._cloudServerlessFunctionLastModifiedAt; }
+            set { this._cloudServerlessFunctionLastModifiedAt = value; }
+        }
+
+        // Check to see if CloudServerlessFunctionLastModifiedAt property is set
+        internal bool IsSetCloudServerlessFunctionLastModifiedAt()
+        {
+            return this._cloudServerlessFunctionLastModifiedAt != null && (this._cloudServerlessFunctionLastModifiedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudServerlessFunctionName. 
+        /// <para>
+        /// Filter criteria for the name of a serverless function.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudServerlessFunctionName
+        {
+            get { return this._cloudServerlessFunctionName; }
+            set { this._cloudServerlessFunctionName = value; }
+        }
+
+        // Check to see if CloudServerlessFunctionName property is set
+        internal bool IsSetCloudServerlessFunctionName()
+        {
+            return this._cloudServerlessFunctionName != null && (this._cloudServerlessFunctionName.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudServerlessFunctionRuntime. 
+        /// <para>
+        /// Filter criteria for the runtime of a serverless function.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudServerlessFunctionRuntime
+        {
+            get { return this._cloudServerlessFunctionRuntime; }
+            set { this._cloudServerlessFunctionRuntime = value; }
+        }
+
+        // Check to see if CloudServerlessFunctionRuntime property is set
+        internal bool IsSetCloudServerlessFunctionRuntime()
+        {
+            return this._cloudServerlessFunctionRuntime != null && (this._cloudServerlessFunctionRuntime.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudVmImageReference. 
+        /// <para>
+        /// Filter criteria for the image reference of a VM instance.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudVmImageReference
+        {
+            get { return this._cloudVmImageReference; }
+            set { this._cloudVmImageReference = value; }
+        }
+
+        // Check to see if CloudVmImageReference property is set
+        internal bool IsSetCloudVmImageReference()
+        {
+            return this._cloudVmImageReference != null && (this._cloudVmImageReference.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudVmNetworkId. 
+        /// <para>
+        /// Filter criteria for the network ID of a VM instance.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudVmNetworkId
+        {
+            get { return this._cloudVmNetworkId; }
+            set { this._cloudVmNetworkId = value; }
+        }
+
+        // Check to see if CloudVmNetworkId property is set
+        internal bool IsSetCloudVmNetworkId()
+        {
+            return this._cloudVmNetworkId != null && (this._cloudVmNetworkId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudVmSubnetIds. 
+        /// <para>
+        /// Filter criteria for the subnet IDs of a VM instance.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> CloudVmSubnetIds
+        {
+            get { return this._cloudVmSubnetIds; }
+            set { this._cloudVmSubnetIds = value; }
+        }
+
+        // Check to see if CloudVmSubnetIds property is set
+        internal bool IsSetCloudVmSubnetIds()
+        {
+            return this._cloudVmSubnetIds != null && (this._cloudVmSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

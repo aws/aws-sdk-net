@@ -96,6 +96,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetRecommenderVersionName())
+            {
+                context.Writer.WritePropertyName("RecommenderVersionName");
+                context.Writer.WriteStringValue(publicRequest.RecommenderVersionName);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

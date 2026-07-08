@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TrafficPolicy Object
     /// </summary>  
-    public class TrafficPolicyUnmarshaller : IJsonUnmarshaller<TrafficPolicy, JsonUnmarshallerContext>
+    public class TrafficPolicyUnmarshaller : ICborUnmarshaller<TrafficPolicy, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrafficPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TrafficPolicy Unmarshall(CborUnmarshallerContext context)
         {
             TrafficPolicy unmarshalledObject = new TrafficPolicy();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DefaultAction", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrafficPolicyId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrafficPolicyId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrafficPolicyName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrafficPolicyName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DefaultAction":
+                        {
+                            context.AddPathSegment("DefaultAction");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DefaultAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TrafficPolicyId":
+                        {
+                            context.AddPathSegment("TrafficPolicyId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TrafficPolicyId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TrafficPolicyName":
+                        {
+                            context.AddPathSegment("TrafficPolicyName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TrafficPolicyName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

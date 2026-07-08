@@ -109,7 +109,9 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ServicePrincipal. 
         /// <para>
         /// For service-linked configuration recorders, you can use the service principal of the
-        /// linked Amazon Web Services service to specify the configuration recorder.
+        /// linked Amazon Web Services service to specify the configuration recorder. This field
+        /// is only supported for Amazon Web Services service principals. For third-party service-linked
+        /// configuration recorders, use <c>Arn</c> instead.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

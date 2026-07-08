@@ -34,13 +34,33 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class HlsConfiguration
     {
+        private string _dualStackManifestEndpointPrefix;
         private string _manifestEndpointPrefix;
+
+        /// <summary>
+        /// Gets and sets the property DualStackManifestEndpointPrefix. 
+        /// <para>
+        /// The dual-stack (IPv4 and IPv6) URL that MediaTailor generates to initiate a playback
+        /// session for devices that support Apple HLS. The session uses server-side reporting.
+        /// </para>
+        /// </summary>
+        public string DualStackManifestEndpointPrefix
+        {
+            get { return this._dualStackManifestEndpointPrefix; }
+            set { this._dualStackManifestEndpointPrefix = value; }
+        }
+
+        // Check to see if DualStackManifestEndpointPrefix property is set
+        internal bool IsSetDualStackManifestEndpointPrefix()
+        {
+            return this._dualStackManifestEndpointPrefix != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ManifestEndpointPrefix. 
         /// <para>
-        /// The URL that is used to initiate a playback session for devices that support Apple
-        /// HLS. The session uses server-side reporting.
+        /// The URL that MediaTailor generates to initiate a playback session for devices that
+        /// support Apple HLS. The session uses server-side reporting.
         /// </para>
         /// </summary>
         public string ManifestEndpointPrefix

@@ -1,3 +1,86 @@
+### 4.0.283.0 (2026-07-08 18:19 UTC)
+* AppConfig (4.0.101.0)
+	* Update ExperimentRun APIs to support ConflictExceptions.
+* BedrockAgentCoreControl (4.0.101.0)
+	* AgentCore Gateway now supports mapping allowed scopes to separate advertised scopes on the inbound authorizer.
+* DSQL (4.0.101.0)
+	* `DSQLAuthTokenGenerator` now forces a refresh when the credentials would expire before the generated token, so the token remains valid for its full lifetime (or as close to it as the credentials session duration allows). This applies to credential providers deriving from `RefreshingAWSCredentials` (such as `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials`); EC2 instance profile credentials and static credentials are unaffected. Token generation may now throw if the credentials refresh fails; previously a token could be returned signed with credentials nearing expiration, which the database could reject.
+* EC2 (4.0.104.0)
+	* Replace Root Volume now supports a VolumeId parameter. This allows the customer to pass in a pre-prepared volume as the target root volume for an RRV workflow.
+* ECS (4.0.101.0)
+	* Amazon ECS now automatically detects the correct CPU architecture for Express Mode services.
+* GeoPlaces (4.0.101.0)
+	* Added AddressNamesMode, AddressNameTranslations, MobilityMode, PostalCodeMode, SecondaryAddresses, and DriveThrough features across Places V2 APIs to support address name formatting,  multilingual translations, travel-aware search, multi-city postal codes, and unit-level address resolution.
+* IoTWireless (4.0.101.0)
+	* Default session downlink transmission parameters have been added to the existing Multicast Group APIs. Explicit transmission parameters are no longer required when starting a multicast session during the FUOTA procedure.
+* RDS (4.0.101.0)
+	* `RDSAuthTokenGenerator` now forces a refresh when the credentials would expire before the generated token, so the token remains valid for its full lifetime. This applies to credential providers deriving from `RefreshingAWSCredentials` (such as `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials`); EC2 instance profile credentials and static credentials are unaffected. `GenerateAuthToken` may now throw if the credentials refresh fails; previously a token could be returned signed with credentials nearing expiration, which the database could reject.
+* Resiliencehubv2 (4.0.101.0)
+	* Next Generation Resilience Hub now supports filtering and sorting failure mode assessments, resource type filtering in ListResources, cross-region and cross-account topology edges, data recovery achievability status, and more granular dependency discovery progress tracking.
+* Extensions.Bedrock.MEAI (4.0.101.3)
+	* Surface strict tool use (ToolSpecification.Strict) through BedrockChatClient
+* Core 4.0.100.3
+	* Added `RefreshingAWSCredentials.GetCredentials(TimeSpan)` and `GetCredentialsAsync(TimeSpan)` methods that regenerate credentials when the current credentials would expire within the requested minimum lifetime, and return the existing credentials otherwise.
+	* Eliminates the intermediate string allocations in the AWS Query request marshalling
+	* All service and extension packages updated to require new Core
+
+### 4.0.282.0 (2026-07-07 18:19 UTC)
+* AWSMarketplaceMetering (4.0.100.3)
+	* The usage reporting window for the BatchMeterUsage API has been extended from 6 hours to 24 hours. Sellers can now submit usage records for up to 24 hours after a metered event occurs. The existing 6-hour grace period at the end of a billing cycle still applies.
+* ConfigService (4.0.102.0)
+	* Added support for connecting AWS Config to third-party cloud service providers. New APIs include PutConnector, GetConnector, DeleteConnector, and ListConnectors for managing connectors, and PutThirdPartyServiceLinkedConfigurationRecorder for creating third-party service-linked recorders.
+* Connect (4.0.103.0)
+	* Adds support for CreateAuthCode and DeleteSession APIs.
+* DynamoDBv2 (4.0.101.0)
+	* Fix `BatchGet` to honor `ConsistentRead` from `BatchGetConfig` (previously the config value was silently dropped, causing all batch gets to use eventually-consistent reads)
+	* Added `SaveConfig.ConditionalExpression` to support conditional expressions on `DynamoDBContext.SaveAsync` and fixed expression evaluation for nullable-typed constants (e.g. comparisons against int?) in `DynamoDBContext` filter/condition expressions
+* EC2 (4.0.103.0)
+	* This launch surfaces the public SSM parameter associated with public AMIs in the AMI metadata.
+* Inspector2 (4.0.101.0)
+	* This release extends vulnerability management to Azure VM, container registries and function apps. Adds support for per-member-account scan configuration settings.
+* Lambda (4.0.101.0)
+	* AWS Lambda Durable Functions now supports customer managed KMS keys. This allows customers to configure a KMS key in Durable Config to have all their durable execution data encrypted.
+* MarketplaceCatalog (4.0.101.0)
+	* This release enhances the ListEntities API to support ResellerRole filter for ResaleAuthorization entity.
+* PartnerCentralRevenueMeasurement (4.0.100.0)
+	* Add support for AWS Partner Central Revenue Measurement API for creating, managing, and tracking revenue attributions and marketplace revenue share allocations.
+* Route53GlobalResolver (4.0.101.0)
+	* Adds ListSharedDNSViews operation to list all DNS Views shared with caller using AWS Resource Access Manager. Also updates ListHostedZoneAssociations operation so that resource ARN param is optional, allowing caller to list all HostedZoneAssociations in account.
+* SecurityHub (4.0.101.0)
+	* release SecurityHub MultiCloud integration with Azure
+* SimpleSystemsManagement (4.0.101.0)
+	* Adding SSM Cloud Connector to support Azure Virtual Machines onboarding to AWS Systems Manager
+
+### 4.0.281.0 (2026-07-06 18:18 UTC)
+* Billing (4.0.101.0)
+	* Adds support for managing AWS account credits and billing preferences, including retrieving credit details, viewing per-month credit allocation history, redeeming promotional codes, and configuring credit sharing and billing preferences.
+* CloudWatchLogs (4.0.101.0)
+	* Added PutStorageTierPolicy and GetStorageTierPolicy APIs to Amazon CloudWatch Logs. Customers can now configure account-level Intelligent Tiering to automatically optimize log storage costs by moving infrequently accessed data to lower-cost storage tiers.
+* MailManager (4.0.101.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.0. The SDK will prioritize its most performant protocol.
+* OpenSearchService (4.0.102.0)
+	* This release introduces Saved Object Migration APIs, enabling users to migrate dashboards, visualizations, index patterns, and other saved objects from a data source into an Amazon OpenSearch Service application workspace with configurable export filters and conflict resolution strategies.
+
+### 4.0.280.0 (2026-07-02 20:08 UTC)
+* CognitoIdentityProvider (4.0.101.0)
+	* Add support for provisioned limit management, enabling customers to view and update their provisioned API rate limits for Amazon Cognito User Pools programmatically through the new GetProvisionedLimit and UpdateProvisionedLimit APIs.
+* ConfigService (4.0.101.0)
+	* AWS Config now supports tag-on-create for organization-managed Config rules and conformance packs through the PutOrganizationConfigRule and PutOrganizationConformancePack APIs.
+* CustomerProfiles (4.0.101.0)
+	* Amazon Connect Customer Profiles adds support for diversityConfig to recommenderConfig which can be used for diversifying the recommendations. This release also includes model versioning support which helps customer to rollback trained models.
+* ElementalInference (4.0.101.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaTailor (4.0.101.0)
+	* Added dual-stack (IPv4 and IPv6) endpoint fields to SSAI and Channel Assembly API responses.
+* Outposts (4.0.101.0)
+	* Tighten Outpost site ContactPhoneNumber regex to perform phone number validation.
+* Extensions.NETCore.Setup (4.0.100.2)
+	* Add JsonMaxDepth to DefaultClientConfig to mirror ClientConfig in Core.
+* Core 4.0.100.2
+	* Add JsonMaxDepth option to ClientConfig for reading deeply nested JSON documents.
+	* AWSSDKUtils.EncodeTraceIdHeaderValue now uses rented buffers and O(1) lookup
+	* All service and extension packages updated to require new Core
+
 ### 4.0.279.0 (2026-07-01 18:16 UTC)
 * Artifact (4.0.101.0)
 	* Add support for Assurance Assistant APIs for managing compliance inquiries along with tagging features.

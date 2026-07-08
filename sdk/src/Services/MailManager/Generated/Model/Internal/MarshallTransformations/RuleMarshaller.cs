@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Rule Marshaller
     /// </summary>
-    public class RuleMarshaller : IRequestMarshaller<Rule, JsonMarshallerContext> 
+    public class RuleMarshaller : IRequestMarshaller<Rule, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,64 +45,61 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Rule requestObject, JsonMarshallerContext context)
+        public void Marshall(Rule requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetActions())
+
+            if (requestObject.IsSetActions())
             {
-                context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Actions");
+                context.Writer.WriteStartArray(requestObject.Actions.Count);
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = RuleActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetConditions())
+            if (requestObject.IsSetConditions())
             {
-                context.Writer.WritePropertyName("Conditions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Conditions");
+                context.Writer.WriteStartArray(requestObject.Conditions.Count);
                 foreach(var requestObjectConditionsListValue in requestObject.Conditions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = RuleConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectConditionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetName())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
-
-            if(requestObject.IsSetUnless())
+            if (requestObject.IsSetUnless())
             {
-                context.Writer.WritePropertyName("Unless");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Unless");
+                context.Writer.WriteStartArray(requestObject.Unless.Count);
                 foreach(var requestObjectUnlessListValue in requestObject.Unless)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = RuleConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectUnlessListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

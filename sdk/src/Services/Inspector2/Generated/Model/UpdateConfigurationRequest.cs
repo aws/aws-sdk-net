@@ -31,14 +31,41 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConfiguration operation.
-    /// Updates setting configurations for your Amazon Inspector account. When you use this
-    /// API as an Amazon Inspector delegated administrator this updates the setting for all
-    /// accounts you manage. Member accounts in an organization cannot update this setting.
+    /// Updates the scan configuration for your Amazon Inspector account. If you don't specify
+    /// an <c>accountId</c>, this operation updates the delegated administrator's configuration
+    /// and propagates it to member accounts that have not been individually configured. If
+    /// you specify an <c>accountId</c>, this operation updates that member account's configuration.
+    /// Only the delegated administrator can specify an <c>accountId</c>; member accounts
+    /// cannot call this operation.
     /// </summary>
     public partial class UpdateConfigurationRequest : AmazonInspector2Request
     {
+        private string _accountId;
         private Ec2Configuration _ec2Configuration;
         private EcrConfiguration _ecrConfiguration;
+        private UpdateConfigurationInheritance _updateConfigurationInheritance;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The 12-digit Amazon Web Services account ID of the member account whose scan configuration
+        /// you want to update. When specified, you must be the delegated administrator for this
+        /// member account. If not specified, the operation updates your own configuration and
+        /// propagates changes to any member accounts that have not been individually configured.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2Configuration. 
@@ -74,6 +101,29 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetEcrConfiguration()
         {
             return this._ecrConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateConfigurationInheritance. 
+        /// <para>
+        /// Specifies which scan-type configurations to reset to the delegated administrator's
+        /// inherited values for the targeted member account. Each member of this structure is
+        /// independently optional. When specified, <c>ec2Configuration</c> and <c>ecrConfiguration</c>
+        /// must be absent, and <c>accountId</c> must also be present. Only <c>INHERIT_FROM_ADMIN</c>
+        /// is valid for each member. If not specified, the operation uses the <c>ec2Configuration</c>
+        /// and <c>ecrConfiguration</c> parameters instead.
+        /// </para>
+        /// </summary>
+        public UpdateConfigurationInheritance UpdateConfigurationInheritance
+        {
+            get { return this._updateConfigurationInheritance; }
+            set { this._updateConfigurationInheritance = value; }
+        }
+
+        // Check to see if UpdateConfigurationInheritance property is set
+        internal bool IsSetUpdateConfigurationInheritance()
+        {
+            return this._updateConfigurationInheritance != null;
         }
 
     }

@@ -220,6 +220,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Public = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("publicSsmParameterName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicSsmParameterName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ramdiskId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

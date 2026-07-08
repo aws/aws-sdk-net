@@ -431,6 +431,32 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubCreateConnector()
+        {
+            #region to-create-a-cspm-connector-1716000000000
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.CreateConnector(new CreateConnectorRequest 
+            {
+                Description = "Connector for Azure tenant monitoring",
+                Name = "MyAzureConnector",
+                Provider = new CspmProviderConfiguration { Azure = new AzureProviderConfiguration {
+                    AWSConfigConnectorArn = "arn:aws:config:us-east-1:123456789012:connector/azure-connector-1234",
+                    AzureRegions = new List<string> {
+                        "eastus",
+                        "westus2"
+                    },
+                    ScopeConfiguration = new AzureScopeConfiguration { ScopeType = "TENANT" }
+                } }
+            });
+
+            string connectorArn = response.ConnectorArn;
+            string connectorId = response.ConnectorId;
+            string enablementStatus = response.EnablementStatus;
+
+            #endregion
+        }
+
         public void SecurityHubCreateFindingAggregator()
         {
             #region to-enable-cross-region-aggregation-1674766716226
@@ -544,6 +570,21 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
                 Identifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
 
+
+            #endregion
+        }
+
+        public void SecurityHubDeleteConnector()
+        {
+            #region to-delete-a-cspm-connector-1716000000000
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.DeleteConnector(new DeleteConnectorRequest 
+            {
+                ConnectorId = "cspm-a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
+            });
+
+            string enablementStatus = response.EnablementStatus;
 
             #endregion
         }
@@ -887,6 +928,29 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubGetConnector()
+        {
+            #region to-get-a-cspm-connector-1716000000000
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.GetConnector(new GetConnectorRequest 
+            {
+                ConnectorId = "cspm-a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
+            });
+
+            string connectorArn = response.ConnectorArn;
+            string connectorId = response.ConnectorId;
+            DateTime createdAt = response.CreatedAt;
+            string createdBy = response.CreatedBy;
+            string description = response.Description;
+            CspmHealthCheck health = response.Health;
+            DateTime lastUpdatedAt = response.LastUpdatedAt;
+            string name = response.Name;
+            CspmProviderDetail providerDetail = response.ProviderDetail;
+
+            #endregion
+        }
+
         public void SecurityHubGetEnabledStandards()
         {
             #region to-return-a-list-of-enabled-standards-1677090731129
@@ -1110,6 +1174,21 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
             List<ConfigurationPolicyAssociationSummary> configurationPolicyAssociationSummaries = response.ConfigurationPolicyAssociationSummaries;
             string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void SecurityHubListConnectors()
+        {
+            #region to-list-cspm-connectors-1716000000000
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.ListConnectors(new ListConnectorsRequest 
+            {
+                MaxResults = 10
+            });
+
+            List<CspmConnectorSummary> connectors = response.Connectors;
 
             #endregion
         }
@@ -1364,6 +1443,37 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             string id = response.Id;
             string name = response.Name;
             DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void SecurityHubUpdateConnector()
+        {
+            #region to-update-a-cspm-connector-1716000000000
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.UpdateConnector(new UpdateConnectorRequest 
+            {
+                ConnectorId = "cspm-a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                Description = "Updated connector description",
+                Provider = new CspmProviderUpdateConfiguration { Azure = new AzureUpdateConfiguration {
+                    AzureRegions = new List<string> {
+                        "eastus",
+                        "westus2",
+                        "northeurope"
+                    },
+                    ScopeConfiguration = new AzureScopeConfiguration {
+                        ScopeType = "SUBSCRIPTION",
+                        ScopeValues = new List<string> {
+                            "sub-1234-5678-abcd",
+                            "sub-9012-3456-efgh"
+                        }
+                    }
+                } }
+            });
+
+            string connectorStatus = response.ConnectorStatus;
+            string enablementStatus = response.EnablementStatus;
 
             #endregion
         }

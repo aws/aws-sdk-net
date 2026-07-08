@@ -57,7 +57,7 @@
             {"<#=member.PropertyName#>", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new <#=member.DetermineType()#>Unmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -106,7 +106,7 @@
                     {"<#=member.PropertyName#>", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new <#=this.Config.ClassName#>EventStreamException(Encoding.UTF8.GetString(payload.Payload), new <#=member.ModelShape#>Unmarshaller().Unmarshall(context, ref reader));
                         }
                     },

@@ -12,37 +12,48 @@ namespace SmithyDotNet.Generator.Generation;
 /// <para />
 /// Phase 1 scope: the writers that exist today (interface, client, config, service exception,
 /// metadata, endpoint parameters/provider/resolver, operation request/response/base, structures,
-/// exceptions, and the restJson1 request marshaller + structure (un)marshallers). The auth
-/// <c>Internal/</c> files and the operation-response / exception unmarshallers have no writers yet,
-/// so the generated tree does not compile standalone.
+/// exceptions, the restJson1 request marshaller + structure (un)marshallers, and the auth resolver).
+/// The operation-response / exception unmarshallers have no writers yet, so the generated tree does
+/// not compile standalone.
 /// </summary>
 public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion)
 {
     /// <summary>
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
-    /// Returns the relative paths written, for logging and tests.
+    /// Returns the relative paths written under <paramref name="outputPath"/>, for logging and tests.
+    /// <para />
+    /// When <paramref name="testsOutputPath"/> is supplied and the service carries endpoint tests
+    /// (<see cref="GenerationContext.HasEndpointTests"/>), the endpoint provider tests file is also
+    /// written under <c>{testsOutputPath}/UnitTests/Generated/Endpoints/</c> — a separate root because
+    /// the SDK lays out its test tree (<c>sdk/test/Services/{Service}/</c>) as a sibling of the source
+    /// tree (<c>sdk/src/Services/{Service}/</c>), not nested under it. That file gets its own
+    /// duplicate-path guard (via <c>EmitUnder</c>) but isn't tracked in the returned list, which stays
+    /// scoped to <paramref name="outputPath"/>.
     /// </summary>
-    public IReadOnlyList<string> Generate(string outputPath, CancellationToken cancellationToken = default)
+    public IReadOnlyList<string> Generate(string outputPath, string? testsOutputPath = null, CancellationToken cancellationToken = default)
     {
         var clientName = context.ClientName;
         // Concurrent-safe so Emit can be called from parallel writers later. TryAdd both reserves
         // the path (atomic fail-fast on duplicates) and records it as written, so there is a single
         // collection to reason about.
         var written = new ConcurrentDictionary<string, byte>();
+        var writtenTests = new ConcurrentDictionary<string, byte>();
 
-        void Emit(string relativePath, string contents)
+        void EmitUnder(string root, ConcurrentDictionary<string, byte> tracker, string relativePath, string contents)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
             // Fail fast: two writers targeting the same path would silently overwrite, producing
             // wrong output while still reporting success.
-            if (!written.TryAdd(relativePath, 0))
+            if (!tracker.TryAdd(relativePath, 0))
             {
                 throw new GeneratorException($"Two writers produced the same output path: '{relativePath}'.");
             }
 
-            WriteFile(outputPath, relativePath, contents);
+            WriteFile(root, relativePath, contents);
         }
+
+        void Emit(string relativePath, string contents) => EmitUnder(outputPath, written, relativePath, contents);
 
         var generated = "Generated";
         var model = Path.Combine(generated, "Model");
@@ -74,6 +85,17 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             var endpointResolverWriter = new EndpointResolverWriter(context, modelFileName);
             Emit(Path.Combine(@internal, $"{clientName}EndpointResolver.g.cs"), endpointResolverWriter.Write(cancellationToken));
+        }
+
+        // The endpoint provider tests file lives under the test project's tree, a sibling of the
+        // source tree rather than a descendant of outputPath, so it's tracked in its own dictionary
+        // under testsOutputPath rather than outputPath's — but it still goes through the same
+        // collision-guarded, cancellation-checked EmitUnder as everything else.
+        if (context.HasEndpointTests && testsOutputPath is not null)
+        {
+            var endpointProviderTestSuiteWriter = new EndpointProviderTestSuiteWriter(context, modelFileName);
+            var testsRelativePath = Path.Combine("UnitTests", "Generated", "Endpoints", $"{context.ServiceName}EndpointProviderTests.g.cs");
+            EmitUnder(testsOutputPath, writtenTests, testsRelativePath, endpointProviderTestSuiteWriter.Write(cancellationToken));
         }
 
         var exceptionWriter = new ExceptionWriter(context, modelFileName);
@@ -117,6 +139,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 }
             }
         }
+
+        // Every service gets an auth resolver: a service that models no auth falls back to noAuth, so
+        // this is emitted unconditionally (unlike the endpoint files, which are gated on a rule set).
+        var authResolverWriter = new AuthResolverWriter(context, modelFileName);
+        Emit(Path.Combine(@internal, $"{clientName}AuthResolver.g.cs"), authResolverWriter.Write(cancellationToken));
 
         var structureWriter = new StructureWriter(context, modelFileName);
         foreach (var (shapeId, structure) in context.Structures)

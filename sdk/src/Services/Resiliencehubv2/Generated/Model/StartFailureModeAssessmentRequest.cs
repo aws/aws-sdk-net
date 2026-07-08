@@ -31,7 +31,7 @@ namespace Amazon.Resiliencehubv2.Model
 {
     /// <summary>
     /// Container for the parameters to the StartFailureModeAssessment operation.
-    /// Start a failure mode assessment.
+    /// Starts a failure mode assessment.
     /// </summary>
     public partial class StartFailureModeAssessmentRequest : AmazonResiliencehubv2Request
     {

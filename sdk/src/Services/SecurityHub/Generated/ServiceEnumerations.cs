@@ -579,6 +579,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type CloudProviderName.
+    /// </summary>
+    public class CloudProviderName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for CloudProviderName
+        /// </summary>
+        public static readonly CloudProviderName AWS = new CloudProviderName("AWS");
+        /// <summary>
+        /// Constant Azure for CloudProviderName
+        /// </summary>
+        public static readonly CloudProviderName Azure = new CloudProviderName("Azure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudProviderName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudProviderName FindValue(string value)
+        {
+            return FindValue<CloudProviderName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudProviderName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComplianceStatus.
     /// </summary>
     public class ComplianceStatus : ConstantClass
@@ -797,6 +847,10 @@ namespace Amazon.SecurityHub
     {
 
         /// <summary>
+        /// Constant AZURE for ConnectorProviderName
+        /// </summary>
+        public static readonly ConnectorProviderName AZURE = new ConnectorProviderName("AZURE");
+        /// <summary>
         /// Constant JIRA_CLOUD for ConnectorProviderName
         /// </summary>
         public static readonly ConnectorProviderName JIRA_CLOUD = new ConnectorProviderName("JIRA_CLOUD");
@@ -851,6 +905,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ConnectorStatus CONNECTED = new ConnectorStatus("CONNECTED");
         /// <summary>
+        /// Constant DEGRADED for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus DEGRADED = new ConnectorStatus("DEGRADED");
+        /// <summary>
         /// Constant FAILED_TO_CONNECT for ConnectorStatus
         /// </summary>
         public static readonly ConnectorStatus FAILED_TO_CONNECT = new ConnectorStatus("FAILED_TO_CONNECT");
@@ -862,6 +920,10 @@ namespace Amazon.SecurityHub
         /// Constant PENDING_CONFIGURATION for ConnectorStatus
         /// </summary>
         public static readonly ConnectorStatus PENDING_CONFIGURATION = new ConnectorStatus("PENDING_CONFIGURATION");
+        /// <summary>
+        /// Constant UNKNOWN for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus UNKNOWN = new ConnectorStatus("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -999,6 +1061,168 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type CspmConnectorProviderName.
+    /// </summary>
+    public class CspmConnectorProviderName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZURE for CspmConnectorProviderName
+        /// </summary>
+        public static readonly CspmConnectorProviderName AZURE = new CspmConnectorProviderName("AZURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CspmConnectorProviderName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CspmConnectorProviderName FindValue(string value)
+        {
+            return FindValue<CspmConnectorProviderName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CspmConnectorProviderName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CspmConnectorStatus.
+    /// </summary>
+    public class CspmConnectorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus CONNECTED = new CspmConnectorStatus("CONNECTED");
+        /// <summary>
+        /// Constant DEGRADED for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus DEGRADED = new CspmConnectorStatus("DEGRADED");
+        /// <summary>
+        /// Constant FAILED_TO_CONNECT for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus FAILED_TO_CONNECT = new CspmConnectorStatus("FAILED_TO_CONNECT");
+        /// <summary>
+        /// Constant UNKNOWN for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus UNKNOWN = new CspmConnectorStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CspmConnectorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CspmConnectorStatus FindValue(string value)
+        {
+            return FindValue<CspmConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CspmConnectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CspmEnablementStatus.
+    /// </summary>
+    public class CspmEnablementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus ENABLED = new CspmEnablementStatus("ENABLED");
+        /// <summary>
+        /// Constant PENDING_DELETION for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus PENDING_DELETION = new CspmEnablementStatus("PENDING_DELETION");
+        /// <summary>
+        /// Constant PENDING_ENABLEMENT for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus PENDING_ENABLEMENT = new CspmEnablementStatus("PENDING_ENABLEMENT");
+        /// <summary>
+        /// Constant PENDING_UPDATE for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus PENDING_UPDATE = new CspmEnablementStatus("PENDING_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CspmEnablementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CspmEnablementStatus FindValue(string value)
+        {
+            return FindValue<CspmEnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CspmEnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DateRangeComparison.
     /// </summary>
     public class DateRangeComparison : ConstantClass
@@ -1088,6 +1312,172 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DateRangeUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnablementStatus.
+    /// </summary>
+    public class EnablementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus ENABLED = new EnablementStatus("ENABLED");
+        /// <summary>
+        /// Constant FAILED_TO_DELETE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus FAILED_TO_DELETE = new EnablementStatus("FAILED_TO_DELETE");
+        /// <summary>
+        /// Constant FAILED_TO_ENABLE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus FAILED_TO_ENABLE = new EnablementStatus("FAILED_TO_ENABLE");
+        /// <summary>
+        /// Constant FAILED_TO_UPDATE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus FAILED_TO_UPDATE = new EnablementStatus("FAILED_TO_UPDATE");
+        /// <summary>
+        /// Constant PENDING_DELETION for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus PENDING_DELETION = new EnablementStatus("PENDING_DELETION");
+        /// <summary>
+        /// Constant PENDING_ENABLEMENT for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus PENDING_ENABLEMENT = new EnablementStatus("PENDING_ENABLEMENT");
+        /// <summary>
+        /// Constant PENDING_UPDATE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus PENDING_UPDATE = new EnablementStatus("PENDING_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnablementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnablementStatus FindValue(string value)
+        {
+            return FindValue<EnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureName.
+    /// </summary>
+    public class FeatureName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NETWORK_SCANNING for FeatureName
+        /// </summary>
+        public static readonly FeatureName NETWORK_SCANNING = new FeatureName("NETWORK_SCANNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureName FindValue(string value)
+        {
+            return FindValue<FeatureName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureStatus.
+    /// </summary>
+    public class FeatureStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED = new FeatureStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED = new FeatureStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureStatus FindValue(string value)
+        {
+            return FindValue<FeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureStatus(string value)
         {
             return FindValue(value);
         }
@@ -1190,6 +1580,22 @@ namespace Amazon.SecurityHub
         /// Constant Region for FindingsTrendsStringField
         /// </summary>
         public static readonly FindingsTrendsStringField Region = new FindingsTrendsStringField("region");
+        /// <summary>
+        /// Constant Resource_cloud_providers for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_cloud_providers = new FindingsTrendsStringField("resource_cloud_providers");
+        /// <summary>
+        /// Constant Resource_owner_ids for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_owner_ids = new FindingsTrendsStringField("resource_owner_ids");
+        /// <summary>
+        /// Constant Resource_owner_organization_ids for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_owner_organization_ids = new FindingsTrendsStringField("resource_owner_organization_ids");
+        /// <summary>
+        /// Constant Resource_regions for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_regions = new FindingsTrendsStringField("resource_regions");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1355,6 +1761,34 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly GroupByField MetadataProductVendor_name = new GroupByField("metadata.product.vendor_name");
         /// <summary>
+        /// Constant ResourcesCloud_partition for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesCloud_partition = new GroupByField("resources.cloud_partition");
+        /// <summary>
+        /// Constant ResourcesName for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesName = new GroupByField("resources.name");
+        /// <summary>
+        /// Constant ResourcesOwnerAccountName for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesOwnerAccountName = new GroupByField("resources.owner.account.name");
+        /// <summary>
+        /// Constant ResourcesOwnerAccountUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesOwnerAccountUid = new GroupByField("resources.owner.account.uid");
+        /// <summary>
+        /// Constant ResourcesOwnerOrgUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesOwnerOrgUid = new GroupByField("resources.owner.org.uid");
+        /// <summary>
+        /// Constant ResourcesProvider for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesProvider = new GroupByField("resources.provider");
+        /// <summary>
+        /// Constant ResourcesRegion for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesRegion = new GroupByField("resources.region");
+        /// <summary>
         /// Constant ResourcesType for GroupByField
         /// </summary>
         public static readonly GroupByField ResourcesType = new GroupByField("resources.type");
@@ -1412,6 +1846,76 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HealthIssueCode.
+    /// </summary>
+    public class HealthIssueCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHENTICATION_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode AUTHENTICATION_FAILURE = new HealthIssueCode("AUTHENTICATION_FAILURE");
+        /// <summary>
+        /// Constant DISCOVERY_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode DISCOVERY_FAILURE = new HealthIssueCode("DISCOVERY_FAILURE");
+        /// <summary>
+        /// Constant NO_HEALTH_DATA for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode NO_HEALTH_DATA = new HealthIssueCode("NO_HEALTH_DATA");
+        /// <summary>
+        /// Constant RECORDING_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode RECORDING_FAILURE = new HealthIssueCode("RECORDING_FAILURE");
+        /// <summary>
+        /// Constant STREAM_AUTHORIZATION_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode STREAM_AUTHORIZATION_FAILURE = new HealthIssueCode("STREAM_AUTHORIZATION_FAILURE");
+        /// <summary>
+        /// Constant STREAM_DISCONNECTED for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode STREAM_DISCONNECTED = new HealthIssueCode("STREAM_DISCONNECTED");
+        /// <summary>
+        /// Constant STREAM_LIMIT_EXCEEDED for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode STREAM_LIMIT_EXCEEDED = new HealthIssueCode("STREAM_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HealthIssueCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthIssueCode FindValue(string value)
+        {
+            return FindValue<HealthIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthIssueCode(string value)
         {
             return FindValue(value);
         }
@@ -2359,6 +2863,26 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField ResourcesImageUid = new OcsfStringField("resources.image.uid");
         /// <summary>
+        /// Constant ResourcesName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesName = new OcsfStringField("resources.name");
+        /// <summary>
+        /// Constant ResourcesOwnerAccountName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesOwnerAccountName = new OcsfStringField("resources.owner.account.name");
+        /// <summary>
+        /// Constant ResourcesOwnerAccountUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesOwnerAccountUid = new OcsfStringField("resources.owner.account.uid");
+        /// <summary>
+        /// Constant ResourcesOwnerOrgUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesOwnerOrgUid = new OcsfStringField("resources.owner.org.uid");
+        /// <summary>
+        /// Constant ResourcesProvider for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesProvider = new OcsfStringField("resources.provider");
+        /// <summary>
         /// Constant ResourcesRegion for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField ResourcesRegion = new OcsfStringField("resources.region");
@@ -2622,6 +3146,18 @@ namespace Amazon.SecurityHub
         /// Constant AwsUsGov for Partition
         /// </summary>
         public static readonly Partition AwsUsGov = new Partition("aws-us-gov");
+        /// <summary>
+        /// Constant AwsUsIso for Partition
+        /// </summary>
+        public static readonly Partition AwsUsIso = new Partition("aws-us-iso");
+        /// <summary>
+        /// Constant AwsUsIsoB for Partition
+        /// </summary>
+        public static readonly Partition AwsUsIsoB = new Partition("aws-us-iso-b");
+        /// <summary>
+        /// Constant AzureCloud for Partition
+        /// </summary>
+        public static readonly Partition AzureCloud = new Partition("AzureCloud");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2885,6 +3421,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourceCategory Identity = new ResourceCategory("Identity");
         /// <summary>
+        /// Constant Messaging for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Messaging = new ResourceCategory("Messaging");
+        /// <summary>
         /// Constant Network for ResourceCategory
         /// </summary>
         public static readonly ResourceCategory Network = new ResourceCategory("Network");
@@ -2943,6 +3483,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourceGroupByField AccountId = new ResourceGroupByField("AccountId");
         /// <summary>
+        /// Constant AccountName for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField AccountName = new ResourceGroupByField("AccountName");
+        /// <summary>
         /// Constant FindingsSummaryFindingType for ResourceGroupByField
         /// </summary>
         public static readonly ResourceGroupByField FindingsSummaryFindingType = new ResourceGroupByField("FindingsSummary.FindingType");
@@ -2955,9 +3499,29 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourceGroupByField ResourceCategory = new ResourceGroupByField("ResourceCategory");
         /// <summary>
+        /// Constant ResourceCloudPartition for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceCloudPartition = new ResourceGroupByField("ResourceCloudPartition");
+        /// <summary>
         /// Constant ResourceName for ResourceGroupByField
         /// </summary>
         public static readonly ResourceGroupByField ResourceName = new ResourceGroupByField("ResourceName");
+        /// <summary>
+        /// Constant ResourceOwnerAccountId for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceOwnerAccountId = new ResourceGroupByField("ResourceOwnerAccountId");
+        /// <summary>
+        /// Constant ResourceOwnerOrgId for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceOwnerOrgId = new ResourceGroupByField("ResourceOwnerOrgId");
+        /// <summary>
+        /// Constant ResourceProvider for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceProvider = new ResourceGroupByField("ResourceProvider");
+        /// <summary>
+        /// Constant ResourceRegion for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceRegion = new ResourceGroupByField("ResourceRegion");
         /// <summary>
         /// Constant ResourceType for ResourceGroupByField
         /// </summary>
@@ -3183,6 +3747,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourcesStringField AccountId = new ResourcesStringField("AccountId");
         /// <summary>
+        /// Constant AccountName for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField AccountName = new ResourcesStringField("AccountName");
+        /// <summary>
         /// Constant FindingsSummaryFindingType for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField FindingsSummaryFindingType = new ResourcesStringField("FindingsSummary.FindingType");
@@ -3199,6 +3767,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourcesStringField ResourceCategory = new ResourcesStringField("ResourceCategory");
         /// <summary>
+        /// Constant ResourceCloudPartition for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceCloudPartition = new ResourcesStringField("ResourceCloudPartition");
+        /// <summary>
         /// Constant ResourceGuid for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField ResourceGuid = new ResourcesStringField("ResourceGuid");
@@ -3210,6 +3782,22 @@ namespace Amazon.SecurityHub
         /// Constant ResourceName for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField ResourceName = new ResourcesStringField("ResourceName");
+        /// <summary>
+        /// Constant ResourceOwnerAccountId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceOwnerAccountId = new ResourcesStringField("ResourceOwnerAccountId");
+        /// <summary>
+        /// Constant ResourceOwnerOrgId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceOwnerOrgId = new ResourcesStringField("ResourceOwnerOrgId");
+        /// <summary>
+        /// Constant ResourceProvider for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceProvider = new ResourcesStringField("ResourceProvider");
+        /// <summary>
+        /// Constant ResourceRegion for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceRegion = new ResourcesStringField("ResourceRegion");
         /// <summary>
         /// Constant ResourceType for ResourcesStringField
         /// </summary>
@@ -3268,6 +3856,22 @@ namespace Amazon.SecurityHub
         /// Constant Resource_category for ResourcesTrendsStringField
         /// </summary>
         public static readonly ResourcesTrendsStringField Resource_category = new ResourcesTrendsStringField("resource_category");
+        /// <summary>
+        /// Constant Resource_cloud_provider for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_cloud_provider = new ResourcesTrendsStringField("resource_cloud_provider");
+        /// <summary>
+        /// Constant Resource_owner_id for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_owner_id = new ResourcesTrendsStringField("resource_owner_id");
+        /// <summary>
+        /// Constant Resource_owner_organization_id for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_owner_organization_id = new ResourcesTrendsStringField("resource_owner_organization_id");
+        /// <summary>
+        /// Constant Resource_region for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_region = new ResourcesTrendsStringField("resource_region");
         /// <summary>
         /// Constant Resource_type for ResourcesTrendsStringField
         /// </summary>
@@ -3409,6 +4013,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type ScopeType.
+    /// </summary>
+    public class ScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUBSCRIPTION for ScopeType
+        /// </summary>
+        public static readonly ScopeType SUBSCRIPTION = new ScopeType("SUBSCRIPTION");
+        /// <summary>
+        /// Constant TENANT for ScopeType
+        /// </summary>
+        public static readonly ScopeType TENANT = new ScopeType("TENANT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScopeType FindValue(string value)
+        {
+            return FindValue<ScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SecurityControlProperty.
     /// </summary>
     public class SecurityControlProperty : ConstantClass
@@ -3448,6 +4102,56 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityControlProperty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityControlsProvider.
+    /// </summary>
+    public class SecurityControlsProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for SecurityControlsProvider
+        /// </summary>
+        public static readonly SecurityControlsProvider AWS = new SecurityControlsProvider("AWS");
+        /// <summary>
+        /// Constant Azure for SecurityControlsProvider
+        /// </summary>
+        public static readonly SecurityControlsProvider Azure = new SecurityControlsProvider("Azure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityControlsProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityControlsProvider FindValue(string value)
+        {
+            return FindValue<SecurityControlsProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityControlsProvider(string value)
         {
             return FindValue(value);
         }
@@ -3725,6 +4429,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type StandardsProvider.
+    /// </summary>
+    public class StandardsProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for StandardsProvider
+        /// </summary>
+        public static readonly StandardsProvider AWS = new StandardsProvider("AWS");
+        /// <summary>
+        /// Constant Azure for StandardsProvider
+        /// </summary>
+        public static readonly StandardsProvider Azure = new StandardsProvider("Azure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StandardsProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandardsProvider FindValue(string value)
+        {
+            return FindValue<StandardsProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandardsProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StandardsStatus.
     /// </summary>
     public class StandardsStatus : ConstantClass
@@ -3804,6 +4558,10 @@ namespace Amazon.SecurityHub
         /// Constant NO_AVAILABLE_CONFIGURATION_RECORDER for StatusReasonCode
         /// </summary>
         public static readonly StatusReasonCode NO_AVAILABLE_CONFIGURATION_RECORDER = new StatusReasonCode("NO_AVAILABLE_CONFIGURATION_RECORDER");
+        /// <summary>
+        /// Constant NO_AVAILABLE_MULTICLOUD_CONNECTOR for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode NO_AVAILABLE_MULTICLOUD_CONNECTOR = new StatusReasonCode("NO_AVAILABLE_MULTICLOUD_CONNECTOR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

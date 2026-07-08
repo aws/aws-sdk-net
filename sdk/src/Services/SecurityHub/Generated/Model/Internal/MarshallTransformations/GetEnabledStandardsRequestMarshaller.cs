@@ -85,6 +85,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetProviders())
+            {
+                context.Writer.WritePropertyName("Providers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestProvidersListValue in publicRequest.Providers)
+                {
+                        context.Writer.WriteStringValue(publicRequestProvidersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetStandardsSubscriptionArns())
             {
                 context.Writer.WritePropertyName("StandardsSubscriptionArns");

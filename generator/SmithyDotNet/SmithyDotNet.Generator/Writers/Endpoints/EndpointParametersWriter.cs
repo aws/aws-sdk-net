@@ -59,7 +59,7 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
             {
                 if (parameter.Default is { } defaultValue)
                 {
-                    writer.WriteLine($"{name} = {FormatDefault(defaultValue)};");
+                    writer.WriteLine($"{name} = {CodeWriter.NativeValue(defaultValue)};");
                 }
             }
         });
@@ -92,13 +92,5 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
         "string" => "string",
         "boolean" => "bool?",
         _ => throw new GeneratorException($"Unsupported endpoint parameter type '{smithyType}'."),
-    };
-
-    private static string FormatDefault(JsonElement value) => value.ValueKind switch
-    {
-        JsonValueKind.True => "true",
-        JsonValueKind.False => "false",
-        JsonValueKind.String => CodeWriter.Literal(value.GetString() ?? string.Empty),
-        _ => throw new GeneratorException($"Unsupported endpoint parameter default of kind '{value.ValueKind}'."),
     };
 }

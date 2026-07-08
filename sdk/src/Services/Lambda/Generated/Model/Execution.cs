@@ -39,6 +39,7 @@ namespace Amazon.Lambda.Model
         private string _durableExecutionName;
         private DateTime? _endTimestamp;
         private string _functionArn;
+        private string _kmsKeyArn;
         private DateTime? _startTimestamp;
         private ExecutionStatus _status;
 
@@ -118,6 +119,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionArn()
         {
             return this._functionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The ARN of the Key Management Service (KMS) customer managed key that is used to encrypt
+        /// your durable execution's payload data, including input, output, and error payloads.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

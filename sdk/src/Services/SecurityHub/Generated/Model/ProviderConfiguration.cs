@@ -35,8 +35,28 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ProviderConfiguration
     {
+        private AzureProviderConfiguration _azure;
         private JiraCloudProviderConfiguration _jiraCloud;
         private ServiceNowProviderConfiguration _serviceNow;
+
+        /// <summary>
+        /// Gets and sets the property Azure. 
+        /// <para>
+        /// The configuration settings required to establish a CSPM integration with Microsoft
+        /// Azure.
+        /// </para>
+        /// </summary>
+        public AzureProviderConfiguration Azure
+        {
+            get { return this._azure; }
+            set { this._azure = value; }
+        }
+
+        // Check to see if Azure property is set
+        internal bool IsSetAzure()
+        {
+            return this._azure != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JiraCloud. 

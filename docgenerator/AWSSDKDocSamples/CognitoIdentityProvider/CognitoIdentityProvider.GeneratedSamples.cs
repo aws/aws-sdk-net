@@ -266,6 +266,26 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
+        public void CognitoIdentityProviderGetProvisionedLimit()
+        {
+            #region example-get-a-provisioned-limit-1782432000000
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.GetProvisionedLimit(new GetProvisionedLimitRequest 
+            {
+                LimitDefinition = new LimitDefinitionType {
+                    Attributes = new Dictionary<string, string> {
+                        { "Category", "UserAuthentication" }
+                    },
+                    LimitClass = "API_CATEGORY"
+                }
+            });
+
+            LimitType limit = response.Limit;
+
+            #endregion
+        }
+
         public void CognitoIdentityProviderInitiateAuth()
         {
             #region example-username-and-password-sign-in-for-a-user-who-has-totp-mfa-1689887395219
@@ -331,6 +351,27 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
             string paginationToken = response.PaginationToken;
             List<UserType> users = response.Users;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderUpdateProvisionedLimit()
+        {
+            #region example-update-a-provisioned-limit-1782432000000
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.UpdateProvisionedLimit(new UpdateProvisionedLimitRequest 
+            {
+                LimitDefinition = new LimitDefinitionType {
+                    Attributes = new Dictionary<string, string> {
+                        { "Category", "UserAuthentication" }
+                    },
+                    LimitClass = "API_CATEGORY"
+                },
+                RequestedLimitValue = 300
+            });
+
+            LimitType limit = response.Limit;
 
             #endregion
         }

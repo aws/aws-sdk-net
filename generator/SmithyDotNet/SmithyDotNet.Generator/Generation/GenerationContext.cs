@@ -76,6 +76,39 @@ public class GenerationContext
     /// </summary>
     public bool HasEndpointContextParams { get; }
 
+    /// <summary>
+    /// Whether the service carries a Smithy endpoint test suite (<c>smithy.rules#endpointTests</c>).
+    /// The endpoint provider tests file is emitted only when this is true. The constructor throws if
+    /// this is true while <see cref="HasEndpointRuleSet"/> is false: the generated tests reference the
+    /// endpoint parameters/provider types, which only exist when a rule set is also present.
+    /// </summary>
+    public bool HasEndpointTests { get; }
+
+    /// <summary>
+    /// The parsed endpoint test suite, or <c>null</c> when <see cref="HasEndpointTests"/> is false.
+    /// </summary>
+    public EndpointTestSuite? EndpointTests { get; }
+
+    /// <summary>
+    /// The service-level auth scheme shape IDs the resolver's <c>default</c> arm returns (e.g.
+    /// <c>["aws.auth#sigv4"]</c>): the service's <c>smithy.api#auth</c> trait when present, otherwise
+    /// derived from its auth traits.
+    /// </summary>
+    public IReadOnlyList<string> ServiceAuthSchemes { get; }
+
+    /// <summary>
+    /// Whether the service supports SigV4 (its auth scheme list contains <c>aws.auth#sigv4</c>). The
+    /// auth resolver emits the <c>Region</c> parameter only when this is true.
+    /// </summary>
+    public bool SupportsSigV4 { get; }
+
+    /// <summary>
+    /// The operations that model their own auth (a <c>smithy.api#auth</c> override), each paired with
+    /// its scheme list and ordered by name. These become the auth resolver's per-operation switch
+    /// arms; operations without an override fall through to <see cref="ServiceAuthSchemes"/>.
+    /// </summary>
+    public IReadOnlyList<OperationAuth> OperationsWithModeledAuth { get; }
+
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
 
@@ -120,9 +153,20 @@ public class GenerationContext
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
         HasEndpointContextParams = DetectEndpointContextParams(index);
+        
+        EndpointTests = index.Service.GetEndpointTests();
+        HasEndpointTests = EndpointTests is not null;
+        if (HasEndpointTests && !HasEndpointRuleSet)
+        {
+            throw new GeneratorException("Service carries smithy.rules#endpointTests but no smithy.rules#endpointRuleSet.");
+        }
+        
         ServiceDocumentation = index.Service.GetDocumentation();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
+        ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
+        SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
+        OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();

@@ -62,7 +62,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property VendedMetrics. 
         /// <para>
-        /// Configuration for vended metrics in the account.
+        /// The configuration for vended metrics in the account.
         /// </para>
         /// </summary>
         public VendedMetricsSettings VendedMetrics

@@ -29,106 +29,141 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuleAction Object
     /// </summary>  
-    public class RuleActionUnmarshaller : IJsonUnmarshaller<RuleAction, JsonUnmarshallerContext>
+    public class RuleActionUnmarshaller : ICborUnmarshaller<RuleAction, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RuleAction Unmarshall(CborUnmarshallerContext context)
         {
             RuleAction unmarshalledObject = new RuleAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AddHeader", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = AddHeaderActionUnmarshaller.Instance;
-                    unmarshalledObject.AddHeader = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Archive", targetDepth, ref reader))
-                {
-                    var unmarshaller = ArchiveActionUnmarshaller.Instance;
-                    unmarshalledObject.Archive = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Bounce", targetDepth, ref reader))
-                {
-                    var unmarshaller = BounceActionUnmarshaller.Instance;
-                    unmarshalledObject.Bounce = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeliverToMailbox", targetDepth, ref reader))
-                {
-                    var unmarshaller = DeliverToMailboxActionUnmarshaller.Instance;
-                    unmarshalledObject.DeliverToMailbox = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeliverToQBusiness", targetDepth, ref reader))
-                {
-                    var unmarshaller = DeliverToQBusinessActionUnmarshaller.Instance;
-                    unmarshalledObject.DeliverToQBusiness = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Drop", targetDepth, ref reader))
-                {
-                    var unmarshaller = DropActionUnmarshaller.Instance;
-                    unmarshalledObject.Drop = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InvokeLambda", targetDepth, ref reader))
-                {
-                    var unmarshaller = InvokeLambdaActionUnmarshaller.Instance;
-                    unmarshalledObject.InvokeLambda = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PublishToSns", targetDepth, ref reader))
-                {
-                    var unmarshaller = SnsActionUnmarshaller.Instance;
-                    unmarshalledObject.PublishToSns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Relay", targetDepth, ref reader))
-                {
-                    var unmarshaller = RelayActionUnmarshaller.Instance;
-                    unmarshalledObject.Relay = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReplaceRecipient", targetDepth, ref reader))
-                {
-                    var unmarshaller = ReplaceRecipientActionUnmarshaller.Instance;
-                    unmarshalledObject.ReplaceRecipient = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Send", targetDepth, ref reader))
-                {
-                    var unmarshaller = SendActionUnmarshaller.Instance;
-                    unmarshalledObject.Send = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WriteToS3", targetDepth, ref reader))
-                {
-                    var unmarshaller = S3ActionUnmarshaller.Instance;
-                    unmarshalledObject.WriteToS3 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AddHeader":
+                        {
+                            context.AddPathSegment("AddHeader");
+                            var unmarshaller = AddHeaderActionUnmarshaller.Instance;
+                            unmarshalledObject.AddHeader = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Archive":
+                        {
+                            context.AddPathSegment("Archive");
+                            var unmarshaller = ArchiveActionUnmarshaller.Instance;
+                            unmarshalledObject.Archive = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Bounce":
+                        {
+                            context.AddPathSegment("Bounce");
+                            var unmarshaller = BounceActionUnmarshaller.Instance;
+                            unmarshalledObject.Bounce = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DeliverToMailbox":
+                        {
+                            context.AddPathSegment("DeliverToMailbox");
+                            var unmarshaller = DeliverToMailboxActionUnmarshaller.Instance;
+                            unmarshalledObject.DeliverToMailbox = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DeliverToQBusiness":
+                        {
+                            context.AddPathSegment("DeliverToQBusiness");
+                            var unmarshaller = DeliverToQBusinessActionUnmarshaller.Instance;
+                            unmarshalledObject.DeliverToQBusiness = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Drop":
+                        {
+                            context.AddPathSegment("Drop");
+                            var unmarshaller = DropActionUnmarshaller.Instance;
+                            unmarshalledObject.Drop = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InvokeLambda":
+                        {
+                            context.AddPathSegment("InvokeLambda");
+                            var unmarshaller = InvokeLambdaActionUnmarshaller.Instance;
+                            unmarshalledObject.InvokeLambda = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PublishToSns":
+                        {
+                            context.AddPathSegment("PublishToSns");
+                            var unmarshaller = SnsActionUnmarshaller.Instance;
+                            unmarshalledObject.PublishToSns = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Relay":
+                        {
+                            context.AddPathSegment("Relay");
+                            var unmarshaller = RelayActionUnmarshaller.Instance;
+                            unmarshalledObject.Relay = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ReplaceRecipient":
+                        {
+                            context.AddPathSegment("ReplaceRecipient");
+                            var unmarshaller = ReplaceRecipientActionUnmarshaller.Instance;
+                            unmarshalledObject.ReplaceRecipient = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Send":
+                        {
+                            context.AddPathSegment("Send");
+                            var unmarshaller = SendActionUnmarshaller.Instance;
+                            unmarshalledObject.Send = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "WriteToS3":
+                        {
+                            context.AddPathSegment("WriteToS3");
+                            var unmarshaller = S3ActionUnmarshaller.Instance;
+                            unmarshalledObject.WriteToS3 = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

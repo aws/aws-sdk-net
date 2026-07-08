@@ -60,6 +60,40 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
             #endregion
         }
 
+        public void Inspector2CreateConnector()
+        {
+            #region example-1
+
+            var client = new AmazonInspector2Client();
+            var response = client.CreateConnector(new CreateConnectorRequest 
+            {
+                Name = "my-azure-connector",
+                Description = "Azure subscription scanner",
+                Provider = "AZURE",
+                ProviderDetail = new ProviderDetailCreate { Azure = new AzureProviderDetailCreate {
+                    AutoInstallVMScanner = true,
+                    AwsConfigConnectorArn = "arn:aws:config:us-east-1:123456789012:connector/azure/a7bc5463-04ce-4b52-901e-f26f7292a4a7/2fbed4bd-5b95-4947-a751-8defc76ecdae",
+                    AzureRegions = new List<string> {
+                        "eastus"
+                    },
+                    ScopeConfiguration = new AzureScopeConfigurationInput { VmScanning = new ScopeConfigurationInput {
+                        ScopeType = "SUBSCRIPTION",
+                        ScopeValues = new List<string> {
+                            "552802f5-1492-4184-bbae-7291c9939b16"
+                        }
+                    } }
+                } },
+                Tags = new Dictionary<string, string> {
+                    { "env", "prod" },
+                    { "owner", "security-team" }
+                }
+            });
+
+            string connectorArn = response.ConnectorArn;
+
+            #endregion
+        }
+
         public void Inspector2DeleteCisScanConfiguration()
         {
             #region example-1
@@ -71,6 +105,20 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
             });
 
             string scanConfigurationArn = response.ScanConfigurationArn;
+
+            #endregion
+        }
+
+        public void Inspector2DeleteConnector()
+        {
+            #region example-1
+
+            var client = new AmazonInspector2Client();
+            var response = client.DeleteConnector(new DeleteConnectorRequest 
+            {
+                ConnectorArn = "arn:aws:inspector2:us-east-1:123456789012:connector/6ccf8549-b52b-57ca-bf52-a2266da3c53a"
+            });
+
 
             #endregion
         }
@@ -163,6 +211,53 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
             });
 
             List<CisScan> scans = response.Scans;
+
+            #endregion
+        }
+
+        public void Inspector2ListConnectors()
+        {
+            #region example-1
+
+            var client = new AmazonInspector2Client();
+            var response = client.ListConnectors(new ListConnectorsRequest 
+            {
+                FilterCriteria = new ConnectorFilterCriteria {
+                    ConnectorType = new List<ConnectorTypeFilter> {
+                        new ConnectorTypeFilter {
+                            Value = "CUSTOMER_MANAGED",
+                            Comparison = "EQUALS"
+                        }
+                    },
+                    Provider = new List<ProviderFilter> {
+                        new ProviderFilter {
+                            Value = "AZURE",
+                            Comparison = "EQUALS"
+                        }
+                    }
+                },
+                MaxResults = 10
+            });
+
+            List<Connector> items = response.Items;
+
+            #endregion
+        }
+
+        public void Inspector2ListConnectorScanConfigurations()
+        {
+            #region example-1
+
+            var client = new AmazonInspector2Client();
+            var response = client.ListConnectorScanConfigurations(new ListConnectorScanConfigurationsRequest 
+            {
+                AwsConfigConnectorArns = new List<string> {
+                    "arn:aws:config:us-east-1:123456789012:connector/azure/a7bc5463-04ce-4b52-901e-f26f7292a4a7/2fbed4bd-5b95-4947-a751-8defc76ecdae"
+                },
+                MaxResults = 10
+            });
+
+            List<ConnectorScanConfigurationItem> scanConfigurations = response.ScanConfigurations;
 
             #endregion
         }
@@ -287,6 +382,43 @@ namespace AWSSDKDocSamples.Amazon.Inspector2.Generated
             });
 
             string scanConfigurationArn = response.ScanConfigurationArn;
+
+            #endregion
+        }
+
+        public void Inspector2UpdateConnector()
+        {
+            #region example-1
+
+            var client = new AmazonInspector2Client();
+            var response = client.UpdateConnector(new UpdateConnectorRequest 
+            {
+                ConnectorArn = "arn:aws:inspector2:us-east-1:123456789012:connector/6ccf8549-b52b-57ca-bf52-a2266da3c53a",
+                ProviderDetail = new ProviderDetailUpdate { Azure = new AzureProviderDetailUpdate { AzureRegions = new List<string> {
+                    "eastus",
+                    "westus"
+                } } }
+            });
+
+            string connectorArn = response.ConnectorArn;
+
+            #endregion
+        }
+
+        public void Inspector2UpdateConnectorScanConfiguration()
+        {
+            #region example-1
+
+            var client = new AmazonInspector2Client();
+            var response = client.UpdateConnectorScanConfiguration(new UpdateConnectorScanConfigurationRequest 
+            {
+                AwsConfigConnectorArn = "arn:aws:config:us-east-1:123456789012:connector/azure/a7bc5463-04ce-4b52-901e-f26f7292a4a7/2fbed4bd-5b95-4947-a751-8defc76ecdae",
+                ScanConfiguration = new ConnectorScanConfiguration { ContainerImageScanning = new ConnectorContainerImageScanConfiguration {
+                    PullDuration = "DAYS_14",
+                    PushDuration = "DAYS_30"
+                } }
+            });
+
 
             #endregion
         }

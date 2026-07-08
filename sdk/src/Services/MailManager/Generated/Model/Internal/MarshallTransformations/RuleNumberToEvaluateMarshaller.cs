@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleNumberToEvaluate Marshaller
     /// </summary>
-    public class RuleNumberToEvaluateMarshaller : IRequestMarshaller<RuleNumberToEvaluate, JsonMarshallerContext> 
+    public class RuleNumberToEvaluateMarshaller : IRequestMarshaller<RuleNumberToEvaluate, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleNumberToEvaluate requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleNumberToEvaluate requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAttribute())
-            {
-                context.Writer.WritePropertyName("Attribute");
-                context.Writer.WriteStringValue(requestObject.Attribute);
-            }
 
+            if (requestObject.IsSetAttribute())
+            {
+                context.Writer.WriteTextString("Attribute");
+                context.Writer.WriteTextString(requestObject.Attribute);
+            }
         }
 
         /// <summary>

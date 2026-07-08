@@ -62,6 +62,310 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetCloudImageArchitecture())
+            {
+                context.Writer.WritePropertyName("cloudImageArchitecture");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImageArchitectureListValue in requestObject.CloudImageArchitecture)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImageArchitectureListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudImageDigest())
+            {
+                context.Writer.WritePropertyName("cloudImageDigest");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImageDigestListValue in requestObject.CloudImageDigest)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImageDigestListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudImageInUseCount())
+            {
+                context.Writer.WritePropertyName("cloudImageInUseCount");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImageInUseCountListValue in requestObject.CloudImageInUseCount)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImageInUseCountListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudImageLastInUseAt())
+            {
+                context.Writer.WritePropertyName("cloudImageLastInUseAt");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImageLastInUseAtListValue in requestObject.CloudImageLastInUseAt)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImageLastInUseAtListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudImagePushedAt())
+            {
+                context.Writer.WritePropertyName("cloudImagePushedAt");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImagePushedAtListValue in requestObject.CloudImagePushedAt)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImagePushedAtListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudImageRegistry())
+            {
+                context.Writer.WritePropertyName("cloudImageRegistry");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImageRegistryListValue in requestObject.CloudImageRegistry)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImageRegistryListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudImageRepositoryName())
+            {
+                context.Writer.WritePropertyName("cloudImageRepositoryName");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImageRepositoryNameListValue in requestObject.CloudImageRepositoryName)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImageRepositoryNameListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudImageTags())
+            {
+                context.Writer.WritePropertyName("cloudImageTags");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudImageTagsListValue in requestObject.CloudImageTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudImageTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudProvider())
+            {
+                context.Writer.WritePropertyName("cloudProvider");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudProviderListValue in requestObject.CloudProvider)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudProviderListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudProviderAccountId())
+            {
+                context.Writer.WritePropertyName("cloudProviderAccountId");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudProviderAccountIdListValue in requestObject.CloudProviderAccountId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudProviderAccountIdListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudProviderOrgId())
+            {
+                context.Writer.WritePropertyName("cloudProviderOrgId");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudProviderOrgIdListValue in requestObject.CloudProviderOrgId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudProviderOrgIdListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudProviderRegion())
+            {
+                context.Writer.WritePropertyName("cloudProviderRegion");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudProviderRegionListValue in requestObject.CloudProviderRegion)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudProviderRegionListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudServerlessFunctionExecutionRole())
+            {
+                context.Writer.WritePropertyName("cloudServerlessFunctionExecutionRole");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudServerlessFunctionExecutionRoleListValue in requestObject.CloudServerlessFunctionExecutionRole)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudServerlessFunctionExecutionRoleListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudServerlessFunctionLastModifiedAt())
+            {
+                context.Writer.WritePropertyName("cloudServerlessFunctionLastModifiedAt");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudServerlessFunctionLastModifiedAtListValue in requestObject.CloudServerlessFunctionLastModifiedAt)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudServerlessFunctionLastModifiedAtListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudServerlessFunctionName())
+            {
+                context.Writer.WritePropertyName("cloudServerlessFunctionName");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudServerlessFunctionNameListValue in requestObject.CloudServerlessFunctionName)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudServerlessFunctionNameListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudServerlessFunctionRuntime())
+            {
+                context.Writer.WritePropertyName("cloudServerlessFunctionRuntime");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudServerlessFunctionRuntimeListValue in requestObject.CloudServerlessFunctionRuntime)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudServerlessFunctionRuntimeListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudVmImageReference())
+            {
+                context.Writer.WritePropertyName("cloudVmImageReference");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudVmImageReferenceListValue in requestObject.CloudVmImageReference)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudVmImageReferenceListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudVmNetworkId())
+            {
+                context.Writer.WritePropertyName("cloudVmNetworkId");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudVmNetworkIdListValue in requestObject.CloudVmNetworkId)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudVmNetworkIdListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCloudVmSubnetIds())
+            {
+                context.Writer.WritePropertyName("cloudVmSubnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCloudVmSubnetIdsListValue in requestObject.CloudVmSubnetIds)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCloudVmSubnetIdsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetCodeRepositoryProjectName())
             {
                 context.Writer.WritePropertyName("codeRepositoryProjectName");

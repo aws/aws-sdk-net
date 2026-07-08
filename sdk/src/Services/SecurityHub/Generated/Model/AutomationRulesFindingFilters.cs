@@ -60,7 +60,10 @@ namespace Amazon.SecurityHub.Model
         private List<StringFilter> _resourceApplicationName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<MapFilter> _resourceDetailsOther = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
         private List<StringFilter> _resourceId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceOwnerAccountId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceOwnerOrgId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _resourcePartition = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceProvider = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<StringFilter> _resourceRegion = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private List<MapFilter> _resourceTags = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
         private List<StringFilter> _resourceType = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
@@ -821,6 +824,54 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceOwnerAccountId. 
+        /// <para>
+        /// The unique identifier of the account that owns the resource that the finding applies
+        /// to, for example, Azure Subscription Id or Amazon Web Services Account Id
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<StringFilter> ResourceOwnerAccountId
+        {
+            get { return this._resourceOwnerAccountId; }
+            set { this._resourceOwnerAccountId = value; }
+        }
+
+        // Check to see if ResourceOwnerAccountId property is set
+        internal bool IsSetResourceOwnerAccountId()
+        {
+            return this._resourceOwnerAccountId != null && (this._resourceOwnerAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwnerOrgId. 
+        /// <para>
+        /// The unique identifier of the organization that owns the resource that the finding
+        /// applies to, for example, Azure Tenant Id
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<StringFilter> ResourceOwnerOrgId
+        {
+            get { return this._resourceOwnerOrgId; }
+            set { this._resourceOwnerOrgId = value; }
+        }
+
+        // Check to see if ResourceOwnerOrgId property is set
+        internal bool IsSetResourceOwnerOrgId()
+        {
+            return this._resourceOwnerOrgId != null && (this._resourceOwnerOrgId.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourcePartition. 
         /// <para>
         ///  The partition in which the resource that the finding pertains to is located. A partition
@@ -847,6 +898,29 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetResourcePartition()
         {
             return this._resourcePartition != null && (this._resourcePartition.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceProvider. 
+        /// <para>
+        /// The cloud provider that the resource belongs to. Valid values are <c>AWS</c> and <c>Azure</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<StringFilter> ResourceProvider
+        {
+            get { return this._resourceProvider; }
+            set { this._resourceProvider = value; }
+        }
+
+        // Check to see if ResourceProvider property is set
+        internal bool IsSetResourceProvider()
+        {
+            return this._resourceProvider != null && (this._resourceProvider.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

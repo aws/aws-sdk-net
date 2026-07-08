@@ -42,3 +42,6 @@ Read them before writing a writer; update them when behavior changes.
 - Don't tell verifiers to ignore "cosmetic" diffs wholesale - real doc/whitespace bugs hide there.
 - Skip the multi-angle design panel when the target output is already pinned; use it only when
   the solution space is genuinely open.
+
+## Testing
+To ensure the code you output is correct always run `dotnet test SmithyDotNet.Generator.slnx`

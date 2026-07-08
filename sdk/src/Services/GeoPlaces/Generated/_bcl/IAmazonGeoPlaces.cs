@@ -38,11 +38,15 @@ namespace Amazon.GeoPlaces
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Forward and reverse geocoding for addresses and coordinates
+    /// Forward and reverse geocoding for addresses and coordinates. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_Geocode.html">Geocode</a>
+    /// and <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_ReverseGeocode.html">ReverseGeocode</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Comprehensive place searches with detailed information, including:
+    /// Comprehensive place searches with detailed information. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText</a>,
+    /// <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchNearby.html">SearchNearby</a>,
+    /// and <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_GetPlace.html">GetPlace</a>.
+    /// Place information you can find include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -58,7 +62,7 @@ namespace Amazon.GeoPlaces
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// POI (Points of Interest) categories
+    /// Points of Interest (POI) categories
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -70,11 +74,27 @@ namespace Amazon.GeoPlaces
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Global data coverage with a wide range of POI categories
+    /// Address and place completion as users type, enhancing input efficiency by completing
+    /// partial queries with valid addresses. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_Autocomplete.html">Autocomplete</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Regular data updates to ensure accuracy and relevance
+    /// Intelligent place and query recommendation based on user's input or context, returning
+    /// relevant places, points of interest, query terms, or search categories. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_Suggest.html">Suggest</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Global data coverage with a wide range of POI categories.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Regular data updates to ensure accuracy and relevance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Bulk address validation for verifying and standardizing large volumes of addresses
+    /// in a single operation using <a href="https://docs.aws.amazon.com/location/latest/APIReference/Welcome.html#Welcome_Amazon_Location_Service_Jobs">Amazon
+    /// Location Service Jobs</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -92,7 +112,9 @@ namespace Amazon.GeoPlaces
         /// query based on a few entered keystrokes. It helps you by completing partial queries
         /// with valid address completion. Also, the API supports the filtering of results based
         /// on geographic location, country, or specific place types, and can be tailored using
-        /// optional parameters like language and political views.
+        /// optional parameters like language and political views. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// 
         ///  
         /// <para>
@@ -126,7 +148,9 @@ namespace Amazon.GeoPlaces
         /// query based on a few entered keystrokes. It helps you by completing partial queries
         /// with valid address completion. Also, the API supports the filtering of results based
         /// on geographic location, country, or specific place types, and can be tailored using
-        /// optional parameters like language and political views.
+        /// optional parameters like language and political views. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// 
         ///  
         /// <para>
@@ -166,7 +190,9 @@ namespace Amazon.GeoPlaces
         /// It supports flexible queries, including free-form text or structured queries with
         /// components like street names, postal codes, and regions. The Geocode API can also
         /// provide additional features such as time zone information and the inclusion of political
-        /// views.
+        /// views. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for
+        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// 
         ///  
         /// <para>
@@ -200,7 +226,9 @@ namespace Amazon.GeoPlaces
         /// It supports flexible queries, including free-form text or structured queries with
         /// components like street names, postal codes, and regions. The Geocode API can also
         /// provide additional features such as time zone information and the inclusion of political
-        /// views.
+        /// views. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for
+        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// 
         ///  
         /// <para>
@@ -379,7 +407,9 @@ namespace Amazon.GeoPlaces
         /// coordinates, returning place results with optional filters such as categories, business
         /// chains, food types and more. The API returns details such as a place name, address,
         /// phone, category, food type, contact, opening hours. Also, the API can return phonemes,
-        /// time zones and more based on requested parameters.
+        /// time zones and more based on requested parameters. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// 
         ///  
         /// <para>
@@ -412,7 +442,9 @@ namespace Amazon.GeoPlaces
         /// coordinates, returning place results with optional filters such as categories, business
         /// chains, food types and more. The API returns details such as a place name, address,
         /// phone, category, food type, contact, opening hours. Also, the API can return phonemes,
-        /// time zones and more based on requested parameters.
+        /// time zones and more based on requested parameters. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// 
         ///  
         /// <para>

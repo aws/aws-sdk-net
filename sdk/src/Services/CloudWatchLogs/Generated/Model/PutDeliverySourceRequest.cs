@@ -125,7 +125,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Bedrock Knowledge Bases, the valid value is <c>APPLICATION_LOGS</c>.
+        /// For Amazon Bedrock Knowledge Bases, the valid values are <c>APPLICATION_LOGS</c> and
+        /// <c>TRACES</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -224,6 +225,10 @@ namespace Amazon.CloudWatchLogs.Model
         ///  </li> <li> 
         /// <para>
         /// For Amazon Q, the valid values are <c>EVENT_LOGS</c> and <c>SYNC_JOB_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon S3, the valid value is <c>S3_SERVER_ACCESS_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

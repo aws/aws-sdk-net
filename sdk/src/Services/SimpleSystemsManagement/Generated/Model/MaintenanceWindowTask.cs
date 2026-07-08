@@ -300,6 +300,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// name or ARN. For <c>LAMBDA</c> tasks, it's the function name or ARN. For <c>STEP_FUNCTIONS</c>
         /// tasks, it's the state machine ARN.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Maintenance Window does not validate the TaskArn when you register a task. A successful
+        /// registration does not guarantee that the TaskArn is valid.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
         public string TaskArn

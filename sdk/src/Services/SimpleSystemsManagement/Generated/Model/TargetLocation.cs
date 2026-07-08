@@ -121,11 +121,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Indicates whether to include child organizational units (OUs) that are children of
         /// the targeted OUs. The default is <c>false</c>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter is not supported by State Manager.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool? IncludeChildOrganizationUnits
         {

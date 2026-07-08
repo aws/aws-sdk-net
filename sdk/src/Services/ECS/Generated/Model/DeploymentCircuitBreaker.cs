@@ -81,9 +81,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ResetOnHealthyTask. 
         /// <para>
-        /// Determines whether the deployment circuit breaker resets its failure count when a
-        /// task reaches a healthy state. When set to <c>true</c>, a healthy task resets the failure
-        /// count to <c>0</c>; when <c>false</c>, it doesn't.
+        /// Specifies whether the deployment circuit breaker resets its failure count when a task
+        /// reaches a healthy state. When set to <c>true</c>, a task that reaches a healthy state
+        /// resets the failure count to <c>0</c>. When set to <c>false</c>, Amazon ECS does not
+        /// reset the failure count. The default is <c>true</c>.
         /// </para>
         /// </summary>
         public bool? ResetOnHealthyTask
@@ -123,6 +124,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ThresholdConfiguration. 
         /// <para>
         /// The threshold configuration that controls when the deployment circuit breaker triggers.
+        /// The <c>type</c> and <c>value</c> together determine how many task failures are tolerated
+        /// before the circuit breaker activates.
         /// </para>
         /// </summary>
         public ThresholdConfiguration ThresholdConfiguration

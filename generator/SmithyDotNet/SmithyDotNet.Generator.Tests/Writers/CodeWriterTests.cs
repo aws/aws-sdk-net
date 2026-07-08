@@ -1,4 +1,6 @@
+using System.Text.Json;
 using Microsoft.CodeAnalysis.CSharp;
+using SmithyDotNet.Generator;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
 
@@ -67,5 +69,26 @@ public class CodeWriterTests
         var result = writer.ToFormattedString(TestContext.Current.CancellationToken);
         var tree = CSharpSyntaxTree.ParseText(result, cancellationToken: TestContext.Current.CancellationToken);
         Assert.Empty(tree.GetDiagnostics(cancellationToken: TestContext.Current.CancellationToken));
+    }
+
+    [Fact]
+    public void NativeValue_RendersStringArrayAsListInitializer()
+    {
+        var value = JsonDocument.Parse("[\"a\", \"b\"]").RootElement;
+        Assert.Equal("new List<string> { \"a\", \"b\" }", CodeWriter.NativeValue(value));
+    }
+
+    [Fact]
+    public void NativeValue_RendersEmptyStringArrayAsEmptyListInitializer()
+    {
+        var value = JsonDocument.Parse("[]").RootElement;
+        Assert.Equal("new List<string> {  }", CodeWriter.NativeValue(value));
+    }
+
+    [Fact]
+    public void NativeValue_ThrowsOnNonStringArrayElement()
+    {
+        var value = JsonDocument.Parse("[1, 2]").RootElement;
+        Assert.Throws<GeneratorException>(() => CodeWriter.NativeValue(value));
     }
 }

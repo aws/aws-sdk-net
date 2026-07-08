@@ -94,7 +94,11 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static CopyDBClusterParameterGroupRequestMarshaller _instance = new CopyDBClusterParameterGroupRequestMarshaller();        

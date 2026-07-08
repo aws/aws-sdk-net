@@ -54,6 +54,14 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void HasEndpointTests_IsTrueForCloudTrailData()
+    {
+        Assert.True(_context.HasEndpointTests);
+        Assert.NotNull(_context.EndpointTests);
+        Assert.Equal(21, _context.EndpointTests.TestCases.Count);
+    }
+
+    [Fact]
     public void ServiceDocumentation_IsPopulatedFromServiceShape()
     {
         Assert.NotNull(_context.ServiceDocumentation);

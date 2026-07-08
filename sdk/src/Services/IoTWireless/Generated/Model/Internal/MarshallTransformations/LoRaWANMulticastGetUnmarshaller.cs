@@ -56,6 +56,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("DefaultSessionParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = DefaultSessionParametersMulticastUnmarshaller.Instance;
+                    unmarshalledObject.DefaultSessionParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DlClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

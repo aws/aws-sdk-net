@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Optional deployment parameters for an experiment run, including extension parameters
+    /// The deployment parameters for an experiment run, including dynamic extension parameters
     /// and tags.
     /// </summary>
     public partial class DeploymentParameters

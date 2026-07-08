@@ -54,6 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _registrationDate;
         private ResourceType _resourceType;
         private string _sourceId;
+        private string _sourceLocation;
         private SourceType _sourceType;
 
         /// <summary>
@@ -451,10 +452,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceLocation. 
+        /// <para>
+        /// The location of the source resource in the third-party cloud environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SourceLocation
+        {
+            get { return this._sourceLocation; }
+            set { this._sourceLocation = value; }
+        }
+
+        // Check to see if SourceLocation property is set
+        internal bool IsSetSourceLocation()
+        {
+            return this._sourceLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
         /// The type of the source resource. For IoT Greengrass devices, <c>SourceType</c> is
-        /// <c>AWS::IoT::Thing</c>. 
+        /// <c>AWS::IoT::Thing</c>. For Azure Virtual Machines, <c>SourceType</c> is <c>Microsoft.Compute/virtualMachines</c>.
         /// </para>
         /// </summary>
         public SourceType SourceType

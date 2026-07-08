@@ -104,6 +104,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetDiversityConfig())
+            {
+                context.Writer.WritePropertyName("DiversityConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecommendationDiversityConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DiversityConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");

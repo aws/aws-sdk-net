@@ -181,7 +181,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Treatments. 
         /// <para>
-        /// An updated list of treatments.
+        /// The updated list of treatments to evaluate during the experiment. Each treatment defines
+        /// a distinct variation compared to the control.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

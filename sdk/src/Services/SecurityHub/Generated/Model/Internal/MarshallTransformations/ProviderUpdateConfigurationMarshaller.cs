@@ -46,6 +46,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAzure())
+            {
+                context.Writer.WritePropertyName("Azure");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AzureUpdateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Azure, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetJiraCloud())
             {
                 context.Writer.WritePropertyName("JiraCloud");

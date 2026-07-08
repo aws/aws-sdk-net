@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     public partial class ResponseOutputItem
     {
         private DashPlaylistSettings _dashPlaylistSettings;
+        private string _dualStackPlaybackUrl;
         private HlsPlaylistSettings _hlsPlaylistSettings;
         private string _manifestName;
         private string _playbackUrl;
@@ -56,6 +57,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetDashPlaylistSettings()
         {
             return this._dashPlaylistSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DualStackPlaybackUrl. 
+        /// <para>
+        /// The dual-stack (IPv4 and IPv6) URL that your player uses for playback.
+        /// </para>
+        /// </summary>
+        public string DualStackPlaybackUrl
+        {
+            get { return this._dualStackPlaybackUrl; }
+            set { this._dualStackPlaybackUrl = value; }
+        }
+
+        // Check to see if DualStackPlaybackUrl property is set
+        internal bool IsSetDualStackPlaybackUrl()
+        {
+            return this._dualStackPlaybackUrl != null;
         }
 
         /// <summary>
@@ -99,7 +118,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackUrl. 
         /// <para>
-        /// The URL used for playback by content players.
+        /// The URL that your player uses for playback.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -66,6 +66,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetConnectorStatus())
                 request.Parameters.Add("ConnectorStatus", StringUtils.FromString(publicRequest.ConnectorStatus));
             
+            if (publicRequest.IsSetEnablementStatus())
+                request.Parameters.Add("EnablementStatus", StringUtils.FromString(publicRequest.EnablementStatus));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

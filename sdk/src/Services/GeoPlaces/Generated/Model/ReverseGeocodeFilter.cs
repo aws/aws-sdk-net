@@ -49,7 +49,7 @@ namespace Amazon.GeoPlaces.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=7)]
         public List<string> IncludePlaceTypes
         {
             get { return this._includePlaceTypes; }

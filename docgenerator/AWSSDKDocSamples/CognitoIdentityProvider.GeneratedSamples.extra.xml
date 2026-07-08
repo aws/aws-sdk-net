@@ -97,6 +97,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the provisioned limit for the UserAuthentication API category.
+                </para>
+                <code
+                    title="Example get a provisioned limit"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-get-a-provisioned-limit-1782432000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
             <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
             <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest" />
@@ -149,6 +168,25 @@
                     title="A ListUsers request for the next 3 users whose email address starts with &quot;testuser.&quot;"
                     source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
                     region="a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.UpdateProvisionedLimit(Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.UpdateProvisionedLimit(Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateProvisionedLimitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets the provisioned limit for the UserAuthentication API category to 300 RPS.
+                </para>
+                <code
+                    title="Example update a provisioned limit"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-update-a-provisioned-limit-1782432000000" />
             </example>
         </value>
     </doc>

@@ -15024,7 +15024,8 @@
         },
         "ImageId":{"shape":"ImageId"},
         "DeleteReplacedRootVolume":{"shape":"Boolean"},
-        "VolumeInitializationRate":{"shape":"Long"}
+        "VolumeInitializationRate":{"shape":"Long"},
+        "VolumeId":{"shape":"VolumeId"}
       }
     },
     "CreateReplaceRootVolumeTaskResult":{
@@ -32218,6 +32219,10 @@
         "FreeTierEligible":{
           "shape":"Boolean",
           "locationName":"freeTierEligible"
+        },
+        "PublicSsmParameterName":{
+          "shape":"String",
+          "locationName":"publicSsmParameterName"
         },
         "ImageWatermarks":{
           "shape":"ImageWatermarkList",

@@ -35,6 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class ProviderSummary
     {
         private ConnectorStatus _connectorStatus;
+        private ProviderDetail _providerConfiguration;
         private ConnectorProviderName _providerName;
 
         /// <summary>
@@ -53,6 +54,21 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetConnectorStatus()
         {
             return this._connectorStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderConfiguration.
+        /// </summary>
+        public ProviderDetail ProviderConfiguration
+        {
+            get { return this._providerConfiguration; }
+            set { this._providerConfiguration = value; }
+        }
+
+        // Check to see if ProviderConfiguration property is set
+        internal bool IsSetProviderConfiguration()
+        {
+            return this._providerConfiguration != null;
         }
 
         /// <summary>

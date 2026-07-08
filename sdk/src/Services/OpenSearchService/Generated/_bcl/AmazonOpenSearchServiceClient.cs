@@ -4362,6 +4362,79 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetMigration
+
+
+        /// <summary>
+        /// Retrieves the current status and progress of a migration job, including the number
+        /// of exported and imported objects and error details if the migration failed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigration service method.</param>
+        /// 
+        /// <returns>The response from the GetMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual GetMigrationResponse GetMigration(GetMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMigrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current status and progress of a migration job, including the number
+        /// of exported and imported objects and error details if the migration failed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual Task<GetMigrationResponse> GetMigrationAsync(GetMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMigrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPackageVersionHistory
 
 
@@ -5317,6 +5390,75 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = ListInstanceTypeDetailsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListInstanceTypeDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMigrations
+
+
+        /// <summary>
+        /// Lists migration jobs for an Amazon OpenSearch Service application. You can filter
+        /// results by migration status. Use pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMigrations service method.</param>
+        /// 
+        /// <returns>The response from the ListMigrations service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListMigrations">REST API Reference for ListMigrations Operation</seealso>
+        public virtual ListMigrationsResponse ListMigrations(ListMigrationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMigrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMigrationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists migration jobs for an Amazon OpenSearch Service application. You can filter
+        /// results by migration status. Use pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMigrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMigrations service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListMigrations">REST API Reference for ListMigrations Operation</seealso>
+        public virtual Task<ListMigrationsResponse> ListMigrationsAsync(ListMigrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMigrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMigrationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6392,6 +6534,93 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = StartDomainMaintenanceResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartDomainMaintenanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMigration
+
+
+        /// <summary>
+        /// Initiates a migration job to migrate saved objects from a data source to an Amazon
+        /// OpenSearch Service application workspace. Saved objects include dashboards, visualizations,
+        /// index patterns, and searches. You can specify export filters to control the scope
+        /// of the migration and a conflict resolution strategy for handling existing objects
+        /// in the target workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartMigrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a migration job to migrate saved objects from a data source to an Amazon
+        /// OpenSearch Service application workspace. Saved objects include dashboards, visualizations,
+        /// index patterns, and searches. You can specify export filters to control the scope
+        /// of the migration and a conflict resolution strategy for handling existing objects
+        /// in the target workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual Task<StartMigrationResponse> StartMigrationAsync(StartMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMigrationResponse>(request, options, cancellationToken);
         }
 
         #endregion

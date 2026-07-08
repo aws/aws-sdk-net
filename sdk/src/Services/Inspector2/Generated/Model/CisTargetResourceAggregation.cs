@@ -123,7 +123,7 @@ namespace Amazon.Inspector2.Model
         /// The ID of the target resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=10, Max=341)]
+        [AWSProperty(Min=10, Max=1024)]
         public string TargetResourceId
         {
             get { return this._targetResourceId; }

@@ -69,6 +69,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetProviders())
+                request.ParameterCollection.Add("Providers", publicRequest.Providers);
+            
             if (publicRequest.IsSetStandardsArn())
                 request.Parameters.Add("StandardsArn", StringUtils.FromString(publicRequest.StandardsArn));
             request.ResourcePath = "/securityControls/definitions";

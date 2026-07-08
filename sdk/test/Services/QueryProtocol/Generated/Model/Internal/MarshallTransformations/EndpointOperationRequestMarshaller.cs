@@ -63,7 +63,11 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                 request.HostPrefix = $"foo.";
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static EndpointOperationRequestMarshaller _instance = new EndpointOperationRequestMarshaller();        

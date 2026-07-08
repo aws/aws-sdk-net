@@ -59,6 +59,7 @@ namespace Amazon.GeoPlaces.Model
         private int? _maxResults;
         private string _politicalView;
         private string _queryText;
+        private SuggestTravelMode _travelMode;
 
         /// <summary>
         /// Gets and sets the property AdditionalFeatures. 
@@ -74,7 +75,7 @@ namespace Amazon.GeoPlaces.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=5)]
         public List<string> AdditionalFeatures
         {
             get { return this._additionalFeatures; }
@@ -181,10 +182,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        ///  A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a> compliant
-        /// language codes for the results to be rendered in. If there is no data for the result
-        /// in the requested language, data will be returned in the default language for the entry.
-        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        ///  A list of <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
+        /// 47</a> compliant language codes for the results to be rendered in. If there is no
+        /// data for the result in the requested language, data will be returned in the default
+        /// language for the entry. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
         /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only the
         /// following codes: <c>en, id, km, lo, ms, my, pt, th, tl, vi, zh</c> 
         /// </para>
@@ -292,6 +293,25 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetQueryText()
         {
             return this._queryText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TravelMode. 
+        /// <para>
+        /// Indicates the mode of mobility used by the end user. This is used to improve the relevance
+        /// of search results. Valid values are <c>Car</c>, <c>Scooter</c>, and <c>Truck</c>.
+        /// </para>
+        /// </summary>
+        public SuggestTravelMode TravelMode
+        {
+            get { return this._travelMode; }
+            set { this._travelMode = value; }
+        }
+
+        // Check to see if TravelMode property is set
+        internal bool IsSetTravelMode()
+        {
+            return this._travelMode != null;
         }
 
     }

@@ -62,16 +62,16 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-09-27";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetResourceArn())
-                throw new AmazonRoute53GlobalResolverException("Request object does not have required field ResourceArn set");
-            request.AddPathResource("{resourceArn+}", StringUtils.FromString(publicRequest.ResourceArn.TrimStart('/')));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max_results", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/hosted-zone-associations/resource-arn/{resourceArn+}";
+            
+            if (publicRequest.IsSetResourceArn())
+                request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/hosted-zone-associations";
             request.UseQueryString = true;
 
             return request;

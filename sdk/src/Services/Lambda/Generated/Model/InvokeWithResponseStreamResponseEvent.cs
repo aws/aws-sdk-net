@@ -52,14 +52,14 @@ namespace Amazon.Lambda.Model
             {"InvokeComplete", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new InvokeWithResponseStreamCompleteEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"PayloadChunk", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new InvokeResponseStreamUpdateUnmarshaller().Unmarshall(context, ref reader);
                 }
             },

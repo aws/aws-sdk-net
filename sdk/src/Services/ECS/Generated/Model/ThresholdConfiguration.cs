@@ -48,10 +48,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Determines how <c>value</c> is used to calculate the failure threshold. For the percentage
-        /// types (<c>BOUNDED_PERCENT</c> and <c>UNBOUNDED_PERCENT</c>), <c>value</c> is multiplied
-        /// by the latest service desired count; for <c>COUNT</c>, <c>value</c> is used directly.
-        /// The default is <c>BOUNDED_PERCENT</c>.
+        /// Determines how Amazon ECS uses <c>value</c> to calculate the failure threshold. For
+        /// the percentage types (<c>BOUNDED_PERCENT</c> and <c>UNBOUNDED_PERCENT</c>), Amazon
+        /// ECS multiplies <c>value</c> by the latest service desired count. For <c>COUNT</c>,
+        /// Amazon ECS uses <c>value</c> directly as the threshold. The default is <c>BOUNDED_PERCENT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,10 +70,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The integer used to calculate the failure threshold. When <c>type</c> is <c>COUNT</c>,
-        /// this is the failure threshold itself. When <c>type</c> is a percentage type, this
-        /// is the percentage that Amazon ECS multiplies by the latest service desired count to
-        /// calculate the failure threshold.
+        /// Specifies the integer that Amazon ECS uses to calculate the failure threshold. When
+        /// <c>type</c> is <c>COUNT</c>, this value is the failure threshold itself. When <c>type</c>
+        /// is a percentage type, Amazon ECS multiplies this value by the latest service desired
+        /// count to produce the failure threshold. The default is <c>50</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

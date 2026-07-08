@@ -39,7 +39,9 @@ namespace Amazon.SecurityHub.Model
         private DataClassificationDetails _dataClassification;
         private ResourceDetails _details;
         private string _id;
+        private ResourceOwner _owner;
         private Partition _partition;
+        private CloudProviderName _provider;
         private string _region;
         private string _resourceRole;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -137,6 +139,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// Information about the account and organization that own the resource.
+        /// </para>
+        /// </summary>
+        public ResourceOwner Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Partition. 
         /// <para>
         /// The canonical Amazon Web Services partition name that the Region is assigned to.
@@ -152,6 +172,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetPartition()
         {
             return this._partition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// The cloud provider that the resource belongs to. Valid values are <c>AWS</c> and <c>Azure</c>.
+        /// </para>
+        /// </summary>
+        public CloudProviderName Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
         }
 
         /// <summary>

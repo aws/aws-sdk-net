@@ -38,6 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _connectorArn;
         private string _connectorId;
         private ConnectorStatus _connectorStatus;
+        private EnablementStatus _enablementStatus;
 
         /// <summary>
         /// Gets and sets the property AuthUrl. 
@@ -111,6 +112,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetConnectorStatus()
         {
             return this._connectorStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatus. 
+        /// <para>
+        /// The enablement status of the connector after creation.
+        /// </para>
+        /// </summary>
+        public EnablementStatus EnablementStatus
+        {
+            get { return this._enablementStatus; }
+            set { this._enablementStatus = value; }
+        }
+
+        // Check to see if EnablementStatus property is set
+        internal bool IsSetEnablementStatus()
+        {
+            return this._enablementStatus != null;
         }
 
     }

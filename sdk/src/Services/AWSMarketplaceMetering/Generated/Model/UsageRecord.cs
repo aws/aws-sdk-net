@@ -171,6 +171,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Your application can meter usage for up to 24 hours in the past. Make sure the <c>timestamp</c>
         /// value is not before the start of the software usage.
         /// </para>
+        ///  
+        /// <para>
+        /// At the end of each billing cycle, you have a 6-hour grace period to submit usage records
+        /// for the previous billing month before 06:00 UTC on the first day of the next month.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? Timestamp

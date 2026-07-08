@@ -41,9 +41,49 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FieldName. 
         /// <para>
-        /// The name of the resources field to filter on, such as resourceType, accountId, or
-        /// region.
+        /// The name of the resources field to filter on. You can specify one of the following
+        /// fields.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>account_id</c> – The Amazon Web Services account ID that owns the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>region</c> – The Amazon Web Services Region of the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_type</c> – The type of the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_category</c> – The category of the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_cloud_provider</c> – The cloud provider of the resource. Valid values
+        /// are <c>AWS</c> and <c>Azure</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_region</c> – The Region of the resource. For an Amazon Web Services resource,
+        /// this is the Amazon Web Services Region. For an Azure resource, this is the Azure Region,
+        /// such as <c>eastus</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_owner_id</c> – The identifier of the account that owns the resource.
+        /// For an Amazon Web Services resource, this is the Amazon Web Services account ID. For
+        /// an Azure resource, this is the Azure subscription ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource_owner_organization_id</c> – The identifier of the organization that owns
+        /// the resource. For an Amazon Web Services resource, this is the Amazon Web Services
+        /// organization ID. For an Azure resource, this is the Azure tenant ID.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourcesTrendsStringField FieldName
         {

@@ -20,16 +20,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
     public class CSMIntegrationTests : IDisposable
     {
         private const int CSMPort = 31000;
+        private readonly string _clientId = Guid.NewGuid().ToString("N");
 
         public CSMIntegrationTests()
         {
             AWSConfigs.CSMConfig.CSMEnabled = true;
+            AWSConfigs.CSMConfig.CSMClientId = _clientId;
             DeterminedCSMConfiguration.Instance.CSMConfiguration = new CSMFallbackConfigChain().GetCSMConfig();
         }
 
         public void Dispose()
         {
             AWSConfigs.CSMConfig.CSMEnabled = null;
+            AWSConfigs.CSMConfig.CSMClientId = null;
             DeterminedCSMConfiguration.Instance.CSMConfiguration = new CSMFallbackConfigChain().GetCSMConfig();
         }
 
@@ -46,11 +49,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
             SendEndMessage();
             var messages = task.Result;
 
-            // Filter out the "Exit" sentinel and any stale messages from prior tests
-            var relevant = messages.Where(m => m != "Exit" && m.Contains("ListTables")).ToList();
-            Assert.Equal(2, relevant.Count);
-            ValidateMessage(relevant[0], "ApiCallAttempt", "DynamoDB", "ListTables", "us-east-1", 200, domain: "dynamodb.us-east-1.amazonaws.com");
-            ValidateMessage(relevant[1], "ApiCall", "DynamoDB", "ListTables", "us-east-1", 200, attemptCount: 1);
+            ValidateCall(messages, "ListTables", 200, domain: "dynamodb.us-east-1.amazonaws.com", clientId: _clientId);
         }
 
         [Fact]
@@ -68,11 +67,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
             SendEndMessage();
             var messages = task.Result;
 
-            // Filter out the "Exit" sentinel and any stale messages from prior tests
-            var relevant = messages.Where(m => m != "Exit" && m.Contains("DeleteTable")).ToList();
-            Assert.Equal(2, relevant.Count);
-            ValidateMessage(relevant[0], "ApiCallAttempt", "DynamoDB", "DeleteTable", "us-east-1", 400, domain: "dynamodb.us-east-1.amazonaws.com");
-            ValidateMessage(relevant[1], "ApiCall", "DynamoDB", "DeleteTable", "us-east-1", 400, attemptCount: 1);
+            ValidateCall(messages, "DeleteTable", 400, domain: "dynamodb.us-east-1.amazonaws.com", clientId: _clientId);
         }
 
 #if NETFRAMEWORK
@@ -102,15 +97,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
             SendEndMessage();
             Thread.Sleep(50);
 
-            // Filter out the "Exit" sentinel and any stale messages from prior tests
-            var relevant = stash.Where(m => m != "Exit" && m.Contains("ListTables")).ToList();
-            Assert.Equal(2, relevant.Count);
-            ValidateMessage(relevant[0], "ApiCallAttempt", "DynamoDB", "ListTables", "us-east-1", 200, domain: "dynamodb.us-east-1.amazonaws.com");
-            ValidateMessage(relevant[1], "ApiCall", "DynamoDB", "ListTables", "us-east-1", 200, attemptCount: 1);
+            ValidateCall(stash, "ListTables", 200, domain: "dynamodb.us-east-1.amazonaws.com", clientId: _clientId);
         }
 #endif
 
-        private static void ValidateMessage(string json, string expectedType, string service, string api, string region, int httpStatusCode, string domain = null, int? attemptCount = null)
+        // Validates CSM output for a single call by keying off the per-test ClientId rather than
+        // the raw datagram count. A single SDK call can emit multiple attempt events if it retries.
+        private static void ValidateCall(IEnumerable<string> messages, string api, int httpStatusCode, string domain, string clientId)
+        {
+            var relevant = messages.Where(m => m != "Exit" && HasCsmIdentity(m, api, clientId)).ToList();
+
+            var summary = Assert.Single(relevant.Where(m => IsType(m, "ApiCall")));
+            ValidateMessage(summary, "ApiCall", "DynamoDB", api, "us-east-1", httpStatusCode);
+
+            var attempts = relevant.Where(m => IsType(m, "ApiCallAttempt")).ToList();
+            Assert.NotEmpty(attempts);
+            foreach (var attempt in attempts)
+            {
+                ValidateMessage(attempt, "ApiCallAttempt", "DynamoDB", api, "us-east-1", domain: domain);
+            }
+        }
+
+        private static bool HasCsmIdentity(string json, string api, string clientId)
+        {
+            using (var doc = JsonDocument.Parse(json))
+            {
+                var root = doc.RootElement;
+                return root.TryGetProperty("Api", out var apiProperty) &&
+                       root.TryGetProperty("ClientId", out var clientIdProperty) &&
+                       apiProperty.GetString() == api &&
+                       clientIdProperty.GetString() == clientId;
+            }
+        }
+
+        private static bool IsType(string json, string type)
+        {
+            using (var doc = JsonDocument.Parse(json))
+            {
+                return doc.RootElement.GetProperty("Type").GetString() == type;
+            }
+        }
+
+        private static void ValidateMessage(string json, string expectedType, string service, string api, string region, int? httpStatusCode = null, string domain = null)
         {
             using (var doc = JsonDocument.Parse(json))
             {
@@ -122,15 +150,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
 
                 if (expectedType == "ApiCall")
                 {
-                    Assert.Equal(httpStatusCode, root.GetProperty("FinalHttpStatusCode").GetInt32());
-                    if (attemptCount.HasValue)
+                    if (httpStatusCode.HasValue)
                     {
-                        Assert.Equal(attemptCount.Value, root.GetProperty("AttemptCount").GetInt32());
+                        Assert.Equal(httpStatusCode.Value, root.GetProperty("FinalHttpStatusCode").GetInt32());
                     }
                 }
                 else
                 {
-                    Assert.Equal(httpStatusCode, root.GetProperty("HttpStatusCode").GetInt32());
+                    if (httpStatusCode.HasValue)
+                    {
+                        Assert.Equal(httpStatusCode.Value, root.GetProperty("HttpStatusCode").GetInt32());
+                    }
                     if (domain != null)
                     {
                         Assert.Equal(domain, root.GetProperty("Fqdn").GetString());

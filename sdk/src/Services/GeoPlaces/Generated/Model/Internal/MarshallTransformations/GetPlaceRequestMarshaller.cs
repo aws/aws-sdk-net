@@ -69,6 +69,9 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAdditionalFeatures())
                 request.ParameterCollection.Add("additional-features", publicRequest.AdditionalFeatures);
             
+            if (publicRequest.IsSetAddressNamesMode())
+                request.Parameters.Add("address-names-mode", StringUtils.FromString(publicRequest.AddressNamesMode));
+            
             if (publicRequest.IsSetIntendedUse())
                 request.Parameters.Add("intended-use", StringUtils.FromString(publicRequest.IntendedUse));
             

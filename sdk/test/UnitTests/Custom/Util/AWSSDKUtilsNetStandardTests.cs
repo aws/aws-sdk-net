@@ -1,4 +1,5 @@
 #if !NETFRAMEWORK
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ThirdParty.RuntimeBackports;
 
 namespace AWSSDK.UnitTests
 {
@@ -122,6 +124,150 @@ namespace AWSSDK.UnitTests
                 var actual = WriteJsonUsingWriteBase64StringValue(stream);
                 Assert.AreEqual(expected, actual);
             }
+        }
+
+        [TestMethod]
+        [DataRow("")]
+        [DataRow("simple")]
+        [DataRow("value, with special chars!")]
+        [DataRow("path {/+:} chars")]
+        [DataRow("😂 emoji and 世界 cjk")]
+        [DataRow("a_b.c-d~e")]
+        [DataRow("mixed-safe-prefix then space here")]
+        public void UrlEncodeToBuffer_MatchesStringOverloadBytes(string input)
+        {
+            var expected = Encoding.UTF8.GetBytes(AWSSDKUtils.UrlEncode(3986, input, false));
+
+            using var writer = new ArrayPoolBufferWriter<byte>(64);
+            AWSSDKUtils.UrlEncodeToBuffer(3986, writer, input, false);
+            var actual = writer.WrittenSpan.ToArray();
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [DataRow(3986, false, 0)]
+        [DataRow(3986, false, 300)]
+        [DataRow(3986, true, 300)]
+        [DataRow(1738, false, 300)]
+        [DataRow(3986, false, -1)]
+        [DataRow(3986, true, -1)]
+        [DataRow(1738, false, -1)]
+        [DataRow(3986, false, 27)]
+        [DataRow(3986, false, 28)]
+        public void UrlEncodeToBuffer_MatchesStringOverload_AcrossRfcPathAndLength(int rfc, bool path, int lengthCode)
+        {
+            // lengthCode >= 0: that many safe 'a' chars (passthrough). lengthCode == -1: 300 spaces (every byte encoded).
+            var input = lengthCode >= 0 ? new string('a', lengthCode) : new string(' ', 300);
+
+            var expected = Encoding.UTF8.GetBytes(AWSSDKUtils.UrlEncode(rfc, input, path));
+
+            using var writer = new ArrayPoolBufferWriter<byte>(64);
+            AWSSDKUtils.UrlEncodeToBuffer(rfc, writer, input, path);
+            var actual = writer.WrittenSpan.ToArray();
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetParametersAsBytes_MatchesStringPath()
+        {
+            var pc = BuildRepresentativeParameters();
+
+            var expected = Encoding.UTF8.GetBytes(AWSSDKUtils.GetParametersAsString(pc));
+            var actual = AWSSDKUtils.GetParametersAsBytes(pc);
+
+            Assert.AreEqual(expected.Length, actual.Length, "Body byte length differs (e.g. trailing '&').");
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void WriteParametersToPooledStream_MatchesStringPath()
+        {
+            var pc = BuildRepresentativeParameters();
+            var request = new DefaultRequest(new MockAmazonWebServiceRequest(), "TestService");
+            foreach (var kvp in pc)
+                request.ParameterCollection.Add(kvp.Key, kvp.Value);
+
+            var expected = Encoding.UTF8.GetBytes(AWSSDKUtils.GetParametersAsString(pc));
+
+            using var stream = AWSSDKUtils.WriteParametersToPooledStream(request);
+            var actual = stream.Content.ToArray();
+
+            Assert.AreEqual(expected.Length, actual.Length, "Body byte length differs (e.g. trailing '&').");
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetParametersAsBytes_SkipsNullValuesAndEmptyStrings_LikeStringPath()
+        {
+            // A collection that exercises: null value (skipped), empty-string value (key=), a value
+            // needing encoding, sorted string list, and a double list.
+            var pc = new ParameterCollection
+            {
+                { "a_empty", "" },
+                { "b_plain", "value" },
+                { "c_encode", "needs encoding & = chars" },
+                { "d_list", new List<string> { "z", "a" } },
+                { "e_doubles", new List<double> { 2.5, 1.1 } },
+                { "f_null", new StringParameterValue(null) },
+            };
+
+            var expected = Encoding.UTF8.GetBytes(AWSSDKUtils.GetParametersAsString(pc));
+            var actual = AWSSDKUtils.GetParametersAsBytes(pc);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetParametersAsBytes_EmptyCollection_ReturnsEmpty()
+        {
+            var pc = new ParameterCollection();
+
+            var actual = AWSSDKUtils.GetParametersAsBytes(pc);
+
+            Assert.AreEqual(0, actual.Length);
+            CollectionAssert.AreEqual(Encoding.UTF8.GetBytes(AWSSDKUtils.GetParametersAsString(pc)), actual);
+        }
+
+        [TestMethod]
+        public void WriteParametersToPooledStream_ContentHash_MatchesLegacyBytePath()
+        {
+            var pc = BuildRepresentativeParameters();
+
+            var contentStreamRequest = new DefaultRequest(new MockAmazonWebServiceRequest(), "TestService");
+            var contentRequest = new DefaultRequest(new MockAmazonWebServiceRequest(), "TestService");
+            foreach (var kvp in pc)
+            {
+                contentStreamRequest.ParameterCollection.Add(kvp.Key, kvp.Value);
+                contentRequest.ParameterCollection.Add(kvp.Key, kvp.Value);
+            }
+            contentStreamRequest.ContentStream = AWSSDKUtils.WriteParametersToPooledStream(contentStreamRequest);
+            contentRequest.Content = AWSSDKUtils.GetRequestPayloadBytes(contentRequest);
+
+            // ComputeContentStreamHash() only hashes ContentStream, so hash the byte[] path the way the
+            // signer does: SHA256 over request.Content, hex-encoded.
+            var contentStreamRequestHash = contentStreamRequest.ComputeContentStreamHash();
+            var contentRequestHash = AWSSDKUtils.ToHex(
+                CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(contentRequest.Content), true);
+
+            Assert.AreEqual(contentRequestHash, contentStreamRequestHash);
+
+            contentStreamRequest.ContentStream.Dispose();
+        }
+
+        private static ParameterCollection BuildRepresentativeParameters()
+        {
+            return new ParameterCollection
+            {
+                { "Action", "PutMetricData" },
+                { "Version", "2010-08-01" },
+                { "Namespace", "AWS/Benchmark with spaces" },
+                { "MetricData.member.1.MetricName", "cpu/util%" },
+                { "MetricData.member.1.Value", "42.5" },
+                { "Dimensions.member.1", new List<string> { "b-zone", "a-zone" } },
+                { "Values", new List<double> { 3.3, 1.0, 2.2 } },
+            };
         }
 
         private static string WriteJsonUsingFromMemoryStream(MemoryStream stream)

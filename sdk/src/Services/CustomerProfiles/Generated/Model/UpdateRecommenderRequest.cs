@@ -40,6 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _domainName;
         private RecommenderConfig _recommenderConfig;
         private string _recommenderName;
+        private string _recommenderVersionName;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -115,6 +116,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetRecommenderName()
         {
             return this._recommenderName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderVersionName. 
+        /// <para>
+        /// The name of a specific recommender version to activate as part of this update (for
+        /// example, to roll back to a previously trained version).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string RecommenderVersionName
+        {
+            get { return this._recommenderVersionName; }
+            set { this._recommenderVersionName = value; }
+        }
+
+        // Check to see if RecommenderVersionName property is set
+        internal bool IsSetRecommenderVersionName()
+        {
+            return this._recommenderVersionName != null;
         }
 
     }

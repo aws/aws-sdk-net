@@ -36,22 +36,28 @@ namespace Amazon.SecurityHub.Model
     public partial class ResourceResult
     {
         private string _accountId;
+        private string _accountName;
         private List<ResourceFindingsSummary> _findingsSummary = AWSConfigs.InitializeCollections ? new List<ResourceFindingsSummary>() : null;
         private string _region;
         private ResourceCategory _resourceCategory;
+        private string _resourceCloudPartition;
         private Amazon.Runtime.Documents.Document _resourceConfig;
         private string _resourceCreationTimeDt;
         private string _resourceDetailCaptureTimeDt;
         private string _resourceGuid;
         private string _resourceId;
         private string _resourceName;
+        private string _resourceOwnerAccountId;
+        private string _resourceOwnerOrgId;
+        private string _resourceProvider;
+        private string _resourceRegion;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private string _resourceType;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account that owns the resource.
+        /// The Amazon Web Services account that recorded the resource data in Security Hub.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,6 +71,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountName. 
+        /// <para>
+        /// The name of the Amazon Web Services account that's associated with the resource.
+        /// </para>
+        /// </summary>
+        public string AccountName
+        {
+            get { return this._accountName; }
+            set { this._accountName = value; }
+        }
+
+        // Check to see if AccountName property is set
+        internal bool IsSetAccountName()
+        {
+            return this._accountName != null;
         }
 
         /// <summary>
@@ -93,7 +117,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Amazon Web Services Region where the resource is located.
+        /// The Amazon Web Services Region that recorded the resource data in Security Hub.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,6 +149,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetResourceCategory()
         {
             return this._resourceCategory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceCloudPartition. 
+        /// <para>
+        /// The cloud partition where the resource exists. For Amazon Web Services, valid values
+        /// include <c>aws</c>, <c>aws-cn</c>, and <c>aws-us-gov</c>. This field isn't returned
+        /// for cloud providers that don't use partitions.
+        /// </para>
+        /// </summary>
+        public string ResourceCloudPartition
+        {
+            get { return this._resourceCloudPartition; }
+            set { this._resourceCloudPartition = value; }
+        }
+
+        // Check to see if ResourceCloudPartition property is set
+        internal bool IsSetResourceCloudPartition()
+        {
+            return this._resourceCloudPartition != null;
         }
 
         /// <summary>
@@ -239,6 +283,85 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceOwnerAccountId. 
+        /// <para>
+        /// The identifier of the cloud account that owns the resource. For Amazon Web Services
+        /// resources, this is the Amazon Web Services account ID. For Azure resources, this is
+        /// the Azure subscription ID.
+        /// </para>
+        /// </summary>
+        public string ResourceOwnerAccountId
+        {
+            get { return this._resourceOwnerAccountId; }
+            set { this._resourceOwnerAccountId = value; }
+        }
+
+        // Check to see if ResourceOwnerAccountId property is set
+        internal bool IsSetResourceOwnerAccountId()
+        {
+            return this._resourceOwnerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwnerOrgId. 
+        /// <para>
+        /// The identifier of the cloud organization that owns the resource. For Amazon Web Services
+        /// resources, this is the Organizations ID. For Azure resources, this is the Azure tenant
+        /// ID.
+        /// </para>
+        /// </summary>
+        public string ResourceOwnerOrgId
+        {
+            get { return this._resourceOwnerOrgId; }
+            set { this._resourceOwnerOrgId = value; }
+        }
+
+        // Check to see if ResourceOwnerOrgId property is set
+        internal bool IsSetResourceOwnerOrgId()
+        {
+            return this._resourceOwnerOrgId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceProvider. 
+        /// <para>
+        /// The cloud provider where the resource exists. Valid values are <c>AWS</c> and <c>Azure</c>.
+        /// This field is always included.
+        /// </para>
+        /// </summary>
+        public string ResourceProvider
+        {
+            get { return this._resourceProvider; }
+            set { this._resourceProvider = value; }
+        }
+
+        // Check to see if ResourceProvider property is set
+        internal bool IsSetResourceProvider()
+        {
+            return this._resourceProvider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRegion. 
+        /// <para>
+        /// The native cloud region where the resource is located. For Amazon Web Services, this
+        /// is an Amazon Web Services Region (for example, <c>us-east-1</c>). For Azure resources,
+        /// this is the Azure region (for example, <c>westus2</c>). This field is always included.
+        /// </para>
+        /// </summary>
+        public string ResourceRegion
+        {
+            get { return this._resourceRegion; }
+            set { this._resourceRegion = value; }
+        }
+
+        // Check to see if ResourceRegion property is set
+        internal bool IsSetResourceRegion()
+        {
+            return this._resourceRegion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
         /// The key-value pairs associated with a resource.
@@ -267,6 +390,7 @@ namespace Amazon.SecurityHub.Model
         /// The type of resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceType
         {
             get { return this._resourceType; }

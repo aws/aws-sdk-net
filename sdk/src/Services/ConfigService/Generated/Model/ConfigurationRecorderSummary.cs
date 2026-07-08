@@ -31,12 +31,13 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// A summary of a configuration recorder, including the <c>arn</c>, <c>name</c>, <c>servicePrincipal</c>,
-    /// and <c>recordingScope</c>.
+    /// <c>recordingScope</c>, and <c>provider</c>.
     /// </summary>
     public partial class ConfigurationRecorderSummary
     {
         private string _arn;
         private string _name;
+        private Provider _provider;
         private RecordingScope _recordingScope;
         private string _servicePrincipal;
 
@@ -76,6 +77,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// For service-linked configuration recorders that record resources from a third-party
+        /// cloud service provider, indicates the cloud service provider. Currently, <c>AZURE</c>
+        /// is supported.
+        /// </para>
+        /// </summary>
+        public Provider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
         }
 
         /// <summary>

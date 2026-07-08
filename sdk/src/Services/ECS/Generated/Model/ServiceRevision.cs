@@ -55,6 +55,7 @@ namespace Amazon.ECS.Model
         private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
         private MonitoringConfiguration _monitoring;
         private NetworkConfiguration _networkConfiguration;
+        private ServiceRevisionOverrides _overrides;
         private string _platformFamily;
         private string _platformVersion;
         private ResolvedConfiguration _resolvedConfiguration;
@@ -274,6 +275,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkConfiguration()
         {
             return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Overrides. 
+        /// <para>
+        /// The effective runtime overrides that Amazon ECS applies to this service revision.
+        /// This value is present only when Amazon ECS detects a difference between the task definition
+        /// and the actual runtime configuration.
+        /// </para>
+        /// </summary>
+        public ServiceRevisionOverrides Overrides
+        {
+            get { return this._overrides; }
+            set { this._overrides = value; }
+        }
+
+        // Check to see if Overrides property is set
+        internal bool IsSetOverrides()
+        {
+            return this._overrides != null;
         }
 
         /// <summary>
