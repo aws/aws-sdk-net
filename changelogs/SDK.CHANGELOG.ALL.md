@@ -1,3 +1,15 @@
+### 4.0.285.0 (2026-07-09 18:15 UTC)
+* Connect (4.0.104.0)
+	* Amazon Connect - Added DeleteContactData API to support PII deletion of customer endpoint, additional email recipients and email subject.
+* EC2 (4.0.105.0)
+	* Added support for additional override parameters in CreateFleet, including LaunchTemplateSpecificationUserData, KeyName, IamInstanceProfile, and MetadataOptions. The CreateFleet response now also includes SubnetId, AvailabilityZone, and AvailabilityZoneId for launched instances.
+* GuardDuty (4.0.101.0)
+	* Adding "AI Analyst" enum value for detector
+* IVS (4.0.101.0)
+	* adds support for AWS IVS ad configuration APIs to allow for a postRollConfiguration object on the ad configuration resource
+* Synthetics (4.0.101.0)
+	* CloudWatch Synthetics adds support for customer managed KMS keys for canary environment variables. Customers can now encrypt their canary's Lambda function environment variables at rest using their own AWS KMS key, providing additional control over data protection.
+
 ### 4.0.284.0 (2026-07-08 23:18 UTC)
 * Signin (4.0.101.0)
 	* Adds support for OAuth 2.0 token operations in AWS Sign-In, CreateOAuth2TokenWithIAM (client credentials flow), IntrospectOAuth2TokenWithIAM (token inspection), and RevokeOAuth2TokenWithIAM (token revocation).
