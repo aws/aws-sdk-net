@@ -1375,6 +1375,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ContactField.
+    /// </summary>
+    public class ContactField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITIONAL_EMAIL_RECIPIENTS for ContactField
+        /// </summary>
+        public static readonly ContactField ADDITIONAL_EMAIL_RECIPIENTS = new ContactField("ADDITIONAL_EMAIL_RECIPIENTS");
+        /// <summary>
+        /// Constant CUSTOMER_ENDPOINT for ContactField
+        /// </summary>
+        public static readonly ContactField CUSTOMER_ENDPOINT = new ContactField("CUSTOMER_ENDPOINT");
+        /// <summary>
+        /// Constant EMAIL_SUBJECT for ContactField
+        /// </summary>
+        public static readonly ContactField EMAIL_SUBJECT = new ContactField("EMAIL_SUBJECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactField FindValue(string value)
+        {
+            return FindValue<ContactField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContactFlowModuleState.
     /// </summary>
     public class ContactFlowModuleState : ConstantClass

@@ -7487,6 +7487,115 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteContactData
+
+
+        /// <summary>
+        /// Deletes the specified fields containing personally identifiable information (PII)
+        /// from a contact in the specified Connect Customer instance. This operation redacts
+        /// PII (such as customer endpoints, additional email recipients, and the email subject)
+        /// from the contact and its associated contact trace record (CTR). The contact must be
+        /// in a terminated state.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation performs a hard deletion of the specified PII and cannot be undone.
+        /// There is no retention period; after the data is deleted, it cannot be recovered. Only
+        /// fields that Connect Customer identifies and stores as PII are removed. Any PII that
+        /// you place in fields outside the scope of this operation remains your responsibility
+        /// to remove.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactData service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactData service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ContactNotTerminatedException">
+        /// The contact has not been disconnected and is not in a terminated state. PII can be
+        /// deleted only from a contact that has been disconnected. This error is returned with
+        /// an HTTP 409 status code.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactData">REST API Reference for DeleteContactData Operation</seealso>
+        public virtual DeleteContactDataResponse DeleteContactData(DeleteContactDataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactDataResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactDataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified fields containing personally identifiable information (PII)
+        /// from a contact in the specified Connect Customer instance. This operation redacts
+        /// PII (such as customer endpoints, additional email recipients, and the email subject)
+        /// from the contact and its associated contact trace record (CTR). The contact must be
+        /// in a terminated state.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation performs a hard deletion of the specified PII and cannot be undone.
+        /// There is no retention period; after the data is deleted, it cannot be recovered. Only
+        /// fields that Connect Customer identifies and stores as PII are removed. Any PII that
+        /// you place in fields outside the scope of this operation remains your responsibility
+        /// to remove.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactData service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ContactNotTerminatedException">
+        /// The contact has not been disconnected and is not in a terminated state. PII can be
+        /// deleted only from a contact that has been disconnected. This error is returned with
+        /// an HTTP 409 status code.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactData">REST API Reference for DeleteContactData Operation</seealso>
+        public virtual Task<DeleteContactDataResponse> DeleteContactDataAsync(DeleteContactDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactDataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteContactEvaluation
 
 
