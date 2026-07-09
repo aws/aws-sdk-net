@@ -851,6 +851,10 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant AI_ANALYST for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature AI_ANALYST = new DetectorFeature("AI_ANALYST");
+        /// <summary>
         /// Constant EBS_MALWARE_PROTECTION for DetectorFeature
         /// </summary>
         public static readonly DetectorFeature EBS_MALWARE_PROTECTION = new DetectorFeature("EBS_MALWARE_PROTECTION");
@@ -920,6 +924,10 @@ namespace Amazon.GuardDuty
     public class DetectorFeatureResult : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AI_ANALYST for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult AI_ANALYST = new DetectorFeatureResult("AI_ANALYST");
         /// <summary>
         /// Constant CLOUD_TRAIL for DetectorFeatureResult
         /// </summary>
