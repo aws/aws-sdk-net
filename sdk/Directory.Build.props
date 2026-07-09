@@ -8,5 +8,43 @@
    <!-- NuGet audit vulnerabilities are handled by a separate CI pipeline, not the build -->
    <NuGetAuditMode>direct</NuGetAuditMode>
    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
+   
+   <LangVersion>12.0</LangVersion>
+
+   <!-- netcoreapp3.1 is past end-of-life; suppress the unsupported-TFM build warning for all projects. -->
+   <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+
+   <!--
+     Centralized .NET target frameworks for all SDK source and test projects. These properties are
+     the single source of truth for the target framework set emitted into the generated .csproj files;
+     the code generator references them by name rather than restating concrete TFM lists. When adding
+     or removing a target framework, update it here. Per-target-framework conditionals
+     (AWS_ASYNC_ENUMERABLES_API, IsTrimmable, GenerateBindingRedirectsOutputType, and the unit-test
+     project-type reference/exclude groups) use MSBuild framework-identifier/version comparisons rather
+     than hardcoded TFM names, so they adapt automatically to target framework changes.
+   -->
+   <SdkNetFrameworkTargets>net472</SdkNetFrameworkTargets>
+   <SdkNetTargets>netstandard2.0;net8.0;net10.0;net11.0</SdkNetTargets>
+   <!--
+     Runnable test targets for the xunit.v3-based integration tests. Excludes netstandard2.0 (tests
+     cannot execute on it) and netcoreapp3.1 (xunit.v3 does not support netcoreapp3.1).
+   -->
+   <SdkTestTargets>net472;net10.0;net11.0</SdkTestTargets>
+   <!--
+     MSTest-based unit test targets. Unlike the xunit.v3 integration tests (SdkTestTargets), MSTest
+     supports netcoreapp3.1, so the unit tests continue to cover it. SdkMSTestAllTestTargets is the full
+     set (used by the per-service and .NET Framework unit test projects); SdkMSTestNetTestTargets is the
+     non-.NET-Framework slice used by the NetStandard uber unit test project.
+   -->
+   <SdkMSTestAllTestTargets>net472;net8.0;net10.0;net11.0</SdkMSTestAllTestTargets>
+   <SdkMSTestNetTestTargets>net8.0;net10.0;net11.0</SdkMSTestNetTestTargets>
+   <!-- Target for performance benchmark and compatibility runner executables. -->
+   <SdkPerformanceTargets>net10.0</SdkPerformanceTargets>
+ </PropertyGroup>
+
+ <!-- Generate binding redirects for all .NET Framework targets. The identifier-based condition covers
+      any current or future net4xx target without hardcoding a TFM name. -->
+ <PropertyGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
+   <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
  </PropertyGroup>
 </Project>

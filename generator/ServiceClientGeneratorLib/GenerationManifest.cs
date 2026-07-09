@@ -105,6 +105,10 @@ namespace ServiceClientGenerator
                         new FileReader(),
                         new DefaultConfigurationParser()));
 
+            // Derive the AssemblyInfo target-framework set from sdk/Directory.Build.props so the generated
+            // AssemblyDescription #if/#elif chain adapts to target framework changes without editing the templates.
+            AssemblyInfoPlatforms.Initialize(options.SdkRootFolder);
+
             var manifest = LoadJsonFromFile(options.Manifest);
             var versionsManifest = LoadJsonFromFile(options.Versions);
 

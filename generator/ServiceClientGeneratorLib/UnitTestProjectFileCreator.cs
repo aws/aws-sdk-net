@@ -11,6 +11,25 @@ namespace ServiceClientGenerator
     {
         private readonly string TemplateName = "VS2017ProjectFile";
 
+        // The project-type variants that exist for Core/CRT/service references. A unit-test project
+        // references the .NETFramework variant on .NET Framework targets and the NetStandard variant on
+        // all other targets; the concrete target frameworks themselves come from the Sdk*Targets
+        // properties in sdk/Directory.Build.props, not from this generator.
+        private const string NetFrameworkProjectType = "NetFramework";
+        private const string NetStandardProjectType = "NetStandard";
+        private static readonly string[] ProjectTypes = { NetFrameworkProjectType, NetStandardProjectType };
+
+        /// <summary>
+        /// The MSBuild condition selecting the target frameworks that use the given project-type variant.
+        /// Uses a framework-identifier comparison so it adapts to any TFM change without hardcoding names:
+        /// the NetFramework variant applies to .NET Framework targets, the NetStandard variant to all others.
+        /// </summary>
+        private static string ConditionForProjectType(string projectType)
+        {
+            var op = projectType == NetFrameworkProjectType ? "==" : "!=";
+            return $"$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) {op} '.NETFramework'";
+        }
+
         private GeneratorOptions _options;
         private IEnumerable<ProjectFileConfiguration> _configurations;
         private string _serviceName;
@@ -38,21 +57,18 @@ namespace ServiceClientGenerator
                 IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
                 string projectName;
 
-                var projectTypes = configuration.TargetFrameworkProjectTypes;
                 if (_isLegacyProj)
                 {
-                    // Uber projects: emit one csproj per project type group (e.g. AWSSDK.UnitTests.NetFramework.csproj, AWSSDK.UnitTests.NetStandard.csproj).
-                    // Each uber solution includes only the matching project.
-                    foreach (var group in projectTypes.GroupBy(kvp => kvp.Value))
+                    // Uber projects: emit one csproj per project type (e.g. AWSSDK.UnitTests.NetFramework.csproj,
+                    // AWSSDK.UnitTests.NetStandard.csproj). Each uber solution includes only the matching project.
+                    foreach (var groupProjectType in ProjectTypes)
                     {
-                        var groupTfms = group.Select(kvp => kvp.Key).ToList();
-                        var groupProjectType = group.Key;
-                        var excludeFolder = groupProjectType == "NetFramework" ? "_netstandard" : "_bcl";
-             
+                        var excludeFolder = groupProjectType == NetFrameworkProjectType ? "_netstandard" : "_bcl";
+
                         var excludeFolders = configuration.PlatformExcludeFolders.Concat(new[] { excludeFolder }).ToList();
 
                         // MobileAnalytics only supports .NET Framework; exclude its test files from the NetStandard uber project.
-                        if (groupProjectType == "NetStandard")
+                        if (groupProjectType == NetStandardProjectType)
                         {
                             excludeFolders.Add(Utils.PathCombineAlt("..", "Services", "MobileAnalytics", "UnitTests", "**", "*.cs"));
                         }
@@ -76,7 +92,7 @@ namespace ServiceClientGenerator
                         var projectProperties = new Project
                         {
                             AssemblyName           = $"AWSSDK.UnitTests.{groupProjectType}",
-                            TargetFrameworks       = groupTfms,
+                            TargetFrameworksProperty = UberTestTargetsProperty(groupProjectType),
                             DefineConstants        = configuration.CompilationConstants,
                             ReferenceDependencies  = configuration.DllReferences,
                             CompileRemoveList      = excludeFolders,
@@ -99,47 +115,50 @@ namespace ServiceClientGenerator
                 }
                 else
                 {
-                    // MobileAnalytics only supports .NET Framework, so restrict its TFMs to net472 only.
+                    // Per-service unit test projects multi-target the MSTest test frameworks (net472 plus the
+                    // NetStandard-variant targets). Which project-type variant is referenced on which target is
+                    // expressed with framework-identifier conditions, so no concrete TFM names are needed here.
+                    // MobileAnalytics only supports .NET Framework, so it targets net472 only.
                     bool netFrameworkOnly = _serviceName == "MobileAnalytics";
                     var effectiveProjectTypes = netFrameworkOnly
-                        ? projectTypes.Where(kvp => kvp.Value == "NetFramework").ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
-                        : projectTypes.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
-                    var effectiveTargetFrameworks = netFrameworkOnly ? effectiveProjectTypes.Keys.ToList() : configuration.TargetFrameworkVersions;
+                        ? new[] { NetFrameworkProjectType }
+                        : ProjectTypes;
+
+                    var targetFrameworksProperty = netFrameworkOnly
+                        ? TargetFrameworkProperties.NetFrameworkProperty
+                        : TargetFrameworkProperties.MSTestAllProperty;
 
                     // Per-service projects: single multi-target csproj with conditional references.
                     projectName = $"AWSSDK.UnitTests.{_serviceName}.csproj";
                     serviceProjectReferences = new List<ProjectFileCreator.ProjectReference>();
 
-                    foreach (var group in effectiveProjectTypes.GroupBy(kvp => kvp.Value))
+                    foreach (var groupProjectType in effectiveProjectTypes)
                     {
-                        string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), effectiveProjectTypes);
-                        var refs = ServiceProjectReferences(unitTestRoot, serviceConfigurations, group.Key);
-                        foreach (var r in refs) 
-                        { 
-                            r.Condition = condition; 
-                        }
-
+                        string condition = netFrameworkOnly ? null : ConditionForProjectType(groupProjectType);
+                        var refs = ServiceProjectReferences(unitTestRoot, serviceConfigurations, groupProjectType);
                         foreach (var r in refs)
                         {
+                            r.Condition = condition;
                             serviceProjectReferences.Add(r);
                         }
                     }
 
                     string projectGuid = Utils.GetProjectGuid(Utils.PathCombineAlt(unitTestRoot, projectName));
-                    projectReferences = GetCommonReferences(unitTestRoot, useDllReference, configuration);
+                    projectReferences = GetCommonReferences(unitTestRoot, useDllReference, configuration, effectiveProjectTypes);
 
                     var conditionalExcludes = new Dictionary<string, List<string>>();
-                    foreach (var group in effectiveProjectTypes.GroupBy(kvp => kvp.Value))
+                    foreach (var groupProjectType in effectiveProjectTypes)
                     {
-                        string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), effectiveProjectTypes);
-                        var excludeFolder = group.Key == "NetFramework" ? "_netstandard" : "_bcl";
-                        conditionalExcludes[condition] = new List<string> { excludeFolder };
+                        string condition = netFrameworkOnly ? null : ConditionForProjectType(groupProjectType);
+                        var excludeFolder = groupProjectType == NetFrameworkProjectType ? "_netstandard" : "_bcl";
+                        // A null condition (net-framework-only service) means an unconditional exclude.
+                        conditionalExcludes[condition ?? string.Empty] = new List<string> { excludeFolder };
                     }
 
                     var projectProperties = new Project
                     {
                         AssemblyName           = $"AWSSDK.UnitTests.{_serviceName}",
-                        TargetFrameworks       = effectiveTargetFrameworks,
+                        TargetFrameworksProperty = targetFrameworksProperty,
                         DefineConstants        = configuration.CompilationConstants,
                         ReferenceDependencies  = configuration.DllReferences,
                         CompileRemoveList      = configuration.PlatformExcludeFolders,
@@ -173,32 +192,16 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Builds an MSBuild condition expression for a group of TFMs that share the same project type.
-        /// If the group is the minority, uses equality checks; otherwise uses inequality against the other group.
+        /// The centralized MSBuild target-frameworks property for a legacy uber unit-test project of the
+        /// given project type. NetFramework uses net472; NetStandard uses the MSTest non-.NET-Framework
+        /// slice (netcoreapp3.1;net8.0) rather than the full source target set (which includes
+        /// netstandard2.0, on which tests cannot run).
         /// </summary>
-        private static string BuildCondition(List<string> tfmsInGroup, IReadOnlyDictionary<string, string> allMappings)
+        private static string UberTestTargetsProperty(string projectType)
         {
-            var otherTfms = allMappings.Keys.Where(t => !tfmsInGroup.Contains(t)).ToList();
-
-            // Use whichever produces a simpler condition
-            if (tfmsInGroup.Count <= otherTfms.Count)
-            {
-                if (tfmsInGroup.Count == 1)
-                {
-                    return $"'$(TargetFramework)' == '{tfmsInGroup[0]}'";
-                }
-
-                return string.Join(" Or ", tfmsInGroup.Select(t => $"'$(TargetFramework)' == '{t}'"));
-            }
-            else
-            {
-                if (otherTfms.Count == 1)
-                {
-                    return $"'$(TargetFramework)' != '{otherTfms[0]}'";
-                }
-
-                return string.Join(" And ", otherTfms.Select(t => $"'$(TargetFramework)' != '{t}'"));
-            }
+            return projectType == NetFrameworkProjectType
+                ? TargetFrameworkProperties.NetFrameworkProperty
+                : TargetFrameworkProperties.MSTestNetProperty;
         }
 
         private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, bool useDllReference, string projectType)
@@ -227,18 +230,20 @@ namespace ServiceClientGenerator
             return references;
         }
 
-        private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, bool useDllReference, ProjectFileConfiguration configuration)
+        private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, bool useDllReference, ProjectFileConfiguration configuration, IReadOnlyList<string> effectiveProjectTypes)
         {
             IList<ProjectFileCreator.ProjectReference> references = new List<ProjectFileCreator.ProjectReference>();
 
-            var projectTypes = configuration.TargetFrameworkProjectTypes;
+            // A single project type (e.g. the .NET Framework-only case) needs no condition; otherwise each
+            // project-type variant is guarded by its framework-identifier condition.
+            bool conditional = effectiveProjectTypes.Count > 1;
 
             if (!useDllReference)
             {
-                foreach (var group in projectTypes.GroupBy(kvp => kvp.Value))
+                foreach (var projectType in effectiveProjectTypes)
                 {
-                    string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), projectTypes);
-                    references.Add(CreateCoreReference(group.Key, condition));
+                    string condition = conditional ? ConditionForProjectType(projectType) : null;
+                    references.Add(CreateCoreReference(projectType, condition));
                 }
             }
 
@@ -254,10 +259,10 @@ namespace ServiceClientGenerator
                 IncludePath = Utils.PathCombineAlt("..", "..", "..", "UnitTests", "Custom", "AWSSDK.UnitTestUtilities.csproj")
             });
 
-            foreach (var group in projectTypes.GroupBy(kvp => kvp.Value))
+            foreach (var projectType in effectiveProjectTypes)
             {
-                string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), projectTypes);
-                references.Add(CreateCrtReference(group.Key, condition));
+                string condition = conditional ? ConditionForProjectType(projectType) : null;
+                references.Add(CreateCrtReference(projectType, condition));
             }
 
             return references;

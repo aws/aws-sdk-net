@@ -1,8 +1,8 @@
 {
+    "_comment": "The compiled target framework set emitted into the generated .csproj files is owned solely by the Sdk*Targets properties in sdk\\Directory.Build.props (SdkNetFrameworkTargets, SdkNetTargets, SdkTestTargets, SdkMSTestAllTestTargets, SdkMSTestNetTestTargets); neither the projects[] items nor the unittestprojects block carry a targetFrameworks list. Each project maps to its Sdk*Targets property in the generator (TargetFrameworkProperties). 'defineConstants' are the UNCONDITIONAL compile constants for that project type (e.g. BCL for .NET Framework, NETSTANDARD for the netstandard project). Note: per-target-framework conditionals (AWS_ASYNC_ENUMERABLES_API, IsTrimmable, unit-test project-type reference/exclude groups, etc.) are expressed using framework-identifier comparisons ($([MSBuild]::GetTargetFrameworkIdentifier(...))), so they do not hardcode specific TFM names.",
     "projects": [
         {
             "name": "NetFramework",
-            "targetFrameworks": [ "net472" ],
             "defineConstants": [ "BCL", "CODE_ANALYSIS" ],
             "template": "VS2017ProjectFile",
             "excludeFolders": [ "_netstandard", "obj"],
@@ -27,7 +27,6 @@
         },
         {
             "name": "NetStandard",
-            "targetFrameworks": [ "netstandard2.0", "netcoreapp3.1", "net8.0" ],
             "defineConstants": [ "NETSTANDARD"],
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
@@ -51,12 +50,6 @@
     ],
     "unittestprojects":[
         {
-            "targetFrameworks": [
-                { "tfm": "net472", "projectType": "NetFramework" },
-                { "tfm": "netstandard2.0", "projectType": "NetStandard" },
-                { "tfm": "netcoreapp3.1", "projectType": "NetStandard" },
-                { "tfm": "net8.0", "projectType": "NetStandard" }
-            ],
             "defineConstants": [],
             "excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],

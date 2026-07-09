@@ -9,6 +9,41 @@ using Json.LitJson;
 namespace ServiceClientGenerator
 {
     /// <summary>
+    /// Maps a project type (e.g. "NetFramework" or "NetStandard") to the centralized MSBuild property
+    /// expression used to express its target frameworks. These properties are defined in
+    /// sdk\Directory.Build.props so the target framework set is controlled from a single location.
+    /// </summary>
+    public static class TargetFrameworkProperties
+    {
+        public const string NetFrameworkProperty = "$(SdkNetFrameworkTargets)";
+        public const string NetStandardProperty = "$(SdkNetTargets)";
+
+        /// <summary>
+        /// MSTest-based unit test target frameworks. Unlike the xunit.v3 integration tests (which use
+        /// $(SdkTestTargets)), MSTest supports netcoreapp3.1. MSTestAllProperty is the full set
+        /// (net472;netcoreapp3.1;net8.0) used by the per-service and .NET Framework unit test projects;
+        /// MSTestNetProperty is the non-.NET-Framework slice (netcoreapp3.1;net8.0) used by the NetStandard
+        /// uber unit test project.
+        /// </summary>
+        public const string MSTestAllProperty = "$(SdkMSTestAllTestTargets)";
+        public const string MSTestNetProperty = "$(SdkMSTestNetTestTargets)";
+
+        /// <summary>
+        /// Returns the MSBuild property expression for the given project type. Returns null if there is
+        /// no mapping; every generated project type must map to a property, and the project file template
+        /// throws when the resulting TargetFrameworksProperty is null or empty.
+        /// </summary>
+        public static string ForProjectType(string projectType)
+        {
+            if (string.Equals(projectType, "NetFramework", StringComparison.InvariantCultureIgnoreCase))
+                return NetFrameworkProperty;
+            if (string.Equals(projectType, "NetStandard", StringComparison.InvariantCultureIgnoreCase))
+                return NetStandardProperty;
+            return null;
+        }
+    }
+
+    /// <summary>
     /// Represents the metadata needed to generate a platform-specific project file
     /// for a service (eg compile constants, build configuration and platform etc).
     /// </summary>
@@ -22,7 +57,6 @@ namespace ServiceClientGenerator
             public const string ProjectsKey = "projects";
             public const string NameKey = "name";
             public const string ConfigurationsKey = "configurations";
-            public const string TargetFrameworksKey = "targetFrameworks";
             public const string DefineConstantsKey = "defineConstants";
             public const string BinSubFolderKey = "binSubFolder";
             public const string TemplateKey = "template";
@@ -62,35 +96,12 @@ namespace ServiceClientGenerator
                 }
             }
 
-            List<string> targetFrameworks;
-            Dictionary<string, string> targetFrameworkProjectTypes = null;
-
-            var tfData = projectNode.SafeGet(ProjectsSectionKeys.TargetFrameworksKey);
-            if (tfData != null && tfData.Count > 0 && tfData[0].IsObject)
-            {
-                targetFrameworks = new List<string>();
-                targetFrameworkProjectTypes = new Dictionary<string, string>();
-                for (int i = 0; i < tfData.Count; i++)
-                {
-                    var entry = tfData[i];
-                    var tfm = entry.SafeGetString("tfm");
-                    var projectType = entry.SafeGetString("projectType");
-                    targetFrameworks.Add(tfm);
-                    if (!string.IsNullOrEmpty(projectType))
-                    {
-                        targetFrameworkProjectTypes[tfm] = projectType;
-                    }
-                }
-            }
-            else
-            {
-                targetFrameworks = SafeGetStringList(projectNode, ProjectsSectionKeys.TargetFrameworksKey);
-            }
-
+            // The target framework set emitted into generated .csproj files is centralized in
+            // sdk/Directory.Build.props (the Sdk*Targets properties); neither the projects[] items nor the
+            // unittestprojects block carry a targetFrameworks list. The unit-test generator selects the
+            // project-type variants and framework-identifier conditions from a fixed project-type set.
             return new ProjectFileConfiguration {
                 Name = projectNode.SafeGetString(ProjectsSectionKeys.NameKey),
-                TargetFrameworkVersions = targetFrameworks,
-                TargetFrameworkProjectTypes = targetFrameworkProjectTypes,
                 CompilationConstants = SafeGetStringList(projectNode, ProjectsSectionKeys.DefineConstantsKey),
                 BinSubFolder = projectNode.SafeGetString(ProjectsSectionKeys.BinSubFolderKey),
                 Template = projectNode.SafeGetString(ProjectsSectionKeys.TemplateKey),
@@ -119,19 +130,6 @@ namespace ServiceClientGenerator
         /// supported by the project kind.
         /// </summary>
         public IEnumerable<string> Configurations { get; private set; }
-
-        /// <summary>
-        /// The .Net Framework versions, in format vX.Y, that the project will compile 
-        /// against.
-        /// </summary>
-        public IEnumerable<string> TargetFrameworkVersions { get; private set; }
-
-        /// <summary>
-        /// Maps each target framework to the project type suffix (e.g. "NetFramework" or "NetStandard")
-        /// used to select the correct service project reference. Only populated when the manifest
-        /// uses the object form of targetFrameworks.
-        /// </summary>
-        public IReadOnlyDictionary<string, string> TargetFrameworkProjectTypes { get; private set; }
 
         /// <summary>
         /// The #define constants to be set at compile time. These are used for all

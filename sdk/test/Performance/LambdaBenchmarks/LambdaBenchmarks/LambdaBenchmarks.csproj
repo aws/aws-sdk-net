@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>$(SdkPerformanceTargets)</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AWSProjectType>Lambda</AWSProjectType>
 		<!-- This property makes the build directory similar to a publish directory and helps the AWS .NET Lambda Mock Test Tool find project dependencies. -->
