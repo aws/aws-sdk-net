@@ -154,6 +154,8 @@ namespace Amazon.S3.Transfer.Internal
 
             downloadRequest.WriteObjectProgressEvent += downloadedProgressEventCallback;
 
+            _request.RaiseDownloadDirectoryFileRequestEvent(downloadRequest);
+
             return downloadRequest;
         }
 
