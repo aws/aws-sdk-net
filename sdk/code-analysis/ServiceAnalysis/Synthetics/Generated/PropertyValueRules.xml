@@ -28,6 +28,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.CreateCanaryRequest.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:kms:[a-z]{2,4}(-[a-z]{2,4})?-[a-z]+-\d{1}:\d{12}:key/[\w\-\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.CreateCanaryRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -299,6 +305,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.UpdateCanaryRequest.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:kms:[a-z]{2,4}(-[a-z]{2,4})?-[a-z]+-\d{1}:\d{12}:key/[\w\-\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -313,6 +325,12 @@
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.SuccessRetentionPeriodInDays</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.AddReplicaLocationInput.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:kms:[a-z]{2,4}(-[a-z]{2,4})?-[a-z]+-\d{1}:\d{12}:key/[\w\-\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.AddReplicaLocationInput.Location</property>
@@ -350,6 +368,12 @@
   <property-value-rule>
     <property>Amazon.Synthetics.Model.Canary.Id</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.Canary.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:kms:[a-z]{2,4}(-[a-z]{2,4})?-[a-z]+-\d{1}:\d{12}:key/[\w\-\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.Canary.Name</property>

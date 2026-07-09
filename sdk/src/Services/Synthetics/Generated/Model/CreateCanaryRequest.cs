@@ -66,6 +66,7 @@ namespace Amazon.Synthetics.Model
         private CanaryCodeInput _code;
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
+        private string _kmsKeyArn;
         private string _name;
         private ProvisionedResourceCleanupSetting _provisionedResourceCleanup;
         private List<string> _resourcesToReplicateTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -268,6 +269,27 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetFailureRetentionPeriodInDays()
         {
             return this._failureRetentionPeriodInDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer-managed AWS Key Management Service
+        /// (AWS KMS) key used to encrypt the canary's AWS Lambda function environment variables
+        /// at rest. If you don't specify a value, the service uses an AWS-managed key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

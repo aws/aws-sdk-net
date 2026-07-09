@@ -46,6 +46,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
+            }
+
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");

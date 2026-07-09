@@ -154,6 +154,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.FailureRetentionPeriodInDays.Value);
             }
 
+            if(publicRequest.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
+            }
+
             if(publicRequest.IsSetProvisionedResourceCleanup())
             {
                 context.Writer.WritePropertyName("ProvisionedResourceCleanup");
