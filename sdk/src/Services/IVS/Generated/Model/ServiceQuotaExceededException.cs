@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// Request would cause a service quota to be exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

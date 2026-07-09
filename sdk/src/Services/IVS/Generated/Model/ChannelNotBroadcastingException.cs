@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// The stream is offline for the given channel ARN.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

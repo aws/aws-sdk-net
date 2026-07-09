@@ -461,13 +461,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the BatchGetChannel service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceUnavailableException">
-        /// 
+        /// The service is temporarily unavailable.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetChannel">REST API Reference for BatchGetChannel Operation</seealso>
         public virtual Task<BatchGetChannelResponse> BatchGetChannelAsync(BatchGetChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -503,13 +503,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the BatchGetStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceUnavailableException">
-        /// 
+        /// The service is temporarily unavailable.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetStreamKey">REST API Reference for BatchGetStreamKey Operation</seealso>
         public virtual Task<BatchGetStreamKeyResponse> BatchGetStreamKeyAsync(BatchGetStreamKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -546,16 +546,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the BatchStartViewerSessionRevocation service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
-        /// 
+        /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">REST API Reference for BatchStartViewerSessionRevocation Operation</seealso>
         public virtual Task<BatchStartViewerSessionRevocationResponse> BatchStartViewerSessionRevocationAsync(BatchStartViewerSessionRevocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -591,28 +591,28 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the CreateAdConfiguration service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
-        /// 
+        /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateAdConfiguration">REST API Reference for CreateAdConfiguration Operation</seealso>
         public virtual Task<CreateAdConfigurationResponse> CreateAdConfigurationAsync(CreateAdConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -648,19 +648,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the CreateChannel service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -697,19 +697,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the CreatePlaybackRestrictionPolicy service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
-        /// 
+        /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">REST API Reference for CreatePlaybackRestrictionPolicy Operation</seealso>
         public virtual Task<CreatePlaybackRestrictionPolicyResponse> CreatePlaybackRestrictionPolicyAsync(CreatePlaybackRestrictionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -761,22 +761,22 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the CreateRecordingConfiguration service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">REST API Reference for CreateRecordingConfiguration Operation</seealso>
         public virtual Task<CreateRecordingConfigurationResponse> CreateRecordingConfigurationAsync(CreateRecordingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -820,19 +820,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the CreateStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateStreamKey">REST API Reference for CreateStreamKey Operation</seealso>
         public virtual Task<CreateStreamKeyResponse> CreateStreamKeyAsync(CreateStreamKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -868,19 +868,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the DeleteAdConfiguration service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteAdConfiguration">REST API Reference for DeleteAdConfiguration Operation</seealso>
         public virtual Task<DeleteAdConfigurationResponse> DeleteAdConfigurationAsync(DeleteAdConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -925,19 +925,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the DeleteChannel service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -975,16 +975,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the DeletePlaybackKeyPair service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair">REST API Reference for DeletePlaybackKeyPair Operation</seealso>
         public virtual Task<DeletePlaybackKeyPairResponse> DeletePlaybackKeyPairAsync(DeletePlaybackKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1020,19 +1020,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the DeletePlaybackRestrictionPolicy service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy">REST API Reference for DeletePlaybackRestrictionPolicy Operation</seealso>
         public virtual Task<DeletePlaybackRestrictionPolicyResponse> DeletePlaybackRestrictionPolicyAsync(DeletePlaybackRestrictionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1076,19 +1076,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the DeleteRecordingConfiguration service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteRecordingConfiguration">REST API Reference for DeleteRecordingConfiguration Operation</seealso>
         public virtual Task<DeleteRecordingConfigurationResponse> DeleteRecordingConfigurationAsync(DeleteRecordingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1124,16 +1124,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the DeleteStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">REST API Reference for DeleteStreamKey Operation</seealso>
         public virtual Task<DeleteStreamKeyResponse> DeleteStreamKeyAsync(DeleteStreamKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1169,16 +1169,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetAdConfiguration service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetAdConfiguration">REST API Reference for GetAdConfiguration Operation</seealso>
         public virtual Task<GetAdConfigurationResponse> GetAdConfigurationAsync(GetAdConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1214,13 +1214,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetChannel service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual Task<GetChannelResponse> GetChannelAsync(GetChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1260,13 +1260,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetPlaybackKeyPair service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair">REST API Reference for GetPlaybackKeyPair Operation</seealso>
         public virtual Task<GetPlaybackKeyPairResponse> GetPlaybackKeyPairAsync(GetPlaybackKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1302,16 +1302,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetPlaybackRestrictionPolicy service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy">REST API Reference for GetPlaybackRestrictionPolicy Operation</seealso>
         public virtual Task<GetPlaybackRestrictionPolicyResponse> GetPlaybackRestrictionPolicyAsync(GetPlaybackRestrictionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1347,16 +1347,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetRecordingConfiguration service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetRecordingConfiguration">REST API Reference for GetRecordingConfiguration Operation</seealso>
         public virtual Task<GetRecordingConfigurationResponse> GetRecordingConfigurationAsync(GetRecordingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1392,16 +1392,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetStream service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ChannelNotBroadcastingException">
-        /// 
+        /// The stream is offline for the given channel ARN.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStream">REST API Reference for GetStream Operation</seealso>
         public virtual Task<GetStreamResponse> GetStreamAsync(GetStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1437,13 +1437,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetStreamKey service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamKey">REST API Reference for GetStreamKey Operation</seealso>
         public virtual Task<GetStreamKeyResponse> GetStreamKeyAsync(GetStreamKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1479,13 +1479,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the GetStreamSession service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamSession">REST API Reference for GetStreamSession Operation</seealso>
         public virtual Task<GetStreamSessionResponse> GetStreamSessionAsync(GetStreamSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1524,19 +1524,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ImportPlaybackKeyPair service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">REST API Reference for ImportPlaybackKeyPair Operation</seealso>
         public virtual Task<ImportPlaybackKeyPairResponse> ImportPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1582,25 +1582,25 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the InsertAdBreak service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ChannelNotBroadcastingException">
-        /// 
+        /// The stream is offline for the given channel ARN.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
-        /// 
+        /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/InsertAdBreak">REST API Reference for InsertAdBreak Operation</seealso>
         public virtual Task<InsertAdBreakResponse> InsertAdBreakAsync(InsertAdBreakRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1637,13 +1637,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListAdConfigurations service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListAdConfigurations">REST API Reference for ListAdConfigurations Operation</seealso>
         public virtual Task<ListAdConfigurationsResponse> ListAdConfigurationsAsync(ListAdConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1682,13 +1682,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListChannels service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1725,10 +1725,10 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListPlaybackKeyPairs service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">REST API Reference for ListPlaybackKeyPairs Operation</seealso>
         public virtual Task<ListPlaybackKeyPairsResponse> ListPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1764,16 +1764,16 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListPlaybackRestrictionPolicies service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">REST API Reference for ListPlaybackRestrictionPolicies Operation</seealso>
         public virtual Task<ListPlaybackRestrictionPoliciesResponse> ListPlaybackRestrictionPoliciesAsync(ListPlaybackRestrictionPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1810,13 +1810,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListRecordingConfigurations service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">REST API Reference for ListRecordingConfigurations Operation</seealso>
         public virtual Task<ListRecordingConfigurationsResponse> ListRecordingConfigurationsAsync(ListRecordingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1852,13 +1852,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListStreamKeys service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamKeys">REST API Reference for ListStreamKeys Operation</seealso>
         public virtual Task<ListStreamKeysResponse> ListStreamKeysAsync(ListStreamKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1895,10 +1895,10 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListStreams service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1935,13 +1935,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListStreamSessions service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamSessions">REST API Reference for ListStreamSessions Operation</seealso>
         public virtual Task<ListStreamSessionsResponse> ListStreamSessionsAsync(ListStreamSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1977,13 +1977,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2023,19 +2023,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the PutMetadata service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ChannelNotBroadcastingException">
-        /// 
+        /// The stream is offline for the given channel ARN.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
-        /// 
+        /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/PutMetadata">REST API Reference for PutMetadata Operation</seealso>
         public virtual Task<PutMetadataResponse> PutMetadataAsync(PutMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2075,22 +2075,22 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the StartViewerSessionRevocation service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
-        /// 
+        /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation">REST API Reference for StartViewerSessionRevocation Operation</seealso>
         public virtual Task<StartViewerSessionRevocationResponse> StartViewerSessionRevocationAsync(StartViewerSessionRevocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2135,19 +2135,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the StopStream service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ChannelNotBroadcastingException">
-        /// 
+        /// The stream is offline for the given channel ARN.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.StreamUnavailableException">
-        /// 
+        /// The stream is temporarily unavailable.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StopStream">REST API Reference for StopStream Operation</seealso>
         public virtual Task<StopStreamResponse> StopStreamAsync(StopStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2183,13 +2183,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the TagResource service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2225,13 +2225,13 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the UntagResource service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2267,28 +2267,28 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the UpdateAdConfiguration service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ThrottlingException">
-        /// 
+        /// Request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateAdConfiguration">REST API Reference for UpdateAdConfiguration Operation</seealso>
         public virtual Task<UpdateAdConfigurationResponse> UpdateAdConfigurationAsync(UpdateAdConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2326,19 +2326,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the UpdateChannel service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2374,19 +2374,19 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the UpdatePlaybackRestrictionPolicy service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy">REST API Reference for UpdatePlaybackRestrictionPolicy Operation</seealso>
         public virtual Task<UpdatePlaybackRestrictionPolicyResponse> UpdatePlaybackRestrictionPolicyAsync(UpdatePlaybackRestrictionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

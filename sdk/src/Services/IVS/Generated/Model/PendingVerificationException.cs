@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// Your account is pending verification.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

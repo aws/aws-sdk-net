@@ -101,6 +101,17 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPostRollConfiguration())
+            {
+                context.Writer.WritePropertyName("postRollConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PostRollConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PostRollConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK
