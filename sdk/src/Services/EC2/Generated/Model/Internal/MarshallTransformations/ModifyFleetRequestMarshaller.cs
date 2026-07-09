@@ -94,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequestlistValue.LaunchTemplateSpecification.LaunchTemplateName));
                                 }
+                                if(publicRequestlistValue.LaunchTemplateSpecification.IsSetLaunchTemplateSpecificationUserData())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateSpecificationUserData", StringUtils.FromString(publicRequestlistValue.LaunchTemplateSpecification.LaunchTemplateSpecificationUserData));
+                                }
                                 if(publicRequestlistValue.LaunchTemplateSpecification.IsSetVersion())
                                 {
                                     request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "LaunchTemplateSpecification" + "." + "Version", StringUtils.FromString(publicRequestlistValue.LaunchTemplateSpecification.Version));
@@ -174,6 +178,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                                     }
                                                      publicRequestlistValuelistValuelistValueIndex++;
                                                  }
+                                            }
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetIamInstanceProfile())
+                                        {
+                                            if(publicRequestlistValuelistValue.IamInstanceProfile.IsSetArn())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "IamInstanceProfile" + "." + "Arn", StringUtils.FromString(publicRequestlistValuelistValue.IamInstanceProfile.Arn));
+                                            }
+                                            if(publicRequestlistValuelistValue.IamInstanceProfile.IsSetName())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "IamInstanceProfile" + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.IamInstanceProfile.Name));
                                             }
                                         }
                                         if(publicRequestlistValuelistValue.IsSetImageId())
@@ -453,9 +468,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValuelistValue.InstanceType));
                                         }
+                                        if(publicRequestlistValuelistValue.IsSetKeyName())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "KeyName", StringUtils.FromString(publicRequestlistValuelistValue.KeyName));
+                                        }
                                         if(publicRequestlistValuelistValue.IsSetMaxPrice())
                                         {
                                             request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "MaxPrice", StringUtils.FromString(publicRequestlistValuelistValue.MaxPrice));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetMetadataOptions())
+                                        {
+                                            if(publicRequestlistValuelistValue.MetadataOptions.IsSetHttpEndpoint())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequestlistValuelistValue.MetadataOptions.HttpEndpoint));
+                                            }
+                                            if(publicRequestlistValuelistValue.MetadataOptions.IsSetHttpPutResponseHopLimit())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequestlistValuelistValue.MetadataOptions.HttpPutResponseHopLimit));
+                                            }
+                                            if(publicRequestlistValuelistValue.MetadataOptions.IsSetHttpTokens())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequestlistValuelistValue.MetadataOptions.HttpTokens));
+                                            }
                                         }
                                         if(publicRequestlistValuelistValue.IsSetPlacement())
                                         {

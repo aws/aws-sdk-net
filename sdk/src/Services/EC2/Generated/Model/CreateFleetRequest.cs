@@ -262,13 +262,15 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// If the fleet type is <c>instant</c>, specify a resource type of <c>fleet</c> to tag
-        /// the fleet or <c>instance</c> to tag the instances at launch.
+        /// the fleet, <c>instance</c> to tag the instances at launch, <c>volume</c> to tag the
+        /// volumes at launch, or <c>network-interface</c> to tag the network interfaces at launch.
         /// </para>
         ///  
         /// <para>
         /// If the fleet type is <c>maintain</c> or <c>request</c>, specify a resource type of
-        /// <c>fleet</c> to tag the fleet. You cannot specify a resource type of <c>instance</c>.
-        /// To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+        /// <c>fleet</c> to tag the fleet. You cannot specify a resource type of <c>instance</c>,
+        /// <c>volume</c>, or <c>network-interface</c>. To tag instances at launch, specify the
+        /// tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
         /// template</a>.
         /// </para>
         /// <para />

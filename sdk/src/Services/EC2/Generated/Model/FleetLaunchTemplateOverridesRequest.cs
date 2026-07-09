@@ -37,10 +37,13 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private List<FleetBlockDeviceMappingRequest> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<FleetBlockDeviceMappingRequest>() : null;
+        private FleetIamInstanceProfileSpecificationRequest _iamInstanceProfile;
         private string _imageId;
         private InstanceRequirementsRequest _instanceRequirements;
         private InstanceType _instanceType;
+        private string _keyName;
         private string _maxPrice;
+        private FleetInstanceMetadataOptionsRequest _metadataOptions;
         private Placement _placement;
         private double? _priority;
         private string _subnetId;
@@ -124,6 +127,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// The IAM instance profile to associate with the instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM
+        /// roles for Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public FleetIamInstanceProfileSpecificationRequest IamInstanceProfile
+        {
+            get { return this._iamInstanceProfile; }
+            set { this._iamInstanceProfile = value; }
+        }
+
+        // Check to see if IamInstanceProfile property is set
+        internal bool IsSetIamInstanceProfile()
+        {
+            return this._iamInstanceProfile != null;
         }
 
         /// <summary>
@@ -253,6 +283,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeyName. 
+        /// <para>
+        /// The name of the key pair to use for the instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// EC2 key pairs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string KeyName
+        {
+            get { return this._keyName; }
+            set { this._keyName = value; }
+        }
+
+        // Check to see if KeyName property is set
+        internal bool IsSetKeyName()
+        {
+            return this._keyName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxPrice. 
         /// <para>
         /// The maximum price per unit hour that you are willing to pay for a Spot Instance. We
@@ -281,6 +338,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetMaxPrice()
         {
             return this._maxPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">Configure
+        /// the instance metadata service</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public FleetInstanceMetadataOptionsRequest MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

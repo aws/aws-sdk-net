@@ -7457,6 +7457,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FleetHttpTokensState.
+    /// </summary>
+    public class FleetHttpTokensState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optional for FleetHttpTokensState
+        /// </summary>
+        public static readonly FleetHttpTokensState Optional = new FleetHttpTokensState("optional");
+        /// <summary>
+        /// Constant Required for FleetHttpTokensState
+        /// </summary>
+        public static readonly FleetHttpTokensState Required = new FleetHttpTokensState("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetHttpTokensState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetHttpTokensState FindValue(string value)
+        {
+            return FindValue<FleetHttpTokensState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetHttpTokensState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetInstanceMatchCriteria.
     /// </summary>
     public class FleetInstanceMatchCriteria : ConstantClass
@@ -7496,6 +7546,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetInstanceMatchCriteria(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetInstanceMetadataEndpointState.
+    /// </summary>
+    public class FleetInstanceMetadataEndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for FleetInstanceMetadataEndpointState
+        /// </summary>
+        public static readonly FleetInstanceMetadataEndpointState Disabled = new FleetInstanceMetadataEndpointState("disabled");
+        /// <summary>
+        /// Constant Enabled for FleetInstanceMetadataEndpointState
+        /// </summary>
+        public static readonly FleetInstanceMetadataEndpointState Enabled = new FleetInstanceMetadataEndpointState("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetInstanceMetadataEndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetInstanceMetadataEndpointState FindValue(string value)
+        {
+            return FindValue<FleetInstanceMetadataEndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetInstanceMetadataEndpointState(string value)
         {
             return FindValue(value);
         }
