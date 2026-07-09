@@ -1739,10 +1739,19 @@ namespace Amazon.Util
             // If none is found the string is already compact.
             bool prevWasWhiteSpace = false;
             int firstRunIndex = -1;
+            int firstNonWhiteSpace = -1;
             for (int i = 0; i < dataLength; i++)
             {
                 char c = data[i];
                 bool isWS = char.IsWhiteSpace(c);
+                if (!isWS)
+                {
+                    if (firstNonWhiteSpace < 0)
+                    {
+                        firstNonWhiteSpace = i;
+                    }
+                }
+
                 if (isWS && (prevWasWhiteSpace || c != SPACE))
                 {
                     firstRunIndex = i - 1;
@@ -1759,6 +1768,8 @@ namespace Amazon.Util
 
             // Trim once at the top as a free span pointer adjustment — no allocation.
             // All subsequent logic operates uniformly on this span.
+            var trimCorrection = trim && firstNonWhiteSpace > 0 ? firstRunIndex - firstNonWhiteSpace: firstRunIndex;
+
             var span = data.AsSpan();
             if (trim)
             {
@@ -1771,7 +1782,7 @@ namespace Amazon.Util
                 return string.Empty;
             }
 
-            return CompressSpacesSlow(span, firstRunIndex);
+            return CompressSpacesSlow(span, trimCorrection);
         }
 
         private static string CompressSpacesSlow(ReadOnlySpan<char> span, int firstRunIndex)

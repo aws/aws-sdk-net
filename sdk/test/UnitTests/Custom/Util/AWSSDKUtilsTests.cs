@@ -93,6 +93,10 @@ namespace AWSSDK.UnitTests
         [DataRow("  hello world  ", "hello world")]
         [DataRow("  hello   world  ", "hello world")]
         [DataRow("hello world", "hello world")]
+        [DataRow(" A  B  C  ", "A B C")]
+        [DataRow("   A   B \tC D ", "A B C D")]
+        [DataRow("   AB  C D  ", "AB C D")]
+        [DataRow("A  B C  D  ", "A B C D")]
         [DataRow("  ", "")]
         public void CompressSpaces_TrimsLeadingAndTrailing_WhenTrimIsTrue(string inputText, string expected)
         {
