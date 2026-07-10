@@ -127,7 +127,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>default</c>: Use the default latest system image
+        ///  <c>default</c>: Use the default latest system image. For clusters with continuous
+        /// scaling node provisioning mode, new instance groups inherit the AMI from the earliest
+        /// existing instance group
         /// </para>
         ///  </li> </ul> 
         /// <para>
