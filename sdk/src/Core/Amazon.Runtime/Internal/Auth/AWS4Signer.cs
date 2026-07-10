@@ -58,9 +58,9 @@ namespace Amazon.Runtime.Internal.Auth
 
         internal const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
-        // If this list is updated to include new headers, the SigV4a signer (in "AWSSDK.Extensions.CrtIntegration\CrtAWS4aSigner.cs") may need to
+        // If this set is updated to include new headers, the SigV4a signer (in "AWSSDK.Extensions.CrtIntegration\CrtAWS4aSigner.cs") may need to
         // be updated as well.
-        private static IEnumerable<string> _headersToIgnoreWhenSigning = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
+        private static readonly HashSet<string> _headersToIgnoreWhenSigning = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
             HeaderKeys.XAmznTraceIdHeader,
             HeaderKeys.TransferEncodingHeader,
             HeaderKeys.AmzSdkInvocationId,
@@ -205,14 +205,16 @@ namespace Amazon.Runtime.Internal.Auth
             var bodyHash = SetRequestBodyHash(request, SignPayload, bodySha, ChunkedUploadWrapperStream.V4_SIGNATURE_LENGTH);
             var sortedHeaders = SortAndPruneHeaders(request.Headers);
 
-            var canonicalRequest = CanonicalizeRequest(request.Endpoint,
-                                                       request.ResourcePath,
-                                                       request.HttpMethod,
-                                                       sortedHeaders,
-                                                       canonicalParameters,
-                                                       bodyHash,
-                                                       request.PathResources,
-                                                       request.UseDoubleEncoding);
+            var canonicalRequest = CanonicalizeRequestHelper(
+                                                             request.Endpoint,
+                                                             request.ResourcePath,
+                                                             request.HttpMethod,
+                                                             sortedHeaders,
+                                                             canonicalParameters,
+                                                             bodyHash,
+                                                             request.PathResources,
+                                                             request.UseDoubleEncoding,
+                                                             out var signedHeaderNames);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
             request.SignatureVersion = SignatureVersion.SigV4;
@@ -221,7 +223,7 @@ namespace Amazon.Runtime.Internal.Auth
                                     request.DeterminedSigningRegion,
                                     signedAt,
                                     serviceSigningName,
-                                    CanonicalizeHeaderNames(sortedHeaders),
+                                    signedHeaderNames,
                                     canonicalRequest,
                                     metrics);
         }
@@ -424,23 +426,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Computed signing key</returns>
         public static byte[] ComposeSigningKey(string awsSecretAccessKey, string region, string date, string service)
         {
-            char[] ksecret = null;
-
-            try
-            {
-                ksecret = (Scheme + awsSecretAccessKey).ToCharArray();
-
-                var hashDate = ComputeKeyedHash(SignerAlgorithm, Encoding.UTF8.GetBytes(ksecret), Encoding.UTF8.GetBytes(date));
-                var hashRegion = ComputeKeyedHash(SignerAlgorithm, hashDate, Encoding.UTF8.GetBytes(region));
-                var hashService = ComputeKeyedHash(SignerAlgorithm, hashRegion, Encoding.UTF8.GetBytes(service));
-                return ComputeKeyedHash(SignerAlgorithm, hashService, TerminatorBytes);
-            }
-            finally
-            {
-                // clean up all secrets, regardless of how initially seeded (for simplicity)
-                if (ksecret != null)
-                    Array.Clear(ksecret, 0, ksecret.Length);
-            }
+            var hashDate = ComputeKeyedHash(SignerAlgorithm, Encoding.UTF8.GetBytes(Scheme + awsSecretAccessKey), Encoding.UTF8.GetBytes(date));
+            var hashRegion = ComputeKeyedHash(SignerAlgorithm, hashDate, Encoding.UTF8.GetBytes(region));
+            var hashService = ComputeKeyedHash(SignerAlgorithm, hashRegion, Encoding.UTF8.GetBytes(service));
+            return ComputeKeyedHash(SignerAlgorithm, hashService, TerminatorBytes);
         }
 
         /// <summary>
@@ -747,7 +736,8 @@ namespace Amazon.Runtime.Internal.Auth
                 canonicalQueryString,
                 precomputedBodyHash,
                 pathResources,
-                true);
+                true,
+                out _);
         }
 
         /// <summary>
@@ -781,7 +771,8 @@ namespace Amazon.Runtime.Internal.Auth
                 canonicalQueryString,
                 precomputedBodyHash,
                 pathResources,
-                doubleEncode);
+                doubleEncode,
+                out _);
         }
 
         private static string CanonicalizeRequestHelper(Uri endpoint,
@@ -791,49 +782,72 @@ namespace Amazon.Runtime.Internal.Auth
                                                     string canonicalQueryString,
                                                     string precomputedBodyHash,
                                                     IDictionary<string, string> pathResources,
-                                                    bool doubleEncode)
+                                                    bool doubleEncode,
+                                                    out string signedHeaderNames)
         {
+            var namesBuilder = new ValueStringBuilder(256);
+
             var canonicalRequest = new ValueStringBuilder(512);
             canonicalRequest.Append(httpMethod);
             canonicalRequest.Append('\n');
-            canonicalRequest.Append($"{AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources)}\n");
-            canonicalRequest.Append($"{canonicalQueryString}\n");
+            canonicalRequest.Append(AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources));
+            canonicalRequest.Append('\n');
+            canonicalRequest.Append(canonicalQueryString);
+            canonicalRequest.Append('\n');
 
-            canonicalRequest.Append($"{CanonicalizeHeaders(sortedHeaders)}\n");
-            canonicalRequest.Append($"{CanonicalizeHeaderNames(sortedHeaders)}\n");
+            // We avoid using CanonicalizeHeaders() and CanonicalizeHeaderNames() here to avoid multiple passes of same collection
+            foreach (var entry in sortedHeaders)
+            {
+                AppendLowerInvariant(ref canonicalRequest, entry.Key);
+                canonicalRequest.Append(':');
+                canonicalRequest.Append(AWSSDKUtils.CompressSpaces(entry.Value, trim: true));
+                canonicalRequest.Append('\n');
+
+                if (namesBuilder.Length > 0)
+                    namesBuilder.Append(';');
+                AppendLowerInvariant(ref namesBuilder, entry.Key);
+            }
+
+            canonicalRequest.Append('\n');
+            canonicalRequest.Append(namesBuilder.AsSpan());
+            canonicalRequest.Append('\n');
 
             if (precomputedBodyHash != null)
-            {
                 canonicalRequest.Append(precomputedBodyHash);
-            }
-            else
-            {
-                if (sortedHeaders.TryGetValue(HeaderKeys.XAmzContentSha256Header, out var contentHash))
-                    canonicalRequest.Append(contentHash);
-            }
+            else if (sortedHeaders.TryGetValue(HeaderKeys.XAmzContentSha256Header, out var contentHash))
+                canonicalRequest.Append(contentHash);
+
+            signedHeaderNames = namesBuilder.ToString();
 
             return canonicalRequest.ToString();
         }
+
+        private static void AppendLowerInvariant(ref ValueStringBuilder builder, string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return;
+
+            var writeSpan = builder.AppendSpan(value.Length);
+            value.AsSpan().ToLowerInvariant(writeSpan);
+        }
+
 
         /// <summary>
         /// Reorders the headers for the request for canonicalization.
         /// </summary>
         /// <param name="requestHeaders">The set of proposed headers for the request</param>
-        /// <returns>List of headers that must be included in the signature</returns>
+        /// <returns>List of headers that must be included in the signature, with keys lowercased</returns>
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
         protected internal static IDictionary<string, string> SortAndPruneHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
         {
-            // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "Build the canonical headers list by sorting the (lowercase) headers by character code"). StringComparer.OrdinalIgnoreCase incorrectly places '_' after lowercase chracters.
-            var sortedHeaders = new SortedDictionary<string, string>(StringComparer.Ordinal);
+            // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "Build the canonical headers list by sorting the (lowercase) headers by character code"). StringComparer.OrdinalIgnoreCase incorrectly places '_' after lowercase characters.
+            int capacity = requestHeaders is ICollection<KeyValuePair<string, string>> c ? c.Count : 16;
+            var sortedHeaders = new SortedList<string, string>(capacity, StringComparer.Ordinal);
             foreach (var header in requestHeaders)
             {
-                if (_headersToIgnoreWhenSigning.Contains(header.Key))
-                {
-                    continue;
-                }
+                if (_headersToIgnoreWhenSigning.Contains(header.Key)) continue;
                 sortedHeaders.Add(header.Key.ToLowerInvariant(), header.Value);
             }
-            
             return sortedHeaders;
         }
 
@@ -859,8 +873,8 @@ namespace Amazon.Runtime.Internal.Auth
                 // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "To create the canonical headers list, convert all header names to lowercase and remove leading spaces and trailing spaces. Convert sequential spaces in the header value to a single space.").
                 builder.Append(entry.Key.ToLowerInvariant());
                 builder.Append(':');
-                builder.Append(AWSSDKUtils.CompressSpaces(entry.Value)?.Trim());
-                builder.Append("\n");
+                builder.Append(AWSSDKUtils.CompressSpaces(entry.Value, trim: true));
+                builder.Append('\n');
             }
             return builder.ToString();
         }
@@ -995,35 +1009,34 @@ namespace Amazon.Runtime.Internal.Auth
             if (parameters == null)
                 return string.Empty;
 
-            var sortedParameters = parameters.OrderBy(kvp => kvp.Key, StringComparer.Ordinal).ToList();
-            var canonicalQueryString = new StringBuilder();
-            foreach (var param in sortedParameters)
-            {
-                var key = param.Key;
-                var value = param.Value;
+            // Short-circuit for the common case of no parameters (e.g. POST/PUT with no SubResources)
+            // to avoid allocating LINQ EnumerableSorter machinery for an empty collection.
+            if (parameters is ICollection<KeyValuePair<string, string>> coll && coll.Count == 0)
+                return string.Empty;
 
-                if (canonicalQueryString.Length > 0)
-                    canonicalQueryString.Append("&");
-                if (uriEncodeParameters)
-                {
-                    if (string.IsNullOrEmpty(value))
-                        canonicalQueryString.AppendFormat("{0}=", AWSSDKUtils.UrlEncode(key, false));
-                    else
-                        canonicalQueryString.AppendFormat("{0}={1}", AWSSDKUtils.UrlEncode(key, false), AWSSDKUtils.UrlEncode(value, false));
-                }
-                else
-                {
-                    if (string.IsNullOrEmpty(value))
-                        canonicalQueryString.AppendFormat("{0}=", key);
-                    else
-                        canonicalQueryString.AppendFormat("{0}={1}", key, value);
-                }
+            // Make a copy of the parameters so we can sort them without affecting the original collection.
+            List<KeyValuePair<string, string>> sortedParameters = new(parameters);
+            sortedParameters.Sort((x, y) => StringComparer.Ordinal.Compare(x.Key, y.Key));
+
+            var canonicalQueryString = new ValueStringBuilder(sortedParameters.Count * 32);
+            for (int i = 0; i < sortedParameters.Count; i++)
+            {
+                var param = sortedParameters[i];
+                var key = uriEncodeParameters ? AWSSDKUtils.UrlEncode(param.Key, false) : param.Key;
+                var value = uriEncodeParameters ? AWSSDKUtils.UrlEncode(param.Value, false) : param.Value;
+
+                if (i > 0) canonicalQueryString.Append('&');
+
+                canonicalQueryString.Append(key);
+                canonicalQueryString.Append('=');
+                if (!string.IsNullOrEmpty(value))
+                    canonicalQueryString.Append(value);
             }
 
             return canonicalQueryString.ToString();
         }
 
-        #endregion
+#endregion
     }
 
     /// <summary>

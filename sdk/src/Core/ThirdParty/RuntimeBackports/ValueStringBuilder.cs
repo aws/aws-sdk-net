@@ -258,6 +258,11 @@ namespace ThirdParty.RuntimeBackports
             _pos += count;
         }
 
+        /// <summary>
+        /// Ensures required capacity of <paramref name="length"/> characters to the builder and returns a writable span to the appended characters.
+        /// </summary>
+        /// <param name="length">The number of characters to ensure capacity for.</param>
+        /// <returns>A writable span to the appended characters.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Span<char> AppendSpan(int length)
         {
