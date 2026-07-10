@@ -2063,6 +2063,60 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AuthType.
+    /// </summary>
+    public class AuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SERVICE_ACCOUNT for AuthType
+        /// </summary>
+        public static readonly AuthType SERVICE_ACCOUNT = new AuthType("SERVICE_ACCOUNT");
+        /// <summary>
+        /// Constant THREE_LEGGED_OAUTH for AuthType
+        /// </summary>
+        public static readonly AuthType THREE_LEGGED_OAUTH = new AuthType("THREE_LEGGED_OAUTH");
+        /// <summary>
+        /// Constant TWO_LEGGED_OAUTH for AuthType
+        /// </summary>
+        public static readonly AuthType TWO_LEGGED_OAUTH = new AuthType("TWO_LEGGED_OAUTH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthType FindValue(string value)
+        {
+            return FindValue<AuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutomationJobStatus.
     /// </summary>
     public class AutomationJobStatus : ConstantClass
@@ -3870,6 +3924,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ControlSortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CredentialStatus.
+    /// </summary>
+    public class CredentialStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTH_FAILED for CredentialStatus
+        /// </summary>
+        public static readonly CredentialStatus AUTH_FAILED = new CredentialStatus("AUTH_FAILED");
+        /// <summary>
+        /// Constant CONNECTED for CredentialStatus
+        /// </summary>
+        public static readonly CredentialStatus CONNECTED = new CredentialStatus("CONNECTED");
+        /// <summary>
+        /// Constant NOT_VERIFIED for CredentialStatus
+        /// </summary>
+        public static readonly CredentialStatus NOT_VERIFIED = new CredentialStatus("NOT_VERIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CredentialStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CredentialStatus FindValue(string value)
+        {
+            return FindValue<CredentialStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CredentialStatus(string value)
         {
             return FindValue(value);
         }
@@ -8794,6 +8902,10 @@ namespace Amazon.QuickSight
     public class KnowledgeBaseSearchFilterName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DATASOURCE_ARN for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName DATASOURCE_ARN = new KnowledgeBaseSearchFilterName("DATASOURCE_ARN");
         /// <summary>
         /// Constant DIRECT_QUICKSIGHT_OWNER for KnowledgeBaseSearchFilterName
         /// </summary>

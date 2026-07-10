@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KnowledgeBaseConfiguration Object
+    /// Response Unmarshaller for FMKBParameters Object
     /// </summary>  
-    public class KnowledgeBaseConfigurationUnmarshaller : IJsonUnmarshaller<KnowledgeBaseConfiguration, JsonUnmarshallerContext>
+    public class FMKBParametersUnmarshaller : IJsonUnmarshaller<FMKBParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FMKBParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KnowledgeBaseConfiguration unmarshalledObject = new KnowledgeBaseConfiguration();
+            FMKBParameters unmarshalledObject = new FMKBParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("templateConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("KnowledgeBaseArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = KbTemplateConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KnowledgeBaseArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("LinkedDataSourceIds", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.LinkedDataSourceIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -67,12 +73,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KnowledgeBaseConfigurationUnmarshaller _instance = new KnowledgeBaseConfigurationUnmarshaller();        
+        private static FMKBParametersUnmarshaller _instance = new FMKBParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KnowledgeBaseConfigurationUnmarshaller Instance
+        public static FMKBParametersUnmarshaller Instance
         {
             get
             {

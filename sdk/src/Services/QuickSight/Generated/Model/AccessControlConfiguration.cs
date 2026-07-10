@@ -30,28 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration settings for a knowledge base.
+    /// The access control settings for a knowledge base. Use this structure to enable or
+    /// disable document-level access control lists (ACLs) that filter query results based
+    /// on the permissions from the source data connector.
     /// </summary>
-    public partial class KnowledgeBaseConfiguration
+    public partial class AccessControlConfiguration
     {
-        private KbTemplateConfiguration _templateConfiguration;
+        private bool? _isaclEnabled;
 
         /// <summary>
-        /// Gets and sets the property TemplateConfiguration. 
+        /// Gets and sets the property IsACLEnabled. 
         /// <para>
-        /// The template configuration for the knowledge base.
+        /// Specifies whether ACLs are enabled for the knowledge base.
         /// </para>
         /// </summary>
-        public KbTemplateConfiguration TemplateConfiguration
+        public bool? IsACLEnabled
         {
-            get { return this._templateConfiguration; }
-            set { this._templateConfiguration = value; }
+            get { return this._isaclEnabled; }
+            set { this._isaclEnabled = value; }
         }
 
-        // Check to see if TemplateConfiguration property is set
-        internal bool IsSetTemplateConfiguration()
+        // Check to see if IsACLEnabled property is set
+        internal bool IsSetIsACLEnabled()
         {
-            return this._templateConfiguration != null;
+            return this._isaclEnabled.HasValue; 
         }
 
     }

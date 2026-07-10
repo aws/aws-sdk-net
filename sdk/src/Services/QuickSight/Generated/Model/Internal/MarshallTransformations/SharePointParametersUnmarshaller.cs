@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KnowledgeBaseConfiguration Object
+    /// Response Unmarshaller for SharePointParameters Object
     /// </summary>  
-    public class KnowledgeBaseConfigurationUnmarshaller : IJsonUnmarshaller<KnowledgeBaseConfiguration, JsonUnmarshallerContext>
+    public class SharePointParametersUnmarshaller : IJsonUnmarshaller<SharePointParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SharePointParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KnowledgeBaseConfiguration unmarshalledObject = new KnowledgeBaseConfiguration();
+            SharePointParameters unmarshalledObject = new SharePointParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("templateConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("AuthType", targetDepth, ref reader))
                 {
-                    var unmarshaller = KbTemplateConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ClientId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SharePointDomain", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SharePointDomain = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TenantId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TenantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -67,12 +85,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KnowledgeBaseConfigurationUnmarshaller _instance = new KnowledgeBaseConfigurationUnmarshaller();        
+        private static SharePointParametersUnmarshaller _instance = new SharePointParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KnowledgeBaseConfigurationUnmarshaller Instance
+        public static SharePointParametersUnmarshaller Instance
         {
             get
             {

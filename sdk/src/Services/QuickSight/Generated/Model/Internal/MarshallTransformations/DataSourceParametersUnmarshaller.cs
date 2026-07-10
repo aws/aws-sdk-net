@@ -122,6 +122,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExasolParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FMKBParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = FMKBParametersUnmarshaller.Instance;
+                    unmarshalledObject.FMKBParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("GoogleDriveParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = GoogleDriveParametersUnmarshaller.Instance;
+                    unmarshalledObject.GoogleDriveParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ImpalaParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ImpalaParametersUnmarshaller.Instance;
@@ -144,6 +156,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MySqlParametersUnmarshaller.Instance;
                     unmarshalledObject.MySqlParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("OneDriveParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = OneDriveParametersUnmarshaller.Instance;
+                    unmarshalledObject.OneDriveParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OracleParameters", targetDepth, ref reader))
@@ -204,6 +222,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ServiceNowParametersUnmarshaller.Instance;
                     unmarshalledObject.ServiceNowParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SharePointParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = SharePointParametersUnmarshaller.Instance;
+                    unmarshalledObject.SharePointParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnowflakeParameters", targetDepth, ref reader))

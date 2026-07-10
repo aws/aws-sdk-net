@@ -167,6 +167,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetFMKBParameters())
+            {
+                context.Writer.WritePropertyName("FMKBParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FMKBParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.FMKBParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetGoogleDriveParameters())
+            {
+                context.Writer.WritePropertyName("GoogleDriveParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GoogleDriveParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.GoogleDriveParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetImpalaParameters())
             {
                 context.Writer.WritePropertyName("ImpalaParameters");
@@ -207,6 +229,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = MySqlParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.MySqlParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetOneDriveParameters())
+            {
+                context.Writer.WritePropertyName("OneDriveParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OneDriveParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.OneDriveParameters, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -317,6 +350,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = ServiceNowParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceNowParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSharePointParameters())
+            {
+                context.Writer.WritePropertyName("SharePointParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SharePointParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.SharePointParameters, context);
 
                 context.Writer.WriteEndObject();
             }

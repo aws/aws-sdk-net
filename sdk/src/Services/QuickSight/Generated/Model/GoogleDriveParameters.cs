@@ -30,28 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration settings for a knowledge base.
+    /// The connection parameters for a Google Drive data source. Provide these parameters
+    /// in the <c>DataSourceParameters</c> object when you create or update a data source
+    /// that uses Google Drive.
     /// </summary>
-    public partial class KnowledgeBaseConfiguration
+    public partial class GoogleDriveParameters
     {
-        private KbTemplateConfiguration _templateConfiguration;
+        private AuthType _authType;
 
         /// <summary>
-        /// Gets and sets the property TemplateConfiguration. 
+        /// Gets and sets the property AuthType. 
         /// <para>
-        /// The template configuration for the knowledge base.
+        /// The authentication type for the Google Drive data source. Valid values include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SERVICE_ACCOUNT</c> – Server-to-server authentication using a Google service account
+        /// key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>THREE_LEGGED_OAUTH</c> – Interactive OAuth that requires user consent.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public KbTemplateConfiguration TemplateConfiguration
+        public AuthType AuthType
         {
-            get { return this._templateConfiguration; }
-            set { this._templateConfiguration = value; }
+            get { return this._authType; }
+            set { this._authType = value; }
         }
 
-        // Check to see if TemplateConfiguration property is set
-        internal bool IsSetTemplateConfiguration()
+        // Check to see if AuthType property is set
+        internal bool IsSetAuthType()
         {
-            return this._templateConfiguration != null;
+            return this._authType != null;
         }
 
     }

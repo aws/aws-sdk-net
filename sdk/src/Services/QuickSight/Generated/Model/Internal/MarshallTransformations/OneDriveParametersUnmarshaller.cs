@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KnowledgeBaseConfiguration Object
+    /// Response Unmarshaller for OneDriveParameters Object
     /// </summary>  
-    public class KnowledgeBaseConfigurationUnmarshaller : IJsonUnmarshaller<KnowledgeBaseConfiguration, JsonUnmarshallerContext>
+    public class OneDriveParametersUnmarshaller : IJsonUnmarshaller<OneDriveParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OneDriveParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KnowledgeBaseConfiguration unmarshalledObject = new KnowledgeBaseConfiguration();
+            OneDriveParameters unmarshalledObject = new OneDriveParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("templateConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("AuthType", targetDepth, ref reader))
                 {
-                    var unmarshaller = KbTemplateConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ClientId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TenantId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TenantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -67,12 +79,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KnowledgeBaseConfigurationUnmarshaller _instance = new KnowledgeBaseConfigurationUnmarshaller();        
+        private static OneDriveParametersUnmarshaller _instance = new OneDriveParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KnowledgeBaseConfigurationUnmarshaller Instance
+        public static OneDriveParametersUnmarshaller Instance
         {
             get
             {
