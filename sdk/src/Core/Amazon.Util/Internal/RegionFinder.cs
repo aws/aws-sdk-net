@@ -102,7 +102,7 @@ namespace Amazon.Util.Internal
             if (endpoint.EndsWith("amazonaws.com") || endpoint.EndsWith("amazon.com"))
                 return _root.RegionEndpoint;
 
-            return FallbackRegionFactory.GetRegionEndpoint() ?? _root.RegionEndpoint;
+            return FallbackRegionFactory.GetRegionEndpoint(false) ?? _root.RegionEndpoint;
         }
 
         /// <summary>
