@@ -51,6 +51,27 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             PutAnomalyDetectorResponse response = new PutAnomalyDetectorResponse();
             var reader = context.Reader;
             context.AddPathSegment("PutAnomalyDetector");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "AnomalyDetectorId":
+                        {
+                            context.AddPathSegment("AnomalyDetectorId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.AnomalyDetectorId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return response;
         }

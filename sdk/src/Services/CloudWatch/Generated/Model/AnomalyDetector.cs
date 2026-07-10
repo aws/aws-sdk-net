@@ -42,6 +42,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class AnomalyDetector
     {
+        private string _anomalyDetectorId;
         private AnomalyDetectorConfiguration _configuration;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private MetricCharacteristics _metricCharacteristics;
@@ -51,6 +52,32 @@ namespace Amazon.CloudWatch.Model
         private SingleMetricAnomalyDetector _singleMetricAnomalyDetector;
         private string _stat;
         private AnomalyDetectorStateValue _stateValue;
+
+        /// <summary>
+        /// Gets and sets the property AnomalyDetectorId. 
+        /// <para>
+        /// The unique identifier of the anomaly detector.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The identifier does not restrict access to a specific anomaly detector in an IAM policy.
+        /// Permissions for anomaly detector operations apply to all anomaly detectors in the
+        /// account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AnomalyDetectorId
+        {
+            get { return this._anomalyDetectorId; }
+            set { this._anomalyDetectorId = value; }
+        }
+
+        // Check to see if AnomalyDetectorId property is set
+        internal bool IsSetAnomalyDetectorId()
+        {
+            return this._anomalyDetectorId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Configuration. 

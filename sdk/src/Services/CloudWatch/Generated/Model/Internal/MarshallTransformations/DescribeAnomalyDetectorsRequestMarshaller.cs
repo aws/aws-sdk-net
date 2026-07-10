@@ -71,6 +71,16 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAnomalyDetectorIds())
+                {
+                    context.Writer.WriteTextString("AnomalyDetectorIds");
+                    context.Writer.WriteStartArray(publicRequest.AnomalyDetectorIds.Count);
+                    foreach(var publicRequestAnomalyDetectorIdsListValue in publicRequest.AnomalyDetectorIds)
+                    {
+                            context.Writer.WriteTextString(publicRequestAnomalyDetectorIdsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 if (publicRequest.IsSetAnomalyDetectorTypes())
                 {
                     context.Writer.WriteTextString("AnomalyDetectorTypes");

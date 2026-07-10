@@ -34,6 +34,26 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutAnomalyDetectorResponse : AmazonWebServiceResponse
     {
+        private string _anomalyDetectorId;
+
+        /// <summary>
+        /// Gets and sets the property AnomalyDetectorId. 
+        /// <para>
+        /// The unique identifier of the anomaly detector that you created or updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AnomalyDetectorId
+        {
+            get { return this._anomalyDetectorId; }
+            set { this._anomalyDetectorId = value; }
+        }
+
+        // Check to see if AnomalyDetectorId property is set
+        internal bool IsSetAnomalyDetectorId()
+        {
+            return this._anomalyDetectorId != null;
+        }
 
     }
 }
