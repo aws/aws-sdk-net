@@ -310,6 +310,9 @@ namespace Amazon.S3.Transfer.Internal
             this._currentFile = s3Object.Key.Substring(prefixLength);
             var downloadRequest = ConstructTransferUtilityDownloadRequest(s3Object, prefixLength);
 
+            // Raise event to allow subscribers to modify request
+            _request.RaiseDownloadDirectoryFileRequestEvent(downloadRequest);
+
             // Create failure callback
             Action<Exception> onFailure = (ex) =>
             {

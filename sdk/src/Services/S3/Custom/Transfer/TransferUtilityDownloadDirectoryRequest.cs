@@ -523,10 +523,25 @@ namespace Amazon.S3.Transfer
         /// </remarks>
         public event EventHandler<DownloadDirectoryProgressArgs> DownloadedDirectoryProgressEvent;
 
+        /// <summary>
+        /// The event for modifying individual TransferUtilityDownloadRequest for each file
+        /// being downloaded.
+        /// </summary>
+        public event EventHandler<DownloadDirectoryFileRequestArgs> DownloadDirectoryFileRequestEvent;
 
         internal void OnRaiseProgressEvent(DownloadDirectoryProgressArgs downloadDirectoryProgress)
         {
             AWSSDKUtils.InvokeInBackground(DownloadedDirectoryProgressEvent, downloadDirectoryProgress, this);
+        }
+
+        internal void RaiseDownloadDirectoryFileRequestEvent(TransferUtilityDownloadRequest request)
+        {
+            var targetEvent = DownloadDirectoryFileRequestEvent;
+            if (targetEvent != null)
+            {
+                var args = new DownloadDirectoryFileRequestArgs(request);
+                targetEvent(this, args);
+            }
         }
     }
 
@@ -691,6 +706,28 @@ namespace Amazon.S3.Transfer
         }
     }
     
+    /// <summary>
+    /// Contains a single TransferUtilityDownloadRequest corresponding
+    /// to a single file about to be downloaded, allowing changes to
+    /// the request before it is executed.
+    /// </summary>
+    public class DownloadDirectoryFileRequestArgs : EventArgs
+    {
+        /// <summary>
+        /// Constructs a new DownloadDirectoryFileRequestArgs instance.
+        /// </summary>
+        /// <param name="request">Request being processed.</param>
+        public DownloadDirectoryFileRequestArgs(TransferUtilityDownloadRequest request)
+        {
+            DownloadRequest = request;
+        }
+
+        /// <summary>
+        /// Gets and sets the DownloadRequest property.
+        /// </summary>
+        public TransferUtilityDownloadRequest DownloadRequest { get; set; }
+    }
+
     /// <summary>
     /// Provides data for <see cref="TransferUtilityDownloadDirectoryRequest.ObjectDownloadFailedEvent"/>
     /// which is raised when an individual object fails to download during a
