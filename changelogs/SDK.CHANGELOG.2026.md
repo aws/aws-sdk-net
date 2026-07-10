@@ -1,3 +1,22 @@
+### 4.0.286.0 (2026-07-10 18:17 UTC)
+* CloudWatch (4.0.102.0)
+	* CloudWatch now assigns a unique identifier to each anomaly detector. PutAnomalyDetector and DescribeAnomalyDetectors return this AnomalyDetectorId, which you can use to describe or delete a specific anomaly detector directly.
+* EC2 (4.0.106.0)
+	* New Amazon EC2 instances. M9g, M9gd, C9g, and C9gd on AWS Graviton5. C8in, M8in, and R8in add 600 Gbps network. C8ib, M8ib, and R8ib add 300 Gbps EBS. C8ine, M8ine, M8idn, R8idn, M8idb, and R8idb round out Intel Xeon 6. Mac-m3ultra with Apple M3 Ultra. G7 with NVIDIA RTX PRO 4500 Blackwell GPUs.
+* Inspector2 (4.0.102.0)
+	* Support for 3 day and 7 day ECR re-scan durations
+* Lambda (4.0.102.0)
+	* Added TelemetryConfig support for Managed Instances Capacity Provider, enabling customers to configure system log level and custom log group for managed instance logging.
+* LicenseManager (4.0.101.0)
+	* Added the ResetUsage field to the CreateLicenseVersion API. When set to true, the entitlement usage counts for the license are reset to 0. If it is false or not specified, entitlement usage is left unchanged.
+* QuickSight (4.0.102.0)
+	* Provides CreateKnowledgeBase and UpdateKnowledgeBase APIs
+* SageMaker (4.0.101.0)
+	* Release support for g4d, c6g, c7g, c8g instance types for SageMaker HyperPod
+* Core 4.0.100.4
+	* Fixed SSO login failure for non-commercial partition start URLs. SSOEndpointResolver now recognizes China (aws-cn), GovCloud (aws-us-gov), and European Sovereign Cloud (aws-eusc) Identity Center domain formats in addition to commercial, including the legacy China and GovCloud portal forms.
+	* Memory and CPU optimizations in AWS4Signer.
+
 ### 4.0.285.0 (2026-07-09 18:15 UTC)
 * Connect (4.0.104.0)
 	* Amazon Connect - Added DeleteContactData API to support PII deletion of customer endpoint, additional email recipients and email subject.
