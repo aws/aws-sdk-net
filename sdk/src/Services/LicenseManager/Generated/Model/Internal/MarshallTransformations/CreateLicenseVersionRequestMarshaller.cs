@@ -159,6 +159,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ProductName);
             }
 
+            if(publicRequest.IsSetResetUsage())
+            {
+                context.Writer.WritePropertyName("ResetUsage");
+                context.Writer.WriteBooleanValue(publicRequest.ResetUsage.Value);
+            }
+
             if(publicRequest.IsSetSourceVersion())
             {
                 context.Writer.WritePropertyName("SourceVersion");
