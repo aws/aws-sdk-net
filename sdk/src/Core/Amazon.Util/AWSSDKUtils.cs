@@ -1721,7 +1721,7 @@ namespace Amazon.Util
         /// <param name="data">The input string to process.</param>
         /// <param name="trim">When <see langword="true"/>, leading and trailing whitespace is also removed.</param>
         /// <returns>The processed string with compressed spaces.</returns>
-        public static string CompressSpaces(string data, bool trim = false)
+        public static string CompressSpaces(string data, bool trim)
         {
             const char SPACE = ' ';
             if (data == null)
