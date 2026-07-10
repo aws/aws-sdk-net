@@ -917,7 +917,8 @@ namespace ServiceClientGenerator
             var solutionFileCreator = new SolutionFileCreator
             {
                 Options = options,
-                ProjectFileConfigurations = manifest.ProjectFileConfigurations
+                ProjectFileConfigurations = manifest.ProjectFileConfigurations,
+                MigratedServiceFolderNames = manifest.MigratedServiceFolderNames
             };
 
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
@@ -1486,24 +1487,54 @@ namespace ServiceClientGenerator
             command.Execute(CodeAnalysisRoot, this.Configuration);
         }
 
-        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string sdkRootFolder)
+        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string sdkRootFolder, IEnumerable<string> migratedServiceFolderNames = null)
         {
-            var codeGeneratedServiceList = codeGeneratedServiceNames.Distinct();
+            // Services migrated to the Smithy generator are ignored by the C2J generator: they are
+            // not generated and their existing files must not be treated as orphans and deleted.
+            var migratedServiceNames = new HashSet<string>(migratedServiceFolderNames ?? Enumerable.Empty<string>(), StringComparer.OrdinalIgnoreCase);
+
+            // Migrated services keep their directories, so union them with the current run's
+            // generated services when deciding which service folders to keep.
+            var codeGeneratedServiceList = codeGeneratedServiceNames.Concat(migratedServiceNames).Distinct();
 
             // Cleanup services within the main sdk/services folder
             var srcFolder = Utils.PathCombineAlt(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
-            RemoveOrphanedShapes(generatedFiles, srcFolder);
+            RemoveOrphanedShapes(generatedFiles, srcFolder, migratedServiceNames);
 
             // Cleanup services within the sdk/test/services folder where it is a generated test service
             var testSrcFolder = Utils.PathCombineAlt(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername);
-            RemoveOrphanedShapes(generatedFiles, generatedTestFiles, testSrcFolder);
-                        
+            RemoveOrphanedShapes(generatedFiles, generatedTestFiles, testSrcFolder, migratedServiceNames);
+
             // Cleanup orphaned Service src artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(srcFolder, codeGeneratedServiceList);
             // Cleanup orphaned Service test artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(testSrcFolder, codeGeneratedServiceList);
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
+        }
+
+        /// <summary>
+        /// Returns true if <paramref name="fullPath"/> lives under a service folder (directly
+        /// beneath the src/Services or test/Services root) that has been migrated to the Smithy
+        /// generator and must not be modified by the C2J generator.
+        /// </summary>
+        private static bool IsUnderMigratedService(string fullPath, string srcFolder, HashSet<string> migratedServiceNames)
+        {
+            if (migratedServiceNames.Count == 0)
+            {
+                return false;
+            }
+
+            var srcRoot = Utils.ConvertPathAlt(Path.GetFullPath(srcFolder)) + Path.AltDirectorySeparatorChar;
+            foreach (var serviceName in migratedServiceNames)
+            {
+                if (fullPath.StartsWith(srcRoot + serviceName + Path.AltDirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -1514,12 +1545,17 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="generatedFiles">Lookup of all files that have been generated.</param>
         /// <param name="srcFolder">The path to the sdk/services folder containing generated services and manual source code.</param>
-        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
+        /// <param name="migratedServiceNames">Service folder names to leave untouched (migrated to the Smithy generator).</param>
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder, HashSet<string> migratedServiceNames = null)
         {
+            migratedServiceNames = migratedServiceNames ?? new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
                 if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+
+                if (IsUnderMigratedService(fullPath, srcFolder, migratedServiceNames))
                     continue;
 
                 if (!generatedFiles.Contains(fullPath))
@@ -1540,12 +1576,17 @@ namespace ServiceClientGenerator
         /// <param name="generatedFiles">Lookup of all files that have been generated.</param>
         /// <param name="generatedTestFiles">Lookup of all the generated test files.</param>
         /// <param name="srcFolder">The path to the sdk/test/services folder containing generated tests and test services.</param>
-        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string srcFolder)
+        /// <param name="migratedServiceNames">Service folder names to leave untouched (migrated to the Smithy generator).</param>
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string srcFolder, HashSet<string> migratedServiceNames = null)
         {
+            migratedServiceNames = migratedServiceNames ?? new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
                 if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+
+                if (IsUnderMigratedService(fullPath, srcFolder, migratedServiceNames))
                     continue;
 
                 if (!generatedFiles.Contains(fullPath) && !generatedTestFiles.Contains(fullPath))

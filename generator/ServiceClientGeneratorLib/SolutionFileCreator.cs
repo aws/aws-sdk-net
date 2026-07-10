@@ -13,6 +13,12 @@ namespace ServiceClientGenerator
         public IEnumerable<ProjectFileConfiguration> ProjectFileConfigurations { get; set; }
 
         /// <summary>
+        /// Service folder names (e.g. "DynamoDBv2") migrated to the Smithy generator.
+        /// The C2J generator must not rewrite the per-service solution file inside their folder.
+        /// </summary>
+        public IEnumerable<string> MigratedServiceFolderNames { get; set; } = new List<string>();
+
+        /// <summary>
         /// The set of project 'types' (or platforms) that we generate the SDK against.
         /// These type names form part of the project filename.
         /// </summary>
@@ -451,9 +457,18 @@ namespace ServiceClientGenerator
             var serviceProjectsRoot = Utils.PathCombineAlt(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
             var coreProjectsRoot = Utils.PathCombineAlt(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
 
+            var migratedServices = new HashSet<string>(MigratedServiceFolderNames, StringComparer.OrdinalIgnoreCase);
+
             // Iterating through each service in the service folder
             foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot).OrderBy(d => d))
             {
+                // Services migrated to the Smithy generator own their per-service solution file; the
+                // C2J generator must leave it untouched.
+                if (migratedServices.Contains(new DirectoryInfo(servicePath).Name))
+                {
+                    continue;
+                }
+
                 var session = new Dictionary<string, object>();
                 var serviceSolutionFolders = new List<ServiceSolutionFolder>();
                 var serviceDirectory = new DirectoryInfo(servicePath);

@@ -49,9 +49,23 @@ namespace ServiceClientGenerator
         public const string ApacheLicenseURL = @"http://aws.amazon.com/apache2.0/";
 
         /// <summary>
-        /// The set of services declared in the manifest as supporting generation. 
+        /// Name of the control file (in the ServiceModels folder) listing the SDK service names
+        /// (e.g. "DynamoDBv2") that have been migrated to the Smithy generator. The C2J generator
+        /// ignores these services entirely - it neither generates nor cleans up their files.
+        /// </summary>
+        private const string MigratedServicesFileName = "_smithy-migrated-services.json";
+
+        /// <summary>
+        /// The set of services declared in the manifest as supporting generation.
         /// </summary>
         public IEnumerable<ServiceConfiguration> ServiceConfigurations { get; private set; }
+
+        /// <summary>
+        /// The service folder names (e.g. "DynamoDBv2") of services that have been migrated to
+        /// the Smithy generator. These are excluded from generation and protected from orphan
+        /// cleanup so the C2J generator leaves their files untouched.
+        /// </summary>
+        public IEnumerable<string> MigratedServiceFolderNames { get; private set; } = new List<string>();
 
         /// <summary>
         /// The set of extensions declared in the manifest as supporting generation. 
@@ -120,6 +134,7 @@ namespace ServiceClientGenerator
                 generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
             generationManifest.LoadDefaultConfiguration(options.ModelsFolder);
+            generationManifest.LoadMigratedServices(options.ModelsFolder);
             generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], versionsManifest["ExtensionVersions"], options);
             generationManifest.LoadExtensionConfigurations(versionsManifest["ServiceVersions"], versionsManifest["ExtensionVersions"], options);
             generationManifest.LoadProjectConfigurations(manifest);
@@ -219,7 +234,35 @@ namespace ServiceClientGenerator
                 }
             }
 
+            // Remove Smithy-migrated services from the generation set, recording them so orphan
+            // cleanup leaves their files alone. Done here, after the checks above that need the
+            // full set (version consistency, parent resolution).
+            var migratedConfigs = serviceConfigurations
+                .Where(config => _migratedServiceNames.Contains(config.ServiceFolderName))
+                .ToList();
+
+            if (string.IsNullOrEmpty(options.ServiceModels))
+            {
+                // On a full run every migrated name must resolve, else a typo silently leaves the
+                // service on C2J and lets cleanup delete Smithy's output. Skipped for a subset run
+                // (-servicemodels), where a migrated service may legitimately be absent.
+                var knownServiceFolderNames = new HashSet<string>(serviceConfigurations.Select(config => config.ServiceFolderName), StringComparer.OrdinalIgnoreCase);
+                var unmatched = _migratedServiceNames
+                    .Where(name => !knownServiceFolderNames.Contains(name))
+                    .ToList();
+                if (unmatched.Any())
+                {
+                    throw new Exception($"Migrated service name(s) in {MigratedServicesFileName} don't match any known service (expected {nameof(ServiceConfiguration.ServiceFolderName)}, e.g. \"DynamoDBv2\"): {string.Join(", ", unmatched)}");
+                }
+            }
+
+            // Publish protected names straight from the control file, not from migratedConfigs: on a
+            // subset run (-servicemodels) a migrated service may not be loaded, but its files must
+            // still be protected. migratedConfigs is only used to exclude loaded services from generation.
+            MigratedServiceFolderNames = _migratedServiceNames.ToList();
+
             ServiceConfigurations = serviceConfigurations
+                .Except(migratedConfigs)
                 .OrderBy(sc => sc.SdkDependencies.Count)
                 .ToList();
         }
@@ -575,6 +618,33 @@ namespace ServiceClientGenerator
             using (var reader = new StreamReader(path))
                 data = JsonMapper.ToObject(reader);
             return data;
+        }
+
+        /// <summary>
+        /// SDK service names (e.g. "DynamoDBv2") listed in the migrated-services control file.
+        /// Compared case-insensitively against each service's <see cref="ServiceConfiguration.ServiceFolderName"/>.
+        /// </summary>
+        private HashSet<string> _migratedServiceNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        /// <summary>
+        /// Loads the set of SDK service names that have been migrated to the Smithy generator
+        /// from the <see cref="MigratedServicesFileName"/> control file. The file is optional; when
+        /// absent no services are treated as migrated.
+        /// </summary>
+        /// <param name="modelsFolder">Path to the ServiceModels folder.</param>
+        private void LoadMigratedServices(string modelsFolder)
+        {
+            var migratedServicesFile = Utils.PathCombineAlt(modelsFolder, MigratedServicesFileName);
+            if (!File.Exists(migratedServicesFile))
+            {
+                return;
+            }
+
+            var migratedServices = LoadJsonFromFile(migratedServicesFile)["services"];
+            foreach (JsonData serviceName in migratedServices)
+            {
+                _migratedServiceNames.Add(serviceName.ToString());
+            }
         }
 
         private readonly IDefaultConfigurationController _defaultConfigurationController;

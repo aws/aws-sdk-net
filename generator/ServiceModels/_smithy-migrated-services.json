@@ -1,0 +1,4 @@
+{
+  "comment": "SDK service names (ServiceFolderName, e.g. 'DynamoDBv2' - not the model-dir name 'dynamodb') that have been migrated to the Smithy generator. The C2J generator ignores these services entirely: it neither generates nor cleans up their files. Remove a name to revert that service back to C2J.",
+  "services": []
+}
