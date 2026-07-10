@@ -102,9 +102,10 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             // If a pre-calculated value was specified, we won't attempt to calculate it again.
-            if (request.Headers.Any(h => h.Key.StartsWith(_checksumHeaderPrefix, StringComparison.OrdinalIgnoreCase)))
+            foreach (var headerKey in request.Headers.Keys)
             {
-                return;
+                if (headerKey.StartsWith(_checksumHeaderPrefix, StringComparison.OrdinalIgnoreCase))
+                    return;
             }
 
             var coreChecksumAlgoritm = ConvertToCoreChecksumAlgorithm(request.ChecksumData.SelectedChecksum);
