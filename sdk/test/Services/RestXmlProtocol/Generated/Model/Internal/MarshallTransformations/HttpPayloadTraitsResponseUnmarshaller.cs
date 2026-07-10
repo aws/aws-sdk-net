@@ -47,9 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             HttpPayloadTraitsResponse response = new HttpPayloadTraitsResponse();
 
-            var ms = new MemoryStream();
-            Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
-            ms.Seek(0, SeekOrigin.Begin);
+            var ms = Amazon.Util.AWSSDKUtils.CopyToMemoryStream(context.Stream, context.ResponseData?.ContentLength ?? 0);
             if (ms.Length > 0)
                 response.Blob = ms;
 

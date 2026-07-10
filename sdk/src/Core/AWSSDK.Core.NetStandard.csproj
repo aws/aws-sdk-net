@@ -1,95 +1,99 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild> 
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>    
-    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DebugType>portable</DebugType>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.Core</AssemblyName>
-    <PackageId>AWSSDK.Core</PackageId>
-    
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+	<PropertyGroup>
+		<RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
+		<TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+		<DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
+		<DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+		<DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+		<DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+		<DebugType>portable</DebugType>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<AssemblyName>AWSSDK.Core</AssemblyName>
+		<PackageId>AWSSDK.Core</PackageId>
 
-    <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <SignAssembly>True</SignAssembly>
+		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+		<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+		<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
-    <IsTrimmable>true</IsTrimmable>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
-    <CodeAnalysisRuleSet>..\..\AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
-    <CodeAnalysisRuleSet>..\..\AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  
-  <!-- 
+		<NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<SignAssembly>True</SignAssembly>
+
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+		<WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
+		<IsTrimmable>true</IsTrimmable>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
+		<CodeAnalysisRuleSet>..\..\AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
+		<CodeAnalysisRuleSet>..\..\AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<!-- 
     For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
     the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
   -->
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <LangVersion>11.0</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
-    <LangVersion>9.0</LangVersion>
-  </PropertyGroup>  
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+		<LangVersion>11.0</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+		<LangVersion>9.0</LangVersion>
+	</PropertyGroup>
 
-  <Choose>
-    <When Condition=" '$(AWSKeyFile)' == '' ">
-      <PropertyGroup>
-        <AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
+	<Choose>
+		<When Condition=" '$(AWSKeyFile)' == '' ">
+			<PropertyGroup>
+				<AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
 
-  <ItemGroup>
-    <Compile Remove="**/obj/**" />
-    <Compile Remove="**/_bcl/**" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="**/obj/**" />
+		<Compile Remove="**/_bcl/**" />
+	</ItemGroup>
 
-  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3">
-        <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
-        <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
+	<ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
 
-  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
-    <Analyzer Include="..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
-  </ItemGroup>
+	<ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+		<Analyzer Include="..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <!-- Powershell (pwsh) will have a preloaded version of System.Text.Json that is older than
+	<PropertyGroup>
+		<!-- Powershell (pwsh) will have a preloaded version of System.Text.Json that is older than
       the version we will ship in core nuget packages and dlls, so we compile with an  older version of STJ
       but ship nuget packages and dlls with newer versions of STJ. If we don't do this then sdk assemblies will fail
       to load in powershell due to unsupported versions -->
-    <SystemTextJsonVersion Condition="'$(SystemTextJsonVersion)' == ''">6.0.11</SystemTextJsonVersion>
-  </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
-    <PackageReference Include="System.Buffers" Version="4.5.1" />
-    <PackageReference Include="System.Memory" Version="4.5.5" />
-    <PackageReference Include="System.Text.Json" Version="$(SystemTextJsonVersion)" />
-  </ItemGroup>
+		<SystemTextJsonVersion Condition="'$(SystemTextJsonVersion)' == ''">6.0.11</SystemTextJsonVersion>
+	</PropertyGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+		<PackageReference Include="System.Buffers" Version="4.5.1" />
+		<PackageReference Include="System.Memory" Version="4.5.5" />
+		<PackageReference Include="System.Text.Json" Version="$(SystemTextJsonVersion)" />
+	</ItemGroup>
+
+	<ItemGroup Label="Proof of Concept for RMS">
+		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="3.0.1" />
+	</ItemGroup>
 </Project>
