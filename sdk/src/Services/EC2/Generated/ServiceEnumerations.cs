@@ -11437,6 +11437,58 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C8i96xlarge = new InstanceType("c8i.96xlarge");
         /// <summary>
+        /// Constant C8ib12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib12xlarge = new InstanceType("c8ib.12xlarge");
+        /// <summary>
+        /// Constant C8ib16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib16xlarge = new InstanceType("c8ib.16xlarge");
+        /// <summary>
+        /// Constant C8ib24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib24xlarge = new InstanceType("c8ib.24xlarge");
+        /// <summary>
+        /// Constant C8ib2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib2xlarge = new InstanceType("c8ib.2xlarge");
+        /// <summary>
+        /// Constant C8ib32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib32xlarge = new InstanceType("c8ib.32xlarge");
+        /// <summary>
+        /// Constant C8ib48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib48xlarge = new InstanceType("c8ib.48xlarge");
+        /// <summary>
+        /// Constant C8ib4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib4xlarge = new InstanceType("c8ib.4xlarge");
+        /// <summary>
+        /// Constant C8ib8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib8xlarge = new InstanceType("c8ib.8xlarge");
+        /// <summary>
+        /// Constant C8ib96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ib96xlarge = new InstanceType("c8ib.96xlarge");
+        /// <summary>
+        /// Constant C8ibLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ibLarge = new InstanceType("c8ib.large");
+        /// <summary>
+        /// Constant C8ibMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ibMetal48xl = new InstanceType("c8ib.metal-48xl");
+        /// <summary>
+        /// Constant C8ibMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ibMetal96xl = new InstanceType("c8ib.metal-96xl");
+        /// <summary>
+        /// Constant C8ibXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ibXlarge = new InstanceType("c8ib.xlarge");
+        /// <summary>
         /// Constant C8id12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C8id12xlarge = new InstanceType("c8id.12xlarge");
@@ -11529,9 +11581,173 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C8iMetal96xl = new InstanceType("c8i.metal-96xl");
         /// <summary>
+        /// Constant C8in12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in12xlarge = new InstanceType("c8in.12xlarge");
+        /// <summary>
+        /// Constant C8in16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in16xlarge = new InstanceType("c8in.16xlarge");
+        /// <summary>
+        /// Constant C8in24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in24xlarge = new InstanceType("c8in.24xlarge");
+        /// <summary>
+        /// Constant C8in2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in2xlarge = new InstanceType("c8in.2xlarge");
+        /// <summary>
+        /// Constant C8in32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in32xlarge = new InstanceType("c8in.32xlarge");
+        /// <summary>
+        /// Constant C8in48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in48xlarge = new InstanceType("c8in.48xlarge");
+        /// <summary>
+        /// Constant C8in4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in4xlarge = new InstanceType("c8in.4xlarge");
+        /// <summary>
+        /// Constant C8in8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in8xlarge = new InstanceType("c8in.8xlarge");
+        /// <summary>
+        /// Constant C8in96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8in96xlarge = new InstanceType("c8in.96xlarge");
+        /// <summary>
+        /// Constant C8ine12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ine12xlarge = new InstanceType("c8ine.12xlarge");
+        /// <summary>
+        /// Constant C8ine2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ine2xlarge = new InstanceType("c8ine.2xlarge");
+        /// <summary>
+        /// Constant C8ine4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ine4xlarge = new InstanceType("c8ine.4xlarge");
+        /// <summary>
+        /// Constant C8ine8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ine8xlarge = new InstanceType("c8ine.8xlarge");
+        /// <summary>
+        /// Constant C8ineLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ineLarge = new InstanceType("c8ine.large");
+        /// <summary>
+        /// Constant C8ineXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8ineXlarge = new InstanceType("c8ine.xlarge");
+        /// <summary>
+        /// Constant C8inLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8inLarge = new InstanceType("c8in.large");
+        /// <summary>
+        /// Constant C8inMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8inMetal48xl = new InstanceType("c8in.metal-48xl");
+        /// <summary>
+        /// Constant C8inMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8inMetal96xl = new InstanceType("c8in.metal-96xl");
+        /// <summary>
+        /// Constant C8inXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8inXlarge = new InstanceType("c8in.xlarge");
+        /// <summary>
         /// Constant C8iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C8iXlarge = new InstanceType("c8i.xlarge");
+        /// <summary>
+        /// Constant C9g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9g12xlarge = new InstanceType("c9g.12xlarge");
+        /// <summary>
+        /// Constant C9g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9g16xlarge = new InstanceType("c9g.16xlarge");
+        /// <summary>
+        /// Constant C9g24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9g24xlarge = new InstanceType("c9g.24xlarge");
+        /// <summary>
+        /// Constant C9g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9g2xlarge = new InstanceType("c9g.2xlarge");
+        /// <summary>
+        /// Constant C9g48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9g48xlarge = new InstanceType("c9g.48xlarge");
+        /// <summary>
+        /// Constant C9g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9g4xlarge = new InstanceType("c9g.4xlarge");
+        /// <summary>
+        /// Constant C9g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9g8xlarge = new InstanceType("c9g.8xlarge");
+        /// <summary>
+        /// Constant C9gd12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gd12xlarge = new InstanceType("c9gd.12xlarge");
+        /// <summary>
+        /// Constant C9gd16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gd16xlarge = new InstanceType("c9gd.16xlarge");
+        /// <summary>
+        /// Constant C9gd24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gd24xlarge = new InstanceType("c9gd.24xlarge");
+        /// <summary>
+        /// Constant C9gd2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gd2xlarge = new InstanceType("c9gd.2xlarge");
+        /// <summary>
+        /// Constant C9gd48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gd48xlarge = new InstanceType("c9gd.48xlarge");
+        /// <summary>
+        /// Constant C9gd4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gd4xlarge = new InstanceType("c9gd.4xlarge");
+        /// <summary>
+        /// Constant C9gd8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gd8xlarge = new InstanceType("c9gd.8xlarge");
+        /// <summary>
+        /// Constant C9gdLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gdLarge = new InstanceType("c9gd.large");
+        /// <summary>
+        /// Constant C9gdMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gdMedium = new InstanceType("c9gd.medium");
+        /// <summary>
+        /// Constant C9gdMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gdMetal48xl = new InstanceType("c9gd.metal-48xl");
+        /// <summary>
+        /// Constant C9gdXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gdXlarge = new InstanceType("c9gd.xlarge");
+        /// <summary>
+        /// Constant C9gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gLarge = new InstanceType("c9g.large");
+        /// <summary>
+        /// Constant C9gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gMedium = new InstanceType("c9g.medium");
+        /// <summary>
+        /// Constant C9gMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gMetal48xl = new InstanceType("c9g.metal-48xl");
+        /// <summary>
+        /// Constant C9gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C9gXlarge = new InstanceType("c9g.xlarge");
         /// <summary>
         /// Constant Cc14xlarge for InstanceType
         /// </summary>
@@ -11844,6 +12060,30 @@ namespace Amazon.EC2
         /// Constant G6Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G6Xlarge = new InstanceType("g6.xlarge");
+        /// <summary>
+        /// Constant G712xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G712xlarge = new InstanceType("g7.12xlarge");
+        /// <summary>
+        /// Constant G724xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G724xlarge = new InstanceType("g7.24xlarge");
+        /// <summary>
+        /// Constant G72xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G72xlarge = new InstanceType("g7.2xlarge");
+        /// <summary>
+        /// Constant G748xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G748xlarge = new InstanceType("g7.48xlarge");
+        /// <summary>
+        /// Constant G74xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G74xlarge = new InstanceType("g7.4xlarge");
+        /// <summary>
+        /// Constant G78xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G78xlarge = new InstanceType("g7.8xlarge");
         /// <summary>
         /// Constant G7e12xlarge for InstanceType
         /// </summary>
@@ -13421,6 +13661,58 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M8i96xlarge = new InstanceType("m8i.96xlarge");
         /// <summary>
+        /// Constant M8ib12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib12xlarge = new InstanceType("m8ib.12xlarge");
+        /// <summary>
+        /// Constant M8ib16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib16xlarge = new InstanceType("m8ib.16xlarge");
+        /// <summary>
+        /// Constant M8ib24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib24xlarge = new InstanceType("m8ib.24xlarge");
+        /// <summary>
+        /// Constant M8ib2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib2xlarge = new InstanceType("m8ib.2xlarge");
+        /// <summary>
+        /// Constant M8ib32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib32xlarge = new InstanceType("m8ib.32xlarge");
+        /// <summary>
+        /// Constant M8ib48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib48xlarge = new InstanceType("m8ib.48xlarge");
+        /// <summary>
+        /// Constant M8ib4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib4xlarge = new InstanceType("m8ib.4xlarge");
+        /// <summary>
+        /// Constant M8ib8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib8xlarge = new InstanceType("m8ib.8xlarge");
+        /// <summary>
+        /// Constant M8ib96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ib96xlarge = new InstanceType("m8ib.96xlarge");
+        /// <summary>
+        /// Constant M8ibLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ibLarge = new InstanceType("m8ib.large");
+        /// <summary>
+        /// Constant M8ibMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ibMetal48xl = new InstanceType("m8ib.metal-48xl");
+        /// <summary>
+        /// Constant M8ibMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ibMetal96xl = new InstanceType("m8ib.metal-96xl");
+        /// <summary>
+        /// Constant M8ibXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ibXlarge = new InstanceType("m8ib.xlarge");
+        /// <summary>
         /// Constant M8id12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M8id12xlarge = new InstanceType("m8id.12xlarge");
@@ -13457,6 +13749,58 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M8id96xlarge = new InstanceType("m8id.96xlarge");
         /// <summary>
+        /// Constant M8idb12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb12xlarge = new InstanceType("m8idb.12xlarge");
+        /// <summary>
+        /// Constant M8idb16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb16xlarge = new InstanceType("m8idb.16xlarge");
+        /// <summary>
+        /// Constant M8idb24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb24xlarge = new InstanceType("m8idb.24xlarge");
+        /// <summary>
+        /// Constant M8idb2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb2xlarge = new InstanceType("m8idb.2xlarge");
+        /// <summary>
+        /// Constant M8idb32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb32xlarge = new InstanceType("m8idb.32xlarge");
+        /// <summary>
+        /// Constant M8idb48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb48xlarge = new InstanceType("m8idb.48xlarge");
+        /// <summary>
+        /// Constant M8idb4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb4xlarge = new InstanceType("m8idb.4xlarge");
+        /// <summary>
+        /// Constant M8idb8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb8xlarge = new InstanceType("m8idb.8xlarge");
+        /// <summary>
+        /// Constant M8idb96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idb96xlarge = new InstanceType("m8idb.96xlarge");
+        /// <summary>
+        /// Constant M8idbLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idbLarge = new InstanceType("m8idb.large");
+        /// <summary>
+        /// Constant M8idbMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idbMetal48xl = new InstanceType("m8idb.metal-48xl");
+        /// <summary>
+        /// Constant M8idbMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idbMetal96xl = new InstanceType("m8idb.metal-96xl");
+        /// <summary>
+        /// Constant M8idbXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idbXlarge = new InstanceType("m8idb.xlarge");
+        /// <summary>
         /// Constant M8idLarge for InstanceType
         /// </summary>
         public static readonly InstanceType M8idLarge = new InstanceType("m8id.large");
@@ -13468,6 +13812,58 @@ namespace Amazon.EC2
         /// Constant M8idMetal96xl for InstanceType
         /// </summary>
         public static readonly InstanceType M8idMetal96xl = new InstanceType("m8id.metal-96xl");
+        /// <summary>
+        /// Constant M8idn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn12xlarge = new InstanceType("m8idn.12xlarge");
+        /// <summary>
+        /// Constant M8idn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn16xlarge = new InstanceType("m8idn.16xlarge");
+        /// <summary>
+        /// Constant M8idn24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn24xlarge = new InstanceType("m8idn.24xlarge");
+        /// <summary>
+        /// Constant M8idn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn2xlarge = new InstanceType("m8idn.2xlarge");
+        /// <summary>
+        /// Constant M8idn32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn32xlarge = new InstanceType("m8idn.32xlarge");
+        /// <summary>
+        /// Constant M8idn48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn48xlarge = new InstanceType("m8idn.48xlarge");
+        /// <summary>
+        /// Constant M8idn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn4xlarge = new InstanceType("m8idn.4xlarge");
+        /// <summary>
+        /// Constant M8idn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn8xlarge = new InstanceType("m8idn.8xlarge");
+        /// <summary>
+        /// Constant M8idn96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idn96xlarge = new InstanceType("m8idn.96xlarge");
+        /// <summary>
+        /// Constant M8idnLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idnLarge = new InstanceType("m8idn.large");
+        /// <summary>
+        /// Constant M8idnMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idnMetal48xl = new InstanceType("m8idn.metal-48xl");
+        /// <summary>
+        /// Constant M8idnMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idnMetal96xl = new InstanceType("m8idn.metal-96xl");
+        /// <summary>
+        /// Constant M8idnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idnXlarge = new InstanceType("m8idn.xlarge");
         /// <summary>
         /// Constant M8idXlarge for InstanceType
         /// </summary>
@@ -13513,9 +13909,173 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M8iMetal96xl = new InstanceType("m8i.metal-96xl");
         /// <summary>
+        /// Constant M8in12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in12xlarge = new InstanceType("m8in.12xlarge");
+        /// <summary>
+        /// Constant M8in16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in16xlarge = new InstanceType("m8in.16xlarge");
+        /// <summary>
+        /// Constant M8in24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in24xlarge = new InstanceType("m8in.24xlarge");
+        /// <summary>
+        /// Constant M8in2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in2xlarge = new InstanceType("m8in.2xlarge");
+        /// <summary>
+        /// Constant M8in32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in32xlarge = new InstanceType("m8in.32xlarge");
+        /// <summary>
+        /// Constant M8in48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in48xlarge = new InstanceType("m8in.48xlarge");
+        /// <summary>
+        /// Constant M8in4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in4xlarge = new InstanceType("m8in.4xlarge");
+        /// <summary>
+        /// Constant M8in8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in8xlarge = new InstanceType("m8in.8xlarge");
+        /// <summary>
+        /// Constant M8in96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8in96xlarge = new InstanceType("m8in.96xlarge");
+        /// <summary>
+        /// Constant M8ine12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ine12xlarge = new InstanceType("m8ine.12xlarge");
+        /// <summary>
+        /// Constant M8ine2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ine2xlarge = new InstanceType("m8ine.2xlarge");
+        /// <summary>
+        /// Constant M8ine4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ine4xlarge = new InstanceType("m8ine.4xlarge");
+        /// <summary>
+        /// Constant M8ine8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ine8xlarge = new InstanceType("m8ine.8xlarge");
+        /// <summary>
+        /// Constant M8ineLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ineLarge = new InstanceType("m8ine.large");
+        /// <summary>
+        /// Constant M8ineXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8ineXlarge = new InstanceType("m8ine.xlarge");
+        /// <summary>
+        /// Constant M8inLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8inLarge = new InstanceType("m8in.large");
+        /// <summary>
+        /// Constant M8inMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8inMetal48xl = new InstanceType("m8in.metal-48xl");
+        /// <summary>
+        /// Constant M8inMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8inMetal96xl = new InstanceType("m8in.metal-96xl");
+        /// <summary>
+        /// Constant M8inXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8inXlarge = new InstanceType("m8in.xlarge");
+        /// <summary>
         /// Constant M8iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M8iXlarge = new InstanceType("m8i.xlarge");
+        /// <summary>
+        /// Constant M9g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9g12xlarge = new InstanceType("m9g.12xlarge");
+        /// <summary>
+        /// Constant M9g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9g16xlarge = new InstanceType("m9g.16xlarge");
+        /// <summary>
+        /// Constant M9g24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9g24xlarge = new InstanceType("m9g.24xlarge");
+        /// <summary>
+        /// Constant M9g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9g2xlarge = new InstanceType("m9g.2xlarge");
+        /// <summary>
+        /// Constant M9g48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9g48xlarge = new InstanceType("m9g.48xlarge");
+        /// <summary>
+        /// Constant M9g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9g4xlarge = new InstanceType("m9g.4xlarge");
+        /// <summary>
+        /// Constant M9g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9g8xlarge = new InstanceType("m9g.8xlarge");
+        /// <summary>
+        /// Constant M9gd12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gd12xlarge = new InstanceType("m9gd.12xlarge");
+        /// <summary>
+        /// Constant M9gd16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gd16xlarge = new InstanceType("m9gd.16xlarge");
+        /// <summary>
+        /// Constant M9gd24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gd24xlarge = new InstanceType("m9gd.24xlarge");
+        /// <summary>
+        /// Constant M9gd2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gd2xlarge = new InstanceType("m9gd.2xlarge");
+        /// <summary>
+        /// Constant M9gd48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gd48xlarge = new InstanceType("m9gd.48xlarge");
+        /// <summary>
+        /// Constant M9gd4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gd4xlarge = new InstanceType("m9gd.4xlarge");
+        /// <summary>
+        /// Constant M9gd8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gd8xlarge = new InstanceType("m9gd.8xlarge");
+        /// <summary>
+        /// Constant M9gdLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gdLarge = new InstanceType("m9gd.large");
+        /// <summary>
+        /// Constant M9gdMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gdMetal24xl = new InstanceType("m9gd.metal-24xl");
+        /// <summary>
+        /// Constant M9gdMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gdMetal48xl = new InstanceType("m9gd.metal-48xl");
+        /// <summary>
+        /// Constant M9gdXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gdXlarge = new InstanceType("m9gd.xlarge");
+        /// <summary>
+        /// Constant M9gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gLarge = new InstanceType("m9g.large");
+        /// <summary>
+        /// Constant M9gMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gMetal24xl = new InstanceType("m9g.metal-24xl");
+        /// <summary>
+        /// Constant M9gMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gMetal48xl = new InstanceType("m9g.metal-48xl");
+        /// <summary>
+        /// Constant M9gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gXlarge = new InstanceType("m9g.xlarge");
         /// <summary>
         /// Constant Mac1Metal for InstanceType
         /// </summary>
@@ -13536,6 +14096,10 @@ namespace Amazon.EC2
         /// Constant Mac2Metal for InstanceType
         /// </summary>
         public static readonly InstanceType Mac2Metal = new InstanceType("mac2.metal");
+        /// <summary>
+        /// Constant MacM3ultraMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType MacM3ultraMetal = new InstanceType("mac-m3ultra.metal");
         /// <summary>
         /// Constant MacM4maxMetal for InstanceType
         /// </summary>
@@ -14649,6 +15213,58 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R8i96xlarge = new InstanceType("r8i.96xlarge");
         /// <summary>
+        /// Constant R8ib12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib12xlarge = new InstanceType("r8ib.12xlarge");
+        /// <summary>
+        /// Constant R8ib16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib16xlarge = new InstanceType("r8ib.16xlarge");
+        /// <summary>
+        /// Constant R8ib24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib24xlarge = new InstanceType("r8ib.24xlarge");
+        /// <summary>
+        /// Constant R8ib2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib2xlarge = new InstanceType("r8ib.2xlarge");
+        /// <summary>
+        /// Constant R8ib32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib32xlarge = new InstanceType("r8ib.32xlarge");
+        /// <summary>
+        /// Constant R8ib48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib48xlarge = new InstanceType("r8ib.48xlarge");
+        /// <summary>
+        /// Constant R8ib4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib4xlarge = new InstanceType("r8ib.4xlarge");
+        /// <summary>
+        /// Constant R8ib8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib8xlarge = new InstanceType("r8ib.8xlarge");
+        /// <summary>
+        /// Constant R8ib96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ib96xlarge = new InstanceType("r8ib.96xlarge");
+        /// <summary>
+        /// Constant R8ibLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ibLarge = new InstanceType("r8ib.large");
+        /// <summary>
+        /// Constant R8ibMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ibMetal48xl = new InstanceType("r8ib.metal-48xl");
+        /// <summary>
+        /// Constant R8ibMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ibMetal96xl = new InstanceType("r8ib.metal-96xl");
+        /// <summary>
+        /// Constant R8ibXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8ibXlarge = new InstanceType("r8ib.xlarge");
+        /// <summary>
         /// Constant R8id12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R8id12xlarge = new InstanceType("r8id.12xlarge");
@@ -14685,6 +15301,58 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R8id96xlarge = new InstanceType("r8id.96xlarge");
         /// <summary>
+        /// Constant R8idb12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb12xlarge = new InstanceType("r8idb.12xlarge");
+        /// <summary>
+        /// Constant R8idb16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb16xlarge = new InstanceType("r8idb.16xlarge");
+        /// <summary>
+        /// Constant R8idb24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb24xlarge = new InstanceType("r8idb.24xlarge");
+        /// <summary>
+        /// Constant R8idb2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb2xlarge = new InstanceType("r8idb.2xlarge");
+        /// <summary>
+        /// Constant R8idb32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb32xlarge = new InstanceType("r8idb.32xlarge");
+        /// <summary>
+        /// Constant R8idb48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb48xlarge = new InstanceType("r8idb.48xlarge");
+        /// <summary>
+        /// Constant R8idb4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb4xlarge = new InstanceType("r8idb.4xlarge");
+        /// <summary>
+        /// Constant R8idb8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb8xlarge = new InstanceType("r8idb.8xlarge");
+        /// <summary>
+        /// Constant R8idb96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idb96xlarge = new InstanceType("r8idb.96xlarge");
+        /// <summary>
+        /// Constant R8idbLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idbLarge = new InstanceType("r8idb.large");
+        /// <summary>
+        /// Constant R8idbMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idbMetal48xl = new InstanceType("r8idb.metal-48xl");
+        /// <summary>
+        /// Constant R8idbMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idbMetal96xl = new InstanceType("r8idb.metal-96xl");
+        /// <summary>
+        /// Constant R8idbXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idbXlarge = new InstanceType("r8idb.xlarge");
+        /// <summary>
         /// Constant R8idLarge for InstanceType
         /// </summary>
         public static readonly InstanceType R8idLarge = new InstanceType("r8id.large");
@@ -14696,6 +15364,58 @@ namespace Amazon.EC2
         /// Constant R8idMetal96xl for InstanceType
         /// </summary>
         public static readonly InstanceType R8idMetal96xl = new InstanceType("r8id.metal-96xl");
+        /// <summary>
+        /// Constant R8idn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn12xlarge = new InstanceType("r8idn.12xlarge");
+        /// <summary>
+        /// Constant R8idn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn16xlarge = new InstanceType("r8idn.16xlarge");
+        /// <summary>
+        /// Constant R8idn24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn24xlarge = new InstanceType("r8idn.24xlarge");
+        /// <summary>
+        /// Constant R8idn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn2xlarge = new InstanceType("r8idn.2xlarge");
+        /// <summary>
+        /// Constant R8idn32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn32xlarge = new InstanceType("r8idn.32xlarge");
+        /// <summary>
+        /// Constant R8idn48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn48xlarge = new InstanceType("r8idn.48xlarge");
+        /// <summary>
+        /// Constant R8idn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn4xlarge = new InstanceType("r8idn.4xlarge");
+        /// <summary>
+        /// Constant R8idn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn8xlarge = new InstanceType("r8idn.8xlarge");
+        /// <summary>
+        /// Constant R8idn96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idn96xlarge = new InstanceType("r8idn.96xlarge");
+        /// <summary>
+        /// Constant R8idnLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idnLarge = new InstanceType("r8idn.large");
+        /// <summary>
+        /// Constant R8idnMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idnMetal48xl = new InstanceType("r8idn.metal-48xl");
+        /// <summary>
+        /// Constant R8idnMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idnMetal96xl = new InstanceType("r8idn.metal-96xl");
+        /// <summary>
+        /// Constant R8idnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8idnXlarge = new InstanceType("r8idn.xlarge");
         /// <summary>
         /// Constant R8idXlarge for InstanceType
         /// </summary>
@@ -14740,6 +15460,58 @@ namespace Amazon.EC2
         /// Constant R8iMetal96xl for InstanceType
         /// </summary>
         public static readonly InstanceType R8iMetal96xl = new InstanceType("r8i.metal-96xl");
+        /// <summary>
+        /// Constant R8in12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in12xlarge = new InstanceType("r8in.12xlarge");
+        /// <summary>
+        /// Constant R8in16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in16xlarge = new InstanceType("r8in.16xlarge");
+        /// <summary>
+        /// Constant R8in24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in24xlarge = new InstanceType("r8in.24xlarge");
+        /// <summary>
+        /// Constant R8in2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in2xlarge = new InstanceType("r8in.2xlarge");
+        /// <summary>
+        /// Constant R8in32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in32xlarge = new InstanceType("r8in.32xlarge");
+        /// <summary>
+        /// Constant R8in48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in48xlarge = new InstanceType("r8in.48xlarge");
+        /// <summary>
+        /// Constant R8in4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in4xlarge = new InstanceType("r8in.4xlarge");
+        /// <summary>
+        /// Constant R8in8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in8xlarge = new InstanceType("r8in.8xlarge");
+        /// <summary>
+        /// Constant R8in96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8in96xlarge = new InstanceType("r8in.96xlarge");
+        /// <summary>
+        /// Constant R8inLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8inLarge = new InstanceType("r8in.large");
+        /// <summary>
+        /// Constant R8inMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8inMetal48xl = new InstanceType("r8in.metal-48xl");
+        /// <summary>
+        /// Constant R8inMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8inMetal96xl = new InstanceType("r8in.metal-96xl");
+        /// <summary>
+        /// Constant R8inXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8inXlarge = new InstanceType("r8in.xlarge");
         /// <summary>
         /// Constant R8iXlarge for InstanceType
         /// </summary>
