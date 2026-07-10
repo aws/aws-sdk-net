@@ -104,6 +104,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TelemetryConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = CapacityProviderTelemetryConfigUnmarshaller.Instance;
+                    unmarshalledObject.TelemetryConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityProviderVpcConfigUnmarshaller.Instance;

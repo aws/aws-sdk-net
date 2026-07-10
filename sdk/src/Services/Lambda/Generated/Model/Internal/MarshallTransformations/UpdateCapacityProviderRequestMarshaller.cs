@@ -98,6 +98,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetTelemetryConfig())
+            {
+                context.Writer.WritePropertyName("TelemetryConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CapacityProviderTelemetryConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TelemetryConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK
