@@ -3097,6 +3097,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly EcrPullDateRescanDuration DAYS_180 = new EcrPullDateRescanDuration("DAYS_180");
         /// <summary>
+        /// Constant DAYS_3 for EcrPullDateRescanDuration
+        /// </summary>
+        public static readonly EcrPullDateRescanDuration DAYS_3 = new EcrPullDateRescanDuration("DAYS_3");
+        /// <summary>
         /// Constant DAYS_30 for EcrPullDateRescanDuration
         /// </summary>
         public static readonly EcrPullDateRescanDuration DAYS_30 = new EcrPullDateRescanDuration("DAYS_30");
@@ -3104,6 +3108,10 @@ namespace Amazon.Inspector2
         /// Constant DAYS_60 for EcrPullDateRescanDuration
         /// </summary>
         public static readonly EcrPullDateRescanDuration DAYS_60 = new EcrPullDateRescanDuration("DAYS_60");
+        /// <summary>
+        /// Constant DAYS_7 for EcrPullDateRescanDuration
+        /// </summary>
+        public static readonly EcrPullDateRescanDuration DAYS_7 = new EcrPullDateRescanDuration("DAYS_7");
         /// <summary>
         /// Constant DAYS_90 for EcrPullDateRescanDuration
         /// </summary>
@@ -3209,6 +3217,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly EcrRescanDuration DAYS_180 = new EcrRescanDuration("DAYS_180");
         /// <summary>
+        /// Constant DAYS_3 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_3 = new EcrRescanDuration("DAYS_3");
+        /// <summary>
         /// Constant DAYS_30 for EcrRescanDuration
         /// </summary>
         public static readonly EcrRescanDuration DAYS_30 = new EcrRescanDuration("DAYS_30");
@@ -3216,6 +3228,10 @@ namespace Amazon.Inspector2
         /// Constant DAYS_60 for EcrRescanDuration
         /// </summary>
         public static readonly EcrRescanDuration DAYS_60 = new EcrRescanDuration("DAYS_60");
+        /// <summary>
+        /// Constant DAYS_7 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_7 = new EcrRescanDuration("DAYS_7");
         /// <summary>
         /// Constant DAYS_90 for EcrRescanDuration
         /// </summary>
