@@ -154,8 +154,7 @@ namespace AWSSDK.UnitTests
             // TODO: ASK THE TEAM: Should attributes on self-closing elements be surfaced?
             // attributes on a self-closing element are never surfaced because the
             // IsEmptyElement branch in Read() skips ReadElement(). This test asserts the
-            // expected behavior; run it against the base commit to confirm the same
-            // misbehavior existed prior to this branch.
+            // expected behavior, not the observed one.
             var xml = "<Root><Something id=\"111\" /></Root>";
 
             CollectionAssert.AreEqual(new[]
