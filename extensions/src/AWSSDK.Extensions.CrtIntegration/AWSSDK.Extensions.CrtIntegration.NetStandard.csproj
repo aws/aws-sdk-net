@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+    <TargetFrameworks>$(SdkNetTargets)</TargetFrameworks>
     <AssemblyName>AWSSDK.Extensions.CrtIntegration</AssemblyName>
     <PackageId>AWSSDK.Extensions.CrtIntegration</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -20,7 +20,7 @@
     <Compile Remove="**/obj/**" />
   </ItemGroup>
 	
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+  <PropertyGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '8.0'))">
     <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>  	

@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFrameworks>netcoreapp3.1;net8.0</TargetFrameworks>
+	<TargetFrameworks>$(SdkTestNetTargets)</TargetFrameworks>
 	<AssemblyName>CloudFront.SignersTests</AssemblyName>
 	<PackageId>CloudFront.SignersTests</PackageId>
 	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
