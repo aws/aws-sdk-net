@@ -24,22 +24,24 @@
      than hardcoded TFM names, so they adapt automatically to target framework changes.
    -->
    <SdkNetFrameworkTargets>net472</SdkNetFrameworkTargets>
-   <SdkNetTargets>netstandard2.0;net8.0;net10.0;net11.0</SdkNetTargets>
+   <SdkNetTargets>netstandard2.0;netcoreapp3.1;net8.0</SdkNetTargets>
    <!--
      Runnable test targets for the xunit.v3-based integration tests. Excludes netstandard2.0 (tests
      cannot execute on it) and netcoreapp3.1 (xunit.v3 does not support netcoreapp3.1).
    -->
-   <SdkTestTargets>net472;net10.0;net11.0</SdkTestTargets>
+   <SdkTestTargets>net472;net8.0</SdkTestTargets>
+   <SdkTestNetTargets>net8.0</SdkTestNetTargets>
+
    <!--
      MSTest-based unit test targets. Unlike the xunit.v3 integration tests (SdkTestTargets), MSTest
      supports netcoreapp3.1, so the unit tests continue to cover it. SdkMSTestAllTestTargets is the full
      set (used by the per-service and .NET Framework unit test projects); SdkMSTestNetTestTargets is the
      non-.NET-Framework slice used by the NetStandard uber unit test project.
    -->
-   <SdkMSTestAllTestTargets>net472;net8.0;net10.0;net11.0</SdkMSTestAllTestTargets>
-   <SdkMSTestNetTestTargets>net8.0;net10.0;net11.0</SdkMSTestNetTestTargets>
+   <SdkMSTestAllTestTargets>net472;netcoreapp3.1;net8.0</SdkMSTestAllTestTargets>
+   <SdkMSTestNetTestTargets>netcoreapp3.1;net8.0</SdkMSTestNetTestTargets>
    <!-- Target for performance benchmark and compatibility runner executables. -->
-   <SdkPerformanceTargets>net10.0</SdkPerformanceTargets>
+   <SdkPerformanceTargets>net8.0</SdkPerformanceTargets>
  </PropertyGroup>
 
  <!-- Generate binding redirects for all .NET Framework targets. The identifier-based condition covers
