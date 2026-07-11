@@ -39,7 +39,7 @@
      non-.NET-Framework slice used by the NetStandard uber unit test project.
    -->
    <SdkMSTestAllTestTargets>net472;netcoreapp3.1;net8.0</SdkMSTestAllTestTargets>
-   <SdkMSTestNetTestTargets>netcoreapp3.1;net8.0</SdkMSTestNetTestTargets>
+   <SdkMSTestNetTestTargets>netstandard2.0;netcoreapp3.1;net8.0</SdkMSTestNetTestTargets>
    <!-- Target for performance benchmark and compatibility runner executables. -->
    <SdkPerformanceTargets>net8.0</SdkPerformanceTargets>
  </PropertyGroup>
