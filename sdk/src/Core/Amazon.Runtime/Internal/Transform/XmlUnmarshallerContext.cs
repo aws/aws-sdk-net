@@ -1,12 +1,11 @@
 ﻿using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
+#if NET8_0_OR_GREATER
+using System.Collections.Frozen;
+#endif
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -34,7 +33,7 @@ namespace Amazon.Runtime.Internal.Transform
     {
         #region Private members
 
-        private static HashSet<XmlNodeType> nodesToSkip = new HashSet<XmlNodeType>
+        private static readonly HashSet<XmlNodeType> nodesToSkipInternal = new HashSet<XmlNodeType>
         {
             XmlNodeType.None,
             XmlNodeType.XmlDeclaration,
@@ -44,10 +43,20 @@ namespace Amazon.Runtime.Internal.Transform
             XmlNodeType.Whitespace
         };
 
+#if NET8_0_OR_GREATER
+        private static readonly FrozenSet<XmlNodeType> nodesToSkip = nodesToSkipInternal.ToFrozenSet();
+#else
+        private static readonly HashSet<XmlNodeType> nodesToSkip = nodesToSkipInternal;
+#endif
+
         private StreamReader streamReader;
         private XmlTextReader _xmlTextReader;
-        private Stack<string> stack = new Stack<string>();
+        // Stack of full element paths (e.g. "/root/child") built incrementally on push,
+        // so the current path never needs to be recomputed by walking the stack.
+        private readonly Stack<string> stack = new Stack<string>();
         private string stackString = "";
+        private string lastPoppedPath;
+        private int lastPoppedDepth = -1;
         private Dictionary<string, string> attributeValues;
         private List<string> attributeNames;
         private IEnumerator<string> attributeEnumerator;
@@ -76,15 +85,17 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 if (_xmlTextReader == null)
                 {
-                    _xmlTextReader = new XmlTextReader(streamReader);
-                    _xmlTextReader.WhitespaceHandling = WhitespaceHandling.All;
-                    _xmlTextReader.DtdProcessing = DtdProcessing.Ignore;
+                    _xmlTextReader = new XmlTextReader(streamReader)
+                    {
+                        WhitespaceHandling = WhitespaceHandling.All,
+                        DtdProcessing = DtdProcessing.Ignore
+                    };
                 }
                 return _xmlTextReader;
             }
         }
 
-        #endregion
+#endregion
 
         #region Constructors
 
@@ -126,8 +137,7 @@ namespace Amazon.Runtime.Internal.Transform
             // If the unmarshaller context is being called internally without there being a http response then the response data would be null
             if (responseData != null)
             {
-                long contentLength;
-                bool parsedContentLengthHeader = long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength);
+                bool parsedContentLengthHeader = long.TryParse(responseData.GetHeaderValue("Content-Length"), out long contentLength);
 
                 if (parsedContentLengthHeader && contentLength == 0)
                 {
@@ -237,7 +247,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (attributeEnumerator != null && attributeEnumerator.MoveNext())
             {
                 this.nodeType = XmlNodeType.Attribute;
-                stackString = string.Format(CultureInfo.InvariantCulture, "{0}/@{1}", StackToPath(stack), attributeEnumerator.Current);
+                stackString = string.Concat(stack.Peek(), "/@", attributeEnumerator.Current);
             }
             else
             {
@@ -248,8 +258,7 @@ namespace Amazon.Runtime.Internal.Transform
                 if (currentlyProcessingEmptyElement)
                 {
                     nodeType = XmlNodeType.EndElement;
-                    stack.Pop();
-                    stackString = StackToPath(stack);
+                    PopElementPath();
                     XmlReader.Read();
                     currentlyProcessingEmptyElement = false;
                 }
@@ -257,8 +266,7 @@ namespace Amazon.Runtime.Internal.Transform
                 {
                     //This is a shorthand form of an empty element <element /> and we want to allow it
                     nodeType = XmlNodeType.Element;
-                    stack.Push(XmlReader.LocalName);
-                    stackString = StackToPath(stack);
+                    PushElementPath(XmlReader.LocalName);
                     currentlyProcessingEmptyElement = true;
                     nodeContent = String.Empty;
 
@@ -270,14 +278,12 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         case XmlNodeType.EndElement:
                             this.nodeType = XmlNodeType.EndElement;
-                            stack.Pop();
-                            stackString = StackToPath(stack);
+                            PopElementPath();
                             XmlReader.Read();
                             break;
                         case XmlNodeType.Element:
                             nodeType = XmlNodeType.Element;
-                            stack.Push(XmlReader.LocalName);
-                            stackString = StackToPath(stack);
+                            PushElementPath(XmlReader.LocalName);
                             this.ReadElement();
                             break;
                         default:
@@ -289,7 +295,7 @@ namespace Amazon.Runtime.Internal.Transform
                             // after advancing the underlying XmlReader past an unhandled node type.
                             nodeType = XmlNodeType.None;
                             nodeContent = string.Empty;
-                            stackString = StackToPath(stack);
+                            stackString = stack.Count > 0 ? stack.Peek() : "/";
                             break;
                     }
                 }
@@ -313,14 +319,35 @@ namespace Amazon.Runtime.Internal.Transform
 
         #region Private Methods
 
-        private static string StackToPath(Stack<string> stack)
+        private void PushElementPath(string name)
         {
-            string path = null;
-            foreach (string s in stack.ToArray())
+            string parentPath = stack.Count > 0 ? stack.Peek() : string.Empty;
+            string path;
+            // Reuse the previously popped path when re-entering an element with the same name at
+            // the same depth (common for repeated list elements, e.g. <member>), avoiding a new
+            // string allocation per sibling. The parent path is guaranteed unchanged because any
+            // intermediate pop would have overwritten lastPoppedPath/lastPoppedDepth.
+            string reusable = lastPoppedPath;
+            if (reusable != null &&
+                stack.Count == lastPoppedDepth &&
+                reusable.Length == parentPath.Length + name.Length + 1 &&
+                string.CompareOrdinal(reusable, parentPath.Length + 1, name, 0, name.Length) == 0)
             {
-                path = null == path ? s : string.Format(CultureInfo.InvariantCulture, "{0}/{1}", s, path);
+                path = reusable;
             }
-            return "/" + path;
+            else
+            {
+                path = string.Concat(parentPath, "/", name);
+            }
+            stack.Push(path);
+            stackString = path;
+        }
+
+        private void PopElementPath()
+        {
+            lastPoppedPath = stack.Pop();
+            lastPoppedDepth = stack.Count;
+            stackString = stack.Count > 0 ? stack.Peek() : "/";
         }
 
         // Move to the next element, cache the attributes collection
