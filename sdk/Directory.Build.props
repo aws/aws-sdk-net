@@ -31,6 +31,7 @@
    -->
    <SdkTestTargets>net472;net8.0</SdkTestTargets>
    <SdkTestNetTargets>net8.0</SdkTestNetTargets>
+   <SdkTestXunitv2NetTargets>netcoreapp3.1;net8.0</SdkTestXunitv2NetTargets>
 
    <!--
      MSTest-based unit test targets. Unlike the xunit.v3 integration tests (SdkTestTargets), MSTest

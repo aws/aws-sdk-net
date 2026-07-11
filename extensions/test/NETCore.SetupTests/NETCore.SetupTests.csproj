@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>$(SdkTestNetTargets)</TargetFrameworks>
+    <TargetFrameworks>$(SdkTestXunitv2NetTargets)</TargetFrameworks>
     <AssemblyName>NETCore.SetupTests</AssemblyName>
     <PackageId>NETCore.SetupTests</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>

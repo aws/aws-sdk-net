@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFrameworks>$(SdkTestNetTargets)</TargetFrameworks>
+	<TargetFrameworks>$(SdkTestXunitv2NetTargets)</TargetFrameworks>
 	<AssemblyName>CloudFront.SignersTests</AssemblyName>
 	<PackageId>CloudFront.SignersTests</PackageId>
 	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
