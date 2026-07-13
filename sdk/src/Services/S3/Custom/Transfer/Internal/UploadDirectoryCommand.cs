@@ -136,9 +136,6 @@ namespace Amazon.S3.Transfer.Internal
 
             uploadRequest.UploadProgressEvent += new EventHandler<UploadProgressArgs>(UploadProgressEventCallback);
 
-            // Raise event to allow subscribers to modify request
-            _request.RaiseUploadDirectoryFileRequestEvent(uploadRequest);
-
             return uploadRequest;
         }
 
