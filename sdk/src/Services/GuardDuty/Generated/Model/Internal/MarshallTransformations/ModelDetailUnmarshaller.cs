@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Observations Object
+    /// Response Unmarshaller for ModelDetail Object
     /// </summary>  
-    public class ObservationsUnmarshaller : IJsonUnmarshaller<Observations, JsonUnmarshallerContext>
+    public class ModelDetailUnmarshaller : IJsonUnmarshaller<ModelDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Observations Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ModelDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Observations unmarshalledObject = new Observations();
+            ModelDetail unmarshalledObject = new ModelDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("number", targetDepth, ref reader))
+                if (context.TestExpression("modelId", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance);
-                    unmarshalledObject.Number = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ObservationsUnmarshaller _instance = new ObservationsUnmarshaller();        
+        private static ModelDetailUnmarshaller _instance = new ModelDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ObservationsUnmarshaller Instance
+        public static ModelDetailUnmarshaller Instance
         {
             get
             {

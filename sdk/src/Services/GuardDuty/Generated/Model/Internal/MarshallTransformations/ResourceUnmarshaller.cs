@@ -62,6 +62,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("bedrockGuardrailDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = BedrockGuardrailDetailsUnmarshaller.Instance;
+                    unmarshalledObject.BedrockGuardrailDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("containerDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerUnmarshaller.Instance;
@@ -114,6 +120,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LambdaDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("modelDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ModelDetail, ModelDetailUnmarshaller>(ModelDetailUnmarshaller.Instance);
+                    unmarshalledObject.ModelDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rdsDbInstanceDetails", targetDepth, ref reader))

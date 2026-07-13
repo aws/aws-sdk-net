@@ -944,6 +944,30 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrail.Arn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrail.Version</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT)|(ENFORCED))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrailDetails.GuardrailArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrailDetails.GuardrailVersion</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CloudDetails.Provider</property>
     <min>1</min>
     <max>50</max>
@@ -1178,6 +1202,11 @@
     <property>Amazon.GuardDuty.Model.MemberDataSourceConfiguration.AccountId</property>
     <min>12</min>
     <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ModelDetail.ModelId</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.ResourceDetails.InstanceArn</property>

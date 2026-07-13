@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecoveryPointDetails Object
+    /// Response Unmarshaller for BedrockGuardrailDetails Object
     /// </summary>  
-    public class RecoveryPointDetailsUnmarshaller : IJsonUnmarshaller<RecoveryPointDetails, JsonUnmarshallerContext>
+    public class BedrockGuardrailDetailsUnmarshaller : IJsonUnmarshaller<BedrockGuardrailDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecoveryPointDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BedrockGuardrailDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RecoveryPointDetails unmarshalledObject = new RecoveryPointDetails();
+            BedrockGuardrailDetails unmarshalledObject = new BedrockGuardrailDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,40 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("backupVaultName", targetDepth, ref reader))
+                if (context.TestExpression("contentPolicyFilters", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<ContentPolicyFilter, ContentPolicyFilterUnmarshaller>(ContentPolicyFilterUnmarshaller.Instance);
+                    unmarshalledObject.ContentPolicyFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("continuousScanDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = ScanConfigurationContinuousScanDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ContinuousScanDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recoveryPointArn", targetDepth, ref reader))
+                if (context.TestExpression("guardrailAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryPointArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.GuardrailAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("guardrailArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("guardrails", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<BedrockGuardrail, BedrockGuardrailUnmarshaller>(BedrockGuardrailUnmarshaller.Instance);
+                    unmarshalledObject.Guardrails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("guardrailSource", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("guardrailVersion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +97,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecoveryPointDetailsUnmarshaller _instance = new RecoveryPointDetailsUnmarshaller();        
+        private static BedrockGuardrailDetailsUnmarshaller _instance = new BedrockGuardrailDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecoveryPointDetailsUnmarshaller Instance
+        public static BedrockGuardrailDetailsUnmarshaller Instance
         {
             get
             {

@@ -299,6 +299,184 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type ConfidenceLevel.
+    /// </summary>
+    public class ConfidenceLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ConfidenceLevel
+        /// </summary>
+        public static readonly ConfidenceLevel HIGH = new ConfidenceLevel("HIGH");
+        /// <summary>
+        /// Constant LOW for ConfidenceLevel
+        /// </summary>
+        public static readonly ConfidenceLevel LOW = new ConfidenceLevel("LOW");
+        /// <summary>
+        /// Constant MEDIUM for ConfidenceLevel
+        /// </summary>
+        public static readonly ConfidenceLevel MEDIUM = new ConfidenceLevel("MEDIUM");
+        /// <summary>
+        /// Constant NONE for ConfidenceLevel
+        /// </summary>
+        public static readonly ConfidenceLevel NONE = new ConfidenceLevel("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfidenceLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfidenceLevel FindValue(string value)
+        {
+            return FindValue<ConfidenceLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfidenceLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentPolicyFilterAction.
+    /// </summary>
+    public class ContentPolicyFilterAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKED for ContentPolicyFilterAction
+        /// </summary>
+        public static readonly ContentPolicyFilterAction BLOCKED = new ContentPolicyFilterAction("BLOCKED");
+        /// <summary>
+        /// Constant NONE for ContentPolicyFilterAction
+        /// </summary>
+        public static readonly ContentPolicyFilterAction NONE = new ContentPolicyFilterAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentPolicyFilterAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentPolicyFilterAction FindValue(string value)
+        {
+            return FindValue<ContentPolicyFilterAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentPolicyFilterAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentPolicyFilterType.
+    /// </summary>
+    public class ContentPolicyFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HATE for ContentPolicyFilterType
+        /// </summary>
+        public static readonly ContentPolicyFilterType HATE = new ContentPolicyFilterType("HATE");
+        /// <summary>
+        /// Constant INSULTS for ContentPolicyFilterType
+        /// </summary>
+        public static readonly ContentPolicyFilterType INSULTS = new ContentPolicyFilterType("INSULTS");
+        /// <summary>
+        /// Constant JAILBREAK for ContentPolicyFilterType
+        /// </summary>
+        public static readonly ContentPolicyFilterType JAILBREAK = new ContentPolicyFilterType("JAILBREAK");
+        /// <summary>
+        /// Constant MISCONDUCT for ContentPolicyFilterType
+        /// </summary>
+        public static readonly ContentPolicyFilterType MISCONDUCT = new ContentPolicyFilterType("MISCONDUCT");
+        /// <summary>
+        /// Constant PROMPT_ATTACK for ContentPolicyFilterType
+        /// </summary>
+        public static readonly ContentPolicyFilterType PROMPT_ATTACK = new ContentPolicyFilterType("PROMPT_ATTACK");
+        /// <summary>
+        /// Constant SEXUAL for ContentPolicyFilterType
+        /// </summary>
+        public static readonly ContentPolicyFilterType SEXUAL = new ContentPolicyFilterType("SEXUAL");
+        /// <summary>
+        /// Constant VIOLENCE for ContentPolicyFilterType
+        /// </summary>
+        public static readonly ContentPolicyFilterType VIOLENCE = new ContentPolicyFilterType("VIOLENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentPolicyFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentPolicyFilterType FindValue(string value)
+        {
+            return FindValue<ContentPolicyFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentPolicyFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CoverageFilterCriterionKey.
     /// </summary>
     public class CoverageFilterCriterionKey : ConstantClass
@@ -855,6 +1033,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly DetectorFeature AI_ANALYST = new DetectorFeature("AI_ANALYST");
         /// <summary>
+        /// Constant AI_PROTECTION for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature AI_PROTECTION = new DetectorFeature("AI_PROTECTION");
+        /// <summary>
         /// Constant EBS_MALWARE_PROTECTION for DetectorFeature
         /// </summary>
         public static readonly DetectorFeature EBS_MALWARE_PROTECTION = new DetectorFeature("EBS_MALWARE_PROTECTION");
@@ -928,6 +1110,10 @@ namespace Amazon.GuardDuty
         /// Constant AI_ANALYST for DetectorFeatureResult
         /// </summary>
         public static readonly DetectorFeatureResult AI_ANALYST = new DetectorFeatureResult("AI_ANALYST");
+        /// <summary>
+        /// Constant AI_PROTECTION for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult AI_PROTECTION = new DetectorFeatureResult("AI_PROTECTION");
         /// <summary>
         /// Constant CLOUD_TRAIL for DetectorFeatureResult
         /// </summary>
@@ -1633,6 +1819,10 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant AI_PROTECTION for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult AI_PROTECTION = new FreeTrialFeatureResult("AI_PROTECTION");
+        /// <summary>
         /// Constant CLOUD_TRAIL for FreeTrialFeatureResult
         /// </summary>
         public static readonly FreeTrialFeatureResult CLOUD_TRAIL = new FreeTrialFeatureResult("CLOUD_TRAIL");
@@ -1768,6 +1958,106 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupByType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailAction.
+    /// </summary>
+    public class GuardrailAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GUARDRAIL_INTERVENED for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction GUARDRAIL_INTERVENED = new GuardrailAction("GUARDRAIL_INTERVENED");
+        /// <summary>
+        /// Constant NONE for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction NONE = new GuardrailAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailAction FindValue(string value)
+        {
+            return FindValue<GuardrailAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailSource.
+    /// </summary>
+    public class GuardrailSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INPUT for GuardrailSource
+        /// </summary>
+        public static readonly GuardrailSource INPUT = new GuardrailSource("INPUT");
+        /// <summary>
+        /// Constant OUTPUT for GuardrailSource
+        /// </summary>
+        public static readonly GuardrailSource OUTPUT = new GuardrailSource("OUTPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailSource FindValue(string value)
+        {
+            return FindValue<GuardrailSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailSource(string value)
         {
             return FindValue(value);
         }
@@ -2813,6 +3103,10 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant AI_PROTECTION for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature AI_PROTECTION = new OrgFeature("AI_PROTECTION");
+        /// <summary>
         /// Constant EBS_MALWARE_PROTECTION for OrgFeature
         /// </summary>
         public static readonly OrgFeature EBS_MALWARE_PROTECTION = new OrgFeature("EBS_MALWARE_PROTECTION");
@@ -2991,6 +3285,14 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant AVERAGE for ProfileSubtype
+        /// </summary>
+        public static readonly ProfileSubtype AVERAGE = new ProfileSubtype("AVERAGE");
+        /// <summary>
+        /// Constant COUNT for ProfileSubtype
+        /// </summary>
+        public static readonly ProfileSubtype COUNT = new ProfileSubtype("COUNT");
+        /// <summary>
         /// Constant FREQUENT for ProfileSubtype
         /// </summary>
         public static readonly ProfileSubtype FREQUENT = new ProfileSubtype("FREQUENT");
@@ -3052,6 +3354,10 @@ namespace Amazon.GuardDuty
         /// Constant FREQUENCY for ProfileType
         /// </summary>
         public static readonly ProfileType FREQUENCY = new ProfileType("FREQUENCY");
+        /// <summary>
+        /// Constant VOLUME for ProfileType
+        /// </summary>
+        public static readonly ProfileType VOLUME = new ProfileType("VOLUME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4360,6 +4666,10 @@ namespace Amazon.GuardDuty
     public class UsageFeature : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AI_PROTECTION for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature AI_PROTECTION = new UsageFeature("AI_PROTECTION");
         /// <summary>
         /// Constant CLOUD_TRAIL for UsageFeature
         /// </summary>
