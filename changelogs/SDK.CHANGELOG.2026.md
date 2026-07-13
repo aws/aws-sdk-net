@@ -1,3 +1,17 @@
+### 4.0.287.0 (2026-07-13 18:15 UTC)
+* Elasticsearch (4.0.101.0)
+	* Adds support for the EngineMode and UseCase parameters on Amazon Elasticsearch Service domains, enabling GENERAL or OPTIMIZED engine modes and SEARCH, VECTOR, OBSERVABILITY, or MIXED usecases when creating and updating domain configurations.
+* GameLift (4.0.101.0)
+	* Amazon GameLift Servers now includes fleet expiration for managed fleets. A managed fleet expires one year after creation, transitioning to EXPIRED status, emitting a FLEET EXPIRED event, and scaling to zero instances. Expired fleets cannot host new game sessions or increase capacity.
+* GuardDuty (4.0.102.0)
+	* GuardDuty AI Protection is now publicly available. Findings include Bedrock guardrail details, model details, observation numbers, and continuous scan details. GuardrailArn and GuardrailVersion are deprecated in favor of the guardrails list.
+* Lambda (4.0.103.0)
+	* Add Java 8, 11 and 17 on AL2023 (java8.al2023, java11.al2023, java17.al2023) support to AWS Lambda.
+* RedshiftServerless (4.0.101.0)
+	* Add support for preserving datasharing, zero-ETL and S3 event integrations on snapshot restore to serverless namespace.
+* S3 (4.0.101.0)
+	* Added `TransferUtilityDownloadDirectoryRequest.DownloadDirectoryFileRequestEvent`, which is raised for each file before it is downloaded and allows subscribers to inspect and modify the individual `TransferUtilityDownloadRequest`. This mirrors the existing `TransferUtilityUploadDirectoryRequest.UploadDirectoryFileRequestEvent`.
+
 ### 4.0.286.0 (2026-07-10 18:17 UTC)
 * CloudWatch (4.0.102.0)
 	* CloudWatch now assigns a unique identifier to each anomaly detector. PutAnomalyDetector and DescribeAnomalyDetectors return this AnomalyDetectorId, which you can use to describe or delete a specific anomaly detector directly.
