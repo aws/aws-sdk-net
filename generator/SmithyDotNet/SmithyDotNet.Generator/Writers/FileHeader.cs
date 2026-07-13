@@ -125,6 +125,17 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the default-configuration file.
+    /// </summary>
+    public static IReadOnlyList<string> DefaultConfigurationUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Collections.ObjectModel",
+        "Amazon.Runtime",
+    ];
+
+    /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.
     /// </summary>

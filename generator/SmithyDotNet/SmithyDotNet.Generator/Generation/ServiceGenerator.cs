@@ -17,7 +17,7 @@ namespace SmithyDotNet.Generator.Generation;
 /// The operation-response / exception unmarshallers have no writers yet, so the generated tree does
 /// not compile standalone.
 /// </summary>
-public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion)
+public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes)
 {
     /// <summary>
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
@@ -69,6 +69,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         var configWriter = new ConfigWriter(context, modelFileName, serviceFileVersion);
         Emit(Path.Combine(generated, $"{clientName}Config.g.cs"), configWriter.Write(cancellationToken));
+
+        var defaultConfigurationWriter = new DefaultConfigurationWriter(context, modelFileName, defaultConfigurationModes);
+        Emit(Path.Combine(generated, $"{clientName}DefaultConfiguration.g.cs"), defaultConfigurationWriter.Write(cancellationToken));
 
         var metadataWriter = new MetadataWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));

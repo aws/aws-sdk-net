@@ -25,6 +25,9 @@ public class CloudTrailModelFixture
 
     public GenerationContext Context { get; }
 
+    public IReadOnlyList<ResolvedDefaultConfigurationMode> DefaultConfigurationModes { get; } =
+        DefaultConfigurationManifest.Load("TestData/sdk-default-configuration.json");
+
     public CloudTrailModelFixture()
     {
         Index = new ServiceIndex(Model);

@@ -73,6 +73,10 @@ public static partial class DocumentationFormatter
             documentation = firstParaContent + documentation[(closePos + "</para>".Length)..];
         }
 
+        // Adjacent paragraphs with no whitespace between them ("</p><p>") leave a triple newline
+        // after the first-para strip, which would render as two blank comment lines.
+        documentation = NewlineRunRegex().Replace(documentation, "\n\n");
+
         // Insert line breaks around 80 character line length.
         var sb = new StringBuilder();
         var currentLineLength = 0;
@@ -179,6 +183,9 @@ public static partial class DocumentationFormatter
     // Matches runs of whitespace (incl. the source doc's newlines and indentation).
     [GeneratedRegex(@"\s+")]
     private static partial Regex WhitespaceRegex();
+
+    [GeneratedRegex("\n{3,}")]
+    private static partial Regex NewlineRunRegex();
 
     // "<p [^>]*>" matches a <p> tag carrying extra attributes (e.g. <p class='title'>).
     [GeneratedRegex("<p [^>]*>")]

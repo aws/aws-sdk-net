@@ -20,7 +20,7 @@ public class ServiceGeneratorTests : IDisposable
         _outputDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
         _testsOutputDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
 
-        var generator = new ServiceGenerator(fixture.Context, ModelFileName, ServiceFileVersion);
+        var generator = new ServiceGenerator(fixture.Context, ModelFileName, ServiceFileVersion, fixture.DefaultConfigurationModes);
         _written = generator.Generate(_outputDir, _testsOutputDir, TestContext.Current.CancellationToken);
     }
 
@@ -43,6 +43,7 @@ public class ServiceGeneratorTests : IDisposable
         AssertFileExists("Generated", "IAmazonCloudTrailData.g.cs");
         AssertFileExists("Generated", "AmazonCloudTrailDataClient.g.cs");
         AssertFileExists("Generated", "AmazonCloudTrailDataConfig.g.cs");
+        AssertFileExists("Generated", "AmazonCloudTrailDataDefaultConfiguration.g.cs");
         AssertFileExists("Generated", "AmazonCloudTrailDataException.g.cs");
     }
 

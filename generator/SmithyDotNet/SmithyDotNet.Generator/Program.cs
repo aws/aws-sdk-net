@@ -8,6 +8,7 @@ namespace SmithyDotNet.Generator;
 public static class Program
 {
     private static readonly string ManifestRelativePath = Path.Combine("generator", "ServiceModels", "_sdk-versions.json");
+    private static readonly string DefaultConfigurationRelativePath = Path.Combine("sdk", "src", "Core", "sdk-default-configuration.json");
 
     private const string MetadataFileName = "metadata.json";
 
@@ -63,7 +64,7 @@ public static class Program
 
             var index = new ServiceIndex(model);
 
-            var manifestPath = args.Length >= 4 ? args[3] : FindVersionManifest(modelPath);
+            var manifestPath = args.Length >= 4 ? args[3] : FindRepoFile(modelPath, ManifestRelativePath);
             if (manifestPath is null)
             {
                 Console.Error.WriteLine($"Error: could not locate '{ManifestRelativePath}'. Pass its path as the fourth argument.");
@@ -73,9 +74,20 @@ public static class Program
             var manifest = SdkVersionManifest.Load(manifestPath);
             var context = new GenerationContext(index, manifest, metadata);
             var serviceFileVersion = manifest.GetServiceVersion(context.ServiceName);
+
+            // The default-configuration file lives in the same repo as the version manifest, so a
+            // caller who passed the manifest path explicitly doesn't need another argument.
+            var defaultConfigurationPath = FindRepoFile(manifestPath, DefaultConfigurationRelativePath);
+            if (defaultConfigurationPath is null)
+            {
+                Console.Error.WriteLine($"Error: could not locate '{DefaultConfigurationRelativePath}' relative to '{manifestPath}'.");
+                return 1;
+            }
+
+            var defaultConfigurationModes = DefaultConfigurationManifest.Load(defaultConfigurationPath);
             var modelFileName = Path.GetFileName(modelPath);
 
-            var generator = new ServiceGenerator(context, modelFileName, serviceFileVersion);
+            var generator = new ServiceGenerator(context, modelFileName, serviceFileVersion, defaultConfigurationModes);
             var written = generator.Generate(outputPath, testsOutputPath);
 
             Console.WriteLine($"Generated {written.Count} files for {context.ServiceName} under '{Path.GetFullPath(outputPath)}'.");
@@ -95,14 +107,14 @@ public static class Program
         }
     }
 
-    // Walks up from the model file's directory looking for the repo's _sdk-versions.json so the
+    // Walks up from startPath's directory looking for a repo file (e.g. _sdk-versions.json) so the
     // two-argument invocation works when run inside the repo. Returns null if not found.
-    private static string? FindVersionManifest(string modelPath)
+    private static string? FindRepoFile(string startPath, string relativePath)
     {
-        var directory = new DirectoryInfo(Path.GetDirectoryName(Path.GetFullPath(modelPath)) ?? ".");
+        var directory = new DirectoryInfo(Path.GetDirectoryName(Path.GetFullPath(startPath)) ?? ".");
         while (directory is not null)
         {
-            var candidate = Path.Combine(directory.FullName, ManifestRelativePath);
+            var candidate = Path.Combine(directory.FullName, relativePath);
             if (File.Exists(candidate))
             {
                 return candidate;
