@@ -112,8 +112,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var structureUnmarshaller = new JsonStructureUnmarshallerWriter(context, modelFileName);
         var exceptionUnmarshallerWriter = new JsonExceptionUnmarshallerWriter(context, modelFileName);
         var nuspecWriter = new NuspecWriter(context);
+
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
-        Emit(Path.Combine($"AWSSDK.{context.ServiceName}.nuspec"), nuspecWriter.Write(cancellationToken));
+        Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+
         // Per-operation walk, mirroring the existing generator: emit the request/response classes
         // and request marshaller, then the (un)marshaller for each structure the operation references
         // — input-side structures get a marshaller, output-side an unmarshaller. The seen-sets skip
@@ -123,14 +125,17 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var marshalledStructures = new HashSet<ShapeId>();
         var unmarshalledStructures = new HashSet<ShapeId>();
         var errorStructures = new HashSet<ShapeId>();
+
         foreach (var operation in context.Operations)
         {
             operationShapes.Add(operation.Shape.Input);
             operationShapes.Add(operation.Shape.Output);
+
             Emit(Path.Combine(model, $"{operation.Name}Request.g.cs"), operationWriter.WriteRequest(operation, cancellationToken));
             Emit(Path.Combine(model, $"{operation.Name}Response.g.cs"), operationWriter.WriteResponse(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
+
             foreach (var (shapeId, structure) in ReferencedStructures(operation.Input))
             {
                 if (marshalledStructures.Add(shapeId))

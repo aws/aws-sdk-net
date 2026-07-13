@@ -1,7 +1,6 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers;

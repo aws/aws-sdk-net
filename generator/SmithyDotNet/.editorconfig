@@ -1,0 +1,28 @@
+root = true
+
+# Scoped to the Smithy generator project (source + tests) only. `root = true` stops the
+# search walking up into the wider SDK repo, so none of this touches generated or hand-written
+# SDK code. These rules cover the *generator's own C# source* — not the code it emits (that
+# goes through the Roslyn formatter in CodeWriter.ToFormattedString and must match the SDK API).
+
+[*.cs]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# --- Conventions CLAUDE.md states but nothing currently enforces ---
+csharp_prefer_braces = true:warning                        # IDE0011 - braces on all if/return
+csharp_style_namespace_declarations = file_scoped:warning  # IDE0161 - file-scoped namespaces
+
+# --- Mechanical nits that recurred in review ---
+dotnet_diagnostic.IDE0005.severity = warning               # unused usings / CS8019
+dotnet_code_quality_unused_parameters = all:warning        # IDE0060 - unused parameters
+dotnet_style_allow_multiple_blank_lines_experimental = false:warning  # IDE2000 - collapse 2+ blank lines
+
+csharp_style_allow_blank_line_after_opening_brace_experimental = false:warning   # IDE2001
+dotnet_diagnostic.IDE2001.severity = warning
+
+csharp_style_allow_blank_line_before_closing_brace_experimental = false:warning  # IDE2002
+dotnet_diagnostic.IDE2002.severity = warning

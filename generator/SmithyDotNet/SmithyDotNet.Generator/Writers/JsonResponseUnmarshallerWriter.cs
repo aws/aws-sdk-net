@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Writers;
 

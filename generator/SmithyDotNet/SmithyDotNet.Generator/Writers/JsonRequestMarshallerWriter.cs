@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -186,7 +185,6 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     private void WriteBodyMember(CodeWriter writer, Member member)
     {
-        
         if (member.DotNetType == "string")
         {
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
@@ -220,7 +218,6 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     private void WriteListElement(CodeWriter writer, Member member)
     {
-        
         if (member.ElementType == "string")
         {
             writer.WriteLine($"context.Writer.WriteStringValue(publicRequest{member.PropertyName}ListValue);");

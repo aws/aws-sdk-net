@@ -1,7 +1,4 @@
 ﻿using SmithyDotNet.Generator.Writers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers;
@@ -20,7 +17,6 @@ public class JsonExceptionUnmarshallerWriterTests
         var errorShape = fixture.Context.Errors.Single(e => e.Key.Name == "ChannelInsufficientPermission");
         _exceptionUnmarshaller = writer.Write(errorShape.Value, errorShape.Key);
     }
-
 
     [Fact]
     public void ExceptionUnmarshallerClassSignatureIsCorrect()

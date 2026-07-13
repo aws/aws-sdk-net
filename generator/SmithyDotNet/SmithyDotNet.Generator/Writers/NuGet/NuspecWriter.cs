@@ -1,13 +1,10 @@
 ﻿using SmithyDotNet.Generator.Generation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SmithyDotNet.Generator.Writers.NuGet;
 
 public sealed class NuspecWriter(GenerationContext context)
 {
-    public string Write(CancellationToken cancellationToken = default)
+    public string Write()
     {
         var writer = new CodeWriter();
         writer.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
@@ -57,13 +54,17 @@ public sealed class NuspecWriter(GenerationContext context)
         writer.OpenXmlBlock("files", () =>
         {
             writer.WriteLine("<file src=\"..\\..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />");
+
             // TODO: incorporate namespace (From metadata) overloads or customization overloads.
             var codeAnalysisServiceFolder = context.ServiceName.Replace("Amazon.", "");
             writer.WriteLine($"<file src=\"..\\..\\..\\code-analysis\\ServiceAnalysis\\{codeAnalysisServiceFolder}\\bin\\Release\\*.dll\" target=\"analyzers\\dotnet\\cs\" exclude=\"**\\Microsoft.CodeAnalysis.*;**\\System.Collections.Immutable.*;**\\System.Reflection.Metadata.*;**\\System.Composition.*\" />");
             writer.WriteLine("<file src=\"..\\..\\..\\code-analysis\\NuGetInstallScripts\\*.ps1\" target=\"tools\\\" />");
             writer.WriteLine();
+
+            // TODO: Read TFMs from the project configuration instead of hard-coding them.
             WriteLibFiles(writer, "net472");
             writer.WriteLine();
+
             // The netstandard-family targets are emitted only when the service supports netstandard
             // (currently false only for MobileAnalytics). Defaults to true when no metadata is present.
             if (context.Metadata?.NetStandardSupport ?? true)

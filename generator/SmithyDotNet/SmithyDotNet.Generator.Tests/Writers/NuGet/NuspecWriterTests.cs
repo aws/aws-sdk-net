@@ -1,7 +1,4 @@
 ﻿using SmithyDotNet.Generator.Writers.NuGet;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.NuGet;
@@ -14,7 +11,7 @@ public class NuspecWriterTests
     public NuspecWriterTests(CloudTrailModelFixture fixture)
     {
         var writer = new NuspecWriter(fixture.Context);
-        _nuspecFile = writer.Write(TestContext.Current.CancellationToken);
+        _nuspecFile = writer.Write();
     }
 
     [Fact]
@@ -49,7 +46,7 @@ public class NuspecWriterTests
         AssertHelper("<file src=\".\\bin\\Release\\net8.0\\AWSSDK.CloudTrailData.xml\" target=\"lib\\net8.0\" />");
         AssertHelper("<file src=\".\\bin\\Release\\net8.0\\AWSSDK.CloudTrailData.pdb\" target=\"lib\\net8.0\" />");
     }
-    
+
     private void AssertHelper(string substring)
     {
         Assert.Contains(substring, _nuspecFile);

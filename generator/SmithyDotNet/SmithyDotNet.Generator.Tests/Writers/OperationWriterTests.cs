@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
 

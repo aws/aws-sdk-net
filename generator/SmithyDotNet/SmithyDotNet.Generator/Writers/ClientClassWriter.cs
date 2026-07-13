@@ -1,12 +1,11 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
 /// Emits the C# source for the concrete service client (e.g. <c>AmazonCloudTrailDataClient</c>),
 /// matching the public API surface of the existing AWS SDK for .NET. The client derives from
-/// <see cref="Amazon.Runtime.AmazonServiceClient"/> and implements the service interface
+/// <c>Amazon.Runtime.AmazonServiceClient</c> and implements the service interface
 /// (e.g. <c>IAmazonCloudTrailData</c>).
 /// <para />
 /// The client references sibling per-service types that are the responsibility of other writers —

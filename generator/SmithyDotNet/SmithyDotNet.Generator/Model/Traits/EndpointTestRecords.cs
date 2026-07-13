@@ -26,8 +26,9 @@ public record EndpointTestCase
     public string Documentation { get; init; } = "";
 
     /// <summary>Parameter values keyed by parameter name. Values are boolean, string, or string
-    /// array in every case seen so far; <see cref="EndpointProviderTestSuiteWriter"/> fails loud on
-    /// anything else.</summary>
+    /// array in every case seen so far;
+    /// <see cref="SmithyDotNet.Generator.Writers.Endpoints.EndpointProviderTestSuiteWriter"/> fails
+    /// loud on anything else.</summary>
     [JsonPropertyName("params")]
     public IReadOnlyDictionary<string, JsonElement> Params { get; init; } = new Dictionary<string, JsonElement>();
 

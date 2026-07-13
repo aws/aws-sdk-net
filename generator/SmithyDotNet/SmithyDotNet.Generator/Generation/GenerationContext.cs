@@ -164,22 +164,22 @@ public class GenerationContext
         // whitespace value in either would silently produce a malformed URL. Validate both once more
         // services are onboarded.
         EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
-        
+
         // AuthenticationServiceName follows the legacy generator's precedence: the sigv4 signing name
         // when the trait is present, otherwise the endpoint prefix.
         AuthenticationServiceName = index.Service.GetSigV4()?.SigningName ?? EndpointPrefix;
-        
+
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
         HasEndpointContextParams = DetectEndpointContextParams(index);
-        
+
         EndpointTests = index.Service.GetEndpointTests();
         HasEndpointTests = EndpointTests is not null;
         if (HasEndpointTests && !HasEndpointRuleSet)
         {
             throw new GeneratorException("Service carries smithy.rules#endpointTests but no smithy.rules#endpointRuleSet.");
         }
-        
+
         ServiceDocumentation = index.Service.GetDocumentation();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);

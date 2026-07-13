@@ -1,12 +1,7 @@
 ﻿using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
-using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
-using Xunit.Sdk;
 
 namespace SmithyDotNet.Generator.Tests.Writers;
 

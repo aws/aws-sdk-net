@@ -1,5 +1,4 @@
 using System.Text.Json;
-using SmithyDotNet.Generator;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.Endpoints;

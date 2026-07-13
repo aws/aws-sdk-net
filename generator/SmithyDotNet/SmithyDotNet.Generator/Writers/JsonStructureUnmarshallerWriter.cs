@@ -91,7 +91,10 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
                 writer.WriteLine("continue;");
             });
 
-            if (i < members.Count - 1) writer.WriteLine();
+            if (i < members.Count - 1)
+            {
+                writer.WriteLine();
+            }
         }
     }
 

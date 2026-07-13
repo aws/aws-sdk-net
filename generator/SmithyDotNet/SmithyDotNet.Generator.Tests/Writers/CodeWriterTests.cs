@@ -1,6 +1,5 @@
 using System.Text.Json;
 using Microsoft.CodeAnalysis.CSharp;
-using SmithyDotNet.Generator;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
 

@@ -8,7 +8,7 @@ namespace SmithyDotNet.Generator.Writers.Endpoints;
 /// Emits the endpoint provider unit tests (e.g. <c>CloudTrailDataEndpointProviderTests.g.cs</c>):
 /// one <c>[TestMethod]</c> per <c>smithy.rules#endpointTests</c> case, each constructing
 /// <c>{ServiceName}EndpointParameters</c>, calling <c>Amazon{ServiceName}EndpointProvider.ResolveEndpoint</c>,
-/// and asserting either the resolved URL or the thrown <see cref="Amazon.Runtime.AmazonClientException"/>
+/// and asserting either the resolved URL or the thrown <c>Amazon.Runtime.AmazonClientException</c>
 /// message. Matches the legacy generator's behavior of asserting only <c>endpoint.URL</c> — no pinned
 /// test file anywhere in the SDK asserts resolved endpoint properties or headers, so those aren't
 /// emitted here either.

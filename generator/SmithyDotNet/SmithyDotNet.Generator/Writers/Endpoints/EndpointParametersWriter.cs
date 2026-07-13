@@ -1,4 +1,3 @@
-using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model.Traits;
 

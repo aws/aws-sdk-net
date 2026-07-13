@@ -3,7 +3,6 @@ using System.Text.Json;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Formatting;
-using SmithyDotNet.Generator;
 
 namespace SmithyDotNet.Generator.Writers;
 

@@ -4,7 +4,7 @@ namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
 /// Emits the C# source for the service configuration class (e.g. <c>AmazonCloudTrailDataConfig</c>),
-/// which derives from <see cref="Amazon.Runtime.ClientConfig"/> and supplies the service's identity:
+/// which derives from <c>Amazon.Runtime.ClientConfig</c> and supplies the service's identity:
 /// its <c>ServiceId</c>, <c>ServiceVersion</c>, <c>AuthenticationServiceName</c>, and
 /// <c>RegionEndpointServiceName</c>, plus the user-agent string and (for services with an endpoint
 /// rule set) the endpoint resolver/provider wiring.

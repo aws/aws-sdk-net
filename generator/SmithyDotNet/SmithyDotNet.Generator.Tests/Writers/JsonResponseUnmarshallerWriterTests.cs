@@ -1,7 +1,4 @@
 ﻿using SmithyDotNet.Generator.Writers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers;

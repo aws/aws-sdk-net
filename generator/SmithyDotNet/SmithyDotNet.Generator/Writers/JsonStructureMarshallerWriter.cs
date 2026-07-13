@@ -26,13 +26,13 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         writer.WriteLine($"using {context.Namespace}.Model;");
         FileHeader.WriteUsings(writer, FileHeader.MarshallerUsings);
         FileHeader.WritePragma(writer, FileHeader.MarshallerWarnings);
-            
+
         writer.OpenNamespace($"{context.Namespace}.Model.Internal.MarshallTransformations", () =>
         {
             WriteMarshallerDocumentation(writer, className);
             writer.OpenBlock($"public partial class {className}Marshaller : IRequestMarshaller<{className}, JsonMarshallerContext>", () =>
             {
-                WriteMarshallMethod(structure, members, writer, className);
+                WriteMarshallMethod(members, writer, className);
                 writer.WriteLine("");
                 WriteSingletonMarshaller(writer, className);
             });
@@ -48,7 +48,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         writer.WriteLine($"public readonly static {className}Marshaller Instance = new {className}Marshaller();");
     }
 
-    private void WriteMarshallMethod(StructureShape structure, List<Member> members, CodeWriter writer, string className)
+    private void WriteMarshallMethod(List<Member> members, CodeWriter writer, string className)
     {
         WriteMarshallMethodDocumentation(writer);
         writer.OpenBlock($"public void Marshall({className} requestObject, JsonMarshallerContext context)", () =>
@@ -62,7 +62,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
     // The marshalName can be overridden via https://smithy.io/2.0/spec/protocol-traits.html#jsonname-trait
     private void WriteMemberMarshallers(CodeWriter writer, List<Member> members)
     {
-        for (int i = 0; i< members.Count; i++)
+        for (int i = 0; i < members.Count; i++)
         {
             if (members[i].DotNetType == "string")
             {
@@ -96,6 +96,6 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the structure from the request object to the service");
         writer.WriteLine("/// </summary>");
-    }        
+    }
 }
 
