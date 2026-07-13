@@ -813,7 +813,7 @@ namespace Amazon.Runtime.Internal.Transform
                     if (context.TestExpression("ResponseMetadata/RequestId"))
                         metadata.RequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
                     else
-                        metadata.Metadata.Add(context.CurrentPath.Substring(context.CurrentPath.LastIndexOf('/') + 1), StringUnmarshaller.GetInstance().Unmarshall(context));
+                        metadata.Metadata.Add(context.CurrentElementName, StringUnmarshaller.GetInstance().Unmarshall(context));
                 }
             }
 
