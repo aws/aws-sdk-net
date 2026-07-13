@@ -2033,9 +2033,17 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Java11 = new Runtime("java11");
         /// <summary>
+        /// Constant Java11Al2023 for Runtime
+        /// </summary>
+        public static readonly Runtime Java11Al2023 = new Runtime("java11.al2023");
+        /// <summary>
         /// Constant Java17 for Runtime
         /// </summary>
         public static readonly Runtime Java17 = new Runtime("java17");
+        /// <summary>
+        /// Constant Java17Al2023 for Runtime
+        /// </summary>
+        public static readonly Runtime Java17Al2023 = new Runtime("java17.al2023");
         /// <summary>
         /// Constant Java21 for Runtime
         /// </summary>
@@ -2052,6 +2060,10 @@ namespace Amazon.Lambda
         /// Constant Java8Al2 for Runtime
         /// </summary>
         public static readonly Runtime Java8Al2 = new Runtime("java8.al2");
+        /// <summary>
+        /// Constant Java8Al2023 for Runtime
+        /// </summary>
+        public static readonly Runtime Java8Al2023 = new Runtime("java8.al2023");
         /// <summary>
         /// Constant Nodejs for Runtime
         /// </summary>

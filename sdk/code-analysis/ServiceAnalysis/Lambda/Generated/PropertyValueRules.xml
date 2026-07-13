@@ -46,7 +46,7 @@
     <property>Amazon.Lambda.Model.AddPermissionRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.Principal</property>
@@ -186,7 +186,7 @@
     <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.KMSKeyArn</property>
@@ -338,7 +338,7 @@
     <property>Amazon.Lambda.Model.CreateFunctionResponse.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Handler</property>
@@ -519,7 +519,7 @@
     <property>Amazon.Lambda.Model.DeleteFunctionRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionRequest.Qualifier</property>
@@ -531,7 +531,7 @@
     <property>Amazon.Lambda.Model.DeleteFunctionCodeSigningConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionConcurrencyRequest.FunctionName</property>
@@ -543,7 +543,7 @@
     <property>Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigRequest.Qualifier</property>
@@ -764,7 +764,7 @@
     <property>Amazon.Lambda.Model.GetFunctionRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionRequest.Qualifier</property>
@@ -776,7 +776,7 @@
     <property>Amazon.Lambda.Model.GetFunctionCodeSigningConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionCodeSigningConfigResponse.CodeSigningConfigArn</property>
@@ -804,7 +804,7 @@
     <property>Amazon.Lambda.Model.GetFunctionConfigurationRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationRequest.Qualifier</property>
@@ -827,7 +827,7 @@
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Handler</property>
@@ -891,7 +891,7 @@
     <property>Amazon.Lambda.Model.GetFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionEventInvokeConfigRequest.Qualifier</property>
@@ -1054,7 +1054,7 @@
     <property>Amazon.Lambda.Model.GetPolicyRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetPolicyRequest.Qualifier</property>
@@ -1096,7 +1096,7 @@
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigRequest.Qualifier</property>
@@ -1126,7 +1126,7 @@
     <property>Amazon.Lambda.Model.InvokeRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeRequest.Qualifier</property>
@@ -1156,7 +1156,7 @@
     <property>Amazon.Lambda.Model.InvokeWithResponseStreamRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeWithResponseStreamRequest.Qualifier</property>
@@ -1213,7 +1213,7 @@
     <property>Amazon.Lambda.Model.ListDurableExecutionsByFunctionRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListDurableExecutionsByFunctionRequest.MaxItems</property>
@@ -1236,7 +1236,7 @@
     <property>Amazon.Lambda.Model.ListEventSourceMappingsRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListEventSourceMappingsRequest.MaxItems</property>
@@ -1247,7 +1247,7 @@
     <property>Amazon.Lambda.Model.ListFunctionEventInvokeConfigsRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListFunctionEventInvokeConfigsRequest.MaxItems</property>
@@ -1341,7 +1341,7 @@
     <property>Amazon.Lambda.Model.ListVersionsByFunctionRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListVersionsByFunctionRequest.MaxItems</property>
@@ -1420,7 +1420,7 @@
     <property>Amazon.Lambda.Model.PublishVersionResponse.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Handler</property>
@@ -1490,7 +1490,7 @@
     <property>Amazon.Lambda.Model.PutFunctionCodeSigningConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionCodeSigningConfigResponse.CodeSigningConfigArn</property>
@@ -1522,7 +1522,7 @@
     <property>Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest.MaximumEventAgeInSeconds</property>
@@ -1612,7 +1612,7 @@
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.Qualifier</property>
@@ -1654,7 +1654,7 @@
     <property>Amazon.Lambda.Model.RemovePermissionRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemovePermissionRequest.Qualifier</property>
@@ -1781,7 +1781,7 @@
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.KMSKeyArn</property>
@@ -1923,7 +1923,7 @@
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Handler</property>
@@ -2037,7 +2037,7 @@
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.Handler</property>
@@ -2101,7 +2101,7 @@
     <property>Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest.MaximumEventAgeInSeconds</property>
@@ -2259,7 +2259,7 @@
     <property>Amazon.Lambda.Model.ChainedInvokeOptions.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ChainedInvokeOptions.TenantId</property>
@@ -2283,7 +2283,7 @@
     <property>Amazon.Lambda.Model.ChainedInvokeStartedDetails.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ChainedInvokeStartedDetails.TenantId</property>
@@ -2545,7 +2545,7 @@
     <property>Amazon.Lambda.Model.InvokeAsyncRequest.FunctionName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:(eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:|(((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?))(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.KafkaSchemaRegistryAccessConfig.URI</property>
