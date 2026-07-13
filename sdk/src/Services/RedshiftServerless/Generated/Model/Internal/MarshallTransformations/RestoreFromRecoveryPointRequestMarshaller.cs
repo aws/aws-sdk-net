@@ -75,6 +75,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMaintainIntegration())
+            {
+                context.Writer.WritePropertyName("maintainIntegration");
+                context.Writer.WriteBooleanValue(publicRequest.MaintainIntegration.Value);
+            }
+
             if(publicRequest.IsSetNamespaceName())
             {
                 context.Writer.WritePropertyName("namespaceName");

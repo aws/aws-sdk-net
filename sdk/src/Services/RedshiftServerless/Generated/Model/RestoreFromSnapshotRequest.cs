@@ -36,6 +36,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class RestoreFromSnapshotRequest : AmazonRedshiftServerlessRequest
     {
         private string _adminPasswordSecretKmsKeyId;
+        private bool? _maintainIntegration;
         private bool? _manageAdminPassword;
         private string _namespaceName;
         private string _ownerAccount;
@@ -60,6 +61,30 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetAdminPasswordSecretKmsKeyId()
         {
             return this._adminPasswordSecretKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintainIntegration. 
+        /// <para>
+        /// If <c>true</c>, maintain existing data sharing, zero-ETL and S3 event integrations
+        /// when restoring. Otherwise, integrations will not be maintained after the restore operation.
+        /// Integrations are only maintained when restored to the same serverless namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: true
+        /// </para>
+        /// </summary>
+        public bool? MaintainIntegration
+        {
+            get { return this._maintainIntegration; }
+            set { this._maintainIntegration = value; }
+        }
+
+        // Check to see if MaintainIntegration property is set
+        internal bool IsSetMaintainIntegration()
+        {
+            return this._maintainIntegration.HasValue; 
         }
 
         /// <summary>
