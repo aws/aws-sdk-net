@@ -64,7 +64,7 @@ namespace Amazon.GameLift.Model
         /// use either the alias ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AliasId
         {
             get { return this._aliasId; }

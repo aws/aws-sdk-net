@@ -129,6 +129,7 @@ namespace Amazon.GameLift.Model
         /// to retrieve all instances in the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceId
         {
             get { return this._instanceId; }

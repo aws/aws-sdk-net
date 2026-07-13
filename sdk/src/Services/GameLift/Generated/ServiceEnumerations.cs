@@ -583,6 +583,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly ContainerFleetLocationStatus DELETING = new ContainerFleetLocationStatus("DELETING");
         /// <summary>
+        /// Constant EXPIRED for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus EXPIRED = new ContainerFleetLocationStatus("EXPIRED");
+        /// <summary>
         /// Constant PENDING for ContainerFleetLocationStatus
         /// </summary>
         public static readonly ContainerFleetLocationStatus PENDING = new ContainerFleetLocationStatus("PENDING");
@@ -698,6 +702,10 @@ namespace Amazon.GameLift
         /// Constant DELETING for ContainerFleetStatus
         /// </summary>
         public static readonly ContainerFleetStatus DELETING = new ContainerFleetStatus("DELETING");
+        /// <summary>
+        /// Constant EXPIRED for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus EXPIRED = new ContainerFleetStatus("EXPIRED");
         /// <summary>
         /// Constant PENDING for ContainerFleetStatus
         /// </summary>
@@ -3225,6 +3233,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode FLEET_DELETED = new EventCode("FLEET_DELETED");
         /// <summary>
+        /// Constant FLEET_EXPIRED for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_EXPIRED = new EventCode("FLEET_EXPIRED");
+        /// <summary>
         /// Constant FLEET_INITIALIZATION_FAILED for EventCode
         /// </summary>
         public static readonly EventCode FLEET_INITIALIZATION_FAILED = new EventCode("FLEET_INITIALIZATION_FAILED");
@@ -3566,6 +3578,10 @@ namespace Amazon.GameLift
         /// Constant ERROR for FleetStatus
         /// </summary>
         public static readonly FleetStatus ERROR = new FleetStatus("ERROR");
+        /// <summary>
+        /// Constant EXPIRED for FleetStatus
+        /// </summary>
+        public static readonly FleetStatus EXPIRED = new FleetStatus("EXPIRED");
         /// <summary>
         /// Constant NEW for FleetStatus
         /// </summary>

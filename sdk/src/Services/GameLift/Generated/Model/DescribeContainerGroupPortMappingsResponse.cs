@@ -176,6 +176,7 @@ namespace Amazon.GameLift.Model
         /// is the instance specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceId
         {
             get { return this._instanceId; }

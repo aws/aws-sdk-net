@@ -69,7 +69,7 @@ namespace Amazon.GameLift.Model
         /// value. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string BuildId
         {
             get { return this._buildId; }

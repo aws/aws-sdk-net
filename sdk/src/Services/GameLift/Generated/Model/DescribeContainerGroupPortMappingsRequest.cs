@@ -215,6 +215,7 @@ namespace Amazon.GameLift.Model
         /// compute. If the instance ID doesn't match, the request fails with an <c>InvalidRequestException</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceId
         {
             get { return this._instanceId; }

@@ -297,6 +297,7 @@ namespace Amazon.GameLift.Model
         ///  The <c>InstanceID</c> of the EC2 instance that is hosting the compute. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceId
         {
             get { return this._instanceId; }

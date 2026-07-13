@@ -104,6 +104,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.BuildId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -132,6 +134,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.ScriptId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -186,6 +190,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -384,10 +390,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteAliasRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteBuildRequest.BuildId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -477,6 +487,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteScriptRequest.ScriptId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -525,10 +537,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeAliasRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeBuildRequest.BuildId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -567,7 +583,7 @@
     <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsRequest.ContainerName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsRequest.FleetId</property>
@@ -577,6 +593,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsRequest.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -605,6 +623,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeContainerGroupPortMappingsResponse.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -819,6 +839,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -880,6 +902,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionsRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -927,6 +951,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeInstancesRequest.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1006,6 +1032,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribePlayerSessionsRequest.PlayerSessionId</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>^psess-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1052,6 +1080,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeScriptRequest.ScriptId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1156,6 +1186,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetInstanceAccessRequest.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1308,6 +1340,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsRequest.BuildId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1321,6 +1355,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsRequest.ScriptId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1481,10 +1517,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.RequestUploadCredentialsRequest.BuildId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ResolveAliasRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1507,6 +1547,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.SearchGameSessionsRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1682,6 +1724,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateAliasRequest.AliasId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^alias-\S+|^arn:.*:alias\/alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1697,6 +1741,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateBuildRequest.BuildId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^build-\S+|^arn:.*:build\/build-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1976,6 +2022,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateScriptRequest.ScriptId</property>
+    <min>1</min>
+    <max>512</max>
     <pattern>^script-\S+|^arn:.*:script\/script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2075,6 +2123,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Compute.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2886,6 +2936,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Instance.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2908,6 +2960,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.InstanceAccess.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3006,6 +3060,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchedPlayerSession.PlayerSessionId</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>^psess-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3100,6 +3156,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlacedPlayerSession.PlayerSessionId</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>^psess-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3186,6 +3244,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerSession.PlayerSessionId</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>^psess-\S+</pattern>
   </property-value-rule>
   <property-value-rule>

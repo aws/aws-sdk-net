@@ -127,7 +127,7 @@ namespace Amazon.GameLift.Model
         /// in any status.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string InstanceId
         {
             get { return this._instanceId; }

@@ -214,6 +214,7 @@ namespace Amazon.GameLift.Model
         /// can't be changed after the fleet is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string BuildId
         {
             get { return this._buildId; }
@@ -746,6 +747,7 @@ namespace Amazon.GameLift.Model
         /// can't be changed after the fleet is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string ScriptId
         {
             get { return this._scriptId; }

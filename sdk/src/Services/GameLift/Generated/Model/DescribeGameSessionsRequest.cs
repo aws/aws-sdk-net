@@ -113,6 +113,7 @@ namespace Amazon.GameLift.Model
         /// for. You can use either the alias ID or ARN value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string AliasId
         {
             get { return this._aliasId; }
