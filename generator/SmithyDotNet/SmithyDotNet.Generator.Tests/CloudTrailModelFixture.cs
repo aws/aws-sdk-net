@@ -28,8 +28,34 @@ public class CloudTrailModelFixture
     public CloudTrailModelFixture()
     {
         Index = new ServiceIndex(Model);
-        Context = new GenerationContext(Index);
+        Context = new GenerationContext(Index, Manifest, Metadata);
     }
+
+    // Mirrors generator/ServiceModels/cloudtrail-data/metadata.json so the context carries the same
+    // metadata the generator would load at runtime.
+    private static readonly ServiceMetadata Metadata = new()
+    {
+        Active = true,
+        Synopsis = "Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.",
+        GenerateClientConstructors = true,
+    };
+
+    // Mirrors the CloudTrailData entry in generator/ServiceModels/_sdk-versions.json so the context's
+    // manifest carries the same version data the generator would resolve at runtime.
+    private static readonly SdkVersionManifest Manifest = new()
+    {
+        CoreVersion = "4.0.100.3",
+        ServiceVersions = new Dictionary<string, ServiceVersion>
+        {
+            ["CloudTrailData"] = new()
+            {
+                Version = "4.0.100.3",
+                AssemblyVersionOverride = "4.0",
+                Dependencies = new Dictionary<string, string> { ["Core"] = "4.0.100.3" },
+                InPreview = false,
+            },
+        },
+    };
 
     public Shape DeserializeShape(string shapeId)
     {

@@ -124,22 +124,41 @@ public class GenerationContext
     /// <summary>Reachable structures that carry the <c>@error</c> trait, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
     public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
 
+    /// <summary>
+    /// The service's <c>metadata.json</c>, or <c>null</c> when no metadata file was supplied.
+    /// Carries package/naming values (synopsis, base-name, tags, ...) and other metadata that the Smithy model can't
+    /// express.
+    /// </summary>
+    public ServiceMetadata? Metadata { get; }
+
     private readonly ServiceIndex _index;
+
+    /// <summary>
+    /// The manifest for the service, read from _sdk-versions.json
+    /// </summary>
+    public SdkVersionManifest Manifest { get; }
+
+    /// <summary>
+    /// The name of the Assembly for the service, without the dll suffix i.e. AWSSDK.CloudTrailData.
+    /// </summary>
+    public string AssemblyName { get; }
 
     // TODO: Accept SmithyModel for shapes not reachable from operations (e.g. shared error shapes).
     // TODO: Add enum values to AWSProtocol as protocols are implemented.
     // TODO: Add customization layer hook in constructor (renames, shape modifiers).
-    public GenerationContext(ServiceIndex index)
+    public GenerationContext(ServiceIndex index, SdkVersionManifest manifest, ServiceMetadata? metadata = null)
     {
         _index = index;
-
+        Metadata = metadata;
+        Manifest = manifest;
         var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException("Service shape is missing the aws.api#service trait.");
         SdkId = serviceTrait.SdkId;
+        //TODO: ServiceName should mirror ClassName in the generator, which takes into account metadata.json, customizations, and overrides
         ServiceName = SdkNaming.NormalizeSdkId(SdkId);
         Namespace = $"Amazon.{ServiceName}";
         ClientName = $"Amazon{ServiceName}";
         ApiVersion = index.Service.ApiVersion;
-        
+        AssemblyName = $"AWSSDK.{ServiceName}";
         // TODO: EndpointPrefix and ApiVersion together form the generated <seealso> doc URL
         // ("{EndpointPrefix}-{ApiVersion}"). EndpointPrefix is null-guarded below, but an empty or
         // whitespace value in either would silently produce a malformed URL. Validate both once more

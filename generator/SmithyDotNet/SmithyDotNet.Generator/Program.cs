@@ -9,6 +9,8 @@ public static class Program
 {
     private static readonly string ManifestRelativePath = Path.Combine("generator", "ServiceModels", "_sdk-versions.json");
 
+    private const string MetadataFileName = "metadata.json";
+
     private static readonly JsonSerializerOptions Options = new()
     {
         Converters = { new ShapeConverter() },
@@ -19,7 +21,7 @@ public static class Program
         if (args.Length < 2)
         {
             Console.Error.WriteLine("Error: expected a Smithy model path and an output directory.");
-            Console.Error.WriteLine("Usage: dotnet run --project SmithyDotNet.Generator/SmithyDotNet.Generator.csproj -- <path-to-model.json> <output-dir> [tests-output-dir] [path-to-_sdk-versions.json]");
+            Console.Error.WriteLine("Usage: dotnet run --project SmithyDotNet.Generator/SmithyDotNet.Generator.csproj -- <path-to-model.json> <output-dir> [tests-output-dir] [path-to-_sdk-versions.json] [path-to-metadata.json]");
             return 1;
         }
 
@@ -54,8 +56,12 @@ public static class Program
         {
             ModelValidator.Validate(model);
 
+            // metadata.json is an optional sidecar next to the model; the fifth argument overrides the
+            // default lookup. When neither is present the context runs without metadata.
+            var metadataPath = args.Length >= 5 ? args[4] : FindMetadata(modelPath);
+            var metadata = metadataPath is not null ? ServiceMetadata.Load(metadataPath) : null;
+
             var index = new ServiceIndex(model);
-            var context = new GenerationContext(index);
 
             var manifestPath = args.Length >= 4 ? args[3] : FindVersionManifest(modelPath);
             if (manifestPath is null)
@@ -64,7 +70,9 @@ public static class Program
                 return 1;
             }
 
-            var serviceFileVersion = SdkVersionManifest.Lookup(manifestPath, context.ServiceName);
+            var manifest = SdkVersionManifest.Load(manifestPath);
+            var context = new GenerationContext(index, manifest, metadata);
+            var serviceFileVersion = manifest.GetServiceVersion(context.ServiceName);
             var modelFileName = Path.GetFileName(modelPath);
 
             var generator = new ServiceGenerator(context, modelFileName, serviceFileVersion);
@@ -104,5 +112,19 @@ public static class Program
         }
 
         return null;
+    }
+
+    // metadata.json sits in the same directory as the model file. Returns null if absent so the
+    // generator can still run without it.
+    private static string? FindMetadata(string modelPath)
+    {
+        var directory = Path.GetDirectoryName(Path.GetFullPath(modelPath));
+        if (directory is null)
+        {
+            return null;
+        }
+
+        var candidate = Path.Combine(directory, MetadataFileName);
+        return File.Exists(candidate) ? candidate : null;
     }
 }

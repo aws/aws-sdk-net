@@ -25,7 +25,7 @@ public class AuthResolverWriterTests
         var bytes = File.ReadAllBytes(Path.Combine("TestData", testDataFileName));
         var model = JsonSerializer.Deserialize<SmithyModel>(bytes, CloudTrailModelFixture.Options)
             ?? throw new InvalidOperationException($"Failed to deserialize '{testDataFileName}'.");
-        return new GenerationContext(new ServiceIndex(model));
+        return new GenerationContext(new ServiceIndex(model), new SdkVersionManifest());
     }
 
     // --- KMS: a plain service-default service (no per-operation auth overrides) ---

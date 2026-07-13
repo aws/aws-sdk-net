@@ -17,12 +17,15 @@ namespace SmithyDotNet.Generator.Writers;
 public class CodeWriter
 {
     private const string IndentUnit = "    ";
+    private const string XmlIndentUnit = "  ";
     private readonly StringBuilder _buffer = new();
     private int _indent;
+    private string _indentUnit = IndentUnit;
 
     /// <summary>
     /// Appends <paramref name="line"/> at the current indent followed by a newline.
-    /// An empty argument emits a blank line (no indent).
+    /// An empty argument emits a blank line (no indent). The indent unit is four
+    /// spaces for C# and two spaces inside an <see cref="OpenXmlBlock"/>.
     /// </summary>
     public CodeWriter WriteLine(string line = "")
     {
@@ -34,7 +37,7 @@ public class CodeWriter
 
         for (var i = 0; i < _indent; i++)
         {
-            _buffer.Append(IndentUnit);
+            _buffer.Append(_indentUnit);
         }
 
         _buffer.Append(line);
@@ -56,6 +59,31 @@ public class CodeWriter
         finally
         {
             _indent--;
+        }
+
+        return this;
+    }
+
+    /// <summary>
+    /// Emits <c>&lt;{tag}&gt;</c>, runs <paramref name="body"/> with the indent increased one
+    /// level (two spaces per level), then emits the matching <c>&lt;/{tag}&gt;</c>. For container
+    /// elements only; self-closing/leaf elements are written directly with <see cref="WriteLine"/>.
+    /// </summary>
+    public CodeWriter OpenXmlBlock(string tag, Action body)
+    {
+        var previousIndentUnit = _indentUnit;
+        _indentUnit = XmlIndentUnit;
+        WriteLine($"<{tag}>");
+        _indent++;
+        try
+        {
+            body();
+        }
+        finally
+        {
+            _indent--;
+            WriteLine($"</{tag}>");
+            _indentUnit = previousIndentUnit;
         }
 
         return this;
@@ -133,6 +161,13 @@ public class CodeWriter
 
         return $"new List<string> {{ {string.Join(", ", elements)} }}";
     }
+
+    /// <summary>
+    /// Returns the raw buffered content verbatim, without running it through the Roslyn formatter.
+    /// Use for non-C# output (e.g. XML nuspec files) where the writer manages its own indentation
+    /// and the C# formatter would corrupt the markup.
+    /// </summary>
+    public string ToRawString() => _buffer.ToString();
 
     /// <summary>
     /// Returns the buffered source after running it through the Roslyn formatter.
