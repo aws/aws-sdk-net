@@ -47,10 +47,12 @@ namespace Amazon.Elasticsearch.Model
         private ElasticsearchClusterConfigStatus _elasticsearchClusterConfig;
         private ElasticsearchVersionStatus _elasticsearchVersion;
         private EncryptionAtRestOptionsStatus _encryptionAtRestOptions;
+        private EngineModeStatus _engineMode;
         private LogPublishingOptionsStatus _logPublishingOptions;
         private List<ModifyingProperties> _modifyingProperties = AWSConfigs.InitializeCollections ? new List<ModifyingProperties>() : null;
         private NodeToNodeEncryptionOptionsStatus _nodeToNodeEncryptionOptions;
         private SnapshotOptionsStatus _snapshotOptions;
+        private UseCaseStatus _useCase;
         private VPCDerivedInfoStatus _vpcOptions;
 
         /// <summary>
@@ -290,6 +292,24 @@ namespace Amazon.Elasticsearch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode configured for the domain.
+        /// </para>
+        /// </summary>
+        public EngineModeStatus EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
         /// Log publishing options for the given domain.
@@ -364,6 +384,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The use case configured for the domain.
+        /// </para>
+        /// </summary>
+        public UseCaseStatus UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
         /// <summary>

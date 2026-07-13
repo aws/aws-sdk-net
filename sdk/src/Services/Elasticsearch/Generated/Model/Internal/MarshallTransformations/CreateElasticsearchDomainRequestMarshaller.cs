@@ -204,6 +204,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetEngineMode())
+            {
+                context.Writer.WritePropertyName("EngineMode");
+                context.Writer.WriteStringValue(publicRequest.EngineMode);
+            }
+
             if(publicRequest.IsSetLogPublishingOptions())
             {
                 context.Writer.WritePropertyName("LogPublishingOptions");
@@ -259,6 +265,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUseCase())
+            {
+                context.Writer.WritePropertyName("UseCase");
+                context.Writer.WriteStringValue(publicRequest.UseCase);
             }
 
             if(publicRequest.IsSetVPCOptions())
