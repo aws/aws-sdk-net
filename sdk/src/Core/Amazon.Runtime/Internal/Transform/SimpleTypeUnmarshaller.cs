@@ -25,12 +25,6 @@ namespace Amazon.Runtime.Internal.Transform
 {
     static class SimpleTypeUnmarshaller<T>
     {
-        public static T Unmarshall(XmlUnmarshallerContext context)
-        {
-            string text = context.ReadText();
-            return (T)Convert.ChangeType(text, typeof(T), CultureInfo.InvariantCulture);
-        }
-
         public static T Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
@@ -66,7 +60,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public int Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<int>.Unmarshall(context);
+            return int.Parse(context.ReadText(), CultureInfo.InvariantCulture);
         }
         public int Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -148,7 +142,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public long Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<long>.Unmarshall(context);
+            return long.Parse(context.ReadText(), CultureInfo.InvariantCulture);
         }
         public long Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -219,7 +213,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public float Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<float>.Unmarshall(context);
+            return float.Parse(context.ReadText(), CultureInfo.InvariantCulture);
         }
         public float Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -295,7 +289,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public double Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<double>.Unmarshall(context);
+            return double.Parse(context.ReadText(), CultureInfo.InvariantCulture);
         }
         public double Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -369,7 +363,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public decimal Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<decimal>.Unmarshall(context);
+            return decimal.Parse(context.ReadText(), CultureInfo.InvariantCulture);
         }
         public decimal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -443,7 +437,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public bool Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<bool>.Unmarshall(context);
+            return bool.Parse(context.ReadText());
         }
         public bool Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -517,7 +511,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public string Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<string>.Unmarshall(context);
+            return context.ReadText();
         }
         public string Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -550,7 +544,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public byte Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<byte>.Unmarshall(context);
+            return byte.Parse(context.ReadText(), CultureInfo.InvariantCulture);
         }
         public byte Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
@@ -681,12 +675,13 @@ namespace Amazon.Runtime.Internal.Transform
 
         public DateTime Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<DateTime>.Unmarshall(context);
+            long milliseconds = long.Parse(context.ReadText(), CultureInfo.InvariantCulture);
+            return Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(milliseconds);
         }
         public DateTime Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            long millseconds = LongUnmarshaller.Instance.Unmarshall(context, ref reader);
-            var ret = Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(millseconds);
+            long milliseconds = LongUnmarshaller.Instance.Unmarshall(context, ref reader);
+            var ret = Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(milliseconds);
             return ret;
         }
     }
