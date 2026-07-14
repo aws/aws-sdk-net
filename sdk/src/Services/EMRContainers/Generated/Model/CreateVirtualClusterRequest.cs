@@ -43,6 +43,7 @@ namespace Amazon.EMRContainers.Model
         private ContainerProvider _containerProvider;
         private string _name;
         private string _securityConfigurationId;
+        private bool? _sessionEnabled;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -119,6 +120,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetSecurityConfigurationId()
         {
             return this._securityConfigurationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionEnabled. 
+        /// <para>
+        /// Indicates whether the virtual cluster has session support enabled.
+        /// </para>
+        /// </summary>
+        public bool? SessionEnabled
+        {
+            get { return this._sessionEnabled; }
+            set { this._sessionEnabled = value; }
+        }
+
+        // Check to see if SessionEnabled property is set
+        internal bool IsSetSessionEnabled()
+        {
+            return this._sessionEnabled.HasValue; 
         }
 
         /// <summary>

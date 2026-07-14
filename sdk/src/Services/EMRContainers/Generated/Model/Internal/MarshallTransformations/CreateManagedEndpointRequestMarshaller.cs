@@ -122,6 +122,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ReleaseLabel);
             }
 
+            if(publicRequest.IsSetSessionIdleTimeoutInMinutes())
+            {
+                context.Writer.WritePropertyName("sessionIdleTimeoutInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.SessionIdleTimeoutInMinutes.Value);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

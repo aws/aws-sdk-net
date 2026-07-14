@@ -107,6 +107,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SecurityConfigurationId);
             }
 
+            if(publicRequest.IsSetSessionEnabled())
+            {
+                context.Writer.WritePropertyName("sessionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SessionEnabled.Value);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

@@ -35,6 +35,7 @@ namespace Amazon.EMRContainers.Model
     public partial class GetManagedEndpointSessionCredentialsResponse : AmazonWebServiceResponse
     {
         private Credentials _credentials;
+        private Credentials _endpointCredentials;
         private DateTime? _expiresAt;
         private string _id;
 
@@ -54,6 +55,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetCredentials()
         {
             return this._credentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointCredentials. 
+        /// <para>
+        /// The structure containing the session token being returned.
+        /// </para>
+        /// </summary>
+        public Credentials EndpointCredentials
+        {
+            get { return this._endpointCredentials; }
+            set { this._endpointCredentials = value; }
+        }
+
+        // Check to see if EndpointCredentials property is set
+        internal bool IsSetEndpointCredentials()
+        {
+            return this._endpointCredentials != null;
         }
 
         /// <summary>

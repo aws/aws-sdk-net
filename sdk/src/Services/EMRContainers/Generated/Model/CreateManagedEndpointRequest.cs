@@ -43,6 +43,7 @@ namespace Amazon.EMRContainers.Model
         private string _executionRoleArn;
         private string _name;
         private string _releaseLabel;
+        private int? _sessionIdleTimeoutInMinutes;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _type;
         private string _virtualClusterId;
@@ -160,6 +161,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionIdleTimeoutInMinutes. 
+        /// <para>
+        /// The idle timeout in minutes for the managed endpoint session.
+        /// </para>
+        /// </summary>
+        public int? SessionIdleTimeoutInMinutes
+        {
+            get { return this._sessionIdleTimeoutInMinutes; }
+            set { this._sessionIdleTimeoutInMinutes = value; }
+        }
+
+        // Check to see if SessionIdleTimeoutInMinutes property is set
+        internal bool IsSetSessionIdleTimeoutInMinutes()
+        {
+            return this._sessionIdleTimeoutInMinutes.HasValue; 
         }
 
         /// <summary>

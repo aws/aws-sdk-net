@@ -35,7 +35,27 @@ namespace Amazon.EMRContainers.Model
     /// </summary>
     public partial class S3MonitoringConfiguration
     {
+        private string _encryptionKeyArn;
         private string _logUri;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyArn. 
+        /// <para>
+        /// The Amazon resource name (ARN) of the encryption key for logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=2048)]
+        public string EncryptionKeyArn
+        {
+            get { return this._encryptionKeyArn; }
+            set { this._encryptionKeyArn = value; }
+        }
+
+        // Check to see if EncryptionKeyArn property is set
+        internal bool IsSetEncryptionKeyArn()
+        {
+            return this._encryptionKeyArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LogUri. 

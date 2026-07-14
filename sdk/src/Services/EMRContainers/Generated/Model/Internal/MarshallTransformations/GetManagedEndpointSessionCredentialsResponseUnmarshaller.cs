@@ -58,6 +58,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     response.Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("endpointCredentials", targetDepth, ref reader))
+                {
+                    var unmarshaller = CredentialsUnmarshaller.Instance;
+                    response.EndpointCredentials = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("expiresAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

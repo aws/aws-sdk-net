@@ -35,6 +35,7 @@ namespace Amazon.EMRContainers.Model
     public partial class Endpoint
     {
         private string _arn;
+        private string _authProxyUrl;
         private string _certificateArn;
         private Certificate _certificateAuthority;
         private ConfigurationOverrides _configurationOverrides;
@@ -70,6 +71,25 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthProxyUrl. 
+        /// <para>
+        /// The auth proxy URL of the endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10280)]
+        public string AuthProxyUrl
+        {
+            get { return this._authProxyUrl; }
+            set { this._authProxyUrl = value; }
+        }
+
+        // Check to see if AuthProxyUrl property is set
+        internal bool IsSetAuthProxyUrl()
+        {
+            return this._authProxyUrl != null;
         }
 
         /// <summary>
