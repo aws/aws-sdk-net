@@ -1263,6 +1263,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode CapacityProviderScalingLimitExceeded = new LastUpdateStatusReasonCode("CapacityProviderScalingLimitExceeded");
         /// <summary>
+        /// Constant DependencyError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode DependencyError = new LastUpdateStatusReasonCode("DependencyError");
+        /// <summary>
         /// Constant DisabledKMSKey for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode DisabledKMSKey = new LastUpdateStatusReasonCode("DisabledKMSKey");
@@ -2590,6 +2594,10 @@ namespace Amazon.Lambda
         /// Constant Creating for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode Creating = new StateReasonCode("Creating");
+        /// <summary>
+        /// Constant DependencyError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode DependencyError = new StateReasonCode("DependencyError");
         /// <summary>
         /// Constant DisabledKMSKey for StateReasonCode
         /// </summary>
