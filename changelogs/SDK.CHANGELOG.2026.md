@@ -1,3 +1,24 @@
+### 4.0.288.0 (2026-07-14 18:13 UTC)
+* Connect (4.0.105.0)
+	* This release adds SearchRules API which can be used to search for rules within an Amazon Connect instance.
+* Drs (4.0.101.0)
+	* Fast recovery of EC2 based drs workloads by skipping the conversion step
+* EMRContainers (4.0.101.0)
+	* Introduced 5 new fields across 3 APIs as part of Spark Connect server launch for EMR on EKS. The fields added are sessionIdleTimeoutInMinutes, sessionEnabled, endpointToken, authProxyUrl and encryptionKeyArn.
+* Lambda (4.0.104.0)
+	* AWS Lambda now returns a new DependencyError value in StateReasonCode and LastUpdateStatusReasonCode to provide more actionable information when a function reaches a failed state due to an error from an upstream dependency or service.
+* MQ (4.0.101.0)
+	* This release adds storage size parameter for Amazon MQ for RabbitMQ cluster deployment broker on engine version RabbitMQ 4.2. You can now set a configurable storage size within a range of sizes dependent on broker instance size.
+* SecurityHub (4.0.102.0)
+	* AWS Security Hub now provides an AI inventory, giving central security teams a continuously updated, organization-wide view of AI assets and their security posture
+* ServiceDiscovery (4.0.101.0)
+	* Fixed Cloud Map endpoint resolution to correctly route to the dualstack endpoint when dualstack is enabled.
+* SimpleSystemsManagement (4.0.102.0)
+	* Update AWS Systems Manager Automation Targets to be correct max value.
+* Core 4.0.100.5
+	* [Breaking Change] When service clients are configured with a service URL and the signing region can not be determined from the host name the SDK would incorrectly default to us-east-1. Now the SDK will detect the default region configured for the environment and use that for signing region. If there is no default region the SDK falls back to the previous behavior and defaults to us-east-1.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.287.0 (2026-07-13 18:15 UTC)
 * Elasticsearch (4.0.101.0)
 	* Adds support for the EngineMode and UseCase parameters on Amazon Elasticsearch Service domains, enabling GENERAL or OPTIMIZED engine modes and SEARCH, VECTOR, OBSERVABILITY, or MIXED usecases when creating and updating domain configurations.

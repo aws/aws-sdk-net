@@ -33,7 +33,7 @@ namespace Amazon.LambdaMicrovms
     public partial class AmazonLambdaMicrovmsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lambda Microvms", "4.0.100.3");
+            InternalSDKUtils.BuildUserAgentString("Lambda Microvms", "4.0.100.4");
 
         private static readonly AmazonLambdaMicrovmsEndpointResolver EndpointResolver =
             new AmazonLambdaMicrovmsEndpointResolver();
