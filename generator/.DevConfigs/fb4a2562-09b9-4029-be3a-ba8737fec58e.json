@@ -1,0 +1,15 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added a public standalone SigV4 request signing API in the `Amazon.Runtime.Signing` namespace (`AWSSigV4Signer` with `Sign`/`SignAsync` for header signing and `Presign`/`PresignAsync` for presigned URLs, plus the `AWSSigningRequest`, `AWSSigningParameters`, `AWSSigningResult`, and `PresignResult` types). This lets callers sign an arbitrary HTTP request with SigV4 without constructing internal signer types.",
+      "Added `HttpRequestMessageSigningExtensions.SignWithSigV4Async`, which signs a `System.Net.Http.HttpRequestMessage` in place.",
+      "Added time-accepting overloads of `AWS4Signer.SignRequest` and `AWS4PreSignedUrlSigner.SignRequest` that take an explicit `signedAt`, enabling deterministic signing. Existing overloads are unchanged and delegate to these with the previously computed default time.",
+      "Added `IRequest.PrecomputedContentSha256`, a caller-supplied body hash that `AWS4Signer` uses verbatim (when payload signing is enabled) in place of reading the request body."
+    ],
+    "type": "minor",
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": [
+      "Amazon.Runtime.Internal.IRequest/MethodAbstractMethodAdded"
+    ]
+  }
+}
