@@ -47,10 +47,10 @@ namespace Amazon.ServiceDiscovery.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -76,7 +76,7 @@ namespace Amazon.ServiceDiscovery.Internal
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
-                    if (Equals(refs["UseFIPS"], true))
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
@@ -84,22 +84,10 @@ namespace Amazon.ServiceDiscovery.Internal
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    if (Equals(refs["UseDualStack"], true))
+                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
-                            if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
-                            {
-                                return new Endpoint(Interpolate(@"https://servicediscovery.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            if (Equals("aws-cn", GetAttr(refs["PartitionResult"], "name")))
-                            {
-                                return new Endpoint(Interpolate(@"https://servicediscovery.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
-                            {
-                                return new Endpoint(Interpolate(@"https://servicediscovery.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
                             return new Endpoint(Interpolate(@"https://servicediscovery.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");

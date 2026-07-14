@@ -50,10 +50,10 @@ namespace Amazon.ServiceDiscovery.Internal
         {
             var config = (AmazonServiceDiscoveryConfig)requestContext.ClientConfig;
             var result = new ServiceDiscoveryEndpointParameters();
-            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
 
 
             // The region needs to be determined from the ServiceURL if not set.
