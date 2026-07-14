@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _accountId;
         private string _accountName;
+        private DiscoveryType _discoveryType;
         private List<ResourceFindingsSummary> _findingsSummary = AWSConfigs.InitializeCollections ? new List<ResourceFindingsSummary>() : null;
         private string _region;
         private ResourceCategory _resourceCategory;
@@ -46,11 +47,13 @@ namespace Amazon.SecurityHub.Model
         private string _resourceDetailCaptureTimeDt;
         private string _resourceGuid;
         private string _resourceId;
+        private ResourceInfo _resourceInfo;
         private string _resourceName;
         private string _resourceOwnerAccountId;
         private string _resourceOwnerOrgId;
         private string _resourceProvider;
         private string _resourceRegion;
+        private ResourceSubCategory _resourceSubCategory;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private string _resourceType;
 
@@ -89,6 +92,27 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAccountName()
         {
             return this._accountName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryType. 
+        /// <para>
+        /// Specifies how the resource was discovered. If the value is <c>Managed</c>, the resource
+        /// is natively provided by a cloud service provider. If the value is <c>SelfHosted</c>,
+        /// the resource is hosted on customer-managed infrastructure, such as a compute instance
+        /// or container image.
+        /// </para>
+        /// </summary>
+        public DiscoveryType DiscoveryType
+        {
+            get { return this._discoveryType; }
+            set { this._discoveryType = value; }
+        }
+
+        // Check to see if DiscoveryType property is set
+        internal bool IsSetDiscoveryType()
+        {
+            return this._discoveryType != null;
         }
 
         /// <summary>
@@ -265,6 +289,25 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceInfo. 
+        /// <para>
+        /// Additional resource-type-specific details. For self-hosted AI resources and their
+        /// host resources, contains an <c>AIDetails</c> structure.
+        /// </para>
+        /// </summary>
+        public ResourceInfo ResourceInfo
+        {
+            get { return this._resourceInfo; }
+            set { this._resourceInfo = value; }
+        }
+
+        // Check to see if ResourceInfo property is set
+        internal bool IsSetResourceInfo()
+        {
+            return this._resourceInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The name of the resource.
@@ -359,6 +402,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetResourceRegion()
         {
             return this._resourceRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceSubCategory. 
+        /// <para>
+        /// The AI/ML sub-grouping of the resource. Present only when <c>ResourceCategory</c>
+        /// is <c>AI/ML</c>.
+        /// </para>
+        /// </summary>
+        public ResourceSubCategory ResourceSubCategory
+        {
+            get { return this._resourceSubCategory; }
+            set { this._resourceSubCategory = value; }
+        }
+
+        // Check to see if ResourceSubCategory property is set
+        internal bool IsSetResourceSubCategory()
+        {
+            return this._resourceSubCategory != null;
         }
 
         /// <summary>

@@ -1850,10 +1850,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates a cloud service provider management (CSPM) connector in Security Hub CSPM.
-        /// A connector establishes a connection between Security Hub CSPM and a third-party cloud
-        /// provider, enabling Security Hub CSPM to ingest security findings and resource data
-        /// from the connected environment.
+        /// Creates a connector to a third-party cloud provider in Security Hub CSPM. A connector
+        /// establishes a connection between Security Hub CSPM and a third-party cloud provider,
+        /// enabling Security Hub CSPM to ingest security findings and resource data from the
+        /// connected environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
         /// 
@@ -1889,10 +1889,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates a cloud service provider management (CSPM) connector in Security Hub CSPM.
-        /// A connector establishes a connection between Security Hub CSPM and a third-party cloud
-        /// provider, enabling Security Hub CSPM to ingest security findings and resource data
-        /// from the connected environment.
+        /// Creates a connector to a third-party cloud provider in Security Hub CSPM. A connector
+        /// establishes a connection between Security Hub CSPM and a third-party cloud provider,
+        /// enabling Security Hub CSPM to ingest security findings and resource data from the
+        /// connected environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
         /// <param name="cancellationToken">
@@ -6468,6 +6468,13 @@ namespace Amazon.SecurityHub
         /// resources from your entire organization or from specific organizational units. Only
         /// the delegated administrator account can use <c>Scopes</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you set <c>GroupByField</c> to <c>ResourceSubCategory</c>, <c>ResourceInfo.AIDetails.HostResourceType</c>,
+        /// or <c>ResourceInfo.AIDetails.CanonicalId</c>, you must include a <c>ResourceCategory</c>
+        /// string filter with comparison set to <c>EQUALS</c> and value <c>AI/ML</c> in the corresponding
+        /// <c>ResourceGroupByRule</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
         /// 
@@ -6514,6 +6521,13 @@ namespace Amazon.SecurityHub
         /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
         /// resources from your entire organization or from specific organizational units. Only
         /// the delegated administrator account can use <c>Scopes</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set <c>GroupByField</c> to <c>ResourceSubCategory</c>, <c>ResourceInfo.AIDetails.HostResourceType</c>,
+        /// or <c>ResourceInfo.AIDetails.CanonicalId</c>, you must include a <c>ResourceCategory</c>
+        /// string filter with comparison set to <c>EQUALS</c> and value <c>AI/ML</c> in the corresponding
+        /// <c>ResourceGroupByRule</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
@@ -6630,6 +6644,20 @@ namespace Amazon.SecurityHub
         /// are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c> refines
         /// results within that scoped data set.
         /// </para>
+        ///  
+        /// <para>
+        /// For AI/ML resources, the response includes the <c>ResourceSubCategory</c> field. For
+        /// self-hosted AI resources and their host resources, the response also includes <c>ResourceInfo</c>
+        /// with AI-specific details. Self-hosted AI resources use a <c>ResourceType</c> with
+        /// the <c>SelfHosted::AI::</c> prefix, such as <c>SelfHosted::AI::Model</c>, <c>SelfHosted::AI::Agent</c>,
+        /// <c>SelfHosted::AI::InferenceEndpoint</c>, and <c>SelfHosted::AI::ExternalEndpoint</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you filter by <c>ResourceSubCategory</c>, you must also include a <c>ResourceCategory</c>
+        /// string filter with comparison set to <c>EQUALS</c> and value <c>AI/ML</c> in the same
+        /// request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
         /// 
@@ -6682,6 +6710,20 @@ namespace Amazon.SecurityHub
         /// You can use <c>Scopes</c> and <c>Filters</c> independently or together. When both
         /// are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c> refines
         /// results within that scoped data set.
+        /// </para>
+        ///  
+        /// <para>
+        /// For AI/ML resources, the response includes the <c>ResourceSubCategory</c> field. For
+        /// self-hosted AI resources and their host resources, the response also includes <c>ResourceInfo</c>
+        /// with AI-specific details. Self-hosted AI resources use a <c>ResourceType</c> with
+        /// the <c>SelfHosted::AI::</c> prefix, such as <c>SelfHosted::AI::Model</c>, <c>SelfHosted::AI::Agent</c>,
+        /// <c>SelfHosted::AI::InferenceEndpoint</c>, and <c>SelfHosted::AI::ExternalEndpoint</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you filter by <c>ResourceSubCategory</c>, you must also include a <c>ResourceCategory</c>
+        /// string filter with comparison set to <c>EQUALS</c> and value <c>AI/ML</c> in the same
+        /// request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>

@@ -41,6 +41,13 @@ namespace Amazon.SecurityHub.Model
     /// resources from your entire organization or from specific organizational units. Only
     /// the delegated administrator account can use <c>Scopes</c>.
     /// </para>
+    ///  
+    /// <para>
+    /// If you set <c>GroupByField</c> to <c>ResourceSubCategory</c>, <c>ResourceInfo.AIDetails.HostResourceType</c>,
+    /// or <c>ResourceInfo.AIDetails.CanonicalId</c>, you must include a <c>ResourceCategory</c>
+    /// string filter with comparison set to <c>EQUALS</c> and value <c>AI/ML</c> in the corresponding
+    /// <c>ResourceGroupByRule</c>.
+    /// </para>
     /// </summary>
     public partial class GetResourcesStatisticsV2Request : AmazonSecurityHubRequest
     {

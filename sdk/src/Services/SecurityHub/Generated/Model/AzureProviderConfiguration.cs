@@ -41,7 +41,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AWSConfigConnectorArn. 
         /// <para>
-        /// The ARN of the AWS Config connector used to establish the connection to Azure.
+        /// The ARN of the multi-cloud configuration connector used to establish the connection
+        /// to Azure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

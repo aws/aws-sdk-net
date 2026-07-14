@@ -1319,6 +1319,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type DiscoveryType.
+    /// </summary>
+    public class DiscoveryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Managed for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType Managed = new DiscoveryType("Managed");
+        /// <summary>
+        /// Constant SelfHosted for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType SelfHosted = new DiscoveryType("SelfHosted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiscoveryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoveryType FindValue(string value)
+        {
+            return FindValue<DiscoveryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoveryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnablementStatus.
     /// </summary>
     public class EnablementStatus : ConstantClass
@@ -3487,6 +3537,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourceGroupByField AccountName = new ResourceGroupByField("AccountName");
         /// <summary>
+        /// Constant DiscoveryType for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField DiscoveryType = new ResourceGroupByField("DiscoveryType");
+        /// <summary>
         /// Constant FindingsSummaryFindingType for ResourceGroupByField
         /// </summary>
         public static readonly ResourceGroupByField FindingsSummaryFindingType = new ResourceGroupByField("FindingsSummary.FindingType");
@@ -3502,6 +3556,14 @@ namespace Amazon.SecurityHub
         /// Constant ResourceCloudPartition for ResourceGroupByField
         /// </summary>
         public static readonly ResourceGroupByField ResourceCloudPartition = new ResourceGroupByField("ResourceCloudPartition");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsCanonicalId for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceInfoAIDetailsCanonicalId = new ResourceGroupByField("ResourceInfo.AIDetails.CanonicalId");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsHostResourceType for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceInfoAIDetailsHostResourceType = new ResourceGroupByField("ResourceInfo.AIDetails.HostResourceType");
         /// <summary>
         /// Constant ResourceName for ResourceGroupByField
         /// </summary>
@@ -3522,6 +3584,10 @@ namespace Amazon.SecurityHub
         /// Constant ResourceRegion for ResourceGroupByField
         /// </summary>
         public static readonly ResourceGroupByField ResourceRegion = new ResourceGroupByField("ResourceRegion");
+        /// <summary>
+        /// Constant ResourceSubCategory for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceSubCategory = new ResourceGroupByField("ResourceSubCategory");
         /// <summary>
         /// Constant ResourceType for ResourceGroupByField
         /// </summary>
@@ -3700,6 +3766,38 @@ namespace Amazon.SecurityHub
         /// Constant FindingsSummaryTotalFindings for ResourcesNumberField
         /// </summary>
         public static readonly ResourcesNumberField FindingsSummaryTotalFindings = new ResourcesNumberField("FindingsSummary.TotalFindings");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIAgentFrameworkResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIAgentFrameworkResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIAgentFrameworkResourceCount");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIAgentResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIAgentResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIAgentResourceCount");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIAgentToolsAndIdentityResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIAgentToolsAndIdentityResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIAgentToolsAndIdentityResourceCount");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIDevelopmentResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIDevelopmentResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIDevelopmentResourceCount");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIExternalEndpointResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIExternalEndpointResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIExternalEndpointResourceCount");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIModelResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIModelResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIModelResourceCount");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIModelServingResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIModelServingResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIModelServingResourceCount");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedTotalAIResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedTotalAIResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedTotalAIResourceCount");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3751,6 +3849,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourcesStringField AccountName = new ResourcesStringField("AccountName");
         /// <summary>
+        /// Constant DiscoveryType for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField DiscoveryType = new ResourcesStringField("DiscoveryType");
+        /// <summary>
         /// Constant FindingsSummaryFindingType for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField FindingsSummaryFindingType = new ResourcesStringField("FindingsSummary.FindingType");
@@ -3779,6 +3881,18 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly ResourcesStringField ResourceId = new ResourcesStringField("ResourceId");
         /// <summary>
+        /// Constant ResourceInfoAIDetailsCanonicalId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceInfoAIDetailsCanonicalId = new ResourcesStringField("ResourceInfo.AIDetails.CanonicalId");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsHostResourceGuid for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceInfoAIDetailsHostResourceGuid = new ResourcesStringField("ResourceInfo.AIDetails.HostResourceGuid");
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsHostResourceType for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceInfoAIDetailsHostResourceType = new ResourcesStringField("ResourceInfo.AIDetails.HostResourceType");
+        /// <summary>
         /// Constant ResourceName for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField ResourceName = new ResourcesStringField("ResourceName");
@@ -3798,6 +3912,10 @@ namespace Amazon.SecurityHub
         /// Constant ResourceRegion for ResourcesStringField
         /// </summary>
         public static readonly ResourcesStringField ResourceRegion = new ResourcesStringField("ResourceRegion");
+        /// <summary>
+        /// Constant ResourceSubCategory for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceSubCategory = new ResourcesStringField("ResourceSubCategory");
         /// <summary>
         /// Constant ResourceType for ResourcesStringField
         /// </summary>
@@ -3906,6 +4024,92 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourcesTrendsStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceSubCategory.
+    /// </summary>
+    public class ResourceSubCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Agent for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Agent = new ResourceSubCategory("Agent");
+        /// <summary>
+        /// Constant AgentFramework for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory AgentFramework = new ResourceSubCategory("AgentFramework");
+        /// <summary>
+        /// Constant AgentToolsAndIdentity for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory AgentToolsAndIdentity = new ResourceSubCategory("AgentToolsAndIdentity");
+        /// <summary>
+        /// Constant Development for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Development = new ResourceSubCategory("Development");
+        /// <summary>
+        /// Constant ExternalEndpoint for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory ExternalEndpoint = new ResourceSubCategory("ExternalEndpoint");
+        /// <summary>
+        /// Constant KnowledgeAndData for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory KnowledgeAndData = new ResourceSubCategory("KnowledgeAndData");
+        /// <summary>
+        /// Constant Model for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Model = new ResourceSubCategory("Model");
+        /// <summary>
+        /// Constant ModelServing for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory ModelServing = new ResourceSubCategory("ModelServing");
+        /// <summary>
+        /// Constant OrchestrationAndPipeline for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory OrchestrationAndPipeline = new ResourceSubCategory("OrchestrationAndPipeline");
+        /// <summary>
+        /// Constant Other for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Other = new ResourceSubCategory("Other");
+        /// <summary>
+        /// Constant SafetyAndGuardrail for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory SafetyAndGuardrail = new ResourceSubCategory("SafetyAndGuardrail");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceSubCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceSubCategory FindValue(string value)
+        {
+            return FindValue<ResourceSubCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceSubCategory(string value)
         {
             return FindValue(value);
         }

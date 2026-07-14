@@ -31,10 +31,10 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConnector operation.
-    /// Creates a cloud service provider management (CSPM) connector in Security Hub CSPM.
-    /// A connector establishes a connection between Security Hub CSPM and a third-party cloud
-    /// provider, enabling Security Hub CSPM to ingest security findings and resource data
-    /// from the connected environment.
+    /// Creates a connector to a third-party cloud provider in Security Hub CSPM. A connector
+    /// establishes a connection between Security Hub CSPM and a third-party cloud provider,
+    /// enabling Security Hub CSPM to ingest security findings and resource data from the
+    /// connected environment.
     /// </summary>
     public partial class CreateConnectorRequest : AmazonSecurityHubRequest
     {
