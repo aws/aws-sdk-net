@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about a rule.
+    /// A summary of information about a rule, returned as part of the response to a <c>SearchRules</c>
+    /// operation.
     /// </summary>
-    public partial class Rule
+    public partial class RuleSearchSummary
     {
-        private List<RuleAction> _actions = AWSConfigs.InitializeCollections ? new List<RuleAction>() : null;
+        private List<ActionSummary> _actionSummaries = AWSConfigs.InitializeCollections ? new List<ActionSummary>() : null;
         private DateTime? _createdTime;
-        private string _function;
         private string _lastUpdatedBy;
         private DateTime? _lastUpdatedTime;
         private string _name;
@@ -48,9 +48,9 @@ namespace Amazon.Connect.Model
         private RuleTriggerEventSource _triggerEventSource;
 
         /// <summary>
-        /// Gets and sets the property Actions. 
+        /// Gets and sets the property ActionSummaries. 
         /// <para>
-        /// A list of actions to be run when the rule is triggered.
+        /// A list of <c>ActionTypes</c> associated with a rule.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -59,16 +59,16 @@ namespace Amazon.Connect.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<RuleAction> Actions
+        public List<ActionSummary> ActionSummaries
         {
-            get { return this._actions; }
-            set { this._actions = value; }
+            get { return this._actionSummaries; }
+            set { this._actionSummaries = value; }
         }
 
-        // Check to see if Actions property is set
-        internal bool IsSetActions()
+        // Check to see if ActionSummaries property is set
+        internal bool IsSetActionSummaries()
         {
-            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._actionSummaries != null && (this._actionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,25 +88,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Function. 
-        /// <para>
-        /// The conditions of the rule.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Function
-        {
-            get { return this._function; }
-            set { this._function = value; }
-        }
-
-        // Check to see if Function property is set
-        internal bool IsSetFunction()
-        {
-            return this._function != null;
         }
 
         /// <summary>
@@ -131,7 +112,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The timestamp for the when the rule was last updated.
+        /// The timestamp for when the rule was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

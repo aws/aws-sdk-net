@@ -1272,9 +1272,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates a set of hours of operations with another hours of operation. Refer to
-        /// Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// Associates a set of hours of operations with another hours of operation. For more
+        /// information about inheriting overrides from parent hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+        /// of operation overrides</a> in the Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations service method.</param>
         /// 
@@ -1312,9 +1312,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates a set of hours of operations with another hours of operation. Refer to
-        /// Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// Associates a set of hours of operations with another hours of operation. For more
+        /// information about inheriting overrides from parent hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+        /// of operation overrides</a> in the Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations service method.</param>
         /// <param name="cancellationToken">
@@ -14011,9 +14011,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Disassociates a set of hours of operations with another hours of operation. Refer
-        /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// Disassociates a set of hours of operations with another hours of operation. For more
+        /// information about inheriting overrides from parent hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+        /// of operation overrides</a> in the Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations service method.</param>
         /// 
@@ -14048,9 +14048,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Disassociates a set of hours of operations with another hours of operation. Refer
-        /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// Disassociates a set of hours of operations with another hours of operation. For more
+        /// information about inheriting overrides from parent hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+        /// of operation overrides</a> in the Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations service method.</param>
         /// <param name="cancellationToken">
@@ -17592,7 +17592,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link
+        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
         /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
         /// </para>
         /// </summary>
@@ -17631,7 +17631,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link
+        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
         /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
         /// </para>
         /// </summary>
@@ -24783,6 +24783,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchRoutingProfilesResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchRoutingProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchRules
+
+
+        /// <summary>
+        /// Searches rules in an Connect Customer instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRules service method.</param>
+        /// 
+        /// <returns>The response from the SearchRules service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRules">REST API Reference for SearchRules Operation</seealso>
+        public virtual SearchRulesResponse SearchRules(SearchRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRulesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches rules in an Connect Customer instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchRules service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRules">REST API Reference for SearchRules Operation</seealso>
+        public virtual Task<SearchRulesResponse> SearchRulesAsync(SearchRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion

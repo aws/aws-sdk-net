@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Rule Object
+    /// Response Unmarshaller for RuleSearchSummary Object
     /// </summary>  
-    public class RuleUnmarshaller : IJsonUnmarshaller<Rule, JsonUnmarshallerContext>
+    public class RuleSearchSummaryUnmarshaller : IJsonUnmarshaller<RuleSearchSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Rule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RuleSearchSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Rule unmarshalledObject = new Rule();
+            RuleSearchSummary unmarshalledObject = new RuleSearchSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Actions", targetDepth, ref reader))
+                if (context.TestExpression("ActionSummaries", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<RuleAction, RuleActionUnmarshaller>(RuleActionUnmarshaller.Instance);
-                    unmarshalledObject.Actions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<ActionSummary, ActionSummaryUnmarshaller>(ActionSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ActionSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Function", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Function = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedBy", targetDepth, ref reader))
@@ -133,12 +127,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleUnmarshaller _instance = new RuleUnmarshaller();        
+        private static RuleSearchSummaryUnmarshaller _instance = new RuleSearchSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleUnmarshaller Instance
+        public static RuleSearchSummaryUnmarshaller Instance
         {
             get
             {

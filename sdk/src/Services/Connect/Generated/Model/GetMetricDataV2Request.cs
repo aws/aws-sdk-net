@@ -148,19 +148,20 @@ namespace Amazon.Connect.Model
         /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c> | <c>ANSWERING_MACHINE_DETECTION_STATUS</c>
         /// | <c>BOT_ALIAS</c> | <c>BOT_ID</c> | <c>BOT_INTENT_NAME</c> | <c>BOT_LOCALE</c> |
-        /// <c>BOT_VERSION</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE</c>
-        /// | <c>CASE_STATUS</c> | <c>CASE_TEMPLATE_ARN</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
-        /// | <c>contact/segmentAttributes/connect:ValidationTestType</c> | <c>DISCONNECT_REASON</c>
-        /// | <c>EVALUATION_FORM</c> | <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SECTION</c>
-        /// | <c>EVALUATION_SOURCE</c> | <c>EVALUATOR_ID</c> | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c>
-        /// | <c>FLOW_TYPE</c> | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_ID</c>
-        /// | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c>
-        /// | <c>FORM_VERSION</c> | <c>INITIATING_FLOW</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
-        /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>KNOWLEDGE_BASE_NAME</c> | <c>PARENT_FLOWS_RESOURCE_ID</c>
-        /// | <c>Q_CONNECT_ENABLED</c> | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> |
-        /// <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> | <c>SESSION_ID</c> | <c>TEST_CASE</c>
-        /// | <c>TEST_CASE_EXECUTION_FAILURE_REASON</c> | <c>TEST_CASE_EXECUTION_RESULT</c> |
-        /// <c>TEST_CASE_EXECUTION_STATE</c> 
+        /// <c>BOT_VERSION</c> | <c>BROWSER_NAME</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>
+        /// | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE</c> | <c>CASE_STATUS</c> | <c>CASE_TEMPLATE_ARN</c>
+        /// | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c> | <c>contact/segmentAttributes/connect:ValidationTestType</c>
+        /// | <c>DEVICE_MODEL</c> | <c>DEVICE_TYPE</c> | <c>DISCONNECT_REASON</c> | <c>EVALUATION_FORM</c>
+        /// | <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SECTION</c> | <c>EVALUATION_SOURCE</c>
+        /// | <c>EVALUATOR_ID</c> | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c>
+        /// | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c>
+        /// | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c> | <c>FORM_VERSION</c> | <c>INITIATING_FLOW</c>
+        /// | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>INVOKING_RESOURCE_TYPE</c>
+        /// | <c>KNOWLEDGE_BASE_NAME</c> | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>Q_CONNECT_ENABLED</c>
+        /// | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c>
+        /// | <c>SESSION_ID</c> | <c>TEST_CASE</c> | <c>TEST_CASE_EXECUTION_FAILURE_REASON</c>
+        /// | <c>TEST_CASE_EXECUTION_RESULT</c> | <c>TEST_CASE_EXECUTION_STATE</c> | <c>WEB_NOTIFICATION_TYPE</c>
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -279,17 +280,18 @@ namespace Amazon.Connect.Model
         /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c> | <c>ANSWERING_MACHINE_DETECTION_STATUS</c>
         /// | <c>BOT_ID</c> | <c>BOT_ALIAS</c> | <c>BOT_VERSION</c> | <c>BOT_LOCALE</c> | <c>BOT_INTENT_NAME</c>
-        /// | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE</c>
+        /// | <c>BROWSER_NAME</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE</c>
         /// | <c>CAMPAIGN_EXECUTION_TIMESTAMP</c> | <c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c>
-        /// | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c> | <c>DISCONNECT_REASON</c>
-        /// | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> | <c>EVALUATION_QUESTION</c>
-        /// | <c>EVALUATION_SOURCE</c> | <c>EVALUATOR_ID</c> | <c>FLOWS_RESOURCE_ID</c> | <c>FLOWS_MODULE_RESOURCE_ID</c>
-        /// | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>FORM_VERSION</c>
-        /// | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>INVOKING_RESOURCE_TYPE</c>
-        /// | <c>KNOWLEDGE_ARTICLE_NAME</c> | <c>KNOWLEDGE_BASE_NAME</c> | <c>PARENT_FLOWS_RESOURCE_ID</c>
-        /// | <c>Q_CONNECT_ENABLED</c> | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> |
-        /// <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> | <c>SESSION_ID</c> | <c>TEST_CASE</c>
-        /// | <c>TEST_CASE_EXECUTION_FAILURE_REASON</c> | <c>TEST_CASE_INVOCATION_METHOD</c> 
+        /// | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c> | <c>DEVICE_MODEL</c>
+        /// | <c>DEVICE_TYPE</c> | <c>DISCONNECT_REASON</c> | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c>
+        /// | <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>EVALUATOR_ID</c> | <c>FLOWS_RESOURCE_ID</c>
+        /// | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c>
+        /// | <c>FORM_VERSION</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
+        /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>KNOWLEDGE_ARTICLE_NAME</c> | <c>KNOWLEDGE_BASE_NAME</c>
+        /// | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>Q_CONNECT_ENABLED</c> | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c>
+        /// | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> | <c>SESSION_ID</c> | <c>TEST_CASE</c>
+        /// | <c>TEST_CASE_EXECUTION_FAILURE_REASON</c> | <c>TEST_CASE_INVOCATION_METHOD</c> |
+        /// <c>WEB_NOTIFICATION_TYPE</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1936,8 +1938,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>CAMPAIGN_INTERACTIONS</dt> <dd> 
         /// <para>
-        /// This metric is available only for outbound campaigns using the email delivery mode.
-        /// 
+        /// This metric is available only for outbound campaigns using the email, WhatsApp, and
+        /// web notification delivery modes. 
         /// </para>
         ///  
         /// <para>
@@ -1949,7 +1951,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign
+        /// Valid groupings and filters: Browser Name, Campaign, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Device Model, Device Type, Web Notification Type
         /// </para>
         ///  
         /// <para>
@@ -2336,9 +2339,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign,
-        /// Campaign Delivery EventType, Channel, contact/segmentAttributes/connect:Subtype, Disconnect
-        /// Reason, Queue, Routing Profile
+        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Browser Name,
+        /// Campaign, Campaign Delivery EventType, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Device Model, Device Type, Disconnect Reason, Queue, Routing Profile, Web Notification
+        /// Type
         /// </para>
         ///  
         /// <para>
@@ -2347,10 +2351,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Campaign Delivery EventType filter and grouping are only available for SMS and Email
-        /// campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection
-        /// Status and Disconnect Reason are only available for agent assisted voice and automated
-        /// voice delivery modes. 
+        /// Campaign Delivery EventType filter and grouping are only available for SMS, Email,
+        /// WhatsApp, and web notification campaign delivery modes. Agent, Queue, Routing Profile,
+        /// Answering Machine Detection Status and Disconnect Reason are only available for agent
+        /// assisted voice and automated voice delivery modes. 
         /// </para>
         ///  </note> </dd> <dt>DELIVERY_ATTEMPT_DISPOSITION_RATE</dt> <dd> 
         /// <para>
@@ -2369,9 +2373,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign,
-        /// Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing
-        /// Profile
+        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Browser Name,
+        /// Campaign, Channel, contact/segmentAttributes/connect:Subtype, Device Model, Device
+        /// Type, Disconnect Reason, Queue, Routing Profile, Web Notification Type
         /// </para>
         ///  
         /// <para>
@@ -2380,10 +2384,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Campaign Delivery Event Type filter and grouping are only available for SMS and Email
-        /// campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection
-        /// Status and Disconnect Reason are only available for agent assisted voice and automated
-        /// voice delivery modes. 
+        /// Campaign Delivery Event Type filter and grouping are only available for SMS, Email,
+        /// WhatsApp, and web notification campaign delivery modes. Agent, Queue, Routing Profile,
+        /// Answering Machine Detection Status and Disconnect Reason are only available for agent
+        /// assisted voice and automated voice delivery modes. 
         /// </para>
         ///  </note> </dd> <dt>EVALUATIONS_PERFORMED</dt> <dd> 
         /// <para>

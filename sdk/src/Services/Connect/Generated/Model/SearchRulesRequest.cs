@@ -30,46 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListChildHoursOfOperations operation.
-    /// Provides information about the child hours of operations for the specified parent
-    /// hours of operation.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
-    /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
-    /// </para>
+    /// Container for the parameters to the SearchRules operation.
+    /// Searches rules in an Connect Customer instance, with optional filtering.
     /// </summary>
-    public partial class ListChildHoursOfOperationsRequest : AmazonConnectRequest
+    public partial class SearchRulesRequest : AmazonConnectRequest
     {
-        private string _hoursOfOperationId;
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property HoursOfOperationId. 
-        /// <para>
-        /// The identifier of the parent hours of operation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string HoursOfOperationId
-        {
-            get { return this._hoursOfOperationId; }
-            set { this._hoursOfOperationId = value; }
-        }
-
-        // Check to see if HoursOfOperationId property is set
-        internal bool IsSetHoursOfOperationId()
-        {
-            return this._hoursOfOperationId != null;
-        }
+        private RulesSearchCriteria _searchCriteria;
+        private RulesSearchFilter _searchFilter;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -89,10 +64,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page. The default MaxResult size is 100.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=200)]
         public int? MaxResults
         {
             get { return this._maxResults; }
@@ -112,6 +87,7 @@ namespace Amazon.Connect.Model
         /// in the next request to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2500)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -122,6 +98,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchCriteria. 
+        /// <para>
+        /// The search criteria to be used to return rules.
+        /// </para>
+        /// </summary>
+        public RulesSearchCriteria SearchCriteria
+        {
+            get { return this._searchCriteria; }
+            set { this._searchCriteria = value; }
+        }
+
+        // Check to see if SearchCriteria property is set
+        internal bool IsSetSearchCriteria()
+        {
+            return this._searchCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchFilter. 
+        /// <para>
+        /// Filters to be applied to search results, such as tag-based filters.
+        /// </para>
+        /// </summary>
+        public RulesSearchFilter SearchFilter
+        {
+            get { return this._searchFilter; }
+            set { this._searchFilter = value; }
+        }
+
+        // Check to see if SearchFilter property is set
+        internal bool IsSetSearchFilter()
+        {
+            return this._searchFilter != null;
         }
 
     }

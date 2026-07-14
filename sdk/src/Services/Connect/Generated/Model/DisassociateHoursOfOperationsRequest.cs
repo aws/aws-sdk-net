@@ -31,9 +31,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateHoursOfOperations operation.
-    /// Disassociates a set of hours of operations with another hours of operation. Refer
-    /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
-    /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+    /// Disassociates a set of hours of operations with another hours of operation. For more
+    /// information about inheriting overrides from parent hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Hours
+    /// of operation overrides</a> in the Administrator Guide.
     /// </summary>
     public partial class DisassociateHoursOfOperationsRequest : AmazonConnectRequest
     {

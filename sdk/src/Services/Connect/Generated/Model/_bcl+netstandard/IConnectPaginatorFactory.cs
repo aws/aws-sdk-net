@@ -808,6 +808,16 @@ namespace Amazon.Connect.Model
         ISearchRoutingProfilesPaginator SearchRoutingProfiles(SearchRoutingProfilesRequest request);
 
         /// <summary>
+        /// Paginator for SearchRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchRulesPaginator SearchRules(SearchRulesRequest request);
+
+        /// <summary>
         /// Paginator for SearchSecurityProfiles operation
         ///</summary>
         [AWSPaginator(

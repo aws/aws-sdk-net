@@ -3610,6 +3610,26 @@
     <max>2500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SearchRulesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchRulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchRulesRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchRulesResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SearchSecurityProfilesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -7415,6 +7435,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Rule.RuleId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RuleSearchSummary.Name</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RuleSearchSummary.RuleId</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
