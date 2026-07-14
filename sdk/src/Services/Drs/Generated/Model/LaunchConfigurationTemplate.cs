@@ -43,6 +43,7 @@ namespace Amazon.Drs.Model
         private bool? _launchIntoSourceInstance;
         private Licensing _licensing;
         private bool? _postLaunchEnabled;
+        private RecoveryMode _recoveryMode;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
 
@@ -211,6 +212,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetPostLaunchEnabled()
         {
             return this._postLaunchEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryMode. 
+        /// <para>
+        /// Recovery mode.
+        /// </para>
+        /// </summary>
+        public RecoveryMode RecoveryMode
+        {
+            get { return this._recoveryMode; }
+            set { this._recoveryMode = value; }
+        }
+
+        // Check to see if RecoveryMode property is set
+        internal bool IsSetRecoveryMode()
+        {
+            return this._recoveryMode != null;
         }
 
         /// <summary>
