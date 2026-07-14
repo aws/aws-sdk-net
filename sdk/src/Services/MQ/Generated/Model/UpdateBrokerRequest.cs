@@ -47,6 +47,7 @@ namespace Amazon.MQ.Model
         private WeeklyStartTime _maintenanceWindowStartTime;
         private List<string> _resourceShareArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private int? _storageSize;
 
         /// <summary>
         /// Gets and sets the property AuthenticationStrategy. 
@@ -293,6 +294,24 @@ namespace Amazon.MQ.Model
         internal bool IsSetSecurityGroups()
         {
             return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageSize. 
+        /// <para>
+        /// The broker's storage size in GB.
+        /// </para>
+        /// </summary>
+        public int? StorageSize
+        {
+            get { return this._storageSize; }
+            set { this._storageSize = value; }
+        }
+
+        // Check to see if StorageSize property is set
+        internal bool IsSetStorageSize()
+        {
+            return this._storageSize.HasValue; 
         }
 
     }

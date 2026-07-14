@@ -142,6 +142,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("storageSize", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.StorageSize = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;
