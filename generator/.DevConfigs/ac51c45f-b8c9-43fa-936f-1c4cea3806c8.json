@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "Extensions.CloudFront.Signers",
+      "type": "minor",
+      "changeLogMessages": [
+        "Added ICloudFrontSigner and DelegateCloudFrontSigner, plus overloads of AmazonCloudFrontUrlSigner.SignUrl/GetCustomSignedURL and AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy that accept an ICloudFrontSigner, so policies can be signed with AWS KMS or another external signer (RSA or ECDSA P-256) without holding the private key in the process."
+      ]
+    }
+  ]
+}
