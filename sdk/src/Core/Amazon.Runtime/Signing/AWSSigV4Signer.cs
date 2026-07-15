@@ -42,6 +42,11 @@ namespace Amazon.Runtime.Signing
         // capitalized form), versus the lowercase header key used for header signing.
         private const string XAmzSecurityTokenQueryParam = "X-Amz-Security-Token";
 
+        // The config only exists to satisfy AWS4Signer's IClientConfig parameter; it carries no per-request
+        // state (region and service are forced onto the request), so a single shared instance is reused for
+        // the header-signing path instead of allocating one per call. The presign path passes null.
+        private static readonly SigningStandaloneClientConfig SharedConfig = new SigningStandaloneClientConfig();
+
         #region Public API
 
         /// <summary>
@@ -72,7 +77,7 @@ namespace Amazon.Runtime.Signing
         {
             ValidateArguments(request, parameters, presign: true);
             ValidateExpiry(expiry);
-            var credentials = parameters.Credentials.GetCredentials();
+            var credentials = ResolveForPresign(parameters.Credentials, expiry);
             return PresignInternal(request, parameters, expiry, credentials);
         }
 
@@ -84,7 +89,7 @@ namespace Amazon.Runtime.Signing
         {
             ValidateArguments(request, parameters, presign: true);
             ValidateExpiry(expiry);
-            var credentials = await parameters.Credentials.GetCredentialsAsync().ConfigureAwait(false);
+            var credentials = await ResolveForPresignAsync(parameters.Credentials, expiry).ConfigureAwait(false);
             return PresignInternal(request, parameters, expiry, credentials);
         }
 
@@ -100,7 +105,7 @@ namespace Amazon.Runtime.Signing
             if (credentials.UseToken)
                 internalRequest.Headers[HeaderKeys.XAmzSecurityTokenHeader] = credentials.Token;
 
-            var config = new SigningStandaloneClientConfig();
+            var config = SharedConfig;
             var signedAt = ResolveSignedAt(parameters, internalRequest);
 
             var signingResult = new AWS4Signer().SignRequest(internalRequest, config, new RequestMetrics(),
@@ -289,6 +294,28 @@ namespace Amazon.Runtime.Signing
                 : CorrectClockSkew.GetCorrectedUtcNowForEndpoint(internalRequest.Endpoint.ToString());
         }
 
+        /// <summary>
+        /// Resolves credentials for presigning. For <see cref="RefreshingAWSCredentials"/> (e.g. assume-role or
+        /// SSO), this forces a refresh when the current credentials would expire within the presign window, so
+        /// the URL stays valid for as much of its stated lifetime as the credentials session allows. This
+        /// mirrors the RDS/DSQL auth-token generators. Note: a URL signed with temporary credentials still
+        /// cannot outlive the credentials session, regardless of the requested expiry.
+        /// </summary>
+        private static ImmutableCredentials ResolveForPresign(AWSCredentials credentials, TimeSpan expiry)
+        {
+            return credentials is RefreshingAWSCredentials refreshing
+                ? refreshing.GetCredentials(expiry)
+                : credentials.GetCredentials();
+        }
+
+        /// <inheritdoc cref="ResolveForPresign"/>
+        private static async Task<ImmutableCredentials> ResolveForPresignAsync(AWSCredentials credentials, TimeSpan expiry)
+        {
+            return credentials is RefreshingAWSCredentials refreshing
+                ? await refreshing.GetCredentialsAsync(expiry).ConfigureAwait(false)
+                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
+        }
+
         private static void CopyHeaderIfPresent(IDictionary<string, string> source, IDictionary<string, string> destination, string key)
         {
             if (source.TryGetValue(key, out var value))
@@ -371,8 +398,10 @@ namespace Amazon.Runtime.Signing
 
         private static void ValidateExpiry(TimeSpan expiry)
         {
-            if (expiry <= TimeSpan.Zero || expiry > MaxPresignExpiry)
-                throw new ArgumentOutOfRangeException(nameof(expiry), "Expiry must be greater than 0 and at most 7 days.");
+            // X-Amz-Expires is expressed in whole seconds, so any value under one second would truncate to
+            // "0" and produce an already-expired URL. Require at least one second (and at most 7 days).
+            if (expiry < TimeSpan.FromSeconds(1) || expiry > MaxPresignExpiry)
+                throw new ArgumentOutOfRangeException(nameof(expiry), "Expiry must be at least 1 second and at most 7 days.");
         }
 
         private static bool TryGetContentSha256Header(IDictionary<string, string> headers, out string value)

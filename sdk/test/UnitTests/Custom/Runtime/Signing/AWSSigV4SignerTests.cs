@@ -341,6 +341,43 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
+        public void Presign_SubSecondExpiry_Throws()
+        {
+            // A sub-second expiry would truncate to X-Amz-Expires=0 (an already-expired URL), so it must be
+            // rejected rather than silently produce an invalid URL.
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
+                Headers = new Dictionary<string, string>(),
+            };
+
+            AssertThrows<ArgumentOutOfRangeException>(() =>
+                AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromMilliseconds(500)));
+        }
+
+        [TestMethod]
+        public void Presign_WithRefreshingCredentials_ForcesRefreshForExpiryWindow()
+        {
+            // A presign expiry longer than the current credentials' remaining lifetime must force a refresh,
+            // so the URL is signed with credentials that outlive the presign window (matching RDS/DSQL).
+            var creds = new CountingRefreshingCredentials(credentialsLifetime: TimeSpan.FromMinutes(1));
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
+                Headers = new Dictionary<string, string>(),
+            };
+            var parameters = BaseParameters();
+            parameters.Credentials = creds;
+            parameters.Service = "sts";
+
+            // First presign with a 1-hour expiry: current 1-minute creds don't cover it, so a refresh happens.
+            AWSSigV4Signer.Presign(request, parameters, TimeSpan.FromHours(1));
+            Assert.AreEqual(1, creds.GenerateCount, "Expected a credential refresh to satisfy the presign expiry window.");
+        }
+
+        [TestMethod]
         public void Presign_WithBody_Throws()
         {
             var request = new AWSSigningRequest
@@ -702,6 +739,29 @@ namespace AWSSDK.UnitTests.Signing
             public override long Seek(long offset, SeekOrigin origin) => throw new NotSupportedException();
             public override void SetLength(long value) => throw new NotSupportedException();
             public override void Write(byte[] buffer, int offset, int count) => throw new NotSupportedException();
+        }
+
+        /// <summary>
+        /// A RefreshingAWSCredentials whose generated credentials expire after a fixed lifetime, counting how
+        /// many times it regenerates. Used to verify the presign path forces a refresh keyed off the expiry.
+        /// </summary>
+        private sealed class CountingRefreshingCredentials : RefreshingAWSCredentials
+        {
+            private readonly TimeSpan _credentialsLifetime;
+            public int GenerateCount { get; private set; }
+
+            public CountingRefreshingCredentials(TimeSpan credentialsLifetime)
+            {
+                _credentialsLifetime = credentialsLifetime;
+            }
+
+            protected override CredentialsRefreshState GenerateNewCredentials()
+            {
+                GenerateCount++;
+                return new CredentialsRefreshState(
+                    new ImmutableCredentials(AccessKey, SecretKey, null),
+                    DateTime.UtcNow + _credentialsLifetime);
+            }
         }
     }
 }
