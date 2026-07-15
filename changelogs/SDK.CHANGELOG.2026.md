@@ -1,3 +1,15 @@
+### 4.0.289.0 (2026-07-15 18:16 UTC)
+* BedrockAgentCoreControl (4.0.102.0)
+	* Fix HarnessEndpointArn pattern to match the actual service-emitted ARN format ('harness-endpoint' instead of 'endpoint'). Add additionalParams to Gemini model configuration for passing provider-specific parameters through to the model unchanged.
+* ElasticLoadBalancingV2 (4.0.101.0)
+	* This release adds support for the IpAddressType field on SourceIpConfig, enabling Network Load Balancer listener rules to match traffic based on whether the source IP is IPv4 or IPv6.
+* HealthLake (4.0.101.0)
+	* AWS HealthLake now offers data transformation in Preview to convert CSV and C-CDA data to FHIR R4. Customers can maintain reusable mapping profiles, run sync or async jobs with provenance tracking and drift detection, and use an AI agent to build and edit mapping logic from natural language.
+* PaymentCryptographyData (4.0.101.0)
+	* Adds support for UnionPay session key derivation to the GenerateAuthRequestCryptogram, VerifyAuthRequestCryptogram, GenerateMac, and VerifyMac APIs.
+* RDS (4.0.102.0)
+	* Adds support for modifying EngineLifecycleSupport on DB instances and DB clusters through ModifyDBInstance and ModifyDBCluster.
+
 ### 4.0.288.0 (2026-07-14 18:13 UTC)
 * Connect (4.0.105.0)
 	* This release adds SearchRules API which can be used to search for rules within an Amazon Connect instance.
