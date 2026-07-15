@@ -44,6 +44,7 @@ public class ServiceGeneratorTests : IDisposable
         AssertFileExists("Generated", "AmazonCloudTrailDataClient.g.cs");
         AssertFileExists("Generated", "AmazonCloudTrailDataConfig.g.cs");
         AssertFileExists("Generated", "AmazonCloudTrailDataDefaultConfiguration.g.cs");
+        AssertFileExists("Generated", "ServiceEnumerations.g.cs");
         AssertFileExists("Generated", "AmazonCloudTrailDataException.g.cs");
     }
 

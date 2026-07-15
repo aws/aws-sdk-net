@@ -80,6 +80,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var defaultConfigurationWriter = new DefaultConfigurationWriter(context, modelFileName, defaultConfigurationModes);
         Emit(Path.Combine(generated, $"{clientName}DefaultConfiguration.g.cs"), defaultConfigurationWriter.Write(cancellationToken));
 
+        var serviceEnumerationsWriter = new ServiceEnumerationsWriter(context, modelFileName);
+        Emit(Path.Combine(generated, "ServiceEnumerations.g.cs"), serviceEnumerationsWriter.Write(cancellationToken));
+
         var metadataWriter = new MetadataWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));
 

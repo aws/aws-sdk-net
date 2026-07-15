@@ -165,6 +165,15 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the service-enumerations file.
+    /// </summary>
+    public static IReadOnlyList<string> ServiceEnumerationsUsings { get; } =
+    [
+        "System",
+        "Amazon.Runtime",
+    ];
+
+    /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.
     /// </summary>
