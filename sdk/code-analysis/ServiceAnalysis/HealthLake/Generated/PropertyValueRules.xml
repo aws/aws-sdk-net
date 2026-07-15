@@ -1,20 +1,57 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.HealthLake.Model.CreateDataTransformationProfileRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.CreateDataTransformationProfileRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.CreateDataTransformationProfileRequest.ProfileDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.CreateDataTransformationProfileRequest.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.CreateDataTransformationProfileResponse.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.CreateDataTransformationProfileResponse.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.CreateDataTransformationProfileResponse.Version</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.HealthLake.Model.CreateFHIRDatastoreRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.CreateFHIRDatastoreRequest.DatastoreName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.CreateFHIRDatastoreResponse.DatastoreArn</property>
-    <pattern>^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-zA-Z0-9-]+:[0-9]{12}:datastore/.+?</pattern>
+    <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-zA-Z0-9-]+:[0-9]{12}:datastore/.+?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.CreateFHIRDatastoreResponse.DatastoreEndpoint</property>
@@ -26,17 +63,34 @@
     <property>Amazon.HealthLake.Model.CreateFHIRDatastoreResponse.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DeleteDataTransformationProfileRequest.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DeleteDataTransformationProfileResponse.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DeleteDataTransformationProfileResponse.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DeleteFHIRDatastoreRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DeleteFHIRDatastoreResponse.DatastoreArn</property>
-    <pattern>^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-zA-Z0-9-]+:[0-9]{12}:datastore/.+?</pattern>
+    <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-zA-Z0-9-]+:[0-9]{12}:datastore/.+?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DeleteFHIRDatastoreResponse.DatastoreEndpoint</property>
@@ -48,37 +102,137 @@
     <property>Amazon.HealthLake.Model.DeleteFHIRDatastoreResponse.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DescribeDataTransformationJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DescribeFHIRDatastoreRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DescribeFHIRExportJobRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DescribeFHIRExportJobRequest.JobId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DescribeFHIRImportJobRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DescribeFHIRImportJobRequest.JobId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.GetDataTransformationProfileRequest.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.GetDataTransformationProfileRequest.ProfileVersion</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.GetDataTransformationProfileResponse.ChangeDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.GetDataTransformationProfileResponse.ProfileDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.GetDataTransformationProfileResponse.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.GetDataTransformationProfileResponse.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.GetDataTransformationProfileResponse.Version</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationJobsRequest.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-%@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationProfilesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationProfilesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationProfileVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationProfileVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationProfileVersionsRequest.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.ListDataTransformationProfileVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRDatastoresRequest.MaxResults</property>
@@ -87,23 +241,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRDatastoresRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRDatastoresResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRExportJobsRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRExportJobsRequest.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRExportJobsRequest.MaxResults</property>
@@ -112,23 +268,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRExportJobsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRExportJobsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRImportJobsRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRImportJobsRequest.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRImportJobsRequest.MaxResults</property>
@@ -137,23 +295,87 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRImportJobsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListFHIRImportJobsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-z0-9-]+:\d{12}:datastore\/fhir\/.{32}</pattern>
+    <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-z0-9-]+:\d{12}:(datastore\/fhir\/.{32}|dataTransformationProfile\/[a-f0-9]{32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.PublishDataTransformationProfileRequest.ChangeDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.PublishDataTransformationProfileRequest.FromExistingVersion</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.PublishDataTransformationProfileRequest.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.PublishDataTransformationProfileResponse.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.PublishDataTransformationProfileResponse.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.PublishDataTransformationProfileResponse.Version</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.StartDataTransformationJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.StartDataTransformationJobRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.StartDataTransformationJobRequest.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-%@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.StartDataTransformationJobRequest.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.StartDataTransformationJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRExportJobRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRExportJobRequest.DataAccessRoleArn</property>
@@ -165,31 +387,31 @@
     <property>Amazon.HealthLake.Model.StartFHIRExportJobRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRExportJobRequest.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRExportJobResponse.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRExportJobResponse.JobId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRImportJobRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRImportJobRequest.DataAccessRoleArn</property>
@@ -201,62 +423,123 @@
     <property>Amazon.HealthLake.Model.StartFHIRImportJobRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.StartFHIRImportJobRequest.InputFormat</property>
+    <min>1</min>
+    <max>5000</max>
+    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRImportJobRequest.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.StartFHIRImportJobRequest.ProfileId</property>
+    <min>1</min>
+    <max>5000</max>
+    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRImportJobResponse.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.StartFHIRImportJobResponse.JobId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-z0-9-]+:\d{12}:datastore\/fhir\/.{32}</pattern>
+    <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-z0-9-]+:\d{12}:(datastore\/fhir\/.{32}|dataTransformationProfile\/[a-f0-9]{32})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-z0-9-]+:\d{12}:datastore\/fhir\/.{32}</pattern>
+    <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-z0-9-]+:\d{12}:(datastore\/fhir\/.{32}|dataTransformationProfile\/[a-f0-9]{32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.UpdateDataTransformationProfileRequest.ChangeDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.UpdateDataTransformationProfileRequest.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.UpdateDataTransformationProfileResponse.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.UpdateDataTransformationProfileResponse.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.UpdateFHIRDatastoreRequest.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.UpdateFHIRDatastoreRequest.DatastoreName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.UpdateProfileWithAgentRequest.ConversationId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.UpdateProfileWithAgentRequest.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.UpdateProfileWithAgentResponse.ConversationId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.AgentInputMessage.Body</property>
+    <min>1</min>
+    <max>40960</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.AgentOutputMessage.Body</property>
+    <min>1</min>
+    <max>40960</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DatastoreFilter.DatastoreName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DatastoreProperties.DatastoreArn</property>
-    <pattern>^arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-zA-Z0-9-]+:[0-9]{12}:datastore/.+?</pattern>
+    <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-zA-Z0-9-]+:[0-9]{12}:datastore/.+?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DatastoreProperties.DatastoreEndpoint</property>
+    <min>0</min>
     <max>10000</max>
     <pattern>[\P{M}\p{M}]{0,10000}</pattern>
   </property-value-rule>
@@ -264,13 +547,66 @@
     <property>Amazon.HealthLake.Model.DatastoreProperties.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DatastoreProperties.DatastoreName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileSummary.ProfileDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileSummary.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileSummary.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileSummary.Version</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileVersionSummary.ChangeDescription</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileVersionSummary.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileVersionSummary.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationProfileVersionSummary.Version</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationS3Configuration.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.DataTransformationS3Configuration.S3Uri</property>
+    <min>8</min>
+    <max>2048</max>
+    <pattern>s3://[a-z0-9][a-z0-9.\-]{1,61}[a-z0-9](/.+)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ErrorCause.ErrorMessage</property>
@@ -287,25 +623,25 @@
     <property>Amazon.HealthLake.Model.ExportJobProperties.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ExportJobProperties.JobId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ExportJobProperties.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ExportJobProperties.Message</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.IdentityProviderConfiguration.IdpLambdaArn</property>
@@ -323,28 +659,29 @@
     <property>Amazon.HealthLake.Model.ImportJobProperties.DatastoreId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ImportJobProperties.JobId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ImportJobProperties.JobName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.ImportJobProperties.Message</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.InputDataConfig.S3Uri</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
@@ -362,19 +699,78 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.S3Configuration.S3Uri</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.SampleDataSource.S3Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][a-z0-9.\-]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationInputDataConfig.S3Uri</property>
+    <min>8</min>
+    <max>2048</max>
+    <pattern>s3://[a-z0-9][a-z0-9.\-]{1,61}[a-z0-9](/.+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobProperties.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobProperties.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobProperties.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-%@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobProperties.Message</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobProperties.ProfileId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobProperties.ProfileName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobSummary.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.TransformationJobSummary.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-%@]*</pattern>
   </property-value-rule>
 </property-value-rules>

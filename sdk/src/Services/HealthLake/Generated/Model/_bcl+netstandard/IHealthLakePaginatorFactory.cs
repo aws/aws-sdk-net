@@ -28,6 +28,36 @@ namespace Amazon.HealthLake.Model
     {
 
         /// <summary>
+        /// Paginator for ListDataTransformationJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataTransformationJobsPaginator ListDataTransformationJobs(ListDataTransformationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataTransformationProfiles operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataTransformationProfilesPaginator ListDataTransformationProfiles(ListDataTransformationProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataTransformationProfileVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataTransformationProfileVersionsPaginator ListDataTransformationProfileVersions(ListDataTransformationProfileVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListFHIRDatastores operation
         ///</summary>
         [AWSPaginator(

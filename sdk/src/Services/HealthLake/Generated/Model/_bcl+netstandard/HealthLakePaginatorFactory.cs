@@ -37,6 +37,30 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataTransformationJobs operation
+        ///</summary>
+        public IListDataTransformationJobsPaginator ListDataTransformationJobs(ListDataTransformationJobsRequest request) 
+        {
+            return new ListDataTransformationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTransformationProfiles operation
+        ///</summary>
+        public IListDataTransformationProfilesPaginator ListDataTransformationProfiles(ListDataTransformationProfilesRequest request) 
+        {
+            return new ListDataTransformationProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataTransformationProfileVersions operation
+        ///</summary>
+        public IListDataTransformationProfileVersionsPaginator ListDataTransformationProfileVersions(ListDataTransformationProfileVersionsRequest request) 
+        {
+            return new ListDataTransformationProfileVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFHIRDatastores operation
         ///</summary>
         public IListFHIRDatastoresPaginator ListFHIRDatastores(ListFHIRDatastoresRequest request) 

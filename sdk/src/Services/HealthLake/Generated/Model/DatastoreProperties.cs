@@ -110,7 +110,7 @@ namespace Amazon.HealthLake.Model
         /// The AWS endpoint for the data store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10000)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string DatastoreEndpoint
         {
             get { return this._datastoreEndpoint; }

@@ -125,7 +125,7 @@ namespace Amazon.HealthLake.Model
         /// A pagination token used to identify the next page of results to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8192)]
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
