@@ -126,6 +126,15 @@ public static class TypeMapper
     public static bool IsCollection(Shape target) => target is ListShape or MapShape;
 
     /// <summary>
+    /// Whether the resolved target is a simple (scalar) type — the Smithy equivalent of the legacy
+    /// generator's <c>IsPrimitiveType</c>. Excludes aggregates (structure, list, map, union, enum),
+    /// documents, and service-level shapes.
+    /// </summary>
+    public static bool IsScalar(Shape target) => target is
+        BlobShape or BooleanShape or StringShape or ByteShape or ShortShape or IntegerShape or
+        LongShape or FloatShape or DoubleShape or BigIntegerShape or BigDecimalShape or TimestampShape;
+
+    /// <summary>
     /// Builds the <c>[AWSProperty(...)]</c> attribute string, or null if no attribute is needed.
     /// </summary>
     public static string? BuildAwsProperty(MemberShape member, Shape target)

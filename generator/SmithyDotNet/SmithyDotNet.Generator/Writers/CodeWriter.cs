@@ -45,6 +45,14 @@ public class CodeWriter
     }
 
     /// <summary>
+    /// Writes a single line comment (format: // comment)
+    /// </summary>
+    public CodeWriter WriteComment(string comment = "")
+    {
+        return WriteLine($"// {comment}");
+    }
+
+    /// <summary>
     /// Runs <paramref name="body"/> with the indent increased one level, for content that nests
     /// without its own braces (e.g. statements under a <c>switch</c> case label).
     /// </summary>
@@ -64,15 +72,17 @@ public class CodeWriter
     }
 
     /// <summary>
-    /// Emits <c>&lt;{tag}&gt;</c>, runs <paramref name="body"/> with the indent increased one
-    /// level (two spaces per level), then emits the matching <c>&lt;/{tag}&gt;</c>. For container
-    /// elements only; self-closing/leaf elements are written directly with <see cref="WriteLine"/>.
+    /// Emits <c>&lt;{open}&gt;</c>, runs <paramref name="body"/> with the indent increased one
+    /// level (two spaces per level), then emits <c>&lt;/{closeTag}&gt;</c>. Use when the opening tag
+    /// carries attributes (e.g. <c>foo bar="x"</c>) but the close is just the element name.
+    /// For container elements only; self-closing/leaf elements are written directly with
+    /// <see cref="WriteLine"/>.
     /// </summary>
-    public CodeWriter OpenXmlBlock(string tag, Action body)
+    public CodeWriter OpenXmlBlock(string open, string closeTag, Action body)
     {
         var previousIndentUnit = _indentUnit;
         _indentUnit = XmlIndentUnit;
-        WriteLine($"<{tag}>");
+        WriteLine($"<{open}>");
         _indent++;
         try
         {
@@ -81,11 +91,21 @@ public class CodeWriter
         finally
         {
             _indent--;
-            WriteLine($"</{tag}>");
+            WriteLine($"</{closeTag}>");
             _indentUnit = previousIndentUnit;
         }
 
         return this;
+    }
+
+    /// <summary>
+    /// Emits <c>&lt;{tag}&gt;</c>, runs <paramref name="body"/> with the indent increased one
+    /// level (two spaces per level), then emits the matching <c>&lt;/{tag}&gt;</c>. For container
+    /// elements only; self-closing/leaf elements are written directly with <see cref="WriteLine"/>.
+    /// </summary>
+    public CodeWriter OpenXmlBlock(string tag, Action body)
+    {
+        return OpenXmlBlock(tag, tag, body);
     }
 
     /// <summary>

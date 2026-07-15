@@ -135,6 +135,35 @@ public static class FileHeader
         "Amazon.Runtime",
     ];
 
+    public static IReadOnlyList<string> NullCollectionInitializerAnalyzerUsings { get; } =
+    [
+        "Microsoft.CodeAnalysis",
+        "Microsoft.CodeAnalysis.Diagnostics",
+        "Amazon.CodeAnalysis.Shared"
+    ];
+
+    public static IReadOnlyList<string> PropertyValueAssignmentAnalyzerUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Collections.Immutable",
+        "System.Reflection",
+        "System.Linq",
+        "System.Xml.Linq",
+        "System.Threading",
+        "Microsoft.CodeAnalysis",
+        "Microsoft.CodeAnalysis.CSharp",
+        "Microsoft.CodeAnalysis.CSharp.Syntax",
+        "Microsoft.CodeAnalysis.Diagnostics",
+        "Amazon.CodeAnalysis.Shared"
+    ];
+
+    public static IReadOnlyList<string> CodeAnalysisAssemblyInfoUsings { get; } =
+    [
+        "System.Reflection",
+        "System.Runtime.InteropServices"
+    ];
+
     /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.

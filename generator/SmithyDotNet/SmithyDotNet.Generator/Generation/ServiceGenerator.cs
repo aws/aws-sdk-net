@@ -1,9 +1,10 @@
-using System.Collections.Concurrent;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
+using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.NuGet;
+using System.Collections.Concurrent;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -55,11 +56,17 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         void Emit(string relativePath, string contents) => EmitUnder(outputPath, written, relativePath, contents);
-
+        
         var generated = "Generated";
         var model = Path.Combine(generated, "Model");
         var @internal = Path.Combine(generated, "Internal");
         var marshalling = Path.Combine(model, "Internal", "MarshallTransformations");
+        // the real codeAnalysis folder is up two levels from "generatedOutput" but for now let's just put it at the 
+        // same level as the "Generated" folder.
+        var codeAnalysis = "code-analysis";
+        var ServiceAnalysis = "ServiceAnalysis";
+        var serviceSpecificCodeAnalysis = Path.Combine(codeAnalysis, ServiceAnalysis);
+        var serviceSpecificCodeAnalysisGenerated = Path.Combine(serviceSpecificCodeAnalysis, generated);
 
         var interfaceWriter = new ClientInterfaceWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"IAmazon{context.ServiceName}.g.cs"), interfaceWriter.Write(cancellationToken));
@@ -75,6 +82,24 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         var metadataWriter = new MetadataWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));
+
+        var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
+        Emit(Path.Combine(serviceSpecificCodeAnalysisGenerated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
+
+        var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
+        Emit(Path.Combine(serviceSpecificCodeAnalysisGenerated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
+
+        var propertyValueRulesWriter = new PropertyValueRulesWriter(context);
+        Emit(Path.Combine(serviceSpecificCodeAnalysisGenerated, "PropertyValueRules.xml"), propertyValueRulesWriter.Write(cancellationToken));
+
+        var codeAnalysisProjectFileWriter = new CodeAnalysisProjectFileWriter(context);
+        var codeAnalysisProjectFilePath = Path.Combine(serviceSpecificCodeAnalysis, $"{context.AssemblyName}.CodeAnalysis.csproj");
+
+        var codeAnalysisAssemblyInfoWriter = new CodeAnalysisAssemblyInfoWriter(context);
+        Emit(Path.Combine(serviceSpecificCodeAnalysis, "Properties","AssemblyInfo.cs"), codeAnalysisAssemblyInfoWriter.Write());
+
+        //file path needed here for existing GUID check
+        Emit(codeAnalysisProjectFilePath, codeAnalysisProjectFileWriter.Write(codeAnalysisProjectFilePath));
 
         // Endpoint files are emitted only when the service carries an endpoint rule set. The
         // parameters class lives in the *.Endpoints namespace (emitted under Generated/), the
