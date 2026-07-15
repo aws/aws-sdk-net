@@ -51,91 +51,12 @@ namespace AWSSDK.UnitTests.Signing
         };
 
         // -----------------------------------------------------------------------
-        // Known-answer vector (header signing)
+        // Header signing — result projection
+        //
+        // Signature correctness over a scenario table (known-answer + parity vs. the internal signer) lives
+        // in AWSSigV4SignerParityTests. The tests here cover behavior that suite does not: the header
+        // projection, presigning, validation/throw paths, the escape hatch, and the HttpRequestMessage helper.
         // -----------------------------------------------------------------------
-
-        [TestMethod]
-        public void Sign_KnownVector_ProducesExpectedSignature()
-        {
-            // Known-answer vector: GET https://example.amazonaws.com/ with empty body, signed at
-            // 20150830T123600Z for us-east-1/service with the canonical AWS test-suite credentials.
-            // The expected Authorization header (and its signature) is computed INDEPENDENTLY of this
-            // codebase by a standalone reference implementation of SigV4 (see the derivation in the PR),
-            // so it catches any systematic canonicalization/string-to-sign/signing-key defect in the
-            // facade's request-building or the underlying signer.
-            var request = new AWSSigningRequest
-            {
-                HttpMethod = "GET",
-                RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
-            };
-
-            var result = AWSSigV4Signer.Sign(request, BaseParameters());
-
-            const string expected =
-                "AWS4-HMAC-SHA256 " +
-                "Credential=AKIDEXAMPLE/20150830/us-east-1/service/aws4_request, " +
-                "SignedHeaders=host;x-amz-content-sha256;x-amz-date, " +
-                "Signature=726c5c4879a6b4ccbbd3b24edbd6b8826d34f87450fbbf4e85546fc7ba9c1642";
-
-            Assert.AreEqual(expected, result.AuthorizationHeader);
-        }
-
-        [TestMethod]
-        public void Sign_KnownVector_EncodedPath_MatchesServiceCanonicalization()
-        {
-            // Known-answer vector for a path that System.Uri percent-encodes. The signature must match what a
-            // compliant non-S3 service computes from the exact bytes on the wire. HttpClient sends the URI's
-            // AbsolutePath ("/documents%20and%20settings/"); SigV4 for non-S3 canonicalizes the path as a
-            // single URL-encode of those received bytes ("/documents%2520and%2520settings/"). The expected
-            // signature below is computed independently by a reference SigV4 implementation over that
-            // canonical path. This guards the path-encoding pass count: the previous double-encode-of-an-
-            // already-encoded-AbsolutePath bug produced a different (wrong) signature here.
-            var request = new AWSSigningRequest
-            {
-                HttpMethod = "GET",
-                RequestUri = new Uri("https://example.amazonaws.com/documents and settings/"),
-                Headers = new Dictionary<string, string>(),
-            };
-
-            var result = AWSSigV4Signer.Sign(request, BaseParameters());
-
-            const string expected =
-                "AWS4-HMAC-SHA256 " +
-                "Credential=AKIDEXAMPLE/20150830/us-east-1/service/aws4_request, " +
-                "SignedHeaders=host;x-amz-content-sha256;x-amz-date, " +
-                "Signature=f238a85b60dd1f5ec084a0b17ab0c7492fa81d4c87a493762b0c610085a3b237";
-
-            Assert.AreEqual(expected, result.AuthorizationHeader);
-        }
-
-        [TestMethod]
-        public void Sign_MatchesInternalSignerForEquivalentRequest()
-        {
-            // Cross-check the facade against the internal AWS4Signer for an equivalent hand-built request at
-            // the same fixed time: proves the facade's request-building and header projection are faithful.
-            var request = new AWSSigningRequest
-            {
-                HttpMethod = "GET",
-                RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
-            };
-            var facadeResult = AWSSigV4Signer.Sign(request, BaseParameters());
-
-            var internalRequest = new DefaultRequest(new StubRequest(), Service)
-            {
-                HttpMethod = "GET",
-                Endpoint = new Uri("https://example.amazonaws.com"),
-                ResourcePath = "/",
-                OverrideSigningServiceName = Service,
-                AuthenticationRegion = Region,
-            };
-            var config = new MockClientConfig { AuthenticationRegion = Region };
-            var internalResult = new AWS4Signer().SignRequest(
-                internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt);
-
-            Assert.AreEqual(internalResult.ForAuthorizationHeader, facadeResult.AuthorizationHeader);
-        }
 
         [TestMethod]
         public void Sign_ReturnsExpectedSigningHeaders()
