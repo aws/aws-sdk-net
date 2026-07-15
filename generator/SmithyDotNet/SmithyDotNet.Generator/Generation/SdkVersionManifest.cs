@@ -83,6 +83,36 @@ public sealed class SdkVersionManifest
 
         return version;
     }
+
+    /// <summary>
+    /// Returns the assembly version for <paramref name="serviceName"/>: the entry's
+    /// <c>AssemblyVersionOverride</c> when present, otherwise <c>major.minor</c> of the file version
+    /// (matching the C2J generator's <c>Utils.GetVersion</c> fallback).
+    /// </summary>
+    public string GetServiceAssemblyVersion(string serviceName)
+    {
+        if (!ServiceVersions.TryGetValue(serviceName, out var entry))
+        {
+            throw new GeneratorException($"'{SourcePath}' has no version entry for service '{serviceName}'.");
+        }
+
+        if (!string.IsNullOrEmpty(entry.AssemblyVersionOverride))
+        {
+            return entry.AssemblyVersionOverride;
+        }
+
+        if (string.IsNullOrEmpty(entry.Version))
+        {
+            throw new GeneratorException($"Service '{serviceName}' in '{SourcePath}' has no AssemblyVersionOverride and no Version to derive major.minor from.");
+        }
+
+        if (!Version.TryParse(entry.Version, out var parsed))
+        {
+            throw new GeneratorException($"Service '{serviceName}' in '{SourcePath}' has an unparseable Version '{entry.Version}'.");
+        }
+
+        return new Version(parsed.Major, parsed.Minor).ToString();
+    }
 }
 
 /// <summary>A single service or extension entry under <c>ServiceVersions</c>/<c>ExtensionVersions</c>.</summary>

@@ -38,6 +38,12 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void WritesAssemblyInfo()
+    {
+        AssertFileExists("Properties", "AssemblyInfo.cs");
+    }
+
+    [Fact]
     public void WritesClientLevelFiles()
     {
         AssertFileExists("Generated", "IAmazonCloudTrailData.g.cs");

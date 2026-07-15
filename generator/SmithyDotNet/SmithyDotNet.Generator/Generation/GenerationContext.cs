@@ -112,6 +112,9 @@ public class GenerationContext
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
 
+    /// <summary>The service's <c>smithy.api#title</c> (e.g. "AWS CloudTrail Data Service"). C2J equivalent: <c>service.FullName</c>. Used in the assembly description.</summary>
+    public string? ServiceTitle { get; }
+
     /// <summary>The wire protocol detected from the service shape's protocol trait.</summary>
     public AWSProtocol Protocol { get; }
 
@@ -181,6 +184,7 @@ public class GenerationContext
         }
 
         ServiceDocumentation = index.Service.GetDocumentation();
+        ServiceTitle = index.Service.GetTitle();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);

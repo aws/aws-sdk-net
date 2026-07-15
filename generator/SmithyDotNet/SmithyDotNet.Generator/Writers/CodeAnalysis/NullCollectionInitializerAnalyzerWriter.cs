@@ -1,7 +1,4 @@
 ﻿using SmithyDotNet.Generator.Generation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SmithyDotNet.Generator.Writers.CodeAnalysis;
 
@@ -9,6 +6,8 @@ public class NullCollectionInitializerAnalyzerWriter(GenerationContext context, 
 {
     public string Write(CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
+
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
         WriteUsings(writer);

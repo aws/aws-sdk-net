@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using Xunit;
-using SmithyDotNet.Generator.Writers;
-using SmithyDotNet.Generator.Writers.CodeAnalysis;
-using Xunit.Internal;
 
 namespace SmithyDotNet.Generator.Tests.Writers.CodeAnalysis;
 

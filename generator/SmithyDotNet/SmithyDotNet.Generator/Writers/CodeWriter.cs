@@ -24,7 +24,7 @@ public class CodeWriter
     /// <summary>
     /// Appends <paramref name="line"/> at the current indent followed by a newline.
     /// An empty argument emits a blank line (no indent). The indent unit is four
-    /// spaces for C# and two spaces inside an <see cref="OpenXmlBlock"/>.
+    /// spaces for C# and two spaces inside an <see cref="OpenXmlBlock(string, Action)"/>.
     /// </summary>
     public CodeWriter WriteLine(string line = "")
     {

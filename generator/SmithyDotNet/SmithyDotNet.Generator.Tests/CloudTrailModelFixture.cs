@@ -34,14 +34,7 @@ public class CloudTrailModelFixture
         Context = new GenerationContext(Index, Manifest, Metadata);
     }
 
-    // Mirrors generator/ServiceModels/cloudtrail-data/metadata.json so the context carries the same
-    // metadata the generator would load at runtime.
-    private static readonly ServiceMetadata Metadata = new()
-    {
-        Active = true,
-        Synopsis = "Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.",
-        GenerateClientConstructors = true,
-    };
+    private static readonly ServiceMetadata Metadata = ServiceMetadata.Load("TestData/metadata.json");
 
     // Mirrors the CloudTrailData entry in generator/ServiceModels/_sdk-versions.json so the context's
     // manifest carries the same version data the generator would resolve at runtime.

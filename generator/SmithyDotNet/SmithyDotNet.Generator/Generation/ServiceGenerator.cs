@@ -10,7 +10,10 @@ namespace SmithyDotNet.Generator.Generation;
 
 /// <summary>
 /// Orchestrates the writers for a single service: invokes each one, maps its output to the
-/// SDK-conventional relative path, and writes the files under <c>{outputPath}/Generated/</c>.
+/// SDK-conventional relative path, and writes the files under the <c>outputPath</c> passed to
+/// <see cref="Generate"/>.
+/// Most generated source lands under <c>Generated/</c>; <c>Properties/AssemblyInfo.cs</c> and
+/// the <c>code-analysis/</c> tree sit alongside it at the service root.
 /// <para />
 /// Phase 1 scope: the writers that exist today (interface, client, config, service exception,
 /// metadata, endpoint parameters/provider/resolver, operation request/response/base, structures,
@@ -67,6 +70,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var ServiceAnalysis = "ServiceAnalysis";
         var serviceSpecificCodeAnalysis = Path.Combine(codeAnalysis, ServiceAnalysis);
         var serviceSpecificCodeAnalysisGenerated = Path.Combine(serviceSpecificCodeAnalysis, generated);
+
+        var assemblyInfoWriter = new AssemblyInfoWriter(context, serviceFileVersion);
+        Emit(Path.Combine("Properties", "AssemblyInfo.cs"), assemblyInfoWriter.Write(cancellationToken));
 
         var interfaceWriter = new ClientInterfaceWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"IAmazon{context.ServiceName}.g.cs"), interfaceWriter.Write(cancellationToken));

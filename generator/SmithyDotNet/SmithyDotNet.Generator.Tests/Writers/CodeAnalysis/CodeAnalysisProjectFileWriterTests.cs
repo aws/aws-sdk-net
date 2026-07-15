@@ -1,8 +1,4 @@
-﻿using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Writers.CodeAnalysis;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.CodeAnalysis;

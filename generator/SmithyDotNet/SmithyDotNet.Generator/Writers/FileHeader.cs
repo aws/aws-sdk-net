@@ -174,6 +174,70 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the service <c>AssemblyInfo.cs</c> file.
+    /// </summary>
+    public static IReadOnlyList<string> AssemblyInfoUsings { get; } =
+    [
+        "System",
+        "System.Reflection",
+        "System.Runtime.InteropServices",
+        "System.Runtime.CompilerServices",
+    ];
+
+    /// <summary>
+    /// Writes the shared assembly attribute body that appears in both the service and
+    /// code-analysis <c>AssemblyInfo.cs</c> files: the title, configuration, product, company,
+    /// copyright, trademark, culture, ComVisible, and version attributes. The caller supplies
+    /// an <paramref name="assemblyDescription"/> action to emit the description attribute(s),
+    /// since the service file uses a platform-conditional <c>#if</c> chain while the
+    /// code-analysis file uses a static string.
+    /// </summary>
+    public static void WriteAssemblyInfoBody(
+        CodeWriter writer,
+        string assemblyName,
+        Action<CodeWriter> assemblyDescription,
+        string assemblyVersion,
+        string fileVersion)
+    {
+        writer.WriteComment("General Information about an assembly is controlled through the following ");
+        writer.WriteComment("set of attributes. Change these attribute values to modify the information");
+        writer.WriteComment("associated with an assembly.");
+
+        writer.WriteLine($"""[assembly: AssemblyTitle("{assemblyName}")]""");
+
+        assemblyDescription(writer);
+
+        writer.WriteLine("""[assembly: AssemblyConfiguration("")]""");
+        writer.WriteLine("""[assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]""");
+        writer.WriteLine("""[assembly: AssemblyCompany("Amazon.com, Inc")]""");
+        writer.WriteLine("""[assembly: AssemblyCopyright("Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")]""");
+        writer.WriteLine("""[assembly: AssemblyTrademark("")]""");
+        writer.WriteLine("""[assembly: AssemblyCulture("")]""");
+        writer.WriteLine();
+
+        writer.WriteComment("Setting ComVisible to false makes the types in this assembly not visible");
+        writer.WriteComment("to COM components.  If you need to access a type in this assembly from");
+        writer.WriteComment("COM, set the ComVisible attribute to true on that type.");
+
+        writer.WriteLine("[assembly: ComVisible(false)]");
+        writer.WriteLine();
+        writer.WriteComment("Version information for an assembly consists of the following four values:");
+        writer.WriteComment();
+        writer.WriteComment("     Major Version");
+        writer.WriteComment("     Minor Version ");
+        writer.WriteComment("     Build Number");
+        writer.WriteComment("     Revision");
+
+        writer.WriteComment();
+        writer.WriteComment("You can specify all the values or you can default the Build and Revision Numbers ");
+        writer.WriteComment("by using the '*' as shown below:");
+        writer.WriteComment("""[assembly: AssemblyVersion("1.0.*")]""");
+
+        writer.WriteLine($"""[assembly: AssemblyVersion("{assemblyVersion}")]""");
+        writer.WriteLine($"""[assembly: AssemblyFileVersion("{fileVersion}")]""");
+    }
+
+    /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.
     /// </summary>
