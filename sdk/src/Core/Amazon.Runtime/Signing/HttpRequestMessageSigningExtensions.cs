@@ -46,7 +46,14 @@ namespace Amazon.Runtime.Signing
 
             var headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var header in message.Headers)
+            {
+                // Skip signing artifacts from any prior signing pass. The signer strips a stale Authorization
+                // and overwrites x-amz-date, but it does not strip x-amz-security-token — so a leftover token
+                // (e.g. from an earlier pass with different credentials) would otherwise be signed and sent.
+                if (IsSigningHeader(header.Key))
+                    continue;
                 headers[header.Key] = string.Join(", ", header.Value);
+            }
 
             byte[] content = null;
             if (message.Content != null)
@@ -68,8 +75,34 @@ namespace Amazon.Runtime.Signing
 
             var result = await AWSSigV4Signer.SignAsync(signingRequest, parameters, cancellationToken).ConfigureAwait(false);
 
+            // Clear any signing headers from a prior pass before applying the new ones. This is necessary
+            // because (a) HttpRequestHeaders.TryAddWithoutValidation appends rather than replaces, so re-adding
+            // would duplicate; and (b) a header that the new pass does NOT set (e.g. X-Amz-Security-Token when
+            // re-signing with non-session credentials after a session-credential pass) must still be removed,
+            // or a stale value would be left on the message.
+            foreach (var name in SigningHeaderNames)
+                message.Headers.Remove(name);
+
             foreach (var header in result.Headers)
                 message.Headers.TryAddWithoutValidation(header.Key, header.Value);
+        }
+
+        private static readonly string[] SigningHeaderNames =
+        {
+            "Authorization",
+            "X-Amz-Date",
+            "X-Amz-Content-SHA256",
+            "X-Amz-Security-Token",
+        };
+
+        private static bool IsSigningHeader(string name)
+        {
+            foreach (var signingHeader in SigningHeaderNames)
+            {
+                if (string.Equals(name, signingHeader, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
     }
 }

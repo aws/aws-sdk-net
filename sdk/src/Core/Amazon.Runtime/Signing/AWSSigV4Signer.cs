@@ -169,6 +169,14 @@ namespace Amazon.Runtime.Signing
                 OverrideSigningServiceName = parameters.Service,
                 AuthenticationRegion = parameters.Region,
                 DisablePayloadSigning = !parameters.SignPayload,
+
+                // ResourcePath is Uri.AbsolutePath, which System.Uri has already percent-encoded once. The
+                // SigV4 canonical path for non-S3 services is a single UrlEncode of the path the service
+                // receives on the wire (that same AbsolutePath). Disabling double encoding makes the signer
+                // apply exactly one encode pass, so the canonical path matches what the service computes.
+                // (The S3-family single-encoding rule is handled inside the signer and is not our concern
+                // here — S3 presigning has its own generators.)
+                UseDoubleEncoding = false,
             };
 
             // Copy caller headers into the request. A caller-supplied x-amz-content-sha256 is routed to
@@ -188,15 +196,16 @@ namespace Amazon.Runtime.Signing
 
             // Parse any query string on the URI into the request's parameter collection. Query components
             // are URL-decoded here because the signer re-encodes them canonically during signing.
+            //
+            // We parse manually rather than via AWSSDKUtils.ParseQueryParameters because that helper returns
+            // a name-keyed dictionary (last-value-wins), which would silently drop repeated keys (?x=1&x=2)
+            // and lose the distinction between a valueless flag (?acl) and an empty value. Both must be
+            // preserved so the signed canonical query matches what is sent on the wire.
             if (!string.IsNullOrEmpty(request.RequestUri.Query))
             {
                 internalRequest.UseQueryString = true;
-                foreach (var kvp in AWSSDKUtils.ParseQueryParameters(request.RequestUri.Query))
-                {
-                    var key = Uri.UnescapeDataString(kvp.Key);
-                    var value = kvp.Value == null ? null : Uri.UnescapeDataString(kvp.Value);
-                    internalRequest.Parameters[key] = value;
-                }
+                foreach (var pair in ParseQueryParameters(request.RequestUri.Query))
+                    AddQueryParameter(internalRequest.ParameterCollection, pair.Key, pair.Value);
             }
 
             // Body handling (header signing only; the presign path rejects a body in ValidateArguments).
@@ -223,6 +232,54 @@ namespace Amazon.Runtime.Signing
                 internalRequest.PrecomputedContentSha256 = precomputedHash;
 
             return internalRequest;
+        }
+
+        /// <summary>
+        /// Splits a raw query string ("?a=1&amp;a=2&amp;flag") into decoded (key, value) pairs, preserving repeated
+        /// keys and distinguishing a valueless flag (value == null) from an empty value. Order is preserved;
+        /// the signer sorts for canonicalization.
+        /// </summary>
+        private static IEnumerable<KeyValuePair<string, string>> ParseQueryParameters(string query)
+        {
+            var start = query.IndexOf('?');
+            var qs = start >= 0 ? query.Substring(start + 1) : query;
+
+            foreach (var token in qs.Split('&'))
+            {
+                if (token.Length == 0)
+                    continue;
+
+                var eq = token.IndexOf('=');
+                if (eq < 0)
+                    yield return new KeyValuePair<string, string>(Uri.UnescapeDataString(token), null);
+                else
+                    yield return new KeyValuePair<string, string>(
+                        Uri.UnescapeDataString(token.Substring(0, eq)),
+                        Uri.UnescapeDataString(token.Substring(eq + 1)));
+            }
+        }
+
+        /// <summary>
+        /// Adds a query parameter to the collection, accumulating repeated keys into a list so no value is
+        /// lost. A valueless flag is stored as an empty string, which canonicalizes as "key=" — matching how
+        /// the service canonicalizes a bare "?key" on the wire.
+        /// </summary>
+        private static void AddQueryParameter(ParameterCollection parameters, string key, string value)
+        {
+            var normalized = value ?? string.Empty;
+
+            if (!parameters.TryGetValue(key, out var existing))
+            {
+                parameters.Add(key, normalized);
+                return;
+            }
+
+            // A key already present: promote to a list (or append to the existing list) so repeated query
+            // keys are all signed rather than collapsed to the last value.
+            if (existing is StringListParameterValue list)
+                list.Value.Add(normalized);
+            else if (existing is StringParameterValue single)
+                parameters[key] = new StringListParameterValue(new List<string> { single.Value, normalized });
         }
 
         private static DateTime ResolveSignedAt(AWSSigningParameters parameters, IRequest internalRequest)

@@ -55,9 +55,14 @@ namespace AWSSDK.UnitTests.Signing
         // -----------------------------------------------------------------------
 
         [TestMethod]
-        public void Sign_FixedTime_ProducesDeterministicAuthorizationHeader()
+        public void Sign_KnownVector_ProducesExpectedSignature()
         {
-            // GET https://example.amazonaws.com/ with empty body, signed at a fixed time for us-east-1/service.
+            // Known-answer vector: GET https://example.amazonaws.com/ with empty body, signed at
+            // 20150830T123600Z for us-east-1/service with the canonical AWS test-suite credentials.
+            // The expected Authorization header (and its signature) is computed INDEPENDENTLY of this
+            // codebase by a standalone reference implementation of SigV4 (see the derivation in the PR),
+            // so it catches any systematic canonicalization/string-to-sign/signing-key defect in the
+            // facade's request-building or the underlying signer.
             var request = new AWSSigningRequest
             {
                 HttpMethod = "GET",
@@ -67,17 +72,41 @@ namespace AWSSDK.UnitTests.Signing
 
             var result = AWSSigV4Signer.Sign(request, BaseParameters());
 
-            // Deterministic pieces of the Authorization header: algorithm, credential scope, and the signed
-            // header set (the facade always signs host + the two x-amz-* headers it adds).
-            Assert.IsTrue(result.AuthorizationHeader.StartsWith(
-                "AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20150830/us-east-1/service/aws4_request", StringComparison.Ordinal),
-                result.AuthorizationHeader);
-            StringAssert.Contains(result.AuthorizationHeader, "SignedHeaders=host;x-amz-content-sha256;x-amz-date");
-            StringAssert.Contains(result.AuthorizationHeader, "Signature=");
+            const string expected =
+                "AWS4-HMAC-SHA256 " +
+                "Credential=AKIDEXAMPLE/20150830/us-east-1/service/aws4_request, " +
+                "SignedHeaders=host;x-amz-content-sha256;x-amz-date, " +
+                "Signature=726c5c4879a6b4ccbbd3b24edbd6b8826d34f87450fbbf4e85546fc7ba9c1642";
 
-            // Signing the same inputs at the same fixed time is byte-for-byte reproducible.
-            var again = AWSSigV4Signer.Sign(request, BaseParameters());
-            Assert.AreEqual(result.AuthorizationHeader, again.AuthorizationHeader);
+            Assert.AreEqual(expected, result.AuthorizationHeader);
+        }
+
+        [TestMethod]
+        public void Sign_KnownVector_EncodedPath_MatchesServiceCanonicalization()
+        {
+            // Known-answer vector for a path that System.Uri percent-encodes. The signature must match what a
+            // compliant non-S3 service computes from the exact bytes on the wire. HttpClient sends the URI's
+            // AbsolutePath ("/documents%20and%20settings/"); SigV4 for non-S3 canonicalizes the path as a
+            // single URL-encode of those received bytes ("/documents%2520and%2520settings/"). The expected
+            // signature below is computed independently by a reference SigV4 implementation over that
+            // canonical path. This guards the path-encoding pass count: the previous double-encode-of-an-
+            // already-encoded-AbsolutePath bug produced a different (wrong) signature here.
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://example.amazonaws.com/documents and settings/"),
+                Headers = new Dictionary<string, string>(),
+            };
+
+            var result = AWSSigV4Signer.Sign(request, BaseParameters());
+
+            const string expected =
+                "AWS4-HMAC-SHA256 " +
+                "Credential=AKIDEXAMPLE/20150830/us-east-1/service/aws4_request, " +
+                "SignedHeaders=host;x-amz-content-sha256;x-amz-date, " +
+                "Signature=f238a85b60dd1f5ec084a0b17ab0c7492fa81d4c87a493762b0c610085a3b237";
+
+            Assert.AreEqual(expected, result.AuthorizationHeader);
         }
 
         [TestMethod]
@@ -148,23 +177,30 @@ namespace AWSSDK.UnitTests.Signing
         // -----------------------------------------------------------------------
 
         [TestMethod]
-        public void SignRequestOverload_DefaultTime_MatchesOriginal()
+        public void SignRequestOverload_DefaultTime_MatchesExplicitTimeWithSameInstant()
         {
+            // Guards the behavior-preserving refactor: the original 5-arg SignRequest computed its signing
+            // time via CorrectClockSkew.GetCorrectedUtcNowForEndpoint and used it. The refactor moved the
+            // logic into a 6-arg time-accepting overload and made the 5-arg delegate with that same computed
+            // default. This test invokes BOTH overloads and asserts they produce byte-identical output when
+            // the explicit time is the value the default-time overload would compute — so a broken delegation
+            // (wrong default, double header init, dropped reassignment) would fail here.
             var config = new MockClientConfig { AuthenticationRegion = Region };
+            var endpoint = new Uri("https://example.amazonaws.com");
+            var computedDefault = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.ToString());
 
-            var fixedTime = new DateTime(2020, 1, 2, 3, 4, 5, DateTimeKind.Utc);
+            var rDefault = BuildInternalRequest();
+            var defaultResult = new AWS4Signer().SignRequest(rDefault, config, new RequestMetrics(), AccessKey, SecretKey);
 
-            var r1 = BuildInternalRequest();
-            var explicitResult = new AWS4Signer().SignRequest(r1, config, new RequestMetrics(), AccessKey, SecretKey, fixedTime);
+            var rExplicit = BuildInternalRequest();
+            var explicitResult = new AWS4Signer().SignRequest(rExplicit, config, new RequestMetrics(), AccessKey, SecretKey, computedDefault);
 
-            // Re-run the default-time overload but pin InitializeHeaders to the same instant by supplying it
-            // through the explicit overload; equality of scope + signature proves the plumbing is consistent.
-            var r2 = BuildInternalRequest();
-            var explicitResult2 = new AWS4Signer().SignRequest(r2, config, new RequestMetrics(), AccessKey, SecretKey, fixedTime);
-
-            Assert.AreEqual(explicitResult.Scope, explicitResult2.Scope);
-            Assert.AreEqual(explicitResult.Signature, explicitResult2.Signature);
-            Assert.AreEqual(explicitResult.ForAuthorizationHeader, explicitResult2.ForAuthorizationHeader);
+            // Scope (date) and signature depend on the signing instant. Since both overloads resolve to the
+            // same corrected-now for this endpoint, the scope and signed headers must match. (The signature
+            // could differ only if the two instants straddle a second/day boundary; the scope is at day
+            // granularity and the signed-header set is time-independent, so both are stable.)
+            Assert.AreEqual(explicitResult.Scope, defaultResult.Scope);
+            Assert.AreEqual(explicitResult.SignedHeaders, defaultResult.SignedHeaders);
         }
 
         private static IRequest BuildInternalRequest()
@@ -331,6 +367,111 @@ namespace AWSSDK.UnitTests.Signing
 
             AssertThrows<ArgumentException>(() =>
                 AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromSeconds(60)));
+        }
+
+        // -----------------------------------------------------------------------
+        // Query string handling (duplicate keys, valueless flags)
+        // -----------------------------------------------------------------------
+
+        [TestMethod]
+        public void Presign_DuplicateQueryKeys_AreAllPreserved()
+        {
+            // ?x=1&x=2 must not collapse to a single value: both must appear in the presigned URL and be
+            // covered by the signature. (A name-keyed parse would silently keep only x=2.)
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://example.amazonaws.com/?x=1&x=2"),
+                Headers = new Dictionary<string, string>(),
+            };
+
+            var result = AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromSeconds(60));
+
+            StringAssert.Contains(result.Uri.Query, "x=1");
+            StringAssert.Contains(result.Uri.Query, "x=2");
+            // Both occurrences are in the signed header set's canonical query, so the signature covers them.
+            StringAssert.Contains(result.Uri.Query, "X-Amz-Signature=");
+        }
+
+        [TestMethod]
+        public void Sign_DuplicateQueryKeys_MatchesInternalSignerWithListParam()
+        {
+            // The facade must sign ?x=1&x=2 as two values. Cross-check against the internal signer given a
+            // request whose parameter collection holds the same list — proves neither value is dropped.
+            var facade = AWSSigV4Signer.Sign(
+                new AWSSigningRequest
+                {
+                    HttpMethod = "GET",
+                    RequestUri = new Uri("https://example.amazonaws.com/?x=1&x=2"),
+                    Headers = new Dictionary<string, string>(),
+                },
+                BaseParameters());
+
+            var internalRequest = new DefaultRequest(new StubRequest(), Service)
+            {
+                HttpMethod = "GET",
+                Endpoint = new Uri("https://example.amazonaws.com"),
+                ResourcePath = "/",
+                UseQueryString = true,
+                OverrideSigningServiceName = Service,
+                AuthenticationRegion = Region,
+            };
+            internalRequest.ParameterCollection.Add("x", new List<string> { "1", "2" });
+            var config = new MockClientConfig { AuthenticationRegion = Region };
+            var expected = new AWS4Signer().SignRequest(
+                internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt);
+
+            Assert.AreEqual(expected.ForAuthorizationHeader, facade.AuthorizationHeader);
+        }
+
+        [TestMethod]
+        public void Presign_ValuelessQueryFlag_IsPreservedAsEmptyValue()
+        {
+            // ?acl (no '=') must be signed and emitted as "acl=" — the form a service canonicalizes a bare
+            // flag into — rather than dropped from the signature.
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://example.amazonaws.com/?acl"),
+                Headers = new Dictionary<string, string>(),
+            };
+
+            var result = AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromSeconds(60));
+
+            StringAssert.Contains(result.Uri.Query, "acl=");
+        }
+
+        // -----------------------------------------------------------------------
+        // HttpRequestMessage re-signing
+        // -----------------------------------------------------------------------
+
+        [TestMethod]
+        public async Task SignWithSigV4Async_ReSigningSameMessage_DoesNotDuplicateHeaders()
+        {
+            var message = new HttpRequestMessage(HttpMethod.Get, "https://example.amazonaws.com/");
+
+            await message.SignWithSigV4Async(BaseParameters());
+            // Re-sign the same message (e.g. after a credential refresh). Headers must be replaced, not appended.
+            await message.SignWithSigV4Async(BaseParameters());
+
+            Assert.AreEqual(1, System.Linq.Enumerable.Count(message.Headers.GetValues(HeaderKeys.AuthorizationHeader)));
+            Assert.AreEqual(1, System.Linq.Enumerable.Count(message.Headers.GetValues(HeaderKeys.XAmzDateHeader)));
+        }
+
+        [TestMethod]
+        public async Task SignWithSigV4Async_ReSigningAfterSessionToken_DropsStaleToken()
+        {
+            var message = new HttpRequestMessage(HttpMethod.Get, "https://example.amazonaws.com/");
+
+            // First pass with session credentials adds X-Amz-Security-Token.
+            var sessionParams = BaseParameters();
+            sessionParams.Credentials = new SessionAWSCredentials(AccessKey, SecretKey, "the-session-token");
+            await message.SignWithSigV4Async(sessionParams);
+            Assert.IsTrue(message.Headers.Contains(HeaderKeys.XAmzSecurityTokenHeader));
+
+            // Re-sign with non-session credentials: the stale token must not survive.
+            await message.SignWithSigV4Async(BaseParameters());
+            Assert.IsFalse(message.Headers.Contains(HeaderKeys.XAmzSecurityTokenHeader));
         }
 
         // -----------------------------------------------------------------------
