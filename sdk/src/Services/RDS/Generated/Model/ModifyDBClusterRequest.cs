@@ -73,6 +73,7 @@ namespace Amazon.RDS.Model
         private bool? _enableLimitlessDatabase;
         private bool? _enableLocalWriteForwarding;
         private bool? _enablePerformanceInsights;
+        private string _engineLifecycleSupport;
         private string _engineMode;
         private string _engineVersion;
         private int? _iops;
@@ -861,6 +862,51 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnablePerformanceInsights()
         {
             return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The lifecycle type for this DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this setting to enroll your DB cluster into Amazon RDS Extended Support
+        /// or to opt out. With RDS Extended Support, you can run the selected major engine version
+        /// on your DB cluster past the end of standard support for that engine version. For more
+        /// information, see the following sections:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Aurora - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Amazon
+        /// RDS Extended Support with Amazon Aurora</a> in the <i>Amazon Aurora User Guide</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Amazon
+        /// RDS Extended Support with Amazon RDS</a> in the <i>Amazon RDS User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>open-source-rds-extended-support | open-source-rds-extended-support-disabled</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
         }
 
         /// <summary>
