@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The S3 URI pointing to the skill directory (e.g., s3://bucket/skills/my-skill/).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5)]
+        [AWSProperty(Required=true, Min=5, Max=16383)]
         public string Uri
         {
             get { return this._uri; }

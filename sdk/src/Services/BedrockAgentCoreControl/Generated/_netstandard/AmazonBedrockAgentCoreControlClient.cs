@@ -7994,6 +7994,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource referenced by the operation does not exist
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
         /// This exception is thrown when the number of requests exceeds the limit
         /// </exception>

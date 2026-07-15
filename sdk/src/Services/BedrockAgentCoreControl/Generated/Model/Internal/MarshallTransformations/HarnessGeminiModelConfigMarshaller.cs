@@ -46,6 +46,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalParams())
+            {
+                context.Writer.WritePropertyName("additionalParams");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalParams);
+            }
+
             if(requestObject.IsSetApiKeyArn())
             {
                 context.Writer.WritePropertyName("apiKeyArn");
