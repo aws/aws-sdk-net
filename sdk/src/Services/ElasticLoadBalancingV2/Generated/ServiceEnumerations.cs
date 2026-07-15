@@ -1047,6 +1047,56 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
     /// <summary>
+    /// Constants used for properties of type SourceIpAddressTypeEnum.
+    /// </summary>
+    public class SourceIpAddressTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ipv4 for SourceIpAddressTypeEnum
+        /// </summary>
+        public static readonly SourceIpAddressTypeEnum Ipv4 = new SourceIpAddressTypeEnum("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for SourceIpAddressTypeEnum
+        /// </summary>
+        public static readonly SourceIpAddressTypeEnum Ipv6 = new SourceIpAddressTypeEnum("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceIpAddressTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceIpAddressTypeEnum FindValue(string value)
+        {
+            return FindValue<SourceIpAddressTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceIpAddressTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TargetAdministrativeOverrideReasonEnum.
     /// </summary>
     public class TargetAdministrativeOverrideReasonEnum : ConstantClass

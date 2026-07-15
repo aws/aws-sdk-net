@@ -482,6 +482,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestlistValue.IsSetSourceIpConfig())
                             {
+                                if(publicRequestlistValue.SourceIpConfig.IsSetIpAddressType())
+                                {
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SourceIpConfig" + "." + "IpAddressType", StringUtils.FromString(publicRequestlistValue.SourceIpConfig.IpAddressType));
+                                }
                                 if(publicRequestlistValue.SourceIpConfig.IsSetValues())
                                 {
                                     if (publicRequestlistValue.SourceIpConfig.Values.Count == 0)
