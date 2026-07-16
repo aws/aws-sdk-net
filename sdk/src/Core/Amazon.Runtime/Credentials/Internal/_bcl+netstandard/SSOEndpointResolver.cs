@@ -43,8 +43,9 @@ namespace Amazon.Runtime.Credentials.Internal
 
         private static readonly string[] IdentityCenterDomains =
         {
-            "identitycenter.amazonaws.com",
-            "identitycenter.amazonaws.com.cn",
+            "identitycenter.amazonaws.com",       // Commercial (aws) and GovCloud (aws-us-gov)
+            "identitycenter.amazonaws.com.cn",    // China (aws-cn)
+            "identitycenter.amazonaws.eu",        // European Sovereign Cloud (aws-eusc)
         };
 
         private static readonly Regex[] UrlPatterns =
@@ -61,6 +62,8 @@ namespace Amazon.Runtime.Credentials.Internal
             new Regex(@"^(https?://)?(?<id>[^.]+)\.portal\.(?<region>[^./]+)\.api\.amazonwebservices\.eu", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
             // New portal, IPv4-only: https://{idcInstanceId}.{region}.portal.amazonaws.eu
             new Regex(@"^(https?://)?(?<id>[^.]+)\.(?<region>[^.]+)\.portal\.amazonaws\.eu", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // Issuer URL: https://identitycenter.amazonaws.eu/{idcInstanceId} (region-less)
+            new Regex(@"^(https?://)?identitycenter\.amazonaws\.eu/(?<id>[^/]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
 
             // New portal, DualStack: https://{idcInstanceId}.portal.{region}.app.aws
             new Regex(@"^(https?://)?(?<id>[^.]+)\.portal\.(?<region>[^./]+)\.app\.aws", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
@@ -300,8 +303,6 @@ namespace Amazon.Runtime.Credentials.Internal
 
         /// <summary>
         /// Returns the partition-appropriate Identity Center issuer hostname for a resolved AWS-owned URL.
-        /// The issuer host differs by partition (e.g. China uses identitycenter.amazonaws.com.cn), so it
-        /// MUST NOT be hardcoded to the commercial host.
         /// </summary>
         private static string GetIssuerHost(string resolvedUrl)
         {
@@ -311,15 +312,22 @@ namespace Amazon.Runtime.Credentials.Internal
                 var hostname = new Uri(resolvedUrl).Host.ToLowerInvariant();
 #pragma warning restore CA1308
 
+                // China partition (aws-cn) hosts end in ".cn".
                 if (hostname.EndsWith(".cn", StringComparison.Ordinal))
                 {
                     return "identitycenter.amazonaws.com.cn";
+                }
+                // European Sovereign Cloud (aws-eusc) hosts end in ".eu".
+                if (hostname.EndsWith(".eu", StringComparison.Ordinal))
+                {
+                    return "identitycenter.amazonaws.eu";
                 }
             }
             catch (UriFormatException)
             {
             }
 
+            // Commercial (aws) and GovCloud (aws-us-gov).
             return "identitycenter.amazonaws.com";
         }
 

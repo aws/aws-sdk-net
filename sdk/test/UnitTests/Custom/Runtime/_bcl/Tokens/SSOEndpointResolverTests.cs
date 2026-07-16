@@ -150,6 +150,17 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.AreEqual("https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid", result.IssuerUrl);
         }
 
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public async Task ResolveAsync_EuscIssuerUrl_RecognizedAndRegionFromOverride()
+        {
+            var result = await SSOEndpointResolver.ResolveAsync("https://identitycenter.amazonaws.eu/ssoins-testinstanceid", "eusc-de-east-1");
+            Assert.AreEqual("eusc-de-east-1", result.Region);
+            Assert.IsFalse(result.IsVanityUrl);
+            Assert.AreEqual("https://identitycenter.amazonaws.eu/ssoins-testinstanceid", result.IssuerUrl);
+        }
+
         #endregion
 
         #region ResolveAsync - Issuer URL extraction
@@ -169,6 +180,9 @@ namespace AWSSDK.UnitTests.Runtime
         [DataRow("https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid", "https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid")]
         // GovCloud legacy: directoryId parsed from the path, maps to the commercial issuer host
         [DataRow("https://start.us-gov-home.awsapps.com/directory/d-testdirectoryid", "https://identitycenter.amazonaws.com/d-testdirectoryid")]
+        // EUSC portal and issuer forms map to the EUSC issuer host
+        [DataRow("https://ssoins-testinstanceid.eusc-de-east-1.portal.amazonaws.eu", "https://identitycenter.amazonaws.eu/ssoins-testinstanceid")]
+        [DataRow("https://identitycenter.amazonaws.eu/ssoins-testinstanceid", "https://identitycenter.amazonaws.eu/ssoins-testinstanceid")]
         public async Task ResolveAsync_ExtractsIssuerUrl(string url, string expectedIssuerUrl)
         {
             var result = await SSOEndpointResolver.ResolveAsync(url, "us-west-2");
