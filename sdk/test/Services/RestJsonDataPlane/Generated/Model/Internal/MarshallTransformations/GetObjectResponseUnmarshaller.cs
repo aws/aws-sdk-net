@@ -47,9 +47,7 @@ namespace Amazon.RestJsonDataPlane.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetObjectResponse response = new GetObjectResponse();
-            var ms = new MemoryStream();
-            Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
-            ms.Seek(0, SeekOrigin.Begin);
+            var ms = Amazon.Util.AWSSDKUtils.CopyToMemoryStream(context.Stream, context.ResponseData?.ContentLength ?? 0);
             if (ms.Length > 0)
                 response.Body = ms;
             if (context.ResponseData.IsHeaderPresent("accept-ranges"))

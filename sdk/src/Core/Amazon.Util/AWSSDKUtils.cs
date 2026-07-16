@@ -984,6 +984,99 @@ namespace Amazon.Util
         {
             source.CopyTo(destination, bufferSize);
         }
+
+        /// <summary>
+        /// Copies the contents of the source stream into a new <see cref="MemoryStream"/> positioned
+        /// at the beginning. When <paramref name="capacityHint"/> is a usable value it sizes the
+        /// stream up front, avoiding the repeated buffer doubling (and the associated garbage)
+        /// an unsized <see cref="MemoryStream"/> incurs for large payloads. An inaccurate hint is
+        /// safe: the returned stream always contains exactly the bytes read from the source.
+        /// </summary>
+        /// <param name="source">Stream to copy from</param>
+        /// <param name="capacityHint">Expected content length, e.g. the response Content-Length.
+        /// Values less than or equal to 0 are ignored. Because the hint typically originates from
+        /// the untrusted Content-Length response header, values larger than an internal limit do
+        /// not translate into an eager allocation of that size; growth beyond the limit requires
+        /// actual data to arrive.</param>
+        /// <returns>A <see cref="MemoryStream"/> with the copied content, positioned at 0</returns>
+        public static MemoryStream CopyToMemoryStream(Stream source, long capacityHint)
+        {
+            // Simple path: the claimed length is small enough to trust with an exact-size
+            // allocation (bounded by MaxCapacityHintPreallocationBytes, so a hostile
+            // Content-Length cannot force a LOH allocation).
+            // Essentially the payload is too small to ramp up a pooled chained-block stream,
+            // so we just allocate the exact size and copy.
+            if (capacityHint > 0 && capacityHint <= MaxCapacityHintPreallocationBytes)
+            {
+                var destination = new MemoryStream((int)capacityHint);
+                CopyStream(source, destination);
+                destination.Seek(0, SeekOrigin.Begin);
+                return destination;
+            }
+
+            // Unknown content length (e.g. chunked or compressed responses) or a length above the
+            // preallocation cap: copy into a pooled chained-block stream (RecyclableMemoryStream)
+            // and return it directly - RMS derives from MemoryStream, so no final copy or final
+            // allocation is needed. Growth appends pooled fixed-size blocks (no resize copies, no
+            // garbage), and the untrusted hint is ignored entirely: blocks are rented only as data
+            // actually arrives, so a hostile Content-Length cannot force any eager rent at all.
+            // Pool ownership transfers to the returned stream; disposing it returns the blocks,
+            // and an undisposed stream degrades to ordinary collectible garbage.
+            // PoC: evaluating Microsoft.IO.RecyclableMemoryStream as a formal Core dependency.
+            // Its GetBuffer/TryGetBuffer semantics differ from a plain MemoryStream (GetBuffer
+            // coalesces into a pooled contiguous buffer; the non-virtual TryGetBuffer reports the
+            // empty base buffer) - for these reasons ideal implementation option would be configurable
+            // opt-in or an extension.
+            var pooledDestination = _responseBodyStreamManager.GetStream(nameof(CopyToMemoryStream));
+            
+            // NOTE: we avoid source.CopyTo(pooledDestination), it would be simpler, but forces
+            // copying every byte twice (source -> intermediate copy buffer -> RMS block, with that
+            // buffer being per-call garbage on some netstandard2.0 platforms); reading straight into
+            // the RMS block via its IBufferWriter<byte> surface moves each byte once.
+            while (true)
+            {
+                // Read straight into the stream's current pooled block (IBufferWriter<byte>);
+                var free = pooledDestination.GetMemory();
+
+                // RecyclableMemoryStream memory is always backed by a pooled array.
+                if (!System.Runtime.InteropServices.MemoryMarshal.TryGetArray<byte>(free, out var segment))
+                    throw new InvalidOperationException("Expected an array-backed buffer.");
+
+                var read = source.Read(segment.Array, segment.Offset, segment.Count);
+                if (read == 0) // by spec the only EoF signal, even if that means extra loop on shorter reads
+                    break;
+
+                pooledDestination.Advance(read);
+            }
+            pooledDestination.Seek(0, SeekOrigin.Begin);
+            return pooledDestination;
+        }
+
+        /// <summary>
+        /// Upper bound on the eager allocation performed by <see cref="CopyToMemoryStream"/>.
+        /// The capacity hint comes from the Content-Length header, which is remote input; without
+        /// a bound a hostile endpoint could claim a huge length and force large allocations
+        /// without ever sending the bytes. The value is kept below the 85,000-byte large-object-heap
+        /// threshold so a hostile Content-Length cannot push allocations onto the LOH with a tiny actual
+        /// payload; 81,920 (80 KB) is the same size the BCL uses for stream copy buffers for the same
+        /// reason. Payloads up to this size are allocated exactly; larger (or fake) lengths grow with
+        /// actual received data.
+        /// </summary>
+        internal const int MaxCapacityHintPreallocationBytes = 80 * 1024;
+
+        /// <summary>
+        /// Shared pool of chained-block streams used by <see cref="CopyToMemoryStream"/> for
+        /// response bodies that exceed <see cref="MaxCapacityHintPreallocationBytes"/> or have no
+        /// usable length hint. Default options: 128 KB blocks, so growth never copies existing data
+        /// and abuse of the untrusted Content-Length header cannot cause allocation beyond the
+        /// pooled blocks actually filled by received data.
+        /// PoC: uses Microsoft.IO.RecyclableMemoryStream as a MS official high-performance memory
+        /// stream. For POC benchmarking we use default settings with safe zeroing of returned blocks,
+        /// which should be most reasonable default. Opposite to RMS default that doesn't zero out 
+        /// returned blocks.
+        /// </summary>
+        private static readonly Microsoft.IO.RecyclableMemoryStreamManager _responseBodyStreamManager =
+            new(new Microsoft.IO.RecyclableMemoryStreamManager.Options() {  ZeroOutBuffer = true});
 #endregion
 
 #region Public Methods and Properties
