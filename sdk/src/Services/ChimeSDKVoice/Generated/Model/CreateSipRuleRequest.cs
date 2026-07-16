@@ -92,7 +92,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<SipRuleTargetApplication> TargetApplications
         {
             get { return this._targetApplications; }

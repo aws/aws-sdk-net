@@ -35,7 +35,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class PhoneNumberOrder
     {
         private DateTime? _createdTimestamp;
-        private DateTime? _focDate;
+        private string _focDate;
         private List<OrderedPhoneNumber> _orderedPhoneNumbers = AWSConfigs.InitializeCollections ? new List<OrderedPhoneNumber>() : null;
         private PhoneNumberOrderType _orderType;
         private string _phoneNumberOrderId;
@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// null if a phone number order is not a porting order.
         /// </para>
         /// </summary>
-        public DateTime? FocDate
+        public string FocDate
         {
             get { return this._focDate; }
             set { this._focDate = value; }
@@ -77,7 +77,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if FocDate property is set
         internal bool IsSetFocDate()
         {
-            return this._focDate.HasValue; 
+            return this._focDate != null;
         }
 
         /// <summary>

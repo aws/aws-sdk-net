@@ -43,6 +43,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The S3 bucket that stores the Voice Connector's call detail records.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CdrBucket
         {
             get { return this._cdrBucket; }

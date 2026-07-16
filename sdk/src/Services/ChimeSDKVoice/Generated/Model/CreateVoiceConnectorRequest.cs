@@ -83,7 +83,12 @@ namespace Amazon.ChimeSDKVoice.Model
         /// enterprises migrating their contact center to Connect Customer can start with Connect
         /// telephony and IVR for immediate modernization ahead of agent migration.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// This integration is a gated feature. Please reach out to your account team to discuss
+        /// this feature with a Connect Specialist.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <c>CONNECT_ANALYTICS_CONNECTOR</c> - Enables enterprises to integrate Connect Customer
         /// with other voice systems for real-time and post-call analytics. They can use Connect
@@ -132,8 +137,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4
-        /// and IPv6).
+        /// The type of network for the Voice Connector.
         /// </para>
         /// </summary>
         public NetworkType NetworkType

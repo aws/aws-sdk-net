@@ -122,8 +122,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and
-        /// IPv6).
+        /// The type of network for the Voice Connector.
         /// </para>
         /// </summary>
         public NetworkType NetworkType

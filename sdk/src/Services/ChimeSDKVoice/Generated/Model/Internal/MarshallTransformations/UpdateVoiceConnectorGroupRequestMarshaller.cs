@@ -76,6 +76,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCallDistributionType())
+            {
+                context.Writer.WritePropertyName("CallDistributionType");
+                context.Writer.WriteStringValue(publicRequest.CallDistributionType);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

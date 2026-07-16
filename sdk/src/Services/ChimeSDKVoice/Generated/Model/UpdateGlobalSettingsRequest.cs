@@ -43,6 +43,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The Voice Connector settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VoiceConnectorSettings VoiceConnector
         {
             get { return this._voiceConnector; }
