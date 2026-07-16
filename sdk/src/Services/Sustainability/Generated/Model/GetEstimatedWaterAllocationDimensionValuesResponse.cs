@@ -30,16 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Sustainability.Model
 {
     /// <summary>
-    /// Filters environmental impact values by specific dimension values.
+    /// This is the response object from the GetEstimatedWaterAllocationDimensionValues operation.
     /// </summary>
-    public partial class FilterExpression
+    public partial class GetEstimatedWaterAllocationDimensionValuesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, List<string>> _dimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private string _nextToken;
+        private List<DimensionEntry> _results = AWSConfigs.InitializeCollections ? new List<DimensionEntry>() : null;
 
         /// <summary>
-        /// Gets and sets the property Dimensions. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// Filters environmental impact values by specific dimension values.
+        /// The pagination token indicating there are additional pages available. You can use
+        /// the token in a following request to fetch the next set of results. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Results. 
+        /// <para>
+        /// The list of possible dimensions over which the allocation data is aggregated.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -47,16 +68,17 @@ namespace Amazon.Sustainability.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public Dictionary<string, List<string>> Dimensions
+        [AWSProperty(Required=true)]
+        public List<DimensionEntry> Results
         {
-            get { return this._dimensions; }
-            set { this._dimensions = value; }
+            get { return this._results; }
+            set { this._results = value; }
         }
 
-        // Check to see if Dimensions property is set
-        internal bool IsSetDimensions()
+        // Check to see if Results property is set
+        internal bool IsSetResults()
         {
-            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

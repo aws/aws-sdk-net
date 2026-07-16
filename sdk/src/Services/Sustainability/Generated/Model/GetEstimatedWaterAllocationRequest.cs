@@ -30,27 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Sustainability.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEstimatedCarbonEmissions operation.
-    /// Returns estimated carbon emission values based on customer grouping and filtering
+    /// Container for the parameters to the GetEstimatedWaterAllocation operation.
+    /// Returns estimated water allocation values based on customer grouping and filtering
     /// parameters. We recommend using pagination to ensure that the operation returns quickly
     /// and successfully.
     /// </summary>
-    public partial class GetEstimatedCarbonEmissionsRequest : AmazonSustainabilityRequest
+    public partial class GetEstimatedWaterAllocationRequest : AmazonSustainabilityRequest
     {
-        private List<string> _emissionsTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allocationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FilterExpression _filterBy;
         private TimeGranularity _granularity;
-        private GranularityConfiguration _granularityConfiguration;
         private List<string> _groupBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private TimePeriod _timePeriod;
 
         /// <summary>
-        /// Gets and sets the property EmissionsTypes. 
+        /// Gets and sets the property AllocationTypes. 
         /// <para>
-        /// The emission types to include in the results. If absent, returns <c>TOTAL_LBM_CARBON_EMISSIONS</c>
-        /// and <c>TOTAL_MBM_CARBON_EMISSIONS</c> emissions types. 
+        /// The allocation types to include in the results. If absent, returns <c>TOTAL_WATER_WITHDRAWALS</c>
+        /// allocation types. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -58,23 +57,23 @@ namespace Amazon.Sustainability.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<string> EmissionsTypes
+        public List<string> AllocationTypes
         {
-            get { return this._emissionsTypes; }
-            set { this._emissionsTypes = value; }
+            get { return this._allocationTypes; }
+            set { this._allocationTypes = value; }
         }
 
-        // Check to see if EmissionsTypes property is set
-        internal bool IsSetEmissionsTypes()
+        // Check to see if AllocationTypes property is set
+        internal bool IsSetAllocationTypes()
         {
-            return this._emissionsTypes != null && (this._emissionsTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._allocationTypes != null && (this._allocationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property FilterBy. 
         /// <para>
-        ///  The criteria for filtering estimated carbon emissions. To determine which dimensions
-        /// are available to be filtered by, you can first call <a>GetEstimatedCarbonEmissionsDimensionValues</a>
+        ///  The criteria for filtering estimated water allocation. To determine which dimensions
+        /// are available to be filtered by, you can first call <a>GetEstimatedWaterAllocationDimensionValues</a>
         /// 
         /// </para>
         /// </summary>
@@ -93,15 +92,15 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        ///  The time granularity for the results. If absent, uses <c>MONTHLY</c> time granularity.
-        /// The smallest supported granularity for carbon emissions is <c>MONTHLY</c>. 
+        /// The time granularity for the results. Only <c>YEARLY_CALENDAR</c> time granularity
+        /// is currently supported for water allocation. Defaults to <c>YEARLY_CALENDAR</c> if
+        /// absent.
         /// </para>
         ///  
         /// <para>
         ///  If requesting partial time periods, data will be returned based on the smallest supported
         /// granularity. For example, requesting <c>2025-04-01T00:00:00Z</c> to <c>2026-04-01T00:00:00Z</c>
-        /// with <c>YEARLY_CALENDAR</c> granularity will return the last 9 months for 2025 and
-        /// the first 3 months of 2026. 
+        /// with <c>YEARLY_CALENDAR</c> will return all the data for 2026 only. 
         /// </para>
         /// </summary>
         public TimeGranularity Granularity
@@ -117,28 +116,9 @@ namespace Amazon.Sustainability.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GranularityConfiguration. 
-        /// <para>
-        /// Configuration for fiscal year calculations when using <c>YEARLY_FISCAL</c> or <c>QUARTERLY_FISCAL</c>
-        /// granularity. 
-        /// </para>
-        /// </summary>
-        public GranularityConfiguration GranularityConfiguration
-        {
-            get { return this._granularityConfiguration; }
-            set { this._granularityConfiguration = value; }
-        }
-
-        // Check to see if GranularityConfiguration property is set
-        internal bool IsSetGranularityConfiguration()
-        {
-            return this._granularityConfiguration != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// The dimensions available for grouping estimated carbon emissions.
+        /// The dimensions available for grouping estimated water allocation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -200,8 +180,8 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        ///  The date range for fetching estimated carbon emissions. The range must include the
-        /// start date of a month for that month's data to be included in the response. 
+        ///  The date range for fetching estimated water allocation. The range must include the
+        /// start date of a year for that year's data to be included in the response. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

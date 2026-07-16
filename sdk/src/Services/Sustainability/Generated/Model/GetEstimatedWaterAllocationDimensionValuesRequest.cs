@@ -30,11 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Sustainability.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEstimatedCarbonEmissionsDimensionValues operation.
+    /// Container for the parameters to the GetEstimatedWaterAllocationDimensionValues operation.
     /// Returns the possible dimension values available for a customer's account. We recommend
     /// using pagination to ensure that the operation returns quickly and successfully.
     /// </summary>
-    public partial class GetEstimatedCarbonEmissionsDimensionValuesRequest : AmazonSustainabilityRequest
+    public partial class GetEstimatedWaterAllocationDimensionValuesRequest : AmazonSustainabilityRequest
     {
         private List<string> _dimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
@@ -44,7 +44,7 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The dimensions available for grouping estimated carbon emissions.
+        /// The dimensions available for grouping estimated water allocation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -108,7 +108,7 @@ namespace Amazon.Sustainability.Model
         /// Gets and sets the property TimePeriod. 
         /// <para>
         ///  The date range for fetching the dimension values. The range must include the start
-        /// date of a month for that month's dimensions to be included in the response. 
+        /// date of a year for that year's data to be included in the response. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,42 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Sustainability.Model
 {
     /// <summary>
-    /// Represents a dimension and its corresponding value.
+    /// Represents a water allocation quantity with its value and unit of measurement.
     /// </summary>
-    public partial class DimensionEntry
+    public partial class WaterAllocation
     {
-        private Dimension _dimension;
-        private string _value;
+        private WaterAllocationUnit _unit;
+        private double? _value;
 
         /// <summary>
-        /// Gets and sets the property Dimension. 
+        /// Gets and sets the property Unit. 
         /// <para>
-        /// The dimension type that categorizes this entry.
+        /// The unit of measurement for the allocation value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public Dimension Dimension
+        public WaterAllocationUnit Unit
         {
-            get { return this._dimension; }
-            set { this._dimension = value; }
+            get { return this._unit; }
+            set { this._unit = value; }
         }
 
-        // Check to see if Dimension property is set
-        internal bool IsSetDimension()
+        // Check to see if Unit property is set
+        internal bool IsSetUnit()
         {
-            return this._dimension != null;
+            return this._unit != null;
         }
 
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value for the specified dimension. Valid values vary based on the dimension type
-        /// (e.g., <c>us-east-1</c> for the <c>REGION</c> dimension, <c>AmazonEC2</c> for the
-        /// <c>SERVICE</c> dimension). 
+        /// The numeric value of the allocation quantity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
-        public string Value
+        [AWSProperty(Required=true)]
+        public double? Value
         {
             get { return this._value; }
             set { this._value = value; }
@@ -74,7 +72,7 @@ namespace Amazon.Sustainability.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this._value != null;
+            return this._value.HasValue; 
         }
 
     }

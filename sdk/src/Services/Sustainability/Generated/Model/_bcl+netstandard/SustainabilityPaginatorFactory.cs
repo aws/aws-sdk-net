@@ -51,5 +51,21 @@ namespace Amazon.Sustainability.Model
         {
             return new GetEstimatedCarbonEmissionsDimensionValuesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for GetEstimatedWaterAllocation operation
+        ///</summary>
+        public IGetEstimatedWaterAllocationPaginator GetEstimatedWaterAllocation(GetEstimatedWaterAllocationRequest request) 
+        {
+            return new GetEstimatedWaterAllocationPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetEstimatedWaterAllocationDimensionValues operation
+        ///</summary>
+        public IGetEstimatedWaterAllocationDimensionValuesPaginator GetEstimatedWaterAllocationDimensionValues(GetEstimatedWaterAllocationDimensionValuesRequest request) 
+        {
+            return new GetEstimatedWaterAllocationDimensionValuesPaginator(this.client, request);
+        }
     }
 }
