@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added time-accepting overloads of `AWS4Signer.SignRequest` and `AWS4PreSignedUrlSigner.SignRequest` that take an explicit `signedAt`, enabling deterministic signing. Existing overloads are unchanged and delegate to these with the previously computed default time."
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}
