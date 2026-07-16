@@ -1,3 +1,19 @@
+### 4.0.290.0 (2026-07-16 18:14 UTC)
+* ChimeSDKVoice (4.0.101.0)
+	* Marked CreateProxySession, DeleteProxySession, GetProxySession, ListProxySessions, UpdateProxySession, PutVoiceConnectorProxy, DeleteVoiceConnectorProxy, and GetVoiceConnectorProxy as deprecated.
+* ElasticMapReduce (4.0.101.0)
+	* Amazon EMR updates the Session object returned by GetSession API
+* Omics (4.0.101.0)
+	* Adds support for returning the task UUID (universally unique identifier) in GetRunTask and ListRunTasks responses
+* Redshift (4.0.100.5)
+	* Amazon Redshift - Added support for rg.large and rg.12xlarge node types in CreateCluster, ModifyCluster, and ResizeCluster API operations.
+* S3 (4.0.101.2)
+	* Documentation update for removing the 30 day minimum restriction for transition to Standard-IA or OneZone-IA storage classes
+* SageMaker (4.0.102.0)
+	* Release support for g7 instance type for SageMaker inference endpoints.
+* Sustainability (4.0.101.0)
+	* Adds support for retrieving estimated water allocation data.
+
 ### 4.0.289.0 (2026-07-15 18:16 UTC)
 * BedrockAgentCoreControl (4.0.102.0)
 	* Fix HarnessEndpointArn pattern to match the actual service-emitted ARN format ('harness-endpoint' instead of 'endpoint'). Add additionalParams to Gemini model configuration for passing provider-specific parameters through to the model unchanged.
