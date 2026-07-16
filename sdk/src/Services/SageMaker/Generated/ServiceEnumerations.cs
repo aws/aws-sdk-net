@@ -18191,6 +18191,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG6Xlarge = new ProductionVariantInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG712xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG712xlarge = new ProductionVariantInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG724xlarge = new ProductionVariantInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG72xlarge = new ProductionVariantInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG748xlarge = new ProductionVariantInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG74xlarge = new ProductionVariantInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG78xlarge = new ProductionVariantInstanceType("ml.g7.8xlarge");
+        /// <summary>
         /// Constant MlG7e12xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG7e12xlarge = new ProductionVariantInstanceType("ml.g7e.12xlarge");
