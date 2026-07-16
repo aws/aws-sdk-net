@@ -223,7 +223,7 @@ namespace Amazon.Runtime.Signing
                 // When payload signing is enabled and the caller hasn't supplied a hash, the signer must be
                 // able to read and rewind the stream. A non-seekable stream would otherwise silently sign
                 // UNSIGNED-PAYLOAD, so fail loud instead.
-                if (parameters.SignPayload && precomputedHash == null && !request.ContentStream.CanSeek)
+                if (parameters.SignPayload && string.IsNullOrWhiteSpace(precomputedHash) && !request.ContentStream.CanSeek)
                 {
                     throw new ArgumentException(
                         "Cannot sign the payload of a non-seekable ContentStream. Supply the body as a byte[] Content, " +
@@ -233,7 +233,10 @@ namespace Amazon.Runtime.Signing
                 internalRequest.ContentStream = request.ContentStream;
             }
 
-            if (precomputedHash != null)
+            // A blank (empty or whitespace-only) x-amz-content-sha256 is treated as "not supplied": the
+            // downstream signer ignores such a value (its own IsNullOrEmpty check), so honoring it here would
+            // bypass the non-seekable guard above and let signing silently downgrade to UNSIGNED-PAYLOAD.
+            if (!string.IsNullOrWhiteSpace(precomputedHash))
                 internalRequest.PrecomputedContentSha256 = precomputedHash;
 
             return internalRequest;

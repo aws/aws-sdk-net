@@ -508,6 +508,26 @@ namespace AWSSDK.UnitTests.Signing
             AssertThrows<ArgumentException>(() => AWSSigV4Signer.Sign(request, BaseParameters()));
         }
 
+        [DataTestMethod]
+        [DataRow("")]
+        [DataRow("   ")]
+        public void Sign_NonSeekableStreamWithBlankPrecomputedHash_StillThrows(string blankHash)
+        {
+            // A blank (empty or whitespace-only) x-amz-content-sha256 is not a usable hash: the downstream
+            // signer ignores it and would silently downgrade to UNSIGNED-PAYLOAD (or sign the blank verbatim).
+            // The non-seekable guard must treat it as "no hash supplied" and fail loud rather than let either
+            // happen.
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "POST",
+                RequestUri = new Uri("https://example.amazonaws.com/"),
+                Headers = new Dictionary<string, string> { [HeaderKeys.XAmzContentSha256Header] = blankHash },
+                ContentStream = new NonSeekableStream(Encoding.UTF8.GetBytes("body")),
+            };
+
+            AssertThrows<ArgumentException>(() => AWSSigV4Signer.Sign(request, BaseParameters()));
+        }
+
         [TestMethod]
         public void Sign_NonSeekableStreamWithUnsignedPayload_DoesNotThrow()
         {
