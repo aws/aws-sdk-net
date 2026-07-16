@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// For information about using the Amazon S3 API—including error handling—see the <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/Welcome.html">Amazon
+    /// S3 Developer Guide</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Container for all error elements.
+    /// </para>
     /// </summary>
     public partial class DeleteError
     {

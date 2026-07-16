@@ -32,7 +32,50 @@ namespace Amazon.S3
     /// <summary>
     /// <para>Interface for accessing S3</para>
     ///
-    /// 
+    /// <note> 
+    /// <para>
+    /// For information about using the Amazon S3 API—including authentication, signing requests,
+    /// code examples, and error handling—see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/Welcome.html">Amazon
+    /// S3 Developer Guide</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Welcome to the <i>Amazon S3 API Reference</i>. This guide explains the Amazon Simple
+    /// Storage Service (Amazon S3) application programming interface (API).
+    /// </para>
+    ///  
+    /// <para>
+    /// Welcome to the <i>Amazon S3 API Reference</i>. This guide explains the Amazon Simple
+    /// Storage Service (Amazon S3) application programming interface (API).
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use any toolkit that supports HTTP to use the REST API. You can even use a
+    /// browser to fetch objects, as long as they are anonymously readable.
+    /// </para>
+    ///  
+    /// <para>
+    /// The REST API uses the standard HTTP headers and status codes, so that standard browsers
+    /// and toolkits work as expected. In some areas, we have added functionality to HTTP
+    /// (for example, we added headers to support access control). In these cases, we have
+    /// done our best to add the new functionality in a way that matched the style of standard
+    /// HTTP usage.
+    /// </para>
+    ///  
+    /// <para>
+    /// The current version of the Amazon S3 API is <c>2006-03-01</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon S3 supports the REST API.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Support for SOAP over HTTP is deprecated, but it is still available over HTTPS. However,
+    /// new Amazon S3 features will not be supported for SOAP. We recommend that you use either
+    /// this REST API or the Amazon Web Services SDKs.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonS3 : IAmazonService, IDisposable
     {
@@ -17114,10 +17157,6 @@ namespace Amazon.S3
         /// To use the <c>UpdateObjectEncryption</c> operation, you must have the following permissions:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <c>s3:PutObject</c> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <c>s3:UpdateObjectEncryption</c> 
         /// </para>

@@ -84,10 +84,6 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>s3:PutObject</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <c>s3:UpdateObjectEncryption</c> 
     /// </para>
     ///  </li> <li> 

@@ -67,7 +67,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// A forward slash followed by the name of the bucket.
+        /// A forward slash followed by the name of the bucket for all account regional namespace
+        /// buckets and all global general purpose buckets created in us-east-1. For example,
+        /// <c>/amzn-s3-demo-bucket</c>. For global general purpose buckets created in other Amazon
+        /// Web Services Regions, the Location field is the global endpoint URL. For example,
+        /// <c>http://amzn-s3-demo-bucket.s3.amazonaws.com/</c>.
         /// </para>
         /// </summary>
         public string Location
