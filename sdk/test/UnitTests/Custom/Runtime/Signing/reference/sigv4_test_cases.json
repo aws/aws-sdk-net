@@ -1,0 +1,207 @@
+{
+  "_comment": "Shared SigV4 known-answer test cases. Single source of truth for both the .NET signer tests (AWSSigV4SignerParityTests) and the independent Python reference oracle (sigv4_reference_vectors.py). All cases use the canonical AWS SigV4 test-suite credentials and a fixed signing time. To (re)generate the expectedSignature fields from the independent Python implementation, run: python3 sigv4_reference_vectors.py --write. To verify the .NET signer matches, run the AWSSigV4SignerParityTests test class.",
+  "credentials": {
+    "accessKey": "AKIDEXAMPLE",
+    "secretKey": "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY",
+    "region": "us-east-1",
+    "service": "service",
+    "amzDate": "20150830T123600Z"
+  },
+  "cases": [
+    {
+      "name": "empty-get",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "726c5c4879a6b4ccbbd3b24edbd6b8826d34f87450fbbf4e85546fc7ba9c1642"
+    },
+    {
+      "name": "encoded-path",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/documents and settings/",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "f238a85b60dd1f5ec084a0b17ab0c7492fa81d4c87a493762b0c610085a3b237"
+    },
+    {
+      "name": "single-query-param",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?Param1=value1",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "2287c0f96af21b7ccf3ee4a2905bcbb2d6f9a94c68d0849f3d1715ef003f2a05"
+    },
+    {
+      "name": "two-query-params",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?a=1&b=2",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "34170682e7af01d97548b14ac02777298b87ffc0370241c0d027326a2dd082b7"
+    },
+    {
+      "name": "duplicate-query-key",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?x=1&x=2",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "5c50be118c209562a76a20a14a4223c06aa5459ba3d84a33432321cfd388fa51"
+    },
+    {
+      "name": "valueless-query-flag",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?acl",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "6615a3c3b4d979bfec21cce1fd1c97bf2b5bd8cabb4bcb2f448c2d2657823d9e"
+    },
+    {
+      "name": "post-with-body",
+      "method": "POST",
+      "url": "https://example.amazonaws.com/",
+      "headers": {},
+      "body": "hello world",
+      "signPayload": true,
+      "expectedSignature": "a46b49879a7216c01acb5bc869be959e2eea307d67b7b39b9335eceb368d8681"
+    },
+    {
+      "name": "unsigned-payload",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/",
+      "headers": {},
+      "body": null,
+      "signPayload": false,
+      "expectedSignature": "9b02fb7b5d0076fa47a0adda28c71e74ba4588334bc0139b8cd6bb87f16afe16"
+    },
+    {
+      "name": "extra-signed-header",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/",
+      "headers": {
+        "x-k8s-aws-id": "my-cluster"
+      },
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "39b2e37f474f20f9d00667e5a68e2cb9fd5c9af381dd983fc8a677df6f610b01"
+    },
+    {
+      "name": "multi-segment-path",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/prod/items/123",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "7d7decdf4faf00ea11abaf36c546c0515c6d189b641ee599a01df2df2efc5127"
+    },
+    {
+      "name": "query-value-with-space",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?name=John Smith",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "4c3b749c356d9cf4e507c858f11e5dc9520147bcbcd4e62173712b9b7c26f1b1"
+    },
+    {
+      "name": "query-reserved-chars",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?filter=a:b/c@d",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "cc651873071ca85732640706e037ac9a3c5ffc1e56cb32f6f95db7be605a9a00"
+    },
+    {
+      "name": "query-empty-value",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?key=",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "b214645cb5aba2c3a6ae4ca5b8903a14623dd4a47d4be4d77a08b8fbd5b43e0f"
+    },
+    {
+      "name": "query-plus-in-value",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?q=a+b",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "3b9db0dabfbc7ec10d0265f6438ffae6ffbff11c19944e1293a8bd7a2905a76d"
+    },
+    {
+      "name": "query-unicode-value",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?city=m\u00fcnchen",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "4195b0f9c6747b571db69b6214b1382c967d89e372c0ac09da9d57aa791f2e02"
+    },
+    {
+      "name": "three-duplicate-keys",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?p=3&p=1&p=2",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "dcef8b2e9651ce96b714cffd391b0e059cf54efb52f2c2274a97a6ea79a95300"
+    },
+    {
+      "name": "put-with-body",
+      "method": "PUT",
+      "url": "https://example.amazonaws.com/resource",
+      "headers": {},
+      "body": "{\"key\":\"value\"}",
+      "signPayload": true,
+      "expectedSignature": "171a804f8527b0881c0a38dfd3b442cc3ce2aab6d31b4cb381f4d0aaae7c26f0"
+    },
+    {
+      "name": "mixed-case-header-name",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/",
+      "headers": {
+        "X-Custom-Header": "SomeValue"
+      },
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "9dbf33fbf546b9ce1e257bd1674c01f5ebcd585b3a84ebdea5c5c15699a1bd08"
+    },
+    {
+      "name": "header-value-needs-trim",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/",
+      "headers": {
+        "x-custom": "  spaced   out  value  "
+      },
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "20c3a7b9ac1f2710e90fbceb53f0d66a91f17cba5da41e030d2f73cddede8d38"
+    },
+    {
+      "name": "non-default-port",
+      "method": "GET",
+      "url": "https://example.amazonaws.com:8443/",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "9cf50958f23df2c14ebcad2c9a5f313bc9202cdb0e47bc62fdde7b3a9620a9ca"
+    },
+    {
+      "name": "empty-body-post-signed",
+      "method": "POST",
+      "url": "https://example.amazonaws.com/",
+      "headers": {},
+      "body": "",
+      "signPayload": true,
+      "expectedSignature": "3ad5e249949a59b862eedd9f1bf1ece4693c3042bf860ef5e3351b8925316f98"
+    }
+  ]
+}

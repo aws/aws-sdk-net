@@ -1,0 +1,255 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Signing;
+using Amazon.Util;
+using AWSSDK_DotNet.UnitTests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace AWSSDK.UnitTests.Signing
+{
+    /// <summary>
+    /// Parity + known-answer coverage for <see cref="AWSSigV4Signer"/>. The signing scenarios are loaded from
+    /// the shared fixture sigv4_test_cases.json (embedded resource) — the SAME file the independent Python
+    /// reference oracle (reference/sigv4_reference_vectors.py) reads and writes — so the two cannot drift.
+    /// Each scenario is exercised two ways:
+    ///
+    /// 1. <see cref="Facade_MatchesInternalSigner"/> signs each scenario through BOTH the public facade and a
+    ///    hand-built <see cref="DefaultRequest"/> + internal <see cref="AWS4Signer"/>, asserting the resulting
+    ///    Authorization header is identical. This guards against the facade's request-building drifting from
+    ///    the internal signer for any input class (query params, bodies, extra headers, unsigned payload, …).
+    ///
+    /// 2. <see cref="Facade_MatchesKnownAnswerVector"/> asserts the facade reproduces each scenario's
+    ///    expectedSignature from the fixture. Those signatures were produced by the independent reference
+    ///    implementation (not this codebase), so they catch a systematic canonicalization / string-to-sign /
+    ///    signing-key defect that a pure facade-vs-internal parity check could not (both sides would share
+    ///    the bug).
+    /// </summary>
+    [TestClass]
+    [TestCategory("Core")]
+    [TestCategory("Signer")]
+    public class AWSSigV4SignerParityTests
+    {
+        /// <summary>A logical signing scenario, loaded from the shared sigv4_test_cases.json fixture.</summary>
+        public sealed class Scenario
+        {
+            public string Name;
+            public string Method;
+            public string Url;
+            public Dictionary<string, string> Headers = new Dictionary<string, string>();
+            public byte[] Content;
+            public bool SignPayload = true;
+            /// <summary>Externally-computed expected signature (hex) from the shared fixture.</summary>
+            public string ExpectedSignature;
+            public override string ToString() => Name;
+        }
+
+        // The credentials/region/service/time come from the same shared JSON fixture that the Python
+        // reference oracle uses, so the two cannot drift.
+        private static string AccessKey;
+        private static string SecretKey;
+        private static string Region;
+        private static string Service;
+        private static DateTime SignedAt;
+        private static Scenario[] Scenarios;
+
+        [ClassInitialize]
+        public static void LoadSharedFixture(TestContext context)
+        {
+            var json = Utils.GetResourceText("sigv4_test_cases.json");
+            using (var doc = JsonDocument.Parse(json))
+            {
+                var creds = doc.RootElement.GetProperty("credentials");
+                AccessKey = creds.GetProperty("accessKey").GetString();
+                SecretKey = creds.GetProperty("secretKey").GetString();
+                Region = creds.GetProperty("region").GetString();
+                Service = creds.GetProperty("service").GetString();
+                var amzDate = creds.GetProperty("amzDate").GetString();
+                SignedAt = DateTime.ParseExact(amzDate, "yyyyMMdd'T'HHmmss'Z'", CultureInfo.InvariantCulture,
+                    DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal);
+
+                var list = new List<Scenario>();
+                foreach (var c in doc.RootElement.GetProperty("cases").EnumerateArray())
+                {
+                    var scenario = new Scenario
+                    {
+                        Name = c.GetProperty("name").GetString(),
+                        Method = c.GetProperty("method").GetString(),
+                        Url = c.GetProperty("url").GetString(),
+                        SignPayload = c.GetProperty("signPayload").GetBoolean(),
+                        ExpectedSignature = c.GetProperty("expectedSignature").GetString(),
+                    };
+                    foreach (var h in c.GetProperty("headers").EnumerateObject())
+                        scenario.Headers[h.Name] = h.Value.GetString();
+                    var body = c.GetProperty("body");
+                    if (body.ValueKind != JsonValueKind.Null)
+                        scenario.Content = Encoding.UTF8.GetBytes(body.GetString());
+                    list.Add(scenario);
+                }
+                Scenarios = list.ToArray();
+            }
+        }
+
+        public static IEnumerable<object[]> AllScenarios()
+        {
+            // DynamicData is evaluated before ClassInitialize, so load the fixture here too if needed.
+            EnsureLoaded();
+            return Scenarios.Select(s => new object[] { s.Name });
+        }
+
+        private static void EnsureLoaded()
+        {
+            if (Scenarios == null)
+                LoadSharedFixture(null);
+        }
+
+        private static Scenario Get(string name)
+        {
+            EnsureLoaded();
+            return Scenarios.Single(s => s.Name == name);
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(AllScenarios))]
+        public void Facade_MatchesInternalSigner(string scenarioName)
+        {
+            var scenario = Get(scenarioName);
+            var facade = SignWithFacade(scenario);
+            var internalHeader = SignWithInternalSigner(scenario);
+
+            Assert.AreEqual(internalHeader, facade,
+                $"Facade and internal signer diverged for scenario '{scenario.Name}'.");
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(AllScenarios))]
+        public void Facade_MatchesKnownAnswerVector(string scenarioName)
+        {
+            var scenario = Get(scenarioName);
+            var facade = SignWithFacade(scenario);
+            var expected =
+                "AWS4-HMAC-SHA256 " +
+                $"Credential={AccessKey}/{SignedAt.ToString("yyyyMMdd", CultureInfo.InvariantCulture)}/{Region}/{Service}/aws4_request, " +
+                $"SignedHeaders={ExpectedSignedHeaders(scenario)}, " +
+                $"Signature={scenario.ExpectedSignature}";
+
+            Assert.AreEqual(expected, facade,
+                $"Facade output did not match the independent known-answer vector for scenario '{scenario.Name}'.");
+        }
+
+        // --- helpers ---
+
+        private static string SignWithFacade(Scenario scenario)
+        {
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = scenario.Method,
+                RequestUri = new Uri(scenario.Url),
+                Headers = new Dictionary<string, string>(scenario.Headers),
+                Content = scenario.Content,
+            };
+            var parameters = new AWSSigningParameters
+            {
+                Credentials = new BasicAWSCredentials(AccessKey, SecretKey),
+                Region = Region,
+                Service = Service,
+                SignedAt = SignedAt,
+                SignPayload = scenario.SignPayload,
+            };
+            return AWSSigV4Signer.Sign(request, parameters).AuthorizationHeader;
+        }
+
+        private static string SignWithInternalSigner(Scenario scenario)
+        {
+            var uri = new Uri(scenario.Url);
+            var internalRequest = new DefaultRequest(new ParityStubRequest(), Service)
+            {
+                HttpMethod = scenario.Method,
+                Endpoint = new Uri(uri.GetLeftPart(UriPartial.Authority)),
+                ResourcePath = uri.AbsolutePath,
+                OverrideSigningServiceName = Service,
+                AuthenticationRegion = Region,
+                DisablePayloadSigning = !scenario.SignPayload,
+                UseDoubleEncoding = false,
+                Content = scenario.Content,
+            };
+
+            foreach (var header in scenario.Headers)
+                internalRequest.Headers[header.Key] = header.Value;
+
+            if (!string.IsNullOrEmpty(uri.Query))
+            {
+                internalRequest.UseQueryString = true;
+                foreach (var pair in ParseQuery(uri.Query))
+                    AddParam(internalRequest.ParameterCollection, pair.Key, pair.Value);
+            }
+
+            var config = new MockClientConfig { AuthenticationRegion = Region };
+            return new AWS4Signer()
+                .SignRequest(internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt)
+                .ForAuthorizationHeader;
+        }
+
+        /// <summary>The sorted signed-header set the facade always produces, plus any extra caller headers.</summary>
+        private static string ExpectedSignedHeaders(Scenario scenario)
+        {
+            var names = new List<string> { "host", "x-amz-content-sha256", "x-amz-date" };
+            foreach (var key in scenario.Headers.Keys)
+                names.Add(key.ToLowerInvariant());
+            names.Sort(StringComparer.Ordinal);
+            return string.Join(";", names);
+        }
+
+        private static IEnumerable<KeyValuePair<string, string>> ParseQuery(string query)
+        {
+            var start = query.IndexOf('?');
+            var qs = start >= 0 ? query.Substring(start + 1) : query;
+            foreach (var token in qs.Split('&'))
+            {
+                if (token.Length == 0) continue;
+                var eq = token.IndexOf('=');
+                if (eq < 0)
+                    yield return new KeyValuePair<string, string>(Uri.UnescapeDataString(token), null);
+                else
+                    yield return new KeyValuePair<string, string>(
+                        Uri.UnescapeDataString(token.Substring(0, eq)),
+                        Uri.UnescapeDataString(token.Substring(eq + 1)));
+            }
+        }
+
+        private static void AddParam(ParameterCollection parameters, string key, string value)
+        {
+            var normalized = value ?? string.Empty;
+            if (!parameters.TryGetValue(key, out var existing))
+                parameters.Add(key, normalized);
+            else if (existing is StringListParameterValue list)
+                list.Value.Add(normalized);
+            else if (existing is StringParameterValue single)
+                parameters[key] = new StringListParameterValue(new List<string> { single.Value, normalized });
+        }
+
+        private sealed class ParityStubRequest : AmazonWebServiceRequest { }
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added a public standalone SigV4 request signing API in the `Amazon.Runtime.Signing` namespace (`AWSSigV4Signer` with `Sign`/`SignAsync` for header signing and `Presign`/`PresignAsync` for presigned URLs, plus the `AWSSigningRequest`, `AWSSigningParameters`, `AWSSigningResult`, and `PresignResult` types). This lets callers sign an arbitrary HTTP request with SigV4 without constructing internal signer types."
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}
