@@ -5244,11 +5244,19 @@ namespace Amazon.Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// rg.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// rg.xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// rg.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// rg.12xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
