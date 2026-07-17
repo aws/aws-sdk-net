@@ -42,23 +42,24 @@ namespace AWSSDK.UnitTests.Signing
         {
             // The original 5-arg SignRequest computed its signing time via
             // CorrectClockSkew.GetCorrectedUtcNowForEndpoint and used it. The refactor moved the logic into a
-            // 6-arg time-accepting overload and made the 5-arg delegate with that same computed default. This
-            // test invokes BOTH overloads and asserts they produce byte-identical output when the explicit
-            // time is the value the default-time overload would compute — so a broken delegation (wrong
-            // default, double header init, dropped reassignment) would fail here.
+            // 6-arg time-accepting overload and made the 5-arg delegate with that same computed default.
+            //
+            // We can't independently recompute the default instant and expect a match, since the default
+            // overload computes its own corrected-now that would differ from ours by the wall-clock elapsed
+            // between the two calls. Instead we capture the exact instant the default path actually used
+            // (surfaced on the result as DateTime), then re-sign with the explicit overload using that same
+            // instant and compare a time-sensitive output. A broken delegation (wrong default, double header
+            // init, dropped reassignment) would make ForAuthorizationHeader diverge here.
             var config = new MockClientConfig { AuthenticationRegion = Region };
-            var endpoint = new Uri("https://example.amazonaws.com");
-            var computedDefault = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.ToString());
 
             var defaultResult = new AWS4Signer().SignRequest(
                 BuildInternalRequest(), config, new RequestMetrics(), AccessKey, SecretKey);
             var explicitResult = new AWS4Signer().SignRequest(
-                BuildInternalRequest(), config, new RequestMetrics(), AccessKey, SecretKey, computedDefault);
+                BuildInternalRequest(), config, new RequestMetrics(), AccessKey, SecretKey, defaultResult.DateTime);
 
-            // Scope (date) and signed headers are the deterministic-instant-dependent portions of the result;
-            // both overloads resolve to the same corrected-now here, so both must match.
-            Assert.AreEqual(explicitResult.Scope, defaultResult.Scope);
-            Assert.AreEqual(explicitResult.SignedHeaders, defaultResult.SignedHeaders);
+            // ForAuthorizationHeader folds in the full signature (down to the second via the credential scope
+            // date and x-amz-date), so it only matches if both paths signed at the identical instant.
+            Assert.AreEqual(explicitResult.ForAuthorizationHeader, defaultResult.ForAuthorizationHeader);
         }
 
         [TestMethod]

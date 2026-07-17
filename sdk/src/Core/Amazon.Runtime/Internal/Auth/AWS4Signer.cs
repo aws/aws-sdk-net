@@ -168,7 +168,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>
         /// Parameters passed as part of the resource path should be uri-encoded prior to
         /// entry to the signer. Parameters passed in the request.Parameters collection should
-        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// not be encoded; encoding will be done for these parameters as part of the
         /// construction of the canonical request.
         /// </remarks>
         public AWS4SigningResult SignRequest(IRequest request,
@@ -177,6 +177,9 @@ namespace Amazon.Runtime.Internal.Auth
                                              string awsAccessKeyId,
                                              string awsSecretAccessKey)
         {
+            // Validate before touching request.Endpoint so that the validation behavior (and any
+            // resulting exception) is unchanged from the pre-refactor flow, which validated first.
+            ValidateRequest(request);
             return SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey,
                                CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString()));
         }
@@ -213,7 +216,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>
         /// Parameters passed as part of the resource path should be uri-encoded prior to
         /// entry to the signer. Parameters passed in the request.Parameters collection should
-        /// be not be encoded; encoding will be done for these parameters as part of the
+        /// not be encoded; encoding will be done for these parameters as part of the
         /// construction of the canonical request.
         /// </remarks>
         public AWS4SigningResult SignRequest(IRequest request,
@@ -1159,7 +1162,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>
         /// Parameters passed as part of the resource path should be uri-encoded prior to
         /// entry to the signer. Parameters passed in the request.Parameters collection should
-        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// not be encoded; encoding will be done for these parameters as part of the
         /// construction of the canonical request.
         /// </remarks>
         public new AWS4SigningResult SignRequest(IRequest request,
@@ -1207,7 +1210,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>
         /// Parameters passed as part of the resource path should be uri-encoded prior to
         /// entry to the signer. Parameters passed in the request.Parameters collection should
-        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// not be encoded; encoding will be done for these parameters as part of the
         /// construction of the canonical request.
         ///
         /// The X-Amz-Content-SHA256 is cleared out of the request.
