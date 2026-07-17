@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.IO;
 using System.Text;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -41,14 +42,16 @@ namespace AWSSDK.UnitTests.Signing
         // -----------------------------------------------------------------------
 
         [TestMethod]
-        public void SetRequestBodyHash_WithPrecomputedHash_UsesItVerbatim()
+        public void SetRequestBodyHash_WithPrecomputedHash_UsesItVerbatimWithoutReadingBody()
         {
-            // A precomputed hash must be used verbatim as x-amz-content-sha256, even when a body is present
-            // that would otherwise be read and hashed.
+            // A precomputed hash must be used verbatim as x-amz-content-sha256 AND the signer must not
+            // read the body to produce it. We back the request with a stream that throws on any read: if
+            // the signer honors the precomputed hash ahead of the body read, signing succeeds and the
+            // header carries the supplied value; if it fell through to hashing the body, the read would throw.
             var precomputed = new string('a', 64);
             var config = new MockClientConfig { AuthenticationRegion = Region };
             var request = BuildInternalRequest();
-            request.Content = Encoding.UTF8.GetBytes("some body the signer must not read");
+            request.ContentStream = new ThrowOnReadStream(Encoding.UTF8.GetBytes("some body the signer must not read"));
             request.PrecomputedContentSha256 = precomputed;
 
             new AWS4Signer().SignRequest(request, config, new RequestMetrics(), AccessKey, SecretKey);
@@ -91,9 +94,10 @@ namespace AWSSDK.UnitTests.Signing
 
         private static IRequest BuildInternalRequest()
         {
+            // POST is the body-typical verb these scenarios represent (a caller supplying a body hash).
             return new DefaultRequest(new StubRequest(), Service)
             {
-                HttpMethod = "GET",
+                HttpMethod = "POST",
                 Endpoint = new Uri("https://example.amazonaws.com"),
                 ResourcePath = "/",
                 OverrideSigningServiceName = Service,
@@ -102,5 +106,58 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         private class StubRequest : AmazonWebServiceRequest { }
+
+        /// <summary>
+        /// A seekable stream whose length matches the supplied content but which throws on any read
+        /// attempt. Used to prove the signer honors PrecomputedContentSha256 without reading the body:
+        /// if signing touched the body, the read would throw instead of completing.
+        /// </summary>
+        private sealed class ThrowOnReadStream : Stream
+        {
+            private readonly long _length;
+            private long _position;
+
+            public ThrowOnReadStream(byte[] content)
+            {
+                _length = content.Length;
+            }
+
+            public override bool CanRead => true;
+            public override bool CanSeek => true;
+            public override bool CanWrite => false;
+            public override long Length => _length;
+
+            public override long Position
+            {
+                get => _position;
+                set => _position = value;
+            }
+
+            public override int Read(byte[] buffer, int offset, int count)
+            {
+                throw new InvalidOperationException("The signer must not read the request body when PrecomputedContentSha256 is set.");
+            }
+
+            public override long Seek(long offset, SeekOrigin origin)
+            {
+                switch (origin)
+                {
+                    case SeekOrigin.Begin:
+                        _position = offset;
+                        break;
+                    case SeekOrigin.Current:
+                        _position += offset;
+                        break;
+                    case SeekOrigin.End:
+                        _position = _length + offset;
+                        break;
+                }
+                return _position;
+            }
+
+            public override void Flush() { }
+            public override void SetLength(long value) => throw new NotSupportedException();
+            public override void Write(byte[] buffer, int offset, int count) => throw new NotSupportedException();
+        }
     }
 }

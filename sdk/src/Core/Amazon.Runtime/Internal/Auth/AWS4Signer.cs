@@ -547,6 +547,11 @@ namespace Amazon.Runtime.Internal.Auth
             // scrub that clears a stale x-amz-content-sha256 header before signing), letting a caller
             // sign a body the signer must not read (large or non-seekable). The standard service
             // pipeline never sets this, so its resign/scrub behavior is unaffected.
+            //
+            // This branch is only reachable when payload signing is effectively enabled: the
+            // unsigned-payload gate above (DisablePayloadSigning ?? !signPayload) already returned
+            // UNSIGNED-PAYLOAD otherwise, so PrecomputedContentSha256 cannot override that magic string.
+            // It is likewise ignored for chunk-encoded requests, which carry their own streaming hash.
             if (!request.UseChunkEncoding && !string.IsNullOrEmpty(request.PrecomputedContentSha256))
                 return SetPayloadSignatureHeader(request, request.PrecomputedContentSha256);
 
