@@ -34,8 +34,27 @@ namespace Amazon.Odb.Model
     /// </summary>
     public partial class AutonomousDatabaseWalletDetails
     {
+        private WalletPasswordSourceSummary _passwordSourceSummary;
         private AutonomousDatabaseWalletStatus _status;
         private DateTime? _timeRotated;
+
+        /// <summary>
+        /// Gets and sets the property PasswordSourceSummary. 
+        /// <para>
+        /// The summary of the password source configuration for the Autonomous Database wallet.
+        /// </para>
+        /// </summary>
+        public WalletPasswordSourceSummary PasswordSourceSummary
+        {
+            get { return this._passwordSourceSummary; }
+            set { this._passwordSourceSummary = value; }
+        }
+
+        // Check to see if PasswordSourceSummary property is set
+        internal bool IsSetPasswordSourceSummary()
+        {
+            return this._passwordSourceSummary != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

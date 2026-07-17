@@ -75,6 +75,56 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type AdminPasswordSource.
+    /// </summary>
+    public class AdminPasswordSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_REQUEST_PARAMETER for AdminPasswordSource
+        /// </summary>
+        public static readonly AdminPasswordSource API_REQUEST_PARAMETER = new AdminPasswordSource("API_REQUEST_PARAMETER");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_AWS_SECRET for AdminPasswordSource
+        /// </summary>
+        public static readonly AdminPasswordSource CUSTOMER_MANAGED_AWS_SECRET = new AdminPasswordSource("CUSTOMER_MANAGED_AWS_SECRET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdminPasswordSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdminPasswordSource FindValue(string value)
+        {
+            return FindValue<AdminPasswordSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdminPasswordSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutonomousDatabaseBackupStatus.
     /// </summary>
     public class AutonomousDatabaseBackupStatus : ConstantClass
@@ -1900,6 +1950,10 @@ namespace Amazon.Odb
         /// Constant KmsTde for OciAwsIntegration
         /// </summary>
         public static readonly OciAwsIntegration KmsTde = new OciAwsIntegration("KmsTde");
+        /// <summary>
+        /// Constant SecretsManager for OciAwsIntegration
+        /// </summary>
+        public static readonly OciAwsIntegration SecretsManager = new OciAwsIntegration("SecretsManager");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1930,6 +1984,68 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OciAwsIntegration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OciIamRoleStatus.
+    /// </summary>
+    public class OciIamRoleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for OciIamRoleStatus
+        /// </summary>
+        public static readonly OciIamRoleStatus AVAILABLE = new OciIamRoleStatus("AVAILABLE");
+        /// <summary>
+        /// Constant PROVISION_FAILED for OciIamRoleStatus
+        /// </summary>
+        public static readonly OciIamRoleStatus PROVISION_FAILED = new OciIamRoleStatus("PROVISION_FAILED");
+        /// <summary>
+        /// Constant PROVISIONING for OciIamRoleStatus
+        /// </summary>
+        public static readonly OciIamRoleStatus PROVISIONING = new OciIamRoleStatus("PROVISIONING");
+        /// <summary>
+        /// Constant TERMINATE_FAILED for OciIamRoleStatus
+        /// </summary>
+        public static readonly OciIamRoleStatus TERMINATE_FAILED = new OciIamRoleStatus("TERMINATE_FAILED");
+        /// <summary>
+        /// Constant TERMINATING for OciIamRoleStatus
+        /// </summary>
+        public static readonly OciIamRoleStatus TERMINATING = new OciIamRoleStatus("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OciIamRoleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OciIamRoleStatus FindValue(string value)
+        {
+            return FindValue<OciIamRoleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OciIamRoleStatus(string value)
         {
             return FindValue(value);
         }
@@ -2846,6 +2962,56 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpcEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WalletPasswordSource.
+    /// </summary>
+    public class WalletPasswordSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_REQUEST_PARAMETER for WalletPasswordSource
+        /// </summary>
+        public static readonly WalletPasswordSource API_REQUEST_PARAMETER = new WalletPasswordSource("API_REQUEST_PARAMETER");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_AWS_SECRET for WalletPasswordSource
+        /// </summary>
+        public static readonly WalletPasswordSource CUSTOMER_MANAGED_AWS_SECRET = new WalletPasswordSource("CUSTOMER_MANAGED_AWS_SECRET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WalletPasswordSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WalletPasswordSource FindValue(string value)
+        {
+            return FindValue<WalletPasswordSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WalletPasswordSource(string value)
         {
             return FindValue(value);
         }

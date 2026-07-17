@@ -38,6 +38,8 @@ namespace Amazon.Odb.Model
         private string _autonomousDatabaseId;
         private string _clientToken;
         private string _password;
+        private WalletPasswordSource _passwordSource;
+        private WalletPasswordSourceConfigurationInput _passwordSourceConfiguration;
         private WalletType _walletType;
 
         /// <summary>
@@ -84,7 +86,7 @@ namespace Amazon.Odb.Model
         /// The password to encrypt the keys inside the wallet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=8)]
+        [AWSProperty(Sensitive=true, Min=8)]
         public string Password
         {
             get { return this._password; }
@@ -95,6 +97,43 @@ namespace Amazon.Odb.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PasswordSource. 
+        /// <para>
+        /// The source of the password for encrypting the wallet. When set to <c>CUSTOMER_MANAGED_AWS_SECRET</c>,
+        /// the password is retrieved from an Amazon Web Services Secrets Manager secret.
+        /// </para>
+        /// </summary>
+        public WalletPasswordSource PasswordSource
+        {
+            get { return this._passwordSource; }
+            set { this._passwordSource = value; }
+        }
+
+        // Check to see if PasswordSource property is set
+        internal bool IsSetPasswordSource()
+        {
+            return this._passwordSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PasswordSourceConfiguration. 
+        /// <para>
+        /// The configuration of the password source for the Autonomous Database wallet.
+        /// </para>
+        /// </summary>
+        public WalletPasswordSourceConfigurationInput PasswordSourceConfiguration
+        {
+            get { return this._passwordSourceConfiguration; }
+            set { this._passwordSourceConfiguration = value; }
+        }
+
+        // Check to see if PasswordSourceConfiguration property is set
+        internal bool IsSetPasswordSourceConfiguration()
+        {
+            return this._passwordSourceConfiguration != null;
         }
 
         /// <summary>

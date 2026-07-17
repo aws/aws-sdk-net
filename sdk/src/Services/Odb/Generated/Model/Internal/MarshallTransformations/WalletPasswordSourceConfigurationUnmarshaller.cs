@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Odb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OciIamRole Object
+    /// Response Unmarshaller for WalletPasswordSourceConfiguration Object
     /// </summary>  
-    public class OciIamRoleUnmarshaller : IJsonUnmarshaller<OciIamRole, JsonUnmarshallerContext>
+    public class WalletPasswordSourceConfigurationUnmarshaller : IJsonUnmarshaller<WalletPasswordSourceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OciIamRole Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WalletPasswordSourceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OciIamRole unmarshalledObject = new OciIamRole();
+            WalletPasswordSourceConfiguration unmarshalledObject = new WalletPasswordSourceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsIntegration", targetDepth, ref reader))
+                if (context.TestExpression("customerManagedAwsSecret", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsIntegration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("iamRoleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("statusReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = CustomerManagedAwsSecretConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CustomerManagedAwsSecret = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         }
 
 
-        private static OciIamRoleUnmarshaller _instance = new OciIamRoleUnmarshaller();        
+        private static WalletPasswordSourceConfigurationUnmarshaller _instance = new WalletPasswordSourceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OciIamRoleUnmarshaller Instance
+        public static WalletPasswordSourceConfigurationUnmarshaller Instance
         {
             get
             {

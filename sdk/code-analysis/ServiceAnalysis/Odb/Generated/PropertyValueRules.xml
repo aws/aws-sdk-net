@@ -1301,6 +1301,28 @@
     <max>320</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfiguration.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfiguration.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfigurationInput.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CustomerManagedAwsSecretConfigurationInput.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.DatabaseCloneConfiguration.SourceAutonomousDatabaseId</property>
     <min>6</min>
     <max>2048</max>

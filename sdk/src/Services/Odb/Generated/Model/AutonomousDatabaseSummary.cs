@@ -35,6 +35,7 @@ namespace Amazon.Odb.Model
     public partial class AutonomousDatabaseSummary
     {
         private double? _actualUsedDataStorageSizeInTBs;
+        private AdminPasswordSourceSummary _adminPasswordSourceSummary;
         private double? _allocatedStorageSizeInTBs;
         private List<string> _allowlistedIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AutonomousDatabaseApex _apexDetails;
@@ -155,6 +156,24 @@ namespace Amazon.Odb.Model
         internal bool IsSetActualUsedDataStorageSizeInTBs()
         {
             return this._actualUsedDataStorageSizeInTBs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdminPasswordSourceSummary. 
+        /// <para>
+        /// The summary of the admin password source configuration for the Autonomous Database.
+        /// </para>
+        /// </summary>
+        public AdminPasswordSourceSummary AdminPasswordSourceSummary
+        {
+            get { return this._adminPasswordSourceSummary; }
+            set { this._adminPasswordSourceSummary = value; }
+        }
+
+        // Check to see if AdminPasswordSourceSummary property is set
+        internal bool IsSetAdminPasswordSourceSummary()
+        {
+            return this._adminPasswordSourceSummary != null;
         }
 
         /// <summary>

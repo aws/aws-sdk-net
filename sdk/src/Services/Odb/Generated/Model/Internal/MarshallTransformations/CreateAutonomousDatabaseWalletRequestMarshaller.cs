@@ -98,6 +98,23 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Password);
             }
 
+            if(publicRequest.IsSetPasswordSource())
+            {
+                context.Writer.WritePropertyName("passwordSource");
+                context.Writer.WriteStringValue(publicRequest.PasswordSource);
+            }
+
+            if(publicRequest.IsSetPasswordSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("passwordSourceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WalletPasswordSourceConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PasswordSourceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetWalletType())
             {
                 context.Writer.WritePropertyName("walletType");

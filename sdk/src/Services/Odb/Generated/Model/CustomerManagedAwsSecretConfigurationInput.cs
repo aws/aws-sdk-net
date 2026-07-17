@@ -30,40 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Odb.Model
 {
     /// <summary>
-    /// Information about an Amazon Web Services Identity and Access Management (IAM) service
-    /// role used for Autonomous Database integration with Oracle Cloud Infrastructure (OCI).
+    /// The input configuration for a customer-managed Amazon Web Services Secrets Manager
+    /// secret used to supply a password.
     /// </summary>
-    public partial class OciIamRole
+    public partial class CustomerManagedAwsSecretConfigurationInput
     {
-        private OciAwsIntegration _awsIntegration;
+        private ExternalIdType _externalIdType;
         private string _iamRoleArn;
-        private OciIamRoleStatus _status;
-        private string _statusReason;
+        private string _secretId;
 
         /// <summary>
-        /// Gets and sets the property AwsIntegration. 
+        /// Gets and sets the property ExternalIdType. 
         /// <para>
-        /// The Amazon Web Services integration configuration settings for the Amazon Web Services
-        /// Identity and Access Management (IAM) service role.
+        /// The type of Oracle Cloud Identifier (OCID) used as the external ID when assuming the
+        /// IAM role.
         /// </para>
         /// </summary>
-        public OciAwsIntegration AwsIntegration
+        public ExternalIdType ExternalIdType
         {
-            get { return this._awsIntegration; }
-            set { this._awsIntegration = value; }
+            get { return this._externalIdType; }
+            set { this._externalIdType = value; }
         }
 
-        // Check to see if AwsIntegration property is set
-        internal bool IsSetAwsIntegration()
+        // Check to see if ExternalIdType property is set
+        internal bool IsSetExternalIdType()
         {
-            return this._awsIntegration != null;
+            return this._externalIdType != null;
         }
 
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
-        /// (IAM) service role.
+        /// (IAM) role that OCI assumes to retrieve the secret value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -80,39 +79,23 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property SecretId. 
         /// <para>
-        /// The current lifecycle status of the IAM service role.
+        /// The identifier or ARN of the Amazon Web Services Secrets Manager secret that contains
+        /// the password.
         /// </para>
         /// </summary>
-        public OciIamRoleStatus Status
+        [AWSProperty(Min=1, Max=2048)]
+        public string SecretId
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._secretId; }
+            set { this._secretId = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if SecretId property is set
+        internal bool IsSetSecretId()
         {
-            return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StatusReason. 
-        /// <para>
-        /// Additional information about the current status of the IAM service role, if applicable.
-        /// </para>
-        /// </summary>
-        public string StatusReason
-        {
-            get { return this._statusReason; }
-            set { this._statusReason = value; }
-        }
-
-        // Check to see if StatusReason property is set
-        internal bool IsSetStatusReason()
-        {
-            return this._statusReason != null;
+            return this._secretId != null;
         }
 
     }
