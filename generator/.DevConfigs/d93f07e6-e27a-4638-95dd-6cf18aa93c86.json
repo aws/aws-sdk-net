@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Reduce memory allocations in XML primitive unmarshalling."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

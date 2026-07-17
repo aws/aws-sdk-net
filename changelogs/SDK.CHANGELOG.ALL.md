@@ -1,3 +1,20 @@
+### 4.0.291.0 (2026-07-17 18:18 UTC)
+* CognitoIdentityProvider (4.0.102.0)
+	* Amazon Cognito user pools now support sending SMS via AWS End User Messaging. A new EumsSms object in SmsConfigurationType lets you deliver MFA and verification texts through AWS End User Messaging, alongside the existing Amazon SNS option.
+* GameLiftStreams (4.0.102.0)
+	* Amazon GameLift Streams now supports assigning an IAM role to a stream session, enabling your application to securely access resources in your AWS account, such as Amazon S3 buckets and DynamoDB tables.
+* KinesisAnalyticsV2 (4.0.101.0)
+	* Support for Flink 2.3 in Managed Service for Apache Flink
+* Odb (4.0.101.0)
+	* Adds support for sourcing Autonomous Database admin and wallet passwords from customer-managed AWS Secrets Manager secrets, including password source configuration and summaries, and enabling or disabling the OCI IAM service role for Secrets Manager integration via InitializeService.
+* RDS (4.0.103.0)
+	* Adds the AssociatedRoles parameter to CreateDBCluster, RestoreDBClusterFromSnapshot, RestoreDBClusterToPointInTime, and RestoreDBClusterFromS3, letting customers associate IAM roles with an Aurora DB cluster at create or restore time instead of calling AddRoleToDBCluster afterward.
+* Core 4.0.100.6
+	* Eliminates per node path allocation in XML and AWSQuery response unmarshalling.
+	* Fixed SSO login failure in the European Sovereign Cloud (aws-eusc) partition by adding the issuer domain identitycenter.amazonaws.eu to the SSOEndpointResolver AWS-owned allowlist, so it is no longer misclassified as a vanity URL. The derived issuer URL now uses the EUSC issuer host.
+	* Reduce memory allocations in XML primitive unmarshalling.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.290.0 (2026-07-16 18:14 UTC)
 * ChimeSDKVoice (4.0.101.0)
 	* Marked CreateProxySession, DeleteProxySession, GetProxySession, ListProxySessions, UpdateProxySession, PutVoiceConnectorProxy, DeleteVoiceConnectorProxy, and GetVoiceConnectorProxy as deprecated.

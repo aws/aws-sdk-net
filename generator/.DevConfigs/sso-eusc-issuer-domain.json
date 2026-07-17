@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed SSO login failure in the European Sovereign Cloud (aws-eusc) partition by adding the issuer domain identitycenter.amazonaws.eu to the SSOEndpointResolver AWS-owned allowlist, so it is no longer misclassified as a vanity URL. The derived issuer URL now uses the EUSC issuer host."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
