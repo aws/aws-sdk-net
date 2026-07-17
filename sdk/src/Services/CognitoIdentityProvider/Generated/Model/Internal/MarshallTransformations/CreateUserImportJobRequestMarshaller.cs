@@ -87,6 +87,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.JobName);
             }
 
+            if(publicRequest.IsSetPasswordHashingAlgorithm())
+            {
+                context.Writer.WritePropertyName("PasswordHashingAlgorithm");
+                context.Writer.WriteStringValue(publicRequest.PasswordHashingAlgorithm);
+            }
+
             if(publicRequest.IsSetUserPoolId())
             {
                 context.Writer.WritePropertyName("UserPoolId");

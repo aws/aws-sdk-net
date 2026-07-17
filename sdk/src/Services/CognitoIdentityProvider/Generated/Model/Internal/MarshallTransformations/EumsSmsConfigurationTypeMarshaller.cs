@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SmsConfigurationType Marshaller
+    /// EumsSmsConfigurationType Marshaller
     /// </summary>
-    public class SmsConfigurationTypeMarshaller : IRequestMarshaller<SmsConfigurationType, JsonMarshallerContext> 
+    public class EumsSmsConfigurationTypeMarshaller : IRequestMarshaller<EumsSmsConfigurationType, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,19 +42,20 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SmsConfigurationType requestObject, JsonMarshallerContext context)
+        public void Marshall(EumsSmsConfigurationType requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEumsSms())
+            if(requestObject.IsSetCallerArn())
             {
-                context.Writer.WritePropertyName("EumsSms");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("CallerArn");
+                context.Writer.WriteStringValue(requestObject.CallerArn);
+            }
 
-                var marshaller = EumsSmsConfigurationTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.EumsSms, context);
-
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetConfigurationSetName())
+            {
+                context.Writer.WritePropertyName("ConfigurationSetName");
+                context.Writer.WriteStringValue(requestObject.ConfigurationSetName);
             }
 
             if(requestObject.IsSetExternalId())
@@ -63,16 +64,28 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ExternalId);
             }
 
-            if(requestObject.IsSetSnsCallerArn())
+            if(requestObject.IsSetInEntityId())
             {
-                context.Writer.WritePropertyName("SnsCallerArn");
-                context.Writer.WriteStringValue(requestObject.SnsCallerArn);
+                context.Writer.WritePropertyName("InEntityId");
+                context.Writer.WriteStringValue(requestObject.InEntityId);
             }
 
-            if(requestObject.IsSetSnsRegion())
+            if(requestObject.IsSetInTemplateId())
             {
-                context.Writer.WritePropertyName("SnsRegion");
-                context.Writer.WriteStringValue(requestObject.SnsRegion);
+                context.Writer.WritePropertyName("InTemplateId");
+                context.Writer.WriteStringValue(requestObject.InTemplateId);
+            }
+
+            if(requestObject.IsSetOriginationIdentity())
+            {
+                context.Writer.WritePropertyName("OriginationIdentity");
+                context.Writer.WriteStringValue(requestObject.OriginationIdentity);
+            }
+
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("Region");
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
         }
@@ -80,7 +93,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SmsConfigurationTypeMarshaller Instance = new SmsConfigurationTypeMarshaller();
+        public readonly static EumsSmsConfigurationTypeMarshaller Instance = new EumsSmsConfigurationTypeMarshaller();
 
     }
 }

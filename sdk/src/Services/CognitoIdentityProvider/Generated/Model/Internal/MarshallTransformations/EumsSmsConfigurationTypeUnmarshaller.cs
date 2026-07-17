@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SmsConfigurationType Object
+    /// Response Unmarshaller for EumsSmsConfigurationType Object
     /// </summary>  
-    public class SmsConfigurationTypeUnmarshaller : IJsonUnmarshaller<SmsConfigurationType, JsonUnmarshallerContext>
+    public class EumsSmsConfigurationTypeUnmarshaller : IJsonUnmarshaller<EumsSmsConfigurationType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SmsConfigurationType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EumsSmsConfigurationType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SmsConfigurationType unmarshalledObject = new SmsConfigurationType();
+            EumsSmsConfigurationType unmarshalledObject = new EumsSmsConfigurationType();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,16 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EumsSms", targetDepth, ref reader))
+                if (context.TestExpression("CallerArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = EumsSmsConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.EumsSms = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CallerArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ConfigurationSetName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationSetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExternalId", targetDepth, ref reader))
@@ -68,16 +74,28 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnsCallerArn", targetDepth, ref reader))
+                if (context.TestExpression("InEntityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnsCallerArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.InEntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnsRegion", targetDepth, ref reader))
+                if (context.TestExpression("InTemplateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnsRegion = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.InTemplateId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("OriginationIdentity", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OriginationIdentity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Region", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +103,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         }
 
 
-        private static SmsConfigurationTypeUnmarshaller _instance = new SmsConfigurationTypeUnmarshaller();        
+        private static EumsSmsConfigurationTypeUnmarshaller _instance = new EumsSmsConfigurationTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SmsConfigurationTypeUnmarshaller Instance
+        public static EumsSmsConfigurationTypeUnmarshaller Instance
         {
             get
             {

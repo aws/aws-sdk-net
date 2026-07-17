@@ -37,9 +37,31 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class SmsConfigurationType
     {
+        private EumsSmsConfigurationType _eumsSms;
         private string _externalId;
         private string _snsCallerArn;
         private string _snsRegion;
+
+        /// <summary>
+        /// Gets and sets the property EumsSms. 
+        /// <para>
+        /// The configuration for sending SMS messages through Amazon Web Services End User Messaging
+        /// SMS, as an alternative to Amazon SNS. In a user pool, provide either the Amazon SNS
+        /// configuration (<c>SnsCallerArn</c>) or this configuration, but not both. In Amazon
+        /// Web Services Regions where Amazon SNS is not available, this configuration is required.
+        /// </para>
+        /// </summary>
+        public EumsSmsConfigurationType EumsSms
+        {
+            get { return this._eumsSms; }
+            set { this._eumsSms = value; }
+        }
+
+        // Check to see if EumsSms property is set
+        internal bool IsSetEumsSms()
+        {
+            return this._eumsSms != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExternalId. 
@@ -82,7 +104,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// limit</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string SnsCallerArn
         {
             get { return this._snsCallerArn; }
