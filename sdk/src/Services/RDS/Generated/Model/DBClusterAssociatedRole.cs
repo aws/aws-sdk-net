@@ -30,51 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the RemoveRoleFromDBCluster operation.
-    /// Removes the asssociation of an Amazon Web Services Identity and Access Management
-    /// (IAM) role from a DB cluster.
-    /// 
-    ///  
-    /// <para>
-    /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
-    /// </para>
+    /// Contains information about an Amazon Web Services Identity and Access Management (IAM)
+    /// role to associate with a DB cluster. You can specify this structure in the <c>AssociatedRoles</c>
+    /// parameter of <a>CreateDBCluster</a>, <a>RestoreDBClusterFromS3</a>, <a>RestoreDBClusterFromSnapshot</a>,
+    /// and <a>RestoreDBClusterToPointInTime</a>.
     /// </summary>
-    public partial class RemoveRoleFromDBClusterRequest : AmazonRDSRequest
+    public partial class DBClusterAssociatedRole
     {
-        private string _dbClusterIdentifier;
         private string _featureName;
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property DBClusterIdentifier. 
-        /// <para>
-        /// The name of the DB cluster to disassociate the IAM role from.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string DBClusterIdentifier
-        {
-            get { return this._dbClusterIdentifier; }
-            set { this._dbClusterIdentifier = value; }
-        }
-
-        // Check to see if DBClusterIdentifier property is set
-        internal bool IsSetDBClusterIdentifier()
-        {
-            return this._dbClusterIdentifier != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property FeatureName. 
         /// <para>
-        /// The name of the feature for the DB cluster that the IAM role is to be disassociated
-        /// from. For information about supported feature names, see <a>DBEngineVersion</a>.
+        /// The name of the feature associated with the IAM role. For information about supported
+        /// feature names, see <a>DBEngineVersion</a>.
         /// </para>
         /// </summary>
         public string FeatureName
@@ -92,8 +62,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB
-        /// cluster, for example <c>arn:aws:iam::123456789012:role/AuroraAccessRole</c>.
+        /// The Amazon Resource Name (ARN) of the IAM role to associate with the DB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -51,6 +51,12 @@ namespace Amazon.RDS.Model
     /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
     /// to <c>iam-db-auth</c>. 
     /// </para>
+    ///  
+    /// <para>
+    /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+    /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster when
+    /// you restore it from a snapshot.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
@@ -72,6 +78,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonRDSRequest
     {
+        private List<DBClusterAssociatedRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<DBClusterAssociatedRole>() : null;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
@@ -112,6 +119,38 @@ namespace Amazon.RDS.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedRoles. 
+        /// <para>
+        /// A list of Amazon Web Services Identity and Access Management (IAM) roles to associate
+        /// with the DB cluster when it's restored from a snapshot. Each role grants the DB cluster
+        /// permission to access other Amazon Web Services on your behalf. For each role, specify
+        /// a role ARN and, optionally, the feature name (such as <c>s3Import</c>, <c>s3Export</c>,
+        /// or <c>Lambda</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters only
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public List<DBClusterAssociatedRole> AssociatedRoles
+        {
+            get { return this._associatedRoles; }
+            set { this._associatedRoles = value; }
+        }
+
+        // Check to see if AssociatedRoles property is set
+        internal bool IsSetAssociatedRoles()
+        {
+            return this._associatedRoles != null && (this._associatedRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 

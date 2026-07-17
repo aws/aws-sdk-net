@@ -63,6 +63,27 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocatedStorage", StringUtils.FromInt(publicRequest.AllocatedStorage));
                 }
+                if(publicRequest.IsSetAssociatedRoles())
+                {
+                    if (publicRequest.AssociatedRoles.Count == 0)
+                        request.Parameters.Add("AssociatedRoles", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AssociatedRoles)
+                         {
+                            if(publicRequestlistValue.IsSetFeatureName())
+                            {
+                                request.Parameters.Add("AssociatedRoles" + "." + "DBClusterAssociatedRole" + "." + publicRequestlistValueIndex + "." + "FeatureName", StringUtils.FromString(publicRequestlistValue.FeatureName));
+                            }
+                            if(publicRequestlistValue.IsSetRoleArn())
+                            {
+                                request.Parameters.Add("AssociatedRoles" + "." + "DBClusterAssociatedRole" + "." + publicRequestlistValueIndex + "." + "RoleArn", StringUtils.FromString(publicRequestlistValue.RoleArn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));

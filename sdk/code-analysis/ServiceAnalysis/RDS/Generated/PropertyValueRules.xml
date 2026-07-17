@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.RDS.Model.AddRoleToDBClusterRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z-]*:iam::[0-9]*:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.CreateBlueGreenDeploymentRequest.BlueGreenDeploymentName</property>
     <min>1</min>
     <max>60</max>
@@ -642,6 +648,12 @@
     <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.RemoveRoleFromDBClusterRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z-]*:iam::[0-9]*:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.SwitchoverBlueGreenDeploymentRequest.BlueGreenDeploymentIdentifier</property>
     <min>1</min>
     <max>255</max>
@@ -692,6 +704,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DBClusterAssociatedRole.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z-]*:iam::[0-9]*:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.GlobalCluster.GlobalClusterIdentifier</property>

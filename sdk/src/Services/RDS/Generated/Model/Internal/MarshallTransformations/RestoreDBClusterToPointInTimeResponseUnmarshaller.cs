@@ -133,6 +133,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBClusterQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterRoleQuotaExceeded"))
+                {
+                    return DBClusterRoleQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterSnapshotNotFoundFault"))
                 {
                     return DBClusterSnapshotNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -1383,6 +1383,14 @@ namespace Amazon.RDS
         /// a cluster with a writer instance and feature specific values set to all other input
         /// parameters of this API. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster. Each
+        /// associated role lets the DB cluster access other Amazon Web Services on your behalf,
+        /// such as Amazon S3 for data import and export, or Amazon Web Services Lambda for invoking
+        /// functions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
         /// 
@@ -1400,6 +1408,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
@@ -1507,6 +1519,14 @@ namespace Amazon.RDS
         /// a cluster with a writer instance and feature specific values set to all other input
         /// parameters of this API. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster. Each
+        /// associated role lets the DB cluster access other Amazon Web Services on your behalf,
+        /// such as Amazon S3 for data import and export, or Amazon Web Services Lambda for invoking
+        /// functions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
         /// <param name="cancellationToken">
@@ -1527,6 +1547,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
@@ -10765,7 +10789,12 @@ namespace Amazon.RDS
         /// <para>
         /// This operation only applies to Aurora DB clusters. The source DB engine must be MySQL.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with the Aurora DB cluster when
+        /// you restore it from Amazon S3.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
         /// 
@@ -10783,6 +10812,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <c>DBSubnetGroupName</c> doesn't refer to an existing DB subnet group.
@@ -10857,7 +10890,12 @@ namespace Amazon.RDS
         /// <para>
         /// This operation only applies to Aurora DB clusters. The source DB engine must be MySQL.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with the Aurora DB cluster when
+        /// you restore it from Amazon S3.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
         /// <param name="cancellationToken">
@@ -10878,6 +10916,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <c>DBSubnetGroupName</c> doesn't refer to an existing DB subnet group.
@@ -10952,6 +10994,12 @@ namespace Amazon.RDS
         /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
         /// to <c>iam-db-auth</c>. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster when
+        /// you restore it from a snapshot.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
@@ -10984,6 +11032,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
@@ -11080,6 +11132,12 @@ namespace Amazon.RDS
         /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
         /// to <c>iam-db-auth</c>. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster when
+        /// you restore it from a snapshot.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
@@ -11115,6 +11173,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
@@ -11215,6 +11277,12 @@ namespace Amazon.RDS
         /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
         /// to <c>iam-db-auth</c>. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster when
+        /// you restore it to a point in time.
+        /// </para>
         ///  <note> 
         /// <para>
         /// For Aurora, this operation only restores the DB cluster, not the DB instances for
@@ -11254,6 +11322,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
@@ -11344,6 +11416,12 @@ namespace Amazon.RDS
         /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
         /// to <c>iam-db-auth</c>. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
+        /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster when
+        /// you restore it to a point in time.
+        /// </para>
         ///  <note> 
         /// <para>
         /// For Aurora, this operation only restores the DB cluster, not the DB instances for
@@ -11386,6 +11464,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
