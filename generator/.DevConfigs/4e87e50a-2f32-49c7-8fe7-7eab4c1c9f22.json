@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Eliminates per node path allocation in XML and AWSQuery response unmarshalling."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
