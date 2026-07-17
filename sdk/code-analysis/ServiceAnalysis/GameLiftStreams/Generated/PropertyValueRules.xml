@@ -314,6 +314,12 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:iam::\d{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.SessionLengthSeconds</property>
     <min>1</min>
     <max>86400</max>
@@ -402,6 +408,12 @@
     <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:iam::\d{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.SessionLengthSeconds</property>
     <min>1</min>
     <max>86400</max>
@@ -444,6 +456,12 @@
     <min>1</min>
     <max>20</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:iam::\d{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.SessionLengthSeconds</property>
@@ -725,6 +743,12 @@
     <min>1</min>
     <max>20</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.StreamSessionSummary.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:iam::\d{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StreamSessionSummary.UserId</property>

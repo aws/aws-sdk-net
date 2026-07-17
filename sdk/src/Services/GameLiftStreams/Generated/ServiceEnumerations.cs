@@ -725,6 +725,10 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         public static readonly StreamSessionStatusReason ApplicationLogS3DestinationError = new StreamSessionStatusReason("applicationLogS3DestinationError");
         /// <summary>
+        /// Constant AssumeRoleFailed for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason AssumeRoleFailed = new StreamSessionStatusReason("assumeRoleFailed");
+        /// <summary>
         /// Constant ConnectionTimeout for StreamSessionStatusReason
         /// </summary>
         public static readonly StreamSessionStatusReason ConnectionTimeout = new StreamSessionStatusReason("connectionTimeout");

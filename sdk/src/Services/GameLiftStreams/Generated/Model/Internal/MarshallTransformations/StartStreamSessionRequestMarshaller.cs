@@ -158,6 +158,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Protocol);
             }
 
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
             if(publicRequest.IsSetSessionLengthSeconds())
             {
                 context.Writer.WritePropertyName("SessionLengthSeconds");

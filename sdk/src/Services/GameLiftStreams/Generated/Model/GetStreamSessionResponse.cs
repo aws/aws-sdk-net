@@ -47,6 +47,7 @@ namespace Amazon.GameLiftStreams.Model
         private string _logFileLocationUri;
         private PerformanceStatsConfiguration _performanceStatsConfiguration;
         private Protocol _protocol;
+        private string _roleArn;
         private int? _sessionLengthSeconds;
         private string _signalRequest;
         private string _signalResponse;
@@ -354,6 +355,26 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift
+        /// Streams assumes on behalf of your application during the stream session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>
