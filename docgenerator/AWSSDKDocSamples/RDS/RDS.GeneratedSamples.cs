@@ -318,6 +318,30 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
+        public void RDSCreateDBCluster()
+        {
+            #region example-4
+
+            var client = new AmazonRDSClient();
+            var response = client.CreateDBCluster(new CreateDBClusterRequest 
+            {
+                AssociatedRoles = new List<DBClusterAssociatedRole> {
+                    new DBClusterAssociatedRole {
+                        FeatureName = "s3Import",
+                        RoleArn = "arn:aws:iam::123456789012:role/RDSLoadFromS3"
+                    }
+                },
+                DBClusterIdentifier = "sample-cluster",
+                Engine = "aurora-postgresql",
+                MasterUserPassword = "mypassword",
+                MasterUsername = "admin"
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
         public void RDSCreateDBClusterEndpoint()
         {
             #region example-1
@@ -2000,6 +2024,29 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
                 EnableVPCNetworking = false,
                 Engine = "aurora-postgresql",
                 SnapshotIdentifier = "sample-cluster-snapshot"
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSRestoreDBClusterFromSnapshot()
+        {
+            #region example-3
+
+            var client = new AmazonRDSClient();
+            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest 
+            {
+                AssociatedRoles = new List<DBClusterAssociatedRole> {
+                    new DBClusterAssociatedRole {
+                        FeatureName = "s3Import",
+                        RoleArn = "arn:aws:iam::123456789012:role/RDSLoadFromS3"
+                    }
+                },
+                DBClusterIdentifier = "restored-cluster",
+                Engine = "aurora-postgresql",
+                SnapshotIdentifier = "test-instance-snapshot"
             });
 
             DBCluster dbCluster = response.DBCluster;
