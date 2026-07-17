@@ -45,6 +45,13 @@ public class NuspecWriterTests
         AssertHelper("<file src=\".\\bin\\Release\\net8.0\\AWSSDK.CloudTrailData.dll\" target=\"lib\\net8.0\" />");
         AssertHelper("<file src=\".\\bin\\Release\\net8.0\\AWSSDK.CloudTrailData.xml\" target=\"lib\\net8.0\" />");
         AssertHelper("<file src=\".\\bin\\Release\\net8.0\\AWSSDK.CloudTrailData.pdb\" target=\"lib\\net8.0\" />");
+        AssertHelper("<file src=\"nuget-readme.md\" target=\"\" />");
+    }
+
+    [Fact]
+    public void NuspecReferencesReadme()
+    {
+        AssertHelper("<readme>nuget-readme.md</readme>");
     }
 
     private void AssertHelper(string substring)

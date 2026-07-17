@@ -153,6 +153,21 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void WritesServiceProjectFiles()
+    {
+        AssertFileExists("AWSSDK.CloudTrailData.NetFramework.csproj");
+        AssertFileExists("AWSSDK.CloudTrailData.NetStandard.csproj");
+        // The unified csproj is not emitted (see ServiceProjectFileWriter.WriteUnified).
+        Assert.DoesNotContain("AWSSDK.CloudTrailData.csproj", _written);
+    }
+
+    [Fact]
+    public void WritesReadme()
+    {
+        AssertFileExists("nuget-readme.md");
+    }
+
+    [Fact]
     public void WritesEndpointProviderTestsUnderTestsOutputPath()
     {
         var path = Path.Combine(_testsOutputDir, "UnitTests", "Generated", "Endpoints", "CloudTrailDataEndpointProviderTests.g.cs");

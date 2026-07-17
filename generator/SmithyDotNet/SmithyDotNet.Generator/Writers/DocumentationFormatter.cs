@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
@@ -102,6 +103,49 @@ public static partial class DocumentationFormatter
     }
 
     /// <summary>
+    /// Converts a Smithy <c>@documentation</c> HTML string into Markdown for the NuGet package README.
+    /// Handles the tags present across the service models (<c>p</c>, <c>a</c>, <c>code</c>,
+    /// <c>b</c>/<c>strong</c>, <c>i</c>/<c>em</c>, <c>ul</c>/<c>ol</c>/<c>li</c>); any other tag is
+    /// kept as literal text. Returns <see cref="string.Empty"/> for null/empty input.
+    /// </summary>
+    public static string ToMarkdown(string? documentation)
+    {
+        if (string.IsNullOrEmpty(documentation))
+        {
+            return string.Empty;
+        }
+
+        var text = WhitespaceRegex().Replace(documentation, " ");
+
+        text = InlineTagRegex("code").Replace(text, m => $"`{m.Groups[1].Value.Trim()}`");
+        text = InlineTagRegex("b").Replace(text, m => $"**{m.Groups[1].Value.Trim()}**");
+        text = InlineTagRegex("strong").Replace(text, m => $"**{m.Groups[1].Value.Trim()}**");
+        text = InlineTagRegex("i").Replace(text, m => $"*{m.Groups[1].Value.Trim()}*");
+        text = InlineTagRegex("em").Replace(text, m => $"*{m.Groups[1].Value.Trim()}*");
+        text = AnchorRegex().Replace(text, m => $"[{m.Groups[2].Value.Trim()}]({m.Groups[1].Value})");
+
+        // Collapse an item's inner tags to one line before it becomes a bullet: if the later
+        // paragraph pass saw a nested <p>, it would split the "- " marker from its text. An item that
+        // reduces to nothing (e.g. <li><p/></li>) is dropped rather than left as a bare "- ".
+        text = ListItemRegex().Replace(text, m =>
+        {
+            var item = ParagraphRegex().Replace(m.Groups[1].Value, " ");
+            item = ResidualTagRegex().Replace(item, "");
+            item = WhitespaceRegex().Replace(item, " ").Trim();
+            return item.Length == 0 ? "" : $"\n- {item}";
+        });
+
+        text = ParagraphRegex().Replace(text, "\n\n");
+        text = ResidualTagRegex().Replace(text, "");
+
+        // Decode after stripping tags, so decoded '<'/'>' in the text aren't re-read as markup.
+        text = WebUtility.HtmlDecode(text);
+
+        text = NewlineRunRegex().Replace(text, "\n\n");
+        return text.Trim();
+    }
+
+    /// <summary>
     /// Writes each line of a cleaned documentation block as a <c>/// {line}</c> comment.
     /// Indentation is supplied by the writer's current block depth.
     /// </summary>
@@ -193,4 +237,26 @@ public static partial class DocumentationFormatter
     // Strips <fullname>, <function>, and <br> tags that carry attributes (the .Replace calls above only match the bare forms).
     [GeneratedRegex("<fullname [^>]*>|<function [^>]*>|<br [^>]*>")]
     private static partial Regex TagsRegex();
+
+    // Builds a regex matching <tag ...>content</tag> (attributes tolerated, content captured in
+    // group 1). Non-greedy so adjacent same-tag runs each match individually.
+    private static Regex InlineTagRegex(string tag) => new($"<{tag}(?:\\s[^>]*)?>(.*?)</{tag}>", RegexOptions.IgnoreCase);
+
+    // <a ...href="url"...>text</a>: group 1 = href, group 2 = link text.
+    [GeneratedRegex("""<a\s+[^>]*?href\s*=\s*["']([^"']*)["'][^>]*>(.*?)</a>""", RegexOptions.IgnoreCase)]
+    private static partial Regex AnchorRegex();
+
+    // <li ...>text</li> (the closing tag is optional; some docs omit it before the next <li>).
+    [GeneratedRegex("<li(?:\\s[^>]*)?>(.*?)(?:</li>|(?=<li)|(?=</[uo]l>))", RegexOptions.IgnoreCase)]
+    private static partial Regex ListItemRegex();
+
+    // Paragraph boundaries: opening or closing <p> (attributes tolerated).
+    [GeneratedRegex("</?p(?:\\s[^>]*)?>", RegexOptions.IgnoreCase)]
+    private static partial Regex ParagraphRegex();
+
+    // Unwraps the known structural/container tags, leaving inner text. Allowlisted rather than
+    // "any tag" so an unanticipated tag survives as literal text (nuget.org escapes raw HTML, so a
+    // stray <foo> displays as-is) instead of being silently deleted along with its content.
+    [GeneratedRegex("</?(?:ul|ol|li|dl|dt|dd|pre|fullname|note|important|a|p|br)(?:\\s[^>]*)?/?>", RegexOptions.IgnoreCase)]
+    private static partial Regex ResidualTagRegex();
 }

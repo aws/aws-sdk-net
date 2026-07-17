@@ -109,6 +109,32 @@ public class CodeWriter
     }
 
     /// <summary>
+    /// Emits <paramref name="openLine"/> verbatim (caller supplies the full <c>&lt;Tag ...&gt;</c>),
+    /// runs <paramref name="body"/> indented, then emits <c>&lt;/{closeTag}&gt;</c>. Use this when
+    /// the opening tag contains attributes with quotes — callers can pass a raw string literal
+    /// without escaping.
+    /// </summary>
+    public CodeWriter WriteXmlBlock(string openLine, string closeTag, Action body)
+    {
+        var previousIndentUnit = _indentUnit;
+        _indentUnit = XmlIndentUnit;
+        WriteLine(openLine);
+        _indent++;
+        try
+        {
+            body();
+        }
+        finally
+        {
+            _indent--;
+            WriteLine($"</{closeTag}>");
+            _indentUnit = previousIndentUnit;
+        }
+
+        return this;
+    }
+
+    /// <summary>
     /// Emits <paramref name="header"/>, then <c>{</c>, executes <paramref name="body"/>,
     /// and closes with <paramref name="close"/>.
     /// </summary>

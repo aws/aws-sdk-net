@@ -28,6 +28,7 @@ public sealed class NuspecWriter(GenerationContext context)
             writer.WriteLine("<authors>Amazon Web Services</authors>");
             writer.WriteLine($"<description>{System.Security.SecurityElement.Escape(context.Metadata?.Synopsis)}</description>");
             writer.WriteLine("<language>en-US</language>");
+            writer.WriteLine("<readme>nuget-readme.md</readme>");
             writer.WriteLine("""<license type="expression">Apache-2.0</license>""");
             writer.WriteLine("<projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>");
             string tags = context.Metadata is { Tags.Count: > 0 } metadata ? " " + string.Join(" ", metadata.Tags) : string.Empty;
@@ -55,6 +56,7 @@ public sealed class NuspecWriter(GenerationContext context)
     {
         writer.OpenXmlBlock("files", () =>
         {
+            writer.WriteLine("""<file src="nuget-readme.md" target="" />""");
             writer.WriteLine("""<file src="..\..\..\nuget-content\AWSLogo.png" target="images\" />""");
 
             // TODO: incorporate namespace (From metadata) overloads or customization overloads.

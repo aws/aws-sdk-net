@@ -146,9 +146,25 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var structureUnmarshaller = new JsonStructureUnmarshallerWriter(context, modelFileName);
         var exceptionUnmarshallerWriter = new JsonExceptionUnmarshallerWriter(context, modelFileName);
         var nuspecWriter = new NuspecWriter(context);
+        var serviceProjectFileWriter = new ServiceProjectFileWriter(context);
 
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
         Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+        // The NuGet README is the service documentation converted to Markdown, falling back to the
+        // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
+        // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
+        // catching hand-written READMEs.
+        var readme = DocumentationFormatter.ToMarkdown(context.ServiceDocumentation);
+        Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
+
+        Emit($"{context.AssemblyName}.NetFramework.csproj", serviceProjectFileWriter.WriteNetFramework());
+        if (context.Metadata?.NetStandardSupport ?? true)
+        {
+            Emit($"{context.AssemblyName}.NetStandard.csproj", serviceProjectFileWriter.WriteNetStandard());
+        }
+
+        // The unified csproj (ServiceProjectFileWriter.WriteUnified) is deliberately not emitted:
+        // nothing consumes it yet, and the build system still assumes the NetFramework/NetStandard pair.
 
         // Per-operation walk, mirroring the existing generator: emit the request/response classes
         // and request marshaller, then the (un)marshaller for each structure the operation references
