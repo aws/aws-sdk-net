@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class ConnectorSource
     {
         private string _connectorId;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property ConnectorId. 
@@ -53,6 +54,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetConnectorId()
         {
             return this._connectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version of the connector to use (for example, <c>1.1.0</c>). If you don't specify
+        /// a version, the service uses the latest available version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=32)]
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }
