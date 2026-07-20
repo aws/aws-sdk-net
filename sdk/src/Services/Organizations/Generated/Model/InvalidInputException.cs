@@ -110,7 +110,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+    /// INVALID_PATTERN: You provided a value that doesn't match the required pattern. The
+    /// service also validates your free-text field values against common cross-site scripting
+    /// (XSS) patterns and rejects requests that contain matching values.
     /// </para>
     ///  </li> <li> 
     /// <para>
