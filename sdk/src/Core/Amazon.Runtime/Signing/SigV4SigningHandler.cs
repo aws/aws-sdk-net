@@ -125,7 +125,7 @@ namespace Amazon.Runtime.Signing
                     "The request URI must be an absolute URI. Set HttpClient.BaseAddress or use an absolute request URI.");
 
             var parameters = ResolveParameters(request);
-            var signingRequest = await BuildSigningRequestAsync(request, parameters).ConfigureAwait(false);
+            var signingRequest = await BuildSigningRequestAsync(request, parameters, cancellationToken).ConfigureAwait(false);
 
             var result = await AWSSigV4Signer.SignAsync(signingRequest, parameters, cancellationToken).ConfigureAwait(false);
 
@@ -170,7 +170,7 @@ namespace Amazon.Runtime.Signing
             return parameters;
         }
 
-        private static async Task<AWSSigningRequest> BuildSigningRequestAsync(HttpRequestMessage request, AWSSigningParameters parameters)
+        private static async Task<AWSSigningRequest> BuildSigningRequestAsync(HttpRequestMessage request, AWSSigningParameters parameters, CancellationToken cancellationToken)
         {
             // The body is only needed when the signer will hash it: payload signing is on and the caller
             // hasn't already supplied a hash. Otherwise (UNSIGNED-PAYLOAD, or a precomputed hash) the body is
@@ -181,7 +181,12 @@ namespace Amazon.Runtime.Signing
             byte[] body = null;
             if (mustHashBody)
             {
+                cancellationToken.ThrowIfCancellationRequested();
+#if NET5_0_OR_GREATER
+                body = await request.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+#else
                 body = await request.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
+#endif
 
                 // Replace the (possibly one-shot) content with a re-readable buffer so the body survives a
                 // resend on retry, preserving the original content headers.
@@ -239,13 +244,36 @@ namespace Amazon.Runtime.Signing
         }
 
         // Apply the computed signing headers, replacing any left over from a previous signing pass so a
-        // re-signed retry does not accumulate duplicate Authorization / X-Amz-Date headers.
+        // re-signed retry does not accumulate duplicate header lines. A signing header may also have been set
+        // by the caller on the content headers (e.g. a precomputed X-Amz-Content-SHA256), so clear it from
+        // there too — otherwise the outgoing request carries the header twice (once on the request, once on
+        // the content), which SigV4 validation can reject.
         private static void ApplySigningHeaders(HttpRequestMessage request, AWSSigningResult result)
         {
             foreach (var header in result.Headers)
             {
+                RemoveFromContentHeaders(request.Content, header.Key);
                 request.Headers.Remove(header.Key);
                 request.Headers.TryAddWithoutValidation(header.Key, header.Value);
+            }
+        }
+
+        // Remove a signing header from the content headers if present. HttpContentHeaders validates the name
+        // and throws for a request-only header (e.g. Authorization), so guard the call: request-only headers
+        // can never be on the content headers anyway, and a custom header such as x-amz-content-sha256 (which
+        // a caller may have set there) is removed cleanly.
+        private static void RemoveFromContentHeaders(HttpContent content, string name)
+        {
+            if (content == null)
+                return;
+
+            try
+            {
+                content.Headers.Remove(name);
+            }
+            catch (InvalidOperationException)
+            {
+                // Not a valid content header name, so it cannot have been set on the content headers.
             }
         }
 
