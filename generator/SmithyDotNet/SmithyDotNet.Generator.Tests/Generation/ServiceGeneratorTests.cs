@@ -175,6 +175,13 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void WritesUnitTestProjectUnderTestsOutputPath()
+    {
+        var path = Path.Combine(_testsOutputDir, "UnitTests", "AWSSDK.UnitTests.CloudTrailData.csproj");
+        Assert.True(File.Exists(path));
+    }
+
+    [Fact]
     public void EndpointProviderTestsPathIsNotInWrittenList()
     {
         // It lives under a different root (testsOutputDir) than everything else (outputDir), so it

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using static SmithyDotNet.Generator.Writers.ProjectFileSections;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -16,12 +17,6 @@ namespace SmithyDotNet.Generator.Writers;
 /// </summary>
 public sealed class ServiceProjectFileWriter(GenerationContext context)
 {
-    // Framework-identifier comparisons rather than hardcoded TFM names, so conditions adapt to any
-    // current or future target automatically.
-    private const string IsNetFramework = "$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'";
-    private const string IsNotNetFramework = "$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'";
-    private const string IsTrimmable = "$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '8.0'))";
-
     /// <summary>Writes <c>AWSSDK.{Service}.NetFramework.csproj</c>.</summary>
     public string WriteNetFramework()
     {
@@ -57,7 +52,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         }
 
         sections.Add(w => WriteRuleSetProperties(w, ns));
-        sections.Add(w => WriteSigningChoose(w, ns));
+        sections.Add(w => WriteSigningChoose(w, ns.KeyFilePath));
         sections.Add(w => WriteAnalyzerItems(w, ns));
         sections.Add(WriteCompileExcludes);
         sections.Add(WriteReadmePackaging);
@@ -157,7 +152,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         }
 
         sections.Add(w => WriteRuleSetProperties(w, config));
-        sections.Add(w => WriteSigningChoose(w, config));
+        sections.Add(w => WriteSigningChoose(w, config.KeyFilePath));
         sections.Add(w => WriteAnalyzerItems(w, config));
         sections.Add(WriteCompileExcludes);
         sections.Add(w => WriteCoreReference(w, config));
@@ -177,20 +172,6 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         return writer.ToRawString();
     }
 
-    // Runs each section, separating them with a single blank line and leaving none trailing.
-    private static void WriteSections(CodeWriter writer, IReadOnlyList<Action<CodeWriter>> sections)
-    {
-        for (var i = 0; i < sections.Count; i++)
-        {
-            if (i > 0)
-            {
-                writer.WriteLine();
-            }
-
-            sections[i](writer);
-        }
-    }
-
     private void WriteMainPropertyGroup(CodeWriter writer, ServiceProjectConfiguration config)
     {
         writer.OpenXmlBlock("PropertyGroup", () =>
@@ -208,15 +189,6 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             writer.WriteLine("<TreatWarningsAsErrors>true</TreatWarningsAsErrors>");
             writer.WriteLine();
             writer.WriteLine($"<NoWarn>{config.NoWarn}</NoWarn>");
-        });
-    }
-
-    private static void WriteCompileExcludes(CodeWriter writer)
-    {
-        writer.OpenXmlBlock("ItemGroup", () =>
-        {
-            writer.WriteLine("""<Compile Remove="**/obj/**"/>""");
-            writer.WriteLine("""<None Remove="**/obj/**" />""");
         });
     }
 
@@ -241,7 +213,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
 
     private static void WriteIsTrimmablePropertyGroup(CodeWriter writer)
     {
-        writer.WriteXmlBlock($"""<PropertyGroup Condition="{IsTrimmable}">""", "PropertyGroup", () =>
+        writer.WriteXmlBlock($"""<PropertyGroup Condition="{IsNet8OrGreater}">""", "PropertyGroup", () =>
         {
             writer.WriteLine("<IsTrimmable>true</IsTrimmable>");
         });
@@ -279,27 +251,6 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
-    private static void WriteSigningChoose(CodeWriter writer, ServiceProjectConfiguration config)
-    {
-        writer.OpenXmlBlock("Choose", () =>
-        {
-            writer.WriteXmlBlock("""<When Condition=" '$(AWSKeyFile)' == '' ">""", "When", () =>
-            {
-                writer.OpenXmlBlock("PropertyGroup", () =>
-                {
-                    writer.WriteLine($"<AssemblyOriginatorKeyFile>{config.KeyFilePath}</AssemblyOriginatorKeyFile>");
-                });
-            });
-            writer.OpenXmlBlock("Otherwise", () =>
-            {
-                writer.OpenXmlBlock("PropertyGroup", () =>
-                {
-                    writer.WriteLine("<AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>");
-                });
-            });
-        });
-    }
-
     private static void WriteAnalyzerItems(CodeWriter writer, ServiceProjectConfiguration config)
     {
         writer.WriteXmlBlock("""<ItemGroup Condition="$(RunAnalyzersDuringBuild)">""", "ItemGroup", () =>
@@ -320,17 +271,5 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
                 });
             }
         });
-    }
-
-    private static void WriteGenerateAssemblyAttributeSuppressions(CodeWriter writer)
-    {
-        writer.WriteLine("<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>");
-        writer.WriteLine("<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>");
-        writer.WriteLine("<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>");
-        writer.WriteLine("<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>");
-        writer.WriteLine("<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>");
-        writer.WriteLine("<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>");
-        writer.WriteLine("<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>");
-        writer.WriteLine("<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>");
     }
 }

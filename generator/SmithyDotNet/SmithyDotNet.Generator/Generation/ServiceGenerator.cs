@@ -28,13 +28,14 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
     /// Returns the relative paths written under <paramref name="outputPath"/>, for logging and tests.
     /// <para />
-    /// When <paramref name="testsOutputPath"/> is supplied and the service carries endpoint tests
-    /// (<see cref="GenerationContext.HasEndpointTests"/>), the endpoint provider tests file is also
-    /// written under <c>{testsOutputPath}/UnitTests/Generated/Endpoints/</c> — a separate root because
-    /// the SDK lays out its test tree (<c>sdk/test/Services/{Service}/</c>) as a sibling of the source
-    /// tree (<c>sdk/src/Services/{Service}/</c>), not nested under it. That file gets its own
-    /// duplicate-path guard (via <c>EmitUnder</c>) but isn't tracked in the returned list, which stays
-    /// scoped to <paramref name="outputPath"/>.
+    /// When <paramref name="testsOutputPath"/> is supplied, the unit-test project file is written
+    /// under <c>{testsOutputPath}/UnitTests/</c>, plus the endpoint provider tests file under
+    /// <c>UnitTests/Generated/Endpoints/</c> when the service carries endpoint tests
+    /// (<see cref="GenerationContext.HasEndpointTests"/>) — a separate root because the SDK lays out
+    /// its test tree (<c>sdk/test/Services/{Service}/</c>) as a sibling of the source tree
+    /// (<c>sdk/src/Services/{Service}/</c>), not nested under it. Those files get the same
+    /// duplicate-path guard (via <c>EmitUnder</c>) but aren't tracked in the returned list, which
+    /// stays scoped to <paramref name="outputPath"/>.
     /// </summary>
     public IReadOnlyList<string> Generate(string outputPath, string? testsOutputPath = null, CancellationToken cancellationToken = default)
     {
@@ -138,6 +139,15 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var endpointProviderTestSuiteWriter = new EndpointProviderTestSuiteWriter(context, modelFileName);
             var testsRelativePath = Path.Combine("UnitTests", "Generated", "Endpoints", $"{context.ServiceName}EndpointProviderTests.g.cs");
             EmitUnder(testsOutputPath, writtenTests, testsRelativePath, endpointProviderTestSuiteWriter.Write(cancellationToken));
+        }
+
+        // Every service gets a unit-test project so the files under UnitTests/ (generated endpoint
+        // tests today, hand-written tests as they are added) have a project to compile under. Not
+        // gated on endpoint tests — the legacy generator emits it for every service.
+        if (testsOutputPath is not null)
+        {
+            var unitTestProjectFileWriter = new UnitTestProjectFileWriter(context);
+            EmitUnder(testsOutputPath, writtenTests, Path.Combine("UnitTests", $"AWSSDK.UnitTests.{context.ServiceName}.csproj"), unitTestProjectFileWriter.Write());
         }
 
         var exceptionWriter = new ExceptionWriter(context, modelFileName);

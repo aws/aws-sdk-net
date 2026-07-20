@@ -91,9 +91,9 @@ public static class Program
             var written = generator.Generate(outputPath, testsOutputPath);
 
             Console.WriteLine($"Generated {written.Count} files for {context.ServiceName} under '{Path.GetFullPath(outputPath)}'.");
-            if (context.HasEndpointTests && testsOutputPath is not null)
+            if (testsOutputPath is not null)
             {
-                Console.WriteLine($"Generated endpoint provider tests for {context.ServiceName} under '{Path.GetFullPath(testsOutputPath)}'.");
+                Console.WriteLine($"Generated unit test files for {context.ServiceName} under '{Path.GetFullPath(testsOutputPath)}'.");
             }
 
             return 0;

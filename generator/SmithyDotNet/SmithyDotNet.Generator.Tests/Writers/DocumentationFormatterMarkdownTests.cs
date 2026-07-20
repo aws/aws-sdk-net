@@ -6,8 +6,8 @@ namespace SmithyDotNet.Generator.Tests.Writers;
 
 /// <summary>
 /// Covers <see cref="DocumentationFormatter.ToMarkdown"/> for the closed set of tags that appear in
-/// AWS service <c>@documentation</c> (p, a, code, b/strong, i/em, ul/ol/li, and the structural
-/// wrappers fullname/note/important/dl/dt/dd/pre).
+/// AWS service <c>@documentation</c> (p, br, a, code, b/strong, i/em, ul/ol/li, pre, and the
+/// structural wrappers fullname/note/important/dl/dt/dd).
 /// </summary>
 public class DocumentationFormatterMarkdownTests
 {
@@ -68,6 +68,34 @@ public class DocumentationFormatterMarkdownTests
         // Item text is commonly wrapped in <p>; the marker must stay on the same line as its text.
         var result = DocumentationFormatter.ToMarkdown("<ul><li><p>one</p></li><li><p>two</p></li></ul>");
         Assert.Equal("- one\n- two", result);
+    }
+
+    [Fact]
+    public void ConvertsBrTagsToParagraphBreaks()
+    {
+        // MediaLive's InputTimecodeSource docs separate sentences with <br>; deleting the tag
+        // outright ran them together ("EMBEDDED.Choose").
+        Assert.Equal(
+            "Choose EMBEDDED.\n\nChoose ZEROBASED.\n\nThere is no default.",
+            DocumentationFormatter.ToMarkdown("Choose EMBEDDED.<br>Choose ZEROBASED.<br>There is no default."));
+        Assert.Equal("One.\n\nTwo.", DocumentationFormatter.ToMarkdown("One.<br/>Two."));
+    }
+
+    [Fact]
+    public void FlattensBrInsideListItems()
+    {
+        // Inside a bullet the item stays on one line, so a <br> is a space, not a break.
+        Assert.Equal("- One same item", DocumentationFormatter.ToMarkdown("<ul><li>One<br>same item</li></ul>"));
+    }
+
+    [Fact]
+    public void ConvertsPreCodeToFencedBlock()
+    {
+        // SimpleDB wraps multi-line examples in <pre><code>; the line structure must survive as a
+        // fenced block rather than collapsing into one inline span.
+        Assert.Equal(
+            "Intro.\n\n```\nExample line one.\nExample line two.\n```",
+            DocumentationFormatter.ToMarkdown("<p>Intro.</p> <pre><code> Example line one.\nExample line two. </code></pre>"));
     }
 
     [Fact]

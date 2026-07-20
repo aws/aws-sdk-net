@@ -104,9 +104,9 @@ public static partial class DocumentationFormatter
 
     /// <summary>
     /// Converts a Smithy <c>@documentation</c> HTML string into Markdown for the NuGet package README.
-    /// Handles the tags present across the service models (<c>p</c>, <c>a</c>, <c>code</c>,
-    /// <c>b</c>/<c>strong</c>, <c>i</c>/<c>em</c>, <c>ul</c>/<c>ol</c>/<c>li</c>); any other tag is
-    /// kept as literal text. Returns <see cref="string.Empty"/> for null/empty input.
+    /// Handles the tags present across the service models (<c>p</c>, <c>br</c>, <c>a</c>, <c>code</c>,
+    /// <c>b</c>/<c>strong</c>, <c>i</c>/<c>em</c>, <c>ul</c>/<c>ol</c>/<c>li</c>, <c>pre</c>); any
+    /// other tag is kept as literal text. Returns <see cref="string.Empty"/> for null/empty input.
     /// </summary>
     public static string ToMarkdown(string? documentation)
     {
@@ -115,7 +115,17 @@ public static partial class DocumentationFormatter
             return string.Empty;
         }
 
-        var text = WhitespaceRegex().Replace(documentation, " ");
+        // Stash <pre> blocks before the whitespace collapse below flattens their line structure;
+        // they re-enter as fenced code blocks at the very end, past every pass that could rewrite
+        // their content. The placeholders use private-use-area characters no service doc contains.
+        var preBlocks = new List<string>();
+        var text = PreBlockRegex().Replace(documentation, match =>
+        {
+            preBlocks.Add(WebUtility.HtmlDecode(match.Groups[1].Value).Trim());
+            return $"\uE000{preBlocks.Count - 1}\uE001";
+        });
+
+        text = WhitespaceRegex().Replace(text, " ");
 
         text = InlineTagRegex("code").Replace(text, m => $"`{m.Groups[1].Value.Trim()}`");
         text = InlineTagRegex("b").Replace(text, m => $"**{m.Groups[1].Value.Trim()}**");
@@ -130,18 +140,31 @@ public static partial class DocumentationFormatter
         text = ListItemRegex().Replace(text, m =>
         {
             var item = ParagraphRegex().Replace(m.Groups[1].Value, " ");
+            item = BrTagRegex().Replace(item, " ");
             item = ResidualTagRegex().Replace(item, "");
             item = WhitespaceRegex().Replace(item, " ").Trim();
             return item.Length == 0 ? "" : $"\n- {item}";
         });
 
+        // A <br> outside a list item becomes a paragraph break: deleting it outright runs the
+        // surrounding sentences together (e.g. MediaLive's InputTimecodeSource docs).
+        text = BrTagRegex().Replace(text, "\n\n");
         text = ParagraphRegex().Replace(text, "\n\n");
         text = ResidualTagRegex().Replace(text, "");
 
         // Decode after stripping tags, so decoded '<'/'>' in the text aren't re-read as markup.
         text = WebUtility.HtmlDecode(text);
 
+        // Set each stashed <pre> placeholder off in its own paragraph so its fence starts at a line
+        // boundary, then substitute the fenced blocks in after the newline normalization (their
+        // inner line runs must survive verbatim).
+        text = PrePlaceholderRegex().Replace(text, "\n\n$1\n\n");
         text = NewlineRunRegex().Replace(text, "\n\n");
+        for (var i = 0; i < preBlocks.Count; i++)
+        {
+            text = text.Replace($"\uE000{i}\uE001", $"```\n{preBlocks[i]}\n```");
+        }
+
         return text.Trim();
     }
 
@@ -253,6 +276,18 @@ public static partial class DocumentationFormatter
     // Paragraph boundaries: opening or closing <p> (attributes tolerated).
     [GeneratedRegex("</?p(?:\\s[^>]*)?>", RegexOptions.IgnoreCase)]
     private static partial Regex ParagraphRegex();
+
+    // <br> in its authored forms (<br>, <br/>, <br />, attributed).
+    [GeneratedRegex("<br(?:\\s[^>]*)?/?>", RegexOptions.IgnoreCase)]
+    private static partial Regex BrTagRegex();
+
+    // <pre>...</pre> (optionally wrapping <code>), captured with its internal newlines intact.
+    [GeneratedRegex("<pre(?:\\s[^>]*)?>\\s*(?:<code[^>]*>)?(.*?)(?:</code>)?\\s*</pre>", RegexOptions.IgnoreCase | RegexOptions.Singleline)]
+    private static partial Regex PreBlockRegex();
+
+    // The private-use-area placeholders holding stashed <pre> blocks, plus any surrounding spaces.
+    [GeneratedRegex(" *(\uE000[0-9]+\uE001) *")]
+    private static partial Regex PrePlaceholderRegex();
 
     // Unwraps the known structural/container tags, leaving inner text. Allowlisted rather than
     // "any tag" so an unanticipated tag survives as literal text (nuget.org escapes raw HTML, so a
