@@ -168,7 +168,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>
         /// Parameters passed as part of the resource path should be uri-encoded prior to
         /// entry to the signer. Parameters passed in the request.Parameters collection should
-        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// not be encoded; encoding will be done for these parameters as part of the
         /// construction of the canonical request.
         /// </remarks>
         public AWS4SigningResult SignRequest(IRequest request,
@@ -177,11 +177,60 @@ namespace Amazon.Runtime.Internal.Auth
                                              string awsAccessKeyId,
                                              string awsSecretAccessKey)
         {
+            // Validate before touching request.Endpoint so that the validation behavior (and any
+            // resulting exception) is unchanged from the pre-refactor flow, which validated first.
             ValidateRequest(request);
-            var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
-            
-            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) 
-                ? request.OverrideSigningServiceName 
+            return SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey,
+                               CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString()));
+        }
+
+        /// <summary>
+        /// Calculates and signs the specified request using the AWS4 signing protocol by using the
+        /// AWS account credentials given in the method parameters, at the caller-supplied signing time.
+        /// </summary>
+        /// <param name="request">
+        /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol
+        /// ('host' and 'x-amz-date') will be added to the request before signing.
+        /// </param>
+        /// <param name="clientConfig">
+        /// Client configuration data encompassing the service call (notably authentication
+        /// region, endpoint and service name).
+        /// </param>
+        /// <param name="metrics">
+        /// Metrics for the request.
+        /// </param>
+        /// <param name="awsAccessKeyId">
+        /// The AWS public key for the account making the service call.
+        /// </param>
+        /// <param name="awsSecretAccessKey">
+        /// The AWS secret key for the account making the call, in clear text.
+        /// </param>
+        /// <param name="signedAt">
+        /// The date and time to use for the signature. Callers who need a deterministic signing time
+        /// (e.g. offline signing or test-vector reproduction) supply it here; the parameterless-time
+        /// overload defaults it to the clock-skew-corrected UTC now for the request endpoint.
+        /// </param>
+        /// <exception cref="Amazon.Runtime.SignatureException">
+        /// If any problems are encountered while signing the request.
+        /// </exception>
+        /// <remarks>
+        /// Parameters passed as part of the resource path should be uri-encoded prior to
+        /// entry to the signer. Parameters passed in the request.Parameters collection should
+        /// not be encoded; encoding will be done for these parameters as part of the
+        /// construction of the canonical request.
+        /// </remarks>
+        public AWS4SigningResult SignRequest(IRequest request,
+                                             IClientConfig clientConfig,
+                                             RequestMetrics metrics,
+                                             string awsAccessKeyId,
+                                             string awsSecretAccessKey,
+                                             DateTime signedAt)
+        {
+            ValidateRequest(request);
+            signedAt = InitializeHeaders(request.Headers, request.Endpoint, signedAt);
+
+            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName)
+                ? request.OverrideSigningServiceName
                 : DetermineService(clientConfig, request);
 
             if (serviceSigningName == "s3")
@@ -1113,7 +1162,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>
         /// Parameters passed as part of the resource path should be uri-encoded prior to
         /// entry to the signer. Parameters passed in the request.Parameters collection should
-        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// not be encoded; encoding will be done for these parameters as part of the
         /// construction of the canonical request.
         /// </remarks>
         public new AWS4SigningResult SignRequest(IRequest request,
@@ -1161,7 +1210,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>
         /// Parameters passed as part of the resource path should be uri-encoded prior to
         /// entry to the signer. Parameters passed in the request.Parameters collection should
-        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// not be encoded; encoding will be done for these parameters as part of the
         /// construction of the canonical request.
         ///
         /// The X-Amz-Content-SHA256 is cleared out of the request.
@@ -1175,6 +1224,55 @@ namespace Amazon.Runtime.Internal.Auth
                                                  string awsSecretAccessKey,
                                                  string service,
                                                  string overrideSigningRegion)
+        {
+            return SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey, service, overrideSigningRegion,
+                               CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString()));
+        }
+
+        /// <summary>
+        /// Calculates the AWS4 signature for a presigned url, at the caller-supplied signing time.
+        /// </summary>
+        /// <param name="request">
+        /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol
+        /// ('host' and 'x-amz-date') will be added to the request before signing. If the Expires parameter
+        /// is present, it is renamed to 'X-Amz-Expires' before signing.
+        /// </param>
+        /// <param name="clientConfig">
+        /// Adding supporting data for the service call required by the signer (notably authentication
+        /// region, endpoint and service name). May be null when <paramref name="overrideSigningRegion"/>
+        /// is supplied, since the region is then not derived from the config.
+        /// </param>
+        /// <param name="metrics">
+        /// Metrics for the request
+        /// </param>
+        /// <param name="awsAccessKeyId">
+        /// The AWS public key for the account making the service call.
+        /// </param>
+        /// <param name="awsSecretAccessKey">
+        /// The AWS secret key for the account making the call, in clear text
+        /// </param>
+        /// <param name="service">
+        /// The service to sign for
+        /// </param>
+        /// <param name="overrideSigningRegion">
+        /// The region to sign to, if null then the region the client is configured for will be used.
+        /// </param>
+        /// <param name="signedAt">
+        /// The date and time to use for the signature. Callers who need a deterministic signing time
+        /// supply it here; the parameterless-time overload defaults it to the clock-skew-corrected UTC
+        /// now for the request endpoint.
+        /// </param>
+        /// <exception cref="Amazon.Runtime.SignatureException">
+        /// If any problems are encountered while signing the request.
+        /// </exception>
+        public static AWS4SigningResult SignRequest(IRequest request,
+                                                 IClientConfig clientConfig,
+                                                 RequestMetrics metrics,
+                                                 string awsAccessKeyId,
+                                                 string awsSecretAccessKey,
+                                                 string service,
+                                                 string overrideSigningRegion,
+                                                 DateTime signedAt)
         {
             if (service == "s3" || service == "s3express")
             {
@@ -1193,7 +1291,6 @@ namespace Amazon.Runtime.Internal.Auth
                 request.Headers.Add(HeaderKeys.HostHeader, hostHeader);
             }
 
-            var signedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
             request.SignedAt = signedAt;
             var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
