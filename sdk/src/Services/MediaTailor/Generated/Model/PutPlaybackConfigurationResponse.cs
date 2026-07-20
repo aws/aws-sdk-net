@@ -37,6 +37,8 @@ namespace Amazon.MediaTailor.Model
         private AdConditioningConfiguration _adConditioningConfiguration;
         private AdDecisionServerConfiguration _adDecisionServerConfiguration;
         private string _adDecisionServerUrl;
+        private AdsPersonalizationConcurrency _adsPersonalizationConcurrency;
+        private AdsPersonalizationTimeouts _adsPersonalizationTimeouts;
         private AvailSuppression _availSuppression;
         private Bumper _bumper;
         private CdnConfiguration _cdnConfiguration;
@@ -118,6 +120,45 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAdDecisionServerUrl()
         {
             return this._adDecisionServerUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdsPersonalizationConcurrency. 
+        /// <para>
+        /// The concurrency settings for ad decision server interactions. These settings control
+        /// how many simultaneous ADS requests MediaTailor makes per manifest request.
+        /// </para>
+        /// </summary>
+        public AdsPersonalizationConcurrency AdsPersonalizationConcurrency
+        {
+            get { return this._adsPersonalizationConcurrency; }
+            set { this._adsPersonalizationConcurrency = value; }
+        }
+
+        // Check to see if AdsPersonalizationConcurrency property is set
+        internal bool IsSetAdsPersonalizationConcurrency()
+        {
+            return this._adsPersonalizationConcurrency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdsPersonalizationTimeouts. 
+        /// <para>
+        /// The timeout settings for ad decision server interactions. These settings control how
+        /// long MediaTailor waits for ADS responses and the total time budget for ad personalization
+        /// across live, VOD, and prefetch workflows.
+        /// </para>
+        /// </summary>
+        public AdsPersonalizationTimeouts AdsPersonalizationTimeouts
+        {
+            get { return this._adsPersonalizationTimeouts; }
+            set { this._adsPersonalizationTimeouts = value; }
+        }
+
+        // Check to see if AdsPersonalizationTimeouts property is set
+        internal bool IsSetAdsPersonalizationTimeouts()
+        {
+            return this._adsPersonalizationTimeouts != null;
         }
 
         /// <summary>

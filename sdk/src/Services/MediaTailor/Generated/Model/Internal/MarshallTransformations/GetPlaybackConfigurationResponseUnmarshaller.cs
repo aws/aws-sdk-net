@@ -70,6 +70,18 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.AdDecisionServerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AdsPersonalizationConcurrency", targetDepth, ref reader))
+                {
+                    var unmarshaller = AdsPersonalizationConcurrencyUnmarshaller.Instance;
+                    response.AdsPersonalizationConcurrency = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("AdsPersonalizationTimeouts", targetDepth, ref reader))
+                {
+                    var unmarshaller = AdsPersonalizationTimeoutsUnmarshaller.Instance;
+                    response.AdsPersonalizationTimeouts = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AvailSuppression", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailSuppressionUnmarshaller.Instance;

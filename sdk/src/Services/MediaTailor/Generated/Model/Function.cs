@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// -- Define Mixin --
+    /// Defines reusable logic that MediaTailor executes at lifecycle hooks during ad insertion.
+    /// The <c>FunctionType</c> determines the function's runtime behavior. For more information
+    /// about functions, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+    /// with functions</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class Function
     {
