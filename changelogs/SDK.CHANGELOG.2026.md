@@ -1,3 +1,21 @@
+### 4.0.292.0 (2026-07-20 18:12 UTC)
+* AWSMarketplaceMetering (4.0.100.7)
+	* For new SaaS product integrations, CustomerIdentifier is not populated in ResolveCustomer responses and is not supported in BatchMeterUsage. Use CustomerAWSAccountId and LicenseArn instead.
+* BedrockAgentCore (4.0.101.0)
+	* Add W3C trace context headers (traceparent, tracestate, baggage) and X-Amzn-Trace-Id to InvokeHarness request for end-to-end observability propagation. Add toolResultMetadata to the streaming content block delta for MCP tool result meta delivery without oversized SSE frames.
+* BedrockAgentCoreControl (4.0.103.0)
+	* This release adds support for specifying a connector version on Gateway targets to pin the connector's tool schema. It also introduces web-search connector version 1.2.0, which adds agent-side domain filtering, published date range filtering, and admin-side domain allowlisting.
+* Inspector2 (4.0.103.0)
+	* Adds Windows path support for deep inspection. Fixes tag propagation for connector CloudFormation stack operations.
+* MediaTailor (4.0.102.0)
+	* This change adds api support for configuring ad decision server timeouts and concurrency fields on MediaTailor playback configurations
+* Organizations (4.0.100.6)
+	* Updated InvalidInputException error documentation to clarify that the service validates free-text field values against common cross-site scripting (XSS) patterns.
+* QuickSight (4.0.103.0)
+	* Adds support for custom permissions for Triggers, allowing administrators to control user access to Schedule, Inbound Email and Quick Event triggers.
+* SimpleEmailV2 (4.0.101.0)
+	* Amazon SES introduces three new Pricing Plans (Essentials, Pro, Enterprise), which bundle SES features under one pricing umbrella.  The new PutAccountPricingAttributes API lets the user set the account's plan, while current plan retrievalif done through the new PricingAttributes field on GetAccount.
+
 ### 4.0.291.0 (2026-07-17 18:18 UTC)
 * CognitoIdentityProvider (4.0.102.0)
 	* Amazon Cognito user pools now support sending SMS via AWS End User Messaging. A new EumsSms object in SmsConfigurationType lets you deliver MFA and verification texts through AWS End User Messaging, alongside the existing Amazon SNS option.
