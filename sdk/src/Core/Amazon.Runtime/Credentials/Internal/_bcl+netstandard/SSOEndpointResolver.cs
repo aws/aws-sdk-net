@@ -43,9 +43,10 @@ namespace Amazon.Runtime.Credentials.Internal
 
         private static readonly string[] IdentityCenterDomains =
         {
-            "identitycenter.amazonaws.com",       // Commercial (aws) and GovCloud (aws-us-gov)
-            "identitycenter.amazonaws.com.cn",    // China (aws-cn)
-            "identitycenter.amazonaws.eu",        // European Sovereign Cloud (aws-eusc)
+            "identitycenter.amazonaws.com",           // Commercial (aws)
+            "identitycenter.amazonaws.com.cn",        // China (aws-cn)
+            "identitycenter.amazonaws.eu",            // European Sovereign Cloud (aws-eusc)
+            "identitycenter.us-gov.amazonaws.com",    // GovCloud (aws-us-gov) - distinct issuer host
         };
 
         private static readonly Regex[] UrlPatterns =
@@ -71,6 +72,8 @@ namespace Amazon.Runtime.Credentials.Internal
             new Regex(@"^(https?://)?(?<id>[^.]+)\.(?<region>[^.]+)\.portal\.amazonaws\.com", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
             // GovCloud legacy portal: https://start.us-gov-home.awsapps.com/directory/{directoryId}
             new Regex(@"^(https?://)?start\.us-gov-home\.awsapps\.com/directory/(?<id>[^/?#]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
+            // GovCloud issuer URL: https://identitycenter.us-gov.amazonaws.com/{idcInstanceId} (region-less).
+            new Regex(@"^(https?://)?identitycenter\.us-gov\.amazonaws\.com/(?<id>[^/]+)", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
             // Legacy portal: https://{directoryId}.awsapps.com/start (also https://{alias}.awsapps.com/start)
             new Regex(@"^(https?://)?(?<id>[^.]+)\.awsapps\.com", RegexOptions.Compiled | RegexOptions.IgnoreCase, TimeSpan.FromSeconds(1)),
             // Issuer URL: https://identitycenter.amazonaws.com/{idcInstanceId}
@@ -109,7 +112,6 @@ namespace Amazon.Runtime.Credentials.Internal
                     "The URL must be an AWS-generated domain or a vanity domain that redirects to one.");
             }
             var parts = ParseUrl(resolvedUrl, startUrl);
-            var issuerUrl = $"https://{GetIssuerHost(resolvedUrl)}/{parts.InstanceId}";
 
             // Region is NOT validated against a local list of known region codes.
             // Validating would block users authenticating against newly launched or unreleased
@@ -117,6 +119,10 @@ namespace Amazon.Runtime.Credentials.Internal
             // be an AWS-owned domain, so a malformed region cannot direct traffic to a non-AWS
             // endpoint. If the region is invalid, the subsequent OIDC service call will fail.
             var region = !string.IsNullOrEmpty(parts.Region) ? parts.Region : regionOverride;
+
+            // Determined after region because GovCloud shares DNS suffixes with commercial and can
+            // only be distinguished by its region (us-gov-*) or its explicit issuer host.
+            var issuerUrl = $"https://{GetIssuerHost(resolvedUrl, region)}/{parts.InstanceId}";
 
             return new SSOResolvedEndpoint(issuerUrl, region, isVanityUrl, startUrl, resolvedUrl);
         }
@@ -303,8 +309,14 @@ namespace Amazon.Runtime.Credentials.Internal
 
         /// <summary>
         /// Returns the partition-appropriate Identity Center issuer hostname for a resolved AWS-owned URL.
+        /// The issuer host differs by partition. China (.cn) and EUSC (.eu) are distinguishable by DNS
+        /// suffix, but GovCloud (aws-us-gov) shares the commercial ".amazonaws.com" / ".app.aws" /
+        /// ".awsapps.com" suffixes and can only be identified by its "us-gov-" region or its explicit
+        /// issuer host, so <paramref name="region"/> is used to disambiguate it from commercial.
         /// </summary>
-        private static string GetIssuerHost(string resolvedUrl)
+        /// <param name="resolvedUrl">The resolved AWS-owned URL.</param>
+        /// <param name="region">The region resolved for this endpoint (may be null); used to detect GovCloud.</param>
+        private static string GetIssuerHost(string resolvedUrl, string region)
         {
             try
             {
@@ -322,12 +334,19 @@ namespace Amazon.Runtime.Credentials.Internal
                 {
                     return "identitycenter.amazonaws.eu";
                 }
+                // GovCloud (aws-us-gov) shares suffixes with commercial; identify it by the already
+                // resolved issuer host or by the us-gov- region.
+                if (hostname.Equals("identitycenter.us-gov.amazonaws.com", StringComparison.Ordinal) ||
+                    (region != null && region.StartsWith("us-gov-", StringComparison.OrdinalIgnoreCase)))
+                {
+                    return "identitycenter.us-gov.amazonaws.com";
+                }
             }
             catch (UriFormatException)
             {
             }
 
-            // Commercial (aws) and GovCloud (aws-us-gov).
+            // Commercial (aws).
             return "identitycenter.amazonaws.com";
         }
 

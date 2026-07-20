@@ -113,6 +113,8 @@ namespace AWSSDK.UnitTests.Runtime
         {
             var result = await SSOEndpointResolver.ResolveAsync("https://start.us-gov-home.awsapps.com/directory/d-testdirectoryid", "us-gov-west-1");
             Assert.AreEqual("us-gov-west-1", result.Region);
+            // The us-gov- region selects the GovCloud issuer host even though awsapps.com is shared with commercial.
+            Assert.AreEqual("https://identitycenter.us-gov.amazonaws.com/d-testdirectoryid", result.IssuerUrl);
         }
 
         #endregion
@@ -161,6 +163,33 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.AreEqual("https://identitycenter.amazonaws.eu/ssoins-testinstanceid", result.IssuerUrl);
         }
 
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public async Task ResolveAsync_GovCloudIssuerUrl_RecognizedAndRegionFromOverride()
+        {
+            // Regression test for the GovCloud issuer domain identitycenter.us-gov.amazonaws.com must be recognized
+            //  as AWS-owned so it is NOT treated as a vanity URL and DNS-resolved (that issuer host has no DNS record
+            // and would fail). GovCloud has a distinct issuer host and must NOT be rewritten to the commercial one.
+            var result = await SSOEndpointResolver.ResolveAsync("https://identitycenter.us-gov.amazonaws.com/ssoins-testinstanceid", "us-gov-west-1");
+            Assert.AreEqual("us-gov-west-1", result.Region);
+            Assert.IsFalse(result.IsVanityUrl);
+            Assert.AreEqual("https://identitycenter.us-gov.amazonaws.com/ssoins-testinstanceid", result.IssuerUrl);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public async Task ResolveAsync_GovCloudPortalUrl_MapsToGovCloudIssuer()
+        {
+            // GovCloud portal form carries a us-gov-* region in the host; the issuer must use the
+            // GovCloud host even though the domain suffix is shared with commercial.
+            var result = await SSOEndpointResolver.ResolveAsync("https://ssoins-testinstanceid.us-gov-west-1.portal.amazonaws.com", null);
+            Assert.AreEqual("us-gov-west-1", result.Region);
+            Assert.IsFalse(result.IsVanityUrl);
+            Assert.AreEqual("https://identitycenter.us-gov.amazonaws.com/ssoins-testinstanceid", result.IssuerUrl);
+        }
+
         #endregion
 
         #region ResolveAsync - Issuer URL extraction
@@ -178,13 +207,17 @@ namespace AWSSDK.UnitTests.Runtime
         // China legacy: directoryId parsed from the path, maps to the China issuer host
         [DataRow("https://start.cn-north-1.home.awsapps.cn/directory/d-testdirectoryid", "https://identitycenter.amazonaws.com.cn/d-testdirectoryid")]
         [DataRow("https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid", "https://identitycenter.amazonaws.com.cn/ssoins-testinstanceid")]
-        // GovCloud legacy: directoryId parsed from the path, maps to the commercial issuer host
-        [DataRow("https://start.us-gov-home.awsapps.com/directory/d-testdirectoryid", "https://identitycenter.amazonaws.com/d-testdirectoryid")]
         // EUSC portal and issuer forms map to the EUSC issuer host
         [DataRow("https://ssoins-testinstanceid.eusc-de-east-1.portal.amazonaws.eu", "https://identitycenter.amazonaws.eu/ssoins-testinstanceid")]
         [DataRow("https://identitycenter.amazonaws.eu/ssoins-testinstanceid", "https://identitycenter.amazonaws.eu/ssoins-testinstanceid")]
+        // GovCloud portal and issuer forms map to the GovCloud issuer host
+        [DataRow("https://ssoins-testinstanceid.us-gov-west-1.portal.amazonaws.com", "https://identitycenter.us-gov.amazonaws.com/ssoins-testinstanceid")]
+        [DataRow("https://identitycenter.us-gov.amazonaws.com/ssoins-testinstanceid", "https://identitycenter.us-gov.amazonaws.com/ssoins-testinstanceid")]
         public async Task ResolveAsync_ExtractsIssuerUrl(string url, string expectedIssuerUrl)
         {
+            // NOTE: the region override here is only consumed by region-less forms. For GovCloud rows the
+            // us-gov-* region is carried in the host (portal) or the host itself is the GovCloud issuer,
+            // so the GovCloud issuer host is selected regardless of this commercial override.
             var result = await SSOEndpointResolver.ResolveAsync(url, "us-west-2");
             Assert.AreEqual(expectedIssuerUrl, result.IssuerUrl);
         }
