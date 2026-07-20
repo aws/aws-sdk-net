@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetAccount operation
+    /// Response Unmarshaller for PutAccountPricingAttributes operation
     /// </summary>  
-    public class GetAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutAccountPricingAttributesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,67 +46,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetAccountResponse response = new GetAccountResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("DedicatedIpAutoWarmupEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.DedicatedIpAutoWarmupEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Details", targetDepth, ref reader))
-                {
-                    var unmarshaller = AccountDetailsUnmarshaller.Instance;
-                    response.Details = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EnforcementStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EnforcementStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PricingAttributes", targetDepth, ref reader))
-                {
-                    var unmarshaller = PricingAttributesUnmarshaller.Instance;
-                    response.PricingAttributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ProductionAccessEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.ProductionAccessEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SendingEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.SendingEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SendQuota", targetDepth, ref reader))
-                {
-                    var unmarshaller = SendQuotaUnmarshaller.Instance;
-                    response.SendQuota = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SuppressionAttributes", targetDepth, ref reader))
-                {
-                    var unmarshaller = SuppressionAttributesUnmarshaller.Instance;
-                    response.SuppressionAttributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VdmAttributes", targetDepth, ref reader))
-                {
-                    var unmarshaller = VdmAttributesUnmarshaller.Instance;
-                    response.VdmAttributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            PutAccountPricingAttributesResponse response = new PutAccountPricingAttributesResponse();
 
             return response;
         }
@@ -135,6 +75,10 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
                     return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -143,9 +87,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetAccountResponseUnmarshaller _instance = new GetAccountResponseUnmarshaller();        
+        private static PutAccountPricingAttributesResponseUnmarshaller _instance = new PutAccountPricingAttributesResponseUnmarshaller();        
 
-        internal static GetAccountResponseUnmarshaller GetInstance()
+        internal static PutAccountPricingAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -153,7 +97,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAccountResponseUnmarshaller Instance
+        public static PutAccountPricingAttributesResponseUnmarshaller Instance
         {
             get
             {

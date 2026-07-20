@@ -38,6 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
         private bool? _dedicatedIpAutoWarmupEnabled;
         private AccountDetails _details;
         private string _enforcementStatus;
+        private PricingAttributes _pricingAttributes;
         private bool? _productionAccessEnabled;
         private bool? _sendingEnabled;
         private SendQuota _sendQuota;
@@ -114,6 +115,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetEnforcementStatus()
         {
             return this._enforcementStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricingAttributes. 
+        /// <para>
+        /// The pricing attributes that apply to your Amazon SES account, including the currently
+        /// active pricing plan and any scheduled change.
+        /// </para>
+        /// </summary>
+        public PricingAttributes PricingAttributes
+        {
+            get { return this._pricingAttributes; }
+            set { this._pricingAttributes = value; }
+        }
+
+        // Check to see if PricingAttributes property is set
+        internal bool IsSetPricingAttributes()
+        {
+            return this._pricingAttributes != null;
         }
 
         /// <summary>
