@@ -37,7 +37,7 @@
     <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/Route53/AWSSDK.Route53.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/EC2/AWSSDK.EC2.NetFramework.csproj" />
@@ -47,7 +47,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Services/Route53/AWSSDK.Route53.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Services/EC2/AWSSDK.EC2.NetStandard.csproj" />

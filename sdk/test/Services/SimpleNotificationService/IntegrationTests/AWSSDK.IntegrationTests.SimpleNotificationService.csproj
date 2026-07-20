@@ -43,7 +43,7 @@
     <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
@@ -53,7 +53,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetStandard.csproj" />

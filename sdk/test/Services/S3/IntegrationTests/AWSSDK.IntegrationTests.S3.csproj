@@ -44,7 +44,7 @@
     <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/S3Control/AWSSDK.S3Control.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
@@ -60,7 +60,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Services/S3Control/AWSSDK.S3Control.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj" />

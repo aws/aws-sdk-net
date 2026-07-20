@@ -51,7 +51,7 @@
     <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
     <ProjectReference Include="../../src/Services/APIGateway/AWSSDK.APIGateway.NetFramework.csproj" />
@@ -76,7 +76,7 @@
     <ProjectReference Include="../../src/Services/TranscribeStreaming/AWSSDK.TranscribeStreaming.NetFramework.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj" />
     <ProjectReference Include="../../src/Services/APIGateway/AWSSDK.APIGateway.NetStandard.csproj" />

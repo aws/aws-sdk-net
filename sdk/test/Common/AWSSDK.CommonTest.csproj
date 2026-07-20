@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>$(SdkNetFrameworkTargets);$(SdkNetTargets)</TargetFrameworks>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' != 'net472'">$(DefineConstants);NETSTANDARD</DefineConstants>
+    <DefineConstants Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">$(DefineConstants);NETSTANDARD</DefineConstants>
     <LangVersion>11.0</LangVersion>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

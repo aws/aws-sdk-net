@@ -42,13 +42,13 @@
   <ItemGroup>
     <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
     <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj" />
     <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
     <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj" />
