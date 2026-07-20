@@ -592,6 +592,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.HuggingFaceAction);
             }
 
+            if(requestObject.IsSetInboundEmailTrigger())
+            {
+                context.Writer.WritePropertyName("InboundEmailTrigger");
+                context.Writer.WriteStringValue(requestObject.InboundEmailTrigger);
+            }
+
             if(requestObject.IsSetIncludeContentInScheduledReportsEmail())
             {
                 context.Writer.WritePropertyName("IncludeContentInScheduledReportsEmail");
@@ -706,6 +712,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PublishWithoutApproval);
             }
 
+            if(requestObject.IsSetQuickEventTrigger())
+            {
+                context.Writer.WritePropertyName("QuickEventTrigger");
+                context.Writer.WriteStringValue(requestObject.QuickEventTrigger);
+            }
+
             if(requestObject.IsSetRenameSharedFolders())
             {
                 context.Writer.WritePropertyName("RenameSharedFolders");
@@ -770,6 +782,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Scenario");
                 context.Writer.WriteStringValue(requestObject.Scenario);
+            }
+
+            if(requestObject.IsSetScheduleTrigger())
+            {
+                context.Writer.WritePropertyName("ScheduleTrigger");
+                context.Writer.WriteStringValue(requestObject.ScheduleTrigger);
             }
 
             if(requestObject.IsSetSelfUpgradeUserRole())
@@ -1130,6 +1148,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Topic");
                 context.Writer.WriteStringValue(requestObject.Topic);
+            }
+
+            if(requestObject.IsSetTrigger())
+            {
+                context.Writer.WritePropertyName("Trigger");
+                context.Writer.WriteStringValue(requestObject.Trigger);
             }
 
             if(requestObject.IsSetUseAgentWebSearch())

@@ -13263,6 +13263,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly ServiceType ATHENA = new ServiceType("ATHENA");
         /// <summary>
+        /// Constant GLUE_DATA_CATALOG for ServiceType
+        /// </summary>
+        public static readonly ServiceType GLUE_DATA_CATALOG = new ServiceType("GLUE_DATA_CATALOG");
+        /// <summary>
         /// Constant QBUSINESS for ServiceType
         /// </summary>
         public static readonly ServiceType QBUSINESS = new ServiceType("QBUSINESS");

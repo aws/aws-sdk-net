@@ -125,6 +125,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _googleCalendarAction;
         private CapabilityState _hubspotAction;
         private CapabilityState _huggingFaceAction;
+        private CapabilityState _inboundEmailTrigger;
         private CapabilityState _includeContentInScheduledReportsEmail;
         private CapabilityState _intercomAction;
         private CapabilityState _invokeAppsAIInference;
@@ -144,6 +145,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _performFlowUiTask;
         private CapabilityState _printReports;
         private CapabilityState _publishWithoutApproval;
+        private CapabilityState _quickEventTrigger;
         private CapabilityState _renameSharedFolders;
         private CapabilityState _research;
         private CapabilityState _salesforceAction;
@@ -155,6 +157,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _sapPhysicalInventoryAction;
         private CapabilityState _sapProductMasterDataAction;
         private CapabilityState _scenario;
+        private CapabilityState _scheduleTrigger;
         private CapabilityState _selfUpgradeUserRole;
         private CapabilityState _serviceNowAction;
         private CapabilityState _shareAmazonBedrockARSAction;
@@ -215,6 +218,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _subscribeDashboardEmailReports;
         private CapabilityState _textractAction;
         private CapabilityState _topic;
+        private CapabilityState _trigger;
         private CapabilityState _useAgentWebSearch;
         private CapabilityState _useAmazonBedrockARSAction;
         private CapabilityState _useAmazonBedrockFSAction;
@@ -1903,6 +1907,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InboundEmailTrigger. 
+        /// <para>
+        /// The ability to create, view, edit, delete, and run inbound email triggers for flows
+        /// and automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState InboundEmailTrigger
+        {
+            get { return this._inboundEmailTrigger; }
+            set { this._inboundEmailTrigger = value; }
+        }
+
+        // Check to see if InboundEmailTrigger property is set
+        internal bool IsSetInboundEmailTrigger()
+        {
+            return this._inboundEmailTrigger != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeContentInScheduledReportsEmail. 
         /// <para>
         /// The ability to include content in scheduled email reports.
@@ -2252,6 +2275,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuickEventTrigger. 
+        /// <para>
+        /// The ability to create, view, edit, delete, and run Quick event triggers for flows
+        /// and automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState QuickEventTrigger
+        {
+            get { return this._quickEventTrigger; }
+            set { this._quickEventTrigger = value; }
+        }
+
+        // Check to see if QuickEventTrigger property is set
+        internal bool IsSetQuickEventTrigger()
+        {
+            return this._quickEventTrigger != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RenameSharedFolders. 
         /// <para>
         /// The ability to rename shared folders.
@@ -2447,6 +2489,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetScenario()
         {
             return this._scenario != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleTrigger. 
+        /// <para>
+        /// The ability to create, view, edit, delete, and run schedule triggers for flows and
+        /// automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState ScheduleTrigger
+        {
+            get { return this._scheduleTrigger; }
+            set { this._scheduleTrigger = value; }
+        }
+
+        // Check to see if ScheduleTrigger property is set
+        internal bool IsSetScheduleTrigger()
+        {
+            return this._scheduleTrigger != null;
         }
 
         /// <summary>
@@ -3527,6 +3588,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTopic()
         {
             return this._topic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Trigger. 
+        /// <para>
+        /// The ability to manage trigger-related settings for flows and automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState Trigger
+        {
+            get { return this._trigger; }
+            set { this._trigger = value; }
+        }
+
+        // Check to see if Trigger property is set
+        internal bool IsSetTrigger()
+        {
+            return this._trigger != null;
         }
 
         /// <summary>
