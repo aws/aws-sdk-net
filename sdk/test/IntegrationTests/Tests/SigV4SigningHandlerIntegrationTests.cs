@@ -20,6 +20,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Credentials;
 using Amazon.Runtime.Signing;
 using Xunit;
 
@@ -47,7 +48,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static HttpClient NewSignedClient()
         {
             var handler = new SigV4SigningHandler(
-                FallbackCredentialsFactory.GetCredentials(),
+                DefaultAWSCredentialsIdentityResolver.GetCredentials(),
                 RegionEndpoint.GetBySystemName(Region),
                 StsService)
             {
