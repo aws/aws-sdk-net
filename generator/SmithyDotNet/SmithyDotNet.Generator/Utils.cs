@@ -45,4 +45,24 @@ public static class Utils
 
         return guidElement.InnerText;
     }
+
+    /// <summary>
+    /// Forces the path to use the AltDirectorySeparatorChar even on Windows.
+    /// </summary>
+    /// <param name="segments">The path segments to join</param>
+    /// <returns>The combined path.</returns>
+    public static string PathCombineAlt(params string[] segments)
+    {
+        return ConvertPathAlt(Path.Combine(segments));
+    }
+
+    /// <summary>
+    /// Converts path characters of Path.DirectorySeparatorChar to Path.AltDirectorySeparatorChar.
+    /// </summary>
+    /// <param name="path">The path to convert to use Path.AltDirectorySeparatorChar characters.</param>
+    /// <returns>The converted path.</returns>
+    public static string ConvertPathAlt(string path)
+    {
+        return path.Replace(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+    }
 }

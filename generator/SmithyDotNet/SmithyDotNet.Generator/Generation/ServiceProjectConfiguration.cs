@@ -1,5 +1,17 @@
 namespace SmithyDotNet.Generator.Generation;
 
+/// <summary>
+/// File names of the shared test and generator projects a service's slnx references.
+/// </summary>
+public static class ProjectFileNames
+{
+    public const string GeneratorLib = "ServiceClientGeneratorLib.csproj";
+    public const string CommonTest = "AWSSDK.CommonTest.csproj";
+    public const string UnitTestsCore = "AWSSDK.UnitTests.Core.csproj";
+    public const string UnitTestUtility = "AWSSDK.UnitTestUtilities.csproj";
+    public const string IntegrationTestUtility = "AWSSDK.IntegrationTestUtilities.csproj";
+}
+
 /// <summary>A NuGet package reference emitted with <c>PrivateAssets=all</c>.</summary>
 public sealed record PackageRef(string Id, string Version);
 
@@ -63,19 +75,19 @@ public sealed record ServiceProjectConfiguration
 public static class ServiceProjectConfigurations
 {
     // Service csprojs live at sdk/src/Services/{Service}/ — 3 levels below sdk/.
-    private const string SdkRoot = "../../..";
-    private const string ServicesRoot = "../..";
+    private static string SdkRoot = Utils.PathCombineAlt("..", "..", "..");
+    private static string ServicesRoot = Utils.PathCombineAlt("..", "..");
 
     public static ServiceProjectConfiguration NetFramework { get; } = new()
     {
         TargetFrameworksProperty = "$(SdkNetFrameworkTargets)",
         DefineConstants = ["BCL", "CODE_ANALYSIS"],
         HasTrimmableTarget = false,
-        CoreProjectReference = $"{ServicesRoot}/Core/AWSSDK.Core.NetFramework.csproj",
-        KeyFilePath = $"{SdkRoot}/awssdk.dll.snk",
-        AnalyzersPath = $"{SdkRoot}/../buildtools/CustomRoslynAnalyzers.dll",
-        RuleSetFilePath = $"{SdkRoot}/AWSDotNetSDK.ruleset",
-        RuleSetFilePathForBuild = $"{SdkRoot}/AWSDotNetSDKForBuild.ruleset",
+        CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetFramework.csproj"),
+        KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
+        AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),
+        RuleSetFilePath = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDK.ruleset"),
+        RuleSetFilePathForBuild = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDKForBuild.ruleset"),
         NoWarn = "CA1822",
         PackageReferences =
         [
@@ -92,11 +104,11 @@ public static class ServiceProjectConfigurations
         // non-.NET-Framework, so the constant always applies.
         DefineConstants = ["NETSTANDARD", "AWS_ASYNC_ENUMERABLES_API"],
         HasTrimmableTarget = true,
-        CoreProjectReference = $"{ServicesRoot}/Core/AWSSDK.Core.NetStandard.csproj",
-        KeyFilePath = $"{SdkRoot}/awssdk.dll.snk",
-        AnalyzersPath = $"{SdkRoot}/../buildtools/CustomRoslynAnalyzers.dll",
-        RuleSetFilePath = $"{SdkRoot}/AWSDotNetSDK.ruleset",
-        RuleSetFilePathForBuild = $"{SdkRoot}/AWSDotNetSDKForBuild.ruleset",
+        CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetStandard.csproj"),
+        KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
+        AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),
+        RuleSetFilePath = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDK.ruleset"),
+        RuleSetFilePathForBuild = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDKForBuild.ruleset"),
         NoWarn = "CA1822",
         PackageReferences =
         [

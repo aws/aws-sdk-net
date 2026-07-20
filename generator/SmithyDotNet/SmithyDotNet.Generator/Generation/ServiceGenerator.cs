@@ -4,6 +4,7 @@ using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.NuGet;
+using SmithyDotNet.Generator.Writers.ProjectFiles;
 using System.Collections.Concurrent;
 
 namespace SmithyDotNet.Generator.Generation;
@@ -109,6 +110,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         //file path needed here for existing GUID check
         Emit(codeAnalysisProjectFilePath, codeAnalysisProjectFileWriter.Write(codeAnalysisProjectFilePath));
+
+        var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
+        Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));
 
         // Endpoint files are emitted only when the service carries an endpoint rule set. The
         // parameters class lives in the *.Endpoints namespace (emitted under Generated/), the

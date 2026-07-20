@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj"/>
+    <ProjectReference Include="../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj"/>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.NetStandard.csproj"/>
+    <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetStandard.csproj"/>
+    <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj"/>
+    <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj"/>
+    <ProjectReference Include="../../src/Services/SQS/AWSSDK.SQS.NetStandard.csproj"/>
+    <ProjectReference Include="../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj"/>
+    <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj"/>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
+    <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetFramework.csproj"/>
+    <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj"/>
+    <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj"/>
+    <ProjectReference Include="../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj"/>
+    <ProjectReference Include="../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj"/>
+    <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj"/>
+  </ItemGroup>
+</Project>
