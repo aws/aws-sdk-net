@@ -66,6 +66,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <para>
         /// The <c>CustomerIdentifier</c> is used to identify an individual customer in your application.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For new SaaS product integrations, this field is not populated. Use <c>CustomerAWSAccountId</c>
+        /// and <c>LicenseArn</c> to identify customers instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
         public string CustomerIdentifier

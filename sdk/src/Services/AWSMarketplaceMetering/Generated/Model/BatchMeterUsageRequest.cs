@@ -36,9 +36,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers
     /// to make multiple purchases per Amazon Web Services account. Starting June 1, 2026,
     /// new SaaS products must use <c>CustomerAWSAccountId</c> (instead of <c>CustomerIdentifier</c>),
-    /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. Existing
-    /// integrations will continue to work. Review the new integration for Concurrent Agreements
-    /// <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
+    /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. <c>BatchMeterUsage</c>
+    /// does not support <c>CustomerIdentifier</c> for new integrations. Existing integrations
+    /// continue to work. Review the new integration for Concurrent Agreements <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -51,16 +51,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     ///  
     /// <para>
     /// Usage records should be submitted in quick succession following a recorded event.
-    /// Usage records aren't accepted 24 hours or more after an event.
+    /// Usage records aren't accepted 24 hours or more after an event. At the end of each
+    /// billing cycle, a 6-hour grace period applies. We accept usage records for the previous
+    /// billing month until 06:00 UTC on the first day of the next month. For example, you
+    /// must submit March usage records before 06:00 UTC on April 1. After this grace period,
+    /// we return a <c>TimestampOutOfBoundsException</c> error.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// At the end of each billing cycle, a 6-hour grace period applies. We accept usage records
-    /// for the previous billing month until 06:00 UTC on the first day of the next month.
-    /// For example, you must submit March usage records before 06:00 UTC on April 1. After
-    /// this grace period, we return a <c>TimestampOutOfBoundsException</c> error.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     ///  <c>BatchMeterUsage</c> can process up to 25 <c>UsageRecords</c> at a time, and each
     /// request must be less than 1 MB in size. Optionally, you can have multiple usage allocations
