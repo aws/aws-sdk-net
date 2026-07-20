@@ -65,8 +65,10 @@ namespace Amazon.Runtime.Signing
         /// </summary>
         public static async Task<AWSSigningResult> SignAsync(AWSSigningRequest request, AWSSigningParameters parameters, CancellationToken cancellationToken = default)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             ValidateArguments(request, parameters, presign: false);
             var credentials = await parameters.Credentials.GetCredentialsAsync().ConfigureAwait(false);
+            cancellationToken.ThrowIfCancellationRequested();
             return SignInternal(request, parameters, credentials);
         }
 
@@ -87,9 +89,11 @@ namespace Amazon.Runtime.Signing
         /// </summary>
         public static async Task<PresignResult> PresignAsync(AWSSigningRequest request, AWSSigningParameters parameters, TimeSpan expiry, CancellationToken cancellationToken = default)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             ValidateArguments(request, parameters, presign: true);
             ValidateExpiry(expiry);
             var credentials = await ResolveForPresignAsync(parameters.Credentials, expiry).ConfigureAwait(false);
+            cancellationToken.ThrowIfCancellationRequested();
             return PresignInternal(request, parameters, expiry, credentials);
         }
 
