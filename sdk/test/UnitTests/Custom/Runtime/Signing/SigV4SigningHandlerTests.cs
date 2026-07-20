@@ -14,7 +14,6 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -207,6 +206,9 @@ namespace AWSSDK.UnitTests.Signing
             await invoker.SendAsync(message, CancellationToken.None);
 
             Assert.AreEqual(precomputed, message.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single());
+            // The caller set the hash on the content headers; after signing it must live only on the request
+            // headers, not on both, or the outgoing request would carry a duplicate x-amz-content-sha256 line.
+            Assert.IsFalse(message.Content.Headers.Contains(HeaderKeys.XAmzContentSha256Header));
         }
 
         // -----------------------------------------------------------------------
