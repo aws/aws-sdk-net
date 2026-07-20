@@ -92,6 +92,30 @@ namespace AWSSDK.UnitTests.Signing
             Assert.AreEqual(AWS4Signer.EmptyBodySha256, request.Headers[HeaderKeys.XAmzContentSha256Header]);
         }
 
+        [TestMethod]
+        [DataRow(true,  true,  false, AWS4Signer.UnsignedPayload)]
+        [DataRow(false, false, false, AWS4Signer.UnsignedPayload)]
+        [DataRow(false, true,  true,  AWS4Signer.StreamingBodySha256)]
+        public void SetRequestBodyHash_WithPrecomputedHash_IgnoredWhenNotEffectivelySigningBody(bool disablePayloadSigning, bool signerSignsPayload, bool useChunkEncoding, string expectedHash)
+        {
+            // PrecomputedContentSha256 must only take effect when payload signing is effectively enabled
+            // and the request isn't chunk-encoded. When the unsigned-payload gate applies (DisablePayloadSigning,
+            // or a signer constructed with signPayload:false) the magic string wins; a chunk-encoded request
+            // carries its own streaming hash. In all these cases the precomputed value must be ignored.
+            var config = new MockClientConfig { AuthenticationRegion = Region };
+            var request = BuildInternalRequest();
+            request.UseChunkEncoding = useChunkEncoding;
+            request.PrecomputedContentSha256 = new string('a', 64);
+
+            if (disablePayloadSigning)
+            {
+                request.DisablePayloadSigning = true;
+            }
+
+            new AWS4Signer(signPayload: signerSignsPayload).SignRequest(request, config, new RequestMetrics(), AccessKey, SecretKey);
+            Assert.AreEqual(expectedHash, request.Headers[HeaderKeys.XAmzContentSha256Header]);
+        }
+
         private static IRequest BuildInternalRequest()
         {
             // POST is the body-typical verb these scenarios represent (a caller supplying a body hash).
