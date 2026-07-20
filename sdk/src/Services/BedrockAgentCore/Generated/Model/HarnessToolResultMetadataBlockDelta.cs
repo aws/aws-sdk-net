@@ -30,29 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// An S3 source for a skill.
+    /// Delta payload for a tool result metadata.
     /// </summary>
-    public partial class HarnessSkillS3Source
+    public partial class HarnessToolResultMetadataBlockDelta
     {
-        private string _uri;
+        private string _metadata;
 
         /// <summary>
-        /// Gets and sets the property Uri. 
+        /// Gets and sets the property Metadata. 
         /// <para>
-        /// The S3 URI pointing to the skill directory (e.g., s3://bucket/skills/my-skill/).
+        /// The partial JSON-string fragment of the tool result metadata.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=16383)]
-        public string Uri
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
+        public string Metadata
         {
-            get { return this._uri; }
-            set { this._uri = value; }
+            get { return this._metadata; }
+            set { this._metadata = value; }
         }
 
-        // Check to see if Uri property is set
-        internal bool IsSetUri()
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
         {
-            return this._uri != null;
+            return this._metadata != null;
         }
 
     }

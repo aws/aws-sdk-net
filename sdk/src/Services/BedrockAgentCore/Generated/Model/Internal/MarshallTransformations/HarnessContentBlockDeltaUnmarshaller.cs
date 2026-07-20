@@ -74,6 +74,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("toolResultMetadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = HarnessToolResultMetadataBlockDeltaUnmarshaller.Instance;
+                    unmarshalledObject.ToolResultMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("toolUse", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessToolUseBlockDeltaUnmarshaller.Instance;

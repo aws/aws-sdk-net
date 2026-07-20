@@ -624,6 +624,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.McpMethod</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.McpName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.McpProtocolVersion</property>
     <min>1</min>
     <max>1024</max>
@@ -747,6 +757,11 @@
     <pattern>[0-9a-zA-Z]{1,40}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.Baggage</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.HarnessArn</property>
     <pattern>arn:([^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:harness/[a-zA-Z][a-zA-Z0-9_]{0,39}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
@@ -759,6 +774,21 @@
     <min>33</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.TraceId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.TraceParent</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.TraceState</property>
+    <min>0</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListABTestsRequest.MaxResults</property>
@@ -1721,6 +1751,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkill.Path</property>
     <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkillGitAuth.CredentialArn</property>
@@ -1729,11 +1760,13 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkillGitSource.Url</property>
     <min>8</min>
+    <max>16383</max>
     <pattern>https://[^#@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkillS3Source.Uri</property>
     <min>5</min>
+    <max>16383</max>
     <pattern>s3://.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1784,6 +1817,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessToolResultContentBlock.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessToolResultMetadataBlockDelta.Metadata</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

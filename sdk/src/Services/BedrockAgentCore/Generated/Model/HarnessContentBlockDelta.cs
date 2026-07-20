@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCore.Model
         private HarnessReasoningContentBlockDelta _reasoningContent;
         private string _text;
         private List<HarnessToolResultBlockDelta> _toolResult = AWSConfigs.InitializeCollections ? new List<HarnessToolResultBlockDelta>() : null;
+        private HarnessToolResultMetadataBlockDelta _toolResultMetadata;
         private HarnessToolUseBlockDelta _toolUse;
 
         /// <summary>
@@ -98,6 +99,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetToolResult()
         {
             return this._toolResult != null && (this._toolResult.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolResultMetadata. 
+        /// <para>
+        /// A tool result metadata delta.
+        /// </para>
+        /// </summary>
+        public HarnessToolResultMetadataBlockDelta ToolResultMetadata
+        {
+            get { return this._toolResultMetadata; }
+            set { this._toolResultMetadata = value; }
+        }
+
+        // Check to see if ToolResultMetadata property is set
+        internal bool IsSetToolResultMetadata()
+        {
+            return this._toolResultMetadata != null;
         }
 
         /// <summary>

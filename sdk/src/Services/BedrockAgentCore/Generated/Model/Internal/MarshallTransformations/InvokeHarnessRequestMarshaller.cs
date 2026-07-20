@@ -199,6 +199,11 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             
 
         
+            if (publicRequest.IsSetBaggage()) 
+            {
+                request.Headers["baggage"] = publicRequest.Baggage;
+            }
+        
             if (publicRequest.IsSetRuntimeSessionId()) 
             {
                 request.Headers["X-Amzn-Bedrock-AgentCore-Runtime-Session-Id"] = publicRequest.RuntimeSessionId;
@@ -207,6 +212,21 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRuntimeUserId()) 
             {
                 request.Headers["X-Amzn-Bedrock-AgentCore-Runtime-User-Id"] = publicRequest.RuntimeUserId;
+            }
+        
+            if (publicRequest.IsSetTraceId()) 
+            {
+                request.Headers["X-Amzn-Trace-Id"] = publicRequest.TraceId;
+            }
+        
+            if (publicRequest.IsSetTraceParent()) 
+            {
+                request.Headers["traceparent"] = publicRequest.TraceParent;
+            }
+        
+            if (publicRequest.IsSetTraceState()) 
+            {
+                request.Headers["tracestate"] = publicRequest.TraceState;
             }
             request.UseQueryString = true;
 

@@ -81,7 +81,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The filesystem path to the skill definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=4096)]
         public string Path
         {
             get { return this._path; }
