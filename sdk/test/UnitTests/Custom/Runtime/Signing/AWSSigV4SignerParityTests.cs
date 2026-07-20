@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -25,7 +26,6 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Signing;
 using Amazon.Util;
-using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests.Signing
@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests.Signing
         [ClassInitialize]
         public static void LoadSharedFixture(TestContext context)
         {
-            var json = Utils.GetResourceText("sigv4_test_cases.json");
+            var json = LoadFixtureJson();
             using (var doc = JsonDocument.Parse(json))
             {
                 var creds = doc.RootElement.GetProperty("credentials");
@@ -109,6 +109,31 @@ namespace AWSSDK.UnitTests.Signing
                     list.Add(scenario);
                 }
                 Scenarios = list.ToArray();
+            }
+        }
+
+        // Load the shared fixture by its exact embedded logical name (pinned via <LogicalName> in the test
+        // csprojs). This avoids the substring/Single() manifest lookup, whose resolved resource name varies
+        // with the build environment (RootNamespace, path separators, MSBuild version) and returned null in a
+        // full recursive CI build even though it resolved locally. Throw a clear, self-diagnosing error naming
+        // what IS embedded if the fixture is ever missing, rather than an opaque ArgumentNullException.
+        private static string LoadFixtureJson()
+        {
+            const string resourceName = "sigv4_test_cases.json";
+            var assembly = typeof(AWSSigV4SignerParityTests).Assembly;
+
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                if (stream == null)
+                {
+                    var available = string.Join(", ", assembly.GetManifestResourceNames());
+                    throw new InvalidOperationException(
+                        $"Embedded resource '{resourceName}' was not found in {assembly.GetName().Name}. " +
+                        $"Available resources: {available}");
+                }
+
+                using (var reader = new StreamReader(stream))
+                    return reader.ReadToEnd();
             }
         }
 
