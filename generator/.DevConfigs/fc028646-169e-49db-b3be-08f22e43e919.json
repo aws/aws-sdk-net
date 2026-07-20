@@ -4,9 +4,6 @@
       "Added `IRequest.PrecomputedContentSha256`, a caller-supplied body hash that `AWS4Signer` uses verbatim (when payload signing is enabled) in place of reading the request body."
     ],
     "type": "minor",
-    "updateMinimum": true,
-    "backwardIncompatibilitiesToIgnore": [
-      "Amazon.Runtime.Internal.IRequest/MethodAbstractMethodAdded"
-    ]
+    "updateMinimum": true
   }
 }
